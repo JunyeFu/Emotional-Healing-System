@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Primary Scale Construct
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record identifies state negative-affect change as the unique primary scale construct, keeps SAM dimensions and positive affect secondary, and leaves the exact standardized instrument and score formula for the next decision gate. |
+| Actual Result | Added U28, separated the primary construct from SAM valence/arousal/control dimensions and device-process evidence, and updated the blackboard so instrument version, items, response timeframe, direction, and change-score formula remain explicitly unfrozen. |
+| Deviation / Surprise | Existing project gates mention SAM, but the redesigned main outcome is narrower and requires a direct state negative-affect score. SAM remains potentially useful as a secondary dimensional measure. |
+| Verification Command | Targeted `rg` checks for U28, the unique primary construct, secondary SAM dimensions, unfrozen instrument details, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Instrument choice, Chinese version provenance and permission, item wording, administration timeframe, score direction, change-score formula, and sensitivity assumptions remain unconfirmed. |
+
 ### 2026-08-04 Confirm Separate Outcome And Process Models
 
 | Field | Notes |
