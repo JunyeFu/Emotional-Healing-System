@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Remove Common Participant Breathing Circle
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record removes the common participant-facing breathing circle and assigns guidance, feedback, onboarding, and degraded behavior to each weather's native visual mechanism while preserving TD as an operator-only monitor. |
+| Actual Result | Added U38 and updated the blackboard. Removed the common circle, dual-circle HUD, and TD Spout breathing texture from the target participant experience; assigned native visual carriers to all four modules; required native onboarding and degraded cues; and marked the current Unity circle dependency as a superseded implementation baseline. |
+| Deviation / Surprise | The user input used “溢出” in a context where “移除” is the coherent operation. The record states this interpretation explicitly. No formal Unity design or implementation file was changed during the ongoing mainline interview. |
+| Verification Command | Targeted `rg` checks for U38, confirmed status, removed circle variants, all four native carriers, onboarding, degraded behavior, TD operator boundary, superseded Unity baseline, and the next gate; restricted-term scan over changed lines; `git diff --check`; final `git status --short`. |
+| Residual Risk | Exact native phase animations, module timeline, degraded weather-progress policy, pretest thresholds, theory contrasts, revised test hierarchy, and revised sample size remain unconfirmed. |
+
 ### 2026-08-04 Confirm Weather Breathing Module Baseline
 
 | Field | Notes |
