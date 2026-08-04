@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Reframe Core Paper Contributions
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record identifies scene-native breathing guidance and explainable closed-loop sequence orchestration as the two contribution objects, demotes causal sequence evaluation and adaptive optimization to an evidence chain, and preserves the fixed-pair identification boundary. |
+| Actual Result | Added U40 and updated the blackboard. Defined a reusable five-stage scene-native mapping grammar, minimum formal and replay requirements for the orchestration method, the three-stage evidence chain, superseded title language, and the next gate on the primary empirical claim and minimum comparison baseline. |
+| Deviation / Surprise | The prior framing treated rigorous evaluation and adaptive functionality as contributions in themselves. U40 explicitly corrects that category error without discarding the already confirmed balanced exploration, process analysis, policy learning, or independent confirmation design. |
+| Verification Command | Targeted `rg` checks for U40, both contribution objects, the mapping grammar, orchestration requirements, evidence-chain roles, fixed-pair and comparison boundaries, the superseded title, and the new next gate; restricted-term scan over changed lines; `git diff --check`; final `git status --short`. |
+| Residual Risk | The unique empirical claim for scene-native guidance, its minimum comparison baseline, formal policy representation, low-degree-of-freedom contrast, revised hierarchy, sample size, and study outcomes remain unconfirmed. |
+
 ### 2026-08-04 Confirm Uniform 120-Second Module Timeline
 
 | Field | Notes |
