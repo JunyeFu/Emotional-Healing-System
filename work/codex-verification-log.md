@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Three-Stage Sequence Evidence Chain
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record distinguishes balanced random exploration, strategy learning, and independent confirmation; the first stage assigns all 24 complete sequences independently of real-time device data, while later adaptive selection remains separately testable. |
+| Actual Result | Added U26, recorded pre-scale stratification with `1/24` sequence allocation, limited first-stage real-time device use to data capture and within-scene feedback, required policy freezing before independent confirmation, and retained balanced random assignment as the minimum comparison benchmark. Updated the blackboard to make the revised phase boundary current. |
+| Deviation / Surprise | U24-U25 previously described state-constrained micro-random selection during exploration. U26 supersedes that first-stage mechanism but preserves adaptive selection for the independent confirmation stage. |
+| Verification Command | Targeted `rg` checks for U26, `1/24`, all three phases, the supersession statement, policy freezing, and the next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The unique primary outcome, sample size, exact pre-scale strata, stage-three comparison conditions, policy form, and formal analysis model remain unconfirmed. |
+
 ### 2026-08-04 Confirm Micro-Randomized Adaptive Sequence Core
 
 | Field | Notes |
