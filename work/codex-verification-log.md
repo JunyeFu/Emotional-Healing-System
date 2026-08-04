@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Micro-Randomized Adaptive Sequence Core
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record marks adaptive sequence generation and constrained random exploration as confirmed, explains why naive realized-sequence averages are biased, and leaves only the primary outcome definition as the next mainline gate. |
+| Actual Result | Added U24-U25, froze the main paper direction as causal evaluation and explainable adaptive optimization of weather-breathing sequences, recorded nonzero random choice probabilities and required decision logs, and defined discovery, policy learning, and independent confirmation phases. Updated the blackboard to identify the primary outcome as the next gate. |
+| Deviation / Surprise | The user wants both personalized real-time sequencing and estimates for all 24 complete sequences. Supporting both requires constrained exploration and propensity logging; a deterministic policy alone cannot identify all sequence effects. |
+| Verification Command | Targeted `rg` checks for U24-U25, confirmed status, nonzero random probabilities, three research phases, working title, and next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The primary outcome, module pairings, randomization probabilities, quality constraints, sample simulation, and final comparison arms remain unconfirmed. |
+
 ### 2026-08-04 Confirm Ideal Output Portfolio
 
 | Field | Notes |
