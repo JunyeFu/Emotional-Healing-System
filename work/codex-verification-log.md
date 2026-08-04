@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Structured Sequence Analysis Hierarchy
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record makes module-position and directed-transition effects the primary structured analysis, retains adjusted estimates and ranking stability for all 24 complete sequences as secondary analysis, and reserves adaptive-policy value for independent confirmation. |
+| Actual Result | Added U31, froze the four-level evidence hierarchy, prohibited naive winner claims from raw sequence means, retained all 24 sequence reports with uncertainty, and moved the next gate to one joint primary hypothesis and coefficient-testing hierarchy. Updated the blackboard accordingly. |
+| Deviation / Surprise | Sequence representation is now prioritized, but the position and transition terms still form a correlated multi-parameter family. A joint hypothesis and multiplicity plan are required before power analysis. |
+| Verification Command | Targeted `rg` checks for U31, primary position and transition analysis, all 24 adjusted sequence estimates, ranking stability, strategy learning, independent confirmation, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Feature coding, model rank, joint hypothesis, coefficient hierarchy, multiplicity method, regularization, ranking stability method, power inputs, and sample size remain unconfirmed. |
+
 ### 2026-08-04 Confirm Primary Sequence Estimand
 
 | Field | Notes |
