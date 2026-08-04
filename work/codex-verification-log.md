@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Ideal Output Portfolio
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record preserves all discussion after U16 and marks the user-confirmed ideal output portfolio as the current baseline without treating external acceptance or grants as guaranteed. |
+| Actual Result | Appended U17-U23, covering fixed weather-breathing pairs, 24 sequence clarification, publication-quality assessment, three low-increment paper routes, real-device-only formal data, the distinction between ideal redesign and current evidence, and the confirmed output portfolio. Updated the blackboard so the next gate is selecting one primary paper contribution. |
+| Deviation / Surprise | The later fixed-pair sequence direction supersedes the earlier independent 4×4 scene-breathing proposal. The main paper contribution remains unresolved among live-versus-replay, fixed sequence modeling, and explainable adaptive sequencing. |
+| Verification Command | Targeted `rg` checks for U17-U23, confirmed output categories, superseded 4×4 status, real-device boundary, and the next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The portfolio is a target baseline. Journal acceptance, showcase acceptance, software registration completion, and patent grant depend on external review and cannot be guaranteed. |
+
 ### 2026-08-04 Grill Interview Context Preservation
 
 | Field | Notes |
