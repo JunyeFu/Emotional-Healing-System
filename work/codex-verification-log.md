@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Reduce Confirmatory Sequence Complexity
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record keeps balanced coverage of all 24 sequences and the 14-degree-of-freedom structured model for secondary analysis and policy learning, while moving the unique confirmatory question to a small set of theory-defined contrasts and invalidating the prior 480-valid-session figure as the current requirement. |
+| Actual Result | Added U35 and updated the blackboard. The decision preserves all sequence and device data, demotes the 14-degree-of-freedom model from the primary test, and requires sample size to be recalculated after theory contrasts are frozen. Current module evidence was checked and found unresolved standardization and passive-experience conflicts. |
+| Deviation / Surprise | The current weather design pairs Storm with 4-2-6 and Heat with 1:2 long exhalation, but Snow still includes micro-action and Fade uses autonomous breathing. The Unity scene document also retains the superseded TD-Spout dependency. Theory contrasts cannot be defensibly defined until these module contracts are redesigned. |
+| Verification Command | Read-only inspection of `01-需求与设计/情绪天气方案/四种天气设计.md` and `02-技术研发/04-Unity视觉/场景设计.md`; targeted `rg` checks for U35, preserved 24-sequence coverage, demoted 14-degree-of-freedom model, prior sample-size boundary, module conflicts, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The four breathing protocols, module theory dimensions, passive presentation rules, low-degree-of-freedom contrasts, revised test hierarchy, and revised sample size remain unconfirmed. The current Unity architecture document remains stale. |
+
 ### 2026-08-04 Confirm Effect Grid And Recruitment Allowance
 
 | Field | Notes |
