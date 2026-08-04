@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Effect Grid And Recruitment Allowance
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record fixes incremental `f2` scenarios at 0.02, 0.05, and 0.10, uses 0.05 for primary planning, reserves 15% for unusable sessions, and reports a reproducible preliminary sample-size approximation without presenting it as the final Monte Carlo result. |
+| Actual Result | Added U34 and updated the blackboard. A noncentral-F calculation for 14 added sequence degrees of freedom, 15 full-model predictors, alpha 0.05, and 90% power produced valid/recruitment targets of 1176/1384, 480/565, and 264/311 for `f2` 0.02, 0.05, and 0.10 respectively. The main planning scenario exposes a large-scale recruitment requirement. |
+| Deviation / Surprise | The confirmed 14-degree-of-freedom model requires about 480 valid sessions even at `f2=0.05`. This is far beyond the legacy 8-12 participant plan and creates a hard choice between recruitment capacity and confirmatory-model complexity. |
+| Verification Command | `py -3.14 -c` noncentral-F power calculation using `scipy.stats.f` and `scipy.stats.ncf`; targeted `rg` checks for U34, the `f2` formula and scenarios, 15% allowance, all sample targets, approximation boundary, and the updated feasibility gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The approximation assumes independent homoscedastic linear-model sessions and does not replace the planned Monte Carlo simulation. Recruitment capacity, final model complexity, nuisance ranges, full-rank implementation, and final sample size remain unconfirmed. |
+
 ### 2026-08-04 Confirm Simulation-Based Power Standard
 
 | Field | Notes |
