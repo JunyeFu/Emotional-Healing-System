@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Hierarchical Sequence Testing
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record defines one global primary comparison of the baseline-adjusted position-plus-transition model against the baseline-only model, gates family and coefficient interpretation, applies Holm correction, and preserves 24-sequence estimates outside the primary significance family. |
+| Actual Result | Added U32, defined `M0`, `MP`, and `MPT`, froze the global `MPT` versus `M0` test at two-sided alpha 0.05, gated Holm-adjusted position and transition family tests and coefficient interpretation, and required non-gated results to remain exploratory. Updated the blackboard and moved the next gate to power-design standards. |
+| Deviation / Surprise | Multiplicity and interpretation hierarchy are now fixed, but model-matrix rank, estimator behavior, and power assumptions still cannot be evaluated until the exact feature coding and simulation inputs are defined. |
+| Verification Command | Targeted `rg` checks for U32, `M0`/`MP`/`MPT`, the unique global test, alpha 0.05, Holm-gated family and coefficient tests, 24-sequence status, exploration boundary, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Full-rank feature coding, estimator choice, residual assumptions, robust inference, minimum effect, baseline correlation, target power, attrition allowance, and sample size remain unconfirmed. |
+
 ### 2026-08-04 Confirm Structured Sequence Analysis Hierarchy
 
 | Field | Notes |
