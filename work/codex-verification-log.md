@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Separate Outcome And Process Models
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record assigns pre/post scale change to session-level sequence analysis and real-device records to segment-level composite-module process analysis, connects them without creating a synthetic total score, and does not claim an independently identified breathing-method effect. |
+| Actual Result | Added U27, froze the outcome/process model boundary, required repeated-measures controls for segment analysis, retained device features as adaptive-policy inputs and explanatory evidence, and moved the next gate to selecting the exact standardized scale score. Updated the blackboard accordingly. |
+| Deviation / Surprise | Existing project material mentions SAM, but the redesigned study has not established that SAM provides the intended unique short-term negative-emotion score. The instrument remains deliberately unfrozen. |
+| Verification Command | Targeted `rg` checks for U27, both model levels, the no-synthetic-score rule, fixed-pair identification boundary, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The exact scale, primary subscale, score direction, process feature family, missing-data rules, sample size, and statistical models remain unconfirmed. |
+
 ### 2026-08-04 Confirm Three-Stage Sequence Evidence Chain
 
 | Field | Notes |
