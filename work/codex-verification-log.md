@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Grill Interview Context Preservation
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The project contains a dated, navigable record of the continuous Grill discussion, clearly separating original user inputs, confirmed decisions, superseded ideas, evidence-based rationale, pending recommendations, open questions, and the next interview gate. |
+| Actual Result | Added `00-项目管理/看板与进度/2026-08-04_Grill访谈原始总结与决策演化.md`; linked it from the M00 README; updated the project-local blackboard. The record preserves the evolution from module boundaries through Unity/TD separation, passive four-scene flow, overall outcome evidence, and the proposed 4×4 scene-breathing match design. |
+| Deviation / Surprise | The current module map still describes TD Spout as a Unity input, while the later confirmed target makes Unity independent of TD. This discrepancy is recorded for a future architecture update after the research mainline is confirmed, not changed in this preservation task. |
+| Verification Command | Targeted `rg` checks for required decisions, decision-state labels, restricted terms, and the M00 navigation link; Markdown relative-link check; `git diff --check`; final `git status --short`. |
+| Residual Risk | Assistant replies before the latest turn are preserved as decision summaries rather than a byte-for-byte transcript. The proposed 4×4 design, scene-level verbal ratings, comparison condition, and four standardized breathing conditions remain unconfirmed. |
+
 ### 2026-08-04 Project Module Reorganization
 
 | Field | Notes |
