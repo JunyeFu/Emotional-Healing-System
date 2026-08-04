@@ -18,31 +18,27 @@ python main.py --weather storm --duration 60
 # 实时可视化仪表盘 (终端2)
 python visualizer.py
 
-# 运行测试
-python -m pytest tests/ -v
+# 运行全部 Python 测试
+python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tests tests -q
 ```
 
-## 模块
+## 运行模块
 
-| 模块 | 文件 | 功能 |
-|------|------|------|
-| 数据采集 | 01-数据采集/mock_data.py | 正弦呼吸波 + 模拟ECG (72BPM) |
-| 数据采集 | 01-数据采集/device_driver.py | 真实设备驱动抽象 |
-| 数据采集 | 01-数据采集/device_manager.py | 设备管理与缓冲读取 |
-| 数据采集 | 01-数据采集/ble_device.py | BLE设备接入骨架 |
-| 信号处理 | 02-信号处理/signal_pipeline.py | NeuroKit2 滤波+特征提取 |
-| 信号处理 | 02-信号处理/scoring_model.py | 4-dim scoring (breath_sync/depth/hrv_coherence/eda_calm) + calm_index |
-| 通信 | 05-通信协议/udp_sender.py | UDP JSON v1.2 @ 10Hz → :5005(TD) :5006(Unity) |
-| 通信 | 05-通信协议/osc_sender.py | OSC 桥接输出 |
-| 通信 | 05-通信协议/csv_logger.py | 结构化 CSV 日志 |
-| 可视化 | visualizer.py | 4面板实时仪表盘 (监听UDP 5005) |
-| TD桥接 | 03-TouchDesigner/osc_bridge/ | OSC 远程遥控 TD 工程 |
-| Unity视觉 | 04-Unity视觉/SRP-Weather-Visual/ | Unity 2D 天气视觉工程 |
+| ID | 模块 | 输入 | 输出 | 主要实现 |
+|---|---|---|---|---|
+| M02 | 数据采集 | 设备或 Mock | 10 Hz `RawFrame`、数据源状态 | `01-数据采集/` |
+| M03 | 交互状态估计 | `RawFrame` | 四维评分、`calm_index`、天气强度 | `02-信号处理/` |
+| M04 | 通信与记录 | 评分帧 | UDP JSON v1.2、CSV | `05-通信协议/` |
+| M05 | TD 引导与监控 | UDP `5005` | 监控画面、Spout 纹理 | `03-TouchDesigner/` |
+| M06 | Unity 天气视觉 | UDP `5006`、Spout | 四天气体验画面 | `04-Unity视觉/` |
+| M07 | 开发桥接 | 编辑器连接 | 构建与检查能力 | `06-MCP开发桥接/` |
+
+跨项目模块关系见根目录 `PROJECT_MODULES.md`。`visualizer.py` 是 M04 输出的本地观察工具，不是同机演示闭环的必需模块。
 
 ## 测试
 
 ```bash
-python -m pytest 01-数据采集/tests/ 02-信号处理/tests/ 05-通信协议/tests/ -v
+python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tests tests -q
 ```
 
 ## 依赖关系

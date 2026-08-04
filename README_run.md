@@ -28,7 +28,7 @@ git status -sb
 ## Python 环境
 
 ```powershell
-cd C:\Users\fujunye\Desktop\Agent\03-SRP
+Set-Location 'D:\Agent\03-SRP'
 py -3.14 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -40,7 +40,7 @@ pip freeze > requirements-lock.txt
 ## Python 测试
 
 ```powershell
-cd C:\Users\fujunye\Desktop\Agent\03-SRP\02-技术研发
+Set-Location 'D:\Agent\03-SRP\02-技术研发'
 python -m pytest 01-数据采集\tests 02-信号处理\tests 05-通信协议\tests tests -q
 ```
 
@@ -51,7 +51,7 @@ python -m pytest 01-数据采集\tests 02-信号处理\tests 05-通信协议\tes
 ## Mock 数据流
 
 ```powershell
-cd C:\Users\fujunye\Desktop\Agent\03-SRP\02-技术研发
+Set-Location 'D:\Agent\03-SRP\02-技术研发'
 python main.py --weather storm --duration 60
 ```
 

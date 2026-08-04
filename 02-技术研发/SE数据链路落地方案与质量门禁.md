@@ -68,7 +68,7 @@ CSVLogger → experiment logs
 推荐命令：
 
 ```powershell
-cd C:\Users\fujunye\Desktop\Agent\03-SRP
+Set-Location 'D:\Agent\03-SRP'
 py -3.14 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -91,7 +91,7 @@ Mock 是本项目的默认验收输入。真实设备未稳定前，不阻塞闭
 运行：
 
 ```powershell
-cd C:\Users\fujunye\Desktop\Agent\03-SRP\02-技术研发
+Set-Location 'D:\Agent\03-SRP\02-技术研发'
 python main.py --weather storm --duration 60
 ```
 

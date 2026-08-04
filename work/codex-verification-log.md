@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Project Module Reorganization
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The D-drive repository has one authoritative module map, stable entry pages for each top-level module group, no active references to the old C-drive path or user-deleted evidence files, and unchanged Python behavior. |
+| Actual Result | Added `PROJECT_MODULES.md` with M00-M10 responsibilities, interfaces, dependencies, placement rules, and validation entry points. Added entry pages for project management, experience design, verification evidence, and delivery. Updated root, development, runbook, board, and workflow navigation. Python tests passed: 42 passed. |
+| Deviation / Surprise | The worktree also contained a user modification to `CLAUDE.md`, an untracked `SRP/` asset directory, and a root docx duplicate. The duplicate docx hash matches the copy under project management; all of these pre-existing changes were preserved and excluded from this task. |
+| Verification Command | `py -3.14 -m pytest '02-技术研发/01-数据采集/tests' '02-技术研发/02-信号处理/tests' '02-技术研发/05-通信协议/tests' '02-技术研发/tests' -q`; targeted `rg` scans for old paths, deleted entries, and restricted terms; relative Markdown link check; `git diff --check`. |
+| Residual Risk | TD, Spout, and Unity Play Mode were not launched in this documentation-only task. User-deleted verification materials remain absent, so module M08 records structure and evidence requirements but not a completed full-system verification. |
+
 ### 2026-07-01 Project File and Document Cleanup
 
 | Field | Notes |
