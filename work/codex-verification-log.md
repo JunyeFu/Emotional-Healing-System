@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Project Status And Top-Level Design Summary
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The project has one navigable summary that separates repository reality from target design, consolidates confirmed product and research decisions, labels pending proposals, and identifies the exact gates before team task-package decomposition. |
+| Actual Result | Added `00-项目管理/看板与进度/2026-08-04_项目情况与顶层设计汇总.md`, linked it from M00, added U41 to the Grill record, and updated the blackboard. The summary covers product boundaries, four modules, runtime timeline, two contribution objects, three-stage evidence, data processing, result-to-claim limits, publication narrative, output portfolio, responsibility directions, current gaps, and pending decisions. Full Python regression passed: `42 passed in 8.21s`. |
+| Deviation / Surprise | The historical stage board still says delivery and archival work, while the confirmed research direction is in top-level redesign. The summary records this divergence but does not silently rewrite the historical board. One draft line said four complete orders and was corrected to 24 before staging. |
+| Verification Command | Targeted `rg` checks for all required sections and status labels; restricted-term scan; Markdown relative-link check; `git diff --check`; full Python test command; final staged-file and Git status checks. |
+| Residual Risk | The causal claim scope, abstract-pacer baseline, primary process endpoint, noninferiority margin, revised model hierarchy, sample size, policy specification, target architecture, and implementation task packages remain unconfirmed. |
+
 ### 2026-08-04 Reframe Core Paper Contributions
 
 | Field | Notes |
