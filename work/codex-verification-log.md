@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Primary Sequence Estimand
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record defines `delta_NA = NA_pre - NA_post` with positive values indicating reduction, uses baseline-adjusted post-session negative affect for primary sequence inference, and distinguishes randomized order effects from unadjusted whole-experience change. |
+| Actual Result | Added U30, froze the score direction and `NA_post ~ NA_pre + prespecified randomized-sequence features` model, assigned raw change to description and sensitivity analysis, and recorded the causal-interpretation boundary. Updated the blackboard and moved the next gate to sequence representation. |
+| Deviation / Surprise | The primary affect outcome is now operationally defined, but the sequence term is still a placeholder. Sample size cannot be calculated until the 24-level sequence, position, and transition terms are prioritized. |
+| Verification Command | Targeted `rg` checks for U30, the score equation and direction, baseline-adjusted model, descriptive-versus-primary roles, causal boundary, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Sequence representation, covariate set, model family, missing-item rule, residual assumptions, multiplicity control, power inputs, and sample size remain unconfirmed. |
+
 ### 2026-08-04 Adopt Chinese 20-Item PANAS
 
 | Field | Notes |
