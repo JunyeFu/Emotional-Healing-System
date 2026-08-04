@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Adopt Chinese 20-Item PANAS
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record adopts a validated Chinese 20-item PANAS with an immediate-state timeframe, assigns the 10-item negative-affect subscale as the unique primary scale outcome, and preserves source, version, scoring, and permission checks as implementation gates. |
+| Actual Result | Added U29, froze identical pre/post “right now” administration, kept positive affect and SAM dimensions secondary, excluded device data from PANAS scoring, and moved the next decision gate to the primary estimand and score direction. Updated the blackboard accordingly. |
+| Deviation / Surprise | The methodological instrument choice is confirmed, but the exact Chinese item source and permission have not yet been verified. The record therefore distinguishes adoption from implementation readiness. |
+| Verification Command | Targeted `rg` checks for U29, 20 items, immediate-state timeframe, 10-item negative-affect primary status, secondary outcomes, implementation gates, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Exact Chinese wording, source and permission, score range, missing-item rule, change direction, primary estimand, and sensitivity assumptions remain unconfirmed. |
+
 ### 2026-08-04 Confirm Primary Scale Construct
 
 | Field | Notes |
