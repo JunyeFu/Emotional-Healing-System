@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Weather Breathing Module Baseline
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record promotes the four weather-breathing mappings from pending candidates to the confirmed research-design baseline without falsely marking untested runtime parameters as validated. |
+| Actual Result | Added U37 and updated the blackboard. Confirmed Storm with 3-3-3-3 box breathing, Heat with 4-6 extended exhalation, Snow with 5-5 equal slow breathing, and Fade with cyclic sighing; retained passive participation, fixed-pair interpretation limits, pretest gates, versioned parameter changes, and the unresolved 90-120-second timeline. |
+| Deviation / Surprise | None. The user's confirmation resolves the mapping decision, while comfort, device detectability, exact participant-facing instructions, and the unique runtime duration remain separate evidence gates. |
+| Verification Command | Targeted `rg` checks for U37, confirmed status, all four mappings, superseded legacy designs, passive participation, fixed-pair interpretation limits, pretest gates, and the next decision; restricted-term scan over changed lines; `git diff --check`; final `git status --short`. |
+| Residual Risk | The native scene cue versus common breathing-circle decision, exact 120-second timeline, pretest thresholds, low-degree-of-freedom theory contrast, revised test hierarchy, and revised sample size remain unconfirmed. |
+
 ### 2026-08-04 Reconsider Weather Breathing Protocols From Evidence
 
 | Field | Notes |
