@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Uniform 120-Second Module Timeline
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record fixes an identical 120-second timeline for all modules, separates demonstration, primary closed-loop analysis, and locked transition phases, and prevents scripted completion from contaminating the real-data window. |
+| Actual Result | Added U39 and updated the blackboard. Fixed 0-15 seconds as native demonstration, 15-105 seconds as the unique primary real-device closed-loop window, and 105-120 seconds as a locked-state automatic transition. Recorded an eight-minute four-module experience, continued raw logging outside the primary window, fallback marking, scale timing, and minimum cross-product stage fields. |
+| Deviation / Surprise | None. Different protocols will produce different numbers of completed breath cycles inside the same 90-second window; this remains a measurable protocol feature rather than a reason to vary module duration. |
+| Verification Command | Targeted `rg` checks for U39, confirmed status, all phase boundaries, 480-second total, unique analysis window, locked-state semantics, no forced complete recovery, fallback marking, scale timing, and the next gate; restricted-term scan over changed lines; `git diff --check`; final `git status --short`. |
+| Residual Risk | Native animation details, fallback weather behavior, final data-contract names, data-quality thresholds, the low-degree-of-freedom theory contrast, revised test hierarchy, and revised sample size remain unconfirmed. |
+
 ### 2026-08-04 Remove Common Participant Breathing Circle
 
 | Field | Notes |
