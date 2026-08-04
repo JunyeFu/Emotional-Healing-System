@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Confirm Simulation-Based Power Standard
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record sets 90% target power for the global test, requires Monte Carlo simulation over the balanced 24-sequence full-rank design, limits pilot use to nuisance parameters, rounds valid samples to a multiple of 24, and distinguishes valid from recruited sample size. |
+| Actual Result | Added U33 and updated the blackboard. A read-only rank calculation over all 24 permutations found 9 position degrees of freedom, 5 transition degrees of freedom incremental to position, and 14 total structured-sequence degrees of freedom for `MPT` versus `M0`; the record requires final simulation to use verified full-rank coding. |
+| Deviation / Surprise | The visible 16 position and 12 directed-transition indicators do not contribute 21 independent sequence terms after permutation constraints. The actual structured model adds 14 degrees of freedom, so heuristic parameter counting would misstate power requirements. |
+| Verification Command | `py -3.14 -c` rank calculation over all 24 permutations; targeted `rg` checks for U33, 90% power, Monte Carlo simulation, pilot restrictions, multiples of 24, unusable-session allowance, and 9/5/14 degrees of freedom; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Full-rank contrast implementation, minimum-effect scale and grid, nuisance-parameter ranges, unusable-session allowance, simulation code, random seeds, convergence criteria, and final sample size remain unconfirmed. |
+
 ### 2026-08-04 Confirm Hierarchical Sequence Testing
 
 | Field | Notes |
