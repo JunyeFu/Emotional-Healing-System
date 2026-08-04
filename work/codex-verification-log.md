@@ -16,6 +16,16 @@
 
 ## Entries
 
+### 2026-08-04 Reconsider Weather Breathing Protocols From Evidence
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record first reflects the existing weather recovery mechanisms, then distinguishes supported breathing-protocol structures from project-specific weather mappings, proposes four measurable passive modules, and keeps the proposal unconfirmed. |
+| Actual Result | Added U36 after reading the Unity visual handoff, scene design, seven-day plan, Unity framework, quality gates, and current weather controller evidence. Recorded a pending baseline of Storm with 3-3-3-3 box breathing, Heat with 4-6 extended exhalation, Snow with 5-5 equal slow breathing, and Fade with cyclic sighing. Updated the blackboard with evidence boundaries, visual-process integration, and comfort and device-detectability gates. |
+| Deviation / Surprise | The evidence is strongest for slow pacing near six breaths per minute, while the independent advantage of longer exhalation remains inconsistent. Cyclic-sighing evidence uses five minutes per day for 28 days, so it does not validate a 120-second module. The weather pairings are design hypotheses rather than established natural correspondences. |
+| Verification Command | Read-only project inspection; online primary-study and review checks; targeted `rg` checks for U36, all four weather mechanisms, all four candidate protocols, pending status, dose limits, and role boundaries; restricted-term scan over changed lines; URL reachability spot-check; `git diff --check`; final `git status --short`. |
+| Residual Risk | Exact protocol parameters, the native in-scene guidance design, 120-second internal timeline, comfort rules, process-feature thresholds, theory contrasts, and revised sample size remain unconfirmed. |
+
 ### 2026-08-04 Reduce Confirmatory Sequence Complexity
 
 | Field | Notes |
