@@ -305,3 +305,13 @@
 | Verification Command | Targeted decision-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | Initial approval checks were interrupted twice by the approval-service connection before a later authorized read-only status check succeeded. |
 | Residual Risk | Stage-one outcome gates, effect thresholds, measurement instruments, power assumptions, and all stage-specific sample sizes remain unconfirmed. |
+
+### 2026-08-05 Confirm Ordered Stage-One Outcome Gates
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The ordered two-gate claim becomes user-confirmed while candidate cycle tolerances, non-inferiority margin, semantic-congruence instrument, paired power, and obsolete sample size remain unfrozen. |
+| Actual Result | Confirmed Gate 1 as non-inferior respiratory execution quality and Gate 2 as superior scene-prompt semantic congruence, with Gate 2 confirmatory only after Gate 1 passes. |
+| Verification Command | Targeted gate-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | Existing Gate 1 power tables assume the rejected paired design and cannot size the confirmed parallel stage-one design. |
+| Residual Risk | The primary device outcome definition, module-specific cycle tolerances, non-inferiority margin, Gate 2 instrument, power assumptions, and sample size remain unconfirmed. |
