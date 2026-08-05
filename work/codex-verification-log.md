@@ -265,3 +265,13 @@
 | Verification Command | Targeted confirmation-state search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
 | Deviation / Surprise | None. |
 | Residual Risk | Comparator, outcome gates, crossover design, and sample size remain unconfirmed. Team task decomposition remains intentionally blocked by the research-design gate. |
+
+### 2026-08-05 Confirm Abstract Pacer Weather Behavior
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The comparator keeps an equivalent closed-loop weather response while removing weather-based respiratory-phase encoding, so the main comparison changes only the guidance carrier. |
+| Actual Result | Confirmed `abstract_pacer` as the comparator. The abstract circle carries target rhythm and real-time phase feedback; weather keeps matched macro response but cannot encode respiratory phase. Other experience and data factors remain matched. |
+| Verification Command | Targeted comparator-boundary search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | The two-visit crossover, outcome gates, and sample size remain unconfirmed. Macro-response equivalence still needs a measurable implementation contract before development. |
