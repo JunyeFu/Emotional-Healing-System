@@ -275,3 +275,13 @@
 | Verification Command | Targeted comparator-boundary search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
 | Deviation / Surprise | None. |
 | Residual Risk | The two-visit crossover, outcome gates, and sample size remain unconfirmed. Macro-response equivalence still needs a measurable implementation contract before development. |
+
+### 2026-08-05 Reject Repeat Participation And Crossover
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The crossover proposal is explicitly rejected because the first exposure can alter the second-visit baseline; paired-power numbers are invalidated and not silently reused. |
+| Actual Result | Froze a one-formal-session-per-participant constraint. Marked the two-visit crossover, 88 effective pairs, 104 participants, and 208 visits as inapplicable. Proposed a 1:1 parallel-group design with 24-order balance inside each condition as the next gate. |
+| Verification Command | Targeted stale-design search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
+| Deviation / Surprise | The imported power script only supports the rejected paired design, so it cannot be reused to size the proposed parallel groups. |
+| Residual Risk | Parallel-group allocation, adjusted outcome model, minimum effect of interest, order-balance granularity, attrition reserve, and total sample size remain unconfirmed. |
