@@ -1,0 +1,8 @@
+{
+  "hard_failures": [],
+  "warnings": [],
+  "metrics": {
+    "module_demo_start_count": 4
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "pilot_level": "C",
+  "study_id": "SRP-IJHCI-SNBG-01",
+  "generated_utc": "[待填写]",
+  "sample": {
+    "planned": 24,
+    "consented": null,
+    "completed_session1": null,
+    "completed_both_sessions": null,
+    "safety_set": null
+  },
+  "safety": {
+    "serious_adverse_events": null,
+    "breathing_related_withdrawals": null,
+    "breathing_related_withdrawal_rate": null,
+    "moderate_or_worse_events": null,
+    "research_pause_triggered": null
+  },
+  "system": {
+    "raw_log_completeness_rate": null,
+    "unity_python_clock_offset_ms_p95": null,
+    "feedback_latency_ms_p95": null,
+    "median_closed_loop_usable_fraction": null,
+    "formal_blockers_remaining": []
+  },
+  "detector_validation": {
+    "inhale_exhale_f1": null,
+    "hold_double_inhale_f1": null,
+    "ordinary_event_time_mae_ms": null,
+    "complex_event_time_mae_ms": null,
+    "annotation_sample_description": ""
+  },
+  "measurement": {
+    "scci_mcdonald_omega": null,
+    "manipulation_check_separation": null,
+    "scci_like_correlation": null,
+    "item_issues": []
+  },
+  "fidelity": {
+    "abstract_overall_protocol_fidelity": null,
+    "scene_native_overall_protocol_fidelity": null,
+    "raw_difference_scene_native_minus_abstract": null,
+    "module_breakdown": {}
+  },
+  "power_update_inputs": {
+    "cycles_per_condition": null,
+    "within_participant_correlation": null,
+    "scci_sd": null,
+    "unusable_pair_rate": null,
+    "effect_estimate_used_for_sample_size": false
+  },
+  "decision": {
+    "status": "UNASSESSED",
+    "gate_results": [],
+    "required_actions": [],
+    "approved_for_formal_recruitment": false
+  }
+}

@@ -1,0 +1,13 @@
+﻿步骤,名称,当前状态,目标,下一步
+1,课题主张与顶层设计冻结,DESIGN_COMPLETE,冻结项目对象、第一篇论文主张、贡献边界和整体成果组合。,2
+2,构念、比较条件与测量冻结,DESIGN_COMPLETE,把主张转化为scene_native/abstract_pacer、protocol_fidelity、SCCI和测量体系。,3
+3,伦理、安全、预试与样本量设计,DESIGN_COMPLETE,冻结Level A/B/C、104人正式招募规划、风险、中止、分析集和预注册入口。,4
+4,产品、系统、数据契约与复现架构,DESIGN_COMPLETE,冻结Unity/Python/TD、状态机、通信、数据分层、Schema、随机化、QC和任务树。,5
+5,伦理申请与预试材料准备,MATERIALS_COMPLETE,形成申请书、同意书、招募、安全筛查、专家表、SOP、事件和CRF。,6
+6,校内伦理路由确认,EXTERNAL_CONFIRMATION_PENDING,确认负责人、受理委员会、系统、模板和Level A/B/C覆盖。,7
+7,机构模板适配、正式伦理提交与Level A,PLAN_READY_NOT_EXECUTED,将材料适配正式模板，提交伦理并启动专家内容与风险审查。,8
+8,Level B认知与可理解性预试,PLAN_READY_NOT_EXECUTED,验证协议理解、三层信息区分、SCCI条目和视觉舒适性，修订场景。,9
+9,Level C真实设备预试与预注册,PLAN_READY_NOT_EXECUTED,验证设备、算法、延迟、数据质量和安全，冻结参数、样本量、构建和预注册。,10
+10,正式研究执行,PLAN_READY_NOT_EXECUTED,招募104人、完成208次访视、盲态QC、替补和现场治理。,11
+11,离线处理、锁库、分析、设计原则与写作,PLAN_READY_NOT_EXECUTED,L0到L5流水线、FAS/PPS、确认性分析、定性综合、图表、论文初稿。,12
+12,IJHCI投稿、返修、发表与科研资产归档,PLAN_READY_NOT_EXECUTED,投稿合规、审稿回复、补实验门、接收、检索、数据代码和项目成果交付。,-

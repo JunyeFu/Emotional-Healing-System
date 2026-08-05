@@ -1,0 +1,44 @@
+{
+  "package_name": "SRP_IJHCI_全项目1-12步规划设计包",
+  "version": "1.0.0",
+  "created_date": "2026-08-05",
+  "scope": [
+    "project_top_design",
+    "product",
+    "scenes",
+    "real_devices",
+    "unity",
+    "python",
+    "touchdesigner",
+    "online_runtime",
+    "offline_processing",
+    "ethics",
+    "pilots",
+    "formal_study",
+    "analysis",
+    "paper",
+    "submission",
+    "deliverables"
+  ],
+  "source_baseline": [
+    "2026-08-04_Grill访谈原始总结与决策演化.md",
+    "2026-08-04_项目情况与顶层设计汇总.md",
+    "2026-08-04_IJHCI科研立项第一步_主张冻结单_v1.0.md",
+    "2026-08-04_IJHCI科研立项第二步_构念操作化与比较条件冻结_v1.0.md",
+    "2026-08-05_IJHCI科研立项第三步_预试伦理与样本量设计冻结_v1.0.md"
+  ],
+  "status": {
+    "steps_1_to_5": "design_or_materials_complete",
+    "step_6": "external_confirmation_pending",
+    "steps_7_to_12": "planning_complete_execution_pending",
+    "formal_participant_recruitment_allowed": false
+  },
+  "key_counts": {
+    "level_A_experts": 8,
+    "level_B_participants": 12,
+    "level_C_participants": 24,
+    "formal_recruitment": 104,
+    "target_effective_pairs": 88,
+    "formal_visit_count": 208
+  }
+}

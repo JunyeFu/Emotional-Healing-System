@@ -1,0 +1,39 @@
+schema_version: 1.0.0
+study_id: SRP-IJHCI-SNBG-01
+participant_id: P0001
+session_id: P0001_S1
+session_index: 1
+study_mode: pilot
+cue_mode: scene_native
+condition_order_code: SN_AP
+williams_sequence_code: W1
+module_sequence: [storm, heat, fade, snow]
+protocol_version: PILOT-1.0.0
+randomization_version: 1.0.0
+randomization_seed_hash: example-only
+builds:
+  unity_build_version: PILOT-0.1.0
+  unity_git_commit: "0000000"
+  python_git_commit: "0000000"
+  td_project_hash: example
+devices:
+  - role: respiration
+    model: UNFROZEN_RESPIRATION_DEVICE
+    serial_hash: example
+    sample_rate_hz: null
+    config_version: PILOT-0.1.0
+  - role: ecg
+    model: Polar H10
+    serial_hash: example
+    sample_rate_hz: null
+    config_version: PILOT-0.1.0
+transport:
+  control: tcp-jsonl://127.0.0.1:5006
+  realtime: udp-json://127.0.0.1:5005@20Hz
+  sync_interval_ms: 1000
+quality_thresholds:
+  clock_offset_ms_max: 50
+  feedback_latency_p95_ms_max: 200
+  module_valid_seconds_min: 60
+mock_input: false
+created_utc: "2026-08-05T03:00:00Z"

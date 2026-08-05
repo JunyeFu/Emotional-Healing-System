@@ -235,3 +235,13 @@
 | Deviation / Surprise | `git diff --stat` only showed tracked files before staging; untracked `work/` files are expected to appear in `git status`. |
 | Verification Command | `Test-Path work/codex-blackboard.md`; `Test-Path work/codex-verification-log.md`; `Test-Path work/codex-evaluation-harness.md`; `rg -n "Codex Workflow|Current Task Goal|Expected Observation|30-Task Log|High-Risk Action Intercepted" AGENTS.md work` |
 | Residual Risk | Workflow quality depends on future tasks consistently updating the blackboard and verification log. |
+
+### 2026-08-05 Import And Reassess IJHCI Planning Package
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The imported package is preserved as a candidate planning baseline, its original source is hash-auditable, confirmed user decisions are separated from package-generated freezes, and the next mainline decision is explicit. |
+| Actual Result | Copied 137 source files into `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0` without deleting Downloads. Added import provenance, original SHA-256 inventory, a synchronous reading ledger, and a clean reassessment summary. Corrected the Unity build eligibility values and a routing-validator boundary phrase. |
+| Verification Command | Source/destination relative-path and SHA-256 comparison; `py -3.14 2026-08-05_SRP_IJHCI_power_sensitivity.py --output-dir C:\tmp\srp-power-recheck --repetitions 3000`; `py -3.14 tools\validate_ethics_pack.py`; `py -3.14 tools\validate_routing_pack.py`; restricted Chinese/English terminology scan; project pytest and Git checks at task close. |
+| Deviation / Surprise | U41 proves the imported claim/comparator/power freezes were not user-confirmed. The fourth-step validator cannot currently import `jsonschema`, and the package does not declare that dependency. |
+| Residual Risk | The recommended split-paper mainline, abstract comparator, gated outcomes, crossover design, SCCI role, non-inferiority margin, and 104-person recruitment plan remain proposals until the user confirms them and later external gates pass. |

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/srp-ijhci/event-envelope.schema.json",
+  "title": "SRP IJHCI Event Envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "session_id",
+    "participant_id",
+    "sequence_number",
+    "source_sequence_number",
+    "event_type",
+    "source",
+    "source_monotonic_ns",
+    "session_elapsed_ms",
+    "utc_time",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^P\\d{4}_S[12]$"
+    },
+    "participant_id": {
+      "type": "string",
+      "pattern": "^P\\d{4}$"
+    },
+    "sequence_number": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_sequence_number": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "session_state",
+        "module_phase",
+        "target_state",
+        "actual_state",
+        "signal_quality",
+        "cycle_result",
+        "recovery_state",
+        "feedback_rendered",
+        "fallback",
+        "operator_marker",
+        "stop_requested",
+        "adverse_event",
+        "protocol_violation",
+        "transport_status",
+        "version_handshake"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "python",
+        "unity",
+        "touchdesigner",
+        "device",
+        "operator"
+      ]
+    },
+    "source_monotonic_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "session_elapsed_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "utc_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "package": "SRP-IJHCI Ethics and Pilot Materials",
+  "version": "1.0.0",
+  "date": "2026-08-05",
+  "status": "institutional_adaptation_required",
+  "formal_recruitment_allowed": false,
+  "required_actions_before_use": [
+    "Confirm PI eligibility",
+    "Confirm ethics review body and current forms",
+    "Replace all institution-specific placeholders",
+    "Obtain ethics approval",
+    "Complete Level A before Level B",
+    "Complete Level B before Level C",
+    "Preregister before formal recruitment"
+  ]
+}

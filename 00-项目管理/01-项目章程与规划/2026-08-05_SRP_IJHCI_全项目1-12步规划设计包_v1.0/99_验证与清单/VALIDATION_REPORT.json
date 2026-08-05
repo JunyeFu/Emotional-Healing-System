@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "required_paths_checked": 20,
+  "file_count": 134,
+  "formal_participant_recruitment_allowed": false,
+  "external_dependencies": [
+    "ethics_routing",
+    "ethics_approval",
+    "real_device_freeze",
+    "PANAS_license",
+    "Level_A_B_C",
+    "formal_data",
+    "journal_decision"
+  ],
+  "note": "PASS means the planning/design package is structurally complete. It does not mean external approvals, participant studies, analysis, or publication are complete."
+}

@@ -1,0 +1,13 @@
+﻿产物,负责人,验收标准,验证阶段
+Unity四层接口,Unity,目标/实际/累计/降级参数独立,单元+集成测试
+Storm adapter,设计+Unity,四阶段可辨识,Level B
+Heat adapter,设计+Unity,长呼气可辨识,Level B
+Snow adapter,设计+Unity,等时可辨识,Level B
+Fade adapter,设计+Unity,双吸可辨识且舒适,Level B/C
+Abstract pacer,Unity+研究,等信息量,Level A
+Resp device,Python,30分钟稳定+真实波形,技术测试
+Event detector,Python/数据,F1/MAE达标,Level C
+Clock/latency,Python+Unity,≤50ms/≤200ms,Level C
+TD console,TD,只读、不影响主链,集成测试
+Offline pipeline,数据,L0可重建L4,合成数据
+Ethics pack,研究治理,机构模板一致,伦理受理

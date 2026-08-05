@@ -1,0 +1,84 @@
+schema_version: 1.0.0
+protocol_version: PILOT-1.0.0
+study_id: SRP-IJHCI-SNBG-01
+
+timing:
+  module_total_s: 120
+  demo_s: 15
+  closed_loop_s: 90
+  lock_transition_s: 15
+
+module_codes:
+  A: storm
+  B: heat
+  C: snow
+  D: fade
+
+williams_sequences:
+  W1: [storm, heat, fade, snow]   # A B D C
+  W2: [heat, snow, storm, fade]   # B C A D
+  W3: [snow, fade, heat, storm]   # C D B A
+  W4: [fade, storm, snow, heat]   # D A C B
+
+modules:
+  storm:
+    display_name: 风暴
+    breathing_protocol: box_3_3_3_3
+    status: pilot_candidate
+    phases:
+      - {name: inhale, target_s: 3}
+      - {name: hold_after_inhale, target_s: 3}
+      - {name: exhale, target_s: 3}
+      - {name: hold_after_exhale, target_s: 3}
+    scene_native_adapter: StormCueAdapter
+    abstract_adapter: AbstractPacerController
+    formal_blocker: false
+
+  heat:
+    display_name: 炙烤
+    breathing_protocol: exhale_4_6
+    status: pilot_candidate
+    phases:
+      - {name: inhale, target_s: 4}
+      - {name: exhale, target_s: 6}
+    scene_native_adapter: HeatCueAdapter
+    abstract_adapter: AbstractPacerController
+    formal_blocker: false
+
+  snow:
+    display_name: 暴雪
+    breathing_protocol: equal_5_5
+    status: pilot_candidate
+    phases:
+      - {name: inhale, target_s: 5}
+      - {name: exhale, target_s: 5}
+    scene_native_adapter: SnowCueAdapter
+    abstract_adapter: AbstractPacerController
+    formal_blocker: false
+
+  fade:
+    display_name: 褪色
+    breathing_protocol: cyclic_sigh
+    status: pilot_parameter_unfrozen
+    phases:
+      - {name: first_inhale, target_s: null}
+      - {name: topup_inhale, target_s: null}
+      - {name: prolonged_exhale, target_s: null}
+    structural_constraints:
+      topup_shorter_than_first_inhale: true
+      no_complete_exhale_between_inhales: true
+      exhale_longer_than_each_inhale: true
+    scene_native_adapter: FadeCueAdapter
+    abstract_adapter: AbstractPacerController
+    formal_blocker: true
+
+cue_modes:
+  scene_native:
+    target_channel: scene_native
+    actual_channel: scene_native
+    cumulative_channel: weather_recovery
+
+  abstract_pacer:
+    target_channel: abstract_outer_ring
+    actual_channel: abstract_inner_ring
+    cumulative_channel: weather_recovery
