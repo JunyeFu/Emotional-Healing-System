@@ -245,3 +245,13 @@
 | Verification Command | Source/destination relative-path and SHA-256 comparison; `py -3.14 2026-08-05_SRP_IJHCI_power_sensitivity.py --output-dir C:\tmp\srp-power-recheck --repetitions 3000`; `py -3.14 tools\validate_ethics_pack.py`; `py -3.14 tools\validate_routing_pack.py`; restricted Chinese/English terminology scan; project pytest and Git checks at task close. |
 | Deviation / Surprise | U41 proves the imported claim/comparator/power freezes were not user-confirmed. The fourth-step validator cannot currently import `jsonschema`, and the package does not declare that dependency. |
 | Residual Risk | The recommended split-paper mainline, abstract comparator, gated outcomes, crossover design, SCCI role, non-inferiority margin, and 104-person recruitment plan remain proposals until the user confirms them and later external gates pass. |
+
+### 2026-08-05 Merge Two Contributions Into One IJHCI Paper
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The reassessment records one IJHCI paper with two explicitly ranked contributions, supersedes the split-paper recommendation, and exposes one new confirmation gate before task decomposition. |
+| Actual Result | Recorded the user's one-paper decision. Recommended scene-native breathing prompts as the primary confirmatory contribution and explainable sequence orchestration as a secondary explanatory contribution based on balanced order, position, predecessor, transition, and interaction-state-estimation analyses. |
+| Verification Command | Targeted `git diff`; restricted-term scan over the two reassessment documents and project blackboard; `git diff --check`; final `git status --short`. |
+| Deviation / Surprise | The user's message used `IJHCL`; project history and package naming consistently use `IJHCI`, so the record retains `IJHCI` pending any explicit venue change. |
+| Residual Risk | The primary-secondary ranking, comparator, outcome gates, crossover design, and sample size remain unconfirmed. The single-paper design cannot claim a globally best sequence or a learned policy without stronger independent evidence. |
