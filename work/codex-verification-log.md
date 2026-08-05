@@ -255,3 +255,13 @@
 | Verification Command | Targeted `git diff`; restricted-term scan over the two reassessment documents and project blackboard; `git diff --check`; final `git status --short`. |
 | Deviation / Surprise | The user's message used `IJHCL`; project history and package naming consistently use `IJHCI`, so the record retains `IJHCI` pending any explicit venue change. |
 | Residual Risk | The primary-secondary ranking, comparator, outcome gates, crossover design, and sample size remain unconfirmed. The single-paper design cannot claim a globally best sequence or a learned policy without stronger independent evidence. |
+
+### 2026-08-05 Confirm IJHCI Contribution Hierarchy
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The recommended contribution hierarchy is promoted to a user-confirmed baseline, the closed gate is retained audibly, and exactly one next decision is exposed. |
+| Actual Result | Confirmed scene-native breathing prompts as the primary contribution and explainable sequence orchestration as the secondary contribution in one IJHCI paper. Advanced the next gate to whether `abstract_pacer` remains the required comparator. |
+| Verification Command | Targeted confirmation-state search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Comparator, outcome gates, crossover design, and sample size remain unconfirmed. Team task decomposition remains intentionally blocked by the research-design gate. |
