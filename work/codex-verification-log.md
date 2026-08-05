@@ -315,3 +315,13 @@
 | Verification Command | Targeted gate-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | Existing Gate 1 power tables assume the rejected paired design and cannot size the confirmed parallel stage-one design. |
 | Residual Risk | The primary device outcome definition, module-specific cycle tolerances, non-inferiority margin, Gate 2 instrument, power assumptions, and sample size remain unconfirmed. |
+
+### 2026-08-05 Confirm Flexible Module Duration Ranges
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The 120-second module is superseded by an evidence-informed target with narrow planning ranges, while formal exposure remains fixed within a study stage. |
+| Actual Result | Confirmed targets of 25 seconds demo, 150 seconds closed loop, and 25 seconds transition, with allowed design ranges of 24-30, 140-160, and 20-30 seconds. Formal builds must freeze exact values and match both comparator conditions. |
+| Verification Command | Targeted active-duration search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | The former 120-second baseline appeared in multiple current blackboard bullets and required explicit supersession rather than an appended note alone. |
+| Residual Risk | The final fixed values still depend on technical pretesting. Stage-level frequency-domain HRV interpretation may require a longer window and is not justified by the duration decision alone. |
