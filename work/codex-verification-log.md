@@ -285,3 +285,23 @@
 | Verification Command | Targeted stale-design search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
 | Deviation / Surprise | The imported power script only supports the rejected paired design, so it cannot be reused to size the proposed parallel groups. |
 | Residual Risk | Parallel-group allocation, adjusted outcome model, minimum effect of interest, order-balance granularity, attrition reserve, and total sample size remain unconfirmed. |
+
+### 2026-08-05 Audit Stage-Specific Weather Order Requirements
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Original confirmed stage rules, later package rewrites, and current one-paper constraints are separated before selecting an allocation design. |
+| Actual Result | Recovered the confirmed three-stage chain: 24-order balanced exploration independent of live state; offline strategy learning and freeze without new allocation; independent new-participant comparison of frozen policy against the 24-order balanced baseline. Identified the later four-sequence Williams plan as dependent on the now-rejected split-paper premise. |
+| Verification Command | Package-wide targeted search; contextual reads of the original Grill record, top-level design summary, construct freeze, lifecycle overview, and sequence research files; restricted-term scan; `git diff --check`; project Python tests. |
+| Deviation / Surprise | The package contains two incompatible order plans because it preserves both the original three-stage contribution design and a later feasibility rewrite that removed sequence orchestration from the first paper. |
+| Residual Risk | The recommended mapping of the abstract comparator into stage one and the frozen-policy comparison into stage three is not yet user-confirmed. Sample-size multiples are allocation constraints, not powered sample-size results. |
+
+### 2026-08-05 Confirm Three-Stage One-Paper Design
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The stage mapping is promoted from recommendation to user-confirmed authority without turning allocation multiples into sample-size claims. |
+| Actual Result | Confirmed stage one as the abstract-pacer comparison plus balanced 24-order exploration, stage two as offline strategy learning and freeze from scene-native data, and stage three as an independent new-participant comparison of the frozen scene-native policy against the scene-native balanced-random baseline. |
+| Verification Command | Targeted decision-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | Initial approval checks were interrupted twice by the approval-service connection before a later authorized read-only status check succeeded. |
+| Residual Risk | Stage-one outcome gates, effect thresholds, measurement instruments, power assumptions, and all stage-specific sample sizes remain unconfirmed. |
