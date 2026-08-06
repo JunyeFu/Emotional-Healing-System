@@ -1,0 +1,38 @@
+task_id,parent_id,wave,stream,title,depends_on,status,effort_person_days,claimant,branch,reviewer,acceptance_summary
+F-01,SRP-ROOT,W0,contract,运行合同v2与fixture,,READY,3,,,,Schema与失败关闭合同测试
+F-02,SRP-ROOT,W0,research,SCCI与Level A/B材料,,READY,2,,,,构念分离与可计算CVI
+F-03,SRP-ROOT,W0,unity,Unity会话运行壳,,READY,4,,,,无TD四模块状态机
+F-04,SRP-ROOT,W0,td,TD只读操作台壳,,READY,2,,,,fixture页面且无Spout输出
+P-01,F-01,W1,python,Python manifest与会话编排,F-01,WAIT_DEP,4,,,,确定性状态机与正式失败关闭
+P-02,F-01,W1,data,L0/L1追加记录与重放,F-01,WAIT_DEP,4,,,,不可变记录与确定性重放
+U-01,F-03,W1,unity,Unity传输ACK与回执,F-01|F-03,WAIT_DEP,3,,,,乱序丢包重复事件测试
+U-02,F-03,W1,unity,Unity四层场景接口与降级,F-03,WAIT_DEP,3,,,,四层独立与锁定测试
+T-01,F-04,W1,td,TD遥测设备与时钟面板,F-01|F-04,WAIT_DEP,3,,,,20Hz只读fixture重放
+R-01,F-02,W1,research,四流程配置公平性与中性说明,F-02,WAIT_DEP,3,,,,条件等信息量和中性文本
+D-01,P-02,W2,device,Polar H10真实适配,P-02,WAIT_DEP_EXTERNAL,4,,,,真机30分钟与断流重连
+D-02,P-02,W2,device,PLUX respiBAN BLE真实适配,P-02,WAIT_DEP_EXTERNAL,4,,,,真机400Hz记录与断流重连
+S-01,P-02,W2,signal,同步SQI与降级状态,D-01|D-02,WAIT_DEP,4,,,,故障注入和时钟延迟报告
+S-02,S-01,W2,signal,呼吸事件周期与在线PF,S-01|R-01,WAIT_DEP,5,,,,人工标注F1和MAE报告
+U-03,U-02,W2,unity,风暴适配器,U-02|R-01,WAIT_DEP,4,,,,四层可辨识和性能证据
+U-04,U-02,W2,unity,炙烤适配器,U-02|R-01,WAIT_DEP,4,,,,长呼气可辨识和性能证据
+U-05,U-02,W2,unity,暴雪适配器,U-02|R-01,WAIT_DEP,4,,,,等时结构可辨识和性能证据
+U-06,U-02,W2,unity,褪色适配器,U-02|R-01,WAIT_DEP,5,,,,双吸结构和性能证据
+U-07,U-02,W2,unity,抽象双环与信息量匹配,U-02|R-01,WAIT_DEP,4,,,,场景不泄露相位和匹配矩阵
+T-02,T-01,W2,td,人工标记中止请求与告警,T-01|P-01,WAIT_DEP,3,,,,请求经Python和权限负测试
+A-01,P-02,W2,analysis,L0到L3离线重建,P-02|S-02,WAIT_DEP,5,,,,固定fixture哈希和差异报告
+A-02,A-01,W2,analysis,Gate1分析集插补与模型,A-01,WAIT_DEP,5,,,,双分析偏移网格与tipping point
+A-03,A-01,W2,analysis,问卷Gate2和3与样本模拟,F-02|A-01,WAIT_DEP,5,,,,计分测量与功效自动报告
+I-01,SRP-ROOT,W3,integration,无TD参与者链与真机E2E,P-01|S-02|U-03|U-04|U-05|U-06|U-07|T-02,WAIT_DEP_EXTERNAL,5,,,,真实双设备完整体验与重放
+Q-01,F-02,W3,research,Level A材料与审查工具,F-02|R-01|U-07,WAIT_DEP,3,,,,专家包与汇总脚本
+Q-02,Q-01,W3,research,Level B构建与认知预试工具,U-03|U-04|U-05|U-06|U-07|Q-01,WAIT_DEP,4,,,,认知记录与修订闭环
+Q-03,Q-02,W3,research,Level C采集标注与冻结工具,I-01|Q-02|A-01|A-03,WAIT_DEP_EXTERNAL,5,,,,阈值报告与冻结配置
+X-01,P-01,W3,randomization,阶段一随机化与失败关闭,P-01|A-03,WAIT_DEP,4,,,,条件乘24顺序分层审计
+X-02,A-03,W3,policy,策略学习审计与重放,A-03,WAIT_DEP,5,,,,正则策略概率日志与重放
+X-03,X-02,W3,policy,阶段三策略运行集成,X-01|X-02|U-01,WAIT_DEP,4,,,,冻结策略不在线学习
+Z-01,SRP-ROOT,W3,release,构建复现与交付候选,I-01|A-02|A-03,WAIT_DEP,5,,,,干净检出重建与哈希清单
+E-01,Q-01,W4,execution,Level A执行,Q-01,BLOCKED_EXTERNAL,3,,,,外部专家真实结果
+E-02,Q-02,W4,execution,Level B执行,Q-02|E-01,BLOCKED_EXTERNAL,5,,,,批准后认知预试结果
+E-03,Q-03,W4,execution,Level C执行与阈值冻结,Q-03|E-02,BLOCKED_EXTERNAL,5,,,,真机预试与冻结报告
+E-04,X-01,W4,execution,阶段一正式执行,E-03|X-01,BLOCKED_EXTERNAL,5,,,,预注册后按批次执行
+E-05,X-02,W4,execution,阶段二策略冻结,E-04|X-02,BLOCKED_EXTERNAL,5,,,,阶段一锁库后策略冻结
+E-06,X-03,W4,execution,阶段三正式执行,E-05|X-03,BLOCKED_EXTERNAL,5,,,,新参与者策略对随机证据

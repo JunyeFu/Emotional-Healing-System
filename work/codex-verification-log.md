@@ -415,3 +415,13 @@
 | Verification Command | Run `08_sample_size_anchors.py`; targeted current-state and stale-conflict search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | The active lifecycle, product, QC, model, sequence, and module-map entries contained mutually incompatible historical designs. A precedence document was required before safe task dispatch. |
 | Residual Risk | Engineering interfaces and task packages still need synchronization. External approvals, device availability, PANAS rights, and Level A/B/C evidence remain open and cannot be closed by repository edits. |
+
+### 2026-08-06 Freeze Target Modules And Dispatch Task Tree
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Four people can independently claim non-overlapping first-wave packages while every downstream package has explicit dependencies, 1-5 day scope, acceptance evidence, and external-gate semantics. |
+| Actual Result | Replaced the legacy Spout-centered module map with the Python-authoritative, Unity-independent, TD-read-only target. Added the v2 runtime contract, 37 task packages, a CSV registry, interface acceptance matrix, and dependency validator. Exactly F-01 through F-04 are READY. Updated README, AGENTS, product timing, lifecycle, and the current board. |
+| Verification Command | Task-registry validation with cycle detection; sample-anchor reconstruction; entry-link existence checks; target-state search; restricted-term scan; `git diff --check`; 42 project Python tests; staged-scope audit; final local/remote SHA check. |
+| Deviation / Surprise | The root README and current board still presented the 10Hz UDP/Spout prototype and stage-7 archival work as current. They required explicit migration-only labeling before dispatch. |
+| Residual Risk | The existing code and Unity/TD artifacts remain legacy implementation until claimed packages replace them. Hardware, approvals, PANAS rights, Level A/B/C, and formal research evidence remain external gates. |
