@@ -385,3 +385,13 @@
 | Verification Command | Targeted cycle-rule search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | None. |
 | Residual Risk | Numeric structure and timing tolerances, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Select 7.5-Point Non-Inferiority Margin
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The delegated margin decision freezes one confirmatory absolute-difference threshold, preserves stricter sensitivity analysis, and prevents the historical 10-point candidate from being treated as current. |
+| Actual Result | Set `Delta_NI=0.075` for `scene_native - abstract_pacer`; Gate 1 requires the lower bound of a two-sided 95% confidence interval to exceed `-0.075`. Reserved 0.05 for strict sensitivity and 0.10 for descriptive worst-case display only. |
+| Verification Command | Targeted decision-state and supersession search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | Historical execution materials contain a frozen 10-point candidate. They remain preserved as historical evidence and are explicitly superseded in current control documents. |
+| Residual Risk | Analysis-set algorithms, conservative missing-data handling, numeric module thresholds, parallel-group power, and stage-one sample size remain unconfirmed. |
