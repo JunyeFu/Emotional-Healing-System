@@ -380,3 +380,10 @@ Audit the supplied R-01 Deep Research package, replace unusable citations, make 
 ### Boundary
 
 The accepted package does not establish Unity implementation, team dual sign-off, transferable-framework validity, Level results, Gate results or publication novelty.
+
+## 2026-08-06 Remove Root CLAUDE.md
+
+- User explicitly authorized deletion of the modified root `CLAUDE.md`.
+- No active Markdown link depends on the file; remaining mentions are historical records.
+- `AGENTS.md` remains the project instruction authority.
+- Other pre-existing deletions and untracked files remain outside this task.

@@ -496,3 +496,12 @@
 | Verified Evidence | DOI identities checked through Crossref records; seven source JSON blocks parsed; Draft 2020-12 metaschema passed; both condition fixtures passed; four negative fixtures were rejected; R-01, F-02, task-registry and protocol validators passed; task state is `DONE=F-02,R-01` and `READY=F-01,F-03,F-04,G-01,W-01`; 36 local Markdown links resolved; restricted terminology and internal citations were absent; scoped Python regression `42 passed in 19.11s`. |
 | Deviation / Surprise | The source called the storm target structure unspecified although current project authorities freeze `3-3-3-3`. The F-02 validator also assumed R-01 could never advance beyond READY; it was corrected to accept unblocked downstream states. |
 | Residual Risk | Fading-stage numeric timing, degraded cumulative behavior, recovery debounce, real-render confounds, Unity execution, team sign-off, reconstruction, Level evidence and Gate results remain open. |
+
+### 2026-08-06 Remove Root CLAUDE.md
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The explicitly requested root file is absent, no active local link breaks, and unrelated worktree changes remain untouched. |
+| Actual Result | Deleted root `CLAUDE.md`; retained historical mentions and kept `AGENTS.md` as the current project instruction authority. |
+| Verification Command | Confirm `Test-Path CLAUDE.md` is false; search repository references; run `git diff --check`; audit staged scope; compare local and remote SHA after push. |
+| Residual Risk | None within the requested deletion; historical documents still mention that the file existed at their recorded time. |
