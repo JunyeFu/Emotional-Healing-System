@@ -435,3 +435,13 @@
 | Verification Command | Run `10_render_task_handbook.py`; run upgraded `07_validate_task_packages.py`; verify 51 entries, 48 fixed, three templates, four READY, no cycle, valid domain/process/learning/acceptance/evidence fields, and reachability to W-04; check learning URLs; run restricted-term scan, Markdown-link check, Python tests, `git diff --check`, staged-scope audit, and final local/remote SHA check. |
 | Deviation / Surprise | The original task tree covered engineering startup well but compressed Level C and formal stages into impossible single five-day packages and did not create tasks for locked analysis, the manuscript, submission, or project handoff. |
 | Residual Risk | Learning portals may change and must be rechecked at claim time. All hardware, approval, Level, preregistration, lock, analysis-result, submission, and external-recognition gates remain open until their real evidence exists. |
+
+### 2026-08-06 Generate Math-Modeling PDF Briefs
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Three self-contained A4 PDF briefs follow the math-modeling paper structure, faithfully summarize the current frozen design, and remain reproducible from project-owned sources. |
+| Actual Result | Generated project-goal and feasibility (5 pages, SHA-256 `A1BD6D17...F0DBE0C1`), fixed-task overview (8 pages, `72BAF1F0...FA2E24D8`), and project-design and experiment-flow (7 pages, `41876993...C8A43FB2`) PDFs. Added deterministic figure generation, a Windows PowerShell 5 compatible one-command build, artifact verification, and delivery navigation. The scoped Python regression completed with `42 passed in 2.59s`. |
+| Verification Command | Run `build_briefs.ps1`; run `verify_briefs.py`; render every page with Poppler and inspect contact sheets; scan sources and extracted text for restricted terminology; run project Python tests; run `git diff --check`; audit staged scope. |
+| Deviation / Surprise | The initial first brief left references alone on a sixth page, and two task-wave headings were weakly placed. Source pagination was adjusted before final verification. |
+| Residual Risk | The briefs describe the frozen target design, not completed hardware, Level, formal-stage, statistical-result, submission, or external-recognition evidence. |
