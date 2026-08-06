@@ -34,6 +34,9 @@ EXPECTED_COMMON = {
     "pytest",
     "vscode",
     "zotero",
+    "unity",
+    "touchdesigner",
+    "python_science_stack",
 }
 EXPECTED_ROLES = {
     "common",
@@ -117,6 +120,10 @@ def validate_authority(baseline: dict[str, object]) -> list[str]:
         additions = profile.get("additional_tool_ids", [])
         if len(additions) != len(set(additions)):
             errors.append(f"{role}: duplicate additional tool")
+        if additions:
+            errors.append(f"{role}: all required tools must be common, found additions {additions}")
+        if not profile.get("primary_ownership"):
+            errors.append(f"{role}: primary_ownership is required")
         referenced_tools.update(additions)
     missing_tools = referenced_tools - set(tools)
     if missing_tools:
@@ -218,27 +225,24 @@ def validate_local(role: str, baseline: dict[str, object]) -> tuple[list[str], d
         tools["zotero"]["version"],
     )
 
-    if role in {"design", "unity"}:
-        unity_path = pathlib.Path(tools["unity"]["path"])
-        product = file_product_version(unity_path)
-        normalized = first_match(product or "", r"(6000\.4\.9f1)")
-        add_check(observations, errors, "unity", normalized, tools["unity"]["version"])
+    unity_path = pathlib.Path(tools["unity"]["path"])
+    product = file_product_version(unity_path)
+    normalized = first_match(product or "", r"(6000\.4\.9f1)")
+    add_check(observations, errors, "unity", normalized, tools["unity"]["version"])
 
-    if role == "python_data":
-        for name, expected in baseline["python_direct_dependencies"].items():
-            add_check(observations, errors, f"python:{name}", package_version(name), expected)
+    td_path = pathlib.Path(tools["touchdesigner"]["path"])
+    product = file_product_version(td_path)
+    normalized = first_match(product or "", r"(?:0\.99\.)?(2025\.32820)")
+    add_check(
+        observations,
+        errors,
+        "touchdesigner",
+        normalized,
+        tools["touchdesigner"]["version"],
+    )
 
-    if role == "experiment_td_governance":
-        td_path = pathlib.Path(tools["touchdesigner"]["path"])
-        product = file_product_version(td_path)
-        normalized = first_match(product or "", r"(?:0\.99\.)?(2025\.32820)")
-        add_check(
-            observations,
-            errors,
-            "touchdesigner",
-            normalized,
-            tools["touchdesigner"]["version"],
-        )
+    for name, expected in baseline["python_direct_dependencies"].items():
+        add_check(observations, errors, f"python:{name}", package_version(name), expected)
 
     return errors, observations
 
@@ -255,7 +259,7 @@ def main() -> int:
             print(f"ERROR: {error}", file=sys.stderr)
         return 1
 
-    print("PASS: team tool baseline authority, role profiles, Python pins and Unity locks")
+    print("PASS: shared team tool baseline, role ownership, Python pins and Unity locks")
     if not args.local_role:
         return 0
 

@@ -437,3 +437,26 @@ Define one versioned common environment for all four members, add only role-owne
 ### Boundary
 
 Tool registration and matching versions do not establish implementation, real-device readiness, independent reproduction, Level evidence or Gate results.
+
+## 2026-08-06 Correct Team Tool Baseline Scope
+
+### Goal
+
+Apply the user's clarification that Unity, TouchDesigner and the full frozen Python data-processing stack are required on every team member's machine; roles divide ownership, not tool availability.
+
+### Evidence And Decision
+
+- Supersedes the preceding statement that heavy tools were added by role.
+- Added Unity 6000.4.9f1 revision f7258d6eebbe, TouchDesigner 2025.32820 and the nine pinned Python direct dependencies to the common tool set.
+- Kept Unity MCP, TouchDesigner MCP and Codex Desktop outside the shared installation requirement because they are automation aids rather than core project production tools.
+- Changed role profiles to ownership labels with no required-tool additions; every local role mode now validates the same complete installation set.
+
+### Next Hard Gates
+
+1. Install Zotero 9.0.6 on the coordinator machine and all other team machines.
+2. Run the corrected validator under each assignee's role label and archive the output with the first claimed task.
+3. Audit the other three machines; the coordinator result cannot stand in for their evidence.
+
+### Boundary
+
+Having the same tools installed does not prove that every member can perform every role's acceptance workflow; capability evidence remains task-specific.

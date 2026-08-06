@@ -525,3 +525,13 @@
 | Verified Evidence | Authority validator passed for all role profiles, nine Python pins, Unity 6000.4.9f1 revision and selected Unity package locks. All five local profiles matched their required versions except the expected missing Zotero 9.0.6. Task registry and protocol validators passed; 20 local Markdown links resolved; restricted terminology was absent from baseline deliverables; scoped regression completed with `42 passed in 9.61s`; `git diff --check` passed. |
 | Deviation / Surprise | VS Code is exposed through a Windows command shim, so the first validator implementation could not execute it directly from Python; the check now runs through `cmd.exe`. The project had no exact Python dependency snapshot, and the Unity MCP source still names `#main` despite a resolved commit in the package lock. |
 | Residual Risk | Zotero is not installed on the coordinator machine; other member machines remain unaudited; Python transitive dependencies are not fully locked; Unity MCP source drift and optional TD MCP service setup remain open. |
+
+### 2026-08-06 Correct Team Tool Baseline Scope
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Unity, TouchDesigner and the frozen Python data-processing stack are common requirements for all four members, while role labels change ownership only and cannot remove environment checks. |
+| Actual Result | Moved all three tool groups into the machine-readable common set, rewrote the human baseline around shared installation, removed all role-specific required-tool additions and made every local role mode run the same Unity, TouchDesigner and Python package checks. |
+| Verified Evidence | Authority mode passed. All five local role labels checked Unity `6000.4.9f1`, TouchDesigner `2025.32820` and all nine Python pins, and each returned only the known Zotero `9.0.6` gap. Task registry and protocol authority validators passed; three local Markdown links resolved; restricted terminology was absent from added lines; scoped regression completed with `42 passed in 2.40s`; `git diff --check` passed. |
+| Verification Command | Compile and run `validate_team_tool_baseline.py` in authority mode and for all five role labels; confirm every role reports only the known Zotero 9.0.6 gap on the coordinator machine; run task/protocol validators, Markdown-link and restricted-term checks, scoped Python regression and `git diff --check`. |
+| Residual Risk | The other three machines remain unaudited; installed tools do not replace task-specific capability evidence; Python transitive dependencies and Unity MCP source drift remain open. |

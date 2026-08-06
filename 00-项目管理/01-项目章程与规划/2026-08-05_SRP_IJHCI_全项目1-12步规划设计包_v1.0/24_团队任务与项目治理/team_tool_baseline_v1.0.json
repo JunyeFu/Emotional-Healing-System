@@ -17,7 +17,10 @@
     "pip",
     "pytest",
     "vscode",
-    "zotero"
+    "zotero",
+    "unity",
+    "touchdesigner",
+    "python_science_stack"
   ],
   "tools": {
     "powershell": {"version": "7.6.4", "policy": "exact"},
@@ -78,11 +81,26 @@
     "com.coplaydev.unity-mcp": "78ee5418415953b79c358bfe6355fcc3fde7912b"
   },
   "role_profiles": {
-    "common": {"additional_tool_ids": []},
-    "design": {"additional_tool_ids": ["unity"]},
-    "unity": {"additional_tool_ids": ["unity", "unity_mcp"]},
-    "python_data": {"additional_tool_ids": ["python_science_stack"]},
-    "experiment_td_governance": {"additional_tool_ids": ["touchdesigner"]}
+    "common": {
+      "additional_tool_ids": [],
+      "primary_ownership": "baseline_validation"
+    },
+    "design": {
+      "additional_tool_ids": [],
+      "primary_ownership": "interaction_design_and_level_evidence"
+    },
+    "unity": {
+      "additional_tool_ids": [],
+      "primary_ownership": "unity_product_build_and_runtime_evidence"
+    },
+    "python_data": {
+      "additional_tool_ids": [],
+      "primary_ownership": "data_bridge_quality_and_analysis_pipeline"
+    },
+    "experiment_td_governance": {
+      "additional_tool_ids": [],
+      "primary_ownership": "touchdesigner_monitoring_experiment_and_governance"
+    }
   },
   "known_gaps": [
     "Coordinator workstation does not currently have Zotero 9.0.6 installed.",
