@@ -455,3 +455,13 @@
 | Verification Command | Cross-check against IJHCI official scope and relevant IJHCI/HCI papers; restricted-term scan; Markdown-link syntax check; `git diff --check`; scoped project Python regression; staged-scope audit; local and remote SHA comparison. |
 | Deviation / Surprise | The existing core claim was already stronger than a simple project-effect narrative, but the paper outline still referenced an obsolete two-day design and did not state the primary-secondary hierarchy. |
 | Residual Risk | Novelty remains conditional on actual cross-structure design grammar, comparator equivalence, SCCI fitness, Gate 1-3 results, transferable design principles, and independent policy evidence. |
+
+### 2026-08-06 Upgrade IJHCI Topic Across Project Authorities
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The upgrade strengthens one paper across theory, interaction design, comparator validity, measurement, statistics, adaptive orchestration, engineering, accessibility, openness and delivery without adding participant arms or breaking task ownership. |
+| Actual Result | Added an authoritative ten-dimension upgrade addendum and U1-U8 non-compensating gates; updated the paper structure, project-paper map, risk/evidence authorities and 2026-2028 plan; strengthened 16 existing task packages without increasing the 48 fixed tasks and three templates; preserved exactly F-01 through F-04 as READY. The feasibility gate now budgets up to 528 participant sessions, about 352 single-station hours, and uses February 2028 as the conservative submission baseline unless verified parallel capacity supports an earlier date. |
+| Verification Command | Task registry validator passed with 51 entries, 48 fixed tasks, three templates, four READY tasks and W-04 as terminal; 42 scoped Python tests passed; all 18 changed Markdown files resolved local links; terminology and superseded-design scans passed; `py_compile` and `git diff --check` passed. PDF verification passed at 5/8/7 pages with SHA-256 `85125E4F...31BDA`, `65B09F89...32373`, `C9F87242...E741`; all 20 pages kept extracted text within page bounds. Finish with staged-scope audit and local/remote SHA comparison. |
+| Deviation / Surprise | The project-paper integration table still contained the obsolete 8-minute experience, FAS/PPS terminology and separate future-paper framing for sequence orchestration; these were synchronized with the active baseline. |
+| Residual Risk | Documentation and task ACs do not close U1-U8, Level A/B/C or Gate 1-3. The 528-session capacity, additional measures, thresholds and public materials remain candidates until assigned tasks and external gates close them. |

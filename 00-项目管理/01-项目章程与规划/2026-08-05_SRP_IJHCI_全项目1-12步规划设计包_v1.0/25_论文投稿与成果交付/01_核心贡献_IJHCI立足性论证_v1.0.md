@@ -7,6 +7,8 @@
 > 适用对象：单篇 *International Journal of Human-Computer Interaction* 目标论文
 >
 > 性质：投稿设计审计，不是录用概率承诺
+>
+> 后续升级：多维度落实要求以`../00_总控/12_IJHCI课题升级决策_v1.0.md`为准，本文件保留升级前的立足性基线评分。
 
 ## 1. 结论先行
 

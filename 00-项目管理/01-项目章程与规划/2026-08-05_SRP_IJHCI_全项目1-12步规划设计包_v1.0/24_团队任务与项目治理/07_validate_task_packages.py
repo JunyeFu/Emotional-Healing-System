@@ -48,6 +48,24 @@ REQUIRED_FIELDS = {
     "branch",
     "reviewer",
 }
+UPGRADE_MARKERS = {
+    "F-02": ("构念图", "注意连续性"),
+    "R-01": ("必须匹配处理差异记录项矩阵", "四层跨模块语法"),
+    "U-07": ("功能信息等价fixture", "条件差异遥测"),
+    "U-08": ("非颜色唯一", "减少运动"),
+    "A-03": ("阶段错误", "三层区分"),
+    "W-01": ("双时间尺度", "正负结果分支"),
+    "Q-01": ("跨模块可迁移审查",),
+    "Q-02": ("阶段识别与三层区分任务", "可访问性路径"),
+    "X-02": ("三类消融", "策略熵", "概率校准"),
+    "G-03": ("U1至U5", "负面结果"),
+    "A-05": ("模块异质性", "阶段错误"),
+    "E-05": ("消融覆盖熵回退校准稳定性报告",),
+    "G-04": ("策略审计配置", "负面结果分支"),
+    "A-04": ("策略支持熵回退校准", "合成重建路径"),
+    "W-02": ("双时间尺度", "设计规则与失败模式"),
+    "W-03": ("Transparency and Openness", "独立复现日志"),
+}
 
 
 def split(value: str, separator: str = "|") -> list[str]:
@@ -153,6 +171,11 @@ def main() -> int:
             errors.append(f"{task_id}: fewer than two evidence items")
         if f"### {task_id} {row['title']}" not in handbook_text:
             errors.append(f"{task_id}: missing or stale handbook section")
+
+        searchable = "|".join(row.values())
+        for marker in UPGRADE_MARKERS.get(task_id, ()):
+            if marker not in searchable:
+                errors.append(f"{task_id}: missing IJHCI upgrade marker {marker!r}")
 
     template_ids = {row["task_id"] for row in rows if row["kind"] == "TEMPLATE"}
     if template_ids != EXPECTED_TEMPLATES:

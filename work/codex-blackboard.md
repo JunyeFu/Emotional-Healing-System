@@ -279,3 +279,20 @@
 ### Immediate Design Consequence
 
 No additional participant arm is required. Add construct closure, comparator matching audit, process evidence, low-cost policy ablations, and explicit mapping rules and failure modes before preregistration and manuscript lock.
+
+## 2026-08-06 Multidimensional Topic Upgrade
+
+### Goal
+
+Upgrade the IJHCI topic without adding participant conditions or diluting the single-paper hierarchy. Push the contribution audit into design, implementation, analysis, accessibility, open-science and task-acceptance authorities.
+
+### Frozen Upgrade
+
+- Keep the four fixed composite modules, three stages, Gate 1-3, sample anchors, real-device roles and Unity/Python/TD architecture unchanged.
+- Add a four-construct evidence model, cross-module four-layer representation grammar, functional-equivalence comparator audit, process evidence, module error taxonomy, strategy ablation/support/stability audit, Unity accessibility baseline and openness statement.
+- Use within-module representation as the primary contribution and between-module orchestration as a conditional secondary contribution.
+- Add no fifth scene, fifth breathing structure, extra participant arm, high-capacity model or extra device to the current critical path.
+
+### Task Impact
+
+Reuse the existing 48 fixed tasks and three templates. Strengthen 16 task packages and enforce their upgrade markers in the registry validator; regenerate the deterministic handbook after registry edits.
