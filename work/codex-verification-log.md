@@ -395,3 +395,13 @@
 | Verification Command | Targeted decision-state and supersession search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | Historical execution materials contain a frozen 10-point candidate. They remain preserved as historical evidence and are explicitly superseded in current control documents. |
 | Residual Risk | Analysis-set algorithms, conservative missing-data handling, numeric module thresholds, parallel-group power, and stage-one sample size remain unconfirmed. |
+
+### 2026-08-06 Require Concordant Gate-One Analysis Sets
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Gate 1 cannot pass by selecting the more favorable result from the full analysis set or the complete-four-module set. |
+| Actual Result | Froze the full analysis set as primary and the technically evaluable complete-four-module set as supportive. Both lower 95% confidence bounds must exceed `-0.075`; otherwise Gate 1 fails and Gate 2 becomes exploratory. Point-estimate disagreement triggers a prespecified bias audit without changing the success rule after results are known. |
+| Verification Command | Targeted analysis-set and gate-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | The complete-four-module set must not be mislabeled as a conventional per-protocol set because valid nonconforming cycles remain failures and only blinded technical evaluability defines inclusion. |
+| Residual Risk | The full-analysis-set imputation model, adverse-shift grid, tipping-point rule, numeric module thresholds, parallel-group power, and stage-one sample size remain unconfirmed. |
