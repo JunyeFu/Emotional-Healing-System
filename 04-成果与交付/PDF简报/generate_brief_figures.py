@@ -124,7 +124,7 @@ def task_waves():
         if index < len(waves) - 1:
             arrow(ax, (x + 1.22, 2.18), (x + 1.45, 2.18), edge)
     box(ax, 2.05, 0.28, 6.3, 0.72, "领取门：依赖完成 + 外部门禁关闭 + AC1-AC3 + 证据 + 第二人复核", COLORS["gray"], COLORS["ink"], size=9)
-    label(ax, 5.2, 3.55, "48 个固定任务包 + 3 个可重复批次模板", size=11, weight="bold", color=COLORS["ink"])
+    label(ax, 5.2, 3.55, "48 个固定任务包 + 3 个可重复批次模板；20 个 v1.1 关键包", size=10.5, weight="bold", color=COLORS["ink"])
     save(fig, "task_waves.png")
 
 
@@ -135,17 +135,17 @@ def experiment_flow():
     ax.axis("off")
 
     box(ax, 0.3, 3.05, 2.3, 1.25, "阶段一\n场景原生 vs 抽象双环\n24 顺序均衡随机", COLORS["light_blue"], COLORS["blue"], size=9)
-    box(ax, 3.95, 3.05, 2.3, 1.25, "阶段二\n仅用阶段一场景原生数据\n学习并冻结随机策略", COLORS["light_gold"], COLORS["gold"], size=9)
-    box(ax, 7.6, 3.05, 2.3, 1.25, "阶段三\n冻结策略 vs 均衡随机\n使用全新参与者", COLORS["light_green"], COLORS["green"], size=9)
+    box(ax, 3.95, 3.05, 2.3, 1.25, "阶段二\n参与者分组 OPE / ESS\n支持不足则均匀回退", COLORS["light_gold"], COLORS["gold"], size=9)
+    box(ax, 7.6, 3.05, 2.3, 1.25, "阶段三\n同一 Unity 构建\n冻结策略 vs 均衡随机", COLORS["light_green"], COLORS["green"], size=9)
     arrow(ax, (2.6, 3.68), (3.95, 3.68))
     arrow(ax, (6.25, 3.68), (7.6, 3.68))
 
-    box(ax, 0.35, 0.75, 1.35, 0.8, "前测量表\n阶段入口", "white", COLORS["blue"], size=8.5)
+    box(ax, 0.35, 0.75, 1.35, 0.8, "训练后\nPANAS 前测", "white", COLORS["blue"], size=8.5)
     box(ax, 2.0, 0.75, 1.35, 0.8, "模块 1\n25+150+25 s", "white", COLORS["green"], size=8.5)
     box(ax, 3.65, 0.75, 1.35, 0.8, "模块 2\n25+150+25 s", "white", COLORS["green"], size=8.5)
     box(ax, 5.3, 0.75, 1.35, 0.8, "模块 3\n25+150+25 s", "white", COLORS["green"], size=8.5)
     box(ax, 6.95, 0.75, 1.35, 0.8, "模块 4\n25+150+25 s", "white", COLORS["green"], size=8.5)
-    box(ax, 8.6, 0.75, 1.25, 0.8, "后测量表\n体验问卷", "white", COLORS["blue"], size=8.5)
+    box(ax, 8.6, 0.75, 1.25, 0.8, "PANAS 后测\n再体验问卷", "white", COLORS["blue"], size=8.2)
     for x in (1.7, 3.35, 5.0, 6.65, 8.3):
         arrow(ax, (x, 1.15), (x + 0.3, 1.15))
     label(ax, 5.1, 2.15, "参与者核心体验内平坐观看，不进行手部操作；模块顺序由阶段规则确定", size=9.5, weight="bold")

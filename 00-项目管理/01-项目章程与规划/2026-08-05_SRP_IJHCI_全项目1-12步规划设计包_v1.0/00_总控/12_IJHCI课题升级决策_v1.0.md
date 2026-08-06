@@ -1,8 +1,10 @@
-# SRP IJHCI课题升级决策 v1.0
+# SRP IJHCI课题升级决策 v1.0（历史基线）
 
 > 日期：2026-08-06
 >
-> 状态：`UPGRADE_REQUIREMENTS_FROZEN`
+> 状态：`SUPERSEDED_FOR_EXECUTION`
+>
+> v1.1说明：本文件保留上一轮十维升级依据。独立审稿后的执行裁定见`13_IJHCI独立审稿攻击与升级裁定_v1.1.md`，机器权威见`protocol_authority_v1.1.json`。
 >
 > 目标：在不新增参与者条件、不改变四个固定复合模块和三阶段主结构的前提下，提高单篇IJHCI论文的理论闭环、识别强度、可迁移性和复现质量。
 >

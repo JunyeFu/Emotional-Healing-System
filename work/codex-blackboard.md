@@ -296,3 +296,40 @@ Upgrade the IJHCI topic without adding participant conditions or diluting the si
 ### Task Impact
 
 Reuse the existing 48 fixed tasks and three templates. Strengthen 16 task packages and enforce their upgrade markers in the registry validator; regenerate the deterministic handbook after registry edits.
+
+## 2026-08-06 Independent IJHCI Reviewer Attack And Protocol v1.1
+
+### Goal
+
+Use three isolated, read-only reviewer roles to attack the same project snapshot from HCI contribution, experimental/statistical, and engineering/reproducibility perspectives; adjudicate the shared objections and upgrade every active execution authority without presenting the exercise as external human review.
+
+### Reviewer Decision
+
+- Overall decision: `REJECT_AND_RESUBMIT_DESIGN`.
+- Evidence status: `PLANNED_NOT_OBSERVED`.
+- The previous `CONDITIONAL_GO` score is superseded for execution because it underweighted construct circularity, policy support, runtime evidence and study capacity.
+- SCCI is a manipulation check. Gate 2 now also requires condition-neutral four-layer comprehension noninferiority and mental-effort noninferiority.
+- Stage 1 identifies the complete cue-representation package, not an isolated weather, breathing structure or visual mechanism.
+- The four-layer grammar is conditional on an independent reconstruction task; failure downgrades it to a four-scene design pattern.
+- Sequence orchestration is a deployment extension. It enters Stage 3 only after participant-grouped cross-fitting, OPE, ESS and action-support gates; otherwise the uniform policy remains and the priority claim is removed.
+
+### Frozen Execution Changes
+
+- Added `00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md` and machine authority `00_总控/protocol_authority_v1.1.json`.
+- Added an executable protocol firewall in `99_验证与清单/validate_protocol_authority_v1_1.py`; marked four earlier control documents `SUPERSEDED_FOR_EXECUTION`.
+- Rewrote active Stage 1-3, Level C, product, runtime, offline-analysis, policy, paper and reporting authorities around one-participation parallel groups and exact questionnaire timing.
+- Replaced analyzable-cycle PF denominators with expected opportunities and explicit `COMPLIANT`, `NONCOMPLIANT` and `TECH_UNOBSERVABLE` states.
+- Froze participant-level randomization, list custody and salted repeat-participation deduplication; Stage 3 uses the same `scene_native` build and estimates the deployed policy including fallback.
+- Rebudgeted 528 maximum sessions at 55-70 station minutes to 484-616 station-hours and added a mandatory two-week throughput rehearsal.
+- Strengthened 20 existing task packages while preserving 48 fixed packages, three batch templates and exactly F-01 through F-04 as `READY`.
+- Rebuilt the three math-modeling-style PDF briefs from the v1.1 source authorities.
+
+### Next Hard Gates
+
+1. Run the closest-work review and independent four-layer reconstruction task.
+2. Build the real-device Unity/Python/TD baseline and obtain LIVE_E2E, external display latency, multi-hour stability and clean-machine evidence.
+3. Complete Level A/B/C, Gate 2 tool calibration, sample-size Monte Carlo and the two-week throughput rehearsal before any formal participant stage.
+
+### Boundary
+
+Repository consistency is verified; research effects, strategy superiority, external review and publication acceptance remain unobserved.

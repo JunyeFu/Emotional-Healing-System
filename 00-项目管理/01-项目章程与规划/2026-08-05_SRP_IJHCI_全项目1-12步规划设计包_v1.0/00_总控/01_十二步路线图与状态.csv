@@ -1,13 +1,13 @@
-﻿步骤,名称,当前状态,目标,下一步
-1,课题主张与顶层设计冻结,DESIGN_COMPLETE,冻结项目对象、单篇论文主次贡献、双时间尺度边界和整体成果组合。,2
-2,构念、比较条件与测量冻结,DESIGN_COMPLETE,把主张转化为scene_native/abstract_pacer、四层语法、功能等价、protocol_fidelity、SCCI和过程测量。,3
-3,伦理、安全、预试与样本量设计,DESIGN_COMPLETE,冻结Level A/B/C、阶段一和阶段三样本锚点、风险、中止、分析集和预注册入口。,4
-4,产品、系统、数据契约与复现架构,DESIGN_COMPLETE,冻结Unity/Python/TD、状态机、通信、数据分层、Schema、随机化、QC和任务树。,5
-5,伦理申请与预试材料准备,MATERIALS_COMPLETE,形成申请书、同意书、招募、安全筛查、专家表、SOP、事件和CRF。,6
-6,校内伦理路由确认,EXTERNAL_CONFIRMATION_PENDING,确认负责人、受理委员会、系统、模板和Level A/B/C覆盖。,7
-7,机构模板适配、正式伦理提交与Level A,PLAN_READY_NOT_EXECUTED,将材料适配正式模板，提交伦理并启动专家内容与风险审查。,8
-8,Level B认知与可理解性预试,PLAN_READY_NOT_EXECUTED,验证阶段识别、三层信息区分、SCCI条目、功能等价和可访问性，修订场景。,9
-9,Level C真实设备预试与预注册,PLAN_READY_NOT_EXECUTED,验证设备、算法、延迟、数据质量和安全，冻结参数、样本量、构建和预注册。,10
-10,正式研究执行,PLAN_READY_NOT_EXECUTED,阶段一与阶段三分开执行、每人单次参与、48人块、盲态QC、替补和现场治理。,11
-11,离线处理、锁库、分析、设计原则与写作,PLAN_READY_NOT_EXECUTED,L0到L5流水线、完整分析集与完整四模块集、过程和策略审计、定性综合、图表、论文初稿。,12
-12,IJHCI投稿、返修与科研资产归档,PLAN_READY_NOT_EXECUTED,投稿合规、审稿回复、开放科学声明、独立复现、数据代码和项目成果交付。,-
+步骤,名称,当前状态,目标,下一步
+1,课题主张与顶层设计冻结,V1_1_DESIGN_FROZEN,主贡献限定为完整提示表示包与候选四层设计知识；序列只保留为条件式部署扩展。,2
+2,构念比较条件与测量冻结,V1_1_DESIGN_FROZEN_PENDING_LEVELS,SCCI仅作操纵核查；理解度非劣和心智努力非劣共同决定Gate2；候选四层语法须独立重建。,3
+3,研究伦理安全预试与样本量设计,PLAN_READY_CAPACITY_PENDING,冻结Level A/B/C、Monte Carlo样本量、随机化、去重、场次和吞吐演练。,4
+4,产品系统数据契约与复现架构,IMPLEMENTATION_BASELINE_NOT_BUILT,实现Unity独立体验、Python唯一权威、TD只读、四时间戳、外部显示延迟、真实设备LIVE_E2E和干净机器复现。,5
+5,研究伦理申请与预试材料准备,SUPERSEDED_UPDATE_REQUIRED,旧材料只作历史输入；依v1.1重建精确问卷时序、联合Gate2、随机化和缺失规则。,6
+6,校内研究伦理路由确认,EXTERNAL_CONFIRMATION_PENDING,确认负责人受理委员会系统模板和Level A/B/C覆盖。,7
+7,机构模板适配正式提交与Level A,PLAN_READY_NOT_EXECUTED,适配正式模板提交并启动专家内容与风险审查。,8
+8,Level B认知与可理解性预试,PLAN_READY_NOT_EXECUTED,验证独立重建、条件中立理解度、心智努力、SCCI操纵核查、功能等价和可访问性。,9
+9,Level C真实设备预试与预注册,PLAN_READY_NOT_EXECUTED,验证设备算法外部显示延迟时钟数据质量降级与产能；冻结参数分析构建和预注册。,10
+10,正式研究执行,PLAN_READY_NOT_EXECUTED,阶段一与阶段三分开执行；每人单次参与；随机名单分配；48人块；盲态QC与现场治理。,11
+11,离线处理锁库分析设计知识与写作,PLAN_READY_NOT_EXECUTED,机会数分母PF；完整分析集；参与者分组交叉拟合；OPE与ESS；过程审计；定性综合；图表与论文初稿。,12
+12,IJHCI投稿返修与科研资产归档,PLAN_READY_NOT_EXECUTED,投稿合规；证据矩阵；审稿回复；开放科学声明；独立复现；数据代码和项目成果交付。,-
