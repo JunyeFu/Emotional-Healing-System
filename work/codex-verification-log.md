@@ -445,3 +445,13 @@
 | Verification Command | Run `build_briefs.ps1`; run `verify_briefs.py`; render every page with Poppler and inspect contact sheets; scan sources and extracted text for restricted terminology; run project Python tests; run `git diff --check`; audit staged scope. |
 | Deviation / Surprise | The initial first brief left references alone on a sixth page, and two task-wave headings were weakly placed. Source pagination was adjusted before final verification. |
 | Residual Risk | The briefs describe the frozen target design, not completed hardware, Level, formal-stage, statistical-result, submission, or external-recognition evidence. |
+
+### 2026-08-06 Audit IJHCI Contribution Viability
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The contribution argument distinguishes journal scope from novelty, separates primary and secondary claims, compares the design with closest HCI work, and produces falsifiable submission gates. |
+| Actual Result | Rated the current design `CONDITIONAL_GO` at 73/100 design maturity. Preserved scene-native representation as the primary contribution, demoted sequence orchestration to a conditional secondary contribution, unified both through two interaction timescales, and identified seven non-compensating contribution gates. |
+| Verification Command | Cross-check against IJHCI official scope and relevant IJHCI/HCI papers; restricted-term scan; Markdown-link syntax check; `git diff --check`; scoped project Python regression; staged-scope audit; local and remote SHA comparison. |
+| Deviation / Surprise | The existing core claim was already stronger than a simple project-effect narrative, but the paper outline still referenced an obsolete two-day design and did not state the primary-secondary hierarchy. |
+| Residual Risk | Novelty remains conditional on actual cross-structure design grammar, comparator equivalence, SCCI fitness, Gate 1-3 results, transferable design principles, and independent policy evidence. |

@@ -266,3 +266,16 @@
 ### Boundary
 
 这些PDF是顶层设计和任务分发制品，不代表设备、Level、正式阶段、统计结果、投稿或外部认可已经完成。
+
+## 2026-08-06 IJHCI Contribution Viability Audit
+
+### Decision
+
+- Overall: `CONDITIONAL_GO`, design-maturity score 73/100, not an acceptance probability.
+- Primary contribution: scene-native breathing guidance can stand only as a cross-structure interaction-representation framework with an information-matched comparator, ordered functional and representational gates, and transferable design knowledge.
+- Secondary contribution: explainable sequence orchestration remains `REVISE_REQUIRED` until a frozen policy is independently compared with balanced random ordering in new participants and supported by audit and ablation evidence.
+- One-paper coherence: unify both through within-module representation and between-module orchestration; keep explicit primary-secondary hierarchy.
+
+### Immediate Design Consequence
+
+No additional participant arm is required. Add construct closure, comparator matching audit, process evidence, low-cost policy ablations, and explicit mapping rules and failure modes before preregistration and manuscript lock.
