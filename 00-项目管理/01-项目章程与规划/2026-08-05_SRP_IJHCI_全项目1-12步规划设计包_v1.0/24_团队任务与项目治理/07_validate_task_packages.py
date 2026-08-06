@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import pathlib
 import re
 import sys
@@ -12,6 +13,8 @@ ROOT = pathlib.Path(__file__).parent
 REGISTRY = ROOT / "05_可领取任务包.csv"
 RESOURCES = ROOT / "08_任务技能与国内学习资料_v1.0.md"
 HANDBOOK = ROOT / "04_可领取树型任务包_v2.0.md"
+PACKAGE_MAP = ROOT / "12_独立任务包文件映射_v1.0.json"
+PACKAGE_OUTPUT = ROOT / "当前解锁独立任务包"
 VALID_STATUSES = {"READY", "DONE", "WAIT_DEP", "WAIT_DEP_EXTERNAL", "BLOCKED_EXTERNAL"}
 VALID_KINDS = {"FIXED", "TEMPLATE"}
 VALID_PROFILES = {
@@ -245,6 +248,29 @@ def main() -> int:
     done = {row["task_id"] for row in rows if row["status"] == "DONE"}
     if done != EXPECTED_DONE:
         errors.append(f"DONE set is {sorted(done)}, expected {sorted(EXPECTED_DONE)}")
+
+    if not PACKAGE_MAP.is_file():
+        errors.append("independent task package mapping is missing")
+    else:
+        mapping = json.loads(PACKAGE_MAP.read_text(encoding="utf-8-sig"))
+        mapped = set(mapping.get("tasks", {}))
+        if mapped != ready:
+            errors.append(
+                f"independent package mapping set {sorted(mapped)} does not match READY {sorted(ready)}"
+            )
+
+    if not PACKAGE_OUTPUT.is_dir():
+        errors.append("independent READY task package output is missing")
+    else:
+        packaged = {path.name for path in PACKAGE_OUTPUT.iterdir() if path.is_dir()}
+        if packaged != ready:
+            errors.append(
+                f"independent package directories {sorted(packaged)} do not match READY {sorted(ready)}"
+            )
+        for task_id in ready:
+            for filename in ("TASK.md", "FILES.md", "package_manifest.json"):
+                if not (PACKAGE_OUTPUT / task_id / filename).is_file():
+                    errors.append(f"{task_id}: independent package missing {filename}")
 
     if errors:
         for error in errors:

@@ -32,6 +32,7 @@ Desktop.ini
 
 # Project-specific
 *.csv
+!**/当前解锁独立任务包/**/inputs/*.csv
 !requirements.txt
 .pipeline.lock
 td_*.png

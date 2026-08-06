@@ -483,3 +483,27 @@ Require local Zotero only where reference curation and paper evidence are owned,
 ### Boundary
 
 Passing the local tool validator does not establish access to the private shared library; that remains a separate human-verifiable permission gate.
+
+## 2026-08-06 Generate Individually Dispatchable READY Task Packages
+
+### Goal
+
+Give every currently unlocked task its own dispatch directory containing a complete task brief, involved-file manifest, necessary input snapshots and machine-verifiable provenance, then make this mandatory whenever the READY set changes.
+
+### Evidence And Decision
+
+- Generated separate packages for F-01, F-03, F-04 and G-01 from the registry authority.
+- Each package contains `TASK.md`, `FILES.md`, `package_manifest.json`, blank claim/completion fields, acceptance checkboxes, working paths and hashed input snapshots.
+- Curated 48 necessary input snapshots across the four packages; Unity and TouchDesigner project roots remain working paths rather than copied caches or generated directories.
+- Added a READY-to-file mapping, deterministic renderer and validator. The main 51-entry task validator now also rejects missing or mismatched independent packages.
+- Added the workflow as a project habit in `AGENTS.md`; future READY transitions must update the mapping, regenerate packages and pass both validators before distribution.
+
+### Next Hard Gates
+
+1. Each assignee fills the claim fields before implementation and works only in the listed authority paths.
+2. When a task changes state, regenerate the directory so stale READY packages cannot remain distributable.
+3. Input snapshots are review aids; source changes require a regenerated hash manifest.
+
+### Boundary
+
+Package generation does not claim that F-01, F-03, F-04 or G-01 has started or completed. Relative links inside copied source snapshots may still assume the original source directory; `FILES.md` links back to those authority files.
