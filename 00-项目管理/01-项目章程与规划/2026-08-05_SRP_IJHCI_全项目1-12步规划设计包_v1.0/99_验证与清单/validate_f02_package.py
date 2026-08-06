@@ -72,18 +72,19 @@ def main() -> int:
 
     with REGISTRY.open(encoding="utf-8-sig", newline="") as handle:
         rows = {row["task_id"]: row for row in csv.DictReader(handle)}
-    expected = {"F-02": "DONE", "G-01": "READY", "R-01": "READY"}
-    for task_id, status in expected.items():
+    if rows.get("F-02", {}).get("status") != "DONE":
+        errors.append("F-02 must remain DONE")
+    for task_id in ("G-01", "R-01"):
         actual = rows.get(task_id, {}).get("status")
-        if actual != status:
-            errors.append(f"{task_id} status is {actual!r}, expected {status!r}")
+        if actual not in {"READY", "DONE"}:
+            errors.append(f"{task_id} status is {actual!r}, expected READY or DONE")
 
     if errors:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
 
-    print("PASS: F-02 candidate package; AC1-AC3; items=12; F-02=DONE; downstream=G-01,R-01")
+    print("PASS: F-02 candidate package; AC1-AC3; items=12; F-02=DONE; downstream unblocked")
     return 0
 
 

@@ -356,3 +356,27 @@ Audit the supplied Deep Research output against F-02 AC1-AC3, reconstruct any mi
 ### Boundary
 
 No expert judgment, interview result, condition effect, noninferiority margin, Gate 2 result or publication result is claimed by this task.
+
+## 2026-08-06 Complete R-01 Candidate Representation Package
+
+### Goal
+
+Audit the supplied R-01 Deep Research package, replace unusable citations, make its Schema evidence executable, and advance only dependencies justified by the accepted candidate design.
+
+### Evidence And Decision
+
+- The supplied `deep-research-report (3).md` is a complete approximately 70 KB candidate package, unlike the earlier F-02 summary.
+- Removed 42 internal session citations, added repository-relative authority links, retained stable DOI or official links, and recorded source SHA-256 `66C78634...8AC0D31`.
+- Corrected one material omission: the current authority freezes storm as `3-3-3-3`; the imported report had called it unspecified.
+- Extracted a Draft 2020-12 Schema, two condition-valid fixtures, four targeted invalid fixtures and one comprehension-truth fixture. Metaschema validation passed; both valid fixtures passed; all four invalid fixtures were rejected.
+- Independent AC review accepts R-01 at candidate-design scope. R-01 is `DONE`, W-01 is newly `READY`, and all other R-01 consumers remain blocked by their additional dependencies.
+
+### Next Hard Gates
+
+1. W-01 must attack the closest 2015-2026 work and keep novelty claims conditional.
+2. U-07 must measure the six confounds from real Unity renders before formal ranges can freeze.
+3. Q-01 and later Levels must test reconstruction, layer discriminability and neutral comprehension with independent evidence.
+
+### Boundary
+
+The accepted package does not establish Unity implementation, team dual sign-off, transferable-framework validity, Level results, Gate results or publication novelty.

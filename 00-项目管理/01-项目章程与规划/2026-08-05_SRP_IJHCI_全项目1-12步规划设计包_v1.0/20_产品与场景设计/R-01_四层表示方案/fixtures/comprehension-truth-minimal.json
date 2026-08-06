@@ -1,0 +1,28 @@
+{
+  "clip_id": "string",
+  "module_id": "storm|scorching|blizzard|fading",
+  "segment": "demo|closed_loop|lock_transition",
+  "clip_start_monotonic_ns": 0,
+  "clip_end_monotonic_ns": 0,
+  "target_phase": "INHALE|HOLD|EXHALE",
+  "target_progress": 0.0,
+  "next_target_phase": "INHALE|HOLD|EXHALE",
+  "actual_phase": "INHALE|HOLD|EXHALE|null",
+  "actual_progress": 0.0,
+  "actual_confidence": 0.0,
+  "phase_error_band": "LEADING|NEAR|LAGGING|INSUFFICIENT",
+  "actual_band": "LOW|MID|HIGH|UNAVAILABLE",
+  "cumulative_band": "LOW|MID|HIGH|LOCKED",
+  "cumulative_scope": "module_to_date",
+  "fallback_state": "GOOD|DEGRADED|UNUSABLE|DISCONNECTED",
+  "degradation_reason": "string|null",
+  "display_confidence": 0.0,
+  "affected_layers": [
+    "actual",
+    "phase_error"
+  ],
+  "answer_key_version": "string",
+  "scene_native_video_hash": "sha256",
+  "abstract_pacer_video_hash": "sha256",
+  "second_reviewer_status": "PENDING"
+}

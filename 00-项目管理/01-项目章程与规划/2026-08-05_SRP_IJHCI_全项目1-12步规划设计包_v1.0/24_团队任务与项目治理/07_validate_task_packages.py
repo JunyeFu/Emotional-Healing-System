@@ -23,8 +23,8 @@ VALID_PROFILES = {
     "P-RUN",
     "P-DELIVERY",
 }
-EXPECTED_READY = {"F-01", "F-03", "F-04", "G-01", "R-01"}
-EXPECTED_DONE = {"F-02"}
+EXPECTED_READY = {"F-01", "F-03", "F-04", "G-01", "W-01"}
+EXPECTED_DONE = {"F-02", "R-01"}
 EXPECTED_TEMPLATES = {"B-01", "B-02", "B-03"}
 TERMINAL_TASK = "W-04"
 WAVE_ORDER = {f"W{index}": index for index in range(7)}

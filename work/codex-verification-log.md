@@ -486,3 +486,13 @@
 | Verified Evidence | F-02 validator `PASS` with 12 required item IDs; task validator `PASS` with 51 entries, 48 fixed, three templates, `DONE=F-02`, five READY tasks and W-04 terminal; protocol firewall `PASS`; `py_compile` passed; scoped Python regression `42 passed in 7.86s`; 18 local Markdown links resolved; restricted terminology absent from nine changed project documents. |
 | Deviation / Surprise | Unfiltered root `pytest` collected vendored TouchDesigner OpenAPI tests and stopped because their separate `connexion` dependency is absent. The established project scope passed after excluding `02-技术研发/03-TouchDesigner/mcp_td_v147`; this dependency was not installed because F-02 does not own vendored TD test infrastructure. |
 | Residual Risk | Team second-person sign-off, Level A/B evidence, equivalent condition fixtures, numeric margins, U1/U5 and Gate 2 remain open. |
+
+### 2026-08-06 Complete R-01 Candidate Representation Package
+
+| Field | Notes |
+|---|---|
+| Expected Observation | R-01 contains a complete four-layer grammar, complete-condition comparison, measurable confound budget, neutral instructions, executable Schema assets and dependency-safe task transition. |
+| Actual Result | Imported and sanitized the full Deep Research package; added local authorities and provenance; corrected storm to `3-3-3-3`; extracted the Schema, two valid fixtures, four directed negatives and a comprehension-truth fixture; added acceptance and validation authorities; marked R-01 `DONE` and W-01 `READY`. |
+| Verified Evidence | DOI identities checked through Crossref records; seven source JSON blocks parsed; Draft 2020-12 metaschema passed; both condition fixtures passed; four negative fixtures were rejected; R-01, F-02, task-registry and protocol validators passed; task state is `DONE=F-02,R-01` and `READY=F-01,F-03,F-04,G-01,W-01`; 36 local Markdown links resolved; restricted terminology and internal citations were absent; scoped Python regression `42 passed in 19.11s`. |
+| Deviation / Surprise | The source called the storm target structure unspecified although current project authorities freeze `3-3-3-3`. The F-02 validator also assumed R-01 could never advance beyond READY; it was corrected to accept unblocked downstream states. |
+| Residual Risk | Fading-stage numeric timing, degraded cumulative behavior, recovery debounce, real-render confounds, Unity execution, team sign-off, reconstruction, Level evidence and Gate results remain open. |

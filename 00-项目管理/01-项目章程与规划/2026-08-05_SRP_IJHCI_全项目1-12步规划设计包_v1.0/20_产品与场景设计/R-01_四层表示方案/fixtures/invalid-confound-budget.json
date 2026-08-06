@@ -1,0 +1,100 @@
+{
+  "schema_version": "0.9-candidate",
+  "status": "CANDIDATE",
+  "evidence_status": "PLANNED_NOT_OBSERVED",
+  "module_id": "storm",
+  "cue_mode": "scene_native",
+  "timing": {
+    "telemetry_hz": 20,
+    "target_render_fps": 60,
+    "demo_seconds": 25,
+    "closed_loop_seconds": 150,
+    "lock_transition_seconds": 25
+  },
+  "layers": {
+    "target": {
+      "source": "python.target_protocol",
+      "fields": [
+        "target_phase",
+        "target_progress"
+      ],
+      "semantic_role": "prescriptive_current_and_next_phase",
+      "smoothing_ms": 80
+    },
+    "actual": {
+      "source": "python.interaction_state_estimate",
+      "fields": [
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence"
+      ],
+      "semantic_role": "descriptive_current_estimate",
+      "smoothing_ms": 180
+    },
+    "cumulative": {
+      "source": "python.recovery_aggregate",
+      "fields": [
+        "recovery_value",
+        "recovery_locked"
+      ],
+      "semantic_role": "module_to_date_aggregate",
+      "visual_time_constant_seconds": 4
+    },
+    "fallback": {
+      "source": "python.signal_quality",
+      "fields": [
+        "signal_quality",
+        "fallback_state",
+        "fallback_reason"
+      ],
+      "semantic_role": "epistemic_reliability_and_display_policy",
+      "participant_blame_forbidden": true
+    }
+  },
+  "mapping": {
+    "core_mechanism_id": "storm_field",
+    "target_presentation": "scene_far_field",
+    "actual_presentation": "scene_near_field",
+    "cumulative_presentation": "shared_scene_slow_variable",
+    "fallback_presentation": "scene_actual_channel_attenuation",
+    "color_is_not_sole_channel": true
+  },
+  "fallback_contract": {
+    "GOOD": {
+      "target": "continue",
+      "actual": "real",
+      "cumulative": "update"
+    },
+    "DEGRADED": {
+      "target": "continue",
+      "actual": "attenuate",
+      "cumulative": "pause"
+    },
+    "UNUSABLE": {
+      "target": "open_loop",
+      "actual": "stop",
+      "cumulative": "pause"
+    },
+    "DISCONNECTED": {
+      "target": "safe_open_loop",
+      "actual": "stop",
+      "cumulative": "pause"
+    }
+  },
+  "confound_budget": {
+    "evidence_label": "ENGINEERING_CANDIDATE",
+    "freeze_status": "PENDING_LIVE_MEASUREMENT",
+    "motion_energy_relative_difference": 0.28,
+    "mean_luminance_absolute_difference": 0.09,
+    "visual_complexity_relative_difference": 0.24,
+    "eccentricity_difference_degrees": 6.5,
+    "occlusion_absolute_difference": 0.12,
+    "event_salience_relative_difference": 0.4
+  },
+  "provenance": {
+    "protocol_version": "1.1",
+    "config_hash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "unity_build_hash": "UNBUILT-CANDIDATE",
+    "review_status": "NOT_DUAL_REVIEWED"
+  }
+}
