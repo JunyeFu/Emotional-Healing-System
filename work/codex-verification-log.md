@@ -325,3 +325,13 @@
 | Verification Command | Targeted active-duration search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | The former 120-second baseline appeared in multiple current blackboard bullets and required explicit supersession rather than an appended note alone. |
 | Residual Risk | The final fixed values still depend on technical pretesting. Stage-level frequency-domain HRV interpretation may require a longer window and is not justified by the duration decision alone. |
+
+### 2026-08-06 Confirm Protocol Fidelity As Gate-One Outcome
+
+| Field | Notes |
+|---|---|
+| Expected Observation | `protocol_fidelity` is promoted to the sole primary device-derived Gate 1 outcome while thresholds, missingness, aggregation, margin, and sample size remain explicitly unfrozen. |
+| Actual Result | Confirmed the proportion of evaluable cycles meeting preregistered module-specific structure and timing tolerance within the frozen closed-loop window. Validly recorded nonconforming cycles remain failures rather than exclusions. |
+| Verification Command | Targeted decision-state and stale-status search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | Historical blackboard entries still described the outcome as unconfirmed and required explicit temporal qualification. |
+| Residual Risk | Module-specific tolerance, technical non-evaluability rules, four-module aggregation, non-inferiority margin, parallel-group power, and stage-one sample size remain unconfirmed. |
