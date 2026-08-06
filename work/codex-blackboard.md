@@ -387,3 +387,28 @@ The accepted package does not establish Unity implementation, team dual sign-off
 - No active Markdown link depends on the file; remaining mentions are historical records.
 - `AGENTS.md` remains the project instruction authority.
 - Other pre-existing deletions and untracked files remain outside this task.
+
+## 2026-08-06 Complete W-01 Closest-Work Candidate Package
+
+### Goal
+
+Audit the supplied W-01 Deep Research package, preserve only reproducible evidence, deliver the closest-work matrix and one-paper IJHCI skeleton, and advance task state without claiming that novelty or study effects are established.
+
+### Evidence And Decision
+
+- Imported `deep-research-report (2).md` after confirming SHA-256 `5856C9C...18CD7E`.
+- Removed 52 GPT internal citation markers, normalized the evidence cutoff to 2026-08-06 and Asia/Shanghai, fixed the Adaptive Biofeedback year to 2016, and replaced the incomplete Heart Garden author field with the verified author list.
+- Extracted 13 search-log rows, 15 seven-axis closest-work records, six claim-refutation records, 15 BibTeX entries and a 15-row DOI identity audit.
+- Independent AC review accepts W-01 only at candidate-package scope. The task is `DONE`, but novelty remains `REVISE_REQUIRED` and project evidence remains `PLANNED_NOT_OBSERVED`.
+- The current task state is `DONE={F-02,R-01,W-01}` and `READY={F-01,F-03,F-04,G-01}`. W-02 remains blocked by A-04.
+
+### Next Hard Gates
+
+1. Export and archive native ACM Digital Library plus Scopus or Web of Science results, exact counts, deduplication and exclusion reasons.
+2. Complete independent two-person screening and high-threat full-text coding, especially `Breathing a Lullaby`.
+3. Use Q-01 reconstruction evidence to decide whether the contribution can retain a cross-structure grammar claim.
+4. Keep the sequence extension outside the title, abstract and primary contribution unless both U6 and Gate 3 pass.
+
+### Boundary
+
+W-01 completion does not establish comprehensive search coverage, external human review, a transferable framework, any Gate result, any observed effect or publication acceptance.

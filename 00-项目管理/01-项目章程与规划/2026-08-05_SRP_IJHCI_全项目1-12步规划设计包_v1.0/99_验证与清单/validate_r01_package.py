@@ -121,11 +121,14 @@ def main() -> int:
 
     with REGISTRY.open(encoding="utf-8-sig", newline="") as handle:
         rows = {row["task_id"]: row for row in csv.DictReader(handle)}
-    expected = {"F-02": "DONE", "R-01": "DONE", "W-01": "READY"}
+    expected = {"F-02": "DONE", "R-01": "DONE"}
     for task_id, status in expected.items():
         actual = rows.get(task_id, {}).get("status")
         if actual != status:
             errors.append(f"{task_id} status is {actual!r}, expected {status!r}")
+    w01_status = rows.get("W-01", {}).get("status")
+    if w01_status not in {"READY", "DONE"}:
+        errors.append(f"W-01 status is {w01_status!r}, expected READY or DONE")
 
     if errors:
         for error in errors:
@@ -134,7 +137,7 @@ def main() -> int:
 
     print(
         "PASS: R-01 candidate package; AC1-AC3; schema+2 valid fixtures+4 negatives; "
-        "R-01=DONE; W-01=READY"
+        "R-01=DONE; W-01 downstream unblocked"
     )
     return 0
 

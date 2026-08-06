@@ -2,6 +2,8 @@
 
 > 当前状态：`REJECT_AND_RESUBMIT_DESIGN`。论文采用“完整提示表示方案为唯一主贡献、序列编排为条件式部署扩展”的单篇结构。所有结果段保持占位，直到锁定真实数据生成。
 
+最近工作、逐项反证、七轴编码和引用库以[W-01候选研究包](W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md)为当前入口。该任务虽已完成候选交付，但新颖性仍为`REVISE_REQUIRED`。
+
 ## 暂定标题
 
 **Scene-Native Breathing Guidance as a Complete Cue-Representation Package: Design Grammar, Controlled Evaluation, and a Conditional Deployment Extension**

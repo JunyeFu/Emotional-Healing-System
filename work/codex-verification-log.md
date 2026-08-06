@@ -505,3 +505,13 @@
 | Actual Result | Deleted root `CLAUDE.md`; retained historical mentions and kept `AGENTS.md` as the current project instruction authority. |
 | Verification Command | Confirm `Test-Path CLAUDE.md` is false; search repository references; run `git diff --check`; audit staged scope; compare local and remote SHA after push. |
 | Residual Risk | None within the requested deletion; historical documents still mention that the file existed at their recorded time. |
+
+### 2026-08-06 Complete W-01 Closest-Work Candidate Package
+
+| Field | Notes |
+|---|---|
+| Expected Observation | W-01 provides reproducible candidate search strategies, a seven-axis closest-work matrix, claim-specific refutations, a one-paper contribution hierarchy, a traceable citation library and explicit limits on novelty claims. |
+| Actual Result | Imported and sanitized the full external package; extracted structured CSV and BibTeX assets; added a DOI identity audit, acceptance record and dedicated validator; marked W-01 `DONE` while preserving `REVISE_REQUIRED`; kept W-02 at `WAIT_DEP` because A-04 is incomplete. |
+| Verified Evidence | W-01 validator passed with 13 search rows, 15 core sources, six claims and 15 BibTeX entries; F-02 and R-01 validators passed; registry validator passed with 51 entries, `DONE=F-02,R-01,W-01` and `READY=F-01,F-03,F-04,G-01`; protocol firewall passed; Python compilation passed; 35 local Markdown links resolved; restricted terminology was absent from W-01 deliverables and status documents; scoped regression completed with `42 passed in 9.58s`; `git diff --check` passed. |
+| Deviation / Surprise | The source contained 52 unusable internal citation markers, a future 2026-12-31 evidence cutoff, a mismatched time zone and two correctable bibliography issues. The first terminology scan also matched the project rule file and validator definitions themselves, so the delivery scan was narrowed to content-bearing documents while the W-01 validator retained direct enforcement. |
+| Residual Risk | Native database exports, complete deduplication, two-person screening, high-threat full-text coding, independent reconstruction, Level evidence, Gate results and observed project effects remain open. |

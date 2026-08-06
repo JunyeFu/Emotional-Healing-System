@@ -1,0 +1,14 @@
+﻿日期,数据库／入口,检索族,原生结果数,本轮执行结果,筛选处理与理由
+2026-08-06,ACM Digital Library,呼吸／HRV × 生物反馈 × 可视化,未取得,DOI 定向检索与 ACM 论文页核验,纳入 CHI、CHI EA、TOCHI、DIS、IMWUT 的一手记录；不能代替完整集合检索
+2026-08-06,ACM Digital Library,场景／隐喻／艺术化表示,未取得,核验 Breeze、Mindful Garden、Respireal 等,排除仅介绍传感算法而没有参与者界面的工作
+2026-08-06,ACM Digital Library,自适应／顺序／编排,未取得,核验 Adaptive Biofeedback、ViBreathe、PIV,区分“改变呼吸速度或模态”与“对四个模块实施顺序策略”
+2026-08-06,ACM Digital Library,CHI 与 TOCHI 定向,未取得,纳入 PIV、Breeze、BreatheWithMe、Same Breath,TOCHI 已找到直接相关 PIV，故不能再写“TOCHI 无相关工作”
+2026-08-06,Scopus,基础式,未取得,通过作者机构中的 Scopus 记录核对部分论文,作者机构记录能证明单篇收录，不提供总命中数
+2026-08-06,Scopus,IJHCI、IJHCS、CHI、TOCHI 限定,未取得,形成目标场所核心集,仍需机构账号导出并去重
+2026-08-06,Scopus,四层与降级词族,未取得,未形成可审计总集合,严格式可能漏检，正式执行须同时运行拆分式
+2026-08-06,Web of Science,基础式,未取得,公开入口无法取得原生结果页,保留为待机构执行项
+2026-08-06,Web of Science,场景表示式,未取得,以 DOI 和题名交叉核验,不把其他搜索引擎的数量冒充 WoS 数量
+2026-08-06,Web of Science,自适应／顺序式,未取得,确认若干 DOI 有 WoS 元数据线索,尚未导出完整记录
+2026-08-06,IJHCI 出版页,题名和 DOI 定向,不适用,核验 ViBreathe、Heart Garden、Heartscape、Breathing a Lullaby,前三篇取得摘要或全文；Lullaby 仅能安全编码元数据
+2026-08-06,IJHCS 出版页,呼吸、放松、反馈,不适用,核验 Chittaro 等 2024,取得出版摘要、样本、条件和主要结果
+2026-08-06,作者机构／开放全文,DOI 定向追踪,不适用,核验 Respireal、Same Breath、Breeze、Mindful Garden 等,仅采纳作者机构、出版方或作者稿明确报告的信息
