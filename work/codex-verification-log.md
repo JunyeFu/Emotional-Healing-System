@@ -375,3 +375,13 @@
 | Verification Command | Targeted evaluability-gate search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | None. |
 | Residual Risk | Numeric coverage and cycle-count thresholds, cycle-conformance tolerances, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Structure-First Module-Specific Cycle Rules
+
+| Field | Notes |
+|---|---|
+| Expected Observation | A recorded cycle must first satisfy its module's required event structure and then its module-specific timing tolerances; candidate global percentages remain pretest inputs only. |
+| Actual Result | Confirmed structure-first, module-specific cycle conformance. The 25% phase-error and 20% total-cycle-error values remain technical-pretest starting points rather than formal thresholds. |
+| Verification Command | Targeted cycle-rule search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Numeric structure and timing tolerances, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
