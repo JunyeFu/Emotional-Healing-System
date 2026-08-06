@@ -3,8 +3,10 @@ SessionManifest,F-01,P-01|F-03|X-01,Schema合法非法fixture,正式模式失败
 ControlEvent_ACK,P-01|U-01,Unity|Python,重复乱序超时重连,四模块状态一致,I-01
 TelemetryFrame,F-01|S-01,Unity|TD,字段版本序号自包含,20Hz丢包与延迟,I-01
 RawSample,D-01|D-02,P-02|S-01,时间戳单位设备状态,双设备30分钟,I-01
-SceneAdapter,U-02,U-03|U-04|U-05|U-06|U-07,四层独立锁定降级,双条件信息量,Q-02
+SceneAdapter,U-02,U-03|U-04|U-05|U-06|U-07|U-08,四层独立锁定降级,双条件信息量与跨场景视听性能,Q-02
 OperatorRequest,T-02,P-01,权限原因码幂等,标记和中止审计,I-01
 L0_L3_Rebuild,A-01,A-02|A-03,固定fixture哈希,在线离线差异,Q-03
-Gate1Dataset,A-02,论文模型,双分析与插补fixture,偏移和tipping point,E-04
-PolicyArtifact,X-02,X-03,版本概率回退重放,阶段三禁止在线学习,E-06
+Stage1LockedDataset,E-04,A-05|E-05,平衡锁库哈希,Gate1/2与策略训练,A-05
+PolicyArtifact,E-05,X-03|G-04,版本概率回退重放,阶段三禁止在线学习,G-04
+FinalAnalysisArtifact,A-04,W-02,表图数据字典与哈希,三重门一键复现,W-02
+SubmissionArtifact,W-03,W-04,匿名许可复现清单,公开顺序与移交演练,W-04

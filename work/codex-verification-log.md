@@ -425,3 +425,13 @@
 | Verification Command | Task-registry validation with cycle detection; sample-anchor reconstruction; entry-link existence checks; target-state search; restricted-term scan; `git diff --check`; 42 project Python tests; staged-scope audit; final local/remote SHA check. |
 | Deviation / Surprise | The root README and current board still presented the 10Hz UDP/Spout prototype and stage-7 archival work as current. They required explicit migration-only labeling before dispatch. |
 | Residual Risk | The existing code and Unity/TD artifacts remain legacy implementation until claimed packages replace them. Hardware, approvals, PANAS rights, Level A/B/C, and formal research evidence remain external gates. |
+
+### 2026-08-06 Upgrade Task Packages With Bidirectional Coverage
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Every claimable task has an explicit domain title, four-stage process, objective acceptance criteria, required evidence, implementer skills, domestic Chinese learning links, and a downstream path into the complete project. |
+| Actual Result | Audited the original 37 packages from both directions and found missing lifecycle work plus oversized participant-run packages. Replaced the active registry with 48 fixed packages and three repeatable batch templates. Added deterministic handbook rendering, a learning-resource catalog, a reverse-coverage matrix, final-paper/delivery tasks, governance and preregistration tasks, locked-analysis tasks, Unity product consistency, and batch closeout semantics. |
+| Verification Command | Run `10_render_task_handbook.py`; run upgraded `07_validate_task_packages.py`; verify 51 entries, 48 fixed, three templates, four READY, no cycle, valid domain/process/learning/acceptance/evidence fields, and reachability to W-04; check learning URLs; run restricted-term scan, Markdown-link check, Python tests, `git diff --check`, staged-scope audit, and final local/remote SHA check. |
+| Deviation / Surprise | The original task tree covered engineering startup well but compressed Level C and formal stages into impossible single five-day packages and did not create tasks for locked analysis, the manuscript, submission, or project handoff. |
+| Residual Risk | Learning portals may change and must be rechecked at claim time. All hardware, approval, Level, preregistration, lock, analysis-result, submission, and external-recognition gates remain open until their real evidence exists. |
