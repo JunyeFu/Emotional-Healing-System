@@ -365,3 +365,13 @@
 | Verification Command | Targeted non-evaluability and formula search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | The active offline design still used the older pooled-cycle formula and required direct reconciliation with the confirmed aggregation decision. |
 | Residual Risk | Signal-coverage threshold, module-specific minimum analyzable cycles, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Dual Module-Evaluability Gates
+
+| Field | Notes |
+|---|---|
+| Expected Observation | A module is evaluable only when both synchronized valid-signal coverage and module-specific analyzable-cycle count meet thresholds frozen before formal data collection. |
+| Actual Result | Confirmed the two-gate structure and its propagation to the complete-four-module outcome. Numeric thresholds remain technical-pretest outputs and cannot be relaxed after formal data are available. |
+| Verification Command | Targeted evaluability-gate search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Numeric coverage and cycle-count thresholds, cycle-conformance tolerances, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
