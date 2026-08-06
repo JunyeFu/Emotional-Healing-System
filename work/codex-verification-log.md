@@ -335,3 +335,13 @@
 | Verification Command | Targeted decision-state and stale-status search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | Historical blackboard entries still described the outcome as unconfirmed and required explicit temporal qualification. |
 | Residual Risk | Module-specific tolerance, technical non-evaluability rules, four-module aggregation, non-inferiority margin, parallel-group power, and stage-one sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Equal-Weight Four-Module Aggregation
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Each fixed weather-breathing module contributes equally to the participant-level Gate 1 outcome, independent of its number of cycles. |
+| Actual Result | Confirmed per-module `protocol_fidelity` followed by an equal-weight mean, with each module contributing 25%. Direct pooling of all cycles is prohibited; module-specific results are prespecified secondary analyses. |
+| Verification Command | Targeted aggregation-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Handling of a non-evaluable module, analysis sets, missing-data sensitivity, module-specific tolerance, non-inferiority margin, parallel-group power, and sample size remain unconfirmed. |
