@@ -355,3 +355,13 @@
 | Verification Command | Targeted completeness-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | None. |
 | Residual Risk | Technical non-evaluability criteria, missing-data models, analysis-set algorithms, module-specific tolerance, non-inferiority margin, power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Blinded Technical Non-Evaluability Boundary
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Non-evaluability is limited to preregistered technical failures and cannot absorb validly recorded execution failures or depend on condition and later outcomes. |
+| Actual Result | Confirmed technical-only reasons, blinded determination, frozen rules and versions, and auditable reason codes. Updated the active offline formula from pooled cycles to the confirmed equal-weight complete-four-module outcome. |
+| Verification Command | Targeted non-evaluability and formula search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | The active offline design still used the older pooled-cycle formula and required direct reconciliation with the confirmed aggregation decision. |
+| Residual Risk | Signal-coverage threshold, module-specific minimum analyzable cycles, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
