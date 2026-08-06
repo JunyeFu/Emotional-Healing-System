@@ -412,3 +412,28 @@ Audit the supplied W-01 Deep Research package, preserve only reproducible eviden
 ### Boundary
 
 W-01 completion does not establish comprehensive search coverage, external human review, a transferable framework, any Gate result, any observed effect or publication acceptance.
+
+## 2026-08-06 Freeze Four-Person Team Tool Baseline
+
+### Goal
+
+Define one versioned common environment for all four members, add only role-owned heavy tools, and make version drift detectable before task pickup.
+
+### Evidence And Decision
+
+- Froze the common baseline at Windows 11 x64 build 26100+, PowerShell 7.6.4, Git 2.54.0.windows.1, Git LFS 3.7.1, OpenSSH 9.5p2, Python 3.14.4, pip 26.1.1, pytest 9.0.3, VS Code 1.131.0 and Zotero 9.0.6.
+- Added role profiles for design, Unity, Python/data and experiment/TD/governance. Unity is fixed at 6000.4.9f1 revision f7258d6eebbe; TouchDesigner is fixed at 2025.32820.
+- Added a nine-package Python direct dependency baseline and cross-checked the Unity package versions and resolved Unity MCP commit against the repository locks.
+- Added a machine-readable JSON authority and a validator with authority-only and per-role local inspection modes.
+- The coordinator machine matches every tested common and role-specific version except Zotero 9.0.6, which is not installed. TD MCP service dependencies remain optional and not ready.
+
+### Next Hard Gates
+
+1. Install Zotero 9.0.6 on all four machines and grant access to the same shared library.
+2. Run the role-specific validator on each machine and archive the output with the first claimed task.
+3. Replace the Unity MCP `#main` source with an immutable commit reference before the first package mutation.
+4. Produce a complete transitive Python lock and clean-environment reconstruction before LIVE_E2E.
+
+### Boundary
+
+Tool registration and matching versions do not establish implementation, real-device readiness, independent reproduction, Level evidence or Gate results.

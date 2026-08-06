@@ -515,3 +515,13 @@
 | Verified Evidence | W-01 validator passed with 13 search rows, 15 core sources, six claims and 15 BibTeX entries; F-02 and R-01 validators passed; registry validator passed with 51 entries, `DONE=F-02,R-01,W-01` and `READY=F-01,F-03,F-04,G-01`; protocol firewall passed; Python compilation passed; 35 local Markdown links resolved; restricted terminology was absent from W-01 deliverables and status documents; scoped regression completed with `42 passed in 9.58s`; `git diff --check` passed. |
 | Deviation / Surprise | The source contained 52 unusable internal citation markers, a future 2026-12-31 evidence cutoff, a mismatched time zone and two correctable bibliography issues. The first terminology scan also matched the project rule file and validator definitions themselves, so the delivery scan was narrowed to content-bearing documents while the W-01 validator retained direct enforcement. |
 | Residual Risk | Native database exports, complete deduplication, two-person screening, high-threat full-text coding, independent reconstruction, Level evidence, Gate results and observed project effects remain open. |
+
+### 2026-08-06 Freeze Four-Person Team Tool Baseline
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Every team member has a precise common tool set, each role adds only the tools it owns, repository locks agree with the declared versions, and local gaps are reported rather than hidden. |
+| Actual Result | Added the human-readable baseline, machine JSON, Python direct-dependency pins and a role-aware validator; linked the baseline from project entry points and synchronized the four-person priority note. |
+| Verified Evidence | Authority validator passed for all role profiles, nine Python pins, Unity 6000.4.9f1 revision and selected Unity package locks. All five local profiles matched their required versions except the expected missing Zotero 9.0.6. Task registry and protocol validators passed; 20 local Markdown links resolved; restricted terminology was absent from baseline deliverables; scoped regression completed with `42 passed in 9.61s`; `git diff --check` passed. |
+| Deviation / Surprise | VS Code is exposed through a Windows command shim, so the first validator implementation could not execute it directly from Python; the check now runs through `cmd.exe`. The project had no exact Python dependency snapshot, and the Unity MCP source still names `#main` despite a resolved commit in the package lock. |
+| Residual Risk | Zotero is not installed on the coordinator machine; other member machines remain unaudited; Python transitive dependencies are not fully locked; Unity MCP source drift and optional TD MCP service setup remain open. |

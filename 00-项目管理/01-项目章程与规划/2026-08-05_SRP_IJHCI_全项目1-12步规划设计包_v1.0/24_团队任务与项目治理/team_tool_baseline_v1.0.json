@@ -1,0 +1,93 @@
+{
+  "baseline_id": "SRP-TEAM-TOOLS-v1.0",
+  "status": "ACTIVE_FOR_TEAM_SETUP",
+  "frozen_on": "2026-08-06",
+  "workspace": "D:\\Agent\\03-SRP",
+  "platform": {
+    "id": "windows_11_x64",
+    "minimum_version": "10.0.26100",
+    "patch_policy": "record_actual_build"
+  },
+  "common_tool_ids": [
+    "powershell",
+    "git",
+    "git_lfs",
+    "openssh",
+    "python",
+    "pip",
+    "pytest",
+    "vscode",
+    "zotero"
+  ],
+  "tools": {
+    "powershell": {"version": "7.6.4", "policy": "exact"},
+    "git": {"version": "2.54.0.windows.1", "policy": "exact"},
+    "git_lfs": {"version": "3.7.1", "policy": "exact"},
+    "openssh": {"version": "9.5p2", "policy": "exact"},
+    "python": {"version": "3.14.4", "architecture": "x64", "policy": "exact"},
+    "pip": {"version": "26.1.1", "policy": "exact"},
+    "pytest": {"version": "9.0.3", "policy": "exact"},
+    "vscode": {"version": "1.131.0", "architecture": "x64", "policy": "exact"},
+    "zotero": {"version": "9.0.6", "architecture": "x64", "policy": "exact"},
+    "unity": {
+      "version": "6000.4.9f1",
+      "revision": "f7258d6eebbe",
+      "policy": "exact",
+      "path": "D:\\UnityEngine\\6000.4.9f1\\Editor\\Unity.exe"
+    },
+    "touchdesigner": {
+      "version": "2025.32820",
+      "policy": "exact",
+      "path": "D:\\TouchDesigner\\bin\\TouchDesigner.exe"
+    },
+    "unity_mcp": {
+      "version": "78ee5418415953b79c358bfe6355fcc3fde7912b",
+      "policy": "resolved_commit"
+    },
+    "touchdesigner_mcp": {
+      "version": "1.4.7",
+      "policy": "optional_not_acceptance_evidence"
+    },
+    "python_science_stack": {
+      "version": "requirements-baseline-py3.14.txt",
+      "policy": "exact_direct_dependencies"
+    },
+    "codex_desktop": {
+      "version": "26.730.8199.0",
+      "policy": "agent_operator_only"
+    },
+    "node": {"version": "24.15.0", "policy": "not_currently_required"},
+    "npm": {"version": "12.0.1", "policy": "not_currently_required"}
+  },
+  "python_direct_dependencies": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.9",
+    "neurokit2": "0.2.13",
+    "biosppy": "2.2.4",
+    "bleak": "3.0.2",
+    "peakutils": "1.3.5",
+    "pytest": "9.0.3"
+  },
+  "unity_packages": {
+    "com.unity.render-pipelines.universal": "17.4.0",
+    "com.unity.inputsystem": "1.19.0",
+    "com.unity.cinemachine": "3.1.7",
+    "com.unity.test-framework": "1.6.0",
+    "com.coplaydev.unity-mcp": "78ee5418415953b79c358bfe6355fcc3fde7912b"
+  },
+  "role_profiles": {
+    "common": {"additional_tool_ids": []},
+    "design": {"additional_tool_ids": ["unity"]},
+    "unity": {"additional_tool_ids": ["unity", "unity_mcp"]},
+    "python_data": {"additional_tool_ids": ["python_science_stack"]},
+    "experiment_td_governance": {"additional_tool_ids": ["touchdesigner"]}
+  },
+  "known_gaps": [
+    "Coordinator workstation does not currently have Zotero 9.0.6 installed.",
+    "Unity MCP manifest uses #main even though packages-lock records a resolved commit.",
+    "Python direct dependencies are pinned, but a complete transitive lock is still required before LIVE_E2E.",
+    "TouchDesigner MCP service dependencies are not installed and the helper is not acceptance evidence."
+  ]
+}
