@@ -405,3 +405,13 @@
 | Verification Command | Targeted analysis-set and gate-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | The complete-four-module set must not be mislabeled as a conventional per-protocol set because valid nonconforming cycles remain failures and only blinded technical evaluability defines inclusion. |
 | Residual Risk | The full-analysis-set imputation model, adverse-shift grid, tipping-point rule, numeric module thresholds, parallel-group power, and stage-one sample size remain unconfirmed. |
+
+### 2026-08-06 Close Internal Research And Statistical Gates
+
+| Field | Notes |
+|---|---|
+| Expected Observation | One implementation authority resolves the remaining internal research decisions without presenting external approvals or technical-pretest outputs as complete. |
+| Actual Result | Added a single-paper three-gate hierarchy, bounded multiple imputation with adverse-shift sensitivity, SCCI fitness gates, stage-one and stage-three planning anchors, a frozen interpretable stochastic policy, and technical-pretest output rules. Superseded crossover, PPS, 120-second, minus-0.10, and separate-paper semantics in active analysis documents. |
+| Verification Command | Run `08_sample_size_anchors.py`; targeted current-state and stale-conflict search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | The active lifecycle, product, QC, model, sequence, and module-map entries contained mutually incompatible historical designs. A precedence document was required before safe task dispatch. |
+| Residual Risk | Engineering interfaces and task packages still need synchronization. External approvals, device availability, PANAS rights, and Level A/B/C evidence remain open and cannot be closed by repository edits. |
