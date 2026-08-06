@@ -345,3 +345,13 @@
 | Verification Command | Targeted aggregation-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
 | Deviation / Surprise | None. |
 | Residual Risk | Handling of a non-evaluable module, analysis sets, missing-data sensitivity, module-specific tolerance, non-inferiority margin, parallel-group power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Complete Four-Module Outcome Requirement
+
+| Field | Notes |
+|---|---|
+| Expected Observation | A participant-level equal-weight Gate 1 result is never reconstructed from a different subset of modules when one module is non-evaluable. |
+| Actual Result | Confirmed that any non-evaluable module makes the participant-level four-module Gate 1 result missing. Remaining modules cannot be re-averaged as a substitute; analysis-set and sensitivity handling must be preregistered. |
+| Verification Command | Targeted completeness-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Technical non-evaluability criteria, missing-data models, analysis-set algorithms, module-specific tolerance, non-inferiority margin, power, and sample size remain unconfirmed. |
