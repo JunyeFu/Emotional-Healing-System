@@ -17,7 +17,6 @@
     "pip",
     "pytest",
     "vscode",
-    "zotero",
     "unity",
     "touchdesigner",
     "python_science_stack"
@@ -86,7 +85,7 @@
       "primary_ownership": "baseline_validation"
     },
     "design": {
-      "additional_tool_ids": [],
+      "additional_tool_ids": ["zotero"],
       "primary_ownership": "interaction_design_and_level_evidence"
     },
     "unity": {
@@ -98,12 +97,20 @@
       "primary_ownership": "data_bridge_quality_and_analysis_pipeline"
     },
     "experiment_td_governance": {
-      "additional_tool_ids": [],
+      "additional_tool_ids": ["zotero"],
       "primary_ownership": "touchdesigner_monitoring_experiment_and_governance"
     }
   },
+  "common_access_requirements": {
+    "zotero_shared_library": {
+      "minimum_access": "read",
+      "local_install_required": false,
+      "validation": "manual_open_project_collection_and_assigned_record"
+    }
+  },
   "known_gaps": [
-    "Coordinator workstation does not currently have Zotero 9.0.6 installed.",
+    "Coordinator workstation does not currently have Zotero 9.0.6 installed; this is a local gap only for design or experiment/TD/governance ownership.",
+    "Shared Zotero library access remains a manual check for every team member.",
     "Unity MCP manifest uses #main even though packages-lock records a resolved commit.",
     "Python direct dependencies are pinned, but a complete transitive lock is still required before LIVE_E2E.",
     "TouchDesigner MCP service dependencies are not installed and the helper is not acceptance evidence."

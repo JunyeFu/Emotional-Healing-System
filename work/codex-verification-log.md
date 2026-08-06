@@ -535,3 +535,13 @@
 | Verified Evidence | Authority mode passed. All five local role labels checked Unity `6000.4.9f1`, TouchDesigner `2025.32820` and all nine Python pins, and each returned only the known Zotero `9.0.6` gap. Task registry and protocol authority validators passed; three local Markdown links resolved; restricted terminology was absent from added lines; scoped regression completed with `42 passed in 2.40s`; `git diff --check` passed. |
 | Verification Command | Compile and run `validate_team_tool_baseline.py` in authority mode and for all five role labels; confirm every role reports only the known Zotero 9.0.6 gap on the coordinator machine; run task/protocol validators, Markdown-link and restricted-term checks, scoped Python regression and `git diff --check`. |
 | Residual Risk | The other three machines remain unaudited; installed tools do not replace task-specific capability evidence; Python transitive dependencies and Unity MCP source drift remain open. |
+
+### 2026-08-06 Narrow Zotero Installation Scope
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Zotero 9.0.6 is required locally only for design and paper evidence governance; Unity and Python/data roles pass without it, while shared-library access remains mandatory for everyone. |
+| Actual Result | Removed Zotero from the common executable set, assigned it to design and experiment/TD/governance role additions, added a machine-readable manual access requirement and made local validation conditional on those two roles. |
+| Verified Evidence | Authority validation passed. `common`, `unity` and `python_data` passed with the complete shared technical stack and no local Zotero requirement; `design` and `experiment_td_governance` each reported Zotero as their only local gap. Task registry and protocol authority validators passed; three local Markdown links resolved; restricted terminology was absent from added lines; scoped regression completed with `42 passed in 2.44s`. |
+| Verification Command | Run authority validation; confirm `common`, `unity` and `python_data` pass on the coordinator machine, while `design` and `experiment_td_governance` report only the known Zotero gap; run project validators, regression, link and terminology checks, and `git diff --check`. |
+| Residual Risk | Shared-library permissions cannot be validated without member accounts and must be evidenced separately; the other three machines remain unaudited. |

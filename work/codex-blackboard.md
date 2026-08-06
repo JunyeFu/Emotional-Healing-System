@@ -460,3 +460,26 @@ Apply the user's clarification that Unity, TouchDesigner and the full frozen Pyt
 ### Boundary
 
 Having the same tools installed does not prove that every member can perform every role's acceptance workflow; capability evidence remains task-specific.
+
+## 2026-08-06 Narrow Zotero Installation Scope
+
+### Goal
+
+Require local Zotero only where reference curation and paper evidence are owned, while preserving shared-library access for all four members.
+
+### Evidence And Decision
+
+- Supersedes the earlier all-machine Zotero installation requirement.
+- Design and experiment/TD/governance roles must install Zotero 9.0.6; the latter owns paper evidence governance.
+- Unity and Python/data roles may use Zotero Web Library and are not blocked by a missing local executable.
+- All four members still need a manual shared-library access check because repository validation cannot inspect private group permissions.
+
+### Next Hard Gates
+
+1. Install Zotero 9.0.6 on the design and paper-evidence-governance machines.
+2. Grant all four accounts at least read access and archive a redacted access check with each person's first task.
+3. Assign write or administrative rights only to members whose curation duties require them.
+
+### Boundary
+
+Passing the local tool validator does not establish access to the private shared library; that remains a separate human-verifiable permission gate.

@@ -33,7 +33,6 @@ EXPECTED_COMMON = {
     "pip",
     "pytest",
     "vscode",
-    "zotero",
     "unity",
     "touchdesigner",
     "python_science_stack",
@@ -44,6 +43,13 @@ EXPECTED_ROLES = {
     "unity",
     "python_data",
     "experiment_td_governance",
+}
+EXPECTED_ROLE_ADDITIONS = {
+    "common": set(),
+    "design": {"zotero"},
+    "unity": set(),
+    "python_data": set(),
+    "experiment_td_governance": {"zotero"},
 }
 
 
@@ -115,13 +121,23 @@ def validate_authority(baseline: dict[str, object]) -> list[str]:
     if set(roles) != EXPECTED_ROLES:
         errors.append(f"role profile set mismatch: {sorted(roles)}")
 
+    shared_library = baseline.get("common_access_requirements", {}).get(
+        "zotero_shared_library", {}
+    )
+    if shared_library != {
+        "minimum_access": "read",
+        "local_install_required": False,
+        "validation": "manual_open_project_collection_and_assigned_record",
+    }:
+        errors.append("Zotero shared-library access requirement mismatch")
+
     referenced_tools = set(common)
     for role, profile in roles.items():
         additions = profile.get("additional_tool_ids", [])
         if len(additions) != len(set(additions)):
             errors.append(f"{role}: duplicate additional tool")
-        if additions:
-            errors.append(f"{role}: all required tools must be common, found additions {additions}")
+        if set(additions) != EXPECTED_ROLE_ADDITIONS[role]:
+            errors.append(f"{role}: unexpected additional tools {additions}")
         if not profile.get("primary_ownership"):
             errors.append(f"{role}: primary_ownership is required")
         referenced_tools.update(additions)
@@ -212,18 +228,19 @@ def validate_local(role: str, baseline: dict[str, object]) -> tuple[list[str], d
 
     add_check(observations, errors, "pytest", package_version("pytest"), tools["pytest"]["version"])
 
-    zotero_paths = (
-        pathlib.Path(r"C:\Program Files\Zotero\zotero.exe"),
-        pathlib.Path(r"C:\Program Files (x86)\Zotero\zotero.exe"),
-    )
-    zotero_path = next((path for path in zotero_paths if path.is_file()), None)
-    add_check(
-        observations,
-        errors,
-        "zotero",
-        file_product_version(zotero_path) if zotero_path else None,
-        tools["zotero"]["version"],
-    )
+    if role in {"design", "experiment_td_governance"}:
+        zotero_paths = (
+            pathlib.Path(r"C:\Program Files\Zotero\zotero.exe"),
+            pathlib.Path(r"C:\Program Files (x86)\Zotero\zotero.exe"),
+        )
+        zotero_path = next((path for path in zotero_paths if path.is_file()), None)
+        add_check(
+            observations,
+            errors,
+            "zotero",
+            file_product_version(zotero_path) if zotero_path else None,
+            tools["zotero"]["version"],
+        )
 
     unity_path = pathlib.Path(tools["unity"]["path"])
     product = file_product_version(unity_path)
