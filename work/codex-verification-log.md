@@ -476,3 +476,13 @@
 | Verified Evidence | Task registry `PASS` with 51 entries, 48 fixed, three templates, F-01 through F-04 `READY` and W-04 terminal. Protocol firewall `PASS`. Python regression `42 passed in 3.09s`. PDF verification `PASS` at 6/8/7 pages with SHA-256 prefixes `9EBF0394`, `181ABEB`, `B17F8C11`; all 21 pages and 12,333 glyphs stayed within bounds and visual inspection found no blank, cropped or overlapping page. Restricted terms were absent from 52 changed text files at that checkpoint; 18 local links resolved across 40 changed Markdown files. |
 | Deviation / Surprise | Two earlier control drafts still carried old thresholds and active-looking status labels; both were preserved but marked `SUPERSEDED_FOR_EXECUTION`. The previous 352-hour estimate excluded setup and turnover, so the current capacity anchor is 484-616 station-hours. |
 | Residual Risk | No real-device LIVE_E2E, external display latency, Level A/B/C, Monte Carlo sample-size result, two-week throughput, formal participant data, Gate 1-3 result, external review or publication outcome exists yet. |
+
+### 2026-08-06 Complete F-02 Candidate Measurement Package
+
+| Field | Notes |
+|---|---|
+| Expected Observation | F-02 has a repository-owned candidate package satisfying AC1-AC3, unusable external references are excluded, status transitions are dependency-safe, and no Level or Gate result is overstated. |
+| Actual Result | Added the F-02 package, AC record and专项 validator; marked F-02 `DONE`; unlocked only G-01 and R-01; regenerated the task handbook; synchronized project entry points and the current board. |
+| Verified Evidence | F-02 validator `PASS` with 12 required item IDs; task validator `PASS` with 51 entries, 48 fixed, three templates, `DONE=F-02`, five READY tasks and W-04 terminal; protocol firewall `PASS`; `py_compile` passed; scoped Python regression `42 passed in 7.86s`; 18 local Markdown links resolved; restricted terminology absent from nine changed project documents. |
+| Deviation / Surprise | Unfiltered root `pytest` collected vendored TouchDesigner OpenAPI tests and stopped because their separate `connexion` dependency is absent. The established project scope passed after excluding `02-技术研发/03-TouchDesigner/mcp_td_v147`; this dependency was not installed because F-02 does not own vendored TD test infrastructure. |
+| Residual Risk | Team second-person sign-off, Level A/B evidence, equivalent condition fixtures, numeric margins, U1/U5 and Gate 2 remain open. |

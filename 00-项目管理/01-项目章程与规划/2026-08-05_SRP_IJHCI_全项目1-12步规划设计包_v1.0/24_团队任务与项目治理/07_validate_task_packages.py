@@ -12,7 +12,7 @@ ROOT = pathlib.Path(__file__).parent
 REGISTRY = ROOT / "05_可领取任务包.csv"
 RESOURCES = ROOT / "08_任务技能与国内学习资料_v1.0.md"
 HANDBOOK = ROOT / "04_可领取树型任务包_v2.0.md"
-VALID_STATUSES = {"READY", "WAIT_DEP", "WAIT_DEP_EXTERNAL", "BLOCKED_EXTERNAL"}
+VALID_STATUSES = {"READY", "DONE", "WAIT_DEP", "WAIT_DEP_EXTERNAL", "BLOCKED_EXTERNAL"}
 VALID_KINDS = {"FIXED", "TEMPLATE"}
 VALID_PROFILES = {
     "P-DESIGN",
@@ -23,7 +23,8 @@ VALID_PROFILES = {
     "P-RUN",
     "P-DELIVERY",
 }
-EXPECTED_READY = {"F-01", "F-02", "F-03", "F-04"}
+EXPECTED_READY = {"F-01", "F-03", "F-04", "G-01", "R-01"}
+EXPECTED_DONE = {"F-02"}
 EXPECTED_TEMPLATES = {"B-01", "B-02", "B-03"}
 TERMINAL_TASK = "W-04"
 WAVE_ORDER = {f"W{index}": index for index in range(7)}
@@ -94,6 +95,7 @@ def main() -> int:
 
     ids = [row["task_id"] for row in rows]
     known = set(ids)
+    rows_by_id = {row["task_id"]: row for row in rows}
     if len(rows) != 51:
         errors.append(f"expected 51 registry entries, found {len(rows)}")
     if len(ids) != len(known):
@@ -152,8 +154,22 @@ def main() -> int:
             errors.append(f"{task_id}: unknown dependencies {sorted(missing_dependencies)}")
         if task_id in dependencies:
             errors.append(f"{task_id}: self dependency")
-        if row["status"] == "READY" and dependencies:
-            errors.append(f"{task_id}: READY task has dependencies")
+        incomplete_dependencies = {
+            dependency
+            for dependency in dependencies & known
+            if rows_by_id[dependency]["status"] != "DONE"
+        }
+        if row["status"] == "READY" and incomplete_dependencies:
+            errors.append(
+                f"{task_id}: READY task has incomplete dependencies "
+                f"{sorted(incomplete_dependencies)}"
+            )
+        if row["status"] == "WAIT_DEP" and dependencies and not incomplete_dependencies:
+            errors.append(f"{task_id}: WAIT_DEP is stale because all dependencies are DONE")
+        if row["status"] == "DONE":
+            for field in ("claimant", "branch", "reviewer"):
+                if not row[field].strip():
+                    errors.append(f"{task_id}: DONE task has empty {field}")
         if row["kind"] == "TEMPLATE" and row["status"] == "READY":
             errors.append(f"{task_id}: repeatable template cannot be READY")
 
@@ -226,6 +242,9 @@ def main() -> int:
     ready = {row["task_id"] for row in rows if row["status"] == "READY"}
     if ready != EXPECTED_READY:
         errors.append(f"READY set is {sorted(ready)}, expected {sorted(EXPECTED_READY)}")
+    done = {row["task_id"] for row in rows if row["status"] == "DONE"}
+    if done != EXPECTED_DONE:
+        errors.append(f"DONE set is {sorted(done)}, expected {sorted(EXPECTED_DONE)}")
 
     if errors:
         for error in errors:
@@ -234,7 +253,8 @@ def main() -> int:
 
     print(
         "PASS: 51 registry entries; fixed=48; templates=3; "
-        f"READY={','.join(sorted(ready))}; terminal={TERMINAL_TASK}"
+        f"DONE={','.join(sorted(done))}; READY={','.join(sorted(ready))}; "
+        f"terminal={TERMINAL_TASK}"
     )
     return 0
 

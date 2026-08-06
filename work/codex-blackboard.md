@@ -333,3 +333,26 @@ Use three isolated, read-only reviewer roles to attack the same project snapshot
 ### Boundary
 
 Repository consistency is verified; research effects, strategy superiority, external review and publication acceptance remain unobserved.
+
+## 2026-08-06 Complete F-02 Candidate Measurement Package
+
+### Goal
+
+Audit the supplied Deep Research output against F-02 AC1-AC3, reconstruct any missing repository-owned artifact, and advance only dependency states justified by accessible evidence.
+
+### Evidence And Decision
+
+- The supplied `deep-research-report.md` is a summary, not the linked full package; its claimed artifact path and internal session references are not usable project evidence.
+- Rebuilt a self-contained `v0.9-candidate` package with the construct graph, four primary SCCI items, eight condition-neutral comprehension items and answer key, one mental-effort item, a measured five-minute target, Level A/B instruments, ordinal item audit, failure rules and R-01/W-01 interfaces.
+- Completed an independent AC review and added a dedicated validator. F-02 is `DONE` only at candidate-material scope; Level A/B/C, U1/U5 and Gate 2 remain open.
+- Extended the registry lifecycle to validate `DONE` and dependency-derived `READY`. F-02 completion unlocks G-01 and R-01; the current READY set is F-01, F-03, F-04, G-01 and R-01.
+
+### Next Hard Gates
+
+1. R-01 must provide information-equivalent two-condition fixtures and visual-confound evidence.
+2. Level A must complete expert content and construct-boundary review.
+3. Level B must run two-condition cognitive interviews, item-function auditing and measured questionnaire timing before the tool or margins can freeze.
+
+### Boundary
+
+No expert judgment, interview result, condition effect, noninferiority margin, Gate 2 result or publication result is claimed by this task.
