@@ -529,3 +529,24 @@ A non-implementing team member must execute the review checklist in `02-技术�
 ### Boundary
 
 Contract and fixture completion does not establish a listening TCP service, persistent L0/L1 records, Unity or TD consumers, real-device LIVE_E2E, Level evidence or any Gate result.
+
+## 2026-08-07 Remediate F-01 Independent Review Findings
+
+### Goal
+
+Close every reproducible F-01 contract finding while preserving the real-team second-review gate.
+
+### Evidence And Decision
+
+- Four isolated review rounds found and drove fixes for Schema/Python drift, EOL-sensitive hashes, missing rejection audit records, malformed enum exceptions, unexecuted Draft 2020-12 validation, source-mode provenance, stage-one probability, fallback consistency, audit ordering and arbitrary-precision integers.
+- The contract suite now executes the Schema and reference runtime against fixtures, required-field/type mutations and semantic counterexamples. A PowerShell consumer independently reads baseline and forward-compatible telemetry.
+- The final isolated model review found no P0-P2 issue after deterministic READY package regeneration and returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`.
+- F-01 remains `READY`; model review is evidence only and cannot substitute for a real non-implementing team member's signature.
+
+### Next Hard Gate
+
+A named team member must review the exact pushed commit, record commands, findings and identity in the F-01 acceptance record, then approve the governance-only transition to `DONE`.
+
+### Boundary
+
+This closes the implemented contract's model-review loop only. It does not complete P-01, P-02, Unity, TouchDesigner, real-device integration or a full-system run.

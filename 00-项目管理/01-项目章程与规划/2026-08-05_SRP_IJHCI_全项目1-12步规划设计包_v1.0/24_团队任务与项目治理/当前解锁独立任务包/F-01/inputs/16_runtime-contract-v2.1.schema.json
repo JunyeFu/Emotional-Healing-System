@@ -42,14 +42,33 @@
         },
         "unity_build_hash": {"type": "string", "minLength": 1}, "python_commit": {"type": "string", "minLength": 1},
         "td_build_hash": {"type": ["string", "null"]}, "source_policy": {"enum": ["real", "replay", "mock"]},
-        "created_utc": {"type": "string", "format": "date-time"}
+        "created_utc": {"type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"}
       },
       "allOf": [
+        {
+          "if": {"properties": {"runtime_mode": {"const": "dev_mock"}}, "required": ["runtime_mode"]},
+          "then": {"properties": {"source_policy": {"const": "mock"}}}
+        },
+        {
+          "if": {"properties": {"runtime_mode": {"const": "dev_replay"}}, "required": ["runtime_mode"]},
+          "then": {
+            "properties": {
+              "source_policy": {"const": "replay"},
+              "device_config": {
+                "properties": {
+                  "resp": {"properties": {"source": {"not": {"const": "mock"}}}},
+                  "ecg": {"properties": {"source": {"not": {"const": "mock"}}}}
+                }
+              }
+            }
+          }
+        },
         {
           "if": {"properties": {"runtime_mode": {"pattern": "^formal_"}}, "required": ["runtime_mode"]},
           "then": {
             "properties": {
               "source_policy": {"const": "real"},
+              "unity_build_hash": {"pattern": "^(?!.*[\\r\\n])(?![Uu][Nn][Kk][Nn][Oo][Ww][Nn]$|[Uu][Nn][Ss][Ee][Tt]$|[Nn][Oo][Nn][Ee]$).+"},
               "device_config": {
                 "properties": {
                   "resp": {"properties": {"source": {"const": "plux_respiban"}}},
@@ -69,22 +88,38 @@
     },
     "ack": {
       "type": "object", "required": ["schema_version", "message_type", "session_id", "event_id", "received_monotonic_ns", "applied_monotonic_ns", "unity_frame", "result", "error_code"],
-      "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "ack"}, "session_id": {"type": "string"}, "event_id": {"type": "string"}, "received_monotonic_ns": {"type": "integer", "minimum": 0}, "applied_monotonic_ns": {"type": "integer", "minimum": 0}, "unity_frame": {"type": "integer", "minimum": 0}, "result": {"enum": ["applied", "duplicate_ignored", "rejected", "failed"]}, "error_code": {"type": ["string", "null"]}},
+      "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "ack"}, "session_id": {"type": "string", "minLength": 1}, "event_id": {"type": "string", "minLength": 1}, "received_monotonic_ns": {"type": "integer", "minimum": 0}, "applied_monotonic_ns": {"type": "integer", "minimum": 0}, "unity_frame": {"type": "integer", "minimum": 0}, "result": {"enum": ["applied", "duplicate_ignored", "rejected", "failed"]}, "error_code": {"type": ["string", "null"]}},
       "additionalProperties": true
     },
     "telemetry_frame": {
       "type": "object", "required": ["schema_version", "message_type", "session_id", "frame_seq", "clock_domain_id", "source_monotonic_ns", "received_monotonic_ns", "sent_monotonic_ns", "clock_offset_ns", "clock_drift_ppm", "sync_uncertainty_ns", "module_id", "module_position", "segment", "target_phase", "target_progress", "actual_phase", "actual_progress", "actual_confidence", "recovery_value", "recovery_locked", "signal_quality", "fallback_state", "fallback_reason", "resp_device_state", "ecg_device_state", "cue_mode", "runtime_mode", "policy_decision_id"],
-      "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "telemetry_frame"}, "session_id": {"type": "string"}, "frame_seq": {"type": "integer", "minimum": 0}, "clock_domain_id": {"type": "string"}, "source_monotonic_ns": {"type": "integer", "minimum": 0}, "received_monotonic_ns": {"type": "integer", "minimum": 0}, "sent_monotonic_ns": {"type": "integer", "minimum": 0}, "clock_offset_ns": {"type": "number"}, "clock_drift_ppm": {"type": "number"}, "sync_uncertainty_ns": {"type": "number", "minimum": 0}, "module_id": {"type": "string"}, "module_position": {"type": "integer", "minimum": 0}, "segment": {"enum": ["demo", "closed_loop", "lock_transition"]}, "target_phase": {"enum": ["inhale", "hold", "exhale", "recovery", "none"]}, "target_progress": {"type": "number", "minimum": 0, "maximum": 1}, "actual_phase": {"enum": ["inhale", "hold", "exhale", "recovery", "none"]}, "actual_progress": {"type": "number", "minimum": 0, "maximum": 1}, "actual_confidence": {"type": "number", "minimum": 0, "maximum": 1}, "recovery_value": {"type": "number", "minimum": 0, "maximum": 1}, "recovery_locked": {"type": "boolean"}, "signal_quality": {"type": "object"}, "fallback_state": {"enum": ["GOOD", "DEGRADED", "UNUSABLE", "DISCONNECTED"]}, "fallback_reason": {"type": ["string", "null"]}, "resp_device_state": {"enum": ["CONNECTED", "DEGRADED", "UNUSABLE", "DISCONNECTED"]}, "ecg_device_state": {"enum": ["CONNECTED", "DEGRADED", "UNUSABLE", "DISCONNECTED"]}, "cue_mode": {"enum": ["scene_native", "abstract_pacer"]}, "runtime_mode": {"enum": ["dev_mock", "dev_replay", "formal_level_c", "formal_stage_1", "formal_stage_3"]}, "policy_decision_id": {"type": ["string", "null"]}},
+      "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "telemetry_frame"}, "session_id": {"type": "string", "minLength": 1}, "frame_seq": {"type": "integer", "minimum": 0}, "clock_domain_id": {"type": "string", "minLength": 1}, "source_monotonic_ns": {"type": "integer", "minimum": 0}, "received_monotonic_ns": {"type": "integer", "minimum": 0}, "sent_monotonic_ns": {"type": "integer", "minimum": 0}, "clock_offset_ns": {"type": "number"}, "clock_drift_ppm": {"type": "number"}, "sync_uncertainty_ns": {"type": "number", "minimum": 0}, "module_id": {"type": "string", "minLength": 1}, "module_position": {"type": "integer", "minimum": 0}, "segment": {"enum": ["demo", "closed_loop", "lock_transition"]}, "target_phase": {"enum": ["inhale", "hold", "exhale", "recovery", "none"]}, "target_progress": {"type": "number", "minimum": 0, "maximum": 1}, "actual_phase": {"enum": ["inhale", "hold", "exhale", "recovery", "none"]}, "actual_progress": {"type": "number", "minimum": 0, "maximum": 1}, "actual_confidence": {"type": "number", "minimum": 0, "maximum": 1}, "recovery_value": {"type": "number", "minimum": 0, "maximum": 1}, "recovery_locked": {"type": "boolean"}, "signal_quality": {"type": "object"}, "fallback_state": {"enum": ["GOOD", "DEGRADED", "UNUSABLE", "DISCONNECTED"]}, "fallback_reason": {"type": ["string", "null"]}, "resp_device_state": {"enum": ["CONNECTED", "DEGRADED", "UNUSABLE", "DISCONNECTED"]}, "ecg_device_state": {"enum": ["CONNECTED", "DEGRADED", "UNUSABLE", "DISCONNECTED"]}, "cue_mode": {"enum": ["scene_native", "abstract_pacer"]}, "runtime_mode": {"enum": ["dev_mock", "dev_replay", "formal_level_c", "formal_stage_1", "formal_stage_3"]}, "policy_decision_id": {"type": ["string", "null"]}},
+      "allOf": [
+        {"if": {"properties": {"fallback_state": {"const": "GOOD"}}, "required": ["fallback_state"]}, "then": {"properties": {"fallback_reason": {"type": "null"}}}},
+        {"if": {"properties": {"fallback_state": {"enum": ["DEGRADED", "UNUSABLE", "DISCONNECTED"]}}, "required": ["fallback_state"]}, "then": {"properties": {"fallback_reason": {"type": "string", "minLength": 1}}}}
+      ],
       "not": {"required": ["calm_index"]}, "additionalProperties": true
     },
     "policy_decision": {
       "type": "object", "required": ["schema_version", "message_type", "decision_id", "session_id", "stage", "position", "candidate_actions", "selected_action", "behavior_probability", "target_policy_probability", "state_snapshot_hash", "random_draw", "reason_code", "fallback_applied", "fallback_reason", "policy_version", "created_monotonic_ns"],
-      "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "policy_decision"}, "decision_id": {"type": "string"}, "session_id": {"type": "string"}, "stage": {"enum": ["stage_1", "stage_3"]}, "position": {"type": "integer", "minimum": 0}, "candidate_actions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["storm", "heat", "snow", "fade"]}}, "selected_action": {"enum": ["storm", "heat", "snow", "fade"]}, "behavior_probability": {"type": "number", "minimum": 0, "maximum": 1}, "target_policy_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1}, "state_snapshot_hash": {"type": "string"}, "random_draw": {"type": "number", "minimum": 0, "maximum": 1}, "reason_code": {"type": "string"}, "fallback_applied": {"type": "boolean"}, "fallback_reason": {"type": ["string", "null"]}, "policy_version": {"type": ["string", "null"]}, "created_monotonic_ns": {"type": "integer", "minimum": 0}},
+      "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "policy_decision"}, "decision_id": {"type": "string", "minLength": 1}, "session_id": {"type": "string", "minLength": 1}, "stage": {"enum": ["stage_1", "stage_3"]}, "position": {"type": "integer", "minimum": 0}, "candidate_actions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["storm", "heat", "snow", "fade"]}}, "selected_action": {"enum": ["storm", "heat", "snow", "fade"]}, "behavior_probability": {"type": "number", "minimum": 0, "maximum": 1}, "target_policy_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1}, "state_snapshot_hash": {"type": "string", "minLength": 1}, "random_draw": {"type": "number", "minimum": 0, "maximum": 1}, "reason_code": {"type": "string", "minLength": 1}, "fallback_applied": {"type": "boolean"}, "fallback_reason": {"type": ["string", "null"]}, "policy_version": {"type": ["string", "null"]}, "created_monotonic_ns": {"type": "integer", "minimum": 0}},
+      "allOf": [
+        {"if": {"properties": {"selected_action": {"const": "storm"}}, "required": ["selected_action"]}, "then": {"properties": {"candidate_actions": {"contains": {"const": "storm"}}}}},
+        {"if": {"properties": {"selected_action": {"const": "heat"}}, "required": ["selected_action"]}, "then": {"properties": {"candidate_actions": {"contains": {"const": "heat"}}}}},
+        {"if": {"properties": {"selected_action": {"const": "snow"}}, "required": ["selected_action"]}, "then": {"properties": {"candidate_actions": {"contains": {"const": "snow"}}}}},
+        {"if": {"properties": {"selected_action": {"const": "fade"}}, "required": ["selected_action"]}, "then": {"properties": {"candidate_actions": {"contains": {"const": "fade"}}}}},
+        {"if": {"properties": {"fallback_applied": {"const": true}}, "required": ["fallback_applied"]}, "then": {"properties": {"fallback_reason": {"type": "string", "minLength": 1}}}},
+        {"if": {"properties": {"fallback_applied": {"const": false}}, "required": ["fallback_applied"]}, "then": {"properties": {"fallback_reason": {"type": "null"}}}},
+        {"if": {"properties": {"stage": {"const": "stage_1"}, "candidate_actions": {"minItems": 1, "maxItems": 1}}, "required": ["stage", "candidate_actions"]}, "then": {"properties": {"behavior_probability": {"const": 1.0}}}},
+        {"if": {"properties": {"stage": {"const": "stage_1"}, "candidate_actions": {"minItems": 2, "maxItems": 2}}, "required": ["stage", "candidate_actions"]}, "then": {"properties": {"behavior_probability": {"const": 0.5}}}},
+        {"if": {"properties": {"stage": {"const": "stage_1"}, "candidate_actions": {"minItems": 3, "maxItems": 3}}, "required": ["stage", "candidate_actions"]}, "then": {"properties": {"behavior_probability": {"const": 0.3333333333333333}}}},
+        {"if": {"properties": {"stage": {"const": "stage_1"}, "candidate_actions": {"minItems": 4, "maxItems": 4}}, "required": ["stage", "candidate_actions"]}, "then": {"properties": {"behavior_probability": {"const": 0.25}}}}
+      ],
       "additionalProperties": true
     },
     "render_receipt": {
       "type": "object", "required": ["schema_version", "message_type", "receipt_id", "session_id", "event_id", "frame_seq", "unity_frame", "rendered_monotonic_ns", "module_id", "segment", "result", "error_code"],
-      "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "render_receipt"}, "receipt_id": {"type": "string"}, "session_id": {"type": "string"}, "event_id": {"type": "string"}, "frame_seq": {"type": "integer", "minimum": 0}, "unity_frame": {"type": "integer", "minimum": 0}, "rendered_monotonic_ns": {"type": "integer", "minimum": 0}, "module_id": {"type": "string"}, "segment": {"enum": ["demo", "closed_loop", "lock_transition"]}, "result": {"enum": ["rendered", "skipped", "failed"]}, "error_code": {"type": ["string", "null"]}},
+      "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "render_receipt"}, "receipt_id": {"type": "string", "minLength": 1}, "session_id": {"type": "string", "minLength": 1}, "event_id": {"type": "string", "minLength": 1}, "frame_seq": {"type": "integer", "minimum": 0}, "unity_frame": {"type": "integer", "minimum": 0}, "rendered_monotonic_ns": {"type": "integer", "minimum": 0}, "module_id": {"type": "string", "minLength": 1}, "segment": {"enum": ["demo", "closed_loop", "lock_transition"]}, "result": {"enum": ["rendered", "skipped", "failed"]}, "error_code": {"type": ["string", "null"]}},
       "additionalProperties": true
     }
   }

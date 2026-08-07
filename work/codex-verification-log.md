@@ -565,3 +565,13 @@
 | Verified Evidence | Dedicated validation passed with `READY packages=4; snapshots=48`; all 48 snapshot sources are Git-tracked; main registry validation passed with 51 entries and the expected READY set; two consecutive renders produced identical hashes for all 61 files; 116 local links in dispatch control documents resolved; restricted terminology was absent from the generated package tree; protocol authority validation passed; scoped regression completed with `42 passed in 3.79s`. |
 | Verification Command | Run `13_render_ready_task_packages.py`, `14_validate_ready_task_packages.py` and `07_validate_task_packages.py`; compare recursive file hashes across two renders; validate links in package README/TASK/FILES documents; run restricted-term scan, scoped project regression and `git diff --check`. |
 | Residual Risk | Snapshot-internal relative links may expect their original directories, so implementation must use the authority links in `FILES.md`; task work itself remains unstarted until a claimant records ownership. |
+
+### 2026-08-07 F-01 Independent Review Remediation
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Schema and the standard-library reference runtime have the same stateless accept/reject boundary; stateful control rejection is auditable; fixture evidence survives Git EOL handling; independent review has no unresolved P0-P2 finding. |
+| Actual Result | Fixed all findings across four isolated review rounds, added actual Draft 2020-12 and cross-boundary tests, normalized fixture hashes, added a PowerShell consumer and regenerated deterministic READY packages. Final model review returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`. |
+| Verified Evidence | Contract suite `42 passed`; scoped project regression `84 passed`; PowerShell non-Python consumer passed; fixture Git blob hashes `11/11`; READY package validator passed with 4 packages and 71 snapshots; registry, protocol authority, F-02, R-01 and W-01 validators passed; deterministic rerender passed. |
+| Deviation / Surprise | Independent review found three successive layers of counterexamples before passing: initial semantic drift and missing audit evidence, then source/probability/fallback rules, then arbitrary-precision integer overflow. The final package-only drift was removed by regenerating after the last source edit. |
+| Residual Risk | F-01 is still `READY` until a real non-implementing team member reviews and signs the exact pushed commit. No downstream runtime or full-system evidence is implied. |

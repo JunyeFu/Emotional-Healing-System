@@ -23,6 +23,7 @@
         "02-技术研发/05-通信协议/contracts/generate_fixture_hashes.py",
         "02-技术研发/05-通信协议/contracts/fixture_hashes.sha256",
         "02-技术研发/05-通信协议/contracts/port-registration-v2.1.md",
+        "02-技术研发/05-通信协议/contracts/verify_non_python_consumer.ps1",
         "02-技术研发/05-通信协议/contracts/fixtures/valid/session-manifest-formal.json",
         "02-技术研发/05-通信协议/contracts/fixtures/valid/control-event.json",
         "02-技术研发/05-通信协议/contracts/fixtures/valid/ack.json",
@@ -34,7 +35,9 @@
         "02-技术研发/05-通信协议/contracts/fixtures/invalid/session-manifest-formal-mock.json",
         "02-技术研发/05-通信协议/contracts/fixtures/invalid/control-event-wrong-version.json",
         "02-技术研发/05-通信协议/contracts/fixtures/invalid/telemetry-retired-calm-index.json",
-        "02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py"
+        "02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py",
+        "02-技术研发/05-通信协议/tests/contract/requirements.txt",
+        ".gitattributes"
       ],
       "working_paths": [
         "02-技术研发/05-通信协议",
