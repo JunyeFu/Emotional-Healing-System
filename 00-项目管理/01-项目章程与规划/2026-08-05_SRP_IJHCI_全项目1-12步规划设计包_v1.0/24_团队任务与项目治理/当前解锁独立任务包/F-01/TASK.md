@@ -4,9 +4,9 @@
 
 ## 领取登记
 
-- 领取人：
-- 分支：`codex/<task-id>-<short-name>`
-- 第二复核人：
+- 领取人：Codex
+- 分支：`codex/f-01-runtime-contract`
+- 第二复核人：PENDING_SECOND_PERSON
 - 领取时间：
 
 ## 任务边界

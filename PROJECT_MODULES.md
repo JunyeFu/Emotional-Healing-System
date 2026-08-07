@@ -64,11 +64,11 @@ finish(reason) -> SessionSummary
 
 ### M05 Runtime Contract
 
-- 可靠控制通道传 `ControlEvent` 与ACK；
+- TCP 5010可靠控制通道传 `ControlEvent`、ACK、渲染回执和TD请求；
 - UDP 5005/5006分别向TD和Unity发送20Hz自包含 `TelemetryFrame`；
 - 所有消息包含schema版本、会话、序号和单调时间；
-- 物理TCP端口在实现前先登记到 `D:\Agent\全局端口注册表.md`；
-- 完整字段见规划包 `21_真实设备与在线运行系统/06_目标运行接口_v2.md`。
+- TCP 5010、UDP 5005和UDP 5006已登记到 `D:\Agent\全局端口注册表.md`；
+- 机器可读合同见 `02-技术研发/05-通信协议/contracts/runtime-contract-v2.1.schema.json`，完整语义见规划包 `21_真实设备与在线运行系统/06_目标运行接口_v2.md`。
 
 ### M06 SceneAdapter
 

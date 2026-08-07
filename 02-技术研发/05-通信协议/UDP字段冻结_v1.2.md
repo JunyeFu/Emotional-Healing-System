@@ -1,5 +1,7 @@
 # UDP 字段冻结表 v1.2
 
+> 状态：`LEGACY_DEV_ONLY`。正式运行权威已迁移到[SRP运行合同v2.1](contracts/README.md)；本文件仅用于旧开发演示和历史数据解释。
+
 > 目的：作为 Python、TouchDesigner、Unity、CSV 的唯一字段契约。
 
 ## 原则

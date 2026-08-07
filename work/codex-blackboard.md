@@ -507,3 +507,25 @@ Give every currently unlocked task its own dispatch directory containing a compl
 ### Boundary
 
 Package generation does not claim that F-01, F-03, F-04 or G-01 has started or completed. Relative links inside copied source snapshots may still assume the original source directory; `FILES.md` links back to those authority files.
+
+## 2026-08-07 Implement F-01 Runtime Contract Technical Closure
+
+### Goal
+
+Complete the F-01 technical scope across the project architecture without implementing downstream session, storage, Unity or TouchDesigner tasks, and preserve the mandatory second-person review boundary.
+
+### Evidence And Decision
+
+- Added the v2.1 Python contract validator, Draft 2020-12 combined Schema, six message families, 11 hashed fixtures, migration guide and AC record.
+- Formal manifests require PLUX respiBAN and Polar H10 sources, a known Unity build and no Mock input. Missing fields, wrong versions, retired fields, duplicate controls and stale sequences fail closed; unknown compatible fields are filtered out.
+- Reserved TCP 5010 for reliable control, ACK, render receipts and TD requests after confirming no active listener. UDP 5005/5006 retain read-only TD and Unity telemetry roles.
+- Preserved v1.2 UDP and CSV code as `LEGACY_DEV_ONLY`; no real-device, session-core, Unity or TD runtime claim was made.
+- F-01 remains `READY` with claimant and branch recorded because second-person review is still pending. P-01, P-02, G-02, U-01 and T-01 remain dependency-blocked.
+
+### Next Hard Gate
+
+A non-implementing team member must execute the review checklist in `02-技术研发/05-通信协议/F-01_技术验收记录.md`, record findings and sign the interface before F-01 may become `DONE` and unlock downstream tasks.
+
+### Boundary
+
+Contract and fixture completion does not establish a listening TCP service, persistent L0/L1 records, Unity or TD consumers, real-device LIVE_E2E, Level evidence or any Gate result.

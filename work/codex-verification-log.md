@@ -546,6 +546,16 @@
 | Verification Command | Run authority validation; confirm `common`, `unity` and `python_data` pass on the coordinator machine, while `design` and `experiment_td_governance` report only the known Zotero gap; run project validators, regression, link and terminology checks, and `git diff --check`. |
 | Residual Risk | Shared-library permissions cannot be validated without member accounts and must be evidenced separately; the other three machines remain unaudited. |
 
+### 2026-08-07 F-01 Runtime Contract Technical Closure
+
+| Field | Notes |
+|---|---|
+| Expected Observation | v2.1 legal fixtures pass; missing fields, wrong versions, formal Mock and duplicate controls fail closed; unknown compatible fields are ignored; existing Python behavior remains green; task package hashes remain deterministic. |
+| Actual Result | Added strict runtime validation, combined JSON Schema, 11 fixtures and hashes, migration and port evidence. Registered TCP 5010 after a `NO_LISTENER` precheck. Kept v1.2 as a development-only compatibility path. |
+| Verified Evidence | Contract suite `16 passed`; scoped project regression `58 passed`; READY package validator passed with 4 packages and 68 snapshots; registry validator passed with 51 entries; protocol authority v1.1 validator passed; F-02/R-01/W-01 validators remained green; `py_compile` and `git diff --check` passed. |
+| Deviation / Surprise | Initial contract test collection lacked the established `02-技术研发` import path and was fixed. The first protocol validator command used an obsolete filename; discovery found `validate_protocol_authority_v1_1.py`. The READY validator correctly rejected new outputs until they were explicitly staged as tracked files. |
+| Residual Risk | Mandatory second-person interface review is open, so F-01 is not `DONE` and downstream tasks remain blocked. TCP 5010 is reserved but no service or LIVE_E2E exists. |
+
 ### 2026-08-06 Generate Individually Dispatchable READY Task Packages
 
 | Field | Notes |
