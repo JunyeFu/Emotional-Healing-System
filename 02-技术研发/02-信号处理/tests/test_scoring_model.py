@@ -68,6 +68,19 @@ class TestScoringModel:
         assert sl[0][0] == "Breath Sync"
         assert sl[-1][0] == "EDA Calm"
 
+    def test_weather_trend_compares_with_previous_frame(self):
+        model = sm.ScoringModel()
+        improving = model.score(PF(
+            rr=10.0, respiration_amplitude=0.5,
+            rmssd=70.0, eda_tonic=8.0,
+        ))
+        worsening = model.score(PF(
+            rr=30.0, respiration_amplitude=0.01,
+            rmssd=1.0, eda_tonic=12.0,
+        ))
+        assert improving.weather_trend == "weakening"
+        assert worsening.weather_trend == "intensifying"
+
 
 class TestPerWeatherScoring:
     def test_all_weathers_have_scoring_presets(self):

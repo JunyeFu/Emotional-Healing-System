@@ -1,21 +1,4 @@
-# SRP SE — Python 依赖清单
-# 安装: pip install --proxy http://172.24.48.1:7897 -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
-
-# 核心信号处理
-neurokit2>=0.2.10
-biosppy>=2.1.0
-scipy>=1.11
-numpy>=1.26
-
-# BLE 设备通信 (阶段3: 真实设备)
-bleak>=0.21
-
-# 数据分析
-pandas>=2.0
-matplotlib>=3.8
-
-# 测试
-pytest>=8.0
-
-# biosppy 隐式依赖
-peakutils>=1.3
+# SRP CPython 3.14 direct runtime/test baseline.
+# Install from an approved index: py -3.14 -m pip install -r requirements.txt
+# A hash-locked transitive environment is still required before LIVE_E2E.
+-r requirements-baseline-py3.14.txt

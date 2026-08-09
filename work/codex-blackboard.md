@@ -550,3 +550,27 @@ A named team member must review the exact pushed commit, record commands, findin
 ### Boundary
 
 This closes the implemented contract's model-review loop only. It does not complete P-01, P-02, Unity, TouchDesigner, real-device integration or a full-system run.
+
+## 2026-08-08 Project-Wide Defect Remediation
+
+### Goal
+
+Land repository-safe fixes from the independent audit without fabricating Unity completion, external approval, participant evidence or LIVE_E2E.
+
+### Implemented
+
+- Preserved timestamped native-rate ECG batches through the 10 Hz coordination frame; removed averaged-ECG interpolation and neutral missing-channel defaults.
+- Made invalid/warmup windows non-emitting; corrected trend state order, mock latency, fatal error propagation, CSV schema drift and asynchronous device shutdown.
+- Added runtime-contract cross-field invariants and negative tests; root pytest now excludes the TD vendor environment and passes as one canonical entry.
+- Added a Unity formal-build preprocessor gate. Its current expected result is `FORMAL_SCENES_MISSING`; this prevents the legacy SampleScene/v1.2 prototype from being published as formal v2.1.
+- Disabled TD mutation controls by default unless `SRP_TD_DEV_CONTROL=1` is explicitly set for development.
+- Moved F-01 to `IN_REVIEW`, distinguished review packages from claimable READY tasks, added current v1.1 authority to every dispatch package and regenerated 74 snapshots.
+- Marked all 20 legacy participant-material Markdown files as superseded/non-distributable; isolated the historical novelty and reference entries; replaced non-authorized acquisition links and added a fail-closed provenance validator.
+- Built a Git-index-only review snapshot. Its first clean checkout exposed line-ending-sensitive hashes for `.sha256`, `.ps1` and numbered `.gitattributes` inputs; the shared canonicalization policy and regression test now cover them, and the rerun passed 100 tests plus strict package validation.
+
+### Open Hard Gates
+
+- F-01 still requires a named non-implementing team member; F-03, F-04 and G-01 remain READY.
+- Unity lacks formal scenes/controller and tests; real device adapters and LIVE_E2E remain absent.
+- Reference provenance validation intentionally remains red until the inventory is rebuilt with identity, hash, source, access basis and asset-role fields.
+- External approvals, scale permission, Level A/B/C, Monte Carlo, throughput rehearsal, preregistration and locked analysis cannot be closed by repository edits.

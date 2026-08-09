@@ -224,7 +224,14 @@ def _validate_manifest(payload: Mapping[str, Any]) -> None:
     for device in ("resp", "ecg"):
         _require_type(payload["device_config"], device, Mapping)
         _require_keys(payload["device_config"][device], ("source",))
+        _reject_unknown_keys(
+            payload["device_config"][device], {"source", "serial"},
+            f"device_config.{device}",
+        )
         _require_enum(payload["device_config"][device], "source", DEVICE_SOURCES[device])
+        if "serial" in payload["device_config"][device]:
+            _require_nonempty_string(payload["device_config"][device], "serial")
+    _reject_unknown_keys(payload["device_config"], {"resp", "ecg"}, "device_config")
     if payload["runtime_mode"] == "dev_mock" and payload["source_policy"] != "mock":
         _fail("MODE_SOURCE_POLICY_MISMATCH", "dev_mock requires mock")
     if payload["runtime_mode"] == "dev_replay":
@@ -233,6 +240,13 @@ def _validate_manifest(payload: Mapping[str, Any]) -> None:
         if any(payload["device_config"][device]["source"] == "mock" for device in ("resp", "ecg")):
             _fail("REPLAY_MOCK_FORBIDDEN", "device_config")
     if payload["runtime_mode"].startswith("formal_"):
+        expected_mode = {
+            "level_c": "formal_level_c",
+            "stage_1": "formal_stage_1",
+            "stage_3": "formal_stage_3",
+        }[payload["study_stage"]]
+        if payload["runtime_mode"] != expected_mode:
+            _fail("STAGE_MODE_MISMATCH", f"{payload['study_stage']}:{payload['runtime_mode']}")
         if payload["source_policy"] != "real":
             _fail("FORMAL_MOCK_FORBIDDEN", "source_policy/device_config")
         expected_sources = {"resp": "plux_respiban", "ecg": "polar_h10"}
@@ -251,6 +265,10 @@ def _validate_control(payload: Mapping[str, Any]) -> None:
         _require_integer(payload, key)
     _require_enum(payload, "event_type", CONTROL_EVENTS)
     _require_type(payload, "payload", Mapping)
+    if payload["effective_monotonic_ns"] < payload["issued_monotonic_ns"]:
+        _fail("INVALID_TIME_ORDER", "control effective before issued")
+    if payload["event_type"] in {"segment", "module"} and not payload["payload"]:
+        _fail("EMPTY_CONTROL_PAYLOAD", payload["event_type"])
 
 
 def _validate_ack(payload: Mapping[str, Any]) -> None:
@@ -262,6 +280,12 @@ def _validate_ack(payload: Mapping[str, Any]) -> None:
     _require_enum(payload, "result", ACK_RESULTS)
     if payload["error_code"] is not None and not isinstance(payload["error_code"], str):
         _fail("INVALID_TYPE", "error_code")
+    if payload["applied_monotonic_ns"] < payload["received_monotonic_ns"]:
+        _fail("INVALID_TIME_ORDER", "ack applied before received")
+    if payload["result"] == "applied" and payload["error_code"] is not None:
+        _fail("INCONSISTENT_ACK", "applied requires null error_code")
+    if payload["result"] != "applied" and not payload["error_code"]:
+        _fail("INCONSISTENT_ACK", "non-applied requires error_code")
 
 
 def _validate_telemetry(payload: Mapping[str, Any]) -> None:
@@ -293,6 +317,12 @@ def _validate_telemetry(payload: Mapping[str, Any]) -> None:
     _require_type(payload, "signal_quality", Mapping)
     _require_nullable_string(payload, "fallback_reason")
     _require_nullable_string(payload, "policy_decision_id")
+    if not (
+        payload["source_monotonic_ns"]
+        <= payload["received_monotonic_ns"]
+        <= payload["sent_monotonic_ns"]
+    ):
+        _fail("INVALID_TIME_ORDER", "telemetry source/received/sent")
     if payload["fallback_state"] == "GOOD" and payload["fallback_reason"] is not None:
         _fail("INCONSISTENT_FALLBACK", "GOOD requires null fallback_reason")
     if payload["fallback_state"] != "GOOD" and not payload["fallback_reason"]:

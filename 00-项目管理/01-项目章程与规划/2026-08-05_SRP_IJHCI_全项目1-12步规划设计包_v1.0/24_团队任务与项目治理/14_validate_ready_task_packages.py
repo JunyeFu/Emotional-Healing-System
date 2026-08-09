@@ -1,7 +1,8 @@
-"""Validate READY package coverage, snapshots, hashes and task content."""
+"""Validate READY/IN_REVIEW package coverage, snapshots and hashes."""
 
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
 import json
@@ -15,12 +16,16 @@ PROJECT_ROOT = ROOT.parents[3]
 REGISTRY = ROOT / "05_可领取任务包.csv"
 MAPPING = ROOT / "12_独立任务包文件映射_v1.0.json"
 OUTPUT = ROOT / "当前解锁独立任务包"
-TEXT_SUFFIXES = {".cs", ".csv", ".json", ".md", ".py", ".txt"}
+TEXT_SUFFIXES = {
+    ".cs", ".csv", ".gitattributes", ".json", ".md", ".ps1", ".py", ".sha256", ".txt"
+}
+TEXT_NAMES = {".gitattributes"}
+PACKAGE_STATUSES = {"READY", "IN_REVIEW"}
 
 
 def canonical_content(path: pathlib.Path) -> bytes:
     content = path.read_bytes()
-    if path.suffix.lower() in TEXT_SUFFIXES:
+    if path.suffix.lower() in TEXT_SUFFIXES or path.name.lower() in TEXT_NAMES:
         content = content.replace(b"\r\n", b"\n")
         content = b"\n".join(line.rstrip(b" \t") for line in content.split(b"\n"))
     return content
@@ -31,28 +36,36 @@ def sha256(path: pathlib.Path) -> str:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--require-index", action="store_true",
+        help="also require every generated package file to be present in the Git index",
+    )
+    args = parser.parse_args()
     errors: list[str] = []
     with REGISTRY.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    ready = {row["task_id"]: row for row in rows if row["status"] == "READY"}
+    package_rows = {
+        row["task_id"]: row for row in rows if row["status"] in PACKAGE_STATUSES
+    }
     mapping = json.loads(MAPPING.read_text(encoding="utf-8-sig"))
     mapped = mapping.get("tasks", {})
 
-    if set(ready) != set(mapped):
-        errors.append(f"READY {sorted(ready)} != mapped {sorted(mapped)}")
+    if set(package_rows) != set(mapped):
+        errors.append(f"dispatch {sorted(package_rows)} != mapped {sorted(mapped)}")
     if not OUTPUT.is_dir():
         errors.append("output directory is missing")
         packaged: set[str] = set()
     else:
         packaged = {path.name for path in OUTPUT.iterdir() if path.is_dir()}
-    if packaged != set(ready):
-        errors.append(f"READY {sorted(ready)} != packaged {sorted(packaged)}")
+    if packaged != set(package_rows):
+        errors.append(f"dispatch {sorted(package_rows)} != packaged {sorted(packaged)}")
     if not (OUTPUT / "README.md").is_file():
         errors.append("output README.md is missing")
 
     registry_hash = sha256(REGISTRY)
     total_snapshots = 0
-    for task_id, row in ready.items():
+    for task_id, row in package_rows.items():
         package_dir = OUTPUT / task_id
         task_file = package_dir / "TASK.md"
         files_file = package_dir / "FILES.md"
@@ -80,7 +93,7 @@ def main() -> int:
                 errors.append(f"{task_id}: missing acceptance criterion {criterion!r}")
 
         manifest = json.loads(manifest_file.read_text(encoding="utf-8-sig"))
-        if manifest.get("task_id") != task_id or manifest.get("status") != "READY":
+        if manifest.get("task_id") != task_id or manifest.get("status") != row["status"]:
             errors.append(f"{task_id}: invalid manifest identity")
         if manifest.get("hash_policy") != "sha256_lf_no_trailing_ws_text_v1":
             errors.append(f"{task_id}: invalid hash policy")
@@ -90,6 +103,33 @@ def main() -> int:
         actual_sources = [item["source_path"] for item in manifest.get("source_files", [])]
         if actual_sources != expected_sources:
             errors.append(f"{task_id}: source list does not match mapping")
+
+        expected_package_files = {
+            "TASK.md", "FILES.md", "package_manifest.json",
+            *(item["package_path"] for item in manifest.get("source_files", [])),
+        }
+        physical_package_files = {
+            path.relative_to(package_dir).as_posix()
+            for path in package_dir.rglob("*")
+            if path.is_file()
+        }
+        if physical_package_files != expected_package_files:
+            errors.append(
+                f"{task_id}: physical package files differ from manifest "
+                f"extra={sorted(physical_package_files - expected_package_files)} "
+                f"missing={sorted(expected_package_files - physical_package_files)}"
+            )
+        if args.require_index:
+            for relative in sorted(physical_package_files):
+                project_relative = (package_dir / relative).relative_to(PROJECT_ROOT).as_posix()
+                tracked = subprocess.run(
+                    ["git", "ls-files", "--error-unmatch", "--", project_relative],
+                    cwd=PROJECT_ROOT,
+                    capture_output=True,
+                    check=False,
+                )
+                if tracked.returncode != 0:
+                    errors.append(f"{task_id}: package file is not in Git index {relative}")
 
         for item in manifest.get("source_files", []):
             source = (PROJECT_ROOT / item["source_path"]).resolve()
@@ -136,8 +176,8 @@ def main() -> int:
             print(f"ERROR: {error}")
         return 1
     print(
-        f"PASS: READY packages={len(ready)}; snapshots={total_snapshots}; "
-        f"tasks={','.join(sorted(ready))}"
+        f"PASS: dispatch packages={len(package_rows)}; snapshots={total_snapshots}; "
+        f"tasks={','.join(sorted(package_rows))}"
     )
     return 0
 

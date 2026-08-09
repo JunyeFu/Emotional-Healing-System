@@ -8,10 +8,19 @@ OSC In DAT Callbacks — 接收外部 OSC 命令操控 TD
     /td/par/set <path> <par> <val> → 设参数
 """
 
+import os
+
+
+DEVELOPMENT_CONTROL_ENABLED = os.getenv('SRP_TD_DEV_CONTROL', '') == '1'
+
 def onReceiveOSC(dat, rowIndex, message, byteData, timeStamp, address, args, peer):
     if address == '/td/ping':
         _send_osc('/td/pong', [project.name, int(absTime.frame)])
         debug('[OSC] ping -> pong')
+
+    elif not DEVELOPMENT_CONTROL_ENABLED:
+        _send_osc('/td/error', ['DEVELOPMENT_CONTROL_DISABLED'])
+        debug(f'[OSC] blocked development control in formal mode: {address}')
 
     elif address == '/td/exec':
         if args:
@@ -50,7 +59,7 @@ def onReceiveOSC(dat, rowIndex, message, byteData, timeStamp, address, args, pee
                     r.append(node)
                 return r
             result = {'project': project.name, 'path': path, 'tree': tree(tgt)}
-            out = 'C:/Users/fujunye/Desktop/Hermes/03-SRP/02-技术研发/03-TouchDesigner/_td_inspect.json'
+            out = project.folder + '/_td_inspect.json'
             with open(out, 'w', encoding='utf-8') as f:
                 json.dump(result, f, ensure_ascii=False, indent=2)
             _send_osc('/td/ok', [f'inspect written to {out}'])

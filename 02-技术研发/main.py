@@ -233,7 +233,15 @@ def run_pipeline(args: argparse.Namespace):
                 raw_frame.eda_raw,
                 raw_frame.acc_magnitude,
                 raw_frame.temp_skin,
+                ecg_samples=getattr(raw_frame, "ecg_samples", None),
             )
+
+            # Warmup, missing channels, and invalid signal windows are not
+            # business values. Do not emit neutral-looking telemetry or CSV.
+            if processed is None:
+                if not args.real:
+                    time.sleep(0.1)
+                continue
 
             score = scorer.score(
                 processed,
@@ -246,7 +254,10 @@ def run_pipeline(args: argparse.Namespace):
             score_dict = score.to_dict()
 
             # Build UDP meta for v1.2 (device status, signal quality)
-            pipeline_latency = (time.time() - raw_frame.timestamp) * 1000
+            # Mock timestamps are logical replay time, not Unix wall time.
+            pipeline_latency = (
+                (time.time() - raw_frame.timestamp) * 1000 if args.real else 0.0
+            )
             if device_manager:
                 udp_meta = {
                     "frame_id": frame_idx,
@@ -290,6 +301,7 @@ def run_pipeline(args: argparse.Namespace):
         logger.info("Interrupted by user")
     except Exception as e:
         logger.error(f"Pipeline error: {e}", exc_info=True)
+        raise
     finally:
         if device_manager:
             device_manager.stop()

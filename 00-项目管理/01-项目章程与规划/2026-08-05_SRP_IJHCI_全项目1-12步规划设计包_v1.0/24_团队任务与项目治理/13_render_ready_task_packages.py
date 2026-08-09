@@ -1,4 +1,4 @@
-"""Render one standalone dispatch package for every READY task."""
+"""Render standalone packages for READY and IN_REVIEW tasks."""
 
 from __future__ import annotations
 
@@ -16,12 +16,16 @@ REGISTRY = ROOT / "05_可领取任务包.csv"
 MAPPING = ROOT / "12_独立任务包文件映射_v1.0.json"
 HANDBOOK_RENDERER = ROOT / "10_render_task_handbook.py"
 OUTPUT = ROOT / "当前解锁独立任务包"
-TEXT_SUFFIXES = {".cs", ".csv", ".json", ".md", ".py", ".txt"}
+TEXT_SUFFIXES = {
+    ".cs", ".csv", ".gitattributes", ".json", ".md", ".ps1", ".py", ".sha256", ".txt"
+}
+TEXT_NAMES = {".gitattributes"}
+PACKAGE_STATUSES = {"READY", "IN_REVIEW"}
 
 
 def canonical_content(path: pathlib.Path) -> bytes:
     content = path.read_bytes()
-    if path.suffix.lower() in TEXT_SUFFIXES:
+    if path.suffix.lower() in TEXT_SUFFIXES or path.name.lower() in TEXT_NAMES:
         content = content.replace(b"\r\n", b"\n")
         content = b"\n".join(line.rstrip(b" \t") for line in content.split(b"\n"))
     return content
@@ -70,7 +74,7 @@ def task_markdown(
         f"- 领取人：{row['claimant'] or '未领取'}",
         f"- 分支：`{row['branch'] or 'codex/<task-id>-<short-name>'}`",
         f"- 第二复核人：{row['reviewer'] or '未指定'}",
-        "- 领取时间：",
+        f"- 领取时间：{'历史登记未记录；当前不得重复领取' if row['claimant'] else '未领取'}",
         "",
         "## 任务边界",
         "",
@@ -166,12 +170,14 @@ def files_markdown(
 def main() -> None:
     with REGISTRY.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    ready_rows = {row["task_id"]: row for row in rows if row["status"] == "READY"}
+    package_rows = {
+        row["task_id"]: row for row in rows if row["status"] in PACKAGE_STATUSES
+    }
     mapping = json.loads(MAPPING.read_text(encoding="utf-8-sig"))
     task_maps = mapping["tasks"]
-    if set(ready_rows) != set(task_maps):
+    if set(package_rows) != set(task_maps):
         raise ValueError(
-            f"READY set {sorted(ready_rows)} does not match mapping {sorted(task_maps)}"
+            f"dispatch set {sorted(package_rows)} does not match mapping {sorted(task_maps)}"
         )
 
     renderer = runpy.run_path(str(HANDBOOK_RENDERER))
@@ -185,8 +191,8 @@ def main() -> None:
 
     registry_hash = sha256(REGISTRY)
     summary_rows = []
-    for task_id in sorted(ready_rows):
-        row = ready_rows[task_id]
+    for task_id in sorted(package_rows):
+        row = package_rows[task_id]
         task_map = task_maps[task_id]
         package_dir = build / task_id
         inputs_dir = package_dir / "inputs"
@@ -223,7 +229,7 @@ def main() -> None:
             "package_schema_version": "1.0",
             "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
             "task_id": task_id,
-            "status": "READY",
+            "status": row["status"],
             "registry_sha256": registry_hash,
             "source_files": copied,
             "working_paths": task_map["working_paths"],
@@ -232,17 +238,17 @@ def main() -> None:
             json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
         summary_rows.append(
-            f"| {task_id} | {row['title']} | {row['effort_person_days']}人日 | [{task_id}/TASK.md]({task_id}/TASK.md) |"
+            f"| {task_id} | {row['status']} | {row['title']} | {row['effort_person_days']}人日 | [{task_id}/TASK.md]({task_id}/TASK.md) |"
         )
 
     readme = [
         "# 当前解锁独立任务包",
         "",
-        "> 本目录由`13_render_ready_task_packages.py`确定性生成，只包含任务注册表中当前状态为`READY`的任务。",
+        "> 本目录由`13_render_ready_task_packages.py`确定性生成，包含可领取的`READY`任务和等待复核的`IN_REVIEW`任务。只有`READY`且领取人为空的任务可以领取。",
         "> 每个包均含任务说明、涉及文件清单、输入快照和哈希清单；状态变化后必须重新生成并校验。",
         "",
-        "| 任务 | 名称 | 工作量 | 领取入口 |",
-        "|---|---|---:|---|",
+        "| 任务 | 状态 | 名称 | 工作量 | 入口 |",
+        "|---|---|---|---:|---|",
         *summary_rows,
         "",
     ]
@@ -253,7 +259,7 @@ def main() -> None:
             raise ValueError(f"refusing to replace unexpected output: {OUTPUT}")
         shutil.rmtree(OUTPUT)
     build.rename(OUTPUT)
-    print(f"WROTE: {OUTPUT.name}; READY={','.join(sorted(ready_rows))}")
+    print(f"WROTE: {OUTPUT.name}; DISPATCH={','.join(sorted(package_rows))}")
 
 
 if __name__ == "__main__":

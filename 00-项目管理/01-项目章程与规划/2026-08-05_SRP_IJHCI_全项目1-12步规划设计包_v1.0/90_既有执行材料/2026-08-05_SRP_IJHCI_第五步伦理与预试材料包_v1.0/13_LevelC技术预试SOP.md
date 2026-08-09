@@ -1,5 +1,9 @@
 # Level C 真实设备技术预试SOP
 
+> **SUPERSEDED / NOT_FOR_RECRUITMENT / NOT_FOR_SUBMISSION**
+> 本v1.0材料仅作迁移与审计证据；它仍含旧流程和待关闭字段。必须完成G-01、双人逐字段复核及外部门禁后，才能使用新的v1.1材料。
+
+
 ## 一、目的
 
 Level C使用24名新参与者完成正式双访视流程，用于验证：

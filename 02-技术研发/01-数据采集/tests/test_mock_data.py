@@ -37,6 +37,12 @@ class TestGenerateFrames:
         cfg = mock.MockConfig(frame_rate=10.0)
         frames = mock.generate_frame_list(duration=2.0, cfg=cfg)
         assert len(frames) == 20
+        assert all(len(frame.ecg_samples) == 13 for frame in frames)
+        native_timestamps = [ts for frame in frames for ts, _ in frame.ecg_samples]
+        assert all(
+            later > earlier
+            for earlier, later in zip(native_timestamps, native_timestamps[1:])
+        )
 
     def test_breath_phases_present(self):
         frames = mock.generate_frame_list(duration=12.0)

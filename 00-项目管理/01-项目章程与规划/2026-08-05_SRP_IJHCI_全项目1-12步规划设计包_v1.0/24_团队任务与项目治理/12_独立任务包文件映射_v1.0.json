@@ -37,7 +37,8 @@
         "02-技术研发/05-通信协议/contracts/fixtures/invalid/telemetry-retired-calm-index.json",
         "02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py",
         "02-技术研发/05-通信协议/tests/contract/requirements.txt",
-        ".gitattributes"
+        ".gitattributes",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md"
       ],
       "working_paths": [
         "02-技术研发/05-通信协议",
@@ -60,7 +61,8 @@
         "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
         "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/UDPReceiver.cs",
         "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/WeatherController.cs",
-        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/WeatherDirector.cs"
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/WeatherDirector.cs",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md"
       ],
       "working_paths": [
         "02-技术研发/04-Unity视觉/SRP-Weather-Visual"
@@ -76,7 +78,8 @@
         "02-技术研发/03-TouchDesigner/TD原型规划.md",
         "02-技术研发/03-TouchDesigner/udp_bridge.py",
         "02-技术研发/03-TouchDesigner/osc_bridge/README.md",
-        "02-技术研发/03-TouchDesigner/呼吸引导.toe"
+        "02-技术研发/03-TouchDesigner/呼吸引导.toe",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md"
       ],
       "working_paths": [
         "02-技术研发/03-TouchDesigner"

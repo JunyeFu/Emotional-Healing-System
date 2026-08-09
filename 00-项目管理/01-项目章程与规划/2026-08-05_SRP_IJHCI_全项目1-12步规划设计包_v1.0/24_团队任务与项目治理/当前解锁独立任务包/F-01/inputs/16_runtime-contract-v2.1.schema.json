@@ -35,10 +35,10 @@
         "device_config": {
           "type": "object", "required": ["resp", "ecg"],
           "properties": {
-            "resp": {"type": "object", "required": ["source"], "properties": {"source": {"enum": ["plux_respiban", "mock", "none"]}}, "additionalProperties": true},
-            "ecg": {"type": "object", "required": ["source"], "properties": {"source": {"enum": ["polar_h10", "mock", "none"]}}, "additionalProperties": true}
+            "resp": {"type": "object", "required": ["source"], "properties": {"source": {"enum": ["plux_respiban", "mock", "none"]}, "serial": {"type": "string", "minLength": 1}}, "additionalProperties": false},
+            "ecg": {"type": "object", "required": ["source"], "properties": {"source": {"enum": ["polar_h10", "mock", "none"]}, "serial": {"type": "string", "minLength": 1}}, "additionalProperties": false}
           },
-          "additionalProperties": true
+          "additionalProperties": false
         },
         "unity_build_hash": {"type": "string", "minLength": 1}, "python_commit": {"type": "string", "minLength": 1},
         "td_build_hash": {"type": ["string", "null"]}, "source_policy": {"enum": ["real", "replay", "mock"]},
@@ -77,6 +77,18 @@
               }
             }
           }
+        },
+        {
+          "if": {"properties": {"runtime_mode": {"const": "formal_level_c"}}, "required": ["runtime_mode"]},
+          "then": {"properties": {"study_stage": {"const": "level_c"}}}
+        },
+        {
+          "if": {"properties": {"runtime_mode": {"const": "formal_stage_1"}}, "required": ["runtime_mode"]},
+          "then": {"properties": {"study_stage": {"const": "stage_1"}}}
+        },
+        {
+          "if": {"properties": {"runtime_mode": {"const": "formal_stage_3"}}, "required": ["runtime_mode"]},
+          "then": {"properties": {"study_stage": {"const": "stage_3"}}}
         }
       ],
       "additionalProperties": true
@@ -84,11 +96,18 @@
     "control_event": {
       "type": "object", "required": ["schema_version", "message_type", "session_id", "event_id", "control_seq", "event_type", "issued_monotonic_ns", "effective_monotonic_ns", "clock_domain_id", "payload"],
       "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "control_event"}, "session_id": {"type": "string", "minLength": 1}, "event_id": {"type": "string", "minLength": 1}, "control_seq": {"type": "integer", "minimum": 0}, "event_type": {"enum": ["prepare", "start", "pause", "abort", "segment", "module", "end"]}, "issued_monotonic_ns": {"type": "integer", "minimum": 0}, "effective_monotonic_ns": {"type": "integer", "minimum": 0}, "clock_domain_id": {"type": "string", "minLength": 1}, "payload": {"type": "object"}},
+      "allOf": [
+        {"if": {"properties": {"event_type": {"enum": ["segment", "module"]}}, "required": ["event_type"]}, "then": {"properties": {"payload": {"minProperties": 1}}}}
+      ],
       "additionalProperties": true
     },
     "ack": {
       "type": "object", "required": ["schema_version", "message_type", "session_id", "event_id", "received_monotonic_ns", "applied_monotonic_ns", "unity_frame", "result", "error_code"],
       "properties": {"schema_version": {"const": "2.1"}, "message_type": {"const": "ack"}, "session_id": {"type": "string", "minLength": 1}, "event_id": {"type": "string", "minLength": 1}, "received_monotonic_ns": {"type": "integer", "minimum": 0}, "applied_monotonic_ns": {"type": "integer", "minimum": 0}, "unity_frame": {"type": "integer", "minimum": 0}, "result": {"enum": ["applied", "duplicate_ignored", "rejected", "failed"]}, "error_code": {"type": ["string", "null"]}},
+      "allOf": [
+        {"if": {"properties": {"result": {"const": "applied"}}, "required": ["result"]}, "then": {"properties": {"error_code": {"type": "null"}}}},
+        {"if": {"properties": {"result": {"enum": ["duplicate_ignored", "rejected", "failed"]}}, "required": ["result"]}, "then": {"properties": {"error_code": {"type": "string", "minLength": 1}}}}
+      ],
       "additionalProperties": true
     },
     "telemetry_frame": {

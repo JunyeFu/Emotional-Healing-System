@@ -118,7 +118,7 @@ run_models(L4, analysis_plan) -> L5
 
 ## 6. 当前实现事实
 
-- 现有Python原型为10Hz Mock/评分/UDP/CSV链，42项测试通过；
+- 现有Python原型测试数量由根目录`pytest.ini`和当次测试报告确定，不在本文固化历史计数；
 - Polar H10适配仍是未完成骨架，PLUX适配尚未实现；
 - Unity现有资产和场景可复用，但缺少目标四层接口、双条件和完整会话状态机；
 - TD现有 `.toe` 以呼吸引导为主，需要重构成只读操作台；

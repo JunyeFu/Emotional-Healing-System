@@ -4,7 +4,7 @@ SRP CSV Logger (Sprint 0)
 Records scored physiological frames to a structured CSV file
 for offline analysis by the experiment team.
 
-File naming: sim_YYYYMMDD_HHMMSS.csv (simulated) or P{ID}_{weather}_{date}.csv (real)
+File naming: sim_YYYYMMDD_HHMMSS_microseconds.csv or a formal session prefix.
 """
 
 import csv
@@ -22,22 +22,27 @@ logger = logging.getLogger(__name__)
 
 CSV_COLUMNS = [
     "timestamp",
-    "breath_score",
-    "calm_index",
     "breath_sync",
-    "hrv_score",
-    "regularity_score",
-    "depth_score",
+    "breath_depth",
+    "hrv_coherence",
+    "eda_calm",
+    "calm_index",
     "weather_intensity",
     "weather_trend",
+    "dominant_domain",
     "weather_type",
     "rr",
     "hr",
     "rmssd",
-    "breath_phase",
-    "guidance_prompt",
     "respiration_raw",
+    "respiration_amplitude",
+    "breath_regularity_raw",
     "ecg_raw",
+    "eda_raw",
+    "eda_tonic",
+    "breath_phase",
+    "respiration_depth",
+    "guidance_prompt",
 ]
 
 
@@ -51,7 +56,7 @@ class CSVLogger:
 
         Args:
             output_dir: Directory for CSV files. Defaults to 03-测试与实验/实验数据/
-            prefix: File prefix ("sim" for simulated, "P01" for real participants)
+            prefix: File prefix ("sim" for simulated, session ID for formal runs)
         """
         if output_dir is None:
             project_root = Path(__file__).resolve().parents[2]
@@ -59,7 +64,7 @@ class CSVLogger:
         self.output_dir = os.path.abspath(os.fspath(output_dir))
         os.makedirs(self.output_dir, exist_ok=True)
 
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
         self.filename = os.path.join(self.output_dir, f"{prefix}_{timestamp}.csv")
         self._file: Optional[TextIO] = None
         self._writer: Optional[csv.DictWriter] = None
@@ -81,9 +86,16 @@ class CSVLogger:
         if self._writer is None:
             raise RuntimeError("CSVLogger not opened. Call open() first.")
 
-        # Extract only defined columns
-        row = {col: score_dict.get(col, "") for col in CSV_COLUMNS}
-        self._writer.writerow(row)
+        expected = set(CSV_COLUMNS)
+        actual = set(score_dict)
+        missing = sorted(expected - actual)
+        unknown = sorted(actual - expected)
+        if missing or unknown:
+            raise ValueError(
+                "CSV_SCHEMA_MISMATCH: "
+                f"missing={missing or 'none'} unknown={unknown or 'none'}"
+            )
+        self._writer.writerow({col: score_dict[col] for col in CSV_COLUMNS})
         self.row_count += 1
 
     def close(self):
@@ -115,22 +127,27 @@ if __name__ == "__main__":
         for i in range(5):
             logger.write({
                 "timestamp": time.time() + i * 0.1,
-                "breath_score": 72.5,
-                "calm_index": 68.3,
                 "breath_sync": 70.0,
-                "hrv_score": 65.0,
-                "regularity_score": 60.0,
-                "depth_score": 55.0,
+                "breath_depth": 55.0,
+                "hrv_coherence": 65.0,
+                "eda_calm": 60.0,
+                "calm_index": 68.3,
                 "weather_intensity": 0.32,
                 "weather_trend": "weakening",
+                "dominant_domain": "breath_sync",
                 "weather_type": "storm",
                 "rr": 14.2,
                 "hr": 72.0,
                 "rmssd": 45.2,
-                "breath_phase": "inhale",
-                "guidance_prompt": "慢慢吸气...4秒",
                 "respiration_raw": 0.65,
+                "respiration_amplitude": 0.5,
+                "breath_regularity_raw": 0.8,
                 "ecg_raw": 0.12,
+                "eda_raw": 7.2,
+                "eda_tonic": 7.0,
+                "breath_phase": "inhale",
+                "respiration_depth": 0.5,
+                "guidance_prompt": "慢慢吸气...4秒",
             })
 
         logger.close()

@@ -575,3 +575,26 @@
 | Verified Evidence | Contract suite `42 passed`; scoped project regression `84 passed`; PowerShell non-Python consumer passed; fixture Git blob hashes `11/11`; READY package validator passed with 4 packages and 71 snapshots; registry, protocol authority, F-02, R-01 and W-01 validators passed; deterministic rerender passed. |
 | Deviation / Surprise | Independent review found three successive layers of counterexamples before passing: initial semantic drift and missing audit evidence, then source/probability/fallback rules, then arbitrary-precision integer overflow. The final package-only drift was removed by regenerating after the last source edit. |
 | Residual Risk | F-01 is still `READY` until a real non-implementing team member reviews and signs the exact pushed commit. No downstream runtime or full-system evidence is implied. |
+
+### 2026-08-08 Project-Wide Defect Remediation
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Native ECG timing is preserved; missing data does not produce scores; current ScoreFrame fields round-trip through CSV; invalid contract state fails closed; root tests are green; legacy materials cannot be mistaken for active inputs. |
+| Actual Result | Implemented native ECG batches, explicit missingness, non-emitting warmup/invalid windows, CSV fail-closed schema, trend/clock/error/shutdown fixes, contract invariants, TD development-control gate, Unity formal-build blocker, lifecycle/status cleanup and evidence-entry quarantine. |
+| Verified Evidence | Exact staged-snapshot pytest `100 passed`; fast simulation regression covered 600 frames and all four weather segments; paced 15-second mock run produced 51 valid CSV rows after warmup; registry PASS with READY=F-03/F-04/G-01 and IN_REVIEW=F-01; strict indexed dispatch-package validation passed with 4 packages/74 snapshots; protocol, F-02, R-01 and W-01 validators PASS; 20/20 legacy Markdown files marked. |
+| Deviation / Surprise | The first clean staged snapshot exposed CRLF/LF hash drift for `.sha256`, `.ps1` and numbered `.gitattributes` snapshots that the primary worktree did not reveal. Renderer and validator now share the expanded text policy, with a two-script regression test; the subsequent clean staged snapshot passed. |
+| Expected Red Gates | Unity batch validation exits with `FORMAL_SCENES_MISSING`; reference provenance validator exits `REFERENCE_PROVENANCE_BLOCKED`. These are enforced blockers, not completed capabilities. |
+| Evidence Paths | `work/unity-formal-build-gate.log`; `02-技术研发/05-通信协议/F-01_技术验收记录.md`; generated dispatch manifests; this log. |
+| Residual Risk | No formal Unity runtime, real device adapter, TD fixture replay, LIVE_E2E, external approval, participant evidence or publication-ready reference ledger exists. |
+
+### 2026-08-08 Unity Source And Art Archive
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The archive contains the reopenable Unity source project and both in-project and external art sources, while excluding generated caches and editor recovery residue. |
+| Actual Result | Created `04-成果与交付/Unity源文件与美术素材/SRP_Unity源文件与美术素材_20260808_142728.zip` with 536 entries and a size of 108.28 MiB. |
+| Verified Evidence | ZIP reopened successfully; 40 C# files, 190 PNG files and 10 Unity scenes were enumerated; required `Packages/manifest.json`, `packages-lock.json` and `ProjectSettings/ProjectVersion.txt` were present; duplicate names and excluded cache entries were both zero. |
+| SHA-256 | `7792498EE0EF99E7DFA679C238628BF6F96151AB5BFB20926B5B256FBE2DF618` |
+| Exclusions | `Library`, `Temp`, `Logs`, `obj`, `UserSettings` and `Assets/_Recovery`. |
+| Residual Risk | This is a source snapshot of the current working tree, not a formal runtime build or LIVE_E2E acceptance artifact. |

@@ -15,7 +15,11 @@ RESOURCES = ROOT / "08_任务技能与国内学习资料_v1.0.md"
 HANDBOOK = ROOT / "04_可领取树型任务包_v2.0.md"
 PACKAGE_MAP = ROOT / "12_独立任务包文件映射_v1.0.json"
 PACKAGE_OUTPUT = ROOT / "当前解锁独立任务包"
-VALID_STATUSES = {"READY", "DONE", "WAIT_DEP", "WAIT_DEP_EXTERNAL", "BLOCKED_EXTERNAL"}
+VALID_STATUSES = {
+    "READY", "IN_PROGRESS", "IN_REVIEW", "DONE",
+    "WAIT_DEP", "WAIT_DEP_EXTERNAL", "BLOCKED_EXTERNAL",
+}
+PACKAGE_STATUSES = {"READY", "IN_REVIEW"}
 VALID_KINDS = {"FIXED", "TEMPLATE"}
 VALID_PROFILES = {
     "P-DESIGN",
@@ -26,8 +30,6 @@ VALID_PROFILES = {
     "P-RUN",
     "P-DELIVERY",
 }
-EXPECTED_READY = {"F-01", "F-03", "F-04", "G-01"}
-EXPECTED_DONE = {"F-02", "R-01", "W-01"}
 EXPECTED_TEMPLATES = {"B-01", "B-02", "B-03"}
 TERMINAL_TASK = "W-04"
 WAVE_ORDER = {f"W{index}": index for index in range(7)}
@@ -55,7 +57,7 @@ REQUIRED_FIELDS = {
 UPGRADE_MARKERS = {
     "F-02": ("SCCI操纵检查", "条件中性四层理解题", "项目功能差异"),
     "G-01": ("528会话产能模型", "两周吞吐演练"),
-    "G-02": ("独立加盐联络哈希表", "跨阶段重复审计"),
+    "G-02": ("机构密钥控制的HMAC联络去重表", "密钥与数据物理分离", "跨阶段重复审计"),
     "R-01": ("完整表示方案", "运动亮度复杂度偏心遮挡显著度"),
     "U-07": ("完整表示方案fixture", "六类视觉混杂报告"),
     "U-08": ("非颜色唯一", "减少运动"),
@@ -162,9 +164,9 @@ def main() -> int:
             for dependency in dependencies & known
             if rows_by_id[dependency]["status"] != "DONE"
         }
-        if row["status"] == "READY" and incomplete_dependencies:
+        if row["status"] in PACKAGE_STATUSES and incomplete_dependencies:
             errors.append(
-                f"{task_id}: READY task has incomplete dependencies "
+                f"{task_id}: dispatch task has incomplete dependencies "
                 f"{sorted(incomplete_dependencies)}"
             )
         if row["status"] == "WAIT_DEP" and dependencies and not incomplete_dependencies:
@@ -173,6 +175,16 @@ def main() -> int:
             for field in ("claimant", "branch", "reviewer"):
                 if not row[field].strip():
                     errors.append(f"{task_id}: DONE task has empty {field}")
+        if row["status"] == "READY" and any(
+            row[field].strip() for field in ("claimant", "branch", "reviewer")
+        ):
+            errors.append(f"{task_id}: READY task must be unclaimed")
+        if row["status"] in {"IN_PROGRESS", "IN_REVIEW"}:
+            for field in ("claimant", "branch"):
+                if not row[field].strip():
+                    errors.append(f"{task_id}: {row['status']} task has empty {field}")
+        if row["status"] == "IN_REVIEW" and not row["reviewer"].strip():
+            errors.append(f"{task_id}: IN_REVIEW task has no review state")
         if row["kind"] == "TEMPLATE" and row["status"] == "READY":
             errors.append(f"{task_id}: repeatable template cannot be READY")
 
@@ -243,31 +255,30 @@ def main() -> int:
             errors.append(f"{task_id}: output does not reach final project handoff {TERMINAL_TASK}")
 
     ready = {row["task_id"] for row in rows if row["status"] == "READY"}
-    if ready != EXPECTED_READY:
-        errors.append(f"READY set is {sorted(ready)}, expected {sorted(EXPECTED_READY)}")
+    packaged_tasks = {row["task_id"] for row in rows if row["status"] in PACKAGE_STATUSES}
     done = {row["task_id"] for row in rows if row["status"] == "DONE"}
-    if done != EXPECTED_DONE:
-        errors.append(f"DONE set is {sorted(done)}, expected {sorted(EXPECTED_DONE)}")
 
     if not PACKAGE_MAP.is_file():
         errors.append("independent task package mapping is missing")
     else:
         mapping = json.loads(PACKAGE_MAP.read_text(encoding="utf-8-sig"))
         mapped = set(mapping.get("tasks", {}))
-        if mapped != ready:
+        if mapped != packaged_tasks:
             errors.append(
-                f"independent package mapping set {sorted(mapped)} does not match READY {sorted(ready)}"
+                "independent package mapping set "
+                f"{sorted(mapped)} does not match dispatch set {sorted(packaged_tasks)}"
             )
 
     if not PACKAGE_OUTPUT.is_dir():
         errors.append("independent READY task package output is missing")
     else:
         packaged = {path.name for path in PACKAGE_OUTPUT.iterdir() if path.is_dir()}
-        if packaged != ready:
+        if packaged != packaged_tasks:
             errors.append(
-                f"independent package directories {sorted(packaged)} do not match READY {sorted(ready)}"
+                "independent package directories "
+                f"{sorted(packaged)} do not match dispatch set {sorted(packaged_tasks)}"
             )
-        for task_id in ready:
+        for task_id in packaged_tasks:
             for filename in ("TASK.md", "FILES.md", "package_manifest.json"):
                 if not (PACKAGE_OUTPUT / task_id / filename).is_file():
                     errors.append(f"{task_id}: independent package missing {filename}")
@@ -280,6 +291,7 @@ def main() -> int:
     print(
         "PASS: 51 registry entries; fixed=48; templates=3; "
         f"DONE={','.join(sorted(done))}; READY={','.join(sorted(ready))}; "
+        f"IN_REVIEW={','.join(sorted(row['task_id'] for row in rows if row['status'] == 'IN_REVIEW'))}; "
         f"terminal={TERMINAL_TASK}"
     )
     return 0

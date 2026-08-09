@@ -2,8 +2,8 @@
   "package_schema_version": "1.0",
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "F-01",
-  "status": "READY",
-  "registry_sha256": "27004562FC74432CDDE631548D162F64893E031A646EB251CFF9263B35FF3D89",
+  "status": "IN_REVIEW",
+  "registry_sha256": "9B49AEF4998E0E46A476B595DC80BB671D20DBA7106197C6FD733D5F97AC5D78",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
@@ -38,8 +38,8 @@
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md",
       "package_path": "inputs/06_06_目标运行接口_v2.md",
-      "sha256": "A1A4D0A8AD6A6C1E8B29F8BCF8A5F93F844BC4F3F29760EDF4746BD2F8AAC735",
-      "size_bytes": 6376
+      "sha256": "07EB07E172FBA0D0A84E193C33755430F9330FD02888D9F0C2DABFC561C1FCD0",
+      "size_bytes": 6370
     },
     {
       "source_path": "02-技术研发/05-通信协议/UDP字段冻结_v1.2.md",
@@ -56,8 +56,8 @@
     {
       "source_path": "02-技术研发/05-通信协议/csv_logger.py",
       "package_path": "inputs/09_csv_logger.py",
-      "sha256": "6067DFF8402F1DBB4B88AB30A4C5CF6CBFD3F3182372B107463BF0EFF5817C58",
-      "size_bytes": 4811
+      "sha256": "8D91AB00F45F031DA118D141D4E29A698E9C994AF599495CC6AFC54696ECF19A",
+      "size_bytes": 5411
     },
     {
       "source_path": "02-技术研发/05-通信协议/tests/test_udp_sender.py",
@@ -68,14 +68,14 @@
     {
       "source_path": "02-技术研发/05-通信协议/tests/test_csv_logger.py",
       "package_path": "inputs/11_test_csv_logger.py",
-      "sha256": "B329384DFBB40D92C8600B5796B1F49D5AE850C7E3C6A20AE40BAFA2D564087D",
-      "size_bytes": 2272
+      "sha256": "D5EAAC5E7EA14CD4E37B774D8F1AB1E3A8C414E355BB41D2895707E442B29745",
+      "size_bytes": 2712
     },
     {
       "source_path": "02-技术研发/05-通信协议/runtime_contract.py",
       "package_path": "inputs/12_runtime_contract.py",
-      "sha256": "9227C0DFB451BD8B360DFEC1A210943B0BA8CF33985DAC2554A4255F6F132011",
-      "size_bytes": 18238
+      "sha256": "6D20558C63958276E43A7BB8292A4A94F65B1D1CEEC86EF0A35C9BA970013054",
+      "size_bytes": 19870
     },
     {
       "source_path": "02-技术研发/05-通信协议/MIGRATION_v1.2_to_v2.1.md",
@@ -86,8 +86,8 @@
     {
       "source_path": "02-技术研发/05-通信协议/F-01_技术验收记录.md",
       "package_path": "inputs/14_F-01_技术验收记录.md",
-      "sha256": "F2173C0AD7455ECDD24E9DA21F38C98975852D1CB30CE497748814B83EA64A9B",
-      "size_bytes": 5403
+      "sha256": "DFD5AAC40D9CEEC48B618B2F4ECAE271BD66F709C44533BC36963F00AACC4F39",
+      "size_bytes": 5991
     },
     {
       "source_path": "02-技术研发/05-通信协议/contracts/README.md",
@@ -98,8 +98,8 @@
     {
       "source_path": "02-技术研发/05-通信协议/contracts/runtime-contract-v2.1.schema.json",
       "package_path": "inputs/16_runtime-contract-v2.1.schema.json",
-      "sha256": "7C9B755FDD43A67DCEDA1AF599C0187EF757C76A8AA9B6B389230678C796A22A",
-      "size_bytes": 13646
+      "sha256": "B8391DB072A697B044BB055A46458D211702D246286470CC78A3D3D4C109C194",
+      "size_bytes": 14912
     },
     {
       "source_path": "02-技术研发/05-通信协议/contracts/generate_fixture_hashes.py",
@@ -194,8 +194,8 @@
     {
       "source_path": "02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py",
       "package_path": "inputs/32_test_runtime_contract.py",
-      "sha256": "44C38D2A8C3E6E7BD3AB419AD7C8F560D48428B2D353F73E76C56138D2E17BE9",
-      "size_bytes": 11385
+      "sha256": "3B4244EC46C44198A9E44EF8477479B58531EDEDBB9CC13FF2AFD5DF31CF3215",
+      "size_bytes": 13484
     },
     {
       "source_path": "02-技术研发/05-通信协议/tests/contract/requirements.txt",
@@ -208,6 +208,12 @@
       "package_path": "inputs/34_.gitattributes",
       "sha256": "C0DB3CF600C5DA51023918AA24F8A2FF5B312841661FA252DFE9CBF682E6A66D",
       "size_bytes": 142
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md",
+      "package_path": "inputs/35_13_IJHCI独立审稿攻击与升级裁定_v1.1.md",
+      "sha256": "B9D4A056038608A246ACF7A3DC85D00D200B3DFDCB73B857C0BEF00F6BF15806",
+      "size_bytes": 16576
     }
   ],
   "working_paths": [

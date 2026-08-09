@@ -68,6 +68,67 @@ def test_unknown_compatible_field_is_ignored():
     assert filtered["frame_seq"] == 11
 
 
+@pytest.mark.parametrize(
+    ("message_type", "filename", "mutate", "error_code"),
+    [
+        (
+            "session_manifest", "session-manifest-formal.json",
+            lambda item: item.update(runtime_mode="formal_stage_3"),
+            "STAGE_MODE_MISMATCH",
+        ),
+        (
+            "session_manifest", "session-manifest-formal.json",
+            lambda item: item["device_config"]["resp"].update(future_override=True),
+            "UNKNOWN_FIELD",
+        ),
+        (
+            "control_event", "control-event.json",
+            lambda item: item.update(event_type="module", payload={}),
+            "EMPTY_CONTROL_PAYLOAD",
+        ),
+        (
+            "ack", "ack.json",
+            lambda item: item.update(error_code="UNEXPECTED"),
+            "INCONSISTENT_ACK",
+        ),
+    ],
+)
+def test_schema_and_python_reject_cross_field_or_nested_invalid_state(
+    message_type, filename, mutate, error_code
+):
+    payload = load_fixture("valid", filename)
+    mutate(payload)
+    assert not schema_accepts(payload)
+    with pytest.raises(contract.ContractValidationError) as error:
+        contract.validate_and_filter(message_type, payload)
+    assert error.value.code == error_code
+
+
+@pytest.mark.parametrize(
+    ("message_type", "filename", "mutate"),
+    [
+        (
+            "control_event", "control-event.json",
+            lambda item: item.update(effective_monotonic_ns=item["issued_monotonic_ns"] - 1),
+        ),
+        (
+            "ack", "ack.json",
+            lambda item: item.update(applied_monotonic_ns=item["received_monotonic_ns"] - 1),
+        ),
+        (
+            "telemetry_frame", "telemetry-frame.json",
+            lambda item: item.update(sent_monotonic_ns=item["source_monotonic_ns"] - 1),
+        ),
+    ],
+)
+def test_python_rejects_time_order_invariants(message_type, filename, mutate):
+    payload = load_fixture("valid", filename)
+    mutate(payload)
+    with pytest.raises(contract.ContractValidationError) as error:
+        contract.validate_and_filter(message_type, payload)
+    assert error.value.code == "INVALID_TIME_ORDER"
+
+
 def test_duplicate_control_cannot_advance_ledger():
     payload = load_fixture("valid", "control-event.json")
     ledger = contract.ControlEventLedger()

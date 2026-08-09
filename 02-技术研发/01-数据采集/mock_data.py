@@ -624,7 +624,6 @@ def _guidance_prompt(phase: str, cfg: MockConfig) -> str:
 # ── Frame Definition ─────────────────────────────────────────────────────
 
 @dataclass
-@dataclass
 class MockFrame:
     """A single 10 Hz frame of simulated multi-sensor physiological data."""
 
@@ -644,6 +643,7 @@ class MockFrame:
     guidance_prompt: str
     weather_type: str
     weather_intensity_base: float
+    ecg_samples: tuple[tuple[float, float], ...] = ()
     respiration_depth: float = 0.5    # 0–1, for ring animation (last for backward compat)
 
     def to_dict(self) -> dict:
@@ -689,14 +689,29 @@ def generate_frames(
         iterator = range(int(duration * cfg.frame_rate))
 
     ecg_state = _ECGState()
+    ecg_rate_hz = 130.0
+    ecg_samples_per_frame = max(1, round(ecg_rate_hz / cfg.frame_rate))
     eda_state = _EDAState()
 
     for i in iterator:
         t = i * dt
+        ecg_samples = tuple(
+            (
+                t + sample_index / ecg_rate_hz,
+                _ecg_signal(
+                    t + sample_index / ecg_rate_hz,
+                    cfg,
+                    1.0 / ecg_rate_hz,
+                    ecg_state,
+                ),
+            )
+            for sample_index in range(ecg_samples_per_frame)
+        )
         yield MockFrame(
             timestamp=t,
             respiration_raw=_respiration(t, cfg),
-            ecg_raw=_ecg_signal(t, cfg, dt, ecg_state),
+            ecg_raw=ecg_samples[-1][1],
+            ecg_samples=ecg_samples,
             eda_raw=_eda_signal(t, cfg, eda_state),
             acc_magnitude=_acc_magnitude(t, cfg),
             temp_skin=_temp_skin(t, cfg),

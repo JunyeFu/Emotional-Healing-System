@@ -7,13 +7,13 @@
 - 领取人：Codex
 - 分支：`codex/f-01-runtime-contract`
 - 第二复核人：PENDING_SECOND_PERSON
-- 领取时间：
+- 领取时间：历史登记未记录；当前不得重复领取
 
 ## 任务边界
 
 - 领域：合同与协议
 - 波次：W0
-- 状态：`READY`
+- 状态：`IN_REVIEW`
 - 类型：FIXED
 - 预计工作量：3人日
 - 前置依赖：无

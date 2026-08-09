@@ -74,7 +74,7 @@ def run_stress_test(full: bool = False):
     all_weather_intensities: list[float] = []
 
     print("=" * 70)
-    print("  SRP FULL-PIPELINE STRESS TEST — 4-Dimension Mode")
+    print("  SRP FAST SIMULATION REGRESSION — 4-Dimension Mode")
     print(f"  {len(WEATHER_CYCLE)} weathers x {SECONDS_PER_SEGMENT}s @ {FRAME_RATE}Hz = {EXPECTED_FRAMES} frames")
     print(f"  UDP/CSV: {'enabled' if full else 'disabled (--full to enable)'}")
     print()
@@ -89,9 +89,6 @@ def run_stress_test(full: bool = False):
               f"{presets.eda_calm.target_value:>9.1f}")
     print("=" * 70)
 
-    # Shared signal pipeline (maintains buffers across weather transitions)
-    pipeline = signal_pipeline_mod.SignalPipeline()
-
     if full:
         sender = udp_sender_mod.UDPSender()
         csv_log = csv_logger_mod.CSVLogger(prefix="stress")
@@ -100,6 +97,9 @@ def run_stress_test(full: bool = False):
     start_time = time.time()
 
     for weather in WEATHER_CYCLE:
+        # Each generated segment starts its logical clock at zero. Keep native
+        # timestamp domains independent instead of silently accepting a reset.
+        pipeline = signal_pipeline_mod.SignalPipeline()
         cfg = mock_data.MockConfig.for_weather(weather)
         frames = mock_data.generate_frame_list(duration=SECONDS_PER_SEGMENT, cfg=cfg)
         stats = segment_stats[weather]
@@ -113,7 +113,11 @@ def run_stress_test(full: bool = False):
             stats.frames += 1
 
             try:
-                processed = pipeline.feed(f.timestamp, f.respiration_raw, f.ecg_raw)
+                processed = pipeline.feed(
+                    f.timestamp, f.respiration_raw, f.ecg_raw,
+                    f.eda_raw, f.acc_magnitude, f.temp_skin,
+                    ecg_samples=getattr(f, "ecg_samples", None),
+                )
 
                 if processed is None:
                     total_warmup_dropped += 1
@@ -202,6 +206,10 @@ def run_stress_test(full: bool = False):
     if total_errors > 0:
         print(f"  FAIL: {total_errors} pipeline errors")
         passed = False
+    for weather, stats in segment_stats.items():
+        if not stats.weather_intensities:
+            print(f"  FAIL: {weather} produced no valid scored frame")
+            passed = False
     if all_weather_intensities:
         wi_range_violations = [wi for wi in all_weather_intensities if not (0 <= wi <= 1)]
         if wi_range_violations:
@@ -209,7 +217,10 @@ def run_stress_test(full: bool = False):
             passed = False
 
     if passed:
-        print(f"  VERDICT: PASS — {EXPECTED_FRAMES} frames, 0 errors, 4 dimensions valid")
+        print(
+            f"  VERDICT: PASS — {EXPECTED_FRAMES} simulated frames, "
+            "all weather segments produced valid scores"
+        )
     else:
         print(f"  VERDICT: FAIL")
 

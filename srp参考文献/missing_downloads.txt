@@ -1,457 +1,457 @@
 需手动下载的文献 (66篇)
 ============================================================
-复制DOI → sci-hub.se → 下载
+通过学校图书馆、出版社、作者公开版本或合法开放获取服务检索DOI
 
   1. [cited: 180] 01 情绪调节理论
      Barańczuk (2019)
      The five factor model of personality and emotion regulation: A meta-analysis
      DOI: 10.1016/j.paid.2018.11.025
-     https://sci-hub.se/10.1016/j.paid.2018.11.025
+     https://doi.org/10.1016/j.paid.2018.11.025
 
   2. [cited: 140] 07 游戏化与严肃游戏
      Kowal, Conroy, Ramsbottom et al. (2021)
      Gaming Your Mental Health: A Narrative Review on Mitigating Symptoms of Depression and Anx
      DOI: 10.2196/26575
-     https://sci-hub.se/10.2196/26575
+     https://doi.org/10.2196/26575
 
   3. [cited:  75] 05 多模态情绪识别
      Pillalamarri, Shanmugam (2025)
      A review on EEG-based multimodal learning for emotion recognition
      DOI: 10.1007/s10462-025-11126-9
-     https://sci-hub.se/10.1007/s10462-025-11126-9
+     https://doi.org/10.1007/s10462-025-11126-9
 
   4. [cited:  51] 08 具身对话代理
      Chaudhry, Debi (2024)
      User perceptions and experiences of an AI-driven conversational agent for mental health su
      DOI: 10.21037/mhealth-23-55
-     https://sci-hub.se/10.21037/mhealth-23-55
+     https://doi.org/10.21037/mhealth-23-55
 
   5. [cited:  35] 01 情绪调节理论
      Raugh, Strauss (2023)
      Integrating mindfulness into the extended process model of emotion regulation: The dual-mo
      DOI: 10.1037/emo0001308
-     https://sci-hub.se/10.1037/emo0001308
+     https://doi.org/10.1037/emo0001308
 
   6. [cited:  32] 02 大学生心理健康
      Shah, Pol (2020)
      Prevalence of depression and anxiety in college students
      DOI: 10.4103/jmhhb.jmhhb_16_20
-     https://sci-hub.se/10.4103/jmhhb.jmhhb_16_20
+     https://doi.org/10.4103/jmhhb.jmhhb_16_20
 
   7. [cited:  32] 14 色彩与审美心理
      Zhang, Jin, Wang et al. (2023)
      Form and color visual perception in green exercise: Positive effects on attention, mood, a
      DOI: 10.1016/j.jenvp.2023.102028
-     https://sci-hub.se/10.1016/j.jenvp.2023.102028
+     https://doi.org/10.1016/j.jenvp.2023.102028
 
   8. [cited:  30] 13 行为激活疗法
      Alber, Krämer, Rosar et al. (2023)
      Internet-Based Behavioral Activation for Depression: Systematic Review and Meta-Analysis
      DOI: 10.2196/41643
-     https://sci-hub.se/10.2196/41643
+     https://doi.org/10.2196/41643
 
   9. [cited:  29] 09 神经反馈与BCI
      Dehghani, Soltanian-Zadeh, Hossein-Zadeh (2023)
      Neural modulation enhancement using connectivity-based EEG neurofeedback with simultaneous
      DOI: 10.1016/j.neuroimage.2023.120320
-     https://sci-hub.se/10.1016/j.neuroimage.2023.120320
+     https://doi.org/10.1016/j.neuroimage.2023.120320
 
  10. [cited:  28] 08 具身对话代理
      Hudon, Stip (2025)
      Delusional Experiences Emerging From AI Chatbot Interactions or “AI Psychosis”
      DOI: 10.2196/85799
-     https://sci-hub.se/10.2196/85799
+     https://doi.org/10.2196/85799
 
  11. [cited:  24] 13 行为激活疗法
      Xiang, Kayser, Turner et al. (2024)
      Layperson-Supported, Web-Delivered Cognitive Behavioral Therapy for Depression in Older Ad
      DOI: 10.2196/53001
-     https://sci-hub.se/10.2196/53001
+     https://doi.org/10.2196/53001
 
  12. [cited:  22] 10 虚拟场景与临场感
      Gao, Spence (2025)
      Enhancing Presence, Immersion, and Interaction in Multisensory Experiences Through Touch a
      DOI: 10.3390/virtualworlds4010003
-     https://sci-hub.se/10.3390/virtualworlds4010003
+     https://doi.org/10.3390/virtualworlds4010003
 
  13. [cited:  18] 01 情绪调节理论
      López-Pérez, Gummerum, Wilson et al. (2017)
      Studying Children's Intrapersonal Emotion Regulation Strategies from the Process Model of 
      DOI: 10.1080/00221325.2016.1230085
-     https://sci-hub.se/10.1080/00221325.2016.1230085
+     https://doi.org/10.1080/00221325.2016.1230085
 
  14. [cited:  17] 01 情绪调节理论
      Nørby (2019)
      Mnemonic emotion regulation: a three-process model
      DOI: 10.1080/02699931.2018.1523137
-     https://sci-hub.se/10.1080/02699931.2018.1523137
+     https://doi.org/10.1080/02699931.2018.1523137
 
  15. [cited:  16] 04 VR心理干预
      Spyridonis, Daylamani-Zad, Nightingale (2024)
      PublicVR: a virtual reality exposure therapy intervention for adults with speech anxiety
      DOI: 10.1007/s10055-024-00998-x
-     https://sci-hub.se/10.1007/s10055-024-00998-x
+     https://doi.org/10.1007/s10055-024-00998-x
 
  16. [cited:  16] 14 色彩与审美心理
      Reppa, McDougall, Sonderegger et al. (2021)
      Mood moderates the effect of aesthetic appeal on performance
      DOI: 10.1080/02699931.2020.1800446
-     https://sci-hub.se/10.1080/02699931.2020.1800446
+     https://doi.org/10.1080/02699931.2020.1800446
 
  17. [cited:  11] 04 VR心理干预
      Scheveneels, Engelhard, Meyerbröker (2025)
      Opening the Black Box: The Underlying Working Mechanisms in Virtual-Reality Exposure Thera
      DOI: 10.1177/21677026241267945
-     https://sci-hub.se/10.1177/21677026241267945
+     https://doi.org/10.1177/21677026241267945
 
  18. [cited:  11] 08 具身对话代理
      Dinesh, Rao, Sinha (2024)
      Language adaptations of mental health interventions: User interaction comparisons with an 
      DOI: 10.1177/20552076241255616
-     https://sci-hub.se/10.1177/20552076241255616
+     https://doi.org/10.1177/20552076241255616
 
  19. [cited:  10] 13 行为激活疗法
      Duffy, Richards, Hisler et al. (2024)
      Implementing Internet-Delivered Cognitive Behavioral Therapy for Depression and Anxiety in
      DOI: 10.2196/47927
-     https://sci-hub.se/10.2196/47927
+     https://doi.org/10.2196/47927
 
  20. [cited:   9] 05 多模态情绪识别
      Al Roken, Barlas (2023)
      Multimodal Arabic emotion recognition using deep learning
      DOI: 10.1016/j.specom.2023.103005
-     https://sci-hub.se/10.1016/j.specom.2023.103005
+     https://doi.org/10.1016/j.specom.2023.103005
 
  21. [cited:   6] 08 具身对话代理
      Schäfer, Krause, Köhler (2025)
      Exploring user characteristics, motives, and expectations and the therapeutic alliance in 
      DOI: 10.3389/fdgth.2025.1576135
-     https://sci-hub.se/10.3389/fdgth.2025.1576135
+     https://doi.org/10.3389/fdgth.2025.1576135
 
  22. [cited:   5] 03 生物反馈与HRV
      Shankar, Bundele, Mukhopadhyay (2025)
      The Effectiveness of Virtual Reality–Based Mindfulness Interventions for Managing Stress, 
      DOI: 10.2196/68231
-     https://sci-hub.se/10.2196/68231
+     https://doi.org/10.2196/68231
 
  23. [cited:   5] 10 虚拟场景与临场感
      Hébert-Lavoie, Ozell, Doyon-Poulin (2024)
      The Influence of Immersion on Situational Awareness in a Virtual Environment
      DOI: 10.1162/pres_a_00427
-     https://sci-hub.se/10.1162/pres_a_00427
+     https://doi.org/10.1162/pres_a_00427
 
  24. [cited:   4] 06 数字心理健康
      Biber, Davis (2024)
      A digital positive psychology intervention for college student mental health and health be
      DOI: 10.1108/mhdt-02-2024-0007
-     https://sci-hub.se/10.1108/mhdt-02-2024-0007
+     https://doi.org/10.1108/mhdt-02-2024-0007
 
  25. [cited:   4] 08 具身对话代理
      Kneese, Vecchione, Marwick (2025)
      A chatbot for the soul: mental health care, privacy, and intimacy in AI-based conversation
      DOI: 10.1007/s44382-025-00015-y
-     https://sci-hub.se/10.1007/s44382-025-00015-y
+     https://doi.org/10.1007/s44382-025-00015-y
 
  26. [cited:   4] 10 虚拟场景与临场感
      Korżel, Łupkowski (2023)
      The Phenomenon of Presence in Virtual Reality Is Mistakenly Equated with Immersion
      DOI: 10.1162/pres_a_00404
-     https://sci-hub.se/10.1162/pres_a_00404
+     https://doi.org/10.1162/pres_a_00404
 
  27. [cited:   3] 02 大学生心理健康
      Peterson, Arterberry, Patrick (2025)
      Barriers to and Benefits of Mental Health Services in College Students with and without De
      DOI: 10.1080/28367138.2024.2373946
-     https://sci-hub.se/10.1080/28367138.2024.2373946
+     https://doi.org/10.1080/28367138.2024.2373946
 
  28. [cited:   3] 06 数字心理健康
      Kim (2024)
      Effects of a walking program using the “WalkON” mobile app among college students
      DOI: 10.1177/20552076241269463
-     https://sci-hub.se/10.1177/20552076241269463
+     https://doi.org/10.1177/20552076241269463
 
  29. [cited:   2] 02 大学生心理健康
      Newcombe, Olthuis, MacLean et al. (2024)
      CBT + Exercise vs Treatment as Usual in Treating Anxiety and Depression in University Stud
      DOI: 10.1080/87568225.2023.2181255
-     https://sci-hub.se/10.1080/87568225.2023.2181255
+     https://doi.org/10.1080/87568225.2023.2181255
 
  30. [cited:   2] 02 大学生心理健康
      Oguntayo, Gutiérrez-Vega (2025)
      A Pilot Study of the Effectiveness of Cognitive Resilience Training on Anxiety, Depression
      DOI: 10.1080/28367138.2024.2346298
-     https://sci-hub.se/10.1080/28367138.2024.2346298
+     https://doi.org/10.1080/28367138.2024.2346298
 
  31. [cited:   2] 05 多模态情绪识别
      Li (2025)
      Integrating Multimodal Data for Deep Learning-Based Facial Emotion Recognition
      DOI: 10.54097/gpy08650
-     https://sci-hub.se/10.54097/gpy08650
+     https://doi.org/10.54097/gpy08650
 
  32. [cited:   2] 05 多模态情绪识别
      Kong (2024)
      Research Advanced in Multimodal Emotion Recognition Based on Deep Learning
      DOI: 10.54097/p3yprn36
-     https://sci-hub.se/10.54097/p3yprn36
+     https://doi.org/10.54097/p3yprn36
 
  33. [cited:   2] 10 虚拟场景与临场感
      Katernyak, Loboda (2016)
      Cognitive Presence and Effect of Immersion in Virtual Learning Environment
      DOI: 10.13189/ujer.2016.041109
-     https://sci-hub.se/10.13189/ujer.2016.041109
+     https://doi.org/10.13189/ujer.2016.041109
 
  34. [cited:   2] 12 中国文化情绪调节
      Song, Li, Wang et al. (2025)
      Solitude capacity and emotional experience in Chinese college students: The suppression ef
      DOI: 10.32604/jpa.2025.065781
-     https://sci-hub.se/10.32604/jpa.2025.065781
+     https://doi.org/10.32604/jpa.2025.065781
 
  35. [cited:   1] 04 VR心理干预
      Ya (2020)
      Psychoanalysis-based Virtual Reality Exposure (PVRE) -The Self-help Intervention on Social
      DOI: 10.35534/tppc.0207029
-     https://sci-hub.se/10.35534/tppc.0207029
+     https://doi.org/10.35534/tppc.0207029
 
  36. [cited:   1] 07 游戏化与严肃游戏
      V M, Pricilla, P M et al. (2024)
      Exploring Gamification and Serious Games for Mental Health: A Narrative Review
      DOI: 10.7759/cureus.74637
-     https://sci-hub.se/10.7759/cureus.74637
+     https://doi.org/10.7759/cureus.74637
 
  37. [cited:   1] 09 神经反馈与BCI
      Zhang, Zhang, Zhang et al. (2025)
      Objective Emotion Assessment Using a Triple Attention Network for an EEG-Based Brain–Compu
      DOI: 10.3390/brainsci15111167
-     https://sci-hub.se/10.3390/brainsci15111167
+     https://doi.org/10.3390/brainsci15111167
 
  38. [cited:   1] 10 虚拟场景与临场感
      Maulina, Susanto (2023)
      Biophilic Design: Virtual Nature Application in a Windowless Room
      DOI: 10.23917/sinektika.v20i1.20484
-     https://sci-hub.se/10.23917/sinektika.v20i1.20484
+     https://doi.org/10.23917/sinektika.v20i1.20484
 
  39. [cited:   1] 11 注意力恢复与自然
      Wiegant, Guariguata (2023)
      Cross‐scale interdependencies require attention in forest restoration
      DOI: 10.1111/rec.13980
-     https://sci-hub.se/10.1111/rec.13980
+     https://doi.org/10.1111/rec.13980
 
  40. [cited:   1] 14 色彩与审美心理
      김지선, 강한모, 김채연 et al. (2015)
      Sad but beautiful; Brain responses to aesthetic judgment and emotion appraisal of visual a
      DOI: 10.22172/cogbio.2015.27.2.008
-     https://sci-hub.se/10.22172/cogbio.2015.27.2.008
+     https://doi.org/10.22172/cogbio.2015.27.2.008
 
  41. [cited:   0] 02 大学生心理健康
      Rallis, Hungerford, Flynn (2024)
      A Wave of Depression: Implications for College Student Mental Health
      DOI: 10.1080/87568225.2023.2202352
-     https://sci-hub.se/10.1080/87568225.2023.2202352
+     https://doi.org/10.1080/87568225.2023.2202352
 
  42. [cited:   0] 02 大学生心理健康
      Garris, Ko, Novotny (2025)
      The Nitty Gritty of Stress and Mental Health: The Role of Grit in Moderating the Relations
      DOI: 10.1080/28367138.2024.2405942
-     https://sci-hub.se/10.1080/28367138.2024.2405942
+     https://doi.org/10.1080/28367138.2024.2405942
 
  43. [cited:   0] 02 大学生心理健康
      Pareek, Jain (2026)
      Passive Vs. Interactive Digital Intervention for State Anxiety Among Undergraduates: Rando
      DOI: 10.1080/28367138.2026.2653092
-     https://sci-hub.se/10.1080/28367138.2026.2653092
+     https://doi.org/10.1080/28367138.2026.2653092
 
  44. [cited:   0] 03 生物反馈与HRV
      Rabelo, Mármora, Ribeiro (2018)
      THE EFFECTIVENESS OF HRV BIOFEEDBACK IN REDUCING MUSICAL PERFORMANCE ANXIETY: AN INITIAL S
      DOI: 10.15309/18psd190203
-     https://sci-hub.se/10.15309/18psd190203
+     https://doi.org/10.15309/18psd190203
 
  45. [cited:   0] 03 生物反馈与HRV
      Schwarzl (2026)
      Verkörperte Selbstregulation: HRV-Biofeedback in der kognitiven Verhaltenstherapie
      DOI: 10.1007/s00729-026-00303-y
-     https://sci-hub.se/10.1007/s00729-026-00303-y
+     https://doi.org/10.1007/s00729-026-00303-y
 
  46. [cited:   0] 04 VR心理干预
      Schier, Badeja, Hoyer et al. (2026)
      Towards co-located multi-user mixed reality exposure therapy for anxiety disorders
      DOI: 10.1007/s10055-025-01279-x
-     https://sci-hub.se/10.1007/s10055-025-01279-x
+     https://doi.org/10.1007/s10055-025-01279-x
 
  47. [cited:   0] 04 VR心理干预
      No author (2023)
      Erratum: Cognitive Behavioral Therapy Based Virtual Reality Exposure Intervention in Publi
      DOI: 10.5455/jcbpr.146601
-     https://sci-hub.se/10.5455/jcbpr.146601
+     https://doi.org/10.5455/jcbpr.146601
 
  48. [cited:   0] 05 多模态情绪识别
      AZEEZ (2025)
      Automated Emotion Recognition Using Hybrid CNN-RNN Models on Multimodal Physiological Sign
      DOI: 10.61710/kjcs.v3i2.100
-     https://sci-hub.se/10.61710/kjcs.v3i2.100
+     https://doi.org/10.61710/kjcs.v3i2.100
 
  49. [cited:   0] 05 多模态情绪识别
      El Hamdaoui, Nfaoui (2026)
      A deep reinforcement learning approach for emotion recognition from unaligned multimodal i
      DOI: 10.1016/j.mlwa.2026.100873
-     https://sci-hub.se/10.1016/j.mlwa.2026.100873
+     https://doi.org/10.1016/j.mlwa.2026.100873
 
  50. [cited:   0] 05 多模态情绪识别
      Mukil Alagirisamy (2025)
      EEG SIGNAL-BASED EMOTION RECOGNITION USING A DEEP LEARNING APPROACH WITH GRU-BGWO
      DOI: 10.12732/ijam.v38i5s.355
-     https://sci-hub.se/10.12732/ijam.v38i5s.355
+     https://doi.org/10.12732/ijam.v38i5s.355
 
  51. [cited:   0] 06 数字心理健康
      Ghailani, Simon (2026)
      A Culturally Driven Digital Intervention for Student Mental Health: Mixed-Methods Evaluati
      DOI: 10.1080/28367138.2026.2637866
-     https://sci-hub.se/10.1080/28367138.2026.2637866
+     https://doi.org/10.1080/28367138.2026.2637866
 
  52. [cited:   0] 06 数字心理健康
      Hastings (2025)
      Media intervention and mental health: can media modify college student attitudes?
      DOI: 10.1108/mhdt-03-2025-0022
-     https://sci-hub.se/10.1108/mhdt-03-2025-0022
+     https://doi.org/10.1108/mhdt-03-2025-0022
 
  53. [cited:   0] 06 数字心理健康
      Pareek, Jain (2026)
      Passive Vs. Interactive Digital Intervention for State Anxiety Among Undergraduates: Rando
      DOI: 10.1080/28367138.2026.2653092
-     https://sci-hub.se/10.1080/28367138.2026.2653092
+     https://doi.org/10.1080/28367138.2026.2653092
 
  54. [cited:   0] 06 数字心理健康
      Rand, Menichetti, Wisløff et al. (2026)
      Mental health INtervention with Digital APPlications (MIND-APP): Protocol for a Randomized
      DOI: 10.2196/84096
-     https://sci-hub.se/10.2196/84096
+     https://doi.org/10.2196/84096
 
  55. [cited:   0] 06 数字心理健康
      Pierce, Twohig, Levin (2025)
      Tacting the Functions of Behavior and College Mental Health: A Mobile App-Based Approach t
      DOI: 10.1080/28367138.2024.2409244
-     https://sci-hub.se/10.1080/28367138.2024.2409244
+     https://doi.org/10.1080/28367138.2024.2409244
 
  56. [cited:   0] 07 游戏化与严肃游戏
      De Gobbis, Malavolta, De Beukelaer et al. (2025)
      Effect of Gamification on Task Engagement During an Eye-Tracking Test Battery in 5-Year-Ol
      DOI: 10.2196/77109
-     https://sci-hub.se/10.2196/77109
+     https://doi.org/10.2196/77109
 
  57. [cited:   0] 09 神经反馈与BCI
      Dinc, Rybski, Dineen (2025)
      The effects of alpha/theta neurofeedback on mood, anxiety, emotion regulation and trait im
      DOI: 10.1016/j.brainres.2025.149943
-     https://sci-hub.se/10.1016/j.brainres.2025.149943
+     https://doi.org/10.1016/j.brainres.2025.149943
 
  58. [cited:   0] 10 虚拟场景与临场感
      Kari, Ojala, Kurkilahti et al. (2026)
      Immersion and Presence in Virtual Nature: How Does the Delivery Technology Affect the Psyc
      DOI: 10.1080/10447318.2026.2651376
-     https://sci-hub.se/10.1080/10447318.2026.2651376
+     https://doi.org/10.1080/10447318.2026.2651376
 
  59. [cited:   0] 10 虚拟场景与临场感
      Webster, Kourkoulakou (2022)
      Composing in virtual immersion: avatar and representation
      DOI: 10.4000/hybrid.2968
-     https://sci-hub.se/10.4000/hybrid.2968
+     https://doi.org/10.4000/hybrid.2968
 
  60. [cited:   0] 11 注意力恢复与自然
      Oe, Yamaoka, Bai (2025)
      Digital Forest Bathing: Stress Reduction through Virtual Nature: Exploring the Effectivene
      DOI: 10.6007/ijarbss/v15-i4/25246
-     https://sci-hub.se/10.6007/ijarbss/v15-i4/25246
+     https://doi.org/10.6007/ijarbss/v15-i4/25246
 
  61. [cited:   0] 11 注意力恢复与自然
      Pavlovic, Connolly (2023)
      Forest bathing for stress reduction: a critical review
      DOI: 10.33235/ajhnm.35.2.56-72
-     https://sci-hub.se/10.33235/ajhnm.35.2.56-72
+     https://doi.org/10.33235/ajhnm.35.2.56-72
 
  62. [cited:   0] 11 注意力恢复与自然
      Kang (2025)
      The Psychological Benefits of Virtual Forest Bathing: A Classroom-Based Study Using Simula
      DOI: 10.30560/ier.v8n3p41
-     https://sci-hub.se/10.30560/ier.v8n3p41
+     https://doi.org/10.30560/ier.v8n3p41
 
  63. [cited:   0] 11 注意力恢复与自然
      Tersch, Anheyer, Ostermann (2026)
      Digital Forest Bathing: A Systematic Review
      DOI: 10.3390/virtualworlds5010009
-     https://sci-hub.se/10.3390/virtualworlds5010009
+     https://doi.org/10.3390/virtualworlds5010009
 
  64. [cited:   0] 11 注意力恢复与自然
      Gies (2026)
      How ‘forest bathing’ keeps lungs healthy
      DOI: 10.1038/d41586-026-00105-x
-     https://sci-hub.se/10.1038/d41586-026-00105-x
+     https://doi.org/10.1038/d41586-026-00105-x
 
  65. [cited:   0] 11 注意力恢复与自然
      Schuil, Kalamkar, Grubert et al. (2024)
      Effects of Multisensory Virtual Forest Bathing on Stress and Well-Being in Young Adults: P
      DOI: 10.61936/themind/2024121210
-     https://sci-hub.se/10.61936/themind/2024121210
+     https://doi.org/10.61936/themind/2024121210
 
  66. [cited:   0] 12 中国文化情绪调节
      Kim, D. Stavrositu (2021)
      Personality-Culture Interaction as a Predictor of Emotion Suppression on Facebook
      DOI: 10.14695/kjsos.2021.24.4.91
-     https://sci-hub.se/10.14695/kjsos.2021.24.4.91
+     https://doi.org/10.14695/kjsos.2021.24.4.91
 === 2026-05-21 修订：桌面端文献补充（PC方案，非VR）===
 
 必下载（8篇）：
   67. [cited: 29] 创新2-HeartMath桌面端HRV biofeedback金标准
       Following the Rhythm of the Heart: HeartMath Institute's Path to HRV Biofeedback (2022)
       DOI: 10.1007/s10484-022-09554-2
-      https://sci-hub.se/10.1007/s10484-022-09554-2
+      https://doi.org/10.1007/s10484-022-09554-2
 
   68. [cited: 20] 创新2-HRV biofeedback 30年综述
       My Life in HRV Biofeedback Research (2022)
       DOI: 10.1007/s10484-022-09535-5
-      https://sci-hub.se/10.1007/s10484-022-09535-5
+      https://doi.org/10.1007/s10484-022-09535-5
 
   69. [cited: 6] 创新2-视觉biofeedback改善呼吸功能
       Effect of diaphragmatic breathing training with visual biofeedback on respiratory function (2024)
       DOI: 10.5606/tftrd.2024.12601
-      https://sci-hub.se/10.5606/tftrd.2024.12601
+      https://doi.org/10.5606/tftrd.2024.12601
 
   70. [cited: —] 创新5-拟真角色降低情绪调节效果(关键!)
       Realistic human-like avatar embodiment DIMINISHES outcomes in digital emotion regulation (2026)
       DOI: 10.1016/j.chbr.2026.100952
-      https://sci-hub.se/10.1016/j.chbr.2026.100952
+      https://doi.org/10.1016/j.chbr.2026.100952
 
   71. [cited: 5] 创新4/5-屏幕端游戏化biofeedback情绪教育
       Biofeedback-Based Videogames: Fostering Emotion Regulation at a Diverse Community Summer Camp (2023)
       DOI: 10.1089/g4h.2023.0013
-      https://sci-hub.se/10.1089/g4h.2023.0013
+      https://doi.org/10.1089/g4h.2023.0013
 
   72. [cited: —] 创新3-多模态自适应biofeedback系统验证
       Technical validation of a multimodal emotion-adaptive biofeedback system (2026)
       DOI: 10.1038/s41598-026-46105-9
-      https://sci-hub.se/10.1038/s41598-026-46105-9
+      https://doi.org/10.1038/s41598-026-46105-9
 
   73. [cited: 6] 创新4-情绪调节灵活性(Nature Reviews Psychology)
       From emotion regulation to emotion regulation flexibility (2023)
       DOI: 10.1038/s44159-023-00237-1
-      https://sci-hub.se/10.1038/s44159-023-00237-1
+      https://doi.org/10.1038/s44159-023-00237-1
 
   74. [cited: 5] 创新1-空间隐喻可视化(IEEE TVCG)
       Subspace-Map: Interactive Visual Analysis with Map Metaphor (2024)
       DOI: 10.1109/tvcg.2024.3368094
-      https://sci-hub.se/10.1109/tvcg.2024.3368094
+      https://doi.org/10.1109/tvcg.2024.3368094
 
 建议下载：
   75. Yoga-Based Visual Respiratory Biofeedback in Migraine (2025)
       DOI: 10.1007/s10484-025-09761-7
-      https://sci-hub.se/10.1007/s10484-025-09761-7
+      https://doi.org/10.1007/s10484-025-09761-7
 
   76. Effects of breathing control using visual feedback (2022)
       DOI: 10.1016/j.resp.2022.103887
-      https://sci-hub.se/10.1016/j.resp.2022.103887
+      https://doi.org/10.1016/j.resp.2022.103887
 
   77. HRV-Based Multimodal Physiological Signal Monitoring in HCI (2026)
       DOI: 10.3390/s26072181
-      https://sci-hub.se/10.3390/s26072181
+      https://doi.org/10.3390/s26072181
 
   78. Shared User Interfaces of Physiological Data: Systematic Review (2022)
       arXiv: 2204.00720

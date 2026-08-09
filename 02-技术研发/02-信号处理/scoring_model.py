@@ -275,13 +275,15 @@ class ScoringModel:
 
         # EMA smoothing
         alpha = self.cfg.smoothing_alpha
-        calm = alpha * raw_calm + (1 - alpha) * self._prev_calm
-        self._prev_calm = calm
+        previous_calm = self._prev_calm
+        calm = alpha * raw_calm + (1 - alpha) * previous_calm
 
         intensity = alpha * _weather_intensity(calm) + (1 - alpha) * self._prev_intensity
-        self._prev_intensity = intensity
+        trend = _weather_trend(calm, previous_calm)
 
-        trend = _weather_trend(calm, self._prev_calm)
+        # Commit history only after all deltas have been evaluated.
+        self._prev_calm = calm
+        self._prev_intensity = intensity
 
         scores_dict = {
             "breath_sync": s1, "breath_depth": s2,

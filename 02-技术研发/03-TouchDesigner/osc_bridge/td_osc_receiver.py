@@ -26,6 +26,12 @@ OSC 协议: UDP port 7000 → OSC In DAT → 本脚本 (Execute DAT)
 DERIVATIVE = "Derivative"
 
 import json
+import os
+
+
+# Development mutation control is opt-in. Formal/default TD runtime remains a
+# read-only monitor even if this callback DAT is accidentally present.
+DEVELOPMENT_CONTROL_ENABLED = os.getenv('SRP_TD_DEV_CONTROL', '') == '1'
 
 
 def onReceiveOSC(dat, rowIndex, message, data):
@@ -35,6 +41,11 @@ def onReceiveOSC(dat, rowIndex, message, data):
     """
     addr = message.address
     values = message.values
+
+    if addr != '/td/ping' and not DEVELOPMENT_CONTROL_ENABLED:
+        debug(f'[OSC] blocked development control in formal mode: {addr}')
+        _send_osc('/td/error', ['DEVELOPMENT_CONTROL_DISABLED'])
+        return
 
     try:
         if addr == '/td/exec':
