@@ -574,3 +574,19 @@ Land repository-safe fixes from the independent audit without fabricating Unity 
 - Unity lacks formal scenes/controller and tests; real device adapters and LIVE_E2E remain absent.
 - Reference provenance validation intentionally remains red until the inventory is rebuilt with identity, hash, source, access basis and asset-role fields.
 - External approvals, scale permission, Level A/B/C, Monte Carlo, throughput rehearsal, preregistration and locked analysis cannot be closed by repository edits.
+
+## 2026-08-11 Prepare F-01 Human Second-Review Report
+
+### Goal
+
+Provide a self-contained report that lets a real non-implementing team member review F-01 against implementation commit `6c27c94a53c3eaa57d77b12a74626eb7442bfc0e` without pre-filling or fabricating the human conclusion.
+
+### Evidence And Decision
+
+- Added `02-技术研发/05-通信协议/F-01_第二人审核报告_待签署.md` with fixed scope, authority links, repeatable commands, AC checklists, findings table and blank identity/conclusion fields.
+- Fresh verification produced 49 contract passes, 100 project passes, a passing PowerShell consumer, and passing registry, package and protocol validators.
+- F-01 remains `IN_REVIEW`; the report explicitly separates F-01 approval from the broader 112-file implementation commit and from downstream runtime claims.
+
+### Next Hard Gate
+
+A named team member must independently execute or witness the listed checks, record findings and sign the report. Only a human `PASS` permits a separate governance commit that moves F-01 to `DONE` and recalculates newly READY tasks.

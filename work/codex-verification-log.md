@@ -598,3 +598,13 @@
 | SHA-256 | `7792498EE0EF99E7DFA679C238628BF6F96151AB5BFB20926B5B256FBE2DF618` |
 | Exclusions | `Library`, `Temp`, `Logs`, `obj`, `UserSettings` and `Assets/_Recovery`. |
 | Residual Risk | This is a source snapshot of the current working tree, not a formal runtime build or LIVE_E2E acceptance artifact. |
+
+### 2026-08-11 F-01 Human Second-Review Report Draft
+
+| Field | Notes |
+|---|---|
+| Expected Observation | A reviewer can bind the audit to one implementation SHA, inspect F-01-only differences, reproduce all current checks, record findings and sign without inheriting a model-generated conclusion. |
+| Actual Result | Added a待签署 report with authority links, scope exclusions, exact commands, AC1-AC3 checks, findings fields, three mutually exclusive conclusions and a post-signature governance sequence. |
+| Verified Evidence | Contract suite `49 passed`; root regression `100 passed`; PowerShell consumer returned `PASS_NON_PYTHON_CONSUMER`; task registry, dispatch-package and protocol authority validators passed. |
+| Boundary | The report is not a signature. F-01 remains `IN_REVIEW`; no Unity, TouchDesigner, real-device or full-system completion is claimed. |
+| Next Hard Gate | A real non-implementing team member fills and signs the report against `6c27c94a53c3eaa57d77b12a74626eb7442bfc0e`. |
