@@ -66,3 +66,15 @@ sysinfo.txt
 *.zip
 *.psd
 *.blend
+
+# G-02 governed local data and key material
+*.db
+*.key
+*.p12
+*.pfx
+*.sealed
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+/02-技术研发/07-数据治理/evidence/unity_formal_build_gate*.log

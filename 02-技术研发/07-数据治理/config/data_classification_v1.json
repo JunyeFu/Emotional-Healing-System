@@ -1,0 +1,40 @@
+{
+  "isolated_stores": {
+    "contact_token_registry": {
+      "classification": "RESTRICTED_CONTACT_TOKEN",
+      "forbidden_fields": [
+        "research_id",
+        "name",
+        "phone",
+        "email",
+        "contact"
+      ],
+      "retention": "PENDING_INSTITUTIONAL_APPROVAL"
+    },
+    "dedup_hmac_credential": {
+      "classification": "SECRET_KEY_MATERIAL",
+      "credential_target": "SRP/G02/dedup-hmac/v1",
+      "retention": "PENDING_INSTITUTIONAL_APPROVAL"
+    },
+    "research_id_mapping": {
+      "classification": "RESTRICTED_IDENTITY_MAPPING",
+      "forbidden_fields": [
+        "phone",
+        "email",
+        "contact",
+        "subject_token",
+        "hmac_key"
+      ],
+      "retention": "PENDING_INSTITUTIONAL_APPROVAL"
+    }
+  },
+  "levels": {
+    "L0": "RESTRICTED_RAW",
+    "L1": "RESTRICTED_PSEUDONYMOUS",
+    "L2": "CONTROLLED_PSEUDONYMOUS",
+    "L3": "CONTROLLED_PSEUDONYMOUS",
+    "L4": "LOCKED_ANALYSIS",
+    "L5": "INTERNAL_RELEASE_CANDIDATE"
+  },
+  "schema_version": 1
+}

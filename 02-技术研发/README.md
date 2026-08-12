@@ -34,13 +34,14 @@ python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tes
 | M06 | TD只读操作台 | UDP `5005` | 监控、人工标记和中止请求 | `03-TouchDesigner/` |
 | M07 | Unity参与者制品 | TCP `5010`、UDP `5006` | 四天气完整体验、ACK和渲染回执 | `04-Unity视觉/` |
 | M08 | 开发桥接 | 编辑器连接 | 构建与检查能力 | `06-MCP开发桥接/` |
+| M00-G02 | 数据治理 | 联系方式预约、manifest和Unity资产 | 跨阶段去重、隐私门、备份恢复和许可门 | `07-数据治理/` |
 
 跨项目模块关系见根目录 `PROJECT_MODULES.md`。`visualizer.py` 是 M05 输出的本地观察工具，不是正式运行闭环的必需模块。
 
 ## 测试
 
 ```bash
-python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tests tests -q
+python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tests 07-数据治理/tests tests -q
 ```
 
 ## 依赖关系
