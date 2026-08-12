@@ -16,6 +16,17 @@
 
 ## Entries
 
+### 2026-08-12 G-02 Data Governance Technical Candidate
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The frozen G-02 design is implemented with isolated stores, fail-closed deduplication, authenticated recovery, repository privacy checks and a Unity asset-license gate; synthetic evidence passes while unavailable formal-machine and asset controls remain visibly blocked; task state moves to `IN_REVIEW`, not `DONE`. |
+| Actual Result | Implementation commit `befbdb698ef5cbeb6061315a4c912abdde4e6b08` added the governance module and Unity gate. G-02 reports 107专项 tests passing, a passing synthetic rehearsal and zero repository privacy violations. The current asset scan covers 179 items and blocks on three license groups; the formal environment check blocks on six missing controls. The registry now has READY=F-03/F-04/G-01/P-01/P-02 and IN_REVIEW=G-02. |
+| Deviation / Surprise | The first regenerated PDF still listed G-02 among six READY packages on page 7. The Markdown source was corrected, the PDF rebuilt and pages 7-8 re-rendered; the final document shows five READY packages and G-02 separately as `IN_REVIEW`. No formal credential was provisioned and no external gate was closed. |
+| Verification Command | G-02 pytest `107 passed`; root pytest `207 passed in 15.91s`; F-01 contract pytest `49 passed in 0.89s`; `compileall`; protocol-authority validator PASS; registry validator PASS for 51 entries; independent-package validator PASS for 6 packages and 127 snapshots; repository privacy PASS with 0 violations; expected fail-closed asset/environment exits both 2; `git diff --check`; added-line terminology and sensitive-extension scans. |
+| PDF QA | `02_固定任务概要.pdf` has 8 A4 pages and SHA-256 `17D2B4F07E0213CCD3C84437027ADA6A89336A82DDACF7A401FB1A447FED4381`. All pages were rendered at 120 DPI and visually checked; the corrected pages have no clipping, overlap, unreadable text or status conflict. |
+| Residual Risk | G-02 cannot become `DONE` until a dedicated account and separated encrypted roots exist, the Credential Manager target and sealed recovery evidence are configured, retention receives institutional approval, all three Unity asset groups are cleared or excluded, and a real independent team member signs the second-review report. Formal contact collection, formal sessions and Unity release remain blocked. |
+
 ### 2026-08-04 Project Status And Top-Level Design Summary
 
 | Field | Notes |

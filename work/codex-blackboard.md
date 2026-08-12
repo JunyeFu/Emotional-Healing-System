@@ -4,7 +4,7 @@
 
 ## Current Task Goal
 
-输出一份可导航的项目情况与顶层设计汇总，区分仓库现状、已确认目标、建议研究方案、尚待确认门和进入成员任务包拆分前的顺序。
+完成G-02数据治理技术闭环，形成可审计实现与失败关闭证据，将任务从`READY`迁移到`IN_REVIEW`，并保持正式专机、资产许可和第二人复核门开放。
 
 ## Constraints
 
@@ -17,6 +17,8 @@
 - 保留 SRP 术语边界，避免新增禁用表达。
 - 不导出内部隐式推理；以“观察—判断—影响”记录可审计依据。
 - 完成后验证文件存在、入口引用有效、术语扫描和 `git diff --check` 通过。
+- 仅在`D:\Agent\03-SRP`操作；保留四个既有删除项、`SRP/`、根目录docx、`tmp/`和本地Unity日志，不纳入G-02提交。
+- G-02不得在专机环境、保留期限、Unity资产和真实团队第二人复核关闭前标记为`DONE`。
 
 ## Known Evidence
 
@@ -617,3 +619,23 @@ Record the named second-person F-01 acceptance without overstating how evidence 
 - F-01 completion covers the runtime contract only. P-01, P-02, Unity, TouchDesigner, real-device integration and a full-system run remain separate tasks.
 - G-02 is planned and dispatchable, not implemented. Formal contact collection remains closed until the dedicated account, encrypted governance volume, credential, retention approval and access evidence exist.
 - The project-level novelty state remains `REVISE_REQUIRED`, and the independent-review project state remains `REJECT_AND_RESUBMIT_DESIGN`.
+
+## 2026-08-12 Implement G-02 Data Governance Candidate
+
+### Goal
+
+Implement the frozen G-02 data-governance design, prove the synthetic technical loop and fail-closed release behavior, then move the task to human second review without claiming formal-machine readiness.
+
+### Evidence And Decision
+
+- Implementation commit `befbdb698ef5cbeb6061315a4c912abdde4e6b08` adds L0-L5 authority, strict E.164 normalization, domain-separated HMAC deduplication, isolated identity mapping, append-only audit chaining, authenticated backup recovery, manifest privacy linting and downstream contracts.
+- The cross-stage state machine covers Level B, Level C, stage 1 and stage 3, including concurrent reservation, release before exposure and permanent blocking after exposure.
+- Unity now has a Git-derived 179-item inventory, license ledger and synchronous formal-build gate. Three unresolved asset groups retain owners, deadlines and exclusion plans and continue to block release.
+- G-02 tests report `107 passed`; the synthetic rehearsal and repository privacy gate pass. The formal environment gate reports six missing machine controls, and Unity exits with the expected asset-license block after successful C# compilation.
+- G-02 moves from `READY` to `IN_REVIEW`. The READY set becomes exactly F-03, F-04, G-01, P-01 and P-02; no G-02-dependent downstream task is newly unlocked.
+
+### Open Hard Gates
+
+- A dedicated Windows account, separate encrypted governance and backup roots, Credential Manager secret, sealed recovery evidence and institution-approved retention period remain required.
+- The three Unity asset groups must be cleared or excluded before publication.
+- A real team member independent of the implementation must review the fixed commit and sign `G-02_第二人审核报告_待签署.md`.

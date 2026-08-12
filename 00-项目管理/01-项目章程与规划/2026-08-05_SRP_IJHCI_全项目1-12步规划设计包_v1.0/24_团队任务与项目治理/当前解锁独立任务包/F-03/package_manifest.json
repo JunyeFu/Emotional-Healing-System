@@ -3,7 +3,7 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "F-03",
   "status": "READY",
-  "registry_sha256": "D9C015461CB04029D765A7D009C43FE6847A6A8FAF7C0C17436BF686B0F1A2A0",
+  "registry_sha256": "085B27FF6DC4514C893ECEBD9F0604F228ED2C2F49F19D7D1009CB8D8E4AC9FE",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
@@ -56,14 +56,14 @@
     {
       "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json",
       "package_path": "inputs/09_manifest.json",
-      "sha256": "CC65E97BEA71F73727AD66096CC5CCCAB4FA7C7B63E891AA1D34C924B5B79752",
-      "size_bytes": 2626
+      "sha256": "DB6E2FE9B0985A3DCF214C44ABE0285771CED0AD4E845BF07592F842D437131B",
+      "size_bytes": 2703
     },
     {
       "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json",
       "package_path": "inputs/10_packages-lock.json",
-      "sha256": "1668D8D026251ED2E06806DE283950CC99D6F3C2D5BB0E2088F4A9DD4A2708A9",
-      "size_bytes": 17371
+      "sha256": "B4761E5179CD60F02E248C36947648E881BA1CC2A11F80326435B8B490033FDB",
+      "size_bytes": 17448
     },
     {
       "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",

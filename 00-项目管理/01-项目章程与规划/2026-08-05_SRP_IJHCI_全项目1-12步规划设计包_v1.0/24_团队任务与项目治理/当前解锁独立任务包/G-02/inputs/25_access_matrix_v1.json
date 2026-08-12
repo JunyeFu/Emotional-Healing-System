@@ -1,0 +1,25 @@
+{
+  "capabilities": {
+    "analyst": [
+      "read_l2_l3"
+    ],
+    "data_admin": [
+      "maintain_identity_mapping",
+      "read_dedup_records",
+      "read_l0_l1",
+      "read_l2_l3",
+      "reserve_contact"
+    ],
+    "design_member": [],
+    "primary_operator": [
+      "read_l0_l1"
+    ],
+    "project_lead": [
+      "approve_l4_l5_disclosure",
+      "read_dedup_audit_summary",
+      "read_l0_l1",
+      "read_l2_l3"
+    ]
+  },
+  "schema_version": 1
+}

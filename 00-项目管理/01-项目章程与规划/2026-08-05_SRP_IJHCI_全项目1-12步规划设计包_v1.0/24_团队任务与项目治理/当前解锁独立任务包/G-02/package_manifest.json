@@ -2,8 +2,8 @@
   "package_schema_version": "1.0",
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "G-02",
-  "status": "READY",
-  "registry_sha256": "D9C015461CB04029D765A7D009C43FE6847A6A8FAF7C0C17436BF686B0F1A2A0",
+  "status": "IN_REVIEW",
+  "registry_sha256": "085B27FF6DC4514C893ECEBD9F0604F228ED2C2F49F19D7D1009CB8D8E4AC9FE",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
@@ -50,8 +50,8 @@
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/G-02_数据治理实施计划_v1.0.md",
       "package_path": "inputs/08_G-02_数据治理实施计划_v1.0.md",
-      "sha256": "9D1DE502C72228F298A66A72326004471227BA8891245CC58CBAAD7B6696B252",
-      "size_bytes": 14663
+      "sha256": "62B108626D8EFD21342BF3C88BEB66AD3FC490FBD2A0AA8DF3A4B56D4779ED5D",
+      "size_bytes": 16013
     },
     {
       "source_path": "02-技术研发/05-通信协议/F-01_技术验收记录.md",
@@ -68,25 +68,326 @@
     {
       "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json",
       "package_path": "inputs/11_manifest.json",
-      "sha256": "CC65E97BEA71F73727AD66096CC5CCCAB4FA7C7B63E891AA1D34C924B5B79752",
-      "size_bytes": 2626
+      "sha256": "DB6E2FE9B0985A3DCF214C44ABE0285771CED0AD4E845BF07592F842D437131B",
+      "size_bytes": 2703
     },
     {
       "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json",
       "package_path": "inputs/12_packages-lock.json",
-      "sha256": "1668D8D026251ED2E06806DE283950CC99D6F3C2D5BB0E2088F4A9DD4A2708A9",
-      "size_bytes": 17371
+      "sha256": "B4761E5179CD60F02E248C36947648E881BA1CC2A11F80326435B8B490033FDB",
+      "size_bytes": 17448
     },
     {
       "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
       "package_path": "inputs/13_ProjectVersion.txt",
       "sha256": "0EE4B8BAF7A4E3760CD3A0C19797A9362ED4E0C9C8EF0F49D8304C1211E511B8",
       "size_bytes": 83
+    },
+    {
+      "source_path": "PROJECT_MODULES.md",
+      "package_path": "inputs/14_PROJECT_MODULES.md",
+      "sha256": "8851F85490A75BF3ECC30C1973BC62AF4C069B4074282B42150D93A18BC89925",
+      "size_bytes": 7808
+    },
+    {
+      "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "package_path": "inputs/15_FormalBuildGate.cs",
+      "sha256": "ADA7823BB73B645E371510BD52402B0F060C72AE54C8AD67FF895A0D939647DB",
+      "size_bytes": 6797
+    },
+    {
+      "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_inventory.json",
+      "package_path": "inputs/16_asset_inventory.json",
+      "sha256": "94C3BE838D91AF8F6AA57EBFE1C8A6AB1A57083D590DD610376CC0645BA031CB",
+      "size_bytes": 60895
+    },
+    {
+      "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_license_ledger.json",
+      "package_path": "inputs/17_asset_license_ledger.json",
+      "sha256": "771E7AC77D0E2C4414ED79A963E3F0C76CEFAA1B2F1675DF4CA800FFDA20F098",
+      "size_bytes": 5939
+    },
+    {
+      "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/third_party_packages.md",
+      "package_path": "inputs/18_third_party_packages.md",
+      "sha256": "03166510316A6D747D953E1AE415425E78FBFB4D806C5E193A4ED3EEA1BBE5A9",
+      "size_bytes": 1478
+    },
+    {
+      "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/unresolved_local_assets.md",
+      "package_path": "inputs/19_unresolved_local_assets.md",
+      "sha256": "F0EDC50C89D56C799C55CEE5A8AA0BE79A00D14AC016099830E7994C04ED0DDF",
+      "size_bytes": 1726
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/README.md",
+      "package_path": "inputs/20_README.md",
+      "sha256": "A6DF62172F7D3E4F8276C946BA658A026CB33775889CFC07700543466369E733",
+      "size_bytes": 4933
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/G-02_技术验收记录.md",
+      "package_path": "inputs/21_G-02_技术验收记录.md",
+      "sha256": "16346A0E6FA1B8C51A5EB88F9F370DC5AD05914239CB83AC7E5B6E127194A2A7",
+      "size_bytes": 3585
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/G-02_第二人审核报告_待签署.md",
+      "package_path": "inputs/22_G-02_第二人审核报告_待签署.md",
+      "sha256": "303081437AA80462BFE978821598201976833E04D27B603EF5D3E72B7B61380B",
+      "size_bytes": 3922
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/g02.py",
+      "package_path": "inputs/23_g02.py",
+      "sha256": "C9B3E8B7C3836ADFDD7FF48FBE58CC16D9B8906DC2A182BEE6672F0636A6CF8A",
+      "size_bytes": 6716
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/verify_repository_privacy.py",
+      "package_path": "inputs/24_verify_repository_privacy.py",
+      "sha256": "DAB133D885EE038372772EE5D310DA04FD2D5FE3EFB3FA48C8C553AD31E86A29",
+      "size_bytes": 5078
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/config/access_matrix_v1.json",
+      "package_path": "inputs/25_access_matrix_v1.json",
+      "sha256": "BB2320636EF820F569846DD31D5965045F9DF8D57E41C1FCA2A5EDFFA2DBD86E",
+      "size_bytes": 460
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/config/data_classification_v1.json",
+      "package_path": "inputs/26_data_classification_v1.json",
+      "sha256": "9DAC812E63532F7CB07437D06B82174F0B43AC5905F3BF1E08FA20BBBA0C4D1E",
+      "size_bytes": 1016
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/docs/downstream_contracts.md",
+      "package_path": "inputs/27_downstream_contracts.md",
+      "sha256": "6E484AEA88465DB0D8900B56B6FC600710416262A186A34851BD31F70C683602",
+      "size_bytes": 2840
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/docs/formal_machine_setup.md",
+      "package_path": "inputs/28_formal_machine_setup.md",
+      "sha256": "074CA18FEB5D0EE565B787679A0A0F519EE1C43B8F73747D119E883694E1F508",
+      "size_bytes": 3677
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/evidence/asset_scan_report.json",
+      "package_path": "inputs/29_asset_scan_report.json",
+      "sha256": "354D9DF83EC70127B70F75E4DA29387F14D5654B5A8C13FF5164DE0201F82510",
+      "size_bytes": 63975
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/evidence/formal_environment_report.json",
+      "package_path": "inputs/30_formal_environment_report.json",
+      "sha256": "FD9DF29723C4C01D71B33F4C7369DA2DC8FF94D71D254EC028E763D8765F67BD",
+      "size_bytes": 503
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/evidence/repository_privacy_report.json",
+      "package_path": "inputs/31_repository_privacy_report.json",
+      "sha256": "CD1BF2B81BD18312111F21F3ED1531498493CC0C9D1FBD02C11634A507B79962",
+      "size_bytes": 64
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/evidence/synthetic_rehearsal_report.json",
+      "package_path": "inputs/32_synthetic_rehearsal_report.json",
+      "sha256": "8B96B1172062017EC9B26DE73A25A160722871095745360D4924FB73CD47216E",
+      "size_bytes": 492
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/evidence/unity_formal_build_gate_summary.json",
+      "package_path": "inputs/33_unity_formal_build_gate_summary.json",
+      "sha256": "FEF83461A806CDA41CDBADB1FF90F1D50C1A35AA210377BA7CDDE1F504C534D7",
+      "size_bytes": 356
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/__init__.py",
+      "package_path": "inputs/34___init__.py",
+      "sha256": "FE7E748104D88E002A5A34DD17C55E9217E1E7205B418496913EE858B908A1EC",
+      "size_bytes": 643
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/access.py",
+      "package_path": "inputs/35_access.py",
+      "sha256": "B8DF87E83050629B30901B53DE8136BD80DEA0BB820E9F90298A99CB067015BB",
+      "size_bytes": 2011
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/assets.py",
+      "package_path": "inputs/36_assets.py",
+      "sha256": "FF1FFEF6A85B30AF271F2B273170BCD1194E0EDD9B496A08D9A46F47B55FC1F3",
+      "size_bytes": 11313
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/backup.py",
+      "package_path": "inputs/37_backup.py",
+      "sha256": "D12309A727FE98012E14CF3088CD7A20761EC519A34402355A7B4D6ADE868B8A",
+      "size_bytes": 8667
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/credentials.py",
+      "package_path": "inputs/38_credentials.py",
+      "sha256": "5E1CA8A0B5D878FEB520B124933CB506EE7745742C4D55BCB1F819829DA5DCB3",
+      "size_bytes": 4579
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/environment.py",
+      "package_path": "inputs/39_environment.py",
+      "sha256": "A3166C5223A7A3B29F6AACD77D133DAC30AD7B212995A173733B45AEC74FBD47",
+      "size_bytes": 4543
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/errors.py",
+      "package_path": "inputs/40_errors.py",
+      "sha256": "474D772EFF7F824DABDDC19EEA86A4030F8876D8C6C4C89CDBBBE64BD9E53B78",
+      "size_bytes": 358
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/identity.py",
+      "package_path": "inputs/41_identity.py",
+      "sha256": "4625A54C5AC96AE7AA0A7996BB567C5B099AA8956EE14028681B2FA76822BA1E",
+      "size_bytes": 2832
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/phone.py",
+      "package_path": "inputs/42_phone.py",
+      "sha256": "A4C562A70EFF722C1FFE33FF1EB2782A52C201679AB64CD36D95E3CD986828FE",
+      "size_bytes": 1613
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/privacy.py",
+      "package_path": "inputs/43_privacy.py",
+      "sha256": "E5BE2471192D3EBD8A789E5ABF1D9109DF3ADD6E651B5E79A47B15056C05BBFA",
+      "size_bytes": 1736
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/registry.py",
+      "package_path": "inputs/44_registry.py",
+      "sha256": "6A8EAC722F90A3C93EF5B5607F2C7E1AA20EC1D6B3369080E0C004AC78FEDBCE",
+      "size_bytes": 18167
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/rehearsal.py",
+      "package_path": "inputs/45_rehearsal.py",
+      "sha256": "6D33A11E9260E85198D183C2F9EB0AE5B70EE3B6A7EFFC44617E3562C6E987BC",
+      "size_bytes": 5045
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/runtime.py",
+      "package_path": "inputs/46_runtime.py",
+      "sha256": "9925C43B05120430DA4F471BB67CD43E3C838DE0E2F32A53E2584E6AD8277B00",
+      "size_bytes": 2371
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/srp_governance/windows_checks.py",
+      "package_path": "inputs/47_windows_checks.py",
+      "sha256": "C39E02AED69931635E945517AB29A0F56568DB21FDC9F8A5511037CF401336FB",
+      "size_bytes": 2567
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/conftest.py",
+      "package_path": "inputs/48_conftest.py",
+      "sha256": "566C3769C1CE5459A1DD5F103E51D103176B23F902ECE11C1EA28D90B2691296",
+      "size_bytes": 161
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/fixtures/cross_stage_matrix.json",
+      "package_path": "inputs/49_cross_stage_matrix.json",
+      "sha256": "FEB126EE711A7DAB27588B73A8DE801CB75CBD50A77445422058D5D22701EC66",
+      "size_bytes": 178
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_access.py",
+      "package_path": "inputs/50_test_access.py",
+      "sha256": "0446C02477A2AF3C72264F282C037B9B339F0BA566F17D4A132599A0B82DFF57",
+      "size_bytes": 1720
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_assets.py",
+      "package_path": "inputs/51_test_assets.py",
+      "sha256": "670A2F238FB994E5E5882EE44F0D3ACB6DEA3E95F639CECF95813414F99E5862",
+      "size_bytes": 7874
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_backup.py",
+      "package_path": "inputs/52_test_backup.py",
+      "sha256": "129EC212347315A2905FE273B0A2B077CB0B6DA07ECA9EC1EE327A26B7C08CBA",
+      "size_bytes": 6178
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_config_authority.py",
+      "package_path": "inputs/53_test_config_authority.py",
+      "sha256": "3BAA6E2159CFD7DBB7A241CCB76BFCC155630F3DEAE21DE6B893D84CC1F36A83",
+      "size_bytes": 1023
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_credentials.py",
+      "package_path": "inputs/54_test_credentials.py",
+      "sha256": "A8EF9CC07F17B6304823415AEE0D9A9D7081949E25AE2D7BCE1D327872B24CAC",
+      "size_bytes": 3256
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_environment.py",
+      "package_path": "inputs/55_test_environment.py",
+      "sha256": "9FA68F2C714C0700D5653D603EEDC83E9F40407C5809543C4D2277B28F7BC5F2",
+      "size_bytes": 4890
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_identity.py",
+      "package_path": "inputs/56_test_identity.py",
+      "sha256": "FAAB0628EEE281AFA9CAAF7734AA0DEC77C701F1F8850C832ED80A8ACD6B36E5",
+      "size_bytes": 2734
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_phone.py",
+      "package_path": "inputs/57_test_phone.py",
+      "sha256": "B03921C58CA20BAA55E0DD92458CAADE231C9D53C5A639143500404B3A494D2F",
+      "size_bytes": 1582
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_privacy.py",
+      "package_path": "inputs/58_test_privacy.py",
+      "sha256": "920C8258B8BE1901A9017A8D8E0EC11CDECFE70B48A590BBA53169B2E2F35A0A",
+      "size_bytes": 2263
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_registry.py",
+      "package_path": "inputs/59_test_registry.py",
+      "sha256": "D9F7F61CEEDEC3E0C5D56FCABC9B79AEB9DA85A6F72EA9C57CDA600E3946BA06",
+      "size_bytes": 6868
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_rehearsal.py",
+      "package_path": "inputs/60_test_rehearsal.py",
+      "sha256": "17561E8D0C61FB5A09C7F0822F79E0F2DE4D26EA8F0658B00CA91111D06AB070",
+      "size_bytes": 1575
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_repository_privacy.py",
+      "package_path": "inputs/61_test_repository_privacy.py",
+      "sha256": "7AADA2D918EFFE6E82A4E1AB6CF35A321B883F94E8544BAC6ADCB5A5E403672F",
+      "size_bytes": 1408
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_unity_gate.py",
+      "package_path": "inputs/62_test_unity_gate.py",
+      "sha256": "ECB4DF2A58D5456FDFA8FDABB55591E3727105B9B5B6848105323C02CDA99EA0",
+      "size_bytes": 685
+    },
+    {
+      "source_path": "02-技术研发/07-数据治理/tests/test_windows_checks.py",
+      "package_path": "inputs/63_test_windows_checks.py",
+      "sha256": "B6E5539D2E805FEC62733535AB2B8820457595F92FBADD8A78D1CAD54676CB03",
+      "size_bytes": 1707
     }
   ],
   "working_paths": [
     "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统",
     "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual"
+    "02-技术研发/04-Unity视觉/SRP-Weather-Visual",
+    "02-技术研发/07-数据治理"
   ]
 }
