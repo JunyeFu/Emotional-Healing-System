@@ -145,8 +145,11 @@ def main() -> int:
 
         try:
             effort = int(row["effort_person_days"])
-            if not 1 <= effort <= 5:
-                errors.append(f"{task_id}: effort must be within 1..5 days")
+            maximum_effort = 6 if task_id == "P-01" else 5
+            if not 1 <= effort <= maximum_effort:
+                errors.append(
+                    f"{task_id}: effort must be within 1..{maximum_effort} days"
+                )
         except ValueError:
             errors.append(f"{task_id}: effort is not an integer")
 

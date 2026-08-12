@@ -639,3 +639,22 @@ Implement the frozen G-02 data-governance design, prove the synthetic technical 
 - A dedicated Windows account, separate encrypted governance and backup roots, Credential Manager secret, sealed recovery evidence and institution-approved retention period remain required.
 - The three Unity asset groups must be cleared or excluded before publication.
 - A real team member independent of the implementation must review the fixed commit and sign `G-02_第二人审核报告_待签署.md`.
+
+## 2026-08-13 Implement P-01 SessionCore Candidate
+
+### Goal
+
+Implement the v2.1 fixed-sequence session authority and minimum Python loopback transport, integrate its contracts with G-02/P-02/X-01 and Unity boundaries, then move P-01 to human second review without claiming downstream runtime completion.
+
+### Evidence And Decision
+
+- Implementation commit `8063afc7053a79a0d27fe8fc94159dbc5fc9a9e0` adds deterministic `SessionCore`, fixed `SequenceProvider`, formal gates, session-event schema, protocol configuration, TCP 5010 control delivery, UDP 5005/5006 validated mirroring and a four-module golden trace.
+- The golden trace completes storm, heat, snow and fade once each in 800 seconds with trace hash `sha256:c163f211396dc979fa9f63ce25a8984cc3a4f2010ba71d8711d3223abf7c4491`.
+- Independent model review found five P1-P2 candidates. Abort delivery/disconnect, semantic ACK failure and local-clock 20 Hz enforcement were repaired; conservative exposure and duplicate-request rejection were confirmed as intended. The second review returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW` with no open P0-P2.
+- P-01 moves from `READY` to `IN_REVIEW` at six person-days. F-03 is explicitly a Python-controlled render mirror, not a second session authority. The claimable set becomes F-03, F-04, G-01 and P-02; G-02 and P-01 remain review-only.
+
+### Open Hard Gates
+
+- A real non-implementing team member must review and sign the fixed P-01 implementation commit before `DONE`.
+- P-02 durable append storage, X-01 randomization authority, Unity/TD consumers, real devices and `LIVE_E2E` remain separate open tasks.
+- Stage 3 frozen-policy ordering is blocked with `ADAPTIVE_SEQUENCE_REQUIRES_V2_2`; v2.1 does not reinterpret `weather_sequence` as a fallback sequence.

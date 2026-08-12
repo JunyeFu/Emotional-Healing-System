@@ -9,5 +9,5 @@
 | F-04 | READY | 【TouchDesigner】只读操作台壳 | 2人日 | [F-04/TASK.md](F-04/TASK.md) |
 | G-01 | READY | 【研究治理】伦理材料许可招募产能与角色台账 | 5人日 | [G-01/TASK.md](G-01/TASK.md) |
 | G-02 | IN_REVIEW | 【数据治理】数据分级跨阶段去重与资产许可 | 4人日 | [G-02/TASK.md](G-02/TASK.md) |
-| P-01 | READY | 【Python核心】manifest与会话编排 | 4人日 | [P-01/TASK.md](P-01/TASK.md) |
+| P-01 | IN_REVIEW | 【Python核心】manifest与会话编排 | 6人日 | [P-01/TASK.md](P-01/TASK.md) |
 | P-02 | READY | 【数据记录】L0/L1追加记录与重放 | 4人日 | [P-02/TASK.md](P-02/TASK.md) |

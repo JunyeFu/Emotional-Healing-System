@@ -630,3 +630,15 @@
 | PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages, SHA-256 `E23243D839DF47BFBC94688B961DD12FA60C12ABE1EA97991E5AD0978B21561E`; eight rendered pages were visually inspected with no clipping, overlap or unreadable content. |
 | Scope Guard | Existing four tracked deletions and the pre-existing untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` were excluded from staging. Historical records were not rewritten. |
 | Residual Risk | F-01 does not establish downstream implementation or a full-system run. G-02 remains `READY`; dedicated-machine credentials, encrypted storage, retention approval, access controls, asset evidence and recovery rehearsal are not yet present. |
+
+### 2026-08-13 P-01 SessionCore Candidate And Review Transition
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Fixed v2.1 ordering, deterministic timing, formal fail-closed gates, reliable loopback controls and validated 20 Hz telemetry work without moving authority into Unity or TouchDesigner. |
+| Actual Result | Added pure `SessionCore`, fixed sequence provider, formal adapter gates, TCP 5010 JSON Lines service, UDP 5005/5006 publisher, machine schemas, protocol configuration and a deterministic four-module golden trace. Implementation commit: `8063afc7053a79a0d27fe8fc94159dbc5fc9a9e0`. |
+| Verified Evidence | P-01 suite `82 passed`; root regression `289 passed`; protocol authority passed; independent model rereview returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`; registry passed with READY=F-03/F-04/G-01/P-02 and IN_REVIEW=G-02/P-01; strict indexed package validation passed with 6 packages and 156 snapshots. |
+| Independent Review | Three transport defects were fixed: fatal abort delivery/disconnect, semantic ACK propagation and local-clock telemetry throttling. Conservative exposure before start and permanent duplicate-request rejection were retained as intended. No P0-P2 remains in the model review. |
+| PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages, SHA-256 `2C1DCF288B9E2EFD86C92719CB95225D90575A87C79B29FFE8C432214D408BB4`; all pages were rendered at 120 DPI and visually checked with no clipping, overlap or unreadable content. |
+| Scope Guard | The four pre-existing tracked deletions and pre-existing untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` remain excluded. |
+| Residual Risk | Abort delivery is best effort if the connection is already lost. Human second review, P-02, X-01, Unity/TD consumers, real devices and `LIVE_E2E` remain open. |
