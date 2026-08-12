@@ -1,7 +1,0 @@
-{
-  "schema_version": "2.1",
-  "message_type": "session_manifest",
-  "research_id": "R-0001",
-  "session_id": "S-INVALID",
-  "study_stage": "stage_1"
-}

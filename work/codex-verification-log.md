@@ -608,3 +608,14 @@
 | Verified Evidence | Contract suite `49 passed`; root regression `100 passed`; PowerShell consumer returned `PASS_NON_PYTHON_CONSUMER`; task registry, dispatch-package and protocol authority validators passed. |
 | Boundary | The report is not a signature. F-01 remains `IN_REVIEW`; no Unity, TouchDesigner, real-device or full-system completion is claimed. |
 | Next Hard Gate | A real non-implementing team member fills and signs the report against `6c27c94a53c3eaa57d77b12a74626eb7442bfc0e`. |
+
+### 2026-08-12 F-01 Signoff Closure And G-02 Dispatch Planning
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The named second-person acceptance is bound to a commit; F-01 is the only task changing to `DONE`; only direct dependents with no other unmet prerequisites become `READY`; every READY task has an indexed independent package; G-02 has a decision-complete plan but no completion claim. |
+| Actual Result | Recorded 傅钧烨 as team director and independent second reviewer using witnessed results and file review; created acceptance commit `58c9e41871214351a0fe96a413dfbc34d482ed4a`; migrated F-01, G-02, P-01 and P-02; regenerated the handbook, six packages and the fixed-task PDF; added the G-02 implementation plan. |
+| Verified Evidence | Contract suite `49 passed in 1.50s`; root regression `100 passed in 13.82s`; PowerShell consumer PASS; registry PASS with 51 entries and READY=F-03/F-04/G-01/G-02/P-01/P-02; indexed package PASS with 6 packages and 77 snapshots; protocol authority PASS; all three PDF structure checks PASS. |
+| PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages, SHA-256 `E23243D839DF47BFBC94688B961DD12FA60C12ABE1EA97991E5AD0978B21561E`; eight rendered pages were visually inspected with no clipping, overlap or unreadable content. |
+| Scope Guard | Existing four tracked deletions and the pre-existing untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` were excluded from staging. Historical records were not rewritten. |
+| Residual Risk | F-01 does not establish downstream implementation or a full-system run. G-02 remains `READY`; dedicated-machine credentials, encrypted storage, retention approval, access controls, asset evidence and recovery rehearsal are not yet present. |

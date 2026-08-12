@@ -590,3 +590,30 @@ Provide a self-contained report that lets a real non-implementing team member re
 ### Next Hard Gate
 
 A named team member must independently execute or witness the listed checks, record findings and sign the report. Only a human `PASS` permits a separate governance commit that moves F-01 to `DONE` and recalculates newly READY tasks.
+
+## 2026-08-12 Close F-01 Signoff And Unlock G-02/P-01/P-02
+
+### Goal
+
+Record the named second-person F-01 acceptance without overstating how evidence was obtained, migrate every current governance surface, generate all newly READY packages and freeze a decision-complete G-02 plan.
+
+### Evidence And Decision
+
+- 傅钧烨 confirmed acceptance as team director and independent second reviewer, based on witnessing the existing verification results and reviewing the fixed files; the report explicitly states that the reviewer did not personally rerun the commands.
+- Acceptance commit `58c9e41871214351a0fe96a413dfbc34d482ed4a` binds the completed report to implementation commit `6c27c94a53c3eaa57d77b12a74626eb7442bfc0e`.
+- F-01 moved from `IN_REVIEW` to `DONE`; G-02, P-01 and P-02 moved from `WAIT_DEP` to `READY`; F-03, F-04 and G-01 remain `READY`.
+- The dispatch set is now exactly F-03, F-04, G-01, G-02, P-01 and P-02. U-01 and T-01 retain other unmet dependencies; D-01 and D-02 retain external and upstream gates.
+- Added `G-02_数据治理实施计划_v1.0.md`, freezing L0-L5 classification, phone-only HMAC deduplication, credential custody, store separation, fail-closed APIs, backup recovery, tracked Unity asset licensing and downstream contracts. G-02 remains `READY`; no implementation claim was made.
+
+### Verification
+
+- F-01 contract suite: `49 passed in 1.50s`; root regression: `100 passed in 13.82s`.
+- Registry validator: 51 entries; `DONE=F-01,F-02,R-01,W-01`; six expected READY tasks; no `IN_REVIEW` task.
+- Indexed dispatch validator: six packages, 77 snapshots; protocol authority and PowerShell non-Python consumer passed.
+- Fixed-task PDF: eight A4 pages, text checks passed, SHA-256 `E23243D839DF47BFBC94688B961DD12FA60C12ABE1EA97991E5AD0978B21561E`; all pages were rendered and visually inspected without clipping or overlap.
+
+### Open Hard Gates
+
+- F-01 completion covers the runtime contract only. P-01, P-02, Unity, TouchDesigner, real-device integration and a full-system run remain separate tasks.
+- G-02 is planned and dispatchable, not implemented. Formal contact collection remains closed until the dedicated account, encrypted governance volume, credential, retention approval and access evidence exist.
+- The project-level novelty state remains `REVISE_REQUIRED`, and the independent-review project state remains `REJECT_AND_RESUBMIT_DESIGN`.

@@ -1,2 +1,0 @@
-# Test-only dependency. runtime_contract.py remains standard-library only.
-jsonschema[format]==4.25.1
