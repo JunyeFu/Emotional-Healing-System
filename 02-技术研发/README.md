@@ -28,6 +28,7 @@ python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tes
 
 | ID | 模块 | 输入 | 输出 | 主要实现 |
 |---|---|---|---|---|
+| M02 | Python会话核心 | v2.1 manifest、分配、单调时间、ACK与回执 | 权威状态、控制事件、会话事件和20Hz发布门 | `srp_session_core/` |
 | M03 | 数据采集 | 真实设备或开发适配器 | 原始样本、设备状态、质量元数据 | `01-数据采集/` |
 | M04 | 交互状态估计 | 原生采样与同步事件 | 目标/实际事件、质量、PF候选和累计状态 | `02-信号处理/` |
 | M05 | 运行合同与记录 | Python权威状态 | v2.1合同、可靠控制、20Hz遥测、L0/L1 | `05-通信协议/` |
@@ -43,6 +44,8 @@ python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tes
 ```bash
 python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tests 07-数据治理/tests tests -q
 ```
+
+P-01定向验证可运行`py -3.14 -m pytest tests/session_core -q`。该结果只证明Python技术候选，不替代Unity、TouchDesigner或真实设备联调。
 
 ## 依赖关系
 

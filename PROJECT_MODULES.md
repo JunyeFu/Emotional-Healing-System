@@ -27,7 +27,7 @@ Python是条件、顺序、时钟、协议、信号质量、事件、累计状�
 |---|---|---|---|---|
 | M00 | 研究与数据治理 | `00-项目管理/`、`02-技术研发/07-数据治理/`、`work/` | 冻结基线、任务状态、L0-L5分级、跨阶段去重、隐私与资产许可门 | 运行时状态计算、随机分配 |
 | M01 | 体验与测量设计 | `01-需求与设计/`、规划包`20_` | 四层候选语法、完整表示方案、SCCI操纵检查与条件中性测量 | 设备驱动、运行编排 |
-| M02 | Python会话核心 | `02-技术研发/` | `prepare/start/abort/end`和权威状态流 | 设备协议细节、画面渲染 |
+| M02 | Python会话核心 | `02-技术研发/srp_session_core/` | manifest门、权威状态流、可靠控制服务和遥测发布门 | 设备协议细节、画面渲染、随机化生成 |
 | M03 | 真实设备采集 | `02-技术研发/01-数据采集/` | 时间戳原始样本、设备状态、质量元数据 | 情绪结论、天气控制 |
 | M04 | 在线交互状态估计 | `02-技术研发/02-信号处理/` | 目标/实际呼吸事件、质量、PF候选、累计更新 | 量表结论、正式统计 |
 | M05 | 运行合同与记录 | `02-技术研发/05-通信协议/` | manifest、控制/ACK、20Hz遥测、L0/L1追加记录 | 场景内部动画、TD界面 |
@@ -54,13 +54,15 @@ PLUX respiBAN BLE与Polar H10是两个真实适配器。Mock和Replay是开发�
 ### M02 SessionCore
 
 ```text
-prepare(manifest) -> PreparedSession
-apply_operator_request(request) -> Decision
-advance(now, device_frames) -> SessionSnapshot
-finish(reason) -> SessionSummary
+prepare(manifest, assignment, now_ns) -> CoreUpdate
+apply_operator_request(request, now_ns) -> CoreUpdate
+advance(now_ns) -> CoreUpdate
+confirm_delivery(ack_or_receipt, now_ns) -> CoreUpdate
+finish(reason, now_ns) -> SessionSummary
+snapshot() -> SessionSnapshot
 ```
 
-调用方不接触随机化、时钟、重试、降级和恢复累计的内部实现。相同manifest、原始输入和随机种子必须可重放。
+调用方不接触状态转换、时钟、控制序号和重试实现。P-01只读取X-01提供的分配，不生成随机化；相同manifest、分配和单调时钟输入必须产生相同轨迹。v2.1只开放固定顺序，阶段三冻结策略在合同升级前失败关闭。
 
 ### M05 Runtime Contract
 
@@ -134,6 +136,7 @@ G-02只对外返回不透明预约和审计ID。去重库、研究编号映射�
 - TD现有 `.toe` 以呼吸引导为主，需要重构成只读操作台；
 - UDP v1.2和Spout文档保留用于迁移审计，不能据此声称目标架构已完成。
 - G-02已形成合成数据技术候选实现；正式专机检查和Unity资产许可仍为阻断状态，不得从测试通过推断正式使用能力。
+- P-01已形成Python会话核心与本机传输技术候选；正式模式仍因P-02、X-01、G-02正式门和Unity客户端未闭合而失败关闭。
 - 当前没有正式Unity独立构建、双真实设备完整链、外部延迟报告、Level A/B/C或参与者结果；这些均不得从任务状态推断。
 
 ## 7. 最小仓库验证
