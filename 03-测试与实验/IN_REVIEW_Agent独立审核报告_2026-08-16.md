@@ -2,7 +2,7 @@
 
 > 审核性质：三个独立Agent对固定实现提交执行只读复核
 >
-> 总结论：`REVIEW_FINDINGS_OPEN`
+> 总结论：`MODEL_REVIEW_FINDINGS_CLOSED / HUMAN_SECOND_REVIEW_PENDING`
 >
 > 状态影响：G-02、P-01、P-02继续保持`IN_REVIEW`；本报告不替代真实团队第二人签署
 
@@ -76,6 +76,8 @@
 |---|---|---|---|
 | P-01 | `01a008fa-b83f-7982-ab82-b8fde66b8c93` | `PASS_FOR_MODEL_INDEPENDENT_REVIEW` | `98 passed`；并发交付、重复ACK、迟到end ACK、终态冻结和失败批次通过 |
 | P-02 | `01a00910-6889-78e0-94d4-246e2409f328` | `PASS_FOR_MODEL_INDEPENDENT_REVIEW` | `68 passed`；恢复资源、路径、封存字段、重放配对和创建失败清理通过 |
-| G-02代码 | `01a00901-cadb-7621-bf35-ea19a1bf2f0f` | 代码反例已关闭；独立包待本轮重生成后终审 | `138 passed`；外部锚、备份竞争、Unicode、local package和操作文档通过 |
+| G-02 | `01a00914-d4c5-7fc1-8966-a400aaccba66` | `PASS_FOR_MODEL_INDEPENDENT_REVIEW` | `138 passed`；51项注册表、6个包/182个快照严格校验通过，G-02 63个快照一致 |
 
 最终全仓Python回归为`404 passed`；任务注册表、协议权威和独立任务包校验通过，6个分发/复审包共182个输入快照无漂移。G-02资产门仍按预期失败关闭：179项机器清单，194个ignored发布文件和3个许可替换项。上述模型复审不替代真实团队第二人签署，三项任务继续保持`IN_REVIEW`。
+
+P-01、P-02与G-02最终均无未关闭P0-P2模型复审发现。该结论只解除模型独立复审阻断，不解除真实团队第二人签署、正式专机、资产许可或完整在线链路门。
