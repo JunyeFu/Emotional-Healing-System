@@ -86,6 +86,21 @@ def test_constructor_failure_closes_streams_and_releases_writer_lock(
     lock.release()
 
 
+def test_unserializable_manifest_releases_writer_lock(tmp_path, manifest_factory) -> None:
+    from srp_session_store.archive import _WriterLock, session_key
+
+    manifest = manifest_factory()
+    manifest["extensions"] = {"invalid": {"not-json"}}
+    with pytest.raises(StoreError, match="STORAGE_INITIALIZATION_FAILED"):
+        create_archive(tmp_path, manifest)
+
+    lock = _WriterLock(
+        tmp_path / "sessions" / session_key(manifest["session_id"]) / "writer.lock"
+    )
+    lock.acquire()
+    lock.release()
+
+
 def test_l0_round_trip_preserves_bytes_and_missing_reason(tmp_path, manifest_factory):
     manifest = manifest_factory()
     archive = create_archive(tmp_path, manifest)

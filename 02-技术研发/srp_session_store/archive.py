@@ -259,22 +259,22 @@ class SessionArchive:
             raise StoreError("STORAGE_INITIALIZATION_FAILED") from error
         lock = _WriterLock(path / "writer.lock")
         lock.acquire()
-        manifest_payload = dict(manifest)
-        envelope_body = {
-            "archive_schema_version": "1.0",
-            "formal_capable": _formal_token is _FORMAL_ARCHIVE_TOKEN,
-            "manifest": manifest_payload,
-            "manifest_hash": domain_hash(_MANIFEST_DOMAIN, manifest_payload),
-            "protocol_config_hash": protocol_config_hash,
-            "session_key": key,
-            "store_config_hash": config.config_hash,
-        }
-        envelope = dict(
-            envelope_body,
-            envelope_hash=domain_hash(_ENVELOPE_DOMAIN, envelope_body),
-        )
         streams: dict[str, _Stream] = {}
         try:
+            manifest_payload = dict(manifest)
+            envelope_body = {
+                "archive_schema_version": "1.0",
+                "formal_capable": _formal_token is _FORMAL_ARCHIVE_TOKEN,
+                "manifest": manifest_payload,
+                "manifest_hash": domain_hash(_MANIFEST_DOMAIN, manifest_payload),
+                "protocol_config_hash": protocol_config_hash,
+                "session_key": key,
+                "store_config_hash": config.config_hash,
+            }
+            envelope = dict(
+                envelope_body,
+                envelope_hash=domain_hash(_ENVELOPE_DOMAIN, envelope_body),
+            )
             _exclusive_json(path / "archive.json", envelope)
             for name in ("l0", "l1"):
                 body = {
