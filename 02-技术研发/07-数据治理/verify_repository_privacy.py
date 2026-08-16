@@ -90,12 +90,19 @@ def _is_separated_phone(value: str) -> bool:
 
 def _normalize_contact_text(value: str) -> str:
     normalized = unicodedata.normalize("NFKC", value)
-    return "".join(
+    normalized = "".join(
         character
         for character in normalized
         if unicodedata.category(character) != "Cf"
         and not unicodedata.category(character).startswith("M")
     )
+    result: list[str] = []
+    for character in normalized:
+        try:
+            result.append(str(unicodedata.decimal(character)))
+        except (TypeError, ValueError):
+            result.append(character)
+    return "".join(result)
 
 
 def _json_key_violations(value: object, path: str = "$") -> list[dict[str, str]]:
@@ -103,6 +110,16 @@ def _json_key_violations(value: object, path: str = "$") -> list[dict[str, str]]
     if isinstance(value, dict):
         for key, nested in value.items():
             nested_path = f"{path}.{key}"
+            normalized_key = unicodedata.normalize("NFKC", str(key))
+            if any(
+                unicodedata.name(character, "").startswith(
+                    ("CYRILLIC", "GREEK", "ARMENIAN")
+                )
+                for character in normalized_key
+            ):
+                violations.append(
+                    {"code": "FORBIDDEN_IDENTITY_FIELD", "json_path": nested_path}
+                )
             if _normalize_key(key) in FORBIDDEN_JSON_KEYS:
                 violations.append(
                     {"code": "FORBIDDEN_IDENTITY_FIELD", "json_path": nested_path}

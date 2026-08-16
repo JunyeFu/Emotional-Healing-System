@@ -30,10 +30,11 @@ $env:SRP_RETENTION_APPROVAL = 'APPROVED:<authority-id>'
 
 ```text
 dedup/dedup_registry.sqlite
+dedup/audit_anchor.json
 identity/research_id_mapping.sqlite
 ```
 
-两库不得共享字段、外键或目录权限继承到无关账户。
+两库不得共享字段、外键或目录权限继承到无关账户。认证审计尾锚必须与去重库共同持久化，并纳入同级ACL、备份和完整性监控。
 
 Windows数据管理员账户只用于凭据与ACL鉴权。治理库中的操作者统一记为角色码`data-admin`，不落盘Windows账户名。
 

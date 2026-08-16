@@ -37,6 +37,24 @@ def _normalized_key(key: str) -> str:
     return "".join(character.lower() for character in key if character.isalnum())
 
 
+def _has_confusable_key_script(key: str) -> bool:
+    normalized = unicodedata.normalize("NFKC", key)
+    return any(
+        unicodedata.name(character, "").startswith(("CYRILLIC", "GREEK", "ARMENIAN"))
+        for character in normalized
+    )
+
+
+def _normalize_decimal_digits(value: str) -> str:
+    result: list[str] = []
+    for character in value:
+        try:
+            result.append(str(unicodedata.decimal(character)))
+        except (TypeError, ValueError):
+            result.append(character)
+    return "".join(result)
+
+
 def _contact_like_value(value: str) -> bool:
     value = unicodedata.normalize("NFKC", value)
     value = "".join(
@@ -45,6 +63,7 @@ def _contact_like_value(value: str) -> bool:
         if unicodedata.category(character) != "Cf"
         and not unicodedata.category(character).startswith("M")
     )
+    value = _normalize_decimal_digits(value)
     if _EMAIL.search(value):
         return True
     for candidate in _PHONE_CANDIDATE.finditer(value):
@@ -71,6 +90,8 @@ def privacy_lint_manifest(manifest: dict) -> None:
                 if not isinstance(key, str):
                     raise GovernanceError("INVALID_MANIFEST_KEY", path=path)
                 child_path = f"{path}.{key}"
+                if _has_confusable_key_script(key):
+                    raise GovernanceError("FORBIDDEN_MANIFEST_KEY", path=child_path)
                 normalized = _normalized_key(key)
                 if any(part in normalized for part in _FORBIDDEN_KEY_PARTS):
                     raise GovernanceError("FORBIDDEN_MANIFEST_KEY", path=child_path)

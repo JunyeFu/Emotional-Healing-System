@@ -83,6 +83,7 @@ def test_contact_like_extension_values_are_rejected_without_echo(
         "Call 139.1234.5678 before start",
         "Call +86\u200b139\u200b1234\u200b5678 before start",
         "Call +86\u034f139\u034f1234\u034f5678 before start",
+        "Call +٨٦ ١٣٩ ١٢٣٤ ٥٦٧٨ before start",
         "Call 139\uff0e1234\uff0e5678 before start",
     ],
 )
@@ -106,6 +107,11 @@ def test_unity_package_coordinate_is_not_misclassified_as_email() -> None:
 def test_fullwidth_forbidden_key_is_rejected() -> None:
     with pytest.raises(GovernanceError, match="FORBIDDEN_MANIFEST_KEY"):
         privacy_lint_manifest({"ｐｈｏｎｅ": "redacted"})
+
+
+def test_confusable_forbidden_key_is_rejected() -> None:
+    with pytest.raises(GovernanceError, match="FORBIDDEN_MANIFEST_KEY"):
+        privacy_lint_manifest({"рhone": "redacted"})
 
 
 def test_research_id_is_the_only_allowed_research_identifier() -> None:

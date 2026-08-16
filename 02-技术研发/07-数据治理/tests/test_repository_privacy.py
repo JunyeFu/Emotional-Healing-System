@@ -76,3 +76,15 @@ def test_zero_width_and_fullwidth_separators_in_log_are_detected(tmp_path: Path)
         _write(tmp_path, path, f"contact={value}\n")
         violations = find_privacy_violations(tmp_path, [path])
         assert {item["code"] for item in violations} >= {"PHONE_VALUE"}
+
+
+def test_unicode_decimal_phone_and_confusable_key_are_detected(tmp_path: Path) -> None:
+    path = EVIDENCE_PATH
+    _write(tmp_path, path, '{"рhone":"+٨٦ ١٣٩ ١٢٣٤ ٥٦٧٨"}\n')
+
+    violations = find_privacy_violations(tmp_path, [path])
+
+    assert {item["code"] for item in violations} >= {
+        "FORBIDDEN_IDENTITY_FIELD",
+        "PHONE_VALUE",
+    }

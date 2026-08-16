@@ -26,6 +26,25 @@ def registry(tmp_path):
     return result
 
 
+def test_failed_publish_does_not_delete_competing_bundle(
+    registry, tmp_path, monkeypatch
+) -> None:
+    import srp_governance.backup as backup_module
+
+    bundle = tmp_path / "backup-bundle"
+
+    def competing_publish(_source, destination):
+        destination.mkdir()
+        (destination / "owner.marker").write_text("other", encoding="utf-8")
+        raise OSError("target won by another writer")
+
+    monkeypatch.setattr(backup_module, "_publish_bundle", competing_publish)
+    with pytest.raises(OSError, match="target won"):
+        backup_registry(registry, bundle, "data-admin")
+
+    assert (bundle / "owner.marker").read_text(encoding="utf-8") == "other"
+
+
 def test_online_backup_and_empty_directory_restore_preserve_decision(registry, tmp_path) -> None:
     bundle = tmp_path / "backup-bundle"
     backup = backup_registry(registry, bundle, "data-admin")

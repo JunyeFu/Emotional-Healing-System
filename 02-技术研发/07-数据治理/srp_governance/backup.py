@@ -78,6 +78,10 @@ def _online_copy(source_path: Path, destination_path: Path) -> None:
         raise GovernanceError("BACKUP_UNAVAILABLE") from exc
 
 
+def _publish_bundle(source: Path, destination: Path) -> None:
+    os.replace(source, destination)
+
+
 def backup_registry(
     registry: DedupRegistry,
     bundle_directory: Path,
@@ -88,6 +92,7 @@ def backup_registry(
         raise GovernanceError("BACKUP_TARGET_EXISTS")
     registry.ensure_authorized(actor_id)
     key = _validate_key(registry.key_provider)
+    published = False
     bundle_directory.parent.mkdir(parents=True, exist_ok=True)
     try:
         with tempfile.TemporaryDirectory(
@@ -127,7 +132,8 @@ def backup_registry(
                 encoding="utf-8",
                 newline="\n",
             )
-            os.replace(temporary_path, bundle_directory)
+            _publish_bundle(temporary_path, bundle_directory)
+            published = True
         registry.record_operation(
             event_type="BACKUP_CREATED",
             actor_id=actor_id,
@@ -137,7 +143,7 @@ def backup_registry(
             reason_code="ONLINE_BACKUP",
         )
     except Exception:
-        if bundle_directory.exists():
+        if published and bundle_directory.exists():
             shutil.rmtree(bundle_directory)
         try:
             registry.record_operation(
