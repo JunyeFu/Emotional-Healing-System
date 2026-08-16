@@ -86,8 +86,8 @@
     {
       "source_path": "02-技术研发/srp_session_core/README.md",
       "package_path": "inputs/14_README.md",
-      "sha256": "626CAB49FA61217890D45EB3A862306A2828A9685A49F841D8071BC90326AC5D",
-      "size_bytes": 2979
+      "sha256": "815EF43FC47E7957D8FEB80C8067AE2F6FB4E7B9ACEFF634484378D671125077",
+      "size_bytes": 3278
     },
     {
       "source_path": "02-技术研发/srp_session_core/contracts/session-event-v1.schema.json",
@@ -98,26 +98,26 @@
     {
       "source_path": "02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json",
       "package_path": "inputs/16_four-module-trace-v1.json",
-      "sha256": "5CA4242B51AD47B7EF150DD97BC5E7433396069A8C71C2DEE3B975E0AD2786DB",
-      "size_bytes": 65361
+      "sha256": "3D5A28C28C37132D0E1121B145CF189A56656CA1EDD4459D6F77235E30F18CD3",
+      "size_bytes": 65320
     },
     {
       "source_path": "02-技术研发/srp_session_store/README.md",
       "package_path": "inputs/17_README.md",
-      "sha256": "3B92896B228EE4AE1BF76AE3ADC31DB79F8845B7C1C0CAF6CD7751915776C90B",
-      "size_bytes": 5071
+      "sha256": "128D4616CC46C5CE554D61C85327D01434D451D1DCC9A673EF22C0DB00A057B8",
+      "size_bytes": 5478
     },
     {
       "source_path": "02-技术研发/srp_session_store/P-02_技术验收记录.md",
       "package_path": "inputs/18_P-02_技术验收记录.md",
-      "sha256": "351F2C6FE2D00F39258604B19B513DB2EC8D136057892705B5772E0A3D154A9A",
-      "size_bytes": 2677
+      "sha256": "D5C9153CF7C051A96677E59D9F66C713125775630FC8A7FB7FF6D3A4CDAD2315",
+      "size_bytes": 2678
     },
     {
       "source_path": "02-技术研发/srp_session_store/P-02_第二人审核报告_待签署.md",
       "package_path": "inputs/19_P-02_第二人审核报告_待签署.md",
-      "sha256": "245C65B7ECFC4C0FA026D4A916AB37F399264AF9FC5419994E9D8C61151DFFA2",
-      "size_bytes": 3490
+      "sha256": "4929CC9814A8774064DEFC08E18C9E683E096D9889C5FCCA91361A7574F4E57A",
+      "size_bytes": 3475
     },
     {
       "source_path": "02-技术研发/srp_session_store/__init__.py",
@@ -134,8 +134,8 @@
     {
       "source_path": "02-技术研发/srp_session_store/archive.py",
       "package_path": "inputs/22_archive.py",
-      "sha256": "E54A7BC00C21F9BEE3514F67CC3516E9E53A5876E7D1B26A8679780A87F1D110",
-      "size_bytes": 32874
+      "sha256": "DB09258D2A85F697FC20E644A306E04D37452A05F0356728FE43E3126778F64B",
+      "size_bytes": 47539
     },
     {
       "source_path": "02-技术研发/srp_session_store/canonical.py",
@@ -164,8 +164,8 @@
     {
       "source_path": "02-技术研发/srp_session_store/contracts/archive-envelope-v1.schema.json",
       "package_path": "inputs/27_archive-envelope-v1.schema.json",
-      "sha256": "D351A10444132B20BFD18458213FD240C9418D28C156D5E755D355FAB7C46F09",
-      "size_bytes": 854
+      "sha256": "691D70B4DFB969481A20430D8E15676A8902B2DC01E9B5ECD69213F879BCB44A",
+      "size_bytes": 952
     },
     {
       "source_path": "02-技术研发/srp_session_store/contracts/session-seal-v1.schema.json",
@@ -182,14 +182,14 @@
     {
       "source_path": "02-技术研发/srp_session_store/evidence/synthetic_stress_report.json",
       "package_path": "inputs/30_synthetic_stress_report.json",
-      "sha256": "1D050040E909C9E48D84AEF6E167C2FB6C801B377A0678CA1E02342B2FA568C9",
-      "size_bytes": 896
+      "sha256": "197F31E91A619EDA469AC17368853DF1DFB3AE4BF6114C3B0375E3015CB82613",
+      "size_bytes": 1070
     },
     {
       "source_path": "02-技术研发/srp_session_store/fixtures/golden/session-archive-v1/evidence.json",
       "package_path": "inputs/31_evidence.json",
-      "sha256": "0F7700A86B1E1DC076680EBF68337AF14D0F3BD341BC95B06DD29443E8783F28",
-      "size_bytes": 4194
+      "sha256": "91122B6A3D4F65A928F5926176C3DD8EB05B73539471B5B1DDA040CAF2A4E13A",
+      "size_bytes": 4592
     },
     {
       "source_path": "02-技术研发/srp_session_store/generate_golden_archive.py",
@@ -200,8 +200,8 @@
     {
       "source_path": "02-技术研发/srp_session_store/generate_stress_report.py",
       "package_path": "inputs/33_generate_stress_report.py",
-      "sha256": "19C136B4004576EC9FBA047D921383B9A5D90BA623E8DDC2900FCA24357331A2",
-      "size_bytes": 6461
+      "sha256": "D5685F3960A384D1E3BA1808908AD85CCE952BD231753656A22A30EC438BC100",
+      "size_bytes": 7680
     },
     {
       "source_path": "02-技术研发/srp_session_store/models.py",
@@ -218,8 +218,8 @@
     {
       "source_path": "02-技术研发/srp_session_store/replay.py",
       "package_path": "inputs/36_replay.py",
-      "sha256": "B349332DD33CFB233334804635B172822E522CBEDDEA40CC78817939369795B4",
-      "size_bytes": 6103
+      "sha256": "1E2CD731F6DB7E94AD7779EC214013A770A62E1FBFB5B62BDA7979BCF5428868",
+      "size_bytes": 8989
     },
     {
       "source_path": "02-技术研发/srp_session_store/serialization.py",
@@ -236,20 +236,20 @@
     {
       "source_path": "02-技术研发/tests/session_store/test_archive.py",
       "package_path": "inputs/39_test_archive.py",
-      "sha256": "E64D2C2BDC73469F18B396527B5566F7F9A2E7C80342B04E32D37216A28031A6",
-      "size_bytes": 11035
+      "sha256": "6D32A299C614C29D74906393CEFDA1733A0E8B2D0155B7E2455E1E905469ABDE",
+      "size_bytes": 24871
     },
     {
       "source_path": "02-技术研发/tests/session_store/test_golden_archive.py",
       "package_path": "inputs/40_test_golden_archive.py",
-      "sha256": "2C0059B46CE554A60E8F089358C9FCA90B0673EB7A15FE813D634C2DB4E3C417",
-      "size_bytes": 2129
+      "sha256": "98D3B7CFB2DC4D6EC8B184CDA15DBD927D49E70BA23AD261E1CE456DEE5092D0",
+      "size_bytes": 3215
     },
     {
       "source_path": "02-技术研发/tests/session_store/test_recording_replay.py",
       "package_path": "inputs/41_test_recording_replay.py",
-      "sha256": "435714C09B9AD4612D90F0A41B0F92EF296D0307F5D1F4C9061058E9C4BFDFCA",
-      "size_bytes": 11812
+      "sha256": "FE0E9ECDBC291528BB8245DD2F46141AF0151819846B4C880AA02063846AF34D",
+      "size_bytes": 13358
     },
     {
       "source_path": "02-技术研发/tests/session_store/test_schemas.py",

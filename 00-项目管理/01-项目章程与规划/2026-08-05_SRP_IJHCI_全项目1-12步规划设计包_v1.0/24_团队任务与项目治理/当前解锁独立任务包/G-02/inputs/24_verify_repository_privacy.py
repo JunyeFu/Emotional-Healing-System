@@ -5,6 +5,7 @@ import json
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
+import unicodedata
 from typing import Iterable
 
 
@@ -44,6 +45,9 @@ MAINLAND_PHONE_PATTERN = re.compile(
     r"(?<![0-9A-Fa-f])(?:\+86|0086|86)?1[3-9][0-9]{9}(?![0-9A-Fa-f])"
 )
 E164_PATTERN = re.compile(r"(?<![0-9])\+[1-9][0-9]{7,14}(?![0-9])")
+SEPARATED_PHONE_PATTERN = re.compile(
+    r"(?<![0-9])(?:\+|00)?[0-9][0-9\s().-]{6,}[0-9](?![0-9])"
+)
 SECRET_PATTERN = re.compile(r"-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----")
 
 
@@ -66,7 +70,39 @@ def _under_artifact_root(path: PurePosixPath) -> bool:
 
 
 def _normalize_key(value: object) -> str:
-    return re.sub(r"[^a-z0-9]", "", str(value).lower())
+    normalized = unicodedata.normalize("NFKC", str(value))
+    return re.sub(r"[^a-z0-9]", "", normalized.lower())
+
+
+def _is_separated_phone(value: str) -> bool:
+    if re.search(r"[\s().-]", value) is None:
+        return False
+    compact = re.sub(r"[\s().-]", "", value)
+    if compact.startswith("+"):
+        digits = compact[1:]
+        return 8 <= len(digits) <= 15 and digits.isdigit() and not digits.startswith("0")
+    for prefix in ("0086", "86"):
+        if compact.startswith(prefix):
+            compact = compact[len(prefix):]
+            break
+    return len(compact) == 11 and compact.startswith("1") and compact.isdigit()
+
+
+def _normalize_contact_text(value: str) -> str:
+    normalized = unicodedata.normalize("NFKC", value)
+    normalized = "".join(
+        character
+        for character in normalized
+        if unicodedata.category(character) != "Cf"
+        and not unicodedata.category(character).startswith("M")
+    )
+    result: list[str] = []
+    for character in normalized:
+        try:
+            result.append(str(unicodedata.decimal(character)))
+        except (TypeError, ValueError):
+            result.append(character)
+    return "".join(result)
 
 
 def _json_key_violations(value: object, path: str = "$") -> list[dict[str, str]]:
@@ -74,6 +110,16 @@ def _json_key_violations(value: object, path: str = "$") -> list[dict[str, str]]
     if isinstance(value, dict):
         for key, nested in value.items():
             nested_path = f"{path}.{key}"
+            normalized_key = unicodedata.normalize("NFKC", str(key))
+            if any(
+                unicodedata.name(character, "").startswith(
+                    ("CYRILLIC", "GREEK", "ARMENIAN")
+                )
+                for character in normalized_key
+            ):
+                violations.append(
+                    {"code": "FORBIDDEN_IDENTITY_FIELD", "json_path": nested_path}
+                )
             if _normalize_key(key) in FORBIDDEN_JSON_KEYS:
                 violations.append(
                     {"code": "FORBIDDEN_IDENTITY_FIELD", "json_path": nested_path}
@@ -100,12 +146,15 @@ def find_privacy_violations(
         if suffix in DANGEROUS_SUFFIXES:
             violations.append({"code": "FORBIDDEN_TRACKED_FILE", "path": normalized})
 
-        if not _under_artifact_root(posix_path) or suffix not in TEXT_SUFFIXES:
+        if suffix not in TEXT_SUFFIXES or (
+            not _under_artifact_root(posix_path) and suffix != ".log"
+        ):
             continue
         full_path = repo_root / Path(*posix_path.parts)
         if not full_path.is_file():
             continue
         text = full_path.read_text(encoding="utf-8", errors="replace")
+        text = _normalize_contact_text(text)
         checks = (
             ("PHONE_VALUE", MAINLAND_PHONE_PATTERN),
             ("E164_VALUE", E164_PATTERN),
@@ -115,6 +164,11 @@ def find_privacy_violations(
         for code, pattern in checks:
             if pattern.search(text):
                 violations.append({"code": code, "path": normalized})
+        if any(
+            _is_separated_phone(match.group())
+            for match in SEPARATED_PHONE_PATTERN.finditer(text)
+        ) and not MAINLAND_PHONE_PATTERN.search(text):
+            violations.append({"code": "PHONE_VALUE", "path": normalized})
 
         if suffix == ".json":
             try:

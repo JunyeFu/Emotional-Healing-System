@@ -200,3 +200,46 @@ def test_tampering_with_an_audit_event_breaks_chain_verification(registry) -> No
     report = registry.verify_audit_chain()
     assert report.valid is False
     assert report.reason_code == "AUDIT_CHAIN_INVALID"
+
+
+@pytest.mark.parametrize("delete_sql", [
+    "DELETE FROM audit_events WHERE sequence = (SELECT MAX(sequence) FROM audit_events)",
+    "DELETE FROM audit_events",
+])
+def test_deleting_audit_tail_is_detected_by_anchor(registry, delete_sql) -> None:
+    check_and_reserve(SYNTHETIC_PHONE, Stage.LEVEL_B, "data-admin", registry=registry)
+    assert registry.verify_audit_chain().valid is True
+    with sqlite3.connect(registry.database_path) as connection:
+        connection.execute(delete_sql)
+        connection.commit()
+
+    report = registry.verify_audit_chain()
+    assert report.valid is False
+    assert report.reason_code == "AUDIT_CHAIN_INVALID"
+
+
+def test_coordinated_database_rollback_cannot_replay_external_anchor(registry) -> None:
+    first = check_and_reserve(SYNTHETIC_PHONE, Stage.LEVEL_B, "data-admin", registry=registry)
+    registry.release_before_exposure(first.reservation_id, "PRE_EXPOSURE_EXIT", "data-admin")
+    second = check_and_reserve("+8613900000001", Stage.LEVEL_C, "data-admin", registry=registry)
+    registry.mark_exposed(second.reservation_id, "data-admin")
+    registry.mark_completed(second.reservation_id, "data-admin")
+    with sqlite3.connect(registry.database_path) as connection:
+        tail = connection.execute(
+            "SELECT current_hash FROM audit_events WHERE sequence = 2"
+        ).fetchone()[0]
+        connection.execute("DELETE FROM reservations WHERE reservation_id = ?", (second.reservation_id,))
+        connection.execute("DELETE FROM audit_events WHERE sequence > 2")
+        connection.execute(
+            "UPDATE schema_metadata SET value = '2' WHERE key = 'audit_tail_sequence'"
+        )
+        connection.execute(
+            "UPDATE schema_metadata SET value = ? WHERE key = 'audit_tail_hash'", (tail,)
+        )
+        connection.commit()
+
+    report = registry.verify_audit_chain()
+    assert report.valid is False
+    assert report.reason_code == "AUDIT_CHAIN_INVALID"
+    with pytest.raises(GovernanceError, match="AUDIT_CHAIN_INVALID"):
+        check_and_reserve("+8613900000002", Stage.STAGE_1, "data-admin", registry=registry)

@@ -98,7 +98,7 @@
     {
       "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_inventory.json",
       "package_path": "inputs/16_asset_inventory.json",
-      "sha256": "94C3BE838D91AF8F6AA57EBFE1C8A6AB1A57083D590DD610376CC0645BA031CB",
+      "sha256": "6C57516B998FBDF03EE6F2F13D3A3138511A5AC57490C0279464016FA01E64CA",
       "size_bytes": 60895
     },
     {
@@ -122,20 +122,20 @@
     {
       "source_path": "02-技术研发/07-数据治理/README.md",
       "package_path": "inputs/20_README.md",
-      "sha256": "A6DF62172F7D3E4F8276C946BA658A026CB33775889CFC07700543466369E733",
-      "size_bytes": 4933
+      "sha256": "2DCC86058DA4306302DFE11490785A5A4275A35864E5190DC689819BD66D7409",
+      "size_bytes": 5177
     },
     {
       "source_path": "02-技术研发/07-数据治理/G-02_技术验收记录.md",
       "package_path": "inputs/21_G-02_技术验收记录.md",
-      "sha256": "16346A0E6FA1B8C51A5EB88F9F370DC5AD05914239CB83AC7E5B6E127194A2A7",
-      "size_bytes": 3585
+      "sha256": "29D958565B742E854AF5743CB7883D7A2586B6A64493AEA996B943B53EB961E9",
+      "size_bytes": 3625
     },
     {
       "source_path": "02-技术研发/07-数据治理/G-02_第二人审核报告_待签署.md",
       "package_path": "inputs/22_G-02_第二人审核报告_待签署.md",
-      "sha256": "303081437AA80462BFE978821598201976833E04D27B603EF5D3E72B7B61380B",
-      "size_bytes": 3922
+      "sha256": "022D9EC4D2F8339F65FEF55763966C21718DBA1E59AAC67849E5477EDCD9E6D2",
+      "size_bytes": 4078
     },
     {
       "source_path": "02-技术研发/07-数据治理/g02.py",
@@ -146,8 +146,8 @@
     {
       "source_path": "02-技术研发/07-数据治理/verify_repository_privacy.py",
       "package_path": "inputs/24_verify_repository_privacy.py",
-      "sha256": "DAB133D885EE038372772EE5D310DA04FD2D5FE3EFB3FA48C8C553AD31E86A29",
-      "size_bytes": 5078
+      "sha256": "1CFEBC509B09091F208CA00E3B7510471B6424854304C4980D7817C5F5224798",
+      "size_bytes": 7095
     },
     {
       "source_path": "02-技术研发/07-数据治理/config/access_matrix_v1.json",
@@ -170,14 +170,14 @@
     {
       "source_path": "02-技术研发/07-数据治理/docs/formal_machine_setup.md",
       "package_path": "inputs/28_formal_machine_setup.md",
-      "sha256": "074CA18FEB5D0EE565B787679A0A0F519EE1C43B8F73747D119E883694E1F508",
-      "size_bytes": 3677
+      "sha256": "EBDB5B27A32FD37AA69926F197BF8E982295438884BACB72C2072A5BDB13C1E8",
+      "size_bytes": 3825
     },
     {
       "source_path": "02-技术研发/07-数据治理/evidence/asset_scan_report.json",
       "package_path": "inputs/29_asset_scan_report.json",
-      "sha256": "354D9DF83EC70127B70F75E4DA29387F14D5654B5A8C13FF5164DE0201F82510",
-      "size_bytes": 63975
+      "sha256": "783207AAF67A1C1F29E31AA9FA60F0CAEFBA4DFE536E4F35A97780A901FC6F9D",
+      "size_bytes": 108472
     },
     {
       "source_path": "02-技术研发/07-数据治理/evidence/formal_environment_report.json",
@@ -218,20 +218,20 @@
     {
       "source_path": "02-技术研发/07-数据治理/srp_governance/assets.py",
       "package_path": "inputs/36_assets.py",
-      "sha256": "FF1FFEF6A85B30AF271F2B273170BCD1194E0EDD9B496A08D9A46F47B55FC1F3",
-      "size_bytes": 11313
+      "sha256": "DAB114BA6947DAE44E7D5671440BCC65D7CD8872F850163BD49878C0A643AE97",
+      "size_bytes": 13620
     },
     {
       "source_path": "02-技术研发/07-数据治理/srp_governance/backup.py",
       "package_path": "inputs/37_backup.py",
-      "sha256": "D12309A727FE98012E14CF3088CD7A20761EC519A34402355A7B4D6ADE868B8A",
-      "size_bytes": 8667
+      "sha256": "986C2EECC6C0B8B4C38E8DE660977B752FA7BF5DD272446BFFC81EA0A9EA695D",
+      "size_bytes": 10416
     },
     {
       "source_path": "02-技术研发/07-数据治理/srp_governance/credentials.py",
       "package_path": "inputs/38_credentials.py",
-      "sha256": "5E1CA8A0B5D878FEB520B124933CB506EE7745742C4D55BCB1F819829DA5DCB3",
-      "size_bytes": 4579
+      "sha256": "57EB0BA85C86FA8024B5FF3812F6F28DE36D9C5F5982F9D0C0C529CE26AD2921",
+      "size_bytes": 6712
     },
     {
       "source_path": "02-技术研发/07-数据治理/srp_governance/environment.py",
@@ -260,14 +260,14 @@
     {
       "source_path": "02-技术研发/07-数据治理/srp_governance/privacy.py",
       "package_path": "inputs/43_privacy.py",
-      "sha256": "E5BE2471192D3EBD8A789E5ABF1D9109DF3ADD6E651B5E79A47B15056C05BBFA",
-      "size_bytes": 1736
+      "sha256": "CB4B6F0E578D9325085FCD3C928F72054756E3C3115B8EA960ABE3C224B50B64",
+      "size_bytes": 3156
     },
     {
       "source_path": "02-技术研发/07-数据治理/srp_governance/registry.py",
       "package_path": "inputs/44_registry.py",
-      "sha256": "6A8EAC722F90A3C93EF5B5607F2C7E1AA20EC1D6B3369080E0C004AC78FEDBCE",
-      "size_bytes": 18167
+      "sha256": "0C66501FDCF9EC189319EECDE87DDDEBA4ADB1B07291A41ED5AAA06E84230043",
+      "size_bytes": 24943
     },
     {
       "source_path": "02-技术研发/07-数据治理/srp_governance/rehearsal.py",
@@ -308,14 +308,14 @@
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_assets.py",
       "package_path": "inputs/51_test_assets.py",
-      "sha256": "670A2F238FB994E5E5882EE44F0D3ACB6DEA3E95F639CECF95813414F99E5862",
-      "size_bytes": 7874
+      "sha256": "96ED966136719C7AE48640F4525788A4506C0725E4EC976B30F0162E4CB253EC",
+      "size_bytes": 11045
     },
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_backup.py",
       "package_path": "inputs/52_test_backup.py",
-      "sha256": "129EC212347315A2905FE273B0A2B077CB0B6DA07ECA9EC1EE327A26B7C08CBA",
-      "size_bytes": 6178
+      "sha256": "B2369E29721E23576CFBCCB525E8017B1DDD1A49431A14FCA00640DF0BBA7E7D",
+      "size_bytes": 8238
     },
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_config_authority.py",
@@ -326,8 +326,8 @@
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_credentials.py",
       "package_path": "inputs/54_test_credentials.py",
-      "sha256": "A8EF9CC07F17B6304823415AEE0D9A9D7081949E25AE2D7BCE1D327872B24CAC",
-      "size_bytes": 3256
+      "sha256": "C5F339DCC4A475E01EF9F857DE3C65CED06162DC4A9930E46E38FDD623F02A18",
+      "size_bytes": 4925
     },
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_environment.py",
@@ -350,14 +350,14 @@
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_privacy.py",
       "package_path": "inputs/58_test_privacy.py",
-      "sha256": "920C8258B8BE1901A9017A8D8E0EC11CDECFE70B48A590BBA53169B2E2F35A0A",
-      "size_bytes": 2263
+      "sha256": "528CFE6C13568B2989FF6F319F25A8CACB831C2E0B93545E8AAF076BF0752F28",
+      "size_bytes": 3863
     },
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_registry.py",
       "package_path": "inputs/59_test_registry.py",
-      "sha256": "D9F7F61CEEDEC3E0C5D56FCABC9B79AEB9DA85A6F72EA9C57CDA600E3946BA06",
-      "size_bytes": 6868
+      "sha256": "43F808377369576AADC370553BDBD3C4B7D1F73F297858DD8853D6B8D5F52526",
+      "size_bytes": 8976
     },
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_rehearsal.py",
@@ -368,8 +368,8 @@
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_repository_privacy.py",
       "package_path": "inputs/61_test_repository_privacy.py",
-      "sha256": "7AADA2D918EFFE6E82A4E1AB6CF35A321B883F94E8544BAC6ADCB5A5E403672F",
-      "size_bytes": 1408
+      "sha256": "533F32501C3DC6E73856AC23233D32534AEBE233055172CC88937A4B82566A99",
+      "size_bytes": 2837
     },
     {
       "source_path": "02-技术研发/07-数据治理/tests/test_unity_gate.py",

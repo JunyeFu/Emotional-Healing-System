@@ -6,7 +6,7 @@ from pathlib import Path
 from srp_session_store import ReplayReader, SessionReplayer
 from srp_session_store.canonical import file_sha256
 from srp_session_store.generate_golden_archive import build_archive
-from srp_session_store.generate_stress_report import run_stress
+from srp_session_store.generate_stress_report import evidence_passed, run_stress
 
 
 def test_full_p01_golden_trace_is_recorded_and_replayed(tmp_path):
@@ -27,6 +27,27 @@ def test_accelerated_stress_fixture_keeps_exact_counts():
     assert report["archive_l0_count"] == 6
     assert report["archive_l1_count"] == 61
     assert report["integrity_valid"] is True
+    assert report["memory_stable"] is True
+    assert "memory_live_growth_after_warmup_bytes" in report
+    assert "memory_slope_bytes_per_100_seconds" in report
+    assert "memory_growth_limit_bytes" in report
+    assert "memory_slope_limit_bytes_per_100_seconds" in report
+
+
+def test_stress_evidence_requires_integrity_and_stable_memory():
+    assert evidence_passed({"integrity_valid": True, "memory_stable": True})
+    assert not evidence_passed({"integrity_valid": True, "memory_stable": False})
+    assert not evidence_passed({"integrity_valid": False, "memory_stable": True})
+
+
+def test_golden_fixture_is_forced_to_lf_in_git():
+    repository = Path(__file__).resolve().parents[3]
+    attributes = (repository / ".gitattributes").read_text(encoding="utf-8")
+    assert "02-技术研发/srp_session_store/fixtures/golden/** text eol=lf" in attributes
+    fixture = repository / "02-技术研发" / "srp_session_store" / "fixtures" / "golden"
+    for path in fixture.rglob("*"):
+        if path.is_file():
+            assert b"\r\n" not in path.read_bytes(), path
 
 
 def test_committed_golden_archive_hashes_and_replay_are_stable(tmp_path):

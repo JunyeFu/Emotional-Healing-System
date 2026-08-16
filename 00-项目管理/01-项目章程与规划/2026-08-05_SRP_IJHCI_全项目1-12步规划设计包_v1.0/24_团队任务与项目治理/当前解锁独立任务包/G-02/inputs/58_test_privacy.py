@@ -71,6 +71,49 @@ def test_contact_like_extension_values_are_rejected_without_echo(
     assert value not in str(error.value)
 
 
+@pytest.mark.parametrize(
+    "value",
+    [
+        "Call +8613912345678 before start",
+        "Call +86 139 1234 5678 before start",
+        "Call 139-1234-5678 before start",
+        "Send the note to owner@example.invalid before start",
+        "Call +86\u00a0139\u00a01234\u00a05678 before start",
+        "Call +86\t139\t1234\t5678 before start",
+        "Call 139.1234.5678 before start",
+        "Call +86\u200b139\u200b1234\u200b5678 before start",
+        "Call +86\u034f139\u034f1234\u034f5678 before start",
+        "Call +٨٦ ١٣٩ ١٢٣٤ ٥٦٧٨ before start",
+        "Call 139\uff0e1234\uff0e5678 before start",
+    ],
+)
+def test_embedded_contact_values_are_rejected_without_echo(value: str) -> None:
+    payload = {"extensions": [{"value": value}]}
+
+    with pytest.raises(GovernanceError) as error:
+        privacy_lint_manifest(payload)
+
+    assert error.value.code == "FORBIDDEN_MANIFEST_VALUE"
+    assert error.value.path == "$.extensions[0].value"
+    assert value not in str(error.value)
+
+
+def test_unity_package_coordinate_is_not_misclassified_as_email() -> None:
+    privacy_lint_manifest(
+        {"extensions": [{"value": "package=com.unity.render-pipelines.universal@17.0.3"}]}
+    )
+
+
+def test_fullwidth_forbidden_key_is_rejected() -> None:
+    with pytest.raises(GovernanceError, match="FORBIDDEN_MANIFEST_KEY"):
+        privacy_lint_manifest({"ｐｈｏｎｅ": "redacted"})
+
+
+def test_confusable_forbidden_key_is_rejected() -> None:
+    with pytest.raises(GovernanceError, match="FORBIDDEN_MANIFEST_KEY"):
+        privacy_lint_manifest({"рhone": "redacted"})
+
+
 def test_research_id_is_the_only_allowed_research_identifier() -> None:
     privacy_lint_manifest(
         {

@@ -80,20 +80,20 @@
     {
       "source_path": "02-技术研发/srp_session_core/README.md",
       "package_path": "inputs/13_README.md",
-      "sha256": "626CAB49FA61217890D45EB3A862306A2828A9685A49F841D8071BC90326AC5D",
-      "size_bytes": 2979
+      "sha256": "815EF43FC47E7957D8FEB80C8067AE2F6FB4E7B9ACEFF634484378D671125077",
+      "size_bytes": 3278
     },
     {
       "source_path": "02-技术研发/srp_session_core/P-01_技术验收记录.md",
       "package_path": "inputs/14_P-01_技术验收记录.md",
-      "sha256": "215D0EC4227B48F41DF200A8EBD591F9EB42C38D728A9CFDE2EC7ED59A8E0EB6",
-      "size_bytes": 2770
+      "sha256": "9DAC5E4830A866DBDD4502A3B91D1970577FF52C3972DF372F99C7133FD343DB",
+      "size_bytes": 2727
     },
     {
       "source_path": "02-技术研发/srp_session_core/P-01_第二人审核报告_待签署.md",
       "package_path": "inputs/15_P-01_第二人审核报告_待签署.md",
-      "sha256": "32BBCF087EB5D25B5C51A383EFF17A99BA7084A278BDB97EB67EF65F6399D3A8",
-      "size_bytes": 3390
+      "sha256": "861457D0A987666FCCB09A14E74F59D599D85E1CA724A07E5A6EC31EBDE04560",
+      "size_bytes": 3441
     },
     {
       "source_path": "02-技术研发/srp_session_core/__init__.py",
@@ -134,8 +134,8 @@
     {
       "source_path": "02-技术研发/srp_session_core/core.py",
       "package_path": "inputs/22_core.py",
-      "sha256": "70BF6FB1593CADE6A21674E41ED0E748597634E5957A522BB59AE5356DCF689D",
-      "size_bytes": 31269
+      "sha256": "63CCCF8AD9816F8D68F1D7F35E9F7A87FF0A953E595788900197568EA974FB4B",
+      "size_bytes": 33923
     },
     {
       "source_path": "02-技术研发/srp_session_core/errors.py",
@@ -146,8 +146,8 @@
     {
       "source_path": "02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json",
       "package_path": "inputs/24_four-module-trace-v1.json",
-      "sha256": "5CA4242B51AD47B7EF150DD97BC5E7433396069A8C71C2DEE3B975E0AD2786DB",
-      "size_bytes": 65361
+      "sha256": "3D5A28C28C37132D0E1121B145CF189A56656CA1EDD4459D6F77235E30F18CD3",
+      "size_bytes": 65320
     },
     {
       "source_path": "02-技术研发/srp_session_core/gates.py",
@@ -176,8 +176,8 @@
     {
       "source_path": "02-技术研发/srp_session_core/transport.py",
       "package_path": "inputs/29_transport.py",
-      "sha256": "21C44D45273AA1F22572973FC7B5BAC9FE0CE010B68CABFC595C82878812B68C",
-      "size_bytes": 17462
+      "sha256": "AC5D29FCDCEF44E4436798B8D3C6BC2FCC804A333C4089ED2312DA6A4102CDBC",
+      "size_bytes": 23775
     },
     {
       "source_path": "02-技术研发/tests/session_core/__init__.py",
@@ -200,8 +200,8 @@
     {
       "source_path": "02-技术研发/tests/session_core/test_core.py",
       "package_path": "inputs/33_test_core.py",
-      "sha256": "0EFB012F19E0D12BF5B2B0F10A7AA253C2ED116209581425E8BE642C5A4C06A1",
-      "size_bytes": 7250
+      "sha256": "2C0C1418FB1A55742C025AF759371494D72DEBD6A96DFF9B9B8D92877AB7FA62",
+      "size_bytes": 12986
     },
     {
       "source_path": "02-技术研发/tests/session_core/test_manifest.py",
@@ -212,8 +212,8 @@
     {
       "source_path": "02-技术研发/tests/session_core/test_transport.py",
       "package_path": "inputs/35_test_transport.py",
-      "sha256": "DA609A7E329FA1BF673A193559F94923434FD416E430E4F88276D6A457929F2E",
-      "size_bytes": 12817
+      "sha256": "5D3F1909D52EF5DBB7DD105D04D79CF7BE5B7F92E2C1F0B64B03A017C04CF939",
+      "size_bytes": 26973
     }
   ],
   "working_paths": [

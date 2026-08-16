@@ -46,7 +46,11 @@ class ControlServer:
         self._unity_writer: asyncio.StreamWriter | None = None
         self._unity_client_id: str | None = None
         self._unity_connected = asyncio.Event()
+        self._unity_generation = 0
         self._pending_acks: dict[str, asyncio.Future[dict[str, Any]]] = {}
+        self._pending_ack_generations: dict[str, int] = {}
+        self._sent_event_ids: set[str] = set()
+        self._delivered_event_ids: set[str] = set()
         self._delivery_updates: dict[str, CoreUpdate] = {}
         self._client_tasks: set[asyncio.Task[Any]] = set()
 
@@ -88,6 +92,9 @@ class ControlServer:
             if not future.done():
                 future.set_exception(TransportError("CONTROL_SERVER_CLOSED"))
         self._pending_acks.clear()
+        self._pending_ack_generations.clear()
+        self._sent_event_ids.clear()
+        self._delivered_event_ids.clear()
         self._delivery_updates.clear()
 
     async def disconnect_unity(self) -> None:
@@ -95,6 +102,7 @@ class ControlServer:
         writer = self._unity_writer
         self._unity_writer = None
         self._unity_client_id = None
+        self._unity_generation += 1
         self._unity_connected.clear()
         if writer is None:
             return
@@ -124,34 +132,45 @@ class ControlServer:
             future = loop.create_future()
             self._pending_acks[event_id] = future
 
-        timeout = self.config.transport.ack_timeout_ms / 1000
-        attempts = self.config.transport.max_send_attempts
-        for _ in range(attempts):
-            if not self._unity_connected.is_set():
-                try:
-                    await self.wait_for_unity()
-                except TransportError:
+        try:
+            timeout = self.config.transport.ack_timeout_ms / 1000
+            attempts = self.config.transport.max_send_attempts
+            for _ in range(attempts):
+                if not self._unity_connected.is_set():
+                    try:
+                        await self.wait_for_unity()
+                    except TransportError:
+                        continue
+                writer = self._unity_writer
+                if writer is None:
                     continue
-            writer = self._unity_writer
-            if writer is None:
-                continue
-            try:
-                await self._write_json(writer, validated)
-            except (ConnectionError, OSError):
-                self._unity_connected.clear()
-                continue
-            try:
-                ack = await asyncio.wait_for(asyncio.shield(future), timeout)
-            except TimeoutError:
-                continue
-            if ack["result"] in {"applied", "duplicate_ignored"}:
-                self._delivery_updates.pop(event_id, None)
-                return ack
-            raise TransportError(
-                "CONTROL_ACK_REJECTED", str(ack.get("error_code") or "UNKNOWN")
-            )
+                generation = self._unity_generation
+                try:
+                    self._pending_ack_generations[event_id] = generation
+                    self._sent_event_ids.add(event_id)
+                    await self._write_json(writer, validated)
+                except (ConnectionError, OSError):
+                    self._sent_event_ids.discard(event_id)
+                    if self._pending_ack_generations.get(event_id) == generation:
+                        self._pending_ack_generations.pop(event_id, None)
+                    self._unity_connected.clear()
+                    continue
+                try:
+                    ack = await asyncio.wait_for(asyncio.shield(future), timeout)
+                except TimeoutError:
+                    continue
+                if ack["result"] in {"applied", "duplicate_ignored"}:
+                    return ack
+                raise TransportError(
+                    "CONTROL_ACK_REJECTED", str(ack.get("error_code") or "UNKNOWN")
+                )
 
-        raise TransportError("CONTROL_ACK_TIMEOUT", event_id)
+            raise TransportError("CONTROL_ACK_TIMEOUT", event_id)
+        finally:
+            self._sent_event_ids.discard(event_id)
+            self._pending_ack_generations.pop(event_id, None)
+            if self._pending_acks.get(event_id) is future:
+                self._pending_acks.pop(event_id, None)
 
     async def _handle_client(
         self, reader: asyncio.StreamReader, writer: asyncio.StreamWriter
@@ -160,6 +179,7 @@ class ControlServer:
         if task is not None:
             self._client_tasks.add(task)
         handshake: Handshake | None = None
+        connection_generation: int | None = None
         try:
             raw = await asyncio.wait_for(
                 reader.readline(), self.config.transport.reconnect_grace_ms / 1000
@@ -176,6 +196,11 @@ class ControlServer:
                         writer, handshake, accepted=False, error_code="UNITY_CLIENT_ALREADY_CONNECTED"
                     )
                     return
+                previous_writer = self._unity_writer
+                if previous_writer is not None and previous_writer is not writer:
+                    previous_writer.close()
+                self._unity_generation += 1
+                connection_generation = self._unity_generation
                 self._unity_writer = writer
                 self._unity_client_id = handshake.client_instance_id
                 self._unity_connected.set()
@@ -187,7 +212,18 @@ class ControlServer:
                     break
                 message = self._decode_line(raw)
                 if handshake.role == "unity":
-                    await self._handle_unity_message(message)
+                    try:
+                        await self._handle_unity_message(
+                            message, connection_generation=connection_generation
+                        )
+                    except TransportError as error:
+                        if error.code in {
+                            "CONTROL_ACK_NOT_PENDING",
+                            "CONTROL_ACK_CONNECTION_MISMATCH",
+                        }:
+                            await self._write_json(writer, self._transport_error(error.code))
+                            continue
+                        raise
                 else:
                     await self._write_json(
                         writer,
@@ -205,7 +241,12 @@ class ControlServer:
                     if isinstance(error, SessionCoreError)
                     else "TRANSPORT_FRAME_INVALID"
                 )
-                self._fail_pending_acks(code)
+                if (
+                    handshake is not None
+                    and handshake.role == "unity"
+                    and connection_generation == self._unity_generation
+                ):
+                    self._fail_pending_acks(code, connection_generation)
                 await self._write_json(writer, self._transport_error(code))
             except (ConnectionError, OSError):
                 pass
@@ -221,14 +262,47 @@ class ControlServer:
             if task is not None:
                 self._client_tasks.discard(task)
 
-    async def _handle_unity_message(self, message: Mapping[str, Any]) -> None:
+    async def _handle_unity_message(
+        self,
+        message: Mapping[str, Any],
+        *,
+        connection_generation: int | None = None,
+    ) -> None:
         message_type = message.get("message_type")
         if message_type not in {"ack", "render_receipt"}:
             raise TransportError("MESSAGE_NOT_ALLOWED_FOR_ROLE", str(message_type))
+        actual_generation = (
+            self._unity_generation
+            if connection_generation is None
+            else connection_generation
+        )
+        if actual_generation != self._unity_generation:
+            raise TransportError("CONTROL_ACK_CONNECTION_MISMATCH")
+        if message_type == "ack":
+            event_id = str(message.get("event_id", ""))
+            if event_id in self._delivered_event_ids:
+                update = self.core.confirm_delivery(message, self.now_ns())
+                self._store_delivery_update(event_id, update)
+                future = self._pending_acks.get(event_id)
+                if future is not None and not future.done():
+                    future.set_result(dict(message))
+                return
+            future = self._pending_acks.get(event_id)
+            if (
+                event_id not in self._sent_event_ids
+                or future is None
+                or future.done()
+            ):
+                raise TransportError("CONTROL_ACK_NOT_PENDING")
+            expected_generation = self._pending_ack_generations.get(event_id)
+            if expected_generation != actual_generation:
+                raise TransportError("CONTROL_ACK_CONNECTION_MISMATCH")
         update = self.core.confirm_delivery(message, self.now_ns())
         if message_type == "ack":
             event_id = str(message["event_id"])
-            self._delivery_updates[event_id] = update
+            self._store_delivery_update(event_id, update)
+            if message.get("result") in {"applied", "duplicate_ignored"}:
+                self._delivered_event_ids.add(event_id)
             future = self._pending_acks.get(event_id)
             if future is not None and not future.done():
                 future.set_result(dict(message))
@@ -237,9 +311,26 @@ class ControlServer:
     def pop_delivery_update(self, event_id: str) -> CoreUpdate | None:
         return self._delivery_updates.pop(event_id, None)
 
-    def _fail_pending_acks(self, code: str) -> None:
-        for future in self._pending_acks.values():
-            if not future.done():
+    def _store_delivery_update(self, event_id: str, update: CoreUpdate) -> None:
+        previous = self._delivery_updates.get(event_id)
+        if previous is None:
+            self._delivery_updates[event_id] = update
+            return
+        self._delivery_updates[event_id] = CoreUpdate(
+            snapshot=update.snapshot,
+            control_events=previous.control_events + update.control_events,
+            session_events=previous.session_events + update.session_events,
+            policy_decisions=previous.policy_decisions + update.policy_decisions,
+            audit_records=previous.audit_records + update.audit_records,
+            gate_receipts=previous.gate_receipts + update.gate_receipts,
+        )
+
+    def _fail_pending_acks(self, code: str, generation: int) -> None:
+        for event_id, future in self._pending_acks.items():
+            if (
+                self._pending_ack_generations.get(event_id) == generation
+                and not future.done()
+            ):
                 future.set_exception(TransportError(code))
 
     def _validate_handshake(self, payload: Mapping[str, Any]) -> Handshake:
@@ -408,6 +499,7 @@ class SessionRuntimeHost:
     def __init__(self, core: SessionCore, control_server: ControlServer) -> None:
         self.core = core
         self.control_server = control_server
+        self._operation_lock = asyncio.Lock()
 
     async def prepare(
         self,
@@ -415,27 +507,60 @@ class SessionRuntimeHost:
         assignment: Any,
         now_ns: int,
     ) -> CoreUpdate:
-        await self.control_server.wait_for_unity()
-        update = self.core.prepare(manifest, assignment, now_ns)
-        return await self._deliver(update, now_ns)
+        async with self._operation_lock:
+            await self.control_server.wait_for_unity()
+            update = self.core.prepare(manifest, assignment, now_ns)
+            return await self._deliver(update, now_ns)
 
     async def apply_operator_request(
         self, request: OperatorRequest, now_ns: int
     ) -> CoreUpdate:
-        update = self.core.apply_operator_request(request, now_ns)
-        return await self._deliver(update, now_ns)
+        async with self._operation_lock:
+            update = self.core.apply_operator_request(request, now_ns)
+            return await self._deliver(update, now_ns)
 
     async def advance(self, now_ns: int) -> CoreUpdate:
-        update = self.core.advance(now_ns)
-        return await self._deliver(update, now_ns)
+        async with self._operation_lock:
+            update = self.core.advance(now_ns)
+            return await self._deliver(update, now_ns)
 
     async def _deliver(self, update: CoreUpdate, now_ns: int) -> CoreUpdate:
         current_event_id: str | None = None
+        delivery_updates: list[CoreUpdate] = []
+
+        def merge(final: CoreUpdate) -> CoreUpdate:
+            updates = (update, *delivery_updates)
+            if final is not update and final not in delivery_updates:
+                updates = (*updates, final)
+            return CoreUpdate(
+                snapshot=final.snapshot,
+                control_events=tuple(
+                    item for candidate in updates for item in candidate.control_events
+                ),
+                session_events=tuple(
+                    item for candidate in updates for item in candidate.session_events
+                ),
+                policy_decisions=tuple(
+                    item for candidate in updates for item in candidate.policy_decisions
+                ),
+                audit_records=tuple(
+                    item for candidate in updates for item in candidate.audit_records
+                ),
+                gate_receipts=tuple(
+                    item for candidate in updates for item in candidate.gate_receipts
+                ),
+            )
+
         try:
             for event in update.control_events:
                 current_event_id = str(event["event_id"])
                 await self.control_server.publish_control(event)
-            return update
+                delivered = self.control_server.pop_delivery_update(current_event_id)
+                if delivered is not None:
+                    delivery_updates.append(delivered)
+            if not delivery_updates:
+                return update
+            return merge(delivery_updates[-1])
         except TransportError as error:
             failure = (
                 None
@@ -446,12 +571,19 @@ class SessionRuntimeHost:
                 failure_now_ns = max(now_ns, self.control_server.now_ns())
                 failure = self.core.transport_failure(error.code, failure_now_ns)
 
+            delivery_updates.append(failure)
+
             for event in failure.control_events:
                 try:
                     await self.control_server.publish_control(event)
+                    delivered = self.control_server.pop_delivery_update(
+                        str(event["event_id"])
+                    )
+                    if delivered is not None:
+                        delivery_updates.append(delivered)
                 except TransportError:
                     break
 
             if str(failure.snapshot.runtime_mode or "").startswith("formal_"):
                 await self.control_server.disconnect_unity()
-            return failure
+            return merge(delivery_updates[-1])

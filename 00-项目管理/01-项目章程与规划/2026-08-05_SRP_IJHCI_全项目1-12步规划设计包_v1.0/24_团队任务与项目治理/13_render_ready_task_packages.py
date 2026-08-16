@@ -57,6 +57,7 @@ def task_markdown(
     row: dict[str, str],
     resources: dict[str, tuple[str, str]],
     process_profiles: dict[str, tuple[str, ...]],
+    task_map: dict[str, object],
 ) -> str:
     dependencies = row["depends_on"].replace("|", "、") or "无"
     refs = []
@@ -101,9 +102,41 @@ def task_markdown(
         for index, step in enumerate(process_profiles[row["process_profile"]], start=1)
     )
     lines.extend(["", "## 验收要求", ""])
-    lines.extend(f"- [ ] {item}" for item in split_items(row["acceptance_criteria"], "；"))
+    checked = "x" if row["status"] == "IN_REVIEW" else " "
+    lines.extend(
+        f"- [{checked}] {item}"
+        for item in split_items(row["acceptance_criteria"], "；")
+    )
     lines.extend(["", "## 必需证据", ""])
-    lines.extend(f"- [ ] {item}" for item in split_items(row["evidence_required"]))
+    lines.extend(
+        f"- [{checked}] {item}" for item in split_items(row["evidence_required"])
+    )
+    if row["status"] == "IN_REVIEW":
+        source_files = [str(item) for item in task_map["source_files"]]
+        evidence_paths = [
+            item
+            for item in source_files
+            if "技术验收记录" in item
+            or "/evidence/" in item
+            or "/fixtures/golden/" in item
+        ]
+        completion = [
+            "- 实际改动文件：见`FILES.md`列出的项目权威路径",
+            f"- 验证命令与结果：技术候选已完成；模型复核状态`{task_map.get('model_review_status', 'PENDING')}`",
+            "- 证据路径：" + "；".join(f"`{item}`" for item in evidence_paths),
+            f"- commit：`{task_map.get('implementation_commit', 'PENDING_FIX_COMMIT')}`",
+            f"- push目标：`origin/{row['branch']}`",
+            "- 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放",
+        ]
+    else:
+        completion = [
+            "- 实际改动文件：",
+            "- 验证命令与结果：",
+            "- 证据路径：",
+            "- commit：",
+            "- push目标：",
+            "- 剩余风险：",
+        ]
     lines.extend(
         [
             "",
@@ -115,12 +148,7 @@ def task_markdown(
             "",
             "## 完成回填",
             "",
-            "- 实际改动文件：",
-            "- 验证命令与结果：",
-            "- 证据路径：",
-            "- commit：",
-            "- push目标：",
-            "- 剩余风险：",
+            *completion,
             "",
         ]
     )
@@ -220,7 +248,7 @@ def main() -> None:
             safe_working_path(relative)
 
         (package_dir / "TASK.md").write_text(
-            task_markdown(row, resources, process_profiles), encoding="utf-8"
+            task_markdown(row, resources, process_profiles, task_map), encoding="utf-8"
         )
         (package_dir / "FILES.md").write_text(
             files_markdown(task_id, copied, task_map["working_paths"]), encoding="utf-8"

@@ -3,6 +3,8 @@
   "output_directory": "当前解锁独立任务包",
   "tasks": {
     "G-02": {
+      "implementation_commit": "03d7426219121e49554e405db9dd521b8ab1d819",
+      "model_review_status": "PASS_FOR_MODEL_INDEPENDENT_REVIEW",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md",
@@ -76,6 +78,8 @@
       ]
     },
     "P-01": {
+      "implementation_commit": "03d7426219121e49554e405db9dd521b8ab1d819",
+      "model_review_status": "PASS_FOR_MODEL_INDEPENDENT_REVIEW",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
@@ -119,6 +123,8 @@
       ]
     },
     "P-02": {
+      "implementation_commit": "03d7426219121e49554e405db9dd521b8ab1d819",
+      "model_review_status": "PASS_FOR_MODEL_INDEPENDENT_REVIEW",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",

@@ -8,6 +8,7 @@ import hmac
 import json
 import os
 from pathlib import Path
+import shutil
 import sqlite3
 import tempfile
 from typing import Callable
@@ -17,6 +18,7 @@ from .registry import DedupRegistry, SCHEMA_VERSION, Stage
 
 
 BACKUP_DATABASE_NAME = "dedup_registry.sqlite"
+BACKUP_ANCHOR_NAME = "audit_anchor.json"
 BACKUP_MANIFEST_NAME = "backup_manifest.json"
 _MANIFEST_DOMAIN = b"srp:g02:backup-manifest:v1\0"
 
@@ -76,6 +78,10 @@ def _online_copy(source_path: Path, destination_path: Path) -> None:
         raise GovernanceError("BACKUP_UNAVAILABLE") from exc
 
 
+def _publish_bundle(source: Path, destination: Path) -> None:
+    os.replace(source, destination)
+
+
 def backup_registry(
     registry: DedupRegistry,
     bundle_directory: Path,
@@ -84,45 +90,73 @@ def backup_registry(
     bundle_directory = Path(bundle_directory)
     if bundle_directory.exists():
         raise GovernanceError("BACKUP_TARGET_EXISTS")
+    registry.ensure_authorized(actor_id)
     key = _validate_key(registry.key_provider)
-    registry.record_operation(
-        event_type="BACKUP_CREATED",
-        actor_id=actor_id,
-        object_type="REGISTRY",
-        object_id="DEDUP_REGISTRY",
-        result="APPLIED",
-        reason_code="ONLINE_BACKUP",
-    )
+    published = False
     bundle_directory.parent.mkdir(parents=True, exist_ok=True)
-
-    with tempfile.TemporaryDirectory(
-        prefix=".g02-backup-", dir=bundle_directory.parent
-    ) as temporary:
-        temporary_path = Path(temporary)
-        database_path = temporary_path / BACKUP_DATABASE_NAME
-        _online_copy(registry.database_path, database_path)
-        backup_snapshot = DedupRegistry(
-            database_path=database_path,
-            key_provider=lambda: key,
-            allowed_actors={actor_id},
+    try:
+        with tempfile.TemporaryDirectory(
+            prefix=".g02-backup-", dir=bundle_directory.parent
+        ) as temporary:
+            temporary_path = Path(temporary)
+            database_path = temporary_path / BACKUP_DATABASE_NAME
+            for _ in range(3):
+                database_path.unlink(missing_ok=True)
+                (temporary_path / BACKUP_ANCHOR_NAME).unlink(missing_ok=True)
+                _online_copy(registry.database_path, database_path)
+                shutil.copy2(
+                    registry.audit_anchor_path, temporary_path / BACKUP_ANCHOR_NAME
+                )
+                backup_snapshot = DedupRegistry(
+                    database_path=database_path,
+                    key_provider=lambda: key,
+                    allowed_actors={actor_id},
+                )
+                if backup_snapshot.verify_audit_chain().valid:
+                    break
+            else:
+                raise GovernanceError("BACKUP_SNAPSHOT_INCONSISTENT")
+            manifest = {
+                "audit_tail_hash": backup_snapshot.audit_tail_hash(),
+                "created_at_utc": datetime.now(timezone.utc)
+                .isoformat(timespec="microseconds")
+                .replace("+00:00", "Z"),
+                "database_file": BACKUP_DATABASE_NAME,
+                "database_sha256": _sha256_file(database_path),
+                "database_size_bytes": database_path.stat().st_size,
+                "schema_version": SCHEMA_VERSION,
+            }
+            manifest["manifest_hmac_sha256"] = _manifest_hmac(manifest, key)
+            (temporary_path / BACKUP_MANIFEST_NAME).write_text(
+                json.dumps(manifest, ensure_ascii=True, sort_keys=True, indent=2) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            _publish_bundle(temporary_path, bundle_directory)
+            published = True
+        registry.record_operation(
+            event_type="BACKUP_CREATED",
+            actor_id=actor_id,
+            object_type="REGISTRY",
+            object_id="DEDUP_REGISTRY",
+            result="APPLIED",
+            reason_code="ONLINE_BACKUP",
         )
-        manifest = {
-            "audit_tail_hash": backup_snapshot.audit_tail_hash(),
-            "created_at_utc": datetime.now(timezone.utc)
-            .isoformat(timespec="microseconds")
-            .replace("+00:00", "Z"),
-            "database_file": BACKUP_DATABASE_NAME,
-            "database_sha256": _sha256_file(database_path),
-            "database_size_bytes": database_path.stat().st_size,
-            "schema_version": SCHEMA_VERSION,
-        }
-        manifest["manifest_hmac_sha256"] = _manifest_hmac(manifest, key)
-        (temporary_path / BACKUP_MANIFEST_NAME).write_text(
-            json.dumps(manifest, ensure_ascii=True, sort_keys=True, indent=2) + "\n",
-            encoding="utf-8",
-            newline="\n",
-        )
-        os.replace(temporary_path, bundle_directory)
+    except Exception:
+        if published and bundle_directory.exists():
+            shutil.rmtree(bundle_directory)
+        try:
+            registry.record_operation(
+                event_type="BACKUP_FAILED",
+                actor_id=actor_id,
+                object_type="REGISTRY",
+                object_id="DEDUP_REGISTRY",
+                result="FAILED",
+                reason_code="BACKUP_UNAVAILABLE",
+            )
+        except Exception:
+            pass
+        raise
 
     return BackupResult(
         bundle_directory / BACKUP_DATABASE_NAME,
@@ -131,7 +165,7 @@ def backup_registry(
 
 
 def _load_and_validate_bundle(bundle_directory: Path, key: bytes) -> tuple[Path, dict]:
-    expected_files = {BACKUP_DATABASE_NAME, BACKUP_MANIFEST_NAME}
+    expected_files = {BACKUP_DATABASE_NAME, BACKUP_ANCHOR_NAME, BACKUP_MANIFEST_NAME}
     try:
         actual_files = {item.name for item in bundle_directory.iterdir() if item.is_file()}
     except OSError as exc:
@@ -207,6 +241,10 @@ def restore_registry(
             key_provider=lambda: key,
             allowed_actors=allowed_actors,
         )
+        shutil.copy2(
+            Path(bundle_directory) / BACKUP_ANCHOR_NAME,
+            restored.audit_anchor_path,
+        )
         if not restored.verify_audit_chain().valid:
             raise GovernanceError("AUDIT_CHAIN_INVALID")
 
@@ -218,6 +256,7 @@ def restore_registry(
                 key_provider=lambda: key,
                 allowed_actors=allowed_actors,
             )
+            shutil.copy2(restored.audit_anchor_path, probe.audit_anchor_path)
             decision = probe.check_and_reserve(
                 "+8619900000000", Stage.LEVEL_B, actor_id
             )
@@ -235,6 +274,9 @@ def restore_registry(
     except Exception:
         if destination_path.exists():
             destination_path.unlink()
+        anchor_path = destination_path.with_name(BACKUP_ANCHOR_NAME)
+        if anchor_path.exists():
+            anchor_path.unlink()
         dedup_directory = destination_path.parent
         if dedup_directory.exists() and not any(dedup_directory.iterdir()):
             dedup_directory.rmdir()

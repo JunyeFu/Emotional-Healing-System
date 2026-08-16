@@ -30,10 +30,11 @@ $env:SRP_RETENTION_APPROVAL = 'APPROVED:<authority-id>'
 
 ```text
 dedup/dedup_registry.sqlite
+dedup/audit_anchor.json
 identity/research_id_mapping.sqlite
 ```
 
-两库不得共享字段、外键或目录权限继承到无关账户。
+两库不得共享字段、外键或目录权限继承到无关账户。认证审计尾锚必须与去重库共同持久化，并纳入同级ACL、备份和完整性监控。
 
 Windows数据管理员账户只用于凭据与ACL鉴权。治理库中的操作者统一记为角色码`data-admin`，不落盘Windows账户名。
 
@@ -74,7 +75,7 @@ py -3.14 '02-技术研发/07-数据治理/g02.py' check-environment `
 - 仅使用SQLite在线备份API；不得复制活动数据库文件；
 - 恢复目标必须为空目录；
 - 依次验证备份SHA-256、密钥认证清单、Schema版本、审计链尾、凭据可用性、恢复授权和合成决策；
-- 备份包只允许`dedup_registry.sqlite`和`backup_manifest.json`，拒绝`-wal`、`-shm`或其他侧文件；
+- 备份包只允许`dedup_registry.sqlite`、`audit_anchor.json`和`backup_manifest.json`，拒绝`-wal`、`-shm`或其他侧文件；
 - 密钥不进入数据库备份；
 - 首次正式录入前和每次权限或存储变更后重新演练；
 - 演练报告只含不透明ID、结果码、哈希和时间，不含联系方式。

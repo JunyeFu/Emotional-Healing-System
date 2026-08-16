@@ -20,6 +20,8 @@
 | 下游消费规则 | [docs/downstream_contracts.md](docs/downstream_contracts.md) |
 | 命令行 | [g02.py](g02.py) |
 
+固定HMAC凭据只允许首次初始化：目标已存在时`provision`失败关闭，密钥轮换必须另走显式审计流程。Manifest隐私门同时搜索独立值和普通文本中嵌入的手机号、邮箱，错误不回显原值。
+
 ## 公开Python接口
 
 ```python

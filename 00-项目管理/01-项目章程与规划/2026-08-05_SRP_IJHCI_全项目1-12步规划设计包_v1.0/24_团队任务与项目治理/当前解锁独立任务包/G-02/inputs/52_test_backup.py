@@ -26,6 +26,25 @@ def registry(tmp_path):
     return result
 
 
+def test_failed_publish_does_not_delete_competing_bundle(
+    registry, tmp_path, monkeypatch
+) -> None:
+    import srp_governance.backup as backup_module
+
+    bundle = tmp_path / "backup-bundle"
+
+    def competing_publish(_source, destination):
+        destination.mkdir()
+        (destination / "owner.marker").write_text("other", encoding="utf-8")
+        raise OSError("target won by another writer")
+
+    monkeypatch.setattr(backup_module, "_publish_bundle", competing_publish)
+    with pytest.raises(OSError, match="target won"):
+        backup_registry(registry, bundle, "data-admin")
+
+    assert (bundle / "owner.marker").read_text(encoding="utf-8") == "other"
+
+
 def test_online_backup_and_empty_directory_restore_preserve_decision(registry, tmp_path) -> None:
     bundle = tmp_path / "backup-bundle"
     backup = backup_registry(registry, bundle, "data-admin")
@@ -175,3 +194,47 @@ def test_existing_backup_target_does_not_record_success(registry, tmp_path) -> N
 
     assert error.value.code == "BACKUP_TARGET_EXISTS"
     assert registry.verify_audit_chain().checked_events == before
+
+
+def test_copy_failure_records_failure_but_not_success(
+    registry, tmp_path, monkeypatch
+) -> None:
+    import srp_governance.backup as backup_module
+
+    def fail_copy(_source, _destination):
+        raise GovernanceError("BACKUP_UNAVAILABLE")
+
+    monkeypatch.setattr(backup_module, "_online_copy", fail_copy)
+    bundle = tmp_path / "failed-backup"
+
+    with pytest.raises(GovernanceError, match="BACKUP_UNAVAILABLE"):
+        backup_registry(registry, bundle, "data-admin")
+
+    assert not bundle.exists()
+    with sqlite3.connect(registry.database_path) as connection:
+        events = connection.execute(
+            "SELECT event_type, result FROM audit_events ORDER BY sequence"
+        ).fetchall()
+    assert ("BACKUP_FAILED", "FAILED") in events
+    assert ("BACKUP_CREATED", "APPLIED") not in events
+
+
+def test_unauthorized_backup_is_rejected_before_copy_or_publication(
+    registry, tmp_path, monkeypatch
+) -> None:
+    import srp_governance.backup as backup_module
+
+    called = False
+
+    def observe_copy(_source, _destination):
+        nonlocal called
+        called = True
+
+    monkeypatch.setattr(backup_module, "_online_copy", observe_copy)
+    bundle = tmp_path / "unauthorized-backup"
+
+    with pytest.raises(GovernanceError, match="UNAUTHORIZED"):
+        backup_registry(registry, bundle, "observer")
+
+    assert called is False
+    assert not bundle.exists()

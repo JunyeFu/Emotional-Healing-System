@@ -98,8 +98,8 @@
     {
       "source_path": "02-技术研发/srp_session_core/README.md",
       "package_path": "inputs/16_README.md",
-      "sha256": "626CAB49FA61217890D45EB3A862306A2828A9685A49F841D8071BC90326AC5D",
-      "size_bytes": 2979
+      "sha256": "815EF43FC47E7957D8FEB80C8067AE2F6FB4E7B9ACEFF634484378D671125077",
+      "size_bytes": 3278
     },
     {
       "source_path": "02-技术研发/srp_session_core/config/protocol_config_v1.1.json",
@@ -110,8 +110,8 @@
     {
       "source_path": "02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json",
       "package_path": "inputs/18_four-module-trace-v1.json",
-      "sha256": "5CA4242B51AD47B7EF150DD97BC5E7433396069A8C71C2DEE3B975E0AD2786DB",
-      "size_bytes": 65361
+      "sha256": "3D5A28C28C37132D0E1121B145CF189A56656CA1EDD4459D6F77235E30F18CD3",
+      "size_bytes": 65320
     }
   ],
   "working_paths": [

@@ -1891,6 +1891,25 @@
       "session_id": "S-P01-GOLDEN-0001",
       "event_id": "S-P01-GOLDEN-0001:session:000053",
       "event_seq": 53,
+      "event_type": "control_acknowledged",
+      "scheduled_monotonic_ns": 801000000000,
+      "observed_monotonic_ns": 801000000000,
+      "state_before": "RUNNING",
+      "state_after": "RUNNING",
+      "module_position": 3,
+      "module_id": "fade",
+      "segment": "lock_transition",
+      "reason_code": null,
+      "payload": {
+        "control_event_id": "S-P01-GOLDEN-0001:control:000019",
+        "ack_result": "applied"
+      }
+    },
+    {
+      "event_schema_version": "1.0",
+      "session_id": "S-P01-GOLDEN-0001",
+      "event_id": "S-P01-GOLDEN-0001:session:000054",
+      "event_seq": 54,
       "event_type": "session_completed",
       "scheduled_monotonic_ns": 801000000000,
       "observed_monotonic_ns": 801000000000,
@@ -1900,28 +1919,7 @@
       "module_id": "fade",
       "segment": "lock_transition",
       "reason_code": "COMPLETED",
-      "payload": {
-        "scheduler_lag_ns": 0
-      }
-    },
-    {
-      "event_schema_version": "1.0",
-      "session_id": "S-P01-GOLDEN-0001",
-      "event_id": "S-P01-GOLDEN-0001:session:000054",
-      "event_seq": 54,
-      "event_type": "control_acknowledged",
-      "scheduled_monotonic_ns": 801000000000,
-      "observed_monotonic_ns": 801000000000,
-      "state_before": "COMPLETED",
-      "state_after": "COMPLETED",
-      "module_position": 3,
-      "module_id": "fade",
-      "segment": "lock_transition",
-      "reason_code": null,
-      "payload": {
-        "control_event_id": "S-P01-GOLDEN-0001:control:000019",
-        "ack_result": "applied"
-      }
+      "payload": {}
     }
   ],
   "audit_records": [
@@ -2159,5 +2157,5 @@
     "session_event_count": 54,
     "protocol_config_hash": "sha256:082df4e0e862b5ba40fb386faa5a7665bad4e4aa941f3a1274ff41adc3efa84c"
   },
-  "trace_hash": "sha256:c163f211396dc979fa9f63ce25a8984cc3a4f2010ba71d8711d3223abf7c4491"
+  "trace_hash": "sha256:0c7638a423f5c5f2b520ebc0f2886b12d49ab925941ce8f2c0b5e22bd2bbcb14"
 }

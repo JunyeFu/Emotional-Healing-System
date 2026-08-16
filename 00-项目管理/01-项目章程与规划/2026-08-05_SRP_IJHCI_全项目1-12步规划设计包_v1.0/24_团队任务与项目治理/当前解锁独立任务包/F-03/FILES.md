@@ -21,9 +21,9 @@
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/WeatherController.cs](D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/WeatherController.cs) | [inputs/13_WeatherController.cs](inputs/13_WeatherController.cs) | `3CAA32DE84CCE8D7B164B2F2EB31C53F1F8F3CE7E95D39C3CA0879FEC68F3EB9` |
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/WeatherDirector.cs](D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/WeatherDirector.cs) | [inputs/14_WeatherDirector.cs](inputs/14_WeatherDirector.cs) | `8BE26969534AF679BD682348616E52E4E68193804C624DB74B9219D70241FDF0` |
 | [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md) | [inputs/15_13_IJHCI独立审稿攻击与升级裁定_v1.1.md](inputs/15_13_IJHCI独立审稿攻击与升级裁定_v1.1.md) | `B9D4A056038608A246ACF7A3DC85D00D200B3DFDCB73B857C0BEF00F6BF15806` |
-| [02-技术研发/srp_session_core/README.md](D:/Agent/03-SRP/02-技术研发/srp_session_core/README.md) | [inputs/16_README.md](inputs/16_README.md) | `626CAB49FA61217890D45EB3A862306A2828A9685A49F841D8071BC90326AC5D` |
+| [02-技术研发/srp_session_core/README.md](D:/Agent/03-SRP/02-技术研发/srp_session_core/README.md) | [inputs/16_README.md](inputs/16_README.md) | `815EF43FC47E7957D8FEB80C8067AE2F6FB4E7B9ACEFF634484378D671125077` |
 | [02-技术研发/srp_session_core/config/protocol_config_v1.1.json](D:/Agent/03-SRP/02-技术研发/srp_session_core/config/protocol_config_v1.1.json) | [inputs/17_protocol_config_v1.1.json](inputs/17_protocol_config_v1.1.json) | `86D6C75826085A9D7BD6FB53F680696FD7E918AAE43BE84A0E49DB2D93D90BB7` |
-| [02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json](D:/Agent/03-SRP/02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json) | [inputs/18_four-module-trace-v1.json](inputs/18_four-module-trace-v1.json) | `5CA4242B51AD47B7EF150DD97BC5E7433396069A8C71C2DEE3B975E0AD2786DB` |
+| [02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json](D:/Agent/03-SRP/02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json) | [inputs/18_four-module-trace-v1.json](inputs/18_four-module-trace-v1.json) | `3D5A28C28C37132D0E1121B145CF189A56656CA1EDD4459D6F77235E30F18CD3` |
 
 ## 实现工作目录
 

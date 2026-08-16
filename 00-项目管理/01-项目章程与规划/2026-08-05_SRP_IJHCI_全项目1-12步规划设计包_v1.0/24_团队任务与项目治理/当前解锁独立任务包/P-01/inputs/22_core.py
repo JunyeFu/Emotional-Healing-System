@@ -64,6 +64,8 @@ class SessionCore:
         self._request_ids: set[str] = set()
         self._completed_modules: list[str] = []
         self._prepare_event_id: str | None = None
+        self._end_event_id: str | None = None
+        self._terminal_ns: int | None = None
         self._exposed = False
         self._finished_reason: str | None = None
         self._gate_receipts: tuple[GateReceipt, ...] = ()
@@ -138,14 +140,15 @@ class SessionCore:
             )
             return self._update(audit_records=(audit,))
         self._request_ids.add(request.request_id)
+        if request.action == "abort":
+            return self._abort_request(request, now_ns)
+        if self._end_event_id is not None and self._end_event_id not in self._acked_event_ids:
+            return self._reject_request(request, "COMPLETION_ACK_PENDING", now_ns)
 
         if request.action == "start":
             return self._start_or_resume(request, now_ns)
         if request.action == "pause":
             return self._pause(request, now_ns)
-        if request.action == "abort":
-            return self._abort_request(request, now_ns)
-
         audit = self._audit(
             request.request_id, "rejected", "UNKNOWN_OPERATOR_ACTION", now_ns
         )
@@ -210,7 +213,8 @@ class SessionCore:
                 action="pause",
                 reason_code=reason_code,
             )
-            return self.apply_operator_request(request, now_ns)
+            self._request_ids.add(request.request_id)
+            return self._pause(request, now_ns)
         audit = self._audit("transport", "rejected", reason_code, now_ns)
         return self._update(audit_records=(audit,))
 
@@ -244,7 +248,13 @@ class SessionCore:
         ):
             progress = 0.0
         else:
-            clock_ns = self._pause_start_ns if self._status is SessionStatus.PAUSED else self._last_now_ns
+            clock_ns = (
+                self._terminal_ns
+                if self._terminal_ns is not None
+                else self._pause_start_ns
+                if self._status is SessionStatus.PAUSED
+                else self._last_now_ns
+            )
             elapsed = max(0, clock_ns - self._segment_start_ns)
             progress = min(1.0, elapsed / duration_ns)
         manifest = self._manifest or {}
@@ -417,6 +427,7 @@ class SessionCore:
             self._total_paused_ns += now_ns - self._pause_start_ns
             self._pause_start_ns = None
         self._status = SessionStatus.ABORTED
+        self._terminal_ns = now_ns
         self._finished_reason = reason_code
         control = self._make_control("abort", now_ns, {"reason_code": reason_code})
         event = self._make_session_event(
@@ -470,19 +481,14 @@ class SessionCore:
             payload={"scheduler_lag_ns": lag_ns},
         ))
         if self._module_position == 3:
-            before = self._status
-            self._status = SessionStatus.COMPLETED
-            self._finished_reason = "COMPLETED"
             self._segment_deadline_ns = None
-            controls.append(self._make_control(
+            end_event = self._make_control(
                 "end",
                 observed_ns,
                 {"reason_code": "COMPLETED", "scheduled_monotonic_ns": scheduled_ns},
-            ))
-            events.append(self._make_session_event(
-                "session_completed", scheduled_ns, observed_ns, before, self._status,
-                reason_code="COMPLETED", payload={"scheduler_lag_ns": lag_ns},
-            ))
+            )
+            self._end_event_id = str(end_event["event_id"])
+            controls.append(end_event)
             return controls, events, decisions
 
         self._module_position += 1
@@ -521,6 +527,14 @@ class SessionCore:
             return self._update(audit_records=(audit,))
 
         result = str(ack["result"])
+        control = self._control_by_id[event_id]
+        if (
+            result in {"applied", "duplicate_ignored"}
+            and control["event_type"] == "end"
+            and self._status not in {SessionStatus.RUNNING, SessionStatus.PAUSED}
+        ):
+            audit = self._audit(event_id, "rejected", "SESSION_TERMINAL", now_ns)
+            return self._update(audit_records=(audit,))
         if result in {"applied", "duplicate_ignored"}:
             self._acked_event_ids.add(event_id)
             audit = self._audit(
@@ -537,7 +551,26 @@ class SessionCore:
                 self._status,
                 payload={"control_event_id": event_id, "ack_result": result},
             )
-            return self._update(session_events=(event,), audit_records=(audit,))
+            events = [event]
+            if control["event_type"] == "end":
+                before = self._status
+                if self._status is SessionStatus.PAUSED and self._pause_start_ns is not None:
+                    self._total_paused_ns += now_ns - self._pause_start_ns
+                    self._pause_start_ns = None
+                self._status = SessionStatus.COMPLETED
+                self._terminal_ns = now_ns
+                self._finished_reason = "COMPLETED"
+                events.append(
+                    self._make_session_event(
+                        "session_completed",
+                        int(control["payload"]["scheduled_monotonic_ns"]),
+                        now_ns,
+                        before,
+                        self._status,
+                        reason_code="COMPLETED",
+                    )
+                )
+            return self._update(session_events=tuple(events), audit_records=(audit,))
 
         reason = str(ack["error_code"] or "CONTROL_ACK_FAILED")
         return self.transport_failure(reason, now_ns)
@@ -554,6 +587,28 @@ class SessionCore:
         event_id = str(receipt["event_id"])
         if event_id not in self._control_by_id:
             audit = self._audit(receipt_id, "rejected", "UNKNOWN_CONTROL_EVENT", now_ns)
+            return self._update(audit_records=(audit,))
+        if event_id not in self._acked_event_ids:
+            audit = self._audit(
+                receipt_id, "rejected", "CONTROL_NOT_ACKNOWLEDGED", now_ns
+            )
+            return self._update(audit_records=(audit,))
+        control = self._control_by_id[event_id]
+        if control["event_type"] != "segment":
+            audit = self._audit(
+                receipt_id, "rejected", "RENDER_RECEIPT_CONTROL_TYPE_INVALID", now_ns
+            )
+            return self._update(audit_records=(audit,))
+        payload = control["payload"]
+        if receipt["module_id"] != payload.get("module_id"):
+            audit = self._audit(
+                receipt_id, "rejected", "RENDER_RECEIPT_MODULE_MISMATCH", now_ns
+            )
+            return self._update(audit_records=(audit,))
+        if receipt["segment"] != payload.get("segment"):
+            audit = self._audit(
+                receipt_id, "rejected", "RENDER_RECEIPT_SEGMENT_MISMATCH", now_ns
+            )
             return self._update(audit_records=(audit,))
         self._receipt_ids.add(receipt_id)
         if receipt["result"] != "rendered":
@@ -723,7 +778,13 @@ class SessionCore:
     def _session_elapsed_ns(self) -> int:
         if self._session_start_ns is None:
             return 0
-        end_ns = self._pause_start_ns if self._status is SessionStatus.PAUSED else self._last_now_ns
+        end_ns = (
+            self._terminal_ns
+            if self._terminal_ns is not None
+            else self._pause_start_ns
+            if self._status is SessionStatus.PAUSED
+            else self._last_now_ns
+        )
         return max(0, end_ns - self._session_start_ns - self._total_paused_ns)
 
     def _paused_duration_ns(self) -> int:

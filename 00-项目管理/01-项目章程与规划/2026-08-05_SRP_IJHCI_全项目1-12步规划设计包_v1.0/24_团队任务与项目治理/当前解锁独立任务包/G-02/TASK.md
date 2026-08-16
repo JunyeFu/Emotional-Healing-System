@@ -45,16 +45,16 @@
 
 ## 验收要求
 
-- [ ] AC1HMAC去重表密钥与研究manifest物理分离且manifest不含联络信息
-- [ ] AC2跨Level B/C阶段一三重复审计和最小权限恢复演练通过
-- [ ] AC3所有发布资产有许可或替换计划
+- [x] AC1HMAC去重表密钥与研究manifest物理分离且manifest不含联络信息
+- [x] AC2跨Level B/C阶段一三重复审计和最小权限恢复演练通过
+- [x] AC3所有发布资产有许可或替换计划
 
 ## 必需证据
 
-- [ ] 权限负测试
-- [ ] 重复审计fixture
-- [ ] 恢复演练日志
-- [ ] 资产许可台账
+- [x] 权限负测试
+- [x] 重复审计fixture
+- [x] 恢复演练日志
+- [x] 资产许可台账
 
 ## 完成条件
 
@@ -64,9 +64,9 @@
 
 ## 完成回填
 
-- 实际改动文件：
-- 验证命令与结果：
-- 证据路径：
-- commit：
-- push目标：
-- 剩余风险：
+- 实际改动文件：见`FILES.md`列出的项目权威路径
+- 验证命令与结果：技术候选已完成；模型复核状态`PASS_FOR_MODEL_INDEPENDENT_REVIEW`
+- 证据路径：`02-技术研发/05-通信协议/F-01_技术验收记录.md`；`02-技术研发/07-数据治理/G-02_技术验收记录.md`；`02-技术研发/07-数据治理/evidence/asset_scan_report.json`；`02-技术研发/07-数据治理/evidence/formal_environment_report.json`；`02-技术研发/07-数据治理/evidence/repository_privacy_report.json`；`02-技术研发/07-数据治理/evidence/synthetic_rehearsal_report.json`；`02-技术研发/07-数据治理/evidence/unity_formal_build_gate_summary.json`
+- commit：`03d7426219121e49554e405db9dd521b8ab1d819`
+- push目标：`origin/codex/g-02-data-governance`
+- 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放

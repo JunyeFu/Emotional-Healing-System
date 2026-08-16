@@ -41,15 +41,15 @@
 
 ## 验收要求
 
-- [ ] AC1中断恢复不覆盖旧数据
-- [ ] AC2校验和发现改写
-- [ ] AC3相同输入重放产生相同状态事件
+- [x] AC1中断恢复不覆盖旧数据
+- [x] AC2校验和发现改写
+- [x] AC3相同输入重放产生相同状态事件
 
 ## 必需证据
 
-- [ ] 恢复测试
-- [ ] 篡改负测试
-- [ ] 重放哈希报告
+- [x] 恢复测试
+- [x] 篡改负测试
+- [x] 重放哈希报告
 
 ## 完成条件
 
@@ -59,9 +59,9 @@ L0/L1格式被A-01和设备适配器消费
 
 ## 完成回填
 
-- 实际改动文件：
-- 验证命令与结果：
-- 证据路径：
-- commit：
-- push目标：
-- 剩余风险：
+- 实际改动文件：见`FILES.md`列出的项目权威路径
+- 验证命令与结果：技术候选已完成；模型复核状态`PASS_FOR_MODEL_INDEPENDENT_REVIEW`
+- 证据路径：`02-技术研发/05-通信协议/F-01_技术验收记录.md`；`02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json`；`02-技术研发/srp_session_store/P-02_技术验收记录.md`；`02-技术研发/srp_session_store/evidence/synthetic_stress_report.json`；`02-技术研发/srp_session_store/fixtures/golden/session-archive-v1/evidence.json`
+- commit：`03d7426219121e49554e405db9dd521b8ab1d819`
+- push目标：`origin/codex/p-02-session-store`
+- 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放
