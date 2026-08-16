@@ -3,7 +3,7 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "F-04",
   "status": "READY",
-  "registry_sha256": "4206531E6E802E75453ED4695911A3183CB19A9E10CCC15DBA5E789F5DBA5BFC",
+  "registry_sha256": "20C2DAF71C6DE647FA4F79923F7D4CA47E3CB93B8D62D13E6DE1FE1D16D3E8FD",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
@@ -32,8 +32,8 @@
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md",
       "package_path": "inputs/05_06_目标运行接口_v2.md",
-      "sha256": "D20703037E7D5D1E001E7FA3311A82BC0EE0E7FAEF87CD4088414AF2A3E72D4D",
-      "size_bytes": 7185
+      "sha256": "9754D8B6F55DBB7D45B187F434388EA27E258EE6EA0FC31B88B023E6827BAF28",
+      "size_bytes": 7231
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/TD原型规划.md",

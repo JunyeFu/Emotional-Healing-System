@@ -658,3 +658,23 @@ Implement the v2.1 fixed-sequence session authority and minimum Python loopback 
 - A real non-implementing team member must review and sign the fixed P-01 implementation commit before `DONE`.
 - P-02 durable append storage, X-01 randomization authority, Unity/TD consumers, real devices and `LIVE_E2E` remain separate open tasks.
 - Stage 3 frozen-policy ordering is blocked with `ADAPTIVE_SEQUENCE_REQUIRES_V2_2`; v2.1 does not reinterpret `weather_sequence` as a fallback sequence.
+
+## 2026-08-16 Implement P-02 Durable Session Store Candidate
+
+### Goal
+
+Implement append-only manifest/L0/L1 storage and deterministic P-01 replay, preserve interrupted bytes without resuming experience progress, and move P-02 to human second review without claiming formal runtime closure.
+
+### Evidence And Decision
+
+- Implementation commit `3d740e99118d6a76993156f26bdf673144429025` adds exclusive manifest storage, segmented canonical JSONL hash chains, checkpoints, seal scopes, interruption recovery, P-01 recording adapters, telemetry store-before-send and side-effect-free replay.
+- Formal capability requires a repository-external root, configured system account and role, G-02 authorization, encryption and minimum ACL checks. Development archives cannot self-declare formal capability.
+- The P-01 golden archive preserves 19 controls, 19 ACKs, 12 render receipts, 54 session events and 46 committed operations. The 800-second stress candidate records 320000 PLUX samples, 104000 Polar samples and 16000 L1 frames with valid integrity.
+- Independent model review required four rounds. All four P1 and two P2 findings were closed; final status is `PASS_FOR_MODEL_INDEPENDENT_REVIEW`.
+- P-02 moves from `READY` to `IN_REVIEW`. The READY set becomes exactly F-03, F-04 and G-01; D-01/D-02 retain device gates and A-01 still waits for S-02.
+
+### Open Hard Gates
+
+- A real non-implementing team member must review and sign the fixed P-02 implementation commit before `DONE`.
+- Formal-machine encryption, ACL, account and integrated runtime evidence remain required.
+- Real device adapters, Unity/TD consumers, X-01, A-01 and `LIVE_E2E` remain separate tasks.

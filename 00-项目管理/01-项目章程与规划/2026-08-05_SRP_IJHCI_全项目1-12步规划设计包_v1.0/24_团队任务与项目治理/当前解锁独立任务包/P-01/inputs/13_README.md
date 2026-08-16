@@ -46,4 +46,4 @@ py -3.14 -m pytest '02-技术研发/tests/session_core' -q
 py -3.14 '02-技术研发/srp_session_core/generate_golden_trace.py'
 ```
 
-生成器对相同manifest、分配和时钟产生相同控制、会话事件和`trace_hash`。P-02后续负责不可覆盖落盘和跨进程重放文件实现。
+生成器对相同manifest、分配和时钟产生相同控制、会话事件和`trace_hash`。P-02技术候选已在`../srp_session_store/`实现不可覆盖落盘和确定性重放；第二人签收及正式运行装配仍未完成。

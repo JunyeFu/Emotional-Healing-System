@@ -642,3 +642,16 @@
 | PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages, SHA-256 `2C1DCF288B9E2EFD86C92719CB95225D90575A87C79B29FFE8C432214D408BB4`; all pages were rendered at 120 DPI and visually checked with no clipping, overlap or unreadable content. |
 | Scope Guard | The four pre-existing tracked deletions and pre-existing untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` remain excluded. |
 | Residual Risk | Abort delivery is best effort if the connection is already lost. Human second review, P-02, X-01, Unity/TD consumers, real devices and `LIVE_E2E` remain open. |
+
+### 2026-08-16 P-02 Durable Session Store Candidate And Review Transition
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Manifest and L0/L1 are append-only; interrupted bytes remain unchanged; integrity drift is detected; complete P-01 operations replay deterministically without external side effects. |
+| Actual Result | Added `srp_session_store`, three machine schemas, formal/development storage gates, P-01 and telemetry adapters, recovery, golden archive, stress generator and a pending human second-review report. Implementation commit: `3d740e99118d6a76993156f26bdf673144429025`. |
+| Verified Evidence | P-02 suite `42 passed`; P-02/P-01/F-01/G-02 regression `288 passed`; root regression `331 passed`; protocol authority passed; independent model review returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`; registry passed with READY=F-03/F-04/G-01 and IN_REVIEW=G-02/P-01/P-02; dispatch package validation passed with 6 packages and 182 snapshots. |
+| Stress Evidence | 800 seconds; PLUX 320000 samples; Polar 104000 samples; L1 16000 frames; integrity valid; eight post-warmup memory samples; no end-of-run growth over warmup. |
+| Independent Review | Four rounds closed formal-capability bypass, privacy synonyms/path echo, seal cross-binding, abort preservation, prepare ordering, dual-device stress, and replay side-effect findings. No P0-P2 remains in the final model review. |
+| PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages and passed the brief verifier; all pages were rendered at 100 DPI and visually checked without clipping, overlap or unreadable text; SHA-256 `E220011680C7D5AA25F2EB87ED7F21C01D79C9C2EF94F59C2622157A05E0E5DF`. |
+| Scope Guard | The four pre-existing tracked deletions and untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` remain excluded. |
+| Residual Risk | Human second review, formal-machine checks, device adapters, Unity/TD consumers, X-01, A-01 and `LIVE_E2E` remain open. Hash chains detect integrity drift but are not digital signatures against a privileged malicious writer. |
