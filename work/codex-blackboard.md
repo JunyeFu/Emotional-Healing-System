@@ -678,3 +678,23 @@ Implement append-only manifest/L0/L1 storage and deterministic P-01 replay, pres
 - A real non-implementing team member must review and sign the fixed P-02 implementation commit before `DONE`.
 - Formal-machine encryption, ACL, account and integrated runtime evidence remain required.
 - Real device adapters, Unity/TD consumers, X-01, A-01 and `LIVE_E2E` remain separate tasks.
+
+## 2026-08-16 Fresh Independent Agent Audit Of IN_REVIEW Tasks
+
+### Goal
+
+Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 implementation commits, preserving human-signature authority and current task states.
+
+### Evidence And Decision
+
+- Three independent Agents reviewed G-02 `befbdb698ef5cbeb6061315a4c912abdde4e6b08`, P-01 `8063afc7053a79a0d27fe8fc94159dbc5fc9a9e0` and P-02 `3d740e99118d6a76993156f26bdf673144429025`.
+- All three returned `REVIEW_FINDINGS_OPEN`: 0 P0, 4 P1, 4 P2 and 2 P3 findings.
+- New counterexamples cover credential overwrite, embedded contact leakage, unconfirmed completion, premature ACK, receipt mismatch, envelope mutation, seal/recovery races and invalid memory-trend evidence.
+- The detailed evidence is recorded in `03-测试与实验/IN_REVIEW_Agent独立审核报告_2026-08-16.md`.
+- G-02, P-01 and P-02 remain `IN_REVIEW`; pending human second-review reports were not edited or signed.
+
+### Next Queue
+
+- Close P1 findings first with regression tests, then P2 and P3 findings.
+- Freeze new implementation commits and rerun independent Agents before requesting human second review.
+- Do not reuse earlier model-pass statements as current closure evidence.

@@ -655,3 +655,14 @@
 | PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages and passed the brief verifier; all pages were rendered at 100 DPI and visually checked without clipping, overlap or unreadable text; SHA-256 `E220011680C7D5AA25F2EB87ED7F21C01D79C9C2EF94F59C2622157A05E0E5DF`. |
 | Scope Guard | The four pre-existing tracked deletions and untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` remain excluded. |
 | Residual Risk | Human second review, formal-machine checks, device adapters, Unity/TD consumers, X-01, A-01 and `LIVE_E2E` remain open. Hash chains detect integrity drift but are not digital signatures against a privileged malicious writer. |
+
+### 2026-08-16 IN_REVIEW Independent Agent Audit
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Three isolated read-only reviews bind findings to the fixed G-02, P-01 and P-02 implementation commits without changing task state or signing human reports. |
+| Actual Result | All three reviews returned `REVIEW_FINDINGS_OPEN`; total findings are 0 P0, 4 P1, 4 P2 and 2 P3. |
+| Verified Evidence | G-02 `107 passed`; P-01 `82 passed`; P-02 `42 passed`; cross-module `288 passed`; root `331 passed`; protocol, registry, package and diff checks passed. Fresh counterexamples still reproduced integrity and delivery gaps. |
+| Report | `03-测试与实验/IN_REVIEW_Agent独立审核报告_2026-08-16.md` |
+| State Guard | G-02, P-01 and P-02 remain `IN_REVIEW`. No pending human second-review report was edited or signed. |
+| Residual Risk | Open P1 findings invalidate current model-review closure; code repair, regression tests and a fresh independent Agent pass are required before human signoff. |
