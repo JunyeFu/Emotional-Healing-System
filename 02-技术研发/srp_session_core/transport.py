@@ -282,7 +282,7 @@ class ControlServer:
             event_id = str(message.get("event_id", ""))
             if event_id in self._delivered_event_ids:
                 update = self.core.confirm_delivery(message, self.now_ns())
-                self._delivery_updates[event_id] = update
+                self._store_delivery_update(event_id, update)
                 future = self._pending_acks.get(event_id)
                 if future is not None and not future.done():
                     future.set_result(dict(message))
@@ -300,7 +300,7 @@ class ControlServer:
         update = self.core.confirm_delivery(message, self.now_ns())
         if message_type == "ack":
             event_id = str(message["event_id"])
-            self._delivery_updates[event_id] = update
+            self._store_delivery_update(event_id, update)
             if message.get("result") in {"applied", "duplicate_ignored"}:
                 self._delivered_event_ids.add(event_id)
             future = self._pending_acks.get(event_id)
@@ -310,6 +310,20 @@ class ControlServer:
 
     def pop_delivery_update(self, event_id: str) -> CoreUpdate | None:
         return self._delivery_updates.pop(event_id, None)
+
+    def _store_delivery_update(self, event_id: str, update: CoreUpdate) -> None:
+        previous = self._delivery_updates.get(event_id)
+        if previous is None:
+            self._delivery_updates[event_id] = update
+            return
+        self._delivery_updates[event_id] = CoreUpdate(
+            snapshot=update.snapshot,
+            control_events=previous.control_events + update.control_events,
+            session_events=previous.session_events + update.session_events,
+            policy_decisions=previous.policy_decisions + update.policy_decisions,
+            audit_records=previous.audit_records + update.audit_records,
+            gate_receipts=previous.gate_receipts + update.gate_receipts,
+        )
 
     def _fail_pending_acks(self, code: str, generation: int) -> None:
         for event_id, future in self._pending_acks.items():

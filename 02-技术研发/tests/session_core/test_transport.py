@@ -651,6 +651,49 @@ def test_runtime_host_returns_latest_snapshot_and_ack_events(
     asyncio.run(scenario())
 
 
+def test_duplicate_ack_cannot_overwrite_unconsumed_delivery_update(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory()
+        core = SessionCore()
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        server = ControlServer(
+            core, config=fast_transport_config(), port=0, now_ns=lambda: 100
+        )
+        await server.start()
+        reader, writer = await asyncio.open_connection("127.0.0.1", server.bound_port)
+        await _write(writer, _hello())
+        await _read(reader)
+
+        publish = asyncio.create_task(server.publish_control(prepared.control_events[0]))
+        event = await _read(reader)
+        ack = ack_for(event, now_ns=100)
+        await _write(writer, ack)
+        await _write(writer, ack)
+        await publish
+        for _ in range(100):
+            if any(item.result == "duplicate_ignored" for item in core.audit_log):
+                break
+            await asyncio.sleep(0.005)
+        assert any(item.result == "duplicate_ignored" for item in core.audit_log)
+
+        update = server.pop_delivery_update(event["event_id"])
+        assert update is not None
+        assert "control_acknowledged" in {
+            item.event_type for item in update.session_events
+        }
+        assert {item.result for item in update.audit_records} >= {
+            "applied",
+            "duplicate_ignored",
+        }
+        writer.close()
+        await writer.wait_closed()
+        await server.close()
+
+    asyncio.run(scenario())
+
+
 def test_runtime_host_failure_keeps_prior_delivery_updates(
     manifest_factory, assignment_factory
 ) -> None:
