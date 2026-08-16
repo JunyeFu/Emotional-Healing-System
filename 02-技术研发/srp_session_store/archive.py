@@ -152,12 +152,12 @@ class _WriterLock:
         self.handle: BinaryIO | None = None
 
     def acquire(self) -> None:
-        self.handle = self.path.open("a+b")
-        if self.path.stat().st_size == 0:
-            self.handle.write(b"\0")
-            self.handle.flush()
-        self.handle.seek(0)
         try:
+            self.handle = self.path.open("a+b")
+            if self.path.stat().st_size == 0:
+                self.handle.write(b"\0")
+                self.handle.flush()
+            self.handle.seek(0)
             if os.name == "nt":
                 import msvcrt
 
@@ -167,7 +167,8 @@ class _WriterLock:
 
                 fcntl.flock(self.handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
         except (OSError, IOError) as error:
-            self.handle.close()
+            if self.handle is not None:
+                self.handle.close()
             self.handle = None
             raise StoreError("SESSION_WRITER_LOCKED") from error
 
@@ -249,6 +250,8 @@ class SessionArchive:
             path.mkdir()
         except FileExistsError as error:
             raise StoreError("SESSION_ALREADY_EXISTS") from error
+        except OSError as error:
+            raise StoreError("STORAGE_INITIALIZATION_FAILED") from error
         try:
             for name in ("l0", "l1", "checkpoints", "tails"):
                 (path / name).mkdir()
@@ -286,6 +289,7 @@ class SessionArchive:
                 )
             for name in ("l0", "l1"):
                 streams[name] = cls._create_stream(path, name, 1)
+            return cls(path, envelope, config, lock, streams)
         except Exception as error:
             for stream in streams.values():
                 if not stream.handle.closed:
@@ -294,7 +298,6 @@ class SessionArchive:
             if isinstance(error, StoreError):
                 raise
             raise StoreError("STORAGE_INITIALIZATION_FAILED") from error
-        return cls(path, envelope, config, lock, streams)
 
     @staticmethod
     def _create_stream(path: Path, name: str, segment_index: int) -> _Stream:

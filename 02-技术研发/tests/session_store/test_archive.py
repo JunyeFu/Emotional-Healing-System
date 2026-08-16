@@ -56,6 +56,36 @@ def test_partial_stream_initialization_closes_open_handle(
     assert opened and opened[0].closed
 
 
+def test_constructor_failure_closes_streams_and_releases_writer_lock(
+    tmp_path, manifest_factory, monkeypatch
+) -> None:
+    from srp_session_store.archive import _WriterLock, session_key
+
+    manifest = manifest_factory()
+    original_create_stream = SessionArchive._create_stream
+    opened = []
+
+    def capture_stream(path, name, segment_index):
+        stream = original_create_stream(path, name, segment_index)
+        opened.append(stream.handle)
+        return stream
+
+    def fail_constructor(self, *args, **kwargs):
+        raise OSError("constructor failed")
+
+    monkeypatch.setattr(SessionArchive, "_create_stream", staticmethod(capture_stream))
+    monkeypatch.setattr(SessionArchive, "__init__", fail_constructor)
+    with pytest.raises(StoreError, match="STORAGE_INITIALIZATION_FAILED"):
+        create_archive(tmp_path, manifest)
+
+    assert len(opened) == 2 and all(handle.closed for handle in opened)
+    lock = _WriterLock(
+        tmp_path / "sessions" / session_key(manifest["session_id"]) / "writer.lock"
+    )
+    lock.acquire()
+    lock.release()
+
+
 def test_l0_round_trip_preserves_bytes_and_missing_reason(tmp_path, manifest_factory):
     manifest = manifest_factory()
     archive = create_archive(tmp_path, manifest)
