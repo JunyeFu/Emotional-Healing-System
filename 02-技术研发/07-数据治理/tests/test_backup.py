@@ -198,3 +198,24 @@ def test_copy_failure_records_failure_but_not_success(
         ).fetchall()
     assert ("BACKUP_FAILED", "FAILED") in events
     assert ("BACKUP_CREATED", "APPLIED") not in events
+
+
+def test_unauthorized_backup_is_rejected_before_copy_or_publication(
+    registry, tmp_path, monkeypatch
+) -> None:
+    import srp_governance.backup as backup_module
+
+    called = False
+
+    def observe_copy(_source, _destination):
+        nonlocal called
+        called = True
+
+    monkeypatch.setattr(backup_module, "_online_copy", observe_copy)
+    bundle = tmp_path / "unauthorized-backup"
+
+    with pytest.raises(GovernanceError, match="UNAUTHORIZED"):
+        backup_registry(registry, bundle, "observer")
+
+    assert called is False
+    assert not bundle.exists()

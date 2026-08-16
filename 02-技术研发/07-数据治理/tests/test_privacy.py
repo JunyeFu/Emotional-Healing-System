@@ -81,6 +81,8 @@ def test_contact_like_extension_values_are_rejected_without_echo(
         "Call +86\u00a0139\u00a01234\u00a05678 before start",
         "Call +86\t139\t1234\t5678 before start",
         "Call 139.1234.5678 before start",
+        "Call +86\u200b139\u200b1234\u200b5678 before start",
+        "Call 139\uff0e1234\uff0e5678 before start",
     ],
 )
 def test_embedded_contact_values_are_rejected_without_echo(value: str) -> None:

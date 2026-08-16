@@ -5,6 +5,7 @@ import json
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
+import unicodedata
 from typing import Iterable
 
 
@@ -86,6 +87,13 @@ def _is_separated_phone(value: str) -> bool:
     return len(compact) == 11 and compact.startswith("1") and compact.isdigit()
 
 
+def _normalize_contact_text(value: str) -> str:
+    normalized = unicodedata.normalize("NFKC", value)
+    return "".join(
+        character for character in normalized if unicodedata.category(character) != "Cf"
+    )
+
+
 def _json_key_violations(value: object, path: str = "$") -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     if isinstance(value, dict):
@@ -125,6 +133,7 @@ def find_privacy_violations(
         if not full_path.is_file():
             continue
         text = full_path.read_text(encoding="utf-8", errors="replace")
+        text = _normalize_contact_text(text)
         checks = (
             ("PHONE_VALUE", MAINLAND_PHONE_PATTERN),
             ("E164_VALUE", E164_PATTERN),

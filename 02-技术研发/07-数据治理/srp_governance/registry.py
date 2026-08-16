@@ -5,7 +5,9 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import StrEnum
 import hashlib
+import hmac
 import json
+import os
 from pathlib import Path
 import re
 import sqlite3
@@ -22,6 +24,7 @@ TOKEN_VERSION = 1
 _INITIALIZATION_LOCK = threading.Lock()
 _RELEASE_REASON = re.compile(r"^[A-Z][A-Z0-9_]{0,63}$")
 _ACTOR_ID = re.compile(r"^[a-z][a-z0-9-]{2,31}$")
+_ANCHOR_DOMAIN = b"srp:g02:audit-anchor:v1\0"
 
 
 class Stage(StrEnum):
@@ -80,6 +83,7 @@ class DedupRegistry:
         timeout_seconds: float = 10.0,
     ) -> None:
         self.database_path = Path(database_path)
+        self.audit_anchor_path = self.database_path.with_name("audit_anchor.json")
         self.key_provider = key_provider
         self.allowed_actors = frozenset(allowed_actors)
         self.timeout_seconds = timeout_seconds
@@ -102,6 +106,62 @@ class DedupRegistry:
         if not isinstance(key, bytes) or len(key) != 32:
             raise GovernanceError("KEY_UNAVAILABLE")
         return key
+
+    def ensure_authorized(self, actor_id: str) -> None:
+        self._authorize(actor_id)
+        self._key()
+
+    @staticmethod
+    def _anchor_authentication(sequence: int, tail_hash: str, key: bytes) -> str:
+        payload = json.dumps(
+            {"sequence": sequence, "tail_hash": tail_hash},
+            ensure_ascii=True,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("utf-8")
+        return hmac.new(key, _ANCHOR_DOMAIN + payload, hashlib.sha256).hexdigest()
+
+    def _write_external_anchor(self, sequence: int, tail_hash: str, key: bytes) -> None:
+        payload = {
+            "authentication": self._anchor_authentication(sequence, tail_hash, key),
+            "schema_version": 1,
+            "sequence": sequence,
+            "tail_hash": tail_hash,
+        }
+        temporary = self.audit_anchor_path.with_name(
+            f".{self.audit_anchor_path.name}.{os.getpid()}.tmp"
+        )
+        self.audit_anchor_path.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            with temporary.open("w", encoding="utf-8", newline="\n") as handle:
+                json.dump(payload, handle, ensure_ascii=True, sort_keys=True, separators=(",", ":"))
+                handle.write("\n")
+                handle.flush()
+                os.fsync(handle.fileno())
+            os.replace(temporary, self.audit_anchor_path)
+        except OSError as exc:
+            temporary.unlink(missing_ok=True)
+            raise GovernanceError("AUDIT_ANCHOR_UNAVAILABLE") from exc
+
+    def _verify_external_anchor(self, sequence: int, tail_hash: str, key: bytes) -> bool:
+        try:
+            payload = json.loads(self.audit_anchor_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return sequence == 0 and tail_hash == "GENESIS"
+        if not isinstance(payload, dict) or set(payload) != {
+            "authentication", "schema_version", "sequence", "tail_hash"
+        }:
+            return False
+        return (
+            payload.get("schema_version") == 1
+            and payload.get("sequence") == sequence
+            and payload.get("tail_hash") == tail_hash
+            and isinstance(payload.get("authentication"), str)
+            and hmac.compare_digest(
+                payload["authentication"],
+                self._anchor_authentication(sequence, tail_hash, key),
+            )
+        )
 
     def _connect(self) -> sqlite3.Connection:
         connection: sqlite3.Connection | None = None
@@ -191,8 +251,8 @@ class DedupRegistry:
                 "INSERT INTO schema_metadata(key, value) VALUES ('audit_tail_hash', 'GENESIS')"
             )
 
-    @staticmethod
     def _append_audit(
+        self,
         connection: sqlite3.Connection,
         *,
         event_type: str,
@@ -250,6 +310,7 @@ class DedupRegistry:
             "UPDATE schema_metadata SET value = ? WHERE key = 'audit_tail_hash'",
             (current_hash,),
         )
+        self._write_external_anchor(sequence, current_hash, self._key())
         return event_id
 
     def check_and_reserve(self, phone: str, stage: Stage | str, actor_id: str) -> DedupDecision:
@@ -416,6 +477,7 @@ class DedupRegistry:
     def verify_audit_chain(self) -> AuditReport:
         if not self.database_path.exists():
             raise GovernanceError("REGISTRY_UNAVAILABLE")
+        key = self._key()
         with closing(sqlite3.connect(self.database_path)) as connection:
             connection.row_factory = sqlite3.Row
             rows = connection.execute("SELECT * FROM audit_events ORDER BY sequence").fetchall()
@@ -447,6 +509,7 @@ class DedupRegistry:
             if (
                 anchors.get("audit_tail_sequence") != str(len(rows))
                 or anchors.get("audit_tail_hash") != previous_hash
+                or not self._verify_external_anchor(len(rows), previous_hash, key)
             ):
                 return AuditReport(False, "AUDIT_CHAIN_INVALID", len(rows))
             reservation_rows = connection.execute(
@@ -463,16 +526,18 @@ class DedupRegistry:
                 ),
             }
             for reservation in reservation_rows:
-                event_types = {
+                event_types = [
                     row[0]
                     for row in connection.execute(
                         "SELECT event_type FROM audit_events WHERE object_id = ? AND result IN ('ALLOWED', 'APPLIED')",
                         (reservation["reservation_id"],),
                     )
-                }
-                if "CHECK_AND_RESERVE" not in event_types or not set(
-                    required_events[reservation["status"]]
-                ) <= event_types:
+                ]
+                expected_events = [
+                    "CHECK_AND_RESERVE",
+                    *required_events[reservation["status"]],
+                ]
+                if event_types != expected_events:
                     return AuditReport(False, "AUDIT_STATE_MISMATCH", len(rows))
             token_count = connection.execute(
                 "SELECT COUNT(DISTINCT subject_token) FROM reservations"

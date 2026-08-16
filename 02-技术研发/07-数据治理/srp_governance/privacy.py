@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from typing import Any
 
 from .errors import GovernanceError
@@ -36,6 +37,8 @@ def _normalized_key(key: str) -> str:
 
 
 def _contact_like_value(value: str) -> bool:
+    value = unicodedata.normalize("NFKC", value)
+    value = "".join(character for character in value if unicodedata.category(character) != "Cf")
     if _EMAIL.search(value):
         return True
     for candidate in _PHONE_CANDIDATE.finditer(value):

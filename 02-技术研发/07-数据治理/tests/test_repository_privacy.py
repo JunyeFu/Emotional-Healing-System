@@ -66,3 +66,13 @@ def test_unicode_separated_phone_in_log_is_detected(tmp_path: Path) -> None:
     violations = find_privacy_violations(tmp_path, [path])
 
     assert {item["code"] for item in violations} == {"PHONE_VALUE"}
+
+
+def test_zero_width_and_fullwidth_separators_in_log_are_detected(tmp_path: Path) -> None:
+    for index, value in enumerate(
+        ("+86\u200b139\u200b1234\u200b5678", "139\uff0e1234\uff0e5678")
+    ):
+        path = f"work/session-{index}.log"
+        _write(tmp_path, path, f"contact={value}\n")
+        violations = find_privacy_violations(tmp_path, [path])
+        assert {item["code"] for item in violations} >= {"PHONE_VALUE"}

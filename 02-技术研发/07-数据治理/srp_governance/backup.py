@@ -18,6 +18,7 @@ from .registry import DedupRegistry, SCHEMA_VERSION, Stage
 
 
 BACKUP_DATABASE_NAME = "dedup_registry.sqlite"
+BACKUP_ANCHOR_NAME = "audit_anchor.json"
 BACKUP_MANIFEST_NAME = "backup_manifest.json"
 _MANIFEST_DOMAIN = b"srp:g02:backup-manifest:v1\0"
 
@@ -85,6 +86,7 @@ def backup_registry(
     bundle_directory = Path(bundle_directory)
     if bundle_directory.exists():
         raise GovernanceError("BACKUP_TARGET_EXISTS")
+    registry.ensure_authorized(actor_id)
     key = _validate_key(registry.key_provider)
     bundle_directory.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -94,6 +96,7 @@ def backup_registry(
             temporary_path = Path(temporary)
             database_path = temporary_path / BACKUP_DATABASE_NAME
             _online_copy(registry.database_path, database_path)
+            shutil.copy2(registry.audit_anchor_path, temporary_path / BACKUP_ANCHOR_NAME)
             backup_snapshot = DedupRegistry(
                 database_path=database_path,
                 key_provider=lambda: key,
@@ -147,7 +150,7 @@ def backup_registry(
 
 
 def _load_and_validate_bundle(bundle_directory: Path, key: bytes) -> tuple[Path, dict]:
-    expected_files = {BACKUP_DATABASE_NAME, BACKUP_MANIFEST_NAME}
+    expected_files = {BACKUP_DATABASE_NAME, BACKUP_ANCHOR_NAME, BACKUP_MANIFEST_NAME}
     try:
         actual_files = {item.name for item in bundle_directory.iterdir() if item.is_file()}
     except OSError as exc:
@@ -223,6 +226,10 @@ def restore_registry(
             key_provider=lambda: key,
             allowed_actors=allowed_actors,
         )
+        shutil.copy2(
+            Path(bundle_directory) / BACKUP_ANCHOR_NAME,
+            restored.audit_anchor_path,
+        )
         if not restored.verify_audit_chain().valid:
             raise GovernanceError("AUDIT_CHAIN_INVALID")
 
@@ -234,6 +241,7 @@ def restore_registry(
                 key_provider=lambda: key,
                 allowed_actors=allowed_actors,
             )
+            shutil.copy2(restored.audit_anchor_path, probe.audit_anchor_path)
             decision = probe.check_and_reserve(
                 "+8619900000000", Stage.LEVEL_B, actor_id
             )
@@ -251,6 +259,9 @@ def restore_registry(
     except Exception:
         if destination_path.exists():
             destination_path.unlink()
+        anchor_path = destination_path.with_name(BACKUP_ANCHOR_NAME)
+        if anchor_path.exists():
+            anchor_path.unlink()
         dedup_directory = destination_path.parent
         if dedup_directory.exists() and not any(dedup_directory.iterdir()):
             dedup_directory.rmdir()

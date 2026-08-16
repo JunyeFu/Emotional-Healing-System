@@ -83,6 +83,18 @@ def _sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def _sha256_git_blob(repo_root: Path, git_path: str) -> str:
+    result = subprocess.run(
+        ["git", "show", f":{git_path}"],
+        cwd=repo_root,
+        check=False,
+        capture_output=True,
+    )
+    if result.returncode != 0:
+        raise GovernanceError("GIT_INVENTORY_UNAVAILABLE")
+    return hashlib.sha256(result.stdout).hexdigest()
+
+
 def _load_json(path: Path, error_code: str) -> dict:
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
@@ -164,6 +176,14 @@ def _direct_packages(unity_root: Path) -> list[dict[str, Any]]:
             commit_match = _GIT_COMMIT_SPEC.search(specification)
             if commit_match is None or locked.get("hash", "").casefold() != commit_match.group(1).casefold():
                 raise GovernanceError("DIRECT_PACKAGE_MUTABLE")
+        if specification.startswith("file:"):
+            local_path = (unity_root / "Packages" / specification[5:]).resolve()
+            try:
+                local_path.relative_to(unity_root.resolve())
+            except ValueError as exc:
+                raise GovernanceError("DIRECT_PACKAGE_OUTSIDE_AUTHORITY") from exc
+            if not local_path.is_dir():
+                raise GovernanceError("DIRECT_PACKAGE_UNAVAILABLE")
         identity = {
             "package_id": package_id,
             "specification": specification,
@@ -191,7 +211,7 @@ def build_asset_inventory(repo_root: Path, unity_root: Path, ledger_path: Path) 
                 "asset_type": _ASSET_TYPES.get(suffix, "UNITY_ASSET"),
                 "git_path": git_path,
                 "license_group_id": _license_group(ledger, path=git_path),
-                "sha256": _sha256_file(absolute),
+                "sha256": _sha256_git_blob(repo_root, git_path),
             }
         )
     for package in _direct_packages(unity_root):
@@ -208,7 +228,9 @@ def build_asset_inventory(repo_root: Path, unity_root: Path, ledger_path: Path) 
         "schema_version": 1,
         "authority_root": unity_relative,
         "license_ledger_path": _repo_relative(repo_root, Path(ledger_path)),
-        "license_ledger_sha256": _sha256_file(Path(ledger_path)),
+        "license_ledger_sha256": _sha256_git_blob(
+            repo_root, _repo_relative(repo_root, Path(ledger_path))
+        ),
         "items": sorted(items, key=lambda item: item["git_path"]),
     }
 
@@ -292,6 +314,23 @@ def scan_unity_assets(
         f"{unity_relative}/Packages",
     )
     blockers.extend(AssetBlocker("IGNORED_RELEASE_FILE", path) for path in sorted(ignored))
+    dirty_tracked = set(
+        _git_paths(repo_root, "diff", "--name-only", "-z", "--", unity_relative)
+    ) | set(
+        _git_paths(
+            repo_root,
+            "diff",
+            "--cached",
+            "--name-only",
+            "-z",
+            "--",
+            unity_relative,
+        )
+    )
+    blockers.extend(
+        AssetBlocker("TRACKED_WORKTREE_CHANGED", path)
+        for path in sorted(dirty_tracked)
+    )
 
     baseline_items = {
         item["git_path"]: item
@@ -299,6 +338,13 @@ def scan_unity_assets(
         if isinstance(item, dict) and isinstance(item.get("git_path"), str)
     }
     current_items = {item["git_path"]: item for item in current["items"]}
+    ledger_relative = current["license_ledger_path"]
+    if ledger_relative in dirty_tracked:
+        blockers.append(AssetBlocker("LICENSE_LEDGER_CHANGED", ledger_relative))
+    blockers.extend(
+        AssetBlocker("HASH_CHANGED", path)
+        for path in sorted(dirty_tracked & set(current_items))
+    )
     for path, item in current_items.items():
         prior = baseline_items.get(path)
         if prior is None:
