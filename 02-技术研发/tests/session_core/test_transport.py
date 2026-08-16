@@ -649,3 +649,47 @@ def test_runtime_host_returns_latest_snapshot_and_ack_events(
         }
 
     asyncio.run(scenario())
+
+
+def test_runtime_host_failure_keeps_prior_delivery_updates(
+    manifest_factory, assignment_factory
+) -> None:
+    class FailSecondControlServer:
+        def __init__(self, core):
+            self.core = core
+            self.calls = 0
+            self.updates = {}
+            self.now_ns = lambda: 1
+
+        async def publish_control(self, event):
+            self.calls += 1
+            if self.calls == 2:
+                raise TransportError("CONTROL_ACK_TIMEOUT")
+            ack = ack_for(event, now_ns=1)
+            self.updates[event["event_id"]] = self.core.confirm_delivery(ack, 1)
+            return ack
+
+        def pop_delivery_update(self, event_id):
+            return self.updates.pop(event_id, None)
+
+        async def disconnect_unity(self):
+            pass
+
+    async def scenario():
+        manifest = manifest_factory()
+        core = SessionCore()
+        core.prepare(manifest, assignment_factory(manifest), 0)
+        server = FailSecondControlServer(core)
+        host = SessionRuntimeHost(core, server)
+
+        update = await host.apply_operator_request(
+            OperatorRequest("REQ-START", "start"), 1
+        )
+
+        assert update.snapshot.status.value == "PAUSED"
+        assert "control_acknowledged" in {
+            event.event_type for event in update.session_events
+        }
+        assert "session_paused" in {event.event_type for event in update.session_events}
+
+    asyncio.run(scenario())

@@ -505,6 +505,30 @@ class SessionRuntimeHost:
     async def _deliver(self, update: CoreUpdate, now_ns: int) -> CoreUpdate:
         current_event_id: str | None = None
         delivery_updates: list[CoreUpdate] = []
+
+        def merge(final: CoreUpdate) -> CoreUpdate:
+            updates = (update, *delivery_updates)
+            if final is not update and final not in delivery_updates:
+                updates = (*updates, final)
+            return CoreUpdate(
+                snapshot=final.snapshot,
+                control_events=tuple(
+                    item for candidate in updates for item in candidate.control_events
+                ),
+                session_events=tuple(
+                    item for candidate in updates for item in candidate.session_events
+                ),
+                policy_decisions=tuple(
+                    item for candidate in updates for item in candidate.policy_decisions
+                ),
+                audit_records=tuple(
+                    item for candidate in updates for item in candidate.audit_records
+                ),
+                gate_receipts=tuple(
+                    item for candidate in updates for item in candidate.gate_receipts
+                ),
+            )
+
         try:
             for event in update.control_events:
                 current_event_id = str(event["event_id"])
@@ -514,35 +538,7 @@ class SessionRuntimeHost:
                     delivery_updates.append(delivered)
             if not delivery_updates:
                 return update
-            latest = delivery_updates[-1]
-            return CoreUpdate(
-                snapshot=latest.snapshot,
-                control_events=update.control_events,
-                session_events=update.session_events
-                + tuple(
-                    item
-                    for delivered in delivery_updates
-                    for item in delivered.session_events
-                ),
-                policy_decisions=update.policy_decisions
-                + tuple(
-                    item
-                    for delivered in delivery_updates
-                    for item in delivered.policy_decisions
-                ),
-                audit_records=update.audit_records
-                + tuple(
-                    item
-                    for delivered in delivery_updates
-                    for item in delivered.audit_records
-                ),
-                gate_receipts=update.gate_receipts
-                + tuple(
-                    item
-                    for delivered in delivery_updates
-                    for item in delivered.gate_receipts
-                ),
-            )
+            return merge(delivery_updates[-1])
         except TransportError as error:
             failure = (
                 None
@@ -561,4 +557,4 @@ class SessionRuntimeHost:
 
             if str(failure.snapshot.runtime_mode or "").startswith("formal_"):
                 await self.control_server.disconnect_unity()
-            return failure
+            return merge(failure)

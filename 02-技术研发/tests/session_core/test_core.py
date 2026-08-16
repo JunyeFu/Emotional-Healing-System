@@ -76,6 +76,59 @@ def test_late_end_ack_cannot_reverse_aborted_terminal_state(
     assert "session_completed" not in {
         event.event_type for event in core.session_event_log
     }
+    assert late.snapshot.session_elapsed_ns == 800_000_000_001
+
+
+def test_end_ack_wait_allows_abort_and_development_transport_pause(
+    manifest_factory, assignment_factory
+) -> None:
+    for runtime_mode, expected_status in (
+        ("formal_stage_1", SessionStatus.ABORTED),
+        ("dev_replay", SessionStatus.PAUSED),
+    ):
+        dependencies = formal_dependencies() if runtime_mode.startswith("formal_") else None
+        core = SessionCore(dependencies=dependencies)
+        manifest = manifest_factory(runtime_mode=runtime_mode)
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        if runtime_mode.startswith("formal_"):
+            core.confirm_delivery(ack_for(prepared.control_events[0], now_ns=0), 0)
+        core.apply_operator_request(OperatorRequest("REQ-START", "start"), 0)
+        now = 0
+        for duration_ns in (25_000_000_000, 150_000_000_000, 25_000_000_000) * 4:
+            now += duration_ns
+            core.advance(now)
+
+        if runtime_mode.startswith("formal_"):
+            update = core.apply_operator_request(
+                OperatorRequest("REQ-ABORT-END", "abort"), now + 1
+            )
+        else:
+            update = core.transport_failure("CONTROL_ACK_TIMEOUT", now + 1)
+
+        assert update.snapshot.status is expected_status
+
+
+def test_terminal_elapsed_time_is_immutable_after_late_inputs(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory()
+    core = SessionCore()
+    core.prepare(manifest, assignment_factory(manifest), 0)
+    core.apply_operator_request(OperatorRequest("REQ-START", "start"), 0)
+    now = 0
+    final = None
+    for duration_ns in (25_000_000_000, 150_000_000_000, 25_000_000_000) * 4:
+        now += duration_ns
+        final = core.advance(now)
+    end = final.control_events[-1]
+    core.confirm_delivery(ack_for(end, now_ns=now), now)
+    expected = core.snapshot().session_elapsed_ns
+
+    core.confirm_delivery(ack_for(end, now_ns=now + 100_000_000_000), now + 100_000_000_000)
+    summary = core.finish("COMPLETED", now + 200_000_000_000)
+
+    assert core.snapshot().session_elapsed_ns == expected
+    assert summary.session_elapsed_ns == expected
 
 
 def test_duplicate_request_and_repeated_tick_do_not_advance(

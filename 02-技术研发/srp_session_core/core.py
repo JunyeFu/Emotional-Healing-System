@@ -65,6 +65,7 @@ class SessionCore:
         self._completed_modules: list[str] = []
         self._prepare_event_id: str | None = None
         self._end_event_id: str | None = None
+        self._terminal_ns: int | None = None
         self._exposed = False
         self._finished_reason: str | None = None
         self._gate_receipts: tuple[GateReceipt, ...] = ()
@@ -139,6 +140,8 @@ class SessionCore:
             )
             return self._update(audit_records=(audit,))
         self._request_ids.add(request.request_id)
+        if request.action == "abort":
+            return self._abort_request(request, now_ns)
         if self._end_event_id is not None and self._end_event_id not in self._acked_event_ids:
             return self._reject_request(request, "COMPLETION_ACK_PENDING", now_ns)
 
@@ -146,9 +149,6 @@ class SessionCore:
             return self._start_or_resume(request, now_ns)
         if request.action == "pause":
             return self._pause(request, now_ns)
-        if request.action == "abort":
-            return self._abort_request(request, now_ns)
-
         audit = self._audit(
             request.request_id, "rejected", "UNKNOWN_OPERATOR_ACTION", now_ns
         )
@@ -213,7 +213,8 @@ class SessionCore:
                 action="pause",
                 reason_code=reason_code,
             )
-            return self.apply_operator_request(request, now_ns)
+            self._request_ids.add(request.request_id)
+            return self._pause(request, now_ns)
         audit = self._audit("transport", "rejected", reason_code, now_ns)
         return self._update(audit_records=(audit,))
 
@@ -420,6 +421,7 @@ class SessionCore:
             self._total_paused_ns += now_ns - self._pause_start_ns
             self._pause_start_ns = None
         self._status = SessionStatus.ABORTED
+        self._terminal_ns = now_ns
         self._finished_reason = reason_code
         control = self._make_control("abort", now_ns, {"reason_code": reason_code})
         event = self._make_session_event(
@@ -547,6 +549,7 @@ class SessionCore:
             if control["event_type"] == "end":
                 before = self._status
                 self._status = SessionStatus.COMPLETED
+                self._terminal_ns = now_ns
                 self._finished_reason = "COMPLETED"
                 events.append(
                     self._make_session_event(
@@ -766,7 +769,13 @@ class SessionCore:
     def _session_elapsed_ns(self) -> int:
         if self._session_start_ns is None:
             return 0
-        end_ns = self._pause_start_ns if self._status is SessionStatus.PAUSED else self._last_now_ns
+        end_ns = (
+            self._terminal_ns
+            if self._terminal_ns is not None
+            else self._pause_start_ns
+            if self._status is SessionStatus.PAUSED
+            else self._last_now_ns
+        )
         return max(0, end_ns - self._session_start_ns - self._total_paused_ns)
 
     def _paused_duration_ns(self) -> int:
