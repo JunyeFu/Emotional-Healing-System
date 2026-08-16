@@ -23,6 +23,7 @@ from .privacy import privacy_lint
 
 
 _SESSION_DOMAIN = b"srp:p02:session-path:v1\0"
+_ENVELOPE_DOMAIN = b"srp:p02:archive-envelope:v1\0"
 _MANIFEST_DOMAIN = b"srp:p02:manifest:v1\0"
 _RECORD_DOMAIN = b"srp:p02:record:v1\0"
 _CHECKPOINT_DOMAIN = b"srp:p02:checkpoint:v1\0"
@@ -155,7 +156,7 @@ class SessionArchive:
         lock = _WriterLock(path / "writer.lock")
         lock.acquire()
         manifest_payload = dict(manifest)
-        envelope = {
+        envelope_body = {
             "archive_schema_version": "1.0",
             "formal_capable": _formal_token is _FORMAL_ARCHIVE_TOKEN,
             "manifest": manifest_payload,
@@ -164,6 +165,10 @@ class SessionArchive:
             "session_key": key,
             "store_config_hash": config.config_hash,
         }
+        envelope = dict(
+            envelope_body,
+            envelope_hash=domain_hash(_ENVELOPE_DOMAIN, envelope_body),
+        )
         try:
             _exclusive_json(path / "archive.json", envelope)
             streams = {
@@ -402,18 +407,20 @@ class SessionArchive:
         now_ns: int,
         store_config: StoreConfig | None = None,
     ) -> SessionSeal:
-        reader = ReplayReader.open(root, session_id)
-        report = reader.verify(mode="recover")
-        if not report.recoverable or report.sealed:
-            raise StoreError("RECOVERY_NOT_AVAILABLE")
-        path = reader.path
-        envelope = reader.envelope
+        path = Path(root) / "sessions" / session_key(session_id)
         config = store_config or load_store_config()
-        if envelope.get("store_config_hash") != config.config_hash:
-            raise StoreError("STORE_CONFIG_MISMATCH")
         lock = _WriterLock(path / "writer.lock")
         lock.acquire()
         try:
+            reader = ReplayReader.open(root, session_id)
+            report = reader.verify(mode="recover")
+            if "INTEGRITY_MISMATCH" in report.reason_codes:
+                raise StoreError("INTEGRITY_MISMATCH")
+            if not report.recoverable or report.sealed:
+                raise StoreError("RECOVERY_NOT_AVAILABLE")
+            envelope = reader.envelope
+            if envelope.get("store_config_hash") != config.config_hash:
+                raise StoreError("STORE_CONFIG_MISMATCH")
             states = reader.stream_states(mode="recover")
             streams = {}
             for name in ("l0", "l1"):
@@ -627,6 +634,13 @@ class ReplayReader:
             _MANIFEST_DOMAIN, self.envelope.get("manifest")
         )
         if self.envelope.get("manifest_hash") != expected_manifest_hash:
+            reasons.append("INTEGRITY_MISMATCH")
+        envelope_body = {
+            key: value for key, value in self.envelope.items() if key != "envelope_hash"
+        }
+        if self.envelope.get("envelope_hash") != domain_hash(
+            _ENVELOPE_DOMAIN, envelope_body
+        ):
             reasons.append("INTEGRITY_MISMATCH")
         if seal is not None:
             if seal.get("invalid"):

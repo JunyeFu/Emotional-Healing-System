@@ -203,7 +203,11 @@ class SessionCore:
         self._observe_time(now_ns)
         self._validate_reason_code(reason_code)
         if self._is_formal():
-            return self._abort_internal(reason_code, now_ns)
+            return self._abort_internal(
+                reason_code,
+                now_ns,
+                allow_unconfirmed_completion=self._completion_delivery_is_pending(),
+            )
         if self._status is SessionStatus.RUNNING:
             request = OperatorRequest(
                 request_id=f"transport:{self._audit_seq + 1}",
@@ -408,8 +412,17 @@ class SessionCore:
             return self._reject_request(request, "INVALID_REASON_CODE", now_ns)
         return self._abort_internal(reason, now_ns)
 
-    def _abort_internal(self, reason_code: str, now_ns: int) -> CoreUpdate:
-        if self._status in {SessionStatus.COMPLETED, SessionStatus.ABORTED}:
+    def _abort_internal(
+        self,
+        reason_code: str,
+        now_ns: int,
+        *,
+        allow_unconfirmed_completion: bool = False,
+    ) -> CoreUpdate:
+        if self._status is SessionStatus.ABORTED or (
+            self._status is SessionStatus.COMPLETED
+            and not allow_unconfirmed_completion
+        ):
             audit = self._audit("abort", "rejected", "TERMINAL_STATE", now_ns)
             return self._update(audit_records=(audit,))
         before = self._status
@@ -428,6 +441,15 @@ class SessionCore:
             reason_code=reason_code,
         )
         return self._update(control_events=(control,), session_events=(event,))
+
+    def _completion_delivery_is_pending(self) -> bool:
+        if self._status is not SessionStatus.COMPLETED:
+            return False
+        return any(
+            event["event_type"] == "end"
+            and str(event["event_id"]) not in self._acked_event_ids
+            for event in reversed(self._control_log)
+        )
 
     def _advance_boundary(
         self, scheduled_ns: int, observed_ns: int, lag_ns: int
@@ -554,6 +576,28 @@ class SessionCore:
         event_id = str(receipt["event_id"])
         if event_id not in self._control_by_id:
             audit = self._audit(receipt_id, "rejected", "UNKNOWN_CONTROL_EVENT", now_ns)
+            return self._update(audit_records=(audit,))
+        if event_id not in self._acked_event_ids:
+            audit = self._audit(
+                receipt_id, "rejected", "CONTROL_NOT_ACKNOWLEDGED", now_ns
+            )
+            return self._update(audit_records=(audit,))
+        control = self._control_by_id[event_id]
+        if control["event_type"] != "segment":
+            audit = self._audit(
+                receipt_id, "rejected", "RENDER_RECEIPT_CONTROL_TYPE_INVALID", now_ns
+            )
+            return self._update(audit_records=(audit,))
+        payload = control["payload"]
+        if receipt["module_id"] != payload.get("module_id"):
+            audit = self._audit(
+                receipt_id, "rejected", "RENDER_RECEIPT_MODULE_MISMATCH", now_ns
+            )
+            return self._update(audit_records=(audit,))
+        if receipt["segment"] != payload.get("segment"):
+            audit = self._audit(
+                receipt_id, "rejected", "RENDER_RECEIPT_SEGMENT_MISMATCH", now_ns
+            )
             return self._update(audit_records=(audit,))
         self._receipt_ids.add(receipt_id)
         if receipt["result"] != "rendered":

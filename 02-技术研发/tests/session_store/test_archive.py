@@ -127,6 +127,57 @@ def test_recovery_keeps_old_segments_byte_identical(tmp_path, manifest_factory):
     assert report.sealed
 
 
+def test_recovery_rejects_modified_unsealed_archive_envelope(
+    tmp_path, manifest_factory
+):
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.close()
+    envelope_path = archive.path / "archive.json"
+    envelope = json.loads(envelope_path.read_text(encoding="utf-8"))
+    envelope["protocol_config_hash"] = "sha256:modified"
+    envelope_path.write_text(json.dumps(envelope), encoding="utf-8")
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify(mode="recover")
+
+    assert not report.valid
+    assert not report.recoverable
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
+
+
+def test_recovery_rechecks_archive_after_acquiring_writer_lock(
+    tmp_path, manifest_factory, monkeypatch
+):
+    import srp_session_store.archive as archive_module
+
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.append_l1("clock_sync", {"offset_ns": 1}, 10)
+    archive.close()
+    existing_segments = {
+        path.relative_to(archive.path).as_posix(): path.read_bytes()
+        for path in archive.path.glob("*/*.jsonl")
+    }
+    original_acquire = archive_module._WriterLock.acquire
+
+    def seal_before_lock(self):
+        (self.path.parent / "seal.json").write_text("{}\n", encoding="utf-8")
+        original_acquire(self)
+
+    monkeypatch.setattr(archive_module._WriterLock, "acquire", seal_before_lock)
+
+    with pytest.raises(StoreError, match="INTEGRITY_MISMATCH"):
+        SessionArchive.recover_interrupted(
+            tmp_path, manifest["session_id"], now_ns=20
+        )
+
+    current_segments = {
+        path.relative_to(archive.path).as_posix(): path.read_bytes()
+        for path in archive.path.glob("*/*.jsonl")
+    }
+    assert current_segments == existing_segments
+
+
 def test_partial_tail_is_preserved_and_acknowledged_by_recovery(tmp_path, manifest_factory):
     manifest = manifest_factory()
     archive = create_archive(tmp_path, manifest)

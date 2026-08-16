@@ -6,6 +6,7 @@
   "required": [
     "archive_schema_version",
     "formal_capable",
+    "envelope_hash",
     "manifest",
     "manifest_hash",
     "protocol_config_hash",
@@ -15,6 +16,7 @@
   "properties": {
     "archive_schema_version": {"const": "1.0"},
     "formal_capable": {"type": "boolean"},
+    "envelope_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
     "manifest": {"type": "object"},
     "manifest_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
     "protocol_config_hash": {"type": "string", "minLength": 1},

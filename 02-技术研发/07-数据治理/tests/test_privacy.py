@@ -71,6 +71,24 @@ def test_contact_like_extension_values_are_rejected_without_echo(
     assert value not in str(error.value)
 
 
+@pytest.mark.parametrize(
+    "value",
+    [
+        "Call +8613912345678 before start",
+        "Send the note to owner@example.invalid before start",
+    ],
+)
+def test_embedded_contact_values_are_rejected_without_echo(value: str) -> None:
+    payload = {"extensions": [{"value": value}]}
+
+    with pytest.raises(GovernanceError) as error:
+        privacy_lint_manifest(payload)
+
+    assert error.value.code == "FORBIDDEN_MANIFEST_VALUE"
+    assert error.value.path == "$.extensions[0].value"
+    assert value not in str(error.value)
+
+
 def test_research_id_is_the_only_allowed_research_identifier() -> None:
     privacy_lint_manifest(
         {

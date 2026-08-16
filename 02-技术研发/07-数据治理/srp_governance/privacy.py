@@ -22,7 +22,8 @@ _FORBIDDEN_KEY_PARTS = (
     "邮箱",
     "联系方式",
 )
-_EMAIL = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
+_EMAIL = re.compile(r"[^\s@]+@[^\s@]+\.[^\s@]+")
+_EMBEDDED_PHONE = re.compile(r"(?<!\d)(?:\+[1-9]\d{7,14}|1[3-9]\d{9})(?!\d)")
 
 
 def _normalized_key(key: str) -> str:
@@ -30,7 +31,7 @@ def _normalized_key(key: str) -> str:
 
 
 def _contact_like_value(value: str) -> bool:
-    if _EMAIL.fullmatch(value):
+    if _EMAIL.search(value) or _EMBEDDED_PHONE.search(value):
         return True
     try:
         normalize_phone(value)

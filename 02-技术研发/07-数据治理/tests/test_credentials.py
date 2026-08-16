@@ -83,6 +83,23 @@ def test_provision_generates_32_byte_key_without_returning_secret() -> None:
     assert len(backend.writes[0][1]) == 32
 
 
+def test_provision_refuses_to_overwrite_existing_key() -> None:
+    original = b"K" * 32
+    backend = FakeCredentialBackend(original)
+    provider = CredentialKeyProvider(
+        backend=backend,
+        required_account="SRPDataAdmin",
+        account_provider=lambda: "SRPDataAdmin",
+    )
+
+    with pytest.raises(GovernanceError) as error:
+        provider.provision()
+
+    assert error.value.code == "KEY_ALREADY_PROVISIONED"
+    assert backend.value == original
+    assert backend.writes == []
+
+
 def test_windows_backend_wipes_temporary_blob_when_write_fails(monkeypatch) -> None:
     class FailedAdvapi:
         @staticmethod

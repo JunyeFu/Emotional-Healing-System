@@ -155,6 +155,75 @@ def test_formal_scheduler_lag_aborts(manifest_factory, assignment_factory) -> No
     assert update.session_events[-1].reason_code == "SCHEDULER_LAG_EXCEEDED"
 
 
+@pytest.mark.parametrize(
+    ("field", "wrong_value", "reason_code"),
+    [
+        ("module_id", "heat", "RENDER_RECEIPT_MODULE_MISMATCH"),
+        ("segment", "closed_loop", "RENDER_RECEIPT_SEGMENT_MISMATCH"),
+    ],
+)
+def test_render_receipt_must_match_acknowledged_segment_control(
+    field, wrong_value, reason_code, manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory()
+    core = SessionCore()
+    core.prepare(manifest, assignment_factory(manifest), 0)
+    started = core.apply_operator_request(OperatorRequest("REQ-START", "start"), 0)
+    segment = started.control_events[2]
+    core.confirm_delivery(ack_for(segment, now_ns=1), 1)
+    receipt = {
+        "schema_version": "2.1",
+        "message_type": "render_receipt",
+        "receipt_id": f"RR-MISMATCH-{field}",
+        "session_id": manifest["session_id"],
+        "event_id": segment["event_id"],
+        "frame_seq": 1,
+        "unity_frame": 1,
+        "rendered_monotonic_ns": 2,
+        "module_id": segment["payload"]["module_id"],
+        "segment": segment["payload"]["segment"],
+        "result": "rendered",
+        "error_code": None,
+    }
+    receipt[field] = wrong_value
+
+    update = core.confirm_delivery(receipt, 2)
+
+    assert update.audit_records[0].result == "rejected"
+    assert update.audit_records[0].reason_code == reason_code
+    assert not update.session_events
+
+
+def test_render_receipt_requires_acknowledged_control(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory()
+    core = SessionCore()
+    core.prepare(manifest, assignment_factory(manifest), 0)
+    segment = core.apply_operator_request(
+        OperatorRequest("REQ-START", "start"), 0
+    ).control_events[2]
+    receipt = {
+        "schema_version": "2.1",
+        "message_type": "render_receipt",
+        "receipt_id": "RR-EARLY",
+        "session_id": manifest["session_id"],
+        "event_id": segment["event_id"],
+        "frame_seq": 1,
+        "unity_frame": 1,
+        "rendered_monotonic_ns": 1,
+        "module_id": segment["payload"]["module_id"],
+        "segment": segment["payload"]["segment"],
+        "result": "rendered",
+        "error_code": None,
+    }
+
+    update = core.confirm_delivery(receipt, 1)
+
+    assert update.audit_records[0].reason_code == "CONTROL_NOT_ACKNOWLEDGED"
+    assert not update.session_events
+
+
 def test_session_events_validate_against_machine_schema(
     manifest_factory, assignment_factory
 ) -> None:

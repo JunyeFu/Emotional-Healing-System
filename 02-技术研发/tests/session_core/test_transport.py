@@ -214,6 +214,29 @@ def test_tcp_reports_semantically_invalid_ack_without_waiting_for_timeout(
     asyncio.run(scenario())
 
 
+def test_tcp_rejects_ack_for_control_that_has_not_been_sent(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory()
+        core = SessionCore()
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        core.confirm_delivery(ack_for(prepared.control_events[0], now_ns=0), 0)
+        started = core.apply_operator_request(OperatorRequest("REQ-START", "start"), 1)
+        server = ControlServer(core, config=fast_transport_config(), port=0)
+        early_ack = ack_for(started.control_events[1], now_ns=2)
+
+        with pytest.raises(TransportError) as error:
+            await server._handle_unity_message(early_ack)
+
+        assert error.value.code == "CONTROL_ACK_NOT_PENDING"
+        assert started.control_events[1]["event_id"] not in {
+            item.event_id for item in core.audit_log if item.result == "applied"
+        }
+
+    asyncio.run(scenario())
+
+
 def test_tcp_port_conflict_fails_closed() -> None:
     async def scenario():
         blocker = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -348,6 +371,47 @@ def test_runtime_host_delivers_abort_best_effort_and_disconnects_after_formal_fa
 
         assert update.snapshot.status.value == "ABORTED"
         assert [event["event_type"] for event in server.events] == ["start", "abort"]
+        assert server.disconnected is True
+
+    asyncio.run(scenario())
+
+
+def test_formal_end_delivery_failure_overrides_unconfirmed_completion(
+    manifest_factory, assignment_factory
+) -> None:
+    class EndFailingControlServer:
+        def __init__(self):
+            self.events = []
+            self.disconnected = False
+            self.now_ns = lambda: 800_000_000_001
+
+        async def publish_control(self, event):
+            self.events.append(event)
+            if event["event_type"] == "end":
+                raise TransportError("CONTROL_ACK_TIMEOUT")
+            return ack_for(event, now_ns=self.now_ns())
+
+        def pop_delivery_update(self, event_id):
+            del event_id
+            return None
+
+        async def disconnect_unity(self):
+            self.disconnected = True
+
+    async def scenario():
+        manifest = manifest_factory(runtime_mode="formal_stage_1")
+        config = fast_transport_config(max_scheduler_lag_ms=1_000_000)
+        core = SessionCore(config=config, dependencies=formal_dependencies())
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        core.confirm_delivery(ack_for(prepared.control_events[0], now_ns=0), 0)
+        core.apply_operator_request(OperatorRequest("REQ-START", "start"), 0)
+        server = EndFailingControlServer()
+        host = SessionRuntimeHost(core, server)
+
+        update = await host.advance(800_000_000_000)
+
+        assert update.snapshot.status.value == "ABORTED"
+        assert [event["event_type"] for event in server.events][-2:] == ["end", "abort"]
         assert server.disconnected is True
 
     asyncio.run(scenario())

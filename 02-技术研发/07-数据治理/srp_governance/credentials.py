@@ -117,6 +117,16 @@ class CredentialKeyProvider:
 
     def provision(self) -> str:
         self._authorize_account()
+        try:
+            existing = self.backend.read(CREDENTIAL_TARGET)
+        except GovernanceError:
+            raise
+        except Exception as exc:
+            raise GovernanceError("KEY_UNAVAILABLE") from exc
+        if existing is not None:
+            if isinstance(existing, bytes) and len(existing) == 32:
+                raise GovernanceError("KEY_ALREADY_PROVISIONED")
+            raise GovernanceError("KEY_UNAVAILABLE")
         value = bytearray(secrets.token_bytes(32))
         try:
             self.backend.write(CREDENTIAL_TARGET, bytes(value))

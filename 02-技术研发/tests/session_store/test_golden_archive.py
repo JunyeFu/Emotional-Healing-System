@@ -27,6 +27,11 @@ def test_accelerated_stress_fixture_keeps_exact_counts():
     assert report["archive_l0_count"] == 6
     assert report["archive_l1_count"] == 61
     assert report["integrity_valid"] is True
+    assert report["memory_stable"] is True
+    assert "memory_live_growth_after_warmup_bytes" in report
+    assert "memory_slope_bytes_per_100_seconds" in report
+    assert "memory_growth_limit_bytes" in report
+    assert "memory_slope_limit_bytes_per_100_seconds" in report
 
 
 def test_committed_golden_archive_hashes_and_replay_are_stable(tmp_path):

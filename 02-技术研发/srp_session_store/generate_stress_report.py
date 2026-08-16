@@ -17,6 +17,23 @@ from srp_session_store import RawPacket, ReplayReader, SessionArchive, load_stor
 from srp_session_store.canonical import domain_hash
 
 
+_MEMORY_GROWTH_LIMIT_BYTES = 1_048_576
+_MEMORY_SLOPE_LIMIT_BYTES_PER_100_SECONDS = 131_072
+
+
+def _memory_slope(samples: list[int]) -> float:
+    if len(samples) < 2:
+        return 0.0
+    x_mean = (len(samples) - 1) / 2
+    y_mean = sum(samples) / len(samples)
+    numerator = sum(
+        (index - x_mean) * (value - y_mean)
+        for index, value in enumerate(samples)
+    )
+    denominator = sum((index - x_mean) ** 2 for index in range(len(samples)))
+    return numerator / denominator
+
+
 def _manifest(session_id: str) -> dict[str, Any]:
     return {
         "schema_version": "2.1",
@@ -111,11 +128,17 @@ def run_stress(duration_seconds: int = 800) -> dict[str, Any]:
             {"status": "COMPLETED", "reason_code": "STRESS_COMPLETE"},
             duration_seconds * 1_000_000_000,
         )
+        live_memory, peak_memory = tracemalloc.get_traced_memory()
         archive.close()
         integrity = ReplayReader.open(root, session_id).verify()
-        current_memory, peak_memory = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     elapsed = time.perf_counter() - started
+    live_growth = max(0, live_memory - baseline_memory)
+    memory_slope = _memory_slope(memory_samples)
+    memory_stable = (
+        live_growth <= _MEMORY_GROWTH_LIMIT_BYTES
+        and memory_slope <= _MEMORY_SLOPE_LIMIT_BYTES_PER_100_SECONDS
+    )
     report = {
         "evidence_status": "P02_SYNTHETIC_STRESS_CANDIDATE",
         "duration_seconds": duration_seconds,
@@ -133,17 +156,24 @@ def run_stress(duration_seconds: int = 800) -> dict[str, Any]:
         "seal_hash": seal.seal_hash,
         "store_config_hash": config.config_hash,
         "elapsed_seconds": round(elapsed, 6),
-        "memory_current_bytes": current_memory,
+        "memory_live_bytes": live_memory,
         "memory_peak_bytes": peak_memory,
-        "memory_growth_after_warmup_bytes": max(0, current_memory - baseline_memory),
+        "memory_live_growth_after_warmup_bytes": live_growth,
         "memory_sample_count": len(memory_samples),
+        "memory_slope_bytes_per_100_seconds": round(memory_slope, 3),
+        "memory_growth_limit_bytes": _MEMORY_GROWTH_LIMIT_BYTES,
+        "memory_slope_limit_bytes_per_100_seconds": (
+            _MEMORY_SLOPE_LIMIT_BYTES_PER_100_SECONDS
+        ),
+        "memory_stable": memory_stable,
         "memory_sample_span_bytes": (
             max(memory_samples) - min(memory_samples) if memory_samples else 0
         ),
     }
     stable = {key: value for key, value in report.items() if key not in {
-        "elapsed_seconds", "memory_current_bytes", "memory_peak_bytes",
-        "memory_growth_after_warmup_bytes", "memory_sample_span_bytes"
+        "elapsed_seconds", "memory_live_bytes", "memory_peak_bytes",
+        "memory_live_growth_after_warmup_bytes", "memory_sample_span_bytes",
+        "memory_slope_bytes_per_100_seconds", "memory_stable"
     }}
     report["stable_result_hash"] = domain_hash(b"srp:p02:stress-result:v1\0", stable)
     return report

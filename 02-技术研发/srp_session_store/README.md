@@ -49,6 +49,7 @@ SessionReplayer.replay_core(core_factory=None) -> ReplayReport
 - 路径键由域分隔SHA-256派生，不直接使用`session_id`；
 - manifest、检查点和封存文件采用排他创建；
 - JSONL记录包含连续序号、前项哈希和当前记录哈希；
+- `archive.json`对除`envelope_hash`外的完整归档头做域分隔哈希；未封存恢复也必须先在写锁内重新验证归档头、记录链和封存状态；
 - L1每次提交执行`flush + fsync`；L0按100毫秒或64 KiB批量同步；
 - 64 MiB自动换段，跨段保持同一序号和哈希链；
 - 已封存会话拒绝任何追加；同一会话只允许一个写者；
@@ -100,4 +101,4 @@ py -3.14 '02-技术研发/srp_session_store/generate_golden_archive.py'
 py -3.14 '02-技术研发/srp_session_store/generate_stress_report.py'
 ```
 
-golden归档消费P-01四模块轨迹并验证19个控制、19个ACK、12个渲染回执、54个会话事件和46次核心调用。压力证据模拟800秒、32万PLUX样本、10.4万Polar样本和1.6万L1同步帧，并按100秒采样内存用于识别持续增长趋势。
+golden归档消费P-01四模块轨迹并验证19个控制、19个ACK、12个渲染回执、54个会话事件和46次核心调用。压力证据模拟800秒、32万PLUX样本、10.4万Polar样本和1.6万L1同步帧；在归档对象仍存活时按100秒采样，并同时冻结1 MiB暖机后增长上限和每100秒128 KiB趋势上限。

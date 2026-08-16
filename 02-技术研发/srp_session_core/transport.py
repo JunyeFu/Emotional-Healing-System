@@ -47,6 +47,7 @@ class ControlServer:
         self._unity_client_id: str | None = None
         self._unity_connected = asyncio.Event()
         self._pending_acks: dict[str, asyncio.Future[dict[str, Any]]] = {}
+        self._sent_event_ids: set[str] = set()
         self._delivery_updates: dict[str, CoreUpdate] = {}
         self._client_tasks: set[asyncio.Task[Any]] = set()
 
@@ -88,6 +89,7 @@ class ControlServer:
             if not future.done():
                 future.set_exception(TransportError("CONTROL_SERVER_CLOSED"))
         self._pending_acks.clear()
+        self._sent_event_ids.clear()
         self._delivery_updates.clear()
 
     async def disconnect_unity(self) -> None:
@@ -124,34 +126,40 @@ class ControlServer:
             future = loop.create_future()
             self._pending_acks[event_id] = future
 
-        timeout = self.config.transport.ack_timeout_ms / 1000
-        attempts = self.config.transport.max_send_attempts
-        for _ in range(attempts):
-            if not self._unity_connected.is_set():
-                try:
-                    await self.wait_for_unity()
-                except TransportError:
+        try:
+            timeout = self.config.transport.ack_timeout_ms / 1000
+            attempts = self.config.transport.max_send_attempts
+            for _ in range(attempts):
+                if not self._unity_connected.is_set():
+                    try:
+                        await self.wait_for_unity()
+                    except TransportError:
+                        continue
+                writer = self._unity_writer
+                if writer is None:
                     continue
-            writer = self._unity_writer
-            if writer is None:
-                continue
-            try:
-                await self._write_json(writer, validated)
-            except (ConnectionError, OSError):
-                self._unity_connected.clear()
-                continue
-            try:
-                ack = await asyncio.wait_for(asyncio.shield(future), timeout)
-            except TimeoutError:
-                continue
-            if ack["result"] in {"applied", "duplicate_ignored"}:
-                self._delivery_updates.pop(event_id, None)
-                return ack
-            raise TransportError(
-                "CONTROL_ACK_REJECTED", str(ack.get("error_code") or "UNKNOWN")
-            )
+                try:
+                    await self._write_json(writer, validated)
+                    self._sent_event_ids.add(event_id)
+                except (ConnectionError, OSError):
+                    self._unity_connected.clear()
+                    continue
+                try:
+                    ack = await asyncio.wait_for(asyncio.shield(future), timeout)
+                except TimeoutError:
+                    continue
+                if ack["result"] in {"applied", "duplicate_ignored"}:
+                    self._delivery_updates.pop(event_id, None)
+                    return ack
+                raise TransportError(
+                    "CONTROL_ACK_REJECTED", str(ack.get("error_code") or "UNKNOWN")
+                )
 
-        raise TransportError("CONTROL_ACK_TIMEOUT", event_id)
+            raise TransportError("CONTROL_ACK_TIMEOUT", event_id)
+        finally:
+            self._sent_event_ids.discard(event_id)
+            if self._pending_acks.get(event_id) is future:
+                self._pending_acks.pop(event_id, None)
 
     async def _handle_client(
         self, reader: asyncio.StreamReader, writer: asyncio.StreamWriter
@@ -225,6 +233,15 @@ class ControlServer:
         message_type = message.get("message_type")
         if message_type not in {"ack", "render_receipt"}:
             raise TransportError("MESSAGE_NOT_ALLOWED_FOR_ROLE", str(message_type))
+        if message_type == "ack":
+            event_id = str(message.get("event_id", ""))
+            future = self._pending_acks.get(event_id)
+            if (
+                event_id not in self._sent_event_ids
+                or future is None
+                or future.done()
+            ):
+                raise TransportError("CONTROL_ACK_NOT_PENDING")
         update = self.core.confirm_delivery(message, self.now_ns())
         if message_type == "ack":
             event_id = str(message["event_id"])
