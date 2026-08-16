@@ -277,6 +277,9 @@ class DedupRegistry:
         if (
             anchor_rows.get("audit_tail_sequence") != str(expected_sequence)
             or anchor_rows.get("audit_tail_hash") != expected_hash
+            or not self._verify_external_anchor(
+                expected_sequence, expected_hash, self._key()
+            )
         ):
             raise GovernanceError("AUDIT_CHAIN_INVALID")
         event_id = _opaque_id("AUD")

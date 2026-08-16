@@ -70,7 +70,8 @@ def _under_artifact_root(path: PurePosixPath) -> bool:
 
 
 def _normalize_key(value: object) -> str:
-    return re.sub(r"[^a-z0-9]", "", str(value).lower())
+    normalized = unicodedata.normalize("NFKC", str(value))
+    return re.sub(r"[^a-z0-9]", "", normalized.lower())
 
 
 def _is_separated_phone(value: str) -> bool:
@@ -90,7 +91,10 @@ def _is_separated_phone(value: str) -> bool:
 def _normalize_contact_text(value: str) -> str:
     normalized = unicodedata.normalize("NFKC", value)
     return "".join(
-        character for character in normalized if unicodedata.category(character) != "Cf"
+        character
+        for character in normalized
+        if unicodedata.category(character) != "Cf"
+        and not unicodedata.category(character).startswith("M")
     )
 
 

@@ -74,7 +74,7 @@ py -3.14 '02-技术研发/07-数据治理/g02.py' check-environment `
 - 仅使用SQLite在线备份API；不得复制活动数据库文件；
 - 恢复目标必须为空目录；
 - 依次验证备份SHA-256、密钥认证清单、Schema版本、审计链尾、凭据可用性、恢复授权和合成决策；
-- 备份包只允许`dedup_registry.sqlite`和`backup_manifest.json`，拒绝`-wal`、`-shm`或其他侧文件；
+- 备份包只允许`dedup_registry.sqlite`、`audit_anchor.json`和`backup_manifest.json`，拒绝`-wal`、`-shm`或其他侧文件；
 - 密钥不进入数据库备份；
 - 首次正式录入前和每次权限或存储变更后重新演练；
 - 演练报告只含不透明ID、结果码、哈希和时间，不含联系方式。

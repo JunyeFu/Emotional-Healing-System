@@ -95,13 +95,22 @@ def backup_registry(
         ) as temporary:
             temporary_path = Path(temporary)
             database_path = temporary_path / BACKUP_DATABASE_NAME
-            _online_copy(registry.database_path, database_path)
-            shutil.copy2(registry.audit_anchor_path, temporary_path / BACKUP_ANCHOR_NAME)
-            backup_snapshot = DedupRegistry(
-                database_path=database_path,
-                key_provider=lambda: key,
-                allowed_actors={actor_id},
-            )
+            for _ in range(3):
+                database_path.unlink(missing_ok=True)
+                (temporary_path / BACKUP_ANCHOR_NAME).unlink(missing_ok=True)
+                _online_copy(registry.database_path, database_path)
+                shutil.copy2(
+                    registry.audit_anchor_path, temporary_path / BACKUP_ANCHOR_NAME
+                )
+                backup_snapshot = DedupRegistry(
+                    database_path=database_path,
+                    key_provider=lambda: key,
+                    allowed_actors={actor_id},
+                )
+                if backup_snapshot.verify_audit_chain().valid:
+                    break
+            else:
+                raise GovernanceError("BACKUP_SNAPSHOT_INCONSISTENT")
             manifest = {
                 "audit_tail_hash": backup_snapshot.audit_tail_hash(),
                 "created_at_utc": datetime.now(timezone.utc)

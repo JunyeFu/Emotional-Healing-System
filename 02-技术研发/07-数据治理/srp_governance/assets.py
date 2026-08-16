@@ -179,7 +179,7 @@ def _direct_packages(unity_root: Path) -> list[dict[str, Any]]:
         if specification.startswith("file:"):
             local_path = (unity_root / "Packages" / specification[5:]).resolve()
             try:
-                local_path.relative_to(unity_root.resolve())
+                local_path.relative_to((unity_root / "Packages").resolve())
             except ValueError as exc:
                 raise GovernanceError("DIRECT_PACKAGE_OUTSIDE_AUTHORITY") from exc
             if not local_path.is_dir():

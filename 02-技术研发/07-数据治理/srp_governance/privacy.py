@@ -33,12 +33,18 @@ _PHONE_CANDIDATE = re.compile(
 
 
 def _normalized_key(key: str) -> str:
+    key = unicodedata.normalize("NFKC", key)
     return "".join(character.lower() for character in key if character.isalnum())
 
 
 def _contact_like_value(value: str) -> bool:
     value = unicodedata.normalize("NFKC", value)
-    value = "".join(character for character in value if unicodedata.category(character) != "Cf")
+    value = "".join(
+        character
+        for character in value
+        if unicodedata.category(character) != "Cf"
+        and not unicodedata.category(character).startswith("M")
+    )
     if _EMAIL.search(value):
         return True
     for candidate in _PHONE_CANDIDATE.finditer(value):

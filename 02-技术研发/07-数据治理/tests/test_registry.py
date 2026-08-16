@@ -241,3 +241,5 @@ def test_coordinated_database_rollback_cannot_replay_external_anchor(registry) -
     report = registry.verify_audit_chain()
     assert report.valid is False
     assert report.reason_code == "AUDIT_CHAIN_INVALID"
+    with pytest.raises(GovernanceError, match="AUDIT_CHAIN_INVALID"):
+        check_and_reserve("+8613900000002", Stage.STAGE_1, "data-admin", registry=registry)
