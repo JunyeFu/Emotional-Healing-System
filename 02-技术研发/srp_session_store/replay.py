@@ -65,6 +65,8 @@ class SessionReplayer:
         begins: dict[str, dict[str, Any]] = {}
         commits: list[dict[str, Any]] = []
         failed: set[str] = set()
+        open_operations: dict[str, str] = {}
+        terminated_operations: set[str] = set()
         for record in self.reader.iter_l1():
             payload = record.get("payload")
             if not isinstance(payload, dict):
@@ -77,9 +79,11 @@ class SessionReplayer:
                     or not isinstance(payload.get("method"), str)
                     or not isinstance(payload.get("arguments"), dict)
                     or operation_id in begins
+                    or operation_id in terminated_operations
                 ):
                     raise StoreError("REPLAY_RECORD_INVALID")
                 begins[operation_id] = payload
+                open_operations[operation_id] = payload["method"]
             elif record["record_type"] == "operation_commit":
                 if (
                     not isinstance(payload.get("operation_id"), str)
@@ -87,11 +91,28 @@ class SessionReplayer:
                     or not isinstance(payload.get("output"), dict)
                 ):
                     raise StoreError("REPLAY_RECORD_INVALID")
+                operation_id = payload["operation_id"]
+                if (
+                    open_operations.get(operation_id) != payload["method"]
+                    or operation_id in terminated_operations
+                ):
+                    raise StoreError("REPLAY_RECORD_INVALID")
+                del open_operations[operation_id]
+                terminated_operations.add(operation_id)
                 commits.append(payload)
             elif record["record_type"] == "operation_failed":
                 operation_id = payload.get("operation_id")
-                if not isinstance(operation_id, str) or not operation_id:
+                method = payload.get("method")
+                if (
+                    not isinstance(operation_id, str)
+                    or not operation_id
+                    or not isinstance(method, str)
+                    or open_operations.get(operation_id) != method
+                    or operation_id in terminated_operations
+                ):
                     raise StoreError("REPLAY_RECORD_INVALID")
+                del open_operations[operation_id]
+                terminated_operations.add(operation_id)
                 failed.add(operation_id)
         committed = {item["operation_id"] for item in commits}
         incomplete = sorted(set(begins) - committed - failed)

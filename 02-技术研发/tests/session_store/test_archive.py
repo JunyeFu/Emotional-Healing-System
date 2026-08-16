@@ -36,6 +36,26 @@ def test_manifest_is_exclusive_and_session_id_is_not_used_as_a_path(tmp_path, ma
         create_archive(tmp_path, manifest)
 
 
+def test_partial_stream_initialization_closes_open_handle(
+    tmp_path, manifest_factory, monkeypatch
+) -> None:
+    original = SessionArchive._create_stream
+    opened = []
+
+    def fail_second(path, name, segment_index):
+        if name == "l1":
+            raise OSError("second stream failed")
+        stream = original(path, name, segment_index)
+        opened.append(stream.handle)
+        return stream
+
+    monkeypatch.setattr(SessionArchive, "_create_stream", staticmethod(fail_second))
+    with pytest.raises(StoreError, match="STORAGE_INITIALIZATION_FAILED"):
+        create_archive(tmp_path, manifest_factory())
+
+    assert opened and opened[0].closed
+
+
 def test_l0_round_trip_preserves_bytes_and_missing_reason(tmp_path, manifest_factory):
     manifest = manifest_factory()
     archive = create_archive(tmp_path, manifest)

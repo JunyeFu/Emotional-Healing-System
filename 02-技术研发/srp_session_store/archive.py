@@ -239,15 +239,21 @@ class SessionArchive:
         config = store_config or load_store_config()
         root = Path(root)
         sessions = root / "sessions"
-        sessions.mkdir(parents=True, exist_ok=True)
+        try:
+            sessions.mkdir(parents=True, exist_ok=True)
+        except OSError as error:
+            raise StoreError("STORAGE_ROOT_UNAVAILABLE") from error
         key = session_key(str(manifest["session_id"]))
         path = sessions / key
         try:
             path.mkdir()
         except FileExistsError as error:
             raise StoreError("SESSION_ALREADY_EXISTS") from error
-        for name in ("l0", "l1", "checkpoints", "tails"):
-            (path / name).mkdir()
+        try:
+            for name in ("l0", "l1", "checkpoints", "tails"):
+                (path / name).mkdir()
+        except OSError as error:
+            raise StoreError("STORAGE_INITIALIZATION_FAILED") from error
         lock = _WriterLock(path / "writer.lock")
         lock.acquire()
         manifest_payload = dict(manifest)
@@ -264,6 +270,7 @@ class SessionArchive:
             envelope_body,
             envelope_hash=domain_hash(_ENVELOPE_DOMAIN, envelope_body),
         )
+        streams: dict[str, _Stream] = {}
         try:
             _exclusive_json(path / "archive.json", envelope)
             for name in ("l0", "l1"):
@@ -277,13 +284,16 @@ class SessionArchive:
                     path / "tails" / f"{name}.json",
                     dict(body, tail_state_hash=domain_hash(_TAIL_STATE_DOMAIN, body)),
                 )
-            streams = {
-                name: cls._create_stream(path, name, 1)
-                for name in ("l0", "l1")
-            }
-        except Exception:
+            for name in ("l0", "l1"):
+                streams[name] = cls._create_stream(path, name, 1)
+        except Exception as error:
+            for stream in streams.values():
+                if not stream.handle.closed:
+                    stream.handle.close()
             lock.release()
-            raise
+            if isinstance(error, StoreError):
+                raise
+            raise StoreError("STORAGE_INITIALIZATION_FAILED") from error
         return cls(path, envelope, config, lock, streams)
 
     @staticmethod
@@ -293,6 +303,8 @@ class SessionArchive:
             handle = segment.open("xb")
         except FileExistsError as error:
             raise StoreError("IMMUTABLE_TARGET_EXISTS") from error
+        except OSError as error:
+            raise StoreError("STORAGE_APPEND_FAILED") from error
         return _Stream(name, segment_index, handle)
 
     @property
@@ -517,13 +529,17 @@ class SessionArchive:
         if not (path / "archive.json").is_file():
             raise StoreError("ARCHIVE_UNAVAILABLE")
         lock.acquire()
-        baseline_files = {
-            item.relative_to(path).as_posix(): item.read_bytes()
-            for item in path.rglob("*")
-            if item.is_file() and item.name != "writer.lock"
-        }
+        baseline_files: dict[str, bytes] | None = None
         recovered = False
         try:
+            try:
+                baseline_files = {
+                    item.relative_to(path).as_posix(): item.read_bytes()
+                    for item in path.rglob("*")
+                    if item.is_file() and item.name != "writer.lock"
+                }
+            except OSError as error:
+                raise StoreError("ARCHIVE_UNAVAILABLE") from error
             reader = ReplayReader.open(root, session_id)
             report = reader.verify(mode="recover")
             if "INTEGRITY_MISMATCH" in report.reason_codes:
@@ -584,13 +600,14 @@ class SessionArchive:
                             for item in path.rglob("*")
                             if item.is_file() and item.name != "writer.lock"
                         }
-                        for relative, item in current_files.items():
-                            if relative not in baseline_files:
-                                item.unlink(missing_ok=True)
-                        for relative, content in baseline_files.items():
-                            target = path / relative
-                            if not target.is_file() or target.read_bytes() != content:
-                                target.write_bytes(content)
+                        if baseline_files is not None:
+                            for relative, item in current_files.items():
+                                if relative not in baseline_files:
+                                    item.unlink(missing_ok=True)
+                            for relative, content in baseline_files.items():
+                                target = path / relative
+                                if not target.is_file() or target.read_bytes() != content:
+                                    target.write_bytes(content)
                     except OSError as rollback_error:
                         raise StoreError("RECOVERY_ROLLBACK_FAILED") from rollback_error
 
