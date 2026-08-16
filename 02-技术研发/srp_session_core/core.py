@@ -64,6 +64,7 @@ class SessionCore:
         self._request_ids: set[str] = set()
         self._completed_modules: list[str] = []
         self._prepare_event_id: str | None = None
+        self._end_event_id: str | None = None
         self._exposed = False
         self._finished_reason: str | None = None
         self._gate_receipts: tuple[GateReceipt, ...] = ()
@@ -138,6 +139,8 @@ class SessionCore:
             )
             return self._update(audit_records=(audit,))
         self._request_ids.add(request.request_id)
+        if self._end_event_id is not None and self._end_event_id not in self._acked_event_ids:
+            return self._reject_request(request, "COMPLETION_ACK_PENDING", now_ns)
 
         if request.action == "start":
             return self._start_or_resume(request, now_ns)
@@ -203,11 +206,7 @@ class SessionCore:
         self._observe_time(now_ns)
         self._validate_reason_code(reason_code)
         if self._is_formal():
-            return self._abort_internal(
-                reason_code,
-                now_ns,
-                allow_unconfirmed_completion=self._completion_delivery_is_pending(),
-            )
+            return self._abort_internal(reason_code, now_ns)
         if self._status is SessionStatus.RUNNING:
             request = OperatorRequest(
                 request_id=f"transport:{self._audit_seq + 1}",
@@ -412,17 +411,8 @@ class SessionCore:
             return self._reject_request(request, "INVALID_REASON_CODE", now_ns)
         return self._abort_internal(reason, now_ns)
 
-    def _abort_internal(
-        self,
-        reason_code: str,
-        now_ns: int,
-        *,
-        allow_unconfirmed_completion: bool = False,
-    ) -> CoreUpdate:
-        if self._status is SessionStatus.ABORTED or (
-            self._status is SessionStatus.COMPLETED
-            and not allow_unconfirmed_completion
-        ):
+    def _abort_internal(self, reason_code: str, now_ns: int) -> CoreUpdate:
+        if self._status in {SessionStatus.COMPLETED, SessionStatus.ABORTED}:
             audit = self._audit("abort", "rejected", "TERMINAL_STATE", now_ns)
             return self._update(audit_records=(audit,))
         before = self._status
@@ -441,15 +431,6 @@ class SessionCore:
             reason_code=reason_code,
         )
         return self._update(control_events=(control,), session_events=(event,))
-
-    def _completion_delivery_is_pending(self) -> bool:
-        if self._status is not SessionStatus.COMPLETED:
-            return False
-        return any(
-            event["event_type"] == "end"
-            and str(event["event_id"]) not in self._acked_event_ids
-            for event in reversed(self._control_log)
-        )
 
     def _advance_boundary(
         self, scheduled_ns: int, observed_ns: int, lag_ns: int
@@ -492,19 +473,14 @@ class SessionCore:
             payload={"scheduler_lag_ns": lag_ns},
         ))
         if self._module_position == 3:
-            before = self._status
-            self._status = SessionStatus.COMPLETED
-            self._finished_reason = "COMPLETED"
             self._segment_deadline_ns = None
-            controls.append(self._make_control(
+            end_event = self._make_control(
                 "end",
                 observed_ns,
                 {"reason_code": "COMPLETED", "scheduled_monotonic_ns": scheduled_ns},
-            ))
-            events.append(self._make_session_event(
-                "session_completed", scheduled_ns, observed_ns, before, self._status,
-                reason_code="COMPLETED", payload={"scheduler_lag_ns": lag_ns},
-            ))
+            )
+            self._end_event_id = str(end_event["event_id"])
+            controls.append(end_event)
             return controls, events, decisions
 
         self._module_position += 1
@@ -559,7 +535,23 @@ class SessionCore:
                 self._status,
                 payload={"control_event_id": event_id, "ack_result": result},
             )
-            return self._update(session_events=(event,), audit_records=(audit,))
+            events = [event]
+            control = self._control_by_id[event_id]
+            if control["event_type"] == "end":
+                before = self._status
+                self._status = SessionStatus.COMPLETED
+                self._finished_reason = "COMPLETED"
+                events.append(
+                    self._make_session_event(
+                        "session_completed",
+                        int(control["payload"]["scheduled_monotonic_ns"]),
+                        now_ns,
+                        before,
+                        self._status,
+                        reason_code="COMPLETED",
+                    )
+                )
+            return self._update(session_events=tuple(events), audit_records=(audit,))
 
         reason = str(ack["error_code"] or "CONTROL_ACK_FAILED")
         return self.transport_failure(reason, now_ns)

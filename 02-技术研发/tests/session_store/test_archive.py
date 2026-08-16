@@ -145,6 +145,36 @@ def test_recovery_rejects_modified_unsealed_archive_envelope(
     assert "INTEGRITY_MISMATCH" in report.reason_codes
 
 
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        lambda value: value.update(extra_field="unexpected"),
+        lambda value: value.pop("protocol_config_hash"),
+        lambda value: value.update(archive_schema_version="2.0"),
+        lambda value: value.update(formal_capable="false"),
+    ],
+)
+def test_self_consistent_archive_envelope_schema_mutation_is_rejected(
+    mutation, tmp_path, manifest_factory
+):
+    from srp_session_store.archive import _ENVELOPE_DOMAIN
+    from srp_session_store.canonical import canonical_bytes, domain_hash
+
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.close()
+    envelope_path = archive.path / "archive.json"
+    envelope = json.loads(envelope_path.read_text(encoding="utf-8"))
+    mutation(envelope)
+    body = {key: value for key, value in envelope.items() if key != "envelope_hash"}
+    envelope["envelope_hash"] = domain_hash(_ENVELOPE_DOMAIN, body)
+    envelope_path.write_bytes(canonical_bytes(envelope) + b"\n")
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify(mode="recover")
+    assert not report.valid
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
+
+
 def test_recovery_rechecks_archive_after_acquiring_writer_lock(
     tmp_path, manifest_factory, monkeypatch
 ):
@@ -193,6 +223,71 @@ def test_partial_tail_is_preserved_and_acknowledged_by_recovery(tmp_path, manife
     report = ReplayReader.open(tmp_path, manifest["session_id"]).verify()
     assert report.valid
     assert "UNCLEAN_TAIL" in report.reason_codes
+
+
+def test_partial_tail_in_nonfinal_segment_is_not_recoverable(tmp_path, manifest_factory):
+    config = replace(load_store_config(), segment_max_bytes=350)
+    manifest = manifest_factory()
+    archive = SessionArchive.create(
+        tmp_path,
+        manifest,
+        protocol_config_hash="sha256:protocol",
+        store_config=config,
+    )
+    for index in range(5):
+        archive.append_l1("clock_sync", {"offset_ns": index}, index + 1)
+    archive.close()
+    segments = sorted((archive.path / "l1").glob("segment-*.jsonl"))
+    assert len(segments) > 1
+    with segments[0].open("ab") as handle:
+        handle.write(b'{"partial":')
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify(mode="recover")
+    assert not report.valid
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
+
+
+def test_deleting_last_durable_l1_record_breaks_tail_anchor(tmp_path, manifest_factory):
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.append_l1("clock_sync", {"offset_ns": 1}, 1)
+    archive.close()
+    segment = archive.path / "l1" / "segment-000001.jsonl"
+    segment.write_bytes(b"")
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify(mode="recover")
+    assert not report.valid
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
+
+
+def test_recovery_failure_restores_all_files(tmp_path, manifest_factory):
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.append_l1("clock_sync", {"offset_ns": 1}, 1)
+    archive.checkpoint(2)
+    archive.checkpoint(3)
+    archive.close()
+    (archive.path / "checkpoints" / "checkpoint-000001.json").unlink()
+    before = {
+        path.relative_to(archive.path).as_posix(): path.read_bytes()
+        for path in archive.path.rglob("*")
+        if path.is_file() and path.name != "writer.lock"
+    }
+
+    with pytest.raises(StoreError, match="INTEGRITY_MISMATCH"):
+        SessionArchive.recover_interrupted(tmp_path, manifest["session_id"], now_ns=4)
+
+    after = {
+        path.relative_to(archive.path).as_posix(): path.read_bytes()
+        for path in archive.path.rglob("*")
+        if path.is_file() and path.name != "writer.lock"
+    }
+    assert after == before
+
+
+def test_recovery_missing_session_maps_to_store_error(tmp_path):
+    with pytest.raises(StoreError, match="ARCHIVE_UNAVAILABLE"):
+        SessionArchive.recover_interrupted(tmp_path, "S-MISSING", now_ns=1)
 
 
 def test_active_writer_blocks_recovery(tmp_path, manifest_factory):

@@ -5,6 +5,7 @@ from dataclasses import dataclass
 import json
 import os
 from pathlib import Path
+import re
 from typing import Any, BinaryIO, Iterator, Mapping
 
 from .canonical import canonical_bytes, domain_hash, file_sha256
@@ -24,6 +25,7 @@ from .privacy import privacy_lint
 
 _SESSION_DOMAIN = b"srp:p02:session-path:v1\0"
 _ENVELOPE_DOMAIN = b"srp:p02:archive-envelope:v1\0"
+_TAIL_STATE_DOMAIN = b"srp:p02:tail-state:v1\0"
 _MANIFEST_DOMAIN = b"srp:p02:manifest:v1\0"
 _RECORD_DOMAIN = b"srp:p02:record:v1\0"
 _CHECKPOINT_DOMAIN = b"srp:p02:checkpoint:v1\0"
@@ -31,6 +33,18 @@ _SEAL_DOMAIN = b"srp:p02:seal:v1\0"
 _ZERO_HASH = "sha256:" + "0" * 64
 _RAW_SOURCE_IDS = {"plux_respiban", "polar_h10_ecg", "polar_h10_rr"}
 _FORMAL_ARCHIVE_TOKEN = object()
+_HASH_VALUE = re.compile(r"^sha256:[0-9a-f]{64}$")
+_SESSION_KEY_VALUE = re.compile(r"^[0-9a-f]{64}$")
+_ENVELOPE_KEYS = {
+    "archive_schema_version",
+    "envelope_hash",
+    "formal_capable",
+    "manifest",
+    "manifest_hash",
+    "protocol_config_hash",
+    "session_key",
+    "store_config_hash",
+}
 
 
 def session_key(session_id: str) -> str:
@@ -50,6 +64,39 @@ def _exclusive_json(path: Path, payload: Mapping[str, Any]) -> None:
         raise StoreError("IMMUTABLE_TARGET_EXISTS") from error
     except OSError as error:
         raise StoreError("STORAGE_APPEND_FAILED") from error
+
+
+def _atomic_json(path: Path, payload: Mapping[str, Any]) -> None:
+    temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    encoded = canonical_bytes(dict(payload)) + b"\n"
+    try:
+        with temporary.open("wb") as handle:
+            handle.write(encoded)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    except OSError as error:
+        temporary.unlink(missing_ok=True)
+        raise StoreError("STORAGE_SYNC_FAILED") from error
+
+
+def _envelope_is_valid(envelope: Mapping[str, Any]) -> bool:
+    return (
+        set(envelope) == _ENVELOPE_KEYS
+        and envelope.get("archive_schema_version") == "1.0"
+        and isinstance(envelope.get("formal_capable"), bool)
+        and isinstance(envelope.get("manifest"), dict)
+        and isinstance(envelope.get("protocol_config_hash"), str)
+        and bool(envelope.get("protocol_config_hash"))
+        and isinstance(envelope.get("manifest_hash"), str)
+        and _HASH_VALUE.fullmatch(str(envelope.get("manifest_hash"))) is not None
+        and isinstance(envelope.get("store_config_hash"), str)
+        and _HASH_VALUE.fullmatch(str(envelope.get("store_config_hash"))) is not None
+        and isinstance(envelope.get("envelope_hash"), str)
+        and _HASH_VALUE.fullmatch(str(envelope.get("envelope_hash"))) is not None
+        and isinstance(envelope.get("session_key"), str)
+        and _SESSION_KEY_VALUE.fullmatch(str(envelope.get("session_key"))) is not None
+    )
 
 
 class _WriterLock:
@@ -104,6 +151,7 @@ class _Stream:
     tail_hash: str = _ZERO_HASH
     unsynced_bytes: int = 0
     last_sync_ns: int = 0
+    anchored_seq: int = 0
 
 
 class SessionArchive:
@@ -151,7 +199,7 @@ class SessionArchive:
             path.mkdir()
         except FileExistsError as error:
             raise StoreError("SESSION_ALREADY_EXISTS") from error
-        for name in ("l0", "l1", "checkpoints"):
+        for name in ("l0", "l1", "checkpoints", "tails"):
             (path / name).mkdir()
         lock = _WriterLock(path / "writer.lock")
         lock.acquire()
@@ -171,6 +219,17 @@ class SessionArchive:
         )
         try:
             _exclusive_json(path / "archive.json", envelope)
+            for name in ("l0", "l1"):
+                body = {
+                    "session_key": key,
+                    "stream": name,
+                    "stream_seq": 0,
+                    "tail_hash": _ZERO_HASH,
+                }
+                _exclusive_json(
+                    path / "tails" / f"{name}.json",
+                    dict(body, tail_state_hash=domain_hash(_TAIL_STATE_DOMAIN, body)),
+                )
             streams = {
                 name: cls._create_stream(path, name, 1)
                 for name in ("l0", "l1")
@@ -322,7 +381,9 @@ class SessionArchive:
         existing_l1, existing_reasons = ReplayReader(
             self.path, self.envelope
         )._scan_stream(
-            "l1", mode="recover" if reason_code == "PROCESS_INTERRUPTED" else "strict"
+            "l1",
+            mode="recover" if reason_code == "PROCESS_INTERRUPTED" else "strict",
+            acknowledged_segments=self._acknowledged_unclean_segments,
         )
         if "INTEGRITY_MISMATCH" in existing_reasons:
             raise StoreError("INTEGRITY_MISMATCH")
@@ -359,8 +420,13 @@ class SessionArchive:
         for stream in self._streams.values():
             self._sync(stream)
         files = []
-        for name in ("l0", "l1", "checkpoints"):
-            for path in sorted((self.path / name).glob("segment-*.jsonl")):
+        for name, pattern in (
+            ("l0", "segment-*.jsonl"),
+            ("l1", "segment-*.jsonl"),
+            ("checkpoints", "checkpoint-*.json"),
+            ("tails", "*.json"),
+        ):
+            for path in sorted((self.path / name).glob(pattern)):
                 files.append(
                     {
                         "path": path.relative_to(self.path).as_posix(),
@@ -368,15 +434,6 @@ class SessionArchive:
                         "size_bytes": path.stat().st_size,
                     }
                 )
-            if name == "checkpoints":
-                for path in sorted((self.path / name).glob("checkpoint-*.json")):
-                    files.append(
-                        {
-                            "path": path.relative_to(self.path).as_posix(),
-                            "sha256": file_sha256(path),
-                            "size_bytes": path.stat().st_size,
-                        }
-                    )
         body = {
             "acknowledged_unclean_segments": list(self._acknowledged_unclean_segments),
             "archive_hash": file_sha256(self.path / "archive.json"),
@@ -410,7 +467,15 @@ class SessionArchive:
         path = Path(root) / "sessions" / session_key(session_id)
         config = store_config or load_store_config()
         lock = _WriterLock(path / "writer.lock")
+        if not (path / "archive.json").is_file():
+            raise StoreError("ARCHIVE_UNAVAILABLE")
         lock.acquire()
+        baseline_files = {
+            item.relative_to(path).as_posix(): item.read_bytes()
+            for item in path.rglob("*")
+            if item.is_file() and item.name != "writer.lock"
+        }
+        recovered = False
         try:
             reader = ReplayReader.open(root, session_id)
             report = reader.verify(mode="recover")
@@ -428,6 +493,7 @@ class SessionArchive:
                 stream = cls._create_stream(path, name, next_segment)
                 stream.seq = states[name]["seq"]
                 stream.tail_hash = states[name]["tail_hash"]
+                stream.anchored_seq = states[name]["anchored_seq"]
                 stream.last_sync_ns = now_ns
                 streams[name] = stream
             archive = cls(
@@ -443,15 +509,30 @@ class SessionArchive:
                 {"event_type": "PROCESS_INTERRUPTED", "reason_code": "PROCESS_INTERRUPTED"},
                 now_ns,
             )
-            return archive.seal(
+            result = archive.seal(
                 {"status": "ABORTED", "reason_code": "PROCESS_INTERRUPTED"},
                 now_ns,
             )
+            recovered = True
+            return result
         finally:
             if "archive" in locals():
                 archive.close()
             else:
                 lock.release()
+            if not recovered:
+                current_files = {
+                    item.relative_to(path).as_posix(): item
+                    for item in path.rglob("*")
+                    if item.is_file() and item.name != "writer.lock"
+                }
+                for relative, item in current_files.items():
+                    if relative not in baseline_files:
+                        item.unlink(missing_ok=True)
+                for relative, content in baseline_files.items():
+                    target = path / relative
+                    if not target.is_file() or target.read_bytes() != content:
+                        target.write_bytes(content)
 
     def _maybe_checkpoint(self, now_ns: int) -> None:
         if now_ns - self._last_checkpoint_ns >= self.store_config.checkpoint_interval_ms * 1_000_000:
@@ -499,6 +580,18 @@ class SessionArchive:
         except OSError as error:
             raise StoreError("STORAGE_SYNC_FAILED") from error
         stream.unsynced_bytes = 0
+        if stream.seq != stream.anchored_seq:
+            body = {
+                "session_key": self.envelope["session_key"],
+                "stream": stream.name,
+                "stream_seq": stream.seq,
+                "tail_hash": stream.tail_hash,
+            }
+            _atomic_json(
+                self.path / "tails" / f"{stream.name}.json",
+                dict(body, tail_state_hash=domain_hash(_TAIL_STATE_DOMAIN, body)),
+            )
+            stream.anchored_seq = stream.seq
 
     def _rollover_if_needed(self, stream: _Stream) -> None:
         if stream.handle.tell() < self.store_config.segment_max_bytes:
@@ -512,6 +605,7 @@ class SessionArchive:
         replacement.seq = stream.seq
         replacement.tail_hash = stream.tail_hash
         replacement.last_sync_ns = stream.last_sync_ns
+        replacement.anchored_seq = stream.anchored_seq
         self._streams[stream.name] = replacement
 
     def _require_open(self) -> None:
@@ -555,7 +649,11 @@ class ReplayReader:
             return {"invalid": True}
 
     def _scan_stream(
-        self, name: str, *, mode: str
+        self,
+        name: str,
+        *,
+        mode: str,
+        acknowledged_segments: tuple[str, ...] = (),
     ) -> tuple[list[dict[str, Any]], list[str]]:
         records: list[dict[str, Any]] = []
         reasons: list[str] = []
@@ -563,7 +661,9 @@ class ReplayReader:
         previous_hash = _ZERO_HASH
         seal = self._seal() or {}
         acknowledged = set(seal.get("acknowledged_unclean_segments", []))
-        for segment in sorted((self.path / name).glob("segment-*.jsonl")):
+        acknowledged.update(acknowledged_segments)
+        segments = sorted((self.path / name).glob("segment-*.jsonl"))
+        for segment_position, segment in enumerate(segments):
             relative = segment.relative_to(self.path).as_posix()
             try:
                 expected_segment_index = int(segment.stem.removeprefix("segment-"))
@@ -575,7 +675,8 @@ class ReplayReader:
             for index, line in enumerate(lines):
                 if not line.endswith(b"\n"):
                     self.unclean_segments.append(relative)
-                    if mode == "recover" or relative in acknowledged:
+                    is_final_segment = segment_position == len(segments) - 1
+                    if relative in acknowledged or (is_final_segment and mode == "recover"):
                         reasons.append("UNCLEAN_TAIL")
                         break
                     reasons.append("INTEGRITY_MISMATCH")
@@ -606,15 +707,53 @@ class ReplayReader:
                 previous_hash = str(actual_hash)
         return records, reasons
 
+    def _tail_state(self, name: str) -> dict[str, Any] | None:
+        path = self.path / "tails" / f"{name}.json"
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return None
+        expected_keys = {
+            "session_key",
+            "stream",
+            "stream_seq",
+            "tail_hash",
+            "tail_state_hash",
+        }
+        if not isinstance(value, dict) or set(value) != expected_keys:
+            return None
+        body = {key: item for key, item in value.items() if key != "tail_state_hash"}
+        if (
+            value.get("session_key") != self.envelope.get("session_key")
+            or value.get("stream") != name
+            or isinstance(value.get("stream_seq"), bool)
+            or not isinstance(value.get("stream_seq"), int)
+            or value["stream_seq"] < 0
+            or _HASH_VALUE.fullmatch(str(value.get("tail_hash"))) is None
+            or value.get("tail_state_hash") != domain_hash(_TAIL_STATE_DOMAIN, body)
+        ):
+            return None
+        return value
+
     def stream_states(self, *, mode: str = "strict") -> dict[str, dict[str, Any]]:
         states = {}
         for name in ("l0", "l1"):
             records, reasons = self._scan_stream(name, mode=mode)
             if "INTEGRITY_MISMATCH" in reasons:
                 raise StoreError("INTEGRITY_MISMATCH")
+            tail_state = self._tail_state(name)
+            if tail_state is None or tail_state["stream_seq"] > len(records):
+                raise StoreError("INTEGRITY_MISMATCH")
+            anchored_seq = tail_state["stream_seq"]
+            anchored_hash = (
+                _ZERO_HASH if anchored_seq == 0 else records[anchored_seq - 1]["record_hash"]
+            )
+            if tail_state["tail_hash"] != anchored_hash:
+                raise StoreError("INTEGRITY_MISMATCH")
             states[name] = {
                 "seq": len(records),
                 "tail_hash": records[-1]["record_hash"] if records else _ZERO_HASH,
+                "anchored_seq": anchored_seq,
             }
         return states
 
@@ -630,6 +769,8 @@ class ReplayReader:
             reasons.extend(stream_reasons)
         seal = self._seal()
         sealed = seal is not None
+        if not _envelope_is_valid(self.envelope):
+            reasons.append("INTEGRITY_MISMATCH")
         expected_manifest_hash = domain_hash(
             _MANIFEST_DOMAIN, self.envelope.get("manifest")
         )
@@ -667,6 +808,7 @@ class ReplayReader:
                         ("l0", "segment-*.jsonl"),
                         ("l1", "segment-*.jsonl"),
                         ("checkpoints", "checkpoint-*.json"),
+                        ("tails", "*.json"),
                     )
                     for path in (self.path / directory).glob(pattern)
                 }
@@ -738,13 +880,34 @@ class ReplayReader:
                     reasons.append("INTEGRITY_MISMATCH")
         else:
             reasons.append("UNSEALED_ARCHIVE")
-        for checkpoint in sorted((self.path / "checkpoints").glob("checkpoint-*.json")):
+        for name in ("l0", "l1"):
+            tail_state = self._tail_state(name)
+            if tail_state is None or tail_state["stream_seq"] > len(streams[name]):
+                reasons.append("INTEGRITY_MISMATCH")
+                continue
+            anchored_seq = tail_state["stream_seq"]
+            expected_tail = (
+                _ZERO_HASH
+                if anchored_seq == 0
+                else streams[name][anchored_seq - 1]["record_hash"]
+            )
+            if tail_state["tail_hash"] != expected_tail:
+                reasons.append("INTEGRITY_MISMATCH")
+            if sealed and anchored_seq != len(streams[name]):
+                reasons.append("INTEGRITY_MISMATCH")
+        checkpoints = sorted((self.path / "checkpoints").glob("checkpoint-*.json"))
+        for checkpoint_index, checkpoint in enumerate(checkpoints, start=1):
+            expected_id = f"checkpoint-{checkpoint_index:06d}"
+            if checkpoint.name != f"{expected_id}.json":
+                reasons.append("INTEGRITY_MISMATCH")
             try:
                 value = json.loads(checkpoint.read_text(encoding="utf-8"))
                 checkpoint_hash = value.pop("checkpoint_hash")
             except (OSError, json.JSONDecodeError, KeyError, AttributeError):
                 reasons.append("INTEGRITY_MISMATCH")
                 continue
+            if value.get("checkpoint_id") != expected_id:
+                reasons.append("INTEGRITY_MISMATCH")
             if checkpoint_hash != domain_hash(_CHECKPOINT_DOMAIN, value):
                 reasons.append("INTEGRITY_MISMATCH")
             for stream_name in ("l0", "l1"):

@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
+import time
+
 import pytest
 
 import srp_governance.credentials as credentials_module
@@ -98,6 +101,36 @@ def test_provision_refuses_to_overwrite_existing_key() -> None:
     assert error.value.code == "KEY_ALREADY_PROVISIONED"
     assert backend.value == original
     assert backend.writes == []
+
+
+def test_concurrent_provision_allows_only_one_key_write() -> None:
+    class SlowBackend(FakeCredentialBackend):
+        def read(self, target: str) -> bytes | None:
+            value = super().read(target)
+            time.sleep(0.02)
+            return value
+
+    backend = SlowBackend()
+
+    def provision() -> str:
+        return CredentialKeyProvider(
+            backend=backend,
+            required_account="SRPDataAdmin",
+            account_provider=lambda: "SRPDataAdmin",
+        ).provision()
+
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        futures = [executor.submit(provision) for _ in range(2)]
+    outcomes = []
+    for future in futures:
+        try:
+            outcomes.append(future.result())
+        except GovernanceError as error:
+            outcomes.append(error.code)
+
+    assert outcomes.count(CREDENTIAL_TARGET) == 1
+    assert outcomes.count("KEY_ALREADY_PROVISIONED") == 1
+    assert len(backend.writes) == 1
 
 
 def test_windows_backend_wipes_temporary_blob_when_write_fails(monkeypatch) -> None:

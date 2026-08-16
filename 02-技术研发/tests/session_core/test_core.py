@@ -23,12 +23,12 @@ WEATHERS = ("storm", "heat", "snow", "fade")
 def _run_exact_session(core: SessionCore, start_ns: int) -> None:
     now = start_ns
     for _ in range(4):
-        now += 25_000_000_000
-        core.advance(now)
-        now += 150_000_000_000
-        core.advance(now)
-        now += 25_000_000_000
-        core.advance(now)
+        for duration_ns in (25_000_000_000, 150_000_000_000, 25_000_000_000):
+            now += duration_ns
+            update = core.advance(now)
+            for event in update.control_events:
+                if event["event_type"] == "end":
+                    core.confirm_delivery(ack_for(event, now_ns=now), now)
 
 
 @pytest.mark.parametrize("sequence", list(permutations(WEATHERS)))

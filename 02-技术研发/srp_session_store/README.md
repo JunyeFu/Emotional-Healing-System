@@ -41,6 +41,8 @@ SessionReplayer.replay_core(core_factory=None) -> ReplayReport
   archive.json
   l0/segment-000001.jsonl
   l1/segment-000001.jsonl
+  tails/l0.json
+  tails/l1.json
   checkpoints/checkpoint-000001.json
   seal.json
   writer.lock
@@ -49,6 +51,7 @@ SessionReplayer.replay_core(core_factory=None) -> ReplayReport
 - 路径键由域分隔SHA-256派生，不直接使用`session_id`；
 - manifest、检查点和封存文件采用排他创建；
 - JSONL记录包含连续序号、前项哈希和当前记录哈希；
+- 每次耐久同步原子更新独立尾锚；L1必须与尾锚完全一致，L0只允许最后一次同步后的批量尾部尚未锚定；
 - `archive.json`对除`envelope_hash`外的完整归档头做域分隔哈希；未封存恢复也必须先在写锁内重新验证归档头、记录链和封存状态；
 - L1每次提交执行`flush + fsync`；L0按100毫秒或64 KiB批量同步；
 - 64 MiB自动换段，跨段保持同一序号和哈希链；

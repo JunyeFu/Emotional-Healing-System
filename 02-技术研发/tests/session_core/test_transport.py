@@ -237,6 +237,95 @@ def test_tcp_rejects_ack_for_control_that_has_not_been_sent(
     asyncio.run(scenario())
 
 
+def test_ack_is_bound_to_connection_generation(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory()
+        core = SessionCore()
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        clock = [1]
+        server = ControlServer(
+            core, config=fast_transport_config(), port=0, now_ns=lambda: clock[0]
+        )
+        await server.start()
+        first_reader, first_writer = await asyncio.open_connection(
+            "127.0.0.1", server.bound_port
+        )
+        await _write(first_writer, _hello())
+        await _read(first_reader)
+        old_generation = server._unity_generation
+        second_reader, second_writer = await asyncio.open_connection(
+            "127.0.0.1", server.bound_port
+        )
+        await _write(second_writer, _hello())
+        await _read(second_reader)
+
+        publish = asyncio.create_task(server.publish_control(prepared.control_events[0]))
+        event = await _read(second_reader)
+        with pytest.raises(TransportError) as error:
+            await server._handle_unity_message(
+                ack_for(event, now_ns=1), connection_generation=old_generation
+            )
+        assert error.value.code == "CONTROL_ACK_CONNECTION_MISMATCH"
+        await _write(second_writer, ack_for(event, now_ns=2))
+        assert (await publish)["result"] == "applied"
+
+        first_writer.close()
+        second_writer.close()
+        await asyncio.gather(
+            first_writer.wait_closed(), second_writer.wait_closed(),
+            return_exceptions=True,
+        )
+        await server.close()
+
+    asyncio.run(scenario())
+
+
+def test_late_duplicate_ack_does_not_fail_current_control(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory()
+        core = SessionCore()
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        clock = [1]
+        server = ControlServer(
+            core, config=fast_transport_config(), port=0, now_ns=lambda: clock[0]
+        )
+        await server.start()
+        reader, writer = await asyncio.open_connection("127.0.0.1", server.bound_port)
+        await _write(writer, _hello())
+        await _read(reader)
+
+        first_publish = asyncio.create_task(
+            server.publish_control(prepared.control_events[0])
+        )
+        first = await _read(reader)
+        first_ack = ack_for(first, now_ns=1)
+        await _write(writer, first_ack)
+        await first_publish
+
+        clock[0] = 2
+        started = core.apply_operator_request(OperatorRequest("REQ-START", "start"), 2)
+        second_publish = asyncio.create_task(
+            server.publish_control(started.control_events[1])
+        )
+        second = await _read(reader)
+        await _write(writer, first_ack)
+        await asyncio.sleep(0.01)
+        assert not second_publish.done()
+        clock[0] = 3
+        await _write(writer, ack_for(second, now_ns=3))
+        assert (await second_publish)["result"] == "applied"
+
+        writer.close()
+        await writer.wait_closed()
+        await server.close()
+
+    asyncio.run(scenario())
+
+
 def test_tcp_port_conflict_fails_closed() -> None:
     async def scenario():
         blocker = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -412,6 +501,9 @@ def test_formal_end_delivery_failure_overrides_unconfirmed_completion(
 
         assert update.snapshot.status.value == "ABORTED"
         assert [event["event_type"] for event in server.events][-2:] == ["end", "abort"]
+        assert "session_completed" not in {
+            event.event_type for event in core.session_event_log
+        }
         assert server.disconnected is True
 
     asyncio.run(scenario())

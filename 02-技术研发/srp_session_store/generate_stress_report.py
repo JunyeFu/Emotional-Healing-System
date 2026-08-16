@@ -179,6 +179,10 @@ def run_stress(duration_seconds: int = 800) -> dict[str, Any]:
     return report
 
 
+def evidence_passed(report: dict[str, object]) -> bool:
+    return report.get("integrity_valid") is True and report.get("memory_stable") is True
+
+
 def main() -> int:
     report = run_stress()
     output = Path(__file__).with_name("evidence") / "synthetic_stress_report.json"
@@ -186,7 +190,7 @@ def main() -> int:
     output.write_bytes(json.dumps(report, ensure_ascii=True, indent=2, sort_keys=True).encode("utf-8") + b"\n")
     print(output)
     print(json.dumps(report, ensure_ascii=True, sort_keys=True))
-    return 0 if report["integrity_valid"] else 1
+    return 0 if evidence_passed(report) else 1
 
 
 if __name__ == "__main__":

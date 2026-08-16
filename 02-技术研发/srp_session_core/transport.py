@@ -46,8 +46,11 @@ class ControlServer:
         self._unity_writer: asyncio.StreamWriter | None = None
         self._unity_client_id: str | None = None
         self._unity_connected = asyncio.Event()
+        self._unity_generation = 0
         self._pending_acks: dict[str, asyncio.Future[dict[str, Any]]] = {}
+        self._pending_ack_generations: dict[str, int] = {}
         self._sent_event_ids: set[str] = set()
+        self._delivered_event_ids: set[str] = set()
         self._delivery_updates: dict[str, CoreUpdate] = {}
         self._client_tasks: set[asyncio.Task[Any]] = set()
 
@@ -89,7 +92,9 @@ class ControlServer:
             if not future.done():
                 future.set_exception(TransportError("CONTROL_SERVER_CLOSED"))
         self._pending_acks.clear()
+        self._pending_ack_generations.clear()
         self._sent_event_ids.clear()
+        self._delivered_event_ids.clear()
         self._delivery_updates.clear()
 
     async def disconnect_unity(self) -> None:
@@ -97,6 +102,7 @@ class ControlServer:
         writer = self._unity_writer
         self._unity_writer = None
         self._unity_client_id = None
+        self._unity_generation += 1
         self._unity_connected.clear()
         if writer is None:
             return
@@ -139,6 +145,7 @@ class ControlServer:
                 if writer is None:
                     continue
                 try:
+                    self._pending_ack_generations[event_id] = self._unity_generation
                     await self._write_json(writer, validated)
                     self._sent_event_ids.add(event_id)
                 except (ConnectionError, OSError):
@@ -158,6 +165,7 @@ class ControlServer:
             raise TransportError("CONTROL_ACK_TIMEOUT", event_id)
         finally:
             self._sent_event_ids.discard(event_id)
+            self._pending_ack_generations.pop(event_id, None)
             if self._pending_acks.get(event_id) is future:
                 self._pending_acks.pop(event_id, None)
 
@@ -168,6 +176,7 @@ class ControlServer:
         if task is not None:
             self._client_tasks.add(task)
         handshake: Handshake | None = None
+        connection_generation: int | None = None
         try:
             raw = await asyncio.wait_for(
                 reader.readline(), self.config.transport.reconnect_grace_ms / 1000
@@ -184,6 +193,11 @@ class ControlServer:
                         writer, handshake, accepted=False, error_code="UNITY_CLIENT_ALREADY_CONNECTED"
                     )
                     return
+                previous_writer = self._unity_writer
+                if previous_writer is not None and previous_writer is not writer:
+                    previous_writer.close()
+                self._unity_generation += 1
+                connection_generation = self._unity_generation
                 self._unity_writer = writer
                 self._unity_client_id = handshake.client_instance_id
                 self._unity_connected.set()
@@ -195,7 +209,18 @@ class ControlServer:
                     break
                 message = self._decode_line(raw)
                 if handshake.role == "unity":
-                    await self._handle_unity_message(message)
+                    try:
+                        await self._handle_unity_message(
+                            message, connection_generation=connection_generation
+                        )
+                    except TransportError as error:
+                        if error.code in {
+                            "CONTROL_ACK_NOT_PENDING",
+                            "CONTROL_ACK_CONNECTION_MISMATCH",
+                        }:
+                            await self._write_json(writer, self._transport_error(error.code))
+                            continue
+                        raise
                 else:
                     await self._write_json(
                         writer,
@@ -229,12 +254,20 @@ class ControlServer:
             if task is not None:
                 self._client_tasks.discard(task)
 
-    async def _handle_unity_message(self, message: Mapping[str, Any]) -> None:
+    async def _handle_unity_message(
+        self,
+        message: Mapping[str, Any],
+        *,
+        connection_generation: int | None = None,
+    ) -> None:
         message_type = message.get("message_type")
         if message_type not in {"ack", "render_receipt"}:
             raise TransportError("MESSAGE_NOT_ALLOWED_FOR_ROLE", str(message_type))
         if message_type == "ack":
             event_id = str(message.get("event_id", ""))
+            if event_id in self._delivered_event_ids:
+                self.core.confirm_delivery(message, self.now_ns())
+                return
             future = self._pending_acks.get(event_id)
             if (
                 event_id not in self._sent_event_ids
@@ -242,10 +275,20 @@ class ControlServer:
                 or future.done()
             ):
                 raise TransportError("CONTROL_ACK_NOT_PENDING")
+            expected_generation = self._pending_ack_generations.get(event_id)
+            actual_generation = (
+                self._unity_generation
+                if connection_generation is None
+                else connection_generation
+            )
+            if expected_generation != actual_generation:
+                raise TransportError("CONTROL_ACK_CONNECTION_MISMATCH")
         update = self.core.confirm_delivery(message, self.now_ns())
         if message_type == "ack":
             event_id = str(message["event_id"])
             self._delivery_updates[event_id] = update
+            if message.get("result") in {"applied", "duplicate_ignored"}:
+                self._delivered_event_ids.add(event_id)
             future = self._pending_acks.get(event_id)
             if future is not None and not future.done():
                 future.set_result(dict(message))

@@ -22,8 +22,13 @@ _FORBIDDEN_KEY_PARTS = (
     "邮箱",
     "联系方式",
 )
-_EMAIL = re.compile(r"[^\s@]+@[^\s@]+\.[^\s@]+")
-_EMBEDDED_PHONE = re.compile(r"(?<!\d)(?:\+[1-9]\d{7,14}|1[3-9]\d{9})(?!\d)")
+_EMAIL = re.compile(
+    r"(?<![A-Za-z0-9._%+-])[A-Za-z0-9._%+-]+@"
+    r"[A-Za-z0-9.-]+\.[A-Za-z]{2,63}(?![A-Za-z0-9.-])"
+)
+_PHONE_CANDIDATE = re.compile(
+    r"(?<!\d)(?:\+|00)?[0-9][0-9 ()-]{6,}[0-9](?!\d)"
+)
 
 
 def _normalized_key(key: str) -> str:
@@ -31,7 +36,13 @@ def _normalized_key(key: str) -> str:
 
 
 def _contact_like_value(value: str) -> bool:
-    if _EMAIL.search(value) or _EMBEDDED_PHONE.search(value):
+    if _EMAIL.search(value):
+        return True
+    for candidate in _PHONE_CANDIDATE.finditer(value):
+        try:
+            normalize_phone(candidate.group())
+        except GovernanceError:
+            continue
         return True
     try:
         normalize_phone(value)
