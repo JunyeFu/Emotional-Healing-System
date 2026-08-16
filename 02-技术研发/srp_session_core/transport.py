@@ -281,7 +281,11 @@ class ControlServer:
         if message_type == "ack":
             event_id = str(message.get("event_id", ""))
             if event_id in self._delivered_event_ids:
-                self.core.confirm_delivery(message, self.now_ns())
+                update = self.core.confirm_delivery(message, self.now_ns())
+                self._delivery_updates[event_id] = update
+                future = self._pending_acks.get(event_id)
+                if future is not None and not future.done():
+                    future.set_result(dict(message))
                 return
             future = self._pending_acks.get(event_id)
             if (
@@ -481,6 +485,7 @@ class SessionRuntimeHost:
     def __init__(self, core: SessionCore, control_server: ControlServer) -> None:
         self.core = core
         self.control_server = control_server
+        self._operation_lock = asyncio.Lock()
 
     async def prepare(
         self,
@@ -488,19 +493,22 @@ class SessionRuntimeHost:
         assignment: Any,
         now_ns: int,
     ) -> CoreUpdate:
-        await self.control_server.wait_for_unity()
-        update = self.core.prepare(manifest, assignment, now_ns)
-        return await self._deliver(update, now_ns)
+        async with self._operation_lock:
+            await self.control_server.wait_for_unity()
+            update = self.core.prepare(manifest, assignment, now_ns)
+            return await self._deliver(update, now_ns)
 
     async def apply_operator_request(
         self, request: OperatorRequest, now_ns: int
     ) -> CoreUpdate:
-        update = self.core.apply_operator_request(request, now_ns)
-        return await self._deliver(update, now_ns)
+        async with self._operation_lock:
+            update = self.core.apply_operator_request(request, now_ns)
+            return await self._deliver(update, now_ns)
 
     async def advance(self, now_ns: int) -> CoreUpdate:
-        update = self.core.advance(now_ns)
-        return await self._deliver(update, now_ns)
+        async with self._operation_lock:
+            update = self.core.advance(now_ns)
+            return await self._deliver(update, now_ns)
 
     async def _deliver(self, update: CoreUpdate, now_ns: int) -> CoreUpdate:
         current_event_id: str | None = None
@@ -549,12 +557,19 @@ class SessionRuntimeHost:
                 failure_now_ns = max(now_ns, self.control_server.now_ns())
                 failure = self.core.transport_failure(error.code, failure_now_ns)
 
+            delivery_updates.append(failure)
+
             for event in failure.control_events:
                 try:
                     await self.control_server.publish_control(event)
+                    delivered = self.control_server.pop_delivery_update(
+                        str(event["event_id"])
+                    )
+                    if delivered is not None:
+                        delivery_updates.append(delivered)
                 except TransportError:
                     break
 
             if str(failure.snapshot.runtime_mode or "").startswith("formal_"):
                 await self.control_server.disconnect_unity()
-            return merge(failure)
+            return merge(delivery_updates[-1])

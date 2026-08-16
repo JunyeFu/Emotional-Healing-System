@@ -248,7 +248,13 @@ class SessionCore:
         ):
             progress = 0.0
         else:
-            clock_ns = self._pause_start_ns if self._status is SessionStatus.PAUSED else self._last_now_ns
+            clock_ns = (
+                self._terminal_ns
+                if self._terminal_ns is not None
+                else self._pause_start_ns
+                if self._status is SessionStatus.PAUSED
+                else self._last_now_ns
+            )
             elapsed = max(0, clock_ns - self._segment_start_ns)
             progress = min(1.0, elapsed / duration_ns)
         manifest = self._manifest or {}
@@ -525,7 +531,7 @@ class SessionCore:
         if (
             result in {"applied", "duplicate_ignored"}
             and control["event_type"] == "end"
-            and self._status is not SessionStatus.RUNNING
+            and self._status not in {SessionStatus.RUNNING, SessionStatus.PAUSED}
         ):
             audit = self._audit(event_id, "rejected", "SESSION_TERMINAL", now_ns)
             return self._update(audit_records=(audit,))
@@ -548,6 +554,9 @@ class SessionCore:
             events = [event]
             if control["event_type"] == "end":
                 before = self._status
+                if self._status is SessionStatus.PAUSED and self._pause_start_ns is not None:
+                    self._total_paused_ns += now_ns - self._pause_start_ns
+                    self._pause_start_ns = None
                 self._status = SessionStatus.COMPLETED
                 self._terminal_ns = now_ns
                 self._finished_reason = "COMPLETED"
