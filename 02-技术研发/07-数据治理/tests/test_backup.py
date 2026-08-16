@@ -175,3 +175,26 @@ def test_existing_backup_target_does_not_record_success(registry, tmp_path) -> N
 
     assert error.value.code == "BACKUP_TARGET_EXISTS"
     assert registry.verify_audit_chain().checked_events == before
+
+
+def test_copy_failure_records_failure_but_not_success(
+    registry, tmp_path, monkeypatch
+) -> None:
+    import srp_governance.backup as backup_module
+
+    def fail_copy(_source, _destination):
+        raise GovernanceError("BACKUP_UNAVAILABLE")
+
+    monkeypatch.setattr(backup_module, "_online_copy", fail_copy)
+    bundle = tmp_path / "failed-backup"
+
+    with pytest.raises(GovernanceError, match="BACKUP_UNAVAILABLE"):
+        backup_registry(registry, bundle, "data-admin")
+
+    assert not bundle.exists()
+    with sqlite3.connect(registry.database_path) as connection:
+        events = connection.execute(
+            "SELECT event_type, result FROM audit_events ORDER BY sequence"
+        ).fetchall()
+    assert ("BACKUP_FAILED", "FAILED") in events
+    assert ("BACKUP_CREATED", "APPLIED") not in events

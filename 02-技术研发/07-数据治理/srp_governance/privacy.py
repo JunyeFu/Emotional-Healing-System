@@ -27,7 +27,7 @@ _EMAIL = re.compile(
     r"[A-Za-z0-9.-]+\.[A-Za-z]{2,63}(?![A-Za-z0-9.-])"
 )
 _PHONE_CANDIDATE = re.compile(
-    r"(?<!\d)(?:\+|00)?[0-9][0-9 ()-]{6,}[0-9](?!\d)"
+    r"(?<!\d)(?:\+|00)?[0-9][0-9\s().-]{6,}[0-9](?!\d)"
 )
 
 
@@ -39,8 +39,9 @@ def _contact_like_value(value: str) -> bool:
     if _EMAIL.search(value):
         return True
     for candidate in _PHONE_CANDIDATE.finditer(value):
+        compact = re.sub(r"[\s().-]", "", candidate.group())
         try:
-            normalize_phone(candidate.group())
+            normalize_phone(compact)
         except GovernanceError:
             continue
         return True

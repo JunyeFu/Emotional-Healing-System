@@ -53,6 +53,31 @@ def test_all_sequences_and_cue_modes_finish_once_each(
     assert len(set(summary.completed_modules)) == 4
 
 
+def test_late_end_ack_cannot_reverse_aborted_terminal_state(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory(runtime_mode="formal_stage_1")
+    core = SessionCore(dependencies=formal_dependencies())
+    prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+    core.confirm_delivery(ack_for(prepared.control_events[0], now_ns=0), 0)
+    core.apply_operator_request(OperatorRequest("REQ-START", "start"), 0)
+    now = 0
+    final = None
+    for duration_ns in (25_000_000_000, 150_000_000_000, 25_000_000_000) * 4:
+        now += duration_ns
+        final = core.advance(now)
+    end = final.control_events[-1]
+    core.transport_failure("CONTROL_ACK_TIMEOUT", now + 1)
+
+    late = core.confirm_delivery(ack_for(end, now_ns=now + 2), now + 2)
+
+    assert late.snapshot.status is SessionStatus.ABORTED
+    assert late.audit_records[-1].reason_code == "SESSION_TERMINAL"
+    assert "session_completed" not in {
+        event.event_type for event in core.session_event_log
+    }
+
+
 def test_duplicate_request_and_repeated_tick_do_not_advance(
     manifest_factory, assignment_factory
 ) -> None:

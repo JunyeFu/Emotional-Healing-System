@@ -1,6 +1,976 @@
 {
   "blockers": [
     {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/camera_render.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/camera_render.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183409.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183409.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183551.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183551.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183731.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183731.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183812.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183812.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-185428.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-185428.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190016.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190016.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190107.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190107.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190218.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190218.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190522.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190522.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190713.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190713.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190757.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190757.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190835.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190835.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190918.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190918.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190942.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190942.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191249.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191249.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191439.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191439.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191517.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191517.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191607.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191607.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192119.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192119.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192129.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192129.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192154.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192154.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192354.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192354.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192448.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192448.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192554.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192554.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192817.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192817.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192956.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192956.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193035.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193035.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193116.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193116.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193205.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193205.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193249.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193249.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-194934.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-194934.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-195020.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-195020.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200022.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200022.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200253.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200253.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200536.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200536.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200701.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200701.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200805.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200805.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200922.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200922.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201210.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201210.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201302.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201302.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201815.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201815.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202130.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202130.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202241.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202241.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202439.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202439.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202528.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202528.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202606.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202606.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202641.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202641.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202703.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202703.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-221746.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-221746.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222350.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222350.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222409.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222409.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222614.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222614.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222806.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222806.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222815.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222815.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-223938.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-223938.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-223945.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-223945.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-224151.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-224151.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-224618.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-224618.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-225040.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-225040.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230002.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230002.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230738.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230738.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230820.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230820.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231410.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231410.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231449.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231449.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231654.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231654.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231715.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231715.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-232818.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-232818.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233707.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233707.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233724.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233724.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233950.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233950.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-235136.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-235136.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-235152.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-235152.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103139.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103139.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103451.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103451.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103907.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103907.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103921.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103921.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-105831.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-105831.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-110550.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-110550.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-111025.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-111025.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112337.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112337.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112414.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112414.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112649.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112649.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112758.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112758.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112908.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112908.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120515.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120515.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120620.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120620.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120645.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120645.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140504.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140504.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140732.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140732.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140839.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140839.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-141036.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-141036.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-112649.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-112649.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-114042.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-114042.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-115248.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-115248.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-115259.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-115259.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-123944.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-123944.png.meta"
+    },
+    {
       "code": "LICENSE_REPLACE",
       "replacement_plan_valid": true,
       "subject": "local-sprites-unresolved"

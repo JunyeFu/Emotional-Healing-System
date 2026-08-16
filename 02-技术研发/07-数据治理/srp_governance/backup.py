@@ -8,6 +8,7 @@ import hmac
 import json
 import os
 from pathlib import Path
+import shutil
 import sqlite3
 import tempfile
 from typing import Callable
@@ -85,44 +86,59 @@ def backup_registry(
     if bundle_directory.exists():
         raise GovernanceError("BACKUP_TARGET_EXISTS")
     key = _validate_key(registry.key_provider)
-    registry.record_operation(
-        event_type="BACKUP_CREATED",
-        actor_id=actor_id,
-        object_type="REGISTRY",
-        object_id="DEDUP_REGISTRY",
-        result="APPLIED",
-        reason_code="ONLINE_BACKUP",
-    )
     bundle_directory.parent.mkdir(parents=True, exist_ok=True)
-
-    with tempfile.TemporaryDirectory(
-        prefix=".g02-backup-", dir=bundle_directory.parent
-    ) as temporary:
-        temporary_path = Path(temporary)
-        database_path = temporary_path / BACKUP_DATABASE_NAME
-        _online_copy(registry.database_path, database_path)
-        backup_snapshot = DedupRegistry(
-            database_path=database_path,
-            key_provider=lambda: key,
-            allowed_actors={actor_id},
+    try:
+        with tempfile.TemporaryDirectory(
+            prefix=".g02-backup-", dir=bundle_directory.parent
+        ) as temporary:
+            temporary_path = Path(temporary)
+            database_path = temporary_path / BACKUP_DATABASE_NAME
+            _online_copy(registry.database_path, database_path)
+            backup_snapshot = DedupRegistry(
+                database_path=database_path,
+                key_provider=lambda: key,
+                allowed_actors={actor_id},
+            )
+            manifest = {
+                "audit_tail_hash": backup_snapshot.audit_tail_hash(),
+                "created_at_utc": datetime.now(timezone.utc)
+                .isoformat(timespec="microseconds")
+                .replace("+00:00", "Z"),
+                "database_file": BACKUP_DATABASE_NAME,
+                "database_sha256": _sha256_file(database_path),
+                "database_size_bytes": database_path.stat().st_size,
+                "schema_version": SCHEMA_VERSION,
+            }
+            manifest["manifest_hmac_sha256"] = _manifest_hmac(manifest, key)
+            (temporary_path / BACKUP_MANIFEST_NAME).write_text(
+                json.dumps(manifest, ensure_ascii=True, sort_keys=True, indent=2) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            os.replace(temporary_path, bundle_directory)
+        registry.record_operation(
+            event_type="BACKUP_CREATED",
+            actor_id=actor_id,
+            object_type="REGISTRY",
+            object_id="DEDUP_REGISTRY",
+            result="APPLIED",
+            reason_code="ONLINE_BACKUP",
         )
-        manifest = {
-            "audit_tail_hash": backup_snapshot.audit_tail_hash(),
-            "created_at_utc": datetime.now(timezone.utc)
-            .isoformat(timespec="microseconds")
-            .replace("+00:00", "Z"),
-            "database_file": BACKUP_DATABASE_NAME,
-            "database_sha256": _sha256_file(database_path),
-            "database_size_bytes": database_path.stat().st_size,
-            "schema_version": SCHEMA_VERSION,
-        }
-        manifest["manifest_hmac_sha256"] = _manifest_hmac(manifest, key)
-        (temporary_path / BACKUP_MANIFEST_NAME).write_text(
-            json.dumps(manifest, ensure_ascii=True, sort_keys=True, indent=2) + "\n",
-            encoding="utf-8",
-            newline="\n",
-        )
-        os.replace(temporary_path, bundle_directory)
+    except Exception:
+        if bundle_directory.exists():
+            shutil.rmtree(bundle_directory)
+        try:
+            registry.record_operation(
+                event_type="BACKUP_FAILED",
+                actor_id=actor_id,
+                object_type="REGISTRY",
+                object_id="DEDUP_REGISTRY",
+                result="FAILED",
+                reason_code="BACKUP_UNAVAILABLE",
+            )
+        except Exception:
+            pass
+        raise
 
     return BackupResult(
         bundle_directory / BACKUP_DATABASE_NAME,

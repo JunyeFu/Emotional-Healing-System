@@ -173,6 +173,23 @@ class DedupRegistry:
         ).fetchone()
         if row is None or row["value"] != str(SCHEMA_VERSION):
             raise GovernanceError("SCHEMA_VERSION_UNSUPPORTED")
+        audit_count = connection.execute("SELECT COUNT(*) FROM audit_events").fetchone()[0]
+        reservation_count = connection.execute("SELECT COUNT(*) FROM reservations").fetchone()[0]
+        anchor_sequence = connection.execute(
+            "SELECT value FROM schema_metadata WHERE key = 'audit_tail_sequence'"
+        ).fetchone()
+        anchor_hash = connection.execute(
+            "SELECT value FROM schema_metadata WHERE key = 'audit_tail_hash'"
+        ).fetchone()
+        if anchor_sequence is None or anchor_hash is None:
+            if audit_count or reservation_count:
+                raise GovernanceError("AUDIT_ANCHOR_MISSING")
+            connection.execute(
+                "INSERT INTO schema_metadata(key, value) VALUES ('audit_tail_sequence', '0')"
+            )
+            connection.execute(
+                "INSERT INTO schema_metadata(key, value) VALUES ('audit_tail_hash', 'GENESIS')"
+            )
 
     @staticmethod
     def _append_audit(
@@ -188,6 +205,20 @@ class DedupRegistry:
         previous = connection.execute(
             "SELECT current_hash FROM audit_events ORDER BY sequence DESC LIMIT 1"
         ).fetchone()
+        anchor_rows = dict(
+            connection.execute(
+                "SELECT key, value FROM schema_metadata WHERE key IN ('audit_tail_sequence', 'audit_tail_hash')"
+            ).fetchall()
+        )
+        expected_sequence = connection.execute(
+            "SELECT COALESCE(MAX(sequence), 0) FROM audit_events"
+        ).fetchone()[0]
+        expected_hash = previous["current_hash"] if previous else "GENESIS"
+        if (
+            anchor_rows.get("audit_tail_sequence") != str(expected_sequence)
+            or anchor_rows.get("audit_tail_hash") != expected_hash
+        ):
+            raise GovernanceError("AUDIT_CHAIN_INVALID")
         event_id = _opaque_id("AUD")
         record = {
             "event_id": event_id,
@@ -209,6 +240,15 @@ class DedupRegistry:
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (*record.values(), current_hash),
+        )
+        sequence = connection.execute("SELECT last_insert_rowid()").fetchone()[0]
+        connection.execute(
+            "UPDATE schema_metadata SET value = ? WHERE key = 'audit_tail_sequence'",
+            (str(sequence),),
+        )
+        connection.execute(
+            "UPDATE schema_metadata SET value = ? WHERE key = 'audit_tail_hash'",
+            (current_hash,),
         )
         return event_id
 
@@ -379,8 +419,13 @@ class DedupRegistry:
         with closing(sqlite3.connect(self.database_path)) as connection:
             connection.row_factory = sqlite3.Row
             rows = connection.execute("SELECT * FROM audit_events ORDER BY sequence").fetchall()
+            anchors = dict(
+                connection.execute(
+                    "SELECT key, value FROM schema_metadata WHERE key IN ('audit_tail_sequence', 'audit_tail_hash')"
+                ).fetchall()
+            )
             previous_hash = "GENESIS"
-            for row in rows:
+            for expected_sequence, row in enumerate(rows, start=1):
                 record = {
                     "event_id": row["event_id"],
                     "event_type": row["event_type"],
@@ -392,9 +437,43 @@ class DedupRegistry:
                     "reason_code": row["reason_code"],
                     "previous_hash": row["previous_hash"],
                 }
-                if row["previous_hash"] != previous_hash or row["current_hash"] != _audit_hash(record):
+                if (
+                    row["sequence"] != expected_sequence
+                    or row["previous_hash"] != previous_hash
+                    or row["current_hash"] != _audit_hash(record)
+                ):
                     return AuditReport(False, "AUDIT_CHAIN_INVALID", len(rows))
                 previous_hash = row["current_hash"]
+            if (
+                anchors.get("audit_tail_sequence") != str(len(rows))
+                or anchors.get("audit_tail_hash") != previous_hash
+            ):
+                return AuditReport(False, "AUDIT_CHAIN_INVALID", len(rows))
+            reservation_rows = connection.execute(
+                "SELECT reservation_id, status FROM reservations"
+            ).fetchall()
+            required_events = {
+                ReservationStatus.RESERVED.value: (),
+                ReservationStatus.RELEASED_BEFORE_EXPOSURE.value: ("RELEASE_BEFORE_EXPOSURE",),
+                ReservationStatus.EXPOSED.value: ("MARK_EXPOSED",),
+                ReservationStatus.COMPLETED.value: ("MARK_EXPOSED", "MARK_COMPLETED"),
+                ReservationStatus.WITHDRAWN_AFTER_EXPOSURE.value: (
+                    "MARK_EXPOSED",
+                    "MARK_WITHDRAWN_AFTER_EXPOSURE",
+                ),
+            }
+            for reservation in reservation_rows:
+                event_types = {
+                    row[0]
+                    for row in connection.execute(
+                        "SELECT event_type FROM audit_events WHERE object_id = ? AND result IN ('ALLOWED', 'APPLIED')",
+                        (reservation["reservation_id"],),
+                    )
+                }
+                if "CHECK_AND_RESERVE" not in event_types or not set(
+                    required_events[reservation["status"]]
+                ) <= event_types:
+                    return AuditReport(False, "AUDIT_STATE_MISMATCH", len(rows))
             token_count = connection.execute(
                 "SELECT COUNT(DISTINCT subject_token) FROM reservations"
             ).fetchone()[0]

@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import re
+import sys
 from typing import Any, BinaryIO, Iterator, Mapping
 
 from .canonical import canonical_bytes, domain_hash, file_sha256
@@ -43,6 +44,22 @@ _ENVELOPE_KEYS = {
     "manifest_hash",
     "protocol_config_hash",
     "session_key",
+    "store_config_hash",
+}
+_SEAL_KEYS = {
+    "acknowledged_unclean_segments",
+    "archive_hash",
+    "created_monotonic_ns",
+    "evidence_scope",
+    "files",
+    "final_state_hash",
+    "l0_count",
+    "l0_tail_hash",
+    "l1_count",
+    "l1_tail_hash",
+    "manifest_hash",
+    "reason_code",
+    "seal_hash",
     "store_config_hash",
 }
 
@@ -97,6 +114,13 @@ def _envelope_is_valid(envelope: Mapping[str, Any]) -> bool:
         and isinstance(envelope.get("session_key"), str)
         and _SESSION_KEY_VALUE.fullmatch(str(envelope.get("session_key"))) is not None
     )
+
+
+def _safe_archive_relative(value: object) -> bool:
+    if not isinstance(value, str) or not value:
+        return False
+    path = Path(value)
+    return not path.is_absolute() and ".." not in path.parts and path.as_posix() == value
 
 
 class _WriterLock:
@@ -489,7 +513,11 @@ class SessionArchive:
             states = reader.stream_states(mode="recover")
             streams = {}
             for name in ("l0", "l1"):
-                next_segment = len(list((path / name).glob("segment-*.jsonl"))) + 1
+                indices = [
+                    int(item.stem.removeprefix("segment-"))
+                    for item in (path / name).glob("segment-*.jsonl")
+                ]
+                next_segment = max(indices, default=0) + 1
                 stream = cls._create_stream(path, name, next_segment)
                 stream.seq = states[name]["seq"]
                 stream.tail_hash = states[name]["tail_hash"]
@@ -516,23 +544,33 @@ class SessionArchive:
             recovered = True
             return result
         finally:
-            if "archive" in locals():
+            original_error = sys.exc_info()[1]
+            if recovered and "archive" in locals():
                 archive.close()
             else:
-                lock.release()
-            if not recovered:
-                current_files = {
-                    item.relative_to(path).as_posix(): item
-                    for item in path.rglob("*")
-                    if item.is_file() and item.name != "writer.lock"
-                }
-                for relative, item in current_files.items():
-                    if relative not in baseline_files:
-                        item.unlink(missing_ok=True)
-                for relative, content in baseline_files.items():
-                    target = path / relative
-                    if not target.is_file() or target.read_bytes() != content:
-                        target.write_bytes(content)
+                try:
+                    if "archive" in locals():
+                        for stream in archive._streams.values():
+                            if not stream.handle.closed:
+                                stream.handle.close()
+                    lock.release()
+                finally:
+                    try:
+                        current_files = {
+                            item.relative_to(path).as_posix(): item
+                            for item in path.rglob("*")
+                            if item.is_file() and item.name != "writer.lock"
+                        }
+                        for relative, item in current_files.items():
+                            if relative not in baseline_files:
+                                item.unlink(missing_ok=True)
+                        for relative, content in baseline_files.items():
+                            target = path / relative
+                            if not target.is_file() or target.read_bytes() != content:
+                                target.write_bytes(content)
+                    except OSError as rollback_error:
+                        if original_error is None:
+                            raise StoreError("RECOVERY_ROLLBACK_FAILED") from rollback_error
 
     def _maybe_checkpoint(self, now_ns: int) -> None:
         if now_ns - self._last_checkpoint_ns >= self.store_config.checkpoint_interval_ms * 1_000_000:
@@ -635,6 +673,8 @@ class ReplayReader:
             envelope = json.loads((path / "archive.json").read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as error:
             raise StoreError("ARCHIVE_UNAVAILABLE") from error
+        if not isinstance(envelope, dict):
+            raise StoreError("INTEGRITY_MISMATCH")
         if envelope.get("session_key") != session_key(session_id):
             raise StoreError("ARCHIVE_SESSION_MISMATCH")
         return cls(path, envelope)
@@ -644,9 +684,10 @@ class ReplayReader:
         if not path.exists():
             return None
         try:
-            return json.loads(path.read_text(encoding="utf-8"))
+            value = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             return {"invalid": True}
+        return value if isinstance(value, dict) else {"invalid": True}
 
     def _scan_stream(
         self,
@@ -665,6 +706,9 @@ class ReplayReader:
         segments = sorted((self.path / name).glob("segment-*.jsonl"))
         for segment_position, segment in enumerate(segments):
             relative = segment.relative_to(self.path).as_posix()
+            expected_filename = f"segment-{segment_position + 1:06d}.jsonl"
+            if segment.name != expected_filename:
+                reasons.append("INTEGRITY_MISMATCH")
             try:
                 expected_segment_index = int(segment.stem.removeprefix("segment-"))
             except ValueError:
@@ -784,7 +828,22 @@ class ReplayReader:
         ):
             reasons.append("INTEGRITY_MISMATCH")
         if seal is not None:
-            if seal.get("invalid"):
+            seal_files = seal.get("files")
+            seal_structure_valid = (
+                set(seal) == _SEAL_KEYS
+                and isinstance(seal_files, list)
+                and all(
+                    isinstance(item, dict)
+                    and set(item) == {"path", "sha256", "size_bytes"}
+                    and _safe_archive_relative(item.get("path"))
+                    and _HASH_VALUE.fullmatch(str(item.get("sha256"))) is not None
+                    and isinstance(item.get("size_bytes"), int)
+                    and not isinstance(item.get("size_bytes"), bool)
+                    and item["size_bytes"] >= 0
+                    for item in seal_files
+                )
+            )
+            if seal.get("invalid") or not seal_structure_valid:
                 reasons.append("INTEGRITY_MISMATCH")
             else:
                 seal_hash = seal.get("seal_hash")
@@ -896,6 +955,8 @@ class ReplayReader:
             if sealed and anchored_seq != len(streams[name]):
                 reasons.append("INTEGRITY_MISMATCH")
         checkpoints = sorted((self.path / "checkpoints").glob("checkpoint-*.json"))
+        prior_checkpoint_time = -1
+        prior_checkpoint_sequences = {"l0": 0, "l1": 0}
         for checkpoint_index, checkpoint in enumerate(checkpoints, start=1):
             expected_id = f"checkpoint-{checkpoint_index:06d}"
             if checkpoint.name != f"{expected_id}.json":
@@ -910,11 +971,26 @@ class ReplayReader:
                 reasons.append("INTEGRITY_MISMATCH")
             if checkpoint_hash != domain_hash(_CHECKPOINT_DOMAIN, value):
                 reasons.append("INTEGRITY_MISMATCH")
+            checkpoint_time = value.get("created_monotonic_ns")
+            if (
+                isinstance(checkpoint_time, bool)
+                or not isinstance(checkpoint_time, int)
+                or checkpoint_time < prior_checkpoint_time
+            ):
+                reasons.append("INTEGRITY_MISMATCH")
+            else:
+                prior_checkpoint_time = checkpoint_time
             for stream_name in ("l0", "l1"):
                 sequence = value.get(f"{stream_name}_seq")
-                if not isinstance(sequence, int) or sequence < 0 or sequence > len(streams[stream_name]):
+                if (
+                    isinstance(sequence, bool)
+                    or not isinstance(sequence, int)
+                    or sequence < prior_checkpoint_sequences[stream_name]
+                    or sequence > len(streams[stream_name])
+                ):
                     reasons.append("INTEGRITY_MISMATCH")
                     continue
+                prior_checkpoint_sequences[stream_name] = sequence
                 expected_tail = (
                     _ZERO_HASH
                     if sequence == 0

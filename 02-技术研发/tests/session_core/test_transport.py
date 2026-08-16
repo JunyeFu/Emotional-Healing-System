@@ -326,6 +326,105 @@ def test_late_duplicate_ack_does_not_fail_current_control(
     asyncio.run(scenario())
 
 
+def test_td_parse_error_does_not_fail_unity_pending_ack(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory()
+        core = SessionCore()
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        server = ControlServer(core, config=fast_transport_config(), port=0)
+        await server.start()
+        unity_reader, unity_writer = await asyncio.open_connection(
+            "127.0.0.1", server.bound_port
+        )
+        await _write(unity_writer, _hello())
+        await _read(unity_reader)
+        td_reader, td_writer = await asyncio.open_connection(
+            "127.0.0.1", server.bound_port
+        )
+        await _write(td_writer, _hello(role="td", client_instance_id="td-test-1"))
+        await _read(td_reader)
+
+        publish = asyncio.create_task(server.publish_control(prepared.control_events[0]))
+        event = await _read(unity_reader)
+        td_writer.write(b"{bad-json\n")
+        await td_writer.drain()
+        assert (await _read(td_reader))["error_code"] == "TRANSPORT_FRAME_INVALID"
+        assert not publish.done()
+        await _write(unity_writer, ack_for(event, now_ns=1))
+        assert (await publish)["result"] == "applied"
+
+        unity_writer.close()
+        td_writer.close()
+        await asyncio.gather(
+            unity_writer.wait_closed(), td_writer.wait_closed(), return_exceptions=True
+        )
+        await server.close()
+
+    asyncio.run(scenario())
+
+
+def test_old_connection_generation_cannot_submit_render_receipt(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory()
+        core = SessionCore()
+        core.prepare(manifest, assignment_factory(manifest), 0)
+        segment = core.apply_operator_request(
+            OperatorRequest("REQ-START", "start"), 0
+        ).control_events[2]
+        core.confirm_delivery(ack_for(segment, now_ns=1), 1)
+        server = ControlServer(core, config=fast_transport_config(), port=0)
+        server._unity_generation = 2
+        receipt = {
+            "schema_version": "2.1",
+            "message_type": "render_receipt",
+            "receipt_id": "RR-OLD-GENERATION",
+            "session_id": manifest["session_id"],
+            "event_id": segment["event_id"],
+            "frame_seq": 1,
+            "unity_frame": 1,
+            "rendered_monotonic_ns": 2,
+            "module_id": segment["payload"]["module_id"],
+            "segment": segment["payload"]["segment"],
+            "result": "rendered",
+            "error_code": None,
+        }
+
+        with pytest.raises(TransportError) as error:
+            await server._handle_unity_message(receipt, connection_generation=1)
+        assert error.value.code == "CONTROL_ACK_CONNECTION_MISMATCH"
+        assert "RR-OLD-GENERATION" not in {item.event_id for item in core.audit_log}
+
+    asyncio.run(scenario())
+
+
+def test_immediate_ack_during_drain_is_accepted(
+    manifest_factory, assignment_factory, monkeypatch
+) -> None:
+    async def scenario():
+        manifest = manifest_factory()
+        core = SessionCore()
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        server = ControlServer(core, config=fast_transport_config(), port=0)
+        server._unity_writer = object()
+        server._unity_generation = 1
+        server._unity_connected.set()
+
+        async def immediate_ack(_writer, payload):
+            await server._handle_unity_message(
+                ack_for(payload, now_ns=1), connection_generation=1
+            )
+
+        monkeypatch.setattr(server, "_write_json", immediate_ack)
+        ack = await server.publish_control(prepared.control_events[0])
+        assert ack["result"] == "applied"
+
+    asyncio.run(scenario())
+
+
 def test_tcp_port_conflict_fails_closed() -> None:
     async def scenario():
         blocker = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -505,5 +604,48 @@ def test_formal_end_delivery_failure_overrides_unconfirmed_completion(
             event.event_type for event in core.session_event_log
         }
         assert server.disconnected is True
+
+    asyncio.run(scenario())
+
+
+def test_runtime_host_returns_latest_snapshot_and_ack_events(
+    manifest_factory, assignment_factory
+) -> None:
+    class AcknowledgingControlServer:
+        def __init__(self, core):
+            self.core = core
+            self.updates = {}
+            self.now_ns = lambda: 800_000_000_000
+
+        async def publish_control(self, event):
+            ack = ack_for(event, now_ns=self.now_ns())
+            self.updates[event["event_id"]] = self.core.confirm_delivery(
+                ack, self.now_ns()
+            )
+            return ack
+
+        def pop_delivery_update(self, event_id):
+            return self.updates.pop(event_id, None)
+
+    async def scenario():
+        manifest = manifest_factory()
+        config = fast_transport_config(max_scheduler_lag_ms=1_000_000)
+        core = SessionCore(config=config)
+        core.prepare(manifest, assignment_factory(manifest), 0)
+        core.apply_operator_request(OperatorRequest("REQ-START", "start"), 0)
+        now = 0
+        durations = (25_000_000_000, 150_000_000_000, 25_000_000_000) * 4
+        for duration_ns in durations[:-1]:
+            now += duration_ns
+            core.advance(now)
+        host = SessionRuntimeHost(core, AcknowledgingControlServer(core))
+
+        update = await host.advance(800_000_000_000)
+
+        assert update.snapshot.status.value == "COMPLETED"
+        assert {event.event_type for event in update.session_events} >= {
+            "control_acknowledged",
+            "session_completed",
+        }
 
     asyncio.run(scenario())

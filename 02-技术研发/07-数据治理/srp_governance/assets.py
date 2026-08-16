@@ -127,8 +127,17 @@ def _tracked_release_files(repo_root: Path, unity_relative: str) -> list[str]:
     tracked = _git_paths(repo_root, "ls-files", "-z", "--", unity_relative)
     release_files: list[str] = []
     assets_prefix = f"{unity_relative}/Assets/"
+    packages_prefix = f"{unity_relative}/Packages/"
     for path in tracked:
-        if path.startswith(assets_prefix) and Path(path).suffix.lower() != ".meta":
+        is_asset = path.startswith(assets_prefix)
+        is_embedded_package = (
+            path.startswith(packages_prefix)
+            and path not in {
+                f"{packages_prefix}manifest.json",
+                f"{packages_prefix}packages-lock.json",
+            }
+        )
+        if (is_asset or is_embedded_package) and Path(path).suffix.lower() != ".meta":
             release_files.append(path)
     return sorted(release_files)
 
@@ -271,6 +280,18 @@ def scan_unity_assets(
         unity_relative,
     )
     blockers.extend(AssetBlocker("UNTRACKED_FILE", path) for path in sorted(untracked))
+    ignored = _git_paths(
+        repo_root,
+        "ls-files",
+        "-z",
+        "--others",
+        "--ignored",
+        "--exclude-standard",
+        "--",
+        f"{unity_relative}/Assets",
+        f"{unity_relative}/Packages",
+    )
+    blockers.extend(AssetBlocker("IGNORED_RELEASE_FILE", path) for path in sorted(ignored))
 
     baseline_items = {
         item["git_path"]: item

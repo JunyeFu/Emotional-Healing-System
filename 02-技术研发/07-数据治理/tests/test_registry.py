@@ -200,3 +200,19 @@ def test_tampering_with_an_audit_event_breaks_chain_verification(registry) -> No
     report = registry.verify_audit_chain()
     assert report.valid is False
     assert report.reason_code == "AUDIT_CHAIN_INVALID"
+
+
+@pytest.mark.parametrize("delete_sql", [
+    "DELETE FROM audit_events WHERE sequence = (SELECT MAX(sequence) FROM audit_events)",
+    "DELETE FROM audit_events",
+])
+def test_deleting_audit_tail_is_detected_by_anchor(registry, delete_sql) -> None:
+    check_and_reserve(SYNTHETIC_PHONE, Stage.LEVEL_B, "data-admin", registry=registry)
+    assert registry.verify_audit_chain().valid is True
+    with sqlite3.connect(registry.database_path) as connection:
+        connection.execute(delete_sql)
+        connection.commit()
+
+    report = registry.verify_audit_chain()
+    assert report.valid is False
+    assert report.reason_code == "AUDIT_CHAIN_INVALID"

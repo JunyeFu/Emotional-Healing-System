@@ -146,6 +146,32 @@ def test_untracked_asset_and_registered_hash_change_block_release(tmp_path) -> N
     assert "HASH_CHANGED" in {item.code for item in changed.blockers}
 
 
+def test_ignored_asset_blocks_release(tmp_path) -> None:
+    repo, unity, ledger, baseline = _repository(tmp_path)
+    (repo / ".gitignore").write_text("UnityProject/Assets/ignored.png\n", encoding="utf-8")
+    (unity / "Assets" / "ignored.png").write_bytes(b"ignored")
+
+    report = scan_unity_assets(repo, unity, ledger, baseline)
+
+    assert report.release_allowed is False
+    assert "IGNORED_RELEASE_FILE" in {item.code for item in report.blockers}
+
+
+def test_tracked_embedded_package_content_is_in_inventory(tmp_path) -> None:
+    repo, unity, ledger, _baseline = _repository(tmp_path)
+    embedded = unity / "Packages" / "com.local.embedded" / "Runtime.dll"
+    embedded.parent.mkdir(parents=True)
+    embedded.write_bytes(b"embedded")
+    _git(repo, "add", ".")
+
+    inventory = build_asset_inventory(repo, unity, ledger)
+    item = next(
+        item for item in inventory["items"] if item["git_path"].endswith("Runtime.dll")
+    )
+    assert item["asset_type"] == "MANAGED_OR_NATIVE_PLUGIN"
+    assert item["license_group_id"] == "UNREGISTERED"
+
+
 def test_replace_status_with_complete_plan_remains_blocking(tmp_path) -> None:
     repo, unity, ledger, baseline = _repository(tmp_path, sprite_status="REPLACE")
 

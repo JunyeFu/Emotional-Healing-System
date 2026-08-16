@@ -144,11 +144,15 @@ class ControlServer:
                 writer = self._unity_writer
                 if writer is None:
                     continue
+                generation = self._unity_generation
                 try:
-                    self._pending_ack_generations[event_id] = self._unity_generation
-                    await self._write_json(writer, validated)
+                    self._pending_ack_generations[event_id] = generation
                     self._sent_event_ids.add(event_id)
+                    await self._write_json(writer, validated)
                 except (ConnectionError, OSError):
+                    self._sent_event_ids.discard(event_id)
+                    if self._pending_ack_generations.get(event_id) == generation:
+                        self._pending_ack_generations.pop(event_id, None)
                     self._unity_connected.clear()
                     continue
                 try:
@@ -156,7 +160,6 @@ class ControlServer:
                 except TimeoutError:
                     continue
                 if ack["result"] in {"applied", "duplicate_ignored"}:
-                    self._delivery_updates.pop(event_id, None)
                     return ack
                 raise TransportError(
                     "CONTROL_ACK_REJECTED", str(ack.get("error_code") or "UNKNOWN")
@@ -238,7 +241,12 @@ class ControlServer:
                     if isinstance(error, SessionCoreError)
                     else "TRANSPORT_FRAME_INVALID"
                 )
-                self._fail_pending_acks(code)
+                if (
+                    handshake is not None
+                    and handshake.role == "unity"
+                    and connection_generation == self._unity_generation
+                ):
+                    self._fail_pending_acks(code, connection_generation)
                 await self._write_json(writer, self._transport_error(code))
             except (ConnectionError, OSError):
                 pass
@@ -263,6 +271,13 @@ class ControlServer:
         message_type = message.get("message_type")
         if message_type not in {"ack", "render_receipt"}:
             raise TransportError("MESSAGE_NOT_ALLOWED_FOR_ROLE", str(message_type))
+        actual_generation = (
+            self._unity_generation
+            if connection_generation is None
+            else connection_generation
+        )
+        if actual_generation != self._unity_generation:
+            raise TransportError("CONTROL_ACK_CONNECTION_MISMATCH")
         if message_type == "ack":
             event_id = str(message.get("event_id", ""))
             if event_id in self._delivered_event_ids:
@@ -276,11 +291,6 @@ class ControlServer:
             ):
                 raise TransportError("CONTROL_ACK_NOT_PENDING")
             expected_generation = self._pending_ack_generations.get(event_id)
-            actual_generation = (
-                self._unity_generation
-                if connection_generation is None
-                else connection_generation
-            )
             if expected_generation != actual_generation:
                 raise TransportError("CONTROL_ACK_CONNECTION_MISMATCH")
         update = self.core.confirm_delivery(message, self.now_ns())
@@ -297,9 +307,12 @@ class ControlServer:
     def pop_delivery_update(self, event_id: str) -> CoreUpdate | None:
         return self._delivery_updates.pop(event_id, None)
 
-    def _fail_pending_acks(self, code: str) -> None:
-        for future in self._pending_acks.values():
-            if not future.done():
+    def _fail_pending_acks(self, code: str, generation: int) -> None:
+        for event_id, future in self._pending_acks.items():
+            if (
+                self._pending_ack_generations.get(event_id) == generation
+                and not future.done()
+            ):
                 future.set_exception(TransportError(code))
 
     def _validate_handshake(self, payload: Mapping[str, Any]) -> Handshake:
@@ -491,11 +504,45 @@ class SessionRuntimeHost:
 
     async def _deliver(self, update: CoreUpdate, now_ns: int) -> CoreUpdate:
         current_event_id: str | None = None
+        delivery_updates: list[CoreUpdate] = []
         try:
             for event in update.control_events:
                 current_event_id = str(event["event_id"])
                 await self.control_server.publish_control(event)
-            return update
+                delivered = self.control_server.pop_delivery_update(current_event_id)
+                if delivered is not None:
+                    delivery_updates.append(delivered)
+            if not delivery_updates:
+                return update
+            latest = delivery_updates[-1]
+            return CoreUpdate(
+                snapshot=latest.snapshot,
+                control_events=update.control_events,
+                session_events=update.session_events
+                + tuple(
+                    item
+                    for delivered in delivery_updates
+                    for item in delivered.session_events
+                ),
+                policy_decisions=update.policy_decisions
+                + tuple(
+                    item
+                    for delivered in delivery_updates
+                    for item in delivered.policy_decisions
+                ),
+                audit_records=update.audit_records
+                + tuple(
+                    item
+                    for delivered in delivery_updates
+                    for item in delivered.audit_records
+                ),
+                gate_receipts=update.gate_receipts
+                + tuple(
+                    item
+                    for delivered in delivery_updates
+                    for item in delivered.gate_receipts
+                ),
+            )
         except TransportError as error:
             failure = (
                 None

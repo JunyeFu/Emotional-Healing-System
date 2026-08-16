@@ -519,6 +519,14 @@ class SessionCore:
             return self._update(audit_records=(audit,))
 
         result = str(ack["result"])
+        control = self._control_by_id[event_id]
+        if (
+            result in {"applied", "duplicate_ignored"}
+            and control["event_type"] == "end"
+            and self._status is not SessionStatus.RUNNING
+        ):
+            audit = self._audit(event_id, "rejected", "SESSION_TERMINAL", now_ns)
+            return self._update(audit_records=(audit,))
         if result in {"applied", "duplicate_ignored"}:
             self._acked_event_ids.add(event_id)
             audit = self._audit(
@@ -536,7 +544,6 @@ class SessionCore:
                 payload={"control_event_id": event_id, "ack_result": result},
             )
             events = [event]
-            control = self._control_by_id[event_id]
             if control["event_type"] == "end":
                 before = self._status
                 self._status = SessionStatus.COMPLETED

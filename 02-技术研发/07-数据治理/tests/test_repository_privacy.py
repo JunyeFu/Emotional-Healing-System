@@ -48,3 +48,21 @@ def test_tracked_governance_database_is_rejected(tmp_path: Path) -> None:
     assert violations == [
         {"code": "FORBIDDEN_TRACKED_FILE", "path": "private/dedup.sqlite"}
     ]
+
+
+def test_tracked_log_outside_evidence_roots_is_scanned(tmp_path: Path) -> None:
+    path = "work/session.log"
+    _write(tmp_path, path, "contact=+8613912345678\n")
+
+    violations = find_privacy_violations(tmp_path, [path])
+
+    assert {item["code"] for item in violations} == {"E164_VALUE", "PHONE_VALUE"}
+
+
+def test_unicode_separated_phone_in_log_is_detected(tmp_path: Path) -> None:
+    path = "work/session.log"
+    _write(tmp_path, path, "contact=+86\u00a0139\u00a01234\u00a05678\n")
+
+    violations = find_privacy_violations(tmp_path, [path])
+
+    assert {item["code"] for item in violations} == {"PHONE_VALUE"}

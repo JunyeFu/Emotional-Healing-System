@@ -133,6 +133,10 @@ def test_concurrent_provision_allows_only_one_key_write() -> None:
     assert len(backend.writes) == 1
 
 
+def test_windows_provision_mutex_uses_machine_namespace() -> None:
+    assert credentials_module._PROVISION_MUTEX_NAME.startswith("Global\\")
+
+
 def test_windows_backend_wipes_temporary_blob_when_write_fails(monkeypatch) -> None:
     class FailedAdvapi:
         @staticmethod

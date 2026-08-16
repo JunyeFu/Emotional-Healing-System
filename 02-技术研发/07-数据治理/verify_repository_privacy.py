@@ -44,6 +44,9 @@ MAINLAND_PHONE_PATTERN = re.compile(
     r"(?<![0-9A-Fa-f])(?:\+86|0086|86)?1[3-9][0-9]{9}(?![0-9A-Fa-f])"
 )
 E164_PATTERN = re.compile(r"(?<![0-9])\+[1-9][0-9]{7,14}(?![0-9])")
+SEPARATED_PHONE_PATTERN = re.compile(
+    r"(?<![0-9])(?:\+|00)?[0-9][0-9\s().-]{6,}[0-9](?![0-9])"
+)
 SECRET_PATTERN = re.compile(r"-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----")
 
 
@@ -67,6 +70,20 @@ def _under_artifact_root(path: PurePosixPath) -> bool:
 
 def _normalize_key(value: object) -> str:
     return re.sub(r"[^a-z0-9]", "", str(value).lower())
+
+
+def _is_separated_phone(value: str) -> bool:
+    if re.search(r"[\s().-]", value) is None:
+        return False
+    compact = re.sub(r"[\s().-]", "", value)
+    if compact.startswith("+"):
+        digits = compact[1:]
+        return 8 <= len(digits) <= 15 and digits.isdigit() and not digits.startswith("0")
+    for prefix in ("0086", "86"):
+        if compact.startswith(prefix):
+            compact = compact[len(prefix):]
+            break
+    return len(compact) == 11 and compact.startswith("1") and compact.isdigit()
 
 
 def _json_key_violations(value: object, path: str = "$") -> list[dict[str, str]]:
@@ -100,7 +117,9 @@ def find_privacy_violations(
         if suffix in DANGEROUS_SUFFIXES:
             violations.append({"code": "FORBIDDEN_TRACKED_FILE", "path": normalized})
 
-        if not _under_artifact_root(posix_path) or suffix not in TEXT_SUFFIXES:
+        if suffix not in TEXT_SUFFIXES or (
+            not _under_artifact_root(posix_path) and suffix != ".log"
+        ):
             continue
         full_path = repo_root / Path(*posix_path.parts)
         if not full_path.is_file():
@@ -115,6 +134,11 @@ def find_privacy_violations(
         for code, pattern in checks:
             if pattern.search(text):
                 violations.append({"code": code, "path": normalized})
+        if any(
+            _is_separated_phone(match.group())
+            for match in SEPARATED_PHONE_PATTERN.finditer(text)
+        ) and not MAINLAND_PHONE_PATTERN.search(text):
+            violations.append({"code": "PHONE_VALUE", "path": normalized})
 
         if suffix == ".json":
             try:

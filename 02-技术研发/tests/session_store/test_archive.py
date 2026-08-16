@@ -175,6 +175,16 @@ def test_self_consistent_archive_envelope_schema_mutation_is_rejected(
     assert "INTEGRITY_MISMATCH" in report.reason_codes
 
 
+def test_non_object_archive_envelope_maps_to_store_error(tmp_path, manifest_factory):
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.close()
+    (archive.path / "archive.json").write_text("[]\n", encoding="utf-8")
+
+    with pytest.raises(StoreError, match="INTEGRITY_MISMATCH"):
+        ReplayReader.open(tmp_path, manifest["session_id"])
+
+
 def test_recovery_rechecks_archive_after_acquiring_writer_lock(
     tmp_path, manifest_factory, monkeypatch
 ):
@@ -285,6 +295,36 @@ def test_recovery_failure_restores_all_files(tmp_path, manifest_factory):
     assert after == before
 
 
+def test_recovery_sync_failure_cannot_skip_baseline_rollback(
+    tmp_path, manifest_factory, monkeypatch
+):
+    import srp_session_store.archive as archive_module
+
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.append_l1("clock_sync", {"offset_ns": 1}, 1)
+    archive.close()
+    before = {
+        path.relative_to(archive.path).as_posix(): path.read_bytes()
+        for path in archive.path.rglob("*")
+        if path.is_file() and path.name != "writer.lock"
+    }
+
+    def fail_atomic(*_args, **_kwargs):
+        raise StoreError("STORAGE_SYNC_FAILED")
+
+    monkeypatch.setattr(archive_module, "_atomic_json", fail_atomic)
+    with pytest.raises(StoreError, match="STORAGE_SYNC_FAILED"):
+        SessionArchive.recover_interrupted(tmp_path, manifest["session_id"], now_ns=2)
+
+    after = {
+        path.relative_to(archive.path).as_posix(): path.read_bytes()
+        for path in archive.path.rglob("*")
+        if path.is_file() and path.name != "writer.lock"
+    }
+    assert after == before
+
+
 def test_recovery_missing_session_maps_to_store_error(tmp_path):
     with pytest.raises(StoreError, match="ARCHIVE_UNAVAILABLE"):
         SessionArchive.recover_interrupted(tmp_path, "S-MISSING", now_ns=1)
@@ -367,6 +407,27 @@ def test_segment_rollover_preserves_one_hash_chain(tmp_path, manifest_factory):
     assert ReplayReader.open(tmp_path, manifest_factory()["session_id"]).verify().valid
 
 
+def test_segment_filename_gap_is_rejected(tmp_path, manifest_factory):
+    config = replace(load_store_config(), segment_max_bytes=350)
+    manifest = manifest_factory()
+    archive = SessionArchive.create(
+        tmp_path,
+        manifest,
+        protocol_config_hash="sha256:protocol",
+        store_config=config,
+    )
+    for index in range(5):
+        archive.append_l1("clock_sync", {"offset_ns": index}, index + 1)
+    archive.close()
+    segments = sorted((archive.path / "l1").glob("segment-*.jsonl"))
+    assert len(segments) > 1
+    segments[1].rename(segments[1].with_name("segment-999999.jsonl"))
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify(mode="recover")
+    assert not report.valid
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
+
+
 def test_checkpoint_rewrite_is_detected(tmp_path, manifest_factory):
     archive = create_archive(tmp_path, manifest_factory())
     archive.checkpoint(1)
@@ -441,3 +502,50 @@ def test_self_consistent_seal_with_wrong_reason_is_detected(
     seal["seal_hash"] = domain_hash(_SEAL_DOMAIN, body)
     seal_path.write_bytes(canonical_bytes(seal) + b"\n")
     assert not ReplayReader.open(tmp_path, manifest_factory()["session_id"]).verify().valid
+
+
+def test_self_consistent_seal_with_non_object_file_entry_is_rejected(
+    tmp_path, manifest_factory
+):
+    from srp_session_store.archive import _SEAL_DOMAIN
+    from srp_session_store.canonical import canonical_bytes, domain_hash
+
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.seal({"status": "COMPLETED"}, 2)
+    archive.close()
+    seal_path = archive.path / "seal.json"
+    seal = json.loads(seal_path.read_text(encoding="utf-8"))
+    seal["files"] = [1]
+    body = {key: value for key, value in seal.items() if key != "seal_hash"}
+    seal["seal_hash"] = domain_hash(_SEAL_DOMAIN, body)
+    seal_path.write_bytes(canonical_bytes(seal) + b"\n")
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify()
+    assert not report.valid
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
+
+
+def test_checkpoint_time_and_sequences_must_be_monotonic(tmp_path, manifest_factory):
+    from srp_session_store.archive import _CHECKPOINT_DOMAIN
+    from srp_session_store.canonical import canonical_bytes, domain_hash
+
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.append_l1("clock_sync", {"offset_ns": 1}, 1)
+    archive.checkpoint(2)
+    archive.append_l1("clock_sync", {"offset_ns": 2}, 3)
+    archive.checkpoint(4)
+    archive.close()
+    checkpoint = archive.path / "checkpoints" / "checkpoint-000002.json"
+    value = json.loads(checkpoint.read_text(encoding="utf-8"))
+    value["created_monotonic_ns"] = 1
+    value["l1_seq"] = 0
+    value["l1_tail_hash"] = "sha256:" + "0" * 64
+    body = {key: item for key, item in value.items() if key != "checkpoint_hash"}
+    value["checkpoint_hash"] = domain_hash(_CHECKPOINT_DOMAIN, body)
+    checkpoint.write_bytes(canonical_bytes(value) + b"\n")
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify(mode="recover")
+    assert not report.valid
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
