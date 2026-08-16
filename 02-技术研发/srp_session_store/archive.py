@@ -4,7 +4,7 @@ import base64
 from dataclasses import dataclass
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import sys
 from typing import Any, BinaryIO, Iterator, Mapping
@@ -119,8 +119,31 @@ def _envelope_is_valid(envelope: Mapping[str, Any]) -> bool:
 def _safe_archive_relative(value: object) -> bool:
     if not isinstance(value, str) or not value:
         return False
-    path = Path(value)
-    return not path.is_absolute() and ".." not in path.parts and path.as_posix() == value
+    if "\\" in value or ":" in value or value.startswith("/"):
+        return False
+    path = PurePosixPath(value)
+    return path.as_posix() == value and all(part not in {"", ".", ".."} for part in path.parts)
+
+
+def _safe_archive_file(root: Path, relative: str) -> Path | None:
+    if not _safe_archive_relative(relative):
+        return None
+    root_resolved = root.resolve()
+    candidate = root / PurePosixPath(relative)
+    current = candidate
+    while current != root:
+        try:
+            if current.is_symlink() or (hasattr(current, "is_junction") and current.is_junction()):
+                return None
+        except OSError:
+            return None
+        current = current.parent
+    try:
+        resolved = candidate.resolve(strict=True)
+        resolved.relative_to(root_resolved)
+    except (OSError, ValueError):
+        return None
+    return resolved if resolved.is_file() else None
 
 
 class _WriterLock:
@@ -569,8 +592,7 @@ class SessionArchive:
                             if not target.is_file() or target.read_bytes() != content:
                                 target.write_bytes(content)
                     except OSError as rollback_error:
-                        if original_error is None:
-                            raise StoreError("RECOVERY_ROLLBACK_FAILED") from rollback_error
+                        raise StoreError("RECOVERY_ROLLBACK_FAILED") from rollback_error
 
     def _maybe_checkpoint(self, now_ns: int) -> None:
         if now_ns - self._last_checkpoint_ns >= self.store_config.checkpoint_interval_ms * 1_000_000:
@@ -651,13 +673,23 @@ class SessionArchive:
             raise StoreError("SESSION_SEALED")
 
     def close(self) -> None:
+        first_error: Exception | None = None
         for stream in self._streams.values():
             if not stream.handle.closed:
                 try:
                     self._sync(stream)
+                except Exception as error:
+                    if first_error is None:
+                        first_error = error
                 finally:
                     stream.handle.close()
-        self._lock.release()
+        try:
+            self._lock.release()
+        except Exception as error:
+            if first_error is None:
+                first_error = error
+        if first_error is not None:
+            raise first_error
 
 
 class ReplayReader:
@@ -701,7 +733,13 @@ class ReplayReader:
         expected_seq = 1
         previous_hash = _ZERO_HASH
         seal = self._seal() or {}
-        acknowledged = set(seal.get("acknowledged_unclean_segments", []))
+        seal_acknowledged = seal.get("acknowledged_unclean_segments", [])
+        acknowledged = (
+            set(seal_acknowledged)
+            if isinstance(seal_acknowledged, list)
+            and all(isinstance(item, str) for item in seal_acknowledged)
+            else set()
+        )
         acknowledged.update(acknowledged_segments)
         segments = sorted((self.path / name).glob("segment-*.jsonl"))
         for segment_position, segment in enumerate(segments):
@@ -832,6 +870,36 @@ class ReplayReader:
             seal_structure_valid = (
                 set(seal) == _SEAL_KEYS
                 and isinstance(seal_files, list)
+                and isinstance(seal.get("acknowledged_unclean_segments"), list)
+                and all(
+                    isinstance(item, str)
+                    for item in seal.get("acknowledged_unclean_segments", [])
+                )
+                and isinstance(seal.get("created_monotonic_ns"), int)
+                and not isinstance(seal.get("created_monotonic_ns"), bool)
+                and seal.get("created_monotonic_ns", -1) >= 0
+                and isinstance(seal.get("evidence_scope"), str)
+                and isinstance(seal.get("reason_code"), str)
+                and bool(seal.get("reason_code"))
+                and all(
+                    isinstance(seal.get(key), int)
+                    and not isinstance(seal.get(key), bool)
+                    and seal.get(key, -1) >= 0
+                    for key in ("l0_count", "l1_count")
+                )
+                and all(
+                    isinstance(seal.get(key), str)
+                    and _HASH_VALUE.fullmatch(seal.get(key)) is not None
+                    for key in (
+                        "archive_hash",
+                        "final_state_hash",
+                        "l0_tail_hash",
+                        "l1_tail_hash",
+                        "manifest_hash",
+                        "seal_hash",
+                        "store_config_hash",
+                    )
+                )
                 and all(
                     isinstance(item, dict)
                     and set(item) == {"path", "sha256", "size_bytes"}
@@ -853,9 +921,11 @@ class ReplayReader:
                 if seal.get("archive_hash") != file_sha256(self.path / "archive.json"):
                     reasons.append("INTEGRITY_MISMATCH")
                 for item in seal.get("files", []):
-                    file_path = self.path / str(item.get("path", ""))
+                    file_path = _safe_archive_file(
+                        self.path, str(item.get("path", ""))
+                    )
                     if (
-                        not file_path.is_file()
+                        file_path is None
                         or file_sha256(file_path) != item.get("sha256")
                         or file_path.stat().st_size != item.get("size_bytes")
                     ):

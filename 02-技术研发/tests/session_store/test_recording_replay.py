@@ -191,6 +191,20 @@ def test_incomplete_operation_is_not_replayed(
         SessionReplayer(ReplayReader.open(tmp_path, manifest["session_id"])).replay_core()
 
 
+def test_malformed_operation_record_maps_to_stable_store_error(
+    tmp_path, manifest_factory, assignment_factory
+):
+    manifest = manifest_factory()
+    core, store = build_recording_core(tmp_path)
+    core.prepare(manifest, assignment_factory(manifest), 0)
+    store.archive.append_l1("operation_begin", {}, 5)
+    store.archive.seal({"status": "ABORTED", "reason_code": "TEST"}, 6)
+    store.archive.close()
+
+    with pytest.raises(StoreError, match="REPLAY_RECORD_INVALID"):
+        SessionReplayer(ReplayReader.open(tmp_path, manifest["session_id"])).replay_core()
+
+
 def test_replay_rejects_core_factory_with_external_dependencies(
     tmp_path, manifest_factory, assignment_factory
 ):

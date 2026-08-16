@@ -526,6 +526,56 @@ def test_self_consistent_seal_with_non_object_file_entry_is_rejected(
     assert "INTEGRITY_MISMATCH" in report.reason_codes
 
 
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("acknowledged_unclean_segments", None),
+        ("acknowledged_unclean_segments", {"segment": True}),
+        ("created_monotonic_ns", "2"),
+    ],
+)
+def test_hostile_seal_field_types_are_rejected_without_crashing(
+    tmp_path, manifest_factory, field, value
+):
+    from srp_session_store.archive import _SEAL_DOMAIN
+    from srp_session_store.canonical import canonical_bytes, domain_hash
+
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.seal({"status": "COMPLETED"}, 2)
+    archive.close()
+    seal_path = archive.path / "seal.json"
+    seal = json.loads(seal_path.read_text(encoding="utf-8"))
+    seal[field] = value
+    body = {key: item for key, item in seal.items() if key != "seal_hash"}
+    seal["seal_hash"] = domain_hash(_SEAL_DOMAIN, body)
+    seal_path.write_bytes(canonical_bytes(seal) + b"\n")
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify()
+    assert not report.valid
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
+
+
+def test_root_relative_seal_path_is_rejected(tmp_path, manifest_factory):
+    from srp_session_store.archive import _SEAL_DOMAIN
+    from srp_session_store.canonical import canonical_bytes, domain_hash
+
+    manifest = manifest_factory()
+    archive = create_archive(tmp_path, manifest)
+    archive.seal({"status": "COMPLETED"}, 2)
+    archive.close()
+    seal_path = archive.path / "seal.json"
+    seal = json.loads(seal_path.read_text(encoding="utf-8"))
+    seal["files"][0]["path"] = "/outside.bin"
+    body = {key: item for key, item in seal.items() if key != "seal_hash"}
+    seal["seal_hash"] = domain_hash(_SEAL_DOMAIN, body)
+    seal_path.write_bytes(canonical_bytes(seal) + b"\n")
+
+    report = ReplayReader.open(tmp_path, manifest["session_id"]).verify()
+    assert not report.valid
+    assert "INTEGRITY_MISMATCH" in report.reason_codes
+
+
 def test_checkpoint_time_and_sequences_must_be_monotonic(tmp_path, manifest_factory):
     from srp_session_store.archive import _CHECKPOINT_DOMAIN
     from srp_session_store.canonical import canonical_bytes, domain_hash

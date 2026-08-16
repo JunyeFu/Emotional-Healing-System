@@ -19,9 +19,16 @@ class _ReplayDependencies:
     def _take(self, name: str) -> GateReceipt:
         try:
             value = self.receipts[name].popleft()
-        except (KeyError, IndexError) as error:
+            if not isinstance(value, Mapping):
+                raise TypeError
+            gate = value["gate"]
+            evidence_id = value["evidence_id"]
+            formal_capable = value["formal_capable"]
+            if not isinstance(gate, str) or not isinstance(evidence_id, str) or not isinstance(formal_capable, bool):
+                raise TypeError
+        except (KeyError, IndexError, TypeError) as error:
             raise StoreError("REPLAY_GATE_RECEIPT_MISSING", name) from error
-        return GateReceipt(str(value["gate"]), str(value["evidence_id"]), bool(value["formal_capable"]))
+        return GateReceipt(gate, evidence_id, formal_capable)
 
     def privacy_receipt(self, manifest, assignment, config_hash):
         del manifest, assignment, config_hash
@@ -59,14 +66,34 @@ class SessionReplayer:
         commits: list[dict[str, Any]] = []
         failed: set[str] = set()
         for record in self.reader.iter_l1():
-            payload = record["payload"]
+            payload = record.get("payload")
+            if not isinstance(payload, dict):
+                raise StoreError("REPLAY_RECORD_INVALID")
             if record["record_type"] == "operation_begin":
-                begins[str(payload["operation_id"])] = payload
+                operation_id = payload.get("operation_id")
+                if (
+                    not isinstance(operation_id, str)
+                    or not operation_id
+                    or not isinstance(payload.get("method"), str)
+                    or not isinstance(payload.get("arguments"), dict)
+                    or operation_id in begins
+                ):
+                    raise StoreError("REPLAY_RECORD_INVALID")
+                begins[operation_id] = payload
             elif record["record_type"] == "operation_commit":
+                if (
+                    not isinstance(payload.get("operation_id"), str)
+                    or not isinstance(payload.get("method"), str)
+                    or not isinstance(payload.get("output"), dict)
+                ):
+                    raise StoreError("REPLAY_RECORD_INVALID")
                 commits.append(payload)
             elif record["record_type"] == "operation_failed":
-                failed.add(str(payload["operation_id"]))
-        committed = {str(item["operation_id"]) for item in commits}
+                operation_id = payload.get("operation_id")
+                if not isinstance(operation_id, str) or not operation_id:
+                    raise StoreError("REPLAY_RECORD_INVALID")
+                failed.add(operation_id)
+        committed = {item["operation_id"] for item in commits}
         incomplete = sorted(set(begins) - committed - failed)
         if incomplete:
             raise StoreError("INCOMPLETE_OPERATION", incomplete[0])
@@ -74,8 +101,13 @@ class SessionReplayer:
         for commit in commits:
             output = commit["output"]
             if output.get("output_type") == "CoreUpdate":
-                for receipt in output.get("gate_receipts", []):
-                    receipts[str(receipt["gate"])].append(receipt)
+                gate_receipts = output.get("gate_receipts", [])
+                if not isinstance(gate_receipts, list):
+                    raise StoreError("REPLAY_RECORD_INVALID")
+                for receipt in gate_receipts:
+                    if not isinstance(receipt, dict) or not isinstance(receipt.get("gate"), str):
+                        raise StoreError("REPLAY_RECORD_INVALID")
+                    receipts[receipt["gate"]].append(receipt)
         dependencies = _ReplayDependencies(receipts)
         if core_factory is not None and core_factory is not SessionCore:
             raise StoreError("REPLAY_CORE_UNSAFE")
@@ -89,7 +121,12 @@ class SessionReplayer:
             if begin is None:
                 raise StoreError("INCOMPLETE_OPERATION", operation_id)
             expected = commit["output"]
-            actual_value = self._execute(core, str(begin["method"]), begin["arguments"])
+            try:
+                actual_value = self._execute(core, begin["method"], begin["arguments"])
+            except StoreError:
+                raise
+            except (KeyError, TypeError, ValueError) as error:
+                raise StoreError("REPLAY_RECORD_INVALID", operation_id) from error
             actual = serialize_core_output(actual_value)
             expected_outputs.append(expected)
             actual_outputs.append(actual)
