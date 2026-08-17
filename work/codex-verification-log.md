@@ -677,3 +677,16 @@
 | Asset Gate | 179项清单；194个ignored发布文件与3个许可替换项；`release_allowed=false` |
 | State Guard | G-02、P-01、P-02保持`IN_REVIEW`；待签署报告未代填结论 |
 | Final Regression | 全仓`404 passed`；注册表、协议权威、6个独立包与182个快照校验通过 |
+
+### 2026-08-17 Unity实验环境渐进搭建与任务协调
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Unity任务从可复现环境开始，经可靠通信和四层接口汇合到一个完整风暴纵向切片，再扩展其他场景；未完成资产和上游签收门继续失败关闭。 |
+| Actual Result | 新增E0至E5权威计划；F-03扩展为环境基线与会话运行壳；U-01补充P-01依赖；U-03先行；U-04至U-07改为在U-03后并行；I-01补充P-02依赖。READY和IN_REVIEW集合未改变。 |
+| Registry And Packages | `07_validate_task_packages.py`通过：51项、48固定包、3模板、READY=F-03/F-04/G-01、IN_REVIEW=G-02/P-01/P-02；`14_validate_ready_task_packages.py`通过：6包、183快照。 |
+| Regression | 默认`python`为3.14.5且缺少pytest，未执行测试；改用`py -3.14`和pytest 9.0.3完成根回归，结果`404 passed in 28.14s`。 |
+| Protocol And Text | 协议权威v1.1验证通过；新增行不合规措辞扫描和`git diff --check`作为提交前门。 |
+| PDF QA | `02_固定任务概要.pdf`为8页，SHA-256 `1C3453527C839C29177E093E546AE4C1895A97207115B3CA50EC28AE27E5D606`；8页均以110 DPI渲染并逐页检查，无截断、重叠、空白或乱码。 |
+| Scope Guard | 保留4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`，不纳入提交。 |
+| Residual Risk | 本轮未运行Unity Editor、Unity测试或构建。P-01/P-02/G-02真实团队第二人签收、资产替换、正式环境、设备和`LIVE_E2E`仍开放。 |
