@@ -3,13 +3,13 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "F-03",
   "status": "READY",
-  "registry_sha256": "67BDDB7A01A8246646BCC16C2D4F4F8EFE32294336FAFDF9F8492F4C47EFBD0E",
+  "registry_sha256": "C848E461880ADB3CA04F42A03ABAD3B01C6942D7E50CEF10842A7DE4F4B7A8D5",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md",
       "package_path": "inputs/01_F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md",
-      "sha256": "5D1214CCA7D3422C2652A5EFABCC1ABB270061BACEEDD838F95F12DAA4AFEB77",
-      "size_bytes": 12370
+      "sha256": "BD5E96CF77B5967B1F35872B67A67560AB426CE1BF47DE018F909E7CE723A44D",
+      "size_bytes": 12413
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
@@ -68,8 +68,8 @@
     {
       "source_path": "PROJECT_MODULES.md",
       "package_path": "inputs/11_PROJECT_MODULES.md",
-      "sha256": "A68CAC0783F93D68B2AA0994D8907484C1DEE52A68CCC89428E4D843A87E49D7",
-      "size_bytes": 9195
+      "sha256": "84D71261CC1DA8799A0FC41485179303336317D5CFE0C81C873F505670358202",
+      "size_bytes": 9246
     }
   ],
   "working_paths": [

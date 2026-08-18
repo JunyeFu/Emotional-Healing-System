@@ -11,4 +11,4 @@
 | G-02 | IN_REVIEW | 【数据治理】数据分级跨阶段去重与资产许可 | 4人日 | [G-02/TASK.md](G-02/TASK.md) |
 | P-01 | IN_REVIEW | 【Python核心】manifest与会话编排 | 6人日 | [P-01/TASK.md](P-01/TASK.md) |
 | P-02 | IN_REVIEW | 【数据记录】L0/L1追加记录与重放 | 4人日 | [P-02/TASK.md](P-02/TASK.md) |
-| V-01 | READY | 【Unity前期设计】研究体验契约与完整旅程 | 3人日 | [V-01/TASK.md](V-01/TASK.md) |
+| V-01 | IN_REVIEW | 【Unity前期设计】研究体验契约与完整旅程 | 3人日 | [V-01/TASK.md](V-01/TASK.md) |

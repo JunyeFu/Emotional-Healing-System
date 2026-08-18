@@ -704,3 +704,20 @@
 | Deviation | 图表首次误用默认Python并因缺少`matplotlib`失败；改用既有`D:\MathModelingTools\envs\cumcm\python.exe`后成功，未安装依赖。 |
 | Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
 | Residual Risk | 本轮未执行Unity Editor、Unity测试或构建；V-01至V-05、F-03及后续U任务仍需领取、实现、验收、第二人复核和各自提交推送。 |
+
+### 2026-08-18 V-01 研究体验契约与完整旅程
+
+| Field | Notes |
+|---|---|
+| Expected Observation | 第一设计步只冻结研究体验、完整旅程、系统权威和证据边界；具体天气表现保持开放，V-02在第二人签收前不解锁。 |
+| Implementation | 初始提交`285422314a2f091dad781b26981c2acb2e42fe10`；独立复核修复提交`293720f40126e2892b585c78fe7908518f40d4ad`。 |
+| Contract Validation | `validate_v01_experience_contract.py`通过：与`protocol_authority_v1.1.json`一致，26个冻结/版本化约束、15个开放项、12个旅程节点和10条结构化主张。 |
+| Negative Gates | TouchDesigner越权、条件单位漂移、场景原生包缺模块、C-001状态越界四类变异均被拒绝。 |
+| Agent Review | Agent `01a012e3-ebfb-7fc0-8747-7d492e8aa612`首轮返回3个P2和1个P3；修复后二轮返回`PASS_NO_OPEN_P1_P3`。 |
+| Regression | `py -3.14 -m pytest -q`通过：`404 passed in 17.63s`；协议权威验证通过。 |
+| Registry And Packages | 56项注册表通过：53固定任务、3模板、READY=F-03/F-04/G-01、IN_REVIEW=G-02/P-01/P-02/V-01；7个分发包、196个快照通过。 |
+| Text And Diff Gates | V-01制品未出现限制表述；当前权威文件不存在V-01仍为READY的陈述；`git diff --cached --check`通过。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `2E314D87D72AF274228DF0F67C47D81DA7B39E4D9C0EFEE87270377DEA426585`；9页联系表及第4、8页重点复查无裁切、重叠或状态冲突。 |
+| State Guard | V-01只转为`IN_REVIEW`；真实团队第二人栏保持`PENDING`，V-02继续`WAIT_DEP`。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
+| Residual Risk | 静态设计契约不能替代Unity独立构建、跨端权限测试、真实设备链和`LIVE_E2E`证据；这些由后续任务关闭。 |
