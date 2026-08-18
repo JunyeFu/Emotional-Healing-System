@@ -721,3 +721,17 @@
 | State Guard | V-01只转为`IN_REVIEW`；真实团队第二人栏保持`PENDING`，V-02继续`WAIT_DEP`。 |
 | Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
 | Residual Risk | 静态设计契约不能替代Unity独立构建、跨端权限测试、真实设备链和`LIVE_E2E`证据；这些由后续任务关闭。 |
+
+### 2026-08-18 V-01签收闭环与V-02解锁
+
+| Field | Notes |
+|---|---|
+| Expected Observation | 真实团队第二人签收证据与治理迁移分成两个提交；V-01转为`DONE`后才允许V-02转为`READY`，且不扩大为Unity运行完成。 |
+| Human Signoff | 傅钧烨以团队总监和真实团队第二人复核身份对`293720f40126e2892b585c78fe7908518f40d4ad`给出`PASS`；签收提交为`339b94fb0a5e4527032cf59a835d6691419c8a76`，复核方式明确为审阅文件并见证已有验证结果，不表述为本人重新运行。 |
+| Registry And Packages | `07_validate_task_packages.py`通过：56项、53固定任务、3模板、DONE含V-01、READY=F-03/F-04/G-01/V-02、IN_REVIEW=G-02/P-01/P-02；`14_validate_ready_task_packages.py`通过：7包、196快照。 |
+| Contract Validation | 协议权威v1.1一致；V-01契约校验通过：26个冻结/版本化约束、15个开放项、12个旅程节点、10条结构化主张。 |
+| Regression | `py -3.14 -m pytest -q`通过：`404 passed in 18.75s`。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `36F393B287D01F42B4D875BDF39FF1DFB4DBFFF882B7131A339EDC4302D23041`；全部页面以110 DPI渲染并逐页检查，无裁切、重叠、空白或乱码。 |
+| Text And Diff Gates | 当前权威文件中不存在V-01仍待签收或V-02仍为`WAIT_DEP`的陈述；新写状态文字未引入限制表述。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
+| Residual Risk | V-02只解锁并进入决策核对，尚未形成候选概念、动态原型或Unity运行证据；G-02、P-01、P-02真实团队第二人复核仍开放。 |
