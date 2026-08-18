@@ -3,7 +3,7 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "P-01",
   "status": "IN_REVIEW",
-  "registry_sha256": "7B3880B7E0B93D0A8653F10F50095781E4AE9A24C1005682055E4339E5B3EFE7",
+  "registry_sha256": "67BDDB7A01A8246646BCC16C2D4F4F8EFE32294336FAFDF9F8492F4C47EFBD0E",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",

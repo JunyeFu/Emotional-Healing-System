@@ -690,3 +690,17 @@
 | PDF QA | `02_固定任务概要.pdf`为8页，SHA-256 `1C3453527C839C29177E093E546AE4C1895A97207115B3CA50EC28AE27E5D606`；8页均以110 DPI渲染并逐页检查，无截断、重叠、空白或乱码。 |
 | Scope Guard | 保留4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`，不纳入提交。 |
 | Residual Risk | 本轮未运行Unity Editor、Unity测试或构建。P-01/P-02/G-02真实团队第二人签收、资产替换、正式环境、设备和`LIVE_E2E`仍开放。 |
+
+### 2026-08-18 Unity场景设计流程订正与任务包落盘
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Unity任务从研究体验契约和完整旅程开始，经概念原型、四层映射、分镜声音预演和全旅程灰盒后，再选择最高风险天气做纵向切片；技术基线不替代场景设计。 |
+| Actual Result | 新增V-01至V-05，收缩F-03并重定U-01至U-07职责；注册表扩展为53个固定任务和3个模板；当前READY为F-03、F-04、G-01、V-01。 |
+| Registry And Packages | `07_validate_task_packages.py`通过：56项、53固定任务、3模板；`14_validate_ready_task_packages.py`通过：7包、186快照；两次重生成文件哈希一致。 |
+| Regression | `py -3.14 -m pytest -q`通过：`404 passed in 22.62s`；协议权威v1.1一致。 |
+| Text And Diff Gates | 新规划与V-01包禁用表述扫描通过；暂存新增行扫描通过；`git diff --cached --check`通过。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `54483B4EF13BEE3F485EB411B4567CFBBFAC5128CD00D3919DEFE73C1D35D4CB`；全部页面已渲染检查，孤立表头修复后无裁切、重叠或乱码。 |
+| Deviation | 图表首次误用默认Python并因缺少`matplotlib`失败；改用既有`D:\MathModelingTools\envs\cumcm\python.exe`后成功，未安装依赖。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
+| Residual Risk | 本轮未执行Unity Editor、Unity测试或构建；V-01至V-05、F-03及后续U任务仍需领取、实现、验收、第二人复核和各自提交推送。 |

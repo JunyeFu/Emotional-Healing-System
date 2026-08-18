@@ -101,8 +101,8 @@ def main() -> int:
     ids = [row["task_id"] for row in rows]
     known = set(ids)
     rows_by_id = {row["task_id"]: row for row in rows}
-    if len(rows) != 51:
-        errors.append(f"expected 51 registry entries, found {len(rows)}")
+    if len(rows) != 56:
+        errors.append(f"expected 56 registry entries, found {len(rows)}")
     if len(ids) != len(known):
         errors.append("task_id values must be unique")
 
@@ -219,8 +219,8 @@ def main() -> int:
     template_ids = {row["task_id"] for row in rows if row["kind"] == "TEMPLATE"}
     if template_ids != EXPECTED_TEMPLATES:
         errors.append(f"template set is {sorted(template_ids)}, expected {sorted(EXPECTED_TEMPLATES)}")
-    if len(rows) - len(template_ids) != 48:
-        errors.append("expected 48 fixed task packages")
+    if len(rows) - len(template_ids) != 53:
+        errors.append("expected 53 fixed task packages")
 
     visiting: set[str] = set()
     visited: set[str] = set()
@@ -292,7 +292,7 @@ def main() -> int:
         return 1
 
     print(
-        "PASS: 51 registry entries; fixed=48; templates=3; "
+        "PASS: 56 registry entries; fixed=53; templates=3; "
         f"DONE={','.join(sorted(done))}; READY={','.join(sorted(ready))}; "
         f"IN_REVIEW={','.join(sorted(row['task_id'] for row in rows if row['status'] == 'IN_REVIEW'))}; "
         f"terminal={TERMINAL_TASK}"

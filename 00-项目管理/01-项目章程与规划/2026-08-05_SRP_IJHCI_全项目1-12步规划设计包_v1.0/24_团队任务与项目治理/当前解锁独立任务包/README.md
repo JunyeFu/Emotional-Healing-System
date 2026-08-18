@@ -5,9 +5,10 @@
 
 | 任务 | 状态 | 名称 | 工作量 | 入口 |
 |---|---|---|---:|---|
-| F-03 | READY | 【Unity】实验环境基线与会话运行壳 | 5人日 | [F-03/TASK.md](F-03/TASK.md) |
+| F-03 | READY | 【Unity】可复现工程与测试构建基线 | 3人日 | [F-03/TASK.md](F-03/TASK.md) |
 | F-04 | READY | 【TouchDesigner】只读操作台壳 | 2人日 | [F-04/TASK.md](F-04/TASK.md) |
 | G-01 | READY | 【研究治理】伦理材料许可招募产能与角色台账 | 5人日 | [G-01/TASK.md](G-01/TASK.md) |
 | G-02 | IN_REVIEW | 【数据治理】数据分级跨阶段去重与资产许可 | 4人日 | [G-02/TASK.md](G-02/TASK.md) |
 | P-01 | IN_REVIEW | 【Python核心】manifest与会话编排 | 6人日 | [P-01/TASK.md](P-01/TASK.md) |
 | P-02 | IN_REVIEW | 【数据记录】L0/L1追加记录与重放 | 4人日 | [P-02/TASK.md](P-02/TASK.md) |
+| V-01 | READY | 【Unity前期设计】研究体验契约与完整旅程 | 3人日 | [V-01/TASK.md](V-01/TASK.md) |
