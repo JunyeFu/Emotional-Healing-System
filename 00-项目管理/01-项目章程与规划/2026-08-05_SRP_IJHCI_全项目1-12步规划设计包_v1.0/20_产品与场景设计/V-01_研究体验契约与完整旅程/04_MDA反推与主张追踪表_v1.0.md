@@ -40,7 +40,7 @@
 | C-007 | 特定天气与特定呼吸流程的组合具有独立效果 | RESEARCH_VARIABLE | 当前设计不提供可识别的独立对照 | 不得提出该独立因果结论 | OUT_OF_SCOPE |
 | C-008 | 某一顺序优于其他顺序 | RESEARCH_VARIABLE | 仅在第三阶段策略研究完成后按冻结分析判断 | 第一阶段不得得出该结论 | CONDITIONAL_STAGE_3 |
 | C-009 | 粒子、角色或背景细节提升研究效果 | NON_RESEARCH_DECORATION | 无计划独立变量 | 不进入论文主贡献 | OUT_OF_SCOPE |
-| C-010 | 前后量表变化与体验中真实记录可共同描述项目参与后的短期变化 | RESEARCH_VARIABLE | 前后量表、质量门后的设备记录和缺失机制 | 不替代对完整表示包与顺序的计划比较 | DESIGN_HYPOTHESIS_NOT_OBSERVED |
+| C-010 | 前后量表变化与体验中真实记录可共同描述项目参与后的短期变化 | RESEARCH_VARIABLE | 前后量表、质量门后的设备记录和缺失机制 | 只能作参与前后描述与计划内关联分析，不能单独证明项目整体因果效果，也不替代完整表示包与顺序的计划比较 | DESIGN_HYPOTHESIS_NOT_OBSERVED |
 
 ## 设计到证据的硬规则
 
