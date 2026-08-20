@@ -759,3 +759,10 @@
 | Agent Review | Agent `01a01ee9-bec5-73d2-a590-3aedcddf3a6a`首轮发现3个P1、2个P2、1个P3；修复后无P1/P2，再关闭2个P3后返回`PASS_NO_OPEN_P1_P3`。 |
 | Diff Gate | `git diff --check`通过，仅报告既有Git行尾转换提示。 |
 | Scope Guard | 4个既有删除项及`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除；未形成Unity运行或正式数据证据。 |
+| Candidate Commit | V-02固定候选提交为`3ebbdeedfd3c16688ae406d34c18e4f319f2afac`；治理提交只迁移状态和重生成派生制品。 |
+| Governance State | V-02迁移为`IN_REVIEW`，V-03保持`WAIT_DEP`；当前`READY`集合为F-03、F-04、G-01。 |
+| Human Gate | 真实团队第二人结论保持待填写；模型独立复审不能替代真实签收。 |
+| Final Registry And Packages | `07_validate_task_packages.py`通过：57项、54个固定任务、3个模板，`READY=F-03/F-04/G-01`，`IN_REVIEW=G-02/P-01/P-02/V-02`；`14_validate_ready_task_packages.py`通过：7包、210个输入快照。 |
+| Final Regression | `py -3.14 -m pytest -q`通过：`404 passed in 18.67s`；V-02基线和协议权威校验均通过。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256为`BD61195164E87827F84E803F392297C1F027EC2ED604D89702B076B634035A10`；110 DPI逐页渲染检查未见裁切、重叠、空白页或乱码。 |
+| Text Gate | 活跃V-02制品未发现限制表述；当前权威状态未把V-02或V-03误列为可领取。 |

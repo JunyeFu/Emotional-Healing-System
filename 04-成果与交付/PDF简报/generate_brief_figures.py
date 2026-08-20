@@ -124,7 +124,7 @@ def task_waves():
         if index < len(waves) - 1:
             arrow(ax, (x + 1.22, 2.18), (x + 1.45, 2.18), edge)
     box(ax, 2.05, 0.28, 6.3, 0.72, "领取门：依赖完成 + 外部门禁关闭 + AC1-AC3 + 证据 + 第二人复核", COLORS["gray"], COLORS["ink"], size=9)
-    label(ax, 5.2, 3.55, "53 个固定任务包 + 3 个可重复批次模板；Unity 新增 5 个前期设计门", size=10.5, weight="bold", color=COLORS["ink"])
+    label(ax, 5.2, 3.55, "54 个固定任务包 + 3 个可重复批次模板；Unity 新增 5 个前期设计门", size=10.5, weight="bold", color=COLORS["ink"])
     save(fig, "task_waves.png")
 
 

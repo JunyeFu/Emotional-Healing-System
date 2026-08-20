@@ -2,14 +2,14 @@
   "package_schema_version": "1.0",
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "V-02",
-  "status": "READY",
-  "registry_sha256": "A80B82C60DFAFEC833DEE0238B5E48D5FF62421DD98C1A7A4AF63A92645971F5",
+  "status": "IN_REVIEW",
+  "registry_sha256": "6FCE421B563AAC622FFBC9038702B9B77B088163825F11B00DEE8A0DC8D418C4",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md",
       "package_path": "inputs/01_F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md",
-      "sha256": "8525A9D25843B761CA84DAEEA80257AB853EA7E510CF724BABE9EB417A6E1016",
-      "size_bytes": 13332
+      "sha256": "635AA7062CD7EC56BA83695ED81F8FFBA2DF0F8B5F0E1B825C8FE423B3FE278F",
+      "size_bytes": 13356
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
@@ -128,8 +128,8 @@
     {
       "source_path": "PROJECT_MODULES.md",
       "package_path": "inputs/21_PROJECT_MODULES.md",
-      "sha256": "F86DA1F8D4AD1D8ABDEA5ED11B2F1A0298B69AD77009C75A2AC23F4A914372BE",
-      "size_bytes": 9424
+      "sha256": "A67A1E11A8B870B782AF7F530BA89DB9CED8F754743CEB35345C95642A567864",
+      "size_bytes": 9473
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/README.md",
@@ -200,13 +200,13 @@
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_技术验收记录.md",
       "package_path": "inputs/33_V-02_技术验收记录.md",
-      "sha256": "E195767E6891C485E22C54BBC239D88B58D951B4F2C832DE4778BBA8B6FC5BF7",
-      "size_bytes": 2567
+      "sha256": "F7686A5C9F7463915C3B4E259391DFA36224F924D3622881A4202B4C37B8AE65",
+      "size_bytes": 2640
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_独立Agent复核记录.md",
       "package_path": "inputs/34_V-02_独立Agent复核记录.md",
-      "sha256": "904CFA946A798F5CD8F89A5038308E897C150EEF0805CE01A1EDB16F7E4C0A8C",
+      "sha256": "21ECB2038244604CFC2FB033C8AB7B9095AF682BB34E9ECB2BB4F4B1B1D04F70",
       "size_bytes": 1400
     },
     {
