@@ -76,12 +76,14 @@ def main() -> None:
     with REGISTRY.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
     resources = parse_resources()
+    template_count = sum(row["kind"] == "TEMPLATE" for row in rows)
+    fixed_count = len(rows) - template_count
 
     lines = [
         "# SRP可领取树型任务包 v2.2",
         "",
         "> 状态：`UNITY_PREPRODUCTION_DISPATCH_READY`",
-        "> 规模：53个固定任务包 + 3个可重复批次模板。CSV登记表是状态权威；本文件由`10_render_task_handbook.py`确定性生成。",
+        f"> 规模：{fixed_count}个固定任务包 + {template_count}个可重复批次模板。CSV登记表是状态权威；本文件由`10_render_task_handbook.py`确定性生成。",
         "> v2.2边界：完整提示表示方案是论文主线；SCCI只作操纵检查；Unity先经过V-01至V-05前期设计门，再进入风险驱动垂直切片。",
         "",
         "## 1. 领取与验收规则",

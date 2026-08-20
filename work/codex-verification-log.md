@@ -735,3 +735,27 @@
 | Text And Diff Gates | 当前权威文件中不存在V-01仍待签收或V-02仍为`WAIT_DEP`的陈述；新写状态文字未引入限制表述。 |
 | Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
 | Residual Risk | V-02只解锁并进入决策核对，尚未形成候选概念、动态原型或Unity运行证据；G-02、P-01、P-02真实团队第二人复核仍开放。 |
+
+### 2026-08-20 V-02场景确认收口
+
+| Field | Notes |
+|---|---|
+| Expected Observation | 四场景及共同呈现规则形成单一移交基线；节点15评审人数、问题、问卷和阈值退出V-02，不再继续节点15B。 |
+| Documentation | 新增`ADR-026_V-02收口于场景确认.md`和`V-02_四场景确认与移交基线.md`；节点15A相关文件标记为`SUPERSEDED`。 |
+| Consistency | `CONTEXT.md`和决策日志均显示场景方案已确认，节点15移出范围，节点16由既有四场景决定完成汇总，节点17转交后续工程任务。 |
+| Text Gate | 新增和更新的活跃文档未发现限制表述；六个涉及文件未发现行尾空白。 |
+| Scope Guard | 未修改任务注册表状态，未声称V-02已治理签收、Unity已实现、正式构建已完成或真实数据链已通过。 |
+| Git Guard | 既有4个删除项及`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续保留且未暂存。 |
+
+### 2026-08-20 V-02候选验收与职责闭环
+
+| Field | Notes |
+|---|---|
+| Expected Observation | V-02场景基线与V-01、R-01及总控一致；F-05、V-03、U-03和U-08职责无重叠或依赖缺口；真实第二人签收前不解锁V-03。 |
+| Contract Validation | `validate_v02_scene_baseline.py`通过：4个技术ID、两种提示模式、四层来源、TD只读、资产门、`storm/fade` v2.2门及F-05消费者依赖一致。 |
+| Registry Validation | `07_validate_task_packages.py`通过：57项、54固定任务、3模板、READY=F-03/F-04/G-01/V-02、IN_REVIEW=G-02/P-01/P-02，依赖图无环且终点为W-04。 |
+| Protocol Validation | `validate_protocol_authority_v1_1.py`通过。 |
+| Regression | 默认`python`缺少pytest；按既有冻结环境改用`py -3.14 -m pytest -q`，结果`404 passed in 18.35s`，未安装依赖。 |
+| Agent Review | Agent `01a01ee9-bec5-73d2-a590-3aedcddf3a6a`首轮发现3个P1、2个P2、1个P3；修复后无P1/P2，再关闭2个P3后返回`PASS_NO_OPEN_P1_P3`。 |
+| Diff Gate | `git diff --check`通过，仅报告既有Git行尾转换提示。 |
+| Scope Guard | 4个既有删除项及`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除；未形成Unity运行或正式数据证据。 |

@@ -3,13 +3,13 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "V-02",
   "status": "READY",
-  "registry_sha256": "B99ED855D418C53611C607812761E01DE5446C15015698E50991E8FDC54033D5",
+  "registry_sha256": "A80B82C60DFAFEC833DEE0238B5E48D5FF62421DD98C1A7A4AF63A92645971F5",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md",
       "package_path": "inputs/01_F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md",
-      "sha256": "4F6C059E24D1597155F198603C15E7C7AA0AAFCC3054F0D26CC9B7B682D5D957",
-      "size_bytes": 12548
+      "sha256": "8525A9D25843B761CA84DAEEA80257AB853EA7E510CF724BABE9EB417A6E1016",
+      "size_bytes": 13332
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
@@ -128,8 +128,92 @@
     {
       "source_path": "PROJECT_MODULES.md",
       "package_path": "inputs/21_PROJECT_MODULES.md",
-      "sha256": "1648E5BBB0D70AB227FB79FC12C33D238CD68DBCEE24C2E9198228EAAAB3AE7D",
-      "size_bytes": 9304
+      "sha256": "F86DA1F8D4AD1D8ABDEA5ED11B2F1A0298B69AD77009C75A2AC23F4A914372BE",
+      "size_bytes": 9424
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/README.md",
+      "package_path": "inputs/22_README.md",
+      "sha256": "1BE2618595B4178D5C27AAB6DE977DF491979DC7E6D9A08711466DDD7983841D",
+      "size_bytes": 984
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/CONTEXT.md",
+      "package_path": "inputs/23_CONTEXT.md",
+      "sha256": "77EDE151A8162FF8B1C8E3C7275BDD8AFDD77A253F0F265D18F61F50B5030AA0",
+      "size_bytes": 21137
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_四场景确认与移交基线.md",
+      "package_path": "inputs/24_V-02_四场景确认与移交基线.md",
+      "sha256": "7C866EC47D0492DA2D0B4F3A4A831338766DD5EF76371EEC6D05324E3F794373",
+      "size_bytes": 2853
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/v02-scene-baseline-v1.0.json",
+      "package_path": "inputs/25_v02-scene-baseline-v1.0.json",
+      "sha256": "96EE6BEE8C46432D0337C838EB28586DE69C01910E1DCE9B3138207E9CC42AC4",
+      "size_bytes": 4175
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_设计决策日志.md",
+      "package_path": "inputs/26_V-02_设计决策日志.md",
+      "sha256": "6F03FAD9A1AAE2726FC9D033DD5E34D51AA0723BEF486FF63EA879DD31BDEF26",
+      "size_bytes": 13541
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_节点5_风雨隘口与雨幕风门规格.md",
+      "package_path": "inputs/27_V-02_节点5_风雨隘口与雨幕风门规格.md",
+      "sha256": "70B2AB3420A44092DE1E001F065F20569B7A80C0E5B922601F84A321B3EE2198",
+      "size_bytes": 7100
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_节点6_热浪盐原与冷流风道规格.md",
+      "package_path": "inputs/28_V-02_节点6_热浪盐原与冷流风道规格.md",
+      "sha256": "9B12F483C11DD5F7B53A71716CE9DA1AB8399B00F658863654DAEA21864A614C",
+      "size_bytes": 7489
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_节点7_雪雾松林与粉雪升沉规格.md",
+      "package_path": "inputs/29_V-02_节点7_雪雾松林与粉雪升沉规格.md",
+      "sha256": "E362F59E531DCB008396B75F9642624927C3314FA1C24E4A9A8835B011DB2B10",
+      "size_bytes": 7548
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_节点8_灰霾湿地与色潮回流规格.md",
+      "package_path": "inputs/30_V-02_节点8_灰霾湿地与色潮回流规格.md",
+      "sha256": "1CC0D03F627638CFEC3A3E9586D764B1FA4B326EA4AF8D804343554D32A0BAD7",
+      "size_bytes": 9130
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_节点12_两条件公平矩阵.md",
+      "package_path": "inputs/31_V-02_节点12_两条件公平矩阵.md",
+      "sha256": "BA7881674DE0EFB4058150A9E4FB129965EEB3E37F497F59DEDF2BB364F13793",
+      "size_bytes": 4186
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/ADR-026_V-02收口于场景确认.md",
+      "package_path": "inputs/32_ADR-026_V-02收口于场景确认.md",
+      "sha256": "6AA0087948C42DB30F94C1F09C515EA72259FDDA1241E6C7C9096112CB91046D",
+      "size_bytes": 1162
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_技术验收记录.md",
+      "package_path": "inputs/33_V-02_技术验收记录.md",
+      "sha256": "E195767E6891C485E22C54BBC239D88B58D951B4F2C832DE4778BBA8B6FC5BF7",
+      "size_bytes": 2567
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_独立Agent复核记录.md",
+      "package_path": "inputs/34_V-02_独立Agent复核记录.md",
+      "sha256": "904CFA946A798F5CD8F89A5038308E897C150EEF0805CE01A1EDB16F7E4C0A8C",
+      "size_bytes": 1400
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/99_验证与清单/validate_v02_scene_baseline.py",
+      "package_path": "inputs/35_validate_v02_scene_baseline.py",
+      "sha256": "FEC52A19FAF72645A53030E99460A59B555132A086D0F68344C46CDF41CB0DB3",
+      "size_bytes": 12081
     }
   ],
   "working_paths": [

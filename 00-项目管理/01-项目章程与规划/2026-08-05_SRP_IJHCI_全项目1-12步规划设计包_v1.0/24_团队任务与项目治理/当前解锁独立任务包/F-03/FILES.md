@@ -6,7 +6,7 @@
 
 | 项目权威路径 | 包内快照 | SHA-256 |
 |---|---|---|
-| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md) | [inputs/01_F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md](inputs/01_F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md) | `4F6C059E24D1597155F198603C15E7C7AA0AAFCC3054F0D26CC9B7B682D5D957` |
+| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md) | [inputs/01_F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md](inputs/01_F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md) | `8525A9D25843B761CA84DAEEA80257AB853EA7E510CF724BABE9EB417A6E1016` |
 | [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md) | [inputs/02_11_实现冻结基线_v1.0.md](inputs/02_11_实现冻结基线_v1.0.md) | `609085CC6A40F2BAC822CA2DDCD73EFE20BF3EA78BE5DB20AF0BA659124DB523` |
 | [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json) | [inputs/03_protocol_authority_v1.1.json](inputs/03_protocol_authority_v1.1.json) | `66DCF22A6B98E9B35FE069AA19373228E9E2070A2508F253801ACA3669E51794` |
 | [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/00_参与者产品总规格.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/00_参与者产品总规格.md) | [inputs/04_00_参与者产品总规格.md](inputs/04_00_参与者产品总规格.md) | `4312DF771A22250488F0A68E04BCBB0FC6968D55314E637729BF4E8561461B0D` |
@@ -16,7 +16,7 @@
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt](D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt) | [inputs/08_ProjectVersion.txt](inputs/08_ProjectVersion.txt) | `0EE4B8BAF7A4E3760CD3A0C19797A9362ED4E0C9C8EF0F49D8304C1211E511B8` |
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs](D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs) | [inputs/09_FormalBuildGate.cs](inputs/09_FormalBuildGate.cs) | `ADA7823BB73B645E371510BD52402B0F060C72AE54C8AD67FF895A0D939647DB` |
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_license_ledger.json](D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_license_ledger.json) | [inputs/10_asset_license_ledger.json](inputs/10_asset_license_ledger.json) | `771E7AC77D0E2C4414ED79A963E3F0C76CEFAA1B2F1675DF4CA800FFDA20F098` |
-| [PROJECT_MODULES.md](D:/Agent/03-SRP/PROJECT_MODULES.md) | [inputs/11_PROJECT_MODULES.md](inputs/11_PROJECT_MODULES.md) | `1648E5BBB0D70AB227FB79FC12C33D238CD68DBCEE24C2E9198228EAAAB3AE7D` |
+| [PROJECT_MODULES.md](D:/Agent/03-SRP/PROJECT_MODULES.md) | [inputs/11_PROJECT_MODULES.md](inputs/11_PROJECT_MODULES.md) | `F86DA1F8D4AD1D8ABDEA5ED11B2F1A0298B69AD77009C75A2AC23F4A914372BE` |
 
 ## 实现工作目录
 
