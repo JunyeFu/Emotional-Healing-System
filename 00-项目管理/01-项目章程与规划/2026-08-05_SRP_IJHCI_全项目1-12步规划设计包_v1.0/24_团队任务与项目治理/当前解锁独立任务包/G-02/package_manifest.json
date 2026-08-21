@@ -3,7 +3,7 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "G-02",
   "status": "IN_REVIEW",
-  "registry_sha256": "EF4FD463CF64DB25D4584F61DC0FC3133C59897BE2CB91F842781BF2C922F923",
+  "registry_sha256": "773403C6E57CAA219F443ECBABE99835B74BE9835BF58EE4D89D60B961E802B0",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
@@ -132,10 +132,10 @@
       "size_bytes": 3625
     },
     {
-      "source_path": "02-技术研发/07-数据治理/G-02_第二人审核报告_待签署.md",
-      "package_path": "inputs/22_G-02_第二人审核报告_待签署.md",
-      "sha256": "022D9EC4D2F8339F65FEF55763966C21718DBA1E59AAC67849E5477EDCD9E6D2",
-      "size_bytes": 4078
+      "source_path": "02-技术研发/07-数据治理/G-02_第二人审核报告_已签署.md",
+      "package_path": "inputs/22_G-02_第二人审核报告_已签署.md",
+      "sha256": "BB8D155EFA827088D4834A2DD69684610E8D4A3E83FDE6CD679E2D6E1E702BDD",
+      "size_bytes": 5134
     },
     {
       "source_path": "02-技术研发/07-数据治理/g02.py",

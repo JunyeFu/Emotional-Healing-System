@@ -4,7 +4,7 @@
 
 ## Current Task Goal
 
-G-01研究治理已领取返工并转`IN_REVIEW`（分支`codex/g-01-research-governance`）。后续开放项：真实团队第二人复核、M-001 PANAS中文版许可核验（E-003）、伦理路径确认、两周吞吐演练真实执行与U8判定。U8未过前正式阶段继续阻断，G-01不得转`DONE`。
+四项IN_REVIEW已由傅钧烨第二人签收`PASS`（签收提交`ea132c8`）：P-01、P-02转`DONE`，F-05解锁为`READY`；G-01（AC3演练/U8/M-001许可/伦理）、G-02（专机/保留期限/197项资产门）保持`IN_REVIEW`，外部门关闭前不得转`DONE`。当前可领取：F-03、F-04、F-05、V-03。
 
 ## Constraints
 
