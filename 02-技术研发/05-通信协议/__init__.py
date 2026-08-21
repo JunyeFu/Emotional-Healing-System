@@ -1,1 +1,1 @@
-# 05-通信协议 — UDP JSON 发送 + CSV 日志
+# 05-通信协议 - runtime contract, UDP compatibility sender, and CSV logger.

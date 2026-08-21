@@ -436,7 +436,10 @@ class DirectPipeline(threading.Thread):
                 break
             processed = pipeline.feed(
                 frame.timestamp, frame.respiration_raw, frame.ecg_raw,
-                frame.eda_raw, frame.acc_magnitude, frame.temp_skin)
+                frame.eda_raw, frame.acc_magnitude, frame.temp_skin,
+                ecg_samples=getattr(frame, "ecg_samples", None))
+            if processed is None:
+                continue
             score = scorer.score(processed,
                                  breath_phase=frame.breath_phase,
                                  guidance_prompt=frame.guidance_prompt,

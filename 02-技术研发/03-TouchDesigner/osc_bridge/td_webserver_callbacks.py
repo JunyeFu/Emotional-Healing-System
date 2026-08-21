@@ -10,9 +10,18 @@ API:
 """
 
 import json
+import os
+
+
+DEVELOPMENT_CONTROL_ENABLED = os.getenv('SRP_TD_DEV_CONTROL', '') == '1'
 
 
 def onHTTPRequest(webServerDat, request, response):
+    if not DEVELOPMENT_CONTROL_ENABLED:
+        response['statusCode'] = 403
+        response['mimeType'] = 'application/json'
+        response['data'] = json.dumps({'error': 'DEVELOPMENT_CONTROL_DISABLED'})
+        return
     method = request.get('method', 'GET')
     uri = request.get('uri', '/')
 

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://srp.local/contracts/transport-handshake-v1.schema.json",
+  "title": "SRP Loopback Transport Hello v1.0",
+  "type": "object",
+  "required": ["transport_type", "transport_version", "role", "schema_version", "client_instance_id"],
+  "properties": {
+    "transport_type": {"const": "hello"},
+    "transport_version": {"const": "1.0"},
+    "role": {"enum": ["unity", "td"]},
+    "schema_version": {"const": "2.1"},
+    "client_instance_id": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

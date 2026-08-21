@@ -4,7 +4,7 @@
 
 ## Current Task Goal
 
-输出一份可导航的项目情况与顶层设计汇总，区分仓库现状、已确认目标、建议研究方案、尚待确认门和进入成员任务包拆分前的顺序。
+G-01研究治理已领取返工并转`IN_REVIEW`（分支`codex/g-01-research-governance`）。后续开放项：真实团队第二人复核、M-001 PANAS中文版许可核验（E-003）、伦理路径确认、两周吞吐演练真实执行与U8判定。U8未过前正式阶段继续阻断，G-01不得转`DONE`。
 
 ## Constraints
 
@@ -17,8 +17,14 @@
 - 保留 SRP 术语边界，避免新增禁用表达。
 - 不导出内部隐式推理；以“观察—判断—影响”记录可审计依据。
 - 完成后验证文件存在、入口引用有效、术语扫描和 `git diff --check` 通过。
+- 仅在`D:\Agent\03-SRP`操作；保留四个既有删除项、`SRP/`、根目录docx、`tmp/`和本地Unity日志，不纳入G-02提交。
+- G-02不得在专机环境、保留期限、Unity资产和真实团队第二人复核关闭前标记为`DONE`。
 
 ## Known Evidence
+
+- 2026-08-21 G-01：对`origin/main`根目录8个文件的验收不通过（记录于`03-测试与实验/G-01_验收记录_2026-08-21.md`）；随后按流程领取，基于`codex/v-02-concept-design`建`codex/g-01-research-governance`（`origin/main`注册表落后，不作基底）。
+- G-01返工：8文件归位`06_步骤05_伦理与预试材料/`，补齐G-01-01与G-01-10；v1.1时长口径统一（PANAS 2~3、猜测2~3、问卷≤5、知情同意5~8、清理5~8）；演练口径统一（窗口14天/执行7天、产能140、U8线112、预约165）；责任人角色化（R-007）；术语0命中；`07`/`14`校验通过，pytest 404 passed。
+- G-01边界：AC3真实演练未执行、U8未判定、M-001许可`PENDING`、第二人复核开放；转`IN_REVIEW`不扩大为DONE或正式阶段放行。
 
 - Git 根目录为 `D:/Agent/03-SRP`，本任务开始时 HEAD 为 `97ed1e8`，分支为 `main`。
 - `PROJECT_MODULES.md` 仍把 TD Spout 作为 Unity 输入；后续访谈已确认 Unity 必须脱离 TD 独立完成体验，因此模块地图需要在主线确认后另行修订。
@@ -507,3 +513,356 @@ Give every currently unlocked task its own dispatch directory containing a compl
 ### Boundary
 
 Package generation does not claim that F-01, F-03, F-04 or G-01 has started or completed. Relative links inside copied source snapshots may still assume the original source directory; `FILES.md` links back to those authority files.
+
+## 2026-08-07 Implement F-01 Runtime Contract Technical Closure
+
+### Goal
+
+Complete the F-01 technical scope across the project architecture without implementing downstream session, storage, Unity or TouchDesigner tasks, and preserve the mandatory second-person review boundary.
+
+### Evidence And Decision
+
+- Added the v2.1 Python contract validator, Draft 2020-12 combined Schema, six message families, 11 hashed fixtures, migration guide and AC record.
+- Formal manifests require PLUX respiBAN and Polar H10 sources, a known Unity build and no Mock input. Missing fields, wrong versions, retired fields, duplicate controls and stale sequences fail closed; unknown compatible fields are filtered out.
+- Reserved TCP 5010 for reliable control, ACK, render receipts and TD requests after confirming no active listener. UDP 5005/5006 retain read-only TD and Unity telemetry roles.
+- Preserved v1.2 UDP and CSV code as `LEGACY_DEV_ONLY`; no real-device, session-core, Unity or TD runtime claim was made.
+- F-01 remains `READY` with claimant and branch recorded because second-person review is still pending. P-01, P-02, G-02, U-01 and T-01 remain dependency-blocked.
+
+### Next Hard Gate
+
+A non-implementing team member must execute the review checklist in `02-技术研发/05-通信协议/F-01_技术验收记录.md`, record findings and sign the interface before F-01 may become `DONE` and unlock downstream tasks.
+
+### Boundary
+
+Contract and fixture completion does not establish a listening TCP service, persistent L0/L1 records, Unity or TD consumers, real-device LIVE_E2E, Level evidence or any Gate result.
+
+## 2026-08-07 Remediate F-01 Independent Review Findings
+
+### Goal
+
+Close every reproducible F-01 contract finding while preserving the real-team second-review gate.
+
+### Evidence And Decision
+
+- Four isolated review rounds found and drove fixes for Schema/Python drift, EOL-sensitive hashes, missing rejection audit records, malformed enum exceptions, unexecuted Draft 2020-12 validation, source-mode provenance, stage-one probability, fallback consistency, audit ordering and arbitrary-precision integers.
+- The contract suite now executes the Schema and reference runtime against fixtures, required-field/type mutations and semantic counterexamples. A PowerShell consumer independently reads baseline and forward-compatible telemetry.
+- The final isolated model review found no P0-P2 issue after deterministic READY package regeneration and returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`.
+- F-01 remains `READY`; model review is evidence only and cannot substitute for a real non-implementing team member's signature.
+
+### Next Hard Gate
+
+A named team member must review the exact pushed commit, record commands, findings and identity in the F-01 acceptance record, then approve the governance-only transition to `DONE`.
+
+### Boundary
+
+This closes the implemented contract's model-review loop only. It does not complete P-01, P-02, Unity, TouchDesigner, real-device integration or a full-system run.
+
+## 2026-08-08 Project-Wide Defect Remediation
+
+### Goal
+
+Land repository-safe fixes from the independent audit without fabricating Unity completion, external approval, participant evidence or LIVE_E2E.
+
+### Implemented
+
+- Preserved timestamped native-rate ECG batches through the 10 Hz coordination frame; removed averaged-ECG interpolation and neutral missing-channel defaults.
+- Made invalid/warmup windows non-emitting; corrected trend state order, mock latency, fatal error propagation, CSV schema drift and asynchronous device shutdown.
+- Added runtime-contract cross-field invariants and negative tests; root pytest now excludes the TD vendor environment and passes as one canonical entry.
+- Added a Unity formal-build preprocessor gate. Its current expected result is `FORMAL_SCENES_MISSING`; this prevents the legacy SampleScene/v1.2 prototype from being published as formal v2.1.
+- Disabled TD mutation controls by default unless `SRP_TD_DEV_CONTROL=1` is explicitly set for development.
+- Moved F-01 to `IN_REVIEW`, distinguished review packages from claimable READY tasks, added current v1.1 authority to every dispatch package and regenerated 74 snapshots.
+- Marked all 20 legacy participant-material Markdown files as superseded/non-distributable; isolated the historical novelty and reference entries; replaced non-authorized acquisition links and added a fail-closed provenance validator.
+- Built a Git-index-only review snapshot. Its first clean checkout exposed line-ending-sensitive hashes for `.sha256`, `.ps1` and numbered `.gitattributes` inputs; the shared canonicalization policy and regression test now cover them, and the rerun passed 100 tests plus strict package validation.
+
+### Open Hard Gates
+
+- F-01 still requires a named non-implementing team member; F-03, F-04 and G-01 remain READY.
+- Unity lacks formal scenes/controller and tests; real device adapters and LIVE_E2E remain absent.
+- Reference provenance validation intentionally remains red until the inventory is rebuilt with identity, hash, source, access basis and asset-role fields.
+- External approvals, scale permission, Level A/B/C, Monte Carlo, throughput rehearsal, preregistration and locked analysis cannot be closed by repository edits.
+
+## 2026-08-11 Prepare F-01 Human Second-Review Report
+
+### Goal
+
+Provide a self-contained report that lets a real non-implementing team member review F-01 against implementation commit `6c27c94a53c3eaa57d77b12a74626eb7442bfc0e` without pre-filling or fabricating the human conclusion.
+
+### Evidence And Decision
+
+- Added `02-技术研发/05-通信协议/F-01_第二人审核报告_待签署.md` with fixed scope, authority links, repeatable commands, AC checklists, findings table and blank identity/conclusion fields.
+- Fresh verification produced 49 contract passes, 100 project passes, a passing PowerShell consumer, and passing registry, package and protocol validators.
+- F-01 remains `IN_REVIEW`; the report explicitly separates F-01 approval from the broader 112-file implementation commit and from downstream runtime claims.
+
+### Next Hard Gate
+
+A named team member must independently execute or witness the listed checks, record findings and sign the report. Only a human `PASS` permits a separate governance commit that moves F-01 to `DONE` and recalculates newly READY tasks.
+
+## 2026-08-12 Close F-01 Signoff And Unlock G-02/P-01/P-02
+
+### Goal
+
+Record the named second-person F-01 acceptance without overstating how evidence was obtained, migrate every current governance surface, generate all newly READY packages and freeze a decision-complete G-02 plan.
+
+### Evidence And Decision
+
+- 傅钧烨 confirmed acceptance as team director and independent second reviewer, based on witnessing the existing verification results and reviewing the fixed files; the report explicitly states that the reviewer did not personally rerun the commands.
+- Acceptance commit `58c9e41871214351a0fe96a413dfbc34d482ed4a` binds the completed report to implementation commit `6c27c94a53c3eaa57d77b12a74626eb7442bfc0e`.
+- F-01 moved from `IN_REVIEW` to `DONE`; G-02, P-01 and P-02 moved from `WAIT_DEP` to `READY`; F-03, F-04 and G-01 remain `READY`.
+- The dispatch set is now exactly F-03, F-04, G-01, G-02, P-01 and P-02. U-01 and T-01 retain other unmet dependencies; D-01 and D-02 retain external and upstream gates.
+- Added `G-02_数据治理实施计划_v1.0.md`, freezing L0-L5 classification, phone-only HMAC deduplication, credential custody, store separation, fail-closed APIs, backup recovery, tracked Unity asset licensing and downstream contracts. G-02 remains `READY`; no implementation claim was made.
+
+### Verification
+
+- F-01 contract suite: `49 passed in 1.50s`; root regression: `100 passed in 13.82s`.
+- Registry validator: 51 entries; `DONE=F-01,F-02,R-01,W-01`; six expected READY tasks; no `IN_REVIEW` task.
+- Indexed dispatch validator: six packages, 77 snapshots; protocol authority and PowerShell non-Python consumer passed.
+- Fixed-task PDF: eight A4 pages, text checks passed, SHA-256 `E23243D839DF47BFBC94688B961DD12FA60C12ABE1EA97991E5AD0978B21561E`; all pages were rendered and visually inspected without clipping or overlap.
+
+### Open Hard Gates
+
+- F-01 completion covers the runtime contract only. P-01, P-02, Unity, TouchDesigner, real-device integration and a full-system run remain separate tasks.
+- G-02 is planned and dispatchable, not implemented. Formal contact collection remains closed until the dedicated account, encrypted governance volume, credential, retention approval and access evidence exist.
+- The project-level novelty state remains `REVISE_REQUIRED`, and the independent-review project state remains `REJECT_AND_RESUBMIT_DESIGN`.
+
+## 2026-08-12 Implement G-02 Data Governance Candidate
+
+### Goal
+
+Implement the frozen G-02 data-governance design, prove the synthetic technical loop and fail-closed release behavior, then move the task to human second review without claiming formal-machine readiness.
+
+### Evidence And Decision
+
+- Implementation commit `befbdb698ef5cbeb6061315a4c912abdde4e6b08` adds L0-L5 authority, strict E.164 normalization, domain-separated HMAC deduplication, isolated identity mapping, append-only audit chaining, authenticated backup recovery, manifest privacy linting and downstream contracts.
+- The cross-stage state machine covers Level B, Level C, stage 1 and stage 3, including concurrent reservation, release before exposure and permanent blocking after exposure.
+- Unity now has a Git-derived 179-item inventory, license ledger and synchronous formal-build gate. Three unresolved asset groups retain owners, deadlines and exclusion plans and continue to block release.
+- G-02 tests report `107 passed`; the synthetic rehearsal and repository privacy gate pass. The formal environment gate reports six missing machine controls, and Unity exits with the expected asset-license block after successful C# compilation.
+- G-02 moves from `READY` to `IN_REVIEW`. The READY set becomes exactly F-03, F-04, G-01, P-01 and P-02; no G-02-dependent downstream task is newly unlocked.
+
+### Open Hard Gates
+
+- A dedicated Windows account, separate encrypted governance and backup roots, Credential Manager secret, sealed recovery evidence and institution-approved retention period remain required.
+- The three Unity asset groups must be cleared or excluded before publication.
+- A real team member independent of the implementation must review the fixed commit and sign `G-02_第二人审核报告_待签署.md`.
+
+## 2026-08-13 Implement P-01 SessionCore Candidate
+
+### Goal
+
+Implement the v2.1 fixed-sequence session authority and minimum Python loopback transport, integrate its contracts with G-02/P-02/X-01 and Unity boundaries, then move P-01 to human second review without claiming downstream runtime completion.
+
+### Evidence And Decision
+
+- Implementation commit `8063afc7053a79a0d27fe8fc94159dbc5fc9a9e0` adds deterministic `SessionCore`, fixed `SequenceProvider`, formal gates, session-event schema, protocol configuration, TCP 5010 control delivery, UDP 5005/5006 validated mirroring and a four-module golden trace.
+- The golden trace completes storm, heat, snow and fade once each in 800 seconds with trace hash `sha256:c163f211396dc979fa9f63ce25a8984cc3a4f2010ba71d8711d3223abf7c4491`.
+- Independent model review found five P1-P2 candidates. Abort delivery/disconnect, semantic ACK failure and local-clock 20 Hz enforcement were repaired; conservative exposure and duplicate-request rejection were confirmed as intended. The second review returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW` with no open P0-P2.
+- P-01 moves from `READY` to `IN_REVIEW` at six person-days. F-03 is explicitly a Python-controlled render mirror, not a second session authority. The claimable set becomes F-03, F-04, G-01 and P-02; G-02 and P-01 remain review-only.
+
+### Open Hard Gates
+
+- A real non-implementing team member must review and sign the fixed P-01 implementation commit before `DONE`.
+- P-02 durable append storage, X-01 randomization authority, Unity/TD consumers, real devices and `LIVE_E2E` remain separate open tasks.
+- Stage 3 frozen-policy ordering is blocked with `ADAPTIVE_SEQUENCE_REQUIRES_V2_2`; v2.1 does not reinterpret `weather_sequence` as a fallback sequence.
+
+## 2026-08-16 Implement P-02 Durable Session Store Candidate
+
+### Goal
+
+Implement append-only manifest/L0/L1 storage and deterministic P-01 replay, preserve interrupted bytes without resuming experience progress, and move P-02 to human second review without claiming formal runtime closure.
+
+### Evidence And Decision
+
+- Implementation commit `3d740e99118d6a76993156f26bdf673144429025` adds exclusive manifest storage, segmented canonical JSONL hash chains, checkpoints, seal scopes, interruption recovery, P-01 recording adapters, telemetry store-before-send and side-effect-free replay.
+- Formal capability requires a repository-external root, configured system account and role, G-02 authorization, encryption and minimum ACL checks. Development archives cannot self-declare formal capability.
+- The P-01 golden archive preserves 19 controls, 19 ACKs, 12 render receipts, 54 session events and 46 committed operations. The 800-second stress candidate records 320000 PLUX samples, 104000 Polar samples and 16000 L1 frames with valid integrity.
+- Independent model review required four rounds. All four P1 and two P2 findings were closed; final status is `PASS_FOR_MODEL_INDEPENDENT_REVIEW`.
+- P-02 moves from `READY` to `IN_REVIEW`. The READY set becomes exactly F-03, F-04 and G-01; D-01/D-02 retain device gates and A-01 still waits for S-02.
+
+### Open Hard Gates
+
+- A real non-implementing team member must review and sign the fixed P-02 implementation commit before `DONE`.
+- Formal-machine encryption, ACL, account and integrated runtime evidence remain required.
+- Real device adapters, Unity/TD consumers, X-01, A-01 and `LIVE_E2E` remain separate tasks.
+
+## 2026-08-16 Fresh Independent Agent Audit Of IN_REVIEW Tasks
+
+### Goal
+
+Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 implementation commits, preserving human-signature authority and current task states.
+
+### Evidence And Decision
+
+- Three independent Agents reviewed G-02 `befbdb698ef5cbeb6061315a4c912abdde4e6b08`, P-01 `8063afc7053a79a0d27fe8fc94159dbc5fc9a9e0` and P-02 `3d740e99118d6a76993156f26bdf673144429025`.
+- All three returned `REVIEW_FINDINGS_OPEN`: 0 P0, 4 P1, 4 P2 and 2 P3 findings.
+- New counterexamples cover credential overwrite, embedded contact leakage, unconfirmed completion, premature ACK, receipt mismatch, envelope mutation, seal/recovery races and invalid memory-trend evidence.
+- The detailed evidence is recorded in `03-测试与实验/IN_REVIEW_Agent独立审核报告_2026-08-16.md`.
+- G-02, P-01 and P-02 remain `IN_REVIEW`; pending human second-review reports were not edited or signed.
+
+### Next Queue
+
+- Close P1 findings first with regression tests, then P2 and P3 findings.
+- Freeze new implementation commits and rerun independent Agents before requesting human second review.
+- Do not reuse earlier model-pass statements as current closure evidence.
+
+## 2026-08-16 P1-P2-P3快速修复
+
+- P-01固定提交`03d7426`，专项`98 passed`，独立Agent `01a008fa-b83f-7982-ab82-b8fde66b8c93`返回`PASS_FOR_MODEL_INDEPENDENT_REVIEW`。
+- P-02固定提交`03d7426`，专项`68 passed`，独立Agent `01a00910-6889-78e0-94d4-246e2409f328`返回`PASS_FOR_MODEL_INDEPENDENT_REVIEW`。
+- G-02专项`138 passed`；独立Agent `01a00914-d4c5-7fc1-8966-a400aaccba66`返回`PASS_FOR_MODEL_INDEPENDENT_REVIEW`，51项注册表及6包/182快照校验通过。
+- 三项继续保持`IN_REVIEW`，真实团队第二人签署、正式专机与Unity资产门不因模型复审通过而关闭。
+
+## 2026-08-17 Unity实验环境渐进搭建与任务协调
+
+### 目标
+
+在不抢跑Unity场景实现的前提下，重新组织Unity任务依赖和验收证据，使团队从可复现环境逐步装配到完整参与者制品和全链路环境。
+
+### 裁定与证据
+
+- 冻结`E0 F-03 -> E1 U-01/U-02 -> E2 U-03 -> E3 U-04/U-05/U-06/U-07 -> E4 U-08 -> E5 I-01`路线。
+- F-03扩展为精确Unity/包锁环境、测试架、P-01 golden驱动会话壳、无TD无Spout开发构建和正式门负路径，仍保持`READY`。
+- U-01新增P-01依赖；U-03成为首个风暴200秒纵向切片；其余场景在U-03后并行；I-01新增P-02依赖。
+- 资产盘点可与E0至E3并行，但未知、未跟踪或未登记资产继续阻断U-08正式候选。
+- 注册表51项和6个分发包通过验证，F-03包增加协调计划后共有183个快照；根回归`404 passed`。
+- 固定任务概要重建为8页，SHA-256为`1C3453527C839C29177E093E546AE4C1895A97207115B3CA50EC28AE27E5D606`，逐页检查无截断、重叠或乱码。
+
+### 边界与下一步
+
+- 本轮只完成任务协调和分发制品，不声称Unity工程已编译、场景已按新接口完成或正式构建已放行。
+- 下一可执行Unity包仅为F-03；U-01必须等待P-01签收，U-08必须通过G-02资产门，I-01必须等待P-02及其他前置。
+- 默认`python`当前指向缺少pytest的3.14.5；验证改用可发现且带pytest 9.0.3的`py -3.14`，未安装新依赖。
+
+## 2026-08-18 Unity场景设计流程订正与任务包落盘
+
+### 目标
+
+废止“先做指定天气纵向切片再补设计”的当前执行口径，按游戏场景设计流程重新建立Unity前期设计、技术支撑、灰盒、纵向切片和批量生产的依赖树，并生成可独立领取的首个前期设计包。
+
+### 裁定与证据
+
+- 新增V-01至V-05五个固定任务，依次覆盖研究体验契约与完整旅程、天气概念与呼吸提示专项原型、四层视听映射与资产来源、完整分镜与真实时长声音预演、四模块全旅程灰盒与形成性回退门。
+- F-03收缩为可复现工程与测试构建基线；U-01负责可靠控制技术探针；U-02负责SceneAdapter；U-03改为由V-02风险矩阵选择最高风险天气，不再预设具体天气。
+- Unity设计主线冻结为`V-01 -> V-02 -> V-03 -> V-04 -> V-05 -> U-03 -> U-04/U-05/U-06/U-07 -> U-08 -> I-01`，F-03、U-01和U-02作为技术支撑在相应门前汇合。
+- 注册表现含56项，其中53个固定任务、3个模板；当前`READY`固定为F-03、F-04、G-01、V-01，G-02、P-01、P-02保持`IN_REVIEW`。
+- 独立任务包确定性重生成通过，共7包、186个输入快照；新增V-01包并刷新F-03边界。
+- 固定任务概要重建为9页，SHA-256为`54483B4EF13BEE3F485EB411B4567CFBBFAC5128CD00D3919DEFE73C1D35D4CB`，逐页检查无裁切、重叠、孤立表头或乱码。
+- 全仓回归`404 passed in 22.62s`；协议权威、注册表、独立任务包、禁用表述和暂存差异检查均通过。
+
+### 边界与下一步
+
+- 本轮只完成设计流程、任务依赖、领取包和说明制品，不声称Unity场景、灰盒、测试构建或正式候选已经完成。
+- V-01可以与F-03并行领取；V-02至V-05必须依赖前序证据逐级解锁，禁止在V-05回退门前批量制作四个天气。
+- G-02、P-01、P-02的真实团队第二人签收、Unity资产许可、真实设备和`LIVE_E2E`仍是后续硬门。
+
+## 2026-08-18 V-01 研究体验契约与完整旅程
+
+### 目标
+
+执行 Unity 从头设计的第一步，在任何天气、美术或声音定案之前，冻结研究体验、系统权威、完整旅程、证据路径和设计主张边界，为 V-02 提供不依赖旧 Unity 场景的起点。
+
+### 已完成
+
+- 建立26个冻结或版本化约束、15个开放创作问题、12个旅程节点和10条结构化主张。
+- 明确第一模块只来自 Python manifest；前量表与后量表均不由 Unity 读取，核心体验不要求参与者进行手部操作。
+- 明确两种条件是覆盖四模块、三个固定段和四层真值的完整表示包；第三阶段使用同一`scene_native`构建，只比较顺序策略。
+- 提交`2854223`形成初始候选；独立 Agent `01a012e3-ebfb-7fc0-8747-7d492e8aa612`发现3个P2和1个P3校验缺口；提交`293720f`补齐跨总控、TouchDesigner只读、条件覆盖和结构化主张校验。
+- 第二轮独立复审返回`PASS_NO_OPEN_P1_P3`。模型结论不替代真实团队第二人签收。
+- V-01迁移到`IN_REVIEW`，V-02继续`WAIT_DEP`；当前可领取集合为F-03、F-04、G-01。
+
+### 验证与边界
+
+- 根回归`404 passed in 17.63s`；协议权威、V-01契约、任务注册表和独立任务包均通过。
+- 四类负向篡改覆盖TouchDesigner越权、条件单位漂移、完整包缺模块和主张状态越界，均被校验器拒绝。
+- 固定任务概要为9页，SHA-256为`2E314D87D72AF274228DF0F67C47D81DA7B39E4D9C0EFEE87270377DEA426585`，逐页及重点页检查无裁切、重叠或状态冲突。
+- 本步未操作 Unity Editor，未选择最终天气、抽象提示、叙事、声音或资产，未形成构建、真实设备链、`LIVE_E2E`或正式参与者结果。
+
+### 下一步
+
+- 真实团队第二人审阅`V-01_技术验收记录_待第二人复核.md`；只有签收为`DONE`后才将V-02改为`READY`。
+- F-03可以继续独立建立Unity工程、测试和开发构建基线，但不得提前冻结天气方案。
+
+## 2026-08-18 V-01签收闭环与V-02解锁
+
+### 目标
+
+把傅钧烨对固定实现提交`293720f40126e2892b585c78fe7908518f40d4ad`的真实团队第二人`PASS`结论独立落盘，随后将V-01迁移为`DONE`、将V-02迁移为`READY`，并恢复逐节点设计核对入口。
+
+### 已完成
+
+- 签收提交`339b94fb0a5e4527032cf59a835d6691419c8a76`只记录审核人、角色、复核方式、对象、结论、日期和不扩大范围。
+- 后续治理增量回填签收提交SHA，并将验收记录重命名为`V-01_技术验收记录_已签署.md`。
+- 注册表迁移为`V-01=DONE`、`V-02=READY`；G-02、P-01、P-02保持`IN_REVIEW`，F-03、F-04、G-01保持`READY`。
+- `READY`任务必须未领取，因此V-02领取人、分支和复核人字段保持为空；当前对话开始逐节点决策核对，不把讨论开始误写成已完成实现。
+- 独立任务包移除V-01并加入V-02，确定性重生成后为7包、196个输入快照。
+
+### 验证与边界
+
+- 根回归`404 passed in 18.75s`；协议权威、V-01契约、任务注册表和独立任务包校验均通过。
+- 固定任务概要PDF为9页，SHA-256为`36F393B287D01F42B4D875BDF39FF1DFB4DBFFF882B7131A339EDC4302D23041`，逐页检查无裁切、重叠或乱码。
+- V-01签收只关闭研究体验契约与完整旅程设计门；Unity运行、构建、真实设备链和`LIVE_E2E`仍由下游任务提供证据。
+- 下一步进入V-02节点1，只确认设计对象、功能位置、用户可见概念和稳定技术ID的术语边界，确认后立即写入V-02上下文。
+
+## 2026-08-20 V-02场景确认收口
+
+### 目标
+
+按用户最新决定停止形成性评审细则设计，将V-02本轮讨论收口到四场景及共同呈现规则确认，并形成后续Unity任务可直接读取的场景基线。
+
+### 已完成
+
+- 冻结风雨隘口、热浪盐原、雪雾松林、灰霾湿地与四个稳定技术ID的对应关系。
+- 汇总2D自动卷轴、东方自然世界、固定观察者、两种互斥呼吸节律提示、低刺激呈现和AI主责资产路线。
+- 节点15A转为历史草案，取消节点15B；不再追问人数、问题、问卷或阈值。
+- 将实现参数、工程风险排序、动态原型和验证方案移交V-03及后续Unity任务。
+
+### 边界与下一步
+
+- 当前结论是`SCENE_DESIGN_CONFIRMED`，不是任务注册表`DONE`。
+- 未产生Unity运行、动态原型、正式构建、真实数据链或正式实验完成证据。
+- 下一阶段应从场景基线进入V-03视听映射和实现约束，不再扩展V-02评审设计。
+
+## 2026-08-20 V-02候选验收与职责闭环
+
+### 目标
+
+将V-02场景确认材料转成可审计候选，修正版本化合同、场景设计和Unity实现之间的责任边界，并在真实团队第二人签收前保持V-03阻断。
+
+### 已完成
+
+- 新增机器可读场景基线、技术验收记录、专项校验器和独立Agent复核记录。
+- 技术ID按无序集合校验且四模块均`exactly_once`；场景原生与抽象双环共享V-01/R-01四层来源。
+- `storm`双停与`fade`双吸均进入v2.2门；新增F-05固定任务负责Schema、fixture和消费者迁移，U-01、U-02、T-01与U-07显式依赖F-05。
+- V-03只负责四层视听合同、资产基线和工程风险排序；U-03负责最高风险切片及成本证据；U-08显式依赖G-02资产门。
+- 任务注册表扩展为57项，其中54个固定任务和3个模板；依赖图无环且全部任务可到达W-04。
+- 独立Agent首轮问题全部关闭，最终结论为`PASS_NO_OPEN_P1_P3`，但不替代真实团队第二人签收。
+
+### 边界与下一步
+
+- V-02候选提交后只迁移到`IN_REVIEW`，V-03继续`WAIT_DEP`；F-05因P-01/P-02尚未签收保持`WAIT_DEP`。
+- 本轮没有Unity运行、正式构建、真实设备链、`LIVE_E2E`或参与者结果证据。
+- 真实团队第二人必须对固定候选提交给出结论，只有V-02转为`DONE`后才能重新计算并解锁V-03。
+
+## 2026-08-21 V-02真实团队第二人签收与V-03解锁
+
+### 签收
+
+- 傅钧烨以团队总监、真实团队第二人复核身份，对固定候选提交`3ebbdeedfd3c16688ae406d34c18e4f319f2afac`给出`PASS`。
+- 日期：`2026-08-21 +08:00`；无未关闭P0-P3问题。
+- 第一签收提交：`c04a7be5017164ce8bdfa4ee7f0270c75bb37368`。
+
+### 治理迁移
+
+- V-02从`IN_REVIEW`迁移为`DONE`，签收记录重命名为`V-02_技术验收记录_已签署.md`。
+- V-03从`WAIT_DEP`迁移为`READY`；当前可领取集合为F-03、F-04、G-01、V-03。
+- 重生成独立任务包后移除V-02复核包，新增V-03包；下游实现仍必须遵守V-03自己的验收门。
+
+### 边界
+
+- V-02签收只关闭四天气场景与呼吸提示设计确认门，不代表Unity运行、正式构建、真实设备链或`LIVE_E2E`完成。
+- V-03只负责四层视听映射、资产来源基线和工程风险排序；U-03仍负责最高风险垂直切片实现证据。
+
+### 候选提交与治理迁移
+
+- V-02固定候选提交为`3ebbdeedfd3c16688ae406d34c18e4f319f2afac`。
+- 注册表将V-02从`READY`迁移为`IN_REVIEW`；当前可领取集合收敛为F-03、F-04、G-01。
+- V-02审核对象固定为上述提交，真实团队第二人结论保持待填写；模型独立复审结论不替代该签收。
+- 任务手册、独立任务包和固定任务概要需从迁移后的注册表重新生成并通过一致性验证后，才能形成治理提交。

@@ -1,0 +1,2300 @@
+{
+  "blockers": [
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/camera_render.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/camera_render.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183409.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183409.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183551.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183551.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183731.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183731.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183812.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-183812.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-185428.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-185428.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190016.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190016.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190107.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190107.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190218.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190218.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190522.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190522.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190713.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190713.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190757.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190757.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190835.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190835.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190918.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190918.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190942.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-190942.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191249.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191249.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191439.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191439.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191517.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191517.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191607.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-191607.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192119.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192119.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192129.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192129.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192154.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192154.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192354.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192354.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192448.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192448.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192554.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192554.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192817.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192817.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192956.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-192956.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193035.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193035.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193116.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193116.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193205.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193205.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193249.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-193249.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-194934.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-194934.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-195020.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-195020.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200022.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200022.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200253.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200253.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200536.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200536.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200701.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200701.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200805.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200805.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200922.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-200922.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201210.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201210.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201302.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201302.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201815.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-201815.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202130.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202130.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202241.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202241.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202439.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202439.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202528.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202528.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202606.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202606.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202641.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202641.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202703.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-202703.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-221746.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-221746.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222350.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222350.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222409.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222409.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222614.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222614.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222806.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222806.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222815.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-222815.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-223938.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-223938.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-223945.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-223945.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-224151.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-224151.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-224618.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-224618.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-225040.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-225040.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230002.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230002.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230738.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230738.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230820.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-230820.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231410.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231410.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231449.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231449.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231654.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231654.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231715.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-231715.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-232818.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-232818.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233707.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233707.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233724.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233724.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233950.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-233950.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-235136.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-235136.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-235152.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260602-235152.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103139.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103139.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103451.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103451.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103907.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103907.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103921.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-103921.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-105831.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-105831.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-110550.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-110550.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-111025.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-111025.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112337.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112337.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112414.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112414.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112649.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112649.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112758.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112758.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112908.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-112908.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120515.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120515.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120620.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120620.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120645.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-120645.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140504.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140504.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140732.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140732.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140839.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-140839.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-141036.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260603-141036.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-112649.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-112649.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-114042.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-114042.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-115248.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-115248.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-115259.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-115259.png.meta"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-123944.png"
+    },
+    {
+      "code": "IGNORED_RELEASE_FILE",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Screenshots/screenshot-20260604-123944.png.meta"
+    },
+    {
+      "code": "LICENSE_REPLACE",
+      "replacement_plan_valid": true,
+      "subject": "local-sprites-unresolved"
+    },
+    {
+      "code": "LICENSE_REPLACE",
+      "replacement_plan_valid": true,
+      "subject": "project-assets-authorship-pending"
+    },
+    {
+      "code": "LICENSE_REPLACE",
+      "replacement_plan_valid": true,
+      "subject": "roslyn-binaries-unresolved"
+    }
+  ],
+  "inventory": {
+    "authority_root": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual",
+    "items": [
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Fall.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "92d16c434d159b91845fd990bb7a856017173d13e6152b5b06b41142116b4323"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Idle.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "ec66510edada5a6f89bf08afc8b80827e24179558732a645087cd54b4c1d0d30"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Kneel.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "1e6ec238e9a2b434bb4b4902ce1160e23a4284a28d3b682e1dd41c1e1eec3ad1"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Lookdown.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "ac7975275b5fb88d8708805b5be8a6cb50ece35dd0a8e0b58c1c84cdcada0b50"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Run.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "c9e0cc37866a5899590233a0b118abf8dbaf03daf42576bfd415f85cf88a5c78"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Shield_Appear.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "9f1402abea23819f98ec136fb4f588eeadefe5e5266752e1004bee98e132fb90"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Shield_Clean.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "8e2bdabf4f25cb5a04fdae1274f45d54b83f09eff35be979eacd30394a25193a"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Shield_Cracked.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "c45b890cf770f7f7e8868b49adefa6adddad7809df0d64591b34354cae261952"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Sit.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "b9e1a6b140ab8acdecca22abd86fc47011b714f34a20e8a0d5f27c21f841f2dc"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Stand2.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "edf330edff0b8331108b8d886c016efeb9a34fe78de4f5cc5ca13ae15aeb4e0c"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Traveler.controller",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "438f89bdceccf0b4d31a63523337a1c975d49612aec59e6df537ad7804b3c889"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Animations/Walk.anim",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "5c995441b7743494bd258d4b6b033f35ea6d27702809142617b3835a1b1b02c5"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/DefaultVolumeProfile.asset",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "cb88ac788e6f2ac42dda3d6bc1593cefaba460e96aeae1b1c8fa7bef3e90e1e7"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/InputSystem_Actions.inputactions",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "1c6cbb519d65ecfe19a29231735b7f54741a20ac1a8ad4f46a18e1bfb28a3c39"
+      },
+      {
+        "asset_type": "MANAGED_OR_NATIVE_PLUGIN",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Plugins/Roslyn/Microsoft.CodeAnalysis.CSharp.dll",
+        "license_group_id": "roslyn-binaries-unresolved",
+        "sha256": "81b578b15e4a3f2ba928fab9d014e9fad6b885fa25a2a7e6176beda937588764"
+      },
+      {
+        "asset_type": "MANAGED_OR_NATIVE_PLUGIN",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Plugins/Roslyn/Microsoft.CodeAnalysis.dll",
+        "license_group_id": "roslyn-binaries-unresolved",
+        "sha256": "a8aef0aaec005c7c9c246669d35575c6075bd876f3095ef06fb07fee7df43b61"
+      },
+      {
+        "asset_type": "MANAGED_OR_NATIVE_PLUGIN",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Plugins/Roslyn/System.Collections.Immutable.dll",
+        "license_group_id": "roslyn-binaries-unresolved",
+        "sha256": "5b1b1c83ba3d135c2fdfe425842fbe9c7432878b7e468623acb554c69b4c130f"
+      },
+      {
+        "asset_type": "MANAGED_OR_NATIVE_PLUGIN",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Plugins/Roslyn/System.Reflection.Metadata.dll",
+        "license_group_id": "roslyn-binaries-unresolved",
+        "sha256": "55ef768ffa305de58e38e15420669258b16f420618eb1f702bddb30e5c797961"
+      },
+      {
+        "asset_type": "MANAGED_OR_NATIVE_PLUGIN",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Plugins/Roslyn/System.Runtime.CompilerServices.Unsafe.dll",
+        "license_group_id": "roslyn-binaries-unresolved",
+        "sha256": "01748200f2400c742aa689f1f5101bd6298efdfd92c00c18f4fa473847235ba9"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/FadeScene.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "69af13d2ac3fc87def81c61f838c7d52cf886ac4da81264102c3681e25d35020"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/HeatScene.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "a94e1955cd94f6f21c6b429be9ef8b2f5856eae08284268d3688efbb99698b36"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/PlayModeTest.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "e7bed14cd11cd1213d3000effcb75e41d0e876b34ef10860292f07dec534272c"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/SampleScene.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "387d8216a517be775b6ecc2ab55b97ece687c3372322da2ba027a96908014912"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/SnowScene.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "8806e4ea971c0efffcde6dd83a46ff4d78810332006945df1dff0ef01974e105"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/StormScene.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "d8d40ae3a580978163fd50309ca941ed7cf327b00490457f82a484c9e818cf70"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/Test3DBasic.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "d846de5f48272ccb89d9fd058dab2af840147806fe3abe9fa7178bcdf7e23c32"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/TestRender.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "227dd35d6d90a6c166ede66ef4a276bc2b465a979f8d8e84b3c38ab350f27910"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scenes/TestScene.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "9b4c26238ee8711929db053788722ad4ab8934648da0e37e2853259d99270922"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/CameraSwitch.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "3453df7ebbe181cd1f11056c09b016597edf737ea58f4be82534bd272710553a"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/AnalyzeBridge.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "f7a26eac4ce0b82fd2bc726c2a13e198d8262dab3fc1981466aa885580d15adc"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/ApplyBridgeParams.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "92a3c59eb525b9c0469dea49bab030174bb5b5e4536a599427839b9b27692bdf"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/ArrangeBackgrounds.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "41be9c41968ba92997b80062c56174dbf5be0ac3bd2d13251daeafc3f48399d8"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/AssignLookdownSprite.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "130a8ec0dfc9183156d26dcde0034cc5baf1d4a2f935a8d12bb92c0bf53d56b4"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/BuildScene1.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "cd1b13f818c8af578d25604b7463a971881a7437ddfda6a6659fdac251dd058b"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/BuildScene2D.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "e8bed56074cd6cfffa95bad833d53e1d38f5c379a59bc04cf7efe144bb302833"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/CleanAndRebuildScenes.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "8a3fd2e6254f8f14752c2325af1047ebbea83526d076b3a82c3d86543d95991a"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/CleanupWeatherDuplicates.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "d850b9d096b111de29bb22202c0c8cd84d837327a0ed6832faba503b849c95e6"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/ComprehensiveFix.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "f1e8a1d89d5f4e08cf103f914c93f38102d1c739b7df1d557c9fa54985814433"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/ConfigureSpriteImports.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "91ff9fdad138fe7be6576ff621998cb14d97012101f5cfcccf13685479f3e1e7"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/CreateAnimations.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "13eb2a60fffac5b817c8cdaf3a34c129529165afa9d9ebf20c110d674184df34"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/DebugCamera.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "d78c517017b7e15e078aba95917238469f348430d5ae0357547fa51add965d86"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/EdgeDetectBridge.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "b4484fd13c4eca492feb48874d8137f12334840afcccc470df5b5e820395308d"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/FinalBuild.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "a353482226ea94ef21051021ed9a2f98f99416b4ca8d020e6bbe8098cbd85834"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/FinalRebuild.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "702af5ac889534c8809610078ec96a650d58cee5b8d549d983b76c779030e693"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/FindBridgeSurface.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "0178051db99945f7e5bf3513aad970cdd2d0167937705a9b876ccb1aa4ee2c8c"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/FixScene1.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "118c4a129a62b9dbc1a8b148dc68b955ac403dfa1ead8767716f9900b287c738"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/FixSpritePPU.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "ab723198c812e3b070cc5bb45f3af666de65d705370ee2db02dc955487d1162b"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+        "license_group_id": "g02-project-original",
+        "sha256": "ada7823bb73b645e371510bd52402b0f060c72ae54c8ad67ff895a0d939647db"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/ImportNewSprites.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "b9c6f4c270de1fb817999824e2e076c2fbc87f28dec072ec18b105e97380f913"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/PlaceTravelerOnBridge.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "954f944227035c620403f267da9108eeb9b9ae271007256256cf6a22e09f9cfb"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/RenderCameraToFile.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "e4b14d7f720c17faa5141e2efde364327a5d6669c2914f9d6ba417b748ce8f2e"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/ScaleTravelerAndScene.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "bcfe2aff0f9d8616b93a847aeaf73b06cc3cde4b34fa5a1bade833c8d3bd4b3e"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/SetupWeatherScenes.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "13bab472a1743650c8c74bf3e4ac7d0b7ee03c0e66af32a57d687ba227e69a37"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/SetupWeatherWalkScene.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "2bfaceecf718898d67268b5d30e3d03f6f22cbf67d8935e84609224c508db2ef"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/SwitchToForwardRenderer.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "ca759b9713f757d7e031b47b8830aa69928d853cebacff3a4ec0276d6c50c879"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/UpdateAllArtAssets.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "45d6815ec8f5f05966f84939830d99c47c5a63242456fa4849bdb8b3dbec4f07"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/VerifyAnimations.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "8dd1c3da0df3071da65540c7eff45a3a0d35e743d4aea3b24862533252692d95"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/VerifyTravelerPosition.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "7c4eff15c68fa386a07b75a7e7c294db4cd1464b07576e43b95942544ffd7cd9"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/PromptDisplay.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "07fbc9723a2874e247ca88985a8540a2caa956866900cbec5c70daee66ce414f"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Scene1Director.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "a76cac68d38965ae52c520f0e42bf9f882c862058b78d84e304b7b39e65cdb0a"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/SpoutReceiver.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "e7833c199661bf6d562d6dd71132eebece36470fefd4fb2070ffef6480eb5024"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/TravelerAnim.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "758ccd46ee7c358398893486b611b2b78b2527b4fe7caeaafce0d64cd485a6c6"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/UDPReceiver.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "10d578e38d8f05208598f03e84159bccf3bc69e435ecabab580730b54e53f837"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/WalkBG01_03.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "31525efac129577bd6da647fc6f05ceac091f1fc9f98b2c80f8846ea63bd916a"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/WalkBG04.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "2e20bda2163c01d582110b0b3925efb2fd40370a759f7dbfc6cc5a0d11cf7b6c"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/WalkBG05.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "4c84260717e5f7563d98f5b3b2796e992031e63aa82f3ab7fd1e7f0a580dd96e"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/WeatherController.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "3caa32de84cce8d7b164b2f2eb31c53f1f8f3ce7e95d39c3ca0879fec68f3eb9"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/WeatherDirector.cs",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "8be26969534af679bd682348616e52e4e68193804c624db74b9219d70241fdf0"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Settings/ForwardRenderer.asset",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "43ad7f2c686b3bb2a3fd8351409e0252a0c3b361d218006d074e77c09534dd30"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Settings/Lit2DSceneTemplate.scenetemplate",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "ca928761bf976c878d54df524a3742c5f1bca53a013b4061abd2c752c8a212aa"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Settings/Renderer2D.asset",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "900455794d0d788504847c3aa54e03a0374fd3635afa295ed05c2f646f974705"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Settings/Scenes/URP2DSceneTemplate.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "f6fb3e91aaa90417e2920b7f903066833b3b9aea72ddcb5e46b91afa729c2e90"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Settings/UniversalRP.asset",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "2a759543c049bdfe70c413693bf5c71ce1bec5778ae52467509b39f07bae1dcb"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/backgrounds/bg_01.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "9ef375c908012b2b1d4a1d2a69b0e3fdb0b382c463d4f6781664ca03081e833d"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/backgrounds/bg_02.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "1c15e260618896724b3ea2491a59abb83d3f673eab5a31be55f7cd50645380a7"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/backgrounds/bg_03.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "d827aedf2d2937d6d134457eba07b2b9229d4474017b58fb64a43376e2bbcba7"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/backgrounds/bg_04.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "8d2af3d54f24dfe2a6584b5b45768df7c5d4d2f57b5037f37767d9e4dd2a556e"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/backgrounds/bg_05.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "bad00a795abf176352b7e86e42b68af4c51614e74c1460ee0d17718c1224dfb7"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/bridge_analysis.json",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "e5b0b65ccd9ca1638c9ffb7a1a510431bb250253009490cdf0ea921ebba0ef39"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/bridge_detection.json",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "d7b4cf4c642dd971a352b113a49dbc1686c4d1327c0be188abcdc43fdf356464"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/bridge_edge_analysis.json",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "95b97a866b9199715c097d09f7224ec966d9185b583c437f44bd1c49aa1f6a06"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/effects/lightning_full.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "9e0c1f72927b0c7c42afc8ab691bd5458e6e4035c41ca5ec650954abafddb583"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/effects/rain_drop.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "523432b60e87465583902393c4d73efc7194ea08a5c5d35bcd273627244a134c"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/effects/speed_trail.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "9377bd503d721db34b19be79231575565218bfdbd705db6690cfe6b12636a8c2"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/fall/fall_1.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "6b5cc4c678fbf70e56ecebc7dca2cc500fa54686e580d007193ec7976696f424"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/fall/fall_2.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "c467668b088bf216591a7ecec105c7061cdd6e07be77b040afe12121776e1e49"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/fall/fall_3.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "98392b04b3283483244c1f7d1dba2f1ce1065d69602b07660041233d0471f442"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/fall/fall_4.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "4da6fca2d52afedae3786e7d5bf7d5838ab7c41a4a47ad180b061fd9298b6a37"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/fall/fall_5.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "87c2e162728d4b29bcb4bbf93e092ac4fba235bd2128ca6b71b4c537d09bd5e5"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/fall/fall_6.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "b0b9d6df36cc9754740e752bdbaca1a8ee422b81d376e1788cb424ec8b8ee4a3"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/fall/fall_7.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "28900f3a4748de6d7f7d8cee5af39a54150e1adeae219c5d4e68531d4228b8af"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/fall/fall_8.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "4ba278148e8c3ff7ad30087b39b3d4025f4256848d7fb4c4deb05f0f226153bc"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/pose_kneel.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "061d5164b7a30a70f3a07566758dc5e678df3a320639a04a13af074623c7aa1e"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/pose_kneel2.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "d12fd33a419cb3b36446d300d1d26ba6f4b48a7ceb7aaa473fd621811c36f9ec"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/pose_kneel3.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "5244b71f9ce7ee2bd10b02f144d672102a59699143cf3d3a367ec8eb0a66ea94"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/pose_run.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "b2312d9b4d0ba7abf6224f387a2f4f53cb4c7b439011cf21b3c263644feed139"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/pose_sit.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "fcef1516bf1ffc51bd2bf8643afb70a6312fb706d1dab0fb84b56d6318b5ee8a"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/pose_stand2.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "bbdeb56b72494e46680e4ffeed1e5ae416ca754403b766a3c89540fcfff9cab1"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_00.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "df462aeec4cdd101e72fede0fd3f4f1c88459b247392039eae94290dd563f144"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_01.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "a4d33609d5f212096feb4911360d52d0bd0c3a54b82cb05e1b429173ba684654"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_02.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "3ebdb1989cbdeca716969127b88df8408885b63646e4d8bb278b5c2126c6eb63"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_03.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "81c53926c962f3616dd55d4d8a7d3437bcb12216764a375880a36460fdfd0d28"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_04.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "aaf0a21667159ececefa91a498b94e8ef0b5bc0b07d0a7336f25be89fad3cc36"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_05.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "a6ba8cfaa75686cf20b0fb5bac6ec9ecb7f60e22271fca638dde47ba6e276a11"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_06.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "193beafc444ff16e0a37264619497cb35cd31edf9065d045512571859a08faab"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_07.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "846ef17bb26afbb67868ad09d07202ad90f347c995754468533a8869a307f84b"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_08.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "7e86173d50825858df75ea472711a31931cff96c0ec653316fe0126bbe005476"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_clean.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "24fff900fc8b831b0d92375cbda7a2bb3d30b8b9571a5dd1e0d2c357e0f71777"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/shield/shield_cracked.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "52c03d4f29ad11f968946333f7ed3de34f9744fb7830157479ce39459646fd66"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/traveler_idle.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "bf341e13aa7d3f2a595f251e786a22f602454ff155a665852343a7b3770d1c59"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/traveler_lookdown.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "12efb321229f1b74ed6124cc92f7cf10bf94e232b98d3f6904df7e4ee9aed77b"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/walk/walk_01.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "c0a60ed2fe69777ab89e5cf63dd69b0eaa25fbaf423d97661fdc7014d4516837"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/walk/walk_02.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "b274d48ce6ca91fe22c47e95e56c77472c4f6885c5c566efe59a16db8c5ebc5b"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/walk/walk_03.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "50748ae080c987e41840fb527e23119ebc61a1b6deb934cfcac5a927d41e9d2f"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/walk/walk_04.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "578e17add1f499684e7c840e00e208d8c9edd2720b65e78660ce1397792b1de7"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/walk/walk_05.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "bce154de594bbc74060c7d45e5fe9cc9d5eabe35a98cdbe6d4509bc9629eff6b"
+      },
+      {
+        "asset_type": "IMAGE",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Sprites/traveler/walk/walk_06.png",
+        "license_group_id": "local-sprites-unresolved",
+        "sha256": "6fd61bc35f0aa5c67be973a728549963a36d641487167dbf573c301bc0ca0eee"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/UniversalRenderPipelineGlobalSettings.asset",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "a60960dbf5434bf38e6b580ba7a47fcc0a775e7eaca8f467f774f80e266aebfc"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/_Recovery/0 (1).unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "ef52f8f28670ab6583c6fb4778f535577c7a40e7410e835b1f414e584e379080"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/_Recovery/0 (2).unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "ef52f8f28670ab6583c6fb4778f535577c7a40e7410e835b1f414e584e379080"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/_Recovery/0 (3).unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "55b633fcc773dee3dae8e874c833301d3fa031d1e6f7b47bc91d25a8e59cbb47"
+      },
+      {
+        "asset_type": "UNITY_ASSET",
+        "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/_Recovery/0.unity",
+        "license_group_id": "project-assets-authorship-pending",
+        "sha256": "ef52f8f28670ab6583c6fb4778f535577c7a40e7410e835b1f414e584e379080"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.coplaydev.unity-mcp",
+        "license_group_id": "coplaydev-unity-mcp",
+        "lock_hash": "78ee5418415953b79c358bfe6355fcc3fde7912b",
+        "package_id": "com.coplaydev.unity-mcp",
+        "sha256": "98f548009efbbbd1d1b6089a6d63717b7b505ffcaaccea4baac07c9070963c02",
+        "source": "git",
+        "specification": "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#78ee5418415953b79c358bfe6355fcc3fde7912b"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.2d.animation",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.2d.animation",
+        "sha256": "3e361d501eca3658196d764c9a55bd4c2fe43fd9f21bb505c21070138e390455",
+        "source": "registry",
+        "specification": "14.0.4"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.2d.aseprite",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.2d.aseprite",
+        "sha256": "e14f84b2e195e27c6502029a547c71da0d5e94ab3cfb9fdc851fd73c6700e64d",
+        "source": "registry",
+        "specification": "4.0.2"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.2d.psdimporter",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.2d.psdimporter",
+        "sha256": "569fadbcd7806afa12d94b162277cf189640bb8a171705572a7cd355f2168919",
+        "source": "registry",
+        "specification": "13.0.3"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.2d.sprite",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.2d.sprite",
+        "sha256": "1d2f1dbfcf0ac410012f5ae3cb5e43157f66e25017365814cd4d6a8dc2394d36",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.2d.spriteshape",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.2d.spriteshape",
+        "sha256": "e9b2691b36ec927a61656d4607680308aac556c44da8d458d955a2fc2d503c23",
+        "source": "registry",
+        "specification": "14.0.1"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.2d.tilemap",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.2d.tilemap",
+        "sha256": "693efd891ea4d33362dbe54e7a833174064697ae005d9f9802c2071f052adb3c",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.2d.tilemap.extras",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.2d.tilemap.extras",
+        "sha256": "527b92bb878134ad172f5393cbbe609e2f673f5e4d18b2df7a6a71f2a9018610",
+        "source": "registry",
+        "specification": "7.0.1"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.2d.tooling",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.2d.tooling",
+        "sha256": "0c57c1a1771c457ebf16ae30727daf18f8d02899ba1fffe6849a5cb66d0320d9",
+        "source": "registry",
+        "specification": "2.0.2"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.cinemachine",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.cinemachine",
+        "sha256": "c89425185fd1d9b905ece4d7d55a25325b475c0380b394d71715fc11db50f43f",
+        "source": "registry",
+        "specification": "3.1.7"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.collab-proxy",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.collab-proxy",
+        "sha256": "7e5075164f7546e940da40b4f19826320ae75c428d668c60c5a054bde19619c0",
+        "source": "registry",
+        "specification": "2.12.4"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.ide.rider",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.ide.rider",
+        "sha256": "53dd4bfb3f6e149791113dd697cfefba6acbfc00efc1b68f41b4ea51c4893655",
+        "source": "registry",
+        "specification": "3.0.40"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.ide.visualstudio",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.ide.visualstudio",
+        "sha256": "22fcd98f2ec1a7adb2ef440431951483eb4649cca9c735aeed78308c22ca2563",
+        "source": "registry",
+        "specification": "2.0.27"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.inputsystem",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.inputsystem",
+        "sha256": "51322480098991a4eb3ff0f90729fb4ff8cae045f689250822e87059783bcefe",
+        "source": "registry",
+        "specification": "1.19.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.accessibility",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.accessibility",
+        "sha256": "0aced1632cb2cfeea8860712ff9f46ec94e62f2ac860c2237ef848976919e1af",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.adaptiveperformance",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.adaptiveperformance",
+        "sha256": "da89885c23ee34938ff05a26b3efb390595b115962dbe40c14e31bcc5ffc84a3",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.ai",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.ai",
+        "sha256": "01a083161ce0b7b51e7dcf434a710db896394fda5f70f8b1674fe7d81ab78420",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.androidjni",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.androidjni",
+        "sha256": "021b11d983db8e2ebabfa2997d062b44f97bb32f6ca3504c0bc0e4528e895b3b",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.animation",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.animation",
+        "sha256": "b55bdbd8f9650b84c243c073ad080ba2b2b613e607d60aa0620611baeada0f2f",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.assetbundle",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.assetbundle",
+        "sha256": "c46af9b640eb4a2b4b8fc4b990fe600654a7ee213cb69c5c5270f4a8c3a9c1fd",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.audio",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.audio",
+        "sha256": "897c5a0ba472666928e60d1ebd69e496f96308d6d6bc9ca4568cf2814bd3aa48",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.cloth",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.cloth",
+        "sha256": "5f9848ffe8418276f29e37846755b8f68acbe7cab85225023ccdd61cb62ca167",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.director",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.director",
+        "sha256": "daa7dc912048e4db69d374ab47c383641783b6d5d81373bb56617a696ea9349b",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.imageconversion",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.imageconversion",
+        "sha256": "d9e467a0d3ca71026a8e359b7e31094339574894dabd0eedf9387f10b8af5b42",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.imgui",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.imgui",
+        "sha256": "266e14a6116a47371daebae4d709e9f01ac021509d94d06526380e9a530ff113",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.jsonserialize",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.jsonserialize",
+        "sha256": "4107c68db1880c65854e6adcae17d0e1c7a7e96a43a334d87ce33e096a32c8b3",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.particlesystem",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.particlesystem",
+        "sha256": "59612a7de0dd8ecdca34bc07640d9185b94b6fd0ef1c53a983880723bd3daa8c",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.physics",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.physics",
+        "sha256": "c48fc0ad1047efeab62bcb6676c127c53e38c1bd7be0be134f4226af0a0d1e1d",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.physics2d",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.physics2d",
+        "sha256": "f721ad222c675b15785d15c760499da47cb0cb660bbac3634b8dc8cb19251bd9",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.screencapture",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.screencapture",
+        "sha256": "a39e1d968c8092c6c8960d6a50cc9ac86b19d6bcc11bf66db3b00d1199b2f1b2",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.terrain",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.terrain",
+        "sha256": "de23ffd3c2143b3d777f997a94dd69cf55f04439e39aa6d771679045c51f249c",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.terrainphysics",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.terrainphysics",
+        "sha256": "bc9c21518ecd7cd5d6a1945fda0cce7b237242d4b0414240d9a4494c26347c5a",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.tilemap",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.tilemap",
+        "sha256": "1c4a14f200572bc4826ff97a236ab225475cb1691e67fc5d39cb48865f608c6c",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.ui",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.ui",
+        "sha256": "e476e0a1806eba9f1a420952800b3489bc06aa8d201fc02563eb4ff3e913f74f",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.uielements",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.uielements",
+        "sha256": "821ed255fa4aca8fc4256778d5755260ce03a7aaff338a2f2245dc377082967a",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.umbra",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.umbra",
+        "sha256": "eea54bb9dd9d2c65b6fad6df6b78c1872d2fe7fb1f1c8b3deea47ea49f0eb526",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.unityanalytics",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.unityanalytics",
+        "sha256": "476468b81206165105812ee6f0bbbad13fc063496bf22d0092b50490c0937180",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.unitywebrequest",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.unitywebrequest",
+        "sha256": "9bcdf05e4f6344b65bcdf4d5f0d5591c465f834d461d60907031b8b49aa73838",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.unitywebrequestassetbundle",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.unitywebrequestassetbundle",
+        "sha256": "80fbf3f4eee38c4c8f0e1b6765aba1799be5c7473c82dac336c04b99bda650a4",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.unitywebrequestaudio",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.unitywebrequestaudio",
+        "sha256": "7ecdac8707c395ec5055c35e18330a6c8d818dceceb6bbf3bdeec5d455203326",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.unitywebrequesttexture",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.unitywebrequesttexture",
+        "sha256": "b413b0f8271e00d7ee87adbf007741a03daa05c59da970d268c31b3c72350b74",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.unitywebrequestwww",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.unitywebrequestwww",
+        "sha256": "37b433393c23fa7b0f6996e0a5c9a89ad17046f8c335b34b169733dd81067511",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.vectorgraphics",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.vectorgraphics",
+        "sha256": "886fb5f0f6f0d57dd0cd5cdbdca47ad74b4ac1c77508791994a1f3d0c4cc1081",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.vehicles",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.vehicles",
+        "sha256": "1523acdf2f35f1589e81c57f1c7449492d860161aeab0f441dfba9908222d12f",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.video",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.video",
+        "sha256": "9d6644b25d7690b3a319f77ea49d6b7db2f837b00ca3446582c750632980ccbb",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.vr",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.vr",
+        "sha256": "567a0254942af240be3436219ce3a131fb6cf484ede11331ea5e533187a4ee2f",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.wind",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.wind",
+        "sha256": "ccfd7f9738220bbc43bb5f878eb44a16b955f4af5171ef12b7a4c6ad1df2e2b9",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.modules.xr",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.modules.xr",
+        "sha256": "9e6d1b31bd89ad98bc980d01c374fee9500c9c7ac43a25babc499c0e8bb02624",
+        "source": "builtin",
+        "specification": "1.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.multiplayer.center",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.multiplayer.center",
+        "sha256": "12978cb5290bb9ecda6a6812c6d4ea6fe7c7548b807f7fa760cc624420f674d2",
+        "source": "builtin",
+        "specification": "1.0.1"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.probuilder",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.probuilder",
+        "sha256": "cb5f44917e4a02b07749f84e14dda437c30861d9cfcbb2bee5faf4739b59a04d",
+        "source": "registry",
+        "specification": "6.1.2"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.render-pipelines.universal",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.render-pipelines.universal",
+        "sha256": "15687360e796ea996a770fef07fada5543d7289ea446934b51b3daf74f364adf",
+        "source": "builtin",
+        "specification": "17.4.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.test-framework",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.test-framework",
+        "sha256": "8ec117d620d4454c86567b8838a9f649aa50adf9f439084d8cbc381c2ad624a3",
+        "source": "builtin",
+        "specification": "1.6.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.timeline",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.timeline",
+        "sha256": "016ec7c5119a3c6987cc7ef9a1ef00481b775aaefbc46fc10b607da703977dbf",
+        "source": "registry",
+        "specification": "1.8.12"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.ugui",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.ugui",
+        "sha256": "d709893bb7a61f522d2aa60401c13b79b88dfed7735239b347dee9fd921c1134",
+        "source": "builtin",
+        "specification": "2.0.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.visualeffectgraph",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.visualeffectgraph",
+        "sha256": "6089351b2fb76f7548bd6f49c2692f3cacf98e07978addc2f40a428363eeba12",
+        "source": "builtin",
+        "specification": "17.4.0"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://com.unity.visualscripting",
+        "license_group_id": "unity-official-packages",
+        "lock_hash": null,
+        "package_id": "com.unity.visualscripting",
+        "sha256": "0acc2386e23c50c22676f5bd5cbfddff9cca9ae6ec6bdf3865fae8b6a03d0fa8",
+        "source": "registry",
+        "specification": "1.9.11"
+      },
+      {
+        "asset_type": "UNITY_PACKAGE",
+        "git_path": "package://jp.keijiro.klak.spout",
+        "license_group_id": "klak-spout",
+        "lock_hash": "849e7bca3c167839ed697796153e1749acf0c53f",
+        "package_id": "jp.keijiro.klak.spout",
+        "sha256": "8a49e965997405654c5008bacbeff5e5656fb136fc71b9b4545475a6a89a5ab7",
+        "source": "git",
+        "specification": "https://github.com/keijiro/KlakSpout.git?path=/Packages/jp.keijiro.klak.spout#849e7bca3c167839ed697796153e1749acf0c53f"
+      }
+    ],
+    "license_ledger_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Governance/asset_license_ledger.json",
+    "license_ledger_sha256": "771e7ac77d0e2c4414ed79a963e3f0c76cefaa1b2f1675df4ca800ffda20f098",
+    "schema_version": 1
+  },
+  "release_allowed": false
+}

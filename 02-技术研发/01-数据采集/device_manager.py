@@ -119,19 +119,28 @@ class DeviceManager:
 
         if self.frame_clock:
             self.frame_clock.stop()
+            if self.frame_clock.is_alive():
+                self.frame_clock.join(timeout=2.0)
 
+        stop_error: Optional[BaseException] = None
         if self._loop and self._loop.is_running():
-            for name in list(self._drivers.keys()):
-                asyncio.run_coroutine_threadsafe(
-                    self._drivers[name].stop(), self._loop
-                )
-            self._loop.call_soon_threadsafe(self._loop.stop)
+            future = asyncio.run_coroutine_threadsafe(self._stop_all(), self._loop)
+            try:
+                future.result(timeout=5.0)
+            except BaseException as exc:
+                future.cancel()
+                stop_error = exc
+                logger.error("Device shutdown did not complete cleanly: %s", exc)
+            finally:
+                self._loop.call_soon_threadsafe(self._loop.stop)
 
         if self._thread and self._thread.is_alive():
             self._thread.join(timeout=5.0)
 
         self._started = False
         logger.info("DeviceManager stopped")
+        if stop_error is not None:
+            raise RuntimeError("DEVICE_SHUTDOWN_FAILED") from stop_error
 
     # ── Frame Access ────────────────────────────────────────────────────────
 
@@ -172,6 +181,29 @@ class DeviceManager:
             self._loop.run_forever()
         except Exception as e:
             logger.error(f"BLE event loop error: {e}")
+        finally:
+            pending = asyncio.all_tasks(self._loop)
+            for task in pending:
+                task.cancel()
+            if pending:
+                self._loop.run_until_complete(
+                    asyncio.gather(*pending, return_exceptions=True)
+                )
+            self._loop.close()
+
+    async def _stop_all(self) -> None:
+        """Await every registered driver shutdown before the loop is stopped."""
+        if not self._drivers:
+            return
+        results = await asyncio.gather(
+            *(driver.stop() for driver in self._drivers.values()),
+            return_exceptions=True,
+        )
+        failures = [result for result in results if isinstance(result, BaseException)]
+        if failures:
+            raise RuntimeError(
+                "driver stop failures: " + ", ".join(str(item) for item in failures)
+            )
 
     async def _connect_all(self) -> None:
         """Connect all registered devices concurrently."""

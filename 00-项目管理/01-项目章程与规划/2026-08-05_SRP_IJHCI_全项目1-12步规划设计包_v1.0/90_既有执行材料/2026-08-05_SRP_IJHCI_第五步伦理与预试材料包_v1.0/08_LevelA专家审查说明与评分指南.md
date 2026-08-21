@@ -1,5 +1,9 @@
 # Level A 专家审查说明与评分指南
 
+> **SUPERSEDED / NOT_FOR_RECRUITMENT / NOT_FOR_SUBMISSION**
+> 本v1.0材料仅作迁移与审计证据；它仍含旧流程和待关闭字段。必须完成G-01、双人逐字段复核及外部门禁后，才能使用新的v1.1材料。
+
+
 ## 一、目标
 
 Level A不是请专家判断项目“好不好”，而是审查：

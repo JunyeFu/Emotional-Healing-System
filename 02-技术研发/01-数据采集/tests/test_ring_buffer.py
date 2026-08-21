@@ -14,7 +14,7 @@ from ring_buffer import RingBuffer
 def test_push_and_read():
     buf = RingBuffer(10)
     assert buf.is_empty
-    assert buf.read_latest() == 0.0  # empty → 0.0
+    assert buf.read_latest() is None
 
     buf.push(1.0, 3.14)
     buf.push(2.0, 2.71)
@@ -48,10 +48,18 @@ def test_read_window_larger_than_buffer():
 
 def test_read_latest_ts():
     buf = RingBuffer(10)
-    assert buf.read_latest_ts() == (0.0, 0.0)
+    assert buf.read_latest_ts() is None
 
     buf.push(1.5, 42.0)
     assert buf.read_latest_ts() == (1.5, 42.0)
+
+
+def test_read_after_preserves_native_timestamps():
+    buf = RingBuffer(10)
+    buf.push(1.0, 10.0)
+    buf.push(1.1, 11.0)
+    buf.push(1.2, 12.0)
+    assert buf.read_after(1.0) == [(1.1, 11.0), (1.2, 12.0)]
 
 
 def test_clear():

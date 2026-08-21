@@ -1,0 +1,223 @@
+{
+  "package_schema_version": "1.0",
+  "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
+  "task_id": "P-01",
+  "status": "IN_REVIEW",
+  "registry_sha256": "EF4FD463CF64DB25D4584F61DC0FC3133C59897BE2CB91F842781BF2C922F923",
+  "source_files": [
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
+      "package_path": "inputs/01_11_实现冻结基线_v1.0.md",
+      "sha256": "609085CC6A40F2BAC822CA2DDCD73EFE20BF3EA78BE5DB20AF0BA659124DB523",
+      "size_bytes": 12433
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+      "package_path": "inputs/02_protocol_authority_v1.1.json",
+      "sha256": "66DCF22A6B98E9B35FE069AA19373228E9E2070A2508F253801ACA3669E51794",
+      "size_bytes": 3961
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/00_在线系统总架构.md",
+      "package_path": "inputs/03_00_在线系统总架构.md",
+      "sha256": "0CACEE3816668F159E2ED7CA48DD545B1F39CE2A7922BC21EDF595F4F8E0D01D",
+      "size_bytes": 1583
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/02_Python模块设计.md",
+      "package_path": "inputs/04_02_Python模块设计.md",
+      "sha256": "EDC271468A2CD8CF305D75E27F2D6AB7074FD3734A47D9F468BF54EF7BAF1572",
+      "size_bytes": 1573
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/04_信号质量与降级设计.md",
+      "package_path": "inputs/05_04_信号质量与降级设计.md",
+      "sha256": "27B0C2913BAE22FBCE11F05B4A1B8111422AFF4FC925941B72ADB00FEE6A57C1",
+      "size_bytes": 614
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md",
+      "package_path": "inputs/06_06_目标运行接口_v2.md",
+      "sha256": "9754D8B6F55DBB7D45B187F434388EA27E258EE6EA0FC31B88B023E6827BAF28",
+      "size_bytes": 7231
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/F-01_技术验收记录.md",
+      "package_path": "inputs/07_F-01_技术验收记录.md",
+      "sha256": "0CED8B92FE594C4C6AF763AD3B7B2761A4180E93FFB960DC451BFA6A48AB5638",
+      "size_bytes": 6501
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/F-01_第二人审核报告_已签署.md",
+      "package_path": "inputs/08_F-01_第二人审核报告_已签署.md",
+      "sha256": "CF078F157C97BBB3580E5225C638738AC2958EF3F612CFA5A4AFB76B734157C5",
+      "size_bytes": 9240
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/contracts/README.md",
+      "package_path": "inputs/09_README.md",
+      "sha256": "45972D05320E0DAC2C5F6BBCEDC82D1F133B9E66C63129D5B567588E4B331EDE",
+      "size_bytes": 2648
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/contracts/runtime-contract-v2.1.schema.json",
+      "package_path": "inputs/10_runtime-contract-v2.1.schema.json",
+      "sha256": "B8391DB072A697B044BB055A46458D211702D246286470CC78A3D3D4C109C194",
+      "size_bytes": 14912
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/runtime_contract.py",
+      "package_path": "inputs/11_runtime_contract.py",
+      "sha256": "6D20558C63958276E43A7BB8292A4A94F65B1D1CEEC86EF0A35C9BA970013054",
+      "size_bytes": 19870
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py",
+      "package_path": "inputs/12_test_runtime_contract.py",
+      "sha256": "3B4244EC46C44198A9E44EF8477479B58531EDEDBB9CC13FF2AFD5DF31CF3215",
+      "size_bytes": 13484
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/README.md",
+      "package_path": "inputs/13_README.md",
+      "sha256": "815EF43FC47E7957D8FEB80C8067AE2F6FB4E7B9ACEFF634484378D671125077",
+      "size_bytes": 3278
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/P-01_技术验收记录.md",
+      "package_path": "inputs/14_P-01_技术验收记录.md",
+      "sha256": "9DAC5E4830A866DBDD4502A3B91D1970577FF52C3972DF372F99C7133FD343DB",
+      "size_bytes": 2727
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/P-01_第二人审核报告_待签署.md",
+      "package_path": "inputs/15_P-01_第二人审核报告_待签署.md",
+      "sha256": "861457D0A987666FCCB09A14E74F59D599D85E1CA724A07E5A6EC31EBDE04560",
+      "size_bytes": 3441
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/__init__.py",
+      "package_path": "inputs/16___init__.py",
+      "sha256": "CAE815A0982B7525E69264EB1EAA39D24FAA8AE5F7259EB878702E8B69FAF429",
+      "size_bytes": 1051
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/config.py",
+      "package_path": "inputs/17_config.py",
+      "sha256": "209653BE866E2D23BB0B54D3F66A0772F07CA873562E2A7656E903A226C46CD7",
+      "size_bytes": 4212
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/config/protocol_config_v1.1.json",
+      "package_path": "inputs/18_protocol_config_v1.1.json",
+      "sha256": "86D6C75826085A9D7BD6FB53F680696FD7E918AAE43BE84A0E49DB2D93D90BB7",
+      "size_bytes": 723
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/contract_adapter.py",
+      "package_path": "inputs/19_contract_adapter.py",
+      "sha256": "4A84C7AE06E3A0231E1F2BA8B1D691E8F30DFEE650C00C42BCD3CEB7B84CA3C8",
+      "size_bytes": 557
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/contracts/session-event-v1.schema.json",
+      "package_path": "inputs/20_session-event-v1.schema.json",
+      "sha256": "0DF6ED08CB24A7971EA9E2B26E55DD34067436E1B38BB067BEB8F82FE2639464",
+      "size_bytes": 1423
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/contracts/transport-handshake-v1.schema.json",
+      "package_path": "inputs/21_transport-handshake-v1.schema.json",
+      "sha256": "97C6F1E7E8A0D3E50984D0593BF736989B8885AA3AE5EFB1D942DC18368B1A77",
+      "size_bytes": 591
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/core.py",
+      "package_path": "inputs/22_core.py",
+      "sha256": "63CCCF8AD9816F8D68F1D7F35E9F7A87FF0A953E595788900197568EA974FB4B",
+      "size_bytes": 33923
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/errors.py",
+      "package_path": "inputs/23_errors.py",
+      "sha256": "53754125C7DB26D1E7AE2DAAEFB982F74CBD81C679E47EABCBB124861BA07E98",
+      "size_bytes": 484
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json",
+      "package_path": "inputs/24_four-module-trace-v1.json",
+      "sha256": "3D5A28C28C37132D0E1121B145CF189A56656CA1EDD4459D6F77235E30F18CD3",
+      "size_bytes": 65320
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/gates.py",
+      "package_path": "inputs/25_gates.py",
+      "sha256": "2F0C779E51A51C05FA8021F99A68A51C26CE9F3C71568A47E46622CCAE21F4AF",
+      "size_bytes": 6729
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/generate_golden_trace.py",
+      "package_path": "inputs/26_generate_golden_trace.py",
+      "sha256": "82287AC0F0509532B6EC737C37FB9DC8B3A68FB0A905AB71424FF629944DF181",
+      "size_bytes": 7250
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/models.py",
+      "package_path": "inputs/27_models.py",
+      "sha256": "C22C2176D30C290586B3381246B5E7E2D70A1A5454A42D49B052FEBCE6730AD5",
+      "size_bytes": 4668
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/sequence.py",
+      "package_path": "inputs/28_sequence.py",
+      "sha256": "80E7A3C9B5777CF445B9668A7B94C5BA28D3EDF495635FA891E37526BF9ECA34",
+      "size_bytes": 3530
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/transport.py",
+      "package_path": "inputs/29_transport.py",
+      "sha256": "AC5D29FCDCEF44E4436798B8D3C6BC2FCC804A333C4089ED2312DA6A4102CDBC",
+      "size_bytes": 23775
+    },
+    {
+      "source_path": "02-技术研发/tests/session_core/__init__.py",
+      "package_path": "inputs/30___init__.py",
+      "sha256": "85944C42954889A10F65AA740B71E9865DD969356A6A2A80FBC1BF2A193AF295",
+      "size_bytes": 31
+    },
+    {
+      "source_path": "02-技术研发/tests/session_core/conftest.py",
+      "package_path": "inputs/31_conftest.py",
+      "sha256": "B3AAFB90CCFA9707EEA050B8B6817DFE4BAB8EECCD90386A4755CA5F6D240216",
+      "size_bytes": 4092
+    },
+    {
+      "source_path": "02-技术研发/tests/session_core/helpers.py",
+      "package_path": "inputs/32_helpers.py",
+      "sha256": "4455D37F8051F46A581ECD6A90F3B8AD33D729B1097BFD39A2B04DB4E8BFFC01",
+      "size_bytes": 3153
+    },
+    {
+      "source_path": "02-技术研发/tests/session_core/test_core.py",
+      "package_path": "inputs/33_test_core.py",
+      "sha256": "2C0C1418FB1A55742C025AF759371494D72DEBD6A96DFF9B9B8D92877AB7FA62",
+      "size_bytes": 12986
+    },
+    {
+      "source_path": "02-技术研发/tests/session_core/test_manifest.py",
+      "package_path": "inputs/34_test_manifest.py",
+      "sha256": "2AF0E07B77CA7CF9AFD3A52E3AB5377B70B69A465A8E3DB880E0B0B4E50B52BA",
+      "size_bytes": 4419
+    },
+    {
+      "source_path": "02-技术研发/tests/session_core/test_transport.py",
+      "package_path": "inputs/35_test_transport.py",
+      "sha256": "5D3F1909D52EF5DBB7DD105D04D79CF7BE5B7F92E2C1F0B64B03A017C04CF939",
+      "size_bytes": 26973
+    }
+  ],
+  "working_paths": [
+    "02-技术研发/srp_session_core",
+    "02-技术研发/05-通信协议"
+  ]
+}

@@ -47,12 +47,13 @@ def test_frame_clock_output():
         assert isinstance(f, RawFrame)
         assert f.timestamp > 0
         assert isinstance(f.respiration_raw, float)
-        assert isinstance(f.ecg_raw, float)
+        if f.ecg_samples:
+            assert f.ecg_raw == f.ecg_samples[-1][1]
         assert isinstance(f.eda_raw, float)
 
 
 def test_missing_device():
-    """Frame with no connected devices should produce zero-valued channels."""
+    """Missing channels are explicit and never neutral-looking values."""
     clock = FrameClock(rate_hz=10.0)
     clock.start()
     time.sleep(0.3)
@@ -60,32 +61,35 @@ def test_missing_device():
     clock.join(timeout=1.0)
 
     frame = clock.output_queue.get_nowait()
-    assert frame.ecg_raw == 0.0
-    assert frame.respiration_raw == 0.0
-    assert frame.eda_raw == 0.0
-    assert frame.temp_skin == 34.0  # neutral default
+    assert frame.ecg_raw is None
+    assert frame.ecg_samples == ()
+    assert frame.respiration_raw is None
+    assert frame.eda_raw is None
+    assert frame.temp_skin is None
+    assert not any(frame.signal_validity.values())
 
 
-def test_downsampling():
-    """ECG downsampling: 13 samples → 1 averaged value."""
+def test_native_ecg_batch_is_preserved():
+    """A coordination frame preserves native ECG values and timestamps."""
     ecg = RingBuffer(2000)
     for i in range(13):
         ecg.push(time.time(), float(i + 1))  # 1..13
 
     clock = FrameClock(ecg_buf=ecg, rate_hz=10.0)
     clock.ecg_connected = True
-    clock.start()
-    time.sleep(0.2)
-    clock.stop()
-    clock.join(timeout=1.0)
+    frame = clock._assemble(time.time())
+    assert frame.ecg_raw == 13.0
+    assert [value for _, value in frame.ecg_samples] == list(map(float, range(1, 14)))
+    assert frame.signal_validity["ecg"] is True
 
-    frame = clock.output_queue.get_nowait()
-    # mean of [1..13] = 7.0
-    assert 6.5 < frame.ecg_raw < 7.5, f"Expected ~7.0, got {frame.ecg_raw}"
+    # A second tick without new samples must be missing, not a repeated value.
+    second = clock._assemble(time.time())
+    assert second.ecg_raw is None
+    assert second.ecg_samples == ()
 
 
 if __name__ == "__main__":
     test_frame_clock_output()
     test_missing_device()
-    test_downsampling()
+    test_native_ecg_batch_is_preserved()
     print("All FrameClock tests passed.")

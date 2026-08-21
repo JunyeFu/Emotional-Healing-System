@@ -18,7 +18,7 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from typing import Optional
+from typing import Iterable, Optional
 from dataclasses import dataclass
 from collections import deque
 import warnings
@@ -85,32 +85,55 @@ class SignalPipeline:
 
     def __init__(self, buffer_size: int = BUFFER_SIZE):
         self.resp_buffer: deque[float] = deque(maxlen=buffer_size)
-        self.ecg_buffer: deque[float] = deque(maxlen=buffer_size)
+        # ECG is intentionally separate from the 10 Hz coordination buffers.
+        # Thirty seconds at 130 Hz preserves R-peak timing for HR/RMSSD.
+        self.ecg_native_buffer: deque[tuple[float, float]] = deque(maxlen=3900)
         self.eda_buffer: deque[float] = deque(maxlen=buffer_size)
         self.acc_buffer: deque[float] = deque(maxlen=buffer_size)
         self.t_buffer: deque[float] = deque(maxlen=buffer_size)
 
         self._last_rr = 14.0
-        self._last_hr = 72.0
-        self._last_rmssd = 45.0
+        self._last_hr: Optional[float] = None
+        self._last_rmssd: Optional[float] = None
         self._last_resp_amp = 0.5
         self._last_eda_tonic = 8.0
         self._last_motion = 0.04
+        self.last_status = "warmup"
+        self.last_invalid_reasons: tuple[str, ...] = ()
 
-    def feed(self, timestamp: float, respiration: float, ecg: float,
-             eda: float = 0.0, acc_mag: float = 0.0,
-             temp_skin: float = 34.0) -> Optional[ProcessedFrame]:
+    def feed(self, timestamp: float, respiration: Optional[float], ecg: Optional[float],
+             eda: Optional[float] = None, acc_mag: Optional[float] = None,
+             temp_skin: Optional[float] = None,
+             ecg_samples: Optional[Iterable[tuple[float, float]]] = None,
+             ) -> Optional[ProcessedFrame]:
         """Feed one multi-sensor frame into the pipeline.
 
         Returns ProcessedFrame after warmup, or None during warmup.
         """
+        reasons: list[str] = []
         self.t_buffer.append(timestamp)
-        self.resp_buffer.append(respiration)
-        self.ecg_buffer.append(ecg)
-        self.eda_buffer.append(eda)
-        self.acc_buffer.append(acc_mag)
+        if respiration is None or not np.isfinite(respiration):
+            reasons.append("resp_missing")
+        else:
+            self.resp_buffer.append(float(respiration))
+
+        native_batch = list(ecg_samples or ())
+        for sample_ts, sample_value in native_batch:
+            if np.isfinite(sample_ts) and np.isfinite(sample_value):
+                self.ecg_native_buffer.append((float(sample_ts), float(sample_value)))
+        if not native_batch:
+            reasons.append("ecg_native_missing")
+
+        if eda is None or not np.isfinite(eda):
+            reasons.append("eda_missing")
+        else:
+            self.eda_buffer.append(float(eda))
+        if acc_mag is not None and np.isfinite(acc_mag):
+            self.acc_buffer.append(float(acc_mag))
 
         if len(self.resp_buffer) < PROCESSING_WINDOW:
+            self.last_status = "warmup"
+            self.last_invalid_reasons = tuple(sorted(set(reasons)))
             return None
 
         # --- Respiratory processing ---
@@ -118,34 +141,51 @@ class SignalPipeline:
 
         rr_val = self._autocorr_resp_rate(resp_arr)
         if rr_val is None:
-            rr_val = self._last_rr
-        self._last_rr = rr_val
+            reasons.append("resp_rate_unavailable")
+        else:
+            self._last_rr = rr_val
         resp_amp = float(np.std(resp_arr[-PROCESSING_WINDOW:]))
         self._last_resp_amp = resp_amp
         regularity = self._estimate_regularity(resp_arr[-PROCESSING_WINDOW:])
 
         # --- Cardiac processing ---
-        ecg_arr = np.array(self.ecg_buffer, dtype=np.float64)
-
         try:
-            hr_val, rmssd_val = self._extract_hrv(ecg_arr)
-            self._last_hr = hr_val
-            self._last_rmssd = rmssd_val
+            hrv = self._extract_hrv(tuple(self.ecg_native_buffer))
         except Exception:
-            hr_val = self._last_hr
-            rmssd_val = self._last_rmssd
+            hrv = None
+        if hrv is None:
+            reasons.append("ecg_hrv_unavailable")
+            hr_val = None
+            rmssd_val = None
+        else:
+            hr_val, rmssd_val = hrv
+            self._last_hr, self._last_rmssd = hrv
 
         # --- EDA processing: tonic extraction via moving average ---
-        eda_arr = np.array(self.eda_buffer, dtype=np.float64)
-        window_n = min(EDA_WINDOW, len(eda_arr))
-        eda_tonic = float(np.mean(eda_arr[-window_n:]))
-        self._last_eda_tonic = eda_tonic
+        if self.eda_buffer:
+            eda_arr = np.array(self.eda_buffer, dtype=np.float64)
+            window_n = min(EDA_WINDOW, len(eda_arr))
+            eda_tonic = float(np.mean(eda_arr[-window_n:]))
+            self._last_eda_tonic = eda_tonic
+        else:
+            eda_tonic = None
 
         # --- Motion processing: RMS of recent ACC ---
-        acc_arr = np.array(self.acc_buffer, dtype=np.float64)
-        window_n = min(ACC_WINDOW, len(acc_arr))
-        motion_rms = float(np.sqrt(np.mean(acc_arr[-window_n:] ** 2)))
-        self._last_motion = motion_rms
+        if self.acc_buffer:
+            acc_arr = np.array(self.acc_buffer, dtype=np.float64)
+            window_n = min(ACC_WINDOW, len(acc_arr))
+            motion_rms = float(np.sqrt(np.mean(acc_arr[-window_n:] ** 2)))
+            self._last_motion = motion_rms
+        else:
+            motion_rms = 0.0
+
+        if reasons or rr_val is None or hr_val is None or rmssd_val is None or eda_tonic is None:
+            self.last_status = "invalid"
+            self.last_invalid_reasons = tuple(sorted(set(reasons)))
+            return None
+
+        self.last_status = "valid"
+        self.last_invalid_reasons = ()
 
         return ProcessedFrame(
             timestamp=timestamp,
@@ -156,68 +196,53 @@ class SignalPipeline:
             rmssd=rmssd_val,
             eda_tonic=eda_tonic,
             motion_index=motion_rms,
-            respiration_raw=respiration,
-            ecg_raw=ecg,
-            eda_raw=eda,
-            acc_magnitude=acc_mag,
-            temp_skin=temp_skin,
+            respiration_raw=float(respiration),
+            ecg_raw=float(ecg if ecg is not None else native_batch[-1][1]),
+            eda_raw=float(eda),
+            acc_magnitude=float(acc_mag or 0.0),
+            temp_skin=float(temp_skin) if temp_skin is not None else float("nan"),
         )
 
-    # ── Cardiac: custom peak detector for low-rate / synthesized ECG ─────
+    # ── Cardiac: native-rate peak detector ───────────────────────────────
 
-    def _extract_hrv(self, ecg_arr: np.ndarray) -> tuple[float, float]:
-        """Extract HR and RMSSD from ECG array using peak detection on
-        upsampled signal for sub-sample peak timing precision.
+    def _extract_hrv(
+        self, ecg_samples: tuple[tuple[float, float], ...]
+    ) -> Optional[tuple[float, float]]:
+        """Extract HR/RMSSD only from timestamped native-rate ECG samples."""
+        if len(ecg_samples) < 130 * 3:
+            return None
+        timestamps = np.array([sample[0] for sample in ecg_samples], dtype=np.float64)
+        ecg_arr = np.array([sample[1] for sample in ecg_samples], dtype=np.float64)
+        if np.any(np.diff(timestamps) <= 0):
+            return None
 
-        NeuroKit2's ecg_peaks requires >=100 Hz for reliable QRS detection.
-        At 10 Hz (synth / wearable), we upsample 10x to 100 Hz so that
-        QRS peak positions are resolved to ~10 ms instead of ~100 ms,
-        bringing RMSSD quantization noise down to physiologically plausible levels.
-
-        Returns (hr_bpm, rmssd_ms).
-        """
-        n = len(ecg_arr)
-        if n < 30:
-            return self._last_hr, self._last_rmssd
-
-        # Upsample 10 Hz → 100 Hz via cubic interpolation
-        up_factor = 10
-        x_orig = np.arange(n)
-        x_up = np.linspace(0, n - 1, (n - 1) * up_factor + 1)
-        from scipy.interpolate import interp1d
-        ecg_up = interp1d(x_orig, ecg_arr, kind='cubic')(x_up)
-        sr_up = 100.0  # Hz after upsampling
-
-        centered = ecg_up - np.mean(ecg_up)
+        centered = ecg_arr - np.mean(ecg_arr)
         threshold = np.std(centered) * 0.4
         if threshold <= 0:
-            return self._last_hr, self._last_rmssd
+            return None
 
-        # Peak detection on upsampled signal with 300 ms refractory period
-        min_dist = int(sr_up * 0.3)  # 300 ms
+        # Native timestamps enforce the 300 ms refractory interval even when
+        # device sampling has small jitter.
         peaks: list[int] = []
         for i in range(1, len(centered) - 1):
             if centered[i] <= threshold:
                 continue
             if centered[i] <= centered[i - 1] or centered[i] < centered[i + 1]:
                 continue
-            if peaks and (i - peaks[-1]) < min_dist:
+            if peaks and (timestamps[i] - timestamps[peaks[-1]]) < 0.3:
                 if centered[i] > centered[peaks[-1]]:
                     peaks[-1] = i
                 continue
             peaks.append(i)
 
-        if len(peaks) < 2:
-            return self._last_hr, self._last_rmssd
+        if len(peaks) < 3:
+            return None
 
-        rr_ms = np.diff(peaks) * (1000.0 / sr_up)
+        rr_ms = np.diff(timestamps[peaks]) * 1000.0
         hr_val = float(60000.0 / np.mean(rr_ms))
-        hr_val = max(40.0, min(120.0, hr_val))
-
-        rmssd_val = self._last_rmssd
-        if len(rr_ms) >= 2:
-            rmssd_val = float(np.sqrt(np.mean(np.diff(rr_ms) ** 2)))
-            rmssd_val = max(5.0, min(200.0, rmssd_val))
+        rmssd_val = float(np.sqrt(np.mean(np.diff(rr_ms) ** 2)))
+        if not (40.0 <= hr_val <= 120.0 and 0.0 <= rmssd_val <= 200.0):
+            return None
 
         return hr_val, rmssd_val
 
@@ -290,7 +315,8 @@ if __name__ == "__main__":
     processed_count = 0
     for f in frames:
         result = pipeline.feed(f.timestamp, f.respiration_raw, f.ecg_raw,
-                               f.eda_raw, f.acc_magnitude, f.temp_skin)
+                               f.eda_raw, f.acc_magnitude, f.temp_skin,
+                               ecg_samples=getattr(f, "ecg_samples", None))
         if result is not None:
             processed_count += 1
 

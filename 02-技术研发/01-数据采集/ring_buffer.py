@@ -1,8 +1,8 @@
 """
 SRP Ring Buffer — thread-safe circular buffer for sensor samples.
 
-Each BLE device pushes samples at its native rate into a RingBuffer.
-The FrameClock reads the latest value at 10 Hz for time alignment.
+Each device pushes samples at its native rate into a RingBuffer. Consumers may
+read timestamped batches without destroying native timing information.
 """
 
 import threading
@@ -20,24 +20,33 @@ class RingBuffer:
         with self._lock:
             self._buf.append((timestamp, value))
 
-    def read_latest(self) -> float:
-        """Return most recent value, or 0.0 if empty."""
+    def read_latest(self) -> float | None:
+        """Return most recent value, or ``None`` if no sample exists."""
         with self._lock:
             if self._buf:
                 return self._buf[-1][1]
-            return 0.0
+            return None
 
-    def read_latest_ts(self) -> tuple[float, float]:
-        """Return (timestamp, value) of most recent sample, or (0.0, 0.0)."""
+    def read_latest_ts(self) -> tuple[float, float] | None:
+        """Return the most recent timestamped sample, or ``None``."""
         with self._lock:
             if self._buf:
                 return self._buf[-1]
-            return (0.0, 0.0)
+            return None
 
     def read_window(self, n: int) -> list[float]:
         """Return last n values for downsampling."""
         with self._lock:
             return [v for _, v in list(self._buf)[-n:]]
+
+    def read_after(self, timestamp: float) -> list[tuple[float, float]]:
+        """Return samples newer than ``timestamp`` in acquisition order.
+
+        The read is non-destructive. A consumer keeps its own cursor so other
+        consumers can independently preserve the same native-rate stream.
+        """
+        with self._lock:
+            return [(ts, value) for ts, value in self._buf if ts > timestamp]
 
     def clear(self) -> None:
         with self._lock:

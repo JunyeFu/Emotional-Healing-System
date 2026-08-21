@@ -1,6 +1,10 @@
 # SRP参考文献目录
 
-## 已下载 (19篇)
+> **QUARANTINED_FOR_PROVENANCE_REVIEW。** 本目录是历史资产库，不是论文证据权威。当前数量、文件名、题名与DOI存在漂移；任何文件进入稿件前必须完成SHA-256、身份、合法来源、许可、页码和双人复核。当前论文证据入口为W-01。
+
+当前隔离门：`py -3.14 validate_reference_provenance.py`。该命令在旧库存未重建前应失败；不得通过降低必填字段或忽略错配使其变绿。
+
+## 历史下载清单（计数已失效）
 
 | # | 文件名 | 对应文献 | 来源 |
 |---|--------|---------|------|
@@ -16,24 +20,24 @@
 | 10 | Suganuma_2018_ECA_CBT.pdf | ECA互联网CBT预防 | JMIR OA |
 | 11-17 | 原有7篇SRP参考文献 | Li 2024 EEG-BCI / Zeng 2025 / Yuan 2018 / Liu 2025 / Multimodal VR / Emotion Regulation Strategies / Tuned In / Teachers | 项目自带 |
 
-## 关键缺失 (需通过学校图书馆/SCI-HUB获取)
+## 关键缺失（仅使用学校图书馆、出版社、作者公开版本或合法开放获取服务）
 
 | # | 文献 | 重要程度 | 获取方式 |
 |---|------|---------|---------|
-| 1 | **Goessl et al. (2017)** HRV-BF焦虑元分析 d=0.63. *Psychological Medicine* | ★★★★★ | sci-hub.se (DOI: 10.1017/S0033291717001003) |
-| 2 | **Carl et al. (2019)** VR暴露疗法元分析 g=0.88. *J Anxiety Disord* | ★★★★★ | sci-hub.se (DOI: 10.1016/j.janxdis.2018.08.003) |
+| 1 | **Goessl et al. (2017)** HRV-BF焦虑元分析 d=0.63. *Psychological Medicine* | ★★★★★ | 学校图书馆或 DOI: 10.1017/S0033291717001003 |
+| 2 | **Carl et al. (2019)** VR暴露疗法元分析 g=0.88. *J Anxiety Disord* | ★★★★★ | 学校图书馆或 DOI: 10.1016/j.janxdis.2018.08.003 |
 | 3 | **Bandura (1977)** 自我效能理论. *Psychological Review* | ★★★★ | Google "Bandura 1977 self-efficacy pdf" (多处免费) |
-| 4 | **Lehrer et al. (2013)** HRV-BF标准化协议. *Biofeedback* | ★★★★ | sci-hub.se (DOI: 10.5298/1081-5937-41.3.08) |
-| 5 | **Meuldijk et al. (2019)** 阶梯式照护综述. *Aust J Rural Health* | ★★★ | sci-hub.se (DOI: 10.1111/ajr.12524) |
+| 4 | **Lehrer et al. (2013)** HRV-BF标准化协议. *Biofeedback* | ★★★★ | 学校图书馆或 DOI: 10.5298/1081-5937-41.3.08 |
+| 5 | **Meuldijk et al. (2019)** 阶梯式照护综述. *Aust J Rural Health* | ★★★ | 学校图书馆或 DOI: 10.1111/ajr.12524 |
 | 6 | **Crossan et al. (2021)** 虚拟自然ART验证. *Environ Behav* | ★★★ | 学校图书馆SAGE数据库 |
 | 7 | **Basu et al. (2019)** 软性吸引ART. *Environ Behav* | ★★★ | 学校图书馆SAGE数据库 |
-| 8 | **Manav et al. (2017)** 色彩-情绪关联. *Color Res Appl* | ★★★ | sci-hub.se |
-| 9 | **Dixit et al. (2024)** 实时多模态CNN情绪识别. *Expert Syst Appl* | ★★★ | sci-hub.se |
-| 10 | **Jacobson et al. (2001)** BA理论基础. *Clin Psychol Sci Pract* | ★★★ | sci-hub.se |
+| 8 | **Manav et al. (2017)** 色彩-情绪关联. *Color Res Appl* | ★★★ | 学校图书馆或作者公开版本 |
+| 9 | **Dixit et al. (2024)** 实时多模态CNN情绪识别. *Expert Syst Appl* | ★★★ | 学校图书馆或作者公开版本 |
+| 10 | **Jacobson et al. (2001)** BA理论基础. *Clin Psychol Sci Pract* | ★★★ | 学校图书馆或作者公开版本 |
 
 ## 获取建议
 
 1. 优先获取 Goessl 2017 和 Carl 2019 — 这是系统心理学依据最核心的两篇元分析
 2. Bandura 1977 可从多个大学网站免费下载（经典文献，扫描版众多）
-3. 其他缺失文献可通过 sci-hub.se 或学校图书馆数据库获取
+3. 其他缺失文献仅通过学校图书馆、出版社、作者公开版本、Crossref或Unpaywall等合法渠道定位
 4. 部分书籍（Lakoff 1980, Picard 1997）可在学校图书馆借阅纸质版

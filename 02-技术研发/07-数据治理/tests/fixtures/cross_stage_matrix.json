@@ -1,0 +1,10 @@
+{
+  "expected_active_reason": "ACTIVE_RESERVATION",
+  "expected_exposed_reason": "PRIOR_EXPOSURE",
+  "stages": [
+    "level_b",
+    "level_c",
+    "stage_1",
+    "stage_3"
+  ]
+}
