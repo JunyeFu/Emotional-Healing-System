@@ -795,3 +795,16 @@
 | Diff Gate | 行尾空白已清理；`git diff --check --cached`通过，仅有既有LF→CRLF转换提示。 |
 | Scope Guard | 4个既有删除项、`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除在提交外。 |
 | Final Boundary | G-01转`IN_REVIEW`不等于DONE：AC3真实演练未执行、U8未判定、M-001许可`PENDING`、伦理路径与真实团队第二人复核保持开放；正式阶段继续阻断。 |
+
+### 2026-08-21 G-01独立Agent复审两轮闭环
+
+| Field | Notes |
+|---|---|
+| Independent Review R1 | Agent `agent-0`（explore只读）首轮结论`REVIEW_FINDINGS_OPEN`：P1×1（G-01-06流程基准缺阶段0/7）、P2×4（G-01-09门控表语义越界读法、12_20/11_17悬空引用、G-01-08旧文件名、G-01-10扫描声明自相矛盾）、P3×3（列表渲染/日期伪影、D-11来源、包生命周期表述）。产能数字（528/140/112/165）逐步核算通过，权威一致性通过。 |
+| Fix Commit | `3299149` fix(g01)：B1~B8全部修复；禁用词复扫0命中、围栏配平、`git diff --check`通过；已推送。 |
+| Independent Review R2 | 同一Agent闭环验证：B1~B8全部确认关闭，G-01-06§2与G-01-01§2逐项一致；增量发现G01-N1（P3，版本留痕缺失）及附观察（G-01-01上限合计62→58分钟）。 |
+| N1 Closure | G-01-01/02/03/06/07/08/09补版本记录行（含发现编号），G-01-10新增第5节修订记录；G-01-01"约62分钟"核正为"约58分钟"。 |
+| Audit Report | `03-测试与实验/G-01_Agent独立审核报告_2026-08-21.md`：总结论`MODEL_REVIEW_FINDINGS_CLOSED / HUMAN_SECOND_REVIEW_PENDING`。 |
+| Kanban | 看板G-01行同步独立复审关闭信息；注册表状态不变（IN_REVIEW）。 |
+| PR State | PR #1（c010482）已由用户合并进main（2f8e6ae），远端分支被自动删除；修复提交推送后重建同名远端分支，需新PR携带复审修复与留痕。 |
+| Final Boundary | 模型复审关闭只解除模型复审阻断；第二人签署、M-001许可、伦理路径、U8演练保持开放，G-01不转DONE。 |
