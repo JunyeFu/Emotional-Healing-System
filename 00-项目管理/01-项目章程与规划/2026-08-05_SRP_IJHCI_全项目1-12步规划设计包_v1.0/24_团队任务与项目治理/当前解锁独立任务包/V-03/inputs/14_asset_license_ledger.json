@@ -1,0 +1,125 @@
+{
+  "groups": {
+    "coplaydev-unity-mcp": {
+      "allowed_use": "Use, modify, and distribute subject to retained MIT notice.",
+      "attribution_required": true,
+      "author": "CoplayDev",
+      "license_evidence_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/third_party_packages.md",
+      "license_name": "MIT",
+      "obtained_on": "2026-08-12",
+      "responsible_role": "Unity technical lead",
+      "source_url": "https://github.com/CoplayDev/unity-mcp/tree/78ee5418415953b79c358bfe6355fcc3fde7912b",
+      "status": "CLEARED"
+    },
+    "klak-spout": {
+      "allowed_use": "Use and distribute under the Unlicense text at the locked commit.",
+      "attribution_required": false,
+      "author": "Keijiro Takahashi and contributors",
+      "license_evidence_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/third_party_packages.md",
+      "license_name": "Unlicense",
+      "obtained_on": "2026-08-12",
+      "responsible_role": "Unity technical lead",
+      "source_url": "https://github.com/keijiro/KlakSpout/tree/849e7bca3c167839ed697796153e1749acf0c53f",
+      "status": "CLEARED"
+    },
+    "g02-project-original": {
+      "allowed_use": "Project-owned governance source may be used, modified, and included in SRP builds.",
+      "attribution_required": false,
+      "author": "SRP project team",
+      "license_evidence_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/third_party_packages.md",
+      "license_name": "PROJECT_ORIGINAL",
+      "obtained_on": "2026-08-12",
+      "responsible_role": "Data governance implementer",
+      "source_url": "urn:srp:git:codex-g02-data-governance",
+      "status": "PROJECT_ORIGINAL"
+    },
+    "local-sprites-unresolved": {
+      "allowed_use": "Not allowed in a candidate build until replaced or supported by provenance evidence.",
+      "attribution_required": true,
+      "author": "PENDING_TEAM_CONFIRMATION",
+      "exclusion_plan": "Remove all unresolved PNG files from candidate scenes, Resources, Addressables, and build settings, or replace them with cleared assets.",
+      "license_evidence_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/unresolved_local_assets.md",
+      "license_name": "PENDING_TEAM_CONFIRMATION",
+      "obtained_on": "2026-06-22",
+      "replacement_deadline": "2026-08-19",
+      "responsible_role": "Unity visual lead",
+      "source_url": "urn:srp:pending-provenance:local-sprites",
+      "status": "REPLACE"
+    },
+    "project-assets-authorship-pending": {
+      "allowed_use": "Not allowed in a candidate build until project authorship or an applicable license is confirmed.",
+      "attribution_required": true,
+      "author": "PENDING_TEAM_CONFIRMATION",
+      "exclusion_plan": "Replace or exclude every affected scene, animation, script, configuration, and derived JSON file that lacks confirmed authorship before a candidate build.",
+      "license_evidence_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/unresolved_local_assets.md",
+      "license_name": "PENDING_TEAM_CONFIRMATION",
+      "obtained_on": "2026-06-22",
+      "replacement_deadline": "2026-08-19",
+      "responsible_role": "Unity technical lead",
+      "source_url": "urn:srp:pending-provenance:project-assets",
+      "status": "REPLACE"
+    },
+    "roslyn-binaries-unresolved": {
+      "allowed_use": "Not allowed in a candidate build until replaced or supported by exact binary provenance evidence.",
+      "attribution_required": true,
+      "author": ".NET Foundation and contributors; exact binary acquisition pending",
+      "exclusion_plan": "Remove Assets/Plugins/Roslyn from the candidate build or reacquire pinned binaries with archived license and third-party notices.",
+      "license_evidence_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/unresolved_local_assets.md",
+      "license_name": "PENDING_EXACT_BINARY_PROVENANCE",
+      "obtained_on": "2026-06-22",
+      "replacement_deadline": "2026-08-19",
+      "responsible_role": "Unity technical lead",
+      "source_url": "urn:srp:pending-provenance:roslyn-binaries",
+      "status": "REPLACE"
+    },
+    "unity-official-packages": {
+      "allowed_use": "Use with the Unity project under an eligible Unity engine license and applicable package notices.",
+      "attribution_required": true,
+      "author": "Unity Technologies",
+      "license_evidence_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/licenses/third_party_packages.md",
+      "license_name": "Unity Companion License and applicable package notices",
+      "obtained_on": "2026-08-12",
+      "responsible_role": "Unity technical lead",
+      "source_url": "https://packages.unity.com",
+      "status": "CLEARED"
+    }
+  },
+  "rules": [
+    {
+      "kind": "path_prefix",
+      "license_group_id": "g02-project-original",
+      "value": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs"
+    },
+    {
+      "kind": "path_prefix",
+      "license_group_id": "roslyn-binaries-unresolved",
+      "value": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Plugins/Roslyn/"
+    },
+    {
+      "kind": "extension",
+      "license_group_id": "local-sprites-unresolved",
+      "value": ".png"
+    },
+    {
+      "kind": "path_prefix",
+      "license_group_id": "project-assets-authorship-pending",
+      "value": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/"
+    },
+    {
+      "kind": "package_exact",
+      "license_group_id": "coplaydev-unity-mcp",
+      "value": "com.coplaydev.unity-mcp"
+    },
+    {
+      "kind": "package_exact",
+      "license_group_id": "klak-spout",
+      "value": "jp.keijiro.klak.spout"
+    },
+    {
+      "kind": "package_prefix",
+      "license_group_id": "unity-official-packages",
+      "value": "com.unity."
+    }
+  ],
+  "schema_version": 1
+}

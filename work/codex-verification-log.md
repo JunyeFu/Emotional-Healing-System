@@ -766,3 +766,17 @@
 | Final Regression | `py -3.14 -m pytest -q`通过：`404 passed in 18.67s`；V-02基线和协议权威校验均通过。 |
 | PDF QA | `02_固定任务概要.pdf`为9页，SHA-256为`BD61195164E87827F84E803F392297C1F027EC2ED604D89702B076B634035A10`；110 DPI逐页渲染检查未见裁切、重叠、空白页或乱码。 |
 | Text Gate | 活跃V-02制品未发现限制表述；当前权威状态未把V-02或V-03误列为可领取。 |
+
+### 2026-08-21 V-02签收与V-03解锁
+
+| Field | Notes |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、真实团队第二人复核身份，对`3ebbdeedfd3c16688ae406d34c18e4f319f2afac`给出`PASS`；日期`2026-08-21 +08:00`；无未关闭P0-P3问题。 |
+| Signoff Commit | `c04a7be5017164ce8bdfa4ee7f0270c75bb37368`；签收记录随后写回该SHA并重命名为`V-02_技术验收记录_已签署.md`。 |
+| State Migration | V-02=`DONE`；V-03=`READY`；当前`READY=F-03/F-04/G-01/V-03`；G-02/P-01/P-02继续`IN_REVIEW`。 |
+| Package Regeneration | V-02复核包移除，V-03独立包新增；注册表与独立任务包映射同步更新。 |
+| Scope Guard | V-02签收不扩大为Unity运行、正式构建、真实设备链或`LIVE_E2E`完成；既有4个删除项和未跟踪用户资产继续排除。 |
+| Final Validation | V-02基线、协议权威、任务注册表和独立任务包均通过；注册表为57项、54个固定任务、`DONE=F-01/F-02/R-01/V-01/V-02/W-01`、`READY=F-03/F-04/G-01/V-03`、`IN_REVIEW=G-02/P-01/P-02`；分发包7个、输入快照190个。 |
+| Final Regression | `py -3.14 -m pytest -q`通过：`404 passed in 17.42s`；`git diff --check`通过，仅有既有换行转换提示。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256为`33E2AB301FFD7CE845CA337E59D9006413CDBC07B65F208658587E954D9FA122`；项目PDF验证器通过。 |
+| Final Boundary | V-03仅完成解锁和独立任务包生成；未形成四层映射实现、Unity运行、正式构建、真实设备链或`LIVE_E2E`证据。 |

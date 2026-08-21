@@ -11,4 +11,4 @@
 | G-02 | IN_REVIEW | 【数据治理】数据分级跨阶段去重与资产许可 | 4人日 | [G-02/TASK.md](G-02/TASK.md) |
 | P-01 | IN_REVIEW | 【Python核心】manifest与会话编排 | 6人日 | [P-01/TASK.md](P-01/TASK.md) |
 | P-02 | IN_REVIEW | 【数据记录】L0/L1追加记录与重放 | 4人日 | [P-02/TASK.md](P-02/TASK.md) |
-| V-02 | IN_REVIEW | 【Unity前期设计】四天气场景与呼吸提示设计确认 | 4人日 | [V-02/TASK.md](V-02/TASK.md) |
+| V-03 | READY | 【Unity前期设计】四层视听映射与资产来源基线 | 3人日 | [V-03/TASK.md](V-03/TASK.md) |
