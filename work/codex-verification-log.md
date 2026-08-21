@@ -819,3 +819,12 @@
 | Package Regeneration | P-01/P-02包移出分发，F-05包新增，G-02映射内待签署引用修正为已签署；`07`通过：`DONE=F-01/F-02/P-01/P-02/R-01/V-01/V-02/W-01`、`READY=F-03/F-04/F-05/V-03`、`IN_REVIEW=G-01/G-02`；`14`通过：6包130快照。 |
 | Entry Sync | 看板、AGENTS.md、README.md（已签署链接）同步。 |
 | Final Boundary | P-01/P-02的DONE不扩大为Unity、TD、真实设备或`LIVE_E2E`完成；G-01/G-02的外部门继续阻断正式阶段。 |
+
+### 2026-08-21 G-01/G-02外部门关闭预备制品
+
+| Field | Notes |
+|---|---|
+| G-01-11 | `08_步骤07_伦理提交与LevelA/G-01-11_伦理提交执行检查清单.md`：v1.0清单（SUPERSEDED）执行版，A~F六组逐项映射G-01交付物/责任角色/状态（✅/⬜/🔒），E.1汇总6款待冻结字段；机构路径确认前不得对外提交。 |
+| G-01-12 | `06_步骤05_伦理与预试材料/G-01-12_U8演练逐日执行脚本与记录表.md`：D1~D14逐日脚本、会话执行卡（对齐G-01-01§2八阶段）、故障模拟排期（满足G-01-08§5最少次数：P-ACT×2/T-BRE×1/T-UNI×1/F-MIS×2）、日终汇总表与U8结论步骤；关键数字140/112/165与产能模型一致。 |
+| G-02 Runbook | `02-技术研发/07-数据治理/docs/formal_environment_closure_runbook.md`：6项失败检查（GOVERNANCE_ROOT/BACKUP_ROOT/SEALED_KEY_EVIDENCE/DATA_ADMIN_ACCOUNT/DEDUP_CREDENTIAL/RETENTION_APPROVAL）逐项操作+验收+责任角色，总体验收以`G02_FORMAL_ENV_PASS`+备份恢复演练为准；密钥与联系方式全程不落盘。 |
+| Gates | 禁用词扫描3个新文件0命中；注册表与任务包状态未变（READY=F-03/F-04/F-05/V-03，IN_REVIEW=G-01/G-02）；预备制品不关闭任何外部门。 |
