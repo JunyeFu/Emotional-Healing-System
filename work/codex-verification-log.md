@@ -780,3 +780,18 @@
 | Final Regression | `py -3.14 -m pytest -q`通过：`404 passed in 17.42s`；`git diff --check`通过，仅有既有换行转换提示。 |
 | PDF QA | `02_固定任务概要.pdf`为9页，SHA-256为`33E2AB301FFD7CE845CA337E59D9006413CDBC07B65F208658587E954D9FA122`；项目PDF验证器通过。 |
 | Final Boundary | V-03仅完成解锁和独立任务包生成；未形成四层映射实现、Unity运行、正式构建、真实设备链或`LIVE_E2E`证据。 |
+
+### 2026-08-21 G-01领取返工与IN_REVIEW迁移
+
+| Field | Notes |
+|---|---|
+| Acceptance Baseline | `03-测试与实验/G-01_验收记录_2026-08-21.md`：对`origin/main`根目录8个文件的验收结论为不通过（流程违规、G-01-01缺失、时长口径矛盾、40预约vs100会话矛盾、责任人占位、术语命中5处、格式残留）。 |
+| Branch And Claim | 新分支`codex/g-01-research-governance`基于`codex/v-02-concept-design`（含最新治理状态；`origin/main`注册表落后于该分支，故不从main建支）；8个文件从`origin/main`取回并`git mv`至规划包`06_步骤05_伦理与预试材料/`，补齐`.md`扩展名。注册表G-01：`READY`→`IN_PROGRESS`（claimant=Codex、branch、reviewer=傅钧烨）→返工后`IN_REVIEW`。 |
+| Rework Content | 新增`G-01-01_单次参与材料.md`（v1.1流程权威+材料清单D-01~D-11）；G-01-02/03时长对齐v1.1基准（PANAS 2~3、猜测2~3、问卷≤5、补充知情同意与清理环节）、Polar H10表述修正为胸带式；G-01-04责任人落实R-007、M-001中文版来源给候选并标注待核验、新增许可证据索引E-001~E-008；G-01-06修正"完全相同模块"表述、修复Mermaid围栏、移除AI残留说明段；G-01-07/08演练窗口统一为D1~D14（执行期7天）、计划产能140次、U8通过线112次、预约目标165人（112÷0.85÷0.80≈164.7），补偿成本改可重建公式；G-01-09移除孤立围栏；新增`G-01-10_双人审查记录.md`（第一审查PASS候选级，第二人复核开放）。 |
+| Terminology Gate | 禁用词扫描（诊断/治疗/疾病/患者/医疗设备/临床）对`06_步骤05_伦理与预试材料/G-01-*.md`全目录0命中；原"心脑血管疾病/心理治疗/医疗诊断证明"已改写，安全筛查语义保留。 |
+| Registry Validation | `07_validate_task_packages.py`通过：57项、54固定、3模板，`DONE=F-01/F-02/R-01/V-01/V-02/W-01`、`READY=F-03/F-04/V-03`、`IN_REVIEW=G-01/G-02/P-01/P-02`。 |
+| Package Validation | `13_render_ready_task_packages.py`重生成；`14_validate_ready_task_packages.py`通过：7包、190个输入快照。 |
+| Regression | `py -3.14 -m pytest -q`通过：`404 passed in 17.71s`。 |
+| Diff Gate | 行尾空白已清理；`git diff --check --cached`通过，仅有既有LF→CRLF转换提示。 |
+| Scope Guard | 4个既有删除项、`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除在提交外。 |
+| Final Boundary | G-01转`IN_REVIEW`不等于DONE：AC3真实演练未执行、U8未判定、M-001许可`PENDING`、伦理路径与真实团队第二人复核保持开放；正式阶段继续阻断。 |
