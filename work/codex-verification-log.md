@@ -842,3 +842,16 @@
 | Protocol authority | `PASS`; v1.1 active files consistent |
 | Root pytest | `404 passed in 43.01s` |
 | Diff check | `PASS`; line-ending warnings only |
+### 2026-08-23 V-03详细制品与独立复核闭环
+
+| 项目 | 结果 |
+|---|---|
+| Grill决策 | 13项公共语义、降级、累计、声音、卷轴、分段资产与安全区决策已逐项确认并落盘 |
+| 详细制品 | 六项Markdown制品、40行映射JSON、参数JSON、设计Schema和双人风险评分JSON齐全 |
+| 风险选择 | 评分者A=`22/14/22/27`，独立评分者B=`26/15/25/26`；差异裁定后冻结`fade`为U-03设计交接对象 |
+| 独立Agent | `01a02f22-00cd-7822-9aa3-bcd7adfc94b3`最终复审`PASS`；首轮及后续P1/P2全部关闭，无未关闭P0-P2；不替代现实团队第二人签收 |
+| V-03校验 | 默认`python`标准库检查PASS；`py -3.14` Draft 2020-12实际验证PASS；规划基线PASS |
+| Root pytest | 默认`python`缺少pytest；按既有冻结入口使用`py -3.14 -m pytest -q`，结果`404 passed in 18.24s`，未安装依赖 |
+| 交叉校验 | 协议权威PASS；注册表PASS（V-03仍`IN_PROGRESS`，READY=`F-03/F-04/F-05`）；独立分发包PASS（5包/115快照） |
+| 文本与Git | V-03范围限制词0命中；`git diff --check`无空白错误，仅既有LF/CRLF提示 |
+| 非主张 | 未操作Unity Editor，未形成运行画面、正式构建、资产许可、真实输入链、联合运行或研究结果证据 |

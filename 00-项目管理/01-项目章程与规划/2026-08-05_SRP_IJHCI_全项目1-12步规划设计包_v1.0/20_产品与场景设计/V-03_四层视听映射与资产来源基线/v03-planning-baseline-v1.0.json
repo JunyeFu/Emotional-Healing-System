@@ -2,8 +2,8 @@
   "contract_id": "SRP-V03-PLANNING-BASELINE",
   "version": "1.0.0",
   "date": "2026-08-23",
-  "status": "READY_FOR_DETAILED_FILL_WITH_F05_PARTIAL_BLOCK",
-  "scope": "planning_and_upstream_downstream_alignment_only",
+  "status": "CANDIDATE_READY_FOR_SECOND_PERSON_REVIEW",
+  "scope": "planning_alignment_and_detailed_design_candidates_no_runtime_evidence",
   "branch": "codex/v-03-visual-mapping",
   "task_status_authority": "IN_PROGRESS",
   "authorities": [
@@ -20,6 +20,245 @@
     "recovery": "python.recovery_aggregate",
     "fallback": "python.signal_quality",
     "background": null
+  },
+  "fallback_presentation": {
+    "backend_states": [
+      "GOOD",
+      "DEGRADED",
+      "UNUSABLE",
+      "DISCONNECTED"
+    ],
+    "participant_visible_classes": {
+      "LOW_CERTAINTY": [
+        "DEGRADED"
+      ],
+      "TEMPORARILY_UNAVAILABLE": [
+        "UNUSABLE",
+        "DISCONNECTED"
+      ]
+    },
+    "good_has_extra_marker": false,
+    "text_or_audio_warning": false,
+    "global_scene_warning": false
+  },
+  "recovery_lifecycle": {
+    "scope": "PER_MODULE",
+    "demo": "NEUTRAL_BASELINE_NO_ACCUMULATION_PRESENTATION",
+    "closed_loop": "FOLLOW_PYTHON_RECOVERY_VALUE_SLOWLY",
+    "closed_loop_end": "LOCK_ACTUAL_VALUE_NO_FORCED_COMPLETION",
+    "lock_transition": "HOLD_THEN_FADE_TO_NEUTRAL_CORRIDOR",
+    "next_module": "RESET_TO_NEXT_MODULE_NEUTRAL_BASELINE",
+    "previous_value_persisted_in_record_only": true
+  },
+  "target_actual_relationship": {
+    "perceptual_synchrony_allowed": true,
+    "spatial_or_layer_separation_required": true,
+    "snapping": false,
+    "merging": false,
+    "connector_or_error_arrow": false,
+    "success_reward": false,
+    "actual_reads_target_or_error_fields": false
+  },
+  "phase_interpolation": {
+    "same_phase_progress_interpolation": true,
+    "candidate_window_ms": [
+      100,
+      250
+    ],
+    "phase_change_applies_on_first_renderable_frame": true,
+    "cross_phase_blending": false,
+    "next_phase_prediction": false,
+    "missing_frame_extrapolation": false,
+    "exact_value_freeze_gate": "U-03_EXTERNAL_LATENCY_EVIDENCE"
+  },
+  "recovery_mapping": {
+    "participant_visible_term": "累计环境状态",
+    "technical_contract_term": "RecoveryState",
+    "input_range": [
+      0.0,
+      1.0
+    ],
+    "bidirectional": true,
+    "historical_max_hold": false,
+    "forced_full_endpoint": false,
+    "candidate_low_pass_seconds": [
+      2,
+      5
+    ],
+    "weather_identity_retained_at_high_value": true,
+    "initial_curve": "SHARED_LINEAR",
+    "weather_specific_curve": false,
+    "weather_specific_endpoints": true,
+    "nonlinear_change_gate": "U-03_VERSIONED_VISIBILITY_EVIDENCE",
+    "same_curve_endpoints_and_timing_between_cue_modes": true
+  },
+  "actual_confidence_envelope": {
+    "shared_across_weather_and_cue_modes": true,
+    "controls": [
+      "CONTINUITY",
+      "EDGE_CLARITY",
+      "BOUNDED_OPACITY"
+    ],
+    "does_not_control": [
+      "PHASE",
+      "PROGRESS",
+      "SPEED",
+      "SIZE",
+      "PATH_GEOMETRY",
+      "COLOR"
+    ],
+    "jitter_or_flicker": false,
+    "low_confidence_remains_locatable": true,
+    "exact_value_freeze_gate": "U-03_VISIBILITY_EVIDENCE"
+  },
+  "audio_baseline": {
+    "role": "NON_RHYTHMIC_ENVIRONMENTAL_MASTER_ONLY",
+    "reacts_to_target_actual_recovery_or_fallback": false,
+    "integrated_loudness_lufs_i": [
+      -24,
+      -20
+    ],
+    "true_peak_max_dbtp": -3,
+    "scene_corridor_crossfade_seconds": [
+      2,
+      4
+    ],
+    "prefer_full_module_master": true,
+    "minimum_seamless_loop_seconds": 60,
+    "loop_point_aligned_with_breath_cycle": false,
+    "deterministic_start_at_module_relative_time_zero": true,
+    "runtime_random_events": false,
+    "pause_freezes_position_and_stops_output": true,
+    "resume_from_frozen_position": true,
+    "same_file_hash_start_loop_loudness_envelope_between_cue_modes": true,
+    "exact_value_freeze_gate": "U-03_AND_U-08_MEASUREMENT_EVIDENCE"
+  },
+  "scroll_parallax_baseline": {
+    "camera_motion": "HORIZONTAL_ONLY",
+    "fixed_camera_properties": [
+      "HEIGHT",
+      "ROTATION",
+      "ORTHOGRAPHIC_SIZE",
+      "HORIZON",
+      "CUE_SAFE_AREAS"
+    ],
+    "base_speed_viewport_widths_per_second": [
+      0.015,
+      0.025
+    ],
+    "default_candidate_viewport_widths_per_second": 0.02,
+    "candidate_reference_resolution": [
+      1920,
+      1080
+    ],
+    "candidate_px_per_second_at_reference_resolution": [
+      28.8,
+      48.0
+    ],
+    "default_candidate_px_per_second_at_reference_resolution": 38.4,
+    "runtime_records_resolution_and_px_per_second": true,
+    "sky_motion": "STATIC",
+    "apparent_scroll_factors": {
+      "far": [
+        0.3,
+        0.45
+      ],
+      "mid": [
+        0.6,
+        0.8
+      ],
+      "near_ground": 1.0
+    },
+    "maximum_moving_parallax_bands": 3,
+    "multiple_asset_layers_may_share_band": true,
+    "cue_layers_participate_in_world_parallax": false,
+    "same_base_speed_across_weather_and_cue_modes": true,
+    "speed_reacts_to_weather_target_actual_or_recovery": false,
+    "pause_freezes_all_visual_time_sources": true,
+    "pixel_art_candidate_defaults_apply": false,
+    "exact_value_freeze_gate": "U-03_PARALLAX_SEAM_AND_PAUSE_EVIDENCE_THEN_U-08"
+  },
+  "scroll_asset_strategy": {
+    "mode": "DETERMINISTIC_SEGMENTED_LONG_SCROLL",
+    "fixed_segment_order": true,
+    "runtime_random_reordering": false,
+    "single_giant_runtime_texture": false,
+    "short_visibly_repeating_loop": false,
+    "maximum_candidate_module_seconds": 220,
+    "maximum_candidate_speed_viewport_widths_per_second": 0.025,
+    "minimum_travel_plus_initial_viewport_widths": 6.5,
+    "minimum_effective_coverage_viewport_widths": 6.75,
+    "recommended_initial_segment_count": 4,
+    "maximum_raw_segment_width_viewports": 2.0,
+    "overlap_viewport_widths": [
+      0.1,
+      0.15
+    ],
+    "overlap_px_at_1920_width": [
+      192,
+      288
+    ],
+    "sky_static": true,
+    "far_layer_shorter_deterministic_seamless_strip_allowed": true,
+    "recognizable_landmark_repetition_within_module": false,
+    "shared_canvas_origin_horizon_and_safe_areas": true,
+    "repair_hidden_regions_after_layer_split": true,
+    "automatic_trim": false,
+    "u03_evidence": [
+      "STATIC_SEAM_PREVIEW",
+      "FULL_DURATION_SCROLL_RECORDING"
+    ],
+    "rejection_reasons": [
+      "VISIBLE_SEAM",
+      "TRANSPARENT_HOLE",
+      "REPAINT_DISCONTINUITY",
+      "OBVIOUS_REPETITION"
+    ],
+    "exact_segment_and_texture_split_freeze_gate": "F-03_ENGINEERING_BUDGET_AND_U-03_VISUAL_EVIDENCE"
+  },
+  "composition_safe_areas": {
+    "aspect_ratio": "16:9",
+    "coordinate_system": "NORMALIZED_SCREEN_BOTTOM_LEFT_ORIGIN",
+    "horizon_y": [
+      0.56,
+      0.62
+    ],
+    "default_candidate_horizon_y": 0.59,
+    "same_horizon_across_segments_and_cue_modes_within_weather": true,
+    "scene_native_target": {
+      "x": [
+        0.55,
+        0.85
+      ],
+      "y": [
+        0.34,
+        0.72
+      ]
+    },
+    "scene_native_actual": {
+      "x": [
+        0.2,
+        0.45
+      ],
+      "y": [
+        0.18,
+        0.52
+      ]
+    },
+    "target_actual_safe_areas_overlap": false,
+    "persistent_foreground_landmark_or_high_contrast_crossing": false,
+    "abstract_ring_center": [
+      0.5,
+      0.5
+    ],
+    "abstract_outer_ring_max_diameter_short_edge_fraction": [
+      0.18,
+      0.24
+    ],
+    "scene_native_target_actual_disabled_in_abstract_mode": true,
+    "unity_world_unit_conversion_owner": "F-03",
+    "legacy_pixel_camera_parameters_apply": false,
+    "exact_value_freeze_gate": "U-03_SAFE_AREA_GRAYSCALE_AND_SCROLL_EVIDENCE"
   },
   "cue_modes": [
     "scene_native",
@@ -48,12 +287,39 @@
     "asset_provenance",
     "condition_matching"
   ],
+  "risk_scoring": {
+    "range": [
+      0,
+      4
+    ],
+    "weights": "EQUAL",
+    "independent_scorers": 2,
+    "mandatory_resolution_dimension_gap": 2,
+    "mandatory_resolution_if_top_weather_differs": true,
+    "tie_break_order": [
+      "upstream_contract_gap",
+      "condition_matching",
+      "fallback_readability",
+      "performance"
+    ],
+    "tie_break_definitions": {
+      "upstream_contract_gap": [
+        "COUNT_UNRESOLVED_UPSTREAM_GATES_BLOCKING_THE_SLICE",
+        "IF_TIED_COMPARE_SCHEMA_OR_FIELD_IDENTITY_THEN_TIMING_OR_CONFIG_THEN_ASSET_OR_ENGINE",
+        "IF_STILL_TIED_COMPARE_BLOCKED_DOWNSTREAM_CONSUMER_COUNT"
+      ],
+      "condition_matching": "COMPARE_EXISTING_CONDITION_MATCHING_DIMENSION_SCORE",
+      "fallback_readability": "COMPARE_EXISTING_FALLBACK_READABILITY_DIMENSION_SCORE",
+      "performance": "COMPARE_EXISTING_PERFORMANCE_DIMENSION_SCORE"
+    },
+    "legacy_asset_or_visual_preference_affects_score": false
+  },
   "upstream_gates": {
     "R-01": "DONE",
     "V-02": "DONE",
     "F-01": "DONE",
     "P-01": "DONE",
-    "F-05": "PARTIAL_BLOCK_UNTIL_V2_2_SIGNED",
+    "F-05": "RUNTIME_BINDING_DEFERRED_NOT_V03_COMPLETION_DEPENDENCY",
     "G-02": "FORMAL_ASSET_RELEASE_EXTERNAL_GATE_OPEN",
     "F-03": "PERFORMANCE_VALUES_REMAIN_CANDIDATE"
   },
@@ -70,15 +336,16 @@
     "U-08"
   ],
   "detailed_fill_state": {
-    "mapping_rows": "TBD_EXECUTION",
-    "parameter_values": "TBD_EXECUTION",
-    "condition_review_results": "NOT_TESTED",
-    "audio_assets": "TBD_EXECUTION",
-    "asset_entries": "TBD_EXECUTION",
-    "weather_risk_scores": "TBD_EXECUTION",
-    "u03_selected_weather": null,
-    "storm_phase_instances": "BLOCKED_F05",
-    "fade_phase_instances": "BLOCKED_F05"
+    "mapping_rows": 40,
+    "parameter_values": "CANDIDATE_VALUES_DOCUMENTED_NOT_RUNTIME_FROZEN",
+    "condition_review_results": "DESIGN_MATCHED_RUNTIME_EVIDENCE_PENDING",
+    "audio_assets": "PLANNED_NOT_PRODUCED_OR_CLEARED",
+    "asset_entries": "PLANNED_PENDING_G02_CLEARANCE",
+    "weather_risk_scores": "DUAL_SCORING_COMPLETE_DIFFERENCES_RESOLVED",
+    "u03_selected_weather": "fade",
+    "independent_agent_review": "PASS_NO_OPEN_P0_P2",
+    "storm_phase_instances": "LOGICAL_SLOT_READY_RUNTIME_BINDING_F05",
+    "fade_phase_instances": "LOGICAL_SLOT_READY_RUNTIME_BINDING_F05"
   },
   "forbidden_claims": [
     "V03_DONE",
