@@ -2,10 +2,10 @@
   "contract_id": "SRP-V03-PLANNING-BASELINE",
   "version": "1.0.0",
   "date": "2026-08-23",
-  "status": "CANDIDATE_READY_FOR_SECOND_PERSON_REVIEW",
+  "status": "SIGNED_DONE_NO_RUNTIME_EVIDENCE",
   "scope": "planning_alignment_and_detailed_design_candidates_no_runtime_evidence",
   "branch": "codex/v-03-visual-mapping",
-  "task_status_authority": "IN_REVIEW",
+  "task_status_authority": "DONE",
   "authorities": [
     "protocol_authority_v1.1",
     "F-01_runtime_contract_v2.1",

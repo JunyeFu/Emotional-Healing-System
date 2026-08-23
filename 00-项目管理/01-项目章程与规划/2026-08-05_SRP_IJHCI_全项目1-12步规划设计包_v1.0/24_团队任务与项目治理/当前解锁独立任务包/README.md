@@ -10,4 +10,4 @@
 | F-05 | READY | 【合同与协议】相位实例v2.2与消费者迁移 | 4人日 | [F-05/TASK.md](F-05/TASK.md) |
 | G-01 | IN_REVIEW | 【研究治理】伦理材料许可招募产能与角色台账 | 5人日 | [G-01/TASK.md](G-01/TASK.md) |
 | G-02 | IN_REVIEW | 【数据治理】数据分级跨阶段去重与资产许可 | 4人日 | [G-02/TASK.md](G-02/TASK.md) |
-| V-03 | IN_REVIEW | 【Unity前期设计】四层视听映射与资产来源基线 | 3人日 | [V-03/TASK.md](V-03/TASK.md) |
+| V-04 | READY | 【Unity前期设计】完整分镜与真实时长声音预演 | 4人日 | [V-04/TASK.md](V-04/TASK.md) |

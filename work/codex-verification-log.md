@@ -880,3 +880,16 @@
 | Regression | V-03资产专项`8 passed`；最终根回归`412 passed in 16.66s`；协议权威v1.1`PASS`。 |
 | Governance | 注册表`PASS`：`READY=F-03/F-04/F-05`、`IN_REVIEW=G-01/G-02/V-03`；独立包`PASS`：6包、141份快照。 |
 | Boundary | 资产登记不等于许可放行；未形成Unity运行、正式构建、F-05绑定、真实输入链、联合运行或研究结果证据。 |
+
+### 2026-08-24 V-03真实团队第二人签收与V-04解锁
+
+| Field | Result |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、真实团队第二人复核身份审阅最终候选`f09f0d5f1f35c98ea447eb3545c18fbb3fb36925`、独立Agent复核记录和已有验证结果，结论`PASS`；无未关闭P0-P3；签收内容提交`e6d642e1eacb659edd965439bad6e6f643519c0e`。未表述为审核人本人重新运行验证。 |
+| State Migration | V-03从`IN_REVIEW`转为`DONE`，V-04从`WAIT_DEP`转为`READY`；当前`READY=F-03/F-04/F-05/V-04`，`IN_REVIEW=G-01/G-02`。 |
+| V-03 Validators | 默认`python`制品校验`PASS`；`py -3.14`制品校验`PASS`并启用Draft 2020-12；规划基线`PASS`且治理状态为`signed_done_no_runtime_evidence`；资产专项`8 passed`。 |
+| Registry And Packages | 注册表校验`PASS`：57项、54固定、3模板；独立包校验`PASS`：6包、135份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-04`；V-03复核包已移除，V-04领取包已生成。 |
+| Regression And Protocol | 根回归`412 passed in 36.18s`；协议权威v1.1校验`PASS`。 |
+| PDF Brief | 固定任务概要PDF重建后验证`PASS`，9页，SHA-256=`77E8CED1AED077EDE4AB0FF6B15BBEE258767AF42A2065DD53F3491DC48A5142`；120 DPI逐页渲染检查未见裁切、重叠或不可读文本。 |
+| Static Checks | 当前权威文件中无V-03仍为`IN_REVIEW`、待签收或候选待签收陈述；新增行禁用词检查0命中；最终暂存差异检查在提交前执行。 |
+| Boundary | 签收只关闭V-03设计任务；不扩大为Unity运行、正式构建、资产许可放行、F-05运行字段绑定、真实输入链、联合运行或研究结果已经完成。 |

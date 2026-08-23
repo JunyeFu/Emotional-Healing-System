@@ -24,11 +24,11 @@ def main() -> None:
         assert path.is_file(), f"missing V-03 preparation artifact: {path}"
 
     data = json.loads(baseline_path.read_text(encoding="utf-8"))
-    assert data["status"] == "CANDIDATE_READY_FOR_SECOND_PERSON_REVIEW"
+    assert data["status"] == "SIGNED_DONE_NO_RUNTIME_EVIDENCE"
     assert data["scope"] == (
         "planning_alignment_and_detailed_design_candidates_no_runtime_evidence"
     )
-    assert data["task_status_authority"] == "IN_REVIEW"
+    assert data["task_status_authority"] == "DONE"
     assert set(data["technical_ids"]) == {"storm", "heat", "snow", "fade"}
     assert set(data["cue_modes"]) == {"scene_native", "abstract_pacer"}
     assert len(data["deliverable_templates"]) == 6
@@ -291,14 +291,14 @@ def main() -> None:
         "ActualFeedback",
         "RecoveryState",
         "FallbackState",
-        "CANDIDATE_READY_FOR_SECOND_PERSON_REVIEW",
+        "SIGNED_DONE_NO_RUNTIME_EVIDENCE",
     ):
         assert required_text in plan, f"missing planning boundary: {required_text}"
 
     print(
         "PASS: V-03 preparation baseline; "
         "deliverable_templates=6; risk_dimensions=7; "
-        "candidate=ready_for_second_person_review; "
+        "governance=signed_done_no_runtime_evidence; "
         "F05_runtime_binding=deferred"
     )
 
