@@ -1,0 +1,125 @@
+{
+  "contract_id": "SRP-V02-SCENE-BASELINE",
+  "version": "1.0.0",
+  "status": "CANDIDATE_FOR_REVIEW",
+  "scope": "scene_design_confirmation",
+  "authority": {
+    "sequence": "python_manifest",
+    "session_clock": "python",
+    "target_protocol": "python",
+    "unity_role": "participant_presentation_and_render_mirror",
+    "touchdesigner_role": "optional_read_only_console",
+    "spout_used": false,
+    "participant_input_during_core": false
+  },
+  "world": {
+    "presentation": "layered_2d_horizontal_auto_scroll",
+    "aspect_ratio": "16:9",
+    "visual_identity": "eastern_nature_journey_with_sparse_landmarks",
+    "observer": "fixed_no_on_screen_traveler",
+    "order_independent_units": true,
+    "transition": "mountain_mist_corridor_and_wordless_marker",
+    "base_weather_driven_by_breathing": false,
+    "camera_driven_by_breathing": false
+  },
+  "cue_conditions": {
+    "modes": [
+      "scene_native",
+      "abstract_pacer"
+    ],
+    "mutually_exclusive": true,
+    "same_truth": true,
+    "same_timing": true,
+    "same_audio": true,
+    "scene_native": {
+      "target_location": "forward_mid_distance",
+      "actual_location": "near_observer",
+      "cumulative_role": "slow_environment_change"
+    },
+    "abstract_pacer": {
+      "form": "centered_unfilled_double_ring",
+      "target_channel": "outer_ring",
+      "actual_channel": "inner_ring",
+      "cumulative_role": "same_slow_environment_change"
+    }
+  },
+  "layer_sources": {
+    "target": "python.target_protocol",
+    "actual": "python.interaction_state_estimate",
+    "cumulative": "python.recovery_aggregate",
+    "fallback": "python.signal_quality"
+  },
+  "technical_ids": [
+    "storm",
+    "heat",
+    "snow",
+    "fade"
+  ],
+  "module_occurrence": "exactly_once",
+  "modules": [
+    {
+      "technical_id": "storm",
+      "breathing_structure": "box_3_3_3_3",
+      "visible_scene": "风雨隘口",
+      "core_mechanism": "雨幕风门",
+      "target_role": "前方中远景雨幕风门",
+      "actual_role": "近景气流痕迹",
+      "recovery_role": "能见度与整体雨势缓慢变化",
+      "contract_requirement": "F-01_v2.2_REQUIRED_BEFORE_IMPLEMENTATION"
+    },
+    {
+      "technical_id": "heat",
+      "breathing_structure": "long_exhale_4_6",
+      "visible_scene": "热浪盐原",
+      "core_mechanism": "冷流风道",
+      "target_role": "前方冷流汇集抬升后贴地推进",
+      "actual_role": "近景冷流痕迹",
+      "recovery_role": "热霭与远景清晰度缓慢变化",
+      "contract_requirement": "F-01_v2.1_COMPATIBLE"
+    },
+    {
+      "technical_id": "snow",
+      "breathing_structure": "equal_inhale_exhale_5_5",
+      "visible_scene": "雪雾松林",
+      "core_mechanism": "粉雪升沉",
+      "target_role": "前方粉雪镜像升起与落下",
+      "actual_role": "近景粉雪痕迹",
+      "recovery_role": "林间雪雾与远景树线缓慢变化",
+      "contract_requirement": "F-01_v2.1_COMPATIBLE"
+    },
+    {
+      "technical_id": "fade",
+      "breathing_structure": "double_inhale_long_exhale",
+      "visible_scene": "灰霾湿地",
+      "core_mechanism": "色潮回流",
+      "target_role": "前方色潮依次表达第一吸气短促补吸和长呼气",
+      "actual_role": "近景色丝痕迹",
+      "recovery_role": "环境轮廓纹理与基础色彩缓慢变化",
+      "contract_requirement": "F-01_v2.2_REQUIRED_BEFORE_IMPLEMENTATION"
+    }
+  ],
+  "asset_baseline": {
+    "production_route": "ai_led_layered_full_canvas_png",
+    "runtime_authority": "accepted_png_layers_and_composition_manifest",
+    "shared_canvas_origin": true,
+    "provenance_and_license_required": true,
+    "g02_release_gate_required": true
+  },
+  "deferred_to_downstream": [
+    "scroll_speed",
+    "parallax_coefficients",
+    "segment_length",
+    "overlap_width",
+    "animation_curves",
+    "runtime_prototype",
+    "implementation_risk_ranking",
+    "formative_review_protocol"
+  ],
+  "evidence_state": {
+    "scene_design": "CONFIRMED_CANDIDATE",
+    "unity_runtime": "NOT_IMPLEMENTED_BY_V02",
+    "formal_build": "NOT_EVIDENCED",
+    "live_device_chain": "NOT_EVIDENCED",
+    "participant_results": "NOT_OBSERVED"
+  }
+}

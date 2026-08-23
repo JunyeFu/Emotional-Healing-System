@@ -855,3 +855,15 @@
 | 交叉校验 | 协议权威PASS；注册表PASS（V-03仍`IN_PROGRESS`，READY=`F-03/F-04/F-05`）；独立分发包PASS（5包/115快照） |
 | 文本与Git | V-03范围限制词0命中；`git diff --check`无空白错误，仅既有LF/CRLF提示 |
 | 非主张 | 未操作Unity Editor，未形成运行画面、正式构建、资产许可、真实输入链、联合运行或研究结果证据 |
+
+### 2026-08-23 V-03候选固定与IN_REVIEW治理迁移
+
+| Field | Result |
+|---|---|
+| Candidate Commits | 详细制品提交`6fbf742`；清理两份Markdown文件末尾空行后，固定第二人审核对象为`06951accd12f24f60de74f9bbf719f2edb7a9a87`。 |
+| State Migration | V-03从`IN_PROGRESS`迁移为`IN_REVIEW`，复核状态为“待真实团队第二人复核”；READY集合保持`F-03/F-04/F-05`，V-04、V-05、U-03未提前解锁。 |
+| Review Package | 新增V-03独立复核包和待签署技术验收记录；分发校验`PASS`，共6包、138份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-03`。 |
+| V-03 Validation | 默认`python`制品校验`PASS`（标准库路径）；`py -3.14`制品校验`PASS`并实际启用Draft 2020-12；规划基线校验`PASS`。 |
+| Regression | `py -3.14 -m pytest -q`结果`404 passed in 20.59s`；协议权威v1.1校验`PASS`。 |
+| Registry | 任务注册表`PASS`：57项，固定54项、模板3项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02/V-03`。 |
+| Scope Boundary | 独立Agent最终`PASS`不替代真实团队第二人签收；`fade`仅作为U-03设计交接对象，不构成Unity运行、正式构建、资产许可、真实输入链、联合运行或研究结果证据。 |
