@@ -75,3 +75,34 @@ def test_v03_asset_registry_rejects_manifest_drift() -> None:
 
     with pytest.raises(AssertionError):
         validate(registry, dependencies, ledger_groups)
+
+
+@pytest.mark.parametrize(
+    ("mutation", "message"),
+    (
+        ("extra_field", "asset fields drifted"),
+        ("duplicate_id", "duplicate V-03 asset_id"),
+        ("unknown_ledger_group", "unknown ledger group"),
+        ("premature_formal_use", "asset prematurely allowed"),
+    ),
+)
+def test_v03_asset_registry_rejects_fail_closed_mutations(
+    mutation: str, message: str
+) -> None:
+    registry = runpy.run_path(str(GENERATOR_PATH))["asset_registry"]()
+    registry = copy.deepcopy(registry)
+    if mutation == "extra_field":
+        registry["entries"][0]["unexpected"] = "must be rejected"
+    elif mutation == "duplicate_id":
+        registry["entries"][1]["asset_id"] = registry["entries"][0]["asset_id"]
+    elif mutation == "unknown_ledger_group":
+        registry["entries"][0]["ledger_group"] = "UNKNOWN_GROUP"
+    elif mutation == "premature_formal_use":
+        registry["entries"][0]["formal_use_allowed"] = True
+    else:  # pragma: no cover - the parameter list is the authority.
+        raise AssertionError(f"unknown test mutation: {mutation}")
+    validate = runpy.run_path(str(VALIDATOR_PATH))["validate_asset_registry"]
+    dependencies, ledger_groups = authorities()
+
+    with pytest.raises(AssertionError, match=message):
+        validate(registry, dependencies, ledger_groups)
