@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -12,6 +13,35 @@ BASE = (
     / "2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
     / "20_产品与场景设计"
     / "V-03_四层视听映射与资产来源基线"
+)
+UNITY_PROJECT = ROOT / "02-技术研发" / "04-Unity视觉" / "SRP-Weather-Visual"
+UNITY_MANIFEST = UNITY_PROJECT / "Packages" / "manifest.json"
+G02_ASSET_LEDGER = UNITY_PROJECT / "Governance" / "asset_license_ledger.json"
+
+ASSET_REQUIRED_FIELDS = (
+    "asset_id",
+    "category",
+    "scene",
+    "layer_role",
+    "author_source",
+    "license",
+    "ledger_group",
+    "status",
+    "formal_use_allowed",
+    "replacement_plan",
+    "owner",
+    "deadline",
+    "hash_or_version",
+    "unity_import_plan",
+)
+ASSET_REQUIRED_CATEGORIES = (
+    "IMAGE",
+    "ANIMATION",
+    "FONT",
+    "AUDIO",
+    "SHADER",
+    "PLUGIN",
+    "DIRECT_PACKAGE",
 )
 
 
@@ -624,6 +654,370 @@ def parameter_contract() -> dict[str, object]:
     }
 
 
+def asset_entry(
+    asset_id: str,
+    category: str,
+    scene: str,
+    layer_role: str,
+    owner: str,
+    deadline: str,
+    replacement_plan: str,
+    unity_import_plan: str,
+    *,
+    author_source: str = "SRP_PROJECT_TEAM_OR_APPROVED_SOURCE_PENDING_INSTANCE",
+    license_name: str = "PENDING_ASSET_INSTANCE_RIGHTS_EVIDENCE",
+    ledger_group: str = "PENDING_G02_INSTANCE_REGISTRATION",
+    status: str = "PLANNED_PENDING_INSTANCE_PROVENANCE",
+    hash_or_version: str = "PENDING_FINAL_SHA256",
+) -> dict[str, object]:
+    return {
+        "asset_id": asset_id,
+        "category": category,
+        "scene": scene,
+        "layer_role": layer_role,
+        "author_source": author_source,
+        "license": license_name,
+        "ledger_group": ledger_group,
+        "status": status,
+        "formal_use_allowed": False,
+        "replacement_plan": replacement_plan,
+        "owner": owner,
+        "deadline": deadline,
+        "hash_or_version": hash_or_version,
+        "unity_import_plan": unity_import_plan,
+    }
+
+
+def design_asset_entries() -> list[dict[str, object]]:
+    entries = [
+        asset_entry(
+            "IMG_COMMON_CORRIDOR",
+            "IMAGE",
+            "common_corridor",
+            "SKY_FAR_MID_GROUND_FOREGROUND",
+            "Unity visual lead",
+            "BEFORE_V05_GREYBOX",
+            "Create project-owned layered corridor art or replace with a G-02-cleared equivalent.",
+            "MULTILAYER_SPRITES_SHARED_CANVAS_NO_AUTO_CROP",
+        ),
+        asset_entry(
+            "IMG_STORM_SCROLL",
+            "IMAGE",
+            "storm",
+            "SKY_FAR_MID_GROUND_FOREGROUND_EFFECT_MASK",
+            "Unity visual lead",
+            "BEFORE_U03_ASSET_IMPORT",
+            "Generate and manually rebuild the storm strip set, then register every exported file in G-02.",
+            "DETERMINISTIC_SEGMENTED_SCROLL_SHARED_ORIGIN",
+        ),
+        asset_entry(
+            "IMG_HEAT_SCROLL",
+            "IMAGE",
+            "heat",
+            "SKY_FAR_MID_GROUND_FOREGROUND_EFFECT_MASK",
+            "Unity visual lead",
+            "BEFORE_U04_ASSET_IMPORT",
+            "Generate and manually rebuild the heat strip set, then register every exported file in G-02.",
+            "DETERMINISTIC_SEGMENTED_SCROLL_SHARED_ORIGIN",
+        ),
+        asset_entry(
+            "IMG_SNOW_SCROLL",
+            "IMAGE",
+            "snow",
+            "SKY_FAR_MID_GROUND_FOREGROUND_EFFECT_MASK",
+            "Unity visual lead",
+            "BEFORE_U05_ASSET_IMPORT",
+            "Generate and manually rebuild the snow strip set, then register every exported file in G-02.",
+            "DETERMINISTIC_SEGMENTED_SCROLL_SHARED_ORIGIN",
+        ),
+        asset_entry(
+            "IMG_FADE_SCROLL",
+            "IMAGE",
+            "fade",
+            "SKY_FAR_MID_GROUND_FOREGROUND_EFFECT_MASK",
+            "Unity visual lead",
+            "BEFORE_U03_ASSET_IMPORT",
+            "Generate and manually rebuild the fade strip set, then register every exported file in G-02.",
+            "DETERMINISTIC_SEGMENTED_SCROLL_SHARED_ORIGIN",
+        ),
+        asset_entry(
+            "ANIM_COMMON_SCROLL_CAMERA",
+            "ANIMATION",
+            "common",
+            "CAMERA_SCROLL_PARALLAX_AND_PAUSE",
+            "Unity technical lead",
+            "BEFORE_V05_GREYBOX",
+            "Author deterministic project-owned animation data; reject imported animation with unknown provenance.",
+            "TIMELINE_OR_SCRIPTED_CURVE_WITH_FIXED_TIME_AUTHORITY",
+            author_source="SRP_PROJECT_TEAM",
+            license_name="PROJECT_ORIGINAL_AFTER_AUTHORSHIP_RECORD",
+            status="PLANNED_PROJECT_ORIGINAL",
+        ),
+        asset_entry(
+            "ANIM_STORM_SEMANTIC",
+            "ANIMATION",
+            "storm",
+            "TARGET_ACTUAL_RECOVERY_FALLBACK",
+            "Unity visual lead",
+            "BEFORE_U03_SLICE_REVIEW",
+            "Author project-owned semantic animation from the V-03 contract and replace any legacy shield motion.",
+            "SCENE_ADAPTER_DRIVEN_NO_BAKED_INPUT_VALUES",
+            author_source="SRP_PROJECT_TEAM",
+            license_name="PROJECT_ORIGINAL_AFTER_AUTHORSHIP_RECORD",
+            status="PLANNED_PROJECT_ORIGINAL",
+        ),
+        asset_entry(
+            "ANIM_HEAT_SEMANTIC",
+            "ANIMATION",
+            "heat",
+            "TARGET_ACTUAL_RECOVERY_FALLBACK",
+            "Unity visual lead",
+            "BEFORE_U04_DONE",
+            "Author project-owned semantic animation from the V-03 contract.",
+            "SCENE_ADAPTER_DRIVEN_NO_BAKED_INPUT_VALUES",
+            author_source="SRP_PROJECT_TEAM",
+            license_name="PROJECT_ORIGINAL_AFTER_AUTHORSHIP_RECORD",
+            status="PLANNED_PROJECT_ORIGINAL",
+        ),
+        asset_entry(
+            "ANIM_SNOW_SEMANTIC",
+            "ANIMATION",
+            "snow",
+            "TARGET_ACTUAL_RECOVERY_FALLBACK",
+            "Unity visual lead",
+            "BEFORE_U05_DONE",
+            "Author project-owned deterministic snow trajectories and semantic animation.",
+            "FIXED_TRAJECTORY_SCENE_ADAPTER_DRIVEN",
+            author_source="SRP_PROJECT_TEAM",
+            license_name="PROJECT_ORIGINAL_AFTER_AUTHORSHIP_RECORD",
+            status="PLANNED_PROJECT_ORIGINAL",
+        ),
+        asset_entry(
+            "ANIM_FADE_SEMANTIC",
+            "ANIMATION",
+            "fade",
+            "TARGET_ACTUAL_RECOVERY_FALLBACK",
+            "Unity visual lead",
+            "BEFORE_U03_SLICE_REVIEW",
+            "Author project-owned fixed-spline semantic animation from the V-03 contract.",
+            "FIXED_SPLINE_SCENE_ADAPTER_DRIVEN",
+            author_source="SRP_PROJECT_TEAM",
+            license_name="PROJECT_ORIGINAL_AFTER_AUTHORSHIP_RECORD",
+            status="PLANNED_PROJECT_ORIGINAL",
+        ),
+        asset_entry(
+            "FONT_PARTICIPANT_UI",
+            "FONT",
+            "common",
+            "PARTICIPANT_VISIBLE_SYSTEM_TEXT_ONLY",
+            "Unity visual lead",
+            "BEFORE_V05_GREYBOX",
+            "Select an OFL or project-owned font, archive the license, or remove participant-visible text.",
+            "TMP_FONT_ASSET_WITH_LOCKED_SOURCE_HASH_AND_FALLBACKS",
+            author_source="PENDING_CLEARED_FONT_SELECTION",
+            license_name="PENDING_OFL_OR_PROJECT_ORIGINAL_EVIDENCE",
+            status="REPLACE_PENDING_CLEARED_FONT_SELECTION",
+        ),
+        asset_entry(
+            "AUD_COMMON_CORRIDOR_MASTER",
+            "AUDIO",
+            "common_corridor",
+            "NON_RHYTHMIC_AMBIENT_MASTER",
+            "Audio design lead",
+            "BEFORE_V04_SOUND_REHEARSAL",
+            "Create a project-owned master or replace it with a G-02-cleared recording.",
+            "LOCKED_AUDIOCLIP_HASH_AND_AUDIO_PROFILE",
+        ),
+        asset_entry(
+            "AUD_STORM_AMBIENT_MASTER",
+            "AUDIO",
+            "storm",
+            "NON_RHYTHMIC_AMBIENT_MASTER",
+            "Audio design lead",
+            "BEFORE_V04_SOUND_REHEARSAL",
+            "Create a project-owned storm master or replace it with a G-02-cleared recording.",
+            "LOCKED_AUDIOCLIP_HASH_AND_AUDIO_PROFILE",
+        ),
+        asset_entry(
+            "AUD_HEAT_AMBIENT_MASTER",
+            "AUDIO",
+            "heat",
+            "NON_RHYTHMIC_AMBIENT_MASTER",
+            "Audio design lead",
+            "BEFORE_V04_SOUND_REHEARSAL",
+            "Create a project-owned heat master or replace it with a G-02-cleared recording.",
+            "LOCKED_AUDIOCLIP_HASH_AND_AUDIO_PROFILE",
+        ),
+        asset_entry(
+            "AUD_SNOW_AMBIENT_MASTER",
+            "AUDIO",
+            "snow",
+            "NON_RHYTHMIC_AMBIENT_MASTER",
+            "Audio design lead",
+            "BEFORE_V04_SOUND_REHEARSAL",
+            "Create a project-owned snow master or replace it with a G-02-cleared recording.",
+            "LOCKED_AUDIOCLIP_HASH_AND_AUDIO_PROFILE",
+        ),
+        asset_entry(
+            "AUD_FADE_AMBIENT_MASTER",
+            "AUDIO",
+            "fade",
+            "NON_RHYTHMIC_AMBIENT_MASTER",
+            "Audio design lead",
+            "BEFORE_V04_SOUND_REHEARSAL",
+            "Create a project-owned fade master or replace it with a G-02-cleared recording.",
+            "LOCKED_AUDIOCLIP_HASH_AND_AUDIO_PROFILE",
+        ),
+        asset_entry(
+            "SHADER_COMMON_URP_2D",
+            "SHADER",
+            "common",
+            "LAYER_COMPOSITING_AND_CERTAINTY_WRAPPER",
+            "Unity technical lead",
+            "BEFORE_U02_DONE",
+            "Author project-owned Shader Graph assets or use only locked Unity URP shader sources.",
+            "URP_2D_SHADER_GRAPH_WITH_MATERIAL_HASH",
+            author_source="SRP_PROJECT_TEAM_OR_LOCKED_UNITY_URP_SOURCE",
+            license_name="PROJECT_ORIGINAL_OR_UNITY_PACKAGE_NOTICE",
+            ledger_group="PENDING_G02_INSTANCE_OR_UNITY_OFFICIAL_PACKAGES",
+            status="PLANNED_PENDING_SHADER_INSTANCE",
+        ),
+        asset_entry(
+            "SHADER_WEATHER_EFFECTS",
+            "SHADER",
+            "all_weather",
+            "RAIN_HEAT_SNOW_FADE_EFFECTS",
+            "Unity technical lead",
+            "BEFORE_U03_SLICE_REVIEW",
+            "Author project-owned weather effects and reject unknown downloaded shader code.",
+            "URP_2D_SHADER_GRAPH_SEPARATE_FROM_RESEARCH_SEMANTICS",
+            author_source="SRP_PROJECT_TEAM",
+            license_name="PROJECT_ORIGINAL_AFTER_AUTHORSHIP_RECORD",
+            status="PLANNED_PROJECT_ORIGINAL",
+        ),
+        asset_entry(
+            "PLUGIN_UNITY_MCP_EDITOR",
+            "PLUGIN",
+            "editor_only",
+            "EDITOR_AUTOMATION",
+            "Unity technical lead",
+            "BEFORE_F03_DONE",
+            "Prove editor-only exclusion from the participant build or remove the package.",
+            "EDITOR_ONLY_NO_PLAYER_ASSEMBLY",
+            author_source="CoplayDev",
+            license_name="MIT",
+            ledger_group="coplaydev-unity-mcp",
+            status="EDITOR_ONLY_PENDING_PLAYER_EXCLUSION_PROOF",
+            hash_or_version="78ee5418415953b79c358bfe6355fcc3fde7912b",
+        ),
+        asset_entry(
+            "PLUGIN_KLAK_SPOUT_LEGACY",
+            "PLUGIN",
+            "legacy_only",
+            "LEGACY_SPOUT_TRANSPORT",
+            "Unity technical lead",
+            "BEFORE_F03_DONE",
+            "Remove KlakSpout from the target package manifest and player build.",
+            "EXCLUDE_AND_REMOVE_FROM_TARGET_ARCHITECTURE",
+            author_source="Keijiro Takahashi and contributors",
+            license_name="Unlicense",
+            ledger_group="klak-spout",
+            status="REPLACE_REMOVE_FROM_TARGET_ARCHITECTURE",
+            hash_or_version="849e7bca3c167839ed697796153e1749acf0c53f",
+        ),
+        asset_entry(
+            "PLUGIN_ROSLYN_BINARIES_LEGACY",
+            "PLUGIN",
+            "legacy_only",
+            "LEGACY_EDITOR_BINARY",
+            "Unity technical lead",
+            "BEFORE_F03_DONE",
+            "Remove Assets/Plugins/Roslyn or reacquire pinned binaries with exact evidence.",
+            "EXCLUDE_FROM_PLAYER_AND_REPLACE_OR_REMOVE",
+            author_source="DOTNET_FOUNDATION_EXACT_BINARY_SOURCE_PENDING",
+            license_name="PENDING_EXACT_BINARY_PROVENANCE",
+            ledger_group="roslyn-binaries-unresolved",
+            status="REPLACE",
+            hash_or_version="PENDING_EXACT_BINARY_SHA256",
+        ),
+    ]
+    return entries
+
+
+def direct_package_entries() -> list[dict[str, object]]:
+    manifest = json.loads(UNITY_MANIFEST.read_text(encoding="utf-8"))
+    entries: list[dict[str, object]] = []
+    for package_id, version in sorted(manifest["dependencies"].items()):
+        if package_id == "com.coplaydev.unity-mcp":
+            author_source = "CoplayDev"
+            license_name = "MIT"
+            ledger_group = "coplaydev-unity-mcp"
+            status = "EDITOR_ONLY_PENDING_PLAYER_EXCLUSION_PROOF"
+            replacement_plan = "Prove editor-only exclusion from the participant build or remove the direct dependency."
+            import_plan = "LOCK_COMMIT_EDITOR_ONLY_OR_REMOVE"
+        elif package_id == "jp.keijiro.klak.spout":
+            author_source = "Keijiro Takahashi and contributors"
+            license_name = "Unlicense"
+            ledger_group = "klak-spout"
+            status = "REPLACE_REMOVE_FROM_TARGET_ARCHITECTURE"
+            replacement_plan = "Remove this legacy direct dependency before the F-03 target baseline is signed."
+            import_plan = "REMOVE_FROM_MANIFEST_AND_PACKAGES_LOCK"
+        elif package_id.startswith("com.unity."):
+            author_source = "Unity Technologies"
+            license_name = "Unity Companion License and applicable package notices"
+            ledger_group = "unity-official-packages"
+            status = "G02_GROUP_CLEARED_PENDING_F03_SCOPE_FREEZE"
+            replacement_plan = "F-03 must retain only packages required by the target build and archive applicable notices."
+            import_plan = "LOCK_VERSION_AND_PACKAGE_NOTICE_OR_REMOVE"
+        else:
+            raise AssertionError(f"unclassified direct package: {package_id}")
+        entries.append(
+            asset_entry(
+                f"PKG::{package_id}",
+                "DIRECT_PACKAGE",
+                "common",
+                "UNITY_DIRECT_DEPENDENCY",
+                "Unity technical lead",
+                "BEFORE_F03_DONE",
+                replacement_plan,
+                import_plan,
+                author_source=author_source,
+                license_name=license_name,
+                ledger_group=ledger_group,
+                status=status,
+                hash_or_version=str(version),
+            )
+        )
+    return entries
+
+
+def asset_registry() -> dict[str, object]:
+    design_entries = design_asset_entries()
+    package_entries = direct_package_entries()
+    entries = design_entries + package_entries
+    return {
+        "registry_id": "SRP_V03_ASSET_SOURCE_REPLACEMENT_REGISTRY",
+        "version": "1.0",
+        "status": "CANDIDATE_AC3_COMPLETE_PENDING_G02_CLEARANCE",
+        "formal_release_rule": (
+            "NO_ENTRY_IS_FORMALLY_USABLE_UNTIL_ITS_INSTANCE_EVIDENCE_AND_"
+            "THE_G02_FORMAL_BUILD_GATE_ARE_CLEARED"
+        ),
+        "authorities": {
+            "unity_manifest": UNITY_MANIFEST.relative_to(ROOT).as_posix(),
+            "unity_manifest_sha256": hashlib.sha256(UNITY_MANIFEST.read_bytes()).hexdigest(),
+            "g02_asset_ledger": G02_ASSET_LEDGER.relative_to(ROOT).as_posix(),
+            "g02_asset_ledger_sha256": hashlib.sha256(G02_ASSET_LEDGER.read_bytes()).hexdigest(),
+        },
+        "required_categories": list(ASSET_REQUIRED_CATEGORIES),
+        "required_fields": list(ASSET_REQUIRED_FIELDS),
+        "design_entry_count": len(design_entries),
+        "direct_package_count": len(package_entries),
+        "entry_count": len(entries),
+        "entries": entries,
+    }
+
+
 def write_json(path: Path, payload: dict[str, object]) -> None:
     path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
@@ -639,7 +1033,11 @@ def main() -> None:
     )
     write_json(BASE / "V-03_参数边界与锁定规则_v1.0.json", parameter_contract())
     write_json(BASE / "V-03_工程风险评分_v1.0.json", risk_contract())
-    print("generated V-03 mapping rows=40, schema, parameters and dual risk scores")
+    write_json(BASE / "V-03_资产来源与替换台账_v1.0.json", asset_registry())
+    print(
+        "generated V-03 mapping rows=40, schema, parameters, dual risk scores "
+        "and asset registry"
+    )
 
 
 if __name__ == "__main__":

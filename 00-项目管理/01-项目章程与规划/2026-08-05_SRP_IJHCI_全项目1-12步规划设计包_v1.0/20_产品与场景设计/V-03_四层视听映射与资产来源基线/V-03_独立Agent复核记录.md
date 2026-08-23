@@ -3,7 +3,8 @@
 > Agent：`01a02f22-00cd-7822-9aa3-bcd7adfc94b3`（Lorentz）
 > 首轮方式：独立只读评分与攻击；未编辑、暂存、提交或推送
 > 首轮结论：`CHANGES_REQUIRED`
-> 最终复审结论：`PASS`
+> 既有复审结论：`PASS`
+> 最新独立复查：`CHANGES_REQUIRED_FIX_IMPLEMENTED_REREVIEW_PENDING`
 > 证据边界：本记录不是现实团队第二人签收
 
 ## 1. 独立评分结论
@@ -30,3 +31,14 @@
 同一Agent执行三轮定向复审：第二轮关闭原10项中的9项并发现Schema约束不足；第三轮关闭状态范围问题并要求按层收紧Schema；最终复审确认按层`source_fields`与`quality_behavior`均已冻结，默认Python标准库检查和`py -3.14` Draft 2020-12验证均通过。
 
 最终裁定：`PASS`。无未关闭P0-P2问题，无本轮修复引入的新P0-P2。该结论只允许V-03进入现实团队第二人复核，不替代签收。
+
+## 4. 2026-08-24新独立Agent复查与修复
+
+新独立Agent `01a02f4e-0807-7e01-b902-95e4af746558`（Beauvoir）对固定候选`06951ac`及治理提交`bffe1f0`执行只读复查，结论为`CHANGES_REQUIRED`：
+
+| ID | 级别 | 问题 | 本轮修复 | 当前状态 |
+|---|---|---|---|---|
+| IA2-P1-01 | P1 | 资产计划未逐项覆盖字体、Shader、插件、直接包及责任字段 | 新增`V-03_资产来源与替换台账_v1.0.json`，覆盖7类、21项设计资产/插件和manifest全部57个直接依赖，每项固定14字段 | `FIX_IMPLEMENTED_REREVIEW_PENDING` |
+| IA2-P2-01 | P2 | 专项校验器只检查资产文档存在，不能拒绝类别或责任字段缺失 | 新增严格字段、类别、ID、G-02组、formal-use、manifest逐项一致性检查和4个正/负向pytest | `FIX_IMPLEMENTED_REREVIEW_PENDING` |
+
+本轮保持所有资产`formal_use_allowed=false`；KlakSpout固定移出目标架构，Unity MCP必须证明仅编辑器使用，旧Roslyn保持替换。修复提交形成后必须由新的独立Agent复审；复审前不得恢复为最终`PASS`，也不得进入真实团队第二人签收。

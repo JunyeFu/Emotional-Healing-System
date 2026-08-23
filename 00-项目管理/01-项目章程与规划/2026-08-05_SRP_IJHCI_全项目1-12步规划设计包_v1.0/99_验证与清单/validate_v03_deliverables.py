@@ -21,6 +21,9 @@ BASE = (
     / "V-03_四层视听映射与资产来源基线"
 )
 GENERATOR = Path(__file__).with_name("generate_v03_contracts.py")
+UNITY_PROJECT = ROOT / "02-技术研发" / "04-Unity视觉" / "SRP-Weather-Visual"
+UNITY_MANIFEST = UNITY_PROJECT / "Packages" / "manifest.json"
+G02_ASSET_LEDGER = UNITY_PROJECT / "Governance" / "asset_license_ledger.json"
 
 
 DOCS = (
@@ -36,6 +39,7 @@ MACHINE_FILES = (
     "V-03_四层视听映射合同_v1.0.schema.json",
     "V-03_参数边界与锁定规则_v1.0.json",
     "V-03_工程风险评分_v1.0.json",
+    "V-03_资产来源与替换台账_v1.0.json",
 )
 FORBIDDEN_WORDS = (
     "\u8bca\u65ad",
@@ -51,6 +55,96 @@ def load_json(name: str) -> dict[str, object]:
     return json.loads((BASE / name).read_text(encoding="utf-8"))
 
 
+def validate_asset_registry(
+    registry: dict[str, object],
+    manifest_dependencies: dict[str, str],
+    ledger_groups: set[str],
+) -> None:
+    required_fields = (
+        "asset_id",
+        "category",
+        "scene",
+        "layer_role",
+        "author_source",
+        "license",
+        "ledger_group",
+        "status",
+        "formal_use_allowed",
+        "replacement_plan",
+        "owner",
+        "deadline",
+        "hash_or_version",
+        "unity_import_plan",
+    )
+    required_categories = {
+        "IMAGE",
+        "ANIMATION",
+        "FONT",
+        "AUDIO",
+        "SHADER",
+        "PLUGIN",
+        "DIRECT_PACKAGE",
+    }
+    assert registry["required_fields"] == list(required_fields)
+    assert set(registry["required_categories"]) == required_categories
+    entries = registry["entries"]
+    assert registry["design_entry_count"] == 21
+    assert registry["direct_package_count"] == len(manifest_dependencies)
+    assert registry["entry_count"] == len(entries) == 21 + len(manifest_dependencies)
+
+    asset_ids = [entry["asset_id"] for entry in entries]
+    assert len(asset_ids) == len(set(asset_ids)), "duplicate V-03 asset_id"
+    assert {entry["category"] for entry in entries} == required_categories
+    pending_ledger_groups = {
+        "PENDING_G02_INSTANCE_REGISTRATION",
+        "PENDING_G02_INSTANCE_OR_UNITY_OFFICIAL_PACKAGES",
+    }
+    for entry in entries:
+        assert set(entry) == set(required_fields), f"asset fields drifted: {entry.get('asset_id')}"
+        for field in required_fields:
+            value = entry[field]
+            if field == "formal_use_allowed":
+                assert value is False, f"asset prematurely allowed: {entry['asset_id']}"
+            else:
+                assert isinstance(value, str) and value.strip(), (
+                    f"empty asset field {field}: {entry['asset_id']}"
+                )
+        assert entry["ledger_group"] in ledger_groups | pending_ledger_groups, (
+            f"unknown ledger group: {entry['asset_id']}"
+        )
+
+    package_entries = {
+        entry["asset_id"].removeprefix("PKG::"): entry
+        for entry in entries
+        if entry["category"] == "DIRECT_PACKAGE"
+    }
+    assert set(package_entries) == set(manifest_dependencies), (
+        "direct package registry does not exactly match Packages/manifest.json"
+    )
+    for package_id, version in manifest_dependencies.items():
+        entry = package_entries[package_id]
+        assert entry["hash_or_version"] == version
+        if package_id == "com.coplaydev.unity-mcp":
+            assert entry["ledger_group"] == "coplaydev-unity-mcp"
+            assert entry["status"] == "EDITOR_ONLY_PENDING_PLAYER_EXCLUSION_PROOF"
+        elif package_id == "jp.keijiro.klak.spout":
+            assert entry["ledger_group"] == "klak-spout"
+            assert entry["status"] == "REPLACE_REMOVE_FROM_TARGET_ARCHITECTURE"
+        else:
+            assert package_id.startswith("com.unity.")
+            assert entry["ledger_group"] == "unity-official-packages"
+
+    by_id = {entry["asset_id"]: entry for entry in entries}
+    assert by_id["FONT_PARTICIPANT_UI"]["category"] == "FONT"
+    assert by_id["SHADER_COMMON_URP_2D"]["category"] == "SHADER"
+    assert by_id["SHADER_WEATHER_EFFECTS"]["category"] == "SHADER"
+    assert by_id["PLUGIN_UNITY_MCP_EDITOR"]["category"] == "PLUGIN"
+    assert by_id["PLUGIN_KLAK_SPOUT_LEGACY"]["status"] == (
+        "REPLACE_REMOVE_FROM_TARGET_ARCHITECTURE"
+    )
+    assert by_id["PLUGIN_ROSLYN_BINARIES_LEGACY"]["status"] == "REPLACE"
+
+
 def main() -> None:
     for name in (*DOCS, *MACHINE_FILES):
         assert (BASE / name).is_file(), f"missing V-03 deliverable: {name}"
@@ -61,10 +155,12 @@ def main() -> None:
     schema = load_json(MACHINE_FILES[1])
     parameters = load_json(MACHINE_FILES[2])
     risk_data = load_json(MACHINE_FILES[3])
+    asset_data = load_json(MACHINE_FILES[4])
     assert mapping == generated["mapping_contract"](), "mapping JSON drifted from generator"
     assert schema == generated["mapping_schema"](), "mapping Schema drifted from generator"
     assert parameters == generated["parameter_contract"](), "parameter JSON drifted from generator"
     assert risk_data == generated["risk_contract"](), "risk JSON drifted from generator"
+    assert asset_data == generated["asset_registry"](), "asset registry drifted from generator"
     assert mapping["schema_id"] == "V03_DESIGN_SEMANTICS_1_0"
     assert schema["$id"] == "urn:srp:v03:design-semantics:1.0"
     draft_validation_active = Draft202012Validator is not None
@@ -194,12 +290,29 @@ def main() -> None:
     assert risk_data["selected_u03_weather"] == "fade"
     assert risk_data["selection_status"] == "FROZEN_FOR_V03_DESIGN_HANDOFF"
 
+    manifest = json.loads(UNITY_MANIFEST.read_text(encoding="utf-8"))
+    asset_ledger = json.loads(G02_ASSET_LEDGER.read_text(encoding="utf-8"))
+    validate_asset_registry(
+        asset_data,
+        manifest["dependencies"],
+        set(asset_ledger["groups"]),
+    )
+
     risk = (BASE / DOCS[-1]).read_text(encoding="utf-8")
     fairness = (BASE / "V-03_两条件信息匹配审查_v1.0.md").read_text(encoding="utf-8")
+    asset_plan = (BASE / "V-03_资产来源与替换计划_v1.0.md").read_text(
+        encoding="utf-8"
+    )
     assert "DUAL_SCORING_COMPLETE_DIFFERENCES_RESOLVED" in risk
     assert "评分者A逐维依据" in risk and "评分者B逐维依据" in risk
     assert "V-03冻结`fade`" in risk
     assert "平均亮度" in fairness and "≤0.05" in fairness
+    for field in asset_data["required_fields"]:
+        assert f"`{field}`" in asset_plan, f"asset plan omits required field: {field}"
+    for category in asset_data["required_categories"]:
+        assert f"`{category}`" in asset_plan, f"asset plan omits category: {category}"
+    assert "57个直接包依赖" in asset_plan and "共78项" in asset_plan
+    assert "formal_use_allowed`当前全部为`false" in asset_plan
     assert (BASE / "V-03_独立Agent复核记录.md").is_file()
 
     for path in BASE.rglob("*"):
@@ -210,7 +323,8 @@ def main() -> None:
 
     print(
         "PASS: V-03 deliverables; docs=6; mapping_rows=40; "
-        "parameters=machine-checked; dual_risk_scoring=resolved; u03=fade; "
+        "parameters=machine-checked; assets=78; direct_packages=57; "
+        "dual_risk_scoring=resolved; u03=fade; "
         f"draft202012_validation={'active' if draft_validation_active else 'not_available'}"
     )
 
