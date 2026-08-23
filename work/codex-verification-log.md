@@ -828,3 +828,17 @@
 | G-01-12 | `06_步骤05_伦理与预试材料/G-01-12_U8演练逐日执行脚本与记录表.md`：D1~D14逐日脚本、会话执行卡（对齐G-01-01§2八阶段）、故障模拟排期（满足G-01-08§5最少次数：P-ACT×2/T-BRE×1/T-UNI×1/F-MIS×2）、日终汇总表与U8结论步骤；关键数字140/112/165与产能模型一致。 |
 | G-02 Runbook | `02-技术研发/07-数据治理/docs/formal_environment_closure_runbook.md`：6项失败检查（GOVERNANCE_ROOT/BACKUP_ROOT/SEALED_KEY_EVIDENCE/DATA_ADMIN_ACCOUNT/DEDUP_CREDENTIAL/RETENTION_APPROVAL）逐项操作+验收+责任角色，总体验收以`G02_FORMAL_ENV_PASS`+备份恢复演练为准；密钥与联系方式全程不落盘。 |
 | Gates | 禁用词扫描3个新文件0命中；注册表与任务包状态未变（READY=F-03/F-04/F-05/V-03，IN_REVIEW=G-01/G-02）；预备制品不关闭任何外部门。 |
+
+### 2026-08-23 V-03前期规划
+
+| Field | Result |
+|---|---|
+| Branch and claim | `codex/v-03-visual-mapping`; V-03 claimant=`Codex`; status=`IN_PROGRESS` |
+| Planning validator | `PASS`; 6 deliverable templates; 7 risk dimensions; detailed fill=`TBD`; F-05 partial block active |
+| Scope | Planning and upstream/downstream alignment only; no Unity edit or weather-level fill |
+| Evidence | `20_产品与场景设计/V-03_四层视听映射与资产来源基线/` |
+| Registry validator | `PASS`; 57 entries; V-03=`IN_PROGRESS`; READY=`F-03/F-04/F-05`; IN_REVIEW=`G-01/G-02` |
+| Independent packages | `PASS`; 5 packages; 115 snapshots; V-03 removed from dispatch after claim |
+| Protocol authority | `PASS`; v1.1 active files consistent |
+| Root pytest | `404 passed in 43.01s` |
+| Diff check | `PASS`; line-ending warnings only |

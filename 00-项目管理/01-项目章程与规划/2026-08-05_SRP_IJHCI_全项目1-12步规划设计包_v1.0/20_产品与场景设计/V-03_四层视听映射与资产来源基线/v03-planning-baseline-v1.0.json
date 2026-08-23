@@ -1,0 +1,92 @@
+{
+  "contract_id": "SRP-V03-PLANNING-BASELINE",
+  "version": "1.0.0",
+  "date": "2026-08-23",
+  "status": "READY_FOR_DETAILED_FILL_WITH_F05_PARTIAL_BLOCK",
+  "scope": "planning_and_upstream_downstream_alignment_only",
+  "branch": "codex/v-03-visual-mapping",
+  "task_status_authority": "IN_PROGRESS",
+  "authorities": [
+    "protocol_authority_v1.1",
+    "F-01_runtime_contract_v2.1",
+    "P-01_session_core",
+    "R-01_four_layer_representation_v0.9_candidate",
+    "V-01_participant_product_spec_v1.1",
+    "V-02_scene_baseline_v1.0"
+  ],
+  "layer_sources": {
+    "target": "python.target_protocol",
+    "actual": "python.interaction_state_estimate",
+    "recovery": "python.recovery_aggregate",
+    "fallback": "python.signal_quality",
+    "background": null
+  },
+  "cue_modes": [
+    "scene_native",
+    "abstract_pacer"
+  ],
+  "technical_ids": [
+    "storm",
+    "heat",
+    "snow",
+    "fade"
+  ],
+  "deliverable_templates": [
+    "four_layer_audiovisual_mapping_contract",
+    "parameter_bounds_and_lock_rules",
+    "condition_information_matching_review",
+    "audio_role_table",
+    "asset_provenance_and_replacement_plan",
+    "engineering_risk_matrix_and_u03_selection"
+  ],
+  "risk_dimensions": [
+    "four_layer_conflict",
+    "phase_discriminability",
+    "implementation",
+    "performance",
+    "fallback_readability",
+    "asset_provenance",
+    "condition_matching"
+  ],
+  "upstream_gates": {
+    "R-01": "DONE",
+    "V-02": "DONE",
+    "F-01": "DONE",
+    "P-01": "DONE",
+    "F-05": "PARTIAL_BLOCK_UNTIL_V2_2_SIGNED",
+    "G-02": "FORMAL_ASSET_RELEASE_EXTERNAL_GATE_OPEN",
+    "F-03": "PERFORMANCE_VALUES_REMAIN_CANDIDATE"
+  },
+  "downstream_consumers": [
+    "U-02",
+    "V-04",
+    "V-05",
+    "U-03",
+    "U-04",
+    "U-05",
+    "U-06",
+    "U-07",
+    "G-02",
+    "U-08"
+  ],
+  "detailed_fill_state": {
+    "mapping_rows": "TBD_EXECUTION",
+    "parameter_values": "TBD_EXECUTION",
+    "condition_review_results": "NOT_TESTED",
+    "audio_assets": "TBD_EXECUTION",
+    "asset_entries": "TBD_EXECUTION",
+    "weather_risk_scores": "TBD_EXECUTION",
+    "u03_selected_weather": null,
+    "storm_phase_instances": "BLOCKED_F05",
+    "fade_phase_instances": "BLOCKED_F05"
+  },
+  "forbidden_claims": [
+    "V03_DONE",
+    "UNITY_RUNTIME_COMPLETE",
+    "FORMAL_BUILD_READY",
+    "ASSET_LICENSE_CLEARED",
+    "LIVE_INPUT_CHAIN_COMPLETE",
+    "CONDITION_MATCHING_OBSERVED",
+    "RESEARCH_RESULT_OBSERVED"
+  ]
+}
