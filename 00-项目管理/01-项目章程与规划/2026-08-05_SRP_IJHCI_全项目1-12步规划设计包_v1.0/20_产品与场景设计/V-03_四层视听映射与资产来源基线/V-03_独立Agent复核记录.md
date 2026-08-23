@@ -4,7 +4,7 @@
 > 首轮方式：独立只读评分与攻击；未编辑、暂存、提交或推送
 > 首轮结论：`CHANGES_REQUIRED`
 > 既有复审结论：`PASS`
-> 最新独立复查：`CHANGES_REQUIRED_FIX_IMPLEMENTED_REREVIEW_PENDING`
+> 最新独立复审：`PASS`
 > 证据边界：本记录不是现实团队第二人签收
 
 ## 1. 独立评分结论
@@ -38,7 +38,13 @@
 
 | ID | 级别 | 问题 | 本轮修复 | 当前状态 |
 |---|---|---|---|---|
-| IA2-P1-01 | P1 | 资产计划未逐项覆盖字体、Shader、插件、直接包及责任字段 | 新增`V-03_资产来源与替换台账_v1.0.json`，覆盖7类、21项设计资产/插件和manifest全部57个直接依赖，每项固定14字段 | `FIX_IMPLEMENTED_REREVIEW_PENDING` |
-| IA2-P2-01 | P2 | 专项校验器只检查资产文档存在，不能拒绝类别或责任字段缺失 | 新增严格字段、类别、ID、G-02组、formal-use、manifest逐项一致性检查和4个正/负向pytest | `FIX_IMPLEMENTED_REREVIEW_PENDING` |
+| IA2-P1-01 | P1 | 资产计划未逐项覆盖字体、Shader、插件、直接包及责任字段 | 新增`V-03_资产来源与替换台账_v1.0.json`，覆盖7类、21项设计资产/插件和manifest全部57个直接依赖，每项固定14字段 | `CLOSED` |
+| IA2-P2-01 | P2 | 专项校验器只检查资产文档存在，不能拒绝类别或责任字段缺失 | 新增严格字段、类别、ID、G-02组、formal-use、manifest逐项一致性检查和8个正/负向pytest | `CLOSED` |
 
-本轮保持所有资产`formal_use_allowed=false`；KlakSpout固定移出目标架构，Unity MCP必须证明仅编辑器使用，旧Roslyn保持替换。修复提交形成后必须由新的独立Agent复审；复审前不得恢复为最终`PASS`，也不得进入真实团队第二人签收。
+本轮保持所有资产`formal_use_allowed=false`；KlakSpout固定移出目标架构，Unity MCP必须证明仅编辑器使用，旧Roslyn保持替换。
+
+## 5. 修复候选复审闭环
+
+新独立Agent `01a02f64-a5fb-7712-b656-39d668d52ef9`（Hypatia）复审提交`6df88d8`时确认IA2-P1-01关闭、IA2-P2-01的校验实现关闭，但要求为额外字段、重复ID、未知G-02组和提前formal-use补四个显式负向测试。提交`f09f0d5`补齐后，同一Agent再次只读复审并给出`PASS`：专项测试`8 passed`，根回归`412 passed`，原P1/P2及新增P2全部关闭，无新P0-P2。
+
+该模型复审只允许最终候选进入真实团队第二人签收，不替代签收，也不扩大为Unity运行或正式构建证据。

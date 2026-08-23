@@ -32,8 +32,8 @@
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/README.md",
       "package_path": "inputs/05_README.md",
-      "sha256": "13F9B7954A56D031940785850BAB370AC7E267C6E640C4D764AE2AA439D29C3D",
-      "size_bytes": 1904
+      "sha256": "38A987DA99A4F259F64C729CC454CEFE4DF7B3CB982C9C3E30336C28BEDB4373",
+      "size_bytes": 2072
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/CONTEXT.md",
@@ -98,50 +98,68 @@
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_资产来源与替换计划_v1.0.md",
       "package_path": "inputs/16_V-03_资产来源与替换计划_v1.0.md",
-      "sha256": "08F3817004439299136B716721BA3B2E808132695157D57C87C63F6A2995BA51",
-      "size_bytes": 4150
+      "sha256": "F0BD14DB6078BBF53FDE9DFBDCD5DB93FF70CBABD3304CEC92212568C7438D94",
+      "size_bytes": 5529
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_资产来源与替换台账_v1.0.json",
+      "package_path": "inputs/17_V-03_资产来源与替换台账_v1.0.json",
+      "sha256": "B99C92518F918227122F4F9F1AA7246E11C9576592F1F213C46C8FCDD3070DA0",
+      "size_bytes": 59224
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_工程风险矩阵与U-03选择_v1.0.md",
-      "package_path": "inputs/17_V-03_工程风险矩阵与U-03选择_v1.0.md",
+      "package_path": "inputs/18_V-03_工程风险矩阵与U-03选择_v1.0.md",
       "sha256": "D20867F7B76D5C3C575DE49878256A234752927D5F2F276B2F7AC97B10E7ABEA",
       "size_bytes": 5395
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_工程风险评分_v1.0.json",
-      "package_path": "inputs/18_V-03_工程风险评分_v1.0.json",
+      "package_path": "inputs/19_V-03_工程风险评分_v1.0.json",
       "sha256": "B491E6E35FC206FCB115388F7132944608A76D0DDA203C5D4C4B28E356F9D963",
       "size_bytes": 9166
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_独立Agent复核记录.md",
-      "package_path": "inputs/19_V-03_独立Agent复核记录.md",
-      "sha256": "A3FE35FE45DFD6955395089162A3A5F5624867BF65F95B15A917F9CA8903DC09",
-      "size_bytes": 2570
+      "package_path": "inputs/20_V-03_独立Agent复核记录.md",
+      "sha256": "A62B6559AC4121A66929F5C3353777D90E23E43C41420E77545F1020409845BD",
+      "size_bytes": 4135
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_技术验收记录_待签署.md",
-      "package_path": "inputs/20_V-03_技术验收记录_待签署.md",
-      "sha256": "FC0057DA71301010ADC92323255D2D3AE78DACEBB3A6CDD1CDE9452F93876112",
-      "size_bytes": 2959
+      "package_path": "inputs/21_V-03_技术验收记录_待签署.md",
+      "sha256": "2A11B6C983D2C9709093F4F2821B23627FC74780C13E672585FD7119D9AF35E0",
+      "size_bytes": 3232
     },
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/99_验证与清单/validate_v03_preparation.py",
-      "package_path": "inputs/21_validate_v03_preparation.py",
+      "package_path": "inputs/22_validate_v03_preparation.py",
       "sha256": "75D18572FB5E9D1F400EEE9C25D272199EAE6FD1BD763489435470CC10EAB26A",
       "size_bytes": 11836
     },
     {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/99_验证与清单/generate_v03_contracts.py",
+      "package_path": "inputs/23_generate_v03_contracts.py",
+      "sha256": "F579259919762D37C71DF40D90068CD1FD3650C7C78C0FEA36E59C3D6DED728F",
+      "size_bytes": 41886
+    },
+    {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/99_验证与清单/validate_v03_deliverables.py",
-      "package_path": "inputs/22_validate_v03_deliverables.py",
-      "sha256": "A4BCF40784292503B77FB1D4C78B418ED68B09291693BE15BE8BF33352171E74",
-      "size_bytes": 9175
+      "package_path": "inputs/24_validate_v03_deliverables.py",
+      "sha256": "A30B524DC7520906D4F83D661778A196946FF924BDBD8E0A9F18867DDA8C4278",
+      "size_bytes": 13989
+    },
+    {
+      "source_path": "02-技术研发/tests/test_v03_asset_registry.py",
+      "package_path": "inputs/25_test_v03_asset_registry.py",
+      "sha256": "7761A7FFB6EFFF7E11A5A5D068F6A22B2064DD31459CA638EEAB88882C57436A",
+      "size_bytes": 4073
     },
     {
       "source_path": "PROJECT_MODULES.md",
-      "package_path": "inputs/23_PROJECT_MODULES.md",
-      "sha256": "72C1A570D646367F1FA6B3EAACD0AC214EA94B17D27DC20665566126B2790A55",
-      "size_bytes": 9312
+      "package_path": "inputs/26_PROJECT_MODULES.md",
+      "sha256": "53D7000429B581FAA863CCE6E844C2832F3DC5AE8DAF247852D66ACE10216BB4",
+      "size_bytes": 9360
     }
   ],
   "working_paths": [

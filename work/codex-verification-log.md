@@ -867,3 +867,16 @@
 | Regression | `py -3.14 -m pytest -q`结果`404 passed in 20.59s`；协议权威v1.1校验`PASS`。 |
 | Registry | 任务注册表`PASS`：57项，固定54项、模板3项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02/V-03`。 |
 | Scope Boundary | 独立Agent最终`PASS`不替代真实团队第二人签收；`fade`仅作为U-03设计交接对象，不构成Unity运行、正式构建、资产许可、真实输入链、联合运行或研究结果证据。 |
+
+### 2026-08-24 V-03资产登记与校验覆盖修复
+
+| Field | Result |
+|---|---|
+| Independent Finding | Beauvoir对旧候选复查返回`CHANGES_REQUIRED`：AC3资产类别/责任字段不完整（P1），专项校验未覆盖该要求（P2）。 |
+| Candidate Fix | `6df88d8596181542359311910748b123a1c1fdf0`新增7类78项机器台账：21项设计资产/插件与manifest全部57个直接包，每项14字段且`formal_use_allowed=false`。 |
+| Test Closure | Hypatia首次复审确认原P1/P2实现关闭并新增测试覆盖P2；`f09f0d5f1f35c98ea447eb3545c18fbb3fb36925`补齐额外字段、重复ID、未知G-02组和提前formal-use四类负向测试。 |
+| Final Independent Review | Hypatia对`f09f0d5`最终只读复审`PASS`：IA2-P1-01、IA2-P2-01和新增P2全部关闭，无新P0-P2；模型复审不替代真实团队第二人签收。 |
+| V-03 Validators | 默认`python`制品校验`PASS`；`py -3.14`制品校验`PASS`并启用Draft 2020-12；结果为`assets=78`、`direct_packages=57`、`mapping_rows=40`；规划基线`PASS`。 |
+| Regression | V-03资产专项`8 passed`；最终根回归`412 passed in 16.66s`；协议权威v1.1`PASS`。 |
+| Governance | 注册表`PASS`：`READY=F-03/F-04/F-05`、`IN_REVIEW=G-01/G-02/V-03`；独立包`PASS`：6包、141份快照。 |
+| Boundary | 资产登记不等于许可放行；未形成Unity运行、正式构建、F-05绑定、真实输入链、联合运行或研究结果证据。 |

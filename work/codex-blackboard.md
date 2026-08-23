@@ -4,7 +4,7 @@
 
 ## Current Task Goal
 
-V-03六项设计候选、机器合同和双人风险评分已完成，候选提交`06951ac`经独立Agent复审`PASS`后进入`IN_REVIEW`，真实团队第二人仍待签署。当前可领取仅为F-03、F-04、F-05；G-01、G-02继续因外部门开放保持`IN_REVIEW`。
+V-03六项设计候选、机器合同、双人风险评分和7类78项资产台账已完成，最终候选`f09f0d5`经独立Agent复审`PASS`，保持`IN_REVIEW`等待真实团队第二人签署。当前可领取仅为F-03、F-04、F-05；G-01、G-02继续因外部门开放保持`IN_REVIEW`。
 
 ## Constraints
 
@@ -992,3 +992,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - V-03从`IN_PROGRESS`迁移到`IN_REVIEW`，待签署记录绑定固定候选提交并保留真实团队第二人空栏。
 - READY集合保持`F-03/F-04/F-05`；V-04、V-05和U-03没有提前解锁。
 - `fade`只作为U-03设计交接对象，不构成Unity运行、切片实现、性能或体验质量证据。
+
+### 2026-08-24 V-03资产登记P1/P2修复闭环
+
+- Beauvoir复查发现资产类别/责任字段不完整（P1）及专项校验未覆盖AC3（P2）。
+- 提交`6df88d8`新增7类78项机器台账：21项设计资产/插件和manifest全部57个直接包，每项14字段且`formal_use_allowed=false`。
+- Hypatia首次复审确认原P1/P2实现关闭，并新增测试覆盖P2；提交`f09f0d5`补齐额外字段、重复ID、未知G-02组和提前formal-use四类负向测试。
+- Hypatia最终复审`PASS`：专项`8 passed`、根回归`412 passed`，原P1/P2及新增P2全部关闭，无新P0-P2。
+- V-03保持`IN_REVIEW`，最终候选`f09f0d5f1f35c98ea447eb3545c18fbb3fb36925`等待真实团队第二人签收；READY仍为F-03/F-04/F-05。
