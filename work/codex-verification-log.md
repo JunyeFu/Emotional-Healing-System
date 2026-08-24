@@ -893,3 +893,17 @@
 | PDF Brief | 固定任务概要PDF重建后验证`PASS`，9页，SHA-256=`77E8CED1AED077EDE4AB0FF6B15BBEE258767AF42A2065DD53F3491DC48A5142`；120 DPI逐页渲染检查未见裁切、重叠或不可读文本。 |
 | Static Checks | 当前权威文件中无V-03仍为`IN_REVIEW`、待签收或候选待签收陈述；新增行禁用词检查0命中；最终暂存差异检查在提交前执行。 |
 | Boundary | 签收只关闭V-03设计任务；不扩大为Unity运行、正式构建、资产许可放行、F-05运行字段绑定、真实输入链、联合运行或研究结果已经完成。 |
+
+### 2026-08-24 V-04设计树关闭与执行基线冻结
+
+| Field | Result |
+|---|---|
+| Design Confirmation | 团队总监逐项确认节点1-25，并确认节点26关闭本轮设计决策树；新增聚合执行基线及ADR-0025，V-04继续保持`READY`。 |
+| Design Inventory | `PASS`：25条ADR、8份节点18-25详细文档、1份聚合执行基线齐全；聚合基线纳入V-04独立任务包。 |
+| Effort Governance | V-04从4人日调整为6人日；任务注册表、任务手册、团队任务树、覆盖审计、看板、固定任务概要及独立任务包已同步。 |
+| Registry | `PASS`：57项、54固定、3模板；`READY=F-03/F-04/F-05/V-04`，`IN_REVIEW=G-01/G-02`。 |
+| Independent Packages | 初次校验按索引门预期拒绝未暂存的新基线；显式暂存权威源并重新生成后`PASS`：6包、145份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-04`。 |
+| Protocol And Regression | 协议权威v1.1校验`PASS`；`py -3.14 -m pytest -q`结果`412 passed in 19.21s`。 |
+| Static Checks | V-04目录不合规措辞扫描0命中；设计清单检查`PASS`；提交前继续执行暂存差异与范围检查。 |
+| PDF Brief | 固定任务概要PDF验证`PASS`，9页，SHA-256=`9871EDFDEE86CB7CD9405E700AADF5A49D61EBF3CF91D006A95D0A81B04BD7C2`；110 DPI逐页渲染及第4/8页重点检查未见裁切、重叠或不可读文本。 |
+| Evidence Boundary | 本轮只冻结设计与任务治理；未安装验签FFmpeg，未生成临时视觉资产、声音母带、Animatic或GitHub预发布，也未形成Unity运行、正式构建、真实输入链或研究结果证据。 |
