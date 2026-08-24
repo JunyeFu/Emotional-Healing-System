@@ -1059,3 +1059,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 节点26已确认：节点1-25的设计决策树关闭，聚合为`V-04_设计冻结与执行基线_v1.0.md`并纳入V-04独立任务包；后续变更必须新增ADR、完成影响分析并重新生成任务包。
 - 设计基线提交后V-04仍保持`READY`；只有负责人实际认领并开始工具探测、分镜数据与H1资产制作时才迁移为`IN_PROGRESS`。
 - 当前没有安装验签后的FFmpeg、临时视觉资产、声音母带、Animatic、GitHub预发布、Unity运行、正式构建或真实输入链证据。
+
+### 2026-08-24 V-04认领、工具门与H1评审候选
+
+- V-04由Codex在`codex/v-04-animatic`认领，注册表由`READY`迁移为`IN_PROGRESS`；当前可领取集合为`F-03/F-04/F-05`，G-01与G-02继续保持`IN_REVIEW`。
+- 项目本机冻结Python 3.14.4、Pillow 12.2.0、NumPy 2.4.6和FFmpeg 9.0.1 essentials；FFmpeg归档、可执行文件、构建参数、1秒编码烟雾与G-02开发工具许可台账均由专项校验器复核通过。
+- H1形成五组A/B第二版候选，共10张1672x941 RGB源图；原图存放于Git忽略目录，仓库仅保存5张1920x650评审图、候选清单、精确哈希、生成脚本和验证器。
+- H1专项验证确认10张原图与5张评审图逐字节一致，全部`formal_use_allowed=false`；H1状态为`PENDING_HUMAN_CONFIRMATION`，H2及后续继续`BLOCKED_BY_H1`。
+- 当前硬门只到“可供团队总监选择五张视觉锚点”；未生成长卷轴、拆层资产、声音母带、十秒样片、完整Animatic或GitHub预发布，也不构成Unity运行、正式构建、真实输入链或研究结果证据。

@@ -907,3 +907,16 @@
 | Static Checks | V-04目录不合规措辞扫描0命中；设计清单检查`PASS`；提交前继续执行暂存差异与范围检查。 |
 | PDF Brief | 固定任务概要PDF验证`PASS`，9页，SHA-256=`9871EDFDEE86CB7CD9405E700AADF5A49D61EBF3CF91D006A95D0A81B04BD7C2`；110 DPI逐页渲染及第4/8页重点检查未见裁切、重叠或不可读文本。 |
 | Evidence Boundary | 本轮只冻结设计与任务治理；未安装验签FFmpeg，未生成临时视觉资产、声音母带、Animatic或GitHub预发布，也未形成Unity运行、正式构建、真实输入链或研究结果证据。 |
+
+### 2026-08-24 V-04认领、工具门与H1候选验证
+
+| Field | Result |
+|---|---|
+| State Migration | V-04=`IN_PROGRESS`，claimant=`Codex`，branch=`codex/v-04-animatic`；`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02`。 |
+| Toolchain | `validate_v04_toolchain.py`结果`PASS`：Python/Pillow/NumPy精确版本、FFmpeg 9.0.1归档与可执行文件哈希、构建参数、1920x1080 H.264/AAC烟雾媒体和G-02开发工具许可登记均一致。 |
+| H1 Candidate Gate | `validate_v04_h1.py`结果`PASS`：10张1672x941 RGB源图和5张1920x650评审图哈希、尺寸、版本及状态精确；全部禁止正式使用；H1仍待团队总监选择，H2继续阻断。 |
+| Registry And Packages | 注册表校验`PASS`：57项、54固定、3模板；独立包校验`PASS`：5包、116份快照，任务为`F-03/F-04/F-05/G-01/G-02`；V-04认领包已移除。 |
+| Protocol And Regression | 协议权威v1.1校验`PASS`；根回归`412 passed in 18.97s`。 |
+| PDF Brief | 固定任务概要验证`PASS`，9页，SHA-256=`D3962052874DDBCF8DF3E003FCBCC4CB92EF56D2F518FD3AE919EE1F611358BA`；逐页渲染后修复第3页旧READY陈述，复查第3、8、9页无裁切、重叠、乱码或状态冲突。 |
+| Static Checks | 本轮V-04候选文档与G-02工具台账禁用词0命中；`.tools`与`.artifacts-local`无Git跟踪文件；最终暂存范围和`git diff --cached --check`在提交前执行。 |
+| Evidence Boundary | 本轮关闭工具探测和H1候选准备，不代替团队总监H1选择；未形成长卷轴、拆层资产、声音母带、H2样片、完整Animatic、GitHub预发布、Unity运行、正式构建、真实输入链或研究结果证据。 |

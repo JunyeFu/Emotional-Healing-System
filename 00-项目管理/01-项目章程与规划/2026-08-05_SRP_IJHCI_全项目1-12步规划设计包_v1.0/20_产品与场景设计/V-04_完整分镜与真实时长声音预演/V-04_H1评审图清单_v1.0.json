@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H1",
+  "source_manifest_sha256": "646020168ff9298d23b797b93bd2ae3132993da602a20584e4c9b481c5c50fbc",
+  "outputs": [
+    {
+      "scene_id": "storm",
+      "file": "review/H1/storm-AB-review.jpg",
+      "width": 1920,
+      "height": 650,
+      "sha256": "97a23635d7666f44b937451a77ae37489fbf13ecaec1a09270c1ffbc03f25466",
+      "review_overlay_only": true
+    },
+    {
+      "scene_id": "heat",
+      "file": "review/H1/heat-AB-review.jpg",
+      "width": 1920,
+      "height": 650,
+      "sha256": "755f294dee0ee9668d364ff00a9d81910c25226bf0f8d8df635de4b52fbb8a59",
+      "review_overlay_only": true
+    },
+    {
+      "scene_id": "snow",
+      "file": "review/H1/snow-AB-review.jpg",
+      "width": 1920,
+      "height": 650,
+      "sha256": "66b6b4828e1e9949dee9de6785f71c6a8b95b9cf5a7adf54362fd83a9b85ed6b",
+      "review_overlay_only": true
+    },
+    {
+      "scene_id": "fade",
+      "file": "review/H1/fade-AB-review.jpg",
+      "width": 1920,
+      "height": 650,
+      "sha256": "24816e3ee0c1d3d2497606127ef361af0e3bf9e40a501d9ead9c883cf48451d2",
+      "review_overlay_only": true
+    },
+    {
+      "scene_id": "corridor",
+      "file": "review/H1/corridor-AB-review.jpg",
+      "width": 1920,
+      "height": 650,
+      "sha256": "6c6e3f00c03c1da148c3bb5fc840df4a4975d832cfafb621491cdbf471688d65",
+      "review_overlay_only": true
+    }
+  ],
+  "selection_status": "PENDING_HUMAN_CONFIRMATION"
+}

@@ -67,6 +67,10 @@ sysinfo.txt
 *.psd
 *.blend
 
+# V-04 local production tools and large preview artifacts
+/.tools/
+/.artifacts-local/
+
 # G-02 governed local data and key material
 *.db
 *.key
