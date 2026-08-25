@@ -1,0 +1,211 @@
+{
+  "version": "1.0",
+  "status": "DUAL_SCORING_COMPLETE_DIFFERENCES_RESOLVED",
+  "dimensions": [
+    "four_layer_conflict",
+    "phase_discriminability",
+    "implementation",
+    "performance",
+    "fallback_readability",
+    "asset_provenance",
+    "condition_matching"
+  ],
+  "range": [
+    0,
+    4
+  ],
+  "weights": "EQUAL",
+  "scorers": {
+    "A": {
+      "storm": {
+        "scores": {
+          "four_layer_conflict": 3,
+          "phase_discriminability": 4,
+          "implementation": 3,
+          "performance": 3,
+          "fallback_readability": 3,
+          "asset_provenance": 3,
+          "condition_matching": 3
+        },
+        "reasons": {
+          "four_layer_conflict": "Rain materials overlap across target, actual, recovery and fallback.",
+          "phase_discriminability": "Two hold slots require explicit identity and stable boundaries.",
+          "implementation": "Gate deformation, near trace and rain masks require coordinated adapters.",
+          "performance": "Rain, mist and transparent traces create moderate overdraw pressure.",
+          "fallback_readability": "Broken near rain traces can blend into the ambient rain field.",
+          "asset_provenance": "Scroll, masks, effects and audio all require new provenance records.",
+          "condition_matching": "Removing gate motion in abstract mode can create attention imbalance."
+        },
+        "total": 22
+      },
+      "heat": {
+        "scores": {
+          "four_layer_conflict": 2,
+          "phase_discriminability": 2,
+          "implementation": 2,
+          "performance": 2,
+          "fallback_readability": 2,
+          "asset_provenance": 2,
+          "condition_matching": 2
+        },
+        "reasons": {
+          "four_layer_conflict": "Cool-flow cues are spatially separable from cumulative haze.",
+          "phase_discriminability": "Two directional phases have a simple identity boundary.",
+          "implementation": "Fixed paths and bounded haze are relatively direct to implement.",
+          "performance": "Full-screen refraction creates moderate rendering pressure.",
+          "fallback_readability": "Near cool-flow traces remain spatially locatable when softened.",
+          "asset_provenance": "All production assets still require provenance records.",
+          "condition_matching": "Travel length and salience still require paired calibration."
+        },
+        "total": 14
+      },
+      "snow": {
+        "scores": {
+          "four_layer_conflict": 3,
+          "phase_discriminability": 2,
+          "implementation": 4,
+          "performance": 4,
+          "fallback_readability": 3,
+          "asset_provenance": 3,
+          "condition_matching": 3
+        },
+        "reasons": {
+          "four_layer_conflict": "Ambient, target and actual snow use similar visual materials.",
+          "phase_discriminability": "Mirrored inhale and exhale are directionally distinct.",
+          "implementation": "Deterministic particles and replay require substantial implementation work.",
+          "performance": "Several snow and mist layers create high overdraw pressure.",
+          "fallback_readability": "Broken actual snow traces may blend into ambient snowfall.",
+          "asset_provenance": "Forest strips, particles, masks and audio need provenance records.",
+          "condition_matching": "Removing phase snow in abstract mode changes motion and object counts."
+        },
+        "total": 22
+      },
+      "fade": {
+        "scores": {
+          "four_layer_conflict": 4,
+          "phase_discriminability": 4,
+          "implementation": 4,
+          "performance": 3,
+          "fallback_readability": 4,
+          "asset_provenance": 4,
+          "condition_matching": 4
+        },
+        "reasons": {
+          "four_layer_conflict": "Current tide and cumulative color-texture state share visual materials.",
+          "phase_discriminability": "Two inhale slots and one long exhale require explicit step identity.",
+          "implementation": "Non-resetting double inhale and deterministic masks are complex.",
+          "performance": "Water mist and masks create moderate transparent-layer pressure.",
+          "fallback_readability": "Low-saturation broken actual threads can resemble cumulative low values.",
+          "asset_provenance": "Wetland strips and multiple semantic masks need detailed provenance.",
+          "condition_matching": "Double tide and double ring must match while remaining grayscale-readable."
+        },
+        "total": 27
+      }
+    },
+    "B": {
+      "storm": {
+        "scores": {
+          "four_layer_conflict": 4,
+          "phase_discriminability": 4,
+          "implementation": 3,
+          "performance": 4,
+          "fallback_readability": 4,
+          "asset_provenance": 3,
+          "condition_matching": 4
+        },
+        "reasons": {
+          "four_layer_conflict": "Rain visual material is shared by four semantic roles.",
+          "phase_discriminability": "Two holds depend on explicit step identity.",
+          "implementation": "Gate, airflow and weather masks need coordinated control.",
+          "performance": "Rain, mist, airflow and scroll create high overdraw risk.",
+          "fallback_readability": "Broken rain traces can be mistaken for ambient rain.",
+          "asset_provenance": "All weather assets remain pending provenance closure.",
+          "condition_matching": "Abstract mode removes a salient gate motion channel."
+        },
+        "total": 26
+      },
+      "heat": {
+        "scores": {
+          "four_layer_conflict": 2,
+          "phase_discriminability": 1,
+          "implementation": 2,
+          "performance": 3,
+          "fallback_readability": 2,
+          "asset_provenance": 3,
+          "condition_matching": 2
+        },
+        "reasons": {
+          "four_layer_conflict": "Cool-flow and haze roles are comparatively separable.",
+          "phase_discriminability": "Only inhale and exhale need to be distinguished.",
+          "implementation": "Fixed spline and haze parameters are relatively direct.",
+          "performance": "Full-screen refraction can still affect performance.",
+          "fallback_readability": "Near cool-flow remains locatable under degradation.",
+          "asset_provenance": "All assets remain pending provenance closure.",
+          "condition_matching": "Travel and salience need ordinary paired calibration."
+        },
+        "total": 15
+      },
+      "snow": {
+        "scores": {
+          "four_layer_conflict": 4,
+          "phase_discriminability": 2,
+          "implementation": 4,
+          "performance": 4,
+          "fallback_readability": 4,
+          "asset_provenance": 3,
+          "condition_matching": 4
+        },
+        "reasons": {
+          "four_layer_conflict": "Ambient, target, actual and cumulative snow materials overlap.",
+          "phase_discriminability": "Mirrored direction provides a clear two-phase distinction.",
+          "implementation": "Deterministic particles, pause and replay are complex.",
+          "performance": "Multiple particle and mist layers create high overdraw.",
+          "fallback_readability": "Broken actual snow can resemble ambient snowfall.",
+          "asset_provenance": "All assets remain pending provenance closure.",
+          "condition_matching": "Abstract mode changes active particle count and motion energy."
+        },
+        "total": 25
+      },
+      "fade": {
+        "scores": {
+          "four_layer_conflict": 4,
+          "phase_discriminability": 4,
+          "implementation": 4,
+          "performance": 3,
+          "fallback_readability": 4,
+          "asset_provenance": 3,
+          "condition_matching": 4
+        },
+        "reasons": {
+          "four_layer_conflict": "Tide, thread and cumulative color-texture materials overlap.",
+          "phase_discriminability": "Two inhales require explicit v2.2 step identity.",
+          "implementation": "Non-resetting double inhale and fixed flow paths are complex.",
+          "performance": "Transparent wetland masks create moderate pressure.",
+          "fallback_readability": "Low-saturation broken threads can blend into cumulative state.",
+          "asset_provenance": "All assets remain pending provenance closure.",
+          "condition_matching": "Double tide and double ring need paired grayscale calibration."
+        },
+        "total": 26
+      }
+    }
+  },
+  "difference_audit": {
+    "any_dimension_gap_gte_2": false,
+    "scorer_a_top_set": [
+      "fade"
+    ],
+    "scorer_b_top_set": [
+      "storm",
+      "fade"
+    ],
+    "top_set_difference_resolved": true
+  },
+  "upstream_contract_gap_definition": {
+    "step_1": "COUNT_UNRESOLVED_UPSTREAM_GATES_BLOCKING_THE_SLICE",
+    "step_2": "IF_TIED_COMPARE_SEVERITY_SCHEMA_OR_FIELD_IDENTITY_THEN_TIMING_OR_CONFIG_THEN_ASSET_OR_ENGINE",
+    "step_3": "IF_STILL_TIED_COMPARE_NUMBER_OF_BLOCKED_DOWNSTREAM_CONSUMERS"
+  },
+  "resolution": "FADE_WINS_OVER_STORM_BECAUSE_BOTH_REQUIRE_F05_STEP_IDENTITY_BUT_FADE_ALSO_LACKS_FROZEN_STEP_TIMING_AND_BOUNDARY_CONFIG",
+  "selected_u03_weather": "fade",
+  "selection_status": "FROZEN_FOR_V03_DESIGN_HANDOFF"
+}

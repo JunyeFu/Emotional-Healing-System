@@ -828,3 +828,82 @@
 | G-01-12 | `06_步骤05_伦理与预试材料/G-01-12_U8演练逐日执行脚本与记录表.md`：D1~D14逐日脚本、会话执行卡（对齐G-01-01§2八阶段）、故障模拟排期（满足G-01-08§5最少次数：P-ACT×2/T-BRE×1/T-UNI×1/F-MIS×2）、日终汇总表与U8结论步骤；关键数字140/112/165与产能模型一致。 |
 | G-02 Runbook | `02-技术研发/07-数据治理/docs/formal_environment_closure_runbook.md`：6项失败检查（GOVERNANCE_ROOT/BACKUP_ROOT/SEALED_KEY_EVIDENCE/DATA_ADMIN_ACCOUNT/DEDUP_CREDENTIAL/RETENTION_APPROVAL）逐项操作+验收+责任角色，总体验收以`G02_FORMAL_ENV_PASS`+备份恢复演练为准；密钥与联系方式全程不落盘。 |
 | Gates | 禁用词扫描3个新文件0命中；注册表与任务包状态未变（READY=F-03/F-04/F-05/V-03，IN_REVIEW=G-01/G-02）；预备制品不关闭任何外部门。 |
+
+### 2026-08-23 V-03前期规划
+
+| Field | Result |
+|---|---|
+| Branch and claim | `codex/v-03-visual-mapping`; V-03 claimant=`Codex`; status=`IN_PROGRESS` |
+| Planning validator | `PASS`; 6 deliverable templates; 7 risk dimensions; detailed fill=`TBD`; F-05 partial block active |
+| Scope | Planning and upstream/downstream alignment only; no Unity edit or weather-level fill |
+| Evidence | `20_产品与场景设计/V-03_四层视听映射与资产来源基线/` |
+| Registry validator | `PASS`; 57 entries; V-03=`IN_PROGRESS`; READY=`F-03/F-04/F-05`; IN_REVIEW=`G-01/G-02` |
+| Independent packages | `PASS`; 5 packages; 115 snapshots; V-03 removed from dispatch after claim |
+| Protocol authority | `PASS`; v1.1 active files consistent |
+| Root pytest | `404 passed in 43.01s` |
+| Diff check | `PASS`; line-ending warnings only |
+### 2026-08-23 V-03详细制品与独立复核闭环
+
+| 项目 | 结果 |
+|---|---|
+| Grill决策 | 13项公共语义、降级、累计、声音、卷轴、分段资产与安全区决策已逐项确认并落盘 |
+| 详细制品 | 六项Markdown制品、40行映射JSON、参数JSON、设计Schema和双人风险评分JSON齐全 |
+| 风险选择 | 评分者A=`22/14/22/27`，独立评分者B=`26/15/25/26`；差异裁定后冻结`fade`为U-03设计交接对象 |
+| 独立Agent | `01a02f22-00cd-7822-9aa3-bcd7adfc94b3`最终复审`PASS`；首轮及后续P1/P2全部关闭，无未关闭P0-P2；不替代现实团队第二人签收 |
+| V-03校验 | 默认`python`标准库检查PASS；`py -3.14` Draft 2020-12实际验证PASS；规划基线PASS |
+| Root pytest | 默认`python`缺少pytest；按既有冻结入口使用`py -3.14 -m pytest -q`，结果`404 passed in 18.24s`，未安装依赖 |
+| 交叉校验 | 协议权威PASS；注册表PASS（V-03仍`IN_PROGRESS`，READY=`F-03/F-04/F-05`）；独立分发包PASS（5包/115快照） |
+| 文本与Git | V-03范围限制词0命中；`git diff --check`无空白错误，仅既有LF/CRLF提示 |
+| 非主张 | 未操作Unity Editor，未形成运行画面、正式构建、资产许可、真实输入链、联合运行或研究结果证据 |
+
+### 2026-08-23 V-03候选固定与IN_REVIEW治理迁移
+
+| Field | Result |
+|---|---|
+| Candidate Commits | 详细制品提交`6fbf742`；清理两份Markdown文件末尾空行后，固定第二人审核对象为`06951accd12f24f60de74f9bbf719f2edb7a9a87`。 |
+| State Migration | V-03从`IN_PROGRESS`迁移为`IN_REVIEW`，复核状态为“待真实团队第二人复核”；READY集合保持`F-03/F-04/F-05`，V-04、V-05、U-03未提前解锁。 |
+| Review Package | 新增V-03独立复核包和待签署技术验收记录；分发校验`PASS`，共6包、138份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-03`。 |
+| V-03 Validation | 默认`python`制品校验`PASS`（标准库路径）；`py -3.14`制品校验`PASS`并实际启用Draft 2020-12；规划基线校验`PASS`。 |
+| Regression | `py -3.14 -m pytest -q`结果`404 passed in 20.59s`；协议权威v1.1校验`PASS`。 |
+| Registry | 任务注册表`PASS`：57项，固定54项、模板3项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02/V-03`。 |
+| Scope Boundary | 独立Agent最终`PASS`不替代真实团队第二人签收；`fade`仅作为U-03设计交接对象，不构成Unity运行、正式构建、资产许可、真实输入链、联合运行或研究结果证据。 |
+
+### 2026-08-24 V-03资产登记与校验覆盖修复
+
+| Field | Result |
+|---|---|
+| Independent Finding | Beauvoir对旧候选复查返回`CHANGES_REQUIRED`：AC3资产类别/责任字段不完整（P1），专项校验未覆盖该要求（P2）。 |
+| Candidate Fix | `6df88d8596181542359311910748b123a1c1fdf0`新增7类78项机器台账：21项设计资产/插件与manifest全部57个直接包，每项14字段且`formal_use_allowed=false`。 |
+| Test Closure | Hypatia首次复审确认原P1/P2实现关闭并新增测试覆盖P2；`f09f0d5f1f35c98ea447eb3545c18fbb3fb36925`补齐额外字段、重复ID、未知G-02组和提前formal-use四类负向测试。 |
+| Final Independent Review | Hypatia对`f09f0d5`最终只读复审`PASS`：IA2-P1-01、IA2-P2-01和新增P2全部关闭，无新P0-P2；模型复审不替代真实团队第二人签收。 |
+| V-03 Validators | 默认`python`制品校验`PASS`；`py -3.14`制品校验`PASS`并启用Draft 2020-12；结果为`assets=78`、`direct_packages=57`、`mapping_rows=40`；规划基线`PASS`。 |
+| Regression | V-03资产专项`8 passed`；最终根回归`412 passed in 16.66s`；协议权威v1.1`PASS`。 |
+| Governance | 注册表`PASS`：`READY=F-03/F-04/F-05`、`IN_REVIEW=G-01/G-02/V-03`；独立包`PASS`：6包、141份快照。 |
+| Boundary | 资产登记不等于许可放行；未形成Unity运行、正式构建、F-05绑定、真实输入链、联合运行或研究结果证据。 |
+
+### 2026-08-24 V-03真实团队第二人签收与V-04解锁
+
+| Field | Result |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、真实团队第二人复核身份审阅最终候选`f09f0d5f1f35c98ea447eb3545c18fbb3fb36925`、独立Agent复核记录和已有验证结果，结论`PASS`；无未关闭P0-P3；签收内容提交`e6d642e1eacb659edd965439bad6e6f643519c0e`。未表述为审核人本人重新运行验证。 |
+| State Migration | V-03从`IN_REVIEW`转为`DONE`，V-04从`WAIT_DEP`转为`READY`；当前`READY=F-03/F-04/F-05/V-04`，`IN_REVIEW=G-01/G-02`。 |
+| V-03 Validators | 默认`python`制品校验`PASS`；`py -3.14`制品校验`PASS`并启用Draft 2020-12；规划基线`PASS`且治理状态为`signed_done_no_runtime_evidence`；资产专项`8 passed`。 |
+| Registry And Packages | 注册表校验`PASS`：57项、54固定、3模板；独立包校验`PASS`：6包、135份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-04`；V-03复核包已移除，V-04领取包已生成。 |
+| Regression And Protocol | 根回归`412 passed in 36.18s`；协议权威v1.1校验`PASS`。 |
+| PDF Brief | 固定任务概要PDF重建后验证`PASS`，9页，SHA-256=`77E8CED1AED077EDE4AB0FF6B15BBEE258767AF42A2065DD53F3491DC48A5142`；120 DPI逐页渲染检查未见裁切、重叠或不可读文本。 |
+| Static Checks | 当前权威文件中无V-03仍为`IN_REVIEW`、待签收或候选待签收陈述；新增行禁用词检查0命中；最终暂存差异检查在提交前执行。 |
+| Boundary | 签收只关闭V-03设计任务；不扩大为Unity运行、正式构建、资产许可放行、F-05运行字段绑定、真实输入链、联合运行或研究结果已经完成。 |
+
+### 2026-08-24 V-04设计树关闭与执行基线冻结
+
+| Field | Result |
+|---|---|
+| Design Confirmation | 团队总监逐项确认节点1-25，并确认节点26关闭本轮设计决策树；新增聚合执行基线及ADR-0025，V-04继续保持`READY`。 |
+| Design Inventory | `PASS`：25条ADR、8份节点18-25详细文档、1份聚合执行基线齐全；聚合基线纳入V-04独立任务包。 |
+| Effort Governance | V-04从4人日调整为6人日；任务注册表、任务手册、团队任务树、覆盖审计、看板、固定任务概要及独立任务包已同步。 |
+| Registry | `PASS`：57项、54固定、3模板；`READY=F-03/F-04/F-05/V-04`，`IN_REVIEW=G-01/G-02`。 |
+| Independent Packages | 初次校验按索引门预期拒绝未暂存的新基线；显式暂存权威源并重新生成后`PASS`：6包、145份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-04`。 |
+| Protocol And Regression | 协议权威v1.1校验`PASS`；`py -3.14 -m pytest -q`结果`412 passed in 19.21s`。 |
+| Static Checks | V-04目录不合规措辞扫描0命中；设计清单检查`PASS`；提交前继续执行暂存差异与范围检查。 |
+| PDF Brief | 固定任务概要PDF验证`PASS`，9页，SHA-256=`9871EDFDEE86CB7CD9405E700AADF5A49D61EBF3CF91D006A95D0A81B04BD7C2`；110 DPI逐页渲染及第4/8页重点检查未见裁切、重叠或不可读文本。 |
+| Evidence Boundary | 本轮只冻结设计与任务治理；未安装验签FFmpeg，未生成临时视觉资产、声音母带、Animatic或GitHub预发布，也未形成Unity运行、正式构建、真实输入链或研究结果证据。 |

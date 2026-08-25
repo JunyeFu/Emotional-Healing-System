@@ -1,0 +1,248 @@
+{
+  "contract_id": "SRP-V01-EXPERIENCE-CONTRACT",
+  "version": "1.0.0",
+  "status": "CANDIDATE_FOR_REVIEW",
+  "authority": {
+    "protocol": "00_总控/protocol_authority_v1.1.json",
+    "paper_ruling": "00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md",
+    "runtime_contract": "F-01/runtime-contract-v2.1",
+    "session_authority": "P-01/SessionCore",
+    "representation_contract": "R-01/r01-four-layer-representation-v0.9"
+  },
+  "roles": {
+    "python": [
+      "session_authority",
+      "sequence_authority",
+      "clock_authority",
+      "interaction_state_estimation",
+      "control_authority",
+      "recording_authority"
+    ],
+    "unity": [
+      "participant_product",
+      "render_state_mirror",
+      "ack_sender",
+      "render_receipt_sender"
+    ],
+    "touchdesigner": [
+      "read_only_console",
+      "data_monitoring"
+    ],
+    "spout_used": false
+  },
+  "research_design": {
+    "participant_runs": 1,
+    "participant_stages": 1,
+    "participant_conditions": 1,
+    "stage_1_conditions": [
+      "scene_native",
+      "abstract_pacer"
+    ],
+    "condition_unit": "complete_cue_representation_package",
+    "condition_packages": {
+      "scene_native": {
+        "module_ids": ["storm", "heat", "snow", "fade"],
+        "segments": ["demo", "closed_loop", "lock_transition"],
+        "truth_layers": ["target", "actual", "cumulative", "fallback"],
+        "timing_profile": "shared",
+        "audio_semantics": "shared"
+      },
+      "abstract_pacer": {
+        "module_ids": ["storm", "heat", "snow", "fade"],
+        "segments": ["demo", "closed_loop", "lock_transition"],
+        "truth_layers": ["target", "actual", "cumulative", "fallback"],
+        "timing_profile": "shared",
+        "audio_semantics": "shared"
+      }
+    },
+    "stage_3": {
+      "arms": ["frozen_policy", "balanced_random"],
+      "cue_mode": "scene_native",
+      "same_unity_build": true,
+      "sequence_source": "python_policy_or_manifest",
+      "treatment": "deployed_ordering_policy_including_fallback"
+    },
+    "module_ids": [
+      "storm",
+      "heat",
+      "snow",
+      "fade"
+    ],
+    "module_count": 4,
+    "module_occurrence": "exactly_once",
+    "sequence_source": "python_manifest",
+    "unity_reads_pre_measure": false,
+    "unity_reads_post_measure": false,
+    "participant_input_during_core": false
+  },
+  "timing": {
+    "segments": [
+      "demo",
+      "closed_loop",
+      "lock_transition"
+    ],
+    "default_seconds": {
+      "demo": 25,
+      "closed_loop": 150,
+      "lock_transition": 25
+    },
+    "allowed_seconds": {
+      "demo": [24, 30],
+      "closed_loop": [140, 160],
+      "lock_transition": [20, 30]
+    },
+    "default_module_seconds": 200,
+    "default_core_seconds": 800,
+    "clock_source": "python_monotonic_clock"
+  },
+  "representation": {
+    "truth_layers": [
+      "target",
+      "actual",
+      "cumulative",
+      "fallback"
+    ],
+    "fallback_states": [
+      "GOOD",
+      "DEGRADED",
+      "UNUSABLE",
+      "DISCONNECTED"
+    ],
+    "same_truth_across_conditions": true,
+    "same_audio_semantics_across_conditions": true,
+    "scene_native_common_central_pacer": false,
+    "abstract_form_frozen": false,
+    "participant_evaluation_feedback": false
+  },
+  "journey": [
+    {"id": "J-01", "name": "site_setup", "surface": "outside_core", "participant_action": "none"},
+    {"id": "J-02", "name": "standardized_briefing", "surface": "outside_core", "participant_action": "listen"},
+    {"id": "J-03", "name": "pre_measure", "surface": "outside_unity_core", "participant_action": "complete_measure"},
+    {"id": "J-04", "name": "neutral_entry", "surface": "unity", "participant_action": "none"},
+    {"id": "J-05", "name": "module_reveal", "surface": "unity", "participant_action": "none"},
+    {"id": "J-06", "name": "demo", "surface": "unity_core", "participant_action": "none"},
+    {"id": "J-07", "name": "closed_loop", "surface": "unity_core", "participant_action": "none"},
+    {"id": "J-08", "name": "lock_transition", "surface": "unity_core", "participant_action": "none"},
+    {"id": "J-09", "name": "module_transition", "surface": "unity_core", "participant_action": "none"},
+    {"id": "J-10", "name": "neutral_completion", "surface": "unity", "participant_action": "none"},
+    {"id": "J-11", "name": "post_measure", "surface": "outside_unity_core", "participant_action": "complete_measure"},
+    {"id": "J-12", "name": "data_check", "surface": "operator_only", "participant_action": "none"}
+  ],
+  "non_timed_journey_boundaries": ["J-05", "J-09"],
+  "frozen_ids": [
+    "F-001", "F-002", "F-003", "F-004", "F-005", "F-006",
+    "F-007", "F-009", "F-010", "F-011", "F-012", "F-013",
+    "F-014", "F-015", "F-016", "F-017", "F-018", "F-019",
+    "F-020", "F-021", "F-022", "F-024", "F-025", "F-026"
+  ],
+  "versioned_change_ids": [
+    "F-008",
+    "F-023"
+  ],
+  "open_ids": [
+    "O-001", "O-002", "O-003", "O-004", "O-005",
+    "O-006", "O-007", "O-008", "O-009", "O-010",
+    "O-011", "O-012", "O-013", "O-014", "O-015"
+  ],
+  "claim_classes": [
+    "RESEARCH_VARIABLE",
+    "RUNTIME_EVIDENCE",
+    "NON_RESEARCH_DECORATION"
+  ],
+  "required_claim_ids": [
+    "C-001", "C-002", "C-003", "C-004", "C-005",
+    "C-006", "C-007", "C-008", "C-009", "C-010"
+  ],
+  "claims": [
+    {
+      "id": "C-001",
+      "classification": "RESEARCH_VARIABLE",
+      "status": "DESIGN_HYPOTHESIS_NOT_OBSERVED",
+      "evidence_refs": ["gate_1_pf", "gate_2_scci"],
+      "conclusion_boundary": "compare_complete_representation_packages_only"
+    },
+    {
+      "id": "C-002",
+      "classification": "RESEARCH_VARIABLE",
+      "status": "DESIGN_HYPOTHESIS_NOT_OBSERVED",
+      "evidence_refs": ["gate_2_comprehension", "gate_2_effort"],
+      "conclusion_boundary": "follow_preregistered_ordered_gates"
+    },
+    {
+      "id": "C-003",
+      "classification": "RESEARCH_VARIABLE",
+      "status": "DESIGN_HYPOTHESIS_NOT_OBSERVED",
+      "evidence_refs": ["f02_truth", "four_layer_comprehension"],
+      "conclusion_boundary": "no_observed_claim_before_formal_data"
+    },
+    {
+      "id": "C-004",
+      "classification": "RUNTIME_EVIDENCE",
+      "status": "ENGINEERING_CANDIDATE",
+      "evidence_refs": ["control_events", "acks", "render_receipts", "final_state_hash"],
+      "conclusion_boundary": "execution_consistency_only"
+    },
+    {
+      "id": "C-005",
+      "classification": "RUNTIME_EVIDENCE",
+      "status": "ENGINEERING_CANDIDATE",
+      "evidence_refs": ["independent_unity_build", "acceptance_recording"],
+      "conclusion_boundary": "product_independence_only"
+    },
+    {
+      "id": "C-006",
+      "classification": "RESEARCH_VARIABLE",
+      "status": "DESIGN_HYPOTHESIS_NOT_OBSERVED",
+      "evidence_refs": ["scci_item", "interview", "cumulative_trace"],
+      "conclusion_boundary": "design_hypothesis_only"
+    },
+    {
+      "id": "C-007",
+      "classification": "RESEARCH_VARIABLE",
+      "status": "OUT_OF_SCOPE",
+      "evidence_refs": ["claim_boundary_registry"],
+      "conclusion_boundary": "no_independent_weather_or_breathing_effect"
+    },
+    {
+      "id": "C-008",
+      "classification": "RESEARCH_VARIABLE",
+      "status": "CONDITIONAL_STAGE_3",
+      "evidence_refs": ["stage_3_policy_decisions", "gate_3_analysis"],
+      "conclusion_boundary": "no_sequence_superiority_claim_from_stage_1"
+    },
+    {
+      "id": "C-009",
+      "classification": "NON_RESEARCH_DECORATION",
+      "status": "OUT_OF_SCOPE",
+      "evidence_refs": ["asset_and_scene_audit"],
+      "conclusion_boundary": "not_a_paper_contribution"
+    },
+    {
+      "id": "C-010",
+      "classification": "RESEARCH_VARIABLE",
+      "status": "DESIGN_HYPOTHESIS_NOT_OBSERVED",
+      "evidence_refs": ["pre_post_measures", "quality_gated_device_records", "missingness_report"],
+      "conclusion_boundary": "descriptive_change_not_whole_project_causality"
+    }
+  ],
+  "change_control": {
+    "silent_contract_change_allowed": false,
+    "requires_version_update": true,
+    "requires_runtime_test_update": true,
+    "requires_analysis_plan_review": true
+  },
+  "evidence_state": {
+    "design_artifact": "CANDIDATE",
+    "unity_build": "NOT_PRODUCED_BY_V01",
+    "device_integration": "NOT_EVIDENCED_BY_V01",
+    "participant_results": "NOT_OBSERVED"
+  },
+  "formal_runtime_requirements": {
+    "python_is_authority": true,
+    "unity_independent_of_td": true,
+    "td_read_only": true,
+    "spout_forbidden": true,
+    "mock_forbidden": true,
+    "live_e2e_required": true
+  }
+}
