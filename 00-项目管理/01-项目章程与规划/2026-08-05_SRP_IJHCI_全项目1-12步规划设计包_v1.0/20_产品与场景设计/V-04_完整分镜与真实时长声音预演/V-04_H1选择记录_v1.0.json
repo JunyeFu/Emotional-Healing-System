@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H1-SELECTION-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H1",
+  "decision": {
+    "result": "PASS",
+    "confirmed_by": "傅钧烨",
+    "role": "团队总监（H1人工确认）",
+    "confirmed_at": "2026-08-25T09:00:03+08:00",
+    "decision_source": "Codex当前任务对话中用户明确提交五项选择并声明H1=PASS",
+    "review_commit": "2ca410de64c7213de9505b623ad2e80a5d33ef09"
+  },
+  "review_inputs": {
+    "candidate_manifest": {
+      "file": "V-04_H1候选清单_v1.0.json",
+      "sha256": "646020168ff9298d23b797b93bd2ae3132993da602a20584e4c9b481c5c50fbc"
+    },
+    "review_report": {
+      "file": "V-04_H1评审图清单_v1.0.json",
+      "sha256": "d4095494f37dae9937255df80dbe9e7bfdf8ce9fdba8ca9aba0d2bd4569886e9"
+    }
+  },
+  "selections": [
+    {
+      "scene_id": "storm",
+      "variant": "A",
+      "candidate_id": "storm-A",
+      "file": "storm-A-r2.png",
+      "sha256": "fd44f8d988ecba6f889058fa6cc69d616408c0b8ac9d53b1c30440e58b6794b9"
+    },
+    {
+      "scene_id": "heat",
+      "variant": "A",
+      "candidate_id": "heat-A",
+      "file": "heat-A-r2.png",
+      "sha256": "27ac6c351b730d4448c21e8d6c88c7d4c5875d3393e9e037482b6b244f61d635"
+    },
+    {
+      "scene_id": "snow",
+      "variant": "B",
+      "candidate_id": "snow-B",
+      "file": "snow-B-r2.png",
+      "sha256": "48ed91dc6d66283c90462a13f8fd9c4bc4fdc8e3241cff5ec2305c557991af76"
+    },
+    {
+      "scene_id": "fade",
+      "variant": "B",
+      "candidate_id": "fade-B",
+      "file": "fade-B-r2.png",
+      "sha256": "f9bec5347bc4ff3b4e676178b40ae87e40291b4d733030f7858611faa9e94e6c"
+    },
+    {
+      "scene_id": "corridor",
+      "variant": "A",
+      "candidate_id": "corridor-A",
+      "file": "corridor-A-r2.png",
+      "sha256": "da3549eaed021edb249c29ab1f98cff27afdb95f6228c0cacfc8770b4d821e6d"
+    }
+  ],
+  "not_selected_candidate_ids": [
+    "storm-B",
+    "heat-B",
+    "snow-A",
+    "fade-A",
+    "corridor-B"
+  ],
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false,
+    "source_files_remain_git_ignored": true
+  },
+  "next_gate": {
+    "gate_id": "H2",
+    "deliverable": "fade十秒双条件动态样片",
+    "status": "READY",
+    "bulk_long_scroll_status": "BLOCKED_BY_H2"
+  },
+  "evidence_boundary": "H1只冻结五张视觉锚点，不证明拆层、长卷轴接缝、提示动画、声音、完整Animatic、Unity运行、正式构建或真实输入链完成。"
+}

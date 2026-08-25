@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "generated_at": "2026-08-24T20:48:23+08:00",
+  "project_root": "D:\\Agent\\03-SRP",
+  "invocation_policy": "ABSOLUTE_PATH_ONLY",
+  "python": {
+    "version": "3.14.4",
+    "executable": "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "executable_sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a"
+  },
+  "pillow": {
+    "version": "12.2.0"
+  },
+  "numpy": {
+    "version": "2.4.6"
+  },
+  "ffmpeg": {
+    "version": "9.0.1",
+    "version_banner": "ffmpeg version 9.0.1-essentials_build-www.gyan.dev",
+    "distribution": "gyan_release_essentials",
+    "archive_url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
+    "version_url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip.ver",
+    "checksum_url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip.sha256",
+    "archive_path": "D:\\Agent\\03-SRP\\.tools\\ffmpeg\\9.0.1\\ffmpeg-release-essentials.zip",
+    "archive_size_bytes": 111253802,
+    "archive_sha256": "fec81ae03971d9dd4be3ebe02e263bd2ec1d789483f931bdba5f5715e65da2e9",
+    "ffmpeg_executable": "D:\\Agent\\03-SRP\\.tools\\ffmpeg\\9.0.1\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+    "ffmpeg_executable_sha256": "72a489eccd008c2ec2c0a5856c5c75bc3d8bbfa90166c4566865c246445e6aa3",
+    "ffprobe_executable": "D:\\Agent\\03-SRP\\.tools\\ffmpeg\\9.0.1\\ffmpeg-9.0.1-essentials_build\\bin\\ffprobe.exe",
+    "ffprobe_executable_sha256": "19202b23c0043f15ad1b7bce2344f406fd52bd6efd8f995ce02e7392a1cec52f",
+    "ffplay_executable": "D:\\Agent\\03-SRP\\.tools\\ffmpeg\\9.0.1\\ffmpeg-9.0.1-essentials_build\\bin\\ffplay.exe",
+    "ffplay_executable_sha256": "39a9ba4f207fe9eecfb094e632998c29e1da88a5d5d23d0b8b71a357a7c47eb5",
+    "build_flags_required": [
+      "--enable-gpl",
+      "--enable-version3",
+      "--enable-static",
+      "--enable-libx264"
+    ],
+    "license_status": "REGISTERED_DEVELOPMENT_TOOL_ONLY",
+    "license_spdx": "GPL-3.0-or-later",
+    "redistributed_with_unity": false
+  }
+}

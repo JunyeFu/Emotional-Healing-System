@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "observed_at": "2026-08-24T20:48:23+08:00",
+  "result": "PASS",
+  "system_path_ffmpeg": "NOT_FOUND",
+  "system_path_ffprobe": "NOT_FOUND",
+  "project_local_install": "D:\\Agent\\03-SRP\\.tools\\ffmpeg\\9.0.1",
+  "observed_versions": {
+    "python": "3.14.4",
+    "pillow": "12.2.0",
+    "numpy": "2.4.6",
+    "ffmpeg": "9.0.1-essentials_build-www.gyan.dev",
+    "ffprobe": "9.0.1-essentials_build-www.gyan.dev"
+  },
+  "archive_verification": {
+    "vendor_sha256": "fec81ae03971d9dd4be3ebe02e263bd2ec1d789483f931bdba5f5715e65da2e9",
+    "observed_sha256": "fec81ae03971d9dd4be3ebe02e263bd2ec1d789483f931bdba5f5715e65da2e9",
+    "matched": true
+  },
+  "smoke_test": {
+    "artifact": "D:\\Agent\\03-SRP\\.artifacts-local\\V-04\\tool-smoke\\ffmpeg-smoke.mp4",
+    "duration_seconds": 1.0,
+    "video_codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "pixel_format": "yuv420p",
+    "frame_rate": "30/1",
+    "audio_codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "result": "PASS"
+  },
+  "disk_free_gib_before_install": 420.05,
+  "evidence_boundary": "V04_PREVISUALIZATION_TOOLCHAIN_ONLY"
+}
