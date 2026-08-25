@@ -1074,3 +1074,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 新增`V-04_H1选择记录_v1.0.json`，绑定审核提交`2ca410d`、候选清单SHA-256 `64602016...50fbc`、评审清单SHA-256 `d4095494...86e9`及五张入选源图完整哈希；选择记录自身SHA-256为`C481645A453E30B4A9BDC6821883B9F648B73D2F8EE2E9FACF06987BA42074AD`。
 - H1专项校验通过；H2十秒`fade`双条件样片转为`READY`，批量长卷轴及后续仍由H2阻断；V-04继续保持`IN_PROGRESS`。
 - 五张入选锚点继续为`TEMP_REFERENCE_ONLY`且`formal_use_allowed=false`；H1不证明拆层、长卷轴接缝、提示动画、声音、完整Animatic、Unity运行、正式构建、真实输入链或研究结果完成。
+
+### 2026-08-25 V-04 H2十秒样片候选
+
+- 以`fade-B`为源完成10秒、30 fps、300帧双条件设计预演；参与者视图各1920x1080，并列评审视图3840x1200。
+- 两条件复用同一环境、天气、卷动、累计与声音，提示掩膜外最大原始像素差为0；默认卷动为`0.02屏宽/秒`，天气仅做非节律小幅双向变化。
+- `candidate-v1`声音测得`-22.16 LUFS-I/-2.98 dBTP`，因真实峰值未满足`<= -3 dBTP`被拒绝；`candidate-v2`在不放宽门槛的情况下修正为`-22.24 LUFS-I/-3.49 dBTP`并通过专项校验。
+- H2当前为`PENDING_HUMAN_CONFIRMATION`，只有团队总监按连续性、速度、提示、天气、声音和H2总判定明确`PASS`后，才允许生成`fade`默认200秒模块。
+- 所有媒体保持`TEMP_REFERENCE_ONLY`、`formal_use_allowed=false`并位于Git忽略目录；本轮不形成完整Animatic、Unity运行、正式构建或真实输入链证据。

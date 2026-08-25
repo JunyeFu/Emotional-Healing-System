@@ -932,3 +932,17 @@
 | Governance | 协议权威v1.1校验`PASS`；注册表`PASS`：57项、`READY=F-03/F-04/F-05`、`IN_REVIEW=G-01/G-02`；独立包`PASS`：5包、116份快照。 |
 | Regression | 根回归`412 passed in 20.71s`。 |
 | Gate Boundary | V-04继续`IN_PROGRESS`；H2十秒`fade`双条件样片已解锁，批量长卷轴及后续仍由H2阻断；H1不构成正式资产、完整Animatic、Unity运行、正式构建或真实输入链证据。 |
+
+### 2026-08-25 V-04 H2十秒样片候选
+
+| Field | Result |
+|---|---|
+| Candidate | `candidate-v2`；10秒、30 fps、300帧；场景原生与抽象提示参与者视图各1920x1080，并列评审视图3840x1200。 |
+| Condition Parity | 两条件共享环境帧、设计预演轨迹、天气、卷动和声音；提示掩膜外最大原始像素差为0。 |
+| Audio Gate | `candidate-v1`为`-22.16 LUFS-I/-2.98 dBTP`，按门槛拒绝；`candidate-v2`为`-22.24 LUFS-I/-3.49 dBTP`，48 kHz、24-bit、双声道PCM，通过。 |
+| H2 Validator | `validate_v04_h2.py`结果`PASS`：3条视频、1条PCM声音和1张关键帧图的尺寸、帧率、时长、哈希、提示差异与Git忽略边界一致。 |
+| Project Regression | 协议权威v1.1校验`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02`）；独立任务包`PASS`（5包、116份快照）；根回归`412 passed in 26.67s`。 |
+| Visual Probe | 抽取0.25、3.50和8.00秒并列帧目检，覆盖`INHALE_1/INHALE_2/EXHALE_1`；FFmpeg黑帧及持续1秒以上冻结探测无命中。 |
+| Static Checks | 新增H2路径不合规措辞扫描0命中；媒体与本地工具均未被Git跟踪；FFprobe清单只保留稳定文件名；`git diff --check`通过。 |
+| Human Gate | `PENDING_HUMAN_CONFIRMATION`；等待团队总监提交`continuity/speed/cue/weather/audio/H2`六项结论。 |
+| Boundary | 候选只验证局部连续性、双条件可比性、预演速度和临时声音；不覆盖200秒接缝、完整Animatic、Unity运行、正式构建或真实输入链。 |

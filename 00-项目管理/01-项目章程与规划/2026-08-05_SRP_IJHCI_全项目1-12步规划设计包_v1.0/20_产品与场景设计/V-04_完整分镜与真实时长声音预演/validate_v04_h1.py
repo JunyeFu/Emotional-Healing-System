@@ -106,10 +106,10 @@ def main() -> None:
     require(bool(ignored), "candidate source directory must remain ignored by Git")
     tracked_local = git_lines("ls-files", "--", ".artifacts-local", ".tools")
     require(not tracked_local, "local source assets or tools must not be tracked")
-    local_files = [path for path in (REPO / ".artifacts-local" / "V-04").rglob("*") if path.is_file()]
+    local_files = [path for path in (REPO / ".artifacts-local" / "V-04" / "H1").rglob("*") if path.is_file()]
     require(
-        all(path.suffix.lower() in {".png", ".mp4"} for path in local_files),
-        "unexpected generated artifact type exists before H1 selection",
+        all(path.suffix.lower() == ".png" for path in local_files),
+        "unexpected artifact type exists in the H1 namespace",
     )
 
     require(SELECTION_RECORD.is_file(), "H1 selection record is missing")
@@ -158,12 +158,19 @@ def main() -> None:
     status_text = STATUS_RECORD.read_text(encoding="utf-8")
     require("H1候选生成：`READY_FOR_HUMAN_REVIEW`" in status_text, "candidate preparation status drift")
     require("H1团队总监确认：`PASS`" in status_text, "human gate status drift")
-    require("H2十秒`fade`双条件样片：`READY`" in status_text, "H2 readiness drift")
+    require(
+        "H2十秒`fade`双条件样片候选：`READY_FOR_HUMAN_REVIEW`" in status_text,
+        "H2 candidate status drift",
+    )
+    require(
+        "H2团队总监确认：`PENDING_HUMAN_CONFIRMATION`" in status_text,
+        "H2 human gate status drift",
+    )
     require("批量长卷轴及后续：`BLOCKED_BY_H2`" in status_text, "bulk production gate drift")
 
     print(
         "PASS: V-04 H1 candidate set verified; 10 source images and 5 review sheets exact; "
-        "formal use disabled; H1 human selection PASS; H2 sample ready"
+        "formal use disabled; H1 human selection PASS; H2 candidate pending human confirmation"
     )
 
 
