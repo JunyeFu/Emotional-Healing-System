@@ -1067,3 +1067,10 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - H1形成五组A/B第二版候选，共10张1672x941 RGB源图；原图存放于Git忽略目录，仓库仅保存5张1920x650评审图、候选清单、精确哈希、生成脚本和验证器。
 - H1专项验证确认10张原图与5张评审图逐字节一致，全部`formal_use_allowed=false`；H1状态为`PENDING_HUMAN_CONFIRMATION`，H2及后续继续`BLOCKED_BY_H1`。
 - 当前硬门只到“可供团队总监选择五张视觉锚点”；未生成长卷轴、拆层资产、声音母带、十秒样片、完整Animatic或GitHub预发布，也不构成Unity运行、正式构建、真实输入链或研究结果证据。
+
+### 2026-08-25 V-04 H1人工确认PASS
+
+- 团队总监傅钧烨确认`storm=A、heat=A、snow=B、fade=B、corridor=A、H1=PASS`，形成锚点集合`storm-A/heat-A/snow-B/fade-B/corridor-A`。
+- 新增`V-04_H1选择记录_v1.0.json`，绑定审核提交`2ca410d`、候选清单SHA-256 `64602016...50fbc`、评审清单SHA-256 `d4095494...86e9`及五张入选源图完整哈希；选择记录自身SHA-256为`C481645A453E30B4A9BDC6821883B9F648B73D2F8EE2E9FACF06987BA42074AD`。
+- H1专项校验通过；H2十秒`fade`双条件样片转为`READY`，批量长卷轴及后续仍由H2阻断；V-04继续保持`IN_PROGRESS`。
+- 五张入选锚点继续为`TEMP_REFERENCE_ONLY`且`formal_use_allowed=false`；H1不证明拆层、长卷轴接缝、提示动画、声音、完整Animatic、Unity运行、正式构建、真实输入链或研究结果完成。
