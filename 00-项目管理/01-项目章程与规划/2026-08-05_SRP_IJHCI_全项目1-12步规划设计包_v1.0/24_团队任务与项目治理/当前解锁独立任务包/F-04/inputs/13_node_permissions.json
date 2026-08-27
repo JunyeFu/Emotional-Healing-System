@@ -1,0 +1,198 @@
+{
+  "fixture_permissions": {
+    "abort": {
+      "enabled": false,
+      "label": "T-02 NOT ACTIVE"
+    },
+    "manual_mark": {
+      "enabled": false,
+      "label": "T-02 NOT ACTIVE"
+    },
+    "network_outputs": [],
+    "spout_outputs": [],
+    "udp_5005": {
+      "active": false,
+      "label": "T-01 NOT ACTIVE"
+    }
+  },
+  "nodes": [
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole",
+      "permission": "read_only",
+      "role": "f04_root"
+    },
+    {
+      "operator_type": "textDAT",
+      "path": "/project1/F04_ReadonlyConsole/fixture_json",
+      "permission": "read_only",
+      "role": "embedded_fixture"
+    },
+    {
+      "operator_type": "tableDAT",
+      "path": "/project1/F04_ReadonlyConsole/page_manifest",
+      "permission": "read_only",
+      "role": "page_manifest"
+    },
+    {
+      "operator_type": "tableDAT",
+      "path": "/project1/F04_ReadonlyConsole/node_permissions",
+      "permission": "read_only",
+      "role": "permission_manifest"
+    },
+    {
+      "operator_type": "tableDAT",
+      "path": "/project1/F04_ReadonlyConsole/node_errors",
+      "permission": "read_only",
+      "role": "error_report"
+    },
+    {
+      "active": false,
+      "label": "T-01 NOT ACTIVE",
+      "operator_type": "udpinDAT",
+      "path": "/project1/F04_ReadonlyConsole/udp_5005_placeholder",
+      "permission": "disabled_input_placeholder",
+      "port": 5005,
+      "role": "udp_placeholder"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages",
+      "permission": "read_only",
+      "role": "page_container"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/session_version",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/session_version/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/device_connection",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/device_connection/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/respiration_waveform",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/respiration_waveform/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/ecg_rr_quality",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/ecg_rr_quality/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/phase_comparison",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/phase_comparison/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/cycle_result",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/cycle_result/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/latency_clock",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/latency_clock/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/degradation",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/degradation/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/log_write",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/log_write/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/pages/manual_actions",
+      "permission": "read_only",
+      "role": "page"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/pages/manual_actions/view",
+      "permission": "read_only",
+      "role": "page_view"
+    },
+    {
+      "operator_type": "switchTOP",
+      "path": "/project1/F04_ReadonlyConsole/page_selector",
+      "permission": "read_only",
+      "role": "display_selector"
+    },
+    {
+      "operator_type": "outTOP",
+      "path": "/project1/F04_ReadonlyConsole/display_out",
+      "permission": "read_only",
+      "role": "local_display_output"
+    }
+  ],
+  "permission_manifest_schema_version": "f04-node-permissions-v1"
+}

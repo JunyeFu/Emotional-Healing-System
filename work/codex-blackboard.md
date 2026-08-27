@@ -1082,3 +1082,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - `candidate-v1`声音测得`-22.16 LUFS-I/-2.98 dBTP`，因真实峰值未满足`<= -3 dBTP`被拒绝；`candidate-v2`在不放宽门槛的情况下修正为`-22.24 LUFS-I/-3.49 dBTP`并通过专项校验。
 - H2当前为`PENDING_HUMAN_CONFIRMATION`，只有团队总监按连续性、速度、提示、天气、声音和H2总判定明确`PASS`后，才允许生成`fade`默认200秒模块。
 - 所有媒体保持`TEMP_REFERENCE_ONLY`、`formal_use_allowed=false`并位于Git忽略目录；本轮不形成完整Animatic、Unity运行、正式构建或真实输入链证据。
+
+### 2026-08-27 F-04只读操作台领取与实施边界
+
+- 用户授权F-04与现有V-04在独立对话、独立工作树和独立分支并行执行；F-04从提交`78078db560ab83e30c385fbaf20ea50807b5e8b9`创建`codex/f-04-readonly-console`，不接触V-04脏工作区。
+- F-04由`Codex Agent（F-04独立对话）`领取并迁移为`IN_PROGRESS`；第二复核人为`傅钧烨（团队总监，独立第二人复核人）`，自动验证不得替代其操作签收。
+- 当前只闭合W0只读页面骨架：本地静态fixture、十页显示、禁用UDP 5005占位和禁用人工请求占位；不实现T-01正式20Hz消费者、T-02请求通道或F-05 v2.2合同。
+- 附件`SRP-F04.zip`只作为缺陷输入，不导入其中的旧字段、9054端口、旧天气名、串包内容或不受权威约束的运行字段。
+- 完成门为静态/合同/真实TouchDesigner保存重开/AC2关闭进程回归/治理校验均通过并形成候选；在真实第二人签收前保持`IN_REVIEW`，不合并、不部署。

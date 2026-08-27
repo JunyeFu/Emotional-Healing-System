@@ -1,0 +1,45 @@
+{
+  "fixture_schema_version": "f04-static-display-fixture-v1",
+  "mode": "DEV_REPLAY",
+  "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+  "notice": "Synthetic display fixture only. Not a formal wire message, device result, LIVE_E2E result, or interaction-state-estimation result.",
+  "permissions": {
+    "udp_5005": {"active": false, "label": "T-01 NOT ACTIVE"},
+    "manual_mark": {"enabled": false, "label": "T-02 NOT ACTIVE"},
+    "abort": {"enabled": false, "label": "T-02 NOT ACTIVE"},
+    "network_outputs": [],
+    "spout_outputs": []
+  },
+  "scenarios": [
+    {
+      "id": "good_storm",
+      "replay_order": 0,
+      "telemetry": {"schema_version":"2.1","message_type":"telemetry_frame","session_id":"F04-DEV-0001","frame_seq":100,"clock_domain_id":"f04-static-clock","source_monotonic_ns":1000000000,"received_monotonic_ns":1002500000,"sent_monotonic_ns":1003000000,"clock_offset_ns":120000,"clock_drift_ppm":0.3,"sync_uncertainty_ns":80000,"module_id":"storm","module_position":0,"segment":"closed_loop","target_phase":"inhale","target_progress":0.40,"actual_phase":"inhale","actual_progress":0.36,"actual_confidence":0.92,"recovery_value":0.30,"recovery_locked":false,"signal_quality":{"resp":0.94,"ecg":0.90},"fallback_state":"GOOD","fallback_reason":null,"resp_device_state":"CONNECTED","ecg_device_state":"CONNECTED","cue_mode":"scene_native","runtime_mode":"dev_replay","policy_decision_id":null},
+      "display_only": {"respiration":{"sample_rate_hz":25,"synthetic":true,"raw_25hz":[0.00,0.13,0.25,0.37,0.48,0.59,0.68,0.77,0.84,0.90,0.95,0.98,1.00,0.98,0.95,0.90,0.84,0.77,0.68,0.59,0.48,0.37,0.25,0.13,0.00],"filtered_25hz":[0.00,0.10,0.22,0.34,0.46,0.57,0.67,0.75,0.82,0.88,0.93,0.96,0.97,0.96,0.93,0.88,0.82,0.75,0.67,0.57,0.46,0.34,0.22,0.10,0.00]},"rr_quality":{"rr_ms":[812,806,819,810],"status":"GOOD"},"cycle_summary":{"cycle_id":"C-100","duration_s":8.0,"result":"DISPLAY_ONLY_COMPLETE"},"log_status":{"write_state":"SIMULATED_OK","last_record_id":"LOG-100","notice":"DISPLAY ONLY - NO FILE WRITE"},"request_placeholders":{"manual_mark":{"enabled":false,"status":"T-02 NOT ACTIVE"},"abort":{"enabled":false,"status":"T-02 NOT ACTIVE"}}}
+    },
+    {
+      "id": "degraded_heat",
+      "replay_order": 1,
+      "telemetry": {"schema_version":"2.1","message_type":"telemetry_frame","session_id":"F04-DEV-0001","frame_seq":101,"clock_domain_id":"f04-static-clock","source_monotonic_ns":1100000000,"received_monotonic_ns":1106000000,"sent_monotonic_ns":1107000000,"clock_offset_ns":220000,"clock_drift_ppm":1.2,"sync_uncertainty_ns":180000,"module_id":"heat","module_position":1,"segment":"closed_loop","target_phase":"hold","target_progress":0.20,"actual_phase":"inhale","actual_progress":0.88,"actual_confidence":0.66,"recovery_value":0.44,"recovery_locked":false,"signal_quality":{"resp":0.61,"ecg":0.58},"fallback_state":"DEGRADED","fallback_reason":"STATIC_LOW_QUALITY_EXAMPLE","resp_device_state":"DEGRADED","ecg_device_state":"DEGRADED","cue_mode":"abstract_pacer","runtime_mode":"dev_replay","policy_decision_id":null},
+      "display_only": {"respiration":{"sample_rate_hz":25,"synthetic":true,"raw_25hz":[0.05,0.18,0.21,0.44,0.39,0.63,0.60,0.79,0.72,0.94,0.87,1.00,0.91,0.99,0.85,0.92,0.74,0.78,0.59,0.61,0.43,0.40,0.27,0.18,0.08],"filtered_25hz":[0.05,0.13,0.22,0.33,0.43,0.54,0.63,0.72,0.79,0.86,0.90,0.93,0.94,0.93,0.89,0.84,0.77,0.69,0.60,0.51,0.41,0.32,0.23,0.15,0.08]},"rr_quality":{"rr_ms":[805,940,780,910],"status":"DEGRADED"},"cycle_summary":{"cycle_id":"C-101","duration_s":8.4,"result":"DISPLAY_ONLY_DEGRADED"},"log_status":{"write_state":"SIMULATED_DELAY","last_record_id":"LOG-101","notice":"DISPLAY ONLY - NO FILE WRITE"},"request_placeholders":{"manual_mark":{"enabled":false,"status":"T-02 NOT ACTIVE"},"abort":{"enabled":false,"status":"T-02 NOT ACTIVE"}}}
+    },
+    {
+      "id": "unusable_snow",
+      "replay_order": 2,
+      "telemetry": {"schema_version":"2.1","message_type":"telemetry_frame","session_id":"F04-DEV-0001","frame_seq":102,"clock_domain_id":"f04-static-clock","source_monotonic_ns":1200000000,"received_monotonic_ns":1215000000,"sent_monotonic_ns":1217000000,"clock_offset_ns":410000,"clock_drift_ppm":3.8,"sync_uncertainty_ns":550000,"module_id":"snow","module_position":2,"segment":"closed_loop","target_phase":"exhale","target_progress":0.55,"actual_phase":"none","actual_progress":0.00,"actual_confidence":0.12,"recovery_value":0.70,"recovery_locked":true,"signal_quality":{"resp":0.18,"ecg":0.20},"fallback_state":"UNUSABLE","fallback_reason":"STATIC_UNUSABLE_EXAMPLE","resp_device_state":"UNUSABLE","ecg_device_state":"UNUSABLE","cue_mode":"scene_native","runtime_mode":"dev_replay","policy_decision_id":null},
+      "display_only": {"respiration":{"sample_rate_hz":25,"synthetic":true,"raw_25hz":[0.22,-0.30,0.65,-0.54,0.71,-0.66,0.52,-0.48,0.81,-0.72,0.43,-0.35,0.78,-0.61,0.49,-0.40,0.69,-0.57,0.38,-0.31,0.55,-0.42,0.27,-0.18,0.10],"filtered_25hz":[0.02,0.04,0.06,0.03,0.05,0.01,0.04,0.02,0.06,0.01,0.03,0.02,0.05,0.01,0.04,0.02,0.05,0.01,0.03,0.02,0.04,0.01,0.03,0.01,0.02]},"rr_quality":{"rr_ms":[],"status":"UNUSABLE"},"cycle_summary":{"cycle_id":"C-102","duration_s":0.0,"result":"DISPLAY_ONLY_SUPPRESSED"},"log_status":{"write_state":"SIMULATED_WARNING","last_record_id":"LOG-102","notice":"DISPLAY ONLY - NO FILE WRITE"},"request_placeholders":{"manual_mark":{"enabled":false,"status":"T-02 NOT ACTIVE"},"abort":{"enabled":false,"status":"T-02 NOT ACTIVE"}}}
+    },
+    {
+      "id": "disconnected_fade",
+      "replay_order": 4,
+      "telemetry": {"schema_version":"2.1","message_type":"telemetry_frame","session_id":"F04-DEV-0001","frame_seq":104,"clock_domain_id":"f04-static-clock","source_monotonic_ns":1400000000,"received_monotonic_ns":1420000000,"sent_monotonic_ns":1421000000,"clock_offset_ns":800000,"clock_drift_ppm":5.0,"sync_uncertainty_ns":900000,"module_id":"fade","module_position":3,"segment":"lock_transition","target_phase":"none","target_progress":0.00,"actual_phase":"none","actual_progress":0.00,"actual_confidence":0.00,"recovery_value":1.00,"recovery_locked":true,"signal_quality":{"resp":0.00,"ecg":0.00},"fallback_state":"DISCONNECTED","fallback_reason":"STATIC_DISCONNECTED_EXAMPLE","resp_device_state":"DISCONNECTED","ecg_device_state":"DISCONNECTED","cue_mode":"abstract_pacer","runtime_mode":"dev_replay","policy_decision_id":null},
+      "display_only": {"respiration":{"sample_rate_hz":25,"synthetic":true,"raw_25hz":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"filtered_25hz":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"rr_quality":{"rr_ms":[],"status":"DISCONNECTED"},"cycle_summary":{"cycle_id":"C-104","duration_s":0.0,"result":"DISPLAY_ONLY_DISCONNECTED"},"log_status":{"write_state":"SIMULATED_PAUSED","last_record_id":"LOG-104","notice":"DISPLAY ONLY - NO FILE WRITE"},"request_placeholders":{"manual_mark":{"enabled":false,"status":"T-02 NOT ACTIVE"},"abort":{"enabled":false,"status":"T-02 NOT ACTIVE"}}}
+    },
+    {
+      "id": "out_of_order_storm",
+      "replay_order": 3,
+      "telemetry": {"schema_version":"2.1","message_type":"telemetry_frame","session_id":"F04-DEV-0001","frame_seq":103,"clock_domain_id":"f04-static-clock","source_monotonic_ns":1300000000,"received_monotonic_ns":1302500000,"sent_monotonic_ns":1303000000,"clock_offset_ns":130000,"clock_drift_ppm":0.4,"sync_uncertainty_ns":85000,"module_id":"storm","module_position":0,"segment":"closed_loop","target_phase":"recovery","target_progress":0.75,"actual_phase":"recovery","actual_progress":0.71,"actual_confidence":0.89,"recovery_value":0.20,"recovery_locked":false,"signal_quality":{"resp":0.91,"ecg":0.87},"fallback_state":"GOOD","fallback_reason":null,"resp_device_state":"CONNECTED","ecg_device_state":"CONNECTED","cue_mode":"scene_native","runtime_mode":"dev_replay","policy_decision_id":null},
+      "display_only": {"respiration":{"sample_rate_hz":25,"synthetic":true,"raw_25hz":[0.00,-0.13,-0.25,-0.37,-0.48,-0.59,-0.68,-0.77,-0.84,-0.90,-0.95,-0.98,-1.00,-0.98,-0.95,-0.90,-0.84,-0.77,-0.68,-0.59,-0.48,-0.37,-0.25,-0.13,0.00],"filtered_25hz":[0.00,-0.10,-0.22,-0.34,-0.46,-0.57,-0.67,-0.75,-0.82,-0.88,-0.93,-0.96,-0.97,-0.96,-0.93,-0.88,-0.82,-0.75,-0.67,-0.57,-0.46,-0.34,-0.22,-0.10,0.00]},"rr_quality":{"rr_ms":[816,809,815,811],"status":"GOOD"},"cycle_summary":{"cycle_id":"C-103","duration_s":8.1,"result":"DISPLAY_ONLY_COMPLETE"},"log_status":{"write_state":"SIMULATED_OK","last_record_id":"LOG-103","notice":"DISPLAY ONLY - NO FILE WRITE"},"request_placeholders":{"manual_mark":{"enabled":false,"status":"T-02 NOT ACTIVE"},"abort":{"enabled":false,"status":"T-02 NOT ACTIVE"}}}
+    }
+  ]
+}
