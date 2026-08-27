@@ -932,3 +932,49 @@
 | Governance | 协议权威v1.1校验`PASS`；注册表`PASS`：57项、`READY=F-03/F-04/F-05`、`IN_REVIEW=G-01/G-02`；独立包`PASS`：5包、116份快照。 |
 | Regression | 根回归`412 passed in 20.71s`。 |
 | Gate Boundary | V-04继续`IN_PROGRESS`；H2十秒`fade`双条件样片已解锁，批量长卷轴及后续仍由H2阻断；H1不构成正式资产、完整Animatic、Unity运行、正式构建或真实输入链证据。 |
+
+### 2026-08-25 V-04 H2十秒样片候选
+
+| Field | Result |
+|---|---|
+| Candidate | `candidate-v2`；10秒、30 fps、300帧；场景原生与抽象提示参与者视图各1920x1080，并列评审视图3840x1200。 |
+| Condition Parity | 两条件共享环境帧、设计预演轨迹、天气、卷动和声音；提示掩膜外最大原始像素差为0。 |
+| Audio Gate | `candidate-v1`为`-22.16 LUFS-I/-2.98 dBTP`，按门槛拒绝；`candidate-v2`为`-22.24 LUFS-I/-3.49 dBTP`，48 kHz、24-bit、双声道PCM，通过。 |
+| H2 Validator | `validate_v04_h2.py`结果`PASS`：3条视频、1条PCM声音和1张关键帧图的尺寸、帧率、时长、哈希、提示差异与Git忽略边界一致。 |
+| Project Regression | 协议权威v1.1校验`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02`）；独立任务包`PASS`（5包、116份快照）；根回归`412 passed in 26.67s`。 |
+| Visual Probe | 抽取0.25、3.50和8.00秒并列帧目检，覆盖`INHALE_1/INHALE_2/EXHALE_1`；FFmpeg黑帧及持续1秒以上冻结探测无命中。 |
+| Static Checks | 新增H2路径不合规措辞扫描0命中；媒体与本地工具均未被Git跟踪；FFprobe清单只保留稳定文件名；`git diff --check`通过。 |
+| Human Gate | `PENDING_HUMAN_CONFIRMATION`；等待团队总监提交`continuity/speed/cue/weather/audio/H2`六项结论。 |
+| Boundary | 候选只验证局部连续性、双条件可比性、预演速度和临时声音；不覆盖200秒接缝、完整Animatic、Unity运行、正式构建或真实输入链。 |
+
+### 2026-08-27 F-04领取
+
+| Field | Result |
+|---|---|
+| Isolation | 从提交`78078db560ab83e30c385fbaf20ea50807b5e8b9`创建独立工作树`D:/Agent/03-SRP-f04-worktree`与分支`codex/f-04-readonly-console`；创建前目标目录及同名分支均不存在。 |
+| State Migration | F-04由`READY`迁移为`IN_PROGRESS`，claimant=`Codex Agent（F-04独立对话）`，reviewer=`傅钧烨（团队总监，独立第二人复核人）`。 |
+| User Authority | 用户明确要求实施F-04质量提升计划并授权候选技术验证后提交、推送该分支；不合并main、不部署，第二人签收前不得转`DONE`。 |
+| Scope Boundary | 仅实现F-04 W0只读壳和本地静态演示；UDP 5005与人工请求均为禁用占位，不抢做T-01、T-02或F-05。 |
+
+### 2026-08-27 F-04候选构建与重开验证
+
+| Field | Result |
+|---|---|
+| Host Tests | F-04主机侧测试`15 passed`；Python 3.14语法检查通过。 |
+| TD Build | TouchDesigner `2025.32820` Textport执行构建器返回`F04_BUILD_COMPLETE 10 pages 30 nodes`。 |
+| TD Reopen | 重新加载`F04_ReadonlyConsole.toe`成功；TD实际自动打开同内容备份名`.1.toe`，两文件哈希一致，已删除重复备份，仅保留正式`.toe`。 |
+| TD Errors | `node_errors.json`中`operator_errors=""`、`script_errors=""`、`pass=true`；节点清单30个。 |
+| Evidence | 10张页面截图、fixture、`.toe/.tox`、主机清单、节点权限、节点错误和运行清单均已生成；fixture、`.toe`、`.tox` SHA-256已记录。 |
+| Network Boundary | 9981与5005无监听；UDP 5005节点为禁用占位，人工标记/中止无回调；无网络输出。 |
+| Human Gate | F-04迁移为`IN_REVIEW`；等待傅钧烨独立打开`.toe`、切换10页、检查权限并签署PASS/FAIL。 |
+
+### 2026-08-27 F-04提交前收尾门禁
+
+| Field | Result |
+|---|---|
+| F-04 Tests | `py -3.14 -m pytest 02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py -q`：`15 passed`。 |
+| Contract Tests | `py -3.14 -m pytest 02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py -q`：`49 passed`。 |
+| P-01/P-02 Regression | `py -3.14 -m pytest 02-技术研发/tests/session_core 02-技术研发/tests/session_store -q`：`166 passed`。 |
+| Governance Gates | 注册表校验`PASS`；独立包`PASS`：5个派发包、132份快照；`git diff --cached --check`通过。 |
+| AC2 | 关闭TouchDesigner后，9981与5005均无监听；F-04不依赖TD进程完成主机合同测试。 |
+| Candidate State | 保持`IN_REVIEW`；自动化与Codex运行验证不替代傅钧烨的独立人工签收。 |

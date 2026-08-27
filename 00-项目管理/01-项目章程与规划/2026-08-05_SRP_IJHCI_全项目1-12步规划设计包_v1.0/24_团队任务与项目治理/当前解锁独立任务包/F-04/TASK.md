@@ -4,16 +4,16 @@
 
 ## 领取登记
 
-- 领取人：未领取
-- 分支：`codex/<task-id>-<short-name>`
-- 第二复核人：未指定
-- 领取时间：未领取
+- 领取人：Codex Agent（F-04独立对话）
+- 分支：`codex/f-04-readonly-console`
+- 第二复核人：傅钧烨（团队总监，独立第二人复核人）
+- 领取时间：历史登记未记录；当前不得重复领取
 
 ## 任务边界
 
 - 领域：TouchDesigner
 - 波次：W0
-- 状态：`READY`
+- 状态：`IN_REVIEW`
 - 类型：FIXED
 - 预计工作量：2人日
 - 前置依赖：无
@@ -38,15 +38,15 @@
 
 ## 验收要求
 
-- [ ] AC1静态fixture可演示全部页面
-- [ ] AC2关闭TD不影响其他制品
-- [ ] AC3不存在Spout输出随机化或阈值编辑入口
+- [x] AC1静态fixture可演示全部页面
+- [x] AC2关闭TD不影响其他制品
+- [x] AC3不存在Spout输出随机化或阈值编辑入口
 
 ## 必需证据
 
-- [ ] toa/toe版本
-- [ ] 页面截图
-- [ ] 节点权限检查
+- [x] toa/toe版本
+- [x] 页面截图
+- [x] 节点权限检查
 
 ## 完成条件
 
@@ -56,9 +56,9 @@
 
 ## 完成回填
 
-- 实际改动文件：
-- 验证命令与结果：
-- 证据路径：
-- commit：
-- push目标：
-- 剩余风险：
+- 实际改动文件：见`FILES.md`列出的项目权威路径
+- 验证命令与结果：技术候选已完成；模型复核状态`PENDING`
+- 证据路径：`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/host/host_build_manifest.json`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/host/page_manifest.json`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/host/node_plan.json`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/host/node_permissions.json`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/node_errors.json`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/node_inventory.json`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/runtime_build_manifest.json`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/01_session_version.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/02_device_connection.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/04_ecg_rr_quality.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/05_phase_comparison.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/06_cycle_result.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/07_latency_clock.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/08_degradation.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/09_log_write.png`；`02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/10_manual_actions.png`
+- commit：`PENDING_FIX_COMMIT`
+- push目标：`origin/codex/f-04-readonly-console`
+- 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放

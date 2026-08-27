@@ -1,0 +1,111 @@
+{
+  "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+  "page_manifest_schema_version": "f04-page-manifest-v1",
+  "pages": [
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "telemetry.session_id",
+        "telemetry.schema_version",
+        "telemetry.runtime_mode",
+        "telemetry.cue_mode"
+      ],
+      "id": "session_version",
+      "title": "Session / Version"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "telemetry.resp_device_state",
+        "telemetry.ecg_device_state"
+      ],
+      "id": "device_connection",
+      "title": "Device Connection"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "display_only.respiration.sample_rate_hz",
+        "display_only.respiration.raw_25hz",
+        "display_only.respiration.filtered_25hz"
+      ],
+      "id": "respiration_waveform",
+      "title": "Raw / Filtered Respiration"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "telemetry.signal_quality.ecg",
+        "display_only.rr_quality.rr_ms",
+        "display_only.rr_quality.status"
+      ],
+      "id": "ecg_rr_quality",
+      "title": "ECG / RR Quality"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "telemetry.target_phase",
+        "telemetry.target_progress",
+        "telemetry.actual_phase",
+        "telemetry.actual_progress",
+        "telemetry.actual_confidence"
+      ],
+      "id": "phase_comparison",
+      "title": "Target / Actual Phase"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "display_only.cycle_summary.cycle_id",
+        "display_only.cycle_summary.duration_s",
+        "display_only.cycle_summary.result"
+      ],
+      "id": "cycle_result",
+      "title": "Cycle Result"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "telemetry.source_monotonic_ns",
+        "telemetry.received_monotonic_ns",
+        "telemetry.sent_monotonic_ns",
+        "telemetry.clock_offset_ns",
+        "telemetry.clock_drift_ppm",
+        "telemetry.sync_uncertainty_ns"
+      ],
+      "id": "latency_clock",
+      "title": "Latency / Clock"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "telemetry.fallback_state",
+        "telemetry.fallback_reason",
+        "telemetry.recovery_value",
+        "telemetry.recovery_locked"
+      ],
+      "id": "degradation",
+      "title": "Degradation"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "display_only.log_status.write_state",
+        "display_only.log_status.last_record_id",
+        "display_only.log_status.notice"
+      ],
+      "id": "log_write",
+      "title": "Log Write"
+    },
+    {
+      "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
+      "field_paths": [
+        "display_only.request_placeholders.manual_mark.status",
+        "display_only.request_placeholders.abort.status"
+      ],
+      "id": "manual_actions",
+      "title": "Manual Mark / Abort"
+    }
+  ]
+}

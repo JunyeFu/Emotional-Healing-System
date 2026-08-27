@@ -1,0 +1,14 @@
+{
+  "artifact_hashes": {
+    "node_permissions.json": "61C9AE5092CC63C99E488160D1AC50F796DAF7662F1C18B618C1997E47DC100D",
+    "node_plan.json": "BF4EEC9017E6B7637C1D18113BAC99D3B6E615C184887C2A0BF7FA8A22DDE742",
+    "page_manifest.json": "44E02A7C0AC8F49A8AC8F318A37E57CC3BB1AEFA7710F7DB4DE459E43645C68C"
+  },
+  "evidence_boundary": "STATIC_HOST_ONLY_NOT_TOUCHDESIGNER_RUNTIME_NOT_LIVE",
+  "fixture_schema_version": "f04-static-display-fixture-v1",
+  "fixture_sha256": "72DA8308681F1C3AAA363143E62BA0FC28DA616D4A5D53CE44B2C3B4DDECD8D4",
+  "manifest_schema_version": "f04-host-build-manifest-v1",
+  "page_count": 10,
+  "scenario_count": 5,
+  "touchdesigner_required_build": "2025.32820"
+}

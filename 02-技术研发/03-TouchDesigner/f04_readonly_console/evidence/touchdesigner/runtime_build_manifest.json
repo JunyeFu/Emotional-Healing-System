@@ -1,0 +1,13 @@
+{
+  "evidence_boundary": "DEV_REPLAY_ONLY_NOT_LIVE",
+  "manifest_schema_version": "f04-td-runtime-build-manifest-v1",
+  "node_count": 30,
+  "node_plan_schema_version": "f04-node-plan-v1",
+  "page_count": 10,
+  "product": "TouchDesigner",
+  "root": "/project1/F04_ReadonlyConsole",
+  "scenario_count": 5,
+  "touchdesigner_build": "2025.32820",
+  "touchdesigner_version": "099",
+  "udp_5005_active": false
+}
