@@ -11,8 +11,8 @@ from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 REPO = next(parent for parent in (HERE, *HERE.parents) if (parent / ".git").exists())
-CONFIG_PATH = HERE / "V-04_H2样片配置_v1.0.json"
-MANIFEST_PATH = HERE / "V-04_H2候选清单_v1.0.json"
+CONFIG_PATH = HERE / "V-04_H2样片配置_v1.1.json"
+MANIFEST_PATH = HERE / "V-04_H2候选清单_v1.1.json"
 H1_SELECTION = HERE / "V-04_H1选择记录_v1.0.json"
 
 
@@ -62,6 +62,8 @@ def main() -> None:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     h1 = json.loads(H1_SELECTION.read_text(encoding="utf-8"))
+    require(config.get("schema_version") == "1.1", "H2 config schema drift")
+    require(config.get("candidate_id") == "candidate-v8", "H2 active candidate drift")
     require(manifest.get("candidate_id") == config.get("candidate_id"), "H2 candidate id drift")
     require(manifest.get("gate_status") == "PENDING_HUMAN_CONFIRMATION", "H2 human gate status drift")
     require(manifest.get("config_sha256") == sha256(CONFIG_PATH), "H2 config hash drift")
@@ -100,6 +102,21 @@ def main() -> None:
     render = manifest["render"]
     require(render["frame_count"] == 300 and render["fps"] == 30, "render timing drift")
     require(render["max_raw_difference_outside_expected_mask"] == 0, "conditions differ outside cue masks")
+    color = render.get("full_frame_color_metrics", {})
+    require(set(color) == {"0.00", "4.00", "9.50", "9.97"}, "full-frame color samples drift")
+    require(color["0.00"]["color_u"] == 0.0, "first frame is not fully faded")
+    require(color["9.50"]["color_u"] == 1.0 and color["9.97"]["color_u"] == 1.0, "native color hold drift")
+    require(color["0.00"]["scene_mean_chroma"] <= 0.01, "scene-native first frame has a color flash")
+    require(color["0.00"]["abstract_mean_chroma"] <= 0.01, "abstract first frame has a color flash")
+    require(
+        0.0 < color["4.00"]["scene_mean_chroma"] < color["9.50"]["scene_mean_chroma"],
+        "scene-native full-frame color does not recover continuously",
+    )
+    require(
+        0.0 < color["4.00"]["abstract_mean_chroma"] < color["9.50"]["abstract_mean_chroma"],
+        "abstract full-frame color does not recover continuously",
+    )
+    require(render["native_color_reached_s"] == 9.5, "native color endpoint drift")
     require(manifest["asset_status"]["formal_use_allowed"] is False, "H2 candidate cannot be formal-use enabled")
     ignored = git_lines("check-ignore", "--", config["outputs"]["artifact_root"])
     require(bool(ignored), "H2 artifact root must remain Git ignored")
@@ -107,7 +124,7 @@ def main() -> None:
     require(not tracked, "H2 media must not be Git tracked")
     print(
         f"PASS: V-04 H2 {config['candidate_id']} verified; 3 videos/1 PCM24 ambient/1 keyframe sheet exact; "
-        "condition differences cue-only; human confirmation pending"
+        "full-frame fade and cue-only condition differences verified; human confirmation pending"
     )
 
 

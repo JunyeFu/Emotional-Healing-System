@@ -13,7 +13,7 @@ HERE = Path(__file__).resolve().parent
 REPO = next(parent for parent in (HERE, *HERE.parents) if (parent / ".git").exists())
 MANIFEST = HERE / "V-04_H1候选清单_v1.0.json"
 REVIEW_REPORT = HERE / "V-04_H1评审图清单_v1.0.json"
-STATUS_RECORD = HERE / "V-04_实施状态与H1确认记录_v1.0.md"
+STATUS_RECORD = HERE / "V-04_实施状态与H1确认记录_v1.1.md"
 SELECTION_RECORD = HERE / "V-04_H1选择记录_v1.0.json"
 SOURCE = REPO / ".artifacts-local" / "V-04" / "H1" / "candidates"
 
@@ -156,17 +156,10 @@ def main() -> None:
     require(next_gate.get("bulk_long_scroll_status") == "BLOCKED_BY_H2", "bulk production must wait for H2")
 
     status_text = STATUS_RECORD.read_text(encoding="utf-8")
-    require("H1候选生成：`READY_FOR_HUMAN_REVIEW`" in status_text, "candidate preparation status drift")
-    require("H1团队总监确认：`PASS`" in status_text, "human gate status drift")
-    require(
-        "H2十秒`fade`双条件样片候选：`READY_FOR_HUMAN_REVIEW`" in status_text,
-        "H2 candidate status drift",
-    )
-    require(
-        "H2团队总监确认：`PENDING_HUMAN_CONFIRMATION`" in status_text,
-        "H2 human gate status drift",
-    )
-    require("批量长卷轴及后续：`BLOCKED_BY_H2`" in status_text, "bulk production gate drift")
+    require("总判定为`H1=PASS`" in status_text, "human gate status drift")
+    require("candidate-v8" in status_text, "H2 candidate status drift")
+    require("`H2_PENDING_HUMAN_CONFIRMATION`" in status_text, "H2 human gate status drift")
+    require("H2人工通过后" in status_text, "post-H2 production gate drift")
 
     print(
         "PASS: V-04 H1 candidate set verified; 10 source images and 5 review sheets exact; "
