@@ -17,10 +17,10 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 HERE = Path(__file__).resolve().parent
 REPO = next(parent for parent in (HERE, *HERE.parents) if (parent / ".git").exists())
-CONFIG_PATH = HERE / "V-04_H2样片配置_v1.0.json"
+CONFIG_PATH = HERE / "V-04_H2样片配置_v1.1.json"
 LOCK_PATH = HERE / "V-04_toolchain-lock_v1.0.json"
 H1_SELECTION = HERE / "V-04_H1选择记录_v1.0.json"
-MANIFEST_PATH = HERE / "V-04_H2候选清单_v1.0.json"
+MANIFEST_PATH = HERE / "V-04_H2候选清单_v1.1.json"
 
 
 def sha256(path: Path) -> str:
@@ -46,14 +46,6 @@ def phase_state(t_s: float) -> tuple[str, float, float]:
         return "INHALE_2", progress, 0.86 + 0.14 * progress
     progress = smoothstep((t_s - 4.0) / 6.0)
     return "EXHALE_1", progress, 1.0 - 0.78 * progress
-
-
-def interpolate_knots(t_s: float, knots: list[list[float]]) -> float:
-    for (t0, v0), (t1, v1) in zip(knots, knots[1:], strict=False):
-        if t_s <= t1:
-            ratio = 0.0 if t1 == t0 else (t_s - t0) / (t1 - t0)
-            return v0 + (v1 - v0) * smoothstep(ratio)
-    return knots[-1][1]
 
 
 def make_vertical_mask(height: int, width: int, start: int, end: int) -> Image.Image:
@@ -118,9 +110,7 @@ def shared_environment(
     frame = Image.composite(mid, frame, masks[1])
     frame = Image.composite(near, frame, masks[2])
 
-    completeness = interpolate_knots(t_s, config["weather_preview"]["completeness_knots"])
-    frame = ImageEnhance.Color(frame).enhance(0.72 + 0.45 * completeness)
-    frame = ImageEnhance.Contrast(frame).enhance(0.90 + 0.20 * completeness)
+    frame = ImageEnhance.Contrast(frame).enhance(0.98)
 
     fog_offset = 18.0 * t_s
     fog_mask = shifted_crop(fog_texture.convert("RGB"), fog_offset).convert("L")
@@ -141,13 +131,9 @@ def shared_environment(
     return Image.alpha_composite(frame.convert("RGBA"), ripple).convert("RGB")
 
 
-def phase_color(phase: str, alpha: int) -> tuple[int, int, int, int]:
-    colors = {
-        "INHALE_1": (92, 167, 163),
-        "INHALE_2": (165, 115, 133),
-        "EXHALE_1": (100, 137, 174),
-    }
-    red, green, blue = colors[phase]
+def cue_color(role: str, alpha: int) -> tuple[int, int, int, int]:
+    colors = {"target": (112, 191, 181), "actual": (235, 225, 196)}
+    red, green, blue = colors[role]
     return red, green, blue, alpha
 
 
@@ -157,18 +143,90 @@ def clip_overlay(overlay: Image.Image, bounds: tuple[int, int, int, int]) -> Ima
     return clipped
 
 
-def scene_flow_layer(t_s: float, actual: bool) -> Image.Image:
-    sample_t = max(0.0, t_s - 0.18) if actual else t_s
-    phase, progress, value = phase_state(sample_t)
-    if actual:
-        value *= 0.86
-        bounds = (350, 485, 900, 930)
-        line_width = 5
-        strands = 4
+def smooth_array(values: np.ndarray) -> np.ndarray:
+    values = np.clip(values, 0.0, 1.0)
+    return values * values * (3.0 - 2.0 * values)
+
+
+def elliptical_tide(
+    width: int,
+    height: int,
+    center: tuple[float, float],
+    radius: tuple[float, float],
+    t_s: float,
+) -> np.ndarray:
+    y, x = np.mgrid[0:height, 0:width]
+    normalized_x = x / max(1, width - 1)
+    normalized_y = y / max(1, height - 1)
+    wave = 0.025 * np.sin(normalized_x * math.tau * 2.2 + t_s * 0.45)
+    dx = (normalized_x - center[0]) / radius[0]
+    dy = (normalized_y + wave - center[1]) / radius[1]
+    distance = np.sqrt(dx * dx + dy * dy)
+    field = smooth_array((1.08 - distance) / 0.34)
+    texture = 0.88 + 0.12 * np.sin(normalized_x * math.tau * 3.0 - normalized_y * 2.4 + t_s * 0.22)
+    return np.clip(field * texture, 0.0, 1.0)
+
+
+def scene_target_flow_layer(t_s: float) -> Image.Image:
+    phase, progress, _ = phase_state(t_s)
+    bounds = (1005, 265, 1680, 760)
+    x0, y0, x1, y1 = bounds
+    width = x1 - x0
+    height = y1 - y0
+
+    if phase == "INHALE_1":
+        field = elliptical_tide(
+            width,
+            height,
+            (0.50, 0.58 - 0.05 * progress),
+            (0.40 + 0.14 * progress, 0.36 + 0.12 * progress),
+            t_s,
+        )
+    elif phase == "INHALE_2":
+        retained = elliptical_tide(width, height, (0.50, 0.53), (0.54, 0.48), t_s)
+        supplement = elliptical_tide(
+            width,
+            height,
+            (0.72 - 0.06 * progress, 0.70 - 0.10 * progress),
+            (0.14 + 0.12 * progress, 0.12 + 0.10 * progress),
+            t_s + 0.7,
+        )
+        field = np.maximum(retained, supplement)
     else:
-        bounds = (1005, 265, 1680, 760)
-        line_width = 11
-        strands = 6
+        field = elliptical_tide(
+            width,
+            height,
+            (0.50, 0.53 + 0.08 * progress),
+            (0.54, 0.48),
+            t_s,
+        )
+
+    mask_values = np.clip(field * 92.0, 0, 92).astype(np.uint8)
+    mask = Image.fromarray(mask_values, mode="L").filter(ImageFilter.GaussianBlur(9))
+    overlay = Image.new("RGBA", (1920, 1080), (0, 0, 0, 0))
+    flow = Image.new("RGBA", (width, height), cue_color("target", 0))
+    flow.putalpha(mask)
+    overlay.alpha_composite(flow, (x0, y0))
+    draw = ImageDraw.Draw(overlay)
+    direction = -1.0 if phase == "EXHALE_1" else 1.0
+    for lane in range(4):
+        points = []
+        for step in range(40):
+            ratio = step / 39
+            x = x0 + width * (0.08 + 0.84 * ratio)
+            y = y0 + height * (0.42 + 0.10 * lane) + 8 * math.sin(ratio * math.tau * 1.2 + t_s * direction)
+            points.append((x, y))
+        draw.line(points, fill=cue_color("target", 132), width=4)
+    return clip_overlay(overlay, bounds)
+
+
+def scene_actual_filament_layer(t_s: float) -> Image.Image:
+    sample_t = max(0.0, t_s - 0.18)
+    phase, progress, value = phase_state(sample_t)
+    value *= 0.86
+    bounds = (350, 485, 900, 930)
+    line_width = 5
+    strands = 4
     x0, y0, x1, y1 = bounds
     width = x1 - x0
     height = y1 - y0
@@ -189,16 +247,15 @@ def scene_flow_layer(t_s: float, actual: bool) -> Image.Image:
             wave = math.sin(ratio * math.tau * 1.35 + phase_offset + t_s * 0.18)
             y = y0 + height * (0.25 + 0.11 * strand) + wave * height * (0.018 + 0.010 * value)
             points.append((x, y))
-        alpha = 95 if actual else 122
-        draw.line(points, fill=phase_color(phase, alpha), width=line_width, joint="curve")
-    glow = overlay.filter(ImageFilter.GaussianBlur(12 if actual else 18))
+        draw.line(points, fill=cue_color("actual", 150), width=line_width, joint="curve")
+    glow = overlay.filter(ImageFilter.GaussianBlur(16))
     combined = Image.alpha_composite(glow, overlay)
     return clip_overlay(combined, bounds)
 
 
 def abstract_layer(t_s: float) -> Image.Image:
-    target_phase, _, target_value = phase_state(t_s)
-    actual_phase, _, actual_value = phase_state(max(0.0, t_s - 0.18))
+    _, _, target_value = phase_state(t_s)
+    _, _, actual_value = phase_state(max(0.0, t_s - 0.18))
     actual_value *= 0.86
     center_x, center_y = 960, 540
     outer_radius = 94 + 38 * target_value
@@ -207,12 +264,12 @@ def abstract_layer(t_s: float) -> Image.Image:
     draw = ImageDraw.Draw(overlay)
     draw.ellipse(
         (center_x - outer_radius, center_y - outer_radius, center_x + outer_radius, center_y + outer_radius),
-        outline=phase_color(target_phase, 210),
+        outline=cue_color("target", 210),
         width=8,
     )
     draw.ellipse(
         (center_x - inner_radius, center_y - inner_radius, center_x + inner_radius, center_y + inner_radius),
-        outline=phase_color(actual_phase, 165),
+        outline=cue_color("actual", 185),
         width=6,
     )
     glow = overlay.filter(ImageFilter.GaussianBlur(10))
@@ -220,10 +277,14 @@ def abstract_layer(t_s: float) -> Image.Image:
     return clip_overlay(combined, (790, 370, 1130, 710))
 
 
-def participant_frames(environment: Image.Image, t_s: float) -> tuple[Image.Image, Image.Image]:
-    scene = Image.alpha_composite(environment.convert("RGBA"), scene_flow_layer(t_s, actual=False))
-    scene = Image.alpha_composite(scene, scene_flow_layer(t_s, actual=True)).convert("RGB")
+def participant_frames(environment: Image.Image, t_s: float, config: dict[str, object]) -> tuple[Image.Image, Image.Image]:
+    scene = Image.alpha_composite(environment.convert("RGBA"), scene_target_flow_layer(t_s))
+    scene = Image.alpha_composite(scene, scene_actual_filament_layer(t_s)).convert("RGB")
     abstract = Image.alpha_composite(environment.convert("RGBA"), abstract_layer(t_s)).convert("RGB")
+    native_reached_s = float(config["full_frame_color"]["native_color_reached_s"])
+    color_u = smoothstep(t_s / native_reached_s)
+    scene = ImageEnhance.Color(scene).enhance(color_u)
+    abstract = ImageEnhance.Color(abstract).enhance(color_u)
     return scene, abstract
 
 
@@ -241,7 +302,7 @@ def review_frame(scene: Image.Image, abstract: Image.Image, t_s: float) -> Image
     draw = ImageDraw.Draw(canvas)
     title_font = load_font(30, bold=True)
     label_font = load_font(24)
-    draw.text((36, 18), "V-04 H2 / FADE-B / DESIGN_PREVIEW_ONLY", font=title_font, fill=(244, 244, 244))
+    draw.text((36, 18), "V-04 H2 / FADE-B / CANDIDATE-V8", font=title_font, fill=(244, 244, 244))
     draw.text((36, 68), f"t={t_s:05.2f}s  phase={phase}  shared background/audio/trace", font=label_font, fill=(195, 202, 208))
     draw.text((1380, 68), "SCENE_NATIVE", font=label_font, fill=(158, 211, 202))
     draw.text((3300, 68), "ABSTRACT_PACER", font=label_font, fill=(190, 177, 220))
@@ -468,11 +529,13 @@ def main() -> None:
     frame_count = int(config["timeline"]["frame_count"])
     duration_s = float(config["timeline"]["duration_s"])
     keyframes: list[tuple[float, Image.Image]] = []
+    full_frame_color_metrics: dict[str, dict[str, float]] = {}
     max_outside_difference = 0
 
     with tempfile.TemporaryDirectory(prefix=f"{config['candidate_id']}-build-", dir=build_parent) as temporary:
         build = Path(temporary)
         with Image.open(source) as image:
+            source_size = image.size
             plate = prepare_plate(image)
         fog = make_fog_texture()
         masks = (
@@ -497,7 +560,7 @@ def main() -> None:
             for frame_index in range(frame_count):
                 t_s = frame_index / fps
                 environment = shared_environment(plate, fog, masks, t_s, config)
-                scene, abstract = participant_frames(environment, t_s)
+                scene, abstract = participant_frames(environment, t_s, config)
                 review = review_frame(scene, abstract, t_s)
                 scene_array = np.asarray(scene, dtype=np.int16)
                 abstract_array = np.asarray(abstract, dtype=np.int16)
@@ -507,7 +570,16 @@ def main() -> None:
                 encoders[0].stdin.write(scene.tobytes())
                 encoders[1].stdin.write(abstract.tobytes())
                 encoders[2].stdin.write(review.tobytes())
-                if frame_index in {30, 105, 240}:
+                if frame_index in {0, 120, 285, 299}:
+                    scene_chroma = np.max(scene_array, axis=2) - np.min(scene_array, axis=2)
+                    abstract_chroma = np.max(abstract_array, axis=2) - np.min(abstract_array, axis=2)
+                    native_reached_s = float(config["full_frame_color"]["native_color_reached_s"])
+                    full_frame_color_metrics[f"{t_s:.2f}"] = {
+                        "color_u": round(smoothstep(t_s / native_reached_s), 6),
+                        "scene_mean_chroma": round(float(np.mean(scene_chroma)), 3),
+                        "abstract_mean_chroma": round(float(np.mean(abstract_chroma)), 3),
+                    }
+                if frame_index in {0, 120, 285}:
                     keyframes.append((t_s, review.copy()))
         finally:
             for encoder in encoders:
@@ -540,7 +612,7 @@ def main() -> None:
         }
         metrics = audio_metrics(ffmpeg, normalized_audio)
         manifest = {
-            "schema_version": "1.0",
+            "schema_version": "1.1",
             "task_id": "V-04",
             "gate_id": "H2",
             "candidate_id": config["candidate_id"],
@@ -550,8 +622,8 @@ def main() -> None:
             "source": {
                 "file": config["source"]["panorama_file"],
                 "sha256": sha256(source),
-                "width": 1942,
-                "height": 809,
+                "width": source_size[0],
+                "height": source_size[1],
             },
             "render": {
                 "duration_s": duration_s,
@@ -559,7 +631,11 @@ def main() -> None:
                 "frame_count": frame_count,
                 "max_raw_difference_outside_expected_mask": max_outside_difference,
                 "difference_mask_policy": "cue layers only",
-                "scroll_last_frame_near_offset_px": 1920.0 * 0.02 * ((frame_count - 1) / fps),
+                "full_frame_color_metrics": full_frame_color_metrics,
+                "native_color_reached_s": float(config["full_frame_color"]["native_color_reached_s"]),
+                "scroll_last_frame_near_offset_px": (
+                    1920.0 * float(config["scroll"]["viewport_per_s"]) * ((frame_count - 1) / fps)
+                ),
             },
             "audio_metrics": metrics,
             "outputs": {
@@ -577,15 +653,15 @@ def main() -> None:
             },
             "asset_status": {"usage": "TEMP_REFERENCE_ONLY", "formal_use_allowed": False},
             "gate_status": "PENDING_HUMAN_CONFIRMATION",
-            "next_if_pass": "render fade default 200-second module",
-            "evidence_boundary": "H2 candidate verifies local continuity, cue parity, preview speed and temporary sound identity only.",
+            "next_if_pass": "freeze H2 cue mapping and hand off the short-preview contract to Unity implementation",
+            "evidence_boundary": "H2 verifies the short preview only; Unity runtime, formal build and device chain remain unverified.",
         }
         output_root.parent.mkdir(parents=True, exist_ok=True)
         os.replace(build, output_root)
         MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print(
-        f"PASS: rendered V-04 H2 {config['candidate_id']}; 300 shared frames; scene-native/abstract/paired review; "
+        f"PASS: rendered V-04 H2 {config['candidate_id']}; 300 shared frames; full-frame color recovery; "
         f"outside-mask diff={max_outside_difference}; H2 human confirmation pending"
     )
 

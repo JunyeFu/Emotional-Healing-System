@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "task_id": "V-04",
   "gate_id": "H2",
-  "candidate_id": "candidate-v2",
-  "generated_at": "2026-08-25T10:02:12+08:00",
-  "config_sha256": "16a7f6a9927344597020a2db4f5fa231df227510d3cdfe0b5750e9343a75e31c",
+  "candidate_id": "candidate-v8",
+  "generated_at": "2026-08-28T00:00:00+08:00",
+  "config_sha256": "e55fbf958a064a7ed8043d689ac5fc9c8ce47d9085d9da2ff8a5ea79e58550e8",
   "h1_selection_sha256": "c481645a453e30b4a9bdc6821883b9f648b73d2f8ee2e9facf06987ba42074ad",
   "source": {
     "file": ".artifacts-local/V-04/H2/source/fade-B-panorama-r1.png",
@@ -18,6 +18,29 @@
     "frame_count": 300,
     "max_raw_difference_outside_expected_mask": 0,
     "difference_mask_policy": "cue layers only",
+    "full_frame_color_metrics": {
+      "0.00": {
+        "color_u": 0.0,
+        "scene_mean_chroma": 0.0,
+        "abstract_mean_chroma": 0.0
+      },
+      "4.00": {
+        "color_u": 0.382563,
+        "scene_mean_chroma": 4.909,
+        "abstract_mean_chroma": 4.18
+      },
+      "9.50": {
+        "color_u": 1.0,
+        "scene_mean_chroma": 12.766,
+        "abstract_mean_chroma": 10.907
+      },
+      "9.97": {
+        "color_u": 1.0,
+        "scene_mean_chroma": 12.761,
+        "abstract_mean_chroma": 10.906
+      }
+    },
+    "native_color_reached_s": 9.5,
     "scroll_last_frame_near_offset_px": 382.71999999999997
   },
   "audio_metrics": {
@@ -27,8 +50,8 @@
   "outputs": {
     "scene_native": {
       "file": "fade-H2-scene-native.mp4",
-      "size_bytes": 5368508,
-      "sha256": "f43b41c04c175406fd8b9700055079edbde269c353799e4abaa2e533a14f78c5",
+      "size_bytes": 5169059,
+      "sha256": "57f88ef18253cd213f695ed7feb9268315b45c66d0152df255565da14d26bd50",
       "ffprobe": {
         "streams": [
           {
@@ -59,7 +82,7 @@
             "start_time": "0.000000",
             "duration_ts": 153600,
             "duration": "10.000000",
-            "bit_rate": "4092169",
+            "bit_rate": "3932629",
             "bits_per_raw_sample": "8",
             "nb_frames": "300",
             "extradata_size": 46,
@@ -152,8 +175,8 @@
           "format_long_name": "QuickTime / MOV",
           "start_time": "0.000000",
           "duration": "10.000000",
-          "size": "5368508",
-          "bit_rate": "4294806",
+          "size": "5169059",
+          "bit_rate": "4135247",
           "probe_score": 100,
           "tags": {
             "major_brand": "isom",
@@ -166,8 +189,8 @@
     },
     "abstract_pacer": {
       "file": "fade-H2-abstract-pacer.mp4",
-      "size_bytes": 4908315,
-      "sha256": "69b4a7767d0afb7c315f34ca50a12b296736342f81fb92374d79c4d79c6e0d58",
+      "size_bytes": 4936092,
+      "sha256": "7d007935baa3a4c8d7862c06f8b1357e417b60367f1efc2386ff473aa2ab6000",
       "ffprobe": {
         "streams": [
           {
@@ -198,7 +221,7 @@
             "start_time": "0.000000",
             "duration_ts": 153600,
             "duration": "10.000000",
-            "bit_rate": "3724015",
+            "bit_rate": "3746256",
             "bits_per_raw_sample": "8",
             "nb_frames": "300",
             "extradata_size": 46,
@@ -291,8 +314,8 @@
           "format_long_name": "QuickTime / MOV",
           "start_time": "0.000000",
           "duration": "10.000000",
-          "size": "4908315",
-          "bit_rate": "3926652",
+          "size": "4936092",
+          "bit_rate": "3948873",
           "probe_score": 100,
           "tags": {
             "major_brand": "isom",
@@ -305,8 +328,8 @@
     },
     "paired_review": {
       "file": "fade-H2-paired-review.mp4",
-      "size_bytes": 10039919,
-      "sha256": "fff0403fc61ca1521d59027e35471313294821e4dfab2ce574b18c67f06ad9a1",
+      "size_bytes": 9889155,
+      "sha256": "41f31f750242b6c6b3ca73b607354b3f3030a4ab14c985446317f8a550b1a792",
       "ffprobe": {
         "streams": [
           {
@@ -337,7 +360,7 @@
             "start_time": "0.000000",
             "duration_ts": 153600,
             "duration": "10.000000",
-            "bit_rate": "7829286",
+            "bit_rate": "7708675",
             "bits_per_raw_sample": "8",
             "nb_frames": "300",
             "extradata_size": 45,
@@ -430,8 +453,8 @@
           "format_long_name": "QuickTime / MOV",
           "start_time": "0.000000",
           "duration": "10.000000",
-          "size": "10039919",
-          "bit_rate": "8031935",
+          "size": "9889155",
+          "bit_rate": "7911324",
           "probe_score": 100,
           "tags": {
             "major_brand": "isom",
@@ -509,9 +532,9 @@
       }
     },
     "review_keyframes": {
-      "file": "review/H2/fade-H2-keyframes-v2.jpg",
-      "size_bytes": 221335,
-      "sha256": "e15d02b00e6a3fd755f3e9d4b646bbb8ee345f7d8015ab90116eb1b2fb623b57",
+      "file": "review/H2/fade-H2-keyframes-v8.jpg",
+      "size_bytes": 210469,
+      "sha256": "b4dd83e1426cc1700a42b26bfe3eea6f7cbc6901b192e04197eac4d73b72df33",
       "width": 1920,
       "height": 1110
     }
@@ -521,6 +544,6 @@
     "formal_use_allowed": false
   },
   "gate_status": "PENDING_HUMAN_CONFIRMATION",
-  "next_if_pass": "render fade default 200-second module",
-  "evidence_boundary": "H2 candidate verifies local continuity, cue parity, preview speed and temporary sound identity only."
+  "next_if_pass": "freeze H2 cue mapping and hand off the short-preview contract to Unity implementation",
+  "evidence_boundary": "H2 verifies the short preview only; Unity runtime, formal build and device chain remain unverified."
 }

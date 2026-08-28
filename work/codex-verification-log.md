@@ -978,3 +978,92 @@
 | Governance Gates | 注册表校验`PASS`；独立包`PASS`：5个派发包、132份快照；`git diff --cached --check`通过。 |
 | AC2 | 关闭TouchDesigner后，9981与5005均无监听；F-04不依赖TD进程完成主机合同测试。 |
 | Candidate State | 保持`IN_REVIEW`；自动化与Codex运行验证不替代傅钧烨的独立人工签收。 |
+### 2026-08-26 V-04 H2原生fade表达返工
+
+| Field | Result |
+|---|---|
+| Human Finding | 团队总监指出`candidate-v2`的场景原生框未体现可辨认的fade变化，裁定`cue=REVISE`；旧候选停止签收。 |
+| Contract Alignment | V-03要求中远景色潮执行主流展开、不回零补流和长距离下降回流，近景色丝独立；共享累计环境继续慢变且两条件一致。 |
+| Internal Rejections | `candidate-v3`第一吸气覆盖不足；`candidate-v4`补吸阶段覆盖和色彩增益不足；二者均被新增机器门拒绝，未交人工复审。 |
+| Candidate | `candidate-v5`，10秒、30 fps、300帧；原生目标改为无矩形边界的局部色潮与色彩恢复，近景实际色丝、抽象双环、共享背景、卷动和声音保持既定职责。 |
+| Visibility Gate | 1.00、3.50、8.00秒目标区变化覆盖=`22.06%/25.38%/29.15%`，平均色彩增益=`6.764/2.075/8.638`，均通过`>=18%`与`>=2.0`门槛。 |
+| H2 Validator | `validate_v04_h2.py`结果`PASS`；提示掩膜外最大原始像素差0；声音`-22.24 LUFS-I/-3.49 dBTP`；黑帧和持续1秒以上冻结检测无命中。 |
+| Project Regression | 协议权威v1.1校验`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02`）；独立任务包`PASS`（5包、116份快照）；根回归`412 passed in 25.55s`；`git diff --check`通过。 |
+| Human Gate | `candidate-v5`等待团队总监重新提交六项结论；自动通过不代替H2人工确认。 |
+| Boundary | 返工只形成设计预演候选，不证明200秒模块、完整Animatic、Unity运行、正式构建或真实输入链完成。 |
+
+### 2026-08-27 V-04 H2颜色丰富度语义订正
+
+| Field | Result |
+|---|---|
+| Human Finding | 团队总监指出`candidate-v5`是青、红、蓝滤镜切换，不是画面颜色丰富度下降和回升；该候选停止评审。 |
+| Authority Check | 早期褪色设计和V-03累计层支持轮廓、纹理与基础色彩完整度变化；V-03目标层仍记载色潮，已通过V-04 ADR记录待版本化同步，不改写历史签收文件。 |
+| Internal Rejection | `candidate-v6`已移除阶段性色相，但目标区变化过弱，被更新后的机器门拒绝，未交人工复审。 |
+| Candidate | `candidate-v7`；原画自身在首吸与补吸阶段去饱和并降低纹理丰富度，长呼阶段连续恢复；没有阶段性彩色覆盖层。 |
+| Richness Gate | 1.00、3.50、8.00秒目标区变化覆盖=`21.96%/72.31%/34.43%`，平均颜色丰富度损失=`1.087/5.373/1.485`；补吸显著深于首吸，长呼回落到补吸峰值的27.6%。 |
+| H2 Validator | `validate_v04_h2.py`结果`PASS`；3条视频、1条PCM声音、1张关键帧图的尺寸、时长、哈希与Git忽略边界一致；提示掩膜外最大原始像素差0。 |
+| Project Regression | V-04工具链和H1校验`PASS`；FFmpeg黑帧及持续1秒以上冻结探测无命中；协议权威、任务注册表和独立任务包校验`PASS`；根回归`412 passed in 28.08s`。 |
+| Human Gate | `candidate-v7`为`PENDING_HUMAN_CONFIRMATION`；自动通过不代替团队总监H2结论。 |
+| Boundary | 当前只形成10秒设计预演，不证明200秒模块、完整Animatic、Unity运行、正式构建或真实输入链完成。 |
+
+### 2026-08-27 V-04 fade合同冲突网页端研究提示词
+
+| Field | Result |
+|---|---|
+| User Requirements | 已逐字保持三项设计方向：两条件从整屏完全褪色开始、重定双吸长呼中的颜色丰富度变化且终点完全恢复、两条件共享整屏褪色并重建合同。 |
+| Conflict Coverage | 提示词覆盖产品总规格、参与者旅程、V-02 fade/双环/视觉预算、V-03映射与参数边界、V-04 ADR和H2候选之间的冲突。 |
+| Research Request | 要求网页端比较三类架构、联网引用权威来源、输出职责合同、完整时间线、归一化映射、两条件像素边界、版本迁移和验收测试。 |
+| Evidence Boundary | 本轮只生成纯文本研究提示词；未裁定新合同，未修改已签收V-03文件，未重新生成H2样片。 |
+
+### 2026-08-27 F-04 附件验收
+
+| Field | Result |
+|---|---|
+| Input | `D:/Wecheat/xwechat_files/wxid_xhivgw8tj7kt22_8232/msg/file/2026-08/SRP-F04.zip`; SHA-256=`6C21308742B0026BAA297501085BAA5C0A0603CD662F69B84685ADEB8840C38B`。 |
+| Package Check | ZIP可读取；包含F-04交付、fixture、工具和TouchDesigner施工图，但同时夹带未声明的`F-01/`目录，包级范围不洁。未发现截图、录屏、`.toe/.toa`、节点检查或TD运行日志。 |
+| Static Fixture | `f04_validate_fixture.py`通过：11条记录、四模块、四类告警、乱序、降级及dropout/recovered覆盖。 |
+| Python Syntax | `py_compile`通过：fixture validator、sender、TD施工图脚本。 |
+| Readonly Boundary | manifest中的五项边界声明均为`false`；静态代码仅创建UDP输入、表、回调、容器和展示面板，未发现Unity/Spout输出、随机化、阈值编辑或设备驱动调用。 |
+| Runtime Evidence | 未在TouchDesigner内执行施工图、未发送UDP并观察页面更新；因此AC1/AC3仅有脚本/fixture级证据，不能升级为TD页面验收。 |
+| Human Gate | 未提供第二人操作复核/签收；F-04任务完成条件未满足。 |
+| Decision | `NO-GO / RETURN_FOR_EVIDENCE`：静态候选可审阅，F-04不可签收为完成。 |
+| Next Gate | 在真实TouchDesigner中生成并保存`.toe`或可追溯页面产物，回放fixture并提交页面截图、节点权限检查和运行日志；清除包内F-01串包；完成第二人复核。 |
+
+### 2026-08-27 F-04 前期设计与运行合同深度核对
+
+| Field | Result |
+|---|---|
+| Authority Health | 协议权威校验`PASS`；任务注册表`PASS`（F-04=`READY`）；独立任务包`PASS`；F-01合同测试`49 passed`；非Python消费者`PASS`。当前对照基线有效。 |
+| Acceptance Drift | 项目F-04 AC2是“关闭TD不影响其他制品”，AC3是“无Spout输出、随机化或阈值编辑入口”；附件改写为AC2只读边界、AC3异常状态展示，遗漏原AC2并自行改变验收编号和语义。 |
+| Contract Compatibility | 正式TelemetryFrame有29个顶层字段；附件首帧28个字段中仅`session_id`与正式合同同名，缺28个正式字段并新增27个demo字段。F-01参考校验器以`MISSING_FIELD: schema_version,message_type`拒绝附件。 |
+| Port and Module Drift | 项目权威和全局端口注册表固定TD遥测为UDP 5005；附件硬编码未登记的9054。正式天气标识为`storm/heat/snow/fade`；附件硬编码`storm/scorching/blizzard/fading`。 |
+| Page Coverage | 10类权威页面中，设备连接、目标/实际相位2类完整；会话/版本、ECG/RR质量、周期结果、延迟/时钟偏差、降级5类部分实现；原始/滤波呼吸、日志写入、中止/人工标记3类缺失。AC1“全部页面”不成立。 |
+| Static Quality | fixture自检与Python编译通过；无监听时sender可发送11条UDP记录并正常退出。施工图静态保持只读，但未校验正式schema/version，解析任意JSON后以默认值继续显示。 |
+| Evidence Quality | 无F-04专用`.toe/.toa`、截图、节点权限导出、TD控制台日志、fixture回放录像、固定提交/哈希清单或第二人复核；项目权威工作目录中也没有附件F-04文件。 |
+| Package Hygiene | ZIP夹带未声明`F-01/`目录，且F-04交付没有包级manifest绑定文件与哈希。附件称“等待F-01正式合同”，但F-01已于2026-08-12签收为DONE，说明前期状态读取过期。 |
+| Quality Decision | `REWORK_REQUIRED`。STATIC仅为部分可读原型；CONTRACT=`FAIL`；INTEGRATION/TD_RUNTIME=`NOT_OBSERVED`；HUMAN_ACCEPTANCE=`NOT_OBSERVED`。F-04保持`READY`，不得进入第二人签收。 |
+| Required Repair Order | 先恢复原AC语义并改用v2.1字段、5005和正式天气标识；补齐10类页面骨架；强化schema/version失败关闭；生成TD运行制品与证据；清理并重打交付包；最后第二人操作复核。 |
+
+### 2026-08-28 V-04科研便捷实施重裁
+
+| Field | Result |
+|---|---|
+| Authority | `CONTEXT.md`已指向`V-04_科研便捷实施裁定_v1.1.md`；冲突时v1.1优先。 |
+| H2 Identity | `V-04_H2样片配置_v1.1.json`可解析，`candidate_id=candidate-v8`且`status=DESIGN_READY_PENDING_RENDER`。 |
+| Consistency | 实施状态、评审说明、配置和v1.1裁定均将candidate-v7标为停止评审，并指向candidate-v8。 |
+| Format | 相关已跟踪文件`git diff --check`通过；仅出现仓库既有LF转CRLF提示。 |
+| Evidence Level | 仅完成设计裁定和静态一致性检查；candidate-v8尚未渲染，未形成Unity运行或正式构建证据。 |
+
+### 2026-08-28 项目清理与V-04 candidate-v8
+
+| Field | Result |
+|---|---|
+| Cleanup Scope | 当前Git差异包含42个已跟踪删除、8个修改和6个新增；移除V-04旧节点/ADR/H2候选链及迁移时已保留的3个旧实验文件删除项。重复docx、无引用`SRP/`素材、`tmp/`、旧候选媒体和生成日志未进入Git。 |
+| H2 Render | `candidate-v8`生成300个共享帧、两条1920x1080参与者视频、一条3840x1200并列视频、一条48 kHz/24-bit双声道PCM声音和一张关键帧图；媒体位于Git忽略目录。 |
+| H2 Metrics | 首帧scene/abstract平均色度均为`0.0`；4秒为`4.909/4.180`；9.5秒为`12.766/10.907`；提示掩膜外最大原始像素差为`0`。 |
+| V-04 Gates | 工具门、H1校验和H2校验均`PASS`；H2仍为`PENDING_HUMAN_CONFIRMATION`，自动验证不代替团队总监结论。 |
+| Governance | 协议权威v1.1、任务注册表和独立任务包校验通过；任务注册表57项，READY=`F-03/F-04/F-05`；独立包5个、116份快照。 |
+| Regression | 首次经`py`启动器运行已输出`412 passed`但启动器未退出；随后使用冻结解释器直接重跑，`412 passed in 28.87s`且退出码为0。 |
+| Static Checks | Python语法、v1.1 JSON解析、废弃路径引用、当前改动文档措辞和Git差异检查通过；发现并修复1处旧实验数据README悬空引用。 |
+| Rebase Verification | 变基到最新`origin/main`后，`core.autocrlf=true`使新配置工作区字节转为CRLF；候选清单已同步到实际配置SHA-256 `E55FBF958A064A7ED8043D689AC5FC9C8CE47D9085D9DA2FF8A5EA79E58550E8`，不改变样片内容或设计参数。 |
+| Evidence Boundary | 当前只证明设计预演、合同一致性和Python回归；不扩大为Unity运行、正式构建、真实设备链、H2人工确认或V-04完成。 |
