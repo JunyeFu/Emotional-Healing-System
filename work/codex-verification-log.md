@@ -978,3 +978,14 @@
 | Governance Gates | 注册表校验`PASS`；独立包`PASS`：5个派发包、132份快照；`git diff --cached --check`通过。 |
 | AC2 | 关闭TouchDesigner后，9981与5005均无监听；F-04不依赖TD进程完成主机合同测试。 |
 | Candidate State | 保持`IN_REVIEW`；自动化与Codex运行验证不替代傅钧烨的独立人工签收。 |
+
+### 2026-08-29 F-04升级控制与治理回退
+
+| Field | Result |
+|---|---|
+| Control File | 新增F-04升级控制v1.0，冻结权威顺序、`ConsoleShell`、`TelemetrySource.read_snapshot()`、`ConsoleSnapshot`、10页图形机制、5场景、延期职责及AC1至AC7。 |
+| Registry | `07_validate_task_packages.py`最终`PASS`：57项、54固定、3模板；F-04=`IN_PROGRESS`、3人日；`READY=F-03/F-05`、`IN_REVIEW=G-01/G-02`。 |
+| Handbook | 首次校验按预期发现手册尚未刷新；显式运行`10_render_task_handbook.py`后复验`PASS`，F-04段落与注册表一致。 |
+| Independent Packages | `14_validate_ready_task_packages.py`为`PASS`：4个派发包、106份快照，任务为`F-03/F-05/G-01/G-02`；旧F-04包已撤下。 |
+| Scope Boundary | 差异范围检查未发现F-04 `.toe/.tox`、`build_f04_touchdesigner.py`或`02-技术研发/05-通信协议/contracts`修改；本轮只落地控制与治理状态。 |
+| Remaining Gate | 当前不构成升级实现完成或第二人签收；完成新AC1至AC6后才可转回`IN_REVIEW`并重建F-04独立包。 |
