@@ -1067,3 +1067,15 @@
 | Static Checks | Python语法、v1.1 JSON解析、废弃路径引用、当前改动文档措辞和Git差异检查通过；发现并修复1处旧实验数据README悬空引用。 |
 | Rebase Verification | 变基到最新`origin/main`后，`core.autocrlf=true`使新配置工作区字节转为CRLF；候选清单已同步到实际配置SHA-256 `E55FBF958A064A7ED8043D689AC5FC9C8CE47D9085D9DA2FF8A5EA79E58550E8`，不改变样片内容或设计参数。 |
 | Evidence Boundary | 当前只证明设计预演、合同一致性和Python回归；不扩大为Unity运行、正式构建、真实设备链、H2人工确认或V-04完成。 |
+
+### 2026-08-29 V-04 candidate-v9色潮回流设计合同
+
+| Field | Result |
+|---|---|
+| Design Authority | 新增`V-04_H2_candidate-v9_色潮回流设计合同_v1.0.md`；冻结整屏复色、目标色潮、实际水面色迹和累计环境四条独立通道，并将当前硬门设为`H2_V9_PENDING_RENDER`。 |
+| Historical Candidate | candidate-v8的3条视频、PCM24声音、关键帧、首末帧颜色和提示区外差异继续由`validate_v04_h2.py`验证`PASS`；该结果仅为历史机器证据，人工设计结论为`REVISE`。 |
+| V-04 Validators | 锁定Python 3.14.4环境下工具链验证`PASS`；H1验证`PASS`；candidate-v8历史媒体验证`PASS`。默认Python 3.14.5缺少Pillow，未用于冻结工具链判定。 |
+| Governance | 协议权威v1.1验证`PASS`；任务注册表验证`PASS`（57项，`READY=F-03/F-05`，`IN_REVIEW=F-04/G-01/G-02`）；独立任务包验证`PASS`（5包、132份快照）。 |
+| Regression | 锁定Python 3.14.4执行根回归：`412 passed in 21.53s`。 |
+| Static Checks | 当前入口只把v1.1评审说明列为历史证据；新增行不含项目禁用表述；`git diff --check`通过。 |
+| Evidence Boundary | 本轮只证明设计合同、状态迁移和既有回归一致；candidate-v9尚未渲染，不构成Unity运行、正式构建、真实设备链、H2人工通过或V-04完成。 |
