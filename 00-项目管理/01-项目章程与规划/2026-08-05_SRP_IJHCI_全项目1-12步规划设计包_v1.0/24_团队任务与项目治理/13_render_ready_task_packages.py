@@ -39,6 +39,21 @@ def split_items(value: str, separator: str = ";") -> list[str]:
     return [item.strip() for item in value.split(separator) if item.strip()]
 
 
+def render_checklist(items: list[str], results: object, default_checked: bool) -> list[str]:
+    if results is None:
+        marker = "x" if default_checked else " "
+        return [f"- [{marker}] {item}" for item in items]
+    if not isinstance(results, list) or len(results) != len(items):
+        raise ValueError("checklist results must be a list matching the rendered item count")
+    lines = []
+    for item, result in zip(items, results, strict=True):
+        normalized = str(result).strip().upper()
+        marker = "x" if normalized == "PASS" else " "
+        suffix = "" if normalized == "PASS" else f" — `{normalized}`"
+        lines.append(f"- [{marker}] {item}{suffix}")
+    return lines
+
+
 def safe_source(relative: str) -> pathlib.Path:
     path = (PROJECT_ROOT / relative).resolve()
     if PROJECT_ROOT not in path.parents or not path.is_file():
@@ -102,14 +117,20 @@ def task_markdown(
         for index, step in enumerate(process_profiles[row["process_profile"]], start=1)
     )
     lines.extend(["", "## 验收要求", ""])
-    checked = "x" if row["status"] == "IN_REVIEW" else " "
     lines.extend(
-        f"- [{checked}] {item}"
-        for item in split_items(row["acceptance_criteria"], "；")
+        render_checklist(
+            split_items(row["acceptance_criteria"], "；"),
+            task_map.get("acceptance_results"),
+            row["status"] == "IN_REVIEW",
+        )
     )
     lines.extend(["", "## 必需证据", ""])
     lines.extend(
-        f"- [{checked}] {item}" for item in split_items(row["evidence_required"])
+        render_checklist(
+            split_items(row["evidence_required"]),
+            task_map.get("evidence_results"),
+            row["status"] == "IN_REVIEW",
+        )
     )
     if row["status"] == "IN_REVIEW":
         source_files = [str(item) for item in task_map["source_files"]]

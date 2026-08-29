@@ -54,6 +54,32 @@
     },
     {
       "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ManualActionControls",
+      "permission": "read_only",
+      "role": "manual_action_controls"
+    },
+    {
+      "action_id": "manual_mark",
+      "enabled": false,
+      "label": "MANUAL MARK / T-02 NOT ACTIVE",
+      "operator_type": "buttonCOMP",
+      "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ManualActionControls/manual_mark_disabled",
+      "permission": "disabled_control",
+      "role": "disabled_action_control",
+      "visible_in_shell": true
+    },
+    {
+      "action_id": "abort",
+      "enabled": false,
+      "label": "ABORT / T-02 NOT ACTIVE",
+      "operator_type": "buttonCOMP",
+      "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ManualActionControls/abort_disabled",
+      "permission": "disabled_control",
+      "role": "disabled_action_control",
+      "visible_in_shell": true
+    },
+    {
+      "operator_type": "containerCOMP",
       "path": "/project1/F04_ReadonlyConsole/Sources",
       "permission": "read_only",
       "role": "source_container"
@@ -297,9 +323,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        20,
+        32
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/01_session_version",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -332,16 +363,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/good_storm/session_card",
+      "permission": "read_only",
+      "role": "session_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/good_storm/version_card",
+      "permission": "read_only",
+      "role": "version_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/good_storm/source_card",
+      "permission": "read_only",
+      "role": "source_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -362,16 +405,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/degraded_heat/session_card",
+      "permission": "read_only",
+      "role": "session_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/degraded_heat/version_card",
+      "permission": "read_only",
+      "role": "version_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/degraded_heat/source_card",
+      "permission": "read_only",
+      "role": "source_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -392,16 +447,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/unusable_snow/session_card",
+      "permission": "read_only",
+      "role": "session_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/unusable_snow/version_card",
+      "permission": "read_only",
+      "role": "version_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/unusable_snow/source_card",
+      "permission": "read_only",
+      "role": "source_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -422,16 +489,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/disconnected_fade/session_card",
+      "permission": "read_only",
+      "role": "session_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/disconnected_fade/version_card",
+      "permission": "read_only",
+      "role": "version_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/disconnected_fade/source_card",
+      "permission": "read_only",
+      "role": "source_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -452,16 +531,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/out_of_order_storm/session_card",
+      "permission": "read_only",
+      "role": "session_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/out_of_order_storm/version_card",
+      "permission": "read_only",
+      "role": "version_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/session_version/scenario_views/out_of_order_storm/source_card",
+      "permission": "read_only",
+      "role": "source_card"
     },
     {
       "operator_type": "switchTOP",
@@ -471,9 +562,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        264,
+        32
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/02_device_connection",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -506,16 +602,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/good_storm/resp_connection_badge",
+      "permission": "read_only",
+      "role": "resp_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/good_storm/ecg_connection_badge",
+      "permission": "read_only",
+      "role": "ecg_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/good_storm/freshness_bar",
+      "permission": "read_only",
+      "role": "freshness_bar"
     },
     {
       "operator_type": "containerCOMP",
@@ -536,16 +644,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/degraded_heat/resp_connection_badge",
+      "permission": "read_only",
+      "role": "resp_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/degraded_heat/ecg_connection_badge",
+      "permission": "read_only",
+      "role": "ecg_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/degraded_heat/freshness_bar",
+      "permission": "read_only",
+      "role": "freshness_bar"
     },
     {
       "operator_type": "containerCOMP",
@@ -566,16 +686,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/unusable_snow/resp_connection_badge",
+      "permission": "read_only",
+      "role": "resp_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/unusable_snow/ecg_connection_badge",
+      "permission": "read_only",
+      "role": "ecg_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/unusable_snow/freshness_bar",
+      "permission": "read_only",
+      "role": "freshness_bar"
     },
     {
       "operator_type": "containerCOMP",
@@ -596,16 +728,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/disconnected_fade/resp_connection_badge",
+      "permission": "read_only",
+      "role": "resp_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/disconnected_fade/ecg_connection_badge",
+      "permission": "read_only",
+      "role": "ecg_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/disconnected_fade/freshness_bar",
+      "permission": "read_only",
+      "role": "freshness_bar"
     },
     {
       "operator_type": "containerCOMP",
@@ -626,16 +770,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/out_of_order_storm/resp_connection_badge",
+      "permission": "read_only",
+      "role": "resp_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/out_of_order_storm/ecg_connection_badge",
+      "permission": "read_only",
+      "role": "ecg_connection_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/device_connection/scenario_views/out_of_order_storm/freshness_bar",
+      "permission": "read_only",
+      "role": "freshness_bar"
     },
     {
       "operator_type": "switchTOP",
@@ -645,9 +801,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        508,
+        32
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/03_respiration_waveform",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -680,16 +841,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "selectTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/good_storm/page_waveform_view",
+      "permission": "read_only",
+      "role": "page_waveform_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/good_storm/raw_channel_legend",
+      "permission": "read_only",
+      "role": "raw_channel_legend"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/good_storm/filtered_channel_legend",
+      "permission": "read_only",
+      "role": "filtered_channel_legend"
     },
     {
       "operator_type": "containerCOMP",
@@ -710,16 +883,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "selectTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/degraded_heat/page_waveform_view",
+      "permission": "read_only",
+      "role": "page_waveform_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/degraded_heat/raw_channel_legend",
+      "permission": "read_only",
+      "role": "raw_channel_legend"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/degraded_heat/filtered_channel_legend",
+      "permission": "read_only",
+      "role": "filtered_channel_legend"
     },
     {
       "operator_type": "containerCOMP",
@@ -740,16 +925,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "selectTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/unusable_snow/page_waveform_view",
+      "permission": "read_only",
+      "role": "page_waveform_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/unusable_snow/raw_channel_legend",
+      "permission": "read_only",
+      "role": "raw_channel_legend"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/unusable_snow/filtered_channel_legend",
+      "permission": "read_only",
+      "role": "filtered_channel_legend"
     },
     {
       "operator_type": "containerCOMP",
@@ -770,16 +967,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "selectTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/disconnected_fade/page_waveform_view",
+      "permission": "read_only",
+      "role": "page_waveform_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/disconnected_fade/raw_channel_legend",
+      "permission": "read_only",
+      "role": "raw_channel_legend"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/disconnected_fade/filtered_channel_legend",
+      "permission": "read_only",
+      "role": "filtered_channel_legend"
     },
     {
       "operator_type": "containerCOMP",
@@ -800,16 +1009,28 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "selectTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/out_of_order_storm/page_waveform_view",
+      "permission": "read_only",
+      "role": "page_waveform_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/out_of_order_storm/raw_channel_legend",
+      "permission": "read_only",
+      "role": "raw_channel_legend"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/respiration_waveform/scenario_views/out_of_order_storm/filtered_channel_legend",
+      "permission": "read_only",
+      "role": "filtered_channel_legend"
     },
     {
       "operator_type": "switchTOP",
@@ -819,9 +1040,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        752,
+        32
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/04_ecg_rr_quality",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -854,16 +1080,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/good_storm/ecg_quality_gauge",
+      "permission": "read_only",
+      "role": "ecg_quality_gauge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/good_storm/rr_interval_strip",
+      "permission": "read_only",
+      "role": "rr_interval_strip"
     },
     {
       "operator_type": "containerCOMP",
@@ -884,16 +1116,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/degraded_heat/ecg_quality_gauge",
+      "permission": "read_only",
+      "role": "ecg_quality_gauge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/degraded_heat/rr_interval_strip",
+      "permission": "read_only",
+      "role": "rr_interval_strip"
     },
     {
       "operator_type": "containerCOMP",
@@ -914,16 +1152,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/unusable_snow/ecg_quality_gauge",
+      "permission": "read_only",
+      "role": "ecg_quality_gauge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/unusable_snow/rr_interval_strip",
+      "permission": "read_only",
+      "role": "rr_interval_strip"
     },
     {
       "operator_type": "containerCOMP",
@@ -944,16 +1188,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/disconnected_fade/ecg_quality_gauge",
+      "permission": "read_only",
+      "role": "ecg_quality_gauge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/disconnected_fade/rr_interval_strip",
+      "permission": "read_only",
+      "role": "rr_interval_strip"
     },
     {
       "operator_type": "containerCOMP",
@@ -974,16 +1224,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/out_of_order_storm/ecg_quality_gauge",
+      "permission": "read_only",
+      "role": "ecg_quality_gauge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/ecg_rr_quality/scenario_views/out_of_order_storm/rr_interval_strip",
+      "permission": "read_only",
+      "role": "rr_interval_strip"
     },
     {
       "operator_type": "switchTOP",
@@ -993,9 +1249,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        996,
+        32
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/05_phase_comparison",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -1028,16 +1289,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/good_storm/target_phase_track",
+      "permission": "read_only",
+      "role": "target_phase_track"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/good_storm/actual_phase_track",
+      "permission": "read_only",
+      "role": "actual_phase_track"
     },
     {
       "operator_type": "containerCOMP",
@@ -1058,16 +1325,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/degraded_heat/target_phase_track",
+      "permission": "read_only",
+      "role": "target_phase_track"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/degraded_heat/actual_phase_track",
+      "permission": "read_only",
+      "role": "actual_phase_track"
     },
     {
       "operator_type": "containerCOMP",
@@ -1088,16 +1361,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/unusable_snow/target_phase_track",
+      "permission": "read_only",
+      "role": "target_phase_track"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/unusable_snow/actual_phase_track",
+      "permission": "read_only",
+      "role": "actual_phase_track"
     },
     {
       "operator_type": "containerCOMP",
@@ -1118,16 +1397,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/disconnected_fade/target_phase_track",
+      "permission": "read_only",
+      "role": "target_phase_track"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/disconnected_fade/actual_phase_track",
+      "permission": "read_only",
+      "role": "actual_phase_track"
     },
     {
       "operator_type": "containerCOMP",
@@ -1148,16 +1433,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/out_of_order_storm/target_phase_track",
+      "permission": "read_only",
+      "role": "target_phase_track"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/phase_comparison/scenario_views/out_of_order_storm/actual_phase_track",
+      "permission": "read_only",
+      "role": "actual_phase_track"
     },
     {
       "operator_type": "switchTOP",
@@ -1167,9 +1458,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        20,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/06_cycle_result",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -1202,16 +1498,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/good_storm/cycle_summary_card",
+      "permission": "read_only",
+      "role": "cycle_summary_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/good_storm/cycle_result_card",
+      "permission": "read_only",
+      "role": "cycle_result_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -1232,16 +1534,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/degraded_heat/cycle_summary_card",
+      "permission": "read_only",
+      "role": "cycle_summary_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/degraded_heat/cycle_result_card",
+      "permission": "read_only",
+      "role": "cycle_result_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -1262,16 +1570,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/unusable_snow/cycle_summary_card",
+      "permission": "read_only",
+      "role": "cycle_summary_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/unusable_snow/cycle_result_card",
+      "permission": "read_only",
+      "role": "cycle_result_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -1292,16 +1606,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/disconnected_fade/cycle_summary_card",
+      "permission": "read_only",
+      "role": "cycle_summary_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/disconnected_fade/cycle_result_card",
+      "permission": "read_only",
+      "role": "cycle_result_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -1322,16 +1642,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/out_of_order_storm/cycle_summary_card",
+      "permission": "read_only",
+      "role": "cycle_summary_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/cycle_result/scenario_views/out_of_order_storm/cycle_result_card",
+      "permission": "read_only",
+      "role": "cycle_result_card"
     },
     {
       "operator_type": "switchTOP",
@@ -1341,9 +1667,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        264,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/07_latency_clock",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -1376,16 +1707,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/good_storm/latency_bar",
+      "permission": "read_only",
+      "role": "latency_bar"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/good_storm/clock_drift_bar",
+      "permission": "read_only",
+      "role": "clock_drift_bar"
     },
     {
       "operator_type": "containerCOMP",
@@ -1406,16 +1743,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/degraded_heat/latency_bar",
+      "permission": "read_only",
+      "role": "latency_bar"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/degraded_heat/clock_drift_bar",
+      "permission": "read_only",
+      "role": "clock_drift_bar"
     },
     {
       "operator_type": "containerCOMP",
@@ -1436,16 +1779,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/unusable_snow/latency_bar",
+      "permission": "read_only",
+      "role": "latency_bar"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/unusable_snow/clock_drift_bar",
+      "permission": "read_only",
+      "role": "clock_drift_bar"
     },
     {
       "operator_type": "containerCOMP",
@@ -1466,16 +1815,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/disconnected_fade/latency_bar",
+      "permission": "read_only",
+      "role": "latency_bar"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/disconnected_fade/clock_drift_bar",
+      "permission": "read_only",
+      "role": "clock_drift_bar"
     },
     {
       "operator_type": "containerCOMP",
@@ -1496,16 +1851,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/out_of_order_storm/latency_bar",
+      "permission": "read_only",
+      "role": "latency_bar"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/latency_clock/scenario_views/out_of_order_storm/clock_drift_bar",
+      "permission": "read_only",
+      "role": "clock_drift_bar"
     },
     {
       "operator_type": "switchTOP",
@@ -1515,9 +1876,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        508,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/08_degradation",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -1550,16 +1916,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/good_storm/quality_state_lane",
+      "permission": "read_only",
+      "role": "quality_state_lane"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/good_storm/degradation_timeline",
+      "permission": "read_only",
+      "role": "degradation_timeline"
     },
     {
       "operator_type": "containerCOMP",
@@ -1580,16 +1952,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/degraded_heat/quality_state_lane",
+      "permission": "read_only",
+      "role": "quality_state_lane"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/degraded_heat/degradation_timeline",
+      "permission": "read_only",
+      "role": "degradation_timeline"
     },
     {
       "operator_type": "containerCOMP",
@@ -1610,16 +1988,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/unusable_snow/quality_state_lane",
+      "permission": "read_only",
+      "role": "quality_state_lane"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/unusable_snow/degradation_timeline",
+      "permission": "read_only",
+      "role": "degradation_timeline"
     },
     {
       "operator_type": "containerCOMP",
@@ -1640,16 +2024,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/disconnected_fade/quality_state_lane",
+      "permission": "read_only",
+      "role": "quality_state_lane"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/disconnected_fade/degradation_timeline",
+      "permission": "read_only",
+      "role": "degradation_timeline"
     },
     {
       "operator_type": "containerCOMP",
@@ -1670,16 +2060,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/out_of_order_storm/quality_state_lane",
+      "permission": "read_only",
+      "role": "quality_state_lane"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/degradation/scenario_views/out_of_order_storm/degradation_timeline",
+      "permission": "read_only",
+      "role": "degradation_timeline"
     },
     {
       "operator_type": "switchTOP",
@@ -1689,9 +2085,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        752,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/09_log_write",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -1724,16 +2125,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/good_storm/log_write_state_card",
+      "permission": "read_only",
+      "role": "log_write_state_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/good_storm/log_counter_card",
+      "permission": "read_only",
+      "role": "log_counter_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -1754,16 +2161,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/degraded_heat/log_write_state_card",
+      "permission": "read_only",
+      "role": "log_write_state_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/degraded_heat/log_counter_card",
+      "permission": "read_only",
+      "role": "log_counter_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -1784,16 +2197,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/unusable_snow/log_write_state_card",
+      "permission": "read_only",
+      "role": "log_write_state_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/unusable_snow/log_counter_card",
+      "permission": "read_only",
+      "role": "log_counter_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -1814,16 +2233,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/disconnected_fade/log_write_state_card",
+      "permission": "read_only",
+      "role": "log_write_state_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/disconnected_fade/log_counter_card",
+      "permission": "read_only",
+      "role": "log_counter_card"
     },
     {
       "operator_type": "containerCOMP",
@@ -1844,16 +2269,22 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/out_of_order_storm/log_write_state_card",
+      "permission": "read_only",
+      "role": "log_write_state_card"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/log_write/scenario_views/out_of_order_storm/log_counter_card",
+      "permission": "read_only",
+      "role": "log_counter_card"
     },
     {
       "operator_type": "switchTOP",
@@ -1863,9 +2294,14 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        996,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageNavigation/10_manual_actions",
       "permission": "read_only",
-      "role": "page_navigation"
+      "role": "page_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "containerCOMP",
@@ -1898,16 +2334,34 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/good_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/good_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/good_storm/manual_mark_control_visual",
+      "permission": "read_only",
+      "role": "manual_mark_control_visual"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/good_storm/abort_control_visual",
+      "permission": "read_only",
+      "role": "abort_control_visual"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/good_storm/manual_mark_control_label",
+      "permission": "read_only",
+      "role": "manual_mark_control_label"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/good_storm/abort_control_label",
+      "permission": "read_only",
+      "role": "abort_control_label"
     },
     {
       "operator_type": "containerCOMP",
@@ -1928,16 +2382,34 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/degraded_heat/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/degraded_heat/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/degraded_heat/manual_mark_control_visual",
+      "permission": "read_only",
+      "role": "manual_mark_control_visual"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/degraded_heat/abort_control_visual",
+      "permission": "read_only",
+      "role": "abort_control_visual"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/degraded_heat/manual_mark_control_label",
+      "permission": "read_only",
+      "role": "manual_mark_control_label"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/degraded_heat/abort_control_label",
+      "permission": "read_only",
+      "role": "abort_control_label"
     },
     {
       "operator_type": "containerCOMP",
@@ -1958,16 +2430,34 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/unusable_snow/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/unusable_snow/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/unusable_snow/manual_mark_control_visual",
+      "permission": "read_only",
+      "role": "manual_mark_control_visual"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/unusable_snow/abort_control_visual",
+      "permission": "read_only",
+      "role": "abort_control_visual"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/unusable_snow/manual_mark_control_label",
+      "permission": "read_only",
+      "role": "manual_mark_control_label"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/unusable_snow/abort_control_label",
+      "permission": "read_only",
+      "role": "abort_control_label"
     },
     {
       "operator_type": "containerCOMP",
@@ -1988,16 +2478,34 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/disconnected_fade/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/disconnected_fade/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/disconnected_fade/manual_mark_control_visual",
+      "permission": "read_only",
+      "role": "manual_mark_control_visual"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/disconnected_fade/abort_control_visual",
+      "permission": "read_only",
+      "role": "abort_control_visual"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/disconnected_fade/manual_mark_control_label",
+      "permission": "read_only",
+      "role": "manual_mark_control_label"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/disconnected_fade/abort_control_label",
+      "permission": "read_only",
+      "role": "abort_control_label"
     },
     {
       "operator_type": "containerCOMP",
@@ -2018,16 +2526,34 @@
       "role": "page_labels"
     },
     {
-      "operator_type": "rectangleTOP",
-      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/out_of_order_storm/indicator",
-      "permission": "read_only",
-      "role": "page_indicator"
-    },
-    {
       "operator_type": "compositeTOP",
       "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/out_of_order_storm/view",
       "permission": "read_only",
       "role": "page_scenario_view"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/out_of_order_storm/manual_mark_control_visual",
+      "permission": "read_only",
+      "role": "manual_mark_control_visual"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/out_of_order_storm/abort_control_visual",
+      "permission": "read_only",
+      "role": "abort_control_visual"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/out_of_order_storm/manual_mark_control_label",
+      "permission": "read_only",
+      "role": "manual_mark_control_label"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/F04_ReadonlyConsole/Pages/manual_actions/scenario_views/out_of_order_storm/abort_control_label",
+      "permission": "read_only",
+      "role": "abort_control_label"
     },
     {
       "operator_type": "switchTOP",
@@ -2037,33 +2563,71 @@
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        20,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ScenarioNavigation/01_good_storm",
       "permission": "read_only",
-      "role": "scenario_navigation"
+      "role": "scenario_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        264,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ScenarioNavigation/02_degraded_heat",
       "permission": "read_only",
-      "role": "scenario_navigation"
+      "role": "scenario_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        508,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ScenarioNavigation/03_unusable_snow",
       "permission": "read_only",
-      "role": "scenario_navigation"
+      "role": "scenario_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        752,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ScenarioNavigation/04_disconnected_fade",
       "permission": "read_only",
-      "role": "scenario_navigation"
+      "role": "scenario_navigation",
+      "visible_in_shell": true
     },
     {
       "operator_type": "buttonCOMP",
+      "panel_position": [
+        996,
+        0
+      ],
       "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ScenarioNavigation/05_out_of_order_storm",
       "permission": "read_only",
-      "role": "scenario_navigation"
+      "role": "scenario_navigation",
+      "visible_in_shell": true
+    },
+    {
+      "operator_type": "constantTOP",
+      "path": "/project1/F04_ReadonlyConsole/ConsoleShell/ShellBackground",
+      "permission": "read_only",
+      "role": "shell_background"
+    },
+    {
+      "input_role": "display_selector",
+      "operator_type": "containerCOMP",
+      "path": "/project1/F04_ReadonlyConsole/ConsoleShell/PageViewport",
+      "permission": "read_only",
+      "role": "page_viewport"
     },
     {
       "operator_type": "containerCOMP",
@@ -2078,6 +2642,14 @@
       "role": "display_selector"
     },
     {
+      "operator_type": "opviewerTOP",
+      "path": "/project1/F04_ReadonlyConsole/Output/shell_viewer",
+      "permission": "read_only",
+      "role": "console_shell_view",
+      "viewer_target": "/project1/F04_ReadonlyConsole/ConsoleShell"
+    },
+    {
+      "input_role": "console_shell_view",
       "operator_type": "outTOP",
       "path": "/project1/F04_ReadonlyConsole/Output/display_out",
       "permission": "read_only",

@@ -1004,3 +1004,18 @@
 | Artifact Hashes | `.toe`=`3CF666C42F4C18568770B2331521363DA32A6E2FFD46239A577B7F2C29750F72`；`.tox`=`282404FA16FD8F8C87228FD405E090890DC70446740C0F00D031BD9F62CF2FCB`；fixture=`72DA8308681F1C3AAA363143E62BA0FC28DA616D4A5D53CE44B2C3B4DDECD8D4`。 |
 | Candidate Boundary | AC1至AC6机器门通过，F-04迁移为`IN_REVIEW`；AC7仍待傅钧烨独立签署，不构成`DONE`、LIVE_E2E或人工验收。 |
 | Governance | 协议权威校验`PASS`；注册表`PASS`（57项，`IN_REVIEW=F-04/G-01/G-02`）；独立任务包`PASS`（5包、140份快照）；受限用语0命中，14张截图哈希全部唯一。 |
+
+### 2026-08-29 F-04团队总监首轮FAIL整改与最终机器候选
+
+| Field | Result |
+|---|---|
+| First Director Audit | 独立Agent任务`01a04b7e-3ecf-7470-994c-6ca37c9ecd5b`结论`FAIL`；AC1/AC2/AC4/AC7未通过，AC3/AC5/AC6通过；Agent未修改工程。 |
+| Implementation Commit | `b910a0d0b04147c228263b444b1beecb5a27ba2d`。 |
+| F-04 Tests | `21 passed in 0.08s`。 |
+| TD Build | TouchDesigner `2025.32820`：`F04_BUILD_COMPLETE 10 pages 5 scenarios 646 nodes`；`F04_SCREENSHOTS_COMPLETE 14 current frames`。 |
+| TD Reopen | `F04_REOPEN_PASS 10 pages 5 scenarios visible shell 50 combinations`；重开报告全部12项检查为`true`。 |
+| Controls And Permissions | 10个页面按钮与5个场景按钮节点名、节点坐标和面板坐标唯一；两个人工操作按钮`enabled=false`，页面显示两组禁用控件卡片；无F-04请求发送回调。 |
+| Closed-TD Ports | TouchDesigner关闭且进程不存在；5005与9981无TCP/UDP监听。 |
+| Regression | F-01合同`49 passed in 0.77s`；P-01/P-02相关回归`166 passed in 4.46s`。 |
+| Artifact Hashes | `.toe`=`CBC982BE379C2A1D9A0BE7FC26508B1467A8CFCD920E51FBE4193E18AE74B9EA`；`.tox`=`1DEC705338AF14F623177BE60975B860FA3D86851D5EF7A7C6DF95BC04DE7F76`；fixture=`72DA8308681F1C3AAA363143E62BA0FC28DA616D4A5D53CE44B2C3B4DDECD8D4`。 |
+| Candidate Boundary | AC1至AC6为机器候选`PASS`；AC7与第二人证据保持`PENDING_DIRECTOR_REVIEW`。当前不构成`DONE`、LIVE_E2E或人工签收。 |

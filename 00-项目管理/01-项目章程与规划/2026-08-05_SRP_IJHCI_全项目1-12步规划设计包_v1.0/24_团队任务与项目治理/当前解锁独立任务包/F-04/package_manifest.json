@@ -20,194 +20,200 @@
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/README.md",
       "package_path": "inputs/03_README.md",
-      "sha256": "28BA72597195A8345779AA1A13F3B4B631437E7D70CD9A6A82C9463ABCFE6E05",
-      "size_bytes": 2370
+      "sha256": "C4BA85178414A71B991939BEDCD70997617F00E2945B094BCF38CD4C6A02F84B",
+      "size_bytes": 2521
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_技术验收记录.md",
       "package_path": "inputs/04_F-04_技术验收记录.md",
-      "sha256": "45CF61B50D6153D8B6111593604206129BA91AE4709DCEC7C0500E192B321DA9",
-      "size_bytes": 2579
+      "sha256": "A1842BFB9BFB655655CC6205D60E14989ABFF25F021AE8CFBFB112CF1D36D10E",
+      "size_bytes": 2726
+    },
+    {
+      "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_团队总监首轮审计整改记录.md",
+      "package_path": "inputs/05_F-04_团队总监首轮审计整改记录.md",
+      "sha256": "FE0564F28129BB5ADBE087CCAF1247AA876327DEAB6C8C28C52697E2B94E14E7",
+      "size_bytes": 2706
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/f04_console.py",
-      "package_path": "inputs/05_f04_console.py",
+      "package_path": "inputs/06_f04_console.py",
       "sha256": "5AC9F7C664B01C6C5F81CE95EFC8EAB98B179FEA913F7FAEDF496A4C5D050BF4",
       "size_bytes": 11439
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/f04_node_plan.py",
-      "package_path": "inputs/06_f04_node_plan.py",
-      "sha256": "F54ECDD59BB3BD10C160732E9DB7198F5717E2316E3258BB2123B88E8416D6B9",
-      "size_bytes": 8712
+      "package_path": "inputs/07_f04_node_plan.py",
+      "sha256": "EC0C815A0978D22FF5348865889199D6AFDC9ECF9AD8867C52E95BC3D0921466",
+      "size_bytes": 12122
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/build_f04_touchdesigner.py",
-      "package_path": "inputs/07_build_f04_touchdesigner.py",
-      "sha256": "FD34BF54BCCDC9AB0109D47895D4211E12FA3A3D37C1A66085E2DF6C4673243C",
-      "size_bytes": 20764
+      "package_path": "inputs/08_build_f04_touchdesigner.py",
+      "sha256": "44D082AF2A3BD86A1768265ADFB92A197E06E8022E1196F7054016BC1136565F",
+      "size_bytes": 30234
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/verify_f04_touchdesigner_reopen.py",
-      "package_path": "inputs/08_verify_f04_touchdesigner_reopen.py",
-      "sha256": "128BEA3F9C362B6EB2C31DC0C002D4610579DB500CB2911F4555CEA71F2E4831",
-      "size_bytes": 2409
+      "package_path": "inputs/09_verify_f04_touchdesigner_reopen.py",
+      "sha256": "9C227997A2D61A4DD44D3556CC3092BAA8BCFF12CF78297FA867BE9EC079D246",
+      "size_bytes": 8172
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/fixtures/f04-static-display-fixture-v1.json",
-      "package_path": "inputs/09_f04-static-display-fixture-v1.json",
+      "package_path": "inputs/10_f04-static-display-fixture-v1.json",
       "sha256": "72DA8308681F1C3AAA363143E62BA0FC28DA616D4A5D53CE44B2C3B4DDECD8D4",
       "size_bytes": 8633
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py",
-      "package_path": "inputs/10_test_f04_console.py",
-      "sha256": "2C1DA1AA9CB5D0702893E9DF9FB6D2F267494F034C008ABE56AEEACCDD3DA2A1",
-      "size_bytes": 9705
+      "package_path": "inputs/11_test_f04_console.py",
+      "sha256": "8CB4E06C2AADE0F8367E18368A8B6E98FD68B53FF29AD80FA3697E6045D73E8B",
+      "size_bytes": 12993
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/F04_ReadonlyConsole.toe",
-      "package_path": "inputs/11_F04_ReadonlyConsole.toe",
-      "sha256": "3CF666C42F4C18568770B2331521363DA32A6E2FFD46239A577B7F2C29750F72",
-      "size_bytes": 21954
+      "package_path": "inputs/12_F04_ReadonlyConsole.toe",
+      "sha256": "CBC982BE379C2A1D9A0BE7FC26508B1467A8CFCD920E51FBE4193E18AE74B9EA",
+      "size_bytes": 25834
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/F04_ReadonlyConsole.tox",
-      "package_path": "inputs/12_F04_ReadonlyConsole.tox",
-      "sha256": "282404FA16FD8F8C87228FD405E090890DC70446740C0F00D031BD9F62CF2FCB",
-      "size_bytes": 18286
+      "package_path": "inputs/13_F04_ReadonlyConsole.tox",
+      "sha256": "1DEC705338AF14F623177BE60975B860FA3D86851D5EF7A7C6DF95BC04DE7F76",
+      "size_bytes": 21342
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/host/host_build_manifest.json",
-      "package_path": "inputs/13_host_build_manifest.json",
-      "sha256": "386C26E2B6C86BEA5DDA3C60D4316CC6C83A541EB9968ED101DF3CF321C1A53E",
+      "package_path": "inputs/14_host_build_manifest.json",
+      "sha256": "22959DFDE668E4234092EF1FF1432116E0FDBA3B71B01E2A24A53E8D5C49A5BC",
       "size_bytes": 724
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/host/page_manifest.json",
-      "package_path": "inputs/14_page_manifest.json",
+      "package_path": "inputs/15_page_manifest.json",
       "sha256": "3CC6D9EFA3A96E0F4FFC58737926477F76AFD7FD94AF5B056A4CC0B7C9BF1487",
       "size_bytes": 3838
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/host/node_plan.json",
-      "package_path": "inputs/15_node_plan.json",
-      "sha256": "F813036E3184DA9B364A7287FB1B9667BA2725DE8814B71568FDF54072B055CF",
-      "size_bytes": 98608
+      "package_path": "inputs/16_node_plan.json",
+      "sha256": "E17AEBDF0A861BF0EDB1F95C508DC030D091D7F6569D8DE41ED51FDCE565B1B2",
+      "size_bytes": 125721
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/host/node_permissions.json",
-      "package_path": "inputs/16_node_permissions.json",
-      "sha256": "A11D56222B00CA34E7463CDA1BF4D8147D072AF45D7EC8276684449423B8B962",
-      "size_bytes": 74193
+      "package_path": "inputs/17_node_permissions.json",
+      "sha256": "DC0EE829E3283763EE53FDD68255FB7566297CDC50B21CC6F5A053C4C3675E99",
+      "size_bytes": 95552
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/node_errors.json",
-      "package_path": "inputs/17_node_errors.json",
+      "package_path": "inputs/18_node_errors.json",
       "sha256": "111798E8AA021EF2A52D7A3CBE0BF3850B0B7E30BB09256D9F303DDBF403A9A8",
       "size_bytes": 125
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/node_inventory.json",
-      "package_path": "inputs/18_node_inventory.json",
-      "sha256": "D7A41DD1920A69023925D4CDAEB1424144A1ABFC035BCF92EE9AAE97D8F4509D",
-      "size_bytes": 132401
+      "package_path": "inputs/19_node_inventory.json",
+      "sha256": "F6970500E34F360D7A50553D34D8C367294D9B31B7E5E3FF22C563AF9AFDAA3A",
+      "size_bytes": 241967
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/runtime_build_manifest.json",
-      "package_path": "inputs/19_runtime_build_manifest.json",
-      "sha256": "3046BDD546EB98EDBEEEBF11068BF6A6C278C8FD688A4D96C0BA8D1FDFD43CEE",
-      "size_bytes": 1975
+      "package_path": "inputs/20_runtime_build_manifest.json",
+      "sha256": "5BED111BF5659D72F7B1F097269CC09CCD467D7F6F54DBAC0D6DAF9D29EE5100",
+      "size_bytes": 2019
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/reopen_report.json",
-      "package_path": "inputs/20_reopen_report.json",
-      "sha256": "562A77263A031540821E44C452CF380654A79E3CEF263FD383C796B2C94236CF",
-      "size_bytes": 505
+      "package_path": "inputs/21_reopen_report.json",
+      "sha256": "54A3676ADD131B4F1E6AAF241C7909B04E0955AF27ACADE426F4F545678737DB",
+      "size_bytes": 13331
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/01_session_version.png",
-      "package_path": "inputs/21_01_session_version.png",
-      "sha256": "050101A6B69CC39A92CC9F7B59B7D429B87A98061B11E5D6ECD0CECD107171CB",
-      "size_bytes": 190231
+      "package_path": "inputs/22_01_session_version.png",
+      "sha256": "E7D344948F46B715657E78A2419B3DDBFD6CD5820DB94C3E8FC13A8476A086EC",
+      "size_bytes": 105651
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/02_device_connection.png",
-      "package_path": "inputs/22_02_device_connection.png",
-      "sha256": "E27FBC07855363B619058937753BFC895B97975294CFEDAB7B4421ECF5974936",
-      "size_bytes": 206405
+      "package_path": "inputs/23_02_device_connection.png",
+      "sha256": "79F448221FAAB3D1FAE125C07B67BEFFCF9C3E1A5CCAE22B962BA89EB70863E9",
+      "size_bytes": 102978
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png",
-      "package_path": "inputs/23_03_respiration_waveform.png",
-      "sha256": "14206E0E82BDD7D3A8FA7BE101AF6AA61F2C75BD05E2BDC12EEB9596E55B8D16",
-      "size_bytes": 221830
+      "package_path": "inputs/24_03_respiration_waveform.png",
+      "sha256": "A3ACC38EE3C6C9618238DCC2623C1C42D053B9750D4B621827AC355E9B27E7D3",
+      "size_bytes": 110136
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/04_ecg_rr_quality.png",
-      "package_path": "inputs/24_04_ecg_rr_quality.png",
-      "sha256": "7D2ED7BEEC0990FAA3FF380A822645582E5858E03DD2ECB0920695E663B33521",
-      "size_bytes": 199404
+      "package_path": "inputs/25_04_ecg_rr_quality.png",
+      "sha256": "4A5F7E411336CC22CD964A1EA5B70B60139053B04D5A9A9A8A808C5E03003E55",
+      "size_bytes": 101853
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/05_phase_comparison.png",
-      "package_path": "inputs/25_05_phase_comparison.png",
-      "sha256": "898F176B937CCAF23233D231ABDD00C2E92A0DF645001B4881B5CE3874CE78A8",
-      "size_bytes": 200620
+      "package_path": "inputs/26_05_phase_comparison.png",
+      "sha256": "197B2B2BE973E4B9D71AB9F9A41211B14AA30F5AFCFC383EF22F0F79FB837715",
+      "size_bytes": 100671
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/06_cycle_result.png",
-      "package_path": "inputs/26_06_cycle_result.png",
-      "sha256": "8C2B9832C3F0C30B091A501F2660B0789116D2196A4CC833ADD307A84F17BA41",
-      "size_bytes": 203335
+      "package_path": "inputs/27_06_cycle_result.png",
+      "sha256": "869C6D9815E00C5E9C364F61B37EF5D057657911E9BE427E454F20466F6618E6",
+      "size_bytes": 97484
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/07_latency_clock.png",
-      "package_path": "inputs/27_07_latency_clock.png",
-      "sha256": "9DC6B7E9C4A9AF3081236204E31395D7076A93F0B95D0C62AC9FF61A2A38B61B",
-      "size_bytes": 219549
+      "package_path": "inputs/28_07_latency_clock.png",
+      "sha256": "D84CC3CB74700976390DBC5EF8274DEF158A91AD32079A24FF5777D90775A6D9",
+      "size_bytes": 97450
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/08_degradation.png",
-      "package_path": "inputs/28_08_degradation.png",
-      "sha256": "1D79F4E104DB0D65741F4E721559A0D436BD261048790C5A7843EA432A7DDB71",
-      "size_bytes": 188781
+      "package_path": "inputs/29_08_degradation.png",
+      "sha256": "4EDED17C47775DB258C2B41C798A190CFB5B4D1F8750A6F2FDCE5A65CAC21EF3",
+      "size_bytes": 96432
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/09_log_write.png",
-      "package_path": "inputs/29_09_log_write.png",
-      "sha256": "26D9DEE3F4EAA947ADEEF2AD35C90E0A62C78B681239980FB16BD222E5BF05A3",
-      "size_bytes": 205773
+      "package_path": "inputs/30_09_log_write.png",
+      "sha256": "680D23DD0D7DBE45349A24206E11417A9F4571B4363F5F3AFAE27E620DE12BB9",
+      "size_bytes": 99999
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/10_manual_actions.png",
-      "package_path": "inputs/30_10_manual_actions.png",
-      "sha256": "0F02CFF850F7E0A18FC1F0A8A034F38170F2653A83B960945276C2FDDCFF14D3",
-      "size_bytes": 206346
+      "package_path": "inputs/31_10_manual_actions.png",
+      "sha256": "9BBEA7CD53DE468055F66E35B3EF31711FD0A7D654CECED08CAA53BE158897B3",
+      "size_bytes": 119796
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/11_degradation_degraded_heat.png",
-      "package_path": "inputs/31_11_degradation_degraded_heat.png",
-      "sha256": "5ACBB8D4CAD042F0A2ADD736079761A7CC36B5AA71FB6A0D532B38E296AFE899",
-      "size_bytes": 196466
+      "package_path": "inputs/32_11_degradation_degraded_heat.png",
+      "sha256": "1E10686F273D8279F01AD44580388DE39385CC162FA9F27FB6CC82B5750915E8",
+      "size_bytes": 101992
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/12_degradation_unusable_snow.png",
-      "package_path": "inputs/32_12_degradation_unusable_snow.png",
-      "sha256": "3E75E57D5AB21B0C3D26C82160F17B3A8D45665B86B04A108CB97247384C65EB",
-      "size_bytes": 193102
+      "package_path": "inputs/33_12_degradation_unusable_snow.png",
+      "sha256": "42CFC849DAD540967E0ABC6F8BC3A966082E521E2A8C2694B4A7976B55E60C56",
+      "size_bytes": 104269
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/13_degradation_disconnected_fade.png",
-      "package_path": "inputs/33_13_degradation_disconnected_fade.png",
-      "sha256": "81E8B97161C3EF588E06C3799E74342E79311910DEB7EE1D1FF54FEDD5305AEF",
-      "size_bytes": 198664
+      "package_path": "inputs/34_13_degradation_disconnected_fade.png",
+      "sha256": "4BA30DC04DBF892B52D537390E1DF4692279E3DEB9DFB19C483F298E9AE7A9EB",
+      "size_bytes": 112347
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/14_degradation_out_of_order_storm.png",
-      "package_path": "inputs/34_14_degradation_out_of_order_storm.png",
-      "sha256": "EAAAAD0ED122F102B054CE62A71C7BEAA99FE47D3B1E6B61F5EC7714E4285D24",
-      "size_bytes": 192779
+      "package_path": "inputs/35_14_degradation_out_of_order_storm.png",
+      "sha256": "56BD9D4C8FE50FA0FD03823EF7A02283B5984B7A8FB80817714B3D91F02CD167",
+      "size_bytes": 100298
     }
   ],
   "working_paths": [

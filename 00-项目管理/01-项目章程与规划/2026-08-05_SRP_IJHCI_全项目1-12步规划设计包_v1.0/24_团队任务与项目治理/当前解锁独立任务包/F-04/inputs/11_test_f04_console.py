@@ -208,6 +208,72 @@ def test_node_plan_is_scoped_idempotent_and_contains_ten_page_views():
     assert not [node for node in plan["nodes"] if node["permission"] == "network_output"]
 
 
+def test_visible_navigation_has_unique_layout_and_drives_final_shell_output():
+    plan = build_node_plan()
+    page_navigation = [node for node in plan["nodes"] if node["role"] == "page_navigation"]
+    scenario_navigation = [node for node in plan["nodes"] if node["role"] == "scenario_navigation"]
+
+    assert len({tuple(node["panel_position"]) for node in page_navigation}) == 10
+    assert len({tuple(node["panel_position"]) for node in scenario_navigation}) == 5
+    assert all(node["visible_in_shell"] is True for node in page_navigation + scenario_navigation)
+
+    shell_view = next(node for node in plan["nodes"] if node["role"] == "console_shell_view")
+    display_out = next(node for node in plan["nodes"] if node["role"] == "local_display_output")
+    assert shell_view["operator_type"] == "opviewerTOP"
+    assert shell_view["viewer_target"] == "/project1/F04_ReadonlyConsole/ConsoleShell"
+    assert display_out["input_role"] == "console_shell_view"
+
+
+def test_each_page_declares_scenario_specific_graphical_roles():
+    required_roles = {
+        "session_version": {"session_card", "version_card", "source_card"},
+        "device_connection": {"resp_connection_badge", "ecg_connection_badge", "freshness_bar"},
+        "respiration_waveform": {"page_waveform_view", "raw_channel_legend", "filtered_channel_legend"},
+        "ecg_rr_quality": {"ecg_quality_gauge", "rr_interval_strip"},
+        "phase_comparison": {"target_phase_track", "actual_phase_track"},
+        "cycle_result": {"cycle_summary_card", "cycle_result_card"},
+        "latency_clock": {"latency_bar", "clock_drift_bar"},
+        "degradation": {"quality_state_lane", "degradation_timeline"},
+        "log_write": {"log_write_state_card", "log_counter_card"},
+        "manual_actions": {
+            "manual_mark_control_visual",
+            "abort_control_visual",
+            "manual_mark_control_label",
+            "abort_control_label",
+        },
+    }
+    nodes = build_node_plan()["nodes"]
+    for page_id, roles in required_roles.items():
+        for scenario_id in SCENARIO_IDS:
+            observed = {
+                node["role"]
+                for node in nodes
+                if node.get("page_id") == page_id
+                and node.get("scenario_id") == scenario_id
+            }
+            assert roles <= observed, (page_id, scenario_id, roles - observed)
+
+
+def test_manual_actions_are_real_visible_disabled_controls_without_callbacks():
+    nodes = build_node_plan()["nodes"]
+    controls = [
+        node
+        for node in nodes
+        if node["role"] == "disabled_action_control"
+    ]
+    assert {node["action_id"] for node in controls} == {"manual_mark", "abort"}
+    assert {node["path"].rsplit("/", 1)[-1] for node in controls} == {
+        "manual_mark_disabled",
+        "abort_disabled",
+    }
+    assert all(node["operator_type"] == "buttonCOMP" for node in controls)
+    assert all(node["permission"] == "disabled_control" for node in controls)
+    assert all(node["enabled"] is False for node in controls)
+    assert all(node["visible_in_shell"] is True for node in controls)
+    assert all(node["label"].endswith("T-02 NOT ACTIVE") for node in controls)
+    assert not [node for node in controls if node.get("callback")]
+
+
 def test_host_artifacts_are_deterministic_and_include_permissions_and_hashes(tmp_path):
     first = write_host_artifacts(tmp_path / "first", FIXTURE)
     second = write_host_artifacts(tmp_path / "second", FIXTURE)
@@ -238,6 +304,7 @@ def test_touchdesigner_builder_has_exact_root_guard_and_runtime_evidence_steps()
     assert "node.numpyArray()" in source
     assert "delayFrames=5" in source
     assert "buttonCOMP" in source
+    assert "button.name = name" in source
     assert "dattoCHOP" in source
     assert "selectCHOP" in source
     assert "mathCHOP" in source

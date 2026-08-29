@@ -37,11 +37,13 @@ py -3.14 02-技术研发/03-TouchDesigner/f04_readonly_console/f04_node_plan.py
 生成 10 张 GOOD 页面截图和 4 张其他场景差异截图。重新打开正式 `.toe` 后执行：
 
 ```text
-exec(open(r'D:\Agent\03-SRP-f04-worktree\02-技术研发\03-TouchDesigner\f04_readonly_console\verify_f04_touchdesigner_reopen.py', encoding='utf-8').read())
+exec(open(r'<当前仓库根目录>\02-技术研发\03-TouchDesigner\f04_readonly_console\verify_f04_touchdesigner_reopen.py', encoding='utf-8').read())
 ```
 
 当前机器验收结果记录于 `F-04_技术验收记录.md`。F-04 处于 `IN_REVIEW`；
-AC1–AC6 已通过机器门，AC7 必须由傅钧烨独立操作并签署 PASS/FAIL。
+机器门和第二人结论分别记录，自动检查不得代替傅钧烨签署 PASS/FAIL。
+首轮独立总监审计与本轮整改映射记录于
+`F-04_团队总监首轮审计整改记录.md`；整改后的 AC7 仍须重新独立复核。
 
 ## 证据边界
 

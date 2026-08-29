@@ -1107,3 +1107,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - TD关闭后5005与9981的TCP/UDP监听均为0；UDP输入停用，人工标记与中止控件禁用，网络输出、Spout输出和请求发送回调均为0。
 - F-04测试18项、F-01合同回归49项、P-01/P-02相关回归166项全部通过；F-04转回`IN_REVIEW`并重新纳入独立任务包。
 - 下一硬门为AC7：傅钧烨独立打开`.toe`、切换全部页面与场景、检查节点权限并签署PASS/FAIL；在此之前不得转`DONE`，也不形成LIVE_E2E或人工验收声明。
+
+### 2026-08-29 F-04团队总监首轮FAIL整改候选
+
+- 独立团队总监Agent首轮审计任务`01a04b7e-3ecf-7470-994c-6ca37c9ecd5b`结论为`FAIL`：AC1、AC2、AC4、AC7未通过，AC3、AC5、AC6通过；该Agent未修改工程。
+- 实现提交`b910a0d0b04147c228263b444b1beecb5a27ba2d`关闭导航重叠、最终Shell输出、页面专属图形、人工操作可见禁用控件、路径可移植性和裁切问题。
+- TouchDesigner 2025.32820最终构建为646个节点；关闭并重开后，10页、5场景、50组合、稳定导航名、最终Shell、图形角色、禁用控件、UDP停用与零节点错误全部通过。
+- F-04专项21项、F-01合同49项、P-01/P-02相关回归166项通过；14张截图哈希全部唯一；TD关闭后5005和9981均无监听。
+- 独立任务包必须把AC7和第二人证据保持为`PENDING_DIRECTOR_REVIEW`；下一硬门是独立团队总监Agent基于`b910a0d`重新审计并给出PASS/FAIL。当前仍为`IN_REVIEW`，不构成`DONE`或LIVE_E2E。

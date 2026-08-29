@@ -97,11 +97,33 @@
       ]
     },
     "F-04": {
+      "implementation_commit": "b910a0d0b04147c228263b444b1beecb5a27ba2d",
+      "model_review_status": "PENDING_DIRECTOR_REVIEW",
+      "acceptance_results": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PENDING_DIRECTOR_REVIEW"
+      ],
+      "evidence_results": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PENDING_DIRECTOR_REVIEW"
+      ],
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-04_TouchDesigner模块化与图形化工作台升级控制_v1.0.md",
         "02-技术研发/03-TouchDesigner/f04_readonly_console/README.md",
         "02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_技术验收记录.md",
+        "02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_团队总监首轮审计整改记录.md",
         "02-技术研发/03-TouchDesigner/f04_readonly_console/f04_console.py",
         "02-技术研发/03-TouchDesigner/f04_readonly_console/f04_node_plan.py",
         "02-技术研发/03-TouchDesigner/f04_readonly_console/build_f04_touchdesigner.py",
