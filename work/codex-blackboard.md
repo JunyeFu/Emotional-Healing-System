@@ -1098,3 +1098,12 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 提交`37f693e6c77905a95701bb5472c88112ea4317f3`保留为升级前历史基线，不再作为最终验收候选；本轮未修改`.toe/.tox`、构建器或公共合同。
 - 当前独立派发集合为`F-03/F-05/G-01/G-02`；旧F-04审阅包已由确定性生成器撤下。升级候选完成并转回`IN_REVIEW`后，必须把控制文件、实现和新证据重新纳入F-04独立任务包。
 - 下一硬门是按新AC1至AC6完成TouchDesigner模块化与图形化升级并形成候选；AC7仍须傅钧烨独立操作签收，当前不得转`DONE`。
+
+### 2026-08-29 F-04模块化图形化升级候选
+
+- F-04已实现`ConsoleShell`、不可变`ConsoleSnapshot`、`StaticFixtureAdapter`、10个独立页面模块、5个确定性场景及50个页面/场景组合；页面不直接访问fixture、UDP、Unity或请求通道。
+- TouchDesigner 2025.32820正式候选包含559个节点；呼吸页使用`DAT to CHOP -> Select/Math CHOP -> OP Viewer TOP`双通道曲线，其余页面使用状态卡、色块、条形指示或时间轨迹。
+- 构建、保存、关闭、重开验证通过，节点错误为0；证据包含10张GOOD页面截图和4张其他场景差异截图。
+- TD关闭后5005与9981的TCP/UDP监听均为0；UDP输入停用，人工标记与中止控件禁用，网络输出、Spout输出和请求发送回调均为0。
+- F-04测试18项、F-01合同回归49项、P-01/P-02相关回归166项全部通过；F-04转回`IN_REVIEW`并重新纳入独立任务包。
+- 下一硬门为AC7：傅钧烨独立打开`.toe`、切换全部页面与场景、检查节点权限并签署PASS/FAIL；在此之前不得转`DONE`，也不形成LIVE_E2E或人工验收声明。

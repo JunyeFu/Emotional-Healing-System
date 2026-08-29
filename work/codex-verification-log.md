@@ -989,3 +989,18 @@
 | Independent Packages | `14_validate_ready_task_packages.py`为`PASS`：4个派发包、106份快照，任务为`F-03/F-05/G-01/G-02`；旧F-04包已撤下。 |
 | Scope Boundary | 差异范围检查未发现F-04 `.toe/.tox`、`build_f04_touchdesigner.py`或`02-技术研发/05-通信协议/contracts`修改；本轮只落地控制与治理状态。 |
 | Remaining Gate | 当前不构成升级实现完成或第二人签收；完成新AC1至AC6后才可转回`IN_REVIEW`并重建F-04独立包。 |
+
+### 2026-08-29 F-04 AC1-AC6升级候选验证
+
+| Field | Result |
+|---|---|
+| F-04 Tests | `py -3.14 -m pytest 02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py -q`：`18 passed in 0.10s`；覆盖不可变快照、适配器替换、10页、5场景、50组合及图形节点计划。 |
+| TD Build | TouchDesigner `2025.32820`构建返回`F04_BUILD_COMPLETE 10 pages 5 scenarios 559 nodes`；延迟cook后返回`F04_SCREENSHOTS_COMPLETE 14 current frames`。 |
+| TD Reopen | 正式`.toe`关闭后重开，校验器返回`F04_REOPEN_PASS 10 pages 5 scenarios`；根容器、导航输入、场景输入、UDP停用及节点错误检查全部通过。 |
+| Graphical Evidence | 14张当前帧截图均已生成；呼吸页显示原始/滤波双通道CHOP曲线，其余页面具有对应图形组件。 |
+| Permissions | 禁止算子0；网络输出0；Spout输出0；请求发送回调0；UDP 5005占位为停用，人工操作控件为禁用。 |
+| Closed-TD Ports | TouchDesigner关闭后，5005与9981的TCP/UDP监听均为0。 |
+| Regression | F-01合同回归`49 passed in 0.69s`；P-01/P-02相关回归`166 passed in 4.22s`。 |
+| Artifact Hashes | `.toe`=`3CF666C42F4C18568770B2331521363DA32A6E2FFD46239A577B7F2C29750F72`；`.tox`=`282404FA16FD8F8C87228FD405E090890DC70446740C0F00D031BD9F62CF2FCB`；fixture=`72DA8308681F1C3AAA363143E62BA0FC28DA616D4A5D53CE44B2C3B4DDECD8D4`。 |
+| Candidate Boundary | AC1至AC6机器门通过，F-04迁移为`IN_REVIEW`；AC7仍待傅钧烨独立签署，不构成`DONE`、LIVE_E2E或人工验收。 |
+| Governance | 协议权威校验`PASS`；注册表`PASS`（57项，`IN_REVIEW=F-04/G-01/G-02`）；独立任务包`PASS`（5包、140份快照）；受限用语0命中，14张截图哈希全部唯一。 |
