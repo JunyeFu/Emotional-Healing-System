@@ -36,6 +36,7 @@
   "runtime_fade_baked_in": false,
   "condition_specific_cues_baked_in": false,
   "formal_use_allowed": false,
-  "status": "PENDING_HUMAN_SELECTION",
-  "gate_status": "H2_V10_BACKGROUND_PENDING_HUMAN_SELECTION"
+  "human_selection_record": "V-04_H2背景选择记录_v1.0.json",
+  "status": "SELECTED",
+  "gate_status": "PASS"
 }

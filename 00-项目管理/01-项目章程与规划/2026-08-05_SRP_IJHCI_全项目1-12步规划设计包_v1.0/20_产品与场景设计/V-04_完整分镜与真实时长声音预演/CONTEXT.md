@@ -5,11 +5,13 @@
 | 范围 | 文件 |
 |---|---|
 | 实施裁定 | `V-04_科研便捷实施裁定_v1.2.md` |
-| 当前状态 | `V-04_实施状态与H1确认记录_v1.3.md` |
+| 当前状态 | `V-04_实施状态与H1确认记录_v1.4.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |
 | H2当前设计合同 | `V-04_H2_candidate-v10_固定镜头与背景重建设计合同_v1.0.md` |
-| H2当前背景候选 | `V-04_H2背景候选清单_v1.0.json`、`V-04_H2_candidate-v10_固定镜头彩色湿地生图提示词_v1.0.txt` |
-| H2当前评审 | `V-04_H2样片评审说明_v1.3.md` |
+| H2当前配置与清单 | `V-04_H2样片配置_v1.3.json`、`V-04_H2候选清单_v1.3.json` |
+| H2当前评审 | `V-04_H2样片评审说明_v1.4.md` |
+| H2当前验证器 | `validate_v04_h2_v10.py` |
+| H2背景签收 | `V-04_H2背景候选清单_v1.0.json`、`V-04_H2背景选择记录_v1.0.json` |
 | H2独立视觉预审 | `V-04_H2_candidate-v9_独立视觉预审报告_v1.0.md` |
 | H2历史机器证据 | candidate-v8的v1.1配置/清单/评审；candidate-v9的v1.2配置/清单/评审、渲染器、校验器和独立预审 |
 
@@ -36,18 +38,20 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H2 candidate-v9机器门 | `PASS` | 300帧双条件媒体、整屏复色、水面裁切、三步骤几何、实际步骤忠实度、灰度提示和条件一致性通过 |
 | H2 candidate-v9独立视觉预审 | `READY_FOR_TEAM_DIRECTOR_REVIEW` | 第一轮线性实际提示被退回；修正版改为水面断续反光，九项预审无阻断项 |
 | H2 candidate-v9团队总监 | `REVISE` | 横向滚动不利于观察固定水系；原生底图恢复后仍灰暗压抑 |
-| H2 candidate-v10背景 | `PENDING_HUMAN_SELECTION` | 固定镜头全彩湿地首张候选已生成，先确认背景再重建双条件样片 |
+| H2 candidate-v10背景 | `PASS` | 团队总监已确认固定镜头全彩湿地背景 |
+| H2 candidate-v10机器门 | `PASS` | 300帧固定镜头媒体、整屏复色、水体裁切、三步骤、实际忠实度、条件一致性、媒体健康和声音通过 |
+| H2 candidate-v10团队总监 | `PENDING_HUMAN_CONFIRMATION` | 观看并列视频后提交包含`native_naturalness`在内的九项结论 |
 | 后续天气与长廊短样片 | `BLOCKED_BY_H2` | H2人工通过后开始 |
 
-candidate-v8媒体位于Git忽略目录`.artifacts-local/V-04/H2/candidate-v8/`。其配置、清单和关键帧只作为历史机器证据。candidate-v9媒体位于`.artifacts-local/V-04/H2/candidate-v9/`；Git保存v1.2配置、清单、彩色/灰度关键帧、渲染器和验证器。candidate-v10首张背景位于`.artifacts-local/V-04/H2/source-candidates/candidate-v10/`，尚未进入完整样片。
+candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；Git保存v1.3配置、清单、彩色/灰度关键帧、v10渲染器和验证器。
 
 ## candidate-v10摘要
 
 - fade采用固定镜头和固定水系；两条件不再横向卷动。
 - 原生背景为明亮但克制的全彩雨后湿地，完全褪色由运行时产生。
 - 主水道、左侧支流汇入口和右下下游出口保持可见，为后续三步骤色潮和近景实际色迹提供稳定坐标。
-- candidate-v9的目标、实际、累计与背景职责分离继续有效。
+- candidate-v9的目标、实际、累计与背景职责分离继续有效；candidate-v10已经完成固定镜头双条件渲染并通过机器门。
 
 ## 下一步
 
-团队总监先确认candidate-v10首张背景。背景通过后重建固定镜头双条件样片，重新执行机器门与九项H2人工评审；H2通过后才制作storm、heat、snow和山雾长廊短样片。
+团队总监观看candidate-v10并列视频并按v1.4评审说明提交九项结论。H2通过后才制作storm、heat、snow和山雾长廊短样片。

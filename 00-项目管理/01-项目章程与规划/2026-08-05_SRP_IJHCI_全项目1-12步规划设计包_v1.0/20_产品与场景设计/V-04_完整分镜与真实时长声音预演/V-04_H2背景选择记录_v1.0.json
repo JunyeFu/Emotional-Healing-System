@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H2_V10_BACKGROUND",
+  "candidate_id": "fade-v10-fixed-color-r1",
+  "reviewer": "傅钧烨",
+  "reviewer_role": "团队总监",
+  "decision": "PASS",
+  "decision_source": "direct task message",
+  "decided_at": "2026-08-29T11:16:43+08:00",
+  "artifact": {
+    "file": ".artifacts-local/V-04/H2/source-candidates/candidate-v10/fade-v10-fixed-color-r1.png",
+    "width": 1942,
+    "height": 809,
+    "sha256": "2a02eae7b2cea3f9584ab9854321ee28cbc65764337d92f99c59dbe9784b9372"
+  },
+  "scope": "fixed-camera native full-color background only",
+  "does_not_approve": [
+    "candidate-v10 paired preview",
+    "H2 nine-item review",
+    "Unity runtime",
+    "formal build",
+    "asset license release"
+  ]
+}

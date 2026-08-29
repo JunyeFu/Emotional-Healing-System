@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.3",
+  "task_id": "V-04",
+  "gate_id": "H2",
+  "candidate_id": "candidate-v10",
+  "render_requested_at": "2026-08-29T11:16:43+08:00",
+  "status": "READY_TO_RENDER",
+  "evidence_class": "DESIGN_PREVIEW_ONLY",
+  "supersedes": "candidate-v9",
+  "design_contract": "V-04_H2_candidate-v10_固定镜头与背景重建设计合同_v1.0.md",
+  "source": {
+    "selected_anchor_id": "fade-v10-fixed-color-r1",
+    "h1_selection_record": "V-04_H1选择记录_v1.0.json",
+    "background_selection_record": "V-04_H2背景选择记录_v1.0.json",
+    "panorama_file": ".artifacts-local/V-04/H2/source-candidates/candidate-v10/fade-v10-fixed-color-r1.png",
+    "panorama_sha256": "2a02eae7b2cea3f9584ab9854321ee28cbc65764337d92f99c59dbe9784b9372",
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  },
+  "timeline": {
+    "duration_s": 10.0,
+    "fps": 30,
+    "frame_count": 300,
+    "phase_schedule": [
+      {"phase": "INHALE_1", "start_s": 0.0, "end_s": 2.5},
+      {"phase": "INHALE_2", "start_s": 2.5, "end_s": 4.0},
+      {"phase": "EXHALE_1", "start_s": 4.0, "end_s": 10.0}
+    ],
+    "preview_timing_only": true,
+    "actual_lag_s": 0.18,
+    "actual_amplitude_ratio": 0.86
+  },
+  "full_frame_color": {
+    "scope": "entire_participant_frame_including_cues",
+    "start_color_u": 0.0,
+    "native_color_reached_s": 9.5,
+    "end_color_u": 1.0,
+    "curve": "smoothstep(clamp(t / 9.5, 0, 1))",
+    "phase_locked": false,
+    "reads_target_actual_or_recovery": false,
+    "unity_candidate": "global saturation -100 to 0"
+  },
+  "participant_view": {
+    "width": 1920,
+    "height": 1080,
+    "pixel_format": "yuv420p",
+    "codec": "h264"
+  },
+  "paired_review_view": {
+    "width": 3840,
+    "height": 1200,
+    "review_header_height": 120,
+    "participant_frames_unscaled": true
+  },
+  "camera": {
+    "mode": "fixed",
+    "horizontal_scroll": false,
+    "source_fit": "cover_center_crop",
+    "camera_displacement_px": 0.0,
+    "max_fog_translation_px": 4.0,
+    "ripple_amplitude_px": 3.2
+  },
+  "cue_modes": {
+    "scene_native": {
+      "target": "deterministic main tide, shorter joining tide and long downstream return clipped inside the midground waterway",
+      "actual": "lower-contrast near-water reflection trace driven by lagged actual step without inferred supplemental inhale",
+      "forbidden": [
+        "rectangular overlay",
+        "parallel lane diagram",
+        "floating filament",
+        "participant-visible labels"
+      ]
+    },
+    "abstract_pacer": {
+      "target": "centered outer ring",
+      "actual": "centered inner ring"
+    }
+  },
+  "shared_between_conditions": [
+    "source scene",
+    "full-frame color curve",
+    "weather motion",
+    "fixed camera and source crop",
+    "preview input",
+    "audio"
+  ],
+  "audio": {
+    "sample_rate_hz": 48000,
+    "bit_depth": 24,
+    "channels": 2,
+    "integrated_loudness_allowed": [-24.0, -20.0],
+    "true_peak_max_dbtp": -3.0,
+    "phase_synchronized": false,
+    "shared_between_conditions": true
+  },
+  "machine_gates": {
+    "target_alpha_outside_water_max": 0,
+    "actual_alpha_outside_water_max": 0,
+    "inhale_1_min_area_px": 12000,
+    "inhale_2_retained_ratio_min": 0.65,
+    "inhale_2_added_area_px_min": 2500,
+    "inhale_2_area_ratio_max": 1.55,
+    "exhale_head_travel_px_min": 260.0,
+    "exhale_centroid_downstream_px_min": 70.0,
+    "end_residual_area_ratio_max": 0.12,
+    "grayscale_mean_delta_min": 1.5,
+    "max_raw_difference_outside_expected_mask": 0,
+    "camera_displacement_px_max": 0.0
+  },
+  "human_review_keys": [
+    "first_frame",
+    "final_color",
+    "continuity",
+    "phase_legibility",
+    "native_naturalness",
+    "actual_fidelity",
+    "condition_match",
+    "camera_audio",
+    "H2"
+  ],
+  "outputs": {
+    "artifact_root": ".artifacts-local/V-04/H2/candidate-v10",
+    "scene_native_video": "fade-H2-scene-native.mp4",
+    "abstract_pacer_video": "fade-H2-abstract-pacer.mp4",
+    "paired_review_video": "fade-H2-paired-review.mp4",
+    "ambient_audio": "fade-H2-ambient.wav",
+    "review_keyframes": "review/H2/fade-H2-keyframes-v10.jpg",
+    "grayscale_keyframes": "review/H2/fade-H2-grayscale-v10.jpg",
+    "candidate_manifest": "V-04_H2候选清单_v1.3.json"
+  },
+  "gate_status": "PENDING_RENDER"
+}

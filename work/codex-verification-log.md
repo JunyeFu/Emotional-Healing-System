@@ -1106,3 +1106,20 @@
 | Static Checks | 背景清单JSON、候选文件哈希/尺寸、当前权威无旧v9待确认门、增量措辞和`git diff --check`均通过。 |
 | Current Gate | `H2_V10_BACKGROUND_PENDING_HUMAN_SELECTION`；团队总监确认背景后才允许重建candidate-v10双条件样片。 |
 | Evidence Boundary | 本轮只完成固定镜头裁定、原生背景生成和静态检查；不构成candidate-v10完整样片、H2通过、Unity运行、正式构建或真实设备链证据。 |
+
+### 2026-08-29 V-04 candidate-v10背景签收与机器门
+
+| Field | Result |
+|---|---|
+| Background Human Gate | 团队总监傅钧烨明确给出`background_v10=PASS`；选择记录覆盖`fade-v10-fixed-color-r1`固定镜头原生全彩背景，不扩大为H2通过。 |
+| Reproducibility | 新建v1.3配置、独立`render_h2_v10.py`和`validate_v04_h2_v10.py`；v8/v9历史渲染链及其清单未改写。 |
+| Preflight Revision | 首次完整宽度适配产生上下模糊填充带，正式渲染前改为固定16:9中心覆盖裁切；相机位移保持0，中央主水道和左侧支流可见。 |
+| Render | candidate-v10生成300帧、两条1920x1080参与者视频、一条3840x1200并列视频、48 kHz/24-bit双声道PCM声音及彩色/灰度关键帧。 |
+| Color and Conditions | 首帧两条件平均色度均为0；9.5秒平均色度为`30.038/30.116`并保持至终点；提示掩膜外最大原始像素差为0。 |
+| Water and Phase Geometry | 目标/实际越出水面alpha=`0/0`；补吸保留率=`0.996336`、面积比=`1.524776`；长呼路径=`582.673 px`、下游质心=`191.688 px`、终点残留=0。 |
+| Media Health | 两条参与者视频黑帧命中0、解码帧各300、最大连续完全重复帧均为1；固定镜头不使用会误判低幅环境运动的通用冻结阈值。 |
+| Audio | `-22.24 LUFS-I/-3.49 dBTP`，处于配置允许范围。 |
+| V-04 and Governance | 工具链、H1、v8、v9、v10、协议权威、57项任务注册表和5个独立任务包验证均`PASS`。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 39.26s`。 |
+| Current Gate | `H2_V10_PENDING_HUMAN_CONFIRMATION`；等待团队总监按v1.4评审说明给出九项结论。 |
+| Evidence Boundary | 当前证明背景人工选择、10秒设计样片和机器合同；不构成H2人工通过、V-04完成、Unity运行、正式构建或真实设备链证据。 |
