@@ -1138,3 +1138,19 @@
 | Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 20.07s`。 |
 | Static Checks | 当前权威不存在旧H2待确认陈述；新增行不合规措辞0命中；`git diff --check`无空白错误。 |
 | Evidence Boundary | H2只签收candidate-v10 fade双条件10秒设计样片；不表示V-04完成、其余样片完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-29 V-04 storm核心机制样片
+
+| Field | Result |
+|---|---|
+| Contract | 12秒、30 fps、`INHALE/HOLD_1/EXHALE/HOLD_2`各3秒；场景原生雨幕风门与近场实际、抽象双环、共享环境及无阶段声音冻结。 |
+| Revisions | r1/r2因条件掩膜外溢被拒绝；r3连续轮廓偏抽象；r4出现安全区硬裁切矩形；全部隔离在Git忽略的本地拒绝目录。 |
+| Final Render | 两条1920×1080参与者视频、一条3840×1200并列视频、48 kHz/24-bit双声道WAV、彩色与灰度关键帧生成完成。 |
+| Machine Gate | `PASS`：360帧、区外像素差0、风门半宽展开110像素、两次停留几何漂移0、3秒与9秒目标/实际保持错位、卷动460像素。 |
+| Media And Audio | 黑帧0、无持续1秒完全重复帧；声音=`-21.96 LUFS-I/-8.5 dBTP`。 |
+| Visual Precheck | `PASS`：当前版本无连续拱线、可见矩形裁切或过长实际轨迹；彩色、灰度关键帧及2.9秒全分辨率场景原生帧已检查。 |
+| V-04 Regression | 工具链、H1、candidate-v8/v9/v10历史机器证据及storm专项验证均为`PASS`。 |
+| Governance | 协议权威、57项任务注册表和5个独立任务包验证均为`PASS`；当前`READY=F-03/F-05`。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 23.52s`。 |
+| State | storm输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为heat。 |
+| Evidence Boundary | 当前只形成storm设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |

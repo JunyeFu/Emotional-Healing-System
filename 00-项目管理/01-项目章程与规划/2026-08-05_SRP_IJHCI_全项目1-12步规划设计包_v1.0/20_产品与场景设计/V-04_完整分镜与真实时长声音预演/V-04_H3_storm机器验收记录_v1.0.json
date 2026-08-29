@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H3-STORM-MACHINE-ACCEPTANCE-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "storm-candidate-v1",
+  "technical_id": "storm",
+  "result": "PASS",
+  "validated_at": "2026-08-29T17:34:58+08:00",
+  "base_commit": "041ec9c3d642d4c9913a6b2bf22045afad47dea0",
+  "evidence": {
+    "manifest": {
+      "file": "V-04_H3_storm候选清单_v1.0.json",
+      "sha256": "42a06151f75c000e0c18d6ce5ebcf819133db0dc02dc185ae8e052af10114591"
+    },
+    "config_sha256": "5e8c0f7a9db40ba6f29fe1a367317264565869e3648d0d5c5ec3f0d1f34fd4b3",
+    "design_contract_sha256": "7ae1896da67c79e54a339bd7c26bec97cf4503e7e59a0fc80033f583d47753a8",
+    "renderer_sha256": "84d73a4a5610c49fac8e5be3dcc1f0a2d70d9a0090f2c8f3d3d06d229b149527",
+    "validator_sha256": "3b019ed470a005af2d9cb39934f3908ba4046ee80be095bdaff4c1c69cc22393",
+    "scene_native_sha256": "7936f53fc1364b111bcebb03a59eee45a87d2a709c4d252deed7248ad1b04e05",
+    "abstract_pacer_sha256": "ad43098e88bd7e7b851b7b32ce638ef00b2d4a2c95b25edd825df40227a1cc03",
+    "paired_review_sha256": "73e1fa977419351a6fb1ea19b75ecbafbbef2928f0b6eb9fc06c75312c105c2c",
+    "ambient_audio_sha256": "0851ee827c8a63f2cc9c6cf30f7f96b5509b45e1d9247e23e167b08e747f3080"
+  },
+  "machine_results": {
+    "duration_s": 12.0,
+    "fps": 30,
+    "frame_count": 360,
+    "phase_duration_s": 3.0,
+    "phase_order": ["INHALE", "HOLD_1", "EXHALE", "HOLD_2"],
+    "gate_half_width_expansion_px": 110.0,
+    "hold_1_geometry_drift_px": 0.0,
+    "hold_2_geometry_drift_px": 0.0,
+    "actual_lag_s": 0.55,
+    "condition_difference_outside_mask": 0,
+    "scroll_displacement_px": 460.0,
+    "integrated_lufs_i": -21.96,
+    "true_peak_dbtp": -8.5,
+    "media_health": "PASS"
+  },
+  "visual_precheck": {
+    "reviewer": "Codex",
+    "result": "PASS",
+    "checked_outputs": [
+      "review/H3/storm-H3-keyframes-v1.jpg",
+      "review/H3/storm-H3-grayscale-v1.jpg",
+      "full-resolution scene-native frame at 2.9 seconds"
+    ],
+    "resolved_findings": [
+      "condition mask glow overflow",
+      "synthetic continuous gate contour",
+      "visible hard clipping rectangle",
+      "overlong actual airflow trace"
+    ]
+  },
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  },
+  "next_input": "heat",
+  "evidence_boundary": "This record accepts the storm design preview only; H3 combined review, Unity runtime, formal build, asset release and device chain remain incomplete."
+}
