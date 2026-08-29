@@ -1079,3 +1079,15 @@
 | Regression | 锁定Python 3.14.4执行根回归：`412 passed in 21.53s`。 |
 | Static Checks | 当前入口只把v1.1评审说明列为历史证据；新增行不含项目禁用表述；`git diff --check`通过。 |
 | Evidence Boundary | 本轮只证明设计合同、状态迁移和既有回归一致；candidate-v9尚未渲染，不构成Unity运行、正式构建、真实设备链、H2人工通过或V-04完成。 |
+
+### 2026-08-29 V-04 candidate-v9渲染与机器门
+
+| Field | Result |
+|---|---|
+| Render | 300组共享帧；两条1920x1080参与者视频、一条3840x1200并列视频、48 kHz/24-bit双声道PCM声音、彩色/灰度关键帧与v1.2清单生成完成。 |
+| Internal Revision | 第一轮实际层连续线条未过独立自然性预审，移入Git忽略目录`rejected/candidate-v9-r1`；修正版采用水面断续反光并重新生成当前candidate-v9。 |
+| Machine Gate | `validate_v04_h2_v9.py`为`PASS`；目标/实际越出水面alpha=`0/0`，补吸保留率=`0.995748`，新增面积=`13642 px`，长呼路径=`551.659 px`，终点残留=`0`，提示掩膜外最大差=`0`。 |
+| Media Checks | 场景原生和抽象提示视频的黑帧及持续1秒冻结检测无命中；声音=`-22.24 LUFS-I/-3.49 dBTP`。 |
+| Project Regression | V-04工具链、H1、candidate-v8历史证据、candidate-v9、协议权威、57项任务注册表和5个独立任务包验证均`PASS`；根回归`412 passed in 21.13s`。 |
+| Human Gate | 独立视觉预审为`READY_FOR_TEAM_DIRECTOR_REVIEW`；团队总监九项结论仍为`PENDING_HUMAN_CONFIRMATION`。 |
+| Evidence Boundary | 当前只证明10秒设计预演候选和机器合同；不构成Unity运行、正式构建、真实设备链、H2人工通过或V-04完成。 |

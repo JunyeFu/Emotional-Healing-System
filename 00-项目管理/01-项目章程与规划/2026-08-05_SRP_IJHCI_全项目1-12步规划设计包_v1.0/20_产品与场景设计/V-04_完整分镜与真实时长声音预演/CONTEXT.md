@@ -8,7 +8,9 @@
 | 当前状态 | `V-04_实施状态与H1确认记录_v1.2.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |
 | H2当前设计合同 | `V-04_H2_candidate-v9_色潮回流设计合同_v1.0.md` |
+| H2当前配置与清单 | `V-04_H2样片配置_v1.2.json`、`V-04_H2候选清单_v1.2.json` |
 | H2当前评审 | `V-04_H2样片评审说明_v1.2.md` |
+| H2独立视觉预审 | `V-04_H2_candidate-v9_独立视觉预审报告_v1.0.md` |
 | H2历史机器证据 | `V-04_H2样片配置_v1.1.json`、`V-04_H2候选清单_v1.1.json`、`V-04_H2样片评审说明_v1.1.md` |
 
 冲突时，任务范围和工作量以科研便捷实施裁定v1.1为准，fade可见语义以candidate-v9色潮回流设计合同为准。已删除的v1.0长预演、节点18-25和ADR只存在于Git历史，不是当前执行输入。
@@ -31,10 +33,12 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H1风格锚点 | `PASS` | `storm-A/heat-A/snow-B/fade-B/corridor-A` |
 | H2 candidate-v8机器门 | `PASS_HISTORICAL_EVIDENCE` | 10秒、300帧、两条件整屏复色，提示区外差异为0 |
 | H2 candidate-v8人工设计 | `REVISE` | 原生提示具有矩形区、通道图和悬浮线观感，未自然承载循环叹息 |
-| H2 candidate-v9设计 | `DESIGN_FROZEN_PENDING_RENDER` | 水道内主潮、补潮、长回流与近景实际水面色迹合同已冻结 |
+| H2 candidate-v9机器门 | `PASS` | 300帧双条件媒体、整屏复色、水面裁切、三步骤几何、实际步骤忠实度、灰度提示和条件一致性通过 |
+| H2 candidate-v9独立视觉预审 | `READY_FOR_TEAM_DIRECTOR_REVIEW` | 第一轮线性实际提示被退回；修正版改为水面断续反光，九项预审无阻断项 |
+| H2 candidate-v9团队总监 | `PENDING_HUMAN_CONFIRMATION` | 观看并列视频后提交九项明确结论 |
 | 后续天气与长廊短样片 | `BLOCKED_BY_H2` | H2人工通过后开始 |
 
-candidate-v8媒体位于Git忽略目录`.artifacts-local/V-04/H2/candidate-v8/`。其配置、清单和关键帧只作为历史机器证据。candidate-v9媒体、清单和关键帧尚未生成。
+candidate-v8媒体位于Git忽略目录`.artifacts-local/V-04/H2/candidate-v8/`。其配置、清单和关键帧只作为历史机器证据。candidate-v9媒体位于`.artifacts-local/V-04/H2/candidate-v9/`；Git保存v1.2配置、清单、彩色/灰度关键帧、渲染器和验证器。
 
 ## candidate-v9摘要
 
@@ -46,4 +50,4 @@ candidate-v8媒体位于Git忽略目录`.artifacts-local/V-04/H2/candidate-v8/`�
 
 ## 下一步
 
-按candidate-v9合同重建10秒双条件样片，先通过机器完整性与条件一致性检查，再由团队总监完成人工评审。通过后制作storm、heat、snow和山雾长廊短样片，再合并为不超过2分钟的H3评审视频和六节点Unity交接分镜。
+团队总监观看candidate-v9并列视频并按v1.2评审说明提交九项结论。全部为`PASS`后制作storm、heat、snow和山雾长廊短样片，再合并为不超过2分钟的H3评审视频和六节点Unity交接分镜。

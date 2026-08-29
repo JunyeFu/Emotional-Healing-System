@@ -9,18 +9,19 @@ import shutil
 import subprocess
 import tempfile
 import wave
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 
 HERE = Path(__file__).resolve().parent
 REPO = next(parent for parent in (HERE, *HERE.parents) if (parent / ".git").exists())
-CONFIG_PATH = HERE / "V-04_H2样片配置_v1.1.json"
+CONFIG_PATH = HERE / "V-04_H2样片配置_v1.2.json"
 LOCK_PATH = HERE / "V-04_toolchain-lock_v1.0.json"
 H1_SELECTION = HERE / "V-04_H1选择记录_v1.0.json"
-MANIFEST_PATH = HERE / "V-04_H2候选清单_v1.1.json"
+MANIFEST_PATH = HERE / "V-04_H2候选清单_v1.2.json"
 
 
 def sha256(path: Path) -> str:
@@ -143,120 +144,297 @@ def clip_overlay(overlay: Image.Image, bounds: tuple[int, int, int, int]) -> Ima
     return clipped
 
 
-def smooth_array(values: np.ndarray) -> np.ndarray:
-    values = np.clip(values, 0.0, 1.0)
-    return values * values * (3.0 - 2.0 * values)
+TARGET_MAIN_PATH = ((900.0, 690.0), (1070.0, 600.0), (1340.0, 620.0), (1770.0, 850.0))
+TARGET_BRANCH_PATH = ((1540.0, 790.0), (1480.0, 700.0), (1400.0, 650.0), (1290.0, 650.0))
+ACTUAL_MAIN_PATH = ((330.0, 950.0), (500.0, 875.0), (760.0, 825.0), (1030.0, 750.0))
+ACTUAL_BRANCH_PATH = ((930.0, 935.0), (900.0, 860.0), (850.0, 810.0), (780.0, 810.0))
+ACTUAL_RETURN_PATH = ((1000.0, 760.0), (850.0, 820.0), (620.0, 900.0), (360.0, 980.0))
 
 
-def elliptical_tide(
-    width: int,
-    height: int,
-    center: tuple[float, float],
-    radius: tuple[float, float],
-    t_s: float,
-) -> np.ndarray:
-    y, x = np.mgrid[0:height, 0:width]
-    normalized_x = x / max(1, width - 1)
-    normalized_y = y / max(1, height - 1)
-    wave = 0.025 * np.sin(normalized_x * math.tau * 2.2 + t_s * 0.45)
-    dx = (normalized_x - center[0]) / radius[0]
-    dy = (normalized_y + wave - center[1]) / radius[1]
-    distance = np.sqrt(dx * dx + dy * dy)
-    field = smooth_array((1.08 - distance) / 0.34)
-    texture = 0.88 + 0.12 * np.sin(normalized_x * math.tau * 3.0 - normalized_y * 2.4 + t_s * 0.22)
-    return np.clip(field * texture, 0.0, 1.0)
-
-
-def scene_target_flow_layer(t_s: float) -> Image.Image:
-    phase, progress, _ = phase_state(t_s)
-    bounds = (1005, 265, 1680, 760)
-    x0, y0, x1, y1 = bounds
-    width = x1 - x0
-    height = y1 - y0
-
-    if phase == "INHALE_1":
-        field = elliptical_tide(
-            width,
-            height,
-            (0.50, 0.58 - 0.05 * progress),
-            (0.40 + 0.14 * progress, 0.36 + 0.12 * progress),
-            t_s,
-        )
-    elif phase == "INHALE_2":
-        retained = elliptical_tide(width, height, (0.50, 0.53), (0.54, 0.48), t_s)
-        supplement = elliptical_tide(
-            width,
-            height,
-            (0.72 - 0.06 * progress, 0.70 - 0.10 * progress),
-            (0.14 + 0.12 * progress, 0.12 + 0.10 * progress),
-            t_s + 0.7,
-        )
-        field = np.maximum(retained, supplement)
+@lru_cache(maxsize=2)
+def water_mask(role: str) -> Image.Image:
+    mask = Image.new("L", (1920, 1080), 0)
+    draw = ImageDraw.Draw(mask)
+    if role == "target":
+        polygon = [
+            (700, 650),
+            (930, 560),
+            (1440, 560),
+            (1880, 700),
+            (1919, 940),
+            (1540, 960),
+            (1080, 875),
+            (690, 775),
+        ]
     else:
-        field = elliptical_tide(
-            width,
-            height,
-            (0.50, 0.53 + 0.08 * progress),
-            (0.54, 0.48),
-            t_s,
+        polygon = [
+            (180, 790),
+            (430, 710),
+            (960, 710),
+            (1240, 865),
+            (1130, 1079),
+            (150, 1079),
+        ]
+    draw.polygon(polygon, fill=255)
+    return mask.filter(ImageFilter.GaussianBlur(7))
+
+
+def bezier_point(control: tuple[tuple[float, float], ...], u: float) -> tuple[float, float]:
+    u = max(0.0, min(1.0, u))
+    inverse = 1.0 - u
+    x = (
+        inverse**3 * control[0][0]
+        + 3.0 * inverse * inverse * u * control[1][0]
+        + 3.0 * inverse * u * u * control[2][0]
+        + u**3 * control[3][0]
+    )
+    y = (
+        inverse**3 * control[0][1]
+        + 3.0 * inverse * inverse * u * control[1][1]
+        + 3.0 * inverse * u * u * control[2][1]
+        + u**3 * control[3][1]
+    )
+    return x, y
+
+
+def ribbon_mask(
+    control: tuple[tuple[float, float], ...],
+    start_u: float,
+    end_u: float,
+    radius: float,
+    alpha: float,
+    t_s: float,
+    seed: float,
+) -> Image.Image:
+    mask = Image.new("L", (1920, 1080), 0)
+    if end_u <= start_u or alpha <= 0.0:
+        return mask
+    draw = ImageDraw.Draw(mask)
+    steps = max(12, round(90 * (end_u - start_u)))
+    for index in range(steps):
+        ratio = index / max(1, steps - 1)
+        u = start_u + (end_u - start_u) * ratio
+        x, y = bezier_point(control, u)
+        organic = 0.86 + 0.14 * math.sin(index * 1.73 + seed + t_s * 0.31)
+        perspective = 0.68 + 0.52 * u
+        local_radius = radius * organic * perspective
+        local_alpha = round(alpha * (0.78 + 0.22 * math.sin(index * 1.19 + seed) ** 2))
+        draw.ellipse(
+            (x - local_radius * 1.65, y - local_radius, x + local_radius * 1.65, y + local_radius),
+            fill=max(0, min(255, local_alpha)),
         )
+    return mask.filter(ImageFilter.GaussianBlur(max(2.0, radius * 0.23)))
 
-    mask_values = np.clip(field * 92.0, 0, 92).astype(np.uint8)
-    mask = Image.fromarray(mask_values, mode="L").filter(ImageFilter.GaussianBlur(9))
+
+def reflection_patch_mask(
+    control: tuple[tuple[float, float], ...],
+    start_u: float,
+    end_u: float,
+    radius: float,
+    alpha: float,
+    t_s: float,
+    seed: float,
+    count: int,
+) -> Image.Image:
+    mask = Image.new("L", (1920, 1080), 0)
+    if end_u <= start_u or alpha <= 0.0:
+        return mask
+    draw = ImageDraw.Draw(mask)
+    for index in range(count):
+        ratio = (index + 0.55) / count
+        u = start_u + (end_u - start_u) * ratio
+        x, y = bezier_point(control, u)
+        x += 5.0 * math.sin(index * 1.9 + seed)
+        y += 2.5 * math.sin(index * 1.3 + seed + t_s * 0.22)
+        half_width = radius * (1.5 + 0.45 * math.sin(index * 1.7 + seed) ** 2)
+        half_height = radius * (0.22 + 0.12 * math.sin(index * 1.1 + seed) ** 2)
+        local_alpha = round(alpha * (0.62 + 0.30 * math.sin(index * 1.37 + seed) ** 2))
+        draw.ellipse((x - half_width, y - half_height, x + half_width, y + half_height), fill=local_alpha)
+    return mask.filter(ImageFilter.GaussianBlur(1.6))
+
+
+def merge_masks(*masks: Image.Image) -> Image.Image:
+    result = Image.new("L", (1920, 1080), 0)
+    for mask in masks:
+        result = ImageChops.lighter(result, mask)
+    return result
+
+
+def clip_to_water(layer: Image.Image, role: str) -> Image.Image:
+    red, green, blue, alpha = layer.split()
+    clipped_alpha = ImageChops.multiply(alpha, water_mask(role))
+    return Image.merge("RGBA", (red, green, blue, clipped_alpha))
+
+
+def water_color_layer(mask: Image.Image, role: str, blur_radius: float) -> Image.Image:
+    body = Image.new("RGBA", (1920, 1080), cue_color(role, 0))
+    body.putalpha(mask)
+    glow = body.filter(ImageFilter.GaussianBlur(blur_radius))
+    return clip_to_water(Image.alpha_composite(glow, body), role)
+
+
+def reflection_marks(
+    control: tuple[tuple[float, float], ...],
+    start_u: float,
+    end_u: float,
+    role: str,
+    t_s: float,
+    alpha: int,
+    count: int,
+) -> Image.Image:
     overlay = Image.new("RGBA", (1920, 1080), (0, 0, 0, 0))
-    flow = Image.new("RGBA", (width, height), cue_color("target", 0))
-    flow.putalpha(mask)
-    overlay.alpha_composite(flow, (x0, y0))
     draw = ImageDraw.Draw(overlay)
-    direction = -1.0 if phase == "EXHALE_1" else 1.0
-    for lane in range(4):
-        points = []
-        for step in range(40):
-            ratio = step / 39
-            x = x0 + width * (0.08 + 0.84 * ratio)
-            y = y0 + height * (0.42 + 0.10 * lane) + 8 * math.sin(ratio * math.tau * 1.2 + t_s * direction)
-            points.append((x, y))
-        draw.line(points, fill=cue_color("target", 132), width=4)
-    return clip_overlay(overlay, bounds)
+    for index in range(count):
+        ratio = (index + 0.45) / count
+        u = start_u + (end_u - start_u) * ratio
+        x, y = bezier_point(control, u)
+        width = 7.0 + 13.0 * u + 3.0 * math.sin(index * 1.7 + t_s * 0.4)
+        rise = 1.5 + 1.5 * math.sin(index * 1.3 + t_s * 0.23)
+        draw.arc(
+            (x - width, y - 4.0 - rise, x + width, y + 4.0 + rise),
+            start=8,
+            end=172,
+            fill=cue_color(role, max(0, alpha - (index % 3) * 12)),
+            width=2 if role == "actual" else 3,
+        )
+    return clip_to_water(overlay, role)
 
 
-def scene_actual_filament_layer(t_s: float) -> Image.Image:
-    sample_t = max(0.0, t_s - 0.18)
-    phase, progress, value = phase_state(sample_t)
-    value *= 0.86
-    bounds = (350, 485, 900, 930)
-    line_width = 5
-    strands = 4
-    x0, y0, x1, y1 = bounds
-    width = x1 - x0
-    height = y1 - y0
-    direction = -1.0 if phase == "EXHALE_1" else 1.0
-    head = progress if direction > 0 else 1.0 - progress
-    overlay = Image.new("RGBA", (1920, 1080), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay)
-    for strand in range(strands):
-        phase_offset = strand * 0.55
-        length = width * (0.28 + 0.48 * value)
-        center = x0 + width * (0.15 + 0.70 * head)
-        start = center - length / 2
-        end = center + length / 2
-        points = []
-        for step in range(46):
-            ratio = step / 45
-            x = start + (end - start) * ratio
-            wave = math.sin(ratio * math.tau * 1.35 + phase_offset + t_s * 0.18)
-            y = y0 + height * (0.25 + 0.11 * strand) + wave * height * (0.018 + 0.010 * value)
-            points.append((x, y))
-        draw.line(points, fill=cue_color("actual", 150), width=line_width, joint="curve")
-    glow = overlay.filter(ImageFilter.GaussianBlur(16))
-    combined = Image.alpha_composite(glow, overlay)
-    return clip_overlay(combined, bounds)
+def scene_target_tide_layer(t_s: float) -> Image.Image:
+    phase, progress, _ = phase_state(t_s)
+    if phase == "INHALE_1":
+        main_end = 0.18 + 0.38 * progress
+        mask = ribbon_mask(TARGET_MAIN_PATH, 0.03, main_end, 23.0 + 13.0 * progress, 74.0 + 42.0 * progress, t_s, 0.4)
+        marks = reflection_marks(TARGET_MAIN_PATH, 0.05, main_end, "target", t_s, 108, 12)
+    elif phase == "INHALE_2":
+        main_end = 0.56
+        retained = ribbon_mask(TARGET_MAIN_PATH, 0.03, main_end, 36.0, 116.0, t_s, 0.4)
+        branch_end = 0.16 + 0.84 * progress
+        supplement_core = ribbon_mask(
+            TARGET_BRANCH_PATH,
+            0.0,
+            branch_end,
+            7.0 + 4.0 * progress,
+            42.0 + 20.0 * progress,
+            t_s,
+            2.1,
+        )
+        supplement_glints = reflection_patch_mask(
+            TARGET_BRANCH_PATH,
+            0.0,
+            branch_end,
+            13.0 + 5.0 * progress,
+            72.0 + 18.0 * progress,
+            t_s,
+            2.1,
+            9,
+        )
+        mask = merge_masks(retained, supplement_core, supplement_glints)
+        marks = Image.alpha_composite(
+            reflection_marks(TARGET_MAIN_PATH, 0.05, main_end, "target", t_s, 102, 12),
+            reflection_marks(TARGET_BRANCH_PATH, 0.0, branch_end, "target", t_s, 68, 5),
+        )
+    else:
+        head_u = 0.52 + 0.48 * progress
+        tail_u = max(0.18, head_u - (0.34 + 0.22 * progress))
+        exit_fade = 1.0 - smoothstep((progress - 0.78) / 0.22)
+        main = ribbon_mask(
+            TARGET_MAIN_PATH,
+            tail_u,
+            head_u,
+            31.0 - 7.0 * progress,
+            122.0 * exit_fade,
+            t_s,
+            0.4,
+        )
+        branch = ribbon_mask(
+            TARGET_BRANCH_PATH,
+            min(0.92, progress * 0.45),
+            1.0,
+            16.0,
+            74.0 * (1.0 - progress) * exit_fade,
+            t_s,
+            2.1,
+        )
+        mask = merge_masks(main, branch)
+        marks = reflection_marks(
+            TARGET_MAIN_PATH,
+            tail_u,
+            head_u,
+            "target",
+            t_s,
+            round(114 * exit_fade),
+            15,
+        )
+    body = water_color_layer(ImageChops.multiply(mask, water_mask("target")), "target", 9.0)
+    return clip_to_water(Image.alpha_composite(body, marks), "target")
 
 
-def abstract_layer(t_s: float) -> Image.Image:
+def scene_actual_reflection_layer(
+    t_s: float,
+    lag_s: float,
+    amplitude_ratio: float,
+) -> tuple[Image.Image, str]:
+    sample_t = max(0.0, t_s - lag_s)
+    phase, progress, _ = phase_state(sample_t)
+    opacity = amplitude_ratio
+    if phase == "INHALE_1":
+        end_u = 0.14 + 0.56 * progress
+        mask = reflection_patch_mask(
+            ACTUAL_MAIN_PATH, 0.04, end_u, 10.0 + 3.0 * progress, 76.0 * opacity, t_s, 3.2, 11
+        )
+        marks = reflection_marks(ACTUAL_MAIN_PATH, 0.04, end_u, "actual", t_s, round(92 * opacity), 7)
+    elif phase == "INHALE_2":
+        retained = reflection_patch_mask(ACTUAL_MAIN_PATH, 0.04, 0.70, 12.0, 76.0 * opacity, t_s, 3.2, 11)
+        branch_end = 0.10 + 0.90 * progress
+        supplement = reflection_patch_mask(
+            ACTUAL_BRANCH_PATH,
+            0.0,
+            branch_end,
+            8.0 + 2.0 * progress,
+            70.0 * opacity,
+            t_s,
+            4.7,
+            7,
+        )
+        mask = merge_masks(retained, supplement)
+        marks = Image.alpha_composite(
+            reflection_marks(ACTUAL_MAIN_PATH, 0.04, 0.70, "actual", t_s, round(90 * opacity), 7),
+            reflection_marks(ACTUAL_BRANCH_PATH, 0.0, branch_end, "actual", t_s, round(82 * opacity), 5),
+        )
+    else:
+        head_u = 0.12 + 0.88 * progress
+        tail_u = max(0.0, head_u - 0.32)
+        exit_fade = 1.0 - smoothstep((progress - 0.84) / 0.16)
+        mask = reflection_patch_mask(
+            ACTUAL_RETURN_PATH,
+            tail_u,
+            head_u,
+            11.0,
+            78.0 * opacity * exit_fade,
+            t_s,
+            5.3,
+            10,
+        )
+        marks = reflection_marks(
+            ACTUAL_RETURN_PATH,
+            tail_u,
+            head_u,
+            "actual",
+            t_s,
+            round(92 * opacity * exit_fade),
+            7,
+        )
+    body = water_color_layer(ImageChops.multiply(mask, water_mask("actual")), "actual", 3.0)
+    return clip_to_water(Image.alpha_composite(body, marks), "actual"), phase
+
+
+def abstract_layer(t_s: float, config: dict[str, object]) -> Image.Image:
     _, _, target_value = phase_state(t_s)
-    _, _, actual_value = phase_state(max(0.0, t_s - 0.18))
-    actual_value *= 0.86
+    lag_s = float(config["timeline"]["actual_lag_s"])
+    amplitude_ratio = float(config["timeline"]["actual_amplitude_ratio"])
+    _, _, actual_value = phase_state(max(0.0, t_s - lag_s))
+    actual_value *= amplitude_ratio
     center_x, center_y = 960, 540
     outer_radius = 94 + 38 * target_value
     inner_radius = 62 + 29 * actual_value
@@ -278,9 +456,12 @@ def abstract_layer(t_s: float) -> Image.Image:
 
 
 def participant_frames(environment: Image.Image, t_s: float, config: dict[str, object]) -> tuple[Image.Image, Image.Image]:
-    scene = Image.alpha_composite(environment.convert("RGBA"), scene_target_flow_layer(t_s))
-    scene = Image.alpha_composite(scene, scene_actual_filament_layer(t_s)).convert("RGB")
-    abstract = Image.alpha_composite(environment.convert("RGBA"), abstract_layer(t_s)).convert("RGB")
+    lag_s = float(config["timeline"]["actual_lag_s"])
+    amplitude_ratio = float(config["timeline"]["actual_amplitude_ratio"])
+    actual, _ = scene_actual_reflection_layer(t_s, lag_s, amplitude_ratio)
+    scene = Image.alpha_composite(environment.convert("RGBA"), scene_target_tide_layer(t_s))
+    scene = Image.alpha_composite(scene, actual).convert("RGB")
+    abstract = Image.alpha_composite(environment.convert("RGBA"), abstract_layer(t_s, config)).convert("RGB")
     native_reached_s = float(config["full_frame_color"]["native_color_reached_s"])
     color_u = smoothstep(t_s / native_reached_s)
     scene = ImageEnhance.Color(scene).enhance(color_u)
@@ -302,8 +483,8 @@ def review_frame(scene: Image.Image, abstract: Image.Image, t_s: float) -> Image
     draw = ImageDraw.Draw(canvas)
     title_font = load_font(30, bold=True)
     label_font = load_font(24)
-    draw.text((36, 18), "V-04 H2 / FADE-B / CANDIDATE-V8", font=title_font, fill=(244, 244, 244))
-    draw.text((36, 68), f"t={t_s:05.2f}s  phase={phase}  shared background/audio/trace", font=label_font, fill=(195, 202, 208))
+    draw.text((36, 18), "V-04 H2 / FADE-B / CANDIDATE-V9", font=title_font, fill=(244, 244, 244))
+    draw.text((36, 68), f"t={t_s:05.2f}s  phase={phase}  shared background/audio/timeline", font=label_font, fill=(195, 202, 208))
     draw.text((1380, 68), "SCENE_NATIVE", font=label_font, fill=(158, 211, 202))
     draw.text((3300, 68), "ABSTRACT_PACER", font=label_font, fill=(190, 177, 220))
     return canvas
@@ -489,21 +670,158 @@ def media_entry(path: Path, probe: dict[str, object]) -> dict[str, object]:
     }
 
 
-def make_keyframe_sheet(frames: list[tuple[float, Image.Image]], output: Path) -> None:
-    canvas = Image.new("RGB", (1920, 1110), (22, 25, 29))
+def cue_difference_mask() -> np.ndarray:
+    mask = ImageChops.lighter(water_mask("target"), water_mask("actual"))
+    rings = Image.new("L", (1920, 1080), 0)
+    ImageDraw.Draw(rings).rectangle((790, 370, 1130, 710), fill=255)
+    return np.asarray(ImageChops.lighter(mask, rings), dtype=np.uint8) > 0
+
+
+def alpha_metrics(layer: Image.Image) -> tuple[np.ndarray, int, tuple[float, float]]:
+    alpha = np.asarray(layer.getchannel("A"), dtype=np.uint8)
+    active = alpha > 5
+    area = int(active.sum())
+    if area == 0:
+        return alpha, 0, (0.0, 0.0)
+    y, x = np.nonzero(active)
+    return alpha, area, (float(x.mean()), float(y.mean()))
+
+
+def grayscale_delta(layer: Image.Image) -> float:
+    alpha = np.asarray(layer.getchannel("A"), dtype=np.uint8)
+    active = alpha > 5
+    if not active.any():
+        return 0.0
+    base = Image.new("RGB", (1920, 1080), (96, 96, 96))
+    composite = Image.alpha_composite(base.convert("RGBA"), layer).convert("L")
+    delta = np.abs(np.asarray(composite, dtype=np.int16) - 96)
+    return float(delta[active].mean())
+
+
+def cue_geometry_metrics(config: dict[str, object]) -> dict[str, object]:
+    lag_s = float(config["timeline"]["actual_lag_s"])
+    amplitude_ratio = float(config["timeline"]["actual_amplitude_ratio"])
+    target_times = {"inhale_1": 2.47, "inhale_2": 3.97, "exhale": 7.0, "end": 9.97}
+    targets = {name: scene_target_tide_layer(t_s) for name, t_s in target_times.items()}
+    target_stats = {name: alpha_metrics(layer) for name, layer in targets.items()}
+    inhale_1_alpha, inhale_1_area, inhale_1_center = target_stats["inhale_1"]
+    inhale_2_alpha, inhale_2_area, _ = target_stats["inhale_2"]
+    _, exhale_area, exhale_center = target_stats["exhale"]
+    _, end_area, _ = target_stats["end"]
+    inhale_1_active = inhale_1_alpha > 5
+    inhale_2_active = inhale_2_alpha > 5
+    retained = int((inhale_1_active & inhale_2_active).sum())
+    added = int((~inhale_1_active & inhale_2_active).sum())
+    start_head = bezier_point(TARGET_MAIN_PATH, 0.52)
+    end_head = bezier_point(TARGET_MAIN_PATH, 1.0)
+    head_travel = math.dist(start_head, end_head)
+    target_water = np.asarray(water_mask("target"), dtype=np.uint8)
+    actual_water = np.asarray(water_mask("actual"), dtype=np.uint8)
+    target_outside = max(
+        int(np.max(np.asarray(layer.getchannel("A"), dtype=np.uint8)[target_water == 0], initial=0))
+        for layer in targets.values()
+    )
+    actual_samples = {
+        "target_inhale_2_start": scene_actual_reflection_layer(2.50, lag_s, amplitude_ratio),
+        "after_actual_lag": scene_actual_reflection_layer(2.75, lag_s, amplitude_ratio),
+        "exhale": scene_actual_reflection_layer(7.0, lag_s, amplitude_ratio),
+    }
+    actual_outside = max(
+        int(np.max(np.asarray(layer.getchannel("A"), dtype=np.uint8)[actual_water == 0], initial=0))
+        for layer, _ in actual_samples.values()
+    )
+    return {
+        "target_alpha_outside_water_max": target_outside,
+        "actual_alpha_outside_water_max": actual_outside,
+        "inhale_1_area_px": inhale_1_area,
+        "inhale_2_area_px": inhale_2_area,
+        "inhale_2_retained_ratio": round(retained / max(1, inhale_1_area), 6),
+        "inhale_2_added_area_px": added,
+        "inhale_2_area_ratio": round(inhale_2_area / max(1, inhale_1_area), 6),
+        "exhale_area_px": exhale_area,
+        "exhale_centroid_downstream_px": round(exhale_center[0] - inhale_1_center[0], 3),
+        "exhale_centroid_down_px": round(exhale_center[1] - inhale_1_center[1], 3),
+        "exhale_head_travel_px": round(head_travel, 3),
+        "end_residual_area_ratio": round(end_area / max(1, exhale_area), 6),
+        "grayscale_mean_delta": {
+            name: round(grayscale_delta(targets[name]), 3) for name in ("inhale_1", "inhale_2", "exhale")
+        },
+        "actual_phase_at_target_inhale_2_start": actual_samples["target_inhale_2_start"][1],
+        "actual_phase_after_lag": actual_samples["after_actual_lag"][1],
+        "actual_exhale_phase": actual_samples["exhale"][1],
+    }
+
+
+def enforce_geometry_gates(metrics: dict[str, object], gates: dict[str, object]) -> None:
+    require(
+        metrics["target_alpha_outside_water_max"] <= gates["target_alpha_outside_water_max"],
+        "target tide escaped the water mask",
+    )
+    require(
+        metrics["actual_alpha_outside_water_max"] <= gates["actual_alpha_outside_water_max"],
+        "actual reflection escaped the water mask",
+    )
+    require(metrics["inhale_1_area_px"] >= gates["inhale_1_min_area_px"], "first inhale tide is too small")
+    require(
+        metrics["inhale_2_retained_ratio"] >= gates["inhale_2_retained_ratio_min"],
+        "supplemental inhale reset too much of the main tide",
+    )
+    require(
+        metrics["inhale_2_added_area_px"] >= gates["inhale_2_added_area_px_min"],
+        "supplemental inhale is not geometrically distinct",
+    )
+    require(
+        metrics["inhale_2_area_ratio"] <= gates["inhale_2_area_ratio_max"],
+        "supplemental inhale is not smaller than the main tide",
+    )
+    require(
+        metrics["exhale_head_travel_px"] >= gates["exhale_head_travel_px_min"],
+        "long exhale head travel is too short",
+    )
+    require(
+        metrics["exhale_centroid_downstream_px"] >= gates["exhale_centroid_downstream_px_min"],
+        "long exhale does not travel downstream",
+    )
+    require(
+        metrics["end_residual_area_ratio"] <= gates["end_residual_area_ratio_max"],
+        "target tide leaves a permanent end-state trace",
+    )
+    require(
+        min(metrics["grayscale_mean_delta"].values()) >= gates["grayscale_mean_delta_min"],
+        "target tide relies on color without enough grayscale contrast",
+    )
+    require(
+        metrics["actual_phase_at_target_inhale_2_start"] == "INHALE_1",
+        "actual trace inferred a supplemental inhale before the lagged actual step",
+    )
+    require(metrics["actual_phase_after_lag"] == "INHALE_2", "actual supplemental inhale did not appear after lag")
+    require(metrics["actual_exhale_phase"] == "EXHALE_1", "actual long exhale step is not represented")
+
+
+def make_keyframe_sheet(
+    frames: list[tuple[float, Image.Image]],
+    output: Path,
+    *,
+    grayscale: bool = False,
+) -> None:
+    canvas_height = 90 + len(frames) * 300
+    canvas = Image.new("RGB", (1920, canvas_height), (22, 25, 29))
     font = load_font(24, bold=True)
     small = load_font(20)
     draw = ImageDraw.Draw(canvas)
     for row, (t_s, review) in enumerate(frames):
         thumbnail = review.crop((0, 120, 3840, 1200)).resize((1920, 540), Image.Resampling.LANCZOS)
         thumbnail = thumbnail.resize((960, 270), Image.Resampling.LANCZOS)
-        y = 90 + row * 340
+        if grayscale:
+            thumbnail = thumbnail.convert("L").convert("RGB")
+        y = 80 + row * 300
         canvas.paste(thumbnail, (480, y))
         phase, _, _ = phase_state(t_s)
         draw.text((40, y), f"t={t_s:.2f}s", font=font, fill=(242, 242, 242))
         draw.text((40, y + 42), phase, font=small, fill=(183, 199, 205))
         draw.rectangle((480, y, 1439, y + 269), outline=(225, 225, 225), width=2)
-    draw.text((40, 22), "V-04 H2 / FADE-B / KEYFRAME REVIEW", font=font, fill=(245, 245, 245))
+    title = "V-04 H2 / FADE-B / GRAYSCALE GEOMETRY" if grayscale else "V-04 H2 / FADE-B / KEYFRAME REVIEW"
+    draw.text((40, 22), title, font=font, fill=(245, 245, 245))
     output.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(output, format="JPEG", quality=92, subsampling=0, optimize=True)
 
@@ -512,8 +830,11 @@ def main() -> None:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     lock = json.loads(LOCK_PATH.read_text(encoding="utf-8"))
     h1 = json.loads(H1_SELECTION.read_text(encoding="utf-8"))
-    require(config["gate_id"] == "H2", "config gate drift")
+    require(config["schema_version"] == "1.2", "config schema drift")
+    require(config["gate_id"] == "H2" and config["candidate_id"] == "candidate-v9", "config identity drift")
     require(any(item["candidate_id"] == "fade-B" for item in h1["selections"]), "fade-B is not H1 selected")
+    design_contract = HERE / config["design_contract"]
+    require(design_contract.is_file(), "candidate-v9 design contract missing")
     source = REPO / config["source"]["panorama_file"]
     require(source.is_file(), f"panorama missing: {source}")
     require(sha256(source) == config["source"]["panorama_sha256"], "panorama hash mismatch")
@@ -528,6 +849,8 @@ def main() -> None:
     fps = int(config["timeline"]["fps"])
     frame_count = int(config["timeline"]["frame_count"])
     duration_s = float(config["timeline"]["duration_s"])
+    geometry_metrics = cue_geometry_metrics(config)
+    enforce_geometry_gates(geometry_metrics, config["machine_gates"])
     keyframes: list[tuple[float, Image.Image]] = []
     full_frame_color_metrics: dict[str, dict[str, float]] = {}
     max_outside_difference = 0
@@ -552,10 +875,7 @@ def main() -> None:
             open_video_encoder(ffmpeg, silent_abstract, (1920, 1080), fps, logs[1]),
             open_video_encoder(ffmpeg, silent_review, (3840, 1200), fps, logs[2]),
         )
-        diff_mask = np.zeros((1080, 1920), dtype=bool)
-        diff_mask[245:950, 320:930] = True
-        diff_mask[245:785, 975:1710] = True
-        diff_mask[340:740, 760:1160] = True
+        diff_mask = cue_difference_mask()
         try:
             for frame_index in range(frame_count):
                 t_s = frame_index / fps
@@ -579,7 +899,7 @@ def main() -> None:
                         "scene_mean_chroma": round(float(np.mean(scene_chroma)), 3),
                         "abstract_mean_chroma": round(float(np.mean(abstract_chroma)), 3),
                     }
-                if frame_index in {0, 120, 285}:
+                if frame_index in {0, 74, 119, 210, 285}:
                     keyframes.append((t_s, review.copy()))
         finally:
             for encoder in encoders:
@@ -604,6 +924,8 @@ def main() -> None:
 
         review_keyframes = HERE / config["outputs"]["review_keyframes"]
         make_keyframe_sheet(keyframes, review_keyframes)
+        grayscale_keyframes = HERE / config["outputs"]["grayscale_keyframes"]
+        make_keyframe_sheet(keyframes, grayscale_keyframes, grayscale=True)
         probes = {
             "scene_native": ffprobe(ffprobe_path, final_scene),
             "abstract_pacer": ffprobe(ffprobe_path, final_abstract),
@@ -612,12 +934,13 @@ def main() -> None:
         }
         metrics = audio_metrics(ffmpeg, normalized_audio)
         manifest = {
-            "schema_version": "1.1",
+            "schema_version": "1.2",
             "task_id": "V-04",
             "gate_id": "H2",
             "candidate_id": config["candidate_id"],
             "generated_at": config["render_requested_at"],
             "config_sha256": sha256(CONFIG_PATH),
+            "design_contract_sha256": sha256(design_contract),
             "h1_selection_sha256": sha256(H1_SELECTION),
             "source": {
                 "file": config["source"]["panorama_file"],
@@ -630,8 +953,9 @@ def main() -> None:
                 "fps": fps,
                 "frame_count": frame_count,
                 "max_raw_difference_outside_expected_mask": max_outside_difference,
-                "difference_mask_policy": "cue layers only",
+                "difference_mask_policy": "water-clipped scene cues plus abstract ring bounds",
                 "full_frame_color_metrics": full_frame_color_metrics,
+                "cue_geometry_metrics": geometry_metrics,
                 "native_color_reached_s": float(config["full_frame_color"]["native_color_reached_s"]),
                 "scroll_last_frame_near_offset_px": (
                     1920.0 * float(config["scroll"]["viewport_per_s"]) * ((frame_count - 1) / fps)
@@ -648,12 +972,20 @@ def main() -> None:
                     "size_bytes": review_keyframes.stat().st_size,
                     "sha256": sha256(review_keyframes),
                     "width": 1920,
-                    "height": 1110,
+                    "height": 1590,
+                },
+                "grayscale_keyframes": {
+                    "file": grayscale_keyframes.relative_to(HERE).as_posix(),
+                    "size_bytes": grayscale_keyframes.stat().st_size,
+                    "sha256": sha256(grayscale_keyframes),
+                    "width": 1920,
+                    "height": 1590,
                 },
             },
             "asset_status": {"usage": "TEMP_REFERENCE_ONLY", "formal_use_allowed": False},
             "gate_status": "PENDING_HUMAN_CONFIRMATION",
-            "next_if_pass": "freeze H2 cue mapping and hand off the short-preview contract to Unity implementation",
+            "human_review_keys": config["human_review_keys"],
+            "next_if_pass": "record the nine-item team-director H2 review, then continue the remaining weather previews",
             "evidence_boundary": "H2 verifies the short preview only; Unity runtime, formal build and device chain remain unverified.",
         }
         output_root.parent.mkdir(parents=True, exist_ok=True)

@@ -1151,3 +1151,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - candidate-v9：第一吸为水道主潮展开，补吸从当前状态形成较短第二潮峰，长呼为合流后的长距离下降回流；实际反馈嵌入近景水面且不得伪造补吸。
 - 当前硬门：`H2_V9_PENDING_RENDER`。下一步生成candidate-v9媒体、清单与关键帧，机器门通过后提交团队总监人工评审。
 - 证据边界：本轮只冻结设计合同，不表示candidate-v9已经渲染，不构成Unity运行、正式构建、真实设备链或H2通过。
+
+### 2026-08-29 V-04 candidate-v9渲染与机器门
+
+- candidate-v9按v1.2配置生成两条1920x1080参与者视频、一条3840x1200并列视频、共享声音、清单和彩色/灰度关键帧。
+- 第一轮实际层仍呈连续亮线，被独立`native_naturalness`预审退回并隔离为本地拒绝证据；修正版改为水面断续反光后重新渲染。
+- v9专项机器门`PASS`：目标/实际越出水面alpha为0，补吸主潮保留率0.995748，新增面积13642像素，长呼路径551.659像素，终点目标残留0，提示掩膜外最大像素差0。
+- 黑帧和持续1秒冻结检查无命中；独立视觉预审九项中八项为`PRECHECK_PASS`，`H2=PENDING_TEAM_DIRECTOR`。
+- 当前硬门：`H2_V9_PENDING_HUMAN_CONFIRMATION`。后续天气短样片继续阻断。
