@@ -1159,3 +1159,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - v9专项机器门`PASS`：目标/实际越出水面alpha为0，补吸主潮保留率0.995748，新增面积13642像素，长呼路径551.659像素，终点目标残留0，提示掩膜外最大像素差0。
 - 黑帧和持续1秒冻结检查无命中；独立视觉预审九项中八项为`PRECHECK_PASS`，`H2=PENDING_TEAM_DIRECTOR`。
 - 当前硬门：`H2_V9_PENDING_HUMAN_CONFIRMATION`。后续天气短样片继续阻断。
+
+### 2026-08-29 V-04 candidate-v10固定镜头与背景重建
+
+- 团队总监审阅candidate-v9后裁定`REVISE`：fade改用固定镜头以保持水系路径稳定；旧底图即使恢复饱和度仍偏灰暗压抑，不能作为原生全彩终态。
+- candidate-v9机器门`PASS`保留为历史实现证据，不改写三步骤几何、实际忠实度、条件一致性和声音结果。
+- 新增candidate-v10合同和生图提示词：原生源图使用中高明度、多自然色族的雨后东方湿地；完全褪色继续由运行时整屏颜色包络产生。
+- 首张候选`fade-v10-fixed-color-r1`已生成并登记，尺寸`1942x809`，SHA-256=`2a02eae7b2cea3f9584ab9854321ee28cbc65764337d92f99c59dbe9784b9372`，只作视觉选择且`formal_use_allowed=false`。
+- 当前硬门：`H2_V10_BACKGROUND_PENDING_HUMAN_SELECTION`。背景通过后才重建双条件样片和机器门。

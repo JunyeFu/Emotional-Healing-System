@@ -1091,3 +1091,18 @@
 | Project Regression | V-04工具链、H1、candidate-v8历史证据、candidate-v9、协议权威、57项任务注册表和5个独立任务包验证均`PASS`；根回归`412 passed in 21.13s`。 |
 | Human Gate | 独立视觉预审为`READY_FOR_TEAM_DIRECTOR_REVIEW`；团队总监九项结论仍为`PENDING_HUMAN_CONFIRMATION`。 |
 | Evidence Boundary | 当前只证明10秒设计预演候选和机器合同；不构成Unity运行、正式构建、真实设备链、H2人工通过或V-04完成。 |
+
+### 2026-08-29 V-04 candidate-v10固定镜头与背景重建
+
+| Field | Result |
+|---|---|
+| Human Revision | 团队总监将candidate-v9人工总门裁定为`REVISE`：fade取消横向滚动，旧底图恢复后仍偏灰暗压抑；v9机器门`PASS`继续作为历史证据。 |
+| Design Authority | 新增科研便捷实施裁定v1.2和candidate-v10合同；fade两条件共享固定相机与固定背景，完全褪色继续由运行时整屏颜色包络产生。 |
+| Prompt and Candidate | 新提示词与首张背景候选`fade-v10-fixed-color-r1`已生成；`1942x809`、`2484075 bytes`、SHA-256=`2a02eae7b2cea3f9584ab9854321ee28cbc65764337d92f99c59dbe9784b9372`，本地候选不进入Git且`formal_use_allowed=false`。 |
+| Image Observation | 旧图/新图平均明度=`0.3909/0.6021`，平均HSV饱和度=`0.1194/0.2508`，高于0.20饱和度像素占比=`7.31%/50.00%`，低于0.20明度暗部占比=`16.48%/3.62%`。 |
+| Historical V-04 Gates | 工具链、H1、candidate-v8和candidate-v9历史验证器均`PASS`；旧候选验证不替代当前v10背景门。 |
+| Governance | 协议权威v1.1、57项任务注册表和5个独立任务包验证均`PASS`；当前`READY=F-03/F-05`。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 26.38s`。 |
+| Static Checks | 背景清单JSON、候选文件哈希/尺寸、当前权威无旧v9待确认门、增量措辞和`git diff --check`均通过。 |
+| Current Gate | `H2_V10_BACKGROUND_PENDING_HUMAN_SELECTION`；团队总监确认背景后才允许重建candidate-v10双条件样片。 |
+| Evidence Boundary | 本轮只完成固定镜头裁定、原生背景生成和静态检查；不构成candidate-v10完整样片、H2通过、Unity运行、正式构建或真实设备链证据。 |

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H2_V10_BACKGROUND",
+  "candidate_id": "fade-v10-fixed-color-r1",
+  "scene_id": "fade",
+  "camera_motion": "fixed",
+  "horizontal_scroll": false,
+  "source_role": "native_full_color_background_only",
+  "prompt_file": "V-04_H2_candidate-v10_固定镜头彩色湿地生图提示词_v1.0.txt",
+  "generator": {
+    "tool": "OpenAI built-in image_gen",
+    "model_version": "NOT_EXPOSED_BY_TOOL",
+    "reference_file": ".artifacts-local/V-04/H2/source/fade-B-panorama-r1.png",
+    "reference_policy": "world and painterly quality reference only; composition, lighting, water layout, and native palette rebuilt"
+  },
+  "artifact": {
+    "file": ".artifacts-local/V-04/H2/source-candidates/candidate-v10/fade-v10-fixed-color-r1.png",
+    "width": 1942,
+    "height": 809,
+    "size_bytes": 2484075,
+    "sha256": "2a02eae7b2cea3f9584ab9854321ee28cbc65764337d92f99c59dbe9784b9372"
+  },
+  "comparison_to_previous_source": {
+    "metric_scope": "static RGB image observation only",
+    "previous_file": ".artifacts-local/V-04/H2/source/fade-B-panorama-r1.png",
+    "previous_mean_luminance": 0.3909,
+    "candidate_mean_luminance": 0.6021,
+    "previous_mean_hsv_saturation": 0.1194,
+    "candidate_mean_hsv_saturation": 0.2508,
+    "previous_colorful_fraction_sat_ge_0_20": 0.0731,
+    "candidate_colorful_fraction_sat_ge_0_20": 0.5,
+    "previous_dark_fraction_lum_lt_0_20": 0.1648,
+    "candidate_dark_fraction_lum_lt_0_20": 0.0362
+  },
+  "runtime_fade_baked_in": false,
+  "condition_specific_cues_baked_in": false,
+  "formal_use_allowed": false,
+  "status": "PENDING_HUMAN_SELECTION",
+  "gate_status": "H2_V10_BACKGROUND_PENDING_HUMAN_SELECTION"
+}
