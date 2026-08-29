@@ -24,6 +24,23 @@ VISUAL_MECHANISMS = {
     "log_write": "write_state_and_counter_cards",
     "manual_actions": "disabled_action_controls",
 }
+VISUAL_ROLE_REQUIREMENTS = {
+    "session_version": ("session_card", "version_card", "source_card"),
+    "device_connection": ("resp_connection_badge", "ecg_connection_badge", "freshness_bar"),
+    "respiration_waveform": ("page_waveform_view", "raw_channel_legend", "filtered_channel_legend"),
+    "ecg_rr_quality": ("ecg_quality_gauge", "rr_interval_strip"),
+    "phase_comparison": ("target_phase_track", "actual_phase_track"),
+    "cycle_result": ("cycle_summary_card", "cycle_result_card"),
+    "latency_clock": ("latency_bar", "clock_drift_bar"),
+    "degradation": ("quality_state_lane", "degradation_timeline"),
+    "log_write": ("log_write_state_card", "log_counter_card"),
+    "manual_actions": (
+        "manual_mark_control_visual",
+        "abort_control_visual",
+        "manual_mark_control_label",
+        "abort_control_label",
+    ),
+}
 
 
 def _node(path: str, operator_type: str, role: str, permission: str = "read_only", **extra: Any) -> dict[str, Any]:
@@ -44,6 +61,31 @@ def build_node_plan() -> dict[str, Any]:
         _node(f"{ROOT_PATH}/ConsoleShell/PageNavigation", "containerCOMP", "page_navigation_container"),
         _node(f"{ROOT_PATH}/ConsoleShell/ScenarioNavigation", "containerCOMP", "scenario_navigation_container"),
         _node(f"{ROOT_PATH}/ConsoleShell/navigation_callbacks", "panelExecuteDAT", "local_navigation_callbacks"),
+        _node(f"{ROOT_PATH}/ConsoleShell/ManualActionControls", "containerCOMP", "manual_action_controls"),
+        _node(
+            f"{ROOT_PATH}/ConsoleShell/ManualActionControls/manual_mark_disabled",
+            "buttonCOMP",
+            "disabled_action_control",
+            permission="disabled_control",
+            action_id="manual_mark",
+            enabled=False,
+            visible_in_shell=True,
+            visible_on_page="manual_actions",
+            label="MANUAL MARK / T-02 NOT ACTIVE",
+            callback=None,
+        ),
+        _node(
+            f"{ROOT_PATH}/ConsoleShell/ManualActionControls/abort_disabled",
+            "buttonCOMP",
+            "disabled_action_control",
+            permission="disabled_control",
+            action_id="abort",
+            enabled=False,
+            visible_in_shell=True,
+            visible_on_page="manual_actions",
+            label="ABORT / T-02 NOT ACTIVE",
+            callback=None,
+        ),
         _node(f"{ROOT_PATH}/Sources", "containerCOMP", "source_container"),
         _node(f"{ROOT_PATH}/Sources/StaticFixtureAdapter", "containerCOMP", "static_fixture_adapter"),
         _node(f"{ROOT_PATH}/Sources/StaticFixtureAdapter/fixture_json", "textDAT", "embedded_fixture"),
@@ -81,6 +123,8 @@ def build_node_plan() -> dict[str, Any]:
                 "page_navigation",
                 page_id=page["id"],
                 selector_index=index,
+                panel_position=[20 + (index % 5) * 244, 32 - (index // 5) * 32],
+                visible_in_shell=True,
             )
         )
         page_path = f"{ROOT_PATH}/Pages/{page['id']}"
@@ -92,9 +136,23 @@ def build_node_plan() -> dict[str, Any]:
                 _node(scenario_path, "containerCOMP", "page_scenario", page_id=page["id"], scenario_id=scenario_id),
                 _node(f"{scenario_path}/background", "constantTOP", "page_background", page_id=page["id"], scenario_id=scenario_id),
                 _node(f"{scenario_path}/labels", "textTOP", "page_labels", page_id=page["id"], scenario_id=scenario_id),
-                _node(f"{scenario_path}/indicator", "rectangleTOP", "page_indicator", page_id=page["id"], scenario_id=scenario_id),
                 _node(f"{scenario_path}/view", "compositeTOP", "page_scenario_view", page_id=page["id"], scenario_id=scenario_id),
             ])
+            for role in VISUAL_ROLE_REQUIREMENTS[page["id"]]:
+                operator_type = (
+                    "selectTOP" if role == "page_waveform_view"
+                    else "textTOP" if role.endswith("_control_label")
+                    else "rectangleTOP"
+                )
+                nodes.append(
+                    _node(
+                        f"{scenario_path}/{role}",
+                        operator_type,
+                        role,
+                        page_id=page["id"],
+                        scenario_id=scenario_id,
+                    )
+                )
         nodes.append(
             _node(
                 f"{page_path}/view",
@@ -114,13 +172,37 @@ def build_node_plan() -> dict[str, Any]:
                 "scenario_navigation",
                 scenario_id=scenario_id,
                 selector_index=index,
+                panel_position=[20 + index * 244, 0],
+                visible_in_shell=True,
             )
         )
     nodes.extend(
         [
+            _node(
+                f"{ROOT_PATH}/ConsoleShell/ShellBackground",
+                "constantTOP",
+                "shell_background",
+            ),
+            _node(
+                f"{ROOT_PATH}/ConsoleShell/PageViewport",
+                "containerCOMP",
+                "page_viewport",
+                input_role="display_selector",
+            ),
             _node(f"{ROOT_PATH}/Output", "containerCOMP", "output_container"),
             _node(f"{ROOT_PATH}/Output/page_selector", "switchTOP", "display_selector"),
-            _node(f"{ROOT_PATH}/Output/display_out", "outTOP", "local_display_output"),
+            _node(
+                f"{ROOT_PATH}/Output/shell_viewer",
+                "opviewerTOP",
+                "console_shell_view",
+                viewer_target=f"{ROOT_PATH}/ConsoleShell",
+            ),
+            _node(
+                f"{ROOT_PATH}/Output/display_out",
+                "outTOP",
+                "local_display_output",
+                input_role="console_shell_view",
+            ),
         ]
     )
     return {
@@ -160,7 +242,14 @@ def write_host_artifacts(output_dir: str | Path, fixture_path: str | Path) -> di
         "permission_manifest_schema_version": "f04-node-permissions-v1",
         "fixture_permissions": fixture["permissions"],
         "nodes": [
-            {key: node[key] for key in node if key in {"path", "operator_type", "role", "permission", "active", "port", "label"}}
+            {
+                key: node[key]
+                for key in node
+                if key in {
+                    "path", "operator_type", "role", "permission", "active", "port", "label",
+                    "enabled", "action_id", "visible_in_shell", "panel_position", "input_role", "viewer_target",
+                }
+            }
             for node in plan["nodes"]
         ],
     }
