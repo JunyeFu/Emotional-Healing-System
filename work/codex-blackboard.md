@@ -1115,3 +1115,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - TouchDesigner 2025.32820最终构建为646个节点；关闭并重开后，10页、5场景、50组合、稳定导航名、最终Shell、图形角色、禁用控件、UDP停用与零节点错误全部通过。
 - F-04专项21项、F-01合同49项、P-01/P-02相关回归166项通过；14张截图哈希全部唯一；TD关闭后5005和9981均无监听。
 - 独立任务包必须把AC7和第二人证据保持为`PENDING_DIRECTOR_REVIEW`；下一硬门是独立团队总监Agent基于`b910a0d`重新审计并给出PASS/FAIL。当前仍为`IN_REVIEW`，不构成`DONE`或LIVE_E2E。
+
+### 2026-08-29 F-04独立团队总监二轮签收
+
+- 新独立任务`01a04c71-9894-73c3-aea1-30cb0d0280c0`对远端候选`6a5d0c8dca0069bea228d9e7c7fdcb34049856bf`执行只读审计；用户授权该Agent承担本轮团队总监检验身份。
+- 总裁定`PASS`，AC1至AC7全部`PASS`；总监在TouchDesigner 2025.32820真实Panel Viewer中完成10页、5场景和50组切换，确认646节点、禁用人工控件、UDP停用、零越权输出与零节点错误。
+- 独立复算F-04 21项、F-01合同49项、P-01/P-02 166项和任务包哈希策略2项，合计238项通过；关闭TD后5005、9981无监听。
+- P0至P2无发现；唯一P3为fixture字段当前记录Git/LF规范化哈希，Windows CRLF原始字节哈希不同，现有验证器已采用规范化策略，不影响签收。
+- F-04转为`DONE`并从当前READY/IN_REVIEW独立派发集合移除；不合并main、不部署，不形成真实设备、正式20 Hz、请求通道、LIVE_E2E、交互状态估计有效性或科学有效性声明。

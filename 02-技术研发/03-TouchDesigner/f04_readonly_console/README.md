@@ -40,10 +40,10 @@ py -3.14 02-技术研发/03-TouchDesigner/f04_readonly_console/f04_node_plan.py
 exec(open(r'<当前仓库根目录>\02-技术研发\03-TouchDesigner\f04_readonly_console\verify_f04_touchdesigner_reopen.py', encoding='utf-8').read())
 ```
 
-当前机器验收结果记录于 `F-04_技术验收记录.md`。F-04 处于 `IN_REVIEW`；
-机器门和第二人结论分别记录，自动检查不得代替傅钧烨签署 PASS/FAIL。
-首轮独立总监审计与本轮整改映射记录于
-`F-04_团队总监首轮审计整改记录.md`；整改后的 AC7 仍须重新独立复核。
+机器验收结果记录于 `F-04_技术验收记录.md`。首轮独立总监审计与整改映射
+记录于 `F-04_团队总监首轮审计整改记录.md`。用户授权的独立团队总监已在
+精确候选上完成二轮实机复审并签署 `PASS`，结论记录于
+`F-04_独立团队总监二轮复审签收报告_已签署.md`；F-04 状态为 `DONE`。
 
 ## 证据边界
 

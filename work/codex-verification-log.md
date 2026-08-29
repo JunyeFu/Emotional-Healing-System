@@ -1019,3 +1019,15 @@
 | Regression | F-01合同`49 passed in 0.77s`；P-01/P-02相关回归`166 passed in 4.46s`。 |
 | Artifact Hashes | `.toe`=`CBC982BE379C2A1D9A0BE7FC26508B1467A8CFCD920E51FBE4193E18AE74B9EA`；`.tox`=`1DEC705338AF14F623177BE60975B860FA3D86851D5EF7A7C6DF95BC04DE7F76`；fixture=`72DA8308681F1C3AAA363143E62BA0FC28DA616D4A5D53CE44B2C3B4DDECD8D4`。 |
 | Candidate Boundary | AC1至AC6为机器候选`PASS`；AC7与第二人证据保持`PENDING_DIRECTOR_REVIEW`。当前不构成`DONE`、LIVE_E2E或人工签收。 |
+
+### 2026-08-29 F-04独立团队总监二轮复审与DONE迁移
+
+| Field | Result |
+|---|---|
+| Independent Director | 用户授权的独立团队总监任务`01a04c71-9894-73c3-aea1-30cb0d0280c0`；精确候选`6a5d0c8dca0069bea228d9e7c7fdcb34049856bf`；总裁定`PASS`，明确可作为AC7签收依据。 |
+| AC1-AC7 | 全部`PASS`；TD 2025.32820实机完成10页、5场景与50组切换，确认最终ConsoleShell、真实CHOP曲线、页面专属图形、两个人工操作按钮`enabled=false`、UDP 5005`active=false`。 |
+| Independent Regression | F-04`21 passed`；F-01合同`49 passed`；P-01/P-02`166 passed`；任务包哈希策略`2 passed`；合计`238 passed`。协议权威、注册表、独立任务包和集合一致性均`PASS`。 |
+| Runtime Boundary | 646节点；根节点与脚本错误为空；禁止能力扫描`AUDIT_FORBIDDEN []`；关闭TD后5005与9981无TCP/UDP监听。 |
+| Findings | P0/P1/P2无；P3为fixture使用Git/LF规范化哈希而Windows CRLF工作树原始字节哈希不同，验证器的规范化策略已保证内容与包一致，不阻断签收。 |
+| State Migration | F-04从`IN_REVIEW`迁移为`DONE`；从当前READY/IN_REVIEW独立任务包映射与生成目录移除。 |
+| Claim Boundary | 仅关闭F-04静态、本地、模块化、图形化、只读工作台；不形成真实设备、正式20 Hz、请求通道、LIVE_E2E、交互状态估计有效性或科学有效性声明。 |
