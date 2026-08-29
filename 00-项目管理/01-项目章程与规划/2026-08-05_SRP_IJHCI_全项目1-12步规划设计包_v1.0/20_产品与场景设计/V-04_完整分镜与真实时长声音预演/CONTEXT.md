@@ -5,11 +5,12 @@
 | 范围 | 文件 |
 |---|---|
 | 实施裁定 | `V-04_科研便捷实施裁定_v1.2.md` |
-| 当前状态 | `V-04_实施状态与H1确认记录_v1.4.md` |
+| 当前状态 | `V-04_实施状态与H1确认记录_v1.5.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |
 | H2当前设计合同 | `V-04_H2_candidate-v10_固定镜头与背景重建设计合同_v1.0.md` |
 | H2当前配置与清单 | `V-04_H2样片配置_v1.3.json`、`V-04_H2候选清单_v1.3.json` |
 | H2当前评审 | `V-04_H2样片评审说明_v1.4.md` |
+| H2人工结论 | `V-04_H2人工评审结论_v1.0.md`、`V-04_H2人工评审记录_v1.0.json` |
 | H2当前验证器 | `validate_v04_h2_v10.py` |
 | H2背景签收 | `V-04_H2背景候选清单_v1.0.json`、`V-04_H2背景选择记录_v1.0.json` |
 | H2独立视觉预审 | `V-04_H2_candidate-v9_独立视觉预审报告_v1.0.md` |
@@ -40,8 +41,8 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H2 candidate-v9团队总监 | `REVISE` | 横向滚动不利于观察固定水系；原生底图恢复后仍灰暗压抑 |
 | H2 candidate-v10背景 | `PASS` | 团队总监已确认固定镜头全彩湿地背景 |
 | H2 candidate-v10机器门 | `PASS` | 300帧固定镜头媒体、整屏复色、水体裁切、三步骤、实际忠实度、条件一致性、媒体健康和声音通过 |
-| H2 candidate-v10团队总监 | `PENDING_HUMAN_CONFIRMATION` | 观看并列视频后提交包含`native_naturalness`在内的九项结论 |
-| 后续天气与长廊短样片 | `BLOCKED_BY_H2` | H2人工通过后开始 |
+| H2 candidate-v10团队总监 | `PASS` | 团队总监确认fade通过；按v1.4规则记录包含`native_naturalness`在内的九项均为`PASS` |
+| 后续天气与长廊短样片 | `IN_PROGRESS` | 依次制作storm、heat、snow和山雾长廊短样片，作为H3输入 |
 
 candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；Git保存v1.3配置、清单、彩色/灰度关键帧、v10渲染器和验证器。
 
@@ -54,4 +55,4 @@ candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。
 
 ## 下一步
 
-团队总监观看candidate-v10并列视频并按v1.4评审说明提交九项结论。H2通过后才制作storm、heat、snow和山雾长廊短样片。
+H2已关闭。依次制作storm、heat、snow各10–15秒核心机制样片和山雾长廊短样片；全部通过机器检查后合并为不超过2分钟的H3评审视频，并输出六节点Unity交接分镜。

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H2-CANDIDATE-V10-REVIEW-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H2",
+  "candidate_id": "candidate-v10",
+  "reviewer": "傅钧烨",
+  "reviewer_role": "团队总监",
+  "decision": "PASS",
+  "decision_source": "direct task message: 确认fade通过",
+  "decided_at": "2026-08-29T11:34:20+08:00",
+  "reviewed_commit": "49a8b596a67544c512cd0a5198c09da1947ecc18",
+  "review_inputs": {
+    "config": {
+      "file": "V-04_H2样片配置_v1.3.json",
+      "sha256": "55bac5e65bbd9f20972500c915ba13b651e03b7eee9354f0c9803ac9e23d121a"
+    },
+    "candidate_manifest": {
+      "file": "V-04_H2候选清单_v1.3.json",
+      "sha256": "3b4eaa11e27316d94f00ed4f930764ed989624211ab881eb112a6003ff95faca"
+    },
+    "paired_review_video": {
+      "file": ".artifacts-local/V-04/H2/candidate-v10/fade-H2-paired-review.mp4",
+      "sha256": "98bb122ed2e41e3e54ea0bcd8a884d1b3d095ec955199c67e0ddc3ebab213e0e"
+    }
+  },
+  "results": {
+    "first_frame": "PASS",
+    "final_color": "PASS",
+    "continuity": "PASS",
+    "phase_legibility": "PASS",
+    "native_naturalness": "PASS",
+    "actual_fidelity": "PASS",
+    "condition_match": "PASS",
+    "camera_audio": "PASS",
+    "H2": "PASS"
+  },
+  "scope": "candidate-v10 fixed-camera fade dual-condition 10-second design preview",
+  "next_gate": {
+    "gate_id": "H3_INPUT_PREVIEWS_READY",
+    "status": "IN_PROGRESS",
+    "required_inputs": [
+      "storm 10-15 second core-mechanism preview",
+      "heat 10-15 second core-mechanism preview",
+      "snow 10-15 second core-mechanism preview",
+      "mountain-mist corridor short preview"
+    ]
+  },
+  "does_not_approve": [
+    "V-04 completion",
+    "remaining weather and corridor previews",
+    "H3 combined review video",
+    "Unity runtime",
+    "formal build",
+    "asset license release",
+    "real device chain"
+  ]
+}

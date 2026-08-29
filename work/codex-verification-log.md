@@ -1123,3 +1123,18 @@
 | Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 39.26s`。 |
 | Current Gate | `H2_V10_PENDING_HUMAN_CONFIRMATION`；等待团队总监按v1.4评审说明给出九项结论。 |
 | Evidence Boundary | 当前证明背景人工选择、10秒设计样片和机器合同；不构成H2人工通过、V-04完成、Unity运行、正式构建或真实设备链证据。 |
+
+### 2026-08-29 V-04 candidate-v10 H2人工确认PASS
+
+| Field | Result |
+|---|---|
+| Human Decision | 团队总监傅钧烨明确回复“确认fade通过”；按v1.4规则记录九项人工评审均为`PASS`，H2关闭。 |
+| Evidence Binding | 审核提交=`49a8b596a67544c512cd0a5198c09da1947ecc18`；配置SHA-256=`55bac5e65bbd9f20972500c915ba13b651e03b7eee9354f0c9803ac9e23d121a`；清单SHA-256=`3b4eaa11e27316d94f00ed4f930764ed989624211ab881eb112a6003ff95faca`；并列视频SHA-256=`98bb122ed2e41e3e54ea0bcd8a884d1b3d095ec955199c67e0ddc3ebab213e0e`。 |
+| State | V-04保持`IN_PROGRESS`；当前硬门迁移为`H3_INPUT_PREVIEWS_READY`。 |
+| Next Inputs | storm、heat、snow各10–15秒核心机制样片及山雾长廊短样片；全部通过机器检查后装配不超过2分钟的H3评审视频。 |
+| Review Record Check | 结构化记录JSON可解析；九个指定键均为`PASS`；配置、清单和并列视频三个SHA-256均与实际文件一致。 |
+| V-04 Regression | 工具链、H1、candidate-v8历史证据、candidate-v9历史证据和candidate-v10机器门验证均为`PASS`。 |
+| Governance | 协议权威验证`PASS`；任务注册表为57项，当前`READY=F-03/F-05`；独立任务包为5包、132份快照。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 20.07s`。 |
+| Static Checks | 当前权威不存在旧H2待确认陈述；新增行不合规措辞0命中；`git diff --check`无空白错误。 |
+| Evidence Boundary | H2只签收candidate-v10 fade双条件10秒设计样片；不表示V-04完成、其余样片完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |

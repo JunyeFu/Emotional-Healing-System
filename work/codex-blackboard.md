@@ -1177,3 +1177,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 补潮主潮保留率`0.996336`、面积比`1.524776`；长呼路径`582.673 px`、下游质心`191.688 px`、终点残留0；声音`-22.24 LUFS-I/-3.49 dBTP`。
 - 固定镜头媒体健康门使用黑帧检测和连续完全重复帧检查；两条参与者视频黑帧0、最大重复帧均为1。
 - 当前硬门：`H2_V10_PENDING_HUMAN_CONFIRMATION`，等待团队总监九项评审。
+
+### 2026-08-29 V-04 candidate-v10 H2人工确认PASS
+
+- 团队总监傅钧烨对candidate-v10明确回复“确认fade通过”；依照v1.4评审规则，将`first_frame/final_color/continuity/phase_legibility/native_naturalness/actual_fidelity/condition_match/camera_audio/H2`九项记录为`PASS`。
+- 结构化记录绑定审核提交`49a8b596a67544c512cd0a5198c09da1947ecc18`、v1.3配置、v1.3候选清单和本地并列视频哈希；H2人工门关闭。
+- V-04继续保持`IN_PROGRESS`，当前硬门迁移为`H3_INPUT_PREVIEWS_READY`。
+- 下一队列固定为storm、heat、snow各10–15秒核心机制样片，随后山雾长廊短样片；四项通过机器检查后装配不超过2分钟的H3评审视频并输出六节点Unity交接分镜。
+- 本结论不表示V-04完成、其余样片完成、Unity运行、正式构建、资产许可放行或真实设备链完成。
