@@ -1082,3 +1082,23 @@
 | Post-claim Governance | 注册表校验`PASS`：57项，`READY=F-05`，`IN_REVIEW=F-04/G-01/G-02`；独立包校验`PASS`：4包、121份快照。 |
 | Distribution Boundary | F-03已从映射和当前解锁目录移除；剩余分发集合为`F-04/F-05/G-01/G-02`。 |
 | Static Checks | 任务手册F-03状态一致、`git diff --check`通过、本轮新增内容受限用语扫描0命中。 |
+
+### 2026-08-30 F-03 可复现Unity基线候选
+
+| Field | Result |
+|---|---|
+| Candidate | 实现提交`7950a1fbd1035f8d80c94647d6849dab535aa07c`；分支治理提交保留该候选且工作树内容与候选一致。 |
+| Environment | Unity `6000.4.9f1 (f7258d6eebbe)`、工程版本、manifest、packages-lock及Git包提交均由环境锁验证。 |
+| Unity Tests | Edit Mode `3/3 PASS`；Play Mode `1/1 PASS`；XML及日志已固化。 |
+| Dev Builds | 同一候选连续完成两次Windows `Development + StrictMode + CleanBuildCache`构建；每次339个相对文件，文件集合及参数一致。 |
+| Player | 从ASCII暂存路径启动Player，退出码0；截图确认持续显示`DEV-REPLAY | NOT FORMAL`以及revision、候选提交和构建时间。中文路径直接启动时UnityPlayer在托管代码前异常，故构建脚本使用manifest校验后的ASCII暂存副本。 |
+| Isolation | 运行前后5005、5006、5010均无F-03新增监听；开发场景不含网络、天气、参与者输入或旧运行组件。 |
+| Negative Gates | 未经F-03入口发起的Development构建返回1；非Development构建进入正式门并返回1；KlakSpout运行依赖扫描通过。 |
+| Regressions | F-01合同测试`49 passed`；仓库Python回归`412 passed`。 |
+| Asset Gate | G-02扫描189项，18项阻断：`ASSET_REMOVED=2`、`ASSET_UNREGISTERED=12`、`HASH_CHANGED=1`、`LICENSE_REPLACE=3`；正式构建继续阻断。 |
+| Evidence | `03-测试与实验/evidence/F-03/evidence_manifest.json`与`evidence_hashes.sha256`固定全部证据。 |
+| Revalidation Note | 候选通过后，本机Unity离线授权有效期到期且缓存无有效令牌；后续重复运行在Unity授权门前被阻断，不改变已固化候选证据，也不能替代第二人复核。 |
+| Decision | `AUTOMATION_PASS_HUMAN_PENDING`；F-03=`IN_REVIEW`，不构成正式构建、真实输入链、完整参与者旅程或`LIVE_E2E`。 |
+| Next Gate | 傅钧烨恢复Unity授权后，在固定候选上独立执行`all`、打开开发场景、启动Player、核对负路径并签署PASS/FAIL。 |
+
+补充治理提交复查：协议目录`57 passed`、采集`24 passed`、评分模型`10 passed`、数据治理`138 passed`、会话与存储`179 passed`；共408项通过。信号管线剩余4项在收集阶段因本机`neurokit2`导入持续停滞而未形成新结论；实现候选生成时的完整仓库回归仍为`412 passed`。协议权威、57项任务注册表、5个独立任务包/158份快照及`git diff --check`均通过。

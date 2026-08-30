@@ -1,0 +1,79 @@
+Mono path[0] = 'C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-cd5a12862dbf4ba39a94c34193428949/build/SRP-F03-DevReplay_Data/Managed'
+Mono config path = 'C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-cd5a12862dbf4ba39a94c34193428949/build/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Found 3 interfaces on host : 0) 192.168.1.63 1) 172.17.112.1 2) 198.18.0.1
+Player connection [52140]  Target information:
+
+Player connection [52140]  * "[IP] 192.168.1.63 [Port] 55000 [Flags] 2 [Guid] 3864803865 [EditorId] 3086509966 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual"
+
+Player connection [52140]  * "[IP] 172.17.112.1 [Port] 55000 [Flags] 2 [Guid] 3864803865 [EditorId] 3086509966 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual"
+
+Player connection [52140]  * "[IP] 198.18.0.1 [Port] 55000 [Flags] 2 [Guid] 3864803865 [EditorId] 3086509966 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual"
+
+Player connection [52140] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.4.9f1 (f7258d6eebbe)
+[Subsystems] Discovering subsystems at path C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-cd5a12862dbf4ba39a94c34193428949/build/SRP-F03-DevReplay_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4080 SUPER
+[D3D12 Device Filter] Driver Version: 32.0.16.1062
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 16045 MB
+[D3D12 Device Filter] Processor Count: 16
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeSplitJobs
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 4080 SUPER (ID=0x2702)
+    Vendor:          NVIDIA
+    VRAM:            16045 MB
+    App VRAM Budget: 15277 MB
+    Driver:          32.0.16.1062
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Finished resetting the current domain, in  0.002 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+
+Using Windows.Gaming.Input
+UnloadTime: 0.691800 ms
+F03_DEV_REPLAY_READY commit=7950a1fbd1035f8d80c94647d6849dab535aa07c unity=6000.4.9f1 |  | 6000.4.9f1 (f7258d6eebbe)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
+SRP.F03.DevReplayBanner:Start () (at D:/Agent/f03v3/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Runtime/DevReplayBanner.cs:35)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
+
+F03_DEV_REPLAY_SCREENSHOT_WRITTEN path=C:\Users\fujunye\AppData\Local\Temp\srp-f03-player-cd5a12862dbf4ba39a94c34193428949\capture.png
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
+SRP.F03.DevReplayBanner/<CaptureEvidence>d__22:MoveNext () (at D:/Agent/f03v3/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Runtime/DevReplayBanner.cs:108)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
+
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed
+GarbageCollector disposing of ComputeBuffer. Please use ComputeBuffer.Release() or .Dispose() to manually release the buffer.
+PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1788059863569,"processId":45420,"allocatedMemory":72564,"memoryLabels":[{"Default":5248},{"Thread":7168},{"Manager":15479},{"Shader":8},{"GfxDevice":2704},{"GfxThread":24},{"Audio":752},{"Serialization":520},{"Input":2440},{"JobScheduler":32768},{"String":575},{"PoolAlloc":192},{"CloudService":144},{"VR":1928},{"Video":144},{"NativeArray":3468},{"Subsystems":96},{"Gui":562},{"CoreBusinessMetrics":128}]}

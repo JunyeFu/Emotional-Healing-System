@@ -1150,3 +1150,12 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - Unity版本与本机安装一致，但当前298个跟踪文件中没有测试脚本或程序集定义；构建设置只启用`SampleScene`，没有确定性Windows开发构建入口或`DEV-REPLAY`标记。
 - 当前仍有KlakSpout直接依赖、`SpoutReceiver`和历史运行组件；四个天气场景虽存在，但正式运行组件未实现。资产台账仍有3组`REPLACE`，正式门应保持失败关闭。
 - 下一队列：环境锁与失败测试、移除Spout运行依赖、建立Edit/Play测试架、建立`DEV-REPLAY`开发壳和Windows构建链、补正式门负测试与证据，再进入第二人复核。
+
+### 2026-08-30 F-03 DEV-REPLAY 实施候选
+
+- 固定实现候选为`7950a1fbd1035f8d80c94647d6849dab535aa07c`；当前分支树与该候选完全一致，F-03转入`IN_REVIEW`，不标记`DONE`。
+- `Tools/F03/Invoke-F03.ps1 all`已在候选提交的干净工作树完成：精确Unity环境锁、Edit Mode 3/3、Play Mode 1/1、两次Windows开发构建、Player启动、端口隔离、未经授权开发构建负路径和正式门负路径均符合预期。
+- 两次构建各含339个相对文件，文件集合和构建参数一致；Player退出码为0，首帧及后续帧持续显示`DEV-REPLAY | NOT FORMAL`。
+- KlakSpout已从运行包和开发构建闭包移除；不实现UDP 5006、TCP 5010、ACK、会话握手、四场景旅程或正式输入链。
+- F-01合同回归49项、项目Python回归412项通过。G-02扫描189项，仍有18项正式资产阻断，因此正式门保持失败关闭。
+- 自动化证据固定在`03-测试与实验/evidence/F-03`。候选完成后本机Unity离线授权有效期到期，新的复核运行被授权门阻断；傅钧烨需先恢复Unity授权，再从固定候选独立执行`all`并签署PASS/FAIL。

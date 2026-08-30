@@ -1,0 +1,10 @@
+{
+  "schema_version": "f03-formal-negative-report-v1",
+  "result": "PASS",
+  "manifest_contract": "F-01 runtime-contract-v2.1 regression passed, including missing-field rejection",
+  "unauthorized_development_exit_code": 1,
+  "unauthorized_development_expected_failure": true,
+  "unity_formal_gate_exit_code": 1,
+  "unity_formal_gate_expected_failure": true,
+  "runtime_manifest_handshake_owner": "U-01"
+}
