@@ -1117,3 +1117,14 @@
 | Negative Gates | 未授权Development和正式门均返回1；F-01必填字段拒绝日志已保留。正式门日志与同次G-02报告均为189项、21个阻断。 |
 | Source Stability | Unity首次导入的5项序列化迁移已冻结；Unity YAML/JSON固定LF；最终运行无受控源文件漂移。 |
 | Decision | `AUTOMATION_PASS / INDEPENDENT_REAUDIT_PENDING`；F-03保持`IN_REVIEW`，不标记`DONE`。 |
+
+### 2026-08-30 F-03 独立Agent重新只读审核闭环
+
+| Field | Result |
+|---|---|
+| Review Identity | 治理提交`c3792228b07ae8a838de983042df338b9393305b`；实现候选`a61eba6a62631780caaf60d8e2e431326d3082ba`；审计前后工作树干净。 |
+| Asset Recalculation | 独立计得189项、21个阻断；资产报告raw与规范化SHA-256均为`30dcc98480110291ea2753a5acccd4ba5ead44f24145a9510e19ae1f091c3499`，与正式门报告及日志一致。 |
+| Build Recalculation | run-1与run-2各339文件、186,809,542 bytes；共678个文件的路径、大小及raw SHA-256均零差异；根manifest与证据副本逐字节一致。 |
+| Old Findings | 旧候选五项独立审计发现全部`CLOSED`；没有新增实现缺陷。 |
+| AC Decision | AC1、AC2、AC3和职责边界均`PASS`；结论为`PASS_FOR_MODEL_INDEPENDENT_REVIEW`。 |
+| Human Gate | F-03保持`IN_REVIEW`；独立Agent未重跑Unity且不替代傅钧烨第二人签收，未签收前不得标记`DONE`。 |

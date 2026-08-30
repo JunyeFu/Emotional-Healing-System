@@ -70,7 +70,7 @@
 ## 完成回填
 
 - 实际改动文件：见`FILES.md`列出的项目权威路径
-- 验证命令与结果：技术候选已完成；模型复核状态`INDEPENDENT_REAUDIT_PENDING`
+- 验证命令与结果：技术候选已完成；模型复核状态`PASS_FOR_MODEL_INDEPENDENT_REVIEW`
 - 证据路径：`03-测试与实验/F-03_技术验收记录_待签署.md`；`03-测试与实验/evidence/F-03/evidence_manifest.json`；`03-测试与实验/evidence/F-03/evidence_hashes.sha256`；`03-测试与实验/evidence/F-03/environment_report.json`；`03-测试与实验/evidence/F-03/run_identity_report.json`；`03-测试与实验/evidence/F-03/build_artifact_receipt.json`；`03-测试与实验/evidence/F-03/editmode-results.xml`；`03-测试与实验/evidence/F-03/playmode-results.xml`；`03-测试与实验/evidence/F-03/repeat_build_report.json`；`03-测试与实验/evidence/F-03/run-1-build-manifest.json`；`03-测试与实验/evidence/F-03/run-2-build-manifest.json`；`03-测试与实验/evidence/F-03/player_smoke_report.json`；`03-测试与实验/evidence/F-03/dev-replay-player.png`；`03-测试与实验/evidence/F-03/runtime_dependency_scan.json`；`03-测试与实验/evidence/F-03/formal_negative_report.json`；`03-测试与实验/evidence/F-03/asset_blocking_report.json`
 - commit：`a61eba6a62631780caaf60d8e2e431326d3082ba`
 - push目标：`origin/codex/f-03-unity-baseline`

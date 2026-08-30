@@ -158,25 +158,25 @@
     {
       "source_path": "03-测试与实验/F-03_技术验收记录_待签署.md",
       "package_path": "inputs/26_F-03_技术验收记录_待签署.md",
-      "sha256": "A6D48D1D1432C67AF64F74D2CD57A08EAEF4C654C59385067121EDD42CC62004",
-      "size_bytes": 3896
+      "sha256": "B2180C6F224C94CD7C083515B66DEFB1A6C6293A5B4E259FBE0078979B43673D",
+      "size_bytes": 3925
     },
     {
       "source_path": "03-测试与实验/F-03_独立Agent审核与修复记录_2026-08-30.md",
       "package_path": "inputs/27_F-03_独立Agent审核与修复记录_2026-08-30.md",
-      "sha256": "DEC8B07FC5EA3D139227108E00B446A0C8A89EF93F37A17926346B654B60DD1A",
-      "size_bytes": 2741
+      "sha256": "0F8AC2D2678EDCD1202EF0ACDB4C61CAA8590177AC7D63C10BE30E683B1BE8D3",
+      "size_bytes": 3912
     },
     {
       "source_path": "03-测试与实验/evidence/F-03/evidence_manifest.json",
       "package_path": "inputs/28_evidence_manifest.json",
-      "sha256": "626B6B8BE2C22E0682DBF70AF40BB3CF32787C1FBFC4A1FCF5ABEEB6BB838B42",
-      "size_bytes": 1119
+      "sha256": "E63A6A66F8708237F6749D21A903BC1A2CF3291BCC78D1B4809C5778BD0FE68B",
+      "size_bytes": 1130
     },
     {
       "source_path": "03-测试与实验/evidence/F-03/evidence_hashes.sha256",
       "package_path": "inputs/29_evidence_hashes.sha256",
-      "sha256": "AEEA0E33DC0F1B985780FC02C5340E3D71E145FB0D548359C5F87280FCE22765",
+      "sha256": "C14EBBC303E8A85B41E4A898D8F0B9644D31BB28C99D2910902ADFDDE9FFF03F",
       "size_bytes": 1960
     },
     {

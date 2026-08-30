@@ -1166,4 +1166,5 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 修复候选`a61eba6a62631780caaf60d8e2e431326d3082ba`改用项目统一文本哈希策略，记录提交与实现树哈希，保留同次G-02报告、F-01日志和两份本地构建收据。
 - 全新工作树恢复锁定Git包时首次遇到TLS/RPC中断；远端恢复后依赖成功导入。Unity首次导入写回的5项序列化迁移已纳入候选，并为Unity YAML/JSON固定LF。
 - 最终`all`在运行前干净的候选上通过：Edit `3/3`、Play `1/1`、双构建各339文件、Player与端口隔离通过、正式门按预期拒绝；运行后只有F-03证据目录变化。
-- F-03保持`IN_REVIEW`，当前硬门为新候选独立Agent重新审核；通过后才进入傅钧烨第二人签署，不标记`DONE`。
+- 新候选独立Agent复审已闭合：首轮确认缺陷1、3、5、AC1、AC3和职责边界，第二轮独立复算资产报告189项/21阻断及两次构建共678个文件，零计数、路径、大小或哈希差异；最终`PASS_FOR_MODEL_INDEPENDENT_REVIEW`。
+- F-03保持`IN_REVIEW`，当前硬门为傅钧烨基于同一候选执行第二人复核并签署；独立Agent结论不替代签收，不标记`DONE`。
