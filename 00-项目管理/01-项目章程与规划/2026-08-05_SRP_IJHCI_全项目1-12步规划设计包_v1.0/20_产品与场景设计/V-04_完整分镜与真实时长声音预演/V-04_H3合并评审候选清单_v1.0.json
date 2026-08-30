@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_COMBINED_REVIEW",
+  "candidate_id": "h3-combined-review-candidate-v1",
+  "generated_at": "2026-08-30T22:20:00+08:00",
+  "config_sha256": "022caeb513ef50ff81e776c4e7f9521507e4bb1cf58853caaf3665e5036e1471",
+  "design_contract_sha256": "d7954ea17a4863d3873e51ccb9a8337bbe88a406058a72e220a5c5d238ec449f",
+  "storyboard_json_sha256": "3b96491225f9f55dea2e43953271143a52c4386d5eb8e707f7ee122aa08b2e46",
+  "storyboard_markdown_sha256": "0b1f88126c5cd8b07953a8683f5a0bd4d20d3816527f48851b3981e6c491d20a",
+  "unity_handoff_checklist_sha256": "1165b282a328bccf5df75db67253da50a14ff75b9f3815fb7b1c748a7199225d",
+  "review_order_is_runtime_sequence": false,
+  "source_sections": [
+    {
+      "section_id": "storm",
+      "label": "STORM / 3-3-3-3 / RAIN CURTAIN GATE",
+      "source_gate": "PASS_HUMAN",
+      "source_file": ".artifacts-local/V-04/H3/storm-candidate-v1/storm-H3-paired-review.mp4",
+      "source_sha256": "73e1fa977419351a6fb1ea19b75ecbafbbef2928f0b6eb9fc06c75312c105c2c",
+      "source_manifest": "V-04_H3_storm候选清单_v1.0.json",
+      "source_manifest_sha256": "42a06151f75c000e0c18d6ce5ebcf819133db0dc02dc185ae8e052af10114591",
+      "gate_evidence_file": "V-04_H3_storm人工评审记录_v1.0.json",
+      "gate_evidence_sha256": "920506b2de0dfd1fbaab3dc29c639f79cfa22af4d7058edbf436a1e5129cae57",
+      "gate_assertions": {
+        "preview_id": "storm-candidate-v1",
+        "decision": "PASS",
+        "results.storm_input": "PASS"
+      },
+      "gate_media_sha256_path": "review_inputs.paired_review_video.sha256",
+      "duration_s": 12.0
+    },
+    {
+      "section_id": "heat",
+      "label": "HEAT / 4-6 / COOL AIR CORRIDOR",
+      "source_gate": "PASS_MACHINE_AND_VISUAL_PRECHECK",
+      "source_file": ".artifacts-local/V-04/H3/heat-candidate-v1/heat-H3-paired-review.mp4",
+      "source_sha256": "409d006fee558577226153e4447fe1f0a6537b24a5f914fddf1dc4481f1b4d52",
+      "source_manifest": "V-04_H3_heat候选清单_v1.0.json",
+      "source_manifest_sha256": "51f82513c4b3fa9b5b8b87ed4efdd7f095a307d351ad171ef0cd58af6195130f",
+      "gate_evidence_file": "V-04_H3_heat机器验收记录_v1.0.json",
+      "gate_evidence_sha256": "dc607d51bbda92778e5025f1140c20375509b3bc8ad616b539fce86006007f09",
+      "gate_assertions": {
+        "preview_id": "heat-candidate-v1",
+        "result": "PASS",
+        "visual_precheck.result": "PASS"
+      },
+      "gate_media_sha256_path": "evidence.paired_review_sha256",
+      "duration_s": 10.0
+    },
+    {
+      "section_id": "snow",
+      "label": "SNOW / 5-5 / POWDER SNOW RISE-FALL",
+      "source_gate": "PASS_MACHINE_AND_VISUAL_PRECHECK",
+      "source_file": ".artifacts-local/V-04/H3/snow-candidate-v1/snow-H3-paired-review.mp4",
+      "source_sha256": "1ddff6a4b1995d855733bb89ba1c0fe8d598aaee1b7e9ef56c2f3e42dbe47e58",
+      "source_manifest": "V-04_H3_snow候选清单_v1.0.json",
+      "source_manifest_sha256": "8ee40b7115cbb3953115a4a8e5d34640e2ae7e0b636457112aca291bd08ec493",
+      "gate_evidence_file": "V-04_H3_snow机器验收记录_v1.0.json",
+      "gate_evidence_sha256": "34454d20493d2abb34af260e4c65096bc261679591282bf59796cd4355b5631a",
+      "gate_assertions": {
+        "preview_id": "snow-candidate-v1",
+        "result": "PASS",
+        "visual_precheck.result": "PASS"
+      },
+      "gate_media_sha256_path": "evidence.paired_review_sha256",
+      "duration_s": 10.0
+    },
+    {
+      "section_id": "fade",
+      "label": "FADE / DOUBLE-INHALE LONG-EXHALE / CHROMATIC TIDE",
+      "source_gate": "PASS_HUMAN_H2_REFERENCE",
+      "source_file": ".artifacts-local/V-04/H2/candidate-v10/fade-H2-paired-review.mp4",
+      "source_sha256": "98bb122ed2e41e3e54ea0bcd8a884d1b3d095ec955199c67e0ddc3ebab213e0e",
+      "source_manifest": "V-04_H2候选清单_v1.3.json",
+      "source_manifest_sha256": "3b4eaa11e27316d94f00ed4f930764ed989624211ab881eb112a6003ff95faca",
+      "gate_evidence_file": "V-04_H2人工评审记录_v1.0.json",
+      "gate_evidence_sha256": "5fffafbc32099269c1e3d4c2798b3857ff0c8f28422098984fb263a86f47a9ec",
+      "gate_assertions": {
+        "candidate_id": "candidate-v10",
+        "decision": "PASS",
+        "results.H2": "PASS"
+      },
+      "gate_media_sha256_path": "review_inputs.paired_review_video.sha256",
+      "duration_s": 10.0
+    },
+    {
+      "section_id": "corridor",
+      "label": "COMMON TRANSITION / 30-40-30 / NEUTRAL MIST CORRIDOR",
+      "source_gate": "PASS_MACHINE_AND_VISUAL_PRECHECK",
+      "source_file": ".artifacts-local/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4",
+      "source_sha256": "c7d16299fc0ef66ccd7e1a05611b001a5b34636433c485d6f7b2f3a792321855",
+      "source_manifest": "V-04_H3_corridor候选清单_v1.0.json",
+      "source_manifest_sha256": "1d92f1ac52604040cf968af048df8166245161603162273d26a121d62c53b5c0",
+      "gate_evidence_file": "V-04_H3_corridor机器验收记录_v1.0.json",
+      "gate_evidence_sha256": "e8bb7bb73032b0558c1551ae55b02adb21ba69cd2e79c938aacc843f2fcf908d",
+      "gate_assertions": {
+        "preview_id": "corridor-candidate-v1",
+        "result": "PASS",
+        "visual_precheck.result": "PASS"
+      },
+      "gate_media_sha256_path": "evidence.paired_review_sha256",
+      "duration_s": 12.0
+    }
+  ],
+  "timeline": {
+    "intro": {
+      "start_s": 0.0,
+      "end_s": 3.0
+    },
+    "sections": [
+      {
+        "section_id": "storm",
+        "start_s": 3.0,
+        "end_s": 15.0,
+        "duration_s": 12.0
+      },
+      {
+        "section_id": "heat",
+        "start_s": 15.0,
+        "end_s": 25.0,
+        "duration_s": 10.0
+      },
+      {
+        "section_id": "snow",
+        "start_s": 25.0,
+        "end_s": 35.0,
+        "duration_s": 10.0
+      },
+      {
+        "section_id": "fade",
+        "start_s": 35.0,
+        "end_s": 45.0,
+        "duration_s": 10.0
+      },
+      {
+        "section_id": "corridor",
+        "start_s": 45.0,
+        "end_s": 57.0,
+        "duration_s": 12.0
+      }
+    ],
+    "outro": {
+      "start_s": 57.0,
+      "end_s": 62.0
+    },
+    "duration_s": 62.0
+  },
+  "storyboard": {
+    "weather_count": 4,
+    "nodes_per_weather": [
+      6,
+      6,
+      6,
+      6
+    ],
+    "total_node_count": 24,
+    "reference_frames_are_runtime_captures": false,
+    "reference_frames_are_style_only": true
+  },
+  "outputs": {
+    "combined_video": {
+      "file": "V-04-H3-combined-review-candidate-v1.mp4",
+      "size_bytes": 37304067,
+      "sha256": "c97757f74f6bbcd3d4aae899365213b55f3e7f07cc2a02ef0cd52e97b9a3bff8",
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640032",
+            "width": 3840,
+            "height": 1200,
+            "coded_width": 3840,
+            "coded_height": 1200,
+            "has_b_frames": 2,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "16:5",
+            "pix_fmt": "yuv420p",
+            "level": 50,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 952320,
+            "duration": "62.000000",
+            "bit_rate": "4636183",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "1860",
+            "extradata_size": 47,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 1024,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 2976000,
+            "duration": "62.000000",
+            "bit_rate": "168279",
+            "nb_frames": "2908",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "V-04-H3-combined-review-candidate-v1.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "62.000000",
+          "size": "37304067",
+          "bit_rate": "4813428",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    "combined_keyframes": {
+      "file": "review/H3/V-04-H3-combined-review-keyframes-v1.jpg",
+      "size_bytes": 270800,
+      "sha256": "aeb208c4d7e20bb784d1663a452cb16574ef2ea13425fc4f6e3c78e0ecf97f64",
+      "width": 3840,
+      "height": 640
+    },
+    "storyboard_sheet": {
+      "file": "review/H3/V-04-H3-six-node-storyboard-v1.jpg",
+      "size_bytes": 1505577,
+      "sha256": "a74f9410cc0abe2c5de2de268edb949bad33298f25a48a0ba799173db024a13c",
+      "width": 3840,
+      "height": 1600
+    }
+  },
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  },
+  "gate_status": "MACHINE_PASS_READY_FOR_INDEPENDENT_REVIEW",
+  "next_if_pass": "INDEPENDENT_AGENT_REVIEW_THEN_TEAM_DIRECTOR_H3_CONFIRMATION",
+  "evidence_boundary": "Design review evidence only; Unity runtime, build, licensed production assets and live device chain remain unverified."
+}

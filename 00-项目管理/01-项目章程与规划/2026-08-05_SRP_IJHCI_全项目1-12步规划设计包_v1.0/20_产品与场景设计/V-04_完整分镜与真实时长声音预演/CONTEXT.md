@@ -5,7 +5,7 @@
 | 范围 | 文件 |
 |---|---|
 | 实施裁定 | `V-04_科研便捷实施裁定_v1.2.md` |
-| 当前状态 | `V-04_实施状态与H1确认记录_v2.0.md` |
+| 当前状态 | `V-04_实施状态与H1确认记录_v2.1.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |
 | H2当前设计合同 | `V-04_H2_candidate-v10_固定镜头与背景重建设计合同_v1.0.md` |
 | H2当前配置与清单 | `V-04_H2样片配置_v1.3.json`、`V-04_H2候选清单_v1.3.json` |
@@ -19,6 +19,9 @@
 | H3 snow验收 | `V-04_H3_snow机器验收记录_v1.0.json`、`V-04_H3_snow样片评审说明_v1.0.md`、`validate_v04_h3_snow.py` |
 | H3 corridor输入 | `V-04_H3_corridor通用转场样片合同_v1.0.md`、`V-04_H3_corridor样片配置_v1.0.json`、`V-04_H3_corridor候选清单_v1.0.json` |
 | H3 corridor验收 | `V-04_H3_corridor机器验收记录_v1.0.json`、`V-04_H3_corridor样片评审说明_v1.0.md`、`validate_v04_h3_corridor.py` |
+| H3合并合同与配置 | `V-04_H3合并评审与Unity交接合同_v1.0.md`、`V-04_H3合并评审配置_v1.0.json` |
+| H3六节点交接 | `V-04_H3_四天气六节点Unity交接分镜_v1.0.json`、`V-04_H3_四天气六节点Unity交接分镜_v1.0.md`、`V-04_H3_Unity交接清单_v1.0.md` |
+| H3合并证据 | `V-04_H3合并评审候选清单_v1.0.json`、`V-04_H3合并评审机器验收记录_v1.0.json`、`V-04_H3合并评审独立Agent复核记录_v1.0.md`、`V-04_H3合并评审说明_v1.0.md` |
 | H2当前验证器 | `validate_v04_h2_v10.py` |
 | H2背景签收 | `V-04_H2背景候选清单_v1.0.json`、`V-04_H2背景选择记录_v1.0.json` |
 | H2独立视觉预审 | `V-04_H2_candidate-v9_独立视觉预审报告_v1.0.md` |
@@ -55,7 +58,9 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H3 snow输入 | `PASS_MACHINE` | 10秒双条件粉雪升沉样片已通过机器门和Codex视觉预检 |
 | H3 corridor输入 | `PASS_MACHINE` | 12秒通用山雾长廊转场已通过机器门和Codex视觉预检；两条件逐帧相同 |
 | H3输入门 | `PASS` | fade、storm、heat、snow与corridor五项输入齐备 |
-| H3合并评审 | `IN_PROGRESS` | 待装配不超过2分钟的评审视频和四天气六节点Unity交接分镜 |
+| H3合并机器门 | `PASS` | 62秒合并视频、五项源门、四天气24节点、F-01/F-05语义、精确输出路径和资产边界通过 |
+| H3独立复审 | `PASS` | 第一轮问题已按P1至P3修复；第二轮无未关闭P1-P3 |
+| H3团队总监 | `PENDING` | 待按H3-1至H3-5确认；V-04继续`IN_PROGRESS` |
 
 candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；Git保存v1.3配置、清单、彩色/灰度关键帧、v10渲染器和验证器。
 
@@ -68,4 +73,4 @@ candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。
 
 ## 下一步
 
-`H3_INPUT_PREVIEWS_READY`已经关闭。下一项装配不超过2分钟的H3评审视频，并输出每个天气六节点Unity交接分镜；V-04继续保持`IN_PROGRESS`。
+H3合并机器门和独立复审已经关闭。下一硬门为`H3_PENDING_TEAM_DIRECTOR_CONFIRMATION`；团队总监按H3-1至H3-5确认前，V-04继续保持`IN_PROGRESS`且不解锁V-05。

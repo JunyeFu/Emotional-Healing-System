@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_COMBINED_REVIEW",
+  "candidate_id": "h3-combined-review-candidate-v1",
+  "render_requested_at": "2026-08-30T22:20:00+08:00",
+  "design_contract": "V-04_H3合并评审与Unity交接合同_v1.0.md",
+  "storyboard_json": "V-04_H3_四天气六节点Unity交接分镜_v1.0.json",
+  "storyboard_markdown": "V-04_H3_四天气六节点Unity交接分镜_v1.0.md",
+  "unity_handoff_checklist": "V-04_H3_Unity交接清单_v1.0.md",
+  "review_order_is_runtime_sequence": false,
+  "slates": {
+    "intro_duration_s": 3.0,
+    "outro_duration_s": 5.0
+  },
+  "sections": [
+    {
+      "section_id": "storm",
+      "label": "STORM / 3-3-3-3 / RAIN CURTAIN GATE",
+      "source_manifest": "V-04_H3_storm候选清单_v1.0.json",
+      "source_file": ".artifacts-local/V-04/H3/storm-candidate-v1/storm-H3-paired-review.mp4",
+      "source_sha256": "73e1fa977419351a6fb1ea19b75ecbafbbef2928f0b6eb9fc06c75312c105c2c",
+      "duration_s": 12.0,
+      "source_gate": "PASS_HUMAN",
+      "gate_evidence": {
+        "file": "V-04_H3_storm人工评审记录_v1.0.json",
+        "assertions": {
+          "preview_id": "storm-candidate-v1",
+          "decision": "PASS",
+          "results.storm_input": "PASS"
+        },
+        "media_sha256_path": "review_inputs.paired_review_video.sha256"
+      }
+    },
+    {
+      "section_id": "heat",
+      "label": "HEAT / 4-6 / COOL AIR CORRIDOR",
+      "source_manifest": "V-04_H3_heat候选清单_v1.0.json",
+      "source_file": ".artifacts-local/V-04/H3/heat-candidate-v1/heat-H3-paired-review.mp4",
+      "source_sha256": "409d006fee558577226153e4447fe1f0a6537b24a5f914fddf1dc4481f1b4d52",
+      "duration_s": 10.0,
+      "source_gate": "PASS_MACHINE_AND_VISUAL_PRECHECK",
+      "gate_evidence": {
+        "file": "V-04_H3_heat机器验收记录_v1.0.json",
+        "assertions": {
+          "preview_id": "heat-candidate-v1",
+          "result": "PASS",
+          "visual_precheck.result": "PASS"
+        },
+        "media_sha256_path": "evidence.paired_review_sha256"
+      }
+    },
+    {
+      "section_id": "snow",
+      "label": "SNOW / 5-5 / POWDER SNOW RISE-FALL",
+      "source_manifest": "V-04_H3_snow候选清单_v1.0.json",
+      "source_file": ".artifacts-local/V-04/H3/snow-candidate-v1/snow-H3-paired-review.mp4",
+      "source_sha256": "1ddff6a4b1995d855733bb89ba1c0fe8d598aaee1b7e9ef56c2f3e42dbe47e58",
+      "duration_s": 10.0,
+      "source_gate": "PASS_MACHINE_AND_VISUAL_PRECHECK",
+      "gate_evidence": {
+        "file": "V-04_H3_snow机器验收记录_v1.0.json",
+        "assertions": {
+          "preview_id": "snow-candidate-v1",
+          "result": "PASS",
+          "visual_precheck.result": "PASS"
+        },
+        "media_sha256_path": "evidence.paired_review_sha256"
+      }
+    },
+    {
+      "section_id": "fade",
+      "label": "FADE / DOUBLE-INHALE LONG-EXHALE / CHROMATIC TIDE",
+      "source_manifest": "V-04_H2候选清单_v1.3.json",
+      "source_file": ".artifacts-local/V-04/H2/candidate-v10/fade-H2-paired-review.mp4",
+      "source_sha256": "98bb122ed2e41e3e54ea0bcd8a884d1b3d095ec955199c67e0ddc3ebab213e0e",
+      "duration_s": 10.0,
+      "source_gate": "PASS_HUMAN_H2_REFERENCE",
+      "gate_evidence": {
+        "file": "V-04_H2人工评审记录_v1.0.json",
+        "assertions": {
+          "candidate_id": "candidate-v10",
+          "decision": "PASS",
+          "results.H2": "PASS"
+        },
+        "media_sha256_path": "review_inputs.paired_review_video.sha256"
+      }
+    },
+    {
+      "section_id": "corridor",
+      "label": "COMMON TRANSITION / 30-40-30 / NEUTRAL MIST CORRIDOR",
+      "source_manifest": "V-04_H3_corridor候选清单_v1.0.json",
+      "source_file": ".artifacts-local/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4",
+      "source_sha256": "c7d16299fc0ef66ccd7e1a05611b001a5b34636433c485d6f7b2f3a792321855",
+      "duration_s": 12.0,
+      "source_gate": "PASS_MACHINE_AND_VISUAL_PRECHECK",
+      "gate_evidence": {
+        "file": "V-04_H3_corridor机器验收记录_v1.0.json",
+        "assertions": {
+          "preview_id": "corridor-candidate-v1",
+          "result": "PASS",
+          "visual_precheck.result": "PASS"
+        },
+        "media_sha256_path": "evidence.paired_review_sha256"
+      }
+    }
+  ],
+  "render": {
+    "width": 3840,
+    "height": 1200,
+    "fps": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2,
+    "expected_duration_s": 62.0,
+    "maximum_duration_s": 120.0
+  },
+  "weather_style_reference_progress": 0.5,
+  "outputs": {
+    "artifact_root": ".artifacts-local/V-04/H3/combined-review-candidate-v1",
+    "combined_video": "V-04-H3-combined-review-candidate-v1.mp4",
+    "combined_keyframes": "review/H3/V-04-H3-combined-review-keyframes-v1.jpg",
+    "storyboard_sheet": "review/H3/V-04-H3-six-node-storyboard-v1.jpg"
+  },
+  "machine_gates": {
+    "required_section_order": [
+      "storm",
+      "heat",
+      "snow",
+      "fade",
+      "corridor"
+    ],
+    "required_weather_ids": [
+      "storm",
+      "heat",
+      "snow",
+      "fade"
+    ],
+    "required_node_ids": [
+      "ENTRY",
+      "DEMO_END",
+      "CLOSED_LOOP_START",
+      "CLOSED_LOOP_MID",
+      "CLOSED_LOOP_END",
+      "TRANSITION_COMPLETE"
+    ],
+    "required_node_times_s": [
+      0.0,
+      25.0,
+      25.0,
+      100.0,
+      175.0,
+      200.0
+    ]
+  },
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  }
+}

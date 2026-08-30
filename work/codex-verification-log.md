@@ -1212,3 +1212,19 @@
 - 协议权威、任务注册表与独立任务包：全部`PASS`；任务注册表57项，`READY=F-03/F-05`；独立包5个、132份快照。
 - 根Python回归：`412 passed in 38.74s`。
 - 当前证据关闭`H3_INPUT_PREVIEWS_READY`；H3合并评审、六节点Unity交接分镜和V-04总体验收仍未完成。
+
+### 2026-08-30 V-04 H3 combined review candidate-v1
+
+| Field | Result |
+|---|---|
+| Render | 62.000秒、30 fps、1860帧、3840×1200、H.264/AAC 48 kHz立体声；视频SHA-256=`c97757f74f6bbcd3d4aae899365213b55f3e7f07cc2a02ef0cd52e97b9a3bff8`。 |
+| Source Gates | storm/fade人工记录及heat/snow/corridor机器记录逐字段断言，并分别绑定输入视频SHA-256；`PASS`。 |
+| Contract | 四天气24节点、F-01回执与边界、F-05全天气演示周期门、Python权威、条件公平、共享转场和临时资产边界均`PASS`。 |
+| Output Safety | 本地视频目录、两张评审图、候选清单和机器记录均使用精确输出白名单；`PASS`。 |
+| Visual Inspection | 4×6图无裁切或重叠；图首和24个单元均标明只作风格参考、不是运行节点捕获；两张评审图`PASS`。 |
+| Independent Review | 首轮`REVISE_REQUIRED`；P1至P3修复后快速复审`PASS`，未关闭P1-P3为0。 |
+| V-04 Validators | 工具链、H1、candidate-v8/v9/v10、storm、heat、snow、corridor、H3合并共十个验证器全部`PASS`。 |
+| Governance | 协议权威`PASS`；任务注册表57项，`READY=F-03/F-05`；独立任务包5个、132份快照。 |
+| Project Regression | 冻结Python 3.14.4：`412 passed in 40.14s`。 |
+| State | V-04保持`IN_PROGRESS`；当前硬门=`H3_PENDING_TEAM_DIRECTOR_CONFIRMATION`。 |
+| Evidence Boundary | 当前只关闭H3候选机器门和独立复审；不表示Unity运行、Windows制品、资产许可放行、真实设备链或研究结果完成。 |

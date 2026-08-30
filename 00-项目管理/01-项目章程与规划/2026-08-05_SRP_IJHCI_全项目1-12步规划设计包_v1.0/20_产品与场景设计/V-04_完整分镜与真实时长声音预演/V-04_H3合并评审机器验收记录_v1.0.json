@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_COMBINED_REVIEW",
+  "candidate_id": "h3-combined-review-candidate-v1",
+  "validated_at": "2026-08-30T22:20:00+08:00",
+  "result": "PASS",
+  "candidate_manifest_sha256": "6bb95604e1a6494133ebd7a35f4d3cca360c1f0e3bc7e315184cefe2364ca4f6",
+  "checks": {
+    "five_source_hashes_and_manifests": "PASS",
+    "five_source_gate_records_bound": "PASS",
+    "review_order_not_runtime_sequence": "PASS",
+    "duration_62s_under_120s": "PASS",
+    "video_audio_format_and_decode": "PASS",
+    "four_weather_six_node_contract": "PASS",
+    "f01_boundary_evidence_semantics": "PASS",
+    "f05_all_weather_demo_cycle_gate": "PASS",
+    "python_authority_and_no_participant_input": "PASS",
+    "condition_parity_and_shared_transition": "PASS",
+    "generated_path_allowlist": "PASS",
+    "style_reference_sheet_not_runtime_capture": "PASS",
+    "temporary_asset_boundary": "PASS"
+  },
+  "gate_status": "MACHINE_PASS_READY_FOR_INDEPENDENT_REVIEW",
+  "next_gate": "INDEPENDENT_AGENT_REVIEW_THEN_TEAM_DIRECTOR_H3_CONFIRMATION",
+  "evidence_boundary": "Machine checks establish the design package structure and media integrity only; Unity runtime, build, licensed production assets and live device chain remain unverified."
+}

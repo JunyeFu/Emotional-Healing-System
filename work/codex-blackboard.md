@@ -1230,3 +1230,13 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 | Regression | V-04九个验证器、协议权威、57项任务注册表、5个独立任务包均`PASS`；根回归`412 passed in 38.74s`。 |
 | State | `H3_INPUT_PREVIEWS_READY`关闭；V-04保持`IN_PROGRESS`，下一硬门为`H3_COMBINED_REVIEW_READY`。 |
 | Evidence Boundary | 当前只形成五项H3输入，不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-30 V-04 H3合并评审与六节点交接
+
+- 生成62秒`h3-combined-review-candidate-v1`，评审排列为`storm -> heat -> snow -> fade -> corridor`且明确不绑定运行顺序；视频SHA-256=`c97757f74f6bbcd3d4aae899365213b55f3e7f07cc2a02ef0cd52e97b9a3bff8`。
+- 四天气各六节点、共24节点已冻结；F-01回执只绑定已ACK的`segment`控制，两个中间观察点只保存遥测帧，第四模块只ACK `end`。
+- 四天气演示周期身份和正式六节点交接均等待F-05 v2.2及消费者迁移；Unity不得本地计数或推断周期。
+- 首轮独立复审为`REVISE_REQUIRED`；按P1至P3修复源门绑定、输出路径、验证器和风格参考图后，快速复审为`PASS`，未关闭P1-P3为0。
+- 十个V-04验证器、协议权威、57项任务注册表、5个独立包/132份快照和根回归`412 passed in 40.14s`均通过。
+- V-04保持`IN_PROGRESS`；当前硬门为`H3_PENDING_TEAM_DIRECTOR_CONFIRMATION`。团队总监确认H3-1至H3-5前不解锁V-05。
+- 当前证据只关闭H3机器门和独立复审，不表示Unity运行、Windows制品、资产许可放行或真实设备链完成。
