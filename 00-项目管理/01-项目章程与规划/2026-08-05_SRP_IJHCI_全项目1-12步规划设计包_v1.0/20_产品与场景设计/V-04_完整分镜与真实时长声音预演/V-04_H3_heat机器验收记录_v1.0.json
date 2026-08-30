@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H3-HEAT-MACHINE-ACCEPTANCE-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "heat-candidate-v1",
+  "technical_id": "heat",
+  "result": "PASS",
+  "validated_at": "2026-08-30T17:15:42+08:00",
+  "base_commit": "4b75025b2cc5f4c118c29a1d32b69f3544d2d462",
+  "evidence": {
+    "manifest": {
+      "file": "V-04_H3_heat候选清单_v1.0.json",
+      "sha256": "51f82513c4b3fa9b5b8b87ed4efdd7f095a307d351ad171ef0cd58af6195130f"
+    },
+    "config_sha256": "8fb691e63aec1e88587e49f092282f57083154b3b65617c210e7d5de21731910",
+    "design_contract_sha256": "a991d66edd1c5310013eebe8b13b28424f48277065f9deb8c0aab8ffa1a61b1a",
+    "renderer_sha256": "c1c375610f8e27153682ad3c4acfc7671ceeaeb8812e8c17a8b9d7254c6739d9",
+    "validator_sha256": "04f7fb6b1193cddbb5b5e152cfd1709c84cca909b6c635a02b383076d85d0a53",
+    "scene_native_sha256": "96a5897f7cefe5988cf8a574cc57f4232b0bc3f1ffb8429f5cf51884da2297a4",
+    "abstract_pacer_sha256": "c50c5d0b86076dafb32bc8cfc20816cc464da02d2ea4afe94f63d0628a07c2c4",
+    "paired_review_sha256": "409d006fee558577226153e4447fe1f0a6537b24a5f914fddf1dc4481f1b4d52",
+    "ambient_audio_sha256": "ea7501c5a57cfd333886e0899bd5942b73452b27b8c4eb27b013a67a43ee830b",
+    "review_keyframes_sha256": "6f8b3ce4df9e264bdbb16a225af97f7b7337e9649ffc1066403d1a589415b7dc",
+    "grayscale_keyframes_sha256": "2a801c67b91317207e3796c0f797494bd10c7c02f93f5a738764e4f7882befe7"
+  },
+  "machine_results": {
+    "duration_s": 10.0,
+    "fps": 30,
+    "frame_count": 300,
+    "inhale_duration_s": 4.0,
+    "exhale_duration_s": 6.0,
+    "phase_order": [
+      "INHALE",
+      "EXHALE"
+    ],
+    "actual_lag_s": 0.5,
+    "inhale_path_length_px": 369.3411258563215,
+    "exhale_path_length_px": 575.8261465388326,
+    "exhale_to_inhale_path_ratio": 1.5590631701351245,
+    "inhale_rise_px": 330.0,
+    "exhale_forward_travel_px": 440.0,
+    "target_at_4s": "EXHALE",
+    "actual_at_4s": "INHALE",
+    "condition_difference_outside_mask": 0,
+    "scroll_displacement_px": 383.0,
+    "integrated_lufs_i": -22.02,
+    "true_peak_dbtp": -4.42,
+    "media_health": "PASS"
+  },
+  "visual_precheck": {
+    "reviewer": "Codex",
+    "result": "PASS",
+    "checked_outputs": [
+      "review/H3/heat-H3-keyframes-v1.jpg",
+      "review/H3/heat-H3-grayscale-v1.jpg",
+      "full-resolution paired frames at 3.9, 4.3, 8.0 and 9.9 seconds"
+    ],
+    "resolved_findings": [
+      "synthetic dashed airflow grid",
+      "regular endpoint blobs",
+      "insufficient warm background separation"
+    ]
+  },
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  },
+  "next_input": "snow",
+  "evidence_boundary": "This record accepts the heat design preview only; H3 combined review, Unity runtime, formal build, asset release and device chain remain incomplete."
+}

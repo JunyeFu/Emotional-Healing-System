@@ -1200,3 +1200,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 单项人工结果记录为目标四阶段、两次停留、实际与目标差异、抽象双环及两条件环境一致均`PASS`。
 - storm状态迁移为`HUMAN_PASS_READY_FOR_H3_ASSEMBLY`；既有机器清单和机器验收记录保持不变。
 - V-04继续`IN_PROGRESS`，当前硬门仍为`H3_INPUT_PREVIEWS_READY`；下一项为heat。
+
+### 2026-08-30 V-04 heat核心机制样片
+
+- 按V-02/V-03权威将heat冻结为10秒双条件短样片：4秒吸气向前中景聚拢，6秒呼气沿地表向右前方延伸，实际轨迹固定滞后0.50秒。
+- 两条件共享热浪盐原、`0.02 viewport/s`横向卷动、非阶段热浪、盐尘、固定累计值和声音；场景原生条件使用冷流风道与近场实际，抽象条件使用外环和内环。
+- 首轮预检退回规则虚线网格和端点圆斑，修正版使用不规则断续冷流与柔和盐尘，并增强背景暖色分离；拒绝预检仅留在Git忽略目录。
+- 最终`heat-candidate-v1`机器门`PASS`：300帧、区外像素差0、呼气/吸气路径比`1.559`、呼气向前移动`440 px`、4秒切换点目标与实际错位、声音`-22.02 LUFS-I/-4.42 dBTP`。
+- V-04继续`IN_PROGRESS`，当前硬门保持`H3_INPUT_PREVIEWS_READY`；下一项为snow，随后山雾长廊。

@@ -1167,3 +1167,20 @@
 | Static Checks | 人工评审JSON可解析，候选清单与并列视频哈希一致；新增文件限制用语0命中；`git diff --check`通过。 |
 | State | storm输入=`HUMAN_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为heat。 |
 | Evidence Boundary | 本结论只签收storm单项设计样片；其余H3输入、H3合并视频、V-04总体验收、Unity运行、正式构建、资产许可放行和真实设备链仍未完成。 |
+
+### 2026-08-30 V-04 heat核心机制样片
+
+| Field | Result |
+|---|---|
+| Contract | 10秒、30 fps、4秒吸气和6秒呼气；场景原生冷流风道与近场实际、抽象双环、共享环境及无阶段天气/声音冻结。 |
+| Revision | 首轮预检的规则虚线网格、端点圆斑和偏弱暖色分离已修复；拒绝预检只保留在Git忽略目录。 |
+| Final Render | 两条1920×1080参与者视频、一条3840×1200并列视频、48 kHz/24-bit双声道WAV、彩色与灰度关键帧生成完成。 |
+| Machine Gate | `PASS`：300帧、区外像素差0、吸气路径`369.34 px`、呼气路径`575.83 px`、路径比`1.559`、呼气向前移动`440 px`，4秒切换点目标/实际保持错位。 |
+| Media And Audio | 10秒CFR媒体和双声道声音结构通过；声音=`-22.02 LUFS-I/-4.42 dBTP`。 |
+| Visual Precheck | `PASS`：彩色/灰度关键帧及3.9、4.3、8.0、9.9秒并列帧已检查；规则网格和端点圆斑不再出现。 |
+| V-04 Regression | 工具链、H1、candidate-v8/v9/v10历史机器证据、storm专项及heat专项验证均为`PASS`；H1/H2校验器阶段尾注按历史证据解释，当前状态以v1.8及既有人工记录为准。 |
+| Governance | 协议权威验证`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-05`）；独立任务包`PASS`（5包、132份快照）。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 636.11s`；本次D盘文件I/O明显慢于历史基线。 |
+| Evidence Binding | heat机器验收JSON可解析；候选清单与并列视频SHA-256均与实际文件一致；下一输入为`snow`。 |
+| State | heat输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为snow。 |
+| Evidence Boundary | 当前只形成heat设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
