@@ -1,0 +1,10 @@
+{
+  "name": "SRP.F03.PlayModeTests",
+  "rootNamespace": "SRP.F03.Tests",
+  "references": [
+    "SRP.F03.Runtime"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

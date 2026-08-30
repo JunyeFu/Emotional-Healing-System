@@ -1,5 +1,16 @@
 {
-  "dependencies": {
+  "schema_version": "f03-environment-lock-v1",
+  "unity_executable": "D:/UnityEngine/6000.4.9f1/Editor/Unity.exe",
+  "unity_version": "6000.4.9f1",
+  "unity_revision": "f7258d6eebbe",
+  "build_target": "StandaloneWindows64",
+  "dev_scene": "Assets/F03/Scenes/F03DevReplay.unity",
+  "hashes": {
+    "ProjectSettings/ProjectVersion.txt": "ccb1d5360e2f76b5696673c1e0b8c101d21d855c074ee892e325c25c865d2775",
+    "Packages/manifest.json": "af4c876960a82cf7b3c7650aeb72235399d917fe62658c328e31a99836059a1a",
+    "Packages/packages-lock.json": "348e87851536f8a9bc08a80f7861e57dbdb7e3fffc94437785ce69ac324a90de"
+  },
+  "direct_dependencies": {
     "com.coplaydev.unity-mcp": "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#78ee5418415953b79c358bfe6355fcc3fde7912b",
     "com.unity.2d.animation": "14.0.4",
     "com.unity.2d.aseprite": "4.0.2",

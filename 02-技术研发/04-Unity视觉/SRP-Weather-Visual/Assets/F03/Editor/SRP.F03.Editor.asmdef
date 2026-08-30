@@ -1,0 +1,10 @@
+{
+  "name": "SRP.F03.Editor",
+  "rootNamespace": "SRP.F03.Editor",
+  "references": [
+    "SRP.F03.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

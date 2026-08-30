@@ -347,15 +347,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "jp.keijiro.klak.spout": {
-      "version": "https://github.com/keijiro/KlakSpout.git?path=/Packages/jp.keijiro.klak.spout#849e7bca3c167839ed697796153e1749acf0c53f",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.modules.screencapture": "1.0.0"
-      },
-      "hash": "849e7bca3c167839ed697796153e1749acf0c53f"
-    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,

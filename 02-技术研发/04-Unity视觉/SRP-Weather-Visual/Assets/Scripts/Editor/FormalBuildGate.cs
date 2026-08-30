@@ -29,7 +29,22 @@ namespace SRP.Editor
 
         public int callbackOrder => -1000;
 
-        public void OnPreprocessBuild(BuildReport report) => ValidateOrThrow();
+        public void OnPreprocessBuild(BuildReport report)
+        {
+            if ((report.summary.options & BuildOptions.Development) != 0)
+            {
+                if (!string.Equals(
+                        Environment.GetEnvironmentVariable("SRP_F03_DEV_BUILD_AUTHORIZED"),
+                        "1",
+                        StringComparison.Ordinal))
+                {
+                    throw new BuildFailedException("UNCONTROLLED_DEVELOPMENT_BUILD");
+                }
+                return;
+            }
+
+            ValidateOrThrow();
+        }
 
         [MenuItem("SRP/Validate Formal v2.1 Build")]
         public static void ValidateFromMenu()
@@ -77,7 +92,10 @@ namespace SRP.Editor
                     .Where(item => item != null)
                     .ToArray();
 
-                if (behaviours.Any(item => item is WeatherController || item is SpoutReceiver))
+                if (behaviours.Any(item =>
+                        item.GetType().Name == "WeatherController" ||
+                        item.GetType().Name == "UDPReceiver" ||
+                        item.GetType().Name == "SpoutReceiver"))
                 {
                     failures.Add(scenePath + ":LEGACY_RUNTIME_COMPONENT_PRESENT");
                 }
