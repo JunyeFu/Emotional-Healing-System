@@ -1067,3 +1067,18 @@
 | Static Checks | Python语法、v1.1 JSON解析、废弃路径引用、当前改动文档措辞和Git差异检查通过；发现并修复1处旧实验数据README悬空引用。 |
 | Rebase Verification | 变基到最新`origin/main`后，`core.autocrlf=true`使新配置工作区字节转为CRLF；候选清单已同步到实际配置SHA-256 `E55FBF958A064A7ED8043D689AC5FC9C8CE47D9085D9DA2FF8A5EA79E58550E8`，不改变样片内容或设计参数。 |
 | Evidence Boundary | 当前只证明设计预演、合同一致性和Python回归；不扩大为Unity运行、正式构建、真实设备链、H2人工确认或V-04完成。 |
+
+### 2026-08-30 F-03 接取与静态盘点
+
+| Field | Result |
+|---|---|
+| Isolation | 从`origin/main@26477005a7b57d4c7781a1f9711dc600b7c393ea`创建`D:/Agent/03-SRP-f03-worktree`与`codex/f-03-unity-baseline`；V-04主工作区未修改。 |
+| Claim Gate | 领取前注册表与独立任务包验证均通过；F-03无前置依赖、领取人为空，可从`READY`转为`IN_PROGRESS`。 |
+| Unity Environment | 项目与本机均为Unity `6000.4.9f1` revision `f7258d6eebbe`；项目版本、manifest和包锁哈希已记录在F-03盘点报告。 |
+| Static Inventory | Unity工程有298个跟踪文件、14个场景、40个C#文件、0个测试脚本、0个程序集定义；构建设置只启用`SampleScene`。 |
+| Boundary Gaps | 仍有KlakSpout直接依赖、`SpoutReceiver`、历史运行组件和TouchDesigner/Spout说明；未发现确定性开发构建入口或`DEV-REPLAY`标记。 |
+| Asset Gate | 台账为`CLEARED=3`、`PROJECT_ORIGINAL=1`、`REPLACE=3`；正式模式必须继续失败关闭。 |
+| Evidence Level | `REPOSITORY_STATIC_INVENTORY`；尚未形成Unity编译、Edit/Play测试或Windows Player构建证据。 |
+| Post-claim Governance | 注册表校验`PASS`：57项，`READY=F-05`，`IN_REVIEW=F-04/G-01/G-02`；独立包校验`PASS`：4包、121份快照。 |
+| Distribution Boundary | F-03已从映射和当前解锁目录移除；剩余分发集合为`F-04/F-05/G-01/G-02`。 |
+| Static Checks | 任务手册F-03状态一致、`git diff --check`通过、本轮新增内容受限用语扫描0命中。 |

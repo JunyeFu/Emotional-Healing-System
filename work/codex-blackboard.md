@@ -1142,3 +1142,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - candidate-v8已生成：两条件整幅画面从完全褪色连续恢复，9.5秒达到原生颜色；提示区外最大像素差为0。H2机器门`PASS`，团队总监人工门仍为`PENDING_HUMAN_CONFIRMATION`。
 - 当前权威收敛到V-04 v1.1配置、清单、评审说明、实施状态和科研便捷裁定；旧实验数据README的唯一悬空引用已改指P-02会话存储数据字典与Schema。
 - 下一队列：最终暂存审计、提交、推送`codex/v-04-animatic`并向`main`创建PR。
+
+### 2026-08-30 F-03 接取与项目盘点
+
+- 用户要求接取F-03并盘点项目；从最新`origin/main@2647700`创建独立工作树`D:/Agent/03-SRP-f03-worktree`和分支`codex/f-03-unity-baseline`，不触碰V-04主工作区及其未跟踪流程图。
+- F-03由`READY`转为`IN_PROGRESS`；领取人为`Codex Agent（F-03独立对话）`，第二复核人为`傅钧烨（团队总监，独立第二人复核人）`。
+- Unity版本与本机安装一致，但当前298个跟踪文件中没有测试脚本或程序集定义；构建设置只启用`SampleScene`，没有确定性Windows开发构建入口或`DEV-REPLAY`标记。
+- 当前仍有KlakSpout直接依赖、`SpoutReceiver`和历史运行组件；四个天气场景虽存在，但正式运行组件未实现。资产台账仍有3组`REPLACE`，正式门应保持失败关闭。
+- 下一队列：环境锁与失败测试、移除Spout运行依赖、建立Edit/Play测试架、建立`DEV-REPLAY`开发壳和Windows构建链、补正式门负测试与证据，再进入第二人复核。
