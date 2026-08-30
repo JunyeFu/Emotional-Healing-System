@@ -50,4 +50,18 @@ Describe 'F-03 environment evidence helpers' {
         $first | Should Match '^[0-9a-f]{64}$'
         $first | Should Be $second
     }
+
+    It 'checks out Unity serialized text with LF line endings' {
+        $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
+        $samples = @(
+            '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Scenes/F03DevReplay.unity',
+            '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/DefaultVolumeProfile.asset',
+            '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Runtime/DevReplayBanner.cs.meta',
+            '02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/Packages/com.unity.probuilder/Settings.json'
+        )
+        $attributes = @(& git -C $repoRoot check-attr eol -- $samples)
+
+        $LASTEXITCODE | Should Be 0
+        @($attributes | Where-Object { $_ -notmatch 'eol: lf$' }).Count | Should Be 0
+    }
 }
