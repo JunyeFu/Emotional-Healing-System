@@ -12,6 +12,13 @@ $evidenceRoot = Join-Path $repoRoot '03-测试与实验\evidence\F-03'
 $buildRoot = Join-Path $unityRoot 'Builds\F03-DevReplay'
 $lock = Get-Content -LiteralPath $lockPath -Raw | ConvertFrom-Json
 $unityExe = $lock.unity_executable -replace '/', '\'
+$environmentModule = Join-Path $PSScriptRoot 'F03Environment.psm1'
+Import-Module $environmentModule -Force
+$implementationPaths = @(
+    'Tools/F03',
+    '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+)
+$script:preRunIdentity = $null
 
 function Write-JsonFile {
     param([Parameter(Mandatory)]$Value, [Parameter(Mandatory)][string]$Path)
@@ -23,6 +30,47 @@ function Write-JsonFile {
 function Get-LowerHash {
     param([Parameter(Mandatory)][string]$Path)
     return (Get-FileHash -Algorithm SHA256 -LiteralPath $Path).Hash.ToLowerInvariant()
+}
+
+function Start-F03RunIdentity {
+    $status = @(Get-F03GitStatus -RepoRoot $repoRoot)
+    Assert-F03CleanStatus -Status $status
+    return [ordered]@{
+        git_commit = (& git -C $repoRoot rev-parse HEAD).Trim()
+        implementation_tree_sha256 = Get-F03ImplementationTreeHash -RepoRoot $repoRoot -RelativePaths $implementationPaths
+        implementation_tree_hash_policy = 'sha256_git_ls_tree_v1'
+        pre_git_status = $status
+        pre_worktree_clean = $true
+    }
+}
+
+function Complete-F03RunIdentity {
+    param([Parameter(Mandatory)][string]$Result)
+
+    $postStatus = @(Get-F03GitStatus -RepoRoot $repoRoot)
+    $unexpected = @($postStatus | Where-Object {
+        $path = if ($_.Length -gt 3) { $_.Substring(3).Replace('\', '/') } else { $_ }
+        -not $path.StartsWith('03-测试与实验/evidence/F-03/', [StringComparison]::Ordinal)
+    })
+    if ($unexpected.Count -gt 0) {
+        throw "F03_POST_RUN_SCOPE_DRIFT: $($unexpected -join '; ')"
+    }
+
+    Write-JsonFile -Value ([ordered]@{
+        schema_version = 'f03-run-identity-v1'
+        task_id = 'F-03'
+        result = $Result
+        mode = $Mode
+        generated_utc = [DateTime]::UtcNow.ToString('O')
+        git_commit = $script:preRunIdentity.git_commit
+        implementation_tree_sha256 = $script:preRunIdentity.implementation_tree_sha256
+        implementation_tree_hash_policy = $script:preRunIdentity.implementation_tree_hash_policy
+        pre_worktree_clean = $script:preRunIdentity.pre_worktree_clean
+        pre_git_status = $script:preRunIdentity.pre_git_status
+        post_git_status_before_identity_report = $postStatus
+        post_changes_limited_to_evidence_scope = $true
+        evidence_scope = '03-测试与实验/evidence/F-03/'
+    }) -Path (Join-Path $evidenceRoot 'run_identity_report.json')
 }
 
 function Start-UnityProcess {
@@ -68,10 +116,14 @@ function Test-F03Environment {
         throw 'Unity project revision drifted'
     }
 
+    if ($lock.hash_policy -ne 'sha256_lf_no_trailing_ws_text_v1') {
+        throw "Unsupported environment hash policy: $($lock.hash_policy)"
+    }
+
     $hashResults = [ordered]@{}
     foreach ($property in $lock.hashes.PSObject.Properties) {
         $path = Join-Path $unityRoot ($property.Name -replace '/', '\')
-        $actual = Get-LowerHash -Path $path
+        $actual = Get-F03CanonicalTextHash -Path $path
         if ($actual -ne [string]$property.Value) {
             throw "Environment lock hash drifted: $($property.Name) expected=$($property.Value) actual=$actual"
         }
@@ -112,19 +164,22 @@ function Test-F03Environment {
         throw "Forbidden runtime dependencies remain: $($forbiddenRuntimeHits -join '; ')"
     }
 
-    $gitCommit = (& git -C $repoRoot rev-parse HEAD).Trim()
     $report = [ordered]@{
-        schema_version = 'f03-environment-report-v1'
+        schema_version = 'f03-environment-report-v2'
         task_id = 'F-03'
         result = 'PASS'
         generated_utc = [DateTime]::UtcNow.ToString('O')
-        git_commit = $gitCommit
+        git_commit = $script:preRunIdentity.git_commit
+        implementation_tree_sha256 = $script:preRunIdentity.implementation_tree_sha256
+        implementation_tree_hash_policy = $script:preRunIdentity.implementation_tree_hash_policy
+        pre_worktree_clean = $script:preRunIdentity.pre_worktree_clean
         unity_executable = $unityExe.Replace('\', '/')
         unity_version = $lock.unity_version
         unity_revision = $lock.unity_revision
         build_target = $lock.build_target
         dev_scene = $lock.dev_scene
         direct_dependency_count = $actualDependencies.Count
+        hash_policy = $lock.hash_policy
         hashes = $hashResults
     }
     Write-JsonFile -Value $report -Path (Join-Path $evidenceRoot 'environment_report.json')
@@ -167,17 +222,36 @@ function Invoke-F03Tests {
 function Invoke-F03Build {
     param([Parameter(Mandatory)][string]$RunName)
     $relativeOutput = "Builds/F03-DevReplay/$RunName"
-    Invoke-Unity -Label "Unity Windows build $RunName" -Arguments @(
-        '-batchmode', '-nographics', '-quit', '-projectPath', $unityRoot,
-        '-executeMethod', 'SRP.F03.Editor.F03Build.BuildWindowsDevReplay',
-        '-f03OutputPath', $relativeOutput,
-        '-logFile', (Join-Path $evidenceRoot "$RunName-build.log")
-    )
+    $previousTreeHash = $env:SRP_F03_IMPLEMENTATION_TREE_SHA256
+    try {
+        $env:SRP_F03_IMPLEMENTATION_TREE_SHA256 = $script:preRunIdentity.implementation_tree_sha256
+        Invoke-Unity -Label "Unity Windows build $RunName" -Arguments @(
+            '-batchmode', '-nographics', '-quit', '-projectPath', $unityRoot,
+            '-executeMethod', 'SRP.F03.Editor.F03Build.BuildWindowsDevReplay',
+            '-f03OutputPath', $relativeOutput,
+            '-logFile', (Join-Path $evidenceRoot "$RunName-build.log")
+        )
+    }
+    finally {
+        $env:SRP_F03_IMPLEMENTATION_TREE_SHA256 = $previousTreeHash
+    }
 }
 
 function Compare-F03Builds {
     $first = Get-Content -LiteralPath (Join-Path $buildRoot 'run-1\f03-build-manifest.json') -Raw | ConvertFrom-Json
     $second = Get-Content -LiteralPath (Join-Path $buildRoot 'run-2\f03-build-manifest.json') -Raw | ConvertFrom-Json
+    foreach ($manifest in @($first, $second)) {
+        if ($manifest.implementation_commit -ne $script:preRunIdentity.git_commit -or
+            $manifest.implementation_tree_sha256 -ne $script:preRunIdentity.implementation_tree_sha256) {
+            throw 'Build manifest implementation identity drifted'
+        }
+        if ($manifest.environment_hash_policy -ne $lock.hash_policy -or
+            $manifest.project_version_sha256 -ne $lock.hashes.'ProjectSettings/ProjectVersion.txt' -or
+            $manifest.package_manifest_sha256 -ne $lock.hashes.'Packages/manifest.json' -or
+            $manifest.package_lock_sha256 -ne $lock.hashes.'Packages/packages-lock.json') {
+            throw 'Build manifest environment lock identity drifted'
+        }
+    }
     $firstPaths = @($first.files.path | Sort-Object)
     $secondPaths = @($second.files.path | Sort-Object)
     if (($firstPaths -join "`n") -ne ($secondPaths -join "`n")) {
@@ -190,8 +264,55 @@ function Compare-F03Builds {
         byte_identical_required = $false
         run_1_manifest_sha256 = Get-LowerHash (Join-Path $buildRoot 'run-1\f03-build-manifest.json')
         run_2_manifest_sha256 = Get-LowerHash (Join-Path $buildRoot 'run-2\f03-build-manifest.json')
+        implementation_tree_sha256 = $script:preRunIdentity.implementation_tree_sha256
         relative_files = $firstPaths
     }) -Path (Join-Path $evidenceRoot 'repeat_build_report.json')
+}
+
+function Test-F03RetainedBuilds {
+    $runs = @()
+    foreach ($runName in @('run-1', 'run-2')) {
+        $runRoot = Join-Path $buildRoot $runName
+        $manifestPath = Join-Path $runRoot 'f03-build-manifest.json'
+        $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
+        $declaredPaths = @($manifest.files.path | Sort-Object)
+        $actualPaths = @(Get-ChildItem -LiteralPath $runRoot -Recurse -File |
+            Where-Object { $_.Name -ne 'f03-build-manifest.json' } |
+            ForEach-Object { [IO.Path]::GetRelativePath($runRoot, $_.FullName).Replace('\', '/') } |
+            Sort-Object)
+        if (($declaredPaths -join "`n") -ne ($actualPaths -join "`n")) {
+            throw "Retained build file set differs from manifest: $runName"
+        }
+        $totalBytes = 0L
+        foreach ($entry in $manifest.files) {
+            $path = Join-Path $runRoot ($entry.path -replace '/', '\')
+            if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+                throw "Retained build file is missing: $runName/$($entry.path)"
+            }
+            if ((Get-LowerHash $path) -ne $entry.sha256) {
+                throw "Retained build file hash drifted: $runName/$($entry.path)"
+            }
+            $totalBytes += [long]$entry.bytes
+        }
+        $runs += [ordered]@{
+            run = $runName
+            local_path = $runRoot.Replace('\', '/')
+            file_count = @($manifest.files).Count
+            total_bytes = $totalBytes
+            manifest_sha256 = Get-LowerHash $manifestPath
+            files_rehashed = $true
+        }
+    }
+    Write-JsonFile -Value ([ordered]@{
+        schema_version = 'f03-build-artifact-receipt-v1'
+        task_id = 'F-03'
+        result = 'PASS'
+        git_commit = $script:preRunIdentity.git_commit
+        implementation_tree_sha256 = $script:preRunIdentity.implementation_tree_sha256
+        retention = 'LOCAL_IGNORED_OUTPUTS_RETAIN_UNTIL_HUMAN_REVIEW'
+        git_publish_allowed = $false
+        runs = $runs
+    }) -Path (Join-Path $evidenceRoot 'build_artifact_receipt.json')
 }
 
 function Test-F03Player {
@@ -259,8 +380,14 @@ function Test-F03Player {
 }
 
 function Invoke-FormalNegative {
-    & py -3.14 -m pytest '02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py' -q
-    if ($LASTEXITCODE -ne 0) { throw 'F-01 contract negative regression failed' }
+    $contractLogPath = Join-Path $evidenceRoot 'f01-contract-negative.log'
+    $contractOutput = @(& py -3.14 -m pytest '02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py' -q -vv 2>&1)
+    $contractExit = $LASTEXITCODE
+    $contractOutput | Set-Content -LiteralPath $contractLogPath -Encoding utf8NoBOM
+    if ($contractExit -ne 0) { throw 'F-01 contract negative regression failed' }
+    if (($contractOutput -join "`n") -notmatch 'test_schema_and_python_share_required_and_type_boundaries') {
+        throw 'F-01 required-field rejection test was not collected'
+    }
 
     $unauthorizedExit = Start-UnityProcess -Arguments @(
         '-batchmode', '-nographics', '-quit', '-projectPath', $unityRoot,
@@ -273,43 +400,79 @@ function Invoke-FormalNegative {
         throw 'Unauthorized Development build failed without the expected gate reason'
     }
 
-    $formalExit = Start-UnityProcess -Arguments @(
-        '-batchmode', '-nographics', '-projectPath', $unityRoot,
-        '-executeMethod', 'SRP.Editor.FormalBuildGate.ValidateFromCommandLine',
-        '-logFile', (Join-Path $evidenceRoot 'formal-gate-negative.log')
-    )
+    $assetReportPath = Join-Path $evidenceRoot 'asset_blocking_report.json'
+    Remove-Item -LiteralPath $assetReportPath -Force -ErrorAction SilentlyContinue
+    $previousAssetReportPath = $env:SRP_G02_ASSET_REPORT_PATH
+    try {
+        $env:SRP_G02_ASSET_REPORT_PATH = $assetReportPath
+        $formalExit = Start-UnityProcess -Arguments @(
+            '-batchmode', '-nographics', '-projectPath', $unityRoot,
+            '-executeMethod', 'SRP.Editor.FormalBuildGate.ValidateFromCommandLine',
+            '-logFile', (Join-Path $evidenceRoot 'formal-gate-negative.log')
+        )
+    }
+    finally {
+        $env:SRP_G02_ASSET_REPORT_PATH = $previousAssetReportPath
+    }
     if ($formalExit -eq 0) { throw 'Formal build gate unexpectedly passed' }
     $formalLog = Get-Content -LiteralPath (Join-Path $evidenceRoot 'formal-gate-negative.log') -Raw
     if ($formalLog -notmatch 'ASSET_LICENSE_GATE_BLOCKED|FORMAL_SCENES_MISSING|FORMAL_RUNTIME_CONTROLLER_MISSING') {
         throw 'Formal gate failed without an expected fail-closed reason'
     }
+    if (-not (Test-Path -LiteralPath $assetReportPath -PathType Leaf)) {
+        throw 'Formal gate did not retain its same-run G-02 asset report'
+    }
+    $assetReport = Get-Content -LiteralPath $assetReportPath -Raw | ConvertFrom-Json
+    $assetItems = @($assetReport.inventory.items).Count
+    $assetBlockers = @($assetReport.blockers).Count
+    $assetSummary = [regex]::Match($formalLog, 'G02_ASSET_GATE_BLOCKED items=(\d+) blockers=(\d+)')
+    if (-not $assetSummary.Success) {
+        throw 'Formal gate log does not contain the same-run G-02 summary'
+    }
+    if ([int]$assetSummary.Groups[1].Value -ne $assetItems -or [int]$assetSummary.Groups[2].Value -ne $assetBlockers) {
+        throw 'Formal gate log and retained G-02 report disagree'
+    }
     Write-JsonFile -Value ([ordered]@{
-        schema_version = 'f03-formal-negative-report-v1'
+        schema_version = 'f03-formal-negative-report-v2'
         result = 'PASS'
         manifest_contract = 'F-01 runtime-contract-v2.1 regression passed, including missing-field rejection'
+        manifest_contract_log_sha256 = Get-LowerHash $contractLogPath
         unauthorized_development_exit_code = $unauthorizedExit
         unauthorized_development_expected_failure = $true
         unity_formal_gate_exit_code = $formalExit
         unity_formal_gate_expected_failure = $true
+        same_run_asset_report_sha256 = Get-LowerHash $assetReportPath
+        same_run_asset_items = $assetItems
+        same_run_asset_blockers = $assetBlockers
         runtime_manifest_handshake_owner = 'U-01'
     }) -Path (Join-Path $evidenceRoot 'formal_negative_report.json')
 }
 
+$script:preRunIdentity = Start-F03RunIdentity
 New-Item -ItemType Directory -Force -Path $evidenceRoot | Out-Null
-switch ($Mode) {
-    'verify' { Test-F03Environment }
-    'test' { Invoke-F03Tests }
-    'build' { Invoke-F03Build -RunName 'run' }
-    'formal-negative' { Invoke-FormalNegative }
-    'all' {
-        Test-F03Environment
-        Invoke-F03Tests
-        Invoke-F03Build -RunName 'run-1'
-        Invoke-F03Build -RunName 'run-2'
-        Compare-F03Builds
-        Test-F03Player
-        Invoke-FormalNegative
+try {
+    switch ($Mode) {
+        'verify' { Test-F03Environment }
+        'test' { Invoke-F03Tests }
+        'build' { Invoke-F03Build -RunName 'run' }
+        'formal-negative' { Invoke-FormalNegative }
+        'all' {
+            Test-F03Environment
+            Invoke-F03Tests
+            Invoke-F03Build -RunName 'run-1'
+            Invoke-F03Build -RunName 'run-2'
+            Compare-F03Builds
+            Test-F03Player
+            Test-F03RetainedBuilds
+            Invoke-FormalNegative
+        }
     }
+    Complete-F03RunIdentity -Result 'PASS'
+}
+catch {
+    try { Complete-F03RunIdentity -Result 'FAIL' }
+    catch { Write-Warning $_.Exception.Message }
+    throw
 }
 
 Write-Output "F03_$($Mode.ToUpperInvariant().Replace('-', '_'))_PASS"
