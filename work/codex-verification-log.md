@@ -1154,3 +1154,16 @@
 | Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 23.52s`。 |
 | State | storm输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为heat。 |
 | Evidence Boundary | 当前只形成storm设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-30 V-04 storm样片人工确认PASS
+
+| Field | Result |
+|---|---|
+| Human Decision | 团队总监傅钧烨明确回复“确认storm样片通过”；`storm-candidate-v1`人工结论为`PASS`。 |
+| Evidence Binding | 审核提交=`65a80939893bf6a8fd9ed73e4721981297341ddd`；候选清单SHA-256=`42a06151f75c000e0c18d6ce5ebcf819133db0dc02dc185ae8e052af10114591`；并列视频SHA-256=`73e1fa977419351a6fb1ea19b75ecbafbbef2928f0b6eb9fc06c75312c105c2c`。 |
+| Human Results | 目标四阶段、两次停留、实际与目标差异、抽象双环、条件环境一致和storm输入均为`PASS`。 |
+| Verification | storm专项机器门和协议权威均`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-05`）；独立任务包`PASS`（5包、132份快照）；根回归`412 passed in 32.92s`。 |
+| Runtime Selection | PATH Python 3.14.5缺少Pillow，工作区绑定图像运行时缺少pytest；按工具链锁直接使用Python 3.14.4、pytest 9.0.3和Pillow 12.2.0完成验证，未安装依赖。 |
+| Static Checks | 人工评审JSON可解析，候选清单与并列视频哈希一致；新增文件限制用语0命中；`git diff --check`通过。 |
+| State | storm输入=`HUMAN_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为heat。 |
+| Evidence Boundary | 本结论只签收storm单项设计样片；其余H3输入、H3合并视频、V-04总体验收、Unity运行、正式构建、资产许可放行和真实设备链仍未完成。 |

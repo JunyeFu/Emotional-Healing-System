@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H3-STORM-HUMAN-REVIEW-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "storm-candidate-v1",
+  "technical_id": "storm",
+  "reviewer": "傅钧烨",
+  "reviewer_role": "团队总监",
+  "decision": "PASS",
+  "decision_source": "direct task message: 确认storm样片通过",
+  "decided_at": "2026-08-30T10:14:15+08:00",
+  "reviewed_commit": "65a80939893bf6a8fd9ed73e4721981297341ddd",
+  "review_inputs": {
+    "candidate_manifest": {
+      "file": "V-04_H3_storm候选清单_v1.0.json",
+      "sha256": "42a06151f75c000e0c18d6ce5ebcf819133db0dc02dc185ae8e052af10114591"
+    },
+    "machine_acceptance": {
+      "file": "V-04_H3_storm机器验收记录_v1.0.json"
+    },
+    "paired_review_video": {
+      "file": ".artifacts-local/V-04/H3/storm-candidate-v1/storm-H3-paired-review.mp4",
+      "sha256": "73e1fa977419351a6fb1ea19b75ecbafbbef2928f0b6eb9fc06c75312c105c2c"
+    }
+  },
+  "results": {
+    "target_phase_legibility": "PASS",
+    "hold_stability": "PASS",
+    "actual_target_divergence": "PASS",
+    "abstract_condition_legibility": "PASS",
+    "condition_match": "PASS",
+    "storm_input": "PASS"
+  },
+  "scope": "storm-candidate-v1 dual-condition 12-second H3 input preview",
+  "next_gate": {
+    "gate_id": "H3_INPUT_PREVIEWS_READY",
+    "status": "IN_PROGRESS",
+    "next_input": "heat"
+  },
+  "does_not_approve": [
+    "remaining H3 inputs",
+    "H3 combined review video",
+    "V-04 completion",
+    "Unity runtime",
+    "formal build",
+    "asset license release",
+    "real device chain"
+  ]
+}

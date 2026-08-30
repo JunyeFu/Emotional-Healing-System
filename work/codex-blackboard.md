@@ -1193,3 +1193,10 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 前两轮因柔光越出差异掩膜被机器门拒绝；后两轮视觉预检分别退回连续轮廓和硬裁切矩形。拒绝制品保留在Git忽略目录，不进入当前候选。
 - 最终`storm-candidate-v1`机器门`PASS`：360帧、区外像素差0、风门展开110像素、两次停留漂移0、卷动460像素、声音`-21.96 LUFS-I/-8.5 dBTP`。
 - V-04继续`IN_PROGRESS`，当前硬门保持`H3_INPUT_PREVIEWS_READY`；下一项为heat。
+
+### 2026-08-30 V-04 storm样片人工确认PASS
+
+- 团队总监傅钧烨明确回复“确认storm样片通过”，审核对象为提交`65a80939893bf6a8fd9ed73e4721981297341ddd`中的`storm-candidate-v1`。
+- 单项人工结果记录为目标四阶段、两次停留、实际与目标差异、抽象双环及两条件环境一致均`PASS`。
+- storm状态迁移为`HUMAN_PASS_READY_FOR_H3_ASSEMBLY`；既有机器清单和机器验收记录保持不变。
+- V-04继续`IN_PROGRESS`，当前硬门仍为`H3_INPUT_PREVIEWS_READY`；下一项为heat。
