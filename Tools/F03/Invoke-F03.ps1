@@ -25,35 +25,12 @@ function Get-LowerHash {
     return (Get-FileHash -Algorithm SHA256 -LiteralPath $Path).Hash.ToLowerInvariant()
 }
 
-function Get-WindowsShortPath {
-    param([Parameter(Mandatory)][string]$Path)
-    if ($null -eq ('F03Native.PathApi' -as [type])) {
-        Add-Type -TypeDefinition @'
-using System.Runtime.InteropServices;
-using System.Text;
-namespace F03Native
-{
-    public static class PathApi
-    {
-        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
-        public static extern uint GetShortPathName(string longPath, StringBuilder shortPath, uint capacity);
-    }
-}
-'@
-    }
-    $buffer = [Text.StringBuilder]::new(32768)
-    $length = [F03Native.PathApi]::GetShortPathName($Path, $buffer, $buffer.Capacity)
-    if ($length -eq 0 -or $length -ge $buffer.Capacity) {
-        throw "Windows short path is unavailable: $Path"
-    }
-    return $buffer.ToString()
-}
-
 function Start-UnityProcess {
     param([Parameter(Mandatory)][string[]]$Arguments)
-    $unityProcesses = @(Get-Process Unity -ErrorAction SilentlyContinue)
-    if ($unityProcesses.Count -gt 0) {
-        throw "Unity is already running: $($unityProcesses.Id -join ',')"
+    $projectProcesses = @(Get-CimInstance Win32_Process -Filter "Name = 'Unity.exe'" -ErrorAction SilentlyContinue |
+        Where-Object { $_.CommandLine -and $_.CommandLine.Contains($unityRoot, [StringComparison]::OrdinalIgnoreCase) })
+    if ($projectProcesses.Count -gt 0) {
+        throw "Unity already has the F-03 project open: $($projectProcesses.ProcessId -join ',')"
     }
     $unityLock = Join-Path $unityRoot 'Temp\UnityLockfile'
     if (Test-Path -LiteralPath $unityLock -PathType Leaf) {
@@ -219,21 +196,30 @@ function Compare-F03Builds {
 
 function Test-F03Player {
     $sourceBuild = Join-Path $buildRoot 'run-1'
-    $sourceExecutable = Join-Path $sourceBuild 'SRP-F03-DevReplay.exe'
     $screenshot = Join-Path $evidenceRoot 'dev-replay-player.png'
     $playerLog = Join-Path $evidenceRoot 'player.log'
     $tempRoot = Join-Path ([IO.Path]::GetTempPath()) ("srp-f03-player-" + [guid]::NewGuid().ToString('N'))
+    $stagedBuild = Join-Path $tempRoot 'build'
     $ports = @(5005, 5006, 5010)
     $beforeUdp = @(Get-NetUDPEndpoint -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -in $ports } | Select-Object LocalAddress, LocalPort, OwningProcess)
     $beforeTcp = @(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -in $ports } | Select-Object LocalAddress, LocalPort, OwningProcess)
 
     try {
-        New-Item -ItemType Directory -Path $tempRoot | Out-Null
+        New-Item -ItemType Directory -Path $stagedBuild | Out-Null
+        Get-ChildItem -LiteralPath $sourceBuild -Force | Copy-Item -Destination $stagedBuild -Recurse
+        $sourceManifest = Get-Content -LiteralPath (Join-Path $sourceBuild 'f03-build-manifest.json') -Raw | ConvertFrom-Json
+        foreach ($entry in $sourceManifest.files) {
+            $stagedPath = Join-Path $stagedBuild ($entry.path -replace '/', '\')
+            if (-not (Test-Path -LiteralPath $stagedPath -PathType Leaf) -or (Get-LowerHash $stagedPath) -ne $entry.sha256) {
+                throw "ASCII staged build differs from source manifest: $($entry.path)"
+            }
+        }
+
         $tempScreenshot = Join-Path $tempRoot 'capture.png'
         $tempPlayerLog = Join-Path $tempRoot 'player.log'
         $startInfo = [Diagnostics.ProcessStartInfo]::new()
-        $startInfo.FileName = Get-WindowsShortPath $sourceExecutable
-        $startInfo.WorkingDirectory = Get-WindowsShortPath $sourceBuild
+        $startInfo.FileName = Join-Path $stagedBuild 'SRP-F03-DevReplay.exe'
+        $startInfo.WorkingDirectory = $stagedBuild
         $startInfo.UseShellExecute = $false
         foreach ($argument in @("--f03-capture=$tempScreenshot", '--f03-auto-quit', '-logFile', $tempPlayerLog, '-screen-width', '1280', '-screen-height', '720', '-screen-fullscreen', '0')) {
             [void]$startInfo.ArgumentList.Add($argument)
@@ -259,9 +245,8 @@ function Test-F03Player {
         schema_version = 'f03-player-smoke-report-v1'
         result = 'PASS'
         player_exit_code = $process.ExitCode
-        launch_mode = 'Win32 short path to original build output'
+        launch_mode = 'manifest-verified ASCII staging copy'
         source_build_manifest_sha256 = Get-LowerHash (Join-Path $sourceBuild 'f03-build-manifest.json')
-        source_executable_sha256 = Get-LowerHash $sourceExecutable
         screenshot_sha256 = Get-LowerHash $screenshot
         before = [ordered]@{ udp = $beforeUdp; tcp = $beforeTcp }
         after = [ordered]@{ udp = $afterUdp; tcp = $afterTcp }
