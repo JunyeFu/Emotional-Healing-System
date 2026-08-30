@@ -5,7 +5,7 @@
 | 范围 | 文件 |
 |---|---|
 | 实施裁定 | `V-04_科研便捷实施裁定_v1.2.md` |
-| 当前状态 | `V-04_实施状态与H1确认记录_v1.9.md` |
+| 当前状态 | `V-04_实施状态与H1确认记录_v2.0.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |
 | H2当前设计合同 | `V-04_H2_candidate-v10_固定镜头与背景重建设计合同_v1.0.md` |
 | H2当前配置与清单 | `V-04_H2样片配置_v1.3.json`、`V-04_H2候选清单_v1.3.json` |
@@ -17,6 +17,8 @@
 | H3 heat验收 | `V-04_H3_heat机器验收记录_v1.0.json`、`V-04_H3_heat样片评审说明_v1.0.md`、`validate_v04_h3_heat.py` |
 | H3 snow输入 | `V-04_H3_snow核心机制样片合同_v1.0.md`、`V-04_H3_snow样片配置_v1.0.json`、`V-04_H3_snow候选清单_v1.0.json` |
 | H3 snow验收 | `V-04_H3_snow机器验收记录_v1.0.json`、`V-04_H3_snow样片评审说明_v1.0.md`、`validate_v04_h3_snow.py` |
+| H3 corridor输入 | `V-04_H3_corridor通用转场样片合同_v1.0.md`、`V-04_H3_corridor样片配置_v1.0.json`、`V-04_H3_corridor候选清单_v1.0.json` |
+| H3 corridor验收 | `V-04_H3_corridor机器验收记录_v1.0.json`、`V-04_H3_corridor样片评审说明_v1.0.md`、`validate_v04_h3_corridor.py` |
 | H2当前验证器 | `validate_v04_h2_v10.py` |
 | H2背景签收 | `V-04_H2背景候选清单_v1.0.json`、`V-04_H2背景选择记录_v1.0.json` |
 | H2独立视觉预审 | `V-04_H2_candidate-v9_独立视觉预审报告_v1.0.md` |
@@ -51,7 +53,9 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H3 storm输入 | `PASS_HUMAN` | 12秒双条件雨幕风门样片已通过机器门、视觉预检和团队总监人工确认 |
 | H3 heat输入 | `PASS_MACHINE` | 10秒双条件冷流风道样片已通过机器门和Codex视觉预检 |
 | H3 snow输入 | `PASS_MACHINE` | 10秒双条件粉雪升沉样片已通过机器门和Codex视觉预检 |
-| H3其余输入 | `IN_PROGRESS` | 只剩山雾长廊 |
+| H3 corridor输入 | `PASS_MACHINE` | 12秒通用山雾长廊转场已通过机器门和Codex视觉预检；两条件逐帧相同 |
+| H3输入门 | `PASS` | fade、storm、heat、snow与corridor五项输入齐备 |
+| H3合并评审 | `IN_PROGRESS` | 待装配不超过2分钟的评审视频和四天气六节点Unity交接分镜 |
 
 candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；Git保存v1.3配置、清单、彩色/灰度关键帧、v10渲染器和验证器。
 
@@ -64,4 +68,4 @@ candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。
 
 ## 下一步
 
-storm、heat与snow输入已完成。下一项制作山雾长廊输入样片；通过机器检查后关闭`H3_INPUT_PREVIEWS_READY`，合并为不超过2分钟的H3评审视频，并输出六节点Unity交接分镜。
+`H3_INPUT_PREVIEWS_READY`已经关闭。下一项装配不超过2分钟的H3评审视频，并输出每个天气六节点Unity交接分镜；V-04继续保持`IN_PROGRESS`。

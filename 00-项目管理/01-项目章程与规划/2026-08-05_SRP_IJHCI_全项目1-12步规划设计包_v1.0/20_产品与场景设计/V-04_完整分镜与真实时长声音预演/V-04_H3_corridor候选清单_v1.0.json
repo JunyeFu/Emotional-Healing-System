@@ -1,0 +1,601 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "corridor-candidate-v1",
+  "technical_id": "corridor",
+  "generated_at": "2026-08-30T22:10:00+08:00",
+  "config_sha256": "3b190a127dbc287d2996e7445f56327f3ac33705a185e4f04d36dd9439a5bd9d",
+  "design_contract_sha256": "7915c44aae610aa743550901a557e2aba5b5c7539bb03c24502f7a53ab59a7ba",
+  "h1_selection_sha256": "c481645a453e30b4a9bdc6821883b9f648b73d2f8ee2e9facf06987ba42074ad",
+  "h2_review_sha256": "5fffafbc32099269c1e3d4c2798b3857ff0c8f28422098984fb263a86f47a9ec",
+  "representative_path": {
+    "purpose": "generic transition visualization only",
+    "current": "storm",
+    "next": "snow",
+    "formal_sequence_binding": false
+  },
+  "sources": {
+    "current": {
+      "candidate_id": "storm-A",
+      "file": ".artifacts-local/V-04/H1/candidates/storm-A-r2.png",
+      "sha256": "fd44f8d988ecba6f889058fa6cc69d616408c0b8ac9d53b1c30440e58b6794b9",
+      "width": 1672,
+      "height": 941
+    },
+    "corridor": {
+      "candidate_id": "corridor-A",
+      "file": ".artifacts-local/V-04/H1/candidates/corridor-A-r2.png",
+      "sha256": "da3549eaed021edb249c29ab1f98cff27afdb95f6228c0cacfc8770b4d821e6d",
+      "width": 1672,
+      "height": 941
+    },
+    "next": {
+      "candidate_id": "snow-B",
+      "file": ".artifacts-local/V-04/H1/candidates/snow-B-r2.png",
+      "sha256": "48ed91dc6d66283c90462a13f8fd9c4bc4fdc8e3241cff5ec2305c557991af76",
+      "width": 1672,
+      "height": 941
+    }
+  },
+  "render": {
+    "duration_s": 12.0,
+    "fps": 30,
+    "frame_count": 360,
+    "sample_is_time_compressed": true,
+    "runtime_candidate_duration_s": [
+      20.0,
+      30.0
+    ],
+    "stage_ratios": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "cue_layers": [],
+    "audio_phase_inputs": [],
+    "condition_pixel_policy": "EXACT_IDENTITY",
+    "max_condition_pixel_difference": 0,
+    "condition_video_hashes_identical": true,
+    "corridor_stele_travel_px": 230.0,
+    "weights": {
+      "at_start": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "at_exit_end": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "at_midpoint": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "at_reveal_start": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "at_end": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "next_weight_before_reveal": 0.0,
+    "current_weight_after_exit": 0.0
+  },
+  "audio_metrics": {
+    "integrated_lufs_i": -22.31,
+    "true_peak_dbtp": -13.21
+  },
+  "outputs": {
+    "scene_native": {
+      "file": "corridor-H3-scene-native.mp4",
+      "size_bytes": 7039648,
+      "sha256": "4987293f81c7623b9d53b2e5101530fb24e5aad943d2936254d27e49459c911e",
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640028",
+            "width": 1920,
+            "height": 1080,
+            "coded_width": 1920,
+            "coded_height": 1080,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 40,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 184320,
+            "duration": "12.000000",
+            "bit_rate": "4491132",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "360",
+            "extradata_size": 46,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 1024,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 576000,
+            "duration": "12.000000",
+            "bit_rate": "192429",
+            "nb_frames": "564",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "corridor-H3-scene-native.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "12.000000",
+          "size": "7039648",
+          "bit_rate": "4693098",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    "abstract_pacer": {
+      "file": "corridor-H3-abstract-pacer.mp4",
+      "size_bytes": 7039648,
+      "sha256": "4987293f81c7623b9d53b2e5101530fb24e5aad943d2936254d27e49459c911e",
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640028",
+            "width": 1920,
+            "height": 1080,
+            "coded_width": 1920,
+            "coded_height": 1080,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 40,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 184320,
+            "duration": "12.000000",
+            "bit_rate": "4491132",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "360",
+            "extradata_size": 46,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 1024,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 576000,
+            "duration": "12.000000",
+            "bit_rate": "192429",
+            "nb_frames": "564",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "corridor-H3-abstract-pacer.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "12.000000",
+          "size": "7039648",
+          "bit_rate": "4693098",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    "paired_review": {
+      "file": "corridor-H3-paired-review.mp4",
+      "size_bytes": 14047268,
+      "sha256": "c7d16299fc0ef66ccd7e1a05611b001a5b34636433c485d6f7b2f3a792321855",
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640032",
+            "width": 3840,
+            "height": 1200,
+            "coded_width": 3840,
+            "coded_height": 1200,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 50,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 184320,
+            "duration": "12.000000",
+            "bit_rate": "9162837",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "360",
+            "extradata_size": 45,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 1024,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 576000,
+            "duration": "12.000000",
+            "bit_rate": "192429",
+            "nb_frames": "564",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "corridor-H3-paired-review.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "12.000000",
+          "size": "14047268",
+          "bit_rate": "9364845",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    "ambient_audio": {
+      "file": "corridor-H3-transition.wav",
+      "size_bytes": 3456102,
+      "sha256": "f39dc7853560272603d10b06f6abc9d697a32d6dfb29a2e9e3132f933306cb7b",
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s24le",
+            "codec_long_name": "PCM signed 24-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s32",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 24,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 576000,
+            "duration": "12.000000",
+            "bit_rate": "2304000",
+            "bits_per_raw_sample": "24",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "corridor-H3-transition.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "12.000000",
+          "size": "3456102",
+          "bit_rate": "2304068",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    "review_keyframes": {
+      "file": "review/H3/corridor-H3-keyframes-v1.jpg",
+      "size_bytes": 488382,
+      "sha256": "a50e7f124d83126fb27a711cc94023cb9ed8f7ec5dd993ca06a5edf3277f833d",
+      "width": 1920,
+      "height": 1100
+    },
+    "grayscale_keyframes": {
+      "file": "review/H3/corridor-H3-grayscale-v1.jpg",
+      "size_bytes": 420855,
+      "sha256": "9773878585b0aef9a765274c9110f213cd47c104e15653ce8510145f340c5471",
+      "width": 1920,
+      "height": 1100
+    }
+  },
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  },
+  "gate_status": "MACHINE_VALIDATION_PENDING",
+  "next_if_pass": "close H3_INPUT_PREVIEWS_READY and assemble the combined H3 review",
+  "evidence_boundary": "This preview is design evidence only; directed-pair runtime, Unity build and device chain remain unverified."
+}

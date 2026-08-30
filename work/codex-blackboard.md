@@ -1216,3 +1216,17 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 第一轮预检提示过弱，第二轮规则十字形成星点，第三轮同心阴影形成气泡感；最终改为带偏移明暗边缘的不规则短絮，三类问题均关闭。
 - 最终`snow-candidate-v1`机器门`PASS`：300帧、区外像素差0、目标/实际垂直行程`300/210 px`、镜像误差低于`4e-13 px`、两阶段粒子数与透明度完全一致、声音`-22.10 LUFS-I/-3.49 dBTP`。
 - V-04继续`IN_PROGRESS`，当前硬门保持`H3_INPUT_PREVIEWS_READY`；只剩山雾长廊输入。
+
+### 2026-08-30 V-04 山雾长廊通用转场样片
+
+| Field | Result |
+|---|---|
+| Contract | 12秒压缩样片按`30/40/30`展示当前退出、中性山雾和下一中性基线；正式候选仍保留20至30秒区间。 |
+| Representative Path | `storm -> snow`仅用于覆盖三段视觉，不绑定正式顺序或天气故事。 |
+| Condition Parity | scene-native与abstract-pacer参与者视频SHA-256相同，360帧最大条件像素差为0，全程提示关闭。 |
+| Leakage And Motion | 下一天气在70%前权重为0，当前天气在30%后权重为0；无字界碑位移`230 px`。 |
+| Audio | 首轮极低频母带响度失败后改为可听中频风雾纹理；最终`-22.31 LUFS-I/-13.21 dBTP`。 |
+| Visual Precheck | 彩色/灰度关键帧及0.0、3.6、6.0、8.4、12.0秒并列帧检查为`PASS`。 |
+| Regression | V-04九个验证器、协议权威、57项任务注册表、5个独立任务包均`PASS`；根回归`412 passed in 38.74s`。 |
+| State | `H3_INPUT_PREVIEWS_READY`关闭；V-04保持`IN_PROGRESS`，下一硬门为`H3_COMBINED_REVIEW_READY`。 |
+| Evidence Boundary | 当前只形成五项H3输入，不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |

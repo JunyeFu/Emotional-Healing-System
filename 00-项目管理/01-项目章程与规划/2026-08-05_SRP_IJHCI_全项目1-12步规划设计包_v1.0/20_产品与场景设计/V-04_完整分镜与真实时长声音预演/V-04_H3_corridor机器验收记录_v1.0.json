@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H3-CORRIDOR-MACHINE-ACCEPTANCE-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "corridor-candidate-v1",
+  "technical_id": "corridor",
+  "result": "PASS",
+  "validated_at": "2026-08-30T21:41:49+08:00",
+  "base_commit": "31538b8229effc4069378b44a33f1ea885f391fe",
+  "evidence": {
+    "manifest": {
+      "file": "V-04_H3_corridor候选清单_v1.0.json",
+      "sha256": "1d92f1ac52604040cf968af048df8166245161603162273d26a121d62c53b5c0"
+    },
+    "config_sha256": "3b190a127dbc287d2996e7445f56327f3ac33705a185e4f04d36dd9439a5bd9d",
+    "design_contract_sha256": "7915c44aae610aa743550901a557e2aba5b5c7539bb03c24502f7a53ab59a7ba",
+    "renderer_sha256": "bde9af817a7215c3e39f2619b86f93e218b1649f37e525d38e73e325a3abd988",
+    "validator_sha256": "b6d1f4deb3c97681ccc5554127db209305f4de244245a9df86e48f8988d55c71",
+    "scene_native_sha256": "4987293f81c7623b9d53b2e5101530fb24e5aad943d2936254d27e49459c911e",
+    "abstract_pacer_sha256": "4987293f81c7623b9d53b2e5101530fb24e5aad943d2936254d27e49459c911e",
+    "paired_review_sha256": "c7d16299fc0ef66ccd7e1a05611b001a5b34636433c485d6f7b2f3a792321855",
+    "ambient_audio_sha256": "f39dc7853560272603d10b06f6abc9d697a32d6dfb29a2e9e3132f933306cb7b",
+    "review_keyframes_sha256": "a50e7f124d83126fb27a711cc94023cb9ed8f7ec5dd993ca06a5edf3277f833d",
+    "grayscale_keyframes_sha256": "9773878585b0aef9a765274c9110f213cd47c104e15653ce8510145f340c5471"
+  },
+  "machine_results": {
+    "duration_s": 12.0,
+    "fps": 30,
+    "frame_count": 360,
+    "stage_ratios": [0.3, 0.4, 0.3],
+    "runtime_candidate_duration_s": [20.0, 30.0],
+    "condition_video_hashes_identical": true,
+    "maximum_condition_pixel_difference": 0,
+    "cue_layers": [],
+    "next_weight_before_reveal": 0.0,
+    "current_weight_after_exit": 0.0,
+    "corridor_stele_travel_px": 230.0,
+    "integrated_lufs_i": -22.31,
+    "true_peak_dbtp": -13.21,
+    "media_health": "PASS"
+  },
+  "visual_precheck": {
+    "reviewer": "Codex",
+    "result": "PASS",
+    "checked_outputs": [
+      "review/H3/corridor-H3-keyframes-v1.jpg",
+      "review/H3/corridor-H3-grayscale-v1.jpg",
+      "full-resolution paired frames at 0.0, 3.6, 6.0, 8.4 and 12.0 seconds"
+    ],
+    "observations": [
+      "current scene exits cleanly into the neutral corridor",
+      "the blank stele passes without text or completion meaning",
+      "the next weather appears only as a neutral baseline",
+      "both cue conditions remain visually identical throughout"
+    ]
+  },
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  },
+  "gate_effect": "H3_INPUT_PREVIEWS_READY_PASS",
+  "next_gate": "H3_COMBINED_REVIEW_READY",
+  "evidence_boundary": "This record accepts the corridor design preview only; directed-pair runtime, final exit, pause behavior, Unity build, asset release and device chain remain incomplete."
+}

@@ -1201,3 +1201,14 @@
 | Evidence Binding | snow机器验收JSON可解析；候选清单与并列视频SHA-256均与实际文件一致；下一输入为`corridor`。 |
 | State | snow输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，只剩山雾长廊输入。 |
 | Evidence Boundary | 当前只形成snow设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-30 V-04 corridor-candidate-v1
+
+- `render_h3_corridor.py --preflight`：`PASS`，检查0.0、3.6、6.0、8.4和12.0秒代表帧。
+- 首轮专项验证：`FAIL`，临时母带为`-32.3 LUFS-I`；修正可听频段后声音预检为`-22.31 LUFS-I/-13.21 dBTP`。
+- `validate_v04_h3_corridor.py`：`PASS`，12秒、30 fps、360帧、30/40/30阶段、两条件视频同哈希、最大像素差0、无提示层、无下一基线提前泄露、媒体健康和共享声音通过。
+- 彩色与灰度关键帧人工视觉预检：`PASS`，无字界碑、中性遮挡和下一场景中性入口清晰。
+- V-04工具链、H1、candidate-v8/v9/v10、storm、heat、snow和corridor共九个验证器：全部`PASS`。
+- 协议权威、任务注册表与独立任务包：全部`PASS`；任务注册表57项，`READY=F-03/F-05`；独立包5个、132份快照。
+- 根Python回归：`412 passed in 38.74s`。
+- 当前证据关闭`H3_INPUT_PREVIEWS_READY`；H3合并评审、六节点Unity交接分镜和V-04总体验收仍未完成。

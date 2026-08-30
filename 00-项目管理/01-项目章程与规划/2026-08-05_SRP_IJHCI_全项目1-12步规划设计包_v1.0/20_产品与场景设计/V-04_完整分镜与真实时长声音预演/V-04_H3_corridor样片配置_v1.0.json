@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "corridor-candidate-v1",
+  "technical_id": "corridor",
+  "render_requested_at": "2026-08-30T22:10:00+08:00",
+  "design_contract": "V-04_H3_corridor通用转场样片合同_v1.0.md",
+  "representative_path": {
+    "purpose": "generic transition visualization only",
+    "current": "storm",
+    "next": "snow",
+    "formal_sequence_binding": false
+  },
+  "sources": {
+    "current": {
+      "candidate_id": "storm-A",
+      "file": ".artifacts-local/V-04/H1/candidates/storm-A-r2.png",
+      "sha256": "fd44f8d988ecba6f889058fa6cc69d616408c0b8ac9d53b1c30440e58b6794b9"
+    },
+    "corridor": {
+      "candidate_id": "corridor-A",
+      "file": ".artifacts-local/V-04/H1/candidates/corridor-A-r2.png",
+      "sha256": "da3549eaed021edb249c29ab1f98cff27afdb95f6228c0cacfc8770b4d821e6d"
+    },
+    "next": {
+      "candidate_id": "snow-B",
+      "file": ".artifacts-local/V-04/H1/candidates/snow-B-r2.png",
+      "sha256": "48ed91dc6d66283c90462a13f8fd9c4bc4fdc8e3241cff5ec2305c557991af76"
+    }
+  },
+  "timeline": {
+    "duration_s": 12.0,
+    "fps": 30,
+    "frame_count": 360,
+    "sample_is_time_compressed": true,
+    "runtime_candidate_duration_s": [20.0, 30.0],
+    "exit_end_progress": 0.3,
+    "reveal_start_progress": 0.7,
+    "stage_ratios": [0.3, 0.4, 0.3]
+  },
+  "visual": {
+    "output_size": [1920, 1080],
+    "corridor_zoom": 1.16,
+    "corridor_camera_travel_px": 230.0,
+    "mist_handoff_opacity": 0.24,
+    "cue_layers": [],
+    "text_layers": [],
+    "condition_pixel_policy": "EXACT_IDENTITY"
+  },
+  "audio": {
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "bit_depth": 24,
+    "crossfade_duration_s": 3.6,
+    "integrated_lufs_i": [-24.0, -20.0],
+    "true_peak_max_dbtp": -3.0,
+    "phase_inputs": []
+  },
+  "keyframe_times_s": [0.0, 3.6, 6.0, 8.4, 12.0],
+  "machine_gates": {
+    "maximum_condition_pixel_difference": 0,
+    "minimum_stele_travel_px": 180.0,
+    "maximum_exact_duplicate_run_frames": 3
+  },
+  "outputs": {
+    "artifact_root": ".artifacts-local/V-04/H3/corridor-candidate-v1",
+    "scene_native_video": "corridor-H3-scene-native.mp4",
+    "abstract_pacer_video": "corridor-H3-abstract-pacer.mp4",
+    "paired_review_video": "corridor-H3-paired-review.mp4",
+    "ambient_audio": "corridor-H3-transition.wav",
+    "review_keyframes": "review/H3/corridor-H3-keyframes-v1.jpg",
+    "grayscale_keyframes": "review/H3/corridor-H3-grayscale-v1.jpg"
+  },
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  }
+}
