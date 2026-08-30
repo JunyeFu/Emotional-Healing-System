@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "snow-candidate-v1",
+  "technical_id": "snow",
+  "render_requested_at": "2026-08-30T20:59:20+08:00",
+  "design_contract": "V-04_H3_snow核心机制样片合同_v1.0.md",
+  "source": {
+    "selected_anchor_id": "snow-B",
+    "panorama_file": ".artifacts-local/V-04/H1/candidates/snow-B-r2.png",
+    "panorama_sha256": "48ed91dc6d66283c90462a13f8fd9c4bc4fdc8e3241cff5ec2305c557991af76",
+    "formal_use_allowed": false
+  },
+  "timeline": {
+    "duration_s": 10.0,
+    "fps": 30,
+    "frame_count": 300,
+    "inhale_duration_s": 5.0,
+    "exhale_duration_s": 5.0,
+    "phase_slots": [
+      "INHALE",
+      "EXHALE"
+    ],
+    "actual_lag_s": 0.55,
+    "recovery_value": 0.35
+  },
+  "camera": {
+    "mode": "horizontal_auto_scroll",
+    "scroll_speed_viewport_per_s": 0.02,
+    "source_plate_height_px": 1350,
+    "vertical_crop_y_px": 135,
+    "expected_displacement_px": 384.0
+  },
+  "environment": {
+    "ambient_snow_count": 128,
+    "fog_band_count": 5,
+    "phase_inputs": []
+  },
+  "geometry": {
+    "target_bounds": [1030, 350, 1730, 850],
+    "actual_bounds": [300, 180, 920, 640],
+    "abstract_bounds": [750, 320, 1170, 760],
+    "target_neutral_center": [1380, 760],
+    "target_rise_px": 300,
+    "target_neutral_spread_px": [205, 72],
+    "target_peak_spread_px": [315, 132],
+    "target_particle_count": 72,
+    "actual_neutral_center": [620, 570],
+    "actual_rise_px": 210,
+    "actual_neutral_spread_px": [135, 52],
+    "actual_peak_spread_px": [205, 92],
+    "actual_particle_count": 38
+  },
+  "audio": {
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bits": 24,
+    "integrated_lufs_i": [-24.0, -20.0],
+    "true_peak_max_dbtp": -3.0,
+    "periodic_breathing_cue": false
+  },
+  "machine_gates": {
+    "max_raw_difference_outside_expected_mask": 0,
+    "difference_mask_glow_margin_px": 64,
+    "maximum_mirror_state_error_px": 0.5,
+    "minimum_target_vertical_travel_px": 240.0,
+    "minimum_actual_vertical_travel_px": 160.0,
+    "maximum_phase_particle_count_difference": 0,
+    "maximum_phase_opacity_difference": 0.0,
+    "maximum_exact_duplicate_run_frames": 29,
+    "black_frame_count_max": 0
+  },
+  "keyframe_times_s": [0.0, 2.5, 4.9, 5.4, 7.5, 9.9],
+  "outputs": {
+    "artifact_root": ".artifacts-local/V-04/H3/snow-candidate-v1",
+    "scene_native_video": "snow-H3-scene-native.mp4",
+    "abstract_pacer_video": "snow-H3-abstract-pacer.mp4",
+    "paired_review_video": "snow-H3-paired-review.mp4",
+    "ambient_audio": "snow-H3-ambient.wav",
+    "review_keyframes": "review/H3/snow-H3-keyframes-v1.jpg",
+    "grayscale_keyframes": "review/H3/snow-H3-grayscale-v1.jpg"
+  }
+}

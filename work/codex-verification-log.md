@@ -1184,3 +1184,20 @@
 | Evidence Binding | heat机器验收JSON可解析；候选清单与并列视频SHA-256均与实际文件一致；下一输入为`snow`。 |
 | State | heat输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为snow。 |
 | Evidence Boundary | 当前只形成heat设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-30 V-04 snow核心机制样片
+
+| Field | Result |
+|---|---|
+| Contract | 10秒、30 fps、5秒吸气和5秒呼气；场景原生中景/近景粉雪、抽象双环、共享环境及无阶段天气/声音冻结。 |
+| Revisions | 首轮提示过弱、第二轮规则十字星点、第三轮同心阴影气泡感依次退回；最终采用带偏移明暗边缘的不规则短絮。 |
+| Final Render | 两条1920×1080参与者视频、一条3840×1200并列视频、48 kHz/24-bit双声道WAV、彩色与灰度关键帧生成完成。 |
+| Machine Gate | `PASS`：300帧、区外像素差0、目标/实际垂直行程`300/210 px`、镜像误差低于`4e-13 px`、两阶段目标粒子数均为72且最大透明度均为175，5秒切换点目标/实际处于不同阶段。 |
+| Media And Audio | 10秒CFR媒体无黑帧或持续1秒完全重复帧；声音=`-22.10 LUFS-I/-3.49 dBTP`。 |
+| Visual Precheck | `PASS`：彩色/灰度关键帧及0.0、4.9、5.4、9.9秒并列帧已检查；提示在灰度画面可辨且不再出现规则星点或同心气泡。 |
+| V-04 Regression | 工具链、H1、candidate-v8/v9/v10历史机器证据、storm、heat及snow专项验证均为`PASS`；H1/H2校验器阶段尾注按历史证据解释，当前状态以v1.9及既有人工记录为准。 |
+| Governance | 协议权威验证`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-05`）；独立任务包`PASS`（5包、132份快照）。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 23.20s`。 |
+| Evidence Binding | snow机器验收JSON可解析；候选清单与并列视频SHA-256均与实际文件一致；下一输入为`corridor`。 |
+| State | snow输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，只剩山雾长廊输入。 |
+| Evidence Boundary | 当前只形成snow设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |

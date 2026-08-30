@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H3-SNOW-MACHINE-ACCEPTANCE-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "snow-candidate-v1",
+  "technical_id": "snow",
+  "result": "PASS",
+  "validated_at": "2026-08-30T21:12:00+08:00",
+  "base_commit": "d635bfe0b5f98d080bce8da055a01d7f49a1ace2",
+  "evidence": {
+    "manifest": {
+      "file": "V-04_H3_snow候选清单_v1.0.json",
+      "sha256": "8ee40b7115cbb3953115a4a8e5d34640e2ae7e0b636457112aca291bd08ec493"
+    },
+    "config_sha256": "dbef3551fd7324def629ae32d2b4589e072e7c6c795600ef8b8fecb31214fcc5",
+    "design_contract_sha256": "b0e28807887b3a9c739329a22206e2b89aa3d597cf8b627ecc3b70736fb6e3f6",
+    "renderer_sha256": "1766c51b0e03b8dbde8aae967f8b668788e2e8b1842ae7dc356dd4dab5443a81",
+    "validator_sha256": "2ac34d2432503099188d9ab8444c829ec75c9d75425a076f2d905dfb884ce387",
+    "scene_native_sha256": "dfabc512430f4307da1137f574aef813b6cede9599495fd297f3411fb1132bdf",
+    "abstract_pacer_sha256": "3695bbf3b7780441076b699d1603f516add36c38654938c4c19b115d359a32d7",
+    "paired_review_sha256": "1ddff6a4b1995d855733bb89ba1c0fe8d598aaee1b7e9ef56c2f3e42dbe47e58",
+    "ambient_audio_sha256": "73480deaa11ae9274614d22aaddc67433a336705bae2be12f80830f964e59ec8",
+    "review_keyframes_sha256": "dfe85cc2a13178c14385a6856da25e3ae0b803301e8cb6ea989c40285777f1ed",
+    "grayscale_keyframes_sha256": "0f10d0eb3f1ed30ec2839420aef3a4ce811c480d828e0232305f2309321d2fba"
+  },
+  "machine_results": {
+    "duration_s": 10.0,
+    "fps": 30,
+    "frame_count": 300,
+    "inhale_duration_s": 5.0,
+    "exhale_duration_s": 5.0,
+    "phase_order": [
+      "INHALE",
+      "EXHALE"
+    ],
+    "actual_lag_s": 0.55,
+    "target_vertical_travel_px": 300.0,
+    "actual_vertical_travel_px": 210.0,
+    "target_mirror_state_max_error_px": 3.2155493553843715e-13,
+    "actual_mirror_state_max_error_px": 2.2737367544323206e-13,
+    "inhale_target_particle_count": 72,
+    "exhale_target_particle_count": 72,
+    "inhale_target_max_opacity": 175.0,
+    "exhale_target_max_opacity": 175.0,
+    "target_at_5s": "EXHALE",
+    "actual_at_5s": "INHALE",
+    "condition_difference_outside_mask": 0,
+    "scroll_displacement_px": 383.0,
+    "integrated_lufs_i": -22.1,
+    "true_peak_dbtp": -3.49,
+    "media_health": "PASS"
+  },
+  "visual_precheck": {
+    "reviewer": "Codex",
+    "result": "PASS",
+    "checked_outputs": [
+      "review/H3/snow-H3-keyframes-v1.jpg",
+      "review/H3/snow-H3-grayscale-v1.jpg",
+      "full-resolution paired frames at 0.0, 4.9, 5.4 and 9.9 seconds"
+    ],
+    "resolved_findings": [
+      "insufficient powder contrast against the snow field",
+      "regular cross-shaped sparkle artifacts",
+      "concentric flake shadows resembling bubbles"
+    ]
+  },
+  "asset_status": {
+    "usage": "TEMP_REFERENCE_ONLY",
+    "formal_use_allowed": false
+  },
+  "next_input": "corridor",
+  "evidence_boundary": "This record accepts the snow design preview only; H3 combined review, Unity runtime, formal build, asset release and device chain remain incomplete."
+}
