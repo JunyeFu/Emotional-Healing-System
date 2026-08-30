@@ -1,0 +1,27 @@
+{
+  "schema_version": "f03-build-artifact-receipt-v1",
+  "task_id": "F-03",
+  "result": "PASS",
+  "git_commit": "a61eba6a62631780caaf60d8e2e431326d3082ba",
+  "implementation_tree_sha256": "a5a6190caccc045d2b9953498bebe6d1d260ce2c2f9a5f1a0bf34e8c1abd2c6c",
+  "retention": "LOCAL_IGNORED_OUTPUTS_RETAIN_UNTIL_HUMAN_REVIEW",
+  "git_publish_allowed": false,
+  "runs": [
+    {
+      "run": "run-1",
+      "local_path": "D:/Agent/03-SRP-f03-worktree/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Builds/F03-DevReplay/run-1",
+      "file_count": 339,
+      "total_bytes": 186809542,
+      "manifest_sha256": "b8b6761e683ebd2aec7e27936dc091aaaa85431e52f208563aa21c6a851f707b",
+      "files_rehashed": true
+    },
+    {
+      "run": "run-2",
+      "local_path": "D:/Agent/03-SRP-f03-worktree/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Builds/F03-DevReplay/run-2",
+      "file_count": 339,
+      "total_bytes": 186809542,
+      "manifest_sha256": "97a0d4634435b571aa30c1e3d6c28770f06a4bd45ebee8df05bb294d004a7145",
+      "files_rehashed": true
+    }
+  ]
+}

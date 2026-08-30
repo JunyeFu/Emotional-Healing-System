@@ -129,7 +129,11 @@ namespace SRP.Editor
             var script = Path.Combine(repoRoot, "02-技术研发", "07-数据治理", "g02.py");
             var ledger = Path.Combine(unityRoot, "Governance", "asset_license_ledger.json");
             var baseline = Path.Combine(unityRoot, "Governance", "asset_inventory.json");
-            var report = Path.Combine(Path.GetTempPath(), $"srp-g02-asset-{Guid.NewGuid():N}.json");
+            var retainedReport = Environment.GetEnvironmentVariable("SRP_G02_ASSET_REPORT_PATH");
+            var report = string.IsNullOrWhiteSpace(retainedReport)
+                ? Path.Combine(Path.GetTempPath(), $"srp-g02-asset-{Guid.NewGuid():N}.json")
+                : Path.GetFullPath(retainedReport);
+            var deleteReport = string.IsNullOrWhiteSpace(retainedReport);
             var arguments = string.Join(" ", new[]
             {
                 "-3.14", Quote(script), "scan-assets",
@@ -183,7 +187,7 @@ namespace SRP.Editor
             }
             finally
             {
-                if (File.Exists(report))
+                if (deleteReport && File.Exists(report))
                 {
                     File.Delete(report);
                 }

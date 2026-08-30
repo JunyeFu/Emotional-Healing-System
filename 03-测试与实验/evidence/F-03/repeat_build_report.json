@@ -3,8 +3,9 @@
   "result": "PASS",
   "comparison": "same input commit, scene, build options, and relative file set",
   "byte_identical_required": false,
-  "run_1_manifest_sha256": "4dc24f237f1209f12fdcbdd171d436e6c74fc48edc836904248a27f05950232d",
-  "run_2_manifest_sha256": "160de7d9729c8bad3fd4c2f60bcfaa95d6ec6cabbf81b1b4688d986626829e82",
+  "run_1_manifest_sha256": "b8b6761e683ebd2aec7e27936dc091aaaa85431e52f208563aa21c6a851f707b",
+  "run_2_manifest_sha256": "97a0d4634435b571aa30c1e3d6c28770f06a4bd45ebee8df05bb294d004a7145",
+  "implementation_tree_sha256": "a5a6190caccc045d2b9953498bebe6d1d260ce2c2f9a5f1a0bf34e8c1abd2c6c",
   "relative_files": [
     "D3D12/D3D12Core.dll",
     "D3D12/d3d12SDKLayers.dll",

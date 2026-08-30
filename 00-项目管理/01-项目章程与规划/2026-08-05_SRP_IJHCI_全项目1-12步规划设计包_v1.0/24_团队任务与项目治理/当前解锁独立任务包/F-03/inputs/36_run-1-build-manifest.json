@@ -3,12 +3,14 @@
     "task_id": "F-03",
     "build_mode": "DEV-REPLAY",
     "formal_use_allowed": false,
-    "implementation_commit": "7950a1fbd1035f8d80c94647d6849dab535aa07c",
-    "build_utc": "2026-08-30T03:15:27.7442547Z",
+    "implementation_commit": "a61eba6a62631780caaf60d8e2e431326d3082ba",
+    "implementation_tree_sha256": "a5a6190caccc045d2b9953498bebe6d1d260ce2c2f9a5f1a0bf34e8c1abd2c6c",
+    "build_utc": "2026-08-30T13:53:43.6979261Z",
     "unity_revision": "m_EditorVersion: 6000.4.9f1\r\nm_EditorVersionWithRevision: 6000.4.9f1 (f7258d6eebbe)",
-    "project_version_sha256": "ccb1d5360e2f76b5696673c1e0b8c101d21d855c074ee892e325c25c865d2775",
-    "package_manifest_sha256": "af4c876960a82cf7b3c7650aeb72235399d917fe62658c328e31a99836059a1a",
-    "package_lock_sha256": "348e87851536f8a9bc08a80f7861e57dbdb7e3fffc94437785ce69ac324a90de",
+    "environment_hash_policy": "sha256_lf_no_trailing_ws_text_v1",
+    "project_version_sha256": "0ee4b8baf7a4e3760cd3a0c19797a9362ed4e0c9c8ef0f49d8304c1211e511b8",
+    "package_manifest_sha256": "8e6ce3804320e077b692884089f399d0432ab17aa1428425bbaaea967ae1a313",
+    "package_lock_sha256": "39ead5e49380da66353a48b66b6c4cbf392227272d61164c23c4b0b497946e61",
     "source_scene": "Assets/F03/Scenes/F03DevReplay.unity",
     "files": [
         {
@@ -143,13 +145,13 @@
         },
         {
             "path": "SRP-F03-DevReplay_Data/boot.config",
-            "bytes": 396,
-            "sha256": "3f7fcf75113bdcb2ea507386908687fbb83414c0de2e98ccf6081ac9f0bad66d"
+            "bytes": 429,
+            "sha256": "bcc68bbe81395ede263ad7fe3311d4b6b592be7d107f7bfd8b1620f9900d8585"
         },
         {
             "path": "SRP-F03-DevReplay_Data/globalgamemanagers",
             "bytes": 236804,
-            "sha256": "ff422b8114f620593f0579e398048b1c95d8132e36a7821928c92e6ab0530a5e"
+            "sha256": "129f5a143b6b0b52cc6c8fde99d6e6e0c827d357c933c6a3587aa8ea3391c283"
         },
         {
             "path": "SRP-F03-DevReplay_Data/globalgamemanagers.assets",
@@ -164,17 +166,17 @@
         {
             "path": "SRP-F03-DevReplay_Data/level0",
             "bytes": 1708,
-            "sha256": "28913ee4a6cbc5e3d5846530a15234e657bb4617db3e24f1aadb8f1e050d5d0d"
+            "sha256": "d70827519ad8f1d8c7971c46394eab0d53aae299a6095b3bf1f3fc9189b11770"
         },
         {
             "path": "SRP-F03-DevReplay_Data/Managed/Assembly-CSharp.dll",
             "bytes": 30208,
-            "sha256": "07f7f8c4614bec22eb8e419db0d67b02d8cb10c6de8bcde1dabad42e367422a4"
+            "sha256": "a276cca293ec2919089bf929d58cf4228045714ec94137c8aada9cad195b041d"
         },
         {
             "path": "SRP-F03-DevReplay_Data/Managed/Assembly-CSharp.pdb",
-            "bytes": 29196,
-            "sha256": "7f0a0afd374374457311316dc99ed012b5e679629e6066178815ce58e51390da"
+            "bytes": 29212,
+            "sha256": "aac72d3e7d93789e4fb31b531c0e09967efe9666c096243c604e6f4000b8f5eb"
         },
         {
             "path": "SRP-F03-DevReplay_Data/Managed/MCPForUnity.Runtime.dll",
@@ -224,12 +226,12 @@
         {
             "path": "SRP-F03-DevReplay_Data/Managed/SRP.F03.Runtime.dll",
             "bytes": 9728,
-            "sha256": "ac27376f99ce131713e5f4b7ec0cfd49ad3aefd5bdbf1caea64454a07b58242e"
+            "sha256": "f45743a528b9b59d5042f44bfd46303da66c1549054081053f4fca64bfa53ef0"
         },
         {
             "path": "SRP-F03-DevReplay_Data/Managed/SRP.F03.Runtime.pdb",
-            "bytes": 18160,
-            "sha256": "42e6258a22c90b92c579269c205f695ea9246c7ffd705f5c9b61738ce0562889"
+            "bytes": 18176,
+            "sha256": "de457a41a7024f14c2ea1ca84a1134cc9f60a2873dd78e9a89992ba9a5249437"
         },
         {
             "path": "SRP-F03-DevReplay_Data/Managed/System.Buffers.dll",
@@ -1639,17 +1641,17 @@
         {
             "path": "SRP-F03-DevReplay_Data/Plugins/x86_64/lib_burst_generated.dll",
             "bytes": 695808,
-            "sha256": "3f2af492a115bd4ec91eb9db68c1198445eac41d31233281785247f060b05246"
+            "sha256": "222945354865468b213d75a9d6640869b79d51ab340c492f36620a726fe6a42c"
         },
         {
             "path": "SRP-F03-DevReplay_Data/Plugins/x86_64/lib_burst_generated.pdb",
-            "bytes": 4153344,
-            "sha256": "814db72c4e845e1599734611e12807621b8aadb86471cc850d5eaa160e322d01"
+            "bytes": 4161536,
+            "sha256": "b7b78ca46406b5993c53ddc500309b34bd7c7242f296b63c7199266da5630a93"
         },
         {
             "path": "SRP-F03-DevReplay_Data/resources.assets",
             "bytes": 387736,
-            "sha256": "8e95bbcdd722e6fbb09f108e20be16bca73a115476533c55d3fba996f7b240a1"
+            "sha256": "2952df0b5eb1756ae7e712f7127303131d9e1abc376fee9555bd4a01edc82979"
         },
         {
             "path": "SRP-F03-DevReplay_Data/resources.assets.resS",
@@ -1688,8 +1690,8 @@
         },
         {
             "path": "SRP-Weather-Visual_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt",
-            "bytes": 247036,
-            "sha256": "3f5061080a897f61764ec14a9710b9f9e531573736682667b8f231f011246816"
+            "bytes": 247302,
+            "sha256": "a6aabe5f6b2c3339ea352286ef3bfea7246f52ee024c48e078c0459baa692f0c"
         },
         {
             "path": "UnityCrashHandler64.exe",

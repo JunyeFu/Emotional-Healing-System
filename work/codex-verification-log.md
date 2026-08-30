@@ -1102,3 +1102,18 @@
 | Next Gate | 傅钧烨恢复Unity授权后，在固定候选上独立执行`all`、打开开发场景、启动Player、核对负路径并签署PASS/FAIL。 |
 
 补充治理提交复查：协议目录`57 passed`、采集`24 passed`、评分模型`10 passed`、数据治理`138 passed`、会话与存储`179 passed`；共408项通过。信号管线剩余4项在收集阶段因本机`neurokit2`导入持续停滞而未形成新结论；实现候选生成时的完整仓库回归仍为`412 passed`。协议权威、57项任务注册表、5个独立任务包/158份快照及`git diff --check`均通过。
+
+### 2026-08-30 F-03 独立审计修复与自动复验
+
+| Field | Result |
+|---|---|
+| Candidate | `a61eba6a62631780caaf60d8e2e431326d3082ba`；实现树SHA-256=`a5a6190caccc045d2b9953498bebe6d1d260ce2c2f9a5f1a0bf34e8c1abd2c6c`。 |
+| Tool Regression | Pester `6/6 PASS`；F-01合同专项pytest `49 passed`。 |
+| Project Regression | 采集、信号处理、运行合同、数据治理与技术回归共`412 passed in 19.28s`。 |
+| Clean Identity | `run_identity_report.json`记录运行前Git状态为空；完整运行后只有`03-测试与实验/evidence/F-03/`变化。 |
+| Unity Tests | Edit Mode `3/3 PASS`；Play Mode `1/1 PASS`。 |
+| Builds | 两次Windows `DEV-REPLAY`构建各339个声明文件；文件集合一致；两份本地产物共约374 MB并逐文件复核。 |
+| Player | 退出码0；截图与就绪标记存在；5005/5006/5010无F-03新增监听。 |
+| Negative Gates | 未授权Development和正式门均返回1；F-01必填字段拒绝日志已保留。正式门日志与同次G-02报告均为189项、21个阻断。 |
+| Source Stability | Unity首次导入的5项序列化迁移已冻结；Unity YAML/JSON固定LF；最终运行无受控源文件漂移。 |
+| Decision | `AUTOMATION_PASS / INDEPENDENT_REAUDIT_PENDING`；F-03保持`IN_REVIEW`，不标记`DONE`。 |

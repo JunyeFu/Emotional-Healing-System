@@ -73,7 +73,22 @@
     {
       "code": "HASH_CHANGED",
       "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/DefaultVolumeProfile.asset"
+    },
+    {
+      "code": "HASH_CHANGED",
+      "replacement_plan_valid": false,
       "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs"
+    },
+    {
+      "code": "HASH_CHANGED",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Settings/UniversalRP.asset"
+    },
+    {
+      "code": "HASH_CHANGED",
+      "replacement_plan_valid": false,
+      "subject": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/UniversalRenderPipelineGlobalSettings.asset"
     },
     {
       "code": "LICENSE_REPLACE",
@@ -170,13 +185,13 @@
         "asset_type": "UNITY_ASSET",
         "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/DefaultVolumeProfile.asset",
         "license_group_id": "project-assets-authorship-pending",
-        "sha256": "cb88ac788e6f2ac42dda3d6bc1593cefaba460e96aeae1b1c8fa7bef3e90e1e7"
+        "sha256": "4789b43834dd5efb32eec4c3b436baf0895c9f8cf2a0624121da8dd812ee984a"
       },
       {
         "asset_type": "UNITY_ASSET",
         "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs",
         "license_group_id": "project-assets-authorship-pending",
-        "sha256": "363e4d1bab7462e34939d703a2ada036096b0488f33ece27f4b233688826753e"
+        "sha256": "fbb02c91b63a03054939b31ffe8b07f07d67b72baab7c105ef7e576da0935df1"
       },
       {
         "asset_type": "UNITY_ASSET",
@@ -452,7 +467,7 @@
         "asset_type": "UNITY_ASSET",
         "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
         "license_group_id": "g02-project-original",
-        "sha256": "5a2be27bb974e04d07e7dc41f9ec3708f9096a3b1c7deb8240cf58f2df138f1c"
+        "sha256": "d669ec2f7afa4827b06710ddc05922014d4d99b6f099db6f272f9d1d1dd9ad0c"
       },
       {
         "asset_type": "UNITY_ASSET",
@@ -596,7 +611,7 @@
         "asset_type": "UNITY_ASSET",
         "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/Settings/UniversalRP.asset",
         "license_group_id": "project-assets-authorship-pending",
-        "sha256": "2a759543c049bdfe70c413693bf5c71ce1bec5778ae52467509b39f07bae1dcb"
+        "sha256": "93e948a334afc5ace1113c4309e736335320f08bf36bfef160ce3b1f382b269a"
       },
       {
         "asset_type": "IMAGE",
@@ -866,7 +881,7 @@
         "asset_type": "UNITY_ASSET",
         "git_path": "02-\u6280\u672f\u7814\u53d1/04-Unity\u89c6\u89c9/SRP-Weather-Visual/Assets/UniversalRenderPipelineGlobalSettings.asset",
         "license_group_id": "project-assets-authorship-pending",
-        "sha256": "a60960dbf5434bf38e6b580ba7a47fcc0a775e7eaca8f467f774f80e266aebfc"
+        "sha256": "c59003d6c95c776fb09656bf3e16877a4783e4068a4d1c9eed85dbab139d487e"
       },
       {
         "asset_type": "UNITY_ASSET",
