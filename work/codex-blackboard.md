@@ -1168,3 +1168,10 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 最终`all`在运行前干净的候选上通过：Edit `3/3`、Play `1/1`、双构建各339文件、Player与端口隔离通过、正式门按预期拒绝；运行后只有F-03证据目录变化。
 - 新候选独立Agent复审已闭合：首轮确认缺陷1、3、5、AC1、AC3和职责边界，第二轮独立复算资产报告189项/21阻断及两次构建共678个文件，零计数、路径、大小或哈希差异；最终`PASS_FOR_MODEL_INDEPENDENT_REVIEW`。
 - F-03保持`IN_REVIEW`，当前硬门为傅钧烨基于同一候选执行第二人复核并签署；独立Agent结论不替代签收，不标记`DONE`。
+
+### 2026-08-30 F-03第二人签收与DONE迁移
+
+- 傅钧烨以团队总监、独立第二人复核人身份确认独立Agent最终`PASS`，并对实现候选`a61eba6a62631780caaf60d8e2e431326d3082ba`及闭环证据确认`PASS / DONE`。
+- 复核方式为审阅固定证据和独立Agent结论，不表述为审核人本人重新运行Unity。
+- F-03从`IN_REVIEW`迁移为`DONE`；其审阅包从当前分发集合移除。U-01、U-02和V-05只关闭F-03依赖，因F-05、U-02或V-04等其他依赖未关闭而继续`WAIT_DEP`。
+- 签收证据等级仅为Unity环境、Edit/Play测试和Windows `DEV-REPLAY`构建基线；正式构建、实时通信、四场景完整旅程、资产许可、真实输入链和研究结果仍未成立。

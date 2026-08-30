@@ -1128,3 +1128,14 @@
 | Old Findings | 旧候选五项独立审计发现全部`CLOSED`；没有新增实现缺陷。 |
 | AC Decision | AC1、AC2、AC3和职责边界均`PASS`；结论为`PASS_FOR_MODEL_INDEPENDENT_REVIEW`。 |
 | Human Gate | F-03保持`IN_REVIEW`；独立Agent未重跑Unity且不替代傅钧烨第二人签收，未签收前不得标记`DONE`。 |
+
+### 2026-08-30 F-03第二人签收与DONE迁移
+
+| Field | Result |
+|---|---|
+| Reviewer | 傅钧烨；团队总监、独立第二人复核人。 |
+| Review Object | 实现候选`a61eba6a62631780caaf60d8e2e431326d3082ba`；独立复审闭环提交`8161fe12c21d2d66d35c3791bda5d3366d8be418`。 |
+| Review Method | 审阅固定证据、修复记录和独立Agent最终`PASS`；不表述为审核人本人重新运行Unity。 |
+| Decision | `PASS / DONE`；F-03从`IN_REVIEW`迁移为`DONE`。 |
+| Dependency Effect | U-01、U-02和V-05只关闭F-03依赖，仍因F-05、U-02或V-04等其他依赖继续`WAIT_DEP`。 |
+| Evidence Boundary | 仅证明Unity环境、测试和Windows `DEV-REPLAY`构建基线；不证明正式构建、实时通信、四场景完整旅程、资产许可放行、真实输入链或研究结果。 |
