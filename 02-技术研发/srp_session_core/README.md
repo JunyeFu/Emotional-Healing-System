@@ -2,7 +2,7 @@
 
 > 状态：`TECHNICAL_IMPLEMENTATION_CANDIDATE`。本模块只形成自动测试和本机合成联调证据，不代表Unity、TouchDesigner、真实设备或`LIVE_E2E`已经完成。
 
-F-05迁移保持本页公共方法不变；合同选择将收敛在`contract_adapter.validate_message()` seam，并由manifest的会话版本驱动控制、握手和遥测版本。接口对齐基线见[运行合同F-05文档](../05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
+F-05候选保持本页公共方法不变；`contract_adapter.validate_message()`按消息版本分派合同，Manifest会话版本驱动控制、握手和遥测版本。正式会话要求v2.2与已加载的呼吸配置hash一致；接口对齐见[运行合同F-05文档](../05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
 
 ## 职责
 

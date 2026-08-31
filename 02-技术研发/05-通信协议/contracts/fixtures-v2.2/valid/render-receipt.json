@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.2",
+  "message_type": "render_receipt",
+  "receipt_id": "RR-0001",
+  "session_id": "S-20260807-0001",
+  "event_id": "EV-0001",
+  "frame_seq": 10,
+  "unity_frame": 42,
+  "rendered_monotonic_ns": 2200000,
+  "module_id": "storm",
+  "segment": "closed_loop",
+  "result": "rendered",
+  "error_code": null
+}

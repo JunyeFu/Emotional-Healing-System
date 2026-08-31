@@ -48,7 +48,7 @@ def fast_transport_config(**changes: Any):
 
 def ack_for(event, *, result="applied", error_code=None, now_ns=1):
     return {
-        "schema_version": "2.1",
+        "schema_version": event["schema_version"],
         "message_type": "ack",
         "session_id": event["session_id"],
         "event_id": event["event_id"],
@@ -61,8 +61,9 @@ def ack_for(event, *, result="applied", error_code=None, now_ns=1):
 
 
 def telemetry_for(snapshot, *, frame_seq=1, sent_ns=50_000_000):
-    return {
-        "schema_version": "2.1",
+    schema_version = getattr(snapshot, "schema_version", "2.1")
+    frame = {
+        "schema_version": schema_version,
         "message_type": "telemetry_frame",
         "session_id": snapshot.session_id,
         "frame_seq": frame_seq,
@@ -92,3 +93,11 @@ def telemetry_for(snapshot, *, frame_seq=1, sent_ns=50_000_000):
         "runtime_mode": snapshot.runtime_mode,
         "policy_decision_id": "PD-P01-0",
     }
+    if schema_version == "2.2":
+        frame.update(
+            target_cycle_index=0,
+            target_step_id="inhale_1",
+            actual_cycle_index=0,
+            actual_step_id="inhale_1",
+        )
+    return frame

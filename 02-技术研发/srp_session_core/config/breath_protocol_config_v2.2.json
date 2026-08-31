@@ -1,0 +1,32 @@
+{
+  "breath_protocol_config_version": "2.2",
+  "modules": {
+    "storm": {
+      "steps": [
+        {"step_id": "inhale_1", "phase": "inhale", "duration_seconds": 3},
+        {"step_id": "hold_1", "phase": "hold", "duration_seconds": 3},
+        {"step_id": "exhale_1", "phase": "exhale", "duration_seconds": 3},
+        {"step_id": "hold_2", "phase": "hold", "duration_seconds": 3}
+      ]
+    },
+    "heat": {
+      "steps": [
+        {"step_id": "inhale_1", "phase": "inhale", "duration_seconds": 4},
+        {"step_id": "exhale_1", "phase": "exhale", "duration_seconds": 6}
+      ]
+    },
+    "snow": {
+      "steps": [
+        {"step_id": "inhale_1", "phase": "inhale", "duration_seconds": 5},
+        {"step_id": "exhale_1", "phase": "exhale", "duration_seconds": 5}
+      ]
+    },
+    "fade": {
+      "steps": [
+        {"step_id": "inhale_1", "phase": "inhale", "duration_seconds": 2.5},
+        {"step_id": "inhale_2", "phase": "inhale", "duration_seconds": 1.5},
+        {"step_id": "exhale_1", "phase": "exhale", "duration_seconds": 6}
+      ]
+    }
+  }
+}

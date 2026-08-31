@@ -131,6 +131,19 @@ def test_terminal_elapsed_time_is_immutable_after_late_inputs(
     assert summary.session_elapsed_ns == expected
 
 
+def test_v22_session_rejects_v21_delivery_message(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory(schema_version="2.2")
+    core = SessionCore()
+    prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+    ack = ack_for(prepared.control_events[0], now_ns=1)
+    ack["schema_version"] = "2.1"
+    with pytest.raises(SessionCoreError) as error:
+        core.confirm_delivery(ack, 1)
+    assert error.value.code == "SCHEMA_VERSION_MISMATCH"
+
+
 def test_duplicate_request_and_repeated_tick_do_not_advance(
     manifest_factory, assignment_factory
 ) -> None:

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
@@ -9,6 +10,7 @@ from srp_session_core import (
     OperatorRequest,
     RuntimeDependencies,
     SessionCore,
+    TransportError,
 )
 from srp_session_store import (
     DurableManifestStore,
@@ -365,3 +367,79 @@ def test_abort_control_is_preserved_when_durable_commit_fails(
     assert update.snapshot.status.value == "ABORTED"
     assert [event["event_type"] for event in update.control_events] == ["abort"]
     store.archive.close()
+
+
+def test_v22_telemetry_identity_is_preserved_and_replay_is_deterministic(
+    tmp_path, manifest_factory, assignment_factory
+):
+    manifest = manifest_factory(schema_version="2.2")
+    core, store = build_recording_core(tmp_path)
+    prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+    core.confirm_delivery(
+        {
+            "schema_version": "2.2",
+            "message_type": "ack",
+            "session_id": manifest["session_id"],
+            "event_id": prepared.control_events[0]["event_id"],
+            "received_monotonic_ns": 1,
+            "applied_monotonic_ns": 1,
+            "unity_frame": 1,
+            "result": "applied",
+            "error_code": None,
+        },
+        1,
+    )
+    core.apply_operator_request(OperatorRequest("REQ-V22-START", "start"), 2)
+    fixture_path = (
+        Path(__file__).resolve().parents[2]
+        / "05-通信协议"
+        / "contracts"
+        / "fixtures-v2.2"
+        / "valid"
+        / "telemetry-storm-hold-2.json"
+    )
+    frame = json.loads(fixture_path.read_text(encoding="utf-8"))
+    frame.update(
+        session_id=manifest["session_id"],
+        runtime_mode=manifest["runtime_mode"],
+        segment=core.snapshot().segment,
+        source_monotonic_ns=3,
+        received_monotonic_ns=3,
+        sent_monotonic_ns=3,
+    )
+
+    class Delegate:
+        def __init__(self):
+            self.core = core
+
+        def publish(self, frame):
+            return frame["schema_version"] == "2.2"
+
+        def close(self):
+            pass
+
+    publisher = RecordingTelemetryPublisher(Delegate(), store)
+    assert publisher.publish(frame)
+    stored = list(ReplayReader.open(tmp_path, manifest["session_id"]).iter_l1("telemetry_frame"))[-1]
+    assert {key: stored["payload"][key] for key in (
+        "target_cycle_index", "target_step_id", "actual_cycle_index", "actual_step_id"
+    )} == {key: frame[key] for key in (
+        "target_cycle_index", "target_step_id", "actual_cycle_index", "actual_step_id"
+    )}
+
+    unmigrated = dict(frame)
+    unmigrated["schema_version"] = "2.1"
+    unmigrated["frame_seq"] = frame["frame_seq"] + 1
+    for key in (
+        "target_cycle_index", "target_step_id", "actual_cycle_index", "actual_step_id"
+    ):
+        unmigrated.pop(key)
+    with pytest.raises(TransportError, match="TELEMETRY_SNAPSHOT_MISMATCH"):
+        publisher.publish(unmigrated)
+
+    summary = core.finish("TEST_COMPLETE", 4)
+    store.archive.seal(summary, 4)
+    store.archive.close()
+    assert SessionReplayer(
+        ReplayReader.open(tmp_path, manifest["session_id"])
+    ).replay_core().valid

@@ -2,7 +2,7 @@
 
 > 状态：`TECHNICAL_IMPLEMENTATION_CANDIDATE`。本模块提供L0/L1不可覆盖追加、完整性校验和确定性重放；它不推进会话状态，也不表示设备链或完整系统联调已经完成。
 
-F-05迁移不增加存储层协议推断：P-02只持久化`contract_adapter.validate_message()`返回的已校验v2.1或v2.2消息，并在重放时保留版本和步骤字段原值。接口对齐基线见[运行合同F-05文档](../05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
+F-05候选不增加存储层协议推断：P-02只持久化`contract_adapter.validate_message()`返回的已校验v2.1或v2.2消息，并在重放时保留版本和步骤字段原值。接口对齐见[运行合同F-05文档](../05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
 
 ## 职责
 

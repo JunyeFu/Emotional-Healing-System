@@ -21,10 +21,14 @@ def manifest_factory():
         study_stage="stage_1",
         runtime_mode="dev_replay",
         assignment_arm=None,
+        schema_version=None,
     ):
+        effective_schema_version = schema_version or (
+            "2.2" if runtime_mode.startswith("formal_") else "2.1"
+        )
         arm = cue_mode if assignment_arm is None else assignment_arm
         manifest = {
-            "schema_version": "2.1",
+            "schema_version": effective_schema_version,
             "message_type": "session_manifest",
             "research_id": "SRP-R-0123456789abcdef0123456789abcdef",
             "session_id": "S-P01-0001",
@@ -61,6 +65,16 @@ def manifest_factory():
                 "resp": {"source": "plux_respiban", "serial": "configured"},
                 "ecg": {"source": "polar_h10", "serial": "configured"},
             }
+        if effective_schema_version == "2.2":
+            from srp_session_core import load_breath_protocol_config
+
+            breath_config = load_breath_protocol_config()
+            manifest.update(
+                breath_protocol_config_version=(
+                    breath_config.breath_protocol_config_version
+                ),
+                breath_protocol_config_hash=breath_config.config_hash,
+            )
         return deepcopy(manifest)
 
     return build
@@ -79,7 +93,7 @@ def assignment_factory():
                 candidates = list(remaining)
                 decisions.append(
                     {
-                        "schema_version": "2.1",
+                        "schema_version": manifest["schema_version"],
                         "message_type": "policy_decision",
                         "decision_id": f"PD-P01-{position}",
                         "session_id": manifest["session_id"],

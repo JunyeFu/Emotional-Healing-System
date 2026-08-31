@@ -141,6 +141,65 @@ def test_tcp_rejects_invalid_handshake(change, value, expected) -> None:
     asyncio.run(scenario())
 
 
+def test_v22_session_requires_v22_handshake_and_reports_active_version(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory(schema_version="2.2")
+        core = SessionCore()
+        core.prepare(manifest, assignment_factory(manifest), 0)
+        server = ControlServer(core, config=fast_transport_config(), port=0)
+        await server.start()
+
+        reader, writer = await asyncio.open_connection("127.0.0.1", server.bound_port)
+        await _write(writer, _hello(schema_version="2.1"))
+        rejected = await _read(reader)
+        assert rejected["error_code"] == "SCHEMA_VERSION_MISMATCH"
+        assert rejected["schema_version"] == "2.2"
+        writer.close()
+        await writer.wait_closed()
+
+        reader, writer = await asyncio.open_connection("127.0.0.1", server.bound_port)
+        await _write(writer, _hello(schema_version="2.2"))
+        welcome = await _read(reader)
+        assert welcome["accepted"] is True
+        assert welcome["schema_version"] == "2.2"
+        writer.close()
+        await writer.wait_closed()
+        await server.close()
+
+    asyncio.run(scenario())
+
+
+def test_runtime_host_announces_v22_before_formal_prepare(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory(runtime_mode="formal_stage_1")
+        core = SessionCore(dependencies=formal_dependencies())
+        server = ControlServer(core, config=fast_transport_config(), port=0)
+        await server.start()
+        host = SessionRuntimeHost(core, server)
+        prepare_task = asyncio.create_task(
+            host.prepare(manifest, assignment_factory(manifest), 0)
+        )
+        await asyncio.sleep(0)
+        reader, writer = await asyncio.open_connection("127.0.0.1", server.bound_port)
+        await _write(writer, _hello(schema_version="2.2"))
+        welcome = await _read(reader)
+        assert welcome["accepted"] is True
+        assert welcome["schema_version"] == "2.2"
+        prepare = await _read(reader)
+        await _write(writer, ack_for(prepare, now_ns=0))
+        update = await prepare_task
+        assert update.snapshot.schema_version == "2.2"
+        writer.close()
+        await writer.wait_closed()
+        await server.close()
+
+    asyncio.run(scenario())
+
+
 def test_td_connection_cannot_change_authoritative_state() -> None:
     async def scenario():
         core = SessionCore()
@@ -519,6 +578,32 @@ def test_udp_rejects_stale_or_snapshot_mismatch(
         with pytest.raises(TransportError) as mismatch_error:
             publisher.publish(mismatch)
         assert mismatch_error.value.code == "TELEMETRY_SNAPSHOT_MISMATCH"
+    finally:
+        publisher.close()
+
+
+def test_v22_udp_rejects_unmigrated_v21_frame(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory(schema_version="2.2")
+    core = SessionCore()
+    core.prepare(manifest, assignment_factory(manifest), 0)
+    core.apply_operator_request(OperatorRequest("REQ-START-V22", "start"), 0)
+    publisher = TelemetryPublisher(core, targets=(("127.0.0.1", 50991),))
+    frame = telemetry_for(core.snapshot(), frame_seq=1, sent_ns=50_000_000)
+    frame["schema_version"] = "2.1"
+    for field in (
+        "target_cycle_index",
+        "target_step_id",
+        "actual_cycle_index",
+        "actual_step_id",
+    ):
+        frame.pop(field)
+    try:
+        with pytest.raises(TransportError) as error:
+            publisher.publish(frame)
+        assert error.value.code == "TELEMETRY_SNAPSHOT_MISMATCH"
+        assert error.value.detail == "schema_version"
     finally:
         publisher.close()
 

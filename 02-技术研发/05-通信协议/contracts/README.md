@@ -1,8 +1,10 @@
-# SRP运行合同v2.1
+# SRP运行合同
 
-> F-05已进入`IN_PROGRESS`。v2.2的候选字段、版本选择seam和消费者责任见[F-05 v2.2接口对齐基线](F-05_v2.2接口对齐基线.md)；该基线不改变本页v2.1合同，也不表示v2.2已经实现或签收。
+> v2.1是已签收且不可变的合同。F-05的v2.2实现候选见[F-05 v2.2接口对齐基线](F-05_v2.2接口对齐基线.md)和[F-05消费者迁移指南](F-05_v2.2消费者迁移指南.md)，仍待第二人复核。
 
 本目录是F-01交付的机器可读合同。`runtime-contract-v2.1.schema.json`是线格式、必填字段、枚举和无状态跨字段约束的机器权威；`runtime_contract.py`是标准库参考实现。两者必须对同一fixture和差分负例产生相同的接受或拒绝结果。`ControlEventLedger`单独负责无法由JSON Schema表达的跨消息幂等与序号状态。
+
+`runtime-contract-v2.2.schema.json`和`runtime_contract_v22.py`是独立的版本化候选。它们保留v2.1全部规则，并新增呼吸配置身份和目标/实际的周期步骤实例字段。调用方只能经`srp_session_core.contract_adapter.validate_message()`进入版本分派，不得把v2.2字段作为v2.1未知字段使用。
 
 ## 权威边界
 
@@ -36,4 +38,7 @@ fixture哈希采用`canonical-lf-v1`：只将CRLF规范化为LF后计算SHA-256�
 
 ```powershell
 py -3.14 "02-技术研发/05-通信协议/contracts/generate_fixture_hashes.py"
+py -3.14 "02-技术研发/05-通信协议/contracts/generate_runtime_contract_v22_schema.py"
+py -3.14 "02-技术研发/05-通信协议/contracts/generate_v22_fixtures.py"
+py -3.14 "02-技术研发/05-通信协议/contracts/generate_v22_fixture_hashes.py"
 ```
