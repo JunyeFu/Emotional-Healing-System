@@ -4,7 +4,7 @@
   "tasks": {
     "F-05": {
       "implementation_commit": "c7c760b83289e7e15c8c1ab65ca52470305cd0dc",
-      "model_review_status": "REVIEW_PENDING_EVIDENCE_SEALED",
+      "model_review_status": "PASS_FOR_MODEL_INDEPENDENT_REVIEW",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
         "02-技术研发/05-通信协议/runtime_contract_v22.py",

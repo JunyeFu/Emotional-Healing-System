@@ -1200,3 +1200,5 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 独立Agent首轮只读审核确认实现和回归均通过，但因固定实现候选未封存证据目录与验证记录而裁定候选级`FAIL`。
 - 本轮将测试日志、哈希、专项验证报告、状态迁移和F-05独立任务包一并纳入治理候选；实现候选`c7c760b`仍作为可复算的代码对象。
 - F-05迁移至`IN_REVIEW`，后续硬门为独立Agent对封存候选复核，以及傅钧烨的第二人`PASS/FAIL`签收；不得据此标记`DONE`。
+- 独立Agent已对治理候选`1b7d4aa`复核为`PASS_FOR_MODEL_INDEPENDENT_REVIEW`：实现—证据关联、哈希、4个独立复核包/121快照、v2.1不可变性、专项验证器和职责边界均通过。
+- 剩余唯一硬门为傅钧烨基于`1b7d4aa`完成真实第二人签收；自动结论不替代该签收。

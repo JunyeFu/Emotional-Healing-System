@@ -20,7 +20,7 @@
 | [02-技术研发/srp_session_core/transport.py](D:/Agent/03-SRP/02-技术研发/srp_session_core/transport.py) | [inputs/12_transport.py](inputs/12_transport.py) | `5C3B49535B9B48386446BCEE1DA2625DF6BB90CBAD6F33F019D66DEE374E8B8E` |
 | [02-技术研发/srp_session_store/adapters.py](D:/Agent/03-SRP/02-技术研发/srp_session_store/adapters.py) | [inputs/13_adapters.py](inputs/13_adapters.py) | `ABA4F4B346DD65FC9586D99B6A6531BA8C7A8DB55476BD2F92A776ABFF441D2B` |
 | [Tools/F05/Invoke-F05.ps1](D:/Agent/03-SRP/Tools/F05/Invoke-F05.ps1) | [inputs/14_Invoke-F05.ps1](inputs/14_Invoke-F05.ps1) | `C4F0604B130FE992FDFB54E9D80E7EABA285C0187B3A06989AC572CB5AA66D6E` |
-| [03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md](D:/Agent/03-SRP/03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md) | [inputs/15_F-05_独立Agent审核与修复记录_2026-08-31.md](inputs/15_F-05_独立Agent审核与修复记录_2026-08-31.md) | `A5C56DE6EC2604C2DB3076DE98B202C6AB66439CD0E27EED685833542535EF1F` |
+| [03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md](D:/Agent/03-SRP/03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md) | [inputs/15_F-05_独立Agent审核与修复记录_2026-08-31.md](inputs/15_F-05_独立Agent审核与修复记录_2026-08-31.md) | `83FBB1AF75AD0DDF92F495953DA268C7EB1C1925E17A273F2985757DE814EB48` |
 | [03-测试与实验/evidence/F-05/evidence_manifest.json](D:/Agent/03-SRP/03-测试与实验/evidence/F-05/evidence_manifest.json) | [inputs/16_evidence_manifest.json](inputs/16_evidence_manifest.json) | `829713E8F013C8B6B9944C781C924A2C449699F93396F286EFDFDB08335B328C` |
 | [03-测试与实验/evidence/F-05/evidence_hashes.sha256](D:/Agent/03-SRP/03-测试与实验/evidence/F-05/evidence_hashes.sha256) | [inputs/17_evidence_hashes.sha256](inputs/17_evidence_hashes.sha256) | `6DCE3BB78D1BA79A21B06D530EC407D80F1C563F45E03D9E59144B345861F8EF` |
 

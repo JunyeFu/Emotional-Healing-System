@@ -1177,3 +1177,13 @@
 | Repair | 治理候选纳入F-05证据目录、逐文件哈希、独立审核记录、任务状态和独立任务包映射。 |
 | State | F-05从`IN_PROGRESS`转为`IN_REVIEW`；不转`DONE`。 |
 | Next Gate | 独立Agent基于封存候选重新审核；傅钧烨完成第二人`PASS/FAIL`签收。 |
+
+### 2026-08-31 F-05 封存候选独立复核
+
+| Field | Result |
+|---|---|
+| Review Object | 治理候选`1b7d4aad34e14ca5b7560ac8fa4e1602a16fe6fc`，直接父提交为实现候选`c7c760b83289e7e15c8c1ab65ca52470305cd0dc`。 |
+| Evidence | 已跟踪的8个F-05证据文件与manifest关联的实现提交一致；manifest的7个受哈希文件和哈希清单的6个非循环文件均逐项一致。 |
+| Recalculation | 合同83项、P-01 113项、P-02 69项、专项验证器、协议权威、注册表、4个独立包/121快照及`git diff --check`均通过。 |
+| Scope | 未发现Unity运行实现、TouchDesigner工程、Spout或实际网络消费者；静态消费者fixture未越界。 |
+| Decision | `PASS_FOR_MODEL_INDEPENDENT_REVIEW`；F-05保持`IN_REVIEW`，等待傅钧烨第二人签收。 |
