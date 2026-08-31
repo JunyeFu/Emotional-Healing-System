@@ -6,6 +6,5 @@
 | 任务 | 状态 | 名称 | 工作量 | 入口 |
 |---|---|---|---:|---|
 | F-04 | IN_REVIEW | 【TouchDesigner】只读操作台壳 | 2人日 | [F-04/TASK.md](F-04/TASK.md) |
-| F-05 | IN_REVIEW | 【合同与协议】相位实例v2.2与消费者迁移 | 4人日 | [F-05/TASK.md](F-05/TASK.md) |
 | G-01 | IN_REVIEW | 【研究治理】伦理材料许可招募产能与角色台账 | 5人日 | [G-01/TASK.md](G-01/TASK.md) |
 | G-02 | IN_REVIEW | 【数据治理】数据分级跨阶段去重与资产许可 | 4人日 | [G-02/TASK.md](G-02/TASK.md) |

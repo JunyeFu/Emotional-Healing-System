@@ -1187,3 +1187,12 @@
 | Recalculation | 合同83项、P-01 113项、P-02 69项、专项验证器、协议权威、注册表、4个独立包/121快照及`git diff --check`均通过。 |
 | Scope | 未发现Unity运行实现、TouchDesigner工程、Spout或实际网络消费者；静态消费者fixture未越界。 |
 | Decision | `PASS_FOR_MODEL_INDEPENDENT_REVIEW`；F-05保持`IN_REVIEW`，等待傅钧烨第二人签收。 |
+
+### 2026-08-31 F-05严格审计推翻与状态退回
+
+| Field | Result |
+|---|---|
+| Superseded Decision | `6760743`的自动`PASS_FOR_MODEL_INDEPENDENT_REVIEW`被严格审计推翻，不再作为验收依据。 |
+| Blocking Findings | 证据哈希受CRLF/LF影响且重复seal会纳入旧输出；AC2缺少完整v2.2纵向轨迹；复核包误勾选第二人签收。 |
+| State | F-05退回`IN_PROGRESS`，旧独立复核包撤下。 |
+| Boundary | 仅修复证据、测试、生成器与入口文档；公共合同线格式及真实消费者保持不变。 |
