@@ -1,0 +1,16 @@
+{
+  "record_version": "1.0",
+  "task_id": "V-04",
+  "decision_type": "TEAM_DIRECTOR_BACKGROUND_DIRECTION_SELECTION",
+  "decision_at": "2026-08-31T00:00:00+08:00",
+  "source_manifest": "V-04_H3_R2大景深背景预览候选清单_v1.0.json",
+  "selection": {
+    "storm": {"group": "B", "candidate_id": "R2-B-storm", "direction": "EAST_ASIAN_ART_DIRECTED_REALISM"},
+    "heat": {"group": "C", "candidate_id": "R2-C-heat", "direction": "MONUMENTAL_GAME_LEVEL_REALISM"},
+    "snow": {"group": "C", "candidate_id": "R2-C-snow", "direction": "MONUMENTAL_GAME_LEVEL_REALISM"},
+    "fade": {"group": "C", "candidate_id": "R2-C-fade", "direction": "MONUMENTAL_GAME_LEVEL_REALISM"}
+  },
+  "result": "PASS",
+  "next_gate": "H3_LAYERABLE_BACKGROUND_REBUILD",
+  "evidence_boundary": "Selection freezes the background rebuild direction only. The previews remain TEMP_REFERENCE_ONLY and are not layerable assets, Unity runtime evidence, a Windows build, asset-license approval, or a real input chain."
+}

@@ -12,8 +12,15 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = next(parent for parent in HERE.parents if (parent / "AGENTS.md").is_file())
 MANIFEST = HERE / "V-04_H3_R2大景深背景预览候选清单_v1.0.json"
+SELECTION_RECORD = HERE / "V-04_H3_R2背景选择记录_v1.0.json"
 WEATHERS = {"storm", "heat", "snow", "fade"}
 GROUPS = {"A", "B", "C"}
+EXPECTED_SELECTED_CANDIDATES = {
+    "storm": "R2-B-storm",
+    "heat": "R2-C-heat",
+    "snow": "R2-C-snow",
+    "fade": "R2-C-fade",
+}
 
 
 def png_size(path: Path) -> tuple[int, int]:
@@ -29,8 +36,33 @@ def main() -> int:
     candidates = manifest.get("candidates", [])
     if len(candidates) != 12:
         errors.append(f"expected 12 candidates, got {len(candidates)}")
-    if manifest.get("current_gate") != "H3_FIXED_BACKGROUND_PREVIEW_SELECTION":
+    if manifest.get("current_gate") != "H3_LAYERABLE_BACKGROUND_REBUILD":
         errors.append("unexpected current gate")
+    if manifest.get("status") != "TEAM_DIRECTOR_SELECTION_CONFIRMED":
+        errors.append("unexpected selection status")
+    if manifest.get("team_director_selection") != {
+        "storm": "B",
+        "heat": "C",
+        "snow": "C",
+        "fade": "C",
+        "confirmed_at": "2026-08-31T00:00:00+08:00",
+        "selection_record": "V-04_H3_R2背景选择记录_v1.0.json",
+    }:
+        errors.append("unexpected team director selection")
+    if not SELECTION_RECORD.is_file():
+        errors.append("missing selection record")
+    else:
+        selection_record = json.loads(SELECTION_RECORD.read_text(encoding="utf-8"))
+        selected_candidates = {
+            weather: selection_record.get("selection", {}).get(weather, {}).get("candidate_id")
+            for weather in WEATHERS
+        }
+        if selection_record.get("result") != "PASS":
+            errors.append("selection record must pass")
+        if selection_record.get("next_gate") != "H3_LAYERABLE_BACKGROUND_REBUILD":
+            errors.append("unexpected next selection gate")
+        if selected_candidates != EXPECTED_SELECTED_CANDIDATES:
+            errors.append("selection record candidate IDs do not match")
     camera = manifest.get("camera_contract", {})
     if any(camera.get(weather) != "FIXED" for weather in WEATHERS):
         errors.append("all weather cameras must be FIXED")

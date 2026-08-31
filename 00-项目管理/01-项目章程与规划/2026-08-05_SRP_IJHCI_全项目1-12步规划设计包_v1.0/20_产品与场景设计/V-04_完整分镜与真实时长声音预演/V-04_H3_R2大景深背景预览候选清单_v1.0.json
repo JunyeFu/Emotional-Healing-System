@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "task_id": "V-04",
   "created_at": "2026-08-31T00:00:00+08:00",
-  "status": "PENDING_TEAM_DIRECTOR_SELECTION",
-  "current_gate": "H3_FIXED_BACKGROUND_PREVIEW_SELECTION",
+  "status": "TEAM_DIRECTOR_SELECTION_CONFIRMED",
+  "current_gate": "H3_LAYERABLE_BACKGROUND_REBUILD",
   "design_contract": "V-04_H3_四天气大景深事件构图合同_v1.0.md",
   "prompt_contract": "V-04_H3_R2大景深AAA背景生图提示词_v1.0.md",
   "generation": {
@@ -28,6 +28,14 @@
     "snow": "C",
     "fade": "C"
   },
+  "team_director_selection": {
+    "storm": "B",
+    "heat": "C",
+    "snow": "C",
+    "fade": "C",
+    "confirmed_at": "2026-08-31T00:00:00+08:00",
+    "selection_record": "V-04_H3_R2背景选择记录_v1.0.json"
+  },
   "candidates": [
     {"candidate_id":"R2-A-storm","group":"A","weather":"storm","direction":"CINEMATIC_NATURAL_PBR","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-A-storm.png","width":1672,"height":941,"sha256":"ec45175dcd7f2d7ecf0084bc60233f4bcca023b73bfad5fce92d85281890d170","screening":"REVISE_NOT_RECOMMENDED","note":"近中远景与湿石材质强，但垂直水幕接近瀑布，可能预先占据雨幕风门语义。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
     {"candidate_id":"R2-A-heat","group":"A","weather":"heat","direction":"CINEMATIC_NATURAL_PBR","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-A-heat.png","width":1672,"height":941,"sha256":"590ad24bd3c40207b21c828597f79d619d8e86fc6bc32bbf100bf381625c6944","screening":"PASS_CANDIDATE","note":"盐壳近景、连续地槽和远方盆地清晰。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
@@ -43,5 +51,5 @@
     {"candidate_id":"R2-C-fade","group":"C","weather":"fade","direction":"MONUMENTAL_GAME_LEVEL_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-fade.png","width":1672,"height":941,"sha256":"837efa74eebda22b885141e7d201f3f56208612e9a574f68b840242df3febbbb","screening":"PASS_CANDIDATE","note":"左支流、开放主水道、右下出口和全彩远景最易读。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false}
   ],
   "selection_format": {"storm":"A|B|C","heat":"A|B|C","snow":"A|B|C","fade":"A|B|C"},
-  "next_step": "REBUILD_FOUR_LAYERABLE_BACKGROUNDS_AFTER_TEAM_DIRECTOR_SELECTION"
+  "next_step": "REBUILD_FOUR_LAYERABLE_BACKGROUNDS"
 }
