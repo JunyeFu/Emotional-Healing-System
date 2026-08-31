@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "created_at": "2026-08-31T00:00:00+08:00",
+  "status": "PENDING_TEAM_DIRECTOR_SELECTION",
+  "current_gate": "H3_FIXED_BACKGROUND_PREVIEW_SELECTION",
+  "camera_contract": {
+    "storm": "FIXED",
+    "heat": "FIXED",
+    "snow": "FIXED",
+    "fade": "FIXED",
+    "camera_translation": 0,
+    "background_translation": 0,
+    "parallax_scroll": false
+  },
+  "preview_layout": {
+    "top_left": "storm",
+    "top_right": "heat",
+    "bottom_left": "snow",
+    "bottom_right": "fade"
+  },
+  "candidates": [
+    {
+      "candidate_id": "fixed-background-group-A",
+      "direction": "CINEMATIC_NATURAL_PBR",
+      "path": ".artifacts-local/V-04/H3/fixed-background-previews/v1/V-04-H3-fixed-background-group-A.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "3774a653d6ea2f9460562d67b49f54857b48ce457be14bcc7195b2ddfe9c450c",
+      "asset_status": "TEMP_REFERENCE_ONLY",
+      "formal_use_allowed": false
+    },
+    {
+      "candidate_id": "fixed-background-group-B",
+      "direction": "EAST_ASIAN_ART_DIRECTED_REALISM",
+      "path": ".artifacts-local/V-04/H3/fixed-background-previews/v1/V-04-H3-fixed-background-group-B.png",
+      "width": 1774,
+      "height": 887,
+      "sha256": "3b7ceb4f78de26dd3a346ae60f93399a07ce5d4b0a1cb447d8522add3ccebf8d",
+      "asset_status": "TEMP_REFERENCE_ONLY",
+      "formal_use_allowed": false
+    },
+    {
+      "candidate_id": "fixed-background-group-C",
+      "direction": "REALTIME_GAMEPLAY_READABILITY",
+      "path": ".artifacts-local/V-04/H3/fixed-background-previews/v1/V-04-H3-fixed-background-group-C.png",
+      "width": 1774,
+      "height": 887,
+      "sha256": "769cd2feb7cb217b20a19b1200d059c60f1030d2883145d2625ebb270855a7d0",
+      "asset_status": "TEMP_REFERENCE_ONLY",
+      "formal_use_allowed": false
+    }
+  ],
+  "selection_format": {
+    "storm": "A|B|C",
+    "heat": "A|B|C",
+    "snow": "A|B|C",
+    "fade": "A|B|C"
+  },
+  "next_step": "GENERATE_FOUR_INDIVIDUAL_16_9_BACKGROUNDS_AFTER_SELECTION"
+}
