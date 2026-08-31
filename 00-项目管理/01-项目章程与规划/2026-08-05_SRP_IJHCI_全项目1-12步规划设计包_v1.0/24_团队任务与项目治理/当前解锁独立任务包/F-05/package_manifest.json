@@ -1,0 +1,118 @@
+{
+  "package_schema_version": "1.0",
+  "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
+  "task_id": "F-05",
+  "status": "IN_REVIEW",
+  "registry_sha256": "AAF15E0C1B5BC4F4B766928DB5FD78DA600E9E6D967823A73A4B30AD70D98BB0",
+  "source_files": [
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+      "package_path": "inputs/01_protocol_authority_v1.1.json",
+      "sha256": "66DCF22A6B98E9B35FE069AA19373228E9E2070A2508F253801ACA3669E51794",
+      "size_bytes": 3961
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/runtime_contract_v22.py",
+      "package_path": "inputs/02_runtime_contract_v22.py",
+      "sha256": "B5FABCABB15E8C471EEF58B5CE4B09D6A7A695163F246E75CBA15EF99C503FA5",
+      "size_bytes": 5732
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+      "package_path": "inputs/03_runtime-contract-v2.2.schema.json",
+      "sha256": "0AF481DF8105DE3AE7A275982F653F36E94450699199DF011FD1DCE6F23001D2",
+      "size_bytes": 47165
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/contracts/fixture_hashes_v2.2.sha256",
+      "package_path": "inputs/04_fixture_hashes_v2.2.sha256",
+      "sha256": "B3C5938BAB8F0553EDA3AF65BB1C3D3ABF59224DEF1AC82FFE7736D58C259585",
+      "size_bytes": 2583
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/contracts/verify_f05_v22.py",
+      "package_path": "inputs/05_verify_f05_v22.py",
+      "sha256": "7C25C896B1F898D951DACBC8B0DAAC427F78B750D8E39CE8CCDA33BB5A2F4680",
+      "size_bytes": 3842
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md",
+      "package_path": "inputs/06_F-05_v2.2接口对齐基线.md",
+      "sha256": "3F05C048F7AE0793A4A599C6A84494978C60A22C1E5F14E6B93C419F8960ADBB",
+      "size_bytes": 4639
+    },
+    {
+      "source_path": "02-技术研发/05-通信协议/contracts/F-05_v2.2消费者迁移指南.md",
+      "package_path": "inputs/07_F-05_v2.2消费者迁移指南.md",
+      "sha256": "A1FFD661F8F53087DE2AF7DE3F2433096A70BA057F1DB91BF6C1093DB2EC0F20",
+      "size_bytes": 2285
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
+      "package_path": "inputs/08_breath_protocol_config_v2.2.json",
+      "sha256": "418D707266B4347DF4C4054CA0F4C007D737C129575106FF4F00C4BADA6B679A",
+      "size_bytes": 1067
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/contract_adapter.py",
+      "package_path": "inputs/09_contract_adapter.py",
+      "sha256": "642802C955C1B9E1066A1181669D8441CC5DED211088E4A5C16256F836331EDA",
+      "size_bytes": 985
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/core.py",
+      "package_path": "inputs/10_core.py",
+      "sha256": "F2C6C40C0CB23703E8F4D2393F46410FBFE59C54C79CD9ADE73796F27BB03777",
+      "size_bytes": 35934
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/models.py",
+      "package_path": "inputs/11_models.py",
+      "sha256": "5D70FD4EEB2707739D05FA949CAAE5F5E0DBD5F8415C554715B2DEDA49782FDE",
+      "size_bytes": 5106
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/transport.py",
+      "package_path": "inputs/12_transport.py",
+      "sha256": "5C3B49535B9B48386446BCEE1DA2625DF6BB90CBAD6F33F019D66DEE374E8B8E",
+      "size_bytes": 24828
+    },
+    {
+      "source_path": "02-技术研发/srp_session_store/adapters.py",
+      "package_path": "inputs/13_adapters.py",
+      "sha256": "ABA4F4B346DD65FC9586D99B6A6531BA8C7A8DB55476BD2F92A776ABFF441D2B",
+      "size_bytes": 14437
+    },
+    {
+      "source_path": "Tools/F05/Invoke-F05.ps1",
+      "package_path": "inputs/14_Invoke-F05.ps1",
+      "sha256": "C4F0604B130FE992FDFB54E9D80E7EABA285C0187B3A06989AC572CB5AA66D6E",
+      "size_bytes": 2953
+    },
+    {
+      "source_path": "03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md",
+      "package_path": "inputs/15_F-05_独立Agent审核与修复记录_2026-08-31.md",
+      "sha256": "A5C56DE6EC2604C2DB3076DE98B202C6AB66439CD0E27EED685833542535EF1F",
+      "size_bytes": 899
+    },
+    {
+      "source_path": "03-测试与实验/evidence/F-05/evidence_manifest.json",
+      "package_path": "inputs/16_evidence_manifest.json",
+      "sha256": "829713E8F013C8B6B9944C781C924A2C449699F93396F286EFDFDB08335B328C",
+      "size_bytes": 1251
+    },
+    {
+      "source_path": "03-测试与实验/evidence/F-05/evidence_hashes.sha256",
+      "package_path": "inputs/17_evidence_hashes.sha256",
+      "sha256": "6DCE3BB78D1BA79A21B06D530EC407D80F1C563F45E03D9E59144B345861F8EF",
+      "size_bytes": 510
+    }
+  ],
+  "working_paths": [
+    "02-技术研发/05-通信协议/contracts",
+    "02-技术研发/srp_session_core",
+    "02-技术研发/srp_session_store",
+    "03-测试与实验/evidence/F-05",
+    "Tools/F05"
+  ]
+}

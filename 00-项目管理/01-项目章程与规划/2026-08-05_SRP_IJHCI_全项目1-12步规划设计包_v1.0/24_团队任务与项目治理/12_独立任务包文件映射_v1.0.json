@@ -2,6 +2,36 @@
   "mapping_id": "SRP-READY-TASK-FILES-v1.0",
   "output_directory": "当前解锁独立任务包",
   "tasks": {
+    "F-05": {
+      "implementation_commit": "c7c760b83289e7e15c8c1ab65ca52470305cd0dc",
+      "model_review_status": "REVIEW_PENDING_EVIDENCE_SEALED",
+      "source_files": [
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+        "02-技术研发/05-通信协议/runtime_contract_v22.py",
+        "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+        "02-技术研发/05-通信协议/contracts/fixture_hashes_v2.2.sha256",
+        "02-技术研发/05-通信协议/contracts/verify_f05_v22.py",
+        "02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md",
+        "02-技术研发/05-通信协议/contracts/F-05_v2.2消费者迁移指南.md",
+        "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
+        "02-技术研发/srp_session_core/contract_adapter.py",
+        "02-技术研发/srp_session_core/core.py",
+        "02-技术研发/srp_session_core/models.py",
+        "02-技术研发/srp_session_core/transport.py",
+        "02-技术研发/srp_session_store/adapters.py",
+        "Tools/F05/Invoke-F05.ps1",
+        "03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md",
+        "03-测试与实验/evidence/F-05/evidence_manifest.json",
+        "03-测试与实验/evidence/F-05/evidence_hashes.sha256"
+      ],
+      "working_paths": [
+        "02-技术研发/05-通信协议/contracts",
+        "02-技术研发/srp_session_core",
+        "02-技术研发/srp_session_store",
+        "03-测试与实验/evidence/F-05",
+        "Tools/F05"
+      ]
+    },
     "G-02": {
       "implementation_commit": "03d7426219121e49554e405db9dd521b8ab1d819",
       "model_review_status": "PASS_FOR_MODEL_INDEPENDENT_REVIEW",

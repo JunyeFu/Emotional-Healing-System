@@ -1155,3 +1155,25 @@
 | Open Parameter | `fade`步骤身份已明确，三个步骤的精确秒数尚未由协议责任人冻结；未自行补造。 |
 | Static Checks | 两份新文档相对链接可解析；新增及增量内容受限用语0命中；`git diff --check`通过。 |
 | Evidence Boundary | 本轮证明任务领取、项目盘点、接口责任对齐和v2.1基线健康；不证明v2.2 Schema、适配器、非Python消费或正式模式已实现。 |
+
+### 2026-08-31 F-05 v2.2实现候选干净证据
+
+| Field | Result |
+|---|---|
+| Candidate | `c7c760b83289e7e15c8c1ab65ca52470305cd0dc`；干净分离工作树为`D:/Agent/03-SRP-f05-evidence-c7c760b`。 |
+| Contract Tests | `83 passed`：签收v2.1测试继续通过；v2.2覆盖新增字段、storm双停、fade双吸、配置身份、非法步骤、空身份和前向兼容。 |
+| P-01 | `113 passed`：会话版本分派、正式v2.1拒绝、v2.2握手、控制、ACK及未迁移遥测拒绝通过。 |
+| P-02 | `69 passed`：v2.2四个步骤字段原值持久化，归档重放最终哈希一致；v2.1黄金归档未漂移。 |
+| Specialized Verifier | `PASS`：相对`cc0b1af`的v2.1未变，v2.2 Schema可重建，22份fixture哈希有效，Unity与TouchDesigner各5帧输入一致。 |
+| Static | `git diff --check`通过；证据包包含显式空PASS日志；Python编译检查通过。 |
+| Evidence | `03-测试与实验/evidence/F-05/evidence_manifest.json`记录候选SHA、8个证据文件及SHA-256；复制前后逐文件SHA-256零差异。 |
+| Boundary | 仅证明版本化合同、Python会话/存储迁移和消费输入；不证明Unity、TouchDesigner、UDP消费者、实际输入链或完整旅程运行。 |
+
+### 2026-08-31 F-05 独立审核修复封存
+
+| Field | Result |
+|---|---|
+| Initial Independent Review | `FAIL`，唯一缺口为`c7c760b`未随提交封存F-05证据和验证记录；实现范围及回归检查均通过。 |
+| Repair | 治理候选纳入F-05证据目录、逐文件哈希、独立审核记录、任务状态和独立任务包映射。 |
+| State | F-05从`IN_PROGRESS`转为`IN_REVIEW`；不转`DONE`。 |
+| Next Gate | 独立Agent基于封存候选重新审核；傅钧烨完成第二人`PASS/FAIL`签收。 |
