@@ -1175,3 +1175,14 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 复核方式为审阅固定证据和独立Agent结论，不表述为审核人本人重新运行Unity。
 - F-03从`IN_REVIEW`迁移为`DONE`；其审阅包从当前分发集合移除。U-01、U-02和V-05只关闭F-03依赖，因F-05、U-02或V-04等其他依赖未关闭而继续`WAIT_DEP`。
 - 签收证据等级仅为Unity环境、Edit/Play测试和Windows `DEV-REPLAY`构建基线；正式构建、实时通信、四场景完整旅程、资产许可、真实输入链和研究结果仍未成立。
+
+### 2026-08-31 F-05领取、项目盘点与接口对齐
+
+- 从F-03签收治理提交`c358a3537d3c110eb03ddcf8f4748b9b7dfb61a8`创建隔离工作树`D:/Agent/03-SRP-f05-worktree`和分支`codex/f-05-phase-v22`；不触碰V-04脏工作区。
+- F-05由`READY`转为`IN_PROGRESS`；领取人为`Codex Agent（F-05独立对话）`，第二复核人为`傅钧烨（团队总监，独立第二人复核人）`。领取后任务统计为DONE 10、IN_PROGRESS 2、IN_REVIEW 3、READY 0。
+- F-01、P-01、P-02前置依赖均为DONE。F-05不自动解锁U-01、U-02、T-01或U-07，也不实现其Unity、TouchDesigner或传输运行职责。
+- 接口保持单一外部seam：`validate_message(message_type, payload)`；v2.1保持不可变，v2.2版本分派、Schema选择和字段过滤收敛在seam内部，P-01与P-02公共方法不扩张。
+- v2.2对齐字段为manifest的呼吸配置版本/哈希，以及遥测的目标/实际周期索引和步骤ID。消费者不得从粗相位、进度回零或历史帧推断步骤实例。
+- `storm`、`heat`、`snow`步骤身份与时长已有权威输入；`fade`的`inhale_1 -> inhale_2 -> exhale_1`身份已明确，但精确秒数尚未冻结，F-05不得自行补造。
+- 当前分发集合重生成为F-04、G-01、G-02三个`IN_REVIEW`包；F-05领取快照已从生成目录移除，项目原路径继续作为实现权威。
+- 下一队列：以失败测试锁住v2.1哈希，新增v2.2 Schema与fixture、独立呼吸步骤配置、P-01版本上下文、P-02确定性重放及Unity/TD消费fixture；完成前保持`IN_PROGRESS`。

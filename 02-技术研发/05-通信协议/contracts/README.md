@@ -1,5 +1,7 @@
 # SRP运行合同v2.1
 
+> F-05已进入`IN_PROGRESS`。v2.2的候选字段、版本选择seam和消费者责任见[F-05 v2.2接口对齐基线](F-05_v2.2接口对齐基线.md)；该基线不改变本页v2.1合同，也不表示v2.2已经实现或签收。
+
 本目录是F-01交付的机器可读合同。`runtime-contract-v2.1.schema.json`是线格式、必填字段、枚举和无状态跨字段约束的机器权威；`runtime_contract.py`是标准库参考实现。两者必须对同一fixture和差分负例产生相同的接受或拒绝结果。`ControlEventLedger`单独负责无法由JSON Schema表达的跨消息幂等与序号状态。
 
 ## 权威边界

@@ -1139,3 +1139,19 @@
 | Decision | `PASS / DONE`；F-03从`IN_REVIEW`迁移为`DONE`。 |
 | Dependency Effect | U-01、U-02和V-05只关闭F-03依赖，仍因F-05、U-02或V-04等其他依赖继续`WAIT_DEP`。 |
 | Evidence Boundary | 仅证明Unity环境、测试和Windows `DEV-REPLAY`构建基线；不证明正式构建、实时通信、四场景完整旅程、资产许可放行、真实输入链或研究结果。 |
+
+### 2026-08-31 F-05领取、项目盘点与接口对齐
+
+| Field | Result |
+|---|---|
+| Isolation | 隔离工作树`D:/Agent/03-SRP-f05-worktree`，分支`codex/f-05-phase-v22`，起点`c358a3537d3c110eb03ddcf8f4748b9b7dfb61a8`；V-04工作树未修改。 |
+| Claim Gate | F-01、P-01、P-02均为DONE；F-05已由READY转为IN_PROGRESS，领取人和第二复核人已登记。 |
+| Registry | `07_validate_task_packages.py`通过：57项；DONE 10、IN_PROGRESS 2、IN_REVIEW 3、READY 0。 |
+| Dispatch Packages | `14_validate_ready_task_packages.py`通过：F-04、G-01、G-02共3包、104份快照；F-05领取快照已从生成目录移除。 |
+| Protocol Authority | `validate_protocol_authority_v1_1.py`通过；活动执行文件与协议权威v1.1一致。 |
+| Baseline Regressions | v2.1合同`49 passed`；P-01会话编排`98 passed`；P-02存储回放`68 passed`；合计215项通过。 |
+| v2.1 Immutability | `runtime_contract.py`对象为`4cfaec0dbde41a91e0d128072c4d6d29919aae2f`，Schema对象为`ba997941e4ea1f9e54080a03fa06c9ff485ef5a2`，fixture哈希清单对象为`a1f067842bd3af11feb6025bf9ab47c0e0711fed`；均与领取起点一致，fixture目录差异为0。 |
+| Interface Alignment | 外部调用保持`validate_message(message_type, payload)`；版本分派置于seam内部。v2.2字段、跨字段约束、暂停/重连/重放语义和消费者责任已形成对齐基线。 |
+| Open Parameter | `fade`步骤身份已明确，三个步骤的精确秒数尚未由协议责任人冻结；未自行补造。 |
+| Static Checks | 两份新文档相对链接可解析；新增及增量内容受限用语0命中；`git diff --check`通过。 |
+| Evidence Boundary | 本轮证明任务领取、项目盘点、接口责任对齐和v2.1基线健康；不证明v2.2 Schema、适配器、非Python消费或正式模式已实现。 |
