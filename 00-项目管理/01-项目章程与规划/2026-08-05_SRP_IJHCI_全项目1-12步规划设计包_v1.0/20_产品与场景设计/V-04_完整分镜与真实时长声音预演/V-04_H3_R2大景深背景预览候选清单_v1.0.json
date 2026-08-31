@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "created_at": "2026-08-31T00:00:00+08:00",
+  "status": "PENDING_TEAM_DIRECTOR_SELECTION",
+  "current_gate": "H3_FIXED_BACKGROUND_PREVIEW_SELECTION",
+  "design_contract": "V-04_H3_四天气大景深事件构图合同_v1.0.md",
+  "prompt_contract": "V-04_H3_R2大景深AAA背景生图提示词_v1.0.md",
+  "generation": {
+    "interface": "image_gen.imagegen",
+    "seed": "NOT_EXPOSED",
+    "output_role": "TEMP_REFERENCE_ONLY"
+  },
+  "camera_contract": {
+    "storm": "FIXED",
+    "heat": "FIXED",
+    "snow": "FIXED",
+    "fade": "FIXED",
+    "lens_equivalent_mm": "24-28",
+    "horizon_y": "0.56-0.60",
+    "camera_translation": 0,
+    "background_translation": 0,
+    "parallax_scroll": false
+  },
+  "recommended_direction": {
+    "storm": "B",
+    "heat": "C",
+    "snow": "C",
+    "fade": "C"
+  },
+  "candidates": [
+    {"candidate_id":"R2-A-storm","group":"A","weather":"storm","direction":"CINEMATIC_NATURAL_PBR","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-A-storm.png","width":1672,"height":941,"sha256":"ec45175dcd7f2d7ecf0084bc60233f4bcca023b73bfad5fce92d85281890d170","screening":"REVISE_NOT_RECOMMENDED","note":"近中远景与湿石材质强，但垂直水幕接近瀑布，可能预先占据雨幕风门语义。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-A-heat","group":"A","weather":"heat","direction":"CINEMATIC_NATURAL_PBR","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-A-heat.png","width":1672,"height":941,"sha256":"590ad24bd3c40207b21c828597f79d619d8e86fc6bc32bbf100bf381625c6944","screening":"PASS_CANDIDATE","note":"盐壳近景、连续地槽和远方盆地清晰。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-A-snow","group":"A","weather":"snow","direction":"CINEMATIC_NATURAL_PBR","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-A-snow.png","width":1672,"height":941,"sha256":"d1d3d040f3442602b19825df4b6e8c4699bc257fd2e24128998d79ad7009929e","screening":"REVISE_NOT_RECOMMENDED","note":"雪谷尺度强，但左侧大树干压缩近场实际响应区。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-A-fade","group":"A","weather":"fade","direction":"CINEMATIC_NATURAL_PBR","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-A-fade.png","width":1672,"height":941,"sha256":"16d7f1b7cebfcf1ab5b038b890aaefc3b16559126a03dbe722a8d286b1d19269","screening":"PASS_WITH_NOTE","note":"水面材质与远景尺度强；中央绿洲使主水道拓扑不如C直观。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-B-storm","group":"B","weather":"storm","direction":"EAST_ASIAN_ART_DIRECTED_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png","width":1672,"height":941,"sha256":"9cc6689d560862bc9110bcb4b16dde7dce1395b9c8d6362acf29b2e5d3f23e53","screening":"PASS_CANDIDATE","note":"雨雾、鞍部、湿石近景和远峡谷平衡，未把雨幕画成固定实体。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-B-heat","group":"B","weather":"heat","direction":"EAST_ASIAN_ART_DIRECTED_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-heat.png","width":1672,"height":941,"sha256":"60290468dd9affa3b9ff68429d8e2fe51cca350036fbdf62a1fe5eb267816604","screening":"PASS_CANDIDATE","note":"地槽路径、矿物层级和开阔安全区均清楚。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-B-snow","group":"B","weather":"snow","direction":"EAST_ASIAN_ART_DIRECTED_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-snow.png","width":1672,"height":941,"sha256":"4baf994f5cfb4914781c6ee3cb4f8d7f8637931576ca457a873b1a2e1bfe0ff6","screening":"PASS_CANDIDATE","note":"开阔雪谷、低遮挡近景和中景垂直空间均可用。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-B-fade","group":"B","weather":"fade","direction":"EAST_ASIAN_ART_DIRECTED_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-fade.png","width":1672,"height":941,"sha256":"2a1e6acaf503565fca0795a05b001165157966121cb507194cda4f26b35d2407","screening":"PASS_WITH_NOTE","note":"全彩水面和远景优秀；中部植被带会轻度收窄水路。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-C-storm","group":"C","weather":"storm","direction":"MONUMENTAL_GAME_LEVEL_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-storm.png","width":1672,"height":941,"sha256":"9ae1ad714a0153a972459d287371a852e1c2b137a1feebf2f251c55f2c70345b","screening":"PASS_WITH_NOTE","note":"关卡轮廓和鞍部极清楚，但整体明度偏低。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-C-heat","group":"C","weather":"heat","direction":"MONUMENTAL_GAME_LEVEL_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png","width":1672,"height":941,"sha256":"679a6c3d9a8f98c08616af8f88a5f0511eddb058c079c6d9011df549d879b7d4","screening":"PASS_CANDIDATE","note":"盐壳近景、地槽路径、台地与远山形成最强层次。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-C-snow","group":"C","weather":"snow","direction":"MONUMENTAL_GAME_LEVEL_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-snow.png","width":1672,"height":941,"sha256":"85830276219c092f1cfea5d3817cf3c7f6c40e38a004e97ea560e3899c1d965d","screening":"PASS_CANDIDATE","note":"近景低位、林间开口、深谷和雪岭层次完整。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
+    {"candidate_id":"R2-C-fade","group":"C","weather":"fade","direction":"MONUMENTAL_GAME_LEVEL_REALISM","path":".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-fade.png","width":1672,"height":941,"sha256":"837efa74eebda22b885141e7d201f3f56208612e9a574f68b840242df3febbbb","screening":"PASS_CANDIDATE","note":"左支流、开放主水道、右下出口和全彩远景最易读。","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false}
+  ],
+  "selection_format": {"storm":"A|B|C","heat":"A|B|C","snow":"A|B|C","fade":"A|B|C"},
+  "next_step": "REBUILD_FOUR_LAYERABLE_BACKGROUNDS_AFTER_TEAM_DIRECTOR_SELECTION"
+}
