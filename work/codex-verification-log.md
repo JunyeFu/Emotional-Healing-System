@@ -1244,3 +1244,14 @@
 | Governance | 57项注册表通过；`DONE=F-03/F-04/F-05`，`READY=T-01/U-01/U-02`，`IN_REVIEW=G-01/G-02`。 |
 | Packages | `PASS`；5包、128份快照，集合=`G-01,G-02,T-01,U-01,U-02`。 |
 | Evidence Boundary | 不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。 |
+
+### 2026-09-01 F-05 independent review and director sign-off
+
+| Check | Result |
+|---|---|
+| Independent Review | `PASS_WITH_NOTES`；无P0/P1、无实现漂移、无签收失效。 |
+| Independent Rerun | 合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`；全项目`470 passed`。 |
+| Governance And Packages | 任务注册表与独立任务包校验均`PASS`；5包、128份快照。 |
+| Director Sign-off | 傅钧烨确认签收`codex/f-05-integration@646bc47a2f68ddddf31bdcc60e9feb5927658c85`，结论`PASS / DONE`。 |
+| Open Note | P2旧状态文案不阻断签收，留作非实质治理修正；本次未修改F-05原签署树。 |
+| Evidence Boundary | 不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。 |

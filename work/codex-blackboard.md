@@ -1251,3 +1251,10 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - F-05专项结果：合同`87 passed`、会话核心`115 passed`、记录回放`70 passed`；v2.2复算确认v2.1未漂移、schema可重建、22个fixture哈希与5帧消费者流一致。
 - 全项目回归`470 passed`。下一队列为最终差异审计、提交并推送`codex/f-05-integration`。
 - 证据边界：本次只关闭F-05 v2.2合同与消费者迁移的集成治理门，不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。
+
+### 2026-09-01 F-05集成签收确认
+
+- 傅钧烨以团队总监身份明确签收`codex/f-05-integration@646bc47a2f68ddddf31bdcc60e9feb5927658c85`。
+- 独立Agent只读复核结论为`PASS_WITH_NOTES`：无P0/P1、无实现漂移、无签收失效；专项与全项目复跑结果保持通过。
+- 唯一P2为合同入口及部分READY包快照仍含“候选/待第二人复核”旧状态文案；该问题不阻断签收，后续按非实质治理修正处理。
+- 新增`03-测试与实验/F-05_集成签收确认_傅钧烨_2026-09-01.md`；不改动F-05原签署树。
