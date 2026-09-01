@@ -1,0 +1,97 @@
+{
+  "schema_version": "srp.v04.h3.validation.v1.0",
+  "candidate": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "H3-001",
+      "status": "PASS",
+      "detail": "required candidate paths exist"
+    },
+    {
+      "id": "H3-002",
+      "status": "PASS",
+      "detail": "candidate status is machine-validation only"
+    },
+    {
+      "id": "H3-003",
+      "status": "PASS",
+      "detail": "formal use remains blocked"
+    },
+    {
+      "id": "H3-016",
+      "status": "PASS",
+      "detail": "candidate identity matches the immutable directory name"
+    },
+    {
+      "id": "H3-017",
+      "status": "PASS",
+      "detail": "package binds the current recipe and generator hashes"
+    },
+    {
+      "id": "H3-004",
+      "status": "PASS",
+      "detail": "asset rows=28 expected=28"
+    },
+    {
+      "id": "H3-005",
+      "status": "PASS",
+      "detail": "manifest covers every weather-layer pair exactly once"
+    },
+    {
+      "id": "H3-006",
+      "status": "PASS",
+      "detail": "all assets retain the G-02 release boundary"
+    },
+    {
+      "id": "H3-007",
+      "status": "PASS",
+      "detail": "all 28 exports are 3840x2160 RGBA PNG"
+    },
+    {
+      "id": "H3-008",
+      "status": "PASS",
+      "detail": "alpha is binary, non-sky layers are transparent, transparent RGB is zero"
+    },
+    {
+      "id": "H3-009",
+      "status": "PASS",
+      "detail": "asset-manifest hashes match export bytes"
+    },
+    {
+      "id": "H3-010",
+      "status": "PASS",
+      "detail": "ownership masks are exclusive and cover the full canvas"
+    },
+    {
+      "id": "H3-011",
+      "status": "PASS",
+      "detail": "four approved masters are normalized to 4K RGBA"
+    },
+    {
+      "id": "H3-012",
+      "status": "PASS",
+      "detail": "ordered layer recomposition is byte-exact to each approved master"
+    },
+    {
+      "id": "H3-013",
+      "status": "PASS",
+      "detail": "package inventory files=123"
+    },
+    {
+      "id": "H3-014",
+      "status": "PASS",
+      "detail": "4K candidate is git-ignored and untracked"
+    },
+    {
+      "id": "H3-015",
+      "status": "PASS",
+      "detail": "eight required human-review sheets exist"
+    },
+    {
+      "id": "H3-018",
+      "status": "PASS",
+      "detail": "frozen source bytes, derived recipes and normalized masters match authority"
+    }
+  ]
+}

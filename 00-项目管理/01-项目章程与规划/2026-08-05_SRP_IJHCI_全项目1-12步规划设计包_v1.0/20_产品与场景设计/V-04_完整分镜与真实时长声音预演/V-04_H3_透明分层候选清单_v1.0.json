@@ -1,0 +1,55 @@
+{
+  "schema_version": "srp.v04.h3.layer-candidate.v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_LAYERABLE_BACKGROUND_REBUILD",
+  "candidate_id": "layer-export-candidate-v2",
+  "status": "READY_FOR_TEAM_DIRECTOR_REVIEW",
+  "candidate_root": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2",
+  "package_manifest": {
+    "local_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/package_manifest.json",
+    "tracked_copy": "review/H3/layer-export-candidate-v2/package_manifest.json",
+    "sha256": "e0be4c9746e96677d324b6ac37e2219e89e582aba27a3833cb774706ae8a9da9"
+  },
+  "machine_validation": {
+    "status": "PASS",
+    "check_count": 18,
+    "failed_check_count": 0,
+    "tracked_report": "review/H3/layer-export-candidate-v2/validation_report.json",
+    "sha256": "9dd38f2fa4ff1a1f7dd5ad16916a8504bc6f6a22925558216cdd27781b2b7a94"
+  },
+  "deliverables": {
+    "weather_count": 4,
+    "layers_per_weather": 7,
+    "transparent_png_count": 28,
+    "width": 3840,
+    "height": 2160,
+    "pixel_mode": "RGBA",
+    "recomposition": "BYTE_EXACT",
+    "camera": "FIXED_NO_PARALLAX"
+  },
+  "review_evidence_root": "review/H3/layer-export-candidate-v2",
+  "review_manifest": {
+    "path": "review/H3/layer-export-candidate-v2/review_manifest.json",
+    "sha256": "ab1c1737a405ab3791c95b72111e93b1bffa299b006d452b9a5419a899420217",
+    "evidence_count": 12,
+    "full_resolution_export_count": 28
+  },
+  "independent_review": {
+    "status": "PASS",
+    "report": "V-04_H3_透明分层独立Agent复核记录_v1.0.md",
+    "open_p0_p3_count": 0
+  },
+  "human_review": {
+    "status": "PENDING_TEAM_DIRECTOR",
+    "weather_count": 4,
+    "criteria_per_weather": 6,
+    "required_pass_count": 24
+  },
+  "release_boundary": {
+    "asset_status": "PENDING_G02_CLEARANCE",
+    "formal_use_allowed": false,
+    "unity_import_completed": false,
+    "v04_completed": false
+  },
+  "next_gate_after_human_pass": "H3_FIXED_COMBINED_REVIEW"
+}

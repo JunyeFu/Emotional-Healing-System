@@ -1,0 +1,677 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_LAYERABLE_BACKGROUND_REBUILD",
+  "candidate_id": "layer-export-candidate-v2",
+  "status": "READY_FOR_MACHINE_VALIDATION",
+  "asset_status": "PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "mode": "RGBA"
+  },
+  "build_inputs": {
+    "generator_sha256": "267e14ea71a7ccbdc5472cb3b4b19ba193e47289bdeedccd79efd0f8e458197f",
+    "recipe_sha256": "9f23592523077d473eb2f4babfbb228675153a39eaa11beb1a0f29d8d869dc2c",
+    "python": "3.14.4",
+    "pillow": "12.2.0",
+    "numpy": "2.4.6"
+  },
+  "weather_summaries": [
+    {
+      "weather": "fade",
+      "selected_direction": "C",
+      "source_sha256": "cb06c979c65268e531e5892d115788e22cae22af7d25c6c3d162b0df81c53c9b",
+      "approved_master_sha256": "a972fdc1a557789a551386c4e46b3b6d64591257ad85e09d38e234c6b6f7082c",
+      "recomposition_exact": true,
+      "layer_count": 7,
+      "structure_invariant": "Preserve the left tributary, open main channel and lower-right outlet; keep the lower-left shallow water open."
+    },
+    {
+      "weather": "heat",
+      "selected_direction": "C",
+      "source_sha256": "2551b38f5c4a89e1aa75246f0e33bcaddaef734462f73013bbcbdc0a8ace4cc4",
+      "approved_master_sha256": "741e0123488af015ed123966e77572d46a55505c7d70ff76247812fbc373a7e7",
+      "recomposition_exact": true,
+      "layer_count": 7,
+      "structure_invariant": "Preserve the continuous shallow salt channel from the center-right foreground into the basin; keep the lower-left salt-crust actual area open."
+    },
+    {
+      "weather": "storm",
+      "selected_direction": "B",
+      "source_sha256": "7764e632e3b3c8ff02eaf8aa04ef06467f14bb855b8be98b96f53eae0297fce2",
+      "approved_master_sha256": "c9a64c564897397fc05309fd573e01c6b16106b09ff44d26943df0c3ec2bd14b",
+      "recomposition_exact": true,
+      "layer_count": 7,
+      "structure_invariant": "Preserve the center-right saddle opening, path and runoff; keep the lower-left wet-rock actual area open."
+    },
+    {
+      "weather": "snow",
+      "selected_direction": "C",
+      "source_sha256": "d38963cae8f8c119f4653605844229c4d09a0a053bfeff23b77eea55412674e8",
+      "approved_master_sha256": "ddbd985688e1a2d628ce3ea7d75426365c120f5423fdd9752b025316eb951f6d",
+      "recomposition_exact": true,
+      "layer_count": 7,
+      "structure_invariant": "Preserve the center-right clearing and vertical volume; foreground may contain only low snow shelves, roots and small stones."
+    }
+  ],
+  "file_count": 123,
+  "files": [
+    {
+      "path": "asset_manifest.csv",
+      "size_bytes": 29061,
+      "sha256": "de68019e5457714fbd2e71180e81a5a50bea4371e508639e03cabdc0613ec7e3"
+    },
+    {
+      "path": "export/fade/fade__far_landform_01.png",
+      "size_bytes": 1547743,
+      "sha256": "ae3626c6eb30b7c48bd0758800b55ee9c305eb2b2ec61332116fa32e2ac9441a"
+    },
+    {
+      "path": "export/fade/fade__far_landform_02.png",
+      "size_bytes": 1296461,
+      "sha256": "528b92d73fae8f7c5a27cf8f9318d203ca62471cbb2ad6e5fc74f7bde9d3a267"
+    },
+    {
+      "path": "export/fade/fade__far_landform_03.png",
+      "size_bytes": 1223572,
+      "sha256": "6d1ee4f7728f32b8fa4ab8368351e1a578542028d14c17bedad9bcb9f1b93371"
+    },
+    {
+      "path": "export/fade/fade__foreground_occluders.png",
+      "size_bytes": 2121243,
+      "sha256": "896ba1762a52bea0f2a8dc9d66bb839029e1cf3c58da01dee10f28e72a17abf6"
+    },
+    {
+      "path": "export/fade/fade__ground_visual.png",
+      "size_bytes": 3193816,
+      "sha256": "11773461ac90f6b506fa837625ef857faa2a6ecafdf1d531fde72c98db82563b"
+    },
+    {
+      "path": "export/fade/fade__mid_terrain.png",
+      "size_bytes": 1349035,
+      "sha256": "353cd9873dac0fdf3b7e772d629a98f392ce170eb9dd4ffc604ee350c70ea742"
+    },
+    {
+      "path": "export/fade/fade__sky_clouds.png",
+      "size_bytes": 2011933,
+      "sha256": "79591a286b97613307a840f5e57e2a8f92bcd9feaed358ddb6093f237afdd20f"
+    },
+    {
+      "path": "export/heat/heat__far_landform_01.png",
+      "size_bytes": 876985,
+      "sha256": "62f77e1ea8797afd6aa3b26c6e8cdc7edb4683bdb72771ef3819f429349ac9e7"
+    },
+    {
+      "path": "export/heat/heat__far_landform_02.png",
+      "size_bytes": 1276155,
+      "sha256": "a6a004193884534689909ec14c3b49a9f4450f42ad240c875841daba31b0fa5d"
+    },
+    {
+      "path": "export/heat/heat__far_landform_03.png",
+      "size_bytes": 1393457,
+      "sha256": "68ac08c21dbcebb07280cde3ee5fc9df76a6633766dc50d02e750c73d074ce3e"
+    },
+    {
+      "path": "export/heat/heat__foreground_occluders.png",
+      "size_bytes": 1654915,
+      "sha256": "3b5d09928a5411017eaa3b73f350fec07442cbe1be39f34c435178b05ed2407c"
+    },
+    {
+      "path": "export/heat/heat__ground_visual.png",
+      "size_bytes": 1682668,
+      "sha256": "3b9b1cc463056ce61592d722bd4897f38f5c171b559096cffbfa9e220d6d1b5e"
+    },
+    {
+      "path": "export/heat/heat__mid_terrain.png",
+      "size_bytes": 1726703,
+      "sha256": "471d42be6ef18dcbfe2316c220c3bac04ccacdfa04c9ca78fb91ab59e0717043"
+    },
+    {
+      "path": "export/heat/heat__sky_clouds.png",
+      "size_bytes": 998405,
+      "sha256": "8a0f09a45456abf744c787f2a3c61f1ce6510b7bafe4614ef992d1b43aed895d"
+    },
+    {
+      "path": "export/snow/snow__far_landform_01.png",
+      "size_bytes": 1104927,
+      "sha256": "7bf6260fa68dd11d65488539777c2a46335700d4cd6e3930f6f2634db2e65979"
+    },
+    {
+      "path": "export/snow/snow__far_landform_02.png",
+      "size_bytes": 1478749,
+      "sha256": "1fd48cdb327d6a95045051fcbd7318988c6028880dcbc1d03c33c7fc7e4d48c3"
+    },
+    {
+      "path": "export/snow/snow__far_landform_03.png",
+      "size_bytes": 1602987,
+      "sha256": "fe474ed33cc0aabac2e7b95e2a352ea46e20ce19e8708bfa43c2c215dbc14106"
+    },
+    {
+      "path": "export/snow/snow__foreground_occluders.png",
+      "size_bytes": 917281,
+      "sha256": "cae32559fd3b2ff3cce5efbed55aabb85323087f892da89f7bce08ceb05440ff"
+    },
+    {
+      "path": "export/snow/snow__ground_visual.png",
+      "size_bytes": 1284835,
+      "sha256": "26e732cb62cde73b01321a5ee509009e1d966f77edaafa5a9a818f4a90ad9c7b"
+    },
+    {
+      "path": "export/snow/snow__mid_terrain.png",
+      "size_bytes": 1473456,
+      "sha256": "f8eb31e5608aecf9bba22e3610fc0a0c65f3ede8f881cc8bce407ab870182d83"
+    },
+    {
+      "path": "export/snow/snow__sky_clouds.png",
+      "size_bytes": 1174804,
+      "sha256": "a9eb1e11f95f76e7b36d3f2fbc61c2892d087260a1ccdddb94642a03b132a044"
+    },
+    {
+      "path": "export/storm/storm__far_landform_01.png",
+      "size_bytes": 681891,
+      "sha256": "537b7ef4c1bd31e7efabc2903ac89f439df41035493aad0be780624d993a65cb"
+    },
+    {
+      "path": "export/storm/storm__far_landform_02.png",
+      "size_bytes": 737334,
+      "sha256": "dce8d85e0c987730f30df58d60e0ff02f47ac8706d6ce2e274d4bd74ba4035ba"
+    },
+    {
+      "path": "export/storm/storm__far_landform_03.png",
+      "size_bytes": 1074089,
+      "sha256": "f91c639d78814ab220d1467425d23d8e219cff7a7f2bb3388e1a4871d9ba1051"
+    },
+    {
+      "path": "export/storm/storm__foreground_occluders.png",
+      "size_bytes": 1630589,
+      "sha256": "0aa4bd936f7e30c9ecdcb94c3f5d24f0832853b88ccea71e75a579761fc57e9a"
+    },
+    {
+      "path": "export/storm/storm__ground_visual.png",
+      "size_bytes": 1536416,
+      "sha256": "017aaafac82b5a000a57eeadc80265fc849c5516a63c29a6e39264328d09d78b"
+    },
+    {
+      "path": "export/storm/storm__mid_terrain.png",
+      "size_bytes": 1318659,
+      "sha256": "8abee8998eba441c3d811e8f63ec3d81e811eeea1ec06a817c865ecb03b534e7"
+    },
+    {
+      "path": "export/storm/storm__sky_clouds.png",
+      "size_bytes": 1731492,
+      "sha256": "564bede7e982973ce2ba10c8b56cf4ba77e3881d39ad1d2df8dd5dcc0c27436a"
+    },
+    {
+      "path": "preview/fade/alpha_contact_sheet.png",
+      "size_bytes": 47844,
+      "sha256": "cfdf312d9ae12f67b50c8dc8d2349350c6d6932205ead5a3c56a9016a51f2b31"
+    },
+    {
+      "path": "preview/fade/difference.png",
+      "size_bytes": 32268,
+      "sha256": "12b216bc307de162566bd1d729cb28471b9324c717977e7f4b01affe3063af08"
+    },
+    {
+      "path": "preview/fade/recomposite.png",
+      "size_bytes": 12245725,
+      "sha256": "a972fdc1a557789a551386c4e46b3b6d64591257ad85e09d38e234c6b6f7082c"
+    },
+    {
+      "path": "preview/fade/safe_area_overlay.png",
+      "size_bytes": 4286598,
+      "sha256": "e982b17b142669421a3d2a9273fd68f1966b5779db7a51c939de15a894bffd23"
+    },
+    {
+      "path": "preview/fade/solo_layers.png",
+      "size_bytes": 570864,
+      "sha256": "25e62a4f08d133fdbede8696bc7d58ce3f7b08e98debf51cda190816ed3b278c"
+    },
+    {
+      "path": "preview/H3-layer-stack-review.mp4",
+      "size_bytes": 1874776,
+      "sha256": "5295eacf7b8526cc2e0785b4002b98ab7b17ef5d1fcdcefc15fd3cbfb3e99cc3"
+    },
+    {
+      "path": "preview/heat/alpha_contact_sheet.png",
+      "size_bytes": 46280,
+      "sha256": "51801b92e9582a6ac99796a68f7e09cfea1a462fea38f409446d24a185acb5d7"
+    },
+    {
+      "path": "preview/heat/difference.png",
+      "size_bytes": 32268,
+      "sha256": "12b216bc307de162566bd1d729cb28471b9324c717977e7f4b01affe3063af08"
+    },
+    {
+      "path": "preview/heat/recomposite.png",
+      "size_bytes": 9205115,
+      "sha256": "741e0123488af015ed123966e77572d46a55505c7d70ff76247812fbc373a7e7"
+    },
+    {
+      "path": "preview/heat/safe_area_overlay.png",
+      "size_bytes": 3424929,
+      "sha256": "49b055f05c52f025937721adedb90178b28a33c969436b8a2bcda341fc6afa58"
+    },
+    {
+      "path": "preview/heat/solo_layers.png",
+      "size_bytes": 491890,
+      "sha256": "d527050b5cbb0fd07c8a3aee5b87c1d9f1a44036c3cae8937f7acca63a838ae8"
+    },
+    {
+      "path": "preview/snow/alpha_contact_sheet.png",
+      "size_bytes": 45457,
+      "sha256": "5945e1847a81609dae6ecfb22d7d9a81c4861272fdf996bd8f6efd6226c3a413"
+    },
+    {
+      "path": "preview/snow/difference.png",
+      "size_bytes": 32268,
+      "sha256": "12b216bc307de162566bd1d729cb28471b9324c717977e7f4b01affe3063af08"
+    },
+    {
+      "path": "preview/snow/recomposite.png",
+      "size_bytes": 8617710,
+      "sha256": "ddbd985688e1a2d628ce3ea7d75426365c120f5423fdd9752b025316eb951f6d"
+    },
+    {
+      "path": "preview/snow/safe_area_overlay.png",
+      "size_bytes": 3267465,
+      "sha256": "6ea999feb4f03900a59ad1333bd5a2af53f91c896cf3695d775bc4c51c5e1f82"
+    },
+    {
+      "path": "preview/snow/solo_layers.png",
+      "size_bytes": 513636,
+      "sha256": "6a67518ad5cfd5b1d61615dbc8b41b5271d28a19931462da7db1afedf54685d2"
+    },
+    {
+      "path": "preview/storm/alpha_contact_sheet.png",
+      "size_bytes": 49522,
+      "sha256": "33747395f4fdb558aa40e817b5ea0bfdf64950703fc7d6ed75e3c4e934a90132"
+    },
+    {
+      "path": "preview/storm/difference.png",
+      "size_bytes": 32268,
+      "sha256": "12b216bc307de162566bd1d729cb28471b9324c717977e7f4b01affe3063af08"
+    },
+    {
+      "path": "preview/storm/recomposite.png",
+      "size_bytes": 8261193,
+      "sha256": "c9a64c564897397fc05309fd573e01c6b16106b09ff44d26943df0c3ec2bd14b"
+    },
+    {
+      "path": "preview/storm/safe_area_overlay.png",
+      "size_bytes": 3198744,
+      "sha256": "a36596e50dfd096e05dbad58e3208c6ff300dafa44d584384eb01343db518613"
+    },
+    {
+      "path": "preview/storm/solo_layers.png",
+      "size_bytes": 484554,
+      "sha256": "1cb56846018ccdc4453494c0ea8e5288c549bde9209dbfa12e659a42e101771f"
+    },
+    {
+      "path": "source/fade/approved_master.png",
+      "size_bytes": 12245725,
+      "sha256": "a972fdc1a557789a551386c4e46b3b6d64591257ad85e09d38e234c6b6f7082c"
+    },
+    {
+      "path": "source/fade/layer_recipe.json",
+      "size_bytes": 4676,
+      "sha256": "6c14ae1133787390950c94886ae8c397709f9b8e890fefc77321de5f9012b658"
+    },
+    {
+      "path": "source/fade/masks/far_landform_01.png",
+      "size_bytes": 13513,
+      "sha256": "42826c51b4ea6bd03d55add50c10d39457472fb038d2f587f581e948a7b873a9"
+    },
+    {
+      "path": "source/fade/masks/far_landform_02.png",
+      "size_bytes": 10594,
+      "sha256": "44d215996a83b390360b28e13d5bc2798d3654d580827f7e685468b0d6647306"
+    },
+    {
+      "path": "source/fade/masks/far_landform_03.png",
+      "size_bytes": 9593,
+      "sha256": "6084ead50fd8f310cb65f70570a0dada67c3584a89baa4f403fcf19c9ab1f290"
+    },
+    {
+      "path": "source/fade/masks/foreground_occluders.png",
+      "size_bytes": 9009,
+      "sha256": "be54b431c5af5a786e52db52c971e2cb4045bae56a272393e50554bf5ab9f65e"
+    },
+    {
+      "path": "source/fade/masks/ground_visual.png",
+      "size_bytes": 9520,
+      "sha256": "6bb290bb1e18aa2f13ed8275bdd6d07dbd906e661c3f1f25ef035861914cd4a7"
+    },
+    {
+      "path": "source/fade/masks/mid_terrain.png",
+      "size_bytes": 9124,
+      "sha256": "146e6ce2f94005b96fcb22d9cddd5d315a26997653b5e77a1d7a5c81daaa8703"
+    },
+    {
+      "path": "source/fade/masks/sky_clouds.png",
+      "size_bytes": 11950,
+      "sha256": "2278e33c76f83d450ac5422331621ba92300b65ecf880f372a6cffbbdd72fe42"
+    },
+    {
+      "path": "source/fade/ownership_map.png",
+      "size_bytes": 35663,
+      "sha256": "5e79391c556dfd5bc3da56947af49baee8cf58da296f92a4489c178b6cbaadad"
+    },
+    {
+      "path": "source/heat/approved_master.png",
+      "size_bytes": 9205115,
+      "sha256": "741e0123488af015ed123966e77572d46a55505c7d70ff76247812fbc373a7e7"
+    },
+    {
+      "path": "source/heat/layer_recipe.json",
+      "size_bytes": 4624,
+      "sha256": "7d5f89b0edfb31a21eb134e366d49b17c0defbd5ff5b17d0976fd19682266e3b"
+    },
+    {
+      "path": "source/heat/masks/far_landform_01.png",
+      "size_bytes": 10181,
+      "sha256": "25d40a108e34329eb035febd794ba0587e580b0ce51c7a3470c1bad1318c46d2"
+    },
+    {
+      "path": "source/heat/masks/far_landform_02.png",
+      "size_bytes": 9729,
+      "sha256": "e059789923e868a9bfc9b45323b351d876f89e41d19f73753dca56111a3de2fe"
+    },
+    {
+      "path": "source/heat/masks/far_landform_03.png",
+      "size_bytes": 9610,
+      "sha256": "652bd426659b28b81cf5e0cda143f71d1907fe53b1ac296105227949894e2631"
+    },
+    {
+      "path": "source/heat/masks/foreground_occluders.png",
+      "size_bytes": 8923,
+      "sha256": "759f91a038439920056052a9adfb6b88b6df53cb0eb0227ac6983837a291aa5c"
+    },
+    {
+      "path": "source/heat/masks/ground_visual.png",
+      "size_bytes": 9371,
+      "sha256": "354ed0cf8bbab28bf7f5ba4b25d312fd9638b4f9610d923e23dfd3fc7a04f60a"
+    },
+    {
+      "path": "source/heat/masks/mid_terrain.png",
+      "size_bytes": 9524,
+      "sha256": "b0525b6259f311bf455779bc3a10fafe84fbd4933b1e0007c26b0206e020f0d1"
+    },
+    {
+      "path": "source/heat/masks/sky_clouds.png",
+      "size_bytes": 9888,
+      "sha256": "c98c53c932d6c1889ff2375dc4b2f6dae732baa339db2ebd09583c9abee8fece"
+    },
+    {
+      "path": "source/heat/ownership_map.png",
+      "size_bytes": 32614,
+      "sha256": "b0db5a342f58a6234ec668b1dadbf45f4be59551aa7088ea6e26218ab75391d4"
+    },
+    {
+      "path": "source/review_concat.txt",
+      "size_bytes": 1813,
+      "sha256": "37db60871d977d0436f7e8a933cc5c540cbc1e65bbc48819a1925f766f5fecc3"
+    },
+    {
+      "path": "source/snow/approved_master.png",
+      "size_bytes": 8617710,
+      "sha256": "ddbd985688e1a2d628ce3ea7d75426365c120f5423fdd9752b025316eb951f6d"
+    },
+    {
+      "path": "source/snow/layer_recipe.json",
+      "size_bytes": 4695,
+      "sha256": "4037c12ddf70df71297fcd6ac2f6abe7bc5c70700a386c0119f58cd252632e31"
+    },
+    {
+      "path": "source/snow/masks/far_landform_01.png",
+      "size_bytes": 10806,
+      "sha256": "7b4ed46038acac85f0fc31b158a96b2bbb68e22d0813719d68eb1092d9790bd3"
+    },
+    {
+      "path": "source/snow/masks/far_landform_02.png",
+      "size_bytes": 9852,
+      "sha256": "c68f0c421277e195ead69e1761980a4bcde51885309f22ec1f0b668aa28be5fb"
+    },
+    {
+      "path": "source/snow/masks/far_landform_03.png",
+      "size_bytes": 9375,
+      "sha256": "eb38d99d2766e1f98ec433e1d2d6c4d6241cec7966c759e78572d4134c40767d"
+    },
+    {
+      "path": "source/snow/masks/foreground_occluders.png",
+      "size_bytes": 8832,
+      "sha256": "b6e835ae0215ad999c8bb66ef9a0c1c78de6724c216de2c372d741eb03efd1a8"
+    },
+    {
+      "path": "source/snow/masks/ground_visual.png",
+      "size_bytes": 9228,
+      "sha256": "88ca56249aa1d2baff92d56a5043fcd75d1fbcb0d8175671f0f2a84c54707af1"
+    },
+    {
+      "path": "source/snow/masks/mid_terrain.png",
+      "size_bytes": 9221,
+      "sha256": "0590aa1a28e27c07e17020cfdd1ed688ba98f943b7cf478eee14569fd2880092"
+    },
+    {
+      "path": "source/snow/masks/sky_clouds.png",
+      "size_bytes": 10540,
+      "sha256": "f6604035010cabfee44e02f2ece956f04fcb6e7acd43a6cefbcaa4dc23e57b11"
+    },
+    {
+      "path": "source/snow/ownership_map.png",
+      "size_bytes": 33036,
+      "sha256": "696d7947e4ead2acbf0701b61a221daa789c83b539a25930ad2f0bbdeb9c64e4"
+    },
+    {
+      "path": "source/stack_frames/fade-stack-00.png",
+      "size_bytes": 14897,
+      "sha256": "19e968627ec0aeb45cff96b9ba4c45d052db8b00ff43fa6a281bcae60791f422"
+    },
+    {
+      "path": "source/stack_frames/fade-stack-01.png",
+      "size_bytes": 394184,
+      "sha256": "963efa2457743e87300480f78e6e75975092274a5b10af702679914db97587a6"
+    },
+    {
+      "path": "source/stack_frames/fade-stack-02.png",
+      "size_bytes": 646341,
+      "sha256": "245037c04678f612615d3b502ebd7ceab8171073c0965fac33be6b248e67a793"
+    },
+    {
+      "path": "source/stack_frames/fade-stack-03.png",
+      "size_bytes": 847820,
+      "sha256": "c768f20b2be1837a3601bde9e3aff14884ca3d573217b6b7ad0998673e82dc32"
+    },
+    {
+      "path": "source/stack_frames/fade-stack-04.png",
+      "size_bytes": 1040326,
+      "sha256": "81efd456694a791f29e7afe18ca663caa758ef8a59a5e13c9c13c0177fade83f"
+    },
+    {
+      "path": "source/stack_frames/fade-stack-05.png",
+      "size_bytes": 1259779,
+      "sha256": "2c74217981ab355f43e6b82a62fb4288ae2cfce752bcb35959500fc84d3fc74a"
+    },
+    {
+      "path": "source/stack_frames/fade-stack-06.png",
+      "size_bytes": 1786438,
+      "sha256": "2d27938a562ff954499c653693b8e7e0555b5c86a796bd68598b6cef4c1be7c1"
+    },
+    {
+      "path": "source/stack_frames/fade-stack-07.png",
+      "size_bytes": 2117416,
+      "sha256": "1623ddb367632c227d15774e67cc4c3c9fcf8b342c2691c9020276628a3fb250"
+    },
+    {
+      "path": "source/stack_frames/heat-stack-00.png",
+      "size_bytes": 14694,
+      "sha256": "10ce0942529e6570450c55fbc27863ac65b56e431025f5af5bf222ac5a1056d3"
+    },
+    {
+      "path": "source/stack_frames/heat-stack-01.png",
+      "size_bytes": 253805,
+      "sha256": "af98e656786b9afa4d9c6453c002b5ca7f930161e663ee56480a8e33023ede87"
+    },
+    {
+      "path": "source/stack_frames/heat-stack-02.png",
+      "size_bytes": 419342,
+      "sha256": "e183cd9cbb89c1736861674ae4e03096e2467ad7d0fc27fe9a52dbfcf1d7692c"
+    },
+    {
+      "path": "source/stack_frames/heat-stack-03.png",
+      "size_bytes": 631188,
+      "sha256": "f48272d8c51188249014e216e58a38ee5289774df56e7682f9e7e021770379db"
+    },
+    {
+      "path": "source/stack_frames/heat-stack-04.png",
+      "size_bytes": 848720,
+      "sha256": "15365faa6872d6ad2f1d441cd5d320b70c01c00e1579472552d03af918b60be7"
+    },
+    {
+      "path": "source/stack_frames/heat-stack-05.png",
+      "size_bytes": 1119468,
+      "sha256": "0e315ac93d39d2743ec73bd3b47b9e178ca3d0d10482722743afc35817e73cac"
+    },
+    {
+      "path": "source/stack_frames/heat-stack-06.png",
+      "size_bytes": 1391742,
+      "sha256": "fa0c8cf18652e570919d030f27475160cd9d1278ed2645422f7af76d76293732"
+    },
+    {
+      "path": "source/stack_frames/heat-stack-07.png",
+      "size_bytes": 1672748,
+      "sha256": "91b5e6ec0b6b134438847782a0ac104508fea06bc6fe335da49df2f53dbf78c1"
+    },
+    {
+      "path": "source/stack_frames/snow-stack-00.png",
+      "size_bytes": 15037,
+      "sha256": "2d13d1991ad611b7f06e779609dd20d2e81ae51b703a6dbe0b3b5556336ffbbc"
+    },
+    {
+      "path": "source/stack_frames/snow-stack-01.png",
+      "size_bytes": 295006,
+      "sha256": "6e12387f71aa997927bb39501f463554a1af0d323215d219fab724224e24581c"
+    },
+    {
+      "path": "source/stack_frames/snow-stack-02.png",
+      "size_bytes": 494084,
+      "sha256": "13271b1327de976a722bec5b0623187655dd25294a262c19d0baf9cb7d3f500d"
+    },
+    {
+      "path": "source/stack_frames/snow-stack-03.png",
+      "size_bytes": 739512,
+      "sha256": "58b8dd475f985dc71b4894dd08f2d546f53600086030ad9ce25ecf0ca84a5266"
+    },
+    {
+      "path": "source/stack_frames/snow-stack-04.png",
+      "size_bytes": 998902,
+      "sha256": "3c1e53901c25a4e3b746e3cf6ed4f1fba91df33d1b62b4ef2936735e19030114"
+    },
+    {
+      "path": "source/stack_frames/snow-stack-05.png",
+      "size_bytes": 1236497,
+      "sha256": "1ff3b5b431ccd67aed8cb756d66cf0bbabe19776b3dd58d76a09fcb0df6c124b"
+    },
+    {
+      "path": "source/stack_frames/snow-stack-06.png",
+      "size_bytes": 1460795,
+      "sha256": "769380e1a5eea526391926b145838d0d84e0cdca5c0875ad16c433f6d08d3df4"
+    },
+    {
+      "path": "source/stack_frames/snow-stack-07.png",
+      "size_bytes": 1622018,
+      "sha256": "3ddecf4cc3192bb2ba00e3289764f3d79548e6bf7763954079cec96e298d31b8"
+    },
+    {
+      "path": "source/stack_frames/storm-stack-00.png",
+      "size_bytes": 14847,
+      "sha256": "706d623074f1ff0a22a6b5dd41b65465672d372e9e05386cb3daa34a9c38157b"
+    },
+    {
+      "path": "source/stack_frames/storm-stack-01.png",
+      "size_bytes": 395470,
+      "sha256": "ead493e47d60c474d760762c94f03d6c49bf33bbd500e4a1dee23a93c8454714"
+    },
+    {
+      "path": "source/stack_frames/storm-stack-02.png",
+      "size_bytes": 529246,
+      "sha256": "505504476e6848dc7a7af4f538f68a0b08b5e2e6ff9a3dfef01eb316bb0ef29a"
+    },
+    {
+      "path": "source/stack_frames/storm-stack-03.png",
+      "size_bytes": 657549,
+      "sha256": "829570d128a1c004c699a1ed559353dc918d25c53987b47ec97ed1ed1373d6a8"
+    },
+    {
+      "path": "source/stack_frames/storm-stack-04.png",
+      "size_bytes": 845705,
+      "sha256": "7933113a73f169fec1b551c2ba481765d418dc2d9a18cadeacc834eaff9ed25b"
+    },
+    {
+      "path": "source/stack_frames/storm-stack-05.png",
+      "size_bytes": 1069068,
+      "sha256": "8f4c7fadce284bcb228b1ee15dc9f746c61ecd123ac9bd6ca0fcedc2140eb969"
+    },
+    {
+      "path": "source/stack_frames/storm-stack-06.png",
+      "size_bytes": 1320225,
+      "sha256": "42c557e28cb46732c2d934e40805651c521fe5dd54e5983786cbc367c507ca67"
+    },
+    {
+      "path": "source/stack_frames/storm-stack-07.png",
+      "size_bytes": 1580255,
+      "sha256": "77995abf6bd23fd5e668a7a3e92189ddb2101137094e9d0a6d96f056f38d2852"
+    },
+    {
+      "path": "source/storm/approved_master.png",
+      "size_bytes": 8261193,
+      "sha256": "c9a64c564897397fc05309fd573e01c6b16106b09ff44d26943df0c3ec2bd14b"
+    },
+    {
+      "path": "source/storm/layer_recipe.json",
+      "size_bytes": 4585,
+      "sha256": "a4ea033674e1ab3f41a6d5379e8dc1e14b481095e3fb694427be08de252d9453"
+    },
+    {
+      "path": "source/storm/masks/far_landform_01.png",
+      "size_bytes": 10658,
+      "sha256": "b93b484cbac184d1c8773d3e356d5d7b8e90b48a71efd47e3b302dd1b29dc1ae"
+    },
+    {
+      "path": "source/storm/masks/far_landform_02.png",
+      "size_bytes": 10075,
+      "sha256": "7bdbfe7f62f4e4d3f65df578de990203b3df66b80832c4abdbac024850f6eb20"
+    },
+    {
+      "path": "source/storm/masks/far_landform_03.png",
+      "size_bytes": 9751,
+      "sha256": "a775125b27ce896cb7a394e9e58102582e903d7e6f85a9d14abe78d5d5953ac1"
+    },
+    {
+      "path": "source/storm/masks/foreground_occluders.png",
+      "size_bytes": 9111,
+      "sha256": "d5ba4f9d8e2f53bd2431015ec9efa1a20369b27dc5588d2c2acf83f6cdc4c60e"
+    },
+    {
+      "path": "source/storm/masks/ground_visual.png",
+      "size_bytes": 9718,
+      "sha256": "61228555f012f454677eff88642013bd1ec2e659bfb9598bb6bd0e152c00f6da"
+    },
+    {
+      "path": "source/storm/masks/mid_terrain.png",
+      "size_bytes": 9692,
+      "sha256": "60506105962dce128f07966aa220eff144ce94da6ed61823c6ab64c12ce2e8d0"
+    },
+    {
+      "path": "source/storm/masks/sky_clouds.png",
+      "size_bytes": 10418,
+      "sha256": "aabf26e2659d3c4a6afeff69c2239d71156c4d84d6483ee8d6a59455fe09347a"
+    },
+    {
+      "path": "source/storm/ownership_map.png",
+      "size_bytes": 33757,
+      "sha256": "00c3c8a0b7ee6689a5c013361eff232f87e1fdc19fd17c825948192ab6a46e96"
+    }
+  ]
+}

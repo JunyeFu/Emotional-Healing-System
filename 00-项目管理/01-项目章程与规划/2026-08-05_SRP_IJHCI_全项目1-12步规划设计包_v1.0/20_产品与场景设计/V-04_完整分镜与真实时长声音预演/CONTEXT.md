@@ -5,11 +5,12 @@
 | 范围 | 文件 |
 |---|---|
 | 实施裁定 | `V-04_科研便捷实施裁定_v1.2.md` |
-| 当前状态 | `V-04_实施状态与H1确认记录_v2.9.md` |
+| 当前状态 | `V-04_实施状态与H1确认记录_v3.0.md` |
 | 四天气固定镜头修订 | `V-04_H3_四天气固定镜头修订合同_v1.0.md` |
 | R2大景深事件构图 | `V-04_H3_四天气大景深事件构图合同_v1.0.md` |
 | R2独立背景预览与选择 | `V-04_H3_R2大景深AAA背景生图提示词_v1.0.md`、`V-04_H3_R2大景深背景预览候选清单_v1.0.json`、`V-04_H3_R2背景选择记录_v1.0.json`、`V-04_H3_R2背景选择验证记录_v1.0.md`、`V-04_H3_R2大景深背景预览验证记录_v1.0.md`、`validate_v04_h3_r2_previews.py` |
 | 可拆层背景重建候选 | `V-04_H3_可拆层背景重建合同_v1.0.md`、`V-04_H3_可拆层背景重建候选清单_v1.0.json`、`V-04_H3_fade_v4真实感重建提示词_v1.0.md`、`V-04_H3_fade_v5选定版提示词与来源记录_v1.0.md`、`validate_v04_h3_layerable_background_rebuild.py` |
+| H3透明分层导出 | `V-04_H3_透明分层交付合同_v1.0.md`、`V-04_H3_透明分层配方_v1.0.json`、`V-04_H3_透明分层候选清单_v1.0.json`、`V-04_H3_透明分层机器验收记录_v1.0.md`、`V-04_H3_透明分层独立Agent复核记录_v1.0.md`、`V-04_H3_透明分层人工评审说明_v1.0.md`、`build_v04_h3_layer_exports.py`、`validate_v04_h3_layer_exports.py` |
 | 历史固定镜头四联预览 | `V-04_H3_固定镜头高精度背景生图提示词_v1.0.md`、`V-04_H3_固定镜头背景预览候选清单_v1.0.json` |
 | 固定镜头预览验证 | `V-04_H3_固定镜头背景预览验证记录_v1.0.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |
@@ -79,7 +80,7 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H3旧合并候选 | `SUPERSEDED` | 机器门与独立复审结果保留；三天气由滚动改为固定镜头后，不再进入原团队总监确认 |
 | H3固定背景选择 | `PASS` | 团队总监已确认`storm=B, heat=C, snow=C, fade=C` |
 | H3三天气固定样片人工门 | `PASS` | 团队总监回复“全部确认”，十二项人工评审全部通过 |
-| H3可拆层背景重建 | `IN_PROGRESS` | 四张构图基准图与分层合同已生成；当前导出实际透明分层文件 |
+| H3可拆层背景重建 | `READY_FOR_TEAM_DIRECTOR_REVIEW` | candidate-v2已导出28张4K透明PNG，18项机器检查与独立Agent复核通过；等待四天气共24项人工确认 |
 
 candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；candidate-v11媒体位于`.artifacts-local/V-04/H2/candidate-v11/`。Git保存对应配置、清单、彩色/灰度关键帧、渲染器和验证器。
 
@@ -100,4 +101,4 @@ storm、heat和snow固定镜头v2媒体分别位于`.artifacts-local/V-04/H3/<we
 
 ## 下一步
 
-继续`H3_LAYERABLE_BACKGROUND_REBUILD`，交付实际透明分层文件并进入Unity装配准备。此前V-04继续保持`IN_PROGRESS`且不解锁V-05。
+由团队总监按`V-04_H3_透明分层人工评审说明_v1.0.md`完成四天气共24项人工确认。全部通过后进入`H3_FIXED_COMBINED_REVIEW`；此前V-04继续保持`IN_PROGRESS`且不解锁V-05。

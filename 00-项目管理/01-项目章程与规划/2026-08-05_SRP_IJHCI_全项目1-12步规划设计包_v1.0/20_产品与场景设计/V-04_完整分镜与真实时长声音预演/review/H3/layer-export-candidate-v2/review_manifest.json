@@ -1,0 +1,218 @@
+{
+  "schema_version": "srp.v04.h3.review-bundle.v1.0",
+  "candidate_id": "layer-export-candidate-v2",
+  "package_manifest_sha256": "e0be4c9746e96677d324b6ac37e2219e89e582aba27a3833cb774706ae8a9da9",
+  "status": "PENDING_TEAM_DIRECTOR",
+  "evidence": [
+    {
+      "path": "review/H3/layer-export-candidate-v2/storm__alpha_contact_sheet.jpg",
+      "sha256": "88b44211e21c180c6a13010878b98007c0d193d414289a6455f44cff40cf92f8",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/storm/alpha_contact_sheet.png",
+      "source_sha256": "33747395f4fdb558aa40e817b5ea0bfdf64950703fc7d6ed75e3c4e934a90132",
+      "use": "alpha_contact_sheet",
+      "weather": "storm"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/storm__solo_layers.jpg",
+      "sha256": "3e55a3e0376c21f4640a7e84b566db3b4a42b1730b7d49f69c22997e6d9038c7",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/storm/solo_layers.png",
+      "source_sha256": "1cb56846018ccdc4453494c0ea8e5288c549bde9209dbfa12e659a42e101771f",
+      "use": "solo_layers",
+      "weather": "storm"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/storm__safe_area_overlay.jpg",
+      "sha256": "248c72bb5211411f220f1063053276239b8406ec819a6b405162461b5b61c0eb",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/storm/safe_area_overlay.png",
+      "source_sha256": "a36596e50dfd096e05dbad58e3208c6ff300dafa44d584384eb01343db518613",
+      "use": "safe_area_overlay",
+      "weather": "storm"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/heat__alpha_contact_sheet.jpg",
+      "sha256": "a47064850fef83b10f9ae274e6ba2ce1993c536b364f00f200f59ed291317942",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/heat/alpha_contact_sheet.png",
+      "source_sha256": "51801b92e9582a6ac99796a68f7e09cfea1a462fea38f409446d24a185acb5d7",
+      "use": "alpha_contact_sheet",
+      "weather": "heat"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/heat__solo_layers.jpg",
+      "sha256": "a8b9c5d3cfdb4ad41a4a4cc0fd9665b88eee855673b9e673da51f14db9775410",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/heat/solo_layers.png",
+      "source_sha256": "d527050b5cbb0fd07c8a3aee5b87c1d9f1a44036c3cae8937f7acca63a838ae8",
+      "use": "solo_layers",
+      "weather": "heat"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/heat__safe_area_overlay.jpg",
+      "sha256": "767aeb173b368de1e7b6b6574a4de76c9cd1a76b8b8b207c27d07790d604ae30",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/heat/safe_area_overlay.png",
+      "source_sha256": "49b055f05c52f025937721adedb90178b28a33c969436b8a2bcda341fc6afa58",
+      "use": "safe_area_overlay",
+      "weather": "heat"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/snow__alpha_contact_sheet.jpg",
+      "sha256": "cce153b2ce6ab09254f48359dc18a0a84a69babd412d41ebbb2f0beee9a233f7",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/snow/alpha_contact_sheet.png",
+      "source_sha256": "5945e1847a81609dae6ecfb22d7d9a81c4861272fdf996bd8f6efd6226c3a413",
+      "use": "alpha_contact_sheet",
+      "weather": "snow"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/snow__solo_layers.jpg",
+      "sha256": "5f6c8db7d021161cc79c4373c39b4a06503ad207b31b580f6e6a8f7524e74a3e",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/snow/solo_layers.png",
+      "source_sha256": "6a67518ad5cfd5b1d61615dbc8b41b5271d28a19931462da7db1afedf54685d2",
+      "use": "solo_layers",
+      "weather": "snow"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/snow__safe_area_overlay.jpg",
+      "sha256": "415a54ef378713a93bda5f908da8a19e087f683ab19e4da3116bcbfa193ea40f",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/snow/safe_area_overlay.png",
+      "source_sha256": "6ea999feb4f03900a59ad1333bd5a2af53f91c896cf3695d775bc4c51c5e1f82",
+      "use": "safe_area_overlay",
+      "weather": "snow"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/fade__alpha_contact_sheet.jpg",
+      "sha256": "e1f8c29163805eddf5cc6c2a75717ea418d496b04f339074190eaef4ceb9f2ed",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/fade/alpha_contact_sheet.png",
+      "source_sha256": "cfdf312d9ae12f67b50c8dc8d2349350c6d6932205ead5a3c56a9016a51f2b31",
+      "use": "alpha_contact_sheet",
+      "weather": "fade"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/fade__solo_layers.jpg",
+      "sha256": "9b558bb70f8bf6ed687b9a9d99371d69028c98d8c7bddd5baa03aefcb4ea160f",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/fade/solo_layers.png",
+      "source_sha256": "25e62a4f08d133fdbede8696bc7d58ce3f7b08e98debf51cda190816ed3b278c",
+      "use": "solo_layers",
+      "weather": "fade"
+    },
+    {
+      "path": "review/H3/layer-export-candidate-v2/fade__safe_area_overlay.jpg",
+      "sha256": "84fffdddf2d8d5987edf3f80884632d379356e0a5bdf5db0145892c1e525de18",
+      "source_path": ".artifacts-local/V-04/H3/layerable-background-rebuild/layer-export-candidate-v2/preview/fade/safe_area_overlay.png",
+      "source_sha256": "e982b17b142669421a3d2a9273fd68f1966b5779db7a51c939de15a894bffd23",
+      "use": "safe_area_overlay",
+      "weather": "fade"
+    }
+  ],
+  "full_resolution_exports": [
+    {
+      "path": "export/fade/fade__far_landform_01.png",
+      "sha256": "ae3626c6eb30b7c48bd0758800b55ee9c305eb2b2ec61332116fa32e2ac9441a"
+    },
+    {
+      "path": "export/fade/fade__far_landform_02.png",
+      "sha256": "528b92d73fae8f7c5a27cf8f9318d203ca62471cbb2ad6e5fc74f7bde9d3a267"
+    },
+    {
+      "path": "export/fade/fade__far_landform_03.png",
+      "sha256": "6d1ee4f7728f32b8fa4ab8368351e1a578542028d14c17bedad9bcb9f1b93371"
+    },
+    {
+      "path": "export/fade/fade__foreground_occluders.png",
+      "sha256": "896ba1762a52bea0f2a8dc9d66bb839029e1cf3c58da01dee10f28e72a17abf6"
+    },
+    {
+      "path": "export/fade/fade__ground_visual.png",
+      "sha256": "11773461ac90f6b506fa837625ef857faa2a6ecafdf1d531fde72c98db82563b"
+    },
+    {
+      "path": "export/fade/fade__mid_terrain.png",
+      "sha256": "353cd9873dac0fdf3b7e772d629a98f392ce170eb9dd4ffc604ee350c70ea742"
+    },
+    {
+      "path": "export/fade/fade__sky_clouds.png",
+      "sha256": "79591a286b97613307a840f5e57e2a8f92bcd9feaed358ddb6093f237afdd20f"
+    },
+    {
+      "path": "export/heat/heat__far_landform_01.png",
+      "sha256": "62f77e1ea8797afd6aa3b26c6e8cdc7edb4683bdb72771ef3819f429349ac9e7"
+    },
+    {
+      "path": "export/heat/heat__far_landform_02.png",
+      "sha256": "a6a004193884534689909ec14c3b49a9f4450f42ad240c875841daba31b0fa5d"
+    },
+    {
+      "path": "export/heat/heat__far_landform_03.png",
+      "sha256": "68ac08c21dbcebb07280cde3ee5fc9df76a6633766dc50d02e750c73d074ce3e"
+    },
+    {
+      "path": "export/heat/heat__foreground_occluders.png",
+      "sha256": "3b5d09928a5411017eaa3b73f350fec07442cbe1be39f34c435178b05ed2407c"
+    },
+    {
+      "path": "export/heat/heat__ground_visual.png",
+      "sha256": "3b9b1cc463056ce61592d722bd4897f38f5c171b559096cffbfa9e220d6d1b5e"
+    },
+    {
+      "path": "export/heat/heat__mid_terrain.png",
+      "sha256": "471d42be6ef18dcbfe2316c220c3bac04ccacdfa04c9ca78fb91ab59e0717043"
+    },
+    {
+      "path": "export/heat/heat__sky_clouds.png",
+      "sha256": "8a0f09a45456abf744c787f2a3c61f1ce6510b7bafe4614ef992d1b43aed895d"
+    },
+    {
+      "path": "export/snow/snow__far_landform_01.png",
+      "sha256": "7bf6260fa68dd11d65488539777c2a46335700d4cd6e3930f6f2634db2e65979"
+    },
+    {
+      "path": "export/snow/snow__far_landform_02.png",
+      "sha256": "1fd48cdb327d6a95045051fcbd7318988c6028880dcbc1d03c33c7fc7e4d48c3"
+    },
+    {
+      "path": "export/snow/snow__far_landform_03.png",
+      "sha256": "fe474ed33cc0aabac2e7b95e2a352ea46e20ce19e8708bfa43c2c215dbc14106"
+    },
+    {
+      "path": "export/snow/snow__foreground_occluders.png",
+      "sha256": "cae32559fd3b2ff3cce5efbed55aabb85323087f892da89f7bce08ceb05440ff"
+    },
+    {
+      "path": "export/snow/snow__ground_visual.png",
+      "sha256": "26e732cb62cde73b01321a5ee509009e1d966f77edaafa5a9a818f4a90ad9c7b"
+    },
+    {
+      "path": "export/snow/snow__mid_terrain.png",
+      "sha256": "f8eb31e5608aecf9bba22e3610fc0a0c65f3ede8f881cc8bce407ab870182d83"
+    },
+    {
+      "path": "export/snow/snow__sky_clouds.png",
+      "sha256": "a9eb1e11f95f76e7b36d3f2fbc61c2892d087260a1ccdddb94642a03b132a044"
+    },
+    {
+      "path": "export/storm/storm__far_landform_01.png",
+      "sha256": "537b7ef4c1bd31e7efabc2903ac89f439df41035493aad0be780624d993a65cb"
+    },
+    {
+      "path": "export/storm/storm__far_landform_02.png",
+      "sha256": "dce8d85e0c987730f30df58d60e0ff02f47ac8706d6ce2e274d4bd74ba4035ba"
+    },
+    {
+      "path": "export/storm/storm__far_landform_03.png",
+      "sha256": "f91c639d78814ab220d1467425d23d8e219cff7a7f2bb3388e1a4871d9ba1051"
+    },
+    {
+      "path": "export/storm/storm__foreground_occluders.png",
+      "sha256": "0aa4bd936f7e30c9ecdcb94c3f5d24f0832853b88ccea71e75a579761fc57e9a"
+    },
+    {
+      "path": "export/storm/storm__ground_visual.png",
+      "sha256": "017aaafac82b5a000a57eeadc80265fc849c5516a63c29a6e39264328d09d78b"
+    },
+    {
+      "path": "export/storm/storm__mid_terrain.png",
+      "sha256": "8abee8998eba441c3d811e8f63ec3d81e811eeea1ec06a817c865ecb03b534e7"
+    },
+    {
+      "path": "export/storm/storm__sky_clouds.png",
+      "sha256": "564bede7e982973ce2ba10c8b56cf4ba77e3881d39ad1d2df8dd5dcc0c27436a"
+    }
+  ]
+}
