@@ -1270,7 +1270,8 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 
 ### 2026-09-01 T-01实现候选与审阅门
 
-- 候选`9d6c9e0`已推送至`codex/t-01-telemetry-panel`；实现、合同适配、fixture或`.toe/.tox`实质变化会使后续复核失效。
+- 原候选`9d6c9e0`独立复核为`FAIL`：洁净Windows checkout中5项文本证据因`core.autocrlf=true`发生字节和SHA漂移；其运行门均通过，但不得签收。
+- 换行属性现精确固定`evidence/host/*.json`与`.ffconcat`原始字节，新候选`8790cd3`已推送；第二个全新detached checkout中23项清单全部匹配。
 - 独立目录提供UDP 5005只读输入、每数据报统计、20Hz显示、v2.2帧内cycle/step身份、断流与恢复；不含网络输出、Spout、文件输出或T-02回调。
 - TD 2025.32820最终关闭重开为`PASS`：22节点、1280×720、零节点和脚本错误；真实`SessionCore + TelemetryPublisher`及fixture/异常发送均经UDP实机复现。
 - 专项结果：T-01=`17 passed`、F-04=`21 passed`、合同=`87 passed`、Session Core=`115 passed`、Session Store=`70 passed`、F-05验证=`PASS`、全项目=`470 passed`。

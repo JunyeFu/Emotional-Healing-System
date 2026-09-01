@@ -61,6 +61,6 @@
 - 实际改动文件：见`FILES.md`列出的项目权威路径
 - 验证命令与结果：技术候选已完成；模型复核状态`PENDING_INDEPENDENT_AGENT_REVIEW`
 - 证据路径：`02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_技术验收记录.md`；`02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md`；`02-技术研发/03-TouchDesigner/t01_telemetry_panel/evidence/evidence_manifest.json`
-- commit：`9d6c9e0`
+- commit：`8790cd3`
 - push目标：`origin/codex/t-01-telemetry-panel`
 - 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放

@@ -153,7 +153,7 @@
       ]
     },
     "T-01": {
-      "implementation_commit": "9d6c9e0",
+      "implementation_commit": "8790cd3",
       "model_review_status": "PENDING_INDEPENDENT_AGENT_REVIEW",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
@@ -165,6 +165,7 @@
         "02-技术研发/05-通信协议/contracts/F-05_v2.2消费者迁移指南.md",
         "02-技术研发/05-通信协议/contracts/consumer-fixtures/v2.2/touchdesigner/phase-instance-stream.jsonl",
         "02-技术研发/srp_session_core/README.md",
+        "02-技术研发/03-TouchDesigner/t01_telemetry_panel/.gitattributes",
         "02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md",
         "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md",
         "02-技术研发/03-TouchDesigner/t01_telemetry_panel/t01_telemetry.py",

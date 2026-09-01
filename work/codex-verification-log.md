@@ -1273,7 +1273,7 @@
 
 | Check | Result |
 |---|---|
-| Candidate | `codex/t-01-telemetry-panel@9d6c9e0`，已推送；T-01转`IN_REVIEW`。 |
+| Candidate | 原候选`9d6c9e0`因5项证据换行漂移独立复核`FAIL`；修复候选`8790cd3`已推送并保持`IN_REVIEW`。 |
 | T-01 Host Tests | `17 passed in 0.06s`。 |
 | TD Reopen | TouchDesigner `2025.32820`；`PASS`；22节点；UDP `127.0.0.1:5005`；1280×720；零节点/脚本错误。 |
 | UDP Runtime | 真实`SessionCore + TelemetryPublisher`为`LIVE`；异常证据`lost=2, duplicate=1, out_of_order=1`；超过2秒为`DISCONNECTED`；新clock domain恢复`LIVE`且重连累计。 |
@@ -1283,3 +1283,13 @@
 | Full Regression | 洁净进程`470 passed in 17.42s`。 |
 | Artifact Identity | TOE=`38ECA7FA...57E44`；TOX=`F0614B20...AB8AE`；录像=`580DB8EE...1DD5A`；23项证据SHA-256已固定。 |
 | Evidence Boundary | 本地TD只读v2.2消费与异常恢复基线；不声明真实设备链、Unity联合运行、T-02、外部延迟、正式构建、科学有效性或`LIVE_E2E`。 |
+
+### 2026-09-01 T-01 first independent review failure and replacement candidate
+
+| Check | Result |
+|---|---|
+| Independent Review | `9d6c9e0`=`FAIL/P1`；运行与TD实机门均通过，但洁净checkout中23项证据有5项SHA/bytes不匹配。 |
+| Root Cause | Windows `core.autocrlf=true`将4项host JSON和1项ffconcat从Git LF展开为CRLF；候选未固定这些证据的字节策略。 |
+| Fix | 新增目录级`.gitattributes`，仅对`evidence/host/*.json`和`evidence/touchdesigner/video/*.ffconcat`禁用换行转换；TD原生状态JSON保持CRLF。 |
+| Replacement Candidate | `8790cd3`；全新`D:\Agent\03-SRP-t01-hashcheck2` detached checkout验证`T01_MANIFEST_PASS count=23`，工作树洁净。 |
+| Review Gate | 原复核不得复用；必须对`8790cd3`重新执行完整独立复核，傅钧烨签收仍未发生。 |
