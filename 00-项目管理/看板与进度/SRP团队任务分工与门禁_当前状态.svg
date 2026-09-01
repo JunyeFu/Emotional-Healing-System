@@ -23,9 +23,9 @@
 <rect x="70.0" y="196" width="912.5" height="92" rx="14" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
 <text x="88.0" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#166534">F-05 合同门</text>
 <text x="88.0" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">DONE → U-01 / U-02 已解锁</text>
-<rect x="1000.5" y="196" width="912.5" height="92" rx="14" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
-<text x="1018.5" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#166534">F-04 TD 壳门</text>
-<text x="1018.5" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">DONE → T-01 已解锁</text>
+<rect x="1000.5" y="196" width="912.5" height="92" rx="14" fill="#f3e8ff" stroke="#6b21a8" stroke-width="2"/>
+<text x="1018.5" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#6b21a8">F-04 TD 壳门</text>
+<text x="1018.5" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">IN_REVIEW → T-01 继续等待</text>
 <rect x="1931.0" y="196" width="912.5" height="92" rx="14" fill="#ffedd5" stroke="#9a3412" stroke-width="2"/>
 <text x="1949.0" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#9a3412">V-04 预演门</text>
 <text x="1949.0" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">IN_PROGRESS → V-05 继续等待</text>
