@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H2_V11_FIXED_PLATE",
+  "candidate_id": "fade-v5-fixed-selected",
+  "reviewer": "傅钧烨",
+  "reviewer_role": "团队总监",
+  "decision": "PASS",
+  "decision_source": "direct task message",
+  "decided_at": "2026-09-01T08:57:53+08:00",
+  "artifact": {
+    "file": ".artifacts-local/V-04/H3/layerable-background-rebuild/v5/base/V-04-H3-LBR-v5-fade-base.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "cb06c979c65268e531e5892d115788e22cae22af7d25c6c3d162b0df81c53c9b"
+  },
+  "scope": "fixed-camera native full-color background plate for candidate-v11",
+  "does_not_approve": [
+    "candidate-v11 paired preview",
+    "candidate-v11 nine-item review",
+    "transparent layer export",
+    "Unity runtime",
+    "formal build",
+    "asset license release"
+  ]
+}
