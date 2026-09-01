@@ -1,0 +1,74 @@
+{
+  "schema_version": "2.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INPUT_PREVIEWS",
+  "preview_id": "storm-candidate-v2",
+  "technical_id": "storm",
+  "render_requested_at": "2026-09-01T11:01:55+08:00",
+  "supersedes": "storm-candidate-v1",
+  "design_contract": "V-04_H3_三天气固定底片样片重建合同_v1.0.md",
+  "mechanism_contract": "V-04_H3_storm核心机制样片合同_v1.0.md",
+  "source": {
+    "selected_anchor_id": "R2-B-storm",
+    "panorama_file": ".artifacts-local/V-04/H3/layerable-background-rebuild/v1/base/V-04-H3-LBR-v1-storm-base.png",
+    "panorama_sha256": "7764e632e3b3c8ff02eaf8aa04ef06467f14bb855b8be98b96f53eae0297fce2",
+    "formal_use_allowed": false
+  },
+  "timeline": {
+    "duration_s": 12.0,
+    "fps": 30,
+    "frame_count": 360,
+    "phase_duration_s": 3.0,
+    "phase_slots": [
+      "INHALE",
+      "HOLD_1",
+      "EXHALE",
+      "HOLD_2"
+    ],
+    "actual_lag_s": 0.55,
+    "recovery_value": 0.35
+  },
+  "camera": {
+    "mode": "fixed",
+    "horizontal_scroll": false,
+    "camera_displacement_px": 0.0,
+    "source_fit": "cover_center_crop"
+  },
+  "geometry": {
+    "gate_center_x": 1390,
+    "gate_base_y": 770,
+    "neutral_half_width_px": 130,
+    "maximum_half_width_px": 240,
+    "neutral_top_y": 455,
+    "maximum_top_y": 350,
+    "target_bounds": [1030, 300, 1700, 820],
+    "actual_bounds": [350, 150, 900, 620],
+    "abstract_bounds": [760, 330, 1160, 750]
+  },
+  "audio": {
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bits": 24,
+    "integrated_lufs_i": [-24.0, -20.0],
+    "true_peak_max_dbtp": -3.0,
+    "periodic_breathing_cue": false
+  },
+  "machine_gates": {
+    "max_raw_difference_outside_expected_mask": 0,
+    "difference_mask_glow_margin_px": 64,
+    "minimum_gate_half_width_expansion_px": 100.0,
+    "maximum_hold_geometry_drift_px": 0.001,
+    "maximum_exact_duplicate_run_frames": 29,
+    "black_frame_count_max": 0
+  },
+  "keyframe_times_s": [0.0, 2.9, 3.7, 5.9, 6.7, 8.9, 9.7, 11.9],
+  "outputs": {
+    "artifact_root": ".artifacts-local/V-04/H3/storm-candidate-v2",
+    "scene_native_video": "storm-H3-v2-scene-native.mp4",
+    "abstract_pacer_video": "storm-H3-v2-abstract-pacer.mp4",
+    "paired_review_video": "storm-H3-v2-paired-review.mp4",
+    "ambient_audio": "storm-H3-v2-ambient.wav",
+    "review_keyframes": "review/H3/storm-H3-keyframes-v2.jpg",
+    "grayscale_keyframes": "review/H3/storm-H3-grayscale-v2.jpg"
+  }
+}
