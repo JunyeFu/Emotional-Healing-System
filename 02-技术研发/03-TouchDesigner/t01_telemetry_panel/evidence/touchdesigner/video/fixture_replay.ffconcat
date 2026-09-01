@@ -1,0 +1,12 @@
+ffconcat version 1.0
+file '../screenshots/fixture_good.png'
+duration 1.5
+file '../screenshots/publisher_live.png'
+duration 2.0
+file '../screenshots/out_of_order.png'
+duration 2.0
+file '../screenshots/disconnected.png'
+duration 2.0
+file '../screenshots/recovered.png'
+duration 2.0
+file '../screenshots/recovered.png'
