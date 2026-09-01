@@ -1255,3 +1255,16 @@
 | Director Sign-off | 傅钧烨确认签收`codex/f-05-integration@646bc47a2f68ddddf31bdcc60e9feb5927658c85`，结论`PASS / DONE`。 |
 | Open Note | P2旧状态文案不阻断签收，留作非实质治理修正；本次未修改F-05原签署树。 |
 | Evidence Boundary | 不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。 |
+
+### 2026-09-01 T-01 claim and interface inventory
+
+| Check | Result |
+|---|---|
+| Base And Isolation | `codex/t-01-telemetry-panel@00b575b`；独立工作树`D:\Agent\03-SRP-t01-worktree`；原V-04脏工作区未写入。 |
+| Claim Gate | 领取前T-01=`READY`、领取字段为空；F-01/F-04/F-05均`DONE`。 |
+| Claim Result | T-01=`IN_PROGRESS`；claimant=`Codex Agent（T-01独立工作树）`；branch=`codex/t-01-telemetry-panel`。 |
+| Interface Inventory | UDP 5005只读消费、20Hz节流、SQI/时钟/序号/延迟/断流显示；正式模式使用v2.2帧内cycle/step身份。 |
+| Governance | 注册表验证`PASS`；`READY=U-01/U-02`，`IN_REVIEW=G-01/G-02`。 |
+| Packages | 独立包验证`PASS`；4包、111份快照，集合=`G-01,G-02,U-01,U-02`。 |
+| Focused Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q 02-技术研发/tests/test_task_package_hash_policy.py`，结果`3 passed`，未安装依赖。 |
+| Evidence Boundary | 只完成领取与盘点，不声明TD实现、网络联调、正式构建或`LIVE_E2E`。 |

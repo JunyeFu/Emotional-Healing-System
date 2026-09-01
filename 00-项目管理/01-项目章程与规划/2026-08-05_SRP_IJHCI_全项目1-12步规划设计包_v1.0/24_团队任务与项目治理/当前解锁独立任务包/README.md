@@ -7,6 +7,5 @@
 |---|---|---|---:|---|
 | G-01 | IN_REVIEW | 【研究治理】伦理材料许可招募产能与角色台账 | 5人日 | [G-01/TASK.md](G-01/TASK.md) |
 | G-02 | IN_REVIEW | 【数据治理】数据分级跨阶段去重与资产许可 | 4人日 | [G-02/TASK.md](G-02/TASK.md) |
-| T-01 | READY | 【TouchDesigner】遥测设备质量与时钟面板 | 3人日 | [T-01/TASK.md](T-01/TASK.md) |
 | U-01 | READY | 【Unity】可靠控制技术探针与渲染回执 | 4人日 | [U-01/TASK.md](U-01/TASK.md) |
 | U-02 | READY | 【Unity】四层SceneAdapter实现与降级 | 3人日 | [U-02/TASK.md](U-02/TASK.md) |
