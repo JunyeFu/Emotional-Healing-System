@@ -1268,3 +1268,18 @@
 | Packages | 独立包验证`PASS`；4包、111份快照，集合=`G-01,G-02,U-01,U-02`。 |
 | Focused Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q 02-技术研发/tests/test_task_package_hash_policy.py`，结果`3 passed`，未安装依赖。 |
 | Evidence Boundary | 只完成领取与盘点，不声明TD实现、网络联调、正式构建或`LIVE_E2E`。 |
+
+### 2026-09-01 T-01 implementation candidate
+
+| Check | Result |
+|---|---|
+| Candidate | `codex/t-01-telemetry-panel@9d6c9e0`，已推送；T-01转`IN_REVIEW`。 |
+| T-01 Host Tests | `17 passed in 0.06s`。 |
+| TD Reopen | TouchDesigner `2025.32820`；`PASS`；22节点；UDP `127.0.0.1:5005`；1280×720；零节点/脚本错误。 |
+| UDP Runtime | 真实`SessionCore + TelemetryPublisher`为`LIVE`；异常证据`lost=2, duplicate=1, out_of_order=1`；超过2秒为`DISCONNECTED`；新clock domain恢复`LIVE`且重连累计。 |
+| Runtime Permissions | 无UDP/TCP输出、Spout、文件输出或T-02回调；Python权威未改变。 |
+| F-04 Regression | `21 passed`；签署目录相对`43a63a1`零差异。 |
+| F-05 Regression | 合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`；`verify_f05_v22.py=PASS`。 |
+| Full Regression | 洁净进程`470 passed in 17.42s`。 |
+| Artifact Identity | TOE=`38ECA7FA...57E44`；TOX=`F0614B20...AB8AE`；录像=`580DB8EE...1DD5A`；23项证据SHA-256已固定。 |
+| Evidence Boundary | 本地TD只读v2.2消费与异常恢复基线；不声明真实设备链、Unity联合运行、T-02、外部延迟、正式构建、科学有效性或`LIVE_E2E`。 |

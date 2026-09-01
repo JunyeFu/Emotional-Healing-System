@@ -1267,3 +1267,12 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 实施范围固定为F-04只读操作台上的UDP 5005、20Hz遥测、SQI/延迟/序号/断流显示和v2.2帧内身份消费，不新增权威状态回写。
 - 当前分发集合重新生成后为`G-01,G-02,U-01,U-02`；T-01已从可领取包和文件映射中移除。
 - 本次仅完成领取和接口盘点，不表示TD节点、`.toe/.tox`、网络联调、正式构建或`LIVE_E2E`已完成。
+
+### 2026-09-01 T-01实现候选与审阅门
+
+- 候选`9d6c9e0`已推送至`codex/t-01-telemetry-panel`；实现、合同适配、fixture或`.toe/.tox`实质变化会使后续复核失效。
+- 独立目录提供UDP 5005只读输入、每数据报统计、20Hz显示、v2.2帧内cycle/step身份、断流与恢复；不含网络输出、Spout、文件输出或T-02回调。
+- TD 2025.32820最终关闭重开为`PASS`：22节点、1280×720、零节点和脚本错误；真实`SessionCore + TelemetryPublisher`及fixture/异常发送均经UDP实机复现。
+- 专项结果：T-01=`17 passed`、F-04=`21 passed`、合同=`87 passed`、Session Core=`115 passed`、Session Store=`70 passed`、F-05验证=`PASS`、全项目=`470 passed`。
+- T-01现转`IN_REVIEW`并登记`Codex Agent（T-01独立复核）`；T-02继续`WAIT_DEP`，不得在独立Agent与傅钧烨真实第二人签收前解锁。
+- 当前审阅包集合应为`G-01,G-02,T-01,U-01,U-02`；下一硬门为候选洁净工作树独立复跑与TD实机复现。
