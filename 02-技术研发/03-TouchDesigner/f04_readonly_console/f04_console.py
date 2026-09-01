@@ -8,11 +8,13 @@ all display-only data outside the wire-format object.
 from __future__ import annotations
 
 from copy import deepcopy
+from dataclasses import dataclass
 import importlib.util
 import json
 import math
 from pathlib import Path
 import sys
+from types import MappingProxyType
 from typing import Any, Mapping
 
 
@@ -20,6 +22,13 @@ FIXTURE_SCHEMA_VERSION = "f04-static-display-fixture-v1"
 WEATHER_IDS = frozenset({"storm", "heat", "snow", "fade"})
 QUALITY_STATES = frozenset({"GOOD", "DEGRADED", "UNUSABLE", "DISCONNECTED"})
 BANNER = "READ ONLY / DEV-REPLAY / NOT LIVE"
+SCENARIO_IDS = (
+    "good_storm",
+    "degraded_heat",
+    "unusable_snow",
+    "disconnected_fade",
+    "out_of_order_storm",
+)
 
 
 def _load_contract_module():
@@ -67,6 +76,83 @@ PAGE_DEFINITIONS = (
 
 class FixtureValidationError(ValueError):
     """Fail-closed error for F-04 fixture or display-only data."""
+
+
+def _freeze(value: Any) -> Any:
+    if isinstance(value, Mapping):
+        return MappingProxyType({key: _freeze(item) for key, item in value.items()})
+    if isinstance(value, list):
+        return tuple(_freeze(item) for item in value)
+    return value
+
+
+@dataclass(frozen=True, slots=True)
+class ConsoleSnapshot:
+    """Immutable display snapshot consumed by every F-04 page module."""
+
+    meta: Mapping[str, Any]
+    telemetry: Mapping[str, Any]
+    display_only: Mapping[str, Any]
+
+    def resolve(self, dotted_path: str) -> Any:
+        root, separator, remainder = dotted_path.partition(".")
+        if not separator or root not in {"meta", "telemetry", "display_only"}:
+            raise KeyError(dotted_path)
+        current: Any = getattr(self, root)
+        for part in remainder.split("."):
+            current = current[part]
+        return current
+
+
+class StaticFixtureAdapter:
+    """F-04 adapter for deterministic local display scenarios."""
+
+    def __init__(self, fixture_path: str | Path):
+        fixture = load_and_validate_fixture(fixture_path)
+        scenarios = {item["id"]: item for item in fixture["scenarios"]}
+        if tuple(scenarios) != SCENARIO_IDS:
+            _fail(f"scenario ids must be {SCENARIO_IDS}")
+        self._fixture_id = fixture["fixture_schema_version"]
+        self._scenarios = scenarios
+        self._scenario_id = SCENARIO_IDS[0]
+        self._page_id = PAGE_DEFINITIONS[0]["id"]
+
+    @property
+    def scenario_ids(self) -> tuple[str, ...]:
+        return SCENARIO_IDS
+
+    @property
+    def scenario_id(self) -> str:
+        return self._scenario_id
+
+    @scenario_id.setter
+    def scenario_id(self, value: str) -> None:
+        if value not in self._scenarios:
+            raise ValueError(f"unknown scenario_id: {value}")
+        self._scenario_id = value
+
+    @property
+    def page_id(self) -> str:
+        return self._page_id
+
+    @page_id.setter
+    def page_id(self, value: str) -> None:
+        if value not in {page["id"] for page in PAGE_DEFINITIONS}:
+            raise ValueError(f"unknown page_id: {value}")
+        self._page_id = value
+
+    def read_snapshot(self) -> ConsoleSnapshot:
+        scenario = self._scenarios[self._scenario_id]
+        return ConsoleSnapshot(
+            meta=_freeze({
+                "fixture_id": self._fixture_id,
+                "scenario_id": self._scenario_id,
+                "page_id": self._page_id,
+                "replay_state": "DEV-REPLAY",
+            }),
+            telemetry=_freeze(scenario["telemetry"]),
+            display_only=_freeze(scenario["display_only"]),
+        )
 
 
 def _fail(message: str) -> None:
