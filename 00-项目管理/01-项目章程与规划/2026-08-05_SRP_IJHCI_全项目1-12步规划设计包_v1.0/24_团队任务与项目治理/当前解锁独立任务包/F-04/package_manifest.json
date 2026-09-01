@@ -3,7 +3,7 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "F-04",
   "status": "IN_REVIEW",
-  "registry_sha256": "AAF15E0C1B5BC4F4B766928DB5FD78DA600E9E6D967823A73A4B30AD70D98BB0",
+  "registry_sha256": "272BBDBC87C0619EA1DD7DD63CB9F572CD2C7A382595F83855EC471148F24FE4",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",

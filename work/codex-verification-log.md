@@ -1214,3 +1214,13 @@
 - Candidate `3549e77`: Git-tree evidence verification PASS.
 - Independent rerun: contract 87, P-01 115, P-02 70, specialist verifier PASS.
 - AC1/AC2/AC3/governance: PASS; human second-person signoff remains open.
+
+## 2026-09-01 F-05 director signoff and SVG refresh
+
+| Item | Result |
+|---|---|
+| Human Gate | 傅钧烨明确签署`PASS`；签收对象为实现候选`11f8119`、治理候选`3549e77`和独立复审闭环`158767e`。 |
+| State Migration | F-05由`IN_REVIEW`转为`DONE`；U-01与U-02由`WAIT_DEP`转为`READY`；T-01与U-07保持等待。 |
+| Package Set | F-05复核包退出分发，新增U-01与U-02领取包；F-04、G-01与G-02继续保持`IN_REVIEW`包。 |
+| Diagram | 从57项任务注册表生成`SRP团队任务分工与门禁_当前状态.svg`，包含全部依赖箭头、状态、类型配色和当前关键门。 |
+| Scope Boundary | 只关闭F-05任务门，不声明Unity、TouchDesigner、真实设备链、正式构建或`LIVE_E2E`完成。 |

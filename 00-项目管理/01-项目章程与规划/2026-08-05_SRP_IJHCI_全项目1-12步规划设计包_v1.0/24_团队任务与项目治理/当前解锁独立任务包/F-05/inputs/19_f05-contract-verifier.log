@@ -1,9 +1,0 @@
-{
-  "report_version": "f05-v22-verification-v1",
-  "claim_base": "cc0b1afe6f71990e6835f74a398bbede4f22f323",
-  "v21_unchanged": true,
-  "schema_rebuild": true,
-  "fixture_hash_count": 22,
-  "consumer_frame_count": 5,
-  "result": "PASS"
-}

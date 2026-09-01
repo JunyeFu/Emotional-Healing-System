@@ -1226,3 +1226,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - Independent read-only audit of candidate `3549e77` returned PASS for AC1, AC2, AC3, and governance.
 - Model review status is now `PASS_FOR_MODEL_INDEPENDENT_REVIEW`.
 - F-05 remains `IN_REVIEW`; 傅钧烨 signoff is the next hard gate.
+
+## 2026-09-01 F-05第二人签收与任务图更新
+
+- 傅钧烨对固定实现候选`11f8119b5b660f495bfd9c20cf7a52d336f2b051`、治理候选`3549e77ef4a17a8c96a126f529b2e7a87d294764`和独立复审闭环`158767e82128b3325b58560aab05824a951c633b`明确签署`PASS`。
+- F-05由`IN_REVIEW`迁移为`DONE`；其独立复核包退出当前分发集合。
+- U-01与U-02因全部仓库内前置依赖关闭而迁移为`READY`。T-01仍等待F-04，U-07仍等待U-03，不作提前解锁。
+- 当前任务分工、依赖和门禁图由任务注册表确定性生成至`00-项目管理/看板与进度/SRP团队任务分工与门禁_当前状态.svg`。
+- 本次签收不扩大为Unity、TouchDesigner、真实设备链、正式构建或`LIVE_E2E`完成。
