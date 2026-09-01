@@ -1,0 +1,114 @@
+{
+  "schema_version": "srp.v04.h3.independent-asset-candidate.v1.0",
+  "weather": "storm",
+  "status": "READY_FOR_TEAM_DIRECTOR_REVIEW",
+  "asset_count": 8,
+  "assets": [
+    {
+      "asset_id": "rain_gate_wide",
+      "role": "mechanism_target",
+      "path": "storm__rain_gate_wide.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "sha256": "9b9f846090eb8049b946c03e8a8300e3689bfd4522cd48828c7a4d5dfaf08cdf"
+    },
+    {
+      "asset_id": "airflow_streaks_near",
+      "role": "mechanism_actual",
+      "path": "storm__airflow_streaks_near.png",
+      "width": 1635,
+      "height": 962,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "sha256": "3e3be5647d5b77d446fc730be816c2d6bb84e450fb4ea17bbbf72bc599c3299b"
+    },
+    {
+      "asset_id": "rain_curtain_soft",
+      "role": "environment_overlay",
+      "path": "storm__rain_curtain_soft.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "sha256": "67d80efe022692c59bf42a118ef86439e29d8e2d744c077cdb48796edf302abd"
+    },
+    {
+      "asset_id": "valley_mist_patch",
+      "role": "environment_overlay",
+      "path": "storm__valley_mist_patch.png",
+      "width": 1774,
+      "height": 887,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "8e68245f890cbb21082ee9932466f0995d6a2b29735ac402951d4ccfa21faaac"
+    },
+    {
+      "asset_id": "wet_rock_cluster",
+      "role": "foreground_prop",
+      "path": "storm__wet_rock_cluster.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "e47535019d0beddffac6afc0aa91e993736937b6a0a2d5e50003923791434f21"
+    },
+    {
+      "asset_id": "wind_bent_grass",
+      "role": "foreground_prop",
+      "path": "storm__wind_bent_grass.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "9f3aa03a1635d24f31c434001c878d790fb84fda3a1b6fb930289325517e05c6"
+    },
+    {
+      "asset_id": "runoff_stream",
+      "role": "transition_accent",
+      "path": "storm__runoff_stream.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "9b4c7715ce16d65135f8a229af33aa302cccbad765f70d06ae9a5662a8488bf3"
+    },
+    {
+      "asset_id": "rain_splash_ripples",
+      "role": "transition_accent",
+      "path": "storm__rain_splash_ripples.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        252
+      ],
+      "sha256": "805aa28f57a79ac090b6c383e816b25d599890e056f4dbb6e37e0a6e7764ba31"
+    }
+  ],
+  "derived_review_sheet": {
+    "path": "storm-review-sheet.png",
+    "sha256": "074c6e898ec8477ecc62942882d14f010edc583fc7e532529780af99392c7d40"
+  },
+  "checker_review": {
+    "path": "storm-review-checker.jpg",
+    "sha256": "bd804613826f0d0165c9d08338a80d1f5d1bb4598919199d173a88a5a78f07b8"
+  },
+  "asset_status": "PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false
+}

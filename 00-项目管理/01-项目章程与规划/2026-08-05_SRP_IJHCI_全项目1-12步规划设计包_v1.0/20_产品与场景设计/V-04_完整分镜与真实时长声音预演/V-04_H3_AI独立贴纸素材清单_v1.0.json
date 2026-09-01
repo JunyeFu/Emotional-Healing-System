@@ -1,0 +1,57 @@
+{
+  "schema_version": "srp.v04.h3.independent-asset-kit.v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INDEPENDENT_ASSET_KIT",
+  "status": "STORM_READY_FOR_TEAM_DIRECTOR_REVIEW",
+  "review_sheet_layout": {"columns": 4, "rows": 2, "assets_per_weather": 8, "derived_only": true},
+  "weather_assets": {
+    "storm": [
+      {"id": "rain_gate_wide", "role": "mechanism_target"},
+      {"id": "airflow_streaks_near", "role": "mechanism_actual"},
+      {"id": "rain_curtain_soft", "role": "environment_overlay"},
+      {"id": "valley_mist_patch", "role": "environment_overlay"},
+      {"id": "wet_rock_cluster", "role": "foreground_prop"},
+      {"id": "wind_bent_grass", "role": "foreground_prop"},
+      {"id": "runoff_stream", "role": "transition_accent"},
+      {"id": "rain_splash_ripples", "role": "transition_accent"}
+    ],
+    "heat": [
+      {"id": "cool_air_channel", "role": "mechanism_target"},
+      {"id": "cool_air_streaks_near", "role": "mechanism_actual"},
+      {"id": "heat_haze_patch", "role": "environment_overlay"},
+      {"id": "dust_wisp", "role": "environment_overlay"},
+      {"id": "salt_crust_cluster", "role": "foreground_prop"},
+      {"id": "desert_rock_cluster", "role": "foreground_prop"},
+      {"id": "shallow_channel_glint", "role": "transition_accent"},
+      {"id": "cooling_particles", "role": "transition_accent"}
+    ],
+    "snow": [
+      {"id": "powder_lift_column", "role": "mechanism_target"},
+      {"id": "powder_response_near", "role": "mechanism_actual"},
+      {"id": "snow_mist_patch", "role": "environment_overlay"},
+      {"id": "drifting_snow_ribbon", "role": "environment_overlay"},
+      {"id": "snowy_pine_branch", "role": "foreground_prop"},
+      {"id": "snow_rock_cluster", "role": "foreground_prop"},
+      {"id": "falling_powder_cluster", "role": "transition_accent"},
+      {"id": "settling_powder_cluster", "role": "transition_accent"}
+    ],
+    "fade": [
+      {"id": "color_tide_ribbon", "role": "mechanism_target"},
+      {"id": "actual_reflection_trace", "role": "mechanism_actual"},
+      {"id": "water_ripple_patch", "role": "environment_overlay"},
+      {"id": "soft_reflection_patch", "role": "environment_overlay"},
+      {"id": "riverbank_grass_cluster", "role": "foreground_prop"},
+      {"id": "wet_pebble_cluster", "role": "foreground_prop"},
+      {"id": "color_bloom_patch", "role": "transition_accent"},
+      {"id": "tributary_glint", "role": "transition_accent"}
+    ]
+  },
+  "supersedes": {
+    "gate_id": "H3_LAYERABLE_BACKGROUND_REBUILD",
+    "candidate_id": "layer-export-candidate-v2",
+    "preserve_as": "SUPERSEDED_DESIGN_EVIDENCE"
+  },
+  "asset_status": "PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false,
+  "next_gate_after_pass": "H3_FIXED_COMBINED_REVIEW"
+}
