@@ -109,7 +109,8 @@ def task_markdown(
     )
     lines.extend(["", "## 必需证据", ""])
     lines.extend(
-        f"- [{checked}] {item}" for item in split_items(row["evidence_required"])
+        f"- [{' ' if '第二人签收报告' in item and row['status'] != 'DONE' else checked}] {item}"
+        for item in split_items(row["evidence_required"])
     )
     if row["status"] == "IN_REVIEW":
         source_files = [str(item) for item in task_map["source_files"]]
@@ -128,6 +129,8 @@ def task_markdown(
             f"- push目标：`origin/{row['branch']}`",
             "- 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放",
         ]
+        if "傅钧烨" in row["reviewer"]:
+            completion.append("- 傅钧烨签收仍开放")
     else:
         completion = [
             "- 实际改动文件：",

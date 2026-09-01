@@ -141,6 +141,65 @@ def test_tcp_rejects_invalid_handshake(change, value, expected) -> None:
     asyncio.run(scenario())
 
 
+def test_v22_wrong_version_reconnect_does_not_consume_pending_control(
+    manifest_factory, assignment_factory
+) -> None:
+    async def scenario():
+        manifest = manifest_factory(schema_version="2.2")
+        core = SessionCore()
+        prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+        server = ControlServer(
+            core,
+            config=fast_transport_config(ack_timeout_ms=20, reconnect_grace_ms=200),
+            port=0,
+            now_ns=lambda: 100,
+        )
+        await server.start()
+        first_reader, first_writer = await asyncio.open_connection(
+            "127.0.0.1", server.bound_port
+        )
+        await _write(first_writer, _hello(schema_version="2.2"))
+        await _read(first_reader)
+
+        async def clients():
+            first = await _read(first_reader)
+            first_writer.close()
+            await first_writer.wait_closed()
+            await asyncio.sleep(0.01)
+
+            wrong_reader, wrong_writer = await asyncio.open_connection(
+                "127.0.0.1", server.bound_port
+            )
+            await _write(wrong_writer, _hello(schema_version="2.1"))
+            rejected = await _read(wrong_reader)
+            assert rejected["error_code"] == "SCHEMA_VERSION_MISMATCH"
+            wrong_writer.close()
+            await wrong_writer.wait_closed()
+
+            valid_reader, valid_writer = await asyncio.open_connection(
+                "127.0.0.1", server.bound_port
+            )
+            await _write(valid_writer, _hello(schema_version="2.2"))
+            assert (await _read(valid_reader))["accepted"] is True
+            resent = await _read(valid_reader)
+            assert (
+                resent["event_id"],
+                resent["control_seq"],
+                resent["schema_version"],
+            ) == (first["event_id"], first["control_seq"], "2.2")
+            await _write(valid_writer, ack_for(resent, now_ns=100))
+            valid_writer.close()
+            await valid_writer.wait_closed()
+
+        client_task = asyncio.create_task(clients())
+        ack = await server.publish_control(prepared.control_events[0])
+        await client_task
+        assert ack["result"] == "applied"
+        await server.close()
+
+    asyncio.run(scenario())
+
+
 def test_v22_session_requires_v22_handshake_and_reports_active_version(
     manifest_factory, assignment_factory
 ) -> None:

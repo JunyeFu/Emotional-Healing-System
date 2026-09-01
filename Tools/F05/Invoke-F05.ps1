@@ -26,6 +26,12 @@ function Invoke-F05Command {
 Push-Location $repoRoot
 try {
     New-Item -ItemType Directory -Path $EvidenceDir -Force | Out-Null
+    $sealFiles = @('evidence_hashes.sha256', 'evidence_manifest.json')
+    $leafFiles = @('contract-tests.log', 'p01-tests.log', 'p02-tests.log', 'f05-contract-verifier.log', 'f05-verification.json', 'git-diff-check.log')
+    $clearFiles = if ($Action -eq 'all') { $leafFiles + $sealFiles } else { $sealFiles }
+    foreach ($name in $clearFiles) {
+        Remove-Item -LiteralPath (Join-Path $EvidenceDir $name) -Force -ErrorAction SilentlyContinue
+    }
     if ($Action -in @('test', 'all')) {
         Invoke-F05Command -Name 'contract-tests' -Arguments @('-m', 'pytest', '02-技术研发/05-通信协议/tests/contract', '-q')
         Invoke-F05Command -Name 'p01-tests' -Arguments @('-m', 'pytest', '02-技术研发/tests/session_core', '-q')
@@ -40,34 +46,12 @@ try {
             throw 'F05_GIT_DIFF_CHECK_FAILED'
         }
     }
-    $files = Get-ChildItem -LiteralPath $EvidenceDir -File | Sort-Object Name
-    $hashes = foreach ($file in $files) {
-        $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
-        "$hash  $($file.Name)"
+    if ($Action -eq 'all') {
+        & py -3.14 'Tools/F05/f05_evidence.py' seal --evidence-dir $EvidenceDir --tested-git-commit (git rev-parse HEAD).Trim()
+        if ($LASTEXITCODE -ne 0) { throw 'F05_EVIDENCE_SEAL_FAILED' }
+        & py -3.14 'Tools/F05/f05_evidence.py' verify --evidence-dir $EvidenceDir
+        if ($LASTEXITCODE -ne 0) { throw 'F05_EVIDENCE_VERIFY_FAILED' }
     }
-    $hashes | Set-Content -LiteralPath (Join-Path $EvidenceDir 'evidence_hashes.sha256') -Encoding ascii
-    $branchName = (git branch --show-current)
-    if ([string]::IsNullOrWhiteSpace($branchName)) {
-        $branchName = 'DETACHED'
-    }
-    else {
-        $branchName = $branchName.Trim()
-    }
-    $manifest = [ordered]@{
-        report_version = 'f05-evidence-manifest-v1'
-        git_head = (git rev-parse HEAD).Trim()
-        branch = $branchName
-        files = @(
-            Get-ChildItem -LiteralPath $EvidenceDir -File | Sort-Object Name | ForEach-Object {
-                [ordered]@{
-                    name = $_.Name
-                    sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
-                    size_bytes = $_.Length
-                }
-            }
-        )
-    }
-    $manifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $EvidenceDir 'evidence_manifest.json') -Encoding utf8
 }
 finally {
     Pop-Location

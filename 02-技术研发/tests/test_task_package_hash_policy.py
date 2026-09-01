@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import runpy
+import csv
+import json
 from pathlib import Path
 
 import pytest
@@ -43,3 +45,30 @@ def test_hash_policy_normalizes_all_dispatched_text_types(
         lf.write_bytes(b"alpha\nbeta\n")
 
         assert canonical_content(crlf) == canonical_content(lf) == b"alpha\nbeta\n"
+
+
+def test_in_review_human_signoff_remains_open() -> None:
+    renderer = runpy.run_path(str(GOVERNANCE_ROOT / "13_render_ready_task_packages.py"))
+    with (GOVERNANCE_ROOT / "05_可领取任务包.csv").open(
+        encoding="utf-8-sig", newline=""
+    ) as handle:
+        row = next(item for item in csv.DictReader(handle) if item["task_id"] == "F-05")
+    row["status"] = "IN_REVIEW"
+    mapping = json.loads(
+        (GOVERNANCE_ROOT / "12_独立任务包文件映射_v1.0.json").read_text(
+            encoding="utf-8-sig"
+        )
+    )
+    task_map = {
+        "source_files": [],
+        "working_paths": [],
+        "implementation_commit": "candidate",
+        "model_review_status": "PENDING_REAUDIT",
+    }
+    handbook = runpy.run_path(str(GOVERNANCE_ROOT / "10_render_task_handbook.py"))
+    rendered = renderer["task_markdown"](
+        row, handbook["parse_resources"](), handbook["PROCESS_PROFILES"], task_map
+    )
+
+    assert "- [ ] 第二人签收报告" in rendered
+    assert "傅钧烨签收仍开放" in rendered

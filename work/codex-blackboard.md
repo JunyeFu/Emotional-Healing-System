@@ -1208,3 +1208,9 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 严格审计推翻此前自动PASS：固定候选`6760743`的证据哈希无法跨Git换行统一复算，AC2缺少明确的v2.2暂停/重复/重连/双重放轨迹，复核包还错误勾选第二人签收。
 - F-05从`IN_REVIEW`退回`IN_PROGRESS`，从独立任务包映射和当前分发集合撤下；旧提交保留为缺陷基线。
 - 修复边界为稳定证据封存、三层公共seam测试、任务包生成器和入口文档；不修改v2.1/v2.2线格式，不实现真实消费者。
+
+## F-05 strict remediation implementation
+
+- Commit A fixed the governance state at `IN_PROGRESS` and withdrew the invalid review package.
+- Implementation scope is limited to deterministic evidence sealing, AC2 scenario tests, package checkbox rendering, and entry-document alignment.
+- Next hard gate: commit B, clean detached evidence run, commit C review package, then independent audit; 傅钧烨 signoff remains open.

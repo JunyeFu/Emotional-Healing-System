@@ -1196,3 +1196,9 @@
 | Blocking Findings | 证据哈希受CRLF/LF影响且重复seal会纳入旧输出；AC2缺少完整v2.2纵向轨迹；复核包误勾选第二人签收。 |
 | State | F-05退回`IN_PROGRESS`，旧独立复核包撤下。 |
 | Boundary | 仅修复证据、测试、生成器与入口文档；公共合同线格式及真实消费者保持不变。 |
+
+## 2026-09-01 F-05 strict remediation TDD
+
+- RED: stable evidence helper absent, IN_REVIEW package pre-checked second-person signoff, and new v2.2 identity assertion exposed the frozen config hash literal.
+- GREEN: evidence normalization/seal tests, SessionCore v2.2 pause/resume and duplicate request, TCP wrong-version reconnect, telemetry fail-closed and double replay, and package signoff rendering all pass.
+- Public runtime schemas and wire fields were not changed.

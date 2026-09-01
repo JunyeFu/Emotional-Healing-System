@@ -72,3 +72,4 @@
 - commit：`PENDING_FIX_COMMIT`
 - push目标：`origin/codex/g-01-research-governance`
 - 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放
+- 傅钧烨签收仍开放
