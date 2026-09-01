@@ -1293,3 +1293,16 @@
 | Fix | 新增目录级`.gitattributes`，仅对`evidence/host/*.json`和`evidence/touchdesigner/video/*.ffconcat`禁用换行转换；TD原生状态JSON保持CRLF。 |
 | Replacement Candidate | `8790cd3`；全新`D:\Agent\03-SRP-t01-hashcheck2` detached checkout验证`T01_MANIFEST_PASS count=23`，工作树洁净。 |
 | Review Gate | 原复核不得复用；必须对`8790cd3`重新执行完整独立复核，傅钧烨签收仍未发生。 |
+
+### 2026-09-01 T-01 replacement candidate independent review
+
+| Check | Result |
+|---|---|
+| Candidate | `8790cd3ae4db3543c038efc21deec635605cb06f`。 |
+| Independent Verdict | `PASS`；P0/P1/P2/P3均无候选缺陷；未执行傅钧烨签收。 |
+| Evidence Integrity | 全新detached审计树；23项原始bytes/SHA-256，`BAD=0`。 |
+| Tests | T-01 `17`；F-04 `21`；合同`87`；Core`115`；Store`70`；全项目`470`；F-05验证`PASS`。 |
+| TD Reproduction | TOE与TOX均从关闭状态打开；22节点、零错误、1280×720、UDP loopback 5005、无禁止输出、无权威写回。 |
+| Runtime Reproduction | 真实发布器`LIVE`；lost/duplicate/out-of-order均复现；>2秒`DISCONNECTED`；恢复`LIVE`且reconnect累计。 |
+| Cleanup | TD与发送器关闭；UDP 5005释放；审计树洁净。 |
+| Next Gate | 傅钧烨对精确候选完成真实第二人签收；此前T-01=`IN_REVIEW`、T-02=`WAIT_DEP`。 |

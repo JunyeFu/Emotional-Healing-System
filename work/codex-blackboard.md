@@ -1277,3 +1277,5 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 专项结果：T-01=`17 passed`、F-04=`21 passed`、合同=`87 passed`、Session Core=`115 passed`、Session Store=`70 passed`、F-05验证=`PASS`、全项目=`470 passed`。
 - T-01现转`IN_REVIEW`并登记`Codex Agent（T-01独立复核）`；T-02继续`WAIT_DEP`，不得在独立Agent与傅钧烨真实第二人签收前解锁。
 - 当前审阅包集合应为`G-01,G-02,T-01,U-01,U-02`；下一硬门为候选洁净工作树独立复跑与TD实机复现。
+- 新候选`8790cd3ae4db3543c038efc21deec635605cb06f`第二轮独立复核为`PASS`，P0-P3均无；23项哈希、全部专项、全量470、TOE/TOX重开、真实发布器与异常恢复均独立复现。
+- 下一硬门改为傅钧烨对精确候选的真实第二人签收；签收前T-01保持`IN_REVIEW`、T-02保持`WAIT_DEP`。
