@@ -1,0 +1,7 @@
+.gitattributes text eol=lf
+*.json -text
+*.ffconcat -text
+*.toe binary
+*.tox binary
+*.png binary
+*.mp4 binary
