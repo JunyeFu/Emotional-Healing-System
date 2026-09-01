@@ -5,7 +5,7 @@
 | 范围 | 文件 |
 |---|---|
 | 实施裁定 | `V-04_科研便捷实施裁定_v1.2.md` |
-| 当前状态 | `V-04_实施状态与H1确认记录_v2.8.md` |
+| 当前状态 | `V-04_实施状态与H1确认记录_v2.9.md` |
 | 四天气固定镜头修订 | `V-04_H3_四天气固定镜头修订合同_v1.0.md` |
 | R2大景深事件构图 | `V-04_H3_四天气大景深事件构图合同_v1.0.md` |
 | R2独立背景预览与选择 | `V-04_H3_R2大景深AAA背景生图提示词_v1.0.md`、`V-04_H3_R2大景深背景预览候选清单_v1.0.json`、`V-04_H3_R2背景选择记录_v1.0.json`、`V-04_H3_R2背景选择验证记录_v1.0.md`、`V-04_H3_R2大景深背景预览验证记录_v1.0.md`、`validate_v04_h3_r2_previews.py` |
@@ -26,6 +26,7 @@
 | H3 snow验收 | `V-04_H3_snow机器验收记录_v1.0.json`、`V-04_H3_snow样片评审说明_v1.0.md`、`validate_v04_h3_snow.py` |
 | H3三天气固定底片重建 | `V-04_H3_三天气固定底片样片重建合同_v1.0.md`、三份`V-04_H3_*样片配置_v2.0.json`、三份`V-04_H3_*候选清单_v2.0.json`、三份`render_h3_*_v2.py`与三份`validate_v04_h3_*_v2.py` |
 | H3三天气固定底片验收 | `V-04_H3_三天气固定底片机器验收记录_v1.0.json`、`V-04_H3_三天气固定底片样片评审说明_v1.0.md` |
+| H3三天气固定底片人工结论 | `V-04_H3_三天气固定底片人工评审记录_v1.0.json`、`V-04_H3_三天气固定底片人工评审结论_v1.0.md` |
 | H3 corridor输入 | `V-04_H3_corridor通用转场样片合同_v1.0.md`、`V-04_H3_corridor样片配置_v1.0.json`、`V-04_H3_corridor候选清单_v1.0.json` |
 | H3 corridor验收 | `V-04_H3_corridor机器验收记录_v1.0.json`、`V-04_H3_corridor样片评审说明_v1.0.md`、`validate_v04_h3_corridor.py` |
 | H3合并合同与配置 | `V-04_H3合并评审与Unity交接合同_v1.0.md`、`V-04_H3合并评审配置_v1.0.json` |
@@ -68,20 +69,21 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H3 storm滚动输入 | `SUPERSEDED` | v1机器门和团队总监人工确认保留为历史证据；固定镜头v2已替代该媒体 |
 | H3 heat滚动输入 | `SUPERSEDED` | v1机器门保留为历史证据；固定镜头v2已替代该媒体 |
 | H3 snow滚动输入 | `SUPERSEDED` | v1机器门保留为历史证据；固定镜头v2已替代该媒体 |
-| H3 storm固定输入 | `PASS_MACHINE` | candidate-v2为12秒固定镜头双条件雨幕风门样片，等待团队总监人工评审 |
-| H3 heat固定输入 | `PASS_MACHINE` | candidate-v2为10秒固定镜头双条件冷流风道样片，等待团队总监人工评审 |
-| H3 snow固定输入 | `PASS_MACHINE` | candidate-v2为10秒固定镜头双条件粉雪升沉样片，等待团队总监人工评审 |
+| H3 storm固定输入 | `PASS_HUMAN` | candidate-v2的机器门与团队总监人工评审均通过 |
+| H3 heat固定输入 | `PASS_HUMAN` | candidate-v2的机器门与团队总监人工评审均通过 |
+| H3 snow固定输入 | `PASS_HUMAN` | candidate-v2的机器门与团队总监人工评审均通过 |
 | H3 corridor输入 | `PASS_MACHINE` | 12秒通用山雾长廊转场已通过机器门和Codex视觉预检；两条件逐帧相同 |
 | H3输入门 | `PASS` | fade、storm、heat、snow与corridor五项输入齐备 |
 | H3合并机器门 | `PASS` | 62秒合并视频、五项源门、四天气24节点、F-01/F-05语义、精确输出路径和资产边界通过 |
 | H3独立复审 | `PASS` | 第一轮问题已按P1至P3修复；第二轮无未关闭P1-P3 |
 | H3旧合并候选 | `SUPERSEDED` | 机器门与独立复审结果保留；三天气由滚动改为固定镜头后，不再进入原团队总监确认 |
 | H3固定背景选择 | `PASS` | 团队总监已确认`storm=B, heat=C, snow=C, fade=C` |
-| H3可拆层背景重建 | `BLOCKED_BY_FIXED_WEATHER_REVIEW` | 四张构图基准图与分层合同已生成；三天气固定样片人工门关闭后再导出实际透明分层文件 |
+| H3三天气固定样片人工门 | `PASS` | 团队总监回复“全部确认”，十二项人工评审全部通过 |
+| H3可拆层背景重建 | `IN_PROGRESS` | 四张构图基准图与分层合同已生成；当前导出实际透明分层文件 |
 
 candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；candidate-v11媒体位于`.artifacts-local/V-04/H2/candidate-v11/`。Git保存对应配置、清单、彩色/灰度关键帧、渲染器和验证器。
 
-storm、heat和snow固定镜头v2媒体分别位于`.artifacts-local/V-04/H3/<weather>-candidate-v2/`。三项专项机器门均为`PASS`，当前等待团队总监按`V-04_H3_三天气固定底片样片评审说明_v1.0.md`完成十二项人工评审。
+storm、heat和snow固定镜头v2媒体分别位于`.artifacts-local/V-04/H3/<weather>-candidate-v2/`。三项专项机器门和团队总监十二项人工评审均为`PASS`。
 
 ## candidate-v10摘要
 
@@ -98,4 +100,4 @@ storm、heat和snow固定镜头v2媒体分别位于`.artifacts-local/V-04/H3/<we
 
 ## 下一步
 
-完成`H3_FIXED_WEATHER_V2_HUMAN_REVIEW`；通过后继续实际透明分层交付和Unity装配准备。此前V-04继续保持`IN_PROGRESS`且不解锁V-05。
+继续`H3_LAYERABLE_BACKGROUND_REBUILD`，交付实际透明分层文件并进入Unity装配准备。此前V-04继续保持`IN_PROGRESS`且不解锁V-05。

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H3-FIXED-WEATHER-HUMAN-REVIEW-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_FIXED_WEATHER_V2_HUMAN_REVIEW",
+  "review_target_commit": "f5757c42b6d48bf24dd513161b5803b4307392b2",
+  "reviewed_candidates": [
+    "storm-candidate-v2",
+    "heat-candidate-v2",
+    "snow-candidate-v2"
+  ],
+  "reviewer": {
+    "name": "傅钧烨",
+    "role": "团队总监"
+  },
+  "reviewed_at": "2026-09-01T13:05:49+08:00",
+  "source_response": "全部确认",
+  "items": {
+    "storm_composition": "PASS",
+    "storm_mechanism": "PASS",
+    "storm_native_naturalness": "PASS",
+    "heat_composition": "PASS",
+    "heat_mechanism": "PASS",
+    "heat_native_naturalness": "PASS",
+    "snow_composition": "PASS",
+    "snow_mechanism": "PASS",
+    "snow_native_naturalness": "PASS",
+    "condition_match": "PASS",
+    "camera_audio": "PASS",
+    "H3_FIXED_WEATHER_PREVIEWS": "PASS"
+  },
+  "result": "PASS",
+  "machine_evidence": "V-04_H3_三天气固定底片机器验收记录_v1.0.json",
+  "review_instructions": "V-04_H3_三天气固定底片样片评审说明_v1.0.md",
+  "next_gate": "H3_LAYERABLE_BACKGROUND_REBUILD",
+  "evidence_boundary": "This review accepts the three fixed-camera design previews only; transparent layers, Unity runtime, formal build and device chain remain incomplete."
+}
