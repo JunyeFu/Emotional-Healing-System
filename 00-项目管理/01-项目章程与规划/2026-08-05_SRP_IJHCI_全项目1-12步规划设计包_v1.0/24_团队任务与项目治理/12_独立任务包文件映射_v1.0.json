@@ -78,6 +78,42 @@
         "02-技术研发/07-数据治理"
       ]
     },
+    "F-05": {
+      "implementation_commit": "11f8119b5b660f495bfd9c20cf7a52d336f2b051",
+      "model_review_status": "PENDING_REAUDIT",
+      "source_files": [
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+        "02-技术研发/05-通信协议/runtime_contract_v22.py",
+        "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+        "02-技术研发/05-通信协议/contracts/fixture_hashes_v2.2.sha256",
+        "02-技术研发/05-通信协议/contracts/verify_f05_v22.py",
+        "02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md",
+        "02-技术研发/05-通信协议/contracts/F-05_v2.2消费者迁移指南.md",
+        "02-技术研发/05-通信协议/tests/contract/test_f05_evidence.py",
+        "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
+        "02-技术研发/tests/session_core/test_core.py",
+        "02-技术研发/tests/session_core/test_transport.py",
+        "02-技术研发/tests/session_store/test_recording_replay.py",
+        "Tools/F05/Invoke-F05.ps1",
+        "Tools/F05/f05_evidence.py",
+        "03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md",
+        "03-测试与实验/evidence/F-05/contract-tests.log",
+        "03-测试与实验/evidence/F-05/p01-tests.log",
+        "03-测试与实验/evidence/F-05/p02-tests.log",
+        "03-测试与实验/evidence/F-05/f05-contract-verifier.log",
+        "03-测试与实验/evidence/F-05/f05-verification.json",
+        "03-测试与实验/evidence/F-05/git-diff-check.log",
+        "03-测试与实验/evidence/F-05/evidence_hashes.sha256",
+        "03-测试与实验/evidence/F-05/evidence_manifest.json"
+      ],
+      "working_paths": [
+        "02-技术研发/05-通信协议/contracts",
+        "02-技术研发/srp_session_core",
+        "02-技术研发/srp_session_store",
+        "03-测试与实验/evidence/F-05",
+        "Tools/F05"
+      ]
+    },
     "F-04": {
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",

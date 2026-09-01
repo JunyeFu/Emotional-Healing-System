@@ -1214,3 +1214,9 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - Commit A fixed the governance state at `IN_PROGRESS` and withdrew the invalid review package.
 - Implementation scope is limited to deterministic evidence sealing, AC2 scenario tests, package checkbox rendering, and entry-document alignment.
 - Next hard gate: commit B, clean detached evidence run, commit C review package, then independent audit; 傅钧烨 signoff remains open.
+
+## F-05 candidate C gate
+
+- Implementation commit: `11f8119b5b660f495bfd9c20cf7a52d336f2b051`.
+- Clean detached `all`: contract 87, P-01 115, P-02 70, specialist verifier PASS.
+- Candidate remains `IN_REVIEW`; independent re-audit and 傅钧烨 signoff are separate open gates.

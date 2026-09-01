@@ -3,7 +3,7 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "G-02",
   "status": "IN_REVIEW",
-  "registry_sha256": "E5B088A997E5B639C881BFAC866FF14BD606DD80214811293E3421F02AD793B6",
+  "registry_sha256": "AAF15E0C1B5BC4F4B766928DB5FD78DA600E9E6D967823A73A4B30AD70D98BB0",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
@@ -86,8 +86,8 @@
     {
       "source_path": "PROJECT_MODULES.md",
       "package_path": "inputs/14_PROJECT_MODULES.md",
-      "sha256": "7CE62A404357BCF6C5CB99279FE36AE6229DCC5A497E597D18E7875B543B2F32",
-      "size_bytes": 9751
+      "sha256": "BD4239F419527BA08951A09A4C747E4555F5E66DCDB65BA215F118A8E9EDAF10",
+      "size_bytes": 9716
     },
     {
       "source_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",

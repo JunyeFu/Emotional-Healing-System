@@ -1202,3 +1202,9 @@
 - RED: stable evidence helper absent, IN_REVIEW package pre-checked second-person signoff, and new v2.2 identity assertion exposed the frozen config hash literal.
 - GREEN: evidence normalization/seal tests, SessionCore v2.2 pause/resume and duplicate request, TCP wrong-version reconnect, telemetry fail-closed and double replay, and package signoff rendering all pass.
 - Public runtime schemas and wire fields were not changed.
+
+## 2026-09-01 F-05 clean candidate evidence
+
+- Fixed implementation commit `11f8119b5b660f495bfd9c20cf7a52d336f2b051`.
+- Clean detached worktree `Invoke-F05.ps1 all`: 87 + 115 + 70 tests and verifier PASS.
+- `f05-evidence-manifest-v2` worktree verification PASS; Git-tree verification is the post-commit C hard gate.
