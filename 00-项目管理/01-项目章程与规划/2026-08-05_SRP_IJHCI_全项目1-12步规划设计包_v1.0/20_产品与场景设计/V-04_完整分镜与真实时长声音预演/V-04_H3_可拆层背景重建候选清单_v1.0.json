@@ -5,6 +5,7 @@
   "current_gate": "H3_LAYERABLE_BACKGROUND_REBUILD",
   "source_selection": "V-04_H3_R2背景选择记录_v1.0.json",
   "rebuild_contract": "V-04_H3_可拆层背景重建合同_v1.0.md",
+  "fade_selection_record": "V-04_H3_fade_v5选定版提示词与来源记录_v1.0.md",
   "canvas_contract": {"source_width": 3840, "source_height": 2160, "aspect_ratio": "16:9", "camera": "FIXED", "parallax_scroll": false},
   "required_static_layers": ["sky_clouds", "far_landform_01", "far_landform_02", "far_landform_03", "mid_terrain", "ground_visual", "foreground_occluders"],
   "required_semantic_roots": ["TargetCueRoot", "ActualFeedbackRoot", "RecoveryStateRoot", "FallbackStateRoot"],
@@ -12,7 +13,7 @@
     {"weather":"storm","selected_direction":"B","base_path":".artifacts-local/V-04/H3/layerable-background-rebuild/v1/base/V-04-H3-LBR-v1-storm-base.png","width":1672,"height":941,"sha256":"7764e632e3b3c8ff02eaf8aa04ef06467f14bb855b8be98b96f53eae0297fce2","screening":"PASS_CANDIDATE","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
     {"weather":"heat","selected_direction":"C","base_path":".artifacts-local/V-04/H3/layerable-background-rebuild/v1/base/V-04-H3-LBR-v1-heat-base.png","width":1672,"height":941,"sha256":"2551b38f5c4a89e1aa75246f0e33bcaddaef734462f73013bbcbdc0a8ace4cc4","screening":"PASS_CANDIDATE","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
     {"weather":"snow","selected_direction":"C","base_path":".artifacts-local/V-04/H3/layerable-background-rebuild/v1/base/V-04-H3-LBR-v1-snow-base.png","width":1672,"height":941,"sha256":"d38963cae8f8c119f4653605844229c4d09a0a053bfeff23b77eea55412674e8","screening":"PASS_CANDIDATE","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false},
-    {"weather":"fade","selected_direction":"C","base_path":".artifacts-local/V-04/H3/layerable-background-rebuild/v4/base/V-04-H3-LBR-v4-fade-base.png","width":1672,"height":941,"sha256":"c230185de7a47245c54b5383f9fa643ce46e737497e01065c2cabdde6e075491","screening":"CANDIDATE_READY_FOR_HUMAN_REVIEW","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false}
+    {"weather":"fade","selected_direction":"C","base_path":".artifacts-local/V-04/H3/layerable-background-rebuild/v5/base/V-04-H3-LBR-v5-fade-base.png","width":1672,"height":941,"sha256":"cb06c979c65268e531e5892d115788e22cae22af7d25c6c3d162b0df81c53c9b","screening":"TEAM_DIRECTOR_SELECTED","asset_status":"TEMP_REFERENCE_ONLY","formal_use_allowed":false}
   ],
   "next_step": "TEAM_DIRECTOR_REVIEW_THEN_LAYER_EXPORT"
 }
