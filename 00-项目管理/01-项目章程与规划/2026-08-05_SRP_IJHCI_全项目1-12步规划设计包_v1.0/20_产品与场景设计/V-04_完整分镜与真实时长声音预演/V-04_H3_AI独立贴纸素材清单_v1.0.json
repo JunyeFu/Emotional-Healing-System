@@ -2,7 +2,7 @@
   "schema_version": "srp.v04.h3.independent-asset-kit.v1.0",
   "task_id": "V-04",
   "gate_id": "H3_INDEPENDENT_ASSET_KIT",
-  "status": "STORM_READY_FOR_TEAM_DIRECTOR_REVIEW",
+  "status": "STORM_AND_HEAT_READY_FOR_TEAM_DIRECTOR_REVIEW",
   "review_sheet_layout": {"columns": 4, "rows": 2, "assets_per_weather": 8, "derived_only": true},
   "weather_assets": {
     "storm": [

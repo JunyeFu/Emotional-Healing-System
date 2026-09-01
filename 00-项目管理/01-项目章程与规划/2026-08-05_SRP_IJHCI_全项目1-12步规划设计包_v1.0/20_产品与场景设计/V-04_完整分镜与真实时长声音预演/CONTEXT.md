@@ -82,7 +82,7 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H3固定背景选择 | `PASS` | 团队总监已确认`storm=B, heat=C, snow=C, fade=C` |
 | H3三天气固定样片人工门 | `PASS` | 团队总监回复“全部确认”，十二项人工评审全部通过 |
 | H3可拆层背景重建 | `SUPERSEDED_DESIGN_EVIDENCE` | candidate-v2机器与独立复核证据保留，但不再进入Unity交接 |
-| H3独立贴纸素材 | `STORM_READY_FOR_TEAM_DIRECTOR_REVIEW` | storm八项独立RGBA素材与派生评审图已通过机器检查；确认后扩展至四天气32项独立素材 |
+| H3独立贴纸素材 | `STORM_AND_HEAT_READY_FOR_TEAM_DIRECTOR_REVIEW` | storm与heat各八项独立RGBA素材及派生评审图已通过机器检查；snow与fade尚未生成 |
 
 candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；candidate-v11媒体位于`.artifacts-local/V-04/H2/candidate-v11/`。Git保存对应配置、清单、彩色/灰度关键帧、渲染器和验证器。
 
@@ -103,4 +103,4 @@ storm、heat和snow固定镜头v2媒体分别位于`.artifacts-local/V-04/H3/<we
 
 ## 下一步
 
-由团队总监确认storm八项独立素材的画风、职责、透明边缘和自由组合可用性，再生成heat、snow和fade。四天气独立素材全部通过后进入`H3_FIXED_COMBINED_REVIEW`；此前V-04继续保持`IN_PROGRESS`且不解锁V-05。
+由团队总监确认storm与heat各八项独立素材的画风、职责、透明边缘和自由组合可用性，再生成snow和fade。四天气独立素材全部通过后进入`H3_FIXED_COMBINED_REVIEW`；此前V-04继续保持`IN_PROGRESS`且不解锁V-05。

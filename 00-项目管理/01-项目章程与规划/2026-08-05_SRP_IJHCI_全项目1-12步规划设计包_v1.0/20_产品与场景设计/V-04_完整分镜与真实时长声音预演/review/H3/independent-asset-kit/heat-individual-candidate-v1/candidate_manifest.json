@@ -1,0 +1,114 @@
+{
+  "schema_version": "srp.v04.h3.independent-asset-candidate.v1.0",
+  "weather": "heat",
+  "status": "READY_FOR_TEAM_DIRECTOR_REVIEW",
+  "asset_count": 8,
+  "assets": [
+    {
+      "asset_id": "cool_air_channel",
+      "role": "mechanism_target",
+      "path": "heat__cool_air_channel.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "sha256": "14c1141361d204ada606cd6b9c44d4015467373133e9dafd4a97112022648f30"
+    },
+    {
+      "asset_id": "cool_air_streaks_near",
+      "role": "mechanism_actual",
+      "path": "heat__cool_air_streaks_near.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        252
+      ],
+      "sha256": "11c75abfb281a21f711d062f1b862fcc4144ab3a4b658dde61e736109089bbaf"
+    },
+    {
+      "asset_id": "heat_haze_patch",
+      "role": "environment_overlay",
+      "path": "heat__heat_haze_patch.png",
+      "width": 1491,
+      "height": 1055,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "4a5fc87ea32eba90a37b93e1b647b76d4c52ac6058635339acd7f147d6ab2770"
+    },
+    {
+      "asset_id": "dust_wisp",
+      "role": "environment_overlay",
+      "path": "heat__dust_wisp.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "c8543a40dbf5003fa516b0b46ad7a033258203c7d98f6a6cec1d7f98bd630318"
+    },
+    {
+      "asset_id": "salt_crust_cluster",
+      "role": "foreground_prop",
+      "path": "heat__salt_crust_cluster.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "57ccc00b096e15e1bc329ea0e9c50c18549ec4fc4fb77d85f6053d4ee79a6965"
+    },
+    {
+      "asset_id": "desert_rock_cluster",
+      "role": "foreground_prop",
+      "path": "heat__desert_rock_cluster.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "6cbb9001be643d3787b9a89b4b21f1d934ef5b54305ad82cbd4c9ba1f8ed6425"
+    },
+    {
+      "asset_id": "shallow_channel_glint",
+      "role": "transition_accent",
+      "path": "heat__shallow_channel_glint.png",
+      "width": 2103,
+      "height": 748,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "093629c963f773d3b8ead42edc2ec606e5b44e62e560d954a3dec99149664e60"
+    },
+    {
+      "asset_id": "cooling_particles",
+      "role": "transition_accent",
+      "path": "heat__cooling_particles.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        251
+      ],
+      "sha256": "e366fc71fa7e717ead809c1bc34588d9677dfa6fd1b632f826c35b34e1861cee"
+    }
+  ],
+  "derived_review_sheet": {
+    "path": "heat-review-sheet.png",
+    "sha256": "3453a7d5ad930cea3b980458f5fb9813303c6680cb4a32624b9463d36277c572"
+  },
+  "checker_review": {
+    "path": "heat-review-checker.jpg",
+    "sha256": "8b518e04518f131e7f382ece1fe628c834fccc04d84a435b47aaed6c88add747"
+  },
+  "asset_status": "PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false
+}
