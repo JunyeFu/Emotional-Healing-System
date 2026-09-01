@@ -8,7 +8,7 @@ import time
 from typing import Any, Callable, Mapping
 
 from .config import ProtocolConfig, load_protocol_config
-from .contract_adapter import SCHEMA_VERSION, validate_message
+from .contract_adapter import SUPPORTED_SCHEMA_VERSIONS, validate_message
 from .core import SessionCore
 from .errors import SessionCoreError, TransportError
 from .models import CoreUpdate, OperatorRequest, SessionStatus
@@ -53,6 +53,7 @@ class ControlServer:
         self._delivered_event_ids: set[str] = set()
         self._delivery_updates: dict[str, CoreUpdate] = {}
         self._client_tasks: set[asyncio.Task[Any]] = set()
+        self._expected_schema_version: str | None = None
 
     @property
     def bound_port(self) -> int | None:
@@ -63,6 +64,19 @@ class ControlServer:
     @property
     def unity_connected(self) -> bool:
         return self._unity_connected.is_set()
+
+    @property
+    def schema_version(self) -> str:
+        return self._expected_schema_version or self.core.schema_version
+
+    def expect_schema_version(self, schema_version: str) -> None:
+        if schema_version not in SUPPORTED_SCHEMA_VERSIONS:
+            raise TransportError("SCHEMA_VERSION_MISMATCH")
+        self._expected_schema_version = schema_version
+
+    def clear_expected_schema_version(self) -> None:
+        if self.core.snapshot().session_id is None:
+            self._expected_schema_version = None
 
     async def start(self) -> None:
         if self._server is not None:
@@ -345,7 +359,7 @@ class ControlServer:
             raise TransportError("TRANSPORT_HANDSHAKE_INVALID")
         if payload.get("transport_version") != TRANSPORT_VERSION:
             raise TransportError("TRANSPORT_VERSION_MISMATCH")
-        if payload.get("schema_version") != SCHEMA_VERSION:
+        if payload.get("schema_version") != self.schema_version:
             raise TransportError("SCHEMA_VERSION_MISMATCH")
         role = payload.get("role")
         if role not in {"unity", "td"}:
@@ -380,7 +394,7 @@ class ControlServer:
             {
                 "transport_type": "welcome",
                 "transport_version": TRANSPORT_VERSION,
-                "schema_version": SCHEMA_VERSION,
+                "schema_version": self.schema_version,
                 "role": handshake.role,
                 "client_instance_id": handshake.client_instance_id,
                 "accepted": accepted,
@@ -398,18 +412,17 @@ class ControlServer:
         writer.write(encoded)
         await writer.drain()
 
-    @staticmethod
-    def _transport_error(code: str) -> dict[str, Any]:
+    def _transport_error(self, code: str) -> dict[str, Any]:
         return {
             "transport_type": "error",
             "transport_version": TRANSPORT_VERSION,
-            "schema_version": SCHEMA_VERSION,
+            "schema_version": self.schema_version,
             "error_code": code,
         }
 
 
 class TelemetryPublisher:
-    """Validate and mirror a complete v2.1 frame to Unity and TD at no more than 20 Hz."""
+    """Validate and mirror a complete versioned frame to Unity and TD at no more than 20 Hz."""
 
     def __init__(
         self,
@@ -444,6 +457,7 @@ class TelemetryPublisher:
         }:
             raise TransportError("TELEMETRY_SESSION_NOT_ACTIVE")
         expected = {
+            "schema_version": snapshot.schema_version,
             "session_id": snapshot.session_id,
             "module_id": snapshot.module_id,
             "module_position": snapshot.module_position,
@@ -508,8 +522,15 @@ class SessionRuntimeHost:
         now_ns: int,
     ) -> CoreUpdate:
         async with self._operation_lock:
-            await self.control_server.wait_for_unity()
-            update = self.core.prepare(manifest, assignment, now_ns)
+            if hasattr(self.control_server, "expect_schema_version"):
+                self.control_server.expect_schema_version(str(manifest.get("schema_version", "")))
+            try:
+                await self.control_server.wait_for_unity()
+                update = self.core.prepare(manifest, assignment, now_ns)
+            except Exception:
+                if hasattr(self.control_server, "clear_expected_schema_version"):
+                    self.control_server.clear_expected_schema_version()
+                raise
             return await self._deliver(update, now_ns)
 
     async def apply_operator_request(

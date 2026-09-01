@@ -149,6 +149,8 @@ def task_markdown(
             f"- push目标：`origin/{row['branch']}`",
             "- 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放",
         ]
+        if "傅钧烨" in row["reviewer"]:
+            completion.append("- 傅钧烨签收仍开放")
     else:
         completion = [
             "- 实际改动文件：",

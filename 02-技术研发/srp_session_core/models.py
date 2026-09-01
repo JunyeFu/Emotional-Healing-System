@@ -95,6 +95,7 @@ class SessionEvent:
 @dataclass(frozen=True)
 class SessionSnapshot:
     session_id: str | None
+    schema_version: str
     status: SessionStatus
     module_id: str | None
     module_position: int | None
@@ -106,9 +107,11 @@ class SessionSnapshot:
     runtime_mode: str | None
     cue_mode: str | None
     protocol_config_hash: str
+    breath_protocol_config_version: str | None
+    breath_protocol_config_hash: str | None
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        payload = {
             "session_id": self.session_id,
             "status": self.status.value,
             "module_id": self.module_id,
@@ -122,6 +125,13 @@ class SessionSnapshot:
             "cue_mode": self.cue_mode,
             "protocol_config_hash": self.protocol_config_hash,
         }
+        if self.schema_version == "2.2":
+            payload.update(
+                schema_version=self.schema_version,
+                breath_protocol_config_version=self.breath_protocol_config_version,
+                breath_protocol_config_hash=self.breath_protocol_config_hash,
+            )
+        return payload
 
 
 @dataclass(frozen=True)

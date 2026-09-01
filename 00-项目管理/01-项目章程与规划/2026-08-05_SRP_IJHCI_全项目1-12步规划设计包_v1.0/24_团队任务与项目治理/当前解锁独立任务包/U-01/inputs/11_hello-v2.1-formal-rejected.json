@@ -1,0 +1,8 @@
+{
+  "transport_type": "hello",
+  "transport_version": "1.0",
+  "role": "unity",
+  "schema_version": "2.1",
+  "client_instance_id": "unity-unmigrated-fixture",
+  "expected_error_code": "SCHEMA_VERSION_MISMATCH"
+}

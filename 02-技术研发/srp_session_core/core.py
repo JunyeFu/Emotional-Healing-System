@@ -4,7 +4,12 @@ from copy import deepcopy
 import re
 from typing import Any, Mapping
 
-from .config import ProtocolConfig, load_protocol_config
+from .config import (
+    BreathProtocolConfig,
+    ProtocolConfig,
+    load_breath_protocol_config,
+    load_protocol_config,
+)
 from .contract_adapter import SCHEMA_VERSION, validate_message
 from .errors import SessionCoreError
 from .gates import RuntimeDependencies
@@ -33,10 +38,12 @@ class SessionCore:
         self,
         *,
         config: ProtocolConfig | None = None,
+        breath_config: BreathProtocolConfig | None = None,
         dependencies: RuntimeDependencies | None = None,
         sequence_provider: SequenceProvider | None = None,
     ) -> None:
         self.config = config or load_protocol_config()
+        self.breath_config = breath_config or load_breath_protocol_config()
         self.dependencies = dependencies or RuntimeDependencies.development()
         self.sequence_provider = sequence_provider or FixedSequenceProvider()
 
@@ -196,6 +203,7 @@ class SessionCore:
         if message_type not in {"ack", "render_receipt"}:
             raise SessionCoreError("DELIVERY_MESSAGE_TYPE_INVALID", str(message_type))
         message = validate_message(str(message_type), ack_or_receipt)
+        self._require_schema_match(message)
         self._require_session_match(message)
 
         if message_type == "ack":
@@ -260,6 +268,7 @@ class SessionCore:
         manifest = self._manifest or {}
         return SessionSnapshot(
             session_id=manifest.get("session_id"),
+            schema_version=str(manifest.get("schema_version", SCHEMA_VERSION)),
             status=self._status,
             module_id=self._module_id,
             module_position=self._module_position,
@@ -271,7 +280,17 @@ class SessionCore:
             runtime_mode=manifest.get("runtime_mode"),
             cue_mode=manifest.get("cue_mode"),
             protocol_config_hash=self.config.config_hash,
+            breath_protocol_config_version=manifest.get(
+                "breath_protocol_config_version"
+            ),
+            breath_protocol_config_hash=manifest.get("breath_protocol_config_hash"),
         )
+
+    @property
+    def schema_version(self) -> str:
+        if self._manifest is None:
+            return SCHEMA_VERSION
+        return str(self._manifest["schema_version"])
 
     @property
     def control_log(self) -> tuple[Mapping[str, Any], ...]:
@@ -286,6 +305,29 @@ class SessionCore:
         return tuple(self._audit_log)
 
     def _validate_manifest_semantics(self, manifest: Mapping[str, Any]) -> None:
+        schema_version = str(manifest["schema_version"])
+        if (
+            str(manifest["runtime_mode"]).startswith("formal_")
+            and schema_version != "2.2"
+        ):
+            raise SessionCoreError("FORMAL_SCHEMA_VERSION_REQUIRED", schema_version)
+        if schema_version == "2.2":
+            if (
+                manifest["breath_protocol_config_version"]
+                != self.breath_config.breath_protocol_config_version
+            ):
+                raise SessionCoreError(
+                    "BREATH_PROTOCOL_CONFIG_VERSION_MISMATCH",
+                    str(manifest["breath_protocol_config_version"]),
+                )
+            if (
+                manifest["breath_protocol_config_hash"]
+                != self.breath_config.config_hash
+            ):
+                raise SessionCoreError(
+                    "BREATH_PROTOCOL_CONFIG_HASH_MISMATCH",
+                    str(manifest["breath_protocol_config_hash"]),
+                )
         if manifest["protocol_config_version"] != self.config.protocol_config_version:
             raise SessionCoreError(
                 "PROTOCOL_CONFIG_VERSION_MISMATCH",
@@ -636,7 +678,7 @@ class SessionCore:
             raise SessionCoreError("SESSION_NOT_PREPARED")
         self._control_seq += 1
         event = {
-            "schema_version": SCHEMA_VERSION,
+            "schema_version": self._manifest["schema_version"],
             "message_type": "control_event",
             "session_id": self._manifest["session_id"],
             "event_id": f"{self._manifest['session_id']}:control:{self._control_seq:06d}",
@@ -765,6 +807,12 @@ class SessionCore:
     def _require_session_match(self, message: Mapping[str, Any]) -> None:
         if self._manifest is None or message["session_id"] != self._manifest["session_id"]:
             raise SessionCoreError("SESSION_ID_MISMATCH")
+
+    def _require_schema_match(self, message: Mapping[str, Any]) -> None:
+        if self._manifest is None:
+            raise SessionCoreError("SESSION_NOT_PREPARED")
+        if message["schema_version"] != self._manifest["schema_version"]:
+            raise SessionCoreError("SCHEMA_VERSION_MISMATCH")
 
     def _duration_ns(self, segment: str) -> int:
         assert self._manifest is not None

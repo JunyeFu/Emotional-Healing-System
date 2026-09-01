@@ -14,9 +14,17 @@ if str(MODULE_ROOT) not in sys.path:
 
 @pytest.fixture
 def manifest_factory():
-    def build(*, session_id: str = "S-P02-0001", runtime_mode: str = "dev_replay"):
+    def build(
+        *,
+        session_id: str = "S-P02-0001",
+        runtime_mode: str = "dev_replay",
+        schema_version: str | None = None,
+    ):
+        effective_schema_version = schema_version or (
+            "2.2" if runtime_mode.startswith("formal_") else "2.1"
+        )
         manifest = {
-            "schema_version": "2.1",
+            "schema_version": effective_schema_version,
             "message_type": "session_manifest",
             "research_id": "SRP-R-0123456789abcdef0123456789abcdef",
             "session_id": session_id,
@@ -53,6 +61,16 @@ def manifest_factory():
                 "resp": {"source": "plux_respiban", "serial": "configured"},
                 "ecg": {"source": "polar_h10", "serial": "configured"},
             }
+        if effective_schema_version == "2.2":
+            from srp_session_core import load_breath_protocol_config
+
+            breath_config = load_breath_protocol_config()
+            manifest.update(
+                breath_protocol_config_version=(
+                    breath_config.breath_protocol_config_version
+                ),
+                breath_protocol_config_hash=breath_config.config_hash,
+            )
         return deepcopy(manifest)
 
     return build
@@ -70,7 +88,7 @@ def assignment_factory():
             candidates = list(remaining)
             decisions.append(
                 {
-                    "schema_version": "2.1",
+                    "schema_version": manifest["schema_version"],
                     "message_type": "policy_decision",
                     "decision_id": f"PD-P02-{position}",
                     "session_id": manifest["session_id"],

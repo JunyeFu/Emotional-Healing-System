@@ -355,6 +355,7 @@ class RecordingTelemetryPublisher:
         validated = validate_message("telemetry_frame", frame)
         snapshot = self.publisher.core.snapshot()
         expected = {
+            "schema_version": snapshot.schema_version,
             "session_id": snapshot.session_id,
             "module_id": snapshot.module_id,
             "module_position": snapshot.module_position,

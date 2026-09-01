@@ -78,6 +78,57 @@
         "02-技术研发/07-数据治理"
       ]
     },
+    "U-01": {
+      "source_files": [
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md",
+        "02-技术研发/05-通信协议/F-01_第二人审核报告_已签署.md",
+        "03-测试与实验/F-03_技术验收记录_已签署.md",
+        "03-测试与实验/F-05_第二人审核报告_已签署.md",
+        "02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md",
+        "02-技术研发/05-通信协议/contracts/README.md",
+        "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+        "02-技术研发/05-通信协议/contracts/F-05_v2.2消费者迁移指南.md",
+        "02-技术研发/05-通信协议/contracts/consumer-fixtures/v2.2/unity/hello-v2.2.json",
+        "02-技术研发/05-通信协议/contracts/consumer-fixtures/v2.2/unity/hello-v2.1-formal-rejected.json",
+        "02-技术研发/05-通信协议/contracts/consumer-fixtures/v2.2/unity/phase-instance-stream.jsonl",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Scenes/F03DevReplay.unity",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs"
+      ],
+      "working_paths": [
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual",
+        "02-技术研发/05-通信协议/contracts",
+        "02-技术研发/srp_session_core"
+      ]
+    },
+    "U-02": {
+      "source_files": [
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+        "03-测试与实验/F-03_技术验收记录_已签署.md",
+        "03-测试与实验/F-05_第二人审核报告_已签署.md",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_技术验收记录_已签署.md",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_四层视听映射合同_v1.0.json",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_四层视听映射合同_v1.0.schema.json",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_参数边界与锁定规则_v1.0.json",
+        "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+        "02-技术研发/05-通信协议/contracts/F-05_v2.2消费者迁移指南.md",
+        "02-技术研发/05-通信协议/contracts/consumer-fixtures/v2.2/unity/phase-instance-stream.jsonl",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Scenes/F03DevReplay.unity",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs"
+      ],
+      "working_paths": [
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线",
+        "02-技术研发/04-Unity视觉/SRP-Weather-Visual",
+        "02-技术研发/05-通信协议/contracts"
+      ]
+    },
     "F-04": {
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
@@ -132,32 +183,6 @@
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/07_步骤06_校内伦理路由",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA"
-      ]
-    },
-    "F-05": {
-      "source_files": [
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/13_IJHCI独立审稿攻击与升级裁定_v1.1.md",
-        "02-技术研发/05-通信协议/contracts/README.md",
-        "02-技术研发/05-通信协议/contracts/runtime-contract-v2.1.schema.json",
-        "02-技术研发/05-通信协议/contracts/fixture_hashes.sha256",
-        "02-技术研发/05-通信协议/F-01_技术验收记录.md",
-        "02-技术研发/05-通信协议/F-01_第二人审核报告_已签署.md",
-        "02-技术研发/srp_session_core/README.md",
-        "02-技术研发/srp_session_core/P-01_技术验收记录.md",
-        "02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md",
-        "02-技术研发/srp_session_core/config/protocol_config_v1.1.json",
-        "02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json",
-        "02-技术研发/srp_session_store/README.md",
-        "02-技术研发/srp_session_store/P-02_技术验收记录.md",
-        "02-技术研发/srp_session_store/P-02_第二人审核报告_已签署.md",
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/v02-scene-baseline-v1.0.json"
-      ],
-      "working_paths": [
-        "02-技术研发/05-通信协议",
-        "02-技术研发/srp_session_core",
-        "02-技术研发/srp_session_store"
       ]
     }
   }
