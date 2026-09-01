@@ -64,7 +64,7 @@ v2.2及全部正式消费者迁移经第二人签收后才允许U-01 U-02 T-01�
 ## 完成回填
 
 - 实际改动文件：见`FILES.md`列出的项目权威路径
-- 验证命令与结果：技术候选已完成；模型复核状态`PENDING_REAUDIT`
+- 验证命令与结果：技术候选已完成；模型复核状态`PASS_FOR_MODEL_INDEPENDENT_REVIEW`
 - 证据路径：`03-测试与实验/evidence/F-05/contract-tests.log`；`03-测试与实验/evidence/F-05/p01-tests.log`；`03-测试与实验/evidence/F-05/p02-tests.log`；`03-测试与实验/evidence/F-05/f05-contract-verifier.log`；`03-测试与实验/evidence/F-05/f05-verification.json`；`03-测试与实验/evidence/F-05/git-diff-check.log`；`03-测试与实验/evidence/F-05/evidence_hashes.sha256`；`03-测试与实验/evidence/F-05/evidence_manifest.json`
 - commit：`11f8119b5b660f495bfd9c20cf7a52d336f2b051`
 - push目标：`origin/codex/f-05-phase-v22`

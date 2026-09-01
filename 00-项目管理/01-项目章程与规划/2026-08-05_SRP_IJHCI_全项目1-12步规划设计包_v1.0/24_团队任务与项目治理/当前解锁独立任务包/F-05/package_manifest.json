@@ -92,8 +92,8 @@
     {
       "source_path": "03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md",
       "package_path": "inputs/15_F-05_独立Agent审核与修复记录_2026-08-31.md",
-      "sha256": "B567F2B64F299F9A24FB6368FA0DCEBB34206B9565BACA6A511F49F1D435CCAE",
-      "size_bytes": 2862
+      "sha256": "209CBCBF0F9980C23E58D914568B4A7E282540FA8207E2C0639A037480FC0946",
+      "size_bytes": 3373
     },
     {
       "source_path": "03-测试与实验/evidence/F-05/contract-tests.log",

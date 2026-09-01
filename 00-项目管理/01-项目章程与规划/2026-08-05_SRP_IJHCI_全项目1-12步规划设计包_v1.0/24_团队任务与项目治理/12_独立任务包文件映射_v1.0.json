@@ -80,7 +80,7 @@
     },
     "F-05": {
       "implementation_commit": "11f8119b5b660f495bfd9c20cf7a52d336f2b051",
-      "model_review_status": "PENDING_REAUDIT",
+      "model_review_status": "PASS_FOR_MODEL_INDEPENDENT_REVIEW",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
         "02-技术研发/05-通信协议/runtime_contract_v22.py",

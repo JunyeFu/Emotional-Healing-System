@@ -1220,3 +1220,9 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - Implementation commit: `11f8119b5b660f495bfd9c20cf7a52d336f2b051`.
 - Clean detached `all`: contract 87, P-01 115, P-02 70, specialist verifier PASS.
 - Candidate remains `IN_REVIEW`; independent re-audit and 傅钧烨 signoff are separate open gates.
+
+## F-05 independent re-audit result
+
+- Independent read-only audit of candidate `3549e77` returned PASS for AC1, AC2, AC3, and governance.
+- Model review status is now `PASS_FOR_MODEL_INDEPENDENT_REVIEW`.
+- F-05 remains `IN_REVIEW`; 傅钧烨 signoff is the next hard gate.
