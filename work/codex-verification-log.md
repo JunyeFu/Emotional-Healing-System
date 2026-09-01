@@ -1228,3 +1228,19 @@
 | Project Regression | 冻结Python 3.14.4：`412 passed in 40.14s`。 |
 | State | V-04保持`IN_PROGRESS`；当前硬门=`H3_PENDING_TEAM_DIRECTOR_CONFIRMATION`。 |
 | Evidence Boundary | 当前只关闭H3候选机器门和独立复审；不表示Unity运行、Windows制品、资产许可放行、真实设备链或研究结果完成。 |
+
+### 2026-09-01 F-05 integration closure
+
+| Check | Result |
+|---|---|
+| Isolation | `D:\Agent\03-SRP-f05-integration`；原V-04脏工作区未写入。 |
+| Signed History | F-03 `c358a35`、F-04 `43a63a1`、F-05 `dc83d9d`均为当前HEAD祖先；无rebase或squash。 |
+| Owned Tree Identity | F-03、F-04、F-05专属实现与证据路径相对各自签署提交均为零差异。 |
+| F-05 Contract | `87 passed in 2.32s`。 |
+| F-05 Session Core | `115 passed in 0.70s`。 |
+| F-05 Session Store | `70 passed in 5.29s`。 |
+| F-05 Verifier | `PASS`；`v21_unchanged=true`、`schema_rebuild=true`、22个fixture哈希、5帧消费者流。 |
+| Integration Regression | 首轮`469 passed / 1 failed`，定位为`IN_REVIEW`第二人签收默认勾选；最小修复后`470 passed in 29.37s`。 |
+| Governance | 57项注册表通过；`DONE=F-03/F-04/F-05`，`READY=T-01/U-01/U-02`，`IN_REVIEW=G-01/G-02`。 |
+| Packages | `PASS`；5包、128份快照，集合=`G-01,G-02,T-01,U-01,U-02`。 |
+| Evidence Boundary | 不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。 |

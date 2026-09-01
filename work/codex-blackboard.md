@@ -1240,3 +1240,14 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 十个V-04验证器、协议权威、57项任务注册表、5个独立包/132份快照和根回归`412 passed in 40.14s`均通过。
 - V-04保持`IN_PROGRESS`；当前硬门为`H3_PENDING_TEAM_DIRECTOR_CONFIRMATION`。团队总监确认H3-1至H3-5前不解锁V-05。
 - 当前证据只关闭H3机器门和独立复审，不表示Unity运行、Windows制品、资产许可放行或真实设备链完成。
+
+### 2026-09-01 F-05签署分支集成收口
+
+- 在独立工作树`D:\Agent\03-SRP-f05-integration`与分支`codex/f-05-integration`工作，原`codex/v-04-animatic`脏工作区未被修改。
+- 以`--no-ff`依次接入F-03 `c358a35`、F-04 `43a63a1`、F-05 `dc83d9d`；三个签署提交均为当前HEAD祖先，专属实现与证据树逐文件一致。
+- F-03、F-04、F-05统一为`DONE`；G-01、G-02保持`IN_REVIEW`；U-01、U-02、T-01解锁为`READY`；U-07保持`WAIT_DEP`；V-04保持`IN_PROGRESS`。
+- 当前分发集合为`G-01,G-02,T-01,U-01,U-02`；任务注册表57项通过，独立包5个、128份快照通过。
+- 集成回归暴露并关闭任务包渲染器缺陷：`IN_REVIEW`的第二人签收不得默认勾选，同时保留显式`evidence_results`。
+- F-05专项结果：合同`87 passed`、会话核心`115 passed`、记录回放`70 passed`；v2.2复算确认v2.1未漂移、schema可重建、22个fixture哈希与5帧消费者流一致。
+- 全项目回归`470 passed`。下一队列为最终差异审计、提交并推送`codex/f-05-integration`。
+- 证据边界：本次只关闭F-05 v2.2合同与消费者迁移的集成治理门，不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。

@@ -7,15 +7,15 @@
 <text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>
 <text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">状态快照 · 2026-09-01 · F-05 已由傅钧烨签署 PASS / DONE</text>
 <rect x="70" y="132" width="114" height="38" rx="19" fill="#dcfce7" stroke="#166534"/>
-<text x="127.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#166534">DONE 11</text>
+<text x="127.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#166534">DONE 12</text>
 <rect x="198" y="132" width="114" height="38" rx="19" fill="#dbeafe" stroke="#1d4ed8"/>
-<text x="255.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#1d4ed8">READY 2</text>
+<text x="255.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#1d4ed8">READY 3</text>
 <rect x="326" y="132" width="186" height="38" rx="19" fill="#ffedd5" stroke="#9a3412"/>
 <text x="419.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#9a3412">IN_PROGRESS 1</text>
 <rect x="526" y="132" width="162" height="38" rx="19" fill="#f3e8ff" stroke="#6b21a8"/>
-<text x="607.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#6b21a8">IN_REVIEW 3</text>
+<text x="607.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#6b21a8">IN_REVIEW 2</text>
 <rect x="702" y="132" width="162" height="38" rx="19" fill="#f1f5f9" stroke="#475569"/>
-<text x="783.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#475569">WAIT_DEP 23</text>
+<text x="783.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#475569">WAIT_DEP 22</text>
 <rect x="878" y="132" width="258" height="38" rx="19" fill="#ffe4e6" stroke="#9f1239"/>
 <text x="1007.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#9f1239">WAIT_DEP_EXTERNAL 4</text>
 <rect x="1150" y="132" width="258" height="38" rx="19" fill="#fee2e2" stroke="#991b1b"/>
@@ -199,12 +199,12 @@
 <text x="94" y="767" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">可复现工程与测试构建基线</text>
 <text x="94" y="795" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：Unity · 3人日</text>
 <text x="94" y="819" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：起点任务</text></g>
-<g filter="url(#shadow)"><rect x="70" y="858" width="500" height="138" rx="13" fill="white" stroke="#6b21a8" stroke-width="3"/>
+<g filter="url(#shadow)"><rect x="70" y="858" width="500" height="138" rx="13" fill="white" stroke="#166534" stroke-width="3"/>
 <rect x="70" y="858" width="12" height="138" rx="6" fill="#ccfbf1"/>
 <rect x="92" y="874" width="76" height="30" rx="8" fill="#ccfbf1"/>
 <text x="130" y="895" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">F-04</text>
-<rect x="396" y="874" width="156" height="30" rx="15" fill="#f3e8ff" stroke="#6b21a8"/>
-<text x="474" y="895" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#6b21a8">IN_REVIEW</text>
+<rect x="396" y="874" width="156" height="30" rx="15" fill="#dcfce7" stroke="#166534"/>
+<text x="474" y="895" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#166534">DONE</text>
 <text x="94" y="933" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">只读操作台壳</text>
 <text x="94" y="961" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：TouchDesigner · 2人日</text>
 <text x="94" y="985" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：起点任务</text></g>
@@ -271,12 +271,12 @@
 <text x="628" y="1431" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">四层SceneAdapter实现与降级</text>
 <text x="628" y="1459" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：Unity · 3人日</text>
 <text x="628" y="1483" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：F-03 · F-05 · V-03</text></g>
-<g filter="url(#shadow)"><rect x="604" y="1522" width="500" height="138" rx="13" fill="white" stroke="#475569" stroke-width="3" stroke-dasharray="8 6"/>
+<g filter="url(#shadow)"><rect x="604" y="1522" width="500" height="138" rx="13" fill="white" stroke="#1d4ed8" stroke-width="3"/>
 <rect x="604" y="1522" width="12" height="138" rx="6" fill="#ccfbf1"/>
 <rect x="626" y="1538" width="76" height="30" rx="8" fill="#ccfbf1"/>
 <text x="664" y="1559" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">T-01</text>
-<rect x="930" y="1538" width="156" height="30" rx="15" fill="#f1f5f9" stroke="#475569"/>
-<text x="1008" y="1559" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#475569">WAIT_DEP</text>
+<rect x="930" y="1538" width="156" height="30" rx="15" fill="#dbeafe" stroke="#1d4ed8"/>
+<text x="1008" y="1559" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">READY</text>
 <text x="628" y="1597" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">遥测设备质量与时钟面板</text>
 <text x="628" y="1625" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：TouchDesigner · 3人日</text>
 <text x="628" y="1649" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：F-01 · F-04 · F-05</text></g>

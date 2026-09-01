@@ -54,6 +54,19 @@ def render_checklist(items: list[str], results: object, default_checked: bool) -
     return lines
 
 
+def render_evidence_checklist(
+    items: list[str], results: object, status: str
+) -> list[str]:
+    if results is not None:
+        return render_checklist(items, results, status == "IN_REVIEW")
+    if status == "IN_REVIEW":
+        return [
+            f"- [{' ' if '第二人签收报告' in item else 'x'}] {item}"
+            for item in items
+        ]
+    return render_checklist(items, None, False)
+
+
 def safe_source(relative: str) -> pathlib.Path:
     path = (PROJECT_ROOT / relative).resolve()
     if PROJECT_ROOT not in path.parents or not path.is_file():
@@ -126,10 +139,10 @@ def task_markdown(
     )
     lines.extend(["", "## 必需证据", ""])
     lines.extend(
-        render_checklist(
+        render_evidence_checklist(
             split_items(row["evidence_required"]),
             task_map.get("evidence_results"),
-            row["status"] == "IN_REVIEW",
+            row["status"],
         )
     )
     if row["status"] == "IN_REVIEW":
