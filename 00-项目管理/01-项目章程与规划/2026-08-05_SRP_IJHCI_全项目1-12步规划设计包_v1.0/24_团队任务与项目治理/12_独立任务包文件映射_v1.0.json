@@ -78,24 +78,6 @@
         "02-技术研发/07-数据治理"
       ]
     },
-    "F-03": {
-      "source_files": [
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md",
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/00_参与者产品总规格.md",
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/08_Unity构建矩阵.csv",
-        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json",
-        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json",
-        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
-        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
-        "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_license_ledger.json",
-        "PROJECT_MODULES.md"
-      ],
-      "working_paths": [
-        "02-技术研发/04-Unity视觉/SRP-Weather-Visual"
-      ]
-    },
     "F-04": {
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",

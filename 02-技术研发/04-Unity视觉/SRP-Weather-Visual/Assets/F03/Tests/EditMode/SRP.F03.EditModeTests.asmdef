@@ -1,0 +1,14 @@
+{
+  "name": "SRP.F03.EditModeTests",
+  "rootNamespace": "SRP.F03.Tests",
+  "references": [
+    "SRP.F03.Runtime",
+    "SRP.F03.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
