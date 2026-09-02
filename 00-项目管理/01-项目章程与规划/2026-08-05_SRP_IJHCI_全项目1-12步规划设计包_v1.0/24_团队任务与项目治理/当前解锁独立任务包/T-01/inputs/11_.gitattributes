@@ -1,7 +1,0 @@
-.gitattributes text eol=lf
-evidence/host/*.json -text
-evidence/touchdesigner/video/*.ffconcat -text
-*.toe binary
-*.tox binary
-*.png binary
-*.mp4 binary

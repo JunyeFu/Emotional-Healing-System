@@ -1306,3 +1306,27 @@
 | Runtime Reproduction | 真实发布器`LIVE`；lost/duplicate/out-of-order均复现；>2秒`DISCONNECTED`；恢复`LIVE`且reconnect累计。 |
 | Cleanup | TD与发送器关闭；UDP 5005释放；审计树洁净。 |
 | Next Gate | 傅钧烨对精确候选完成真实第二人签收；此前T-01=`IN_REVIEW`、T-02=`WAIT_DEP`。 |
+
+### 2026-09-02 T-01 exact-candidate signoff
+
+| Check | Result |
+|---|---|
+| Signed Candidate | `8790cd3ae4db3543c038efc21deec635605cb06f`。 |
+| Signatory | 傅钧烨（团队总监、独立第二人复核人）明确确认`PASS / DONE`。 |
+| Independent Review | 候选已由独立Agent在洁净detached工作树完整复核为`PASS`，P0-P3均无。 |
+| State Transition | T-01 `IN_REVIEW -> DONE`；T-02 `WAIT_DEP -> READY`。 |
+| Invalidation Rule | 候选代码、合同适配、fixture或`.toe/.tox`发生实质变化时，复核与签收立即失效。 |
+| Boundary | 不覆盖真实设备、Unity联合运行、T-02请求实现、正式构建、科学有效性或`LIVE_E2E`。 |
+
+### 2026-09-02 T-01 closure verification
+
+| Check | Result |
+|---|---|
+| Governance | 57项注册表通过；T-01=`DONE`；T-02、U-01、U-02=`READY`；G-01、G-02=`IN_REVIEW`。 |
+| Dispatch Packages | `G-01,G-02,T-02,U-01,U-02`；5个独立包、122份快照通过。 |
+| Focused Tests | T-01 `17 passed`；F-04 `21 passed`；合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`。 |
+| F-05 Verification | `PASS`；v2.1未漂移、schema可重建、22个fixture哈希、5帧消费者流。 |
+| Full Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q`，结果`470 passed in 20.69s`，未安装依赖。 |
+| Signed Trees | `8790cd3`为HEAD祖先；T-01实现树相对候选零差异；F-04目录相对`43a63a1`零差异。 |
+| Evidence And Port | T-01证据清单23项bytes/SHA-256全部匹配；UDP 5005无监听。 |
+| Diff Gate | `git diff --check`无空白错误；仅报告仓库既有Windows换行转换提示。 |
