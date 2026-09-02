@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H3-STORM-HEAT-SNOW-INDEPENDENT-ASSET-HUMAN-REVIEW-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INDEPENDENT_ASSET_KIT",
+  "reviewer": "傅钧烨",
+  "reviewer_role": "团队总监",
+  "decision": "PASS",
+  "decision_source": "direct task message: 确认 storm、heat、snow 三组独立素材",
+  "decided_at": "2026-09-02T15:03:29+08:00",
+  "review_inputs": {
+    "storm": {
+      "candidate_id": "storm-individual-candidate-v1",
+      "reviewed_commit": "860747c86393779b9b3cb30d0562347bbd6a1c8c",
+      "candidate_manifest_sha256": "6f2d54daa7f7a88193258fc1e8d8891157726804936f1bdaffc064f30d4eb2d7",
+      "checker_review_sha256": "bd804613826f0d0165c9d08338a80d1f5d1bb4598919199d173a88a5a78f07b8"
+    },
+    "heat": {
+      "candidate_id": "heat-individual-candidate-v1",
+      "reviewed_commit": "37711cc6cd13b0b23c7f8c3c4678b11acaf43238",
+      "candidate_manifest_sha256": "a759447854a679278b345c2f8d36823ce1644c1116c353f469f41024bda5b2f6",
+      "checker_review_sha256": "8b518e04518f131e7f382ece1fe628c834fccc04d84a435b47aaed6c88add747"
+    },
+    "snow": {
+      "candidate_id": "snow-individual-candidate-v1",
+      "reviewed_commit": "67f4747bd725439948003b67a1b3ddf7f0f214db",
+      "candidate_manifest_sha256": "f0108b4a91636d34b6d9b3fb83d7022a4e423493e17d03eb92860e897c71d01e",
+      "checker_review_sha256": "5cbdcd7a7d4d71e071d489fc0a166387b69632980caffb95738889bbe46c7947"
+    }
+  },
+  "results": {
+    "storm": "PASS",
+    "heat": "PASS",
+    "snow": "PASS",
+    "style_match": "PASS",
+    "asset_independence": "PASS",
+    "role_separation": "PASS",
+    "transparent_edge_quality": "PASS",
+    "free_composition": "PASS"
+  },
+  "gate_result": {
+    "H3_INDEPENDENT_ASSET_KIT": "PASS_HUMAN",
+    "next_gate": "H3_FIXED_COMBINED_REVIEW"
+  },
+  "does_not_approve": [
+    "H3 fixed combined review",
+    "V-04 completion",
+    "Unity import",
+    "Unity runtime",
+    "formal build",
+    "asset license release",
+    "real device chain"
+  ]
+}
