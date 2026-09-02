@@ -12,6 +12,7 @@
 | 可拆层背景重建候选 | `V-04_H3_可拆层背景重建合同_v1.0.md`、`V-04_H3_可拆层背景重建候选清单_v1.0.json`、`V-04_H3_fade_v4真实感重建提示词_v1.0.md`、`V-04_H3_fade_v5选定版提示词与来源记录_v1.0.md`、`validate_v04_h3_layerable_background_rebuild.py` |
 | H3透明分层导出 | `V-04_H3_透明分层交付合同_v1.0.md`、`V-04_H3_透明分层配方_v1.0.json`、`V-04_H3_透明分层候选清单_v1.0.json`、`V-04_H3_透明分层机器验收记录_v1.0.md`、`V-04_H3_透明分层独立Agent复核记录_v1.0.md`、`V-04_H3_透明分层人工评审说明_v1.0.md`、`build_v04_h3_layer_exports.py`、`validate_v04_h3_layer_exports.py` |
 | H3当前独立贴纸素材 | `V-04_H3_AI独立贴纸素材合同_v1.0.md`、`V-04_H3_AI独立贴纸素材清单_v1.0.json`、`V-04_H3_AI独立贴纸生图提示词_v1.0.md` |
+| H3 fade独立素材人工结论 | `V-04_H3_fade独立素材人工评审记录_v1.0.json`、`V-04_H3_fade独立素材人工评审结论_v1.0.md` |
 | 历史固定镜头四联预览 | `V-04_H3_固定镜头高精度背景生图提示词_v1.0.md`、`V-04_H3_固定镜头背景预览候选清单_v1.0.json` |
 | 固定镜头预览验证 | `V-04_H3_固定镜头背景预览验证记录_v1.0.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |
@@ -82,7 +83,7 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H3固定背景选择 | `PASS` | 团队总监已确认`storm=B, heat=C, snow=C, fade=C` |
 | H3三天气固定样片人工门 | `PASS` | 团队总监回复“全部确认”，十二项人工评审全部通过 |
 | H3可拆层背景重建 | `SUPERSEDED_DESIGN_EVIDENCE` | candidate-v2机器与独立复核证据保留，但不再进入Unity交接 |
-| H3独立贴纸素材 | `ALL_WEATHERS_READY_FOR_TEAM_DIRECTOR_REVIEW` | storm、heat、snow与fade各八项独立RGBA素材及派生评审图已通过机器检查，等待团队总监人工确认 |
+| H3独立贴纸素材 | `FADE_PASS_HUMAN_STORM_HEAT_SNOW_PENDING` | 四天气各八项独立RGBA素材及派生评审图已通过机器检查；fade已获团队总监人工确认，storm、heat与snow仍待确认 |
 
 candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；candidate-v11媒体位于`.artifacts-local/V-04/H2/candidate-v11/`。Git保存对应配置、清单、彩色/灰度关键帧、渲染器和验证器。
 
@@ -103,4 +104,4 @@ storm、heat和snow固定镜头v2媒体分别位于`.artifacts-local/V-04/H3/<we
 
 ## 下一步
 
-由团队总监确认四种天气各八项独立素材的画风、职责、透明边缘和自由组合可用性。四天气独立素材全部获得人工确认后进入`H3_FIXED_COMBINED_REVIEW`；此前V-04继续保持`IN_PROGRESS`且不解锁V-05。
+由团队总监继续确认storm、heat与snow各八项独立素材的画风、职责、透明边缘和自由组合可用性。四天气独立素材全部获得人工确认后进入`H3_FIXED_COMBINED_REVIEW`；此前V-04继续保持`IN_PROGRESS`且不解锁V-05。

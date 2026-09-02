@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "record_id": "SRP-V04-H3-FADE-INDEPENDENT-ASSET-HUMAN-REVIEW-v1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_INDEPENDENT_ASSET_KIT",
+  "candidate_id": "fade-individual-candidate-v1",
+  "technical_id": "fade",
+  "reviewer": "傅钧烨",
+  "reviewer_role": "团队总监",
+  "decision": "PASS",
+  "decision_source": "direct task message: 确认",
+  "decided_at": "2026-09-02T13:31:23+08:00",
+  "reviewed_commit": "3ea28a129ff9f709dc5977b5e878076b56d6090f",
+  "review_inputs": {
+    "candidate_manifest": {
+      "file": "review/H3/independent-asset-kit/fade-individual-candidate-v1/candidate_manifest.json",
+      "sha256": "4cacd758d383d315eb7f40f4f167adc6c707e8eb7162f7469a04f91a174b6d67"
+    },
+    "machine_acceptance": {
+      "file": "V-04_H3_fade独立素材机器验收记录_v1.0.md"
+    },
+    "checker_review": {
+      "file": "review/H3/independent-asset-kit/fade-individual-candidate-v1/fade-review-checker.jpg",
+      "sha256": "42d7933b88ccff387560cf3b2fdc1fe700f17fbde1695fd02aecf4b5dbf3a94b"
+    }
+  },
+  "results": {
+    "style_match": "PASS",
+    "asset_independence": "PASS",
+    "target_actual_separation": "PASS",
+    "transparent_edge_quality": "PASS",
+    "free_composition": "PASS",
+    "no_forced_layout": "PASS",
+    "color_recovery_boundary": "PASS"
+  },
+  "scope": "fade-individual-candidate-v1 eight independent transparent assets and derived checker review",
+  "next_gate": {
+    "gate_id": "H3_INDEPENDENT_ASSET_KIT",
+    "status": "IN_PROGRESS",
+    "pending_weather": ["storm", "heat", "snow"]
+  },
+  "does_not_approve": [
+    "storm independent assets",
+    "heat independent assets",
+    "snow independent assets",
+    "H3 fixed combined review",
+    "V-04 completion",
+    "Unity import",
+    "Unity runtime",
+    "formal build",
+    "asset license release",
+    "real device chain"
+  ]
+}
