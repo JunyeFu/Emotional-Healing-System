@@ -14,7 +14,7 @@
 | H3当前独立贴纸素材 | `V-04_H3_AI独立贴纸素材合同_v1.0.md`、`V-04_H3_AI独立贴纸素材清单_v1.0.json`、`V-04_H3_AI独立贴纸生图提示词_v1.0.md` |
 | H3 fade独立素材人工结论 | `V-04_H3_fade独立素材人工评审记录_v1.0.json`、`V-04_H3_fade独立素材人工评审结论_v1.0.md` |
 | H3三天气独立素材人工结论 | `V-04_H3_storm_heat_snow独立素材人工评审记录_v1.0.json`、`V-04_H3_storm_heat_snow独立素材人工评审结论_v1.0.md` |
-| H3固定镜头合并评审 | `V-04_H3固定镜头合并评审配置_v1.0.json`、`render_h3_fixed_combined_review.py`、`validate_v04_h3_fixed_combined_review.py`、`V-04_H3固定镜头合并评审候选清单_v1.0.json`、`V-04_H3固定镜头合并评审机器验收记录_v1.0.json`、`V-04_H3固定镜头合并评审说明_v1.0.md`、`review/H3/fixed-combined-review-candidate-v1/keyframes.jpg` |
+| H3固定镜头合并评审 | `V-04_H3固定镜头合并评审配置_v1.0.json`、`render_h3_fixed_combined_review.py`、`validate_v04_h3_fixed_combined_review.py`、`V-04_H3固定镜头合并评审候选清单_v1.0.json`、`V-04_H3固定镜头合并评审机器验收记录_v1.0.json`、`V-04_H3固定镜头合并评审说明_v1.0.md`、`V-04_H3固定镜头合并评审人工评审记录_v1.0.json`、`V-04_H3固定镜头合并评审人工评审结论_v1.0.md`、`review/H3/fixed-combined-review-candidate-v1/keyframes.jpg` |
 | 历史固定镜头四联预览 | `V-04_H3_固定镜头高精度背景生图提示词_v1.0.md`、`V-04_H3_固定镜头背景预览候选清单_v1.0.json` |
 | 固定镜头预览验证 | `V-04_H3_固定镜头背景预览验证记录_v1.0.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |
@@ -86,7 +86,7 @@ V-04负责在Unity制作前冻结四个天气的核心视觉机制、两种呼�
 | H3三天气固定样片人工门 | `PASS` | 团队总监回复“全部确认”，十二项人工评审全部通过 |
 | H3可拆层背景重建 | `SUPERSEDED_DESIGN_EVIDENCE` | candidate-v2机器与独立复核证据保留，但不再进入Unity交接 |
 | H3独立贴纸素材 | `PASS_HUMAN` | 四天气各八项独立RGBA素材及派生评审图已通过机器检查和团队总监人工确认 |
-| H3固定镜头合并评审 | `PASS_MACHINE_READY_FOR_TEAM_DIRECTOR_REVIEW` | 68秒候选、四段固定镜头、32项素材、双条件与共同过渡段通过机器门；旧滚动版证据不作为当前通过依据 |
+| H3固定镜头合并评审 | `PASS_HUMAN` | 68秒候选先通过机器门，团队总监随后确认九项人工评审全部通过；旧滚动版证据不作为当前通过依据 |
 
 candidate-v8和v9媒体继续位于各自Git忽略目录并作为历史证据。candidate-v10媒体位于`.artifacts-local/V-04/H2/candidate-v10/`；candidate-v11媒体位于`.artifacts-local/V-04/H2/candidate-v11/`。Git保存对应配置、清单、彩色/灰度关键帧、渲染器和验证器。
 
@@ -107,4 +107,4 @@ storm、heat和snow固定镜头v2媒体分别位于`.artifacts-local/V-04/H3/<we
 
 ## 下一步
 
-团队总监观看固定镜头合并候选，并按九项人工评审清单确认固定镜头、核心机制、目标与实际分离、抽象提示纯度、条件一致性、fade整屏复色、素材融合、共同过渡段和画面完整性。V-04继续保持`IN_PROGRESS`且不解锁V-05。
+V-04设计交付已完成。V-05等待F-03可复现Unity工程基线、U-02四层SceneAdapter及注册依赖满足后再进入全旅程灰盒，不由H3单独放行。
