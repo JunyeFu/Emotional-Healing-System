@@ -1,0 +1,114 @@
+{
+  "schema_version": "srp.v04.h3.independent-asset-candidate.v1.0",
+  "weather": "snow",
+  "status": "READY_FOR_TEAM_DIRECTOR_REVIEW",
+  "asset_count": 8,
+  "assets": [
+    {
+      "asset_id": "powder_lift_column",
+      "role": "mechanism_target",
+      "path": "snow__powder_lift_column.png",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "54e50b31daa9680582ef603b99921ed2c90d0e62b568ad00fe186349ccc115d0"
+    },
+    {
+      "asset_id": "powder_response_near",
+      "role": "mechanism_actual",
+      "path": "snow__powder_response_near.png",
+      "width": 1548,
+      "height": 1016,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "7bbf08eb6d541dc37defb7be5d6300d5a70257f228c10f89ef6d868d02f6be8a"
+    },
+    {
+      "asset_id": "snow_mist_patch",
+      "role": "environment_overlay",
+      "path": "snow__snow_mist_patch.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "a4eb995248d9e5e1e3af774fa679a4ca05e8e8ab3e3216ff63e3446b5ccf0c5b"
+    },
+    {
+      "asset_id": "drifting_snow_ribbon",
+      "role": "environment_overlay",
+      "path": "snow__drifting_snow_ribbon.png",
+      "width": 2172,
+      "height": 724,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "sha256": "b800aef87c66aea4fe1652c4264be4fc2270982d8e028a0ecf8a007ea4ac50b9"
+    },
+    {
+      "asset_id": "snowy_pine_branch",
+      "role": "foreground_prop",
+      "path": "snow__snowy_pine_branch.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "0c6f7bb68b2e024d5506c108dafe0fedb3cd198e76c16bf9b7710d3dc44ee26f"
+    },
+    {
+      "asset_id": "snow_rock_cluster",
+      "role": "foreground_prop",
+      "path": "snow__snow_rock_cluster.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "1f5b8c2a584355fe3589ba29def0f4458c7ca267e3f0fdb1819720fb4288a64c"
+    },
+    {
+      "asset_id": "falling_powder_cluster",
+      "role": "transition_accent",
+      "path": "snow__falling_powder_cluster.png",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "d19adf1092880481ac820d823a340f62f4c34e47c3256f328341f34ad0c413aa"
+    },
+    {
+      "asset_id": "settling_powder_cluster",
+      "role": "transition_accent",
+      "path": "snow__settling_powder_cluster.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "95e6cff4df1d8bf962619e8f6ad6778ee3b7f865619170f421797bce0bcad76a"
+    }
+  ],
+  "derived_review_sheet": {
+    "path": "snow-review-sheet.png",
+    "sha256": "17b7be9544d794d9dc6520c7f5855038c34af033fc12e4144f68997eab47917b"
+  },
+  "checker_review": {
+    "path": "snow-review-checker.jpg",
+    "sha256": "5cbdcd7a7d4d71e071d489fc0a166387b69632980caffb95738889bbe46c7947"
+  },
+  "asset_status": "PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false
+}
