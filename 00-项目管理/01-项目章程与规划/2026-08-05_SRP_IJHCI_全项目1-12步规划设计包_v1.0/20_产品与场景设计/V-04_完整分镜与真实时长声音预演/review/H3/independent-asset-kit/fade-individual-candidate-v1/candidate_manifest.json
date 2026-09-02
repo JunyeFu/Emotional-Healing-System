@@ -1,0 +1,114 @@
+{
+  "schema_version": "srp.v04.h3.independent-asset-candidate.v1.0",
+  "weather": "fade",
+  "status": "READY_FOR_TEAM_DIRECTOR_REVIEW",
+  "asset_count": 8,
+  "assets": [
+    {
+      "asset_id": "color_tide_ribbon",
+      "role": "mechanism_target",
+      "path": "fade__color_tide_ribbon.png",
+      "width": 2091,
+      "height": 752,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "40485fa2f6ffb132f7aaf71f481a26c763cb0177892a08d7713087f4aca9c362"
+    },
+    {
+      "asset_id": "actual_reflection_trace",
+      "role": "mechanism_actual",
+      "path": "fade__actual_reflection_trace.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "b42bb6fb56f496266384128203930da72d55e0248df68c7e7101a08f5327294e"
+    },
+    {
+      "asset_id": "water_ripple_patch",
+      "role": "environment_overlay",
+      "path": "fade__water_ripple_patch.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "219a52556d5984d21b7a822f2332291c2023177796ec3ffcde58e3b7c01816f1"
+    },
+    {
+      "asset_id": "soft_reflection_patch",
+      "role": "environment_overlay",
+      "path": "fade__soft_reflection_patch.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "sha256": "e8d0244cb5cbeb421dc88854e34fc1e5c68ea878383996ba9eb1943f2dafb1cb"
+    },
+    {
+      "asset_id": "riverbank_grass_cluster",
+      "role": "foreground_prop",
+      "path": "fade__riverbank_grass_cluster.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "82de2d6add4fabdada099d06b4acc49007a4e1d7ee4962b079d99949763d0e5d"
+    },
+    {
+      "asset_id": "wet_pebble_cluster",
+      "role": "foreground_prop",
+      "path": "fade__wet_pebble_cluster.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "e555bf452f686a86707782bcf29b232969a88b69d481f51254560c1afc814054"
+    },
+    {
+      "asset_id": "color_bloom_patch",
+      "role": "transition_accent",
+      "path": "fade__color_bloom_patch.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "sha256": "897e630e14177d12843fe2f411bd0164d18aff90f8081fb98b64ff0a26d2cb87"
+    },
+    {
+      "asset_id": "tributary_glint",
+      "role": "transition_accent",
+      "path": "fade__tributary_glint.png",
+      "width": 1672,
+      "height": 941,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "sha256": "9ded381409921f68737109c69825b6770778d15bc23d1a257919ba7d305dd26a"
+    }
+  ],
+  "derived_review_sheet": {
+    "path": "fade-review-sheet.png",
+    "sha256": "f596754cc2dbae6a45461da1b1b52eab5ee9496e17b044bb86c2f3b603f7b875"
+  },
+  "checker_review": {
+    "path": "fade-review-checker.jpg",
+    "sha256": "42d7933b88ccff387560cf3b2fdc1fe700f17fbde1695fd02aecf4b5dbf3a94b"
+  },
+  "asset_status": "PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false
+}
