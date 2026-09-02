@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "gate_id": "H3_FIXED_COMBINED_REVIEW",
+  "candidate_id": "h3-fixed-combined-review-candidate-v1",
+  "review_order_is_runtime_sequence": false,
+  "timeline": {
+    "intro_duration_s": 3.0,
+    "weather_duration_s": 12.0,
+    "corridor_duration_s": 12.0,
+    "outro_duration_s": 5.0,
+    "expected_duration_s": 68.0
+  },
+  "render": {
+    "participant_width": 1920,
+    "participant_height": 1080,
+    "review_width": 3840,
+    "review_height": 1200,
+    "source_fps": 15,
+    "output_fps": 30
+  },
+  "weather": {
+    "storm": {
+      "background": ".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png",
+      "background_sha256": "9cc6689d560862bc9110bcb4b16dde7dce1395b9c8d6362acf29b2e5d3f23e53",
+      "asset_root": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1",
+      "asset_manifest": "review/H3/independent-asset-kit/storm-individual-candidate-v1/candidate_manifest.json",
+      "audio": ".artifacts-local/V-04/H3/storm-candidate-v2/storm-H3-v2-ambient.wav",
+      "audio_sha256": "0851ee827c8a63f2cc9c6cf30f7f96b5509b45e1d9247e23e167b08e747f3080",
+      "breath_pattern": "3-3-3-3"
+    },
+    "heat": {
+      "background": ".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png",
+      "background_sha256": "679a6c3d9a8f98c08616af8f88a5f0511eddb058c079c6d9011df549d879b7d4",
+      "asset_root": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1",
+      "asset_manifest": "review/H3/independent-asset-kit/heat-individual-candidate-v1/candidate_manifest.json",
+      "audio": ".artifacts-local/V-04/H3/heat-candidate-v2/heat-H3-v2-ambient.wav",
+      "audio_sha256": "ea7501c5a57cfd333886e0899bd5942b73452b27b8c4eb27b013a67a43ee830b",
+      "breath_pattern": "4-6"
+    },
+    "snow": {
+      "background": ".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-snow.png",
+      "background_sha256": "85830276219c092f1cfea5d3817cf3c7f6c40e38a004e97ea560e3899c1d965d",
+      "asset_root": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1",
+      "asset_manifest": "review/H3/independent-asset-kit/snow-individual-candidate-v1/candidate_manifest.json",
+      "audio": ".artifacts-local/V-04/H3/snow-candidate-v2/snow-H3-v2-ambient.wav",
+      "audio_sha256": "73480deaa11ae9274614d22aaddc67433a336705bae2be12f80830f964e59ec8",
+      "breath_pattern": "5-5"
+    },
+    "fade": {
+      "background": ".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-fade.png",
+      "background_sha256": "837efa74eebda22b885141e7d201f3f56208612e9a574f68b840242df3febbbb",
+      "asset_root": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1",
+      "asset_manifest": "review/H3/independent-asset-kit/fade-individual-candidate-v1/candidate_manifest.json",
+      "audio": ".artifacts-local/V-04/H2/candidate-v11/fade-H2-v11-ambient.wav",
+      "audio_sha256": "a1348b9523a04498f6e86dba4c25d07c943b2ef22d9bf59d0471ae2907f7fbf2",
+      "breath_pattern": "DOUBLE-INHALE-LONG-EXHALE"
+    }
+  },
+  "corridor": {
+    "source": ".artifacts-local/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4",
+    "sha256": "c7d16299fc0ef66ccd7e1a05611b001a5b34636433c485d6f7b2f3a792321855"
+  },
+  "outputs": {
+    "artifact_root": ".artifacts-local/V-04/H3/fixed-combined-review-candidate-v1",
+    "combined_video": "V-04-H3-fixed-combined-review-candidate-v1.mp4",
+    "keyframes": "review/H3/fixed-combined-review-candidate-v1/keyframes.jpg"
+  },
+  "asset_status": "PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false
+}

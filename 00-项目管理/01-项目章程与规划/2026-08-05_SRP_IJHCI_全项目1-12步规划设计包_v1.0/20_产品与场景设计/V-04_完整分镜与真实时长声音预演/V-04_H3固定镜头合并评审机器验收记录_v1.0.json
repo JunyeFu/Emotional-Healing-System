@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "candidate_id": "h3-fixed-combined-review-candidate-v1",
+  "result": "PASS",
+  "gates": {
+    "selected_fixed_backgrounds": "PASS",
+    "four_weather_clips": "PASS",
+    "assets_32_of_32": "PASS",
+    "independent_asset_hashes": "PASS",
+    "fixed_camera": "PASS",
+    "two_conditions": "PASS",
+    "shared_non_cue_layers": "PASS",
+    "fade_full_frame_color_recovery": "PASS",
+    "common_corridor": "PASS",
+    "combined_duration": "PASS",
+    "media_health": "PASS"
+  },
+  "combined_duration_s": 68.0,
+  "next_gate": "TEAM_DIRECTOR_H3_FIXED_COMBINED_REVIEW",
+  "evidence_boundary": "Review media only; Unity import, runtime, build, asset clearance and live device chain remain unverified."
+}
