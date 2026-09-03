@@ -58,6 +58,8 @@ class FixedSequenceProvider:
                 decisions.append(None)
                 continue
             decision = validate_message("policy_decision", raw_decisions[position])
+            if decision["schema_version"] != manifest["schema_version"]:
+                raise SessionCoreError("SCHEMA_VERSION_MISMATCH", str(position))
             if decision["session_id"] != manifest["session_id"]:
                 raise SessionCoreError("POLICY_SESSION_MISMATCH", str(position))
             if int(decision["position"]) != position:

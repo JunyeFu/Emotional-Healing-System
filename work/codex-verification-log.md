@@ -1315,3 +1315,116 @@
 | Governance after claim | `PASS`：57项注册表；READY=`F-03`，IN_REVIEW=`G-01,G-02`；独立包3包/89份快照，任务为F-03、G-01、G-02。 |
 | Downstream boundary | U-01、U-02、T-01和U-07仍等待F-05完成及第二人签收；本次未实现v2.2或放行任何消费者。 |
 | Worktree boundary | 保留当前`codex/v-04-animatic`工作树与并行V-04制品；未切换到F-05目标分支，未提交或推送。 |
+
+### 2026-09-01 F-05 integration closure
+
+| Check | Result |
+|---|---|
+| Isolation | `D:\Agent\03-SRP-f05-integration`；原V-04脏工作区未写入。 |
+| Signed History | F-03 `c358a35`、F-04 `43a63a1`、F-05 `dc83d9d`均为当前HEAD祖先；无rebase或squash。 |
+| Owned Tree Identity | F-03、F-04、F-05专属实现与证据路径相对各自签署提交均为零差异。 |
+| F-05 Contract | `87 passed in 2.32s`。 |
+| F-05 Session Core | `115 passed in 0.70s`。 |
+| F-05 Session Store | `70 passed in 5.29s`。 |
+| F-05 Verifier | `PASS`；`v21_unchanged=true`、`schema_rebuild=true`、22个fixture哈希、5帧消费者流。 |
+| Integration Regression | 首轮`469 passed / 1 failed`，定位为`IN_REVIEW`第二人签收默认勾选；最小修复后`470 passed in 29.37s`。 |
+| Governance | 57项注册表通过；`DONE=F-03/F-04/F-05`，`READY=T-01/U-01/U-02`，`IN_REVIEW=G-01/G-02`。 |
+| Packages | `PASS`；5包、128份快照，集合=`G-01,G-02,T-01,U-01,U-02`。 |
+| Evidence Boundary | 不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。 |
+
+### 2026-09-01 F-05 independent review and director sign-off
+
+| Check | Result |
+|---|---|
+| Independent Review | `PASS_WITH_NOTES`；无P0/P1、无实现漂移、无签收失效。 |
+| Independent Rerun | 合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`；全项目`470 passed`。 |
+| Governance And Packages | 任务注册表与独立任务包校验均`PASS`；5包、128份快照。 |
+| Director Sign-off | 傅钧烨确认签收`codex/f-05-integration@646bc47a2f68ddddf31bdcc60e9feb5927658c85`，结论`PASS / DONE`。 |
+| Open Note | P2旧状态文案不阻断签收，留作非实质治理修正；本次未修改F-05原签署树。 |
+| Evidence Boundary | 不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。 |
+
+### 2026-09-01 T-01 claim and interface inventory
+
+| Check | Result |
+|---|---|
+| Base And Isolation | `codex/t-01-telemetry-panel@00b575b`；独立工作树`D:\Agent\03-SRP-t01-worktree`；原V-04脏工作区未写入。 |
+| Claim Gate | 领取前T-01=`READY`、领取字段为空；F-01/F-04/F-05均`DONE`。 |
+| Claim Result | T-01=`IN_PROGRESS`；claimant=`Codex Agent（T-01独立工作树）`；branch=`codex/t-01-telemetry-panel`。 |
+| Interface Inventory | UDP 5005只读消费、20Hz节流、SQI/时钟/序号/延迟/断流显示；正式模式使用v2.2帧内cycle/step身份。 |
+| Governance | 注册表验证`PASS`；`READY=U-01/U-02`，`IN_REVIEW=G-01/G-02`。 |
+| Packages | 独立包验证`PASS`；4包、111份快照，集合=`G-01,G-02,U-01,U-02`。 |
+| Focused Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q 02-技术研发/tests/test_task_package_hash_policy.py`，结果`3 passed`，未安装依赖。 |
+| Evidence Boundary | 只完成领取与盘点，不声明TD实现、网络联调、正式构建或`LIVE_E2E`。 |
+
+### 2026-09-01 T-01 implementation candidate
+
+| Check | Result |
+|---|---|
+| Candidate | 原候选`9d6c9e0`因5项证据换行漂移独立复核`FAIL`；修复候选`8790cd3`已推送并保持`IN_REVIEW`。 |
+| T-01 Host Tests | `17 passed in 0.06s`。 |
+| TD Reopen | TouchDesigner `2025.32820`；`PASS`；22节点；UDP `127.0.0.1:5005`；1280×720；零节点/脚本错误。 |
+| UDP Runtime | 真实`SessionCore + TelemetryPublisher`为`LIVE`；异常证据`lost=2, duplicate=1, out_of_order=1`；超过2秒为`DISCONNECTED`；新clock domain恢复`LIVE`且重连累计。 |
+| Runtime Permissions | 无UDP/TCP输出、Spout、文件输出或T-02回调；Python权威未改变。 |
+| F-04 Regression | `21 passed`；签署目录相对`43a63a1`零差异。 |
+| F-05 Regression | 合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`；`verify_f05_v22.py=PASS`。 |
+| Full Regression | 洁净进程`470 passed in 17.42s`。 |
+| Artifact Identity | TOE=`38ECA7FA...57E44`；TOX=`F0614B20...AB8AE`；录像=`580DB8EE...1DD5A`；23项证据SHA-256已固定。 |
+| Evidence Boundary | 本地TD只读v2.2消费与异常恢复基线；不声明真实设备链、Unity联合运行、T-02、外部延迟、正式构建、科学有效性或`LIVE_E2E`。 |
+
+### 2026-09-01 T-01 first independent review failure and replacement candidate
+
+| Check | Result |
+|---|---|
+| Independent Review | `9d6c9e0`=`FAIL/P1`；运行与TD实机门均通过，但洁净checkout中23项证据有5项SHA/bytes不匹配。 |
+| Root Cause | Windows `core.autocrlf=true`将4项host JSON和1项ffconcat从Git LF展开为CRLF；候选未固定这些证据的字节策略。 |
+| Fix | 新增目录级`.gitattributes`，仅对`evidence/host/*.json`和`evidence/touchdesigner/video/*.ffconcat`禁用换行转换；TD原生状态JSON保持CRLF。 |
+| Replacement Candidate | `8790cd3`；全新`D:\Agent\03-SRP-t01-hashcheck2` detached checkout验证`T01_MANIFEST_PASS count=23`，工作树洁净。 |
+| Review Gate | 原复核不得复用；必须对`8790cd3`重新执行完整独立复核，傅钧烨签收仍未发生。 |
+
+### 2026-09-01 T-01 replacement candidate independent review
+
+| Check | Result |
+|---|---|
+| Candidate | `8790cd3ae4db3543c038efc21deec635605cb06f`。 |
+| Independent Verdict | `PASS`；P0/P1/P2/P3均无候选缺陷；未执行傅钧烨签收。 |
+| Evidence Integrity | 全新detached审计树；23项原始bytes/SHA-256，`BAD=0`。 |
+| Tests | T-01 `17`；F-04 `21`；合同`87`；Core`115`；Store`70`；全项目`470`；F-05验证`PASS`。 |
+| TD Reproduction | TOE与TOX均从关闭状态打开；22节点、零错误、1280×720、UDP loopback 5005、无禁止输出、无权威写回。 |
+| Runtime Reproduction | 真实发布器`LIVE`；lost/duplicate/out-of-order均复现；>2秒`DISCONNECTED`；恢复`LIVE`且reconnect累计。 |
+| Cleanup | TD与发送器关闭；UDP 5005释放；审计树洁净。 |
+| Next Gate | 傅钧烨对精确候选完成真实第二人签收；此前T-01=`IN_REVIEW`、T-02=`WAIT_DEP`。 |
+
+### 2026-09-02 T-01 exact-candidate signoff
+
+| Check | Result |
+|---|---|
+| Signed Candidate | `8790cd3ae4db3543c038efc21deec635605cb06f`。 |
+| Signatory | 傅钧烨（团队总监、独立第二人复核人）明确确认`PASS / DONE`。 |
+| Independent Review | 候选已由独立Agent在洁净detached工作树完整复核为`PASS`，P0-P3均无。 |
+| State Transition | T-01 `IN_REVIEW -> DONE`；T-02 `WAIT_DEP -> READY`。 |
+| Invalidation Rule | 候选代码、合同适配、fixture或`.toe/.tox`发生实质变化时，复核与签收立即失效。 |
+| Boundary | 不覆盖真实设备、Unity联合运行、T-02请求实现、正式构建、科学有效性或`LIVE_E2E`。 |
+
+### 2026-09-02 T-01 closure verification
+
+| Check | Result |
+|---|---|
+| Governance | 57项注册表通过；T-01=`DONE`；T-02、U-01、U-02=`READY`；G-01、G-02=`IN_REVIEW`。 |
+| Dispatch Packages | `G-01,G-02,T-02,U-01,U-02`；5个独立包、122份快照通过。 |
+| Focused Tests | T-01 `17 passed`；F-04 `21 passed`；合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`。 |
+| F-05 Verification | `PASS`；v2.1未漂移、schema可重建、22个fixture哈希、5帧消费者流。 |
+| Full Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q`，结果`470 passed in 20.69s`，未安装依赖。 |
+| Signed Trees | `8790cd3`为HEAD祖先；T-01实现树相对候选零差异；F-04目录相对`43a63a1`零差异。 |
+| Evidence And Port | T-01证据清单23项bytes/SHA-256全部匹配；UDP 5005无监听。 |
+| Diff Gate | `git diff --check`无空白错误；仅报告仓库既有Windows换行转换提示。 |
+
+### 2026-09-03 complete project integration
+
+| Check | Result |
+|---|---|
+| Registry | `PASS`；57项，`DONE=14`、`IN_REVIEW=2`、`READY=3`，无`IN_PROGRESS`。 |
+| Dispatch Packages | `PASS`；`G-01,G-02,T-02,U-01,U-02`，5个包与122份快照一致。 |
+| Protocol Authority | `PASS`；`protocol_authority_v1.1` 与当前执行文件一致。 |
+| Repository Privacy | `G02_REPOSITORY_PRIVACY_PASS violations=0`。 |
+| Full Regression | `py -3.14 -m pytest -q` 结果`470 passed in 28.20s`。 |
+| Diff Gate | `git diff --check` 通过；合并冲突标记为零。 |

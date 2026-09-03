@@ -1,0 +1,24 @@
+{
+  "schema_version": "2.2",
+  "message_type": "policy_decision",
+  "decision_id": "PD-0001",
+  "session_id": "S-20260807-0001",
+  "stage": "stage_1",
+  "position": 0,
+  "candidate_actions": [
+    "storm",
+    "heat",
+    "snow",
+    "fade"
+  ],
+  "selected_action": "storm",
+  "behavior_probability": 0.25,
+  "target_policy_probability": null,
+  "state_snapshot_hash": "sha256:state",
+  "random_draw": 0.12,
+  "reason_code": "balanced_random",
+  "fallback_applied": false,
+  "fallback_reason": null,
+  "policy_version": null,
+  "created_monotonic_ns": 900000
+}

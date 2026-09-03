@@ -1,0 +1,99 @@
+{
+  "artifact_count": 23,
+  "artifacts": {
+    "T01_TelemetryPanel.toe": {
+      "bytes": 11570,
+      "sha256": "38ECA7FAD11A989DA4EF3923A4277E557A966586CDD2F7C2F1EC251CCFE57E44"
+    },
+    "T01_TelemetryPanel.tox": {
+      "bytes": 7414,
+      "sha256": "F0614B20CF71E3C6E83B98D4CCC8A3CAD2F953A557DC2AAAEF809B15530AB8AE"
+    },
+    "evidence/host/field_manifest.json": {
+      "bytes": 973,
+      "sha256": "F78A33D45DF11A0DB4D4B7EE658EADEBBB09CB3A800D1DA92C13B8AD94265157"
+    },
+    "evidence/host/host_build_manifest.json": {
+      "bytes": 506,
+      "sha256": "0911F99DD251DEF1C8BA2C21C459E76D7842BF859FF8934415652C220520A86C"
+    },
+    "evidence/host/node_permissions.json": {
+      "bytes": 4045,
+      "sha256": "BD2BCB7BC28E94BABF8DDAAF31E6876929ADC6174DB69181C928D219C9B7702E"
+    },
+    "evidence/host/node_plan.json": {
+      "bytes": 4247,
+      "sha256": "07006EB3834F24A02ADFA73C428890D4A0161B5409F5D81C1E2B8F5726A04282"
+    },
+    "evidence/touchdesigner/capture_manifest.json": {
+      "bytes": 1556,
+      "sha256": "92ED08AC8DD6EC667AEB27F4403B649F9F2F1953E4EA91BF8E4C5C544C9A93D9"
+    },
+    "evidence/touchdesigner/node_errors.json": {
+      "bytes": 131,
+      "sha256": "8608FF89E777AFDF102E1125F6C55E23CAE4655B61BCE89BE9B9EA83F00CF64E"
+    },
+    "evidence/touchdesigner/node_inventory.json": {
+      "bytes": 4377,
+      "sha256": "58F12976B210051BBE2F837979BD549CD6EC3EA1A4B297FE24FCA3093AA6D463"
+    },
+    "evidence/touchdesigner/reopen_report.json": {
+      "bytes": 828,
+      "sha256": "84C153D5C4DA426F2355A9EDEC9FE0EE7F964EC1FEE0D372B48F0933CE42100D"
+    },
+    "evidence/touchdesigner/runtime_build_manifest.json": {
+      "bytes": 1116,
+      "sha256": "F2FB49098AF3703721C961CF4CE7595BCA60CD73B6D2E06E3C9DD94A37BBC64D"
+    },
+    "evidence/touchdesigner/screenshots/disconnected.png": {
+      "bytes": 217910,
+      "sha256": "7FBFA6F9C31088D26167CCAA1B68F4C079103175947ACF8E44078C1FA9903613"
+    },
+    "evidence/touchdesigner/screenshots/fixture_good.png": {
+      "bytes": 215245,
+      "sha256": "566F32EC2327B0169793F4D46137CF145CBC0FA1B8521EF054E7913F97CBA0A7"
+    },
+    "evidence/touchdesigner/screenshots/out_of_order.png": {
+      "bytes": 214190,
+      "sha256": "044205669A3CDC43C617037E9BAEE1DC0351B27DC0A174B0A3BFE376C844BFAC"
+    },
+    "evidence/touchdesigner/screenshots/publisher_live.png": {
+      "bytes": 208817,
+      "sha256": "B3CBC4AB753044503C71E9EC9F728AA4B40409C73EDB453E64DFC72ADEFF3CD4"
+    },
+    "evidence/touchdesigner/screenshots/recovered.png": {
+      "bytes": 215137,
+      "sha256": "8EA27BBC15E5CCA0FFD1A1C64B39B4C8489B01C591C31D4AF4937F3707DFF62D"
+    },
+    "evidence/touchdesigner/states/disconnected.json": {
+      "bytes": 2160,
+      "sha256": "9A351EF6543434264535F58802799E5B4FAD72D1C41279754616BC956E6E9908"
+    },
+    "evidence/touchdesigner/states/fixture_good.json": {
+      "bytes": 2144,
+      "sha256": "A127034D0719B4CD282BE372C3CEFD4292BA24E2CB6D2D0FAD1C0539779DEBB9"
+    },
+    "evidence/touchdesigner/states/out_of_order.json": {
+      "bytes": 2149,
+      "sha256": "CB0076D3F05DE5BDBF6AEA2E6A0865DF7AA91F391F630C6EA1F38496C51CC64B"
+    },
+    "evidence/touchdesigner/states/publisher_live.json": {
+      "bytes": 2139,
+      "sha256": "CD8353E174604C39F158F7DBCFD0B1833BA3775535D1614684B4C2688A957B13"
+    },
+    "evidence/touchdesigner/states/recovered.json": {
+      "bytes": 2149,
+      "sha256": "9A861602C90B292C41B3A62962BD07E07DCD36626B885BA04FB144323D047625"
+    },
+    "evidence/touchdesigner/video/fixture_replay.ffconcat": {
+      "bytes": 316,
+      "sha256": "2697BFFDCB305B92C30EF5083A44E703360C9F334AD73BE84662EF6B87CA0359"
+    },
+    "evidence/touchdesigner/video/fixture_replay.mp4": {
+      "bytes": 4716850,
+      "sha256": "580DB8EEB06E957D3B277D3D7CFBBCAEA6261EBCAAB6E0CEC59094EDCEB1DD5A"
+    }
+  },
+  "evidence_boundary": "LOCAL_TD_RUNTIME_NOT_LIVE_E2E",
+  "manifest_schema_version": "t01-evidence-manifest-v1"
+}

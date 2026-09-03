@@ -2,6 +2,8 @@
 
 > 状态：`TECHNICAL_IMPLEMENTATION_CANDIDATE`。本模块只形成自动测试和本机合成联调证据，不代表Unity、TouchDesigner、真实设备或`LIVE_E2E`已经完成。
 
+F-05候选保持本页公共方法不变；`contract_adapter.validate_message()`按消息版本分派合同，Manifest会话版本驱动控制、握手和遥测版本。正式会话要求v2.2与已加载的呼吸配置hash一致；接口对齐见[运行合同F-05文档](../05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
+
 ## 职责
 
 `SessionCore`是核心体验的唯一会话、模块、段、单调时间和控制序号权威。Unity只维护由控制事件驱动的渲染镜像，TouchDesigner只读遥测。旧`main.py`和UDP v1.2继续作为`LEGACY_DEV_ONLY`保留。
@@ -29,7 +31,7 @@ snapshot() -> SessionSnapshot
 ## 本机传输
 
 - TCP `127.0.0.1:5010`：UTF-8 JSON Lines、v1.0握手、控制ACK和渲染回执；
-- UDP `127.0.0.1:5005/5006`：同一完整v2.1遥测帧最多20Hz镜像给TD和Unity；
+- UDP `127.0.0.1:5005/5006`：遥测版本由活动会话决定，同一完整帧最多20Hz镜像给TD和Unity；正式会话要求v2.2；
 - 控制默认500毫秒ACK超时、最多3次同ID同序号发送、2000毫秒重连宽限；
 - 传输只接受已经实际发送且当前等待确认的控制ACK；渲染回执必须关联已确认的`segment`控制，并严格匹配模块和分段；
 - 正式模式下`end`未确认时不会保留完成结论，交付超时、拒绝或断连会转为`ABORTED`并尽力发送中止控制；

@@ -1,0 +1,191 @@
+{
+  "version": "1.0",
+  "status": "CANDIDATE_READY_FOR_REVIEW",
+  "common": {
+    "phase_interpolation_ms": [
+      100,
+      250
+    ],
+    "recovery_low_pass_s": [
+      2,
+      5
+    ],
+    "actual_degraded_opacity": [
+      0.45,
+      0.7
+    ],
+    "actual_unavailable_opacity": [
+      0.25,
+      0.45
+    ],
+    "actual_degraded_continuity": [
+      0.45,
+      0.75
+    ],
+    "actual_edge_softening_px_1080p": [
+      1,
+      3
+    ],
+    "abstract_outer_diameter_short_edge": [
+      0.18,
+      0.24
+    ],
+    "abstract_inner_outer_radius_ratio": [
+      0.62,
+      0.76
+    ],
+    "abstract_line_width_short_edge": [
+      0.004,
+      0.008
+    ],
+    "horizon_y": [
+      0.56,
+      0.62
+    ],
+    "scroll_speed_viewport_per_s": [
+      0.015,
+      0.025
+    ],
+    "scroll_speed_default": 0.02,
+    "parallax": {
+      "far": [
+        0.3,
+        0.45
+      ],
+      "mid": [
+        0.6,
+        0.8
+      ],
+      "near": 1.0
+    },
+    "scroll_effective_coverage_min": 6.75,
+    "segment_raw_width_max": 2.0,
+    "segment_overlap": [
+      0.1,
+      0.15
+    ],
+    "ambient_integrated_loudness_lufs_i": [
+      -24,
+      -20
+    ],
+    "ambient_true_peak_max_dbtp": -3,
+    "scene_corridor_crossfade_s": [
+      2,
+      4
+    ],
+    "ambient_loop_minimum_s": 60
+  },
+  "safe_areas": {
+    "target": {
+      "x": [
+        0.55,
+        0.85
+      ],
+      "y": [
+        0.34,
+        0.72
+      ]
+    },
+    "actual": {
+      "x": [
+        0.2,
+        0.45
+      ],
+      "y": [
+        0.18,
+        0.52
+      ]
+    },
+    "abstract_center": [
+      0.5,
+      0.5
+    ]
+  },
+  "recovery_endpoints": {
+    "storm": {
+      "rain_multiplier": {
+        "low": [
+          1.0,
+          1.0
+        ],
+        "high": [
+          0.65,
+          0.8
+        ]
+      },
+      "visibility": {
+        "low": [
+          0.45,
+          0.6
+        ],
+        "high": [
+          0.7,
+          0.85
+        ]
+      }
+    },
+    "heat": {
+      "haze_multiplier": {
+        "low": [
+          1.0,
+          1.0
+        ],
+        "high": [
+          0.55,
+          0.75
+        ]
+      },
+      "clarity": {
+        "low": [
+          0.45,
+          0.6
+        ],
+        "high": [
+          0.7,
+          0.85
+        ]
+      }
+    },
+    "snow": {
+      "mist_multiplier": {
+        "low": [
+          1.0,
+          1.0
+        ],
+        "high": [
+          0.6,
+          0.8
+        ]
+      },
+      "tree_line_clarity": {
+        "low": [
+          0.45,
+          0.6
+        ],
+        "high": [
+          0.7,
+          0.85
+        ]
+      }
+    },
+    "fade": {
+      "outline_texture_base_color_completeness": {
+        "low": [
+          0.35,
+          0.5
+        ],
+        "high": [
+          0.65,
+          0.8
+        ]
+      }
+    }
+  },
+  "shared_rules": {
+    "recovery_curve": "LINEAR_0_TO_1",
+    "same_between_cue_modes": true,
+    "no_forced_full_endpoint": true,
+    "weather_identity_retained_at_high_value": true,
+    "exact_values_require_runtime_evidence": true
+  }
+}

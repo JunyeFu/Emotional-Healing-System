@@ -1,0 +1,142 @@
+{
+  "network_contract": {
+    "address": "127.0.0.1",
+    "authoritative_state_write": false,
+    "direction": "input_only",
+    "port": 5005,
+    "telemetry_hz": 20
+  },
+  "nodes": [
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/T01_TelemetryPanel",
+      "permission": "read_only",
+      "role": "t01_root"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/T01_TelemetryPanel/Sources",
+      "permission": "read_only",
+      "role": "source_container"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/T01_TelemetryPanel/Sources/UdpTelemetryAdapter",
+      "permission": "read_only",
+      "role": "udp_adapter"
+    },
+    {
+      "active": true,
+      "callback_format": "one_per_message",
+      "local_address": "127.0.0.1",
+      "operator_type": "udpinDAT",
+      "path": "/project1/T01_TelemetryPanel/Sources/UdpTelemetryAdapter/udp_in",
+      "permission": "loopback_input",
+      "port": 5005,
+      "role": "telemetry_input"
+    },
+    {
+      "callback": "onReceive",
+      "operator_type": "textDAT",
+      "path": "/project1/T01_TelemetryPanel/Sources/UdpTelemetryAdapter/udp_callbacks",
+      "permission": "local_state_update",
+      "role": "telemetry_callbacks"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/T01_TelemetryPanel/Runtime",
+      "permission": "read_only",
+      "role": "runtime_container"
+    },
+    {
+      "operator_type": "textDAT",
+      "path": "/project1/T01_TelemetryPanel/Runtime/t01_adapter_module",
+      "permission": "read_only",
+      "role": "embedded_adapter_module"
+    },
+    {
+      "operator_type": "textDAT",
+      "path": "/project1/T01_TelemetryPanel/Runtime/panel_state",
+      "permission": "read_only",
+      "role": "local_display_state"
+    },
+    {
+      "callback": "onFrameStart",
+      "maximum_hz": 20,
+      "operator_type": "executeDAT",
+      "path": "/project1/T01_TelemetryPanel/Runtime/render_execute",
+      "permission": "local_display_update",
+      "role": "render_tick"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/T01_TelemetryPanel/ConsoleShell",
+      "permission": "read_only",
+      "role": "console_shell"
+    },
+    {
+      "operator_type": "constantTOP",
+      "path": "/project1/T01_TelemetryPanel/ConsoleShell/background",
+      "permission": "read_only",
+      "role": "background"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/T01_TelemetryPanel/ConsoleShell/stream_badge",
+      "permission": "read_only",
+      "role": "stream_badge"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/T01_TelemetryPanel/ConsoleShell/resp_sqi_bar",
+      "permission": "read_only",
+      "role": "resp_sqi_bar"
+    },
+    {
+      "operator_type": "rectangleTOP",
+      "path": "/project1/T01_TelemetryPanel/ConsoleShell/ecg_sqi_bar",
+      "permission": "read_only",
+      "role": "ecg_sqi_bar"
+    },
+    {
+      "operator_type": "textTOP",
+      "path": "/project1/T01_TelemetryPanel/ConsoleShell/panel_text",
+      "permission": "read_only",
+      "role": "telemetry_text"
+    },
+    {
+      "operator_type": "compositeTOP",
+      "path": "/project1/T01_TelemetryPanel/ConsoleShell/composite",
+      "permission": "read_only",
+      "role": "console_composite"
+    },
+    {
+      "operator_type": "containerCOMP",
+      "path": "/project1/T01_TelemetryPanel/Output",
+      "permission": "read_only",
+      "role": "output_container"
+    },
+    {
+      "operator_type": "outTOP",
+      "path": "/project1/T01_TelemetryPanel/Output/display_out",
+      "permission": "read_only",
+      "role": "local_display_output"
+    },
+    {
+      "operator_type": "tableDAT",
+      "path": "/project1/T01_TelemetryPanel/node_permissions",
+      "permission": "read_only",
+      "role": "permission_manifest"
+    },
+    {
+      "operator_type": "tableDAT",
+      "path": "/project1/T01_TelemetryPanel/node_errors",
+      "permission": "read_only",
+      "role": "error_report"
+    }
+  ],
+  "plan_schema_version": "t01-node-plan-v1",
+  "replace_scope": "/project1/T01_TelemetryPanel",
+  "replacement_policy": "replace_exact_root_only",
+  "touchdesigner_required_build": "2025.32820"
+}

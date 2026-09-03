@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.1",
+  "message_type": "control_event",
+  "session_id": "S-20260807-0001",
+  "event_id": "EV-0001",
+  "control_seq": 1,
+  "event_type": "prepare",
+  "issued_monotonic_ns": 1000000,
+  "effective_monotonic_ns": 1100000,
+  "clock_domain_id": "python-session-1",
+  "payload": {
+    "module_id": "storm"
+  }
+}

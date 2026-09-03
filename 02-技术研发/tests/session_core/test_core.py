@@ -131,6 +131,19 @@ def test_terminal_elapsed_time_is_immutable_after_late_inputs(
     assert summary.session_elapsed_ns == expected
 
 
+def test_v22_session_rejects_v21_delivery_message(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory(schema_version="2.2")
+    core = SessionCore()
+    prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+    ack = ack_for(prepared.control_events[0], now_ns=1)
+    ack["schema_version"] = "2.1"
+    with pytest.raises(SessionCoreError) as error:
+        core.confirm_delivery(ack, 1)
+    assert error.value.code == "SCHEMA_VERSION_MISMATCH"
+
+
 def test_duplicate_request_and_repeated_tick_do_not_advance(
     manifest_factory, assignment_factory
 ) -> None:
@@ -186,6 +199,34 @@ def test_pause_freezes_progress_and_resume_shifts_deadline(
     assert resumed.snapshot.paused_duration_ns == 100_000_000_000
     assert core.advance(124_999_999_999).control_events == ()
     assert core.advance(125_000_000_000).snapshot.segment == "closed_loop"
+
+
+def test_v22_pause_resume_preserves_identity_and_duplicate_is_idempotent(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory(schema_version="2.2")
+    core = SessionCore()
+    prepared = core.prepare(manifest, assignment_factory(manifest), 0)
+    initial = prepared.snapshot
+    core.apply_operator_request(OperatorRequest("REQ-V22-START", "start"), 1)
+    paused = core.apply_operator_request(OperatorRequest("REQ-V22-PAUSE", "pause"), 2)
+    duplicate = core.apply_operator_request(OperatorRequest("REQ-V22-PAUSE", "pause"), 3)
+    resumed = core.apply_operator_request(OperatorRequest("REQ-V22-RESUME", "start"), 4)
+
+    expected_identity = (
+        "2.2",
+        "2.2",
+        "sha256:e5bb3c609f069a31bf9d02af1c987ccafc2be8d4fd01ca2394565c0c10d4a203",
+    )
+    for snapshot in (initial, paused.snapshot, duplicate.snapshot, resumed.snapshot):
+        assert (
+            snapshot.schema_version,
+            snapshot.breath_protocol_config_version,
+            snapshot.breath_protocol_config_hash,
+        ) == expected_identity
+    assert duplicate.snapshot.status is SessionStatus.PAUSED
+    assert duplicate.control_events == ()
+    assert duplicate.audit_records[0].reason_code == "DUPLICATE_OPERATOR_REQUEST"
 
 
 def test_non_monotonic_clock_fails_and_audits(manifest_factory, assignment_factory) -> None:

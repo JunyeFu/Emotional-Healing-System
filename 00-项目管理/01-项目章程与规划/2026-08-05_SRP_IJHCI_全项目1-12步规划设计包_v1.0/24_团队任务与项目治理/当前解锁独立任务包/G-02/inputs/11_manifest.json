@@ -22,7 +22,6 @@
     "com.unity.ugui": "2.0.0",
     "com.unity.visualeffectgraph": "17.4.0",
     "com.unity.visualscripting": "1.9.11",
-    "jp.keijiro.klak.spout": "https://github.com/keijiro/KlakSpout.git?path=/Packages/jp.keijiro.klak.spout#849e7bca3c167839ed697796153e1749acf0c53f",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.adaptiveperformance": "1.0.0",
     "com.unity.modules.ai": "1.0.0",

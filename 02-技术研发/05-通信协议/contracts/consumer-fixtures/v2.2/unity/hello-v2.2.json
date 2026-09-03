@@ -1,0 +1,7 @@
+{
+  "transport_type": "hello",
+  "transport_version": "1.0",
+  "role": "unity",
+  "schema_version": "2.2",
+  "client_instance_id": "unity-f05-fixture"
+}

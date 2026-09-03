@@ -134,3 +134,47 @@ def test_policy_decisions_must_match_each_position(
         SessionCore().prepare(manifest, assignment, 0)
 
     assert error.value.code in {"CONTRACT_ILLEGAL_SELECTED_ACTION", "POLICY_ACTION_MISMATCH"}
+
+
+def test_formal_v21_manifest_is_rejected_after_f05_migration(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory(
+        runtime_mode="formal_stage_1", schema_version="2.1"
+    )
+    with pytest.raises(SessionCoreError) as error:
+        SessionCore(dependencies=formal_dependencies()).prepare(
+            manifest, assignment_factory(manifest), 0
+        )
+    assert error.value.code == "FORMAL_SCHEMA_VERSION_REQUIRED"
+
+
+def test_formal_v22_manifest_drives_versioned_control_and_snapshot(
+    manifest_factory, assignment_factory
+) -> None:
+    manifest = manifest_factory(runtime_mode="formal_stage_1")
+    core = SessionCore(dependencies=formal_dependencies())
+    update = core.prepare(manifest, assignment_factory(manifest), 0)
+    assert update.control_events[0]["schema_version"] == "2.2"
+    assert update.snapshot.schema_version == "2.2"
+    assert (
+        update.snapshot.breath_protocol_config_hash
+        == manifest["breath_protocol_config_hash"]
+    )
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "error_code"),
+    [
+        ("breath_protocol_config_version", "2.2-drift", "BREATH_PROTOCOL_CONFIG_VERSION_MISMATCH"),
+        ("breath_protocol_config_hash", "sha256:" + "0" * 64, "BREATH_PROTOCOL_CONFIG_HASH_MISMATCH"),
+    ],
+)
+def test_v22_manifest_breath_config_identity_fails_closed(
+    manifest_factory, assignment_factory, field, value, error_code
+) -> None:
+    manifest = manifest_factory(schema_version="2.2")
+    manifest[field] = value
+    with pytest.raises(SessionCoreError) as error:
+        SessionCore().prepare(manifest, assignment_factory(manifest), 0)
+    assert error.value.code == error_code

@@ -1,7 +1,7 @@
 # 03-SRP — 多模态交互情绪疗愈 (SRP v2.1)
 
 > 可穿戴呼吸/HRV → 实时桥接 → 视听反馈 → 情绪调节教育
-> 2026/5/20 — 6/30 | 4人团队 | 当前阶段：**F-01、F-02、F-04、R-01、V-01、V-02、V-03、V-04、W-01、P-01与P-02已DONE；V-04完整时长有声/静音Animatic经独立Agent复核及傅钧烨团队总监签收为PASS；F-05由Codex Agent（F-05独立对话）认领并进入IN_PROGRESS；G-01与G-02保持IN_REVIEW；F-03为READY；新颖性仍为REVISE_REQUIRED**
+> 2026/5/20 — 6/30 | 4人团队 | 当前阶段：**F-01、F-02、F-03、F-04、F-05、P-01、P-02、R-01、T-01、V-01、V-02、V-03、V-04与W-01已DONE；G-01与G-02保持IN_REVIEW；T-02、U-01与U-02为READY；新颖性仍为REVISE_REQUIRED**
 
 ## 快速入口
 
