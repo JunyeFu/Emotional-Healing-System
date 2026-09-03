@@ -47,14 +47,25 @@ def participant_parity(frame: np.ndarray) -> float:
     return float(np.abs(left - right)[keep].mean())
 
 
-def saturation(frame: np.ndarray) -> float:
-    rgb = frame[100:585, :900] / 255.0
+def saturation(region: np.ndarray) -> float:
+    rgb = region / 255.0
     maximum = rgb.max(axis=2)
     minimum = rgb.min(axis=2)
     valid = maximum > 0.02
     values = np.zeros_like(maximum)
     values[valid] = (maximum[valid] - minimum[valid]) / maximum[valid]
     return float(values.mean())
+
+
+def probe_media(ffprobe: Path, video: Path) -> dict[str, object]:
+    completed = subprocess.run(
+        [str(ffprobe), "-v", "error", "-show_streams", "-show_format", "-of", "json", str(video)],
+        check=True,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    return json.loads(completed.stdout)
 
 
 def low_frequency_gray(frame: np.ndarray) -> np.ndarray:
@@ -81,6 +92,7 @@ def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     lock = json.loads((HERE / "V-04_toolchain-lock_v1.0.json").read_text(encoding="utf-8"))
     ffmpeg = Path(lock["ffmpeg"]["ffmpeg_executable"])
+    ffprobe = Path(lock["ffmpeg"]["ffprobe_executable"])
     artifact_root = REPO / config["outputs"]["artifact_root"]
     audio_video = artifact_root / config["outputs"]["audio_video"]
     silent_video = artifact_root / config["outputs"]["silent_video"]
@@ -103,7 +115,9 @@ def main() -> None:
     for path, key in ((audio_video, "audio_video"), (silent_video, "silent_video")):
         require(path.is_file(), f"missing media: {path}")
         require(sha256(path) == manifest[key]["sha256"], f"media hash drift: {path.name}")
-        probe = manifest[key]["ffprobe"]
+        probe = probe_media(ffprobe, path)
+        probe["format"]["filename"] = path.name
+        require(probe == manifest[key]["ffprobe"], f"live ffprobe differs from manifest: {path.name}")
         require(abs(float(probe["format"]["duration"]) - 800.0) <= 0.05, f"duration drift: {path.name}")
         video_streams = [stream for stream in probe["streams"] if stream["codec_type"] == "video"]
         audio_streams = [stream for stream in probe["streams"] if stream["codec_type"] == "audio"]
@@ -130,12 +144,14 @@ def main() -> None:
             require(parity[weather] <= 8.0, f"condition pixels diverged outside cue mask: {weather}={parity[weather]}")
             require(camera[weather][0:2] == (0, 0), f"camera translation detected: {weather}={camera[weather]}")
 
-        fade_saturation = []
+        fade_saturation = {"scene_native": [], "abstract_pacer": []}
         for index, time_s in enumerate((600.5, 700.0, 774.5)):
             frame = frame_at(ffmpeg, audio_video, time_s, temp / f"fade-{index}.png")
-            fade_saturation.append(saturation(frame))
-        require(fade_saturation[0] + 0.08 < fade_saturation[1] < fade_saturation[2],
-                f"fade recovery is not monotonic: {fade_saturation}")
+            fade_saturation["scene_native"].append(saturation(frame[95:585, :960]))
+            fade_saturation["abstract_pacer"].append(saturation(frame[95:585, 960:1920]))
+        for condition, values in fade_saturation.items():
+            require(values[0] + 0.08 < values[1] < values[2],
+                    f"fade recovery is not monotonic: {condition}={values}")
 
         corridor_parity = {}
         for index, time_s in enumerate((187.5, 387.5, 587.5, 787.5)):
@@ -154,7 +170,10 @@ def main() -> None:
             "timeline_and_24_nodes": "PASS",
             "condition_non_cue_pixel_parity": parity,
             "fixed_camera_translation_dx_dy_score": camera,
-            "fade_mean_saturation": [round(value, 6) for value in fade_saturation],
+            "fade_full_non_hud_mean_saturation_by_condition": {
+                condition: [round(value, 6) for value in values]
+                for condition, values in fade_saturation.items()
+            },
             "corridor_condition_parity": corridor_parity,
         },
         "evidence_boundary": "DESIGN_AND_MEDIA_CANDIDATE_ONLY_NOT_UNITY_RUNTIME_NOT_FORMAL_BUILD_NOT_LIVE_DEVICE_CHAIN",

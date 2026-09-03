@@ -33,11 +33,18 @@
         2.2211551666259766
       ]
     },
-    "fade_mean_saturation": [
-      9.4e-05,
-      0.209991,
-      0.305495
-    ],
+    "fade_full_non_hud_mean_saturation_by_condition": {
+      "scene_native": [
+        9.6e-05,
+        0.216704,
+        0.314448
+      ],
+      "abstract_pacer": [
+        0.000104,
+        0.217674,
+        0.3126
+      ]
+    },
     "corridor_condition_parity": {
       "187.5": 2.5046,
       "387.5": 2.5235,
