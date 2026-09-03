@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2640" viewBox="0 0 2400 2640" role="img" aria-labelledby="title desc">
+  <title id="title">SRP v2.1 任务状态与门禁解释清单</title>
+  <desc id="desc">解释 SRP 任务注册表的七种任务状态、三种门禁、五类任务颜色和依赖线含义。快照日期为 2026-09-03。</desc>
+  <metadata>snapshot=2026-09-03; tasks=57; done=11; in_progress=1; in_review=2; ready=1; wait_dep=25; wait_dep_external=4; blocked_external=13; status_basis=05_可领取任务包.csv@working-tree; v04_signoff=68db963</metadata>
+
+  <style>
+    text { font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #1d2732; }
+    .title { font-size: 42px; font-weight: 700; }
+    .subtitle { font-size: 19px; fill: #66717a; }
+    .summary { font-size: 21px; font-weight: 700; }
+    .section-title { font-size: 28px; font-weight: 700; }
+    .column-title { font-size: 18px; font-weight: 700; fill: #ffffff; }
+    .status-name { font-size: 21px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+    .registry-name { font-size: 21px; font-weight: 700; }
+    .count { font-size: 30px; font-weight: 700; text-anchor: middle; }
+    .body { font-size: 19px; }
+    .body-strong { font-size: 19px; font-weight: 700; }
+    .note { font-size: 17px; fill: #66717a; }
+    .gate-title { font-size: 23px; font-weight: 700; }
+    .gate-body { font-size: 18px; }
+    .type-title { font-size: 21px; font-weight: 700; }
+    .type-note { font-size: 16px; fill: #66717a; }
+    .boundary { font-size: 21px; font-weight: 700; fill: #b3372f; text-anchor: middle; }
+  </style>
+
+  <rect x="0" y="0" width="2400" height="2640" fill="#fbfaf6"/>
+
+  <g id="header">
+    <text x="60" y="72" class="title">SRP v2.1｜任务状态与门禁解释清单</text>
+    <text x="60" y="112" class="subtitle">任务框颜色表示职责类型；右上状态角标表示进度。顺序与工程结果均不得扩大为项目整体通过。</text>
+
+    <rect x="60" y="142" width="2280" height="66" rx="11" fill="#edf4fa" stroke="#6d94b8" stroke-width="1.6"/>
+    <text x="86" y="184" class="summary">当前快照：57 项｜DONE 11｜DOING 1｜REVIEW 2｜READY 1｜WAIT 25｜EXT-WAIT 4｜LOCK 13</text>
+
+    <rect x="60" y="226" width="2280" height="66" rx="11" fill="#fff0ee" stroke="#cf4d43" stroke-width="1.6"/>
+    <text x="86" y="268" class="summary">当前工作面：F-04 / V-04 DONE｜F-05 DOING｜G-01 / G-02 REVIEW｜F-03 READY</text>
+  </g>
+
+  <g id="task-status-checklist">
+    <text x="60" y="346" class="section-title">一、任务节点状态</text>
+
+    <rect x="60" y="376" width="2280" height="76" rx="10" fill="#536879"/>
+    <text x="216" y="424" class="column-title" text-anchor="middle">图中角标</text>
+    <text x="544" y="424" class="column-title" text-anchor="middle">注册表状态</text>
+    <text x="770" y="424" class="column-title" text-anchor="middle">数量</text>
+    <text x="1288" y="424" class="column-title" text-anchor="middle">准确含义</text>
+    <text x="2050" y="424" class="column-title" text-anchor="middle">下一状态条件</text>
+
+    <g id="status-DONE" data-status="DONE" data-count="11">
+      <rect x="60" y="452" width="2280" height="148" fill="#ffffff" stroke="#d4dce3"/>
+      <rect x="96" y="495" width="240" height="62" rx="31" fill="#2f8a57"/>
+      <text x="216" y="535" class="status-name">DONE</text>
+      <text x="544" y="528" class="registry-name" text-anchor="middle">DONE</text>
+      <text x="770" y="536" class="count" fill="#2f8a57">11</text>
+      <text x="892" y="505" class="body">
+        <tspan x="892" dy="0">任务自身 AC、证据与复核已经闭合。</tspan>
+        <tspan x="892" dy="32">不代表下游、LIVE_E2E、伦理或发布完成。</tspan>
+      </text>
+      <text x="1788" y="512" class="body">
+        <tspan x="1788" dy="0">可作为显式依赖满足；</tspan>
+        <tspan x="1788" dy="32">完成范围不得向外扩大。</tspan>
+      </text>
+    </g>
+
+    <g id="status-IN_PROGRESS" data-status="IN_PROGRESS" data-count="1">
+      <rect x="60" y="600" width="2280" height="148" fill="#f7f9fb" stroke="#d4dce3"/>
+      <rect x="96" y="643" width="240" height="62" rx="31" fill="#2f75b5"/>
+      <text x="216" y="683" class="status-name">DOING</text>
+      <text x="544" y="676" class="registry-name" text-anchor="middle">IN_PROGRESS</text>
+      <text x="770" y="684" class="count" fill="#2f75b5">1</text>
+      <text x="892" y="653" class="body">
+        <tspan x="892" dy="0">任务已被领取并正在实施，不能重复领取。</tspan>
+        <tspan x="892" dy="32">尚不能被下游当作完成依赖。</tspan>
+      </text>
+      <text x="1788" y="660" class="body">
+        <tspan x="1788" dy="0">形成候选 → 验证 →</tspan>
+        <tspan x="1788" dy="32">进入第二人复核。</tspan>
+      </text>
+    </g>
+
+    <g id="status-IN_REVIEW" data-status="IN_REVIEW" data-count="2">
+      <rect x="60" y="748" width="2280" height="148" fill="#ffffff" stroke="#d4dce3"/>
+      <rect x="96" y="791" width="240" height="62" rx="31" fill="#c47a1b"/>
+      <text x="216" y="831" class="status-name">REVIEW</text>
+      <text x="544" y="824" class="registry-name" text-anchor="middle">IN_REVIEW</text>
+      <text x="770" y="832" class="count" fill="#c47a1b">2</text>
+      <text x="892" y="801" class="body">
+        <tspan x="892" dy="0">候选已形成，等待第二人、外部门或治理裁定。</tspan>
+        <tspan x="892" dy="32">不是失败，也不等于已经通过。</tspan>
+      </text>
+      <text x="1788" y="808" class="body">
+        <tspan x="1788" dy="0">PASS 且硬门闭合 → DONE；</tspan>
+        <tspan x="1788" dy="32">否则返回实施修正。</tspan>
+      </text>
+    </g>
+
+    <g id="status-READY" data-status="READY" data-count="1">
+      <rect x="60" y="896" width="2280" height="148" fill="#f7f9fb" stroke="#d4dce3"/>
+      <rect x="96" y="939" width="240" height="62" rx="31" fill="#7b56b6"/>
+      <text x="216" y="979" class="status-name">READY</text>
+      <text x="544" y="972" class="registry-name" text-anchor="middle">READY</text>
+      <text x="770" y="980" class="count" fill="#7b56b6">1</text>
+      <text x="892" y="949" class="body">
+        <tspan x="892" dy="0">已进入可领取队列，但尚未开始实施。</tspan>
+        <tspan x="892" dy="32">领取前仍须核对依赖、外部门和独立任务包。</tspan>
+      </text>
+      <text x="1788" y="972" class="body-strong">认领后 → IN_PROGRESS</text>
+    </g>
+
+    <g id="status-WAIT_DEP" data-status="WAIT_DEP" data-count="25">
+      <rect x="60" y="1044" width="2280" height="148" fill="#ffffff" stroke="#d4dce3"/>
+      <rect x="96" y="1087" width="240" height="62" rx="31" fill="#7d8790"/>
+      <text x="216" y="1127" class="status-name">WAIT</text>
+      <text x="544" y="1120" class="registry-name" text-anchor="middle">WAIT_DEP</text>
+      <text x="770" y="1128" class="count" fill="#7d8790">25</text>
+      <text x="892" y="1097" class="body">
+        <tspan x="892" dy="0">一个或多个显式 depends_on 尚未完成，不可领取。</tspan>
+        <tspan x="892" dy="32">不能按波次整体完成而自动放行。</tspan>
+      </text>
+      <text x="1788" y="1120" class="body-strong">全部依赖闭合 → READY</text>
+    </g>
+
+    <g id="status-WAIT_DEP_EXTERNAL" data-status="WAIT_DEP_EXTERNAL" data-count="4">
+      <rect x="60" y="1192" width="2280" height="148" fill="#f7f9fb" stroke="#d4dce3"/>
+      <rect x="96" y="1235" width="240" height="62" rx="31" fill="#d9822b"/>
+      <text x="216" y="1275" class="status-name">EXT-WAIT</text>
+      <text x="544" y="1268" class="registry-name" text-anchor="middle">WAIT_DEP_EXTERNAL</text>
+      <text x="770" y="1276" class="count" fill="#d9822b">4</text>
+      <text x="892" y="1245" class="body">
+        <tspan x="892" dy="0">仍缺真实设备、外部测量或正式运行条件。</tspan>
+        <tspan x="892" dy="32">仅补内部代码不能关闭此状态。</tspan>
+      </text>
+      <text x="1788" y="1252" class="body">
+        <tspan x="1788" dy="0">外部条件 + 任务依赖</tspan>
+        <tspan x="1788" dy="32">全部闭合 → READY</tspan>
+      </text>
+    </g>
+
+    <g id="status-BLOCKED_EXTERNAL" data-status="BLOCKED_EXTERNAL" data-count="13">
+      <rect x="60" y="1340" width="2280" height="148" fill="#ffffff" stroke="#d4dce3"/>
+      <rect x="96" y="1383" width="240" height="62" rx="31" fill="#c64d4d"/>
+      <text x="216" y="1423" class="status-name">LOCK</text>
+      <text x="544" y="1416" class="registry-name" text-anchor="middle">BLOCKED_EXTERNAL</text>
+      <text x="770" y="1424" class="count" fill="#c64d4d">13</text>
+      <text x="892" y="1393" class="body">
+        <tspan x="892" dy="0">伦理、许可、预注册、人员或正式批次硬门阻断。</tspan>
+        <tspan x="892" dy="32">机器 PASS 与工程完成均不能替代。</tspan>
+      </text>
+      <text x="1788" y="1400" class="body">
+        <tspan x="1788" dy="0">具名外部放行后，</tspan>
+        <tspan x="1788" dy="32">再按注册表重新解锁。</tspan>
+      </text>
+    </g>
+  </g>
+
+  <g id="gate-status-checklist">
+    <text x="60" y="1556" class="section-title">二、门禁条状态</text>
+
+    <g id="gate-CURRENT">
+      <rect x="60" y="1590" width="740" height="278" rx="14" fill="#edf4fa" stroke="#5d8fb9" stroke-width="2"/>
+      <rect x="88" y="1622" width="156" height="42" rx="9" fill="#5d8fb9"/>
+      <text x="166" y="1650" class="status-name" style="font-size:17px">CURRENT</text>
+      <text x="88" y="1712" class="gate-title">当前工作面</text>
+      <text x="88" y="1754" class="gate-body">
+        <tspan x="88" dy="0">允许推进该波次中的具体任务，</tspan>
+        <tspan x="88" dy="32">不表示波次整体通过或全部依赖完成。</tspan>
+      </text>
+      <text x="88" y="1836" class="note">当前用于 W0 / W1。</text>
+    </g>
+
+    <g id="gate-WAIT">
+      <rect x="830" y="1590" width="740" height="278" rx="14" fill="#fff7e8" stroke="#d88a24" stroke-width="2" stroke-dasharray="10 8"/>
+      <rect x="858" y="1622" width="156" height="42" rx="9" fill="#d88a24"/>
+      <text x="936" y="1650" class="status-name" style="font-size:17px">WAIT</text>
+      <text x="858" y="1712" class="gate-title">依赖门未闭</text>
+      <text x="858" y="1754" class="gate-body">
+        <tspan x="858" dy="0">必须按箭头和 depends_on 完成上游任务，</tspan>
+        <tspan x="858" dy="32">不得跳过、抢跑或按波次整体放行。</tspan>
+      </text>
+      <text x="858" y="1836" class="note">用于 W2 / W3 / W6。</text>
+    </g>
+
+    <g id="gate-LOCK">
+      <rect x="1600" y="1590" width="740" height="278" rx="14" fill="#fff0ee" stroke="#cf4d43" stroke-width="2"/>
+      <rect x="1628" y="1622" width="156" height="42" rx="9" fill="#cf4d43"/>
+      <text x="1706" y="1650" class="status-name" style="font-size:17px">LOCK</text>
+      <text x="1628" y="1712" class="gate-title">外部硬门未闭</text>
+      <text x="1628" y="1754" class="gate-body">
+        <tspan x="1628" dy="0">自动测试、截图、代码完成或本地运行，</tspan>
+        <tspan x="1628" dy="32">均不能替代正式批准和具名复核。</tspan>
+      </text>
+      <text x="1628" y="1836" class="note">当前用于 W4 / W5。</text>
+    </g>
+  </g>
+
+  <g id="task-type-checklist">
+    <text x="60" y="1944" class="section-title">三、任务框颜色（职责类型，不是进度）</text>
+
+    <g id="type-data">
+      <rect x="60" y="1980" width="430" height="206" rx="13" fill="#edf5ec" stroke="#71966c" stroke-width="3"/>
+      <text x="86" y="2030" class="type-title">协议与数据</text>
+      <text x="86" y="2072" class="body">合同、Python、设备、</text>
+      <text x="86" y="2104" class="body">信号、随机化与分析</text>
+      <text x="86" y="2152" class="type-note">低饱和绿色框</text>
+    </g>
+
+    <g id="type-unity">
+      <rect x="522" y="1980" width="430" height="206" rx="13" fill="#edf4fa" stroke="#6d94b8" stroke-width="3"/>
+      <text x="548" y="2030" class="type-title">Unity 与视觉</text>
+      <text x="548" y="2072" class="body">前期设计、SceneAdapter、</text>
+      <text x="548" y="2104" class="body">场景实现、成品与构建</text>
+      <text x="548" y="2152" class="type-note">低饱和蓝色框</text>
+    </g>
+
+    <g id="type-td">
+      <rect x="984" y="1980" width="430" height="206" rx="13" fill="#fbf4e6" stroke="#b18a4b" stroke-width="3"/>
+      <text x="1010" y="2030" class="type-title">TD 与集成</text>
+      <text x="1010" y="2072" class="body">TouchDesigner 只读操作台</text>
+      <text x="1010" y="2104" class="body">与完整系统集成</text>
+      <text x="1010" y="2152" class="type-note">低饱和金色框</text>
+    </g>
+
+    <g id="type-research">
+      <rect x="1446" y="1980" width="430" height="206" rx="13" fill="#f5f0f8" stroke="#9074a5" stroke-width="3"/>
+      <text x="1472" y="2030" class="type-title">研究治理与执行</text>
+      <text x="1472" y="2072" class="body">研究设计、治理、工具、</text>
+      <text x="1472" y="2104" class="body">预试、批次与关闭</text>
+      <text x="1472" y="2152" class="type-note">低饱和紫色框</text>
+    </g>
+
+    <g id="type-paper">
+      <rect x="1908" y="1980" width="430" height="206" rx="13" fill="#fbefec" stroke="#b96e5d" stroke-width="3"/>
+      <text x="1934" y="2030" class="type-title">论文与交付</text>
+      <text x="1934" y="2072" class="body">论文准备、写作、</text>
+      <text x="1934" y="2104" class="body">投稿复现与成果归档</text>
+      <text x="1934" y="2152" class="type-note">低饱和陶红色框</text>
+    </g>
+  </g>
+
+  <g id="relation-checklist">
+    <text x="60" y="2262" class="section-title">四、关联线与判定边界</text>
+
+    <path d="M90 2320 H390" fill="none" stroke="#34495a" stroke-width="5"/>
+    <path d="M390 2320 L366 2306 V2334 Z" fill="#34495a"/>
+    <text x="426" y="2328" class="body-strong">深色粗线：主装配链</text>
+
+    <path d="M850 2320 H1150" fill="none" stroke="#74808c" stroke-width="2"/>
+    <path d="M1150 2320 L1128 2308 V2332 Z" fill="#74808c"/>
+    <text x="1186" y="2328" class="body-strong">灰色细线：其他显式 depends_on</text>
+
+    <rect x="60" y="2376" width="2280" height="112" rx="12" fill="#fff0ee" stroke="#cf4d43" stroke-width="2"/>
+    <text x="1200" y="2444" class="boundary">READY ≠ 已开始 ｜ REVIEW ≠ 已通过 ｜ DONE ≠ 项目完成</text>
+
+    <rect x="60" y="2504" width="2280" height="82" rx="12" fill="#eef3f7" stroke="#9aabb8" stroke-width="1.6"/>
+    <text x="1200" y="2556" class="boundary" style="fill:#34495a">自动检查 ≠ 第二人复核 ｜ 工程就绪 ≠ LIVE_E2E / 伦理放行 / 投稿发布</text>
+
+    <text x="60" y="2620" class="note">快照：2026-09-03｜V-04 独立复核与团队总监签收：68db963｜对应流程图：SRP_项目任务关联与门禁流程_v1.0.svg</text>
+  </g>
+</svg>
