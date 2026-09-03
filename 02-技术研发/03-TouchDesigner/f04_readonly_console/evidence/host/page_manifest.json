@@ -1,6 +1,6 @@
 {
   "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
-  "page_manifest_schema_version": "f04-page-manifest-v1",
+  "page_manifest_schema_version": "f04-page-manifest-v2",
   "pages": [
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -11,7 +11,8 @@
         "telemetry.cue_mode"
       ],
       "id": "session_version",
-      "title": "Session / Version"
+      "title": "Session / Version",
+      "visual_mechanism": "status_cards"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -20,7 +21,8 @@
         "telemetry.ecg_device_state"
       ],
       "id": "device_connection",
-      "title": "Device Connection"
+      "title": "Device Connection",
+      "visual_mechanism": "connection_badges_and_freshness_bars"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -30,7 +32,8 @@
         "display_only.respiration.filtered_25hz"
       ],
       "id": "respiration_waveform",
-      "title": "Raw / Filtered Respiration"
+      "title": "Raw / Filtered Respiration",
+      "visual_mechanism": "dual_chop_waveform"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -40,7 +43,8 @@
         "display_only.rr_quality.status"
       ],
       "id": "ecg_rr_quality",
-      "title": "ECG / RR Quality"
+      "title": "ECG / RR Quality",
+      "visual_mechanism": "quality_gauge_and_rr_strip"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -52,7 +56,8 @@
         "telemetry.actual_confidence"
       ],
       "id": "phase_comparison",
-      "title": "Target / Actual Phase"
+      "title": "Target / Actual Phase",
+      "visual_mechanism": "dual_phase_tracks"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -62,7 +67,8 @@
         "display_only.cycle_summary.result"
       ],
       "id": "cycle_result",
-      "title": "Cycle Result"
+      "title": "Cycle Result",
+      "visual_mechanism": "summary_cards"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -75,7 +81,8 @@
         "telemetry.sync_uncertainty_ns"
       ],
       "id": "latency_clock",
-      "title": "Latency / Clock"
+      "title": "Latency / Clock",
+      "visual_mechanism": "latency_and_clock_bars"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -86,7 +93,8 @@
         "telemetry.recovery_locked"
       ],
       "id": "degradation",
-      "title": "Degradation"
+      "title": "Degradation",
+      "visual_mechanism": "state_lane_and_timeline"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -96,7 +104,8 @@
         "display_only.log_status.notice"
       ],
       "id": "log_write",
-      "title": "Log Write"
+      "title": "Log Write",
+      "visual_mechanism": "write_state_and_counter_cards"
     },
     {
       "banner": "READ ONLY / DEV-REPLAY / NOT LIVE",
@@ -105,7 +114,15 @@
         "display_only.request_placeholders.abort.status"
       ],
       "id": "manual_actions",
-      "title": "Manual Mark / Abort"
+      "title": "Manual Mark / Abort",
+      "visual_mechanism": "disabled_action_controls"
     }
+  ],
+  "scenarios": [
+    "good_storm",
+    "degraded_heat",
+    "unusable_snow",
+    "disconnected_fade",
+    "out_of_order_storm"
   ]
 }

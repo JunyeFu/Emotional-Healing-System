@@ -16,7 +16,7 @@
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt](D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt) | [inputs/08_ProjectVersion.txt](inputs/08_ProjectVersion.txt) | `0EE4B8BAF7A4E3760CD3A0C19797A9362ED4E0C9C8EF0F49D8304C1211E511B8` |
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs](D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs) | [inputs/09_FormalBuildGate.cs](inputs/09_FormalBuildGate.cs) | `ADA7823BB73B645E371510BD52402B0F060C72AE54C8AD67FF895A0D939647DB` |
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_license_ledger.json](D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_license_ledger.json) | [inputs/10_asset_license_ledger.json](inputs/10_asset_license_ledger.json) | `771E7AC77D0E2C4414ED79A963E3F0C76CEFAA1B2F1675DF4CA800FFDA20F098` |
-| [PROJECT_MODULES.md](D:/Agent/03-SRP/PROJECT_MODULES.md) | [inputs/11_PROJECT_MODULES.md](inputs/11_PROJECT_MODULES.md) | `D2EFE47B977C54BDD234D39BBCE5599008B8A4F7D60F4A1E4C8E9B4F36547303` |
+| [PROJECT_MODULES.md](D:/Agent/03-SRP/PROJECT_MODULES.md) | [inputs/11_PROJECT_MODULES.md](inputs/11_PROJECT_MODULES.md) | `A9446E9DFC6F5E6E4D0A8E563440F0DB8E732C44A2F8E0DB62BEB7B967E860EC` |
 
 ## 实现工作目录
 

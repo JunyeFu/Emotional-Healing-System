@@ -3,7 +3,7 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "F-03",
   "status": "READY",
-  "registry_sha256": "C875AB41AA919B4D8E970F159BD81A1CA5F252246D6278E595705BA7C53CA7D4",
+  "registry_sha256": "E3F564EBE0836127C89EDCE609592E381399E5E372BD5D611C99565C24CAFEC9",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md",
@@ -68,8 +68,8 @@
     {
       "source_path": "PROJECT_MODULES.md",
       "package_path": "inputs/11_PROJECT_MODULES.md",
-      "sha256": "D2EFE47B977C54BDD234D39BBCE5599008B8A4F7D60F4A1E4C8E9B4F36547303",
-      "size_bytes": 9448
+      "sha256": "A9446E9DFC6F5E6E4D0A8E563440F0DB8E732C44A2F8E0DB62BEB7B967E860EC",
+      "size_bytes": 9502
     }
   ],
   "working_paths": [

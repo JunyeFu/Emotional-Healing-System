@@ -1240,3 +1240,66 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 十个V-04验证器、协议权威、57项任务注册表、5个独立包/132份快照和根回归`412 passed in 40.14s`均通过。
 - V-04保持`IN_PROGRESS`；当前硬门为`H3_PENDING_TEAM_DIRECTOR_CONFIRMATION`。团队总监确认H3-1至H3-5前不解锁V-05。
 - 当前证据只关闭H3机器门和独立复审，不表示Unity运行、Windows制品、资产许可放行或真实设备链完成。
+
+### 2026-08-31 团队任务关联与门禁图更新
+
+- 目标：把团队流程图与状态解释清单同步到F-03第二人签收后的治理快照。
+- 权威：采用F-03 DONE治理分支任务注册表，状态为`DONE 10 / IN_PROGRESS 1 / IN_REVIEW 3 / READY 1 / WAIT_DEP 25 / WAIT_DEP_EXTERNAL 4 / BLOCKED_EXTERNAL 13`。
+- 制品：更新两张SVG并同步重绘PNG；F-03=`DONE`、F-04=`IN_REVIEW`、F-05=`READY`、V-04=`IN_PROGRESS`。
+- 边界：图示更新不改变任务状态，不解锁仍有剩余依赖的U-01、U-02、T-01或V-05。
+- 下一步：等待V-04团队总监H3确认；F-05仍为唯一READY任务。
+
+### 2026-08-31 V-04四天气固定镜头与高精度背景预览
+
+- 目标：将`storm`、`heat`、`snow`与已固定的`fade`统一改为固定场景，并提供多组高精度3D游戏环境风格预览。
+- 决策：四天气相机、背景与世界视差位移均为零；只保留低幅、非周期、可重放的局部天气运动。
+- 制品：生成A/B/C三组四联预览并落入`.artifacts-local/V-04/H3/fixed-background-previews/v1/`；Git保存修订合同、提示词和候选清单。
+- 联动：参与者产品总规格变化已同步刷新`F-03`独立包快照；任务状态不变，5个分发包与132份快照重新通过一致性门。
+- 历史边界：旧H3合并机器门与独立复审结果保留，但滚动镜头方向已被替换，不再进入原团队总监确认。
+- 当前硬门：`H3_FIXED_BACKGROUND_PREVIEW_SELECTION`；团队总监逐天气选择A/B/C后再生成四张独立16:9背景。
+
+### 2026-08-31 V-04 R2大景深独立背景预览
+
+- 目标：让每个固定画面同时具备近景材质、中景机制空间和远景尺度，并让地形或水系直接承接后续画面事件。
+- 制品：生成R2三组共12张独立`16:9`预览，保存于`.artifacts-local/V-04/H3/fixed-background-previews/r2/`；Git保存大景深事件构图合同、提示词、候选清单、验证记录和校验器。
+- 设计：近景承接实际响应；中景分别为风雨鞍部、连续盐槽、林间垂直空地和支流汇入的主水道；远景承接能见度、热霭、雪雾或整屏颜色与纹理的累计变化。
+- 筛查：A-storm的垂直水幕接近瀑布、A-snow的左侧大树干压缩近场区，均保留为反例但标为不推荐。推荐方向为`storm=B, heat=C, snow=C, fade=C`，未代替团队总监选择。
+- 验证：R2校验器、V-04工具链、历史H3合并机器门、协议权威、57项任务注册表和5包/132份独立任务包均为`PASS`；冻结Python 3.14.4根回归为`412 passed in 124.25s`。
+- 当前硬门：仍为`H3_FIXED_BACKGROUND_PREVIEW_SELECTION`；选择四项方向后重建四张可拆层背景，再重建四天气机制样片与H3合并评审。
+
+### 2026-08-31 V-04 R2背景方向选择确认
+
+- 团队总监已确认`storm=B, heat=C, snow=C, fade=C`。
+- 选择绑定`R2-B-storm`、`R2-C-heat`、`R2-C-snow`与`R2-C-fade`；不自动采用其他预览。
+- `H3_FIXED_BACKGROUND_PREVIEW_SELECTION`关闭，当前硬门迁移为`H3_LAYERABLE_BACKGROUND_REBUILD`。
+- 下一步：以近景实际响应、中景核心机制、远景累计环境的边界重建四张可拆层背景，之后再重建四天气固定镜头样片与H3合并评审。
+- 边界：R2预览仍为`TEMP_REFERENCE_ONLY`，未形成分层资产、Unity运行、Windows制品、资产许可放行或真实输入链证据。
+
+### 2026-09-01 T-01领取前盘点
+
+- 目标：核对T-01对应文件、接口、依赖和独立任务包后领取任务；项目状态枚举中的执行态为`IN_PROGRESS`，不使用未定义的`DOING`。
+- 权威状态：任务注册表中F-01=`DONE`、F-04=`IN_REVIEW`、F-05=`READY`、T-01=`WAIT_DEP`且领取人和分支为空；只有`READY`且未领取的任务可领取。
+- 合同接口：F-01 v2.1 Schema与fixture存在且合同测试`49 passed`；F-05要求的v2.2 Schema、步骤实例fixture和消费者迁移尚未形成，因此T-01不能只凭v2.1静态字段进入实现。
+- TouchDesigner接口：F-04静态只读壳测试`15 passed`，但UDP 5005节点仍为`active=false`的`T-01 NOT ACTIVE`占位；F-04说明仍要求第二人打开`.toe`完成人工复核。
+- 端口与任务包：UDP 5005已在全局端口注册表归属`03-SRP`，当前无监听；T-01不在独立任务包映射和当前分发目录中。
+- 治理验证：57项注册表校验`PASS`，当前`READY=F-03,F-05`；独立任务包校验`PASS`，当前5包、132份快照，不含T-01。
+- 决定：不改写T-01状态，不登记领取人或分支，保持`WAIT_DEP`。下一硬门为F-04完成第二人复核并转`DONE`、F-05完成v2.2与消费者迁移且经第二人签收转`DONE`，随后先生成并校验T-01的`READY`独立包，再执行领取。
+
+### 2026-09-01 F-04专用分支收口
+
+- 来源：将`codex/f-04-readonly-console`上经候选`6a5d0c8`绑定、独立团队总监二轮复审和签收提交`43a63a1`确认的最终F-04制品同步到当前权威。
+- 制品：模块化图形化只读操作台、统一`ConsoleSnapshot`、10页/5场景、TOE/TOX、14张截图、保存重开证据、首轮整改记录、技术验收记录和已签署二轮复审报告均已归位；升级控制文件标记`F-04_DONE / AC1-AC7_PASS / DIRECTOR_SIGNED`。
+- 状态：任务注册表、任务手册、AGENTS、README和当前阶段看板已同步F-04=`DONE`；F-04从当前独立分发包映射和目录移除。
+- 验证：F-04专项`21 passed`、F-01合同`49 passed`、P-01/P-02相关`166 passed`、根回归`412 passed`；协议权威、57项任务注册表和4包/106份快照均`PASS`；TOE/TOX哈希与签收报告一致。
+- 下游：T-01仍为`WAIT_DEP`且未领取；F-04门已关闭，剩余直接依赖门为F-05 v2.2与消费者迁移完成并经第二人签收。
+- 边界：未实现T-01正式20Hz消费、T-02请求通道、真实输入链或`LIVE_E2E`；当前V-04未跟踪制品保持不变。
+
+### 2026-09-01 F-05领取与接口基线盘点
+
+- 领取结论：F-05三项前置F-01、P-01、P-02均为`DONE`；注册表由`READY`转为`IN_PROGRESS`，领取人登记为`Codex Agent（F-05独立对话）`，目标分支登记为`codex/f-05-phase-instance-v2-2`。
+- 输入完整性：领取前独立包含17份受`sha256_lf_no_trailing_ws_text_v1`约束的输入快照，包校验`PASS`；工作面限定为`02-技术研发/05-通信协议`、`02-技术研发/srp_session_core`和`02-技术研发/srp_session_store`。
+- 接口现状：正式机器合同仍只有不可变`runtime-contract-v2.1.schema.json`；`schema_version=2.1`，遥测提供`target_phase/target_progress`与`actual_phase/actual_progress`，尚无周期、步骤和步骤实例身份。Python保持唯一状态权威，Unity与TD保持只消费边界。
+- 实现基线：F-01合同测试`49 passed`；P-01/P-02测试`166 passed`。未发现v2.2 Schema、storm双停/fade双吸运行fixture或正式消费者迁移实现，符合F-05起点。
+- 下游边界：F-05完成与第二人签收前，U-01、U-02、T-01和U-07继续受阻；不得从相位名称或进度猜测步骤实例。
+- 分发更新：F-05进入执行态后从独立领取包映射和生成目录移除；当前分发集合为F-03、G-01、G-02，共3包89份快照。
+- 工作树保护：当前检出分支仍为`codex/v-04-animatic`且含并行V-04与F-04收口改动；本次未切换分支、未覆盖并行制品，F-05目标分支仅完成治理登记。

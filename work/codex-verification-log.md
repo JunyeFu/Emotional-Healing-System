@@ -1228,3 +1228,90 @@
 | Project Regression | 冻结Python 3.14.4：`412 passed in 40.14s`。 |
 | State | V-04保持`IN_PROGRESS`；当前硬门=`H3_PENDING_TEAM_DIRECTOR_CONFIRMATION`。 |
 | Evidence Boundary | 当前只关闭H3候选机器门和独立复审；不表示Unity运行、Windows制品、资产许可放行、真实设备链或研究结果完成。 |
+
+### 2026-08-31 团队任务关联与门禁图
+
+| Check | Result |
+|---|---|
+| SVG XML | 两张SVG均可解析。 |
+| Registry binding | 绑定F-03 DONE治理分支注册表SHA-256 `A792580438B3E4BE81B0B7B86693DFCB30BF9009969DCFF723A01FFB80D380C4`。 |
+| Status counts | 57项任务计数与注册表逐状态一致；F-03/F-04/F-05/V-04分别为DONE/IN_REVIEW/READY/IN_PROGRESS。 |
+| PNG render | 流程图`2400×5878`，状态清单`2400×2640`；人工查看无画布截断。 |
+| Terminology scan | 新制品受限用语扫描0命中。 |
+
+### 2026-08-31 V-04固定镜头背景预览
+
+| Check | Result |
+|---|---|
+| Camera authority | 四天气均为`FIXED`；相机、背景和世界视差位移为零。 |
+| Preview groups | A/B/C三组均已生成，每组包含`storm/heat/snow/fade`四格。 |
+| Local artifacts | 三张PNG保存于`.artifacts-local/V-04/H3/fixed-background-previews/v1/`，尺寸与SHA-256写入候选清单。 |
+| Historical H3 | 既有H3合并验证器`PASS`；该结果只证明历史证据仍完整。 |
+| Governance | 协议权威、57项任务注册表与5个独立包/132份快照均`PASS`；`F-03`快照已同步当前产品总规格。 |
+| Project regression | 冻结Python 3.14.4执行根回归：`412 passed in 25.28s`。 |
+| Static checks | 新增行受限措辞0命中；候选JSON、图像尺寸/哈希及`git diff --check`通过。 |
+| Evidence boundary | 三组均为`TEMP_REFERENCE_ONLY`，当前只用于团队总监选择美术方向。 |
+
+### 2026-08-31 V-04 R2大景深独立背景预览
+
+| Check | Result |
+|---|---|
+| Candidate coverage | `PASS`：A/B/C三组、四天气各一张，共12张独立`16:9`PNG。 |
+| Manifest integrity | `validate_v04_h3_r2_previews.py`=`PASS`；12项尺寸和SHA-256与清单一致，固定相机与零背景位移断言通过。 |
+| Event affordance review | `PASS_FOR_HUMAN_SELECTION`：近景/中景/远景职责完整；A-storm与A-snow标记为不推荐，避免固定背景占据核心机制语义或遮挡近场。 |
+| Existing project gates | V-04工具链、历史H3合并机器门、协议权威、任务注册表和独立任务包均=`PASS`。 |
+| Project regression | 冻结Python 3.14.4：`412 passed in 124.25s`。 |
+| Static checks | 新增行受限措辞0命中；候选JSON解析和`git diff --check`通过。 |
+| Evidence boundary | R2图像均为`TEMP_REFERENCE_ONLY`，不代表分层背景、Unity运行、Windows制品、资产许可放行或真实输入链已经形成。 |
+
+### 2026-08-31 V-04 R2背景方向选择
+
+| Check | Result |
+|---|---|
+| Team director selection | `PASS`：`storm=B, heat=C, snow=C, fade=C`。 |
+| Candidate binding | `PASS`：`R2-B-storm`、`R2-C-heat`、`R2-C-snow`、`R2-C-fade`与选择记录逐项一致。 |
+| Gate migration | `PASS`：当前硬门从`H3_FIXED_BACKGROUND_PREVIEW_SELECTION`迁移为`H3_LAYERABLE_BACKGROUND_REBUILD`。 |
+| Evidence boundary | 选择只冻结背景重建方向；R2图像仍为`TEMP_REFERENCE_ONLY`。 |
+
+### 2026-09-01 T-01领取前盘点
+
+| Check | Result |
+|---|---|
+| Registry authority | `PASS`：57项；F-01=`DONE`、F-04=`IN_REVIEW`、F-05=`READY`、T-01=`WAIT_DEP`；当前可领取集合仅为F-03和F-05。 |
+| Independent packages | `PASS`：5包、132份快照，任务为F-03、F-04、F-05、G-01、G-02；T-01不在映射或分发目录中。 |
+| Protocol authority | `PASS`：v1.1权威与当前执行文件一致。 |
+| F-01 contract tests | `py -3.14 -m pytest 02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py -q`：`49 passed in 0.81s`。 |
+| F-04 tests | `py -3.14 -m pytest 02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py -q`：`15 passed in 0.06s`。 |
+| Interface state | 当前仅有v2.1 Schema/fixture；未发现F-05要求的v2.2 Schema、步骤实例fixture和消费者迁移。F-04 UDP 5005节点仍为禁用占位。 |
+| Port state | 全局端口注册表确认UDP 5005归属`03-SRP`；`netstat -ano -p udp`未发现5005监听。 |
+| Runtime deviation | PATH默认Python 3.14.5缺少pytest；按既有冻结入口改用`py -3.14`完成测试，未安装依赖。`Get-NetUDPEndpoint`查询挂起后已中止，改用只读`netstat`完成检查。 |
+| Claim decision | `NOT_CLAIMED`：T-01不满足“READY且未领取”，保持`WAIT_DEP`，未写入领取人或分支。 |
+| Scope boundary | 保留当前`codex/v-04-animatic`工作树及既有V-04改动；本次只追加盘点与验证记录。 |
+
+### 2026-09-01 F-04专用分支收口
+
+| Check | Result |
+|---|---|
+| Source binding | 最终实现来自`codex/f-04-readonly-console`；复审候选=`6a5d0c8`，签收提交=`43a63a1`，独立任务=`01a04c71-9894-73c3-aea1-30cb0d0280c0`。 |
+| Deliverable closure | 模块化图形化只读操作台、10页/5场景、TOE/TOX、14张截图、重开报告、首轮整改记录、技术验收记录与二轮签收报告已归位。 |
+| F-04 tests | `py -3.14 -m pytest 02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py -q`：`21 passed in 0.17s`。 |
+| Related regression | F-01合同`49 passed in 0.94s`；P-01/P-02相关`166 passed in 8.50s`；根回归`412 passed in 21.19s`。 |
+| Artifact hashes | TOE=`CBC982BE379C2A1D9A0BE7FC26508B1467A8CFCD920E51FBE4193E18AE74B9EA`；TOX=`1DEC705338AF14F623177BE60975B860FA3D86851D5EF7A7C6DF95BC04DE7F76`，与签收报告一致。 |
+| Governance | 协议权威`PASS`；任务注册表57项`PASS`，F-04=`DONE`、READY=`F-03,F-05`、IN_REVIEW=`G-01,G-02`；独立包4包/106份快照`PASS`。 |
+| T-01 effect | 保持`WAIT_DEP`和未领取；F-04门已关闭，剩余直接门为F-05。 |
+| Scope boundary | 未触碰当前V-04未跟踪制品；未实现T-01、T-02、真实输入链或`LIVE_E2E`。 |
+
+### 2026-09-01 F-05领取与接口基线盘点
+
+| Check | Result |
+|---|---|
+| Dependency gate | `PASS`：F-01、P-01、P-02均为`DONE`，F-05领取前为`READY`且领取字段为空。 |
+| Package integrity before claim | `PASS`：4个分发包、106份快照，F-05含17份输入快照且无哈希漂移。 |
+| Contract baseline | `PASS`：正式合同仍为不可变v2.1；当前未发现v2.2 Schema、显式周期/步骤实例字段、storm双停/fade双吸运行fixture或消费者迁移。 |
+| F-01 contract tests | 在`02-技术研发/05-通信协议`内执行`py -3.14 -m pytest tests/contract -q`：`49 passed in 0.76s`。 |
+| P-01/P-02 tests | 在`02-技术研发`内执行`py -3.14 -m pytest tests/session_core tests/session_store -q`：`166 passed in 4.70s`。 |
+| Command deviation | 首次把中文父目录作为pytest参数时发生Windows参数乱码且未收集测试；改为在模块目录内使用ASCII相对路径后通过，未安装或修改依赖。 |
+| Claim state | `PASS`：F-05=`IN_PROGRESS`，claimant=`Codex Agent（F-05独立对话）`，branch=`codex/f-05-phase-instance-v2-2`；项目状态枚举以`IN_PROGRESS`表示DOING。 |
+| Governance after claim | `PASS`：57项注册表；READY=`F-03`，IN_REVIEW=`G-01,G-02`；独立包3包/89份快照，任务为F-03、G-01、G-02。 |
+| Downstream boundary | U-01、U-02、T-01和U-07仍等待F-05完成及第二人签收；本次未实现v2.2或放行任何消费者。 |
+| Worktree boundary | 保留当前`codex/v-04-animatic`工作树与并行V-04制品；未切换到F-05目标分支，未提交或推送。 |

@@ -16,7 +16,10 @@ from f04_console import (  # noqa: E402
     FIXTURE_SCHEMA_VERSION,
     FORMAL_TELEMETRY_FIELDS,
     PAGE_DEFINITIONS,
+    SCENARIO_IDS,
+    ConsoleSnapshot,
     FixtureValidationError,
+    StaticFixtureAdapter,
     load_and_validate_fixture,
     validate_fixture,
 )
@@ -107,6 +110,52 @@ def test_ten_pages_have_complete_unique_field_mappings_and_readonly_banner():
     assert all(page["banner"] == "READ ONLY / DEV-REPLAY / NOT LIVE" for page in PAGE_DEFINITIONS)
 
 
+def test_static_fixture_adapter_reads_five_immutable_console_snapshots():
+    adapter = StaticFixtureAdapter(FIXTURE)
+    assert adapter.scenario_ids == SCENARIO_IDS == (
+        "good_storm",
+        "degraded_heat",
+        "unusable_snow",
+        "disconnected_fade",
+        "out_of_order_storm",
+    )
+    for scenario_id in SCENARIO_IDS:
+        adapter.scenario_id = scenario_id
+        snapshot = adapter.read_snapshot()
+        assert isinstance(snapshot, ConsoleSnapshot)
+        assert snapshot.meta["scenario_id"] == scenario_id
+        assert snapshot.meta["replay_state"] == "DEV-REPLAY"
+        assert set(snapshot.telemetry) == FORMAL_TELEMETRY_FIELDS
+        with pytest.raises(TypeError):
+            snapshot.telemetry["frame_seq"] = 999
+
+
+def test_all_fifty_page_scenario_combinations_resolve_through_snapshot_interface():
+    adapter = StaticFixtureAdapter(FIXTURE)
+    observed = set()
+    for scenario_id in SCENARIO_IDS:
+        adapter.scenario_id = scenario_id
+        for page in PAGE_DEFINITIONS:
+            adapter.page_id = page["id"]
+            snapshot = adapter.read_snapshot()
+            values = [snapshot.resolve(path) for path in page["field_paths"]]
+            assert snapshot.meta["page_id"] == page["id"]
+            assert len(values) == len(page["field_paths"])
+            observed.add((page["id"], scenario_id))
+    assert len(observed) == 50
+
+
+def test_static_adapter_can_be_replaced_without_page_specific_input_contract():
+    class ReplacementSource:
+        def read_snapshot(self):
+            return StaticFixtureAdapter(FIXTURE).read_snapshot()
+
+    source = ReplacementSource()
+    snapshot = source.read_snapshot()
+    for page in PAGE_DEFINITIONS:
+        assert [snapshot.resolve(path) for path in page["field_paths"]]
+
+
 def test_fixture_declares_disabled_runtime_and_request_permissions():
     payload = load_and_validate_fixture(FIXTURE)
     permissions = payload["permissions"]
@@ -140,12 +189,89 @@ def test_node_plan_is_scoped_idempotent_and_contains_ten_page_views():
     assert {node["page_id"] for node in page_nodes} == {
         page["id"] for page in PAGE_DEFINITIONS
     }
-    assert all(node["operator_type"] == "textTOP" for node in page_nodes)
+    assert all(node["operator_type"] != "textTOP" for node in page_nodes)
+    assert all(node["visual_mechanism"] != "text_dump" for node in page_nodes)
+    page_navigation = [node for node in plan["nodes"] if node["role"] == "page_navigation"]
+    scenario_navigation = [node for node in plan["nodes"] if node["role"] == "scenario_navigation"]
+    assert len(page_navigation) == 10
+    assert len(scenario_navigation) == 5
+    assert {node["scenario_id"] for node in scenario_navigation} == set(SCENARIO_IDS)
+    waveform_roles = {
+        node["role"] for node in plan["nodes"]
+        if node["path"].startswith("/project1/F04_ReadonlyConsole/SharedViews/WaveformPanel")
+    }
+    assert {"waveform_table", "waveform_dat_to_chop", "waveform_select", "waveform_math", "waveform_view"} <= waveform_roles
     udp = next(node for node in plan["nodes"] if node["role"] == "udp_placeholder")
     assert udp["port"] == 5005
     assert udp["active"] is False
     assert udp["label"] == "T-01 NOT ACTIVE"
     assert not [node for node in plan["nodes"] if node["permission"] == "network_output"]
+
+
+def test_visible_navigation_has_unique_layout_and_drives_final_shell_output():
+    plan = build_node_plan()
+    page_navigation = [node for node in plan["nodes"] if node["role"] == "page_navigation"]
+    scenario_navigation = [node for node in plan["nodes"] if node["role"] == "scenario_navigation"]
+
+    assert len({tuple(node["panel_position"]) for node in page_navigation}) == 10
+    assert len({tuple(node["panel_position"]) for node in scenario_navigation}) == 5
+    assert all(node["visible_in_shell"] is True for node in page_navigation + scenario_navigation)
+
+    shell_view = next(node for node in plan["nodes"] if node["role"] == "console_shell_view")
+    display_out = next(node for node in plan["nodes"] if node["role"] == "local_display_output")
+    assert shell_view["operator_type"] == "opviewerTOP"
+    assert shell_view["viewer_target"] == "/project1/F04_ReadonlyConsole/ConsoleShell"
+    assert display_out["input_role"] == "console_shell_view"
+
+
+def test_each_page_declares_scenario_specific_graphical_roles():
+    required_roles = {
+        "session_version": {"session_card", "version_card", "source_card"},
+        "device_connection": {"resp_connection_badge", "ecg_connection_badge", "freshness_bar"},
+        "respiration_waveform": {"page_waveform_view", "raw_channel_legend", "filtered_channel_legend"},
+        "ecg_rr_quality": {"ecg_quality_gauge", "rr_interval_strip"},
+        "phase_comparison": {"target_phase_track", "actual_phase_track"},
+        "cycle_result": {"cycle_summary_card", "cycle_result_card"},
+        "latency_clock": {"latency_bar", "clock_drift_bar"},
+        "degradation": {"quality_state_lane", "degradation_timeline"},
+        "log_write": {"log_write_state_card", "log_counter_card"},
+        "manual_actions": {
+            "manual_mark_control_visual",
+            "abort_control_visual",
+            "manual_mark_control_label",
+            "abort_control_label",
+        },
+    }
+    nodes = build_node_plan()["nodes"]
+    for page_id, roles in required_roles.items():
+        for scenario_id in SCENARIO_IDS:
+            observed = {
+                node["role"]
+                for node in nodes
+                if node.get("page_id") == page_id
+                and node.get("scenario_id") == scenario_id
+            }
+            assert roles <= observed, (page_id, scenario_id, roles - observed)
+
+
+def test_manual_actions_are_real_visible_disabled_controls_without_callbacks():
+    nodes = build_node_plan()["nodes"]
+    controls = [
+        node
+        for node in nodes
+        if node["role"] == "disabled_action_control"
+    ]
+    assert {node["action_id"] for node in controls} == {"manual_mark", "abort"}
+    assert {node["path"].rsplit("/", 1)[-1] for node in controls} == {
+        "manual_mark_disabled",
+        "abort_disabled",
+    }
+    assert all(node["operator_type"] == "buttonCOMP" for node in controls)
+    assert all(node["permission"] == "disabled_control" for node in controls)
+    assert all(node["enabled"] is False for node in controls)
+    assert all(node["visible_in_shell"] is True for node in controls)
+    assert all(node["label"].endswith("T-02 NOT ACTIVE") for node in controls)
+    assert not [node for node in controls if node.get("callback")]
 
 
 def test_host_artifacts_are_deterministic_and_include_permissions_and_hashes(tmp_path):
@@ -154,6 +280,7 @@ def test_host_artifacts_are_deterministic_and_include_permissions_and_hashes(tmp
     assert first["artifact_hashes"] == second["artifact_hashes"]
     assert first["fixture_sha256"] == second["fixture_sha256"]
     assert first["page_count"] == 10
+    assert first["page_scenario_combinations"] == 50
     assert first["touchdesigner_required_build"] == "2025.32820"
     expected = {
         "page_manifest.json",
@@ -173,4 +300,12 @@ def test_touchdesigner_builder_has_exact_root_guard_and_runtime_evidence_steps()
     assert ".save(str(TOX_PATH))" in source
     assert "errors(recurse=True)" in source
     assert "scriptErrors(recurse=True)" in source
-    assert "view.save(" in source
+    assert "node.save(" in source
+    assert "node.numpyArray()" in source
+    assert "delayFrames=5" in source
+    assert "buttonCOMP" in source
+    assert "button.name = name" in source
+    assert "dattoCHOP" in source
+    assert "selectCHOP" in source
+    assert "mathCHOP" in source
+    assert "opviewerTOP" in source
