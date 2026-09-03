@@ -5,7 +5,7 @@
 | 范围 | 文件 |
 |---|---|
 | 实施裁定 | `V-04_科研便捷实施裁定_v1.2.md` |
-| 当前状态 | `V-04_实施状态与H1确认记录_v3.1.md` |
+| 当前状态 | `V-04_实施状态与独立复核修订记录_v3.2.md` |
 | 四天气固定镜头修订 | `V-04_H3_四天气固定镜头修订合同_v1.0.md` |
 | R2大景深事件构图 | `V-04_H3_四天气大景深事件构图合同_v1.0.md` |
 | R2独立背景预览与选择 | `V-04_H3_R2大景深AAA背景生图提示词_v1.0.md`、`V-04_H3_R2大景深背景预览候选清单_v1.0.json`、`V-04_H3_R2背景选择记录_v1.0.json`、`V-04_H3_R2背景选择验证记录_v1.0.md`、`V-04_H3_R2大景深背景预览验证记录_v1.0.md`、`validate_v04_h3_r2_previews.py` |
@@ -14,7 +14,8 @@
 | H3当前独立贴纸素材 | `V-04_H3_AI独立贴纸素材合同_v1.0.md`、`V-04_H3_AI独立贴纸素材清单_v1.0.json`、`V-04_H3_AI独立贴纸生图提示词_v1.0.md` |
 | H3 fade独立素材人工结论 | `V-04_H3_fade独立素材人工评审记录_v1.0.json`、`V-04_H3_fade独立素材人工评审结论_v1.0.md` |
 | H3三天气独立素材人工结论 | `V-04_H3_storm_heat_snow独立素材人工评审记录_v1.0.json`、`V-04_H3_storm_heat_snow独立素材人工评审结论_v1.0.md` |
-| H3固定镜头合并评审 | `V-04_H3固定镜头合并评审配置_v1.0.json`、`render_h3_fixed_combined_review.py`、`validate_v04_h3_fixed_combined_review.py`、`V-04_H3固定镜头合并评审候选清单_v1.0.json`、`V-04_H3固定镜头合并评审机器验收记录_v1.0.json`、`V-04_H3固定镜头合并评审说明_v1.0.md`、`V-04_H3固定镜头合并评审人工评审记录_v1.0.json`、`V-04_H3固定镜头合并评审人工评审结论_v1.0.md`、`review/H3/fixed-combined-review-candidate-v1/keyframes.jpg` |
+| H3固定镜头合并评审 | 当前为`V-04_H3固定镜头合并评审配置_v2.0.json`、`render_h3_fixed_combined_review_v2.py`、`validate_v04_h3_fixed_combined_review_v2.py`、`V-04_H3固定镜头合并评审候选清单_v2.0.json`、`V-04_H3固定镜头合并评审机器验收记录_v2.0.json`、`review/H3/fixed-combined-review-candidate-v2/keyframes.jpg`；v1为`SUPERSEDED_REVIEW_INPUT_ERROR` |
+| V-04完整时长Animatic | `V-04_完整时长Animatic配置_v1.0.json`、`render_v04_full_duration_animatic.py`、`validate_v04_full_duration_animatic.py`、`V-04_完整时长Animatic候选清单_v1.0.json`、`V-04_完整时长Animatic机器验收记录_v1.0.json`、`V-04_完整时长Animatic深度机器验收记录_v1.0.json`、`review/V-04/full-duration-animatic-candidate-v1/keyframes.jpg` |
 | 历史固定镜头四联预览 | `V-04_H3_固定镜头高精度背景生图提示词_v1.0.md`、`V-04_H3_固定镜头背景预览候选清单_v1.0.json` |
 | 固定镜头预览验证 | `V-04_H3_固定镜头背景预览验证记录_v1.0.md` |
 | H1选择 | `V-04_H1选择记录_v1.0.json` |

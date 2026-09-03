@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "task_id": "V-04",
+  "candidate_id": "v04-full-duration-animatic-candidate-v1",
+  "purpose": "LOW_FIDELITY_FULL_TIMELINE_REVIEW",
+  "review_order": ["storm", "heat", "snow", "fade"],
+  "review_order_is_runtime_sequence": false,
+  "timeline": {
+    "demo_s": 25.0,
+    "closed_loop_s": 150.0,
+    "lock_transition_s": 25.0,
+    "current_exit_s": 7.5,
+    "neutral_corridor_s": 10.0,
+    "next_baseline_s": 7.5,
+    "module_total_s": 200.0,
+    "session_total_s": 800.0
+  },
+  "render": {
+    "width": 1920,
+    "height": 600,
+    "source_fps": 2,
+    "output_fps": 30,
+    "video_codec": "h264",
+    "audio_sample_rate": 48000,
+    "audio_channels": 2
+  },
+  "inputs": {
+    "h3_config": "V-04_H3固定镜头合并评审配置_v2.0.json",
+    "h3_manifest": "V-04_H3固定镜头合并评审候选清单_v2.0.json",
+    "six_node_storyboard": "V-04_H3_四天气六节点Unity交接分镜_v1.0.json"
+  },
+  "outputs": {
+    "artifact_root": ".artifacts-local/V-04/full-duration-animatic-candidate-v1",
+    "audio_video": "V-04-full-duration-animatic-audio-v1.mp4",
+    "silent_video": "V-04-full-duration-animatic-silent-v1.mp4",
+    "keyframes": "review/V-04/full-duration-animatic-candidate-v1/keyframes.jpg",
+    "manifest": "V-04_完整时长Animatic候选清单_v1.0.json",
+    "machine_report": "V-04_完整时长Animatic机器验收记录_v1.0.json"
+  },
+  "asset_status": "TEMP_REFERENCE_ONLY_PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false
+}

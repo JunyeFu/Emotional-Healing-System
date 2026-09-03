@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "candidate_id": "v04-full-duration-animatic-candidate-v1",
+  "result": "PASS",
+  "duration_s": 800.021354,
+  "modules": 4,
+  "nodes": 24,
+  "has_audio_version": true,
+  "has_silent_version": true,
+  "next_gate": "V04_FULL_ANIMATIC_VALIDATION",
+  "evidence_boundary": "Low-fidelity design review media only; Unity runtime, formal build, asset clearance and live device chain remain unverified."
+}

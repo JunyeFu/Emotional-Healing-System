@@ -1,0 +1,804 @@
+{
+  "schema_version": "1.0",
+  "candidate_id": "v04-full-duration-animatic-candidate-v1",
+  "status": "MACHINE_CANDIDATE",
+  "review_order": [
+    "storm",
+    "heat",
+    "snow",
+    "fade"
+  ],
+  "review_order_is_runtime_sequence": false,
+  "timeline": [
+    {
+      "module": "storm",
+      "kind": "demo_closed_loop_exit",
+      "start_s": 0.0,
+      "end_s": 182.5
+    },
+    {
+      "module": "storm",
+      "kind": "neutral_corridor",
+      "start_s": 182.5,
+      "end_s": 192.5
+    },
+    {
+      "module": "storm",
+      "kind": "next_neutral_baseline",
+      "start_s": 192.5,
+      "end_s": 200.0
+    },
+    {
+      "module": "heat",
+      "kind": "demo_closed_loop_exit",
+      "start_s": 200.0,
+      "end_s": 382.5
+    },
+    {
+      "module": "heat",
+      "kind": "neutral_corridor",
+      "start_s": 382.5,
+      "end_s": 392.5
+    },
+    {
+      "module": "heat",
+      "kind": "next_neutral_baseline",
+      "start_s": 392.5,
+      "end_s": 400.0
+    },
+    {
+      "module": "snow",
+      "kind": "demo_closed_loop_exit",
+      "start_s": 400.0,
+      "end_s": 582.5
+    },
+    {
+      "module": "snow",
+      "kind": "neutral_corridor",
+      "start_s": 582.5,
+      "end_s": 592.5
+    },
+    {
+      "module": "snow",
+      "kind": "next_neutral_baseline",
+      "start_s": 592.5,
+      "end_s": 600.0
+    },
+    {
+      "module": "fade",
+      "kind": "demo_closed_loop_exit",
+      "start_s": 600.0,
+      "end_s": 782.5
+    },
+    {
+      "module": "fade",
+      "kind": "neutral_corridor",
+      "start_s": 782.5,
+      "end_s": 792.5
+    },
+    {
+      "module": "fade",
+      "kind": "session_end",
+      "start_s": 792.5,
+      "end_s": 800.0
+    }
+  ],
+  "node_timeline": [
+    {
+      "module": "storm",
+      "node_id": "ENTRY",
+      "module_time_s": 0.0,
+      "session_time_s": 0.0,
+      "purpose": "从中性风门开始第一目标周期并建立风雨隘口",
+      "visual_segment": "demo",
+      "authoritative_inputs": [
+        "session_state",
+        "segment",
+        "target_phase",
+        "target_progress",
+        "target_cycle_index",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "signal_quality"
+      ],
+      "audio_state": "SHARED_AMBIENT_START_AT_RELATIVE_ZERO",
+      "fallback_state": "LOG_ONLY_UNTIL_ACTUAL_INTRO"
+    },
+    {
+      "module": "storm",
+      "node_id": "DEMO_END",
+      "module_time_s": 25.0,
+      "session_time_s": 25.0,
+      "purpose": "证明演示阶段完成但目标周期和实际提示不被重置",
+      "visual_segment": "demo",
+      "authoritative_inputs": [
+        "target_phase",
+        "target_progress",
+        "target_cycle_index",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "signal_quality",
+        "fallback_state"
+      ],
+      "audio_state": "CONTINUOUS_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_CERTAINTY_WRAPPER"
+    },
+    {
+      "module": "storm",
+      "node_id": "CLOSED_LOOP_START",
+      "module_time_s": 25.0,
+      "session_time_s": 25.0,
+      "purpose": "在不跳相位的前提下开放累计环境输入",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "segment",
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "recovery_value",
+        "recovery_locked",
+        "fallback_state"
+      ],
+      "audio_state": "CONTINUOUS_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_CERTAINTY_WRAPPER"
+    },
+    {
+      "module": "storm",
+      "node_id": "CLOSED_LOOP_MID",
+      "module_time_s": 100.0,
+      "session_time_s": 100.0,
+      "purpose": "同时审查目标、实际、累计与降级四层",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "recovery_value",
+        "signal_quality",
+        "fallback_state"
+      ],
+      "audio_state": "NON_PHASE_REACTIVE_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_LOW_CERTAINTY_OR_STATIC_BROKEN_OUTLINE"
+    },
+    {
+      "module": "storm",
+      "node_id": "CLOSED_LOOP_END",
+      "module_time_s": 175.0,
+      "session_time_s": 175.0,
+      "purpose": "冻结最后合法实际与累计环境状态并退出提示",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "segment",
+        "recovery_locked",
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "fallback_state"
+      ],
+      "audio_state": "BEGIN_SHARED_TRANSITION_CROSSFADE_WHEN_CONTROL_EVENT_ARRIVES",
+      "fallback_state": "PRESERVE_LAST_TRUTH_DURING_EXIT"
+    },
+    {
+      "module": "storm",
+      "node_id": "TRANSITION_COMPLETE",
+      "module_time_s": 200.0,
+      "session_time_s": 200.0,
+      "purpose": "清除当前天气提示并交给manifest指定的下一状态",
+      "visual_segment": "lock_transition",
+      "authoritative_inputs": [
+        "module_id",
+        "module_position",
+        "segment",
+        "session_state",
+        "manifest_sequence"
+      ],
+      "audio_state": "NEXT_SHARED_AMBIENT_OR_SESSION_END",
+      "fallback_state": "NO_CURRENT_ACTUAL_CARRIER_REMAINS"
+    },
+    {
+      "module": "heat",
+      "node_id": "ENTRY",
+      "module_time_s": 0.0,
+      "session_time_s": 200.0,
+      "purpose": "从中性冷流种子开始第一目标周期并建立盐原",
+      "visual_segment": "demo",
+      "authoritative_inputs": [
+        "session_state",
+        "segment",
+        "target_phase",
+        "target_progress",
+        "target_cycle_index",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "signal_quality"
+      ],
+      "audio_state": "SHARED_AMBIENT_START_AT_RELATIVE_ZERO",
+      "fallback_state": "LOG_ONLY_UNTIL_ACTUAL_INTRO"
+    },
+    {
+      "module": "heat",
+      "node_id": "DEMO_END",
+      "module_time_s": 25.0,
+      "session_time_s": 225.0,
+      "purpose": "证明演示完成但4-6目标与实际不中断",
+      "visual_segment": "demo",
+      "authoritative_inputs": [
+        "target_phase",
+        "target_progress",
+        "target_cycle_index",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "signal_quality",
+        "fallback_state"
+      ],
+      "audio_state": "CONTINUOUS_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_CERTAINTY_WRAPPER"
+    },
+    {
+      "module": "heat",
+      "node_id": "CLOSED_LOOP_START",
+      "module_time_s": 25.0,
+      "session_time_s": 225.0,
+      "purpose": "连续保留冷流状态并开放累计热霭输入",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "segment",
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "recovery_value",
+        "recovery_locked",
+        "fallback_state"
+      ],
+      "audio_state": "CONTINUOUS_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_CERTAINTY_WRAPPER"
+    },
+    {
+      "module": "heat",
+      "node_id": "CLOSED_LOOP_MID",
+      "module_time_s": 100.0,
+      "session_time_s": 300.0,
+      "purpose": "同时审查延长呼气、实际差异和累计热霭",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "recovery_value",
+        "signal_quality",
+        "fallback_state"
+      ],
+      "audio_state": "NON_PHASE_REACTIVE_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_LOW_CERTAINTY_OR_STATIC_BROKEN_OUTLINE"
+    },
+    {
+      "module": "heat",
+      "node_id": "CLOSED_LOOP_END",
+      "module_time_s": 175.0,
+      "session_time_s": 375.0,
+      "purpose": "冻结最后合法冷流实际和累计热霭",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "segment",
+        "recovery_locked",
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "fallback_state"
+      ],
+      "audio_state": "BEGIN_SHARED_TRANSITION_CROSSFADE_WHEN_CONTROL_EVENT_ARRIVES",
+      "fallback_state": "PRESERVE_LAST_TRUTH_DURING_EXIT"
+    },
+    {
+      "module": "heat",
+      "node_id": "TRANSITION_COMPLETE",
+      "module_time_s": 200.0,
+      "session_time_s": 400.0,
+      "purpose": "清除盐原提示并交给manifest指定的下一状态",
+      "visual_segment": "lock_transition",
+      "authoritative_inputs": [
+        "module_id",
+        "module_position",
+        "segment",
+        "session_state",
+        "manifest_sequence"
+      ],
+      "audio_state": "NEXT_SHARED_AMBIENT_OR_SESSION_END",
+      "fallback_state": "NO_CURRENT_ACTUAL_CARRIER_REMAINS"
+    },
+    {
+      "module": "snow",
+      "node_id": "ENTRY",
+      "module_time_s": 0.0,
+      "session_time_s": 400.0,
+      "purpose": "从中性粉雪边界开始第一目标周期并建立松林",
+      "visual_segment": "demo",
+      "authoritative_inputs": [
+        "session_state",
+        "segment",
+        "target_phase",
+        "target_progress",
+        "target_cycle_index",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "signal_quality"
+      ],
+      "audio_state": "SHARED_AMBIENT_START_AT_RELATIVE_ZERO",
+      "fallback_state": "LOG_ONLY_UNTIL_ACTUAL_INTRO"
+    },
+    {
+      "module": "snow",
+      "node_id": "DEMO_END",
+      "module_time_s": 25.0,
+      "session_time_s": 425.0,
+      "purpose": "证明演示完成但5-5镜像升沉不中断",
+      "visual_segment": "demo",
+      "authoritative_inputs": [
+        "target_phase",
+        "target_progress",
+        "target_cycle_index",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "signal_quality",
+        "fallback_state"
+      ],
+      "audio_state": "CONTINUOUS_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_CERTAINTY_WRAPPER"
+    },
+    {
+      "module": "snow",
+      "node_id": "CLOSED_LOOP_START",
+      "module_time_s": 25.0,
+      "session_time_s": 425.0,
+      "purpose": "连续保留粉雪状态并开放累计雪雾输入",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "segment",
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "recovery_value",
+        "recovery_locked",
+        "fallback_state"
+      ],
+      "audio_state": "CONTINUOUS_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_CERTAINTY_WRAPPER"
+    },
+    {
+      "module": "snow",
+      "node_id": "CLOSED_LOOP_MID",
+      "module_time_s": 100.0,
+      "session_time_s": 500.0,
+      "purpose": "同时审查镜像升沉、实际差异和累计雪雾",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "actual_confidence",
+        "recovery_value",
+        "signal_quality",
+        "fallback_state",
+        "config_hash"
+      ],
+      "audio_state": "NON_PHASE_REACTIVE_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_LOW_CERTAINTY_OR_STATIC_BROKEN_OUTLINE"
+    },
+    {
+      "module": "snow",
+      "node_id": "CLOSED_LOOP_END",
+      "module_time_s": 175.0,
+      "session_time_s": 575.0,
+      "purpose": "冻结最后合法粉雪实际与累计雪雾",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "segment",
+        "recovery_locked",
+        "target_phase",
+        "target_progress",
+        "actual_phase",
+        "actual_progress",
+        "fallback_state"
+      ],
+      "audio_state": "BEGIN_SHARED_TRANSITION_CROSSFADE_WHEN_CONTROL_EVENT_ARRIVES",
+      "fallback_state": "PRESERVE_LAST_TRUTH_DURING_EXIT"
+    },
+    {
+      "module": "snow",
+      "node_id": "TRANSITION_COMPLETE",
+      "module_time_s": 200.0,
+      "session_time_s": 600.0,
+      "purpose": "清除松林提示并交给manifest指定的下一状态",
+      "visual_segment": "lock_transition",
+      "authoritative_inputs": [
+        "module_id",
+        "module_position",
+        "segment",
+        "session_state",
+        "manifest_sequence"
+      ],
+      "audio_state": "NEXT_SHARED_AMBIENT_OR_SESSION_END",
+      "fallback_state": "NO_CURRENT_ACTUAL_CARRIER_REMAINS"
+    },
+    {
+      "module": "fade",
+      "node_id": "ENTRY",
+      "module_time_s": 0.0,
+      "session_time_s": 600.0,
+      "purpose": "从完全褪色固定湿地和第一吸目标起点进入模块",
+      "visual_segment": "demo",
+      "authoritative_inputs": [
+        "session_state",
+        "segment",
+        "target_step_id",
+        "target_progress",
+        "target_cycle_index",
+        "actual_step_id",
+        "actual_progress",
+        "actual_confidence",
+        "signal_quality",
+        "module_progress"
+      ],
+      "audio_state": "SHARED_AMBIENT_START_AT_RELATIVE_ZERO",
+      "fallback_state": "LOG_ONLY_UNTIL_ACTUAL_INTRO"
+    },
+    {
+      "module": "fade",
+      "node_id": "DEMO_END",
+      "module_time_s": 25.0,
+      "session_time_s": 625.0,
+      "purpose": "证明三步骤和整屏复色在演示边界保持连续",
+      "visual_segment": "demo",
+      "authoritative_inputs": [
+        "target_step_id",
+        "target_progress",
+        "target_cycle_index",
+        "actual_step_id",
+        "actual_progress",
+        "actual_confidence",
+        "signal_quality",
+        "fallback_state",
+        "module_progress"
+      ],
+      "audio_state": "CONTINUOUS_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_CERTAINTY_WRAPPER"
+    },
+    {
+      "module": "fade",
+      "node_id": "CLOSED_LOOP_START",
+      "module_time_s": 25.0,
+      "session_time_s": 625.0,
+      "purpose": "保持目标、实际和复色连续并开放累计轮廓纹理输入",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "segment",
+        "target_step_id",
+        "target_progress",
+        "actual_step_id",
+        "actual_progress",
+        "actual_confidence",
+        "recovery_value",
+        "recovery_locked",
+        "fallback_state",
+        "module_progress"
+      ],
+      "audio_state": "CONTINUOUS_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_CERTAINTY_WRAPPER"
+    },
+    {
+      "module": "fade",
+      "node_id": "CLOSED_LOOP_MID",
+      "module_time_s": 100.0,
+      "session_time_s": 700.0,
+      "purpose": "同时审查双吸长呼、实际差异、累计纹理和共享复色",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "target_cycle_index",
+        "target_step_id",
+        "target_progress",
+        "actual_cycle_index",
+        "actual_step_id",
+        "actual_progress",
+        "actual_confidence",
+        "recovery_value",
+        "signal_quality",
+        "fallback_state",
+        "module_progress"
+      ],
+      "audio_state": "NON_PHASE_REACTIVE_SHARED_AMBIENT",
+      "fallback_state": "ACTUAL_ONLY_LOW_CERTAINTY_OR_STATIC_BROKEN_OUTLINE"
+    },
+    {
+      "module": "fade",
+      "node_id": "CLOSED_LOOP_END",
+      "module_time_s": 175.0,
+      "session_time_s": 775.0,
+      "purpose": "冻结最后合法色丝实际和累计纹理并退出固定湿地",
+      "visual_segment": "closed_loop",
+      "authoritative_inputs": [
+        "segment",
+        "recovery_locked",
+        "target_step_id",
+        "target_progress",
+        "actual_step_id",
+        "actual_progress",
+        "fallback_state",
+        "module_progress"
+      ],
+      "audio_state": "BEGIN_SHARED_TRANSITION_CROSSFADE_WHEN_CONTROL_EVENT_ARRIVES",
+      "fallback_state": "PRESERVE_LAST_TRUTH_DURING_EXIT"
+    },
+    {
+      "module": "fade",
+      "node_id": "TRANSITION_COMPLETE",
+      "module_time_s": 200.0,
+      "session_time_s": 800.0,
+      "purpose": "清除湿地提示并交给manifest指定的下一状态",
+      "visual_segment": "lock_transition",
+      "authoritative_inputs": [
+        "module_id",
+        "module_position",
+        "segment",
+        "session_state",
+        "manifest_sequence",
+        "module_progress"
+      ],
+      "audio_state": "NEXT_SHARED_AMBIENT_OR_SESSION_END",
+      "fallback_state": "NO_CURRENT_ACTUAL_CARRIER_REMAINS"
+    }
+  ],
+  "audio_video": {
+    "file": "V-04-full-duration-animatic-audio-v1.mp4",
+    "size_bytes": 56975616,
+    "sha256": "469ac0b3f4e3e2215b7291ead2c6d1740f673c1fb022c98ffe127d30ff564c79",
+    "ffprobe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.640020",
+          "width": 1920,
+          "height": 600,
+          "coded_width": 1920,
+          "coded_height": 600,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 32,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360",
+          "start_pts": 328,
+          "start_time": "0.021354",
+          "duration_ts": 12288000,
+          "duration": "800.000000",
+          "bit_rate": "433769",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "24000",
+          "extradata_size": 45,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc63.1.101 libx264"
+          }
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_long_name": "AAC (Advanced Audio Coding)",
+          "profile": "LC",
+          "codec_type": "audio",
+          "codec_tag_string": "mp4a",
+          "codec_tag": "0x6134706d",
+          "mime_codec_string": "mp4a.40.2",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "id": "0x2",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 38401024,
+          "duration": "800.021333",
+          "bit_rate": "127176",
+          "nb_frames": "37516",
+          "extradata_size": 5,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "SoundHandler"
+          }
+        }
+      ],
+      "format": {
+        "filename": "V-04-full-duration-animatic-audio-v1.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "800.021354",
+        "size": "56975616",
+        "bit_rate": "569740",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf63.1.101"
+        }
+      }
+    }
+  },
+  "silent_video": {
+    "file": "V-04-full-duration-animatic-silent-v1.mp4",
+    "size_bytes": 43663129,
+    "sha256": "19599754374971dc0e45a2637a003be1e797c411f51895ef65cdfe3fbeacbd00",
+    "ffprobe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.640020",
+          "width": 1920,
+          "height": 600,
+          "coded_width": 1920,
+          "coded_height": 600,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 32,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360",
+          "start_pts": 328,
+          "start_time": "0.021354",
+          "duration_ts": 12288000,
+          "duration": "800.000000",
+          "bit_rate": "433769",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "24000",
+          "extradata_size": 45,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc63.1.101 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "V-04-full-duration-animatic-silent-v1.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.021354",
+        "duration": "800.000000",
+        "size": "43663129",
+        "bit_rate": "436631",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf63.1.101"
+        }
+      }
+    }
+  },
+  "keyframes": {
+    "path": "review/V-04/full-duration-animatic-candidate-v1/keyframes.jpg",
+    "sha256": "f2dd281fafd698f62618e56980f99fce1d2f7d70929dba1517f8724badf09b09"
+  },
+  "h3_candidate": "h3-fixed-combined-review-candidate-v2",
+  "h3_manifest_sha256": "8814367c323491ee15fbd35d213683648386f0fb4ffcc1349ad59cdd80b1f8ba",
+  "storyboard_sha256": "3b96491225f9f55dea2e43953271143a52c4386d5eb8e707f7ee122aa08b2e46",
+  "asset_status": "TEMP_REFERENCE_ONLY_PENDING_G02_CLEARANCE",
+  "formal_use_allowed": false
+}

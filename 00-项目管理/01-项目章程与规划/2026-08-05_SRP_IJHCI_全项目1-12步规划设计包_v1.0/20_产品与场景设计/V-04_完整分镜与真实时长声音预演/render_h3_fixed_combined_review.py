@@ -123,7 +123,8 @@ def shared_frame(background: Image.Image, assets: list[dict[str, object]], time_
     composite_at(frame, prop_a, 20, 1080 - prop_a.height)
     composite_at(frame, prop_b, 1920 - prop_b.width - 20, 1080 - prop_b.height)
 
-    edge = max(0.0, 1.0 - min(time_s, 12.0 - time_s) / 2.5)
+    phase = time_s % 12.0
+    edge = max(0.0, 1.0 - min(phase, 12.0 - phase) / 2.5)
     accent_a = contain_rgba(assets[6]["source"], (680, 360))
     accent_b = contain_rgba(assets[7]["source"], (680, 360))
     composite_at(frame, alpha_scaled(accent_a, 0.18 + 0.45 * edge), 180, 360)
@@ -154,23 +155,29 @@ def abstract_cues(frame: Image.Image, target: float, actual: float) -> Image.Ima
     return result
 
 
-def apply_fade_color(frame: Image.Image, time_s: float) -> Image.Image:
-    progress = min(1.0, time_s / (12.0 * 0.95))
+def apply_fade_color(frame: Image.Image, time_s: float, recovery_duration_s: float = 12.0 * 0.95) -> Image.Image:
+    progress = min(1.0, time_s / recovery_duration_s)
     progress = progress * progress * (3.0 - 2.0 * progress)
     rgb = frame.convert("RGB")
     gray = ImageEnhance.Contrast(ImageOps.grayscale(rgb)).enhance(1.03).convert("RGB")
     return Image.blend(gray, rgb, progress).convert("RGBA")
 
 
-def review_frame(weather: str, background: Image.Image, assets: list[dict[str, object]], time_s: float) -> Image.Image:
+def review_frame(
+    weather: str,
+    background: Image.Image,
+    assets: list[dict[str, object]],
+    time_s: float,
+    fade_recovery_duration_s: float | None = 12.0 * 0.95,
+) -> Image.Image:
     shared = shared_frame(background, assets, time_s)
     target = breathe_level(weather, time_s)
     actual = breathe_level(weather, time_s, lag_s=0.8)
     native = native_cues(shared, assets, target, actual)
     abstract = abstract_cues(shared, target, actual)
-    if weather == "fade":
-        native = apply_fade_color(native, time_s)
-        abstract = apply_fade_color(abstract, time_s)
+    if weather == "fade" and fade_recovery_duration_s is not None:
+        native = apply_fade_color(native, time_s, fade_recovery_duration_s)
+        abstract = apply_fade_color(abstract, time_s, fade_recovery_duration_s)
 
     canvas = Image.new("RGB", (3840, 1200), (20, 23, 27))
     canvas.paste(native.convert("RGB"), (0, 120))

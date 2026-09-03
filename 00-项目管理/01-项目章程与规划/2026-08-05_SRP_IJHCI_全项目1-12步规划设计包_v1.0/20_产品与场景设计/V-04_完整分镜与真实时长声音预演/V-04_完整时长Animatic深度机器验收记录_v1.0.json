@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "candidate_id": "v04-full-duration-animatic-candidate-v1",
+  "status": "PASS",
+  "checks": {
+    "media_and_streams": "PASS",
+    "timeline_and_24_nodes": "PASS",
+    "condition_non_cue_pixel_parity": {
+      "storm": 7.0938,
+      "heat": 3.138,
+      "snow": 3.4588,
+      "fade": 3.7906
+    },
+    "fixed_camera_translation_dx_dy_score": {
+      "storm": [
+        0,
+        0,
+        5.097990989685059
+      ],
+      "heat": [
+        0,
+        0,
+        0.7030759453773499
+      ],
+      "snow": [
+        0,
+        0,
+        0.8374764323234558
+      ],
+      "fade": [
+        0,
+        0,
+        2.2211551666259766
+      ]
+    },
+    "fade_mean_saturation": [
+      9.4e-05,
+      0.209991,
+      0.305495
+    ],
+    "corridor_condition_parity": {
+      "187.5": 2.5046,
+      "387.5": 2.5235,
+      "587.5": 2.4778,
+      "787.5": 2.5124
+    }
+  },
+  "evidence_boundary": "DESIGN_AND_MEDIA_CANDIDATE_ONLY_NOT_UNITY_RUNTIME_NOT_FORMAL_BUILD_NOT_LIVE_DEVICE_CHAIN"
+}

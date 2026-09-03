@@ -1,3 +1,15 @@
 02-技术研发/05-通信协议/contracts/fixtures/** text eol=lf
 02-技术研发/05-通信协议/contracts/fixture_hashes.sha256 text eol=lf
 02-技术研发/srp_session_store/fixtures/golden/** text eol=lf
+.artifacts-local/V-04/H3/independent-asset-kit/*-individual-candidate-v1/*.png filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-snow.png filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/layerable-background-rebuild/v5/base/V-04-H3-LBR-v5-fade-base.png filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/storm-candidate-v2/storm-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/heat-candidate-v2/heat-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/snow-candidate-v2/snow-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H2/candidate-v11/fade-H2-v11-ambient.wav filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4 filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/H3/fixed-combined-review-candidate-v2/*.mp4 filter=lfs diff=lfs merge=lfs -text
+.artifacts-local/V-04/full-duration-animatic-candidate-v1/*.mp4 filter=lfs diff=lfs merge=lfs -text
