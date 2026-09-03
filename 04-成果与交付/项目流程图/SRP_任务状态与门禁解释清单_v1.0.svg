@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2640" viewBox="0 0 2400 2640" role="img" aria-labelledby="title desc">
   <title id="title">SRP v2.1 任务状态与门禁解释清单</title>
   <desc id="desc">解释 SRP 任务注册表的七种任务状态、三种门禁、五类任务颜色和依赖线含义。快照日期为 2026-09-03。</desc>
-  <metadata>snapshot=2026-09-03; tasks=57; done=11; in_progress=1; in_review=2; ready=1; wait_dep=25; wait_dep_external=4; blocked_external=13; status_basis=05_可领取任务包.csv@working-tree; v04_signoff=68db963</metadata>
+  <metadata>snapshot=2026-09-03; tasks=57; done=14; in_progress=0; in_review=2; ready=3; wait_dep=21; wait_dep_external=4; blocked_external=13; status_basis=signed-branch-union; signoffs=f03:c358a35,f04:43a63a1,f05:cb09d32,t01:5c77efc,v04:68db963</metadata>
 
   <style>
     text { font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #1d2732; }
@@ -31,10 +31,10 @@
     <text x="60" y="112" class="subtitle">任务框颜色表示职责类型；右上状态角标表示进度。顺序与工程结果均不得扩大为项目整体通过。</text>
 
     <rect x="60" y="142" width="2280" height="66" rx="11" fill="#edf4fa" stroke="#6d94b8" stroke-width="1.6"/>
-    <text x="86" y="184" class="summary">当前快照：57 项｜DONE 11｜DOING 1｜REVIEW 2｜READY 1｜WAIT 25｜EXT-WAIT 4｜LOCK 13</text>
+    <text x="86" y="184" class="summary">当前快照：57 项｜DONE 14｜DOING 0｜REVIEW 2｜READY 3｜WAIT 21｜EXT-WAIT 4｜LOCK 13</text>
 
     <rect x="60" y="226" width="2280" height="66" rx="11" fill="#fff0ee" stroke="#cf4d43" stroke-width="1.6"/>
-    <text x="86" y="268" class="summary">当前工作面：F-04 / V-04 DONE｜F-05 DOING｜G-01 / G-02 REVIEW｜F-03 READY</text>
+    <text x="86" y="268" class="summary">当前工作面：F-03 / F-04 / F-05 / T-01 / V-04 DONE｜G-01 / G-02 REVIEW｜T-02 / U-01 / U-02 READY</text>
   </g>
 
   <g id="task-status-checklist">
@@ -47,12 +47,12 @@
     <text x="1288" y="424" class="column-title" text-anchor="middle">准确含义</text>
     <text x="2050" y="424" class="column-title" text-anchor="middle">下一状态条件</text>
 
-    <g id="status-DONE" data-status="DONE" data-count="11">
+    <g id="status-DONE" data-status="DONE" data-count="14">
       <rect x="60" y="452" width="2280" height="148" fill="#ffffff" stroke="#d4dce3"/>
       <rect x="96" y="495" width="240" height="62" rx="31" fill="#2f8a57"/>
       <text x="216" y="535" class="status-name">DONE</text>
       <text x="544" y="528" class="registry-name" text-anchor="middle">DONE</text>
-      <text x="770" y="536" class="count" fill="#2f8a57">11</text>
+      <text x="770" y="536" class="count" fill="#2f8a57">14</text>
       <text x="892" y="505" class="body">
         <tspan x="892" dy="0">任务自身 AC、证据与复核已经闭合。</tspan>
         <tspan x="892" dy="32">不代表下游、LIVE_E2E、伦理或发布完成。</tspan>
@@ -63,12 +63,12 @@
       </text>
     </g>
 
-    <g id="status-IN_PROGRESS" data-status="IN_PROGRESS" data-count="1">
+    <g id="status-IN_PROGRESS" data-status="IN_PROGRESS" data-count="0">
       <rect x="60" y="600" width="2280" height="148" fill="#f7f9fb" stroke="#d4dce3"/>
       <rect x="96" y="643" width="240" height="62" rx="31" fill="#2f75b5"/>
       <text x="216" y="683" class="status-name">DOING</text>
       <text x="544" y="676" class="registry-name" text-anchor="middle">IN_PROGRESS</text>
-      <text x="770" y="684" class="count" fill="#2f75b5">1</text>
+      <text x="770" y="684" class="count" fill="#2f75b5">0</text>
       <text x="892" y="653" class="body">
         <tspan x="892" dy="0">任务已被领取并正在实施，不能重复领取。</tspan>
         <tspan x="892" dy="32">尚不能被下游当作完成依赖。</tspan>
@@ -95,12 +95,12 @@
       </text>
     </g>
 
-    <g id="status-READY" data-status="READY" data-count="1">
+    <g id="status-READY" data-status="READY" data-count="3">
       <rect x="60" y="896" width="2280" height="148" fill="#f7f9fb" stroke="#d4dce3"/>
       <rect x="96" y="939" width="240" height="62" rx="31" fill="#7b56b6"/>
       <text x="216" y="979" class="status-name">READY</text>
       <text x="544" y="972" class="registry-name" text-anchor="middle">READY</text>
-      <text x="770" y="980" class="count" fill="#7b56b6">1</text>
+      <text x="770" y="980" class="count" fill="#7b56b6">3</text>
       <text x="892" y="949" class="body">
         <tspan x="892" dy="0">已进入可领取队列，但尚未开始实施。</tspan>
         <tspan x="892" dy="32">领取前仍须核对依赖、外部门和独立任务包。</tspan>
@@ -108,12 +108,12 @@
       <text x="1788" y="972" class="body-strong">认领后 → IN_PROGRESS</text>
     </g>
 
-    <g id="status-WAIT_DEP" data-status="WAIT_DEP" data-count="25">
+    <g id="status-WAIT_DEP" data-status="WAIT_DEP" data-count="21">
       <rect x="60" y="1044" width="2280" height="148" fill="#ffffff" stroke="#d4dce3"/>
       <rect x="96" y="1087" width="240" height="62" rx="31" fill="#7d8790"/>
       <text x="216" y="1127" class="status-name">WAIT</text>
       <text x="544" y="1120" class="registry-name" text-anchor="middle">WAIT_DEP</text>
-      <text x="770" y="1128" class="count" fill="#7d8790">25</text>
+      <text x="770" y="1128" class="count" fill="#7d8790">21</text>
       <text x="892" y="1097" class="body">
         <tspan x="892" dy="0">一个或多个显式 depends_on 尚未完成，不可领取。</tspan>
         <tspan x="892" dy="32">不能按波次整体完成而自动放行。</tspan>
@@ -255,6 +255,6 @@
     <rect x="60" y="2504" width="2280" height="82" rx="12" fill="#eef3f7" stroke="#9aabb8" stroke-width="1.6"/>
     <text x="1200" y="2556" class="boundary" style="fill:#34495a">自动检查 ≠ 第二人复核 ｜ 工程就绪 ≠ LIVE_E2E / 伦理放行 / 投稿发布</text>
 
-    <text x="60" y="2620" class="note">快照：2026-09-03｜V-04 独立复核与团队总监签收：68db963｜对应流程图：SRP_项目任务关联与门禁流程_v1.0.svg</text>
+    <text x="60" y="2620" class="note">快照：2026-09-03｜签收：F-03 c358a35｜F-04 43a63a1｜F-05 cb09d32｜T-01 5c77efc｜V-04 68db963</text>
   </g>
 </svg>
