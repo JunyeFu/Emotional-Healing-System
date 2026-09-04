@@ -72,3 +72,28 @@ def test_in_review_human_signoff_remains_open() -> None:
 
     assert "- [ ] 第二人签收报告" in rendered
     assert "傅钧烨签收仍开放" in rendered
+
+
+def test_in_review_human_signoff_pass_keeps_external_gates_open() -> None:
+    renderer = runpy.run_path(str(GOVERNANCE_ROOT / "13_render_ready_task_packages.py"))
+    with (GOVERNANCE_ROOT / "05_可领取任务包.csv").open(
+        encoding="utf-8-sig", newline=""
+    ) as handle:
+        row = next(item for item in csv.DictReader(handle) if item["task_id"] == "G-02")
+    task_map = {
+        "source_files": [],
+        "working_paths": [],
+        "implementation_commit": "candidate",
+        "model_review_status": "PASS",
+        "human_review_status": "PASS",
+        "human_review_commit": "signoff",
+        "remaining_risk": "正式环境门仍开放",
+    }
+    handbook = runpy.run_path(str(GOVERNANCE_ROOT / "10_render_task_handbook.py"))
+    rendered = renderer["task_markdown"](
+        row, handbook["parse_resources"](), handbook["PROCESS_PROFILES"], task_map
+    )
+
+    assert "真实团队第二人复核：`PASS`（签收提交`signoff`）" in rendered
+    assert "正式环境门仍开放" in rendered
+    assert "完成还必须满足：任务文档列明的外部与下游门禁关闭。" in rendered

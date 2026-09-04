@@ -3,7 +3,7 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "G-02",
   "status": "IN_REVIEW",
-  "registry_sha256": "2C716F7CFA1C842D1869F2ABBA44CE3A5791AD30C1D82DD3136F8350EE5A0226",
+  "registry_sha256": "96F66AAF022695AF71B3B20D7C49D8C90A35EF1ED884BA734BDFF8BCBAD6E817",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/11_实现冻结基线_v1.0.md",
@@ -50,8 +50,8 @@
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/G-02_数据治理实施计划_v1.0.md",
       "package_path": "inputs/08_G-02_数据治理实施计划_v1.0.md",
-      "sha256": "62B108626D8EFD21342BF3C88BEB66AD3FC490FBD2A0AA8DF3A4B56D4779ED5D",
-      "size_bytes": 16013
+      "sha256": "CCDFA1AF06C729BC411E8A1A9C86AAA11E29E1C3CDEB7D25E64ABD8964CB1687",
+      "size_bytes": 16210
     },
     {
       "source_path": "02-技术研发/05-通信协议/F-01_技术验收记录.md",
@@ -122,14 +122,14 @@
     {
       "source_path": "02-技术研发/07-数据治理/README.md",
       "package_path": "inputs/20_README.md",
-      "sha256": "2DCC86058DA4306302DFE11490785A5A4275A35864E5190DC689819BD66D7409",
-      "size_bytes": 5177
+      "sha256": "6ABFE2DDD26804C1A9E4B0923BD761FD208D56BC27DC614ACB6B5DE1C5D82AF6",
+      "size_bytes": 5297
     },
     {
       "source_path": "02-技术研发/07-数据治理/G-02_技术验收记录.md",
       "package_path": "inputs/21_G-02_技术验收记录.md",
-      "sha256": "29D958565B742E854AF5743CB7883D7A2586B6A64493AEA996B943B53EB961E9",
-      "size_bytes": 3625
+      "sha256": "24410839944E15D206F6FE8E7A42EDB7BD3A2C4081CEC22A8048CBE6DADDDA3C",
+      "size_bytes": 3672
     },
     {
       "source_path": "02-技术研发/07-数据治理/G-02_第二人审核报告_已签署.md",
@@ -182,8 +182,8 @@
     {
       "source_path": "02-技术研发/07-数据治理/evidence/asset_scan_report.json",
       "package_path": "inputs/30_asset_scan_report.json",
-      "sha256": "783207AAF67A1C1F29E31AA9FA60F0CAEFBA4DFE536E4F35A97780A901FC6F9D",
-      "size_bytes": 108472
+      "sha256": "6275FB65196D6F1D7BC7FA8D81DCA013EDEE8314A98CD5CCDFEC863C284C9EA0",
+      "size_bytes": 115473
     },
     {
       "source_path": "02-技术研发/07-数据治理/evidence/formal_environment_report.json",

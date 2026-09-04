@@ -1428,3 +1428,16 @@
 | Repository Privacy | `G02_REPOSITORY_PRIVACY_PASS violations=0`。 |
 | Full Regression | `py -3.14 -m pytest -q` 结果`470 passed in 28.20s`。 |
 | Diff Gate | `git diff --check` 通过；合并冲突标记为零。 |
+
+### 2026-09-04 G-01/G-02 Agent repair verification
+
+| Check | Result |
+|---|---|
+| Initial command correction | 两个旧验证脚本名不存在；改用仓库实际入口`07_validate_task_packages.py`与`14_validate_ready_task_packages.py`，不把命令错误记为验证失败。 |
+| Regression repair | 首次全量为`469 passed, 1 failed`；修复未签收兼容措辞并新增已签收外部门测试后，专项`4 passed`。 |
+| Full Regression | `py -3.14 -m pytest -q`最终`471 passed in 111.23s`。 |
+| Registry | `PASS`；57项，`DONE=14`、`IN_REVIEW=G-01,G-02`、`READY=T-02,U-01,U-02`。 |
+| Dispatch Packages | `PASS`；5个包、133份快照，集合为`G-01,G-02,T-02,U-01,U-02`。 |
+| Protocol Authority | `PASS`；v1.1与当前执行文件一致。 |
+| G-02 Current Evidence | 专项测试`138 passed`；合成演练通过；仓库隐私`0`违规；正式环境6项缺失、资产189项及215个失败关闭项继续阻断。 |
+| Diff And Wording | `git diff --check`通过；新增行未出现项目禁用表述。 |

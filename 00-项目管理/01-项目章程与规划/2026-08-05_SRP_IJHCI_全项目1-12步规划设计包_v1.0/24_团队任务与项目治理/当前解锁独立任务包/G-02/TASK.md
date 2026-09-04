@@ -6,7 +6,7 @@
 
 - 领取人：Codex
 - 分支：`codex/g-02-data-governance`
-- 第二复核人：待真实团队第二人复核
+- 第二复核人：傅钧烨（团队总监，独立第二人复核）
 - 领取时间：历史登记未记录；当前不得重复领取
 
 ## 任务边界
@@ -60,7 +60,7 @@
 
 数据去重和资产规则被X-01/Z-01/W-03消费
 
-完成还必须满足：第二人复核、相关验证通过、证据路径可访问，并完成本任务范围内的commit与push。
+完成还必须满足：任务文档列明的外部与下游门禁关闭。
 
 ## 完成回填
 
@@ -69,4 +69,5 @@
 - 证据路径：`02-技术研发/05-通信协议/F-01_技术验收记录.md`；`02-技术研发/07-数据治理/G-02_技术验收记录.md`；`02-技术研发/07-数据治理/evidence/asset_scan_report.json`；`02-技术研发/07-数据治理/evidence/formal_environment_report.json`；`02-技术研发/07-数据治理/evidence/repository_privacy_report.json`；`02-技术研发/07-数据治理/evidence/synthetic_rehearsal_report.json`；`02-技术研发/07-数据治理/evidence/unity_formal_build_gate_summary.json`
 - commit：`03d7426219121e49554e405db9dd521b8ab1d819`
 - push目标：`origin/codex/g-02-data-governance`
-- 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放
+- 真实团队第二人复核：`PASS`（签收提交`ea132c8f26db76d1a1f97daebea5e97258d969c4`）
+- 剩余风险：正式专机配置、机构保留期限批准、Unity资产许可门与X-01/Z-01/W-03下游消费仍开放
