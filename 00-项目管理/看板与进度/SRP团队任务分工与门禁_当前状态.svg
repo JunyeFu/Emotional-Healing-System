@@ -5,33 +5,33 @@
 </defs>
 <rect width="100%" height="100%" fill="#f8fafc"/>
 <text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>
-<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">状态快照 · 2026-09-01 · F-05 已由傅钧烨签署 PASS / DONE</text>
+<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">状态快照 · 2026-09-04 · G-01 / G-02 DONE，外部准入责任迁移至第58项 G-05</text>
 <rect x="70" y="132" width="114" height="38" rx="19" fill="#dcfce7" stroke="#166534"/>
-<text x="127.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#166534">DONE 12</text>
+<text x="127.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#166534">DONE 16</text>
 <rect x="198" y="132" width="114" height="38" rx="19" fill="#dbeafe" stroke="#1d4ed8"/>
 <text x="255.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#1d4ed8">READY 3</text>
 <rect x="326" y="132" width="186" height="38" rx="19" fill="#ffedd5" stroke="#9a3412"/>
-<text x="419.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#9a3412">IN_PROGRESS 1</text>
+<text x="419.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#9a3412">IN_PROGRESS 0</text>
 <rect x="526" y="132" width="162" height="38" rx="19" fill="#f3e8ff" stroke="#6b21a8"/>
-<text x="607.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#6b21a8">IN_REVIEW 2</text>
+<text x="607.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#6b21a8">IN_REVIEW 0</text>
 <rect x="702" y="132" width="162" height="38" rx="19" fill="#f1f5f9" stroke="#475569"/>
-<text x="783.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#475569">WAIT_DEP 22</text>
+<text x="783.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#475569">WAIT_DEP 21</text>
 <rect x="878" y="132" width="258" height="38" rx="19" fill="#ffe4e6" stroke="#9f1239"/>
-<text x="1007.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#9f1239">WAIT_DEP_EXTERNAL 4</text>
+<text x="1007.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#9f1239">WAIT_DEP_EXTERNAL 5</text>
 <rect x="1150" y="132" width="258" height="38" rx="19" fill="#fee2e2" stroke="#991b1b"/>
 <text x="1279.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#991b1b">BLOCKED_EXTERNAL 13</text>
 <rect x="70.0" y="196" width="912.5" height="92" rx="14" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
-<text x="88.0" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#166534">F-05 合同门</text>
-<text x="88.0" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">DONE → U-01 / U-02 已解锁</text>
-<rect x="1000.5" y="196" width="912.5" height="92" rx="14" fill="#f3e8ff" stroke="#6b21a8" stroke-width="2"/>
-<text x="1018.5" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#6b21a8">F-04 TD 壳门</text>
-<text x="1018.5" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">IN_REVIEW → T-01 继续等待</text>
-<rect x="1931.0" y="196" width="912.5" height="92" rx="14" fill="#ffedd5" stroke="#9a3412" stroke-width="2"/>
-<text x="1949.0" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#9a3412">V-04 预演门</text>
-<text x="1949.0" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">IN_PROGRESS → V-05 继续等待</text>
+<text x="88.0" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#166534">治理设计门</text>
+<text x="88.0" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">G-01 / G-02 DONE → 候选实现可继续</text>
+<rect x="1000.5" y="196" width="912.5" height="92" rx="14" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+<text x="1018.5" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#991b1b">外部准入门</text>
+<text x="1018.5" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">G-05 EXT-WAIT → 正式研究链保持阻断</text>
+<rect x="1931.0" y="196" width="912.5" height="92" rx="14" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1949.0" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8">当前可领取</text>
+<text x="1949.0" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">T-02 / U-01 / U-02 READY</text>
 <rect x="2861.5" y="196" width="912.5" height="92" rx="14" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
-<text x="2879.5" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#991b1b">设备与外部门</text>
-<text x="2879.5" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">D-01 / D-02 / 后续研究链保持阻断</text>
+<text x="2879.5" y="228" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#991b1b">设备外部门</text>
+<text x="2879.5" y="260" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">D-01 / D-02 仍等待真实设备</text>
 <rect x="70" y="310" width="500" height="42" rx="10" fill="#0f172a"/>
 <text x="320.0" y="338" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="white">W0 · 4 项</text>
 <rect x="604" y="310" width="500" height="42" rx="10" fill="#0f172a"/>
@@ -39,7 +39,7 @@
 <rect x="1138" y="310" width="500" height="42" rx="10" fill="#0f172a"/>
 <text x="1388.0" y="338" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="white">W2 · 16 项</text>
 <rect x="1672" y="310" width="500" height="42" rx="10" fill="#0f172a"/>
-<text x="1922.0" y="338" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="white">W3 · 8 项</text>
+<text x="1922.0" y="338" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="white">W3 · 9 项</text>
 <rect x="2206" y="310" width="500" height="42" rx="10" fill="#0f172a"/>
 <text x="2456.0" y="338" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="19" font-weight="700" fill="white">W4 · 5 项</text>
 <rect x="2740" y="310" width="500" height="42" rx="10" fill="#0f172a"/>
@@ -135,8 +135,10 @@
 <path d="M 1638 2753.0 C 1683 2753.0, 1627 1591.0, 1672 1591.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 1638 2089.0 C 1683 2089.0, 1627 1591.0, 1672 1591.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 1104 761.0 C 1342.56 761.0, 1433.44 1591.0, 1672 1591.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
+<path d="M 1104 595.0 C 1342.56 595.0, 1433.44 1757.0, 1672 1757.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
+<path d="M 1104 761.0 C 1342.56 761.0, 1433.44 1757.0, 1672 1757.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2172 595.0 C 2217 595.0, 2161 429.0, 2206 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
-<path d="M 1104 595.0 C 1566.84 595.0, 1743.16 429.0, 2206 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
+<path d="M 2172 1757.0 C 2217 1757.0, 2161 429.0, 2206 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2172 761.0 C 2217 761.0, 2161 595.0, 2206 595.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2456.0 498 C 2536.0 512.0, 2536.0 512.0, 2456.0 526" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2172 927.0 C 2217 927.0, 2161 761.0, 2206 761.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
@@ -149,6 +151,7 @@
 <path d="M 2172 1591.0 C 2217 1591.0, 2161 1093.0, 2206 1093.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 1638 2587.0 C 1876.56 2587.0, 1967.44 1093.0, 2206 1093.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 1638 2753.0 C 1876.56 2753.0, 1967.44 1093.0, 2206 1093.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
+<path d="M 2172 1757.0 C 2217 1757.0, 2161 1093.0, 2206 1093.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2706 1093.0 C 2751 1093.0, 2695 429.0, 2740 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2706 1093.0 C 2751 1093.0, 2695 595.0, 2740 595.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2990.0 498 C 3070.0 512.0, 3070.0 512.0, 2990.0 526" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
@@ -169,7 +172,7 @@
 <path d="M 3240 1591.0 C 3285 1591.0, 3229 429.0, 3274 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 3524.0 498 C 3604.0 512.0, 3604.0 512.0, 3524.0 526" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2172 1591.0 C 2634.84 1591.0, 2811.16 595.0, 3274 595.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
-<path d="M 1104 761.0 C 2015.4 761.0, 2362.6 595.0, 3274 595.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
+<path d="M 2172 1757.0 C 2634.84 1757.0, 2811.16 595.0, 3274 595.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 3524.0 664 C 3604.0 678.0, 3604.0 678.0, 3524.0 692" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 2172 1591.0 C 2634.84 1591.0, 2811.16 761.0, 3274 761.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <g filter="url(#shadow)"><rect x="70" y="360" width="500" height="138" rx="13" fill="white" stroke="#166534" stroke-width="3"/>
@@ -217,21 +220,21 @@
 <text x="628" y="435" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">相位实例v2.2与消费者迁移</text>
 <text x="628" y="463" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：合同与协议 · 4人日</text>
 <text x="628" y="487" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：F-01 · P-01 · P-02</text></g>
-<g filter="url(#shadow)"><rect x="604" y="526" width="500" height="138" rx="13" fill="white" stroke="#6b21a8" stroke-width="3"/>
+<g filter="url(#shadow)"><rect x="604" y="526" width="500" height="138" rx="13" fill="white" stroke="#166534" stroke-width="3"/>
 <rect x="604" y="526" width="12" height="138" rx="6" fill="#ede9fe"/>
 <rect x="626" y="542" width="76" height="30" rx="8" fill="#ede9fe"/>
 <text x="664" y="563" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">G-01</text>
-<rect x="930" y="542" width="156" height="30" rx="15" fill="#f3e8ff" stroke="#6b21a8"/>
-<text x="1008" y="563" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#6b21a8">IN_REVIEW</text>
+<rect x="930" y="542" width="156" height="30" rx="15" fill="#dcfce7" stroke="#166534"/>
+<text x="1008" y="563" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#166534">DONE</text>
 <text x="628" y="601" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">伦理材料许可招募产能与角色台账</text>
 <text x="628" y="629" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：研究治理 · 5人日</text>
 <text x="628" y="653" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：F-02</text></g>
-<g filter="url(#shadow)"><rect x="604" y="692" width="500" height="138" rx="13" fill="white" stroke="#6b21a8" stroke-width="3"/>
+<g filter="url(#shadow)"><rect x="604" y="692" width="500" height="138" rx="13" fill="white" stroke="#166534" stroke-width="3"/>
 <rect x="604" y="692" width="12" height="138" rx="6" fill="#ede9fe"/>
 <rect x="626" y="708" width="76" height="30" rx="8" fill="#ede9fe"/>
 <text x="664" y="729" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">G-02</text>
-<rect x="930" y="708" width="156" height="30" rx="15" fill="#f3e8ff" stroke="#6b21a8"/>
-<text x="1008" y="729" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#6b21a8">IN_REVIEW</text>
+<rect x="930" y="708" width="156" height="30" rx="15" fill="#dcfce7" stroke="#166534"/>
+<text x="1008" y="729" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#166534">DONE</text>
 <text x="628" y="767" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">数据分级跨阶段去重与资产许可</text>
 <text x="628" y="795" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：数据治理 · 4人日</text>
 <text x="628" y="819" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：F-01</text></g>
@@ -271,12 +274,12 @@
 <text x="628" y="1431" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">四层SceneAdapter实现与降级</text>
 <text x="628" y="1459" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：Unity · 3人日</text>
 <text x="628" y="1483" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：F-03 · F-05 · V-03</text></g>
-<g filter="url(#shadow)"><rect x="604" y="1522" width="500" height="138" rx="13" fill="white" stroke="#1d4ed8" stroke-width="3"/>
+<g filter="url(#shadow)"><rect x="604" y="1522" width="500" height="138" rx="13" fill="white" stroke="#166534" stroke-width="3"/>
 <rect x="604" y="1522" width="12" height="138" rx="6" fill="#ccfbf1"/>
 <rect x="626" y="1538" width="76" height="30" rx="8" fill="#ccfbf1"/>
 <text x="664" y="1559" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">T-01</text>
-<rect x="930" y="1538" width="156" height="30" rx="15" fill="#dbeafe" stroke="#1d4ed8"/>
-<text x="1008" y="1559" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">READY</text>
+<rect x="930" y="1538" width="156" height="30" rx="15" fill="#dcfce7" stroke="#166534"/>
+<text x="1008" y="1559" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#166534">DONE</text>
 <text x="628" y="1597" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">遥测设备质量与时钟面板</text>
 <text x="628" y="1625" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：TouchDesigner · 3人日</text>
 <text x="628" y="1649" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：F-01 · F-04 · F-05</text></g>
@@ -316,12 +319,12 @@
 <text x="628" y="2261" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">四层视听映射与资产来源基线</text>
 <text x="628" y="2289" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：Unity前期设计 · 3人日</text>
 <text x="628" y="2313" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：V-02 · R-01</text></g>
-<g filter="url(#shadow)"><rect x="604" y="2352" width="500" height="138" rx="13" fill="white" stroke="#9a3412" stroke-width="3"/>
+<g filter="url(#shadow)"><rect x="604" y="2352" width="500" height="138" rx="13" fill="white" stroke="#166534" stroke-width="3"/>
 <rect x="604" y="2352" width="12" height="138" rx="6" fill="#fce7f3"/>
 <rect x="626" y="2368" width="76" height="30" rx="8" fill="#fce7f3"/>
 <text x="664" y="2389" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">V-04</text>
-<rect x="930" y="2368" width="156" height="30" rx="15" fill="#ffedd5" stroke="#9a3412"/>
-<text x="1008" y="2389" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#9a3412">IN_PROGRESS</text>
+<rect x="930" y="2368" width="156" height="30" rx="15" fill="#dcfce7" stroke="#166534"/>
+<text x="1008" y="2389" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#166534">DONE</text>
 <text x="628" y="2427" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">完整分镜与真实时长声音预演</text>
 <text x="628" y="2455" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：Unity前期设计 · 6人日</text>
 <text x="628" y="2479" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：V-03</text></g>
@@ -424,12 +427,12 @@
 <text x="1162" y="2095" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">跨场景视听一致性性能与可访问性</text>
 <text x="1162" y="2123" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：Unity成品 · 5人日</text>
 <text x="1162" y="2147" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：G-02 · U-03 · U-04 · U-05 · U-06 · U-07</text></g>
-<g filter="url(#shadow)"><rect x="1138" y="2186" width="500" height="138" rx="13" fill="white" stroke="#475569" stroke-width="3" stroke-dasharray="8 6"/>
+<g filter="url(#shadow)"><rect x="1138" y="2186" width="500" height="138" rx="13" fill="white" stroke="#1d4ed8" stroke-width="3"/>
 <rect x="1138" y="2186" width="12" height="138" rx="6" fill="#ccfbf1"/>
 <rect x="1160" y="2202" width="76" height="30" rx="8" fill="#ccfbf1"/>
 <text x="1198" y="2223" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">T-02</text>
-<rect x="1464" y="2202" width="156" height="30" rx="15" fill="#f1f5f9" stroke="#475569"/>
-<text x="1542" y="2223" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#475569">WAIT_DEP</text>
+<rect x="1464" y="2202" width="156" height="30" rx="15" fill="#dbeafe" stroke="#1d4ed8"/>
+<text x="1542" y="2223" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">READY</text>
 <text x="1162" y="2261" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">人工标记中止请求与告警</text>
 <text x="1162" y="2289" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：TouchDesigner · 3人日</text>
 <text x="1162" y="2313" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：T-01 · P-01</text></g>
@@ -541,6 +544,15 @@
 <text x="1696" y="1597" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">干净检出构建复现与候选制品</text>
 <text x="1696" y="1625" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：构建交付 · 5人日</text>
 <text x="1696" y="1649" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：I-01 · A-02 · A-03 · U-08 · G-02</text></g>
+<g filter="url(#shadow)"><rect x="1672" y="1688" width="500" height="138" rx="13" fill="white" stroke="#9f1239" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="1672" y="1688" width="12" height="138" rx="6" fill="#fee2e2"/>
+<rect x="1694" y="1704" width="76" height="30" rx="8" fill="#fee2e2"/>
+<text x="1732" y="1725" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">G-05</text>
+<rect x="1998" y="1704" width="156" height="30" rx="15" fill="#ffe4e6" stroke="#9f1239"/>
+<text x="2076" y="1725" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#9f1239">WAIT_DEP_EXTERNAL</text>
+<text x="1696" y="1763" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">正式环境机构路径许可与U8实地闭环</text>
+<text x="1696" y="1791" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：外部准入 · 5人日</text>
+<text x="1696" y="1815" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：G-01 · G-02</text></g>
 <g filter="url(#shadow)"><rect x="2206" y="360" width="500" height="138" rx="13" fill="white" stroke="#991b1b" stroke-width="3" stroke-dasharray="8 6"/>
 <rect x="2206" y="360" width="12" height="138" rx="6" fill="#e2e8f0"/>
 <rect x="2228" y="376" width="76" height="30" rx="8" fill="#e2e8f0"/>
@@ -549,7 +561,7 @@
 <text x="2610" y="397" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#991b1b">BLOCKED_EXTERNAL</text>
 <text x="2230" y="435" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Level A专家审查执行</text>
 <text x="2230" y="463" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：研究执行 · 3人日</text>
-<text x="2230" y="487" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：Q-01 · G-01</text></g>
+<text x="2230" y="487" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：Q-01 · G-05</text></g>
 <g filter="url(#shadow)"><rect x="2206" y="526" width="500" height="138" rx="13" fill="white" stroke="#991b1b" stroke-width="3" stroke-dasharray="8 6"/>
 <rect x="2206" y="526" width="12" height="138" rx="6" fill="#e2e8f0"/>
 <rect x="2228" y="542" width="76" height="30" rx="8" fill="#e2e8f0"/>
@@ -585,7 +597,7 @@
 <text x="2610" y="1061" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#991b1b">BLOCKED_EXTERNAL</text>
 <text x="2230" y="1099" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">阶段一估计目标报告清单与构建锁定</text>
 <text x="2230" y="1127" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：预注册与锁定 · 5人日</text>
-<text x="2230" y="1151" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：E-03 · X-01 · Z-01 · A-02 · A-03</text></g>
+<text x="2230" y="1151" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：E-03 · X-01 · Z-01 · A-02 · A-03 · G-05</text></g>
 <g filter="url(#shadow)"><rect x="2740" y="360" width="500" height="138" rx="13" fill="white" stroke="#991b1b" stroke-width="3" stroke-dasharray="8 6"/>
 <rect x="2740" y="360" width="12" height="138" rx="6" fill="#fef3c7"/>
 <rect x="2762" y="376" width="76" height="30" rx="8" fill="#fef3c7"/>
@@ -675,7 +687,7 @@
 <text x="3678" y="563" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#475569">WAIT_DEP</text>
 <text x="3298" y="601" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">IJHCI实时规范数据声明与独立复现包</text>
 <text x="3298" y="629" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：投稿复现 · 5人日</text>
-<text x="3298" y="653" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：W-02 · Z-01 · G-02</text></g>
+<text x="3298" y="653" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：W-02 · Z-01 · G-05</text></g>
 <g filter="url(#shadow)"><rect x="3274" y="692" width="500" height="138" rx="13" fill="white" stroke="#475569" stroke-width="3" stroke-dasharray="8 6"/>
 <rect x="3274" y="692" width="12" height="138" rx="6" fill="#e2e8f0"/>
 <rect x="3296" y="708" width="76" height="30" rx="8" fill="#e2e8f0"/>

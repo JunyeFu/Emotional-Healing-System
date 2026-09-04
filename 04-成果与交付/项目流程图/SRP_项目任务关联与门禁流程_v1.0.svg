@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="5878" viewBox="0 0 2400 5878" role="img" aria-labelledby="title desc">
   <title id="title">SRP v2.1 任务关联与门禁流程</title>
-  <desc id="desc">57 项任务，按 W0 至 W6 波次与五类职责泳道排列。图中包含 126 条显式依赖边、当前状态和外部门禁。</desc>
-  <metadata>snapshot=2026-09-04; tasks=57; dependency_edges=126; status_basis=signed-branch-union; signoffs=f03:c358a35,f04:43a63a1,f05:cb09d32,t01:5c77efc,v04:68db963,g01-g02-review-repair:9f0a15b; authority=REJECT_AND_RESUBMIT_DESIGN; evidence=PLANNED_NOT_OBSERVED</metadata>
+  <desc id="desc">58 项任务，按 W0 至 W6 波次与五类职责泳道排列。图中包含 129 条显式依赖边、当前状态和外部门禁。</desc>
+  <metadata>snapshot=2026-09-04; tasks=58; dependency_edges=129; status_basis=task-registry; transition=g01-g02-done-to-g05; authority=REJECT_AND_RESUBMIT_DESIGN; evidence=PLANNED_NOT_OBSERVED</metadata>
   <defs>
     <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 Z" fill="#74808c"/></marker>
     <marker id="arrow-critical" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#34495a"/></marker>
@@ -21,24 +21,24 @@
   </style>
   <rect x="0" y="0" width="100%" height="100%" fill="#fbfaf6"/>
   <g id="header">
-    <text x="52" y="66" class="title">SRP v2.1｜57 项任务关联与门禁流程</text>
+    <text x="52" y="66" class="title">SRP v2.1｜58 项任务关联与门禁流程</text>
     <text x="52" y="101" class="subtitle">顺序规范不代表当前通过状态；附件仅作视觉参考，状态来自项目任务注册表、协议权威与独立分支证据。</text>
     <rect x="52" y="126" width="2296" height="54" rx="10" fill="#edf4fa" stroke="#6d94b8" stroke-width="1.5"/>
-    <text x="76" y="160" class="snapshot">当前工作面：14 项 DONE ｜ G-01 / G-02 REVIEW（治理修复已签收，外部门开放）｜ T-02 / U-01 / U-02 READY</text>
+    <text x="76" y="160" class="snapshot">当前工作面：16 项 DONE ｜ 第58项 G-05 EXT-WAIT（外部准入）｜ T-02 / U-01 / U-02 READY</text>
     <rect x="52" y="196" width="2296" height="54" rx="10" fill="#fff0ee" stroke="#cf4d43" stroke-width="1.5"/>
     <text x="76" y="230" class="snapshot">设计权威：REJECT_AND_RESUBMIT_DESIGN ｜ 证据：PLANNED_NOT_OBSERVED ｜ 工程完成不得扩大为 LIVE_E2E 或外部放行</text>
     <text x="52" y="286" class="subtitle">状态</text>
-    <circle cx="116" cy="281" r="7" fill="#2f8a57"/><text x="130" y="286" class="legend-text">DONE 14</text>
+    <circle cx="116" cy="281" r="7" fill="#2f8a57"/><text x="130" y="286" class="legend-text">DONE 16</text>
     <circle cx="251" cy="281" r="7" fill="#2f75b5"/><text x="265" y="286" class="legend-text">DOING 0</text>
-    <circle cx="406" cy="281" r="7" fill="#c47a1b"/><text x="420" y="286" class="legend-text">REVIEW 2</text>
+    <circle cx="406" cy="281" r="7" fill="#c47a1b"/><text x="420" y="286" class="legend-text">REVIEW 0</text>
     <circle cx="541" cy="281" r="7" fill="#7b56b6"/><text x="555" y="286" class="legend-text">READY 3</text>
     <circle cx="676" cy="281" r="7" fill="#7d8790"/><text x="690" y="286" class="legend-text">WAIT 21</text>
-    <circle cx="811" cy="281" r="7" fill="#d9822b"/><text x="825" y="286" class="legend-text">EXT-WAIT 4</text>
+    <circle cx="811" cy="281" r="7" fill="#d9822b"/><text x="825" y="286" class="legend-text">EXT-WAIT 5</text>
     <circle cx="966" cy="281" r="7" fill="#c64d4d"/><text x="980" y="286" class="legend-text">LOCK 13</text>
     <text x="1220" y="286" class="subtitle">线条</text>
     <path d="M1280 281 H1380" class="dependency critical"/><text x="1396" y="286" class="legend-text">主装配链</text>
     <path d="M1530 281 H1630" class="dependency"/><text x="1646" y="286" class="legend-text">其他显式 depends_on</text>
-    <text x="2020" y="286" class="legend-text">共 126 条依赖</text>
+    <text x="2020" y="286" class="legend-text">共 129 条依赖</text>
   </g>
   <g id="lane-headers">
     <rect x="236" y="328" width="410" height="112" rx="12" fill="#71966c"/>
@@ -73,7 +73,7 @@
     <text x="121" y="890" class="wave-code" text-anchor="middle">W1</text>
     <text x="121" y="922" class="wave-name" text-anchor="middle">公共骨架与前期设计</text>
     <text x="121" y="954" class="wave-count" text-anchor="middle">13 项</text>
-    <text x="52" y="988" class="wave-count">DONE 9 · REVIEW 2 · READY 2</text>
+    <text x="52" y="988" class="wave-count">DONE 11 · READY 2</text>
     <line x1="655" y1="856" x2="655" y2="1578" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
     <line x1="1083" y1="856" x2="1083" y2="1578" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
     <line x1="1511" y1="856" x2="1511" y2="1578" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
@@ -92,8 +92,8 @@
     <rect x="34" y="2730" width="174" height="546" rx="14" fill="#eef3f7" stroke="#86a7c4" stroke-width="1.7"/>
     <text x="121" y="2782" class="wave-code" text-anchor="middle">W3</text>
     <text x="121" y="2814" class="wave-name" text-anchor="middle">集成与研究工具</text>
-    <text x="121" y="2846" class="wave-count" text-anchor="middle">8 项</text>
-    <text x="52" y="2880" class="wave-count">WAIT 6 · EXT-WAIT 2</text>
+    <text x="121" y="2846" class="wave-count" text-anchor="middle">9 项</text>
+    <text x="52" y="2880" class="wave-count">WAIT 6 · EXT-WAIT 3</text>
     <line x1="655" y1="2748" x2="655" y2="3146" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
     <line x1="1083" y1="2748" x2="1083" y2="3146" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
     <line x1="1511" y1="2748" x2="1511" y2="3146" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
@@ -220,7 +220,9 @@
     <g data-from="U-08" data-to="Z-01"><title>U-08 → Z-01</title><path d="M 869 2546 V 2558 H 869 V 2806" class="dependency"/></g>
     <g data-from="G-02" data-to="Z-01"><title>G-02 → Z-01</title><path d="M 1725 1114 V 1126 H 869 V 2806" class="dependency"/></g>
     <g data-from="Q-01" data-to="E-01"><title>Q-01 → E-01</title><path d="M 1725 2898 V 2910 H 1725 V 3374" class="dependency critical"/></g>
-    <g data-from="G-01" data-to="E-01"><title>G-01 → E-01</title><path d="M 1725 1006 V 1018 H 1725 V 3374" class="dependency"/></g>
+    <g data-from="G-01" data-to="G-05"><title>G-01 → G-05</title><path d="M 1725 1006 V 1018 H 1725 V 3130" class="dependency"/></g>
+    <g data-from="G-02" data-to="G-05"><title>G-02 → G-05</title><path d="M 1725 1114 V 3130" class="dependency critical"/></g>
+    <g data-from="G-05" data-to="E-01"><title>G-05 → E-01</title><path d="M 1725 3222 V 3374" class="dependency critical"/></g>
     <g data-from="Q-02" data-to="E-02"><title>Q-02 → E-02</title><path d="M 1725 3006 V 3018 H 1725 V 3482" class="dependency"/></g>
     <g data-from="E-01" data-to="E-02"><title>E-01 → E-02</title><path d="M 1725 3466 V 3482" class="dependency critical"/></g>
     <g data-from="Q-03" data-to="B-01"><title>Q-03 → B-01</title><path d="M 1725 3114 V 3126 H 1725 V 3590" class="dependency"/></g>
@@ -229,6 +231,7 @@
     <g data-from="E-02" data-to="E-03"><title>E-02 → E-03</title><path d="M 1725 3574 V 3698" class="dependency"/></g>
     <g data-from="B-01" data-to="E-03"><title>B-01 → E-03</title><path d="M 1725 3682 V 3698" class="dependency critical"/></g>
     <g data-from="E-03" data-to="G-03"><title>E-03 → G-03</title><path d="M 1725 3790 V 3806" class="dependency critical"/></g>
+    <g data-from="G-05" data-to="G-03"><title>G-05 → G-03</title><path d="M 1922 3176 H 1936 V 3852 H 1922" class="dependency"/></g>
     <g data-from="X-01" data-to="G-03"><title>X-01 → G-03</title><path d="M 441 2898 V 2910 H 1725 V 3806" class="dependency"/></g>
     <g data-from="Z-01" data-to="G-03"><title>Z-01 → G-03</title><path d="M 869 2898 V 2910 H 1725 V 3806" class="dependency"/></g>
     <g data-from="A-02" data-to="G-03"><title>A-02 → G-03</title><path d="M 441 2438 V 2450 H 1725 V 3806" class="dependency"/></g>
@@ -253,7 +256,7 @@
     <g data-from="A-04" data-to="W-02"><title>A-04 → W-02</title><path d="M 441 4358 V 4370 H 2153 V 5050" class="dependency critical"/></g>
     <g data-from="W-02" data-to="W-03"><title>W-02 → W-03</title><path d="M 2153 5142 V 5158" class="dependency critical"/></g>
     <g data-from="Z-01" data-to="W-03"><title>Z-01 → W-03</title><path d="M 869 2898 V 2910 H 2153 V 5158" class="dependency critical"/></g>
-    <g data-from="G-02" data-to="W-03"><title>G-02 → W-03</title><path d="M 1725 1114 V 1126 H 2153 V 5158" class="dependency"/></g>
+    <g data-from="G-05" data-to="W-03"><title>G-05 → W-03</title><path d="M 1922 3176 H 2153 V 5158" class="dependency"/></g>
     <g data-from="W-03" data-to="W-04"><title>W-03 → W-04</title><path d="M 2153 5250 V 5266" class="dependency critical"/></g>
     <g data-from="Z-01" data-to="W-04"><title>Z-01 → W-04</title><path d="M 869 2898 V 2910 H 2153 V 5266" class="dependency"/></g>
   </g>
@@ -299,20 +302,20 @@
       <text x="585" y="1157" class="status-text">DONE</text>
       <text x="259" y="1186" class="task-title">相位实例v2.2与消费者迁移</text>
     </g>
-    <g id="task-G-01" data-task-id="G-01" data-wave="W1" data-type="research" data-status="IN_REVIEW" data-depends-on="F-02">
-      <title>【研究治理】伦理材料许可招募产能与角色台账 | status=IN_REVIEW | depends_on=F-02</title>
+    <g id="task-G-01" data-task-id="G-01" data-wave="W1" data-type="research" data-status="DONE" data-depends-on="F-02">
+      <title>【研究治理】伦理材料许可招募产能与角色台账 | status=DONE | depends_on=F-02</title>
       <rect x="1528" y="914" width="394" height="92" rx="11" fill="#f5f0f8" stroke="#9074a5" stroke-width="1.6"/>
       <text x="1543" y="943" class="task-id">G-01</text>
-      <rect x="1830" y="924" width="78" height="25" rx="12.5" fill="#c47a1b"/>
-      <text x="1869" y="941" class="status-text">REVIEW</text>
+      <rect x="1830" y="924" width="78" height="25" rx="12.5" fill="#2f8a57"/>
+      <text x="1869" y="941" class="status-text">DONE</text>
       <text x="1543" y="970" class="task-title">伦理材料许可招募产能与角色台账</text>
     </g>
-    <g id="task-G-02" data-task-id="G-02" data-wave="W1" data-type="research" data-status="IN_REVIEW" data-depends-on="F-01">
-      <title>【数据治理】数据分级跨阶段去重与资产许可 | status=IN_REVIEW | depends_on=F-01</title>
+    <g id="task-G-02" data-task-id="G-02" data-wave="W1" data-type="research" data-status="DONE" data-depends-on="F-01">
+      <title>【数据治理】数据分级跨阶段去重与资产许可 | status=DONE | depends_on=F-01</title>
       <rect x="1528" y="1022" width="394" height="92" rx="11" fill="#f5f0f8" stroke="#9074a5" stroke-width="1.6"/>
       <text x="1543" y="1051" class="task-id">G-02</text>
-      <rect x="1830" y="1032" width="78" height="25" rx="12.5" fill="#c47a1b"/>
-      <text x="1869" y="1049" class="status-text">REVIEW</text>
+      <rect x="1830" y="1032" width="78" height="25" rx="12.5" fill="#2f8a57"/>
+      <text x="1869" y="1049" class="status-text">DONE</text>
       <text x="1543" y="1078" class="task-title">数据分级跨阶段去重与资产许可</text>
     </g>
     <g id="task-P-01" data-task-id="P-01" data-wave="W1" data-type="data" data-status="DONE" data-depends-on="F-01">
@@ -591,8 +594,16 @@
       <text x="1013" y="2833" class="status-text">WAIT</text>
       <text x="687" y="2862" class="task-title">干净检出构建复现与候选制品</text>
     </g>
-    <g id="task-E-01" data-task-id="E-01" data-wave="W4" data-type="research" data-status="BLOCKED_EXTERNAL" data-depends-on="Q-01|G-01">
-      <title>【研究执行】Level A专家审查执行 | status=BLOCKED_EXTERNAL | depends_on=Q-01|G-01</title>
+    <g id="task-G-05" data-task-id="G-05" data-wave="W3" data-type="research" data-status="WAIT_DEP_EXTERNAL" data-depends-on="G-01|G-02">
+      <title>【外部准入】正式环境机构路径许可与U8实地闭环 | status=WAIT_DEP_EXTERNAL | depends_on=G-01|G-02</title>
+      <rect x="1528" y="3130" width="394" height="92" rx="11" fill="#fff0ee" stroke="#cf4d43" stroke-width="2"/>
+      <text x="1543" y="3159" class="task-id">G-05 · 第58项</text>
+      <rect x="1830" y="3140" width="78" height="25" rx="12.5" fill="#d9822b"/>
+      <text x="1869" y="3157" class="status-text">EXT-WAIT</text>
+      <text x="1543" y="3186" class="task-title">正式环境、机构路径、许可与U8实地闭环</text>
+    </g>
+    <g id="task-E-01" data-task-id="E-01" data-wave="W4" data-type="research" data-status="BLOCKED_EXTERNAL" data-depends-on="Q-01|G-05">
+      <title>【研究执行】Level A专家审查执行 | status=BLOCKED_EXTERNAL | depends_on=Q-01|G-05</title>
       <rect x="1528" y="3374" width="394" height="92" rx="11" fill="#f5f0f8" stroke="#9074a5" stroke-width="1.6"/>
       <text x="1543" y="3403" class="task-id">E-01</text>
       <rect x="1830" y="3384" width="78" height="25" rx="12.5" fill="#c64d4d"/>
@@ -623,8 +634,8 @@
       <text x="1869" y="3725" class="status-text">LOCK</text>
       <text x="1543" y="3754" class="task-title">Level C汇总门与阈值冻结</text>
     </g>
-    <g id="task-G-03" data-task-id="G-03" data-wave="W4" data-type="research" data-status="BLOCKED_EXTERNAL" data-depends-on="E-03|X-01|Z-01|A-02|A-03">
-      <title>【预注册与锁定】阶段一估计目标报告清单与构建锁定 | status=BLOCKED_EXTERNAL | depends_on=E-03|X-01|Z-01|A-02|A-03</title>
+    <g id="task-G-03" data-task-id="G-03" data-wave="W4" data-type="research" data-status="BLOCKED_EXTERNAL" data-depends-on="E-03|X-01|Z-01|A-02|A-03|G-05">
+      <title>【预注册与锁定】阶段一估计目标报告清单与构建锁定 | status=BLOCKED_EXTERNAL | depends_on=E-03|X-01|Z-01|A-02|A-03|G-05</title>
       <rect x="1528" y="3806" width="394" height="92" rx="11" fill="#f5f0f8" stroke="#9074a5" stroke-width="1.6"/>
       <text x="1543" y="3835" class="task-id">G-03</text>
       <rect x="1830" y="3816" width="78" height="25" rx="12.5" fill="#c64d4d"/>
@@ -705,8 +716,8 @@
       <text x="1971" y="5106" class="task-title">完整提示表示主线与条件式部署扩展IJHC</text>
       <text x="1971" y="5128" class="task-title">I稿</text>
     </g>
-    <g id="task-W-03" data-task-id="W-03" data-wave="W6" data-type="paper" data-status="WAIT_DEP" data-depends-on="W-02|Z-01|G-02">
-      <title>【投稿复现】IJHCI实时规范数据声明与独立复现包 | status=WAIT_DEP | depends_on=W-02|Z-01|G-02</title>
+    <g id="task-W-03" data-task-id="W-03" data-wave="W6" data-type="paper" data-status="WAIT_DEP" data-depends-on="W-02|Z-01|G-05">
+      <title>【投稿复现】IJHCI实时规范数据声明与独立复现包 | status=WAIT_DEP | depends_on=W-02|Z-01|G-05</title>
       <rect x="1956" y="5158" width="394" height="92" rx="11" fill="#fbefec" stroke="#b96e5d" stroke-width="1.6"/>
       <text x="1971" y="5187" class="task-id">W-03</text>
       <rect x="2258" y="5168" width="78" height="25" rx="12.5" fill="#7d8790"/>
@@ -734,8 +745,8 @@
       <rect x="236" y="1592" width="2118" height="94" rx="11" class="gate-current"/>
       <rect x="252" y="1609" width="82" height="28" rx="7" fill="#5d8fb9"/>
       <text x="293" y="1628" class="gate-label">CURRENT</text>
-    <text x="352" y="1628" class="gate-text">当前工作面：14项DONE；G-01/G-02治理修复已签收但外部门开放；T-02/U-01/U-02 READY。</text>
-    <text x="352" y="1660" class="gate-note">基础、合同、遥测与 V-04 预演门已闭合；后续任务仍须按各自 AC 独立验收。</text>
+    <text x="352" y="1628" class="gate-text">当前工作面：16项DONE；G-01/G-02已完成；T-02/U-01/U-02 READY。</text>
+    <text x="352" y="1660" class="gate-note">外部配置、机构路径、许可清零与U8实地证据统一由第58项G-05承接。</text>
     </g>
     <g id="gate-W2">
       <rect x="236" y="2592" width="2118" height="94" rx="11" class="gate-wait"/>
@@ -745,11 +756,10 @@
       <text x="352" y="2660" class="gate-note">U-08、T-02 与分析工具闭合后，才可进入完整链集成。</text>
     </g>
     <g id="gate-W3">
-      <rect x="236" y="3160" width="2118" height="94" rx="11" class="gate-wait"/>
-      <rect x="252" y="3177" width="82" height="28" rx="7" fill="#d88a24"/>
-      <text x="293" y="3196" class="gate-label">WAIT</text>
-      <text x="352" y="3196" class="gate-text">集成与工具门：I-01/Q-03 受双真机、外部测量与正式批准约束。</text>
-      <text x="352" y="3228" class="gate-note">Z-01 必须同时满足干净检出、统计实现、资产许可与完整制品。</text>
+      <rect x="236" y="3228" width="2118" height="54" rx="11" class="gate-wait"/>
+      <rect x="252" y="3241" width="82" height="28" rx="7" fill="#d88a24"/>
+      <text x="293" y="3260" class="gate-label">WAIT</text>
+      <text x="352" y="3260" class="gate-text">G-05统一阻断正式执行、阶段锁定与投稿复现；候选工程任务仍按自身依赖推进。</text>
     </g>
     <g id="gate-W4">
       <rect x="236" y="3944" width="2118" height="94" rx="11" class="gate-external"/>
@@ -780,7 +790,7 @@
     <text x="210" y="5626" class="footer-text">Python 是运行状态唯一权威；Unity 不依赖 TD；TD 只读；禁止 Spout。波次完成不替代各任务 AC、证据和外部门。</text>
     <rect x="52" y="5688" width="2296" height="124" rx="12" fill="#eef3f7" stroke="#9aabb8" stroke-width="1.4"/>
     <text x="80" y="5726" class="footer-title">数据来源与可审计性</text>
-  <text x="80" y="5758" class="footer-text">签收证据：F-03 c358a35｜F-04 43a63a1｜F-05 cb09d32｜T-01 5c77efc｜V-04 68db963｜G-01/G-02修复 9f0a15b</text>
-  <text x="80" y="5788" class="footer-text">快照：2026-09-04 ｜ tasks=57 ｜ dependency_edges=126 ｜ 权威：protocol_authority_v1.1.json</text>
+  <text x="80" y="5758" class="footer-text">治理迁移：G-01/G-02 DONE｜第58项G-05承接外部准入并保持EXT-WAIT</text>
+  <text x="80" y="5788" class="footer-text">快照：2026-09-04 ｜ tasks=58 ｜ dependency_edges=129 ｜ 权威：05_可领取任务包.csv</text>
   </g>
 </svg>

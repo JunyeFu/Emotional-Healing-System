@@ -80,6 +80,7 @@ def test_in_review_human_signoff_pass_keeps_external_gates_open() -> None:
         encoding="utf-8-sig", newline=""
     ) as handle:
         row = next(item for item in csv.DictReader(handle) if item["task_id"] == "G-02")
+    row["status"] = "IN_REVIEW"
     task_map = {
         "source_files": [],
         "working_paths": [],
