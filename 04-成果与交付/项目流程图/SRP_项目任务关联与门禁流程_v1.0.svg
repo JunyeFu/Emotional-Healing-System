@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="5878" viewBox="0 0 2400 5878" role="img" aria-labelledby="title desc">
   <title id="title">SRP v2.1 任务关联与门禁流程</title>
   <desc id="desc">57 项任务，按 W0 至 W6 波次与五类职责泳道排列。图中包含 126 条显式依赖边、当前状态和外部门禁。</desc>
-  <metadata>snapshot=2026-09-03; tasks=57; dependency_edges=126; status_basis=signed-branch-union; signoffs=f03:c358a35,f04:43a63a1,f05:cb09d32,t01:5c77efc,v04:68db963; authority=REJECT_AND_RESUBMIT_DESIGN; evidence=PLANNED_NOT_OBSERVED</metadata>
+  <metadata>snapshot=2026-09-04; tasks=57; dependency_edges=126; status_basis=signed-branch-union; signoffs=f03:c358a35,f04:43a63a1,f05:cb09d32,t01:5c77efc,v04:68db963,g01-g02-review-repair:9f0a15b; authority=REJECT_AND_RESUBMIT_DESIGN; evidence=PLANNED_NOT_OBSERVED</metadata>
   <defs>
     <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 Z" fill="#74808c"/></marker>
     <marker id="arrow-critical" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#34495a"/></marker>
@@ -24,7 +24,7 @@
     <text x="52" y="66" class="title">SRP v2.1｜57 项任务关联与门禁流程</text>
     <text x="52" y="101" class="subtitle">顺序规范不代表当前通过状态；附件仅作视觉参考，状态来自项目任务注册表、协议权威与独立分支证据。</text>
     <rect x="52" y="126" width="2296" height="54" rx="10" fill="#edf4fa" stroke="#6d94b8" stroke-width="1.5"/>
-    <text x="76" y="160" class="snapshot">当前工作面：F-03 / F-04 / F-05 / T-01 / V-04 DONE ｜ G-01 / G-02 REVIEW ｜ T-02 / U-01 / U-02 READY</text>
+    <text x="76" y="160" class="snapshot">当前工作面：14 项 DONE ｜ G-01 / G-02 REVIEW（治理修复已签收，外部门开放）｜ T-02 / U-01 / U-02 READY</text>
     <rect x="52" y="196" width="2296" height="54" rx="10" fill="#fff0ee" stroke="#cf4d43" stroke-width="1.5"/>
     <text x="76" y="230" class="snapshot">设计权威：REJECT_AND_RESUBMIT_DESIGN ｜ 证据：PLANNED_NOT_OBSERVED ｜ 工程完成不得扩大为 LIVE_E2E 或外部放行</text>
     <text x="52" y="286" class="subtitle">状态</text>
@@ -734,7 +734,7 @@
       <rect x="236" y="1592" width="2118" height="94" rx="11" class="gate-current"/>
       <rect x="252" y="1609" width="82" height="28" rx="7" fill="#5d8fb9"/>
       <text x="293" y="1628" class="gate-label">CURRENT</text>
-    <text x="352" y="1628" class="gate-text">当前工作面：F-03/F-04/F-05/T-01/V-04 DONE；G-01/G-02 REVIEW；T-02/U-01/U-02 READY。</text>
+    <text x="352" y="1628" class="gate-text">当前工作面：14项DONE；G-01/G-02治理修复已签收但外部门开放；T-02/U-01/U-02 READY。</text>
     <text x="352" y="1660" class="gate-note">基础、合同、遥测与 V-04 预演门已闭合；后续任务仍须按各自 AC 独立验收。</text>
     </g>
     <g id="gate-W2">
@@ -780,7 +780,7 @@
     <text x="210" y="5626" class="footer-text">Python 是运行状态唯一权威；Unity 不依赖 TD；TD 只读；禁止 Spout。波次完成不替代各任务 AC、证据和外部门。</text>
     <rect x="52" y="5688" width="2296" height="124" rx="12" fill="#eef3f7" stroke="#9aabb8" stroke-width="1.4"/>
     <text x="80" y="5726" class="footer-title">数据来源与可审计性</text>
-  <text x="80" y="5758" class="footer-text">签收证据：F-03 c358a35｜F-04 43a63a1｜F-05 cb09d32｜T-01 5c77efc｜V-04 68db963｜权威：protocol_authority_v1.1.json</text>
-  <text x="80" y="5788" class="footer-text">快照：2026-09-03 ｜ tasks=57 ｜ dependency_edges=126 ｜ 口径：已签收任务分支证据并集</text>
+  <text x="80" y="5758" class="footer-text">签收证据：F-03 c358a35｜F-04 43a63a1｜F-05 cb09d32｜T-01 5c77efc｜V-04 68db963｜G-01/G-02修复 9f0a15b</text>
+  <text x="80" y="5788" class="footer-text">快照：2026-09-04 ｜ tasks=57 ｜ dependency_edges=126 ｜ 权威：protocol_authority_v1.1.json</text>
   </g>
 </svg>

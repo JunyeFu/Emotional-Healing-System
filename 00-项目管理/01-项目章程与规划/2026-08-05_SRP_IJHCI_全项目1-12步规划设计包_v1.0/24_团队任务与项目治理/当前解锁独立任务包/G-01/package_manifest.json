@@ -154,6 +154,12 @@
       "package_path": "inputs/25_G-01_Agent独立审核报告_2026-08-21.md",
       "sha256": "CC3C30074819F7A7ED8412083F345A5CA5200947C3495647B0C72D78D6509569",
       "size_bytes": 3297
+    },
+    {
+      "source_path": "03-测试与实验/G-01_G-02_治理修复团队总监签收报告_已签署.md",
+      "package_path": "inputs/26_G-01_G-02_治理修复团队总监签收报告_已签署.md",
+      "sha256": "82DD33EDDC90DCC4639272D16C0F3D9C366CB52276C1571C5A15EBD423788485",
+      "size_bytes": 1415
     }
   ],
   "working_paths": [

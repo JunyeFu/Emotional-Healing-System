@@ -388,6 +388,12 @@
       "package_path": "inputs/64_test_windows_checks.py",
       "sha256": "B6E5539D2E805FEC62733535AB2B8820457595F92FBADD8A78D1CAD54676CB03",
       "size_bytes": 1707
+    },
+    {
+      "source_path": "03-测试与实验/G-01_G-02_治理修复团队总监签收报告_已签署.md",
+      "package_path": "inputs/65_G-01_G-02_治理修复团队总监签收报告_已签署.md",
+      "sha256": "82DD33EDDC90DCC4639272D16C0F3D9C366CB52276C1571C5A15EBD423788485",
+      "size_bytes": 1415
     }
   ],
   "working_paths": [

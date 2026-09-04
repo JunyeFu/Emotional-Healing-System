@@ -70,6 +70,7 @@
 | [02-技术研发/07-数据治理/tests/test_repository_privacy.py](D:/Agent/03-SRP/02-技术研发/07-数据治理/tests/test_repository_privacy.py) | [inputs/62_test_repository_privacy.py](inputs/62_test_repository_privacy.py) | `533F32501C3DC6E73856AC23233D32534AEBE233055172CC88937A4B82566A99` |
 | [02-技术研发/07-数据治理/tests/test_unity_gate.py](D:/Agent/03-SRP/02-技术研发/07-数据治理/tests/test_unity_gate.py) | [inputs/63_test_unity_gate.py](inputs/63_test_unity_gate.py) | `ECB4DF2A58D5456FDFA8FDABB55591E3727105B9B5B6848105323C02CDA99EA0` |
 | [02-技术研发/07-数据治理/tests/test_windows_checks.py](D:/Agent/03-SRP/02-技术研发/07-数据治理/tests/test_windows_checks.py) | [inputs/64_test_windows_checks.py](inputs/64_test_windows_checks.py) | `B6E5539D2E805FEC62733535AB2B8820457595F92FBADD8A78D1CAD54676CB03` |
+| [03-测试与实验/G-01_G-02_治理修复团队总监签收报告_已签署.md](D:/Agent/03-SRP/03-测试与实验/G-01_G-02_治理修复团队总监签收报告_已签署.md) | [inputs/65_G-01_G-02_治理修复团队总监签收报告_已签署.md](inputs/65_G-01_G-02_治理修复团队总监签收报告_已签署.md) | `82DD33EDDC90DCC4639272D16C0F3D9C366CB52276C1571C5A15EBD423788485` |
 
 ## 实现工作目录
 

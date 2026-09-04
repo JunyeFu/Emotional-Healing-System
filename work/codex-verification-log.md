@@ -1441,3 +1441,14 @@
 | Protocol Authority | `PASS`；v1.1与当前执行文件一致。 |
 | G-02 Current Evidence | 专项测试`138 passed`；合成演练通过；仓库隐私`0`违规；正式环境6项缺失、资产189项及215个失败关闭项继续阻断。 |
 | Diff And Wording | `git diff --check`通过；新增行未出现项目禁用表述。 |
+
+### 2026-09-04 G-01/G-02 repair signoff and SVG refresh
+
+| Check | Result |
+|---|---|
+| Signoff Scope | 傅钧烨签收精确提交`9f0a15b364aa70f5f15433cb03a3335ba85fa888`；G-01/G-02状态继续为`IN_REVIEW`。 |
+| SVG Structure | 两张SVG均可由Python XML解析，根元素与`viewBox`有效，快照日期和签收提交已写入。 |
+| Browser Preview | Edge headless成功渲染两张临时预览；标题、状态条和外部门说明可见，临时文件未纳入仓库。 |
+| Dispatch Packages | `PASS`；5个包、135份快照，新增签收报告同时进入G-01与G-02包。 |
+| Focused Regression | 任务包治理测试`4 passed`。 |
+| Full Regression | `py -3.14 -m pytest -q`结果`471 passed in 32.34s`。 |

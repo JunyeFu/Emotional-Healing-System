@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2640" viewBox="0 0 2400 2640" role="img" aria-labelledby="title desc">
   <title id="title">SRP v2.1 任务状态与门禁解释清单</title>
-  <desc id="desc">解释 SRP 任务注册表的七种任务状态、三种门禁、五类任务颜色和依赖线含义。快照日期为 2026-09-03。</desc>
-  <metadata>snapshot=2026-09-03; tasks=57; done=14; in_progress=0; in_review=2; ready=3; wait_dep=21; wait_dep_external=4; blocked_external=13; status_basis=signed-branch-union; signoffs=f03:c358a35,f04:43a63a1,f05:cb09d32,t01:5c77efc,v04:68db963</metadata>
+  <desc id="desc">解释 SRP 任务注册表的七种任务状态、三种门禁、五类任务颜色和依赖线含义。快照日期为 2026-09-04。</desc>
+  <metadata>snapshot=2026-09-04; tasks=57; done=14; in_progress=0; in_review=2; ready=3; wait_dep=21; wait_dep_external=4; blocked_external=13; status_basis=signed-branch-union; signoffs=f03:c358a35,f04:43a63a1,f05:cb09d32,t01:5c77efc,v04:68db963,g01-g02-review-repair:9f0a15b</metadata>
 
   <style>
     text { font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #1d2732; }
@@ -34,7 +34,7 @@
     <text x="86" y="184" class="summary">当前快照：57 项｜DONE 14｜DOING 0｜REVIEW 2｜READY 3｜WAIT 21｜EXT-WAIT 4｜LOCK 13</text>
 
     <rect x="60" y="226" width="2280" height="66" rx="11" fill="#fff0ee" stroke="#cf4d43" stroke-width="1.6"/>
-    <text x="86" y="268" class="summary">当前工作面：F-03 / F-04 / F-05 / T-01 / V-04 DONE｜G-01 / G-02 REVIEW｜T-02 / U-01 / U-02 READY</text>
+    <text x="86" y="268" class="summary">当前工作面：14 项 DONE｜G-01 / G-02 REVIEW（治理修复已签收，外部门开放）｜T-02 / U-01 / U-02 READY</text>
   </g>
 
   <g id="task-status-checklist">
@@ -86,7 +86,7 @@
       <text x="544" y="824" class="registry-name" text-anchor="middle">IN_REVIEW</text>
       <text x="770" y="832" class="count" fill="#c47a1b">2</text>
       <text x="892" y="801" class="body">
-        <tspan x="892" dy="0">候选已形成，等待第二人、外部门或治理裁定。</tspan>
+        <tspan x="892" dy="0">候选已形成，可能等待第二人、外部门或治理裁定。</tspan>
         <tspan x="892" dy="32">不是失败，也不等于已经通过。</tspan>
       </text>
       <text x="1788" y="808" class="body">
@@ -255,6 +255,6 @@
     <rect x="60" y="2504" width="2280" height="82" rx="12" fill="#eef3f7" stroke="#9aabb8" stroke-width="1.6"/>
     <text x="1200" y="2556" class="boundary" style="fill:#34495a">自动检查 ≠ 第二人复核 ｜ 工程就绪 ≠ LIVE_E2E / 伦理放行 / 投稿发布</text>
 
-    <text x="60" y="2620" class="note">快照：2026-09-03｜签收：F-03 c358a35｜F-04 43a63a1｜F-05 cb09d32｜T-01 5c77efc｜V-04 68db963</text>
+    <text x="60" y="2620" class="note">快照：2026-09-04｜签收：F-03 c358a35｜F-04 43a63a1｜F-05 cb09d32｜T-01 5c77efc｜V-04 68db963｜G-01/G-02修复 9f0a15b</text>
   </g>
 </svg>
