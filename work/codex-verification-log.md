@@ -1428,3 +1428,39 @@
 | Repository Privacy | `G02_REPOSITORY_PRIVACY_PASS violations=0`。 |
 | Full Regression | `py -3.14 -m pytest -q` 结果`470 passed in 28.20s`。 |
 | Diff Gate | `git diff --check` 通过；合并冲突标记为零。 |
+
+### 2026-09-04 G-01/G-02 Agent repair verification
+
+| Check | Result |
+|---|---|
+| Initial command correction | 两个旧验证脚本名不存在；改用仓库实际入口`07_validate_task_packages.py`与`14_validate_ready_task_packages.py`，不把命令错误记为验证失败。 |
+| Regression repair | 首次全量为`469 passed, 1 failed`；修复未签收兼容措辞并新增已签收外部门测试后，专项`4 passed`。 |
+| Full Regression | `py -3.14 -m pytest -q`最终`471 passed in 111.23s`。 |
+| Registry | `PASS`；57项，`DONE=14`、`IN_REVIEW=G-01,G-02`、`READY=T-02,U-01,U-02`。 |
+| Dispatch Packages | `PASS`；5个包、133份快照，集合为`G-01,G-02,T-02,U-01,U-02`。 |
+| Protocol Authority | `PASS`；v1.1与当前执行文件一致。 |
+| G-02 Current Evidence | 专项测试`138 passed`；合成演练通过；仓库隐私`0`违规；正式环境6项缺失、资产189项及215个失败关闭项继续阻断。 |
+| Diff And Wording | `git diff --check`通过；新增行未出现项目禁用表述。 |
+
+### 2026-09-04 G-01/G-02 repair signoff and SVG refresh
+
+| Check | Result |
+|---|---|
+| Signoff Scope | 傅钧烨签收精确提交`9f0a15b364aa70f5f15433cb03a3335ba85fa888`；G-01/G-02状态继续为`IN_REVIEW`。 |
+| SVG Structure | 两张SVG均可由Python XML解析，根元素与`viewBox`有效，快照日期和签收提交已写入。 |
+| Browser Preview | Edge headless成功渲染两张临时预览；标题、状态条和外部门说明可见，临时文件未纳入仓库。 |
+| Dispatch Packages | `PASS`；5个包、135份快照，新增签收报告同时进入G-01与G-02包。 |
+
+### 2026-09-04 G-01/G-02 DONE与第58项G-05责任迁移
+
+| Check | Result |
+|---|---|
+| Registry | `PASS`：58项、55固定任务、3模板、依赖图无环且全部到达W-04；`DONE=16`、`IN_REVIEW=0`、`READY=T-02/U-01/U-02`、`WAIT_DEP_EXTERNAL=5`。 |
+| Dispatch Packages | `PASS`：G-01/G-02复核包移出当前分发集合；3个包、44份快照，集合为T-02、U-01、U-02。 |
+| Dependency Gate | G-05依赖G-01/G-02；E-01、G-03、W-03显式依赖G-05；候选工程任务不被新增外部门提前阻断。 |
+| Regression | 根pytest `471 passed in 20.41s`；协议权威、任务注册表、独立任务包和`git diff --check`通过。 |
+| PDF | `02_固定任务概要.pdf`为9页，SHA-256 `74D322A9A08D754E895BF5BF4C54DD1D5F3874CB20129E7F586B87D63D820086`；9页渲染检查无裁切、重叠、空白或乱码。 |
+| Diagram | 三张SVG均通过XML解析；主依赖图含58个任务、129条依赖和唯一G-05节点；两张交付PNG按2400×5878与2400×2640重新渲染。 |
+| Boundary | G-01/G-02的`DONE`只覆盖已签收方案、实现和候选证据；G-05外部证据仍为`WAIT_DEP_EXTERNAL`。 |
+| Focused Regression | 任务包治理测试`4 passed`。 |
+| Full Regression | `py -3.14 -m pytest -q`结果`471 passed in 32.34s`。 |

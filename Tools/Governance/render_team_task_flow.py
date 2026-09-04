@@ -36,6 +36,7 @@ DOMAIN = {
     "体验设计": "#fce7f3",
     "研究治理": "#ede9fe",
     "数据治理": "#ede9fe",
+    "外部准入": "#fee2e2",
     "设备接入": "#dcfce7",
     "信号处理": "#dcfce7",
     "交互状态估计": "#dcfce7",
@@ -94,7 +95,7 @@ def main() -> None:
         "</defs>",
         '<rect width="100%" height="100%" fill="#f8fafc"/>',
         '<text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>',
-        '<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">状态快照 · 2026-09-01 · F-05 已由傅钧烨签署 PASS / DONE</text>',
+        '<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">状态快照 · 2026-09-04 · G-01 / G-02 DONE，外部准入责任迁移至第58项 G-05</text>',
     ]
 
     counts = Counter(row["status"] for row in rows)
@@ -110,10 +111,10 @@ def main() -> None:
         x += box_w + 14
 
     gates = [
-        ("F-05 合同门", "DONE → U-01 / U-02 已解锁", "#dcfce7", "#166534"),
-        ("F-04 TD 壳门", "IN_REVIEW → T-01 继续等待", "#f3e8ff", "#6b21a8"),
-        ("V-04 预演门", "IN_PROGRESS → V-05 继续等待", "#ffedd5", "#9a3412"),
-        ("设备与外部门", "D-01 / D-02 / 后续研究链保持阻断", "#fee2e2", "#991b1b"),
+        ("治理设计门", "G-01 / G-02 DONE → 候选实现可继续", "#dcfce7", "#166534"),
+        ("外部准入门", "G-05 EXT-WAIT → 正式研究链保持阻断", "#fee2e2", "#991b1b"),
+        ("当前可领取", "T-02 / U-01 / U-02 READY", "#dbeafe", "#1d4ed8"),
+        ("设备外部门", "D-01 / D-02 仍等待真实设备", "#fee2e2", "#991b1b"),
     ]
     gate_y, gate_w = 196, (width - 140 - 3 * 18) / 4
     for index, (title, body, fill, stroke) in enumerate(gates):

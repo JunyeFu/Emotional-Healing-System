@@ -147,10 +147,13 @@ def task_markdown(
     )
     if row["status"] == "IN_REVIEW":
         source_files = [str(item) for item in task_map["source_files"]]
+        human_review_status = task_map.get("human_review_status", "PENDING")
         evidence_paths = [
             item
             for item in source_files
             if "技术验收记录" in item
+            or "独立审核报告" in item
+            or "双人审查记录" in item
             or "/evidence/" in item
             or "/fixtures/golden/" in item
         ]
@@ -160,10 +163,14 @@ def task_markdown(
             "- 证据路径：" + "；".join(f"`{item}`" for item in evidence_paths),
             f"- commit：`{task_map.get('implementation_commit', 'PENDING_FIX_COMMIT')}`",
             f"- push目标：`origin/{row['branch']}`",
-            "- 剩余风险：真实团队第二人签署及任务文档列明的外部边界仍开放",
+            f"- 真实团队第二人复核：`{human_review_status}`"
+            + (
+                f"（签收提交`{task_map['human_review_commit']}`）"
+                if task_map.get("human_review_commit")
+                else ""
+            ),
+            f"- 剩余风险：{task_map.get('remaining_risk', '傅钧烨签收仍开放；任务文档列明的外部边界仍开放')}",
         ]
-        if "傅钧烨" in row["reviewer"]:
-            completion.append("- 傅钧烨签收仍开放")
     else:
         completion = [
             "- 实际改动文件：",
@@ -180,7 +187,12 @@ def task_markdown(
             "",
             row["completion_condition"],
             "",
-            "完成还必须满足：第二人复核、相关验证通过、证据路径可访问，并完成本任务范围内的commit与push。",
+            (
+                "完成还必须满足：任务文档列明的外部与下游门禁关闭。"
+                if row["status"] == "IN_REVIEW"
+                and task_map.get("human_review_status") == "PASS"
+                else "完成还必须满足：第二人复核、相关验证通过、证据路径可访问，并完成本任务范围内的commit与push。"
+            ),
             "",
             "## 完成回填",
             "",
