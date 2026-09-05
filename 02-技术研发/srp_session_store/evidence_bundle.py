@@ -82,7 +82,7 @@ def validate_bundle(bundle: dict[str, Any], base_dir: Path | None = None) -> dic
             errors.append(path + ":DUPLICATE_ARTIFACT_ID")
         seen_ids.add(artifact_id)
         family = artifact.get("family")
-        if family not in REQUIRED_FAMILIES:
+        if not isinstance(family, str) or family not in REQUIRED_FAMILIES:
             errors.append(path + ":FAMILY_INVALID")
         if artifact.get("observed_or_derived") not in {"observed", "derived"}:
             errors.append(path + ":OBSERVATION_NAMESPACE_INVALID")
@@ -142,7 +142,11 @@ def validate_bundle(bundle: dict[str, Any], base_dir: Path | None = None) -> dic
             }
         )
 
-    represented = {item.get("family") for item in artifacts if isinstance(item, dict)}
+    represented = {
+        family
+        for item in artifacts
+        if isinstance(item, dict) and isinstance((family := item.get("family")), str)
+    }
     if missing_artifacts := REQUIRED_FAMILIES - represented:
         errors.append("FAMILIES_WITHOUT_ARTIFACT:" + ",".join(sorted(missing_artifacts)))
 

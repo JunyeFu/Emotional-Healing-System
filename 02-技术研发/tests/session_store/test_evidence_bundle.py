@@ -163,3 +163,11 @@ def test_invalid_family_and_reason_types_fail_without_exception(tmp_path: Path):
     assert not result["ok"]
     assert "FAMILY_ITEMS_INVALID" in result["errors"]
     assert any(item.endswith("REASON_CODE_INVALID") for item in result["errors"])
+
+
+def test_invalid_artifact_family_type_fails_without_exception(tmp_path: Path):
+    candidate = bundle(tmp_path)
+    candidate["artifacts"][0]["family"] = {"invalid": True}
+    result = validate_bundle(candidate, tmp_path)
+    assert not result["ok"]
+    assert any(item.endswith("FAMILY_INVALID") for item in result["errors"])
