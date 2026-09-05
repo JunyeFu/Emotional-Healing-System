@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "entries": {
+    "UP-01": [
+      {
+        "reference": "audit:source_record_v1.0.json",
+        "byte_sha256": "95843A4CF9439F3BCCC0E6E8F9F2EF580557148A5131EE6232AA71D59358CD73"
+      },
+      {
+        "reference": "audit:findings_disposition_v1.0.csv",
+        "byte_sha256": "E9D0F12A6C68BB1CFA3EC218B642C9D984D4FEFAA469359C0D0334B3CC6D2543"
+      }
+    ],
+    "UP-02": [
+      {
+        "reference": "audit:release_routes_v1.0.json",
+        "byte_sha256": "58EEBB7F99EE40B5E53AC0E4AE83D9B102A781E1A66196936138F962CF13B472"
+      },
+      {
+        "reference": "governance:07_validate_task_packages.py",
+        "byte_sha256": "6AEDF61D106754FB8C24FF8A09EA9CA095D55E988C99B43D79D80AE69D13EA0F"
+      }
+    ],
+    "UP-03": [
+      {
+        "reference": "project:02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
+        "byte_sha256": "759B51A9700DA92B845D1DE5E6478217341255DDF4B501EEC8938BFCC13F12DC"
+      },
+      {
+        "reference": "project:02-技术研发/srp_session_store/evidence_bundle.py",
+        "byte_sha256": "EF97A47A7413715F77EC263FDE17CCA87455B0756591B97FCA77F909DC4E055A"
+      }
+    ],
+    "UP-04": [
+      {
+        "reference": "audit:external_capability_matrix_v1.0.csv",
+        "byte_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD"
+      }
+    ],
+    "UP-05": [
+      {
+        "reference": "audit:task_milestones_v1.0.json",
+        "byte_sha256": "C247AE222D7BB1FA8756A4283DCED26E60E133EF814C0F57912B0F654210D281"
+      }
+    ],
+    "UP-06": [
+      {
+        "reference": "governance:05_可领取任务包.csv",
+        "byte_sha256": "C5F94DDC3C279008407B3810B0DD7A8C18B3907634D0C9572785A531443C9834"
+      }
+    ],
+    "UP-07": [
+      {
+        "reference": "governance:05_可领取任务包.csv",
+        "byte_sha256": "C5F94DDC3C279008407B3810B0DD7A8C18B3907634D0C9572785A531443C9834"
+      }
+    ],
+    "UP-08": [
+      {
+        "reference": "governance:05_可领取任务包.csv",
+        "byte_sha256": "C5F94DDC3C279008407B3810B0DD7A8C18B3907634D0C9572785A531443C9834"
+      }
+    ],
+    "UP-09": [
+      {
+        "reference": "governance:13_render_ready_task_packages.py",
+        "byte_sha256": "8F90FC6195FC828379B7E0C9EC590D10724B0C6E76EE1730862744E45A80D3AE"
+      },
+      {
+        "reference": "governance:14_validate_ready_task_packages.py",
+        "byte_sha256": "825C1D60B60D0C25729BE6E7D3F59693D53673B9F8DFC2C7C6B6D665C517A4E5"
+      }
+    ],
+    "UP-10": [
+      {
+        "reference": "audit:external_capability_matrix_v1.0.csv",
+        "byte_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD"
+      }
+    ],
+    "UP-11": [
+      {
+        "reference": "audit:release_routes_v1.0.json",
+        "byte_sha256": "58EEBB7F99EE40B5E53AC0E4AE83D9B102A781E1A66196936138F962CF13B472"
+      }
+    ],
+    "UP-12": [
+      {
+        "reference": "audit:external_capability_matrix_v1.0.csv",
+        "byte_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD"
+      }
+    ]
+  }
+}

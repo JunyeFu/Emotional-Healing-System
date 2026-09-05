@@ -15,11 +15,12 @@ RESOURCES = ROOT / "08_任务技能与国内学习资料_v1.0.md"
 HANDBOOK = ROOT / "04_可领取树型任务包_v2.0.md"
 PACKAGE_MAP = ROOT / "12_独立任务包文件映射_v1.0.json"
 PACKAGE_OUTPUT = ROOT / "当前解锁独立任务包"
+RELEASE_ROUTES = ROOT / "audit_upgrade" / "release_routes_v1.0.json"
 VALID_STATUSES = {
     "READY", "IN_PROGRESS", "IN_REVIEW", "DONE",
     "WAIT_DEP", "WAIT_DEP_EXTERNAL", "BLOCKED_EXTERNAL",
 }
-PACKAGE_STATUSES = {"READY", "IN_REVIEW"}
+PACKAGE_STATUSES = {"READY", "IN_PROGRESS", "IN_REVIEW"}
 VALID_KINDS = {"FIXED", "TEMPLATE"}
 VALID_PROFILES = {
     "P-DESIGN",
@@ -33,6 +34,7 @@ VALID_PROFILES = {
 EXPECTED_TEMPLATES = {"B-01", "B-02", "B-03"}
 TERMINAL_TASK = "W-04"
 WAVE_ORDER = {f"W{index}": index for index in range(7)}
+REVIEW_PLACEHOLDERS = ("待复核", "待真实", "待签", "未签署", "pending", "tbd", "todo")
 REQUIRED_FIELDS = {
     "task_id",
     "parent_id",
@@ -76,11 +78,43 @@ UPGRADE_MARKERS = {
     "A-04": ("估计目标", "次要FDR", "独立复现日志"),
     "W-02": ("完整提示表示主线", "条件式部署扩展", "主文补充材料预算"),
     "W-03": ("实时IJHCI作者说明快照", "数据可用性声明", "独立复现日志"),
+    "A-06": ("阶段一主论文", "条件式阶段三", "范围关闭回执"),
 }
 
 
 def split(value: str, separator: str = "|") -> list[str]:
     return [item.strip() for item in value.split(separator) if item.strip()]
+
+
+def unknown_dependencies(dependencies: set[str], known: set[str]) -> set[str]:
+    return dependencies - known
+
+
+def reviewer_is_placeholder(value: str) -> bool:
+    reviewer = value.strip().casefold()
+    return any(marker in reviewer for marker in REVIEW_PLACEHOLDERS)
+
+
+def dependency_cycle_nodes(graph: dict[str, set[str]]) -> set[str]:
+    visiting: set[str] = set()
+    visited: set[str] = set()
+    cycles: set[str] = set()
+
+    def visit(task_id: str) -> None:
+        if task_id in visiting:
+            cycles.add(task_id)
+            return
+        if task_id in visited:
+            return
+        visiting.add(task_id)
+        for dependency in graph[task_id] & graph.keys():
+            visit(dependency)
+        visiting.remove(task_id)
+        visited.add(task_id)
+
+    for task_id in graph:
+        visit(task_id)
+    return cycles
 
 
 def main() -> int:
@@ -101,8 +135,8 @@ def main() -> int:
     ids = [row["task_id"] for row in rows]
     known = set(ids)
     rows_by_id = {row["task_id"]: row for row in rows}
-    if len(rows) != 58:
-        errors.append(f"expected 58 registry entries, found {len(rows)}")
+    if len(rows) != 59:
+        errors.append(f"expected 59 registry entries, found {len(rows)}")
     if len(ids) != len(known):
         errors.append("task_id values must be unique")
 
@@ -157,7 +191,7 @@ def main() -> int:
         if not row["title"].startswith(expected_prefix):
             errors.append(f"{task_id}: title must start with {expected_prefix}")
 
-        missing_dependencies = dependencies - known
+        missing_dependencies = unknown_dependencies(dependencies, known)
         if missing_dependencies:
             errors.append(f"{task_id}: unknown dependencies {sorted(missing_dependencies)}")
         if task_id in dependencies:
@@ -178,6 +212,8 @@ def main() -> int:
             for field in ("claimant", "branch", "reviewer"):
                 if not row[field].strip():
                     errors.append(f"{task_id}: DONE task has empty {field}")
+            if reviewer_is_placeholder(row["reviewer"]):
+                errors.append(f"{task_id}: DONE task has placeholder reviewer")
         if row["status"] == "READY" and any(
             row[field].strip() for field in ("claimant", "branch", "reviewer")
         ):
@@ -188,6 +224,8 @@ def main() -> int:
                     errors.append(f"{task_id}: {row['status']} task has empty {field}")
         if row["status"] == "IN_REVIEW" and not row["reviewer"].strip():
             errors.append(f"{task_id}: IN_REVIEW task has no review state")
+        if row["status"] == "IN_REVIEW" and reviewer_is_placeholder(row["reviewer"]):
+            errors.append(f"{task_id}: IN_REVIEW task has placeholder reviewer")
         if row["kind"] == "TEMPLATE" and row["status"] == "READY":
             errors.append(f"{task_id}: repeatable template cannot be READY")
 
@@ -219,26 +257,29 @@ def main() -> int:
     template_ids = {row["task_id"] for row in rows if row["kind"] == "TEMPLATE"}
     if template_ids != EXPECTED_TEMPLATES:
         errors.append(f"template set is {sorted(template_ids)}, expected {sorted(EXPECTED_TEMPLATES)}")
-    if len(rows) - len(template_ids) != 55:
-        errors.append("expected 55 fixed task packages")
+    if len(rows) - len(template_ids) != 56:
+        errors.append("expected 56 fixed task packages")
 
-    visiting: set[str] = set()
-    visited: set[str] = set()
+    conditional_consumers: dict[str, set[str]] = {task_id: set() for task_id in known}
+    if not RELEASE_ROUTES.is_file():
+        errors.append("release route contract is missing")
+    else:
+        routes = json.loads(RELEASE_ROUTES.read_text(encoding="utf-8-sig"))
+        for edge in routes.get("conditional_edges", []):
+            source = edge.get("from")
+            target = edge.get("to")
+            if source not in known or target not in known:
+                errors.append(f"release route has unknown edge {source!r} -> {target!r}")
+            else:
+                conditional_consumers[source].add(target)
+                graph[target].add(source)
+        if rows_by_id.get("A-06", {}).get("depends_on") != "A-05":
+            errors.append("A-06 must have A-05 as its unconditional dependency")
+        if rows_by_id.get("W-02", {}).get("depends_on") != "W-01|A-06":
+            errors.append("W-02 must consume W-01 and A-06")
 
-    def visit(task_id: str) -> None:
-        if task_id in visiting:
-            errors.append(f"dependency cycle reaches {task_id}")
-            return
-        if task_id in visited:
-            return
-        visiting.add(task_id)
-        for dependency in graph[task_id]:
-            visit(dependency)
-        visiting.remove(task_id)
-        visited.add(task_id)
-
-    for task_id in graph:
-        visit(task_id)
+    for task_id in sorted(dependency_cycle_nodes(graph)):
+        errors.append(f"dependency cycle reaches {task_id}")
 
     def reaches_terminal(start: str) -> bool:
         pending = [start]
@@ -250,7 +291,7 @@ def main() -> int:
             if current in seen:
                 continue
             seen.add(current)
-            pending.extend(consumers[current] - seen)
+            pending.extend((consumers[current] | conditional_consumers[current]) - seen)
         return False
 
     for task_id in known:
@@ -292,7 +333,7 @@ def main() -> int:
         return 1
 
     print(
-        "PASS: 58 registry entries; fixed=55; templates=3; "
+        "PASS: 59 registry entries; fixed=56; templates=3; "
         f"DONE={','.join(sorted(done))}; READY={','.join(sorted(ready))}; "
         f"IN_REVIEW={','.join(sorted(row['task_id'] for row in rows if row['status'] == 'IN_REVIEW'))}; "
         f"terminal={TERMINAL_TASK}"

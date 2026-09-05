@@ -7,6 +7,7 @@ import csv
 import hashlib
 import json
 import pathlib
+import re
 import subprocess
 import sys
 
@@ -20,7 +21,7 @@ TEXT_SUFFIXES = {
     ".cs", ".csv", ".gitattributes", ".json", ".md", ".ps1", ".py", ".sha256", ".txt"
 }
 TEXT_NAMES = {".gitattributes"}
-PACKAGE_STATUSES = {"READY", "IN_REVIEW"}
+PACKAGE_STATUSES = {"READY", "IN_PROGRESS", "IN_REVIEW"}
 
 
 def canonical_content(path: pathlib.Path) -> bytes:
@@ -97,12 +98,38 @@ def main() -> int:
             errors.append(f"{task_id}: invalid manifest identity")
         if manifest.get("hash_policy") != "sha256_lf_no_trailing_ws_text_v1":
             errors.append(f"{task_id}: invalid hash policy")
+        if not isinstance(manifest.get("input_snapshot_id"), str) or not manifest["input_snapshot_id"]:
+            errors.append(f"{task_id}: missing input_snapshot_id")
         if manifest.get("registry_sha256") != registry_hash:
             errors.append(f"{task_id}: stale registry hash")
         expected_sources = mapped[task_id]["source_files"]
         actual_sources = [item["source_path"] for item in manifest.get("source_files", [])]
         if actual_sources != expected_sources:
             errors.append(f"{task_id}: source list does not match mapping")
+        snapshot_payload = "\n".join(
+            f"{item.get('source_path')}:{item.get('sha256')}"
+            for item in manifest.get("source_files", [])
+        ).encode("utf-8")
+        expected_snapshot_id = hashlib.sha256(snapshot_payload).hexdigest().upper()
+        if manifest.get("input_snapshot_id") != expected_snapshot_id:
+            errors.append(f"{task_id}: input_snapshot_id does not match source manifest")
+        if row["status"] in {"IN_PROGRESS", "IN_REVIEW"}:
+            if manifest.get("previous_input_snapshot_id") != expected_snapshot_id:
+                errors.append(f"{task_id}: active input baseline is missing or changed")
+            expected_candidate = mapped[task_id].get("implementation_commit")
+            if not expected_candidate or manifest.get("candidate_identity") != expected_candidate:
+                errors.append(f"{task_id}: candidate identity does not match mapping")
+            elif re.fullmatch(r"[0-9a-fA-F]{40}", expected_candidate) is None:
+                errors.append(f"{task_id}: candidate identity is not a full commit SHA")
+            else:
+                candidate = subprocess.run(
+                    ["git", "cat-file", "-e", f"{expected_candidate}^{{commit}}"],
+                    cwd=PROJECT_ROOT,
+                    capture_output=True,
+                    check=False,
+                )
+                if candidate.returncode != 0:
+                    errors.append(f"{task_id}: candidate commit does not exist")
 
         expected_package_files = {
             "TASK.md", "FILES.md", "package_manifest.json",
@@ -113,11 +140,16 @@ def main() -> int:
             for path in package_dir.rglob("*")
             if path.is_file()
         }
-        if physical_package_files != expected_package_files:
+        unexpected_generated = {
+            item for item in physical_package_files - expected_package_files
+            if item.startswith("inputs/")
+        }
+        missing_package_files = expected_package_files - physical_package_files
+        if unexpected_generated or missing_package_files:
             errors.append(
                 f"{task_id}: physical package files differ from manifest "
-                f"extra={sorted(physical_package_files - expected_package_files)} "
-                f"missing={sorted(expected_package_files - physical_package_files)}"
+                f"extra_generated={sorted(unexpected_generated)} "
+                f"missing={sorted(missing_package_files)}"
             )
         if args.require_index:
             for relative in sorted(physical_package_files):

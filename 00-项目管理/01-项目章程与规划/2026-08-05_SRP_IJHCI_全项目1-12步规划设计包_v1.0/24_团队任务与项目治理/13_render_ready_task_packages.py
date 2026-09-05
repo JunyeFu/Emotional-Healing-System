@@ -1,4 +1,4 @@
-"""Render standalone packages for READY and IN_REVIEW tasks."""
+"""Render standalone packages for READY, active and review tasks."""
 
 from __future__ import annotations
 
@@ -16,11 +16,14 @@ REGISTRY = ROOT / "05_可领取任务包.csv"
 MAPPING = ROOT / "12_独立任务包文件映射_v1.0.json"
 HANDBOOK_RENDERER = ROOT / "10_render_task_handbook.py"
 OUTPUT = ROOT / "当前解锁独立任务包"
+INPUT_IMPACTS = ROOT / "audit_upgrade" / "input_impacts"
+MEMBER_OUTPUT_ARCHIVE = ROOT / "task_member_outputs"
 TEXT_SUFFIXES = {
     ".cs", ".csv", ".gitattributes", ".json", ".md", ".ps1", ".py", ".sha256", ".txt"
 }
 TEXT_NAMES = {".gitattributes"}
-PACKAGE_STATUSES = {"READY", "IN_REVIEW"}
+PACKAGE_STATUSES = {"READY", "IN_PROGRESS", "IN_REVIEW"}
+FROZEN_INPUT_STATUSES = {"IN_PROGRESS", "IN_REVIEW"}
 
 
 def canonical_content(path: pathlib.Path) -> bytes:
@@ -33,6 +36,71 @@ def canonical_content(path: pathlib.Path) -> bytes:
 
 def sha256(path: pathlib.Path) -> str:
     return hashlib.sha256(canonical_content(path)).hexdigest().upper()
+
+
+def enforce_snapshot_freeze(
+    status: str, previous_snapshot_id: str | None, input_snapshot_id: str
+) -> None:
+    if (
+        status in FROZEN_INPUT_STATUSES
+        and previous_snapshot_id != input_snapshot_id
+    ):
+        raise ValueError(
+            f"{status} input snapshot changed: "
+            f"{previous_snapshot_id} -> {input_snapshot_id}"
+        )
+
+
+def write_input_impact(
+    impact_dir: pathlib.Path,
+    task_id: str,
+    status: str,
+    previous_snapshot_id: str | None,
+    input_snapshot_id: str,
+) -> pathlib.Path:
+    impact_dir.mkdir(parents=True, exist_ok=True)
+    previous_label = previous_snapshot_id[:12] if previous_snapshot_id else "MISSING"
+    path = impact_dir / f"{task_id}_{previous_label}_{input_snapshot_id[:12]}.json"
+    payload = {
+        "schema_version": "1.0",
+        "task_id": task_id,
+        "status": status,
+        "previous_input_snapshot_id": previous_snapshot_id,
+        "observed_input_snapshot_id": input_snapshot_id,
+        "disposition": "REFRESH_BLOCKED_PENDING_TASK_OWNER_REVIEW",
+    }
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return path
+
+
+def preserve_task_owned_files(
+    output: pathlib.Path,
+    build: pathlib.Path,
+    active_task_ids: set[str],
+    retired_archive: pathlib.Path,
+) -> None:
+    generated_names = {"TASK.md", "FILES.md", "package_manifest.json"}
+    if not output.is_dir():
+        return
+    for old_task in output.iterdir():
+        if not old_task.is_dir():
+            continue
+        task_id = old_task.name
+        destination_root = (
+            build / task_id if task_id in active_task_ids else retired_archive / task_id
+        )
+        for old_file in old_task.rglob("*"):
+            if not old_file.is_file():
+                continue
+            relative = old_file.relative_to(old_task)
+            if relative.parts[0] == "inputs" or relative.as_posix() in generated_names:
+                continue
+            destination = destination_root / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            if destination.exists() and destination.read_bytes() != old_file.read_bytes():
+                raise ValueError(f"task-owned file collision: {task_id}/{relative.as_posix()}")
+            if not destination.exists():
+                shutil.copy2(old_file, destination)
 
 
 def split_items(value: str, separator: str = ";") -> list[str]:
@@ -292,6 +360,28 @@ def main() -> None:
                 }
             )
 
+        snapshot_payload = "\n".join(
+            f"{item['source_path']}:{item['sha256']}" for item in copied
+        ).encode("utf-8")
+        input_snapshot_id = hashlib.sha256(snapshot_payload).hexdigest().upper()
+        existing_manifest = OUTPUT / task_id / "package_manifest.json"
+        previous_snapshot_id = None
+        if existing_manifest.is_file():
+            previous_snapshot_id = json.loads(
+                existing_manifest.read_text(encoding="utf-8-sig")
+            ).get("input_snapshot_id")
+        try:
+            enforce_snapshot_freeze(row["status"], previous_snapshot_id, input_snapshot_id)
+        except ValueError:
+            write_input_impact(
+                INPUT_IMPACTS,
+                task_id,
+                row["status"],
+                previous_snapshot_id,
+                input_snapshot_id,
+            )
+            raise
+
         for relative in task_map["working_paths"]:
             safe_working_path(relative)
 
@@ -307,6 +397,10 @@ def main() -> None:
             "task_id": task_id,
             "status": row["status"],
             "registry_sha256": registry_hash,
+            "input_snapshot_id": input_snapshot_id,
+            "previous_input_snapshot_id": previous_snapshot_id,
+            "input_changed": previous_snapshot_id not in {None, input_snapshot_id},
+            "candidate_identity": task_map.get("implementation_commit"),
             "source_files": copied,
             "working_paths": task_map["working_paths"],
         }
@@ -320,7 +414,7 @@ def main() -> None:
     readme = [
         "# 当前解锁独立任务包",
         "",
-        "> 本目录由`13_render_ready_task_packages.py`确定性生成，包含可领取的`READY`任务和等待复核的`IN_REVIEW`任务。只有`READY`且领取人为空的任务可以领取。",
+        "> 本目录由`13_render_ready_task_packages.py`确定性生成，包含`READY`、`IN_PROGRESS`和`IN_REVIEW`任务。只有`READY`且领取人为空的任务可以领取。",
         "> 每个包均含任务说明、涉及文件清单、输入快照和哈希清单；状态变化后必须重新生成并校验。",
         "",
         "| 任务 | 状态 | 名称 | 工作量 | 入口 |",
@@ -329,6 +423,9 @@ def main() -> None:
         "",
     ]
     (build / "README.md").write_text("\n".join(readme), encoding="utf-8")
+
+    # Files outside the generated surface belong to the task owner and survive refreshes.
+    preserve_task_owned_files(OUTPUT, build, set(package_rows), MEMBER_OUTPUT_ARCHIVE)
 
     if OUTPUT.exists():
         if OUTPUT.parent != ROOT or OUTPUT.name != mapping["output_directory"]:

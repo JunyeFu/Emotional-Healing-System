@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="5878" viewBox="0 0 2400 5878" role="img" aria-labelledby="title desc">
   <title id="title">SRP v2.1 任务关联与门禁流程</title>
-  <desc id="desc">58 项任务，按 W0 至 W6 波次与五类职责泳道排列。图中包含 129 条显式依赖边、当前状态和外部门禁。</desc>
-  <metadata>snapshot=2026-09-04; tasks=58; dependency_edges=129; status_basis=task-registry; transition=g01-g02-done-to-g05; authority=REJECT_AND_RESUBMIT_DESIGN; evidence=PLANNED_NOT_OBSERVED</metadata>
+  <desc id="desc">59 项任务，按 W0 至 W6 波次与五类职责泳道排列。图中包含 130 条注册表依赖边、1 条条件路线边、当前状态和外部门禁。</desc>
+  <metadata>snapshot=2026-09-06; tasks=59; dependency_edges=130; conditional_edges=1; status_basis=task-registry; transition=a06-stage1-main-stage3-conditional; authority=REJECT_AND_RESUBMIT_DESIGN; evidence=PLANNED_NOT_OBSERVED</metadata>
   <defs>
     <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 Z" fill="#74808c"/></marker>
     <marker id="arrow-critical" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#34495a"/></marker>
@@ -15,16 +15,17 @@
     .task-id { font-size: 18px; font-weight: 700; } .task-title { font-size: 15px; } .status-text { font-size: 12px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
     .dependency { fill: none; stroke: #74808c; stroke-width: 1.35; opacity: 0.34; marker-end: url(#arrow); }
     .dependency.critical { stroke: #34495a; stroke-width: 2.25; opacity: 0.78; marker-end: url(#arrow-critical); }
+    .dependency.conditional { stroke: #b96e5d; stroke-width: 1.8; stroke-dasharray: 8 6; opacity: 0.72; }
     .gate-label { font-size: 13px; font-weight: 700; fill: #ffffff; text-anchor: middle; } .gate-text { font-size: 16px; font-weight: 600; } .gate-note { font-size: 14px; fill: #66717a; }
     .gate-current { fill: #edf4fa; stroke: #5d8fb9; stroke-width: 1.6; } .gate-wait { fill: #fff7e8; stroke: #d88a24; stroke-width: 1.7; stroke-dasharray: 9 7; } .gate-external { fill: #fff0ee; stroke: #cf4d43; stroke-width: 1.8; }
     .legend-text { font-size: 14px; } .footer-title { font-size: 18px; font-weight: 700; } .footer-text { font-size: 15px; fill: #66717a; }
   </style>
   <rect x="0" y="0" width="100%" height="100%" fill="#fbfaf6"/>
   <g id="header">
-    <text x="52" y="66" class="title">SRP v2.1｜58 项任务关联与门禁流程</text>
+    <text x="52" y="66" class="title">SRP v2.1｜59 项任务关联与门禁流程</text>
     <text x="52" y="101" class="subtitle">顺序规范不代表当前通过状态；附件仅作视觉参考，状态来自项目任务注册表、协议权威与独立分支证据。</text>
     <rect x="52" y="126" width="2296" height="54" rx="10" fill="#edf4fa" stroke="#6d94b8" stroke-width="1.5"/>
-    <text x="76" y="160" class="snapshot">当前工作面：16 项 DONE ｜ 第58项 G-05 EXT-WAIT（外部准入）｜ T-02 / U-01 / U-02 READY</text>
+    <text x="76" y="160" class="snapshot">当前工作面：16 项 DONE ｜ G-05 EXT-WAIT ｜ A-06 WAIT ｜ T-02 / U-01 / U-02 READY</text>
     <rect x="52" y="196" width="2296" height="54" rx="10" fill="#fff0ee" stroke="#cf4d43" stroke-width="1.5"/>
     <text x="76" y="230" class="snapshot">设计权威：REJECT_AND_RESUBMIT_DESIGN ｜ 证据：PLANNED_NOT_OBSERVED ｜ 工程完成不得扩大为 LIVE_E2E 或外部放行</text>
     <text x="52" y="286" class="subtitle">状态</text>
@@ -32,13 +33,13 @@
     <circle cx="251" cy="281" r="7" fill="#2f75b5"/><text x="265" y="286" class="legend-text">DOING 0</text>
     <circle cx="406" cy="281" r="7" fill="#c47a1b"/><text x="420" y="286" class="legend-text">REVIEW 0</text>
     <circle cx="541" cy="281" r="7" fill="#7b56b6"/><text x="555" y="286" class="legend-text">READY 3</text>
-    <circle cx="676" cy="281" r="7" fill="#7d8790"/><text x="690" y="286" class="legend-text">WAIT 21</text>
+    <circle cx="676" cy="281" r="7" fill="#7d8790"/><text x="690" y="286" class="legend-text">WAIT 22</text>
     <circle cx="811" cy="281" r="7" fill="#d9822b"/><text x="825" y="286" class="legend-text">EXT-WAIT 5</text>
     <circle cx="966" cy="281" r="7" fill="#c64d4d"/><text x="980" y="286" class="legend-text">LOCK 13</text>
     <text x="1220" y="286" class="subtitle">线条</text>
     <path d="M1280 281 H1380" class="dependency critical"/><text x="1396" y="286" class="legend-text">主装配链</text>
     <path d="M1530 281 H1630" class="dependency"/><text x="1646" y="286" class="legend-text">其他显式 depends_on</text>
-    <text x="2020" y="286" class="legend-text">共 129 条依赖</text>
+    <text x="2020" y="286" class="legend-text">130 条依赖 + 1 条条件边</text>
   </g>
   <g id="lane-headers">
     <rect x="236" y="328" width="410" height="112" rx="12" fill="#71966c"/>
@@ -112,8 +113,8 @@
     <rect x="34" y="4082" width="174" height="870" rx="14" fill="#eef3f7" stroke="#86a7c4" stroke-width="1.7"/>
     <text x="121" y="4134" class="wave-code" text-anchor="middle">W5</text>
     <text x="121" y="4166" class="wave-name" text-anchor="middle">正式阶段与锁定分析</text>
-    <text x="121" y="4198" class="wave-count" text-anchor="middle">8 项</text>
-    <text x="52" y="4232" class="wave-count">LOCK 8</text>
+    <text x="121" y="4198" class="wave-count" text-anchor="middle">9 项</text>
+    <text x="52" y="4232" class="wave-count">LOCK 8 · WAIT 1</text>
     <line x1="655" y1="4100" x2="655" y2="4822" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
     <line x1="1083" y1="4100" x2="1083" y2="4822" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
     <line x1="1511" y1="4100" x2="1511" y2="4822" stroke="#dfe5ea" stroke-width="1" stroke-dasharray="5 7"/>
@@ -253,7 +254,9 @@
     <g data-from="A-05" data-to="A-04"><title>A-05 → A-04</title><path d="M 441 4250 V 4266" class="dependency"/></g>
     <g data-from="E-06" data-to="A-04"><title>E-06 → A-04</title><path d="M 1528 4744 H 1083 V 4312 H 638" class="dependency critical"/></g>
     <g data-from="W-01" data-to="W-02"><title>W-01 → W-02</title><path d="M 2153 1898 V 1910 H 2153 V 5050" class="dependency"/></g>
-    <g data-from="A-04" data-to="W-02"><title>A-04 → W-02</title><path d="M 441 4358 V 4370 H 2153 V 5050" class="dependency critical"/></g>
+    <g data-from="A-05" data-to="A-06"><title>A-05 → A-06</title><path d="M 638 4204 H 1956" class="dependency critical"/></g>
+    <g data-from="A-04" data-to="A-06"><title>A-04 → A-06（仅实施阶段三时）</title><path d="M 638 4312 H 1502 V 4204 H 1956" class="dependency conditional"/></g>
+    <g data-from="A-06" data-to="W-02"><title>A-06 → W-02</title><path d="M 2153 4250 V 5050" class="dependency critical"/></g>
     <g data-from="W-02" data-to="W-03"><title>W-02 → W-03</title><path d="M 2153 5142 V 5158" class="dependency critical"/></g>
     <g data-from="Z-01" data-to="W-03"><title>Z-01 → W-03</title><path d="M 869 2898 V 2910 H 2153 V 5158" class="dependency critical"/></g>
     <g data-from="G-05" data-to="W-03"><title>G-05 → W-03</title><path d="M 1922 3176 H 2153 V 5158" class="dependency"/></g>
@@ -707,8 +710,17 @@
       <text x="585" y="4293" class="status-text">LOCK</text>
       <text x="259" y="4322" class="task-title">估计目标三重门FDR策略审计与复现</text>
     </g>
-    <g id="task-W-02" data-task-id="W-02" data-wave="W6" data-type="paper" data-status="WAIT_DEP" data-depends-on="W-01|A-04">
-      <title>【论文写作】完整提示表示主线与条件式部署扩展IJHCI稿 | status=WAIT_DEP | depends_on=W-01|A-04</title>
+    <g id="task-A-06" data-task-id="A-06" data-wave="W5" data-type="paper" data-status="WAIT_DEP" data-depends-on="A-05">
+      <title>【研究关闭】研究范围关闭与投稿证据汇总 | status=WAIT_DEP | depends_on=A-05</title>
+      <rect x="1956" y="4158" width="394" height="92" rx="11" fill="#fbefec" stroke="#b96e5d" stroke-width="1.6"/>
+      <text x="1971" y="4187" class="task-id">A-06 · 第59项</text>
+      <rect x="2258" y="4168" width="78" height="25" rx="12.5" fill="#7d8790"/>
+      <text x="2297" y="4185" class="status-text">WAIT</text>
+      <text x="1971" y="4214" class="task-title">阶段一主论文与条件式阶段三</text>
+      <text x="1971" y="4236" class="task-title">研究范围关闭</text>
+    </g>
+    <g id="task-W-02" data-task-id="W-02" data-wave="W6" data-type="paper" data-status="WAIT_DEP" data-depends-on="W-01|A-06">
+      <title>【论文写作】完整提示表示主线与条件式部署扩展IJHCI稿 | status=WAIT_DEP | depends_on=W-01|A-06</title>
       <rect x="1956" y="5050" width="394" height="92" rx="11" fill="#fbefec" stroke="#b96e5d" stroke-width="1.6"/>
       <text x="1971" y="5079" class="task-id">W-02</text>
       <rect x="2258" y="5060" width="78" height="25" rx="12.5" fill="#7d8790"/>
@@ -773,13 +785,13 @@
       <rect x="252" y="4853" width="82" height="28" rx="7" fill="#cf4d43"/>
       <text x="293" y="4872" class="gate-label">LOCK</text>
       <text x="352" y="4872" class="gate-text">正式研究硬门：预注册/构建锁定 → 批次 → 锁库/揭盲 → 锁定分析。</text>
-      <text x="352" y="4904" class="gate-note">本波次 8 项全部 BLOCKED_EXTERNAL，不得以工程完成替代外部放行。</text>
+      <text x="352" y="4904" class="gate-note">本波次 8 项 BLOCKED_EXTERNAL，A-06为WAIT；不得以工程完成替代外部放行。</text>
     </g>
     <g id="gate-W6">
       <rect x="236" y="5404" width="2118" height="94" rx="11" class="gate-wait"/>
       <rect x="252" y="5421" width="82" height="28" rx="7" fill="#d88a24"/>
       <text x="293" y="5440" class="gate-label">WAIT</text>
-      <text x="352" y="5440" class="gate-text">论文门：A-04 + W-01 → W-02 → W-03 → W-04。</text>
+      <text x="352" y="5440" class="gate-text">论文门：A-05 → A-06；阶段三实施时另需 A-04 → A-06；随后 W-01 + A-06 → W-02。</text>
       <text x="352" y="5472" class="gate-note">工程就绪不等于投稿、录用、发布或完整成果归档。</text>
     </g>
   </g>
@@ -790,7 +802,7 @@
     <text x="210" y="5626" class="footer-text">Python 是运行状态唯一权威；Unity 不依赖 TD；TD 只读；禁止 Spout。波次完成不替代各任务 AC、证据和外部门。</text>
     <rect x="52" y="5688" width="2296" height="124" rx="12" fill="#eef3f7" stroke="#9aabb8" stroke-width="1.4"/>
     <text x="80" y="5726" class="footer-title">数据来源与可审计性</text>
-  <text x="80" y="5758" class="footer-text">治理迁移：G-01/G-02 DONE｜第58项G-05承接外部准入并保持EXT-WAIT</text>
-  <text x="80" y="5788" class="footer-text">快照：2026-09-04 ｜ tasks=58 ｜ dependency_edges=129 ｜ 权威：05_可领取任务包.csv</text>
+  <text x="80" y="5758" class="footer-text">治理迁移：G-05承接外部准入｜第59项A-06关闭实际研究范围｜阶段三保持条件式</text>
+  <text x="80" y="5788" class="footer-text">快照：2026-09-06 ｜ tasks=59 ｜ dependency_edges=130 + conditional_edges=1 ｜ 权威：05_可领取任务包.csv</text>
   </g>
 </svg>

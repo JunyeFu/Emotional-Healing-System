@@ -1,6 +1,6 @@
 # P-02 Session Store
 
-> 状态：`TECHNICAL_IMPLEMENTATION_CANDIDATE`。本模块提供L0/L1不可覆盖追加、完整性校验和确定性重放；它不推进会话状态，也不表示设备链或完整系统联调已经完成。
+> 状态：`DONE_WITH_BOUNDED_SCOPE`。P-02已由傅钧烨完成真实第二人复核；本模块提供L0/L1不可覆盖追加、完整性校验和确定性重放，不推进会话状态，也不表示设备链或完整系统联调已经完成。
 
 F-05候选不增加存储层协议推断：P-02只持久化`contract_adapter.validate_message()`返回的已校验v2.1或v2.2消息，并在重放时保留版本和步骤字段原值。接口对齐见[运行合同F-05文档](../05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
 
@@ -33,6 +33,8 @@ ReplayReader.iter_l0(source_id=None)
 ReplayReader.iter_l1(record_type=None)
 SessionReplayer.replay_core(core_factory=None) -> ReplayReport
 ```
+
+完整科研输入通过`validate_bundle`或`load_and_validate`校验`RawEvidenceBundle v1`。设备原始流、运行事实、问卷、分配记录、人工标注及配置/构建身份六类输入缺一即失败；二进制与原始流使用`byte_sha256`，源文本文档使用`normalized_text_sha256`。受限原件可只保存仓库外引用，但仍必须提供内容哈希；`explicit_none`必须给出原因码且不得伪造哈希。
 
 `RecordingSessionCore`和P-01 `ControlServer`、`SessionRuntimeHost`使用同一个代理实例。代理内部仍调用纯`SessionCore`，所以流程、时钟、状态和控制序号权威没有迁移到存储层。普通调用遵循`operation_begin -> SessionCore调用 -> 组件记录 -> operation_commit`；`prepare`在P-01完成合同、语义、隐私和分配检查后，于存储门回调排他建档并耐久写入`operation_begin`，随后P-01才建立`PREPARED`状态和控制输出。
 

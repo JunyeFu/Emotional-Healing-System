@@ -33,6 +33,7 @@ Desktop.ini
 # Project-specific
 *.csv
 !**/当前解锁独立任务包/**/inputs/*.csv
+!**/24_团队任务与项目治理/audit_upgrade/*.csv
 !requirements.txt
 .pipeline.lock
 td_*.png
@@ -64,6 +65,7 @@ sysinfo.txt
 
 # Large binary assets (keep tracked separately)
 *.zip
+!**/24_团队任务与项目治理/audit_upgrade/external_source/*.zip
 *.psd
 *.blend
 

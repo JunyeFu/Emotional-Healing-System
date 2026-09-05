@@ -1,6 +1,6 @@
 # 当前解锁独立任务包
 
-> 本目录由`13_render_ready_task_packages.py`确定性生成，包含可领取的`READY`任务和等待复核的`IN_REVIEW`任务。只有`READY`且领取人为空的任务可以领取。
+> 本目录由`13_render_ready_task_packages.py`确定性生成，包含`READY`、`IN_PROGRESS`和`IN_REVIEW`任务。只有`READY`且领取人为空的任务可以领取。
 > 每个包均含任务说明、涉及文件清单、输入快照和哈希清单；状态变化后必须重新生成并校验。
 
 | 任务 | 状态 | 名称 | 工作量 | 入口 |

@@ -96,15 +96,15 @@ ResetModule(module_id, cue_mode)
 ### M08 Rebuild
 
 ```text
-validate_manifest(L0)
-synchronize(L0) -> L1
-detect_events(L1, annotations) -> L2
+validate_raw_evidence_bundle(device_streams, runtime_facts, questionnaires, allocations, annotations, configuration_build)
+synchronize(device_streams, runtime_facts) -> offline_derived/L1
+detect_events(offline_derived/L1, annotations) -> offline_derived/L2
 summarize(L2) -> L3
 build_locked_sets(L3, questionnaires) -> L4
 run_models(L4, analysis_plan) -> L5
 ```
 
-每层输出输入哈希、代码提交、配置版本和排除原因码。
+每层输出输入哈希、代码提交、配置版本和排除原因码。P-02 L0/L1记录事实只读，离线派生使用独立命名空间；仅有设备波形不能重建问卷、分配、标注或真实渲染事实。
 
 ### M00 G-02 Governance
 
@@ -147,6 +147,7 @@ G-02只对外返回不透明预约和审计ID。去重库、研究编号映射�
 - G-01/G-02已完成候选材料、治理实现及第二人签收；正式专机、机构路径、许可清零和U8实地演练已迁移至G-05，当前仍为阻断状态。
 - P-01会话核心与P-02追加存储已由真实团队第二人签收并转为`DONE`；该状态只关闭各自任务门，正式模式仍因X-01、G-05外部准入、Unity客户端和真实输入链未闭合而失败关闭。
 - 当前没有正式Unity独立构建、双真实设备完整链、外部延迟报告、Level A/B/C或参与者结果；这些均不得从任务状态推断。
+- 第59项A-06已经建立：阶段一主论文可独立收尾；阶段二和阶段三只有在支持、资源和外部准入通过后进入。一旦阶段三已有分配、暴露或批次事实，最终稿必须消费其完整结果。
 
 ## 7. 最小仓库验证
 

@@ -1,0 +1,13 @@
+subdelivery_id,owner_tasks,status,depends_on,evidence_refs,completion_gate
+UP-01,G-05|P-01|P-02,IMPLEMENTED_CANDIDATE,,audit:source_record_v1.0.json|audit:findings_disposition_v1.0.csv,来源归档与当前权威一致且历史签署不改写
+UP-02,G-05|A-06,IMPLEMENTED_CANDIDATE,UP-01,audit:release_routes_v1.0.json|governance:07_validate_task_packages.py,未知依赖与两条论文路线负测通过
+UP-03,P-02|A-01|Z-01,FOUNDATION_IMPLEMENTED,UP-01,project:02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json|project:02-技术研发/srp_session_store/evidence_bundle.py,完整真实证据束实例可验证且受限原件可追溯
+UP-04,G-05|E-01|G-03|G-04|W-03,IMPLEMENTED_CANDIDATE,UP-02,audit:external_capability_matrix_v1.0.csv,每项活动获得对应真实资格回执
+UP-05,A-03|A-05|A-04,PLANNED_WAIT_DEP,UP-03,audit:task_milestones_v1.0.json,计分边界和联合功效工具可重算并通过统计冻结
+UP-06,D-01|D-02|S-01|I-01,WAIT_DEP_EXTERNAL,UP-03,governance:05_可领取任务包.csv,真实设备兼容前测与持续采集证据通过
+UP-07,U-01|U-02|T-02,WAIT_DEP,UP-02,governance:05_可领取任务包.csv,三项任务完成实现复核及真实第二人签收
+UP-08,V-05|U-03|U-07,WAIT_DEP,UP-07,governance:05_可领取任务包.csv,全旅程灰盒和首天气双条件切片后扩展四天气
+UP-09,G-05,IMPLEMENTED_CANDIDATE,UP-01,governance:13_render_ready_task_packages.py|governance:14_validate_ready_task_packages.py,输入快照冻结影响记录及成员文件保留负测通过
+UP-10,I-01|E-01|E-02|E-03|B-01|B-02,WAIT_DEP_EXTERNAL,UP-06|UP-08,audit:external_capability_matrix_v1.0.csv,真实全链验证与分级预试获得对应证据
+UP-11,A-06|W-02|W-03,PLANNED_WAIT_DEP,UP-05|UP-10,audit:release_routes_v1.0.json,主张结果图表输入代码使用同一锁定证据
+UP-12,G-01|G-05|X-01,PLANNED_WAIT_DEP,UP-02,audit:external_capability_matrix_v1.0.csv,阶段一资源模型通过且条件式阶段三资源单独裁定

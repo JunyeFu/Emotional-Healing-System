@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A-06 route closure v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "route", "activity_evidence", "receipt", "result_families"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "route": {"enum": ["stage1_only", "with_stage3"]},
+    "activity_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage3_assignment_ledger", "stage3_exposure_ledger", "B-03_instance_registry"],
+      "properties": {
+        "stage3_assignment_ledger": {"$ref": "#/$defs/ledger"},
+        "stage3_exposure_ledger": {"$ref": "#/$defs/ledger"},
+        "B-03_instance_registry": {"$ref": "#/$defs/ledger"}
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_id", "candidate_identity", "reviewer", "review_method", "signed_ref", "signed_ref_sha256", "status", "scope"],
+      "properties": {
+        "record_id": {"type": "string", "minLength": 1},
+        "candidate_identity": {"type": "string", "pattern": "^[A-Fa-f0-9]{40}$"},
+        "reviewer": {"type": "string", "minLength": 1},
+        "review_method": {"enum": ["rerun", "witnessed", "record_review"]},
+        "signed_ref": {"type": "string", "minLength": 1},
+        "signed_ref_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "status": {"const": "PASS"},
+        "scope": {"enum": ["NO_STAGE3", "INCLUDE_STAGE3"]}
+      }
+    },
+    "result_families": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+  },
+  "$defs": {
+    "ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "byte_sha256", "record_count"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "byte_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "record_count": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

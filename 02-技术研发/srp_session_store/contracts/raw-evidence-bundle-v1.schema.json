@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://srp.local/contracts/raw-evidence-bundle-v1.schema.json",
+  "title": "SRP RawEvidenceBundle v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "bundle_id", "session_ref", "families", "artifacts"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "bundle_id": {"type": "string", "minLength": 1},
+    "session_ref": {"type": "string", "minLength": 1},
+    "families": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"enum": ["device_streams", "runtime_facts", "questionnaires", "allocations", "annotations", "configuration_build"]}
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["family", "artifact_id", "location_type", "location", "content_kind", "hash_strategy", "content_sha256", "observed_or_derived"],
+        "properties": {
+          "family": {"enum": ["device_streams", "runtime_facts", "questionnaires", "allocations", "annotations", "configuration_build"]},
+          "artifact_id": {"type": "string", "minLength": 1},
+          "location_type": {"enum": ["local_file", "restricted_ref", "explicit_none"]},
+          "location": {"type": "string", "minLength": 1},
+          "content_kind": {"enum": ["raw_evidence", "binary", "build_artifact", "source_text"]},
+          "hash_strategy": {"type": ["string", "null"], "enum": ["byte_sha256", "normalized_text_sha256", null]},
+          "content_sha256": {"type": ["string", "null"], "pattern": "^[A-Fa-f0-9]{64}$"},
+          "observed_or_derived": {"enum": ["observed", "derived"]},
+          "reason_code": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

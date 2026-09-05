@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "source_type": "external_audit_package",
+  "source_path": "C:/Users/fujunye/Downloads/SRP_IJHCI_Audit_Upgrade_2026-09-05.zip",
+  "archived_path": "audit_upgrade/external_source/SRP_IJHCI_Audit_Upgrade_2026-09-05.zip",
+  "source_bytes": 149213,
+  "source_byte_sha256": "AFDBEA2EDF867650D9A6FF3A63901A73B199D701F90AE29E59511BE53ECBF545",
+  "audit_fixed_commit": "145f7b20b5e2b3453235fb79090b982785b4c5a3",
+  "bundle_manifest_files": 57,
+  "bundle_manifest_verification": "PASS",
+  "repository_head_at_intake": "145f7b20b5e2b3453235fb79090b982785b4c5a3",
+  "authority": "INPUT_EVIDENCE_ONLY",
+  "received_on": "2026-09-06+08:00"
+}

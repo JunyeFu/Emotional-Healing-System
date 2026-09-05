@@ -1464,3 +1464,19 @@
 | Boundary | G-01/G-02的`DONE`只覆盖已签收方案、实现和候选证据；G-05外部证据仍为`WAIT_DEP_EXTERNAL`。 |
 | Focused Regression | 任务包治理测试`4 passed`。 |
 | Full Regression | `py -3.14 -m pytest -q`结果`471 passed in 32.34s`。 |
+
+### 2026-09-06 IJHCI审计升级批次0-1
+
+| Check | Result |
+|---|---|
+| Source Intake | 归档包149213字节，SHA-256 `AFDBEA2EDF867650D9A6FF3A63901A73B199D701F90AE29E59511BE53ECBF545`，57项清单校验记录为PASS。 |
+| Registry | `PASS`：59项、56固定任务、3模板、`DONE=16`、`READY=T-02/U-01/U-02`；A-06与W-02条件路线通过。 |
+| Dispatch Packages | `PASS`：3个包、44份快照；均有`input_snapshot_id`，生命周期漂移和成员文件保留具备负测。 |
+| Audit Contracts | `PASS`：24项处置、两条关闭路线、A-03三里程碑、13项G-05活动能力均与权威一致。 |
+| Raw Evidence Bundle | 六类输入、篡改、缺件、非波形身份变化、规范化文本换行与受限原件缺哈希均通过专项测试。 |
+| Focused Tests | 初轮为`18 passed`；独立复审修复后扩充为`24 passed`，覆盖条件环、成员输出归档、本机文件验证、结构化身份和阶段三台账隔离。 |
+| Protocol | F-05 v2.2验证`PASS`：v2.1未漂移、schema重建、22项fixture哈希与5帧消费者流通过。 |
+| Upgrade Evidence | UP-01至UP-12的证据引用生成可重算字节哈希清单；缺件、路径漂移或哈希漂移均使升级校验失败。 |
+| Full Regression | 首次误用数学建模Python导致缺少NeuroKit2，未进入测试；改用冻结Python 3.14.4并完成修订后为`495 passed in 17.70s`。 |
+| PDF | 三份PDF验证通过；仅提交更新后的固定任务概要，9页，SHA-256 `F5A30A74A9CF02543B87675185F127485BEF143C2F78D3FD375CC5D6974B007B`。 |
+| Diagrams | 两张SVG可渲染；PNG为2400×5878和2400×2640，人工检查A-06节点、条件边、59项计数和图文无明显遮挡。 |
