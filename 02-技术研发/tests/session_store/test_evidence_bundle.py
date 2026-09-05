@@ -171,3 +171,18 @@ def test_invalid_artifact_family_type_fails_without_exception(tmp_path: Path):
     result = validate_bundle(candidate, tmp_path)
     assert not result["ok"]
     assert any(item.endswith("FAMILY_INVALID") for item in result["errors"])
+
+
+def test_invalid_artifact_enum_types_fail_without_exception(tmp_path: Path):
+    expected = {
+        "location_type": "LOCATION_TYPE_INVALID",
+        "content_kind": "CONTENT_KIND_INVALID",
+        "hash_strategy": "HASH_STRATEGY_INVALID",
+        "observed_or_derived": "OBSERVATION_NAMESPACE_INVALID",
+    }
+    for field, error in expected.items():
+        candidate = bundle(tmp_path)
+        candidate["artifacts"][0][field] = {"invalid": True}
+        result = validate_bundle(candidate, tmp_path)
+        assert not result["ok"]
+        assert any(item.endswith(error) for item in result["errors"])

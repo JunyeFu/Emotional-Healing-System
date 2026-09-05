@@ -84,33 +84,39 @@ def validate_bundle(bundle: dict[str, Any], base_dir: Path | None = None) -> dic
         family = artifact.get("family")
         if not isinstance(family, str) or family not in REQUIRED_FAMILIES:
             errors.append(path + ":FAMILY_INVALID")
-        if artifact.get("observed_or_derived") not in {"observed", "derived"}:
+        observed_or_derived = artifact.get("observed_or_derived")
+        if not isinstance(observed_or_derived, str) or observed_or_derived not in {"observed", "derived"}:
             errors.append(path + ":OBSERVATION_NAMESPACE_INVALID")
         reason_code = artifact.get("reason_code")
         if reason_code is not None and not isinstance(reason_code, str):
             errors.append(path + ":REASON_CODE_INVALID")
         location_type = artifact.get("location_type")
-        if location_type not in VALID_LOCATION_TYPES:
+        if not isinstance(location_type, str) or location_type not in VALID_LOCATION_TYPES:
             errors.append(path + ":LOCATION_TYPE_INVALID")
         if not isinstance(artifact.get("location"), str) or not artifact["location"].strip():
             errors.append(path + ":LOCATION_INVALID")
         strategy = artifact.get("hash_strategy")
         digest = artifact.get("content_sha256")
         content_kind = artifact.get("content_kind")
-        if content_kind not in VALID_CONTENT_KINDS:
+        if not isinstance(content_kind, str) or content_kind not in VALID_CONTENT_KINDS:
             errors.append(path + ":CONTENT_KIND_INVALID")
-        if content_kind in BYTE_HASH_KINDS and strategy != "byte_sha256":
+        if isinstance(content_kind, str) and content_kind in BYTE_HASH_KINDS and strategy != "byte_sha256":
             errors.append(path + ":BYTE_HASH_STRATEGY_REQUIRED")
         if content_kind == "source_text" and strategy != "normalized_text_sha256":
             errors.append(path + ":NORMALIZED_TEXT_HASH_STRATEGY_REQUIRED")
         if family == "device_streams" and content_kind != "raw_evidence":
             errors.append(path + ":DEVICE_STREAM_MUST_BE_RAW_EVIDENCE")
-        if location_type in {"local_file", "restricted_ref"}:
-            if strategy not in VALID_HASH_STRATEGIES:
+        if isinstance(location_type, str) and location_type in {"local_file", "restricted_ref"}:
+            if not isinstance(strategy, str) or strategy not in VALID_HASH_STRATEGIES:
                 errors.append(path + ":HASH_STRATEGY_INVALID")
             if not isinstance(digest, str) or re.fullmatch(r"[A-Fa-f0-9]{64}", digest) is None:
                 errors.append(path + ":CONTENT_HASH_REQUIRED")
-        if location_type == "local_file" and isinstance(digest, str) and strategy in VALID_HASH_STRATEGIES:
+        if (
+            location_type == "local_file"
+            and isinstance(digest, str)
+            and isinstance(strategy, str)
+            and strategy in VALID_HASH_STRATEGIES
+        ):
             if base_dir is None:
                 errors.append(path + ":BASE_DIR_REQUIRED_FOR_LOCAL_FILE")
             else:
