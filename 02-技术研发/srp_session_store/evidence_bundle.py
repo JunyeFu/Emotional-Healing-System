@@ -36,7 +36,17 @@ def _content_for_hash(path: Path, strategy: str) -> bytes:
     return ("\n".join(line.rstrip(" \t") for line in text.split("\n"))).encode("utf-8")
 
 
-def validate_bundle(bundle: dict[str, Any], base_dir: Path | None = None) -> dict[str, Any]:
+def validate_bundle(bundle: Any, base_dir: Path | None = None) -> dict[str, Any]:
+    if not isinstance(bundle, dict):
+        identity_payload = json.dumps(
+            bundle, ensure_ascii=False, separators=(",", ":"), sort_keys=True
+        ).encode("utf-8")
+        return {
+            "ok": False,
+            "errors": ["BUNDLE_NOT_OBJECT"],
+            "input_identity": hashlib.sha256(identity_payload).hexdigest().upper(),
+            "authorization": False,
+        }
     errors: list[str] = []
     if set(bundle) != TOP_LEVEL_FIELDS:
         errors.append("TOP_LEVEL_FIELDS_INVALID")

@@ -1474,9 +1474,9 @@
 | Dispatch Packages | `PASS`：3个包、44份快照；均有`input_snapshot_id`，生命周期漂移和成员文件保留具备负测。 |
 | Audit Contracts | `PASS`：24项处置、两条关闭路线、A-03三里程碑、13项G-05活动能力均与权威一致。 |
 | Raw Evidence Bundle | 六类输入、篡改、缺件、非波形身份变化、规范化文本换行与受限原件缺哈希均通过专项测试。 |
-| Focused Tests | 初轮为`18 passed`；独立复审修复后扩充为`26 passed`，覆盖条件环、成员输出归档、本机文件验证、所有artifact枚举字段的非法类型结构化失败和阶段三台账隔离。 |
+| Focused Tests | 初轮为`18 passed`；独立复审修复后扩充为`27 passed`，覆盖条件环、成员输出归档、本机文件验证、artifact枚举字段及非对象根节点的结构化失败和阶段三台账隔离。 |
 | Protocol | F-05 v2.2验证`PASS`：v2.1未漂移、schema重建、22项fixture哈希与5帧消费者流通过。 |
 | Upgrade Evidence | UP-01至UP-12的证据引用生成可重算字节哈希清单；缺件、路径漂移或哈希漂移均使升级校验失败。 |
-| Full Regression | 首次误用数学建模Python导致缺少NeuroKit2，未进入测试；改用冻结Python 3.14.4并完成修订后为`497 passed in 17.68s`。 |
+| Full Regression | 首次误用数学建模Python导致缺少NeuroKit2，未进入测试；改用冻结Python 3.14.4并完成修订后为`498 passed in 17.45s`。 |
 | PDF | 三份PDF验证通过；仅提交更新后的固定任务概要，9页，SHA-256 `F5A30A74A9CF02543B87675185F127485BEF143C2F78D3FD375CC5D6974B007B`。 |
 | Diagrams | 两张SVG可渲染；PNG为2400×5878和2400×2640，人工检查A-06节点、条件边、59项计数和图文无明显遮挡。 |

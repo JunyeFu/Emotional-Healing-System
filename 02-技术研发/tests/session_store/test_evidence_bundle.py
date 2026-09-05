@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import hashlib
+import json
 from pathlib import Path
 
-from srp_session_store.evidence_bundle import REQUIRED_FAMILIES, validate_bundle
+from srp_session_store.evidence_bundle import REQUIRED_FAMILIES, load_and_validate, validate_bundle
 
 
 def bundle(tmp_path: Path) -> dict:
@@ -186,3 +187,13 @@ def test_invalid_artifact_enum_types_fail_without_exception(tmp_path: Path):
         result = validate_bundle(candidate, tmp_path)
         assert not result["ok"]
         assert any(item.endswith(error) for item in result["errors"])
+
+
+def test_non_object_bundle_roots_fail_without_exception(tmp_path: Path):
+    for index, value in enumerate(([], 1, True, None)):
+        direct = validate_bundle(value, tmp_path)
+        assert direct["errors"] == ["BUNDLE_NOT_OBJECT"]
+        path = tmp_path / f"root-{index}.json"
+        path.write_text(json.dumps(value), encoding="utf-8")
+        loaded = load_and_validate(path)
+        assert loaded["errors"] == ["BUNDLE_NOT_OBJECT"]
