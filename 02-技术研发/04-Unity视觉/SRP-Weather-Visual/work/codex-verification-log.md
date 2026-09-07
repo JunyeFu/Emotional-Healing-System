@@ -6,7 +6,7 @@
 
 | 项目 | 值 |
 |---|---|
-| L2 HEAD | `b0cbb625` |
+| L2 HEAD | `85ff3dd` |
 | EditMode 用例数 | 82 |
 | PlayMode 用例数 | 8 |
 | 总用例数 | 90 |
@@ -41,7 +41,7 @@ PlayMode 用例分两批验证：
 
 | 项目 | 值 |
 |---|---|
-| 验证 HEAD | `b0cbb625` |
+| 验证 HEAD | `85ff3dd` |
 | 验证日期 | 2026-09-08 |
 | 验证人 | Codex 自动化 |
 | 备注 | EditMode 82 + PlayMode 8 全量亲跑全绿 |
