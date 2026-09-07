@@ -644,7 +644,6 @@ namespace SRP.U01.Tests
             _manager.MarkApplied("evt-001");
             Assert.That(appliedId, Is.EqualTo("evt-001"));
         }
-    }
 
         [Test]
         public void OnDuplicateIgnored_EventFires()
@@ -656,6 +655,7 @@ namespace SRP.U01.Tests
             _manager.MarkDuplicate("evt-dup-001");
             Assert.That(duplicateId, Is.EqualTo("evt-dup-001"));
         }
+    }
 
     // ── RenderReceiptManager tests ────────────────────────────────────────
 
