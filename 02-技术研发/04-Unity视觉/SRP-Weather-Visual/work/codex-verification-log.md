@@ -1,6 +1,6 @@
 # U-01 验证记录（第六轮）
 
-> 日期：2026-09-08 | 分支：codex/u-01-reliable-control | HEAD：（commit后填入）
+> 日期：2026-09-08 | 分支：codex/u-01-reliable-control | HEAD：f681138
 > 审查人：Grip 第6轮 | 验证人：Hermes Agent
 
 ---
