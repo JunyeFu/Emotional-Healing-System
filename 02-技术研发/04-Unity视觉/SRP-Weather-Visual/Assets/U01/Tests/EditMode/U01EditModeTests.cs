@@ -11,6 +11,21 @@ using UnityEngine;
 
 namespace SRP.U01.Tests
 {
+// ── TestHelpers (shared with PlayModeTests) ──────────────────────────
+    public static class TestHelpers
+    {
+        public static string TransportErrorJson(string errorCode)
+        {
+            return JsonLines.Serialize(new Dictionary<string, object>
+            {
+                ["transport_type"] = "error",
+                ["transport_version"] = "1.0",
+                ["schema_version"] = "2.2",
+                ["error_code"] = errorCode,
+                ["error_message"] = $"Transport error: {errorCode}"
+            });
+        }
+    }
     // ── JSON serialization round-trip tests ───────────────────────────────
 
     public sealed class JsonLinesSerializationTests
@@ -269,16 +284,17 @@ namespace SRP.U01.Tests
                 mirror.ApplySessionManifest(CreateTestManifest());
 
                 var evt = CreateTestControlEvent("module", 10);
+                // R2-6: Use module_position=1 to verify long→int conversion works
                 evt.payload = new Dictionary<string, object>
                 {
                     ["module_id"] = "storm",
-                    ["module_position"] = 0
+                    ["module_position"] = (long)1
                 };
                 mirror.ApplyControlEvent(evt);
 
                 var snap = mirror.Snapshot;
                 Assert.That(snap.CurrentModuleId, Is.EqualTo("storm"));
-                Assert.That(snap.ModulePosition, Is.EqualTo(0));
+                Assert.That(snap.ModulePosition, Is.EqualTo(1));
             }
             finally
             {
@@ -1331,4 +1347,243 @@ namespace SRP.U01.Tests
             Assert.That(set.Count, Is.EqualTo(4));
         }
     }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // R2-5 — 运行期 error 帧分类测试
+    //
+    // 验收标准：
+    //   CONNECTION_MISMATCH → 关闭 socket + 触发重连
+    //   NOT_PENDING         → LogWarning + 计数，不重连
+    //   REJECTED/TIMEOUT    → 仅日志
+    //   未知 error_code     → 日志 + 连续阈值降级
+    //   JSON 解析失败       → 计数 + 阈值降级
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// <summary>
+    /// R2-5 测试：运行期 error 帧按 error_code 分流处理。
+    /// 使用反射调用 ProcessIncomingLine（private）进行单元测试，
+    /// 无需真实网络连接。
+    /// </summary>
+    [TestFixture]
+    public class R25_ErrorFrameClassification_Tests
+    {
+        private ReliableControlClient _client;
+        private GameObject _go;
+        private System.Collections.Generic.List<string> _transportErrors;
+        private System.Collections.Generic.List<ConnectionState> _stateChanges;
+
+        private static readonly System.Reflection.BindingFlags Flags =
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _go = new GameObject("R25TestClient");
+            _client = _go.AddComponent<ReliableControlClient>();
+            _transportErrors = new System.Collections.Generic.List<string>();
+            _stateChanges = new System.Collections.Generic.List<ConnectionState>();
+
+            _client.OnTransportError += err => _transportErrors.Add(err);
+            _client.OnConnectionStateChanged += state => _stateChanges.Add(state);
+
+            // 重置阈值计数器（通过反射）
+            typeof(ReliableControlClient)
+                .GetField("_consecutiveUnknownErrorCount", Flags)
+                ?.SetValue(_client, 0);
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            if (_go != null)
+                UnityEngine.Object.DestroyImmediate(_go);
+        }
+
+        /// <summary>通过反射调用 private ProcessIncomingLine。</summary>
+        private void InjectLine(string jsonLine)
+        {
+            typeof(ReliableControlClient)
+                .GetMethod("ProcessIncomingLine", Flags)
+                ?.Invoke(_client, new object[] { jsonLine });
+        }
+
+        /// <summary>通过反射读取 private _consecutiveUnknownErrorCount。</summary>
+        private int GetErrorCount()
+        {
+            return (int)(typeof(ReliableControlClient)
+                .GetField("_consecutiveUnknownErrorCount", Flags)
+                ?.GetValue(_client) ?? 0);
+        }
+
+        /// <summary>通过反射读取 private _isUnusable。</summary>
+        private bool GetIsUnusable()
+        {
+            return (bool)(typeof(ReliableControlClient)
+                .GetField("_isUnusable", Flags)
+                ?.GetValue(_client) ?? false);
+        }
+
+        // ── CONNECTION_MISMATCH：触发重连 ─────────────────────────────
+
+        [Test]
+        public void CONNECTION_MISMATCH_TriggersSocketCloseAndReconnect()
+        {
+            // 注入模拟 stream（需先建立连接状态）
+            var dummyStream = new System.IO.MemoryStream();
+            typeof(ReliableControlClient)
+                .GetField("_stream", Flags)
+                ?.SetValue(_client, dummyStream);
+
+            InjectLine(TestHelpers.TransportErrorJson("CONTROL_ACK_CONNECTION_MISMATCH"));
+
+            Assert.That(_transportErrors, Does.Contain("CONTROL_ACK_CONNECTION_MISMATCH"),
+                "应触发 OnTransportError 事件");
+            // CONNECTION_MISMATCH 不触发 Unusable 状态变化（它触发重连，不是永久停用）
+            Assert.That(_stateChanges, Does.Not.Contain(ConnectionState.Unusable.ToString()),
+                "CONNECTION_MISMATCH 不应标记为 Unusable");
+        }
+
+        // ── NOT_PENDING：仅日志 + 计数 ──────────────────────────────
+
+        [Test]
+        public void NOT_PENDING_LogOnlyNoReconnect()
+        {
+            InjectLine(TestHelpers.TransportErrorJson("CONTROL_ACK_NOT_PENDING"));
+
+            Assert.That(_transportErrors, Does.Contain("CONTROL_ACK_NOT_PENDING"),
+                "应触发 OnTransportError 事件");
+            Assert.That(GetErrorCount(), Is.EqualTo(0),
+                "NOT_PENDING 不增加连续未知错误计数器");
+            Assert.That(_stateChanges, Is.Empty,
+                "NOT_PENDING 不触发任何连接状态变化");
+        }
+
+        // ── REJECTED：仅日志 ─────────────────────────────────────────
+
+        [Test]
+        public void REJECTED_LogOnlyNoAction()
+        {
+            InjectLine(TestHelpers.TransportErrorJson("CONTROL_ACK_REJECTED"));
+
+            Assert.That(_transportErrors, Does.Contain("CONTROL_ACK_REJECTED"));
+            Assert.That(GetErrorCount(), Is.EqualTo(0));
+            Assert.That(_stateChanges, Is.Empty);
+        }
+
+        // ── TIMEOUT：仅日志 ─────────────────────────────────────────
+
+        [Test]
+        public void TIMEOUT_LogOnlyNoAction()
+        {
+            InjectLine(TestHelpers.TransportErrorJson("CONTROL_ACK_TIMEOUT"));
+
+            Assert.That(_transportErrors, Does.Contain("CONTROL_ACK_TIMEOUT"));
+            Assert.That(GetErrorCount(), Is.EqualTo(0));
+            Assert.That(_stateChanges, Is.Empty);
+        }
+
+        // ── 未知 error_code：阈值降级 ────────────────────────────────
+
+        [Test]
+        public void UnknownErrorCode_IncrementsCounter()
+        {
+            InjectLine(TestHelpers.TransportErrorJson("SOME_UNKNOWN_ERROR"));
+
+            Assert.That(_transportErrors, Does.Contain("SOME_UNKNOWN_ERROR"));
+            Assert.That(GetErrorCount(), Is.EqualTo(1),
+                "未知错误码应将计数器 +1");
+            Assert.That(_stateChanges, Is.Empty,
+                "未达阈值前不触发状态变化");
+        }
+
+        [Test]
+        public void UnknownErrorCode_DegradesAtThreshold()
+        {
+            // 逐条注入，直到达到阈值 (5)
+            for (int i = 0; i < 5; i++)
+                InjectLine(TestHelpers.TransportErrorJson("UNKNOWN_ERR_" + i));
+
+            Assert.That(GetErrorCount(), Is.EqualTo(5));
+            Assert.That(GetIsUnusable(), Is.True,
+                "连续 5 次未知错误码应标记为 Unusable");
+            Assert.That(_stateChanges, Does.Contain(ConnectionState.Unusable),
+                "应触发 Unusable 状态变化");
+        }
+
+        [Test]
+        public void KnownErrorCode_ResetsCounter()
+        {
+            // 先注入 3 次未知错误
+            for (int i = 0; i < 3; i++)
+                InjectLine(TestHelpers.TransportErrorJson("UNKNOWN_" + i));
+            Assert.That(GetErrorCount(), Is.EqualTo(3));
+
+            // 注入一次已知错误码
+            InjectLine(TestHelpers.TransportErrorJson("CONTROL_ACK_NOT_PENDING"));
+
+            Assert.That(GetErrorCount(), Is.EqualTo(0),
+                "已知错误码应重置连续计数器");
+        }
+
+        [Test]
+        public void CONNECTION_MISMATCH_DoesNotIncrementCounter()
+        {
+            InjectLine(TestHelpers.TransportErrorJson("CONTROL_ACK_CONNECTION_MISMATCH"));
+
+            Assert.That(GetErrorCount(), Is.EqualTo(0),
+                "CONNECTION_MISMATCH 是已知错误码，不增加计数器");
+        }
+
+        // ── JSON 解析失败：计数 + 阈值降级 ──────────────────────────
+
+        [Test]
+        public void JsonParseFailure_IncrementsCounter()
+        {
+            InjectLine("{invalid json!!");
+
+            Assert.That(_transportErrors, Does.Contain("TRANSPORT_FRAME_INVALID"));
+            Assert.That(GetErrorCount(), Is.EqualTo(1),
+                "JSON 解析失败应增加计数器");
+            Assert.That(_stateChanges, Is.Empty,
+                "未达阈值前不触发状态变化");
+        }
+
+        [Test]
+        public void JsonParseFailure_DegradesAtThreshold()
+        {
+            for (int i = 0; i < 5; i++)
+                InjectLine("{invalid json!!");
+
+            Assert.That(GetErrorCount(), Is.EqualTo(5));
+            Assert.That(GetIsUnusable(), Is.True,
+                "连续 5 次 JSON 解析失败应标记为 Unusable");
+            Assert.That(_stateChanges, Does.Contain(ConnectionState.Unusable),
+                "应触发 Unusable 状态变化");
+        }
+
+        [Test]
+        public void ValidFrame_ResetJsonCounter()
+        {
+            // 先累积 JSON 解析失败
+            InjectLine("{invalid");
+            InjectLine("{invalid");
+            Assert.That(GetErrorCount(), Is.EqualTo(2));
+
+            // 注入一帧有效 JSON（非 error 帧，正常 message_type 处理后不增加计数）
+            var normalFrame = JsonLines.Serialize(new Dictionary<string, object>
+            {
+                ["transport_type"] = "welcome",
+                ["accepted"] = true,
+                ["error_code"] = (string)null
+            });
+            InjectLine(normalFrame);
+
+            // 注意：已知 error code 会重置计数器，但 welcome 帧不是 error 帧，
+            // 所以不会走 ClassifyRuntimeError 重置路径。
+            // 计数器保持为 2（因为 welcome 帧不会经过错误分类路径）。
+            Assert.That(GetErrorCount(), Is.EqualTo(2),
+                "普通 welcome 帧不重置 JSON 解析失败计数器");
+        }
+    }
+
 }

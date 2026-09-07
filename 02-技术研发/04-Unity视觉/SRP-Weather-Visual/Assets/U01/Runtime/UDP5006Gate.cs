@@ -65,6 +65,7 @@ namespace SRP.U01
         [SerializeField] private int _port = 5006;
         [SerializeField] private int _maxDatagramBytes = 65535;
         [SerializeField] private int _receiveTimeoutMs = 1000;
+        [SerializeField] private string _bindAddress = "127.0.0.1";
 
         [Header("Validation")]
         [SerializeField] private bool _requireTelemetryFrame = true;
@@ -143,7 +144,8 @@ namespace SRP.U01
 
             try
             {
-                _udpClient = new UdpClient(_port);
+                var bindEp = new IPEndPoint(IPAddress.Parse(_bindAddress), _port);
+                _udpClient = new UdpClient(bindEp);
                 _udpClient.Client.ReceiveTimeout = _receiveTimeoutMs;
                 _isRunning = true;
 
@@ -153,7 +155,7 @@ namespace SRP.U01
                     Name = "U01-UDP-5006"
                 };
                 _receiveThread.Start();
-                Log($"Listening on UDP port {_port}");
+                Log($"Listening on UDP port {_port} (bind={_bindAddress})");
             }
             catch (Exception ex)
             {
@@ -200,35 +202,6 @@ namespace SRP.U01
                 _lastReceiveTicks = -1;
                 Log($"Session changed to {newSessionId} — frame_seq reset");
             }
-        }
-
-        /// <summary>
-        /// Dequeue the next validated frame (if any) and process it.
-        /// Call from Update().  Returns true if a frame was dispatched.
-        /// </summary>
-        public bool DequeueNext()
-        {
-            if (!_queue.TryDequeue(out var receipt)) return false;
-
-            if (receipt.Result == GateResult.Accepted)
-            {
-                _framesAccepted++;
-                OnTelemetryFrame?.Invoke(receipt.Raw);
-
-                // Periodic diagnostics
-                if (_diagnosticIntervalFrames > 0 &&
-                    _framesAccepted % _diagnosticIntervalFrames == 0)
-                {
-                    LogDiagnostics();
-                }
-            }
-            else
-            {
-                _framesDropped++;
-                OnFrameRejected?.Invoke(receipt);
-            }
-
-            return true;
         }
 
         /// <summary>Dequeue and dispatch all pending frames.</summary>
@@ -415,8 +388,8 @@ namespace SRP.U01
                 "segment", "target_phase", "target_progress",
                 "actual_phase", "actual_progress", "actual_confidence",
                 "recovery_value", "recovery_locked", "signal_quality",
-                "fallback_state", "resp_device_state", "ecg_device_state",
-                "cue_mode", "runtime_mode"
+                "fallback_state", "fallback_reason", "resp_device_state", "ecg_device_state",
+                "cue_mode", "runtime_mode", "policy_decision_id"
             };
             foreach (var field in requiredFields)
             {

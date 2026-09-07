@@ -169,8 +169,8 @@ namespace SRP.U01
             {
                 if (evt.payload.TryGetValue("module_id", out var mid))
                     newModule = mid?.ToString();
-                if (evt.payload.TryGetValue("module_position", out var mpos) && mpos is int mp)
-                    newModulePos = mp;
+                if (evt.payload.TryGetValue("module_position", out var mpos) && mpos is long mp)
+                    newModulePos = (int)mp;
             }
             if (evt.event_type == "segment" && evt.payload != null)
             {

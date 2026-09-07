@@ -14,6 +14,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace SRP.U01
@@ -66,6 +67,7 @@ namespace SRP.U01
         [Header("Connection")]
         [SerializeField] private string _host = "127.0.0.1";
         [SerializeField] private int _port = 5010;
+        [SerializeField] private int _connectTimeoutMs = 5000;
         [SerializeField] private int _receiveTimeoutMs = 5000;
         [SerializeField] private int _sendTimeoutMs = 2000;
 
@@ -77,6 +79,11 @@ namespace SRP.U01
         // ── Dependencies ──────────────────────────────────────────────────
         [Header("Components (set via code in Awake)")]
         [SerializeField] private SessionMirror _sessionMirror;
+
+        // R2-4: UDP5006Gate reference — wired in Awake via GetComponent.
+        // ProcessSessionManifest calls _gate.ResetSession(newSessionId)
+        // when session_id changes so frame_seq baseline resets.
+        [SerializeField] private UDP5006Gate _gate;
 
         // P0-1: AckManager (idempotent ACK sender)
         private AckManager _ackManager;
@@ -99,6 +106,12 @@ namespace SRP.U01
         // P0-3: Track whether we are in an unusable (fatal) state
         private volatile bool _isUnusable;
         private string _fatalErrorCode;
+
+        // R2-5: Consecutive unknown error-code / JSON-parse-failure counter.
+        // When this reaches UnknownErrorCodeThreshold the client degrades
+        // to unusable state (same as fatal protocol error).
+        private const int UnknownErrorCodeThreshold = 5;
+        private volatile int _consecutiveUnknownErrorCount = 0;
 
         // Thread-safe queues
         private readonly ConcurrentQueue<string> _incomingLines = new();
@@ -141,6 +154,17 @@ namespace SRP.U01
         public AckManager AckMgr => _ackManager;
         public RenderReceiptManager ReceiptMgr => _renderReceiptManager;
         public ReconnectHandler ReconnectHdl => _reconnectHandler;
+        public UDP5006Gate Gate => _gate;
+
+        // R2-12: Clock sync values from welcome handshake
+        private long _clockOffsetNs;
+        private long _syncUncertaintyNs;
+
+        /// <summary>Server-reported clock offset in nanoseconds.</summary>
+        public long ClockOffsetNs => _clockOffsetNs;
+
+        /// <summary>Server-reported sync uncertainty in nanoseconds.</summary>
+        public long SyncUncertaintyNs => _syncUncertaintyNs;
 
         // ── Lifecycle ─────────────────────────────────────────────────────
 
@@ -154,12 +178,22 @@ namespace SRP.U01
             _ackManager = new AckManager();
             _renderReceiptManager = new RenderReceiptManager();
 
-            // P0-4: Wire render receipt sending
+            // R2-2: Do NOT send here — FlushPendingReceipts is the single send path.
+            // The event handler only forwards to external subscribers for logging/UI.
             _renderReceiptManager.OnReceiptReady += receipt =>
             {
-                SendRenderReceipt(receipt);
                 OnRenderReceiptReady?.Invoke(receipt);
             };
+
+            // R2-4: Wire UDP5006Gate reference if not inspector-assigned.
+            // Same GameObject assumption — both are network components.
+            if (_gate == null)
+                _gate = GetComponent<UDP5006Gate>();
+            if (_gate != null)
+                Log($"R2-4: Gate reference wired — UDP5006Gate.ResetSession available");
+            else
+                Log("R2-4: WARNING — UDP5006Gate not found on this GameObject. " +
+                    "ResetSession will not be called on session change.");
 
             // P0-4: ReconnectHandler (uses this MonoBehaviour as coroutine runner)
             var policy = new ReconnectPolicy
@@ -208,6 +242,7 @@ namespace SRP.U01
             _isRunning = true;
             _isUnusable = false;
             _fatalErrorCode = null;
+            _consecutiveUnknownErrorCount = 0;
 
             _receiveThread = new Thread(ReceiveLoop)
             {
@@ -378,13 +413,14 @@ namespace SRP.U01
                     // P0-5: Sync state on disconnect
                     SyncReconnectState();
 
-                    // Simple blocking backoff here (the ReconnectHandler manages
-                    // the async coroutine-based path for Unity main thread).
-                    // On the network thread we do a blocking backoff with jitter.
+                    // R2-3 fix: Only the network thread reconnects (ConnectAndHandshake).
+                    // ReconnectHandler is only used for CurrentBackoffMs (backoff timing).
+                    // Deleted fake SignalDisconnected(() => true) — it triggered a
+                    // coroutine path that returned success immediately without a real
+                    // TCP connection, causing double generation increment.
                     int backoffMs = _reconnectHandler.CurrentBackoffMs;
                     int jitter = UnityEngine.Random.Range(0, 200);
                     Thread.Sleep(backoffMs + jitter);
-                    _reconnectHandler.SignalDisconnected(() => true);
                 }
             }
         }
@@ -402,7 +438,17 @@ namespace SRP.U01
                 throw new IOException("Fault injection — connect forced to fail");
             }
 
-            _tcpClient.Connect(_host, _port);
+            // R2-10: Use ConnectAsync with timeout instead of sync Connect
+            var connectTask = _tcpClient.ConnectAsync(_host, _port);
+            if (!connectTask.Wait(_connectTimeoutMs))
+            {
+                _tcpClient?.Close();
+                _tcpClient?.Dispose();
+                _tcpClient = null;
+                throw new IOException(
+                    $"Connection to {_host}:{_port} timed out after {_connectTimeoutMs}ms");
+            }
+            connectTask.GetAwaiter().GetResult(); // propagate exceptions
             _stream = _tcpClient.GetStream();
 
             // Send hello
@@ -442,6 +488,26 @@ namespace SRP.U01
 
             _isConnected = true;
             _incomingLines.Enqueue("__CONNECTED__");
+
+            // R2-12: Extract clock sync values from welcome
+            if (welcome.TryGetValue("clock_offset_ns", out var cOff) && cOff is long cOffVal)
+                _clockOffsetNs = cOffVal;
+            else if (welcome.TryGetValue("clock_offset_ns", out var cOffObj) && cOffObj != null)
+                long.TryParse(cOffObj.ToString(), out _clockOffsetNs);
+
+            if (welcome.TryGetValue("sync_uncertainty_ns", out var sUnc) && sUnc is long sUncVal)
+                _syncUncertaintyNs = sUncVal;
+            else if (welcome.TryGetValue("sync_uncertainty_ns", out var sUncObj) && sUncObj != null)
+                long.TryParse(sUncObj.ToString(), out _syncUncertaintyNs);
+
+            // R2-12: Warn if sync uncertainty exceeds 50ms (50,000,000 ns)
+            const long SyncUncertaintyWarningNs = 50_000_000L;
+            if (_syncUncertaintyNs > SyncUncertaintyWarningNs)
+            {
+                Debug.LogWarning(
+                    $"[U01.ReliableControlClient] R2-12: sync_uncertainty_ns={_syncUncertaintyNs} " +
+                    $"exceeds 50ms threshold ({SyncUncertaintyWarningNs} ns)");
+            }
 
             // P0-4: Signal reconnect handler that we are connected
             _reconnectHandler.SignalConnected();
@@ -568,8 +634,18 @@ namespace SRP.U01
             }
             catch (Exception ex)
             {
+                // R2-5: JSON parse failure — count and degrade at threshold
                 Log($"JSON parse error: {ex.Message}");
                 OnTransportError?.Invoke("TRANSPORT_FRAME_INVALID");
+                _consecutiveUnknownErrorCount++;
+                if (_consecutiveUnknownErrorCount >= UnknownErrorCodeThreshold)
+                {
+                    Log($"TRANSPORT_FRAME_INVALID consecutive count >= {UnknownErrorCodeThreshold} — " +
+                        "degrading to unusable");
+                    _isUnusable = true;
+                    _fatalErrorCode = "TRANSPORT_FRAME_INVALID";
+                    OnConnectionStateChanged?.Invoke(ConnectionState.Unusable);
+                }
                 return;
             }
 
@@ -578,13 +654,42 @@ namespace SRP.U01
                 // Could be transport-level (welcome, error, etc.)
                 if (msg.TryGetValue("transport_type", out var ttt) && ttt?.ToString() == "error")
                 {
-                    string ec = msg.TryGetValue("error_code", out var ec2) ? ec2?.ToString() : "UNKNOWN";
-                    OnTransportError?.Invoke(ec);
+                    // R2-5: Classify error frame by error_code per transport.py semantics
+                    string errorCode = msg.TryGetValue("error_code", out var ec2)
+                        ? ec2?.ToString() : "UNKNOWN";
+                    ClassifyRuntimeError(errorCode);
                 }
                 return;
             }
 
             string messageType = mtRaw?.ToString();
+
+            // R2-13: schema_version==2.2 gate for business frames
+            // Transport-level frames (welcome, error) don't carry schema_version.
+            if (messageType == "session_manifest" || messageType == "control_event"
+                || messageType == "ack" || messageType == "render_receipt")
+            {
+                if (!msg.TryGetValue("schema_version", out var svRaw)
+                    || svRaw?.ToString() != "2.2")
+                {
+                    string sv = svRaw?.ToString() ?? "(missing)";
+                    Log($"R2-13: schema_version mismatch on {messageType} — " +
+                        $"expected '2.2', got '{sv}', rejecting");
+                    OnTransportError?.Invoke("SCHEMA_VERSION_MISMATCH");
+                    _consecutiveUnknownErrorCount++;
+                    if (_consecutiveUnknownErrorCount >= UnknownErrorCodeThreshold)
+                    {
+                        Log($"R2-13: schema_version mismatch count >= " +
+                            $"{UnknownErrorCodeThreshold} — degrading to unusable");
+                        _isUnusable = true;
+                        _fatalErrorCode = "SCHEMA_VERSION_MISMATCH";
+                        OnConnectionStateChanged?.Invoke(ConnectionState.Unusable);
+                    }
+                    return;
+                }
+                // Reset counter for valid schema_version
+                _consecutiveUnknownErrorCount = 0;
+            }
 
             switch (messageType)
             {
@@ -606,14 +711,113 @@ namespace SRP.U01
             }
         }
 
+        // ── R2-5: Runtime error frame classification ────────────────────
+
+        /// <summary>
+        /// R2-5: Classify a runtime error frame by its error_code.
+        ///
+        /// transport.py semantics (reference: _handle_client / _handle_unity_message):
+        ///   CONNECTION_MISMATCH → generation mismatch; client must close socket and
+        ///       reconnect (triggers the same path as a network disconnect).
+        ///   NOT_PENDING         → duplicate/unknown ACK or receipt; log + count only.
+        ///   REJECTED / TIMEOUT  → server-side rejection or ACK timeout; log only.
+        ///   Unknown error_code  → log + consecutive threshold degradation.
+        /// </summary>
+        private void ClassifyRuntimeError(string errorCode)
+        {
+            switch (errorCode)
+            {
+                case "CONTROL_ACK_CONNECTION_MISMATCH":
+                    Log($"CONNECTION_MISMATCH received — closing socket and reconnecting");
+                    OnTransportError?.Invoke(errorCode);
+                    CloseSocketForReconnect();
+                    break;
+
+                case "CONTROL_ACK_NOT_PENDING":
+                    // Repeated receipt / unknown event_id — log + count, do NOT reconnect
+                    Debug.LogWarning(
+                        $"[U01.ReliableControlClient] NOT_PENDING: {errorCode}");
+                    OnTransportError?.Invoke(errorCode);
+                    break;
+
+                case "CONTROL_ACK_REJECTED":
+                case "CONTROL_ACK_TIMEOUT":
+                    // Server-side rejection or ACK timeout — informational only
+                    Log($"Transport error (no action): {errorCode}");
+                    OnTransportError?.Invoke(errorCode);
+                    break;
+
+                default:
+                    // Unknown error code — log and degrade at consecutive threshold
+                    Log($"Unknown transport error: {errorCode} " +
+                        $"(count={_consecutiveUnknownErrorCount + 1}/{UnknownErrorCodeThreshold})");
+                    OnTransportError?.Invoke(errorCode);
+                    _consecutiveUnknownErrorCount++;
+                    if (_consecutiveUnknownErrorCount >= UnknownErrorCodeThreshold)
+                    {
+                        Log($"Unknown error codes consecutive count >= {UnknownErrorCodeThreshold} " +
+                            $"— degrading to unusable");
+                        _isUnusable = true;
+                        _fatalErrorCode = errorCode;
+                        OnConnectionStateChanged?.Invoke(ConnectionState.Unusable);
+                    }
+                    break;
+            }
+
+            // Reset counter for known error codes (only unknown codes increment)
+            if (errorCode != "CONTROL_ACK_CONNECTION_MISMATCH"
+                && errorCode != "CONTROL_ACK_NOT_PENDING"
+                && errorCode != "CONTROL_ACK_REJECTED"
+                && errorCode != "CONTROL_ACK_TIMEOUT")
+            {
+                // Unknown — already incremented above; do NOT reset here
+            }
+            else
+            {
+                _consecutiveUnknownErrorCount = 0;
+            }
+        }
+
+        /// <summary>
+        /// R2-5: Close the TCP socket from the main thread so that the network
+        /// thread's ReadLoop sees an IOException and enters the reconnect path
+        /// in ReceiveLoop.  This is the same action as a server-initiated drop.
+        /// Called when CONNECTION_MISMATCH indicates our generation is stale.
+        /// </summary>
+        private void CloseSocketForReconnect()
+        {
+            try { _stream?.Close(); } catch { }
+            try { _tcpClient?.Close(); } catch { }
+        }
+
         private void ProcessSessionManifest(Dictionary<string, object> raw)
         {
             try
             {
                 var manifest = DeserializeSessionManifest(raw);
 
-                // P0-5: Reset UDP gate frame_seq baseline for new session
-                // (callers should wire this; we fire the event so they can)
+                // R2-4: Detect session_id change and reset UDP gate frame_seq.
+                // _appliedEventIds is PRESERVED across sessions (per contract),
+                // but frame_seq baseline must restart so new session frames
+                // are not rejected as "stale".
+                string newSessionId = manifest.session_id;
+                string previousSessionId = _sessionMirror?.Snapshot?.SessionId;
+
+                bool sessionChanged = !string.IsNullOrEmpty(newSessionId)
+                    && newSessionId != previousSessionId;
+
+                if (sessionChanged)
+                {
+                    Log($"R2-4: Session changed ({previousSessionId} -> {newSessionId})");
+                    _gate?.ResetSession(newSessionId);
+
+                    // Cross-session: reset AckManager tracking so old session
+                    // event_ids do not cause false "duplicate" rejections.
+                    _ackManager?.Reset();
+
+                    // Cross-session: discard old render receipts.
+                    _renderReceiptManager?.DiscardAll();
+                }
 
                 _sessionMirror?.ApplySessionManifest(manifest);
                 OnSessionManifest?.Invoke(manifest);
@@ -630,11 +834,20 @@ namespace SRP.U01
             {
                 var evt = DeserializeControlEvent(raw);
 
+                // R2-9: Validate session_id matches current session
+                var snap = _sessionMirror?.Snapshot;
+                if (snap != null && snap.HasSession
+                    && evt.session_id != snap.SessionId)
+                {
+                    Log($"R2-9: control_event session_id mismatch — " +
+                        $"event='{evt.session_id}' vs expected='{snap.SessionId}', rejecting");
+                    OnTransportError?.Invoke("SESSION_ID_MISMATCH");
+                    return;
+                }
+
                 // Capture received timestamp (P1-2: ideally from receive thread,
                 // but this is the best we can do from the main thread).
                 long receivedNs = AckManagerTimestampNow();
-
-                var snap = _sessionMirror?.Snapshot;
                 string sessionId = snap?.SessionId ?? "";
                 int unityFrame = Time.frameCount;
 

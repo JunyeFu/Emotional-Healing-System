@@ -81,7 +81,9 @@ namespace SRP.U01
             Func<long> nowNs = null,
             Func<int> unityFrameProvider = null)
         {
-            _nowNs = nowNs ?? (() => (long)(DateTime.UtcNow.Ticks - new DateTime(1970, 1, 1).Ticks) * 100L);
+            // R2-8: Use Stopwatch for monotonic timestamps instead of DateTime.UtcNow
+            _nowNs = nowNs ?? (() => (long)(System.Diagnostics.Stopwatch.GetTimestamp()
+                * (1_000_000_000.0 / System.Diagnostics.Stopwatch.Frequency)));
             _unityFrameProvider = unityFrameProvider ?? (() => Time.frameCount);
         }
 

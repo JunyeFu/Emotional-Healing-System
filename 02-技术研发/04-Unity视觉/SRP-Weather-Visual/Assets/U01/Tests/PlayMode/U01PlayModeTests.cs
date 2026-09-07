@@ -54,10 +54,30 @@ namespace SRP.U01.Tests.PlayMode
         private readonly ConcurrentQueue<string> _receiveQueue = new();
         private int _connectionCount;
         private volatile bool _clientConnected;
+        private TcpClient _currentClient;
+
+        // R2-2: receipt_id dedup counter — tracks how many times each
+        // receipt_id was received. Useful for asserting single-send.
+        private readonly ConcurrentDictionary<string, int> _receiptIdCounts = new();
 
         public int Port { get; }
         public int ConnectionCount => Interlocked.CompareExchange(ref _connectionCount, 0, 0);
         public bool ClientConnected => _clientConnected;
+
+        /// <summary>R2-2: Total receipt_ids seen (unique).</summary>
+        public int ReceiptIdCount => _receiptIdCounts.Count;
+
+        /// <summary>R2-2: Total duplicate receipt sends (count > 1 for any id).</summary>
+        public int DuplicateReceiptCount
+        {
+            get
+            {
+                int dups = 0;
+                foreach (var kv in _receiptIdCounts)
+                    if (kv.Value > 1) dups += kv.Value - 1;
+                return dups;
+            }
+        }
 
         public LoopbackTcpServer()
         {
@@ -84,6 +104,7 @@ namespace SRP.U01.Tests.PlayMode
                     // 清空上一轮连接的队列残留
                     while (_sendQueue.TryDequeue(out _)) { }
                     while (_receiveQueue.TryDequeue(out _)) { }
+                    _receiptIdCounts.Clear();
 
                     HandleClient(client);
                 }
@@ -104,32 +125,61 @@ namespace SRP.U01.Tests.PlayMode
             NetworkStream stream = null;
             try
             {
+                _currentClient = client;
                 stream = client.GetStream();
 
                 // 发送线程：从 _sendQueue 消费并写入 stream
                 var sendThread = new Thread(() => SendLoop(stream)) { IsBackground = true };
                 sendThread.Start();
 
-                // 逐字节读取，避免 StreamReader dispose 关闭底层 stream
-                var sb = new StringBuilder();
+                // R2-14: Use List<byte> + Encoding.UTF8 instead of sb.Append((char)b)
+                // to avoid corrupting multi-byte UTF8 characters.
+                var byteBuffer = new List<byte>();
                 while (_running && client.Connected)
                 {
                     int b = stream.ReadByte();
                     if (b < 0) break;  // EOF
                     if (b == '\n')
                     {
-                        _receiveQueue.Enqueue(sb.ToString());
-                        sb.Clear();
+                        string line = byteBuffer.Count == 0
+                            ? ""
+                            : Encoding.UTF8.GetString(byteBuffer.ToArray());
+                        _receiveQueue.Enqueue(line);
+                        TrackReceiptId(line);
+                        byteBuffer.Clear();
                     }
                     else
                     {
-                        sb.Append((char)b);
+                        byteBuffer.Add((byte)b);
                     }
                 }
             }
             catch (IOException) { }
             catch (SocketException) { }
             catch { }
+        }
+
+        /// <summary>
+        /// R2-2: Parse a received JSON line for render_receipt messages
+        /// and track receipt_id occurrences for dedup assertions.
+        /// </summary>
+        private void TrackReceiptId(string line)
+        {
+            if (string.IsNullOrEmpty(line)) return;
+            if (!line.Contains("\"message_type\"")) return;
+            if (!line.Contains("\"render_receipt\"")) return;
+
+            try
+            {
+                var msg = JsonLines.Deserialize(line);
+                if (msg.TryGetValue("receipt_id", out var rid) && rid != null)
+                {
+                    string receiptId = rid.ToString();
+                    if (!string.IsNullOrEmpty(receiptId))
+                        _receiptIdCounts.AddOrUpdate(receiptId, 1, (_, c) => c + 1);
+                }
+            }
+            catch { /* best-effort: malformed JSON is not our concern here */ }
         }
 
         private void SendLoop(NetworkStream stream)
@@ -216,6 +266,8 @@ namespace SRP.U01.Tests.PlayMode
         public void DropClient()
         {
             _clientConnected = false;
+            // R2-14: Truly close the socket to force the receive thread to exit
+            try { _currentClient?.Close(); } catch { }
         }
 
         public void Dispose()
@@ -256,6 +308,21 @@ namespace SRP.U01.Tests.PlayMode
                 ["schema_version"] = "2.2",
                 ["role"] = "control",
                 ["accepted"] = false,
+                ["error_code"] = errorCode
+            });
+        }
+
+        /// <summary>
+        /// R2-5: 构建运行期 error 帧 JSON 行。
+        /// transport.py 发送 {transport_type:"error", error_code:...} 给客户端。
+        /// </summary>
+        public static string TransportErrorJson(string errorCode)
+        {
+            return JsonLines.Serialize(new Dictionary<string, object>
+            {
+                ["transport_type"] = "error",
+                ["transport_version"] = "1.0",
+                ["schema_version"] = "2.2",
                 ["error_code"] = errorCode
             });
         }
@@ -364,7 +431,12 @@ namespace SRP.U01.Tests.PlayMode
                 ["resp_device_state"] = "CONNECTED",
                 ["ecg_device_state"] = "CONNECTED",
                 ["cue_mode"] = "scene_native",
-                ["runtime_mode"] = "formal_stage_1"
+                ["runtime_mode"] = "formal_stage_1",
+                ["policy_decision_id"] = (string)null,
+                ["target_cycle_index"] = (int?)null,
+                ["target_step_id"] = (string)null,
+                ["actual_cycle_index"] = (int?)null,
+                ["actual_step_id"] = (string)null
             });
         }
 
@@ -597,7 +669,7 @@ namespace SRP.U01.Tests.PlayMode
             // ── 3. 消费 Gate 队列 ──
             for (int i = 0; i < 12; i++)
             {
-                _gate.DequeueNext();
+                _gate.DequeueAndDispatch();
                 yield return null;
             }
 
