@@ -1,7 +1,7 @@
-# U-01 验证记录（第三轮审查）
+# U-01 验证记录（终审）
 
-> 日期：2026-09-07 | 分支：codex/u-01-reliable-control | HEAD：06965f7
-> 审查人：Grip 第3轮 | 验证人：Hermes Agent
+> 日期：2026-09-07 | 分支：codex/u-01-reliable-control | HEAD：160c1a7
+> 审查人：Grip 终审 | 验证人：Hermes Agent
 
 ---
 
@@ -22,14 +22,15 @@
 | 测试套件 | 用例数 | 通过 | 失败 | 跳过 | 状态 |
 |----------|--------|------|------|------|------|
 | SRP.U01.EditModeTests | 82 | 82 | 0 | 0 | ✅ 全绿 |
-|| SRP.U01.PlayModeTests | 7 | 7 | 0 | 0 | ✅ 全绿 |
-|| **合计** | **89** | **89** | **0** | **0** | **✅** |
+| SRP.U01.PlayModeTests | 8 | 8 | 0 | 0 | ✅ 全绿 |
+| **合计** | **90** | **90** | **0** | **0** | **✅** |
 
 ---
 
 ## 三、EditMode 用例清单（82 项）
 
 ### JsonLinesSerializationTests（14 项）
+
 | # | 用例名 | 覆盖 |
 |---|--------|------|
 | 1 | SerializeString_ProducesQuotedValue | JSON 字符串序列化 |
@@ -48,6 +49,7 @@
 | 14 | Serialize_Long_PreservesValue | long 类型值保持 |
 
 ### SessionMirrorTests（7 项）
+
 | # | 用例名 | 覆盖 |
 |---|--------|------|
 | 15 | InitialSnapshot_IsEmpty | 初始快照为空 |
@@ -59,6 +61,7 @@
 | 21 | ApplyControlEvent_NullThrows | null 参数抛 ArgumentNullException |
 
 ### AckManagerTests（13 项）
+
 | # | 用例名 | 覆盖 |
 |---|--------|------|
 | 22 | FirstEvent_IsAppliedFalse_AfterMarkApplied_IsAppliedTrue | 首次事件幂等判定 |
@@ -76,6 +79,7 @@
 | 34 | OnEventApplied_EventFires | OnEventApplied 事件触发 |
 
 ### RenderReceiptManagerTests（12 项）
+
 | # | 用例名 | 覆盖 |
 |---|--------|------|
 | 35 | RegisterEvent_CreatesPendingReceipt | RegisterEvent 创建待处理回执 |
@@ -92,6 +96,7 @@
 | 46 | RegisterEvent_NullThrows | null 参数抛异常 |
 
 ### ReconnectHandlerTests（10 项）
+
 | # | 用例名 | 覆盖 |
 |---|--------|------|
 | 47 | NewHandler_HasGenerationZero | 新 Handler generation=0 |
@@ -106,6 +111,7 @@
 | 56 | OnGenerationChanged_FiresOnConnect | generation 变更事件触发 |
 
 ### UDP5006GateValidationTests（9 项）
+
 | # | 用例名 | 覆盖 |
 |---|--------|------|
 | 57 | Validate_ValidTelemetryFrame_ReturnsAccepted | 有效遥测帧 accepted |
@@ -119,6 +125,7 @@
 | 65 | GateReceiptTracksStats | GateReceipt 统计跟踪 |
 
 ### ContractMessageStructureTests（6 项）
+
 | # | 用例名 | 覆盖 |
 |---|--------|------|
 | 66 | AckMessage_AllRequiredFieldsSerialized | ACK 消息 required 字段序列化 |
@@ -129,6 +136,7 @@
 | 71 | SessionManifest_WeatherSequence_RemainsUnique | weather_sequence 去重 |
 
 ### ReliableControlClient_ErrorHandlingTests（11 项）
+
 | # | 用例名 | 覆盖 |
 |---|--------|------|
 | 72 | CONNECTION_MISMATCH_TriggersSocketCloseAndReconnect | CONNECTION_MISMATCH → 重连 |
@@ -145,7 +153,7 @@
 
 ---
 
-## 四、PlayMode 用例清单（7 项）
+## 四、PlayMode 用例清单（8 项）
 
 | # | 验收标准 | 用例名 | 覆盖 |
 |---|----------|--------|------|
@@ -154,8 +162,9 @@
 | 3 | AC2 | NoControlEvent_SessionMirrorUnchanged | 无控制事件 → 状态不变 |
 | 4 | AC3 | V21HandshakeRejected_StopReconnect | v2.1 握手被拒 → 停止重连 |
 | 5 | AC3 | Reconnect_IncrementsGeneration_SameClientId | 断连重连 → generation+1, 同 client_instance_id |
-|| 6 | AC3 | RenderReceiptFailure_HasCorrectFields | 渲染回执失败路径字段正确 |
-|| 7 | R4-1 | DevAutoConfirm_SegmentEvent_TriggersAutoRenderReceipt | dev 模式 segment 事件自动触发 render_receipt 回执（formal 不触发） |
+| 6 | AC3 | RenderReceiptFailure_HasCorrectFields | 渲染回执失败路径字段正确 |
+| 7 | R4-1 | DevAutoConfirm_SegmentEvent_TriggersAutoRenderReceipt | dev_replay 模式 segment → render_receipt（正向） |
+| 8 | R4-1 | FormalMode_NoAutoConfirm_SegmentProducesNoReceipt | formal 模式 segment → 零回执（反向） |
 
 ---
 
@@ -163,12 +172,13 @@
 
 | # | 验证项 | 结果 | 备注 |
 |---|--------|------|------|
-| 1 | 三个 DLL 编译零错误 | ✅ | SRP.U01.Runtime.dll、SRP.U01.EditModeTests.dll、SRP.U01.PlayModeTests.dll |
+| 1 | 三个 DLL 编译零错误 | ✅ | SRP.U01.Runtime.dll、EditModeTests.dll、PlayModeTests.dll |
 | 2 | .gitignore 覆盖 *.sln *.slnx *.csproj | ✅ | |
 | 3 | U01_TASK_PLAN.md 已移出 Assets | ✅ | 在 work/ 目录 |
 | 4 | U01.meta 存在 | ✅ | |
 | 5 | git status 仅含任务相关文件 | ✅ | 无无关文件 |
-| 6 | Git HEAD: cd3b7cc | ✅ | 分支 codex/u-01-reliable-control |
+| 6 | Git HEAD: 160c1a7 | ✅ | 分支 codex/u-01-reliable-control |
+| 7 | dev 回执端到端到达 + formal 不自动确认 | ✅ | R4-1 两个用例覆盖 |
 
 ---
 
@@ -176,17 +186,17 @@
 
 | 编号 | 严重级 | 问题 | 处置 | 状态 |
 |------|--------|------|------|------|
-| R3-1 | P0 | dev 模式自动确认钩子缺失 → 回执链路零证据 | 待修复 | ⏳ |
-| R3-2 | P0 | PlayMode fixture 遥测帧违反 schema oneOf | 待修复 | ⏳ |
-| R3-3 | P1 | 回执注册范围过宽，与服务器验收规则不对齐 | 待修复 | ⏳ |
-| R3-4 | P2 | 回执 frame_seq 本地自增（建议改用 control_seq） | 记入 blackboard | ⏳ |
+| R3-1 | P0 | dev 模式自动确认钩子缺失 → 回执链路零证据 | 已修复 ✅ | ✅ |
+| R3-2 | P0 | PlayMode fixture 遥测帧违反 schema oneOf | 已修复 ✅ | ✅ |
+| R3-3 | P1 | 回执注册范围过宽，与服务器验收规则不对齐 | 已修复 ✅ | ✅ |
+| R3-4 | P2 | 回执 frame_seq 本地自增（建议改用 control_seq） | 已修复 ✅ | ✅ |
 | R3-5 | P2 | received_monotonic_ns 在主线程取 | 记入 blackboard | ⏳ |
-| R3-6 | P2 | 反射 helper 残留（ForceCloseTcpClient） | 建议顺手删除 | ⏳ |
+| R3-6 | P2 | 反射 helper 残留（ForceCloseTcpClient） | 已修复 ✅ | ✅ |
 
 ---
 
 ## 七、附件
 
-- 编译日志：见 `u01_round3_check.txt`、`u01_round3_check_b.txt`
+- 编译日志：见 Unity Editor.log
 - 代码审查基线：runtime-contract-v2.2.schema.json
 - 服务器实现：srp_session_core/transport.py、core.py
