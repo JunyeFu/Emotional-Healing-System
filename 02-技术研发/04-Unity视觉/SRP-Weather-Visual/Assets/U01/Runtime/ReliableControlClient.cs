@@ -96,7 +96,7 @@ namespace SRP.U01
 
         // ── Internal state ────────────────────────────────────────────────
         private TcpClient _tcpClient;
-        private NetworkStream _stream;
+        private System.IO.Stream _stream;
         private Thread _receiveThread;
         private Thread _sendThread;
         private volatile bool _isConnected;

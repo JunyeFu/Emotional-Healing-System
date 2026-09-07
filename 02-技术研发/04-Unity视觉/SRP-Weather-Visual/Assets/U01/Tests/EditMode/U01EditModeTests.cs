@@ -803,13 +803,14 @@ namespace SRP.U01.Tests
         [Test]
         public void FrameSeq_Increments()
         {
-            _manager.RegisterEvent(CreateTestEvent("evt-001"), "storm", "demo");
-            _manager.RegisterEvent(CreateTestEvent("evt-002"), "heat", "demo");
+            _manager.RegisterEvent(CreateTestEvent("evt-001", seq: 1), "storm", "demo");
+            _manager.RegisterEvent(CreateTestEvent("evt-002", seq: 2), "heat", "demo");
 
             var r1 = _manager.CompleteRendered("evt-001", "sess-001");
             var r2 = _manager.CompleteRendered("evt-002", "sess-001");
 
-            Assert.That(r2.frame_seq, Is.GreaterThan(r1.frame_seq));
+            Assert.That(r1.frame_seq, Is.EqualTo(1));
+            Assert.That(r2.frame_seq, Is.EqualTo(2));
         }
 
         [Test]
@@ -819,16 +820,16 @@ namespace SRP.U01.Tests
                 _manager.RegisterEvent(null, "storm", "demo"));
         }
 
-        private static ControlEvent CreateTestEvent(string eventId)
+        private static ControlEvent CreateTestEvent(string eventId, int seq = 1)
         {
             return new ControlEvent
             {
                 session_id = "sess-001",
                 event_id = eventId,
-                control_seq = 1,
+                control_seq = seq,
                 event_type = "start",
-                issued_monotonic_ns = 1000000000L,
-                effective_monotonic_ns = 1000000000L,
+                issued_monotonic_ns = 1000000000L + seq * 1000000L,
+                effective_monotonic_ns = 1000000000L + seq * 1000000L + 500000L,
                 clock_domain_id = "python",
                 payload = new Dictionary<string, object>()
             };
@@ -1441,6 +1442,12 @@ namespace SRP.U01.Tests
             // CONNECTION_MISMATCH 不触发 Unusable 状态变化（它触发重连，不是永久停用）
             Assert.That(_stateChanges, Does.Not.Contain(ConnectionState.Unusable.ToString()),
                 "CONNECTION_MISMATCH 不应标记为 Unusable");
+
+            // R5-2: 验证 stream 已被关闭（CloseSocketForReconnect 执行了 _stream?.Close()）
+            var streamField = typeof(ReliableControlClient).GetField("_stream", Flags);
+            var closedStream = (System.IO.Stream)streamField?.GetValue(_client);
+            Assert.That(closedStream, Is.Not.Null, "stream 字段不应为 null");
+            Assert.That(closedStream.CanWrite, Is.False, "stream 应已被 Close（CanWrite 应为 false）");
         }
 
         // ── NOT_PENDING：仅日志 + 计数 ──────────────────────────────

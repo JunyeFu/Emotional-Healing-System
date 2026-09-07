@@ -74,10 +74,36 @@ namespace SRP.U01
         /// </summary>
         public void MarkApplied(string eventId)
         {
+            bool isNew;
             lock (_lock)
             {
-                _appliedEventIds.Add(eventId);
+                isNew = _appliedEventIds.Add(eventId);
             }
+            if (isNew)
+            {
+                OnEventApplied?.Invoke(eventId);
+            }
+        }
+
+        /// <summary>
+        /// Record that a duplicate event_id was detected (already applied).
+        /// Invoke OnDuplicateIgnored for subscribers.
+        /// </summary>
+        public void MarkDuplicate(string eventId)
+        {
+            OnDuplicateIgnored?.Invoke(eventId);
+        }
+
+        /// <summary>
+        /// Record that an event was rejected (cannot apply).
+        /// Invoke OnEventRejected for subscribers.
+        /// </summary>
+        /// <param name="eventId">The event_id that was rejected.</param>
+        /// <param name="reason">Human-readable rejection reason.</param>
+        public void MarkRejected(string eventId, string reason)
+        {
+            // 保留给未来 reject 路径
+            OnEventRejected?.Invoke(eventId, reason);
         }
 
         /// <summary>
