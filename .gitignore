@@ -82,3 +82,4 @@ sysinfo.txt
 *.sqlite-shm
 *.sqlite-wal
 /02-技术研发/07-数据治理/evidence/unity_formal_build_gate*.log
+*.slnx
