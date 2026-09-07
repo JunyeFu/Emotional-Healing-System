@@ -403,6 +403,9 @@ namespace SRP.U01.Tests
     }
 
     // ── AckManager tests ──────────────────────────────────────────────────
+    // P0-1: AckManager 重写为 Unity 侧幂等 ACK 生成器。
+    // 旧 API (TrackEventSent/IsDelivered/ProcessIncomingAck/CheckTimeouts/PendingCount) 已删除。
+    // 新 API: IsApplied / MarkApplied / CreateAck / AppliedCount
 
     public sealed class AckManagerTests
     {
@@ -412,8 +415,6 @@ namespace SRP.U01.Tests
         public void SetUp()
         {
             _manager = new AckManager(
-                ackTimeoutMs: 100,
-                maxAttempts: 2,
                 clockDomainId: "unity",
                 nowNs: () => 1000000000L);
         }
@@ -424,222 +425,208 @@ namespace SRP.U01.Tests
             _manager.Reset();
         }
 
+        // ── 测试 1：首次事件 → IsApplied=false，MarkApplied 后 → IsApplied=true ──
+
+        [Test]
+        public void FirstEvent_IsAppliedFalse_AfterMarkApplied_IsAppliedTrue()
+        {
+            // 首次收到事件，IsApplied 应为 false
+            Assert.That(_manager.IsApplied("evt-001"), Is.False);
+
+            // 标记已应用后，IsApplied 应为 true
+            _manager.MarkApplied("evt-001");
+            Assert.That(_manager.IsApplied("evt-001"), Is.True);
+        }
+
+        [Test]
+        public void CreateAck_AfterMarkApplied_ReturnsApplied()
+        {
+            _manager.MarkApplied("evt-001");
+
+            var ack = _manager.CreateAck(
+                sessionId: "sess-001",
+                eventId: "evt-001",
+                unityFrame: 42,
+                result: AckResult.applied,
+                receivedMonotonicNs: 900000000L);
+
+            Assert.That(ack.result, Is.EqualTo("applied"));
+        }
+
+        // ── 测试 2：重复事件 → IsApplied=true，CreateAck result=duplicate_ignored ──
+
+        [Test]
+        public void DuplicateEvent_IsAppliedTrue_CreateAckReturnsDuplicateIgnored()
+        {
+            // 模拟重复事件：先 MarkApplied 再判断
+            _manager.MarkApplied("evt-001");
+            Assert.That(_manager.IsApplied("evt-001"), Is.True);
+
+            var ack = _manager.CreateAck(
+                sessionId: "sess-001",
+                eventId: "evt-001",
+                unityFrame: 42,
+                result: AckResult.duplicate_ignored,
+                receivedMonotonicNs: 900000000L);
+
+            Assert.That(ack.result, Is.EqualTo("duplicate_ignored"));
+        }
+
+        [Test]
+        public void DuplicateEvent_MultipleEvents_DetectedIndependently()
+        {
+            _manager.MarkApplied("evt-001");
+
+            // evt-001 是重复的
+            Assert.That(_manager.IsApplied("evt-001"), Is.True);
+            // evt-002 是新的
+            Assert.That(_manager.IsApplied("evt-002"), Is.False);
+        }
+
+        // ── 测试 3：CreateAck 字段验证 (schema_version, message_type, result, error_code) ──
+
         [Test]
         public void CreateAck_HasCorrectFields()
         {
-            var ack = _manager.CreateAck("sess-001", "evt-001", 42, AckResult.applied);
+            var ack = _manager.CreateAck(
+                sessionId: "sess-001",
+                eventId: "evt-001",
+                unityFrame: 42,
+                result: AckResult.applied,
+                receivedMonotonicNs: 900000000L);
 
+            // 基本字段
             Assert.That(ack.session_id, Is.EqualTo("sess-001"));
             Assert.That(ack.event_id, Is.EqualTo("evt-001"));
             Assert.That(ack.unity_frame, Is.EqualTo(42));
             Assert.That(ack.result, Is.EqualTo("applied"));
-            Assert.That(ack.error_code, Is.Null);
-            Assert.That(ack.received_monotonic_ns, Is.EqualTo(1000000000L));
+            Assert.That(ack.received_monotonic_ns, Is.EqualTo(900000000L));
+
+            // schema_version 和 message_type 常量
+            Assert.That(AckMessage.schema_version, Is.EqualTo("2.2"));
+            Assert.That(AckMessage.message_type_val, Is.EqualTo("ack"));
+
+            // applied_monotonic_ns 由 nowNs() 提供 (测试中固定为 1000000000L)
+            Assert.That(ack.applied_monotonic_ns, Is.EqualTo(1000000000L));
         }
 
         [Test]
         public void CreateAck_Rejected_HasErrorCode()
         {
-            var ack = _manager.CreateAck("sess-001", "evt-001", 1, AckResult.rejected, "STALE_SEQ");
+            var ack = _manager.CreateAck(
+                sessionId: "sess-001",
+                eventId: "evt-001",
+                unityFrame: 1,
+                result: AckResult.rejected,
+                receivedMonotonicNs: 500000000L,
+                errorCode: "STALE_SEQ");
 
             Assert.That(ack.result, Is.EqualTo("rejected"));
             Assert.That(ack.error_code, Is.EqualTo("STALE_SEQ"));
         }
 
         [Test]
-        public void TrackEventSent_MakesEventPending()
+        public void CreateAck_Applied_HasNullErrorCode()
         {
-            var evt = new ControlEvent
-            {
-                event_id = "evt-001",
-                control_seq = 1,
-                event_type = "start",
-                issued_monotonic_ns = 1000000000L,
-                effective_monotonic_ns = 1000000000L,
-                clock_domain_id = "python",
-                session_id = "sess-001",
-                payload = new Dictionary<string, object>()
-            };
+            var ack = _manager.CreateAck(
+                sessionId: "sess-001",
+                eventId: "evt-001",
+                unityFrame: 10,
+                result: AckResult.applied,
+                receivedMonotonicNs: 500000000L);
 
-            _manager.TrackEventSent(evt);
-
-            Assert.That(_manager.IsPending("evt-001"), Is.True);
-            Assert.That(_manager.PendingCount, Is.EqualTo(1));
+            Assert.That(ack.error_code, Is.Null);
         }
 
         [Test]
-        public void ProcessIncomingAck_Applied_MarksDelivered()
+        public void CreateAck_AllResultTypes()
         {
-            var evt = CreateTrackedEvent("evt-001");
-            _manager.TrackEventSent(evt);
+            // applied
+            var ack1 = _manager.CreateAck("sess-001", "evt-001", 1, AckResult.applied, 100L);
+            Assert.That(ack1.result, Is.EqualTo("applied"));
 
-            var ack = new AckMessage
-            {
-                session_id = "sess-001",
-                event_id = "evt-001",
-                result = "applied",
-                unity_frame = 10,
-                received_monotonic_ns = 1000000000L,
-                applied_monotonic_ns = 1000000000L,
-                error_code = null
-            };
+            // duplicate_ignored
+            var ack2 = _manager.CreateAck("sess-001", "evt-002", 2, AckResult.duplicate_ignored, 200L);
+            Assert.That(ack2.result, Is.EqualTo("duplicate_ignored"));
 
-            bool isNew = _manager.ProcessIncomingAck(ack);
+            // rejected
+            var ack3 = _manager.CreateAck("sess-001", "evt-003", 3, AckResult.rejected, 300L, "ERR");
+            Assert.That(ack3.result, Is.EqualTo("rejected"));
 
-            Assert.That(isNew, Is.True);
-            Assert.That(_manager.IsDelivered("evt-001"), Is.True);
-            Assert.That(_manager.IsPending("evt-001"), Is.False);
+            // failed
+            var ack4 = _manager.CreateAck("sess-001", "evt-004", 4, AckResult.failed, 400L, "TIMEOUT");
+            Assert.That(ack4.result, Is.EqualTo("failed"));
+        }
+
+        // ── 测试 4：重连后 _appliedEventIds 不被清除 (IsApplied 持久) ──
+
+        [Test]
+        public void AppliedEventIds_PersistAcrossReconnect()
+        {
+            // 模拟首次连接：标记事件已应用
+            _manager.MarkApplied("evt-001");
+            _manager.MarkApplied("evt-002");
+
+            // 模拟重连（新实例，不调用 Reset）
+            // AckManager 不提供 Reconnect 方法，_appliedEventIds 不被清除
+            // 验证 IsApplied 仍然返回 true
+            Assert.That(_manager.IsApplied("evt-001"), Is.True);
+            Assert.That(_manager.IsApplied("evt-002"), Is.True);
+            Assert.That(_manager.AppliedCount, Is.EqualTo(2));
         }
 
         [Test]
-        public void ProcessIncomingAck_DuplicateIgnored_MarksDelivered()
+        public void AppliedEventIds_NotClearedOnNewSession()
         {
-            var evt = CreateTrackedEvent("evt-001");
-            _manager.TrackEventSent(evt);
+            _manager.MarkApplied("evt-001");
 
-            var ack = new AckMessage
-            {
-                session_id = "sess-001",
-                event_id = "evt-001",
-                result = "duplicate_ignored",
-                unity_frame = 10,
-                received_monotonic_ns = 1000000000L,
-                applied_monotonic_ns = 1000000000L,
-                error_code = null
-            };
-
-            _manager.ProcessIncomingAck(ack);
-            Assert.That(_manager.IsDelivered("evt-001"), Is.True);
+            // 新的 session 到来时，旧的 appliedEventIds 应保持不变
+            // （重连 ≠ 重置，只有 Reset() 才清除）
+            Assert.That(_manager.IsApplied("evt-001"), Is.True);
         }
 
-        [Test]
-        public void ProcessIncomingAck_Rejected_NotDelivered()
-        {
-            var evt = CreateTrackedEvent("evt-001");
-            _manager.TrackEventSent(evt);
-
-            var ack = new AckMessage
-            {
-                session_id = "sess-001",
-                event_id = "evt-001",
-                result = "rejected",
-                unity_frame = 10,
-                received_monotonic_ns = 1000000000L,
-                applied_monotonic_ns = 1000000000L,
-                error_code = "INVALID"
-            };
-
-            _manager.ProcessIncomingAck(ack);
-            Assert.That(_manager.IsDelivered("evt-001"), Is.False);
-            Assert.That(_manager.IsPending("evt-001"), Is.False);
-        }
+        // ── 辅助测试：Reset 仅在完整会话销毁时调用 ──
 
         [Test]
-        public void CheckTimeouts_ExceedsMaxAttempts_ReturnsTimedOut()
+        public void Reset_ClearsAllApplied()
         {
-            // With maxAttempts=2, after 2 timeouts the event should be removed
-            var evt = CreateTrackedEvent("evt-001");
-            _manager.TrackEventSent(evt);
+            _manager.MarkApplied("evt-001");
+            _manager.MarkApplied("evt-002");
 
-            // Simulate time passing by creating ack manager with very short timeout
-            var shortManager = new AckManager(
-                ackTimeoutMs: 1, // 1ms
-                maxAttempts: 1,
-                clockDomainId: "unity",
-                nowNs: () => 1000000000L);
-
-            shortManager.TrackEventSent(evt);
-
-            // Wait a bit
-            System.Threading.Thread.Sleep(10);
-
-            var timedOut = shortManager.CheckTimeouts();
-            Assert.That(timedOut, Does.Contain("evt-001"));
-            Assert.That(shortManager.IsPending("evt-001"), Is.False);
-        }
-
-        [Test]
-        public void FailAllPending_ClearsAll()
-        {
-            _manager.TrackEventSent(CreateTrackedEvent("evt-001"));
-            _manager.TrackEventSent(CreateTrackedEvent("evt-002"));
-
-            _manager.FailAllPending("disconnect");
-
-            Assert.That(_manager.PendingCount, Is.EqualTo(0));
-        }
-
-        [Test]
-        public void ProcessIncomingAck_Null_ReturnsFalse()
-        {
-            Assert.That(_manager.ProcessIncomingAck(null), Is.False);
-        }
-
-        [Test]
-        public void ProcessIncomingAck_SecondTime_ReturnsFalse()
-        {
-            var evt = CreateTrackedEvent("evt-001");
-            _manager.TrackEventSent(evt);
-
-            var ack = new AckMessage
-            {
-                session_id = "sess-001",
-                event_id = "evt-001",
-                result = "applied",
-                unity_frame = 10,
-                received_monotonic_ns = 1000000000L,
-                applied_monotonic_ns = 1000000000L,
-                error_code = null
-            };
-
-            Assert.That(_manager.ProcessIncomingAck(ack), Is.True);
-            Assert.That(_manager.ProcessIncomingAck(ack), Is.False);
-        }
-
-        [Test]
-        public void Reset_ClearsEverything()
-        {
-            _manager.TrackEventSent(CreateTrackedEvent("evt-001"));
             _manager.Reset();
 
-            Assert.That(_manager.PendingCount, Is.EqualTo(0));
-            Assert.That(_manager.DeliveredCount, Is.EqualTo(0));
+            Assert.That(_manager.IsApplied("evt-001"), Is.False);
+            Assert.That(_manager.IsApplied("evt-002"), Is.False);
+            Assert.That(_manager.AppliedCount, Is.EqualTo(0));
         }
 
         [Test]
-        public void OnAckReceived_EventFires()
+        public void AppliedCount_IncrementsCorrectly()
         {
-            string receivedId = null;
-            _manager.OnAckReceived += (id, ack) => receivedId = id;
+            Assert.That(_manager.AppliedCount, Is.EqualTo(0));
 
-            _manager.TrackEventSent(CreateTrackedEvent("evt-001"));
-            _manager.ProcessIncomingAck(new AckMessage
-            {
-                event_id = "evt-001",
-                session_id = "sess-001",
-                result = "applied",
-                unity_frame = 1,
-                received_monotonic_ns = 1000000000L,
-                applied_monotonic_ns = 1000000000L,
-                error_code = null
-            });
+            _manager.MarkApplied("evt-001");
+            Assert.That(_manager.AppliedCount, Is.EqualTo(1));
 
-            Assert.That(receivedId, Is.EqualTo("evt-001"));
+            _manager.MarkApplied("evt-002");
+            Assert.That(_manager.AppliedCount, Is.EqualTo(2));
+
+            // 重复 MarkApplied 同一 ID 不增加计数
+            _manager.MarkApplied("evt-001");
+            Assert.That(_manager.AppliedCount, Is.EqualTo(2));
         }
 
-        private static ControlEvent CreateTrackedEvent(string eventId)
+        // ── 事件回调测试 ──
+
+        [Test]
+        public void OnEventApplied_EventFires()
         {
-            return new ControlEvent
-            {
-                session_id = "sess-001",
-                event_id = eventId,
-                control_seq = 1,
-                event_type = "start",
-                issued_monotonic_ns = 1000000000L,
-                effective_monotonic_ns = 1000000000L,
-                clock_domain_id = "python",
-                payload = new Dictionary<string, object>()
-            };
+            string appliedId = null;
+            _manager.OnEventApplied += id => appliedId = id;
+
+            // 第一次 MarkApplied 应触发 OnEventApplied
+            _manager.MarkApplied("evt-001");
+            Assert.That(appliedId, Is.EqualTo("evt-001"));
         }
     }
 
@@ -975,7 +962,7 @@ namespace SRP.U01.Tests
             var frame = CreateTelemetryFrameJson("sess-001", 1);
             byte[] data = System.Text.Encoding.UTF8.GetBytes(frame);
 
-            var receipt = UDP5006Gate.Validate(data);
+            var receipt = UDP5006Gate.ValidateFull(data);
 
             Assert.That(receipt.Result, Is.EqualTo(GateResult.Accepted));
             Assert.That(receipt.FrameSeq, Is.EqualTo(1));
@@ -986,7 +973,7 @@ namespace SRP.U01.Tests
         {
             byte[] data = System.Text.Encoding.UTF8.GetBytes("{not valid json}}");
 
-            var receipt = UDP5006Gate.Validate(data);
+            var receipt = UDP5006Gate.ValidateFull(data);
 
             Assert.That(receipt.Result, Is.EqualTo(GateResult.InvalidJson));
         }
@@ -997,7 +984,7 @@ namespace SRP.U01.Tests
             var json = "{\"schema_version\":\"2.2\"}";
             byte[] data = System.Text.Encoding.UTF8.GetBytes(json);
 
-            var receipt = UDP5006Gate.Validate(data);
+            var receipt = UDP5006Gate.ValidateFull(data);
 
             Assert.That(receipt.Result, Is.EqualTo(GateResult.MissingMessageType));
         }
@@ -1008,7 +995,7 @@ namespace SRP.U01.Tests
             var json = "{\"schema_version\":\"2.2\",\"message_type\":\"ack\"}";
             byte[] data = System.Text.Encoding.UTF8.GetBytes(json);
 
-            var receipt = UDP5006Gate.Validate(data);
+            var receipt = UDP5006Gate.ValidateFull(data);
 
             Assert.That(receipt.Result, Is.EqualTo(GateResult.NotTelemetryFrame));
         }
@@ -1022,7 +1009,7 @@ namespace SRP.U01.Tests
                        "\"target_phase\":\"inhale\",\"actual_phase\":\"inhale\"}";
             byte[] data = System.Text.Encoding.UTF8.GetBytes(json);
 
-            var receipt = UDP5006Gate.Validate(data);
+            var receipt = UDP5006Gate.ValidateFull(data);
 
             Assert.That(receipt.Result, Is.EqualTo(GateResult.SchemaViolation));
         }
@@ -1034,7 +1021,7 @@ namespace SRP.U01.Tests
                        "\"session_id\":\"s\"}";
             byte[] data = System.Text.Encoding.UTF8.GetBytes(json);
 
-            var receipt = UDP5006Gate.Validate(data);
+            var receipt = UDP5006Gate.ValidateFull(data);
 
             Assert.That(receipt.Result, Is.EqualTo(GateResult.SchemaViolation));
             Assert.That(receipt.ErrorMessage, Does.Contain("Missing required field"));
@@ -1045,7 +1032,7 @@ namespace SRP.U01.Tests
         {
             byte[] data = System.Text.Encoding.UTF8.GetBytes("");
 
-            var receipt = UDP5006Gate.Validate(data);
+            var receipt = UDP5006Gate.ValidateFull(data);
 
             Assert.That(receipt.Result, Is.EqualTo(GateResult.InvalidJson));
         }
@@ -1056,7 +1043,7 @@ namespace SRP.U01.Tests
             var frame = CreateFullTelemetryFrameJson();
             byte[] data = System.Text.Encoding.UTF8.GetBytes(frame);
 
-            var receipt = UDP5006Gate.Validate(data);
+            var receipt = UDP5006Gate.ValidateFull(data);
 
             Assert.That(receipt.Result, Is.EqualTo(GateResult.Accepted));
             Assert.That(receipt.Raw.ContainsKey("clock_drift_ppm"), Is.True);

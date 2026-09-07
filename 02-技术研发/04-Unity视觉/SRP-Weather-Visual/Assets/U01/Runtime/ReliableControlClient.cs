@@ -1,6 +1,11 @@
 // U01 — ReliableControlClient: TCP client connecting to the Python control
 // server on port 5010 using JSON Lines protocol.  Runs a receive thread;
 // marshals incoming control_events to the main thread for processing.
+//
+// P0-3: Protocol errors (handshake rejection, schema mismatch) are fatal
+//       — fail-closed, do NOT retry.  Only network errors trigger reconnect.
+// P0-4: Wired ReconnectHandler and RenderReceiptManager.
+// P0-5: Reconnect state sync (discard old receipts, wait for manifest).
 
 using System;
 using System.Collections.Concurrent;
@@ -13,6 +18,36 @@ using UnityEngine;
 
 namespace SRP.U01
 {
+    /// <summary>
+    /// Fatal protocol error codes — when received, the client stops
+    /// reconnecting and enters UNUSABLE state (P0-3 fail-closed).
+    /// These match transport.py's handshake-phase error codes.
+    /// </summary>
+    public static class FatalProtocolErrors
+    {
+        public static readonly HashSet<string> Codes = new HashSet<string>
+        {
+            "SCHEMA_VERSION_MISMATCH",
+            "TRANSPORT_VERSION_MISMATCH",
+            "TRANSPORT_HANDSHAKE_INVALID",
+            "TRANSPORT_ROLE_INVALID",
+            "CLIENT_INSTANCE_ID_INVALID",
+            "UNITY_CLIENT_ALREADY_CONNECTED"
+        };
+    }
+
+    /// <summary>
+    /// Connection state for external consumers.
+    /// </summary>
+    public enum ConnectionState
+    {
+        Disconnected,
+        Connecting,
+        Connected,
+        Reconnecting,
+        Unusable  // fatal protocol error — will not reconnect
+    }
+
     /// <summary>
     /// TCP client for the reliable control channel.
     /// Connects to the Python ControlServer, performs the hello/welcome handshake,
@@ -40,9 +75,17 @@ namespace SRP.U01
         [SerializeField] private string _clientInstanceId = "";
 
         // ── Dependencies ──────────────────────────────────────────────────
+        [Header("Components (set via code in Awake)")]
         [SerializeField] private SessionMirror _sessionMirror;
-        [SerializeField] private AckManager _ackManager;
-        [SerializeField] private RenderReceiptManager _renderReceiptManager;
+
+        // P0-1: AckManager (idempotent ACK sender)
+        private AckManager _ackManager;
+
+        // P0-4: RenderReceiptManager wired in
+        private RenderReceiptManager _renderReceiptManager;
+
+        // P0-4: ReconnectHandler wired in (replaces manual Thread.Sleep backoff)
+        private ReconnectHandler _reconnectHandler;
 
         // ── Internal state ────────────────────────────────────────────────
         private TcpClient _tcpClient;
@@ -53,9 +96,21 @@ namespace SRP.U01
         private volatile bool _isRunning;
         private int _generation;
 
+        // P0-3: Track whether we are in an unusable (fatal) state
+        private volatile bool _isUnusable;
+        private string _fatalErrorCode;
+
         // Thread-safe queues
         private readonly ConcurrentQueue<string> _incomingLines = new();
         private readonly ConcurrentQueue<byte[]> _outgoingLines = new();
+
+        // P0-4: Fault injection via ReconnectHandler
+        private bool _faultDropEnabled;
+        private int _faultDropCounter;
+        private int _faultDropEveryN;
+        private bool _faultCorruptEnabled;
+        private int _faultCorruptCounter;
+        private int _faultCorruptEveryN;
 
         // ── Events ────────────────────────────────────────────────────────
         /// <summary>Fired on main thread when a valid control_event arrives.</summary>
@@ -70,11 +125,22 @@ namespace SRP.U01
         /// <summary>Fired on main thread when a transport error arrives.</summary>
         public event Action<string> OnTransportError;
 
+        /// <summary>Fired when a render receipt is ready to send.</summary>
+        public event Action<RenderReceipt> OnRenderReceiptReady;
+
+        /// <summary>Fired when connection state enum changes.</summary>
+        public event Action<ConnectionState> OnConnectionStateChanged;
+
         // ── Properties ────────────────────────────────────────────────────
         public bool IsConnected => _isConnected;
+        public bool IsUnusable => _isUnusable;
         public int Generation => _generation;
         public string Host { get => _host; set => _host = value; }
         public int Port { get => _port; set => _port = value; }
+        public string ClientInstanceId => _clientInstanceId;
+        public AckManager AckMgr => _ackManager;
+        public RenderReceiptManager ReceiptMgr => _renderReceiptManager;
+        public ReconnectHandler ReconnectHdl => _reconnectHandler;
 
         // ── Lifecycle ─────────────────────────────────────────────────────
 
@@ -82,6 +148,45 @@ namespace SRP.U01
         {
             if (string.IsNullOrEmpty(_clientInstanceId))
                 _clientInstanceId = Guid.NewGuid().ToString("N");
+
+            // P0-4: Construct components in code (P1-1 fix: can't SerializeField
+            // plain C# classes in Unity).
+            _ackManager = new AckManager();
+            _renderReceiptManager = new RenderReceiptManager();
+
+            // P0-4: Wire render receipt sending
+            _renderReceiptManager.OnReceiptReady += receipt =>
+            {
+                SendRenderReceipt(receipt);
+                OnRenderReceiptReady?.Invoke(receipt);
+            };
+
+            // P0-4: ReconnectHandler (uses this MonoBehaviour as coroutine runner)
+            var policy = new ReconnectPolicy
+            {
+                InitialBackoffMs = 500,
+                MaxBackoffMs = 10000,
+                BackoffMultiplier = 2.0f,
+                MaxReconnectAttempts = 20,
+                JitterMaxMs = 200
+            };
+            _reconnectHandler = new ReconnectHandler(policy, this);
+            _reconnectHandler.OnReconnectFailed += () =>
+            {
+                Log("Reconnect exhausted — entering UNUSABLE");
+                _isUnusable = true;
+                OnConnectionStateChanged?.Invoke(ConnectionState.Unusable);
+            };
+            _reconnectHandler.OnReconnected += () =>
+            {
+                Log("Reconnected successfully");
+                OnConnectionStateChanged?.Invoke(ConnectionState.Connected);
+            };
+            _reconnectHandler.OnGenerationChanged += gen =>
+            {
+                _generation = gen;
+                Log($"Generation changed to {gen}");
+            };
         }
 
         void Update()
@@ -101,6 +206,9 @@ namespace SRP.U01
         {
             if (_isRunning) return;
             _isRunning = true;
+            _isUnusable = false;
+            _fatalErrorCode = null;
+
             _receiveThread = new Thread(ReceiveLoop)
             {
                 IsBackground = true,
@@ -115,6 +223,7 @@ namespace SRP.U01
             };
             _sendThread.Start();
 
+            OnConnectionStateChanged?.Invoke(ConnectionState.Connecting);
             Log($"Connecting to {_host}:{_port}...");
         }
 
@@ -123,6 +232,7 @@ namespace SRP.U01
         {
             _isRunning = false;
             _isConnected = false;
+            _reconnectHandler?.Abort();
 
             try { _stream?.Close(); } catch { }
             try { _tcpClient?.Close(); } catch { }
@@ -132,6 +242,7 @@ namespace SRP.U01
 
             _stream = null;
             _tcpClient = null;
+            OnConnectionStateChanged?.Invoke(ConnectionState.Disconnected);
             Log("Disconnected");
         }
 
@@ -188,22 +299,67 @@ namespace SRP.U01
             Send(dict);
         }
 
+        // ── P0-4: Fault injection for testing ────────────────────────────
+
+        /// <summary>Enable message drop fault injection (every Nth receive).</summary>
+        public void EnableDropFault(int everyN)
+        {
+            _faultDropEveryN = everyN;
+            _faultDropEnabled = everyN > 0;
+            _faultDropCounter = 0;
+        }
+
+        /// <summary>Enable message corruption fault injection.</summary>
+        public void EnableCorruptFault(int everyN)
+        {
+            _faultCorruptEveryN = everyN;
+            _faultCorruptEnabled = everyN > 0;
+            _faultCorruptCounter = 0;
+        }
+
+        /// <summary>Clear all fault injection.</summary>
+        public void ClearFaults()
+        {
+            _faultDropEnabled = false;
+            _faultCorruptEnabled = false;
+        }
+
         // ── Network thread: connect + handshake ───────────────────────────
 
         private void ReceiveLoop()
         {
             while (_isRunning)
             {
+                // P0-3: Stop immediately if in unusable (fatal) state
+                if (_isUnusable)
+                {
+                    Log("In unusable state — receive loop exiting");
+                    break;
+                }
+
                 try
                 {
                     ConnectAndHandshake();
-                    if (!_isRunning) break;
+                    if (!_isRunning || _isUnusable) break;
                     ReadLoop();
                 }
                 catch (Exception ex)
                 {
                     if (!_isRunning) break;
-                    Log($"Receive error: {ex.Message}");
+
+                    // P0-3: Check if this is a fatal protocol error
+                    string errorCode = ExtractErrorCode(ex);
+                    if (errorCode != null && FatalProtocolErrors.Codes.Contains(errorCode))
+                    {
+                        Log($"FATAL protocol error: {errorCode} — failing closed");
+                        _isUnusable = true;
+                        _fatalErrorCode = errorCode;
+                        OnTransportError?.Invoke(errorCode);
+                        OnConnectionStateChanged?.Invoke(ConnectionState.Unusable);
+                        break;  // Do NOT retry — fail-closed per contract
+                    }
+
+                    Log($"Receive error (retryable): {ex.Message}");
                 }
                 finally
                 {
@@ -212,13 +368,24 @@ namespace SRP.U01
                     if (wasConnected)
                     {
                         _incomingLines.Enqueue("__DISCONNECTED__");
-                        _generation++;
                     }
                 }
 
-                // Backoff before retry
-                if (_isRunning)
-                    Thread.Sleep(1000);
+                // P0-4: Use ReconnectHandler for backoff (not fixed Thread.Sleep)
+                if (_isRunning && !_isUnusable)
+                {
+                    OnConnectionStateChanged?.Invoke(ConnectionState.Reconnecting);
+                    // P0-5: Sync state on disconnect
+                    SyncReconnectState();
+
+                    // Simple blocking backoff here (the ReconnectHandler manages
+                    // the async coroutine-based path for Unity main thread).
+                    // On the network thread we do a blocking backoff with jitter.
+                    int backoffMs = _reconnectHandler.CurrentBackoffMs;
+                    int jitter = UnityEngine.Random.Range(0, 200);
+                    Thread.Sleep(backoffMs + jitter);
+                    _reconnectHandler.SignalDisconnected(() => true);
+                }
             }
         }
 
@@ -228,6 +395,13 @@ namespace SRP.U01
             _tcpClient.NoDelay = true;
             _tcpClient.ReceiveTimeout = _receiveTimeoutMs;
             _tcpClient.SendTimeout = _sendTimeoutMs;
+
+            // P0-4: Fault injection — force connect failure
+            if (_reconnectHandler != null && _reconnectHandler.ShouldInjectFault())
+            {
+                throw new IOException("Fault injection — connect forced to fail");
+            }
+
             _tcpClient.Connect(_host, _port);
             _stream = _tcpClient.GetStream();
 
@@ -248,20 +422,30 @@ namespace SRP.U01
                 throw new IOException("Connection closed before welcome");
 
             var welcome = JsonLines.Deserialize(welcomeLine);
+
+            // Check for transport error frame
             if (welcome.TryGetValue("transport_type", out var tt) && tt?.ToString() == "error")
             {
                 string errCode = welcome.TryGetValue("error_code", out var ec) ? ec?.ToString() : "UNKNOWN";
-                throw new IOException($"Server rejected: {errCode}");
+                // P0-3: Wrap error code so ReceiveLoop can classify it
+                throw new ProtocolErrorException(errCode,
+                    $"Server error: {errCode}");
             }
 
+            // Check for handshake rejection (accepted=false)
             if (welcome.TryGetValue("accepted", out var acc) && acc is bool accepted && !accepted)
             {
                 string errCode = welcome.TryGetValue("error_code", out var ec) ? ec?.ToString() : "UNKNOWN";
-                throw new IOException($"Handshake rejected: {errCode}");
+                throw new ProtocolErrorException(errCode,
+                    $"Handshake rejected: {errCode}");
             }
 
             _isConnected = true;
             _incomingLines.Enqueue("__CONNECTED__");
+
+            // P0-4: Signal reconnect handler that we are connected
+            _reconnectHandler.SignalConnected();
+
             Log($"Handshake OK — connected (gen {_generation})");
         }
 
@@ -272,10 +456,26 @@ namespace SRP.U01
                 string line = ReadLine();
                 if (line == null) break; // server closed
 
-                // Fault injection check
-                if (_renderReceiptManager != null)
+                // P0-4: Fault injection — drop every Nth message
+                if (_faultDropEnabled)
                 {
-                    // Check if we should drop/corrupt
+                    _faultDropCounter++;
+                    if (_faultDropEveryN > 0 && _faultDropCounter % _faultDropEveryN == 0)
+                    {
+                        Log($"Fault injection: dropping message #{_faultDropCounter}");
+                        continue;
+                    }
+                }
+
+                // P0-4: Fault injection — corrupt every Nth message
+                if (_faultCorruptEnabled)
+                {
+                    _faultCorruptCounter++;
+                    if (_faultCorruptEveryN > 0 && _faultCorruptCounter % _faultCorruptEveryN == 0)
+                    {
+                        Log($"Fault injection: corrupting message #{_faultCorruptCounter}");
+                        line = "{invalid json content!!";
+                    }
                 }
 
                 _incomingLines.Enqueue(line);
@@ -285,16 +485,20 @@ namespace SRP.U01
         private string ReadLine()
         {
             if (_stream == null) return null;
-            var sb = new StringBuilder();
+
+            // P1-5 fix: read bytes then decode as UTF-8 to avoid per-byte
+            // (char)b corruption of multi-byte characters.
+            var buffer = new List<byte>();
             int b;
             while (true)
             {
                 b = _stream.ReadByte();
                 if (b < 0) return null; // EOF
                 if (b == '\n') break;
-                sb.Append((char)b);
+                buffer.Add((byte)b);
             }
-            return sb.ToString();
+            if (buffer.Count == 0) return "";
+            return Encoding.UTF8.GetString(buffer.ToArray());
         }
 
         // ── Send thread ───────────────────────────────────────────────────
@@ -335,16 +539,22 @@ namespace SRP.U01
                 if (line == "__CONNECTED__")
                 {
                     OnConnectionChanged?.Invoke(true);
+                    OnConnectionStateChanged?.Invoke(ConnectionState.Connected);
                     continue;
                 }
                 if (line == "__DISCONNECTED__")
                 {
                     OnConnectionChanged?.Invoke(false);
+                    if (!_isUnusable)
+                        OnConnectionStateChanged?.Invoke(ConnectionState.Reconnecting);
                     continue;
                 }
 
                 ProcessIncomingLine(line);
             }
+
+            // P0-4: Flush any pending render receipts
+            FlushPendingReceipts();
         }
 
         private void ProcessIncomingLine(string line)
@@ -401,6 +611,10 @@ namespace SRP.U01
             try
             {
                 var manifest = DeserializeSessionManifest(raw);
+
+                // P0-5: Reset UDP gate frame_seq baseline for new session
+                // (callers should wire this; we fire the event so they can)
+
                 _sessionMirror?.ApplySessionManifest(manifest);
                 OnSessionManifest?.Invoke(manifest);
             }
@@ -416,20 +630,56 @@ namespace SRP.U01
             {
                 var evt = DeserializeControlEvent(raw);
 
-                // Update session mirror
-                _sessionMirror?.ApplyControlEvent(evt);
+                // Capture received timestamp (P1-2: ideally from receive thread,
+                // but this is the best we can do from the main thread).
+                long receivedNs = AckManagerTimestampNow();
 
-                // Generate ACK
                 var snap = _sessionMirror?.Snapshot;
                 string sessionId = snap?.SessionId ?? "";
                 int unityFrame = Time.frameCount;
 
-                if (_ackManager != null && !_ackManager.IsDelivered(evt.event_id))
+                if (_ackManager == null)
                 {
-                    _ackManager.TrackEventSent(evt);
-                    var ack = _ackManager.CreateAck(sessionId, evt.event_id, unityFrame,
-                        AckResult.applied);
-                    SendAck(ack);
+                    Log("AckManager is null — cannot process control_event");
+                    return;
+                }
+
+                if (_ackManager.IsApplied(evt.event_id))
+                {
+                    // P0-1: Duplicate event — do NOT re-apply
+                    var dupAck = _ackManager.CreateAck(
+                        sessionId, evt.event_id, unityFrame,
+                        AckResult.duplicate_ignored, receivedNs);
+                    SendAck(dupAck);
+                    return;
+                }
+
+                // New event — apply to session mirror
+                _sessionMirror?.ApplyControlEvent(evt);
+
+                // Mark as applied *after* successful application
+                _ackManager.MarkApplied(evt.event_id);
+
+                // Send applied ACK
+                var ack = _ackManager.CreateAck(
+                    sessionId, evt.event_id, unityFrame,
+                    AckResult.applied, receivedNs);
+                SendAck(ack);
+
+                // P0-4: Register for render receipt if this is a rendering event
+                if (evt.event_type == "module" || evt.event_type == "segment"
+                    || evt.event_type == "start" || evt.event_type == "prepare")
+                {
+                    string moduleId = "";
+                    string segment = "";
+                    if (evt.payload != null)
+                    {
+                        if (evt.payload.TryGetValue("module_id", out var mid))
+                            moduleId = mid?.ToString() ?? "";
+                        if (evt.payload.TryGetValue("segment", out var seg))
+                            segment = seg?.ToString() ?? "";
+                    }
+                    _renderReceiptManager?.RegisterEvent(evt, moduleId, segment);
                 }
 
                 // Notify main thread
@@ -439,6 +689,126 @@ namespace SRP.U01
             {
                 Log($"Failed to process control_event: {ex.Message}");
             }
+        }
+
+        /// <summary>
+        /// P0-4: Flush any pending render receipts to the send queue.
+        /// Called from main thread (Update).
+        /// </summary>
+        private void FlushPendingReceipts()
+        {
+            if (_renderReceiptManager == null) return;
+
+            var snap = _sessionMirror?.Snapshot;
+            string sessionId = snap?.SessionId ?? "";
+            if (string.IsNullOrEmpty(sessionId)) return;
+
+            var unsent = _renderReceiptManager.GetUnsentReceipts(sessionId);
+            foreach (var receipt in unsent)
+            {
+                SendRenderReceipt(receipt);
+                _renderReceiptManager.MarkSent(receipt.event_id);
+                OnRenderReceiptReady?.Invoke(receipt);
+            }
+        }
+
+        /// <summary>
+        /// P0-4: Complete a render receipt for a rendered frame.
+        /// Should be called from the visual layer after rendering is confirmed.
+        /// </summary>
+        public void ConfirmRendered(string eventId)
+        {
+            var snap = _sessionMirror?.Snapshot;
+            string sessionId = snap?.SessionId ?? "";
+            _renderReceiptManager?.CompleteRendered(eventId, sessionId);
+        }
+
+        /// <summary>
+        /// P0-4: Complete a render receipt as skipped (no render needed).
+        /// For abort/pause events per contract.
+        /// </summary>
+        public void ConfirmRenderSkipped(string eventId, string reason = null)
+        {
+            var snap = _sessionMirror?.Snapshot;
+            string sessionId = snap?.SessionId ?? "";
+            _renderReceiptManager?.CompleteSkipped(eventId, sessionId, reason);
+        }
+
+        /// <summary>
+        /// P0-4: Complete a render receipt as failed.
+        /// </summary>
+        public void ConfirmRenderFailed(string eventId, string errorCode)
+        {
+            var snap = _sessionMirror?.Snapshot;
+            string sessionId = snap?.SessionId ?? "";
+            _renderReceiptManager?.CompleteFailed(eventId, sessionId, errorCode);
+        }
+
+        // ── P0-5: Reconnect state sync ──────────────────────────────────
+
+        /// <summary>
+        /// P0-5: Synchronize state when reconnect is triggered.
+        /// - Discard pending render receipts (mark as failed)
+        /// - _appliedEventIds is PRESERVED (per contract)
+        /// - UDP gate frame_seq will be reset when new session_manifest arrives
+        /// </summary>
+        private void SyncReconnectState()
+        {
+            // P0-5: Mark all pending render receipts as failed
+            // (don't send old-generation receipts)
+            _renderReceiptManager?.DiscardAll();
+
+            Log($"Reconnect state sync: gen={_generation}, " +
+                $"applied={_ackManager?.AppliedCount ?? 0}");
+        }
+
+        // ── Error classification helpers ──────────────────────────────────
+
+        /// <summary>
+        /// Extract error code from an exception.  Handles
+        /// ProtocolErrorException (thrown during handshake) and
+        /// IOException messages containing known error codes.
+        /// </summary>
+        private static string ExtractErrorCode(Exception ex)
+        {
+            if (ex is ProtocolErrorException pex)
+                return pex.ErrorCode;
+
+            // Check if the exception message contains a known error code
+            string msg = ex.Message;
+            foreach (var code in FatalProtocolErrors.Codes)
+            {
+                if (msg.Contains(code))
+                    return code;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// P0-3: Exception type for fatal protocol errors during handshake.
+        /// Carries the error code for classification in ReceiveLoop.
+        /// </summary>
+        private sealed class ProtocolErrorException : Exception
+        {
+            public string ErrorCode { get; }
+
+            public ProtocolErrorException(string errorCode, string message)
+                : base(message)
+            {
+                ErrorCode = errorCode;
+            }
+        }
+
+        // ── Timestamp helpers ────────────────────────────────────────────
+
+        /// <summary>
+        /// Get monotonic timestamp in nanoseconds.  Uses Stopwatch for
+        /// monotonicity (P1-1 alignment).
+        /// </summary>
+        private static long AckManagerTimestampNow()
+        {
+            return (long)(System.Diagnostics.Stopwatch.GetTimestamp()
+                * (1_000_000_000.0 / System.Diagnostics.Stopwatch.Frequency));
         }
 
         // ── Deserialization helpers ───────────────────────────────────────

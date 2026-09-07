@@ -1,5 +1,16 @@
-// U01 — AckManager: creates, tracks, and sends ACK messages for
-// control_event delivery.  Runs the ack logic on the network thread.
+// U01 — AckManager: tracks applied control_event IDs for idempotent ACK
+// generation.  Unity is the ACK *sender*: it receives control_events from
+// the Python server and sends back ACKs (applied / duplicate_ignored /
+// rejected).  This is NOT a server-side retry manager.
+//
+// Key contract (from transport.py _handle_unity_message):
+//   - New event_id  → apply → send ACK result="applied"
+//   - Duplicate event_id → do NOT re-apply → send ACK result="duplicate_ignored"
+//   - Cannot apply (session mismatch / state error) → send ACK result="rejected"
+//
+// _appliedEventIds persists across reconnections — the server uses
+// _delivered_event_ids to decide what to replay, and we must consistently
+// reply duplicate_ignored for any event_id we have already processed.
 
 using System;
 using System.Collections.Generic;
@@ -8,61 +19,36 @@ using UnityEngine;
 namespace SRP.U01
 {
     /// <summary>
-    /// Tracks a single pending ACK waiting for timeout/expiry.
-    /// </summary>
-    public sealed class PendingAck
-    {
-        public string EventId { get; }
-        public ControlEvent Event { get; }
-        public DateTime IssuedUtc { get; }
-        public int AttemptCount { get; set; }
-        public bool Acknowledged { get; set; }
-
-        public PendingAck(ControlEvent evt)
-        {
-            EventId = evt.event_id;
-            Event = evt;
-            IssuedUtc = DateTime.UtcNow;
-            AttemptCount = 0;
-            Acknowledged = false;
-        }
-    }
-
-    /// <summary>
-    /// Manages the ACK lifecycle for control events:
-    /// - Records when an event is sent
-    /// - Creates the ACK message to send back
-    /// - Handles timeout and retry escalation
-    /// - Tracks delivered vs. pending events
+    /// Manages idempotent ACK generation for control_event messages.
+    /// Maintains the set of already-applied event_ids so duplicates
+    /// are detected and responded to without re-applying the event.
     /// </summary>
     public sealed class AckManager
     {
         // ── Configuration ─────────────────────────────────────────────────
-        private readonly int _ackTimeoutMs;
-        private readonly int _maxAttempts;
         private readonly string _clockDomainId;
         private readonly Func<long> _nowNs;
 
         // ── State ─────────────────────────────────────────────────────────
-        private readonly Dictionary<string, PendingAck> _pendingAcks = new();
-        private readonly HashSet<string> _deliveredEventIds = new();
+        // Event IDs that have been successfully applied.  Used for idempotent
+        // duplicate detection.  NOT cleared on reconnect (per contract).
+        private readonly HashSet<string> _appliedEventIds = new();
         private readonly object _lock = new();
 
         // ── Events ────────────────────────────────────────────────────────
-        /// <summary>Fired when an ACK times out after all attempts.</summary>
-        public event Action<string> OnAckTimeout;
+        /// <summary>Fired when an event is applied for the first time.</summary>
+        public event Action<string> OnEventApplied;
 
-        /// <summary>Fired when an ACK is successfully received.</summary>
-        public event Action<string, AckMessage> OnAckReceived;
+        /// <summary>Fired when a duplicate event_id is detected.</summary>
+        public event Action<string> OnDuplicateIgnored;
+
+        /// <summary>Fired when an event is rejected (cannot apply).</summary>
+        public event Action<string, string> OnEventRejected;
 
         public AckManager(
-            int ackTimeoutMs = 2000,
-            int maxAttempts = 3,
             string clockDomainId = "unity",
             Func<long> nowNs = null)
         {
-            _ackTimeoutMs = ackTimeoutMs;
-            _maxAttempts = maxAttempts;
             _clockDomainId = clockDomainId;
             _nowNs = nowNs ?? (() => (long)(DateTime.UtcNow.Ticks - new DateTime(1970, 1, 1).Ticks) * 100L);
         }
@@ -70,56 +56,49 @@ namespace SRP.U01
         // ── Public API ────────────────────────────────────────────────────
 
         /// <summary>
-        /// Mark an event as sent and start tracking its ACK.
+        /// Check whether an event_id has already been applied.
         /// </summary>
-        public void TrackEventSent(ControlEvent evt)
+        public bool IsApplied(string eventId)
         {
-            if (evt == null) return;
             lock (_lock)
             {
-                _pendingAcks[evt.event_id] = new PendingAck(evt);
+                return _appliedEventIds.Contains(eventId);
             }
         }
 
         /// <summary>
-        /// Check whether an event has already been delivered (duplicate guard).
+        /// Record that an event_id has been applied.  Called after the event
+        /// has been successfully applied to SessionMirror / OnControlEvent.
         /// </summary>
-        public bool IsDelivered(string eventId)
+        public void MarkApplied(string eventId)
         {
             lock (_lock)
             {
-                return _deliveredEventIds.Contains(eventId);
-            }
-        }
-
-        /// <summary>
-        /// Check whether an event is pending (awaiting ACK).
-        /// </summary>
-        public bool IsPending(string eventId)
-        {
-            lock (_lock)
-            {
-                return _pendingAcks.ContainsKey(eventId) && !_pendingAcks[eventId].Acknowledged;
+                _appliedEventIds.Add(eventId);
             }
         }
 
         /// <summary>
         /// Create the ACK message to send back for a received control_event.
+        /// Uses received_monotonic_ns for the time the message was received
+        /// (caller should capture this before processing) and
+        /// applied_monotonic_ns for the current time after application.
         /// </summary>
         public AckMessage CreateAck(
             string sessionId,
             string eventId,
             int unityFrame,
             AckResult result,
+            long receivedMonotonicNs,
             string errorCode = null)
         {
-            long nowNs = _nowNs();
+            long appliedNs = _nowNs();
             return new AckMessage
             {
                 session_id = sessionId,
                 event_id = eventId,
-                received_monotonic_ns = nowNs,
-                applied_monotonic_ns = nowNs,
+                received_monotonic_ns = receivedMonotonicNs,
+                applied_monotonic_ns = appliedNs,
                 unity_frame = unityFrame,
                 result = result.ToString(),
                 error_code = errorCode
@@ -127,105 +106,23 @@ namespace SRP.U01
         }
 
         /// <summary>
-        /// Process an incoming ACK message (from server echo or round-trip).
-        /// Returns true if this was a new, non-duplicate ACK.
+        /// Reset all tracking state.  Normally NOT called on reconnect
+        /// (per contract, _appliedEventIds must persist across reconnections
+        /// so the server can correctly identify duplicates).
+        /// Only call this on full session teardown.
         /// </summary>
-        public bool ProcessIncomingAck(AckMessage ack)
-        {
-            if (ack == null) return false;
-            lock (_lock)
-            {
-                if (_deliveredEventIds.Contains(ack.event_id))
-                    return false; // already processed
-
-                if (_pendingAcks.TryGetValue(ack.event_id, out var pending))
-                {
-                    pending.Acknowledged = true;
-                    if (ack.result == "applied" || ack.result == "duplicate_ignored")
-                        _deliveredEventIds.Add(ack.event_id);
-                    _pendingAcks.Remove(ack.event_id);
-                }
-
-                OnAckReceived?.Invoke(ack.event_id, ack);
-                return true;
-            }
-        }
-
-        /// <summary>
-        /// Check for timed-out pending ACKs.  Returns event IDs that have
-        /// exceeded max attempts (caller should trigger reconnect).
-        /// </summary>
-        public List<string> CheckTimeouts()
-        {
-            var timedOut = new List<string>();
-            var now = DateTime.UtcNow;
-            lock (_lock)
-            {
-                var toRemove = new List<string>();
-                foreach (var kv in _pendingAcks)
-                {
-                    var pending = kv.Value;
-                    if (pending.Acknowledged) continue;
-
-                    var elapsed = (now - pending.IssuedUtc).TotalMilliseconds;
-                    if (elapsed > _ackTimeoutMs)
-                    {
-                        pending.AttemptCount++;
-                        if (pending.AttemptCount >= _maxAttempts)
-                        {
-                            timedOut.Add(kv.Key);
-                            toRemove.Add(kv.Key);
-                        }
-                    }
-                }
-                foreach (var id in toRemove)
-                {
-                    _pendingAcks.Remove(id);
-                    OnAckTimeout?.Invoke(id);
-                }
-            }
-            return timedOut;
-        }
-
-        /// <summary>
-        /// Fail all pending ACKs for a given connection generation (disconnect).
-        /// </summary>
-        public void FailAllPending(string reason)
-        {
-            lock (_lock)
-            {
-                foreach (var kv in _pendingAcks)
-                {
-                    if (!kv.Value.Acknowledged)
-                    {
-                        OnAckTimeout?.Invoke(kv.Key);
-                    }
-                }
-                _pendingAcks.Clear();
-            }
-            Log($"All pending ACKs failed: {reason}");
-        }
-
-        /// <summary>Number of events still awaiting ACK.</summary>
-        public int PendingCount
-        {
-            get { lock (_lock) return _pendingAcks.Count; }
-        }
-
-        /// <summary>Number of successfully delivered events.</summary>
-        public int DeliveredCount
-        {
-            get { lock (_lock) return _deliveredEventIds.Count; }
-        }
-
-        /// <summary>Reset all tracking state.</summary>
         public void Reset()
         {
             lock (_lock)
             {
-                _pendingAcks.Clear();
-                _deliveredEventIds.Clear();
+                _appliedEventIds.Clear();
             }
+        }
+
+        /// <summary>Number of events that have been applied.</summary>
+        public int AppliedCount
+        {
+            get { lock (_lock) return _appliedEventIds.Count; }
         }
 
         private static void Log(string msg)
