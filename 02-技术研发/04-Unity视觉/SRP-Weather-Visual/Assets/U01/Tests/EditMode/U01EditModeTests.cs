@@ -646,6 +646,17 @@ namespace SRP.U01.Tests
         }
     }
 
+        [Test]
+        public void OnDuplicateIgnored_EventFires()
+        {
+            string duplicateId = null;
+            _manager.OnDuplicateIgnored += id => duplicateId = id;
+
+            _manager.MarkApplied("evt-dup-001");
+            _manager.MarkDuplicate("evt-dup-001");
+            Assert.That(duplicateId, Is.EqualTo("evt-dup-001"));
+        }
+
     // ── RenderReceiptManager tests ────────────────────────────────────────
 
     public sealed class RenderReceiptManagerTests

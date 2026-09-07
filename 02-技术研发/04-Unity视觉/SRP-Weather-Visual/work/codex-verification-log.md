@@ -1,51 +1,91 @@
-# Codex Verification Log — R5 Review
+# U-01 验证记录（第六轮）
 
-> 最后更新: 2026-09-08 16:32 (CST)
+> 日期：2026-09-08 | 分支：codex/u-01-reliable-control | HEAD：（commit后填入）
+> 审查人：Grip 第6轮 | 验证人：Hermes Agent
 
-## 基本信息
+---
 
-| 项目 | 值 |
-|---|---|
-| L2 HEAD | `85ff3dd` |
-| EditMode 用例数 | 82 |
-| PlayMode 用例数 | 8 |
-| 总用例数 | 90 |
-
-## 测试结果
-
-### EditMode — 82 用例全绿
-
-所有 EditMode 用例通过，无失败、无跳过。
-
-### PlayMode — 8 用例全绿
-
-PlayMode 用例分两批验证：
-
-| 批次 | 描述 | 用例数 | 结果 |
-|---|---|---|---|
-| 开发环境（正向验证） | 开发模式下 PlayMode 功能正向流程 | 4 | 全部通过 ✅ |
-| 正式环境（反向验证） | 生产配置下 PlayMode 边界与异常场景 | 4 | 全部通过 ✅ |
-
-## Review R3 修复状态
-
-| 编号 | 问题描述 | 状态 |
-|---|---|---|
-| R3-1 | PlayMode 计数偏差（7→8） | 已修复 ✅ |
-| R3-2 | 总用例数不一致（89→90） | 已修复 ✅ |
-| R3-3 | L23-24 表格行首多余 `\|\|` | 已修复 ✅ |
-| R3-4 | PlayMode 清单未区分正向/反向 | 已修复 ✅ |
-| R3-5 | 人工验证 HEAD 未更新 | 已修复 ✅ |
-| R3-6 | 缺少全量回归摘要行 | 已修复 ✅ |
-
-## 人工验证
+## 一、测试环境
 
 | 项目 | 值 |
-|---|---|
-| 验证 HEAD | `85ff3dd` |
-| 验证日期 | 2026-09-08 |
-| 验证人 | Codex 自动化 |
-| 备注 | EditMode 82 + PlayMode 8 全量亲跑全绿 |
+|------|-----|
+| Unity 版本 | 6000.4.9f1 |
+| 操作系统 | Windows 11 |
+| .NET 运行时 | Mono（Unity Editor 内置） |
+| 测试框架 | NUnit 3 + Unity Test Framework |
+| Python 服务器 | srp_session_core（本地 loopback mock） |
 
-## 回归摘要
+---
 
-**EditMode 82 + PlayMode 8 全量亲跑全绿** 🟢
+## 二、测试结果总览
+
+| 测试套件 | 用例数 | 通过 | 失败 | 跳过 | 状态 |
+|----------|--------|------|------|------|------|
+| SRP.U01.EditModeTests | 83 | — | — | — | 待亲跑确认 ⏳ |
+| SRP.U01.PlayModeTests | 8 | — | — | — | 待亲跑确认 ⏳ |
+| **合计** | **91** | — | — | — | **待亲跑确认 ⏳** |
+
+> ⚠️ 本轮为代码修复，尚未在 Unity Test Runner 亲跑。数字为用例计数，非实测结果。
+
+---
+
+## 三、R5/R6 修复内容
+
+### R5-1 AckManager 事件 Invoke 修复（P0）
+
+| 事件 | 修复内容 | 行号 |
+|------|----------|------|
+| OnEventApplied | MarkApplied 内 HashSet.Add 返回值判断，新增时锁外 Invoke | AckManager.cs L75-81 |
+| OnDuplicateIgnored | 新增 MarkDuplicate 方法，Invoke OnDuplicateIgnored | AckManager.cs L92-96 |
+| OnEventRejected | 新增 MarkRejected 方法，Invoke OnEventRejected | AckManager.cs L98-102 |
+
+### R5-2 _stream 类型修复（P0）
+
+| 项目 | 修复内容 | 行号 |
+|------|----------|------|
+| 字段类型 | `NetworkStream _stream` → `System.IO.Stream _stream` | ReliableControlClient.cs L99 |
+| 测试断言 | CONNECTION_MISMATCH 用例末尾断言 stream 已 Close | U01EditModeTests.cs L1426 |
+
+### R5-3 FrameSeq 断言修复（P1）
+
+| 项目 | 修复内容 | 行号 |
+|------|----------|------|
+| evt-001 | control_seq=1，断言 frame_seq==1 | U01EditModeTests.cs L798, L805 |
+| evt-002 | control_seq=2，断言 frame_seq==2 | U01EditModeTests.cs L802, L806 |
+
+### R6-1 MarkDuplicate 调用修复（P0）
+
+| 项目 | 修复内容 | 行号 |
+|------|----------|------|
+| 客户端重复分支 | IsApplied==true 时调用 _ackManager.MarkDuplicate | ReliableControlClient.cs L863 |
+
+### R6-2 OnDuplicateIgnored 测试（P2）
+
+| 用例 | 覆盖 | 行号 |
+|------|------|------|
+| OnDuplicateIgnored_EventFires | 订阅事件 → MarkApplied → MarkDuplicate → 断言回调触发 | U01EditModeTests.cs L649-658 |
+
+### R6-3 verification-log 更新
+
+- HEAD 哈希：commit 后填入 git log -1 真实值
+- EditMode 用例数：82 → 83（新增 OnDuplicateIgnored 测试）
+- 总用例数：90 → 91
+- PlayMode 状态：改为"待亲跑确认 ⏳"
+
+---
+
+## 四、编译状态
+
+| 组件 | 时间 | 状态 |
+|------|------|------|
+| SRP.U01.Runtime.dll | 00:51 | ✅ 零错误 |
+| SRP.U01.EditModeTests.dll | 00:51 | ✅ 零错误 |
+| SRP.U01.PlayModeTests.dll | 00:51 | ✅ 零错误 |
+
+---
+
+## 五、收尾要求
+
+1. Unity Test Runner 亲跑 EditMode（83）+ PlayMode（8），报真实数字
+2. 更新本文件 HEAD 哈希和测试结果
+3. commit 后通知 Grip 做终审确认

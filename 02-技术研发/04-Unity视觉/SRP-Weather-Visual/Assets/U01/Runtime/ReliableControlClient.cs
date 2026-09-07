@@ -860,6 +860,7 @@ namespace SRP.U01
                 if (_ackManager.IsApplied(evt.event_id))
                 {
                     // P0-1: Duplicate event — do NOT re-apply
+                    _ackManager.MarkDuplicate(evt.event_id);
                     var dupAck = _ackManager.CreateAck(
                         sessionId, evt.event_id, unityFrame,
                         AckResult.duplicate_ignored, receivedNs);
