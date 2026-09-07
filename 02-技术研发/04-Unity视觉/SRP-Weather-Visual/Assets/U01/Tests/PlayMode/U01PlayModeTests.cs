@@ -433,10 +433,10 @@ namespace SRP.U01.Tests.PlayMode
                 ["cue_mode"] = "scene_native",
                 ["runtime_mode"] = "formal_stage_1",
                 ["policy_decision_id"] = (string)null,
-                ["target_cycle_index"] = (int?)null,
-                ["target_step_id"] = (string)null,
-                ["actual_cycle_index"] = (int?)null,
-                ["actual_step_id"] = (string)null
+                ["target_cycle_index"] = 0,
+                ["target_step_id"]    = "hold_1",     // 与 target_phase="hold" 一致
+                ["actual_cycle_index"] = 0,
+                ["actual_step_id"]    = "inhale_1",   // 与 actual_phase="inhale" 一致
             });
         }
 
@@ -481,14 +481,8 @@ namespace SRP.U01.Tests.PlayMode
                 ?.GetValue(client)?.ToString();
         }
 
-        /// <summary>通过反射强制关闭 TcpClient（模拟断连）。</summary>
-        public static void ForceCloseTcpClient(ReliableControlClient client)
-        {
-            var tcp = typeof(ReliableControlClient)
-                .GetField("_tcpClient", BindingFlags.NonPublic | BindingFlags.Instance)
-                ?.GetValue(client) as TcpClient;
-            try { tcp?.Close(); } catch { }
-        }
+        // R3-6: ForceCloseTcpClient removed — DropClient now truly closes the socket
+        // after R2-14 fix, so the reflection bypass is no longer needed.
 
         // ── 等待辅助 ─────────────────────────────────────────────────
 
@@ -896,8 +890,8 @@ namespace SRP.U01.Tests.PlayMode
             Assert.That(clientId, Is.Not.Null.And.Not.Empty,
                 "client_instance_id 应在 Awake 中生成");
 
-            // ── 4. 模拟断连（强制关闭 TCP 连接）──
-            TestHelpers.ForceCloseTcpClient(client);
+            // ── 4. 模拟断连（R3-6: 使用 server.DropClient 代替反射 ForceCloseTcpClient）──
+            server.DropClient();
 
             // 等待客户端检测到断连（generation++ 在 finally 块中）
             yield return new WaitForSeconds(1.5f);

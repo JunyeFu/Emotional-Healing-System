@@ -879,9 +879,14 @@ namespace SRP.U01
                     AckResult.applied, receivedNs);
                 SendAck(ack);
 
-                // P0-4: Register for render receipt if this is a rendering event
-                if (evt.event_type == "module" || evt.event_type == "segment"
-                    || evt.event_type == "start" || evt.event_type == "prepare")
+                // P0-4: Register for render receipt — ONLY for segment events.
+                // Server core.py _confirm_receipt rejects non-segment receipts
+                // with RENDER_RECEIPT_CONTROL_TYPE_INVALID.
+                // For segment: skipped/failed receipts are FATAL — server marks
+                // the session as transport_failure (core.py L660-663).
+                // pause/abort/prepare/start/module/end events send NO receipts;
+                // any pending receipts for them are discarded at session end.
+                if (evt.event_type == "segment")
                 {
                     string moduleId = "";
                     string segment = "";
@@ -893,6 +898,18 @@ namespace SRP.U01
                             segment = seg?.ToString() ?? "";
                     }
                     _renderReceiptManager?.RegisterEvent(evt, moduleId, segment);
+
+                    // R3-1: DEV-only auto-confirm for segment events.
+                    // In dev_mock/dev_replay there is no real visual layer (U-02) to call
+                    // ConfirmRendered. Simulate successful render so render receipts flow
+                    // end-to-end. Formal modes (formal_level_c / formal_stage_1 /
+                    // formal_stage_3) MUST NOT auto-confirm — they rely on real rendering.
+                    var snapMode = _sessionMirror?.Snapshot;
+                    string runtimeMode = snapMode?.RuntimeMode ?? "";
+                    if (runtimeMode == "dev_mock" || runtimeMode == "dev_replay")
+                    {
+                        ConfirmRendered(evt.event_id);
+                    }
                 }
 
                 // Notify main thread
@@ -937,8 +954,10 @@ namespace SRP.U01
         }
 
         /// <summary>
-        /// P0-4: Complete a render receipt as skipped (no render needed).
-        /// For abort/pause events per contract.
+        /// P0-4/R3-3: Complete a render receipt as skipped (no render needed).
+        /// Only applicable to segment events — non-segment events are never registered.
+        /// WARNING: A skipped receipt for a segment event is FATAL — server core.py
+        /// marks the session as transport_failure (L660-663).
         /// </summary>
         public void ConfirmRenderSkipped(string eventId, string reason = null)
         {
@@ -948,7 +967,10 @@ namespace SRP.U01
         }
 
         /// <summary>
-        /// P0-4: Complete a render receipt as failed.
+        /// P0-4/R3-3: Complete a render receipt as failed.
+        /// Only applicable to segment events — non-segment events are never registered.
+        /// WARNING: A failed receipt for a segment event is FATAL — server core.py
+        /// marks the session as transport_failure (L660-663).
         /// </summary>
         public void ConfirmRenderFailed(string eventId, string errorCode)
         {

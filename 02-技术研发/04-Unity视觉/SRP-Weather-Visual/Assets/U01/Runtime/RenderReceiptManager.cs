@@ -97,7 +97,9 @@ namespace SRP.U01
         {
             if (evt == null) throw new ArgumentNullException(nameof(evt));
 
-            int frameSeq = Interlocked.Increment(ref _nextFrameSeq) - 1;
+            // R3-4: Use server-assigned control_seq to match generate_golden_trace.py convention
+            // (frame_seq = control_seq). Local counter only used for ad-hoc path below.
+            int frameSeq = evt.control_seq;
             var receipt = new TrackedReceipt(evt.event_id, frameSeq)
             {
                 ModuleId = moduleId,
@@ -225,6 +227,7 @@ namespace SRP.U01
                 if (!_pendingReceipts.TryGetValue(eventId, out tracked))
                 {
                     Log($"No pending receipt for event {eventId} — creating ad-hoc");
+                    // Ad-hoc path: no ControlEvent available, fall back to local counter
                     int frameSeq = Interlocked.Increment(ref _nextFrameSeq) - 1;
                     tracked = new TrackedReceipt(eventId, frameSeq)
                     {
