@@ -220,7 +220,7 @@ namespace SRP.U01.Tests.PlayMode
             {
                 if (_receiveQueue.TryDequeue(out var line))
                     return line;
-                Thread.Sleep(10);
+                System.Threading.Thread.Sleep(0);
             }
             return null;
         }
@@ -241,7 +241,7 @@ namespace SRP.U01.Tests.PlayMode
                         continue;
                     return line;
                 }
-                Thread.Sleep(10);
+                System.Threading.Thread.Sleep(0);
             }
             return null;
         }
@@ -259,7 +259,7 @@ namespace SRP.U01.Tests.PlayMode
                     // 不是 hello，放回去（用新队列暂存）
                     _receiveQueue.Enqueue(line);
                 }
-                Thread.Sleep(10);
+                System.Threading.Thread.Sleep(0);
             }
             return null;
         }
