@@ -9,6 +9,8 @@
 //   AC3 — v2.1 握手被拒 → 停止重连 → UNUSABLE 状态
 //   AC3 — 断连重连 → 世代+1、同一 client_instance_id
 //   AC3 — 渲染回执失败路径
+//   R4-1 — dev_replay 模式 segment 自动确认回执端到端
+//   R4-1 — formal 模式 segment 不自动确认（反向断言）
 //
 // 注意：部分测试覆盖的是 P0 修复后的期望行为（TDD RED 阶段），
 // 当前代码可能不满足（如 P0-1 ACK 幂等方向、P0-3 fail-closed）。
@@ -328,7 +330,9 @@ namespace SRP.U01.Tests.PlayMode
         }
 
         /// <summary>构建 session_manifest JSON 行。</summary>
-        public static string SessionManifestJson(string sessionId = "S-TEST-001")
+        public static string SessionManifestJson(
+            string sessionId = "S-TEST-001",
+            string runtimeMode = "formal_stage_1")
         {
             return JsonLines.Serialize(new Dictionary<string, object>
             {
@@ -337,7 +341,7 @@ namespace SRP.U01.Tests.PlayMode
                 ["research_id"] = "res-test",
                 ["session_id"] = sessionId,
                 ["study_stage"] = "stage_1",
-                ["runtime_mode"] = "formal_stage_1",
+                ["runtime_mode"] = runtimeMode,
                 ["cue_mode"] = "scene_native",
                 ["assignment_arm"] = "arm-A",
                 ["allocation_index"] = 0,
@@ -1044,6 +1048,178 @@ namespace SRP.U01.Tests.PlayMode
 
             try { client?.Disconnect(); } catch { }
             yield return new WaitForSeconds(0.1f);
+            UnityEngine.Object.DestroyImmediate(go);
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // R4-1 — dev_replay 模式 segment 事件 → 自动确认回执端到端
+    //
+    // 验收标准：R3-1 钩子代码（ReliableControlClient L902-912）要求：
+    //   - dev_mock / dev_replay 模式下收到 segment 控制事件后，
+    //     自动调用 ConfirmRendered → FlushPendingReceipts 发出回执；
+    //   - formal_* 模式下不自动确认，ReceiptIdCount 应为 0。
+    //
+    // 测试验证：
+    //   1. dev_replay manifest + segment 事件 → mock 服务器收到回执
+    //      (ReceiptIdCount >= 1, DuplicateReceiptCount == 0)
+    //   2. 收到的回执 result="rendered"，event_id 与发送一致，
+    //      frame_seq == control_seq（R3-4 顺带验证）
+    //   3. 反向：formal_stage_1 manifest + segment 事件 → 无回执
+    // ═══════════════════════════════════════════════════════════════════
+
+    [TestFixture]
+    public class R41_DevAutoConfirm_Tests
+    {
+        [UnityTest]
+        public IEnumerator DevReplay_SegmentEvent_AutoConfirmReceiptSent()
+        {
+            // ── 1. 启动假服务器 ──
+            using var server = new LoopbackTcpServer();
+            yield return new WaitForSeconds(0.1f);
+
+            // ── 2. 创建客户端组件 ──
+            var go = new GameObject("U01_R41_Dev");
+            ReliableControlClient client = null;
+            SessionMirror mirror = null;
+
+            client = go.AddComponent<ReliableControlClient>();
+            mirror = go.AddComponent<SessionMirror>();
+            var ack = new AckManager();
+            var rrManager = new RenderReceiptManager();
+            client.Host = "127.0.0.1";
+            client.Port = server.Port;
+            TestHelpers.InjectDependencies(client, mirror: mirror, ack: ack, rr: rrManager);
+
+            // ── 3. 等待客户端连接并握手 ──
+            while (!server.ClientConnected)
+                yield return null;
+
+            server.ConsumeHello();
+            server.SendLine(TestHelpers.WelcomeAccepted());
+            yield return new WaitForSeconds(0.1f);
+
+            // ── 4. 发送 dev_replay 模式的 session_manifest ──
+            string sessionId = "S-DEV-R41-001";
+            server.SendLine(TestHelpers.SessionManifestJson(sessionId, "dev_replay"));
+            yield return new WaitForSeconds(0.3f);
+
+            // ── 5. 发送 segment 控制事件 ──
+            string eventId = "evt-dev-seg-001";
+            int controlSeq = 1;
+            server.SendLine(TestHelpers.ControlEventJson(
+                sessionId, eventId, controlSeq, "segment", "storm", "closed_loop"));
+
+            // ── 6. 等待回执产出并发送 ──
+            // FlushPendingReceipts 在 Update 中运行，留足时间
+            yield return new WaitForSeconds(2.0f);
+
+            // ── 7. 断言 mock 服务器收到回执 ──
+            Assert.That(server.ReceiptIdCount, Is.GreaterThanOrEqualTo(1),
+                "dev_replay 模式下 segment 事件应触发自动确认，服务器至少收到 1 个回执");
+            Assert.That(server.DuplicateReceiptCount, Is.EqualTo(0),
+                "同一 receipt_id 不应重复发送（R2-2 单发送路径不回归）");
+
+            // ── 8. 解析收到的 render_receipt，验证字段 ──
+            // 服务器 receiveQueue 里先到 ACK，再到 render_receipt
+            string receivedLine = null;
+            // 消费掉 ACK，找 render_receipt
+            for (int i = 0; i < 10; i++)
+            {
+                string line = server.WaitForAppMessage(2000);
+                if (line == null) break;
+                if (line.Contains("\"render_receipt\""))
+                {
+                    receivedLine = line;
+                    break;
+                }
+                // 非 render_receipt 消息（如 ACK），继续读
+            }
+
+            Assert.That(receivedLine, Is.Not.Null,
+                "应收到 render_receipt 消息");
+
+            var receiptDict = JsonLines.Deserialize(receivedLine);
+            Assert.That(receiptDict["result"], Is.EqualTo("rendered"),
+                "dev 模式自动确认的回执 result 应为 rendered");
+            Assert.That(receiptDict["event_id"], Is.EqualTo(eventId),
+                "回执的 event_id 应与发送的控制事件一致");
+            Assert.That((int)(long)receiptDict["frame_seq"], Is.EqualTo(controlSeq),
+                "回执的 frame_seq 应等于 control_seq（R3-4）");
+
+            // ── 9. 清理 ──
+            try { client?.Disconnect(); } catch { }
+            yield return new WaitForSeconds(0.2f);
+            UnityEngine.Object.DestroyImmediate(go);
+        }
+
+        [UnityTest]
+        public IEnumerator Formal_SegmentEvent_NoAutoConfirm()
+        {
+            // ── 1. 启动假服务器 ──
+            using var server = new LoopbackTcpServer();
+            yield return new WaitForSeconds(0.1f);
+
+            // ── 2. 创建客户端组件 ──
+            var go = new GameObject("U01_R41_Formal");
+            ReliableControlClient client = null;
+            SessionMirror mirror = null;
+
+            client = go.AddComponent<ReliableControlClient>();
+            mirror = go.AddComponent<SessionMirror>();
+            var ack = new AckManager();
+            var rrManager = new RenderReceiptManager();
+            client.Host = "127.0.0.1";
+            client.Port = server.Port;
+            TestHelpers.InjectDependencies(client, mirror: mirror, ack: ack, rr: rrManager);
+
+            // ── 3. 等待客户端连接并握手 ──
+            while (!server.ClientConnected)
+                yield return null;
+
+            server.ConsumeHello();
+            server.SendLine(TestHelpers.WelcomeAccepted());
+            yield return new WaitForSeconds(0.1f);
+
+            // ── 4. 发送 formal_stage_1 模式的 session_manifest ──
+            string sessionId = "S-FRM-R41-001";
+            server.SendLine(TestHelpers.SessionManifestJson(sessionId, "formal_stage_1"));
+            yield return new WaitForSeconds(0.3f);
+
+            // ── 5. 发送 segment 控制事件 ──
+            string eventId = "evt-formal-seg-001";
+            int controlSeq = 1;
+            server.SendLine(TestHelpers.ControlEventJson(
+                sessionId, eventId, controlSeq, "segment", "storm", "closed_loop"));
+
+            // ── 6. 等待足够时间（formal 模式不自动确认，不应有回执产出）──
+            yield return new WaitForSeconds(2.0f);
+
+            // ── 7. 反向断言：formal 模式下 ReceiptIdCount 应为 0 ──
+            Assert.That(server.ReceiptIdCount, Is.EqualTo(0),
+                "formal_stage_1 模式不应自动确认，服务器不应收到任何回执");
+
+            // ── 8. 额外验证：ACK 仍然正常发送（控制事件本身被正常处理）──
+            string ackLine = null;
+            for (int i = 0; i < 5; i++)
+            {
+                string line = server.WaitForAppMessage(2000);
+                if (line == null) break;
+                if (line.Contains("\"message_type\"") && line.Contains("\"ack\""))
+                {
+                    ackLine = line;
+                    break;
+                }
+            }
+            Assert.That(ackLine, Is.Not.Null,
+                "formal 模式下控制事件仍应收到 ACK（只是不自动确认回执）");
+            var ackDict = JsonLines.Deserialize(ackLine);
+            Assert.That(ackDict["result"], Is.EqualTo("applied"),
+                "ACK result 应为 applied");
+
+            // ── 9. 清理 ──
+            try { client?.Disconnect(); } catch { }
+            yield return new WaitForSeconds(0.2f);
             UnityEngine.Object.DestroyImmediate(go);
         }
     }

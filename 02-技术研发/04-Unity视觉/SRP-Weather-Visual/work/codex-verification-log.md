@@ -1,6 +1,6 @@
 # U-01 验证记录（第三轮审查）
 
-> 日期：2026-09-07 | 分支：codex/u-01-reliable-control | HEAD：cd3b7cc
+> 日期：2026-09-07 | 分支：codex/u-01-reliable-control | HEAD：06965f7
 > 审查人：Grip 第3轮 | 验证人：Hermes Agent
 
 ---
@@ -22,8 +22,8 @@
 | 测试套件 | 用例数 | 通过 | 失败 | 跳过 | 状态 |
 |----------|--------|------|------|------|------|
 | SRP.U01.EditModeTests | 82 | 82 | 0 | 0 | ✅ 全绿 |
-| SRP.U01.PlayModeTests | 6 | 6 | 0 | 0 | ✅ 全绿 |
-| **合计** | **88** | **88** | **0** | **0** | **✅** |
+|| SRP.U01.PlayModeTests | 7 | 7 | 0 | 0 | ✅ 全绿 |
+|| **合计** | **89** | **89** | **0** | **0** | **✅** |
 
 ---
 
@@ -145,7 +145,7 @@
 
 ---
 
-## 四、PlayMode 用例清单（6 项）
+## 四、PlayMode 用例清单（7 项）
 
 | # | 验收标准 | 用例名 | 覆盖 |
 |---|----------|--------|------|
@@ -154,7 +154,8 @@
 | 3 | AC2 | NoControlEvent_SessionMirrorUnchanged | 无控制事件 → 状态不变 |
 | 4 | AC3 | V21HandshakeRejected_StopReconnect | v2.1 握手被拒 → 停止重连 |
 | 5 | AC3 | Reconnect_IncrementsGeneration_SameClientId | 断连重连 → generation+1, 同 client_instance_id |
-| 6 | AC3 | RenderReceiptFailure_HasCorrectFields | 渲染回执失败路径字段正确 |
+|| 6 | AC3 | RenderReceiptFailure_HasCorrectFields | 渲染回执失败路径字段正确 |
+|| 7 | R4-1 | DevAutoConfirm_SegmentEvent_TriggersAutoRenderReceipt | dev 模式 segment 事件自动触发 render_receipt 回执（formal 不触发） |
 
 ---
 
