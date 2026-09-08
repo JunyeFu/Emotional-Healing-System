@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="9" result="Passed" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:34:07Z" duration="16.6658534">
+  <test-suite type="TestSuite" id="1033" name="SRP-Weather-Visual" fullname="SRP-Weather-Visual" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:34:07Z" duration="16.665853" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1003" name="SRP.F03.PlayModeTests.dll" fullname="D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.F03.PlayModeTests.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:33:51Z" duration="0.023958" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="29740" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1004" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:33:51Z" duration="0.022730" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1005" name="F03" fullname="SRP.F03" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:33:51Z" duration="0.021610" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1006" name="Tests" fullname="SRP.F03.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:33:51Z" duration="0.018679" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="DevReplayPlayModeTests" fullname="SRP.F03.Tests.DevReplayPlayModeTests" classname="SRP.F03.Tests.DevReplayPlayModeTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:33:51Z" duration="0.016799" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1002" name="BannerRemainsVisibleAndNonFormalAcrossFrames" fullname="SRP.F03.Tests.DevReplayPlayModeTests.BannerRemainsVisibleAndNonFormalAcrossFrames" methodname="BannerRemainsVisibleAndNonFormalAcrossFrames" classname="SRP.F03.Tests.DevReplayPlayModeTests" runstate="Runnable" seed="281612693" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:33:51Z" duration="0.013443" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[F03_DEV_REPLAY_READY commit=WORKTREE unity=6000.4.9f1 (f7258d6eebbe)
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1022" name="SRP.U01.PlayModeTests.dll" fullname="D:/Agent/03-SRP/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.U01.PlayModeTests.dll" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:34:07Z" duration="16.640295" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="29740" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1023" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:34:07Z" duration="16.636060" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1024" name="U01" fullname="SRP.U01" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:34:07Z" duration="16.634179" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1025" name="Tests" fullname="SRP.U01.Tests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:34:07Z" duration="16.632700" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestSuite" id="1026" name="PlayMode" fullname="SRP.U01.Tests.PlayMode" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:34:07Z" duration="16.631028" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1007" name="AC1_DuplicateEventId_Tests" fullname="SRP.U01.Tests.PlayMode.AC1_DuplicateEventId_Tests" classname="SRP.U01.Tests.PlayMode.AC1_DuplicateEventId_Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:33:52Z" duration="1.825697" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1008" name="DuplicateEventId_SecondAckIsDuplicateIgnored" fullname="SRP.U01.Tests.PlayMode.AC1_DuplicateEventId_Tests.DuplicateEventId_SecondAckIsDuplicateIgnored" methodname="DuplicateEventId_SecondAckIsDuplicateIgnored" classname="SRP.U01.Tests.PlayMode.AC1_DuplicateEventId_Tests" runstate="Runnable" seed="1223824052" result="Passed" start-time="2026-09-08 08:33:51Z" end-time="2026-09-08 08:33:52Z" duration="1.821872" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[U01.ReliableControlClient] R2-4: WARNING — UDP5006Gate not found on this GameObject. ResetSession will not be called on session change.
+[U01.ReliableControlClient] Connecting to 127.0.0.1:1811...
+[U01.ReliableControlClient] R2-4: Session changed ( -> S-TEST-001)
+[U01.RenderReceiptManager] All receipts discarded
+[U01.SessionMirror] Session manifested: S-TEST-001 (formal_stage_1)
+[U01.RenderReceiptManager] Registered receipt for event evt-new-002 (seq=2)
+[U01.ReliableControlClient] Disconnected
+[U01.ReliableControlClient] Disconnected
+]]></output>
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1009" name="AC1_TelemetryOrdering_Tests" fullname="SRP.U01.Tests.PlayMode.AC1_TelemetryOrdering_Tests" classname="SRP.U01.Tests.PlayMode.AC1_TelemetryOrdering_Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:52Z" end-time="2026-09-08 08:33:54Z" duration="1.245755" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1010" name="StaleFramesRejected_DuplicateFramesDetected" fullname="SRP.U01.Tests.PlayMode.AC1_TelemetryOrdering_Tests.StaleFramesRejected_DuplicateFramesDetected" methodname="StaleFramesRejected_DuplicateFramesDetected" classname="SRP.U01.Tests.PlayMode.AC1_TelemetryOrdering_Tests" runstate="Runnable" seed="1746461918" result="Passed" start-time="2026-09-08 08:33:52Z" end-time="2026-09-08 08:33:54Z" duration="1.239623" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[U01.UDP5006Gate] Listening on UDP port 5006 (bind=127.0.0.1)
+[U01.UDP5006Gate] Stopped listening
+[U01.UDP5006Gate] Stopped listening
+]]></output>
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1011" name="AC2_NoControlEvent_Tests" fullname="SRP.U01.Tests.PlayMode.AC2_NoControlEvent_Tests" classname="SRP.U01.Tests.PlayMode.AC2_NoControlEvent_Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:54Z" end-time="2026-09-08 08:33:54Z" duration="0.703552" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1012" name="NoControlEvent_SessionMirrorUnchanged" fullname="SRP.U01.Tests.PlayMode.AC2_NoControlEvent_Tests.NoControlEvent_SessionMirrorUnchanged" methodname="NoControlEvent_SessionMirrorUnchanged" classname="SRP.U01.Tests.PlayMode.AC2_NoControlEvent_Tests" runstate="Runnable" seed="1628534912" result="Passed" start-time="2026-09-08 08:33:54Z" end-time="2026-09-08 08:33:54Z" duration="0.698865" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[U01.ReliableControlClient] R2-4: WARNING — UDP5006Gate not found on this GameObject. ResetSession will not be called on session change.
+[U01.ReliableControlClient] Connecting to 127.0.0.1:13709...
+[U01.ReliableControlClient] R2-4: Session changed ( -> S-NO-CTRL)
+[U01.RenderReceiptManager] All receipts discarded
+[U01.SessionMirror] Session manifested: S-NO-CTRL (formal_stage_1)
+[U01.ReliableControlClient] Disconnected
+[U01.ReliableControlClient] Disconnected
+]]></output>
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1013" name="AC3_HandshakeRejected_Tests" fullname="SRP.U01.Tests.PlayMode.AC3_HandshakeRejected_Tests" classname="SRP.U01.Tests.PlayMode.AC3_HandshakeRejected_Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:54Z" end-time="2026-09-08 08:33:59Z" duration="4.842783" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1014" name="V21HandshakeRejected_StopReconnect" fullname="SRP.U01.Tests.PlayMode.AC3_HandshakeRejected_Tests.V21HandshakeRejected_StopReconnect" methodname="V21HandshakeRejected_StopReconnect" classname="SRP.U01.Tests.PlayMode.AC3_HandshakeRejected_Tests" runstate="Runnable" seed="508169131" result="Passed" start-time="2026-09-08 08:33:54Z" end-time="2026-09-08 08:33:59Z" duration="4.839293" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[U01.ReliableControlClient] R2-4: WARNING — UDP5006Gate not found on this GameObject. ResetSession will not be called on session change.
+[U01.ReliableControlClient] Connecting to 127.0.0.1:13711...
+[U01.ReliableControlClient] Disconnected
+[U01.ReliableControlClient] Disconnected
+]]></output>
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1015" name="AC3_Reconnect_Tests" fullname="SRP.U01.Tests.PlayMode.AC3_Reconnect_Tests" classname="SRP.U01.Tests.PlayMode.AC3_Reconnect_Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:33:59Z" end-time="2026-09-08 08:34:01Z" duration="1.833569" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1016" name="Reconnect_IncrementsGeneration_SameClientId" fullname="SRP.U01.Tests.PlayMode.AC3_Reconnect_Tests.Reconnect_IncrementsGeneration_SameClientId" methodname="Reconnect_IncrementsGeneration_SameClientId" classname="SRP.U01.Tests.PlayMode.AC3_Reconnect_Tests" runstate="Runnable" seed="1268514362" result="Passed" start-time="2026-09-08 08:33:59Z" end-time="2026-09-08 08:34:01Z" duration="1.830717" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[U01.ReliableControlClient] R2-4: WARNING — UDP5006Gate not found on this GameObject. ResetSession will not be called on session change.
+[U01.ReliableControlClient] Connecting to 127.0.0.1:13719...
+[U01.ReliableControlClient] R2-4: Session changed ( -> S-RECON-001)
+[U01.RenderReceiptManager] All receipts discarded
+[U01.SessionMirror] Session manifested: S-RECON-001 (formal_stage_1)
+[U01.ReliableControlClient] Disconnected
+[U01.ReliableControlClient] Disconnected
+]]></output>
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1017" name="AC3_RenderReceipt_Tests" fullname="SRP.U01.Tests.PlayMode.AC3_RenderReceipt_Tests" classname="SRP.U01.Tests.PlayMode.AC3_RenderReceipt_Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-08 08:34:01Z" end-time="2026-09-08 08:34:02Z" duration="0.735434" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1018" name="RenderReceiptFailure_HasCorrectFields" fullname="SRP.U01.Tests.PlayMode.AC3_RenderReceipt_Tests.RenderReceiptFailure_HasCorrectFields" methodname="RenderReceiptFailure_HasCorrectFields" classname="SRP.U01.Tests.PlayMode.AC3_RenderReceipt_Tests" runstate="Runnable" seed="1952588233" result="Passed" start-time="2026-09-08 08:34:01Z" end-time="2026-09-08 08:34:02Z" duration="0.730751" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[U01.ReliableControlClient] R2-4: WARNING — UDP5006Gate not found on this GameObject. ResetSession will not be called on session change.
+[U01.ReliableControlClient] Connecting to 127.0.0.1:10798...
+[U01.ReliableControlClient] R2-4: Session changed ( -> S-RR-001)
+[U01.RenderReceiptManager] All receipts discarded
+[U01.SessionMirror] Session manifested: S-RR-001 (formal_stage_1)
+[U01.RenderReceiptManager] Registered receipt for event evt-rr-001 (seq=1)
+[U01.RenderReceiptManager] Receipt evt-rr-001: failed (RENDER_SHADER_ERROR)
+[U01.ReliableControlClient] Disconnected
+[U01.ReliableControlClient] Disconnected
+]]></output>
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1019" name="R41_DevAutoConfirm_Tests" fullname="SRP.U01.Tests.PlayMode.R41_DevAutoConfirm_Tests" classname="SRP.U01.Tests.PlayMode.R41_DevAutoConfirm_Tests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-08 08:34:02Z" end-time="2026-09-08 08:34:07Z" duration="5.441794" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1020" name="DevReplay_SegmentEvent_AutoConfirmReceiptSent" fullname="SRP.U01.Tests.PlayMode.R41_DevAutoConfirm_Tests.DevReplay_SegmentEvent_AutoConfirmReceiptSent" methodname="DevReplay_SegmentEvent_AutoConfirmReceiptSent" classname="SRP.U01.Tests.PlayMode.R41_DevAutoConfirm_Tests" runstate="Runnable" seed="864544778" result="Passed" start-time="2026-09-08 08:34:02Z" end-time="2026-09-08 08:34:05Z" duration="2.720990" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[U01.ReliableControlClient] R2-4: WARNING — UDP5006Gate not found on this GameObject. ResetSession will not be called on session change.
+[U01.ReliableControlClient] Connecting to 127.0.0.1:10800...
+[U01.ReliableControlClient] R2-4: Session changed ( -> S-DEV-R41-001)
+[U01.RenderReceiptManager] All receipts discarded
+[U01.SessionMirror] Session manifested: S-DEV-R41-001 (dev_replay)
+[U01.RenderReceiptManager] Registered receipt for event evt-dev-seg-001 (seq=1)
+[U01.RenderReceiptManager] Receipt evt-dev-seg-001: rendered
+[U01.ReliableControlClient] Disconnected
+[U01.ReliableControlClient] Disconnected
+]]></output>
+                </test-case>
+                <test-case id="1021" name="Formal_SegmentEvent_NoAutoConfirm" fullname="SRP.U01.Tests.PlayMode.R41_DevAutoConfirm_Tests.Formal_SegmentEvent_NoAutoConfirm" methodname="Formal_SegmentEvent_NoAutoConfirm" classname="SRP.U01.Tests.PlayMode.R41_DevAutoConfirm_Tests" runstate="Runnable" seed="1382770448" result="Passed" start-time="2026-09-08 08:34:05Z" end-time="2026-09-08 08:34:07Z" duration="2.716058" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[U01.ReliableControlClient] R2-4: WARNING — UDP5006Gate not found on this GameObject. ResetSession will not be called on session change.
+[U01.ReliableControlClient] Connecting to 127.0.0.1:10244...
+[U01.ReliableControlClient] R2-4: Session changed ( -> S-FRM-R41-001)
+[U01.RenderReceiptManager] All receipts discarded
+[U01.SessionMirror] Session manifested: S-FRM-R41-001 (formal_stage_1)
+[U01.RenderReceiptManager] Registered receipt for event evt-formal-seg-001 (seq=1)
+[U01.ReliableControlClient] Disconnected
+[U01.ReliableControlClient] Disconnected
+<b><color=#2EA3FF>MCP-FOR-UNITY</color></b>: [TestRunnerNoThrottle] Restored Interaction Mode after test run.
+Saving results to: C:/Users/15744/AppData/LocalLow/DefaultCompany/SRP-Weather-Visual\TestResults.xml
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
