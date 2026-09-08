@@ -103,6 +103,13 @@ namespace SRP.U01
         private volatile bool _isRunning;
         private int _generation;
 
+        // R7-5: Thread-safe jitter RNG for the ReceiveLoop backoff.
+        // UnityEngine.Random is main-thread only and threw UnityException when
+        // ReceiveLoop (background thread) hit the reconnect path, killing the
+        // thread. System.Random is safe here: only this client's single
+        // ReceiveLoop thread ever accesses it.
+        private readonly System.Random _reconnectJitter = new System.Random();
+
         // P0-3: Track whether we are in an unusable (fatal) state
         private volatile bool _isUnusable;
         private string _fatalErrorCode;
@@ -419,7 +426,12 @@ namespace SRP.U01
                     // coroutine path that returned success immediately without a real
                     // TCP connection, causing double generation increment.
                     int backoffMs = _reconnectHandler.CurrentBackoffMs;
-                    int jitter = UnityEngine.Random.Range(0, 200);
+                    // R7-5 fix: UnityEngine.Random.Range -> System.Random.
+                    // UnityEngine.Random is main-thread only; calling it from the
+                    // ReceiveLoop background thread threw UnityException
+                    // (RandomRangeInt can only be called from the main thread)
+                    // and killed the reconnect loop.
+                    int jitter = _reconnectJitter.Next(0, 200);
                     Thread.Sleep(backoffMs + jitter);
                 }
             }

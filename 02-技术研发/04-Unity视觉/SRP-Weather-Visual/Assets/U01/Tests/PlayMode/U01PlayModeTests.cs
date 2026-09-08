@@ -539,10 +539,11 @@ namespace SRP.U01.Tests.PlayMode
             client.Host = "127.0.0.1";
             client.Port = server.Port;
             TestHelpers.InjectDependencies(client, mirror: mirror, ack: ack);
+            client.Connect();
 
-            // ── 3. 等待客户端连接并握手 ──
-            while (!server.ClientConnected)
-                yield return null;
+            // ── 3. 等待客户端连接并握手（10s 超时）──
+            yield return TestHelpers.WaitUntil(() => server.ClientConnected, 10f,
+                msg => Assert.Fail("客户端未能在10s内连接mock服务器: " + msg));
 
             // 消费客户端发来的 hello
             server.ConsumeHello();
@@ -573,6 +574,12 @@ namespace SRP.U01.Tests.PlayMode
             string ack2 = server.WaitForAppMessage(2000);
             Assert.That(ack2, Is.Not.Null, "应收到第二个 ACK（重复事件）");
 
+            // ── 5.5 R7-5: 重复事件处理后镜像序列应仍为 1（幂等不重复推进）──
+            // 2026-09-08 实测 XML：第二条 ACK 已返回 duplicate_ignored，
+            // 说明去重生效；此处直接验证镜像序列未因重复事件推进。
+            Assert.That(mirror.Snapshot.ActiveControlSeq, Is.EqualTo(1),
+                "重复事件处理后 ActiveControlSeq 应仍为 1");
+
             // ── 6. 发送不同的 control_event(evt-new-002) ──
             server.SendLine(TestHelpers.ControlEventJson(
                 "S-TEST-001", "evt-new-002", 2, "segment", null, "closed_loop"));
@@ -594,9 +601,13 @@ namespace SRP.U01.Tests.PlayMode
             Assert.That(dict3["result"], Is.EqualTo("applied"),
                 "新事件 evt-new-002 → ACK result = applied");
 
-            // ── 8. 验证镜像只应用一次 ──
-            Assert.That(mirror.Snapshot.ActiveControlSeq, Is.EqualTo(1),
-                "重复事件不应推进 ActiveControlSeq");
+            // ── 8. 验证镜像序列推进 ──
+            // R7-5 fix（2026-09-08 实测 XML 佐证）: 前三步 ACK 断言
+            // (applied / duplicate_ignored / applied) 全部通过，幂等去重工作正常；
+            // 此刻 evt-new-002 (seq=2) 已被正确 applied，终值应为 2。
+            // 旧断言 Expected=1 为笔误（与已 applied 的新事件 seq=2 矛盾）。
+            Assert.That(mirror.Snapshot.ActiveControlSeq, Is.EqualTo(2),
+                "evt-new-002 applied 后 ActiveControlSeq 应为 2（重复事件未重复推进）");
 
             try { client?.Disconnect(); } catch { }
             yield return new WaitForSeconds(0.2f);
@@ -726,10 +737,11 @@ namespace SRP.U01.Tests.PlayMode
             client.Host = "127.0.0.1";
             client.Port = server.Port;
             TestHelpers.InjectDependencies(client, mirror: mirror, ack: ack);
+            client.Connect();
 
-            // ── 3. 等待连接并握手 ──
-            while (!server.ClientConnected)
-                yield return null;
+            // ── 3. 等待连接并握手（10s 超时）──
+            yield return TestHelpers.WaitUntil(() => server.ClientConnected, 10f,
+                msg => Assert.Fail("客户端未能在10s内连接mock服务器: " + msg));
 
             server.ConsumeHello();
             server.SendLine(TestHelpers.WelcomeAccepted());
@@ -807,10 +819,11 @@ namespace SRP.U01.Tests.PlayMode
             // 监听错误事件
             string lastError = null;
             client.OnTransportError += err => lastError = err;
+            client.Connect();
 
-            // ── 3. 等待客户端连接 ──
-            while (!server.ClientConnected)
-                yield return null;
+            // ── 3. 等待客户端连接（10s 超时）──
+            yield return TestHelpers.WaitUntil(() => server.ClientConnected, 10f,
+                msg => Assert.Fail("客户端未能在10s内连接mock服务器: " + msg));
 
             // 消费客户端 hello
             server.ConsumeHello();
@@ -875,10 +888,11 @@ namespace SRP.U01.Tests.PlayMode
             client.Host = "127.0.0.1";
             client.Port = port;
             TestHelpers.InjectDependencies(client, mirror: mirror, ack: ack);
+            client.Connect();
 
-            // ── 3. 第一次连接 ──
-            while (!server.ClientConnected)
-                yield return null;
+            // ── 3. 第一次连接（10s 超时）──
+            yield return TestHelpers.WaitUntil(() => server.ClientConnected, 10f,
+                msg => Assert.Fail("客户端未能在10s内连接mock服务器: " + msg));
 
             server.ConsumeHello();
             server.SendLine(TestHelpers.WelcomeAccepted());
@@ -897,21 +911,24 @@ namespace SRP.U01.Tests.PlayMode
             // ── 4. 模拟断连（R3-6: 使用 server.DropClient 代替反射 ForceCloseTcpClient）──
             server.DropClient();
 
-            // 等待客户端检测到断连（generation++ 在 finally 块中）
-            yield return new WaitForSeconds(1.5f);
+            // R7-5 语义修正：generation 在重连握手成功后才递增（R2-3 修复
+            // 删除了断连即递增的假路径，防止 double generation increment），
+            // 因此先等 server 侧收到第二次 TCP 连接（退避 500ms+jitter 后），
+            // 完成握手后再断言 generation 递增。
+            yield return WaitUntil(() => server.ConnectionCount >= 2, 5.0f);
+            Assert.That(server.ConnectionCount, Is.GreaterThanOrEqualTo(2),
+                "客户端应在退避后重新连接");
 
-            int genAfterDisconnect = client.Generation;
-            Assert.That(genAfterDisconnect, Is.GreaterThan(genBefore),
-                "断连后 generation 应递增");
-
-            // ── 5. 等待客户端重连（退避后）──
-            yield return WaitUntil(() => server.ClientConnected, 5.0f);
-            Assert.That(server.ClientConnected, Is.True,
-                "客户端应在退避后成功重连");
-
-            // 握手
+            // 完成第二次握手，等待 generation 递增
             server.ConsumeHello();
             server.SendLine(TestHelpers.WelcomeAccepted());
+            yield return TestHelpers.WaitUntil(() => client.Generation > genBefore, 3.0f,
+                msg => Assert.Fail("重连握手完成后 generation 应递增: " + msg));
+
+            int genAfterReconnect = client.Generation;
+            Assert.That(genAfterReconnect, Is.GreaterThan(genBefore),
+                "断连重连后 generation 应递增");
+
             yield return new WaitForSeconds(0.2f);
 
             // ── 6. 验证 client_instance_id 不变 ──
@@ -982,10 +999,11 @@ namespace SRP.U01.Tests.PlayMode
             client.Host = "127.0.0.1";
             client.Port = port;
             TestHelpers.InjectDependencies(client, mirror: mirror, ack: ack, rr: rrManager);
+            client.Connect();
 
-            // ── 3. 连接并握手 ──
-            while (!server.ClientConnected)
-                yield return null;
+            // ── 3. 连接并握手（10s 超时）──
+            yield return TestHelpers.WaitUntil(() => server.ClientConnected, 10f,
+                msg => Assert.Fail("客户端未能在10s内连接mock服务器: " + msg));
 
             server.ConsumeHello();
             server.SendLine(TestHelpers.WelcomeAccepted());
@@ -1090,10 +1108,11 @@ namespace SRP.U01.Tests.PlayMode
             client.Host = "127.0.0.1";
             client.Port = server.Port;
             TestHelpers.InjectDependencies(client, mirror: mirror, ack: ack, rr: rrManager);
+            client.Connect();
 
-            // ── 3. 等待客户端连接并握手 ──
-            while (!server.ClientConnected)
-                yield return null;
+            // ── 3. 等待客户端连接并握手（10s 超时）──
+            yield return TestHelpers.WaitUntil(() => server.ClientConnected, 10f,
+                msg => Assert.Fail("客户端未能在10s内连接mock服务器: " + msg));
 
             server.ConsumeHello();
             server.SendLine(TestHelpers.WelcomeAccepted());
@@ -1172,10 +1191,13 @@ namespace SRP.U01.Tests.PlayMode
             client.Host = "127.0.0.1";
             client.Port = server.Port;
             TestHelpers.InjectDependencies(client, mirror: mirror, ack: ack, rr: rrManager);
+            // R7-5 fix: client.Connect() 此前缺失（Connect 审计的第 8 处遗漏），
+            // 服务器永远等不到客户端，且无超时 while 死循环挂到 180s NUnit 超时。
+            client.Connect();
 
-            // ── 3. 等待客户端连接并握手 ──
-            while (!server.ClientConnected)
-                yield return null;
+            // ── 3. 等待客户端连接并握手（10s 超时，防死等）──
+            yield return TestHelpers.WaitUntil(() => server.ClientConnected, 10f,
+                msg => Assert.Fail("客户端未能在10s内连接mock服务器: " + msg));
 
             server.ConsumeHello();
             server.SendLine(TestHelpers.WelcomeAccepted());
