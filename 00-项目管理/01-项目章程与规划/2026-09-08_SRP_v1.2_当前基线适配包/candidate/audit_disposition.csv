@@ -1,0 +1,24 @@
+source_id,tasks,local_status,note
+AU-01,U12-10|U12-08,ALREADY_ROUTED_VIA_A06,Source closure is not current repository acceptance.
+AU-02,U12-04,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-03,U12-03,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-04,U12-10,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-05,A-03|A-05,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-06,U12-02,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-07,S-02|U12-02,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-08,U12-04|A-03|U12-11,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-09,A-02,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-10,A-03,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-11,U12-05,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-12,G-05|U12-11,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-13,I-01,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-14,X-02|E-05,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-15,U12-08,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-16,U12-03,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-17,G-03|E-04,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-18,W-02,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-19,U12-09,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-20,W-01|W-03,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-21,U12-06,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-22,U12-08|W-03,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.
+AU-23,U12-04|U12-11|X-01,PENDING_LOCAL_EVIDENCE,Source closure is not current repository acceptance.

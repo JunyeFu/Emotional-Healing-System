@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.1",
+  "status": "REJECT_AND_RESUBMIT_DESIGN",
+  "evidence_status": "PLANNED_NOT_OBSERVED",
+  "authority_markdown": "13_IJHCI独立审稿攻击与升级裁定_v1.1.md",
+  "participant_rule": {
+    "one_stage": true,
+    "one_condition": true,
+    "one_core_experience": true,
+    "cross_stage_overlap_allowed": false
+  },
+  "core_experience": {
+    "recommended_total_seconds": 800,
+    "module_count": 4,
+    "segments_seconds": {
+      "demo": 25,
+      "closed_loop": 150,
+      "lock_transition": 25
+    },
+    "technical_ranges_seconds": {
+      "demo": [24, 30],
+      "closed_loop": [140, 160],
+      "lock_transition": [20, 30]
+    }
+  },
+  "stages": {
+    "level_c": {
+      "target_total": 48,
+      "cue_modes": ["scene_native", "abstract_pacer"],
+      "target_per_mode": 24
+    },
+    "stage_1": {
+      "design": "parallel_group",
+      "cue_modes": ["scene_native", "abstract_pacer"],
+      "complete_target_total": 192,
+      "complete_target_per_mode": 96,
+      "initial_recruitment_cap": 240,
+      "allocation_block_size": 48,
+      "balanced_sequences_per_mode": 24
+    },
+    "stage_2": {
+      "new_participants": 0,
+      "input_arm": "stage_1_scene_native_locked",
+      "method": "participant_grouped_cross_fitted_finite_horizon_ridge_q",
+      "minimum_uniform_mixture": 0.20,
+      "offline_ecg_only": true
+    },
+    "stage_3": {
+      "design": "prospective_independent_cohort_parallel_group",
+      "arms": ["frozen_policy", "balanced_random"],
+      "same_scene_native_build": true,
+      "complete_target_total": 192,
+      "complete_target_per_arm": 96,
+      "initial_recruitment_cap": 240,
+      "allocation_block_size": 48
+    }
+  },
+  "gates": {
+    "gate_1": {
+      "endpoint": "opportunity_based_participant_protocol_fidelity",
+      "noninferiority_margin": 0.075,
+      "analysis_sets": ["all_randomized", "complete_four_module"],
+      "both_must_pass": true
+    },
+    "gate_2": {
+      "name": "joint_representation_value",
+      "scci_role": "manipulation_check",
+      "ordered_components": [
+        "scci_superiority",
+        "four_layer_comprehension_noninferiority",
+        "mental_effort_noninferiority"
+      ],
+      "margins_freeze_before_stage_1": true
+    },
+    "gate_3": {
+      "endpoint": "panas_negative_affect_post_adjusted_for_pre",
+      "estimand_includes_fallback": true,
+      "superiority_direction": "frozen_policy_lower"
+    }
+  },
+  "questionnaire_order": [
+    "device_setup_and_standardized_training",
+    "panas_pre",
+    "four_module_core_experience",
+    "panas_post",
+    "scci_and_secondary_measures",
+    "purpose_and_condition_guess",
+    "qualitative_subsample"
+  ],
+  "analysis": {
+    "primary_unit": "participant",
+    "sequence_24_in_primary_model": false,
+    "primary_covariates": ["assignment", "centered_panas_na_pre", "randomization_strata"],
+    "secondary_family_correction": "FDR",
+    "module_results": "descriptive_effect_sizes_and_intervals"
+  },
+  "policy_online_state": [
+    "panas_na_pre",
+    "position",
+    "completed_modules",
+    "previous_module",
+    "recent_respiratory_pf",
+    "recent_respiratory_sqi",
+    "cumulative_degradation",
+    "remaining_legal_actions"
+  ],
+  "formal_runtime": {
+    "python_is_authority": true,
+    "unity_independent_of_td": true,
+    "td_read_only": true,
+    "spout_forbidden": true,
+    "mock_forbidden": true,
+    "telemetry_hz": 20,
+    "live_e2e_required": true
+  },
+  "capacity": {
+    "maximum_sessions_anchor": 528,
+    "station_minutes_range": [55, 70],
+    "station_hours_range": [484, 616],
+    "two_week_rehearsal_required": true
+  },
+  "claim_boundaries": {
+    "whole_project_causal_effect": false,
+    "independent_weather_effect": false,
+    "independent_breathing_structure_effect": false,
+    "single_visual_mechanism_effect": false,
+    "stage_1_treatment": "complete_cue_representation_package",
+    "stage_3_treatment": "deployed_ordering_policy_including_fallback"
+  }
+}

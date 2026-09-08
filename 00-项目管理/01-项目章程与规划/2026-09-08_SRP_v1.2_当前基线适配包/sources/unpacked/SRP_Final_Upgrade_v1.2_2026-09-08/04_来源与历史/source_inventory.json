@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-08",
+  "repo_commit_rechecked": "145f7b20b5e2b3453235fb79090b982785b4c5a3",
+  "local_sources": [
+    {
+      "name": "SRP_全流程严格评审_2026-09-08.md",
+      "bytes": 39805,
+      "sha256": "e80fe10147a8f176ac0d1fa1589c4d8e5ae03560b1af442b938e475b5ab57d08"
+    },
+    {
+      "name": "SRP_Full_Lifecycle_Review_2026-09-08.zip",
+      "bytes": 37572,
+      "sha256": "1647442599874fa63198b6cacf63b17b3d5696d7ebd061da0f18882f454086b9"
+    },
+    {
+      "name": "2026-08-04_Grill访谈原始总结与决策演化.md",
+      "bytes": 69898,
+      "sha256": "9c604cfbaf1ab78cfaf28ec94ea7ff71818ba69700097cb3c0de88224e9a773e"
+    },
+    {
+      "name": "2026-08-04_项目情况与顶层设计汇总.md",
+      "bytes": 19162,
+      "sha256": "2b705ac14a1378dc75efa1b47bbc1ae3eca3338632a2262ef92d9092b120f761"
+    }
+  ],
+  "conversation_sources": [
+    "C1 full lifecycle audit",
+    "C2 emotional outcome primacy",
+    "C3 negative/reverse/null distinction",
+    "C4 request to package"
+  ],
+  "external_literature_this_delivery": "NO_NEW_EXTERNAL_LITERATURE_REVIEW; prior references retained with access limits",
+  "repo_files_mounted_as_complete_worktree": false,
+  "download_note": "Public raw byte download was not available in this container. Connector readings and pinned blob guards used instead. No complete original task CSV is represented as downloaded."
+}

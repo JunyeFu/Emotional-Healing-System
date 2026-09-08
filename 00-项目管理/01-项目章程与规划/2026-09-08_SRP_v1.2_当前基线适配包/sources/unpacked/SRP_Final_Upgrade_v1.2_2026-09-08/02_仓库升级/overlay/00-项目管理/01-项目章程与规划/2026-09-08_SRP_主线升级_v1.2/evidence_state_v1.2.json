@@ -1,0 +1,13 @@
+{
+  "artifact_status": "FINAL_DELIVERY",
+  "source_repo_state": "UNCHANGED_BY_THIS_DELIVERY",
+  "local_application": "NOT_APPLIED",
+  "runtime_gate_integration": "NOT_IMPLEMENTED",
+  "real_devices": "NOT_TESTED_IN_THIS_DELIVERY",
+  "formal_participants": "NOT_RUN_IN_THIS_DELIVERY",
+  "ethics_permissions": "NOT_VERIFIED_IN_THIS_DELIVERY",
+  "final_power": "NOT_FROZEN",
+  "effect_direction": "NOT_OBSERVED",
+  "journal_acceptance": "NOT_APPLICABLE",
+  "historical_done_records": "PRESERVED_ONLY_FOR_ORIGINAL_ACCEPTANCE_OBJECTS"
+}

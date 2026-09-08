@@ -1,0 +1,4 @@
+* -text
+**/* -text
+sources/** -whitespace
+baseline/** -whitespace

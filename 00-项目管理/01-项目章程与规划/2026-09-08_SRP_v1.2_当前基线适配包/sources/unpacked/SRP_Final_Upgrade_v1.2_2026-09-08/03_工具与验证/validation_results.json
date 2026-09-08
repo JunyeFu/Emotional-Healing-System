@@ -1,0 +1,85 @@
+{
+  "delivery_version": "1.2",
+  "status": "PASS",
+  "scope": "PACKAGE_CONTRACTS_AND_SYNTHETIC_FIXTURES_ONLY",
+  "structural_checks": [
+    {
+      "name": "all_json_parse",
+      "passed": true
+    },
+    {
+      "name": "reviewed_graph_acyclic_core_independent",
+      "passed": true
+    },
+    {
+      "name": "70_nodes",
+      "passed": true
+    },
+    {
+      "name": "800_second_timeline",
+      "passed": true
+    },
+    {
+      "name": "main_stage1_affect_two_sided",
+      "passed": true
+    },
+    {
+      "name": "no_significance_conditioned_reporting",
+      "passed": true
+    },
+    {
+      "name": "equivalence_not_enabled",
+      "passed": true
+    },
+    {
+      "name": "formal_collect_stays_blocked",
+      "passed": true
+    },
+    {
+      "name": "final_N_not_fabricated",
+      "passed": true
+    },
+    {
+      "name": "runtime_integration_not_claimed",
+      "passed": true
+    },
+    {
+      "name": "template_not_an_approval",
+      "passed": true
+    },
+    {
+      "name": "native_not_hidden",
+      "passed": true
+    },
+    {
+      "name": "baseline_timing_correction_explicit_not_silent",
+      "passed": true
+    },
+    {
+      "name": "no_chat_ui_citation_tokens_in_overlay",
+      "passed": true
+    }
+  ],
+  "unit_tests": {
+    "run": 48,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log": "test_abstract_important (test_upgrade_tools.ClassifierTests.test_abstract_important) ... ok\ntest_boolean_numeric_rejected (test_upgrade_tools.ClassifierTests.test_boolean_numeric_rejected) ... ok\ntest_delivery_problem_limits_concept_not_numbers (test_upgrade_tools.ClassifierTests.test_delivery_problem_limits_concept_not_numbers) ... ok\ntest_estimate_outside_ci_rejected (test_upgrade_tools.ClassifierTests.test_estimate_outside_ci_rejected) ... ok\ntest_functional_failure_does_not_hide_affect (test_upgrade_tools.ClassifierTests.test_functional_failure_does_not_hide_affect) ... ok\ntest_inf_rejected (test_upgrade_tools.ClassifierTests.test_inf_rejected) ... ok\ntest_invalid_guard_rejected (test_upgrade_tools.ClassifierTests.test_invalid_guard_rejected) ... ok\ntest_nan_rejected (test_upgrade_tools.ClassifierTests.test_nan_rejected) ... ok\ntest_narrow_not_formal_equivalence (test_upgrade_tools.ClassifierTests.test_narrow_not_formal_equivalence) ... ok\ntest_native_important (test_upgrade_tools.ClassifierTests.test_native_important) ... ok\ntest_no_automatic_universal_claim (test_upgrade_tools.ClassifierTests.test_no_automatic_universal_claim) ... ok\ntest_no_threshold_no_importance (test_upgrade_tools.ClassifierTests.test_no_threshold_no_importance) ... ok\ntest_not_assessable (test_upgrade_tools.ClassifierTests.test_not_assessable) ... ok\ntest_practical_boundary_no_important_claim (test_upgrade_tools.ClassifierTests.test_practical_boundary_no_important_claim) ... ok\ntest_reversed_ci_rejected (test_upgrade_tools.ClassifierTests.test_reversed_ci_rejected) ... ok\ntest_sensitivity_caveat_retained (test_upgrade_tools.ClassifierTests.test_sensitivity_caveat_retained) ... ok\ntest_small_significant_and_practical_bounds_can_coexist (test_upgrade_tools.ClassifierTests.test_small_significant_and_practical_bounds_can_coexist) ... ok\ntest_wide_null_not_equivalent (test_upgrade_tools.ClassifierTests.test_wide_null_not_equivalent) ... ok\ntest_wrong_ci_level_rejected (test_upgrade_tools.ClassifierTests.test_wrong_ci_level_rejected) ... ok\ntest_zero_boundary_no_superiority (test_upgrade_tools.ClassifierTests.test_zero_boundary_no_superiority) ... ok\ntest_zero_delta_rejected (test_upgrade_tools.ClassifierTests.test_zero_delta_rejected) ... ok\ntest_bom_preserved (test_upgrade_tools.GraphAndCSVTests.test_bom_preserved) ... ok\ntest_core_reachable_without_extension (test_upgrade_tools.GraphAndCSVTests.test_core_reachable_without_extension) ... ok\ntest_cycle_rejected (test_upgrade_tools.GraphAndCSVTests.test_cycle_rejected) ... ok\ntest_dep_drift_rejected (test_upgrade_tools.GraphAndCSVTests.test_dep_drift_rejected) ... ok\ntest_extension_requires_e06 (test_upgrade_tools.GraphAndCSVTests.test_extension_requires_e06) ... ok\ntest_no_generated_task_done (test_upgrade_tools.GraphAndCSVTests.test_no_generated_task_done) ... ok\ntest_source_graph_58 (test_upgrade_tools.GraphAndCSVTests.test_source_graph_58) ... ok\ntest_target_graph_70 (test_upgrade_tools.GraphAndCSVTests.test_target_graph_70) ... ok\ntest_transform_preserves_done (test_upgrade_tools.GraphAndCSVTests.test_transform_preserves_done) ... ok\ntest_unknown_dependency_rejected (test_upgrade_tools.GraphAndCSVTests.test_unknown_dependency_rejected) ... ok\ntest_windows_crlf_preserved (test_upgrade_tools.GraphAndCSVTests.test_windows_crlf_preserved) ... ok\ntest_bad_round_input (test_upgrade_tools.PlanningAndPathTests.test_bad_round_input) ... ok\ntest_capacity_exact (test_upgrade_tools.PlanningAndPathTests.test_capacity_exact) ... ok\ntest_git_write_rejected (test_upgrade_tools.PlanningAndPathTests.test_git_write_rejected) ... ok\ntest_new_n_not_old_anchor (test_upgrade_tools.PlanningAndPathTests.test_new_n_not_old_anchor) ... ok\ntest_parent_escape_rejected (test_upgrade_tools.PlanningAndPathTests.test_parent_escape_rejected) ... ok\ntest_pf_counterexample (test_upgrade_tools.PlanningAndPathTests.test_pf_counterexample) ... ok\ntest_proposed_pretreatment_baseline_timing_explicit (test_upgrade_tools.PlanningAndPathTests.test_proposed_pretreatment_baseline_timing_explicit) ... ok\ntest_symlink_rejected (test_upgrade_tools.PlanningAndPathTests.test_symlink_rejected) ... ok\ntest_windows_drive_rejected (test_upgrade_tools.PlanningAndPathTests.test_windows_drive_rejected) ... ok\ntest_dirty_worktree_rejected (test_upgrade_tools.SyntheticGitMigrationTests.test_dirty_worktree_rejected) ... ok\ntest_restore_refuses_subsequent_edit (test_upgrade_tools.SyntheticGitMigrationTests.test_restore_refuses_subsequent_edit) ... ok\ntest_synthetic_apply_and_restore (test_upgrade_tools.SyntheticGitMigrationTests.test_synthetic_apply_and_restore) ... ok\ntest_synthetic_preflight_read_only (test_upgrade_tools.SyntheticGitMigrationTests.test_synthetic_preflight_read_only) ... ok\ntest_unsafe_backup_rejected (test_upgrade_tools.SyntheticGitMigrationTests.test_unsafe_backup_rejected) ... ok\ntest_wrong_blob_rejected (test_upgrade_tools.SyntheticGitMigrationTests.test_wrong_blob_rejected) ... ok\ntest_wrong_head_rejected (test_upgrade_tools.SyntheticGitMigrationTests.test_wrong_head_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 48 tests in 0.225s\n\nOK\n"
+  },
+  "integrity": {
+    "status": "NOT_SEALED_YET",
+    "files": null
+  },
+  "not_run": [
+    "original_repository_test_suite",
+    "original_repository_patch_application",
+    "Unity",
+    "TouchDesigner",
+    "real_devices",
+    "participant_research",
+    "formal_power_simulation",
+    "institutional_approval_verification"
+  ],
+  "formal_collection_allowed": false
+}

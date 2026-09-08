@@ -1,0 +1,23 @@
+{
+  "version": "1.2",
+  "repository": "JunyeFu/Emotional-Healing-System",
+  "expected_commit": "145f7b20b5e2b3453235fb79090b982785b4c5a3",
+  "expected_source_blobs": {
+    "README.md": "bda1778c873eb6a769cc94d2cb855d1b4e0da615",
+    "AGENTS.md": "ef036e01c0f8ef973ef5fda9a0bf84a5f7d4c861",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv": "a61caea745f95d5a686f0cfcfd4ecafd580ff47f",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json": "c060d09cb6b51ed7aa67a9594706bbbc00c59849"
+  },
+  "overlay_dir": "overlay",
+  "prepend_notices": [
+    "README.md",
+    "AGENTS.md"
+  ],
+  "task_mutations": "task_mutations_v1.2.json",
+  "new_tasks_csv": "new_tasks_v1.2.csv",
+  "readme_notice": "[v1.2 研究升级入口](SRP_UPGRADE_v1.2.md)：阶段一情绪比较为主、功能护栏独立、核心稿不依赖阶段三。历史DONE保留；新协议未完成真实冻结与运行准入接线前不得正式采集。",
+  "new_protocol_path": "00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/protocol_authority_v1.2.json",
+  "clean_worktree_required": true,
+  "writes_runtime_code": false,
+  "does_not_commit_or_push": true
+}

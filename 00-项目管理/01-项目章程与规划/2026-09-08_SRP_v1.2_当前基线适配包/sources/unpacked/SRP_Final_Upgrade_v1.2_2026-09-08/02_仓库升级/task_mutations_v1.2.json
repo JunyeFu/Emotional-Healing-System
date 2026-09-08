@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.2",
+  "baseline_commit": "145f7b20b5e2b3453235fb79090b982785b4c5a3",
+  "target_csv": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+  "expected_git_blob_sha": "a61caea745f95d5a686f0cfcfd4ecafd580ff47f",
+  "preserve_done_history": true,
+  "mutations": [
+    {
+      "task_id": "Q-01",
+      "expected_dependencies": [
+        "F-02",
+        "R-01",
+        "U-07",
+        "G-01"
+      ],
+      "changes": {
+        "depends_on": "F-02|R-01|G-01|UP-01",
+        "title": "【研究工具】Level A构念与静态/回放独立重建材料",
+        "completion_condition": "可先生成不依赖U-07最终构建的材料；真实执行需UP-05；最终渲染再复核，不能把材料完成当真人研究完成"
+      }
+    },
+    {
+      "task_id": "E-01",
+      "expected_dependencies": [
+        "Q-01",
+        "G-05"
+      ],
+      "changes": {
+        "depends_on": "Q-01|UP-05",
+        "completion_condition": "在UP-05实际覆盖的批准范围执行Level A；真实专家原始记录与修订决定，失败退回Q-01"
+      }
+    },
+    {
+      "task_id": "Q-02",
+      "expected_dependencies": [
+        "U-08",
+        "Q-01"
+      ],
+      "changes": {
+        "depends_on": "U-08|Q-01|UP-02|UP-03",
+        "completion_condition": "步骤实例题库与公平教学冻结；真实Level B需相应许可；不以SCCI优效作为工具生成完成标准"
+      }
+    },
+    {
+      "task_id": "E-02",
+      "expected_dependencies": [
+        "Q-02",
+        "E-01"
+      ],
+      "changes": {
+        "depends_on": "Q-02|E-01|UP-05",
+        "completion_condition": "在UP-05覆盖且有真实设备研究许可时执行；真实设备/正式活动超出范围则等待G-05对应批准；不得借静态许可运行未获准设备研究"
+      }
+    },
+    {
+      "task_id": "A-02",
+      "expected_dependencies": [
+        "A-01"
+      ],
+      "changes": {
+        "title": "【统计实现】机会分母PF护栏及缺失敏感性",
+        "acceptance_criteria": "AC1机会分母和技术不可观测分别建模；AC2继承非劣候选界值须有依据且双分析集可重建；AC3护栏失败不阻断独立PANAS主要比较的计算和报告",
+        "completion_condition": "只实现冻结功能规则；不把PF非劣等同情绪收益或全部模块均非劣"
+      }
+    },
+    {
+      "task_id": "A-03",
+      "expected_dependencies": [
+        "F-02",
+        "A-01"
+      ],
+      "changes": {
+        "depends_on": "F-02|A-01|UP-04",
+        "title": "【统计实现】PANAS主要比较、支持测量与新功效模拟",
+        "deliverables": "PANAS版本计分;ANCOVA/HC3及有界插补合并;步骤理解与努力;双侧效应/CI;零正反情景Monte Carlo;联合部署成功率",
+        "acceptance_criteria": "AC1主要beta为native减abstract，双侧.05；AC2设备缺失不删除有效PANAS且SCCI仅操纵；AC3地板缺失/不同方向/护栏均覆盖；AC4确认性等效默认关闭，不用旧192/240锚点代替新功效；AC5主要前测先于分条件教学的候选时序及相应估计目标通过受控冻结，不能把处理后前测当无干预基线",
+        "completion_condition": "依据UP-04与真实盲态参数完成并独立复算；不依据正式有利结果选指标或效应"
+      }
+    },
+    {
+      "task_id": "G-03",
+      "expected_dependencies": [
+        "E-03",
+        "X-01",
+        "Z-01",
+        "A-02",
+        "A-03",
+        "G-05"
+      ],
+      "changes": {
+        "depends_on": "E-03|X-01|Z-01|A-02|A-03|G-05|UP-11",
+        "title": "【预注册与锁定】阶段一情绪比较与独立功能护栏锁定",
+        "deliverables": "主要情绪SAP;PANAS与许可;固定教学预算;功能界值理由;新N与停止规则;隐藏清单;构建与算法哈希;结果中立报告分支",
+        "acceptance_criteria": "AC1真实批准、UP-06正式入口阻断及UP-11数值冻结全部完成；AC2主要结果与护栏分开且所有预设结果均报告；AC3任一未关闭项拒绝B-02实例化，不能沿用旧Gate2值替代",
+        "completion_condition": "真实预注册回执与冻结字段版本一致；本包最终文档或空模板不构成放行；共同准备、前测、揭示与分条件教学的时序和处理范围必须一致"
+      }
+    },
+    {
+      "task_id": "B-02",
+      "expected_dependencies": [
+        "G-03"
+      ],
+      "changes": {
+        "completion_condition": "按冻结随机分配N与停止规则实例化；平衡针对分配；不依据p值、条件方向或完成者缺格定向补人"
+      }
+    },
+    {
+      "task_id": "E-04",
+      "expected_dependencies": [
+        "G-03",
+        "B-02"
+      ],
+      "changes": {
+        "acceptance_criteria": "AC1全部批次QC与暴露去重；AC2报告分配平衡与完成者不平衡而不裁剪结果；AC3排除缺失/原因码和分析在揭盲前冻结",
+        "completion_condition": "按预注册随机分配目标或盲态调整规则停止；不得因结果方向或完整者未填满24格追加"
+      }
+    },
+    {
+      "task_id": "A-05",
+      "expected_dependencies": [
+        "A-02",
+        "A-03",
+        "E-04"
+      ],
+      "changes": {
+        "title": "【锁定分析】阶段一情绪差异、功能护栏与完整过程结果",
+        "deliverables": "PANAS主要beta与CI;PF护栏;SCCI操纵;理解努力;模块错误;缺失/敏感性;预设次要FDR;可选训练数据manifest",
+        "acceptance_criteria": "AC1所有结果由锁库生成且主要量表与设备过程分离；AC2SCCI/PF失败不隐藏主要情绪结果；AC3报告正向反向小差异不确定，等效未启用时不声称确认性等效；AC4只释放批准的原生轨迹与合法在线状态",
+        "completion_condition": "完整报告所有预设结果与研究效度限制；不以原生优效作为核心分析完成条件"
+      }
+    },
+    {
+      "task_id": "A-04",
+      "expected_dependencies": [
+        "A-05",
+        "E-06"
+      ],
+      "changes": {
+        "depends_on": "A-05|UP-10",
+        "title": "【核心最终分析】阶段一证据归档与独立复现",
+        "deliverables": "核心分析报告;正反结论复核;全部主次结果;缺失偏离;数据字典;合成与真实重建边界;独立复现",
+        "acceptance_criteria": "AC1核心不依赖E-06；AC2beta方向/区间与主张一致；AC3无阶段三也能完成核心证据包，已实施扩展记录在披露清单",
+        "completion_condition": "核心证据与限定结论可复现；不是必须显著；扩展分析由UP-08独立承接"
+      }
+    },
+    {
+      "task_id": "E-05",
+      "expected_dependencies": [
+        "A-05",
+        "X-02"
+      ],
+      "changes": {
+        "completion_condition": "仅在预先冻结的扩展支持/资源/伦理/部署护栏成立时冻结策略；不以SCCI或原生情绪优效作为核心收尾条件；支持不足则不启动阶段三并透明记录"
+      }
+    },
+    {
+      "task_id": "G-04",
+      "expected_dependencies": [
+        "E-05",
+        "X-03",
+        "Z-01"
+      ],
+      "changes": {
+        "acceptance_criteria": "AC1独立扩展估计目标/策略/同构建冻结且支持ESS通过；AC2正式范围与资源已批准；AC3未放行不能采集；AC4阶段三不成为核心稿依赖",
+        "completion_condition": "扩展须独立批准预注册；主要比较为部署策略含回退相对随机，不自动声称个性化机制"
+      }
+    },
+    {
+      "task_id": "W-02",
+      "expected_dependencies": [
+        "W-01",
+        "A-04"
+      ],
+      "changes": {
+        "depends_on": "W-01|A-04|UP-07",
+        "title": "【核心论文】提示比较的情绪收益、代价与设计边界",
+        "deliverables": "结果中立主稿;主张证据表;真实设计规则;正反/等效选项/不确定分支;补充材料;可选扩展披露",
+        "acceptance_criteria": "AC1所有结果与A-04一致；AC2不把原生等同隐藏且不显著不是等效；AC3没有E-06仍能形成完整核心稿；AC4扩展已运行时如实披露并按相应分析状态附上",
+        "completion_condition": "完成符合证据的核心稿，不要求原生胜出；扩展仅在UP-08证据就绪时写相应结果"
+      }
+    },
+    {
+      "task_id": "W-03",
+      "expected_dependencies": [
+        "W-02",
+        "Z-01",
+        "G-05"
+      ],
+      "changes": {
+        "completion_condition": "核对提交当天期刊说明/数据政策/AI披露，独立复现和真实作者同意；核心路线不要求UP-08或E-06；实际公开/投稿须人类授权"
+      }
+    }
+  ],
+  "new_tasks_file": "new_tasks_v1.2.csv",
+  "note": "Only listed fields change. Existing DONE entries are not reopened or rewritten; impact revalidation lives in new UP tasks."
+}

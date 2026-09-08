@@ -1,0 +1,13 @@
+﻿id,source,decision_status,decision,boundary
+DEC-01,三轮共同,BUILD_BASIS,普通短时情绪结果与设备过程分开,不是新的治疗或情绪真值模型
+DEC-02,第二轮,BUILD_BASIS,阶段一提示方案情绪增量转为主线,不再仅用SCCI和非劣承担人的收益
+DEC-03,第三轮,BUILD_BASIS,可靠反向结果可为核心发现,不显著不是反向优势，低功效不是等效
+DEC-04,第三轮,BUILD_BASIS,原生与隐藏/显式分开,两臂完整方案不能识别显式性独立机制
+DEC-05,第一轮及当前仓库,INHERITED,800秒与运行v2.2,8月4日480秒旧协议保留历史但不恢复
+DEC-06,第一轮,BUILD_BASIS,核心稿独立于阶段三,已实施扩展必须披露
+DEC-07,本包操作化,PROPOSED_OPERATIONALIZATION,主要ANCOVA/HC3与双侧.05,须SAP验证与真实签署；不称用户已批准所有数值
+DEC-08,本包操作化,PROPOSED_OPERATIONALIZATION,确认性等效默认关闭,第三轮讨论其可能性未冻结界值/方法/多重声明
+DEC-09,第二三轮建议,PROPOSED_OPERATIONALIZATION,同样有限合理教学预算,具体秒数与材料未冻结
+DEC-10,机构/统计实证,EXTERNAL_OR_EMPIRICAL_FREEZE,最终N、界值、许可、风险、资源,本包无权代填事实或代签
+DEC-11,本次用户请求,DELIVERY_AUTHORIZATION,生成最终zip和审计文档,不是授权远端push或正式采集
+DEC-12,本包交叉审计补充,PROPOSED_OPERATIONALIZATION,主要前测先于分条件教学，处理含教学与核心体验,不是用户已逐项确认；须与X-01/UP-04/UP-11受控冻结

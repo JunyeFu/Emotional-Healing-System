@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": "UP-01",
+    "proposed_verification_role": "MACHINE_AND_AGENT",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-02",
+    "proposed_verification_role": "MACHINE_AND_AGENT",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-03",
+    "proposed_verification_role": "AGENT_PLUS_REAL_PARTICIPANTS",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-04",
+    "proposed_verification_role": "INDEPENDENT_RECOMPUTE_PLUS_RESEARCH_OWNER",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-05",
+    "proposed_verification_role": "REAL_INSTITUTION_OR_AUTHORIZED_OWNER",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-06",
+    "proposed_verification_role": "MACHINE_AND_AGENT",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-07",
+    "proposed_verification_role": "AGENT",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-08",
+    "proposed_verification_role": "INDEPENDENT_RECOMPUTE",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-09",
+    "proposed_verification_role": "MACHINE_AND_INDEPENDENT_AGENT",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-10",
+    "proposed_verification_role": "INDEPENDENT_RECOMPUTE",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-11",
+    "proposed_verification_role": "REAL_RESEARCH_OWNER_AND_APPROVALS",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  },
+  {
+    "task_id": "UP-12",
+    "proposed_verification_role": "REAL_RESEARCH_OWNER_AND_AUTHORS",
+    "actual_reviewer": "UNASSIGNED",
+    "completion_does_not_imply_research_evidence": true
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "task_id": "U12-11",
+  "dispatch_allowed": false,
+  "input_snapshot_id": "f9b117705f9ca665ce0893d18f6b4ede170bd4a7795e1fa9713d7f03e898838e",
+  "files": [
+    {
+      "path": "FILES.md",
+      "byte_sha256": "100ad31a68bc6e055cb590184063aa102fe84fe185a9ff9089ebb6200520e520"
+    },
+    {
+      "path": "inputs/task_input.json",
+      "byte_sha256": "f9b117705f9ca665ce0893d18f6b4ede170bd4a7795e1fa9713d7f03e898838e"
+    },
+    {
+      "path": "TASK.md",
+      "byte_sha256": "c37d5e289822315a86a8be3923249748e9b2f95c0d42b0b69ef20449158e1097"
+    }
+  ]
+}

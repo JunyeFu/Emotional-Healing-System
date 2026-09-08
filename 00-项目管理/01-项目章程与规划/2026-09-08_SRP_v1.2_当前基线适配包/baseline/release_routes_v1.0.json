@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "route_authority": "A-06",
+  "paper_task": "W-02",
+  "stage3_started_evidence_sources": [
+    "stage3_assignment_ledger",
+    "stage3_exposure_ledger",
+    "B-03_instance_registry"
+  ],
+  "conditional_edges": [
+    {"from": "A-04", "to": "A-06", "route": "with_stage3"}
+  ],
+  "routes": {
+    "stage1_only": {
+      "required_done": ["A-05", "W-01"],
+      "required_human_receipt_scope": "NO_STAGE3",
+      "must_have_no_stage3_activity": true,
+      "not_required_to_mark_done": ["X-02", "X-03", "E-05", "G-04", "B-03", "E-06", "A-04"]
+    },
+    "with_stage3": {
+      "required_done": ["A-05", "A-04", "W-01"],
+      "required_human_receipt_scope": "INCLUDE_STAGE3",
+      "must_have_stage3_activity": true,
+      "required_result_families": ["stage3_results", "deviations", "stop_records", "fallback_exposure"]
+    }
+  }
+}

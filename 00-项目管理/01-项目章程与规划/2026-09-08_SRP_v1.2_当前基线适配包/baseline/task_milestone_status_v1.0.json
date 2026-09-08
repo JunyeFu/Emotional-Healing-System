@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "task": "A-03",
+  "statuses": {
+    "A-03-SPEC": "DONE",
+    "A-03-REAL": "WAIT_DEP",
+    "A-03-CAL": "WAIT_DEP"
+  }
+}

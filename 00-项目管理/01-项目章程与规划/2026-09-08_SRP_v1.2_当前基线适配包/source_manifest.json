@@ -1,0 +1,297 @@
+{
+  "base_commit": "de4ebcbfea209674127c833dd9e69ad703a6634b",
+  "status": "CANDIDATE_NOT_ACTIVE",
+  "originals": [
+    {
+      "original_path": "C:/Users/fujunye/Downloads/SRP_Project_Final_Upgrade_v1.2_2026-09-08.zip",
+      "archived_path": "sources/SRP_Project_Final_Upgrade_v1.2_2026-09-08.zip",
+      "byte_sha256": "7982bd7a0ba3489d64326f2ea0619eef1e738507092cee1b307ff87e788f44cc"
+    },
+    {
+      "original_path": "C:/Users/fujunye/Downloads/SRP_项目升级最终审计_v1.2.md",
+      "archived_path": "sources/SRP_项目升级最终审计_v1.2.md",
+      "byte_sha256": "9767e40f7dff73785b5e18996a5a9226f1bfff45cf2f54d41b0710e77c5c2ea2"
+    }
+  ],
+  "source_content_files": [
+    {
+      "path": "00_审计文档/SRP_项目升级最终审计_v1.2.docx",
+      "byte_sha256": "8f66cff18369af8bba94b1bb0ff240b4cd7d70a845513484fe9f42b4dcffcbee"
+    },
+    {
+      "path": "00_审计文档/SRP_项目升级最终审计_v1.2.md",
+      "byte_sha256": "9767e40f7dff73785b5e18996a5a9226f1bfff45cf2f54d41b0710e77c5c2ea2"
+    },
+    {
+      "path": "00_审计文档/审计问题与关闭证据.csv",
+      "byte_sha256": "a4e2ad23d023a18f91b74f3ef0e976dea84f09df673d8552bb42062ab6dc3191"
+    },
+    {
+      "path": "01_研究与执行/01_研究主张与设计合同.md",
+      "byte_sha256": "cc8a628fdf9556b933871326afd873a67f5813f3251563f8230f5eebf59fba5a"
+    },
+    {
+      "path": "01_研究与执行/02_统计分析与结果分类合同.md",
+      "byte_sha256": "68eb99a855b33c6b925364c3491e7972e9162130a052cc910c037aa3d25ea448"
+    },
+    {
+      "path": "01_研究与执行/03_测量与两条件实现迁移.md",
+      "byte_sha256": "50de532d4f8c9654e291a83284ff48b4ce0e4003edf783e4609b3e616af8fbe5"
+    },
+    {
+      "path": "01_研究与执行/04_正反结果与论文写作模板.md",
+      "byte_sha256": "cd189ab3f590b8030b4058634184020eeaf070e2b84082745a8cb53518f11e50"
+    },
+    {
+      "path": "01_研究与执行/05_伦理执行与研究收尾.md",
+      "byte_sha256": "e807a4a89efde8e3aef9369000317ecfdd472cc6c9c7941b1327dd2346c3881f"
+    },
+    {
+      "path": "01_研究与执行/06_时间资源与停止规则.md",
+      "byte_sha256": "5e14cea938fc8e5b5bdb87fa6d8ac18a226f1e517990d19645a7dbc6fee42ba8"
+    },
+    {
+      "path": "01_研究与执行/07_Agent协作与人工责任.md",
+      "byte_sha256": "f607093700e1610274dd4526f762febe800cc923fbf585a87ff819b6fe953a88"
+    },
+    {
+      "path": "02_仓库升级/migration_manifest.json",
+      "byte_sha256": "2438e6630c46082610b84755aa50b8ff1623ef12262eddcd6383f3b9927819c3"
+    },
+    {
+      "path": "02_仓库升级/new_tasks_v1.2.csv",
+      "byte_sha256": "e27a9842c419008c558a26b00d2bb1b7baf1cb406d87699f6f265f29c3b4db44"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/README.md",
+      "byte_sha256": "e5ec8dbce8c627120a6cebcaa4f6465038dbfcbe89aa2f6392c544881002ce9e"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/evidence_state_v1.2.json",
+      "byte_sha256": "4908c10493b022340bec693a8d0c6976918da0d9e834589ea7a9a0f5df0c453f"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/protocol_authority_v1.2.json",
+      "byte_sha256": "8a44bc6e0f09c50c33a86d13060e58c6422b2c9e58cab8df34363aa391b5a9a5"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/route_contract_v1.2.json",
+      "byte_sha256": "1fe7c63e2afd7624d8be335c78050c81ba4f0e71609f8fd2be5450d5a3fb2470"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/study_manifest_v1.2.template.json",
+      "byte_sha256": "ea1cf4ac1203d53b82397f781485f56e01c4789ea7da63030eb9b3019ff64b29"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/最终审计.md",
+      "byte_sha256": "9767e40f7dff73785b5e18996a5a9226f1bfff45cf2f54d41b0710e77c5c2ea2"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/来源索引.md",
+      "byte_sha256": "6ef51d729dcfaf628ee097da5d0738883ddffbe84edec2215a7bbac43a729ac7"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/正反结果与论文写作模板.md",
+      "byte_sha256": "cd189ab3f590b8030b4058634184020eeaf070e2b84082745a8cb53518f11e50"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/测量与两条件实现迁移.md",
+      "byte_sha256": "50de532d4f8c9654e291a83284ff48b4ce0e4003edf783e4609b3e616af8fbe5"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/研究主张与设计合同.md",
+      "byte_sha256": "cc8a628fdf9556b933871326afd873a67f5813f3251563f8230f5eebf59fba5a"
+    },
+    {
+      "path": "02_仓库升级/overlay/00-项目管理/01-项目章程与规划/2026-09-08_SRP_主线升级_v1.2/统计分析与结果分类合同.md",
+      "byte_sha256": "68eb99a855b33c6b925364c3491e7972e9162130a052cc910c037aa3d25ea448"
+    },
+    {
+      "path": "02_仓库升级/overlay/SRP_UPGRADE_v1.2.md",
+      "byte_sha256": "c0f5cdc80816ed4d791a6d922bfdd16935bd0a0ba2e52b6c3a3c3e869f141c50"
+    },
+    {
+      "path": "02_仓库升级/task_mutations_v1.2.json",
+      "byte_sha256": "bbbf662d7f0feddc521178754ae9c70889b15a7a6349a446cdb35e05af0cfc81"
+    },
+    {
+      "path": "02_仓库升级/task_review_roles_v1.2.json",
+      "byte_sha256": "a36d3ed6909056f28f655a4b1a5e501af04707e23e71e91bfc48ebaea00019ed"
+    },
+    {
+      "path": "02_仓库升级/历史DONE影响与复核.csv",
+      "byte_sha256": "de66d881e1598cf76fd064fe33deffab9e9c4bfef96fd7827c756d951245cd51"
+    },
+    {
+      "path": "02_仓库升级/定点变更审阅表.md",
+      "byte_sha256": "a5e22fafbde2354eb74b2e6a214083ba43ea4e0db50f7c40d888030f2617b7f4"
+    },
+    {
+      "path": "02_仓库升级/应用与回滚说明.md",
+      "byte_sha256": "5453d45f6642bc9f09caa3bc736f554d5ebe787088abd34e0ec5c977350697eb"
+    },
+    {
+      "path": "03_工具与验证/apply_upgrade.py",
+      "byte_sha256": "a90276952d8b846957e8ccf341972d6efe8ef2b1fe12f90bb54187e767e10756"
+    },
+    {
+      "path": "03_工具与验证/document_visual_qa.json",
+      "byte_sha256": "d301de633085cf680ca0c82e3a4144871dc149227b7f13750e851081d0bbe767"
+    },
+    {
+      "path": "03_工具与验证/example_synthetic_output.json",
+      "byte_sha256": "9d8e20b1f20d6a2942328d336f66250dec77d3a59908e7033c6fe2f4abb953f5"
+    },
+    {
+      "path": "03_工具与验证/example_synthetic_uncertain.json",
+      "byte_sha256": "fd3e745527ba0a16fa433b93685088dfaf1927e528facc5d92cdcd2da02fab94"
+    },
+    {
+      "path": "03_工具与验证/planning_checks.py",
+      "byte_sha256": "27cd74ab902c05bf3ead60e9cebd0da8d8b30c7243b459ae577120b700ccad31"
+    },
+    {
+      "path": "03_工具与验证/planning_results.json",
+      "byte_sha256": "118c05628c890171d826a2fa860e117c1fdf1319c8093698fcb1a641f7724fff"
+    },
+    {
+      "path": "03_工具与验证/result_classifier.py",
+      "byte_sha256": "d0338447796bc7d455278fbe7a06ff69e694bed55d0f1029ffb241d4ca033315"
+    },
+    {
+      "path": "03_工具与验证/test_upgrade_tools.py",
+      "byte_sha256": "6ed5bd81eb19520eaa0a539f4c373f316f4ac7d56d94dcf104ae75982ff4b1d2"
+    },
+    {
+      "path": "03_工具与验证/validate_bundle.py",
+      "byte_sha256": "c8f99a8b37eb5df2d8061b3a49150a711dee829cb75452d4c3cb0f48907e897f"
+    },
+    {
+      "path": "03_工具与验证/validation_results.json",
+      "byte_sha256": "af6aa23c9ed2a866023b37d82e95dfb3e6f2e3e8d36e58695419ef7dd8e8cc94"
+    },
+    {
+      "path": "03_工具与验证/封包核验说明.md",
+      "byte_sha256": "349c7cbc353c884222bc1808ee6f25a7f29b98abeb81a53f93b7b378cb824baa"
+    },
+    {
+      "path": "03_工具与验证/工具说明与验证边界.md",
+      "byte_sha256": "1a5b9a903acbe8729974d191fd22bd73d48f929dcbe730e8fd96f674904d997f"
+    },
+    {
+      "path": "04_来源与历史/2026-08-04_Grill访谈原始总结与决策演化.md",
+      "byte_sha256": "9c604cfbaf1ab78cfaf28ec94ea7ff71818ba69700097cb3c0de88224e9a773e"
+    },
+    {
+      "path": "04_来源与历史/2026-08-04_项目情况与顶层设计汇总.md",
+      "byte_sha256": "2b705ac14a1378dc75efa1b47bbc1ae3eca3338632a2262ef92d9092b120f761"
+    },
+    {
+      "path": "04_来源与历史/base_task_graph_derived.json",
+      "byte_sha256": "f371ea4433f1f8a93e321ffcd293ab3a1df275013b08829b93d95c2668d9aa9c"
+    },
+    {
+      "path": "04_来源与历史/source_inventory.json",
+      "byte_sha256": "07ce0962a71d8743247662fc639b8bf8524d63ef3fdbc6c0417be9664f5c6bce"
+    },
+    {
+      "path": "04_来源与历史/三轮决策与覆盖账本.csv",
+      "byte_sha256": "09771f59416a584cd21419916281564c83cb1949912d3a00fc869e80a3728c6f"
+    },
+    {
+      "path": "04_来源与历史/前一轮审计_历史非现行.md",
+      "byte_sha256": "e80fe10147a8f176ac0d1fa1589c4d8e5ae03560b1af442b938e475b5ab57d08"
+    },
+    {
+      "path": "04_来源与历史/前一轮来源索引_未经本轮重新核验.md",
+      "byte_sha256": "cf3ddd114fc05b72000dcfe809978442263797782e41c2fdf6f1495c5eb84303"
+    },
+    {
+      "path": "04_来源与历史/来源索引.md",
+      "byte_sha256": "6ef51d729dcfaf628ee097da5d0738883ddffbe84edec2215a7bbac43a729ac7"
+    },
+    {
+      "path": "README_先读.md",
+      "byte_sha256": "208cebb616c226dbc3a8886f722c429b23a982731fb67cc641ff35a4fd906497"
+    }
+  ],
+  "baseline_files": [
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+      "snapshot": "baseline/05_可领取任务包.csv",
+      "byte_sha256": "4cc5c7d9e2d9cde89a4db3e9e8983b7d099799950b9d82c475f3213b6f528982",
+      "worktree_byte_sha256": "0ddfcddaef34b1869afa5e3c42c5ea52dff6fb5176cc4629894fdd745cc9d5a0",
+      "normalized_text_sha256": "4cc5c7d9e2d9cde89a4db3e9e8983b7d099799950b9d82c475f3213b6f528982"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/07_validate_task_packages.py",
+      "snapshot": "baseline/07_validate_task_packages.py",
+      "byte_sha256": "3d8bb80636a1df928f99bc9ab78bd003d433409f52722206822de6f20f700077",
+      "worktree_byte_sha256": "2984674d4b187085dda3c5931d1466b005591dcec8f53a1fe6ace5fb35f3fbe3",
+      "normalized_text_sha256": "3d8bb80636a1df928f99bc9ab78bd003d433409f52722206822de6f20f700077"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/12_独立任务包文件映射_v1.0.json",
+      "snapshot": "baseline/12_独立任务包文件映射_v1.0.json",
+      "byte_sha256": "4a341f275e6961055e9313d1aa2185f4bfa945fc9924c0188fe214e75f41a36e",
+      "worktree_byte_sha256": "e02ba564d6dd828f46f30be23f26e8f04a7fdd10e54f9f5685916f7d8f400910",
+      "normalized_text_sha256": "4a341f275e6961055e9313d1aa2185f4bfa945fc9924c0188fe214e75f41a36e"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md",
+      "snapshot": "baseline/08_任务技能与国内学习资料_v1.0.md",
+      "byte_sha256": "39e309274d067d5ed0dec15a4e11be34543af5203a9640e97415fb158f93069f",
+      "worktree_byte_sha256": "39e309274d067d5ed0dec15a4e11be34543af5203a9640e97415fb158f93069f",
+      "normalized_text_sha256": "39e309274d067d5ed0dec15a4e11be34543af5203a9640e97415fb158f93069f"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+      "snapshot": "baseline/protocol_authority_v1.1.json",
+      "byte_sha256": "66dcf22a6b98e9b35fe069aa19373228e9e2070a2508f253801aca3669e51794",
+      "worktree_byte_sha256": "66dcf22a6b98e9b35fe069aa19373228e9e2070a2508f253801aca3669e51794",
+      "normalized_text_sha256": "66dcf22a6b98e9b35fe069aa19373228e9e2070a2508f253801aca3669e51794"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/release_routes_v1.0.json",
+      "snapshot": "baseline/release_routes_v1.0.json",
+      "byte_sha256": "58eebb7f99ee40b5e53ac0e4ae83d9b102a781e1a66196936138f962cf13b472",
+      "worktree_byte_sha256": "58eebb7f99ee40b5e53ac0e4ae83d9b102a781e1a66196936138f962cf13b472",
+      "normalized_text_sha256": "58eebb7f99ee40b5e53ac0e4ae83d9b102a781e1a66196936138f962cf13b472"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.0.json",
+      "snapshot": "baseline/task_milestones_v1.0.json",
+      "byte_sha256": "285173b311500db71b94cf6bd6a901154ef5a0be57253671748ef593ea0171f3",
+      "worktree_byte_sha256": "285173b311500db71b94cf6bd6a901154ef5a0be57253671748ef593ea0171f3",
+      "normalized_text_sha256": "285173b311500db71b94cf6bd6a901154ef5a0be57253671748ef593ea0171f3"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestone_status_v1.0.json",
+      "snapshot": "baseline/task_milestone_status_v1.0.json",
+      "byte_sha256": "3374a0420c664cad2d64d2b1a10d6ad0fcb4dd9a60762bac01d5fd4c83a2c35b",
+      "worktree_byte_sha256": "3374a0420c664cad2d64d2b1a10d6ad0fcb4dd9a60762bac01d5fd4c83a2c35b",
+      "normalized_text_sha256": "3374a0420c664cad2d64d2b1a10d6ad0fcb4dd9a60762bac01d5fd4c83a2c35b"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv",
+      "snapshot": "baseline/upgrade_subdeliveries_v1.0.csv",
+      "byte_sha256": "942e78818dfb35e12b829114ea46f20e7aaa3b1e3a1a473ad8f3cce62a8f4b47",
+      "worktree_byte_sha256": "942e78818dfb35e12b829114ea46f20e7aaa3b1e3a1a473ad8f3cce62a8f4b47",
+      "normalized_text_sha256": "942e78818dfb35e12b829114ea46f20e7aaa3b1e3a1a473ad8f3cce62a8f4b47"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+      "snapshot": "baseline/external_capability_matrix_v1.0.csv",
+      "byte_sha256": "6f3d58c0f8179892bce663ace3d18637b6696dce5fc252053c1320e003faaefd",
+      "worktree_byte_sha256": "6f3d58c0f8179892bce663ace3d18637b6696dce5fc252053c1320e003faaefd",
+      "normalized_text_sha256": "6f3d58c0f8179892bce663ace3d18637b6696dce5fc252053c1320e003faaefd"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/route_evaluator.py",
+      "snapshot": "baseline/route_evaluator.py",
+      "byte_sha256": "583dd6e57a9aba5361e912cd2d6354b15606cdeca6f11df14aad3f18752d816f",
+      "worktree_byte_sha256": "583dd6e57a9aba5361e912cd2d6354b15606cdeca6f11df14aad3f18752d816f",
+      "normalized_text_sha256": "583dd6e57a9aba5361e912cd2d6354b15606cdeca6f11df14aad3f18752d816f"
+    }
+  ]
+}

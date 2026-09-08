@@ -1,0 +1,105 @@
+{
+  "task": {
+    "task_id": "U12-04",
+    "parent_id": "SRP-ROOT",
+    "wave": "W1",
+    "domain": "统计规格",
+    "title": "【统计规格】PANAS主结果SAP与新功效规格",
+    "depends_on": "U12-01|F-02",
+    "status": "WAIT_DEP",
+    "kind": "FIXED",
+    "effort_person_days": "4",
+    "process_profile": "P-ANALYSIS",
+    "skills": "Python+统计复算+合同测试",
+    "learning_refs": "L-STAT|L-PYTEST",
+    "deliverables": "SAP;差值方向;参数来源;功效模拟规格",
+    "acceptance_criteria": "双侧主比较；等效默认不启用；N和界值待真实冻结；覆盖正反零与缺失情景",
+    "evidence_required": "版本与实际检查日志；外部项须真实回执",
+    "completion_condition": "新制品验收对象明确；不覆盖历史DONE；研究证据单独判断",
+    "claimant": "",
+    "branch": "",
+    "reviewer": "未指定"
+  },
+  "base_commit": "de4ebcbfea209674127c833dd9e69ad703a6634b",
+  "authority": "CANDIDATE_NOT_DISPATCHABLE",
+  "source_id": "UP-04",
+  "baseline_files": [
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+      "snapshot": "baseline/05_可领取任务包.csv",
+      "byte_sha256": "4cc5c7d9e2d9cde89a4db3e9e8983b7d099799950b9d82c475f3213b6f528982",
+      "worktree_byte_sha256": "0ddfcddaef34b1869afa5e3c42c5ea52dff6fb5176cc4629894fdd745cc9d5a0",
+      "normalized_text_sha256": "4cc5c7d9e2d9cde89a4db3e9e8983b7d099799950b9d82c475f3213b6f528982"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/07_validate_task_packages.py",
+      "snapshot": "baseline/07_validate_task_packages.py",
+      "byte_sha256": "3d8bb80636a1df928f99bc9ab78bd003d433409f52722206822de6f20f700077",
+      "worktree_byte_sha256": "2984674d4b187085dda3c5931d1466b005591dcec8f53a1fe6ace5fb35f3fbe3",
+      "normalized_text_sha256": "3d8bb80636a1df928f99bc9ab78bd003d433409f52722206822de6f20f700077"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/12_独立任务包文件映射_v1.0.json",
+      "snapshot": "baseline/12_独立任务包文件映射_v1.0.json",
+      "byte_sha256": "4a341f275e6961055e9313d1aa2185f4bfa945fc9924c0188fe214e75f41a36e",
+      "worktree_byte_sha256": "e02ba564d6dd828f46f30be23f26e8f04a7fdd10e54f9f5685916f7d8f400910",
+      "normalized_text_sha256": "4a341f275e6961055e9313d1aa2185f4bfa945fc9924c0188fe214e75f41a36e"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md",
+      "snapshot": "baseline/08_任务技能与国内学习资料_v1.0.md",
+      "byte_sha256": "39e309274d067d5ed0dec15a4e11be34543af5203a9640e97415fb158f93069f",
+      "worktree_byte_sha256": "39e309274d067d5ed0dec15a4e11be34543af5203a9640e97415fb158f93069f",
+      "normalized_text_sha256": "39e309274d067d5ed0dec15a4e11be34543af5203a9640e97415fb158f93069f"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+      "snapshot": "baseline/protocol_authority_v1.1.json",
+      "byte_sha256": "66dcf22a6b98e9b35fe069aa19373228e9e2070a2508f253801aca3669e51794",
+      "worktree_byte_sha256": "66dcf22a6b98e9b35fe069aa19373228e9e2070a2508f253801aca3669e51794",
+      "normalized_text_sha256": "66dcf22a6b98e9b35fe069aa19373228e9e2070a2508f253801aca3669e51794"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/release_routes_v1.0.json",
+      "snapshot": "baseline/release_routes_v1.0.json",
+      "byte_sha256": "58eebb7f99ee40b5e53ac0e4ae83d9b102a781e1a66196936138f962cf13b472",
+      "worktree_byte_sha256": "58eebb7f99ee40b5e53ac0e4ae83d9b102a781e1a66196936138f962cf13b472",
+      "normalized_text_sha256": "58eebb7f99ee40b5e53ac0e4ae83d9b102a781e1a66196936138f962cf13b472"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.0.json",
+      "snapshot": "baseline/task_milestones_v1.0.json",
+      "byte_sha256": "285173b311500db71b94cf6bd6a901154ef5a0be57253671748ef593ea0171f3",
+      "worktree_byte_sha256": "285173b311500db71b94cf6bd6a901154ef5a0be57253671748ef593ea0171f3",
+      "normalized_text_sha256": "285173b311500db71b94cf6bd6a901154ef5a0be57253671748ef593ea0171f3"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestone_status_v1.0.json",
+      "snapshot": "baseline/task_milestone_status_v1.0.json",
+      "byte_sha256": "3374a0420c664cad2d64d2b1a10d6ad0fcb4dd9a60762bac01d5fd4c83a2c35b",
+      "worktree_byte_sha256": "3374a0420c664cad2d64d2b1a10d6ad0fcb4dd9a60762bac01d5fd4c83a2c35b",
+      "normalized_text_sha256": "3374a0420c664cad2d64d2b1a10d6ad0fcb4dd9a60762bac01d5fd4c83a2c35b"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv",
+      "snapshot": "baseline/upgrade_subdeliveries_v1.0.csv",
+      "byte_sha256": "942e78818dfb35e12b829114ea46f20e7aaa3b1e3a1a473ad8f3cce62a8f4b47",
+      "worktree_byte_sha256": "942e78818dfb35e12b829114ea46f20e7aaa3b1e3a1a473ad8f3cce62a8f4b47",
+      "normalized_text_sha256": "942e78818dfb35e12b829114ea46f20e7aaa3b1e3a1a473ad8f3cce62a8f4b47"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+      "snapshot": "baseline/external_capability_matrix_v1.0.csv",
+      "byte_sha256": "6f3d58c0f8179892bce663ace3d18637b6696dce5fc252053c1320e003faaefd",
+      "worktree_byte_sha256": "6f3d58c0f8179892bce663ace3d18637b6696dce5fc252053c1320e003faaefd",
+      "normalized_text_sha256": "6f3d58c0f8179892bce663ace3d18637b6696dce5fc252053c1320e003faaefd"
+    },
+    {
+      "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/route_evaluator.py",
+      "snapshot": "baseline/route_evaluator.py",
+      "byte_sha256": "583dd6e57a9aba5361e912cd2d6354b15606cdeca6f11df14aad3f18752d816f",
+      "worktree_byte_sha256": "583dd6e57a9aba5361e912cd2d6354b15606cdeca6f11df14aad3f18752d816f",
+      "normalized_text_sha256": "583dd6e57a9aba5361e912cd2d6354b15606cdeca6f11df14aad3f18752d816f"
+    }
+  ]
+}

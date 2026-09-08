@@ -1,0 +1,25 @@
+{
+  "evidence_status": "SYNTHETIC_TEST_ONLY_NOT_PARTICIPANT_DATA",
+  "classification": {
+    "input": {
+      "estimate": 0.0,
+      "ci95": [
+        -3.0,
+        3.0
+      ],
+      "practical_delta": 1.0
+    },
+    "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+    "direction_evidence": "NO_DIRECTION_ESTABLISHED",
+    "practical_scale": "IMPORTANT_EFFECT_NOT_EXCLUDED",
+    "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+    "functional_guard": "UNKNOWN",
+    "sensitivity": "UNKNOWN",
+    "prespecified_affect_result_must_be_reported": true,
+    "formal_equivalence_claim_allowed": false,
+    "automatic_deployment_recommendation": false,
+    "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+    "long_term_or_treatment_efficacy_claim_allowed": false,
+    "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+  }
+}

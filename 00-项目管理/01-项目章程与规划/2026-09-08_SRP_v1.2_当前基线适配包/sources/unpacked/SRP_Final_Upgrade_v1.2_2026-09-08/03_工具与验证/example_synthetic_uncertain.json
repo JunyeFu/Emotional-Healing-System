@@ -1,0 +1,8 @@
+{
+  "estimate": 0.0,
+  "ci_low": -3.0,
+  "ci_high": 3.0,
+  "practical_delta": 1.0,
+  "functional_guard": "UNKNOWN",
+  "sensitivity": "UNKNOWN"
+}

@@ -1,0 +1,67 @@
+{
+  "evidence_status": "ANALYTIC_APPROXIMATIONS_NOT_OBSERVED_DATA_NOT_FORMAL_MONTE_CARLO",
+  "formula": "n_per_arm=ceil(2*(z_.975+z_.90)^2/d_residual^2)",
+  "alpha_two_sided": 0.05,
+  "target_power": 0.9,
+  "warning": "d is difference / ANCOVA residual SD, not raw-score Cohen d. 20% unavailability is illustrative, inferred from the old 192/240 anchor, not observed. Actual N/stopping must be frozen for assigned participants; never refill outcome cells.",
+  "affect_sensitivity": [
+    {
+      "residual_standardized_difference": 0.2,
+      "ideal_n_per_arm": 526,
+      "complete_results_rounded_for_planning": 1056,
+      "illustrative_recruitment_with_20pct_unavailable": 1344
+    },
+    {
+      "residual_standardized_difference": 0.3,
+      "ideal_n_per_arm": 234,
+      "complete_results_rounded_for_planning": 480,
+      "illustrative_recruitment_with_20pct_unavailable": 624
+    },
+    {
+      "residual_standardized_difference": 0.4,
+      "ideal_n_per_arm": 132,
+      "complete_results_rounded_for_planning": 288,
+      "illustrative_recruitment_with_20pct_unavailable": 384
+    },
+    {
+      "residual_standardized_difference": 0.5,
+      "ideal_n_per_arm": 85,
+      "complete_results_rounded_for_planning": 192,
+      "illustrative_recruitment_with_20pct_unavailable": 240
+    },
+    {
+      "residual_standardized_difference": 0.6,
+      "ideal_n_per_arm": 59,
+      "complete_results_rounded_for_planning": 144,
+      "illustrative_recruitment_with_20pct_unavailable": 192
+    }
+  ],
+  "capacity": {
+    "core_sessions_anchor": 288,
+    "core_station_hours": [
+      264.0,
+      336.0
+    ],
+    "full_sessions_anchor": 528,
+    "full_station_hours": [
+      484.0,
+      616.0
+    ],
+    "illustrative_sessions_per_week": 32,
+    "core_collection_weeks": 9.0,
+    "full_collection_weeks": 16.5,
+    "excludes": "Level A/B, extra rehearsal, approvals, scheduling, no-shows, failures, analysis, staffing overhead"
+  },
+  "pf_counterexample": {
+    "module_differences": [
+      -0.24,
+      0,
+      0,
+      0
+    ],
+    "mean": -0.06,
+    "candidate_margin": 0.075,
+    "conclusion": "Mean contrast within the margin does not establish each module noninferior."
+  },
+  "formal_collection_allowed": false
+}
