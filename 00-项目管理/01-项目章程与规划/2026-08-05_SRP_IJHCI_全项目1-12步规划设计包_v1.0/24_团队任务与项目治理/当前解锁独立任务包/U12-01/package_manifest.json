@@ -2,12 +2,12 @@
   "package_schema_version": "1.0",
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "U12-01",
-  "status": "IN_PROGRESS",
-  "registry_sha256": "0CDB5360408C2134F8086ECC1B3C8C32728A44E2515C7375D02CCDAE4708361E",
+  "status": "IN_REVIEW",
+  "registry_sha256": "074595051A6BE107BF78E7EC627EE3718939F6B9B8BCCCBBFB3D59A26A69EFC5",
   "input_snapshot_id": "93426C648A043E79596A7D5D7EBFB803EF0507B40D72D8F01E06C3971D52F546",
   "previous_input_snapshot_id": "93426C648A043E79596A7D5D7EBFB803EF0507B40D72D8F01E06C3971D52F546",
   "input_changed": false,
-  "candidate_identity": "bdda9f955c4de7e96bd07fb03fd6a63c8ef0ac8a",
+  "candidate_identity": "47c81744884ae380e047cafb722aeb332c8cda29",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/candidate/protocol_authority_v1.2.json",

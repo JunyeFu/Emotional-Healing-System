@@ -173,6 +173,6 @@
   ],
   "authority_note": "This JSON is a new design contract. Existing runtime consumers must be migrated and tested in U12-06. A false field here does not itself intercept an old executable.",
   "adaptation_base_commit": "de4ebcbfea209674127c833dd9e69ad703a6634b",
-  "adoption_status": "GOVERNANCE_ADOPTED_IMPLEMENTATION_IN_PROGRESS",
+  "adoption_status": "GOVERNANCE_IMPLEMENTED_IN_REVIEW",
   "source_baseline_commit": "145f7b20b5e2b3453235fb79090b982785b4c5a3"
 }

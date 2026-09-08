@@ -1508,6 +1508,8 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 下一硬门为U12-01受控治理迁移。候选协议与71条任务尚未启用；不代签、不合并main，不改变研究设计或真实准入状态。
 # 2026-09-08 U12-01治理迁移
 
+- 实现候选固定为`47c81744884ae380e047cafb722aeb332c8cda29`；U12-01已转IN_REVIEW，待签署报告已生成，未代填真实第二人结论。
+
 - 在分支 `codex/u12-01-governance-migration` 受控启用治理v1.2：71条任务、68项固定任务、3项模板；保留18项DONE与A-03原行及冻结输入。
 - 只迁移治理消费者、依赖、任务分发与当前视图；真实系统迁移归U12-06，正式采集保持禁止，数值/时序不代冻结。
 - 备份：`D:/Agent/SRP-backups/u12-01-bdda9f9-20260908/tracked-baseline.zip`；原未跟踪TD资产及tmp不纳入提交。

@@ -1,6 +1,6 @@
 # SRP实验系统与论文证据系统
 
-> SRP · 4人团队 · 治理v1.2：71项任务（68固定+3模板）；18项原签收DONE保留；U12-01为IN_PROGRESS，A-03为IN_PROGRESS，A-03-SPEC为DONE；READY=U-02/T-02；真实准入与研究数值仍未冻结
+> SRP · 4人团队 · 治理v1.2：71项任务（68固定+3模板）；18项原签收DONE保留；U12-01为IN_REVIEW，A-03为IN_PROGRESS，A-03-SPEC为DONE；READY=U-02/T-02；真实准入与研究数值仍未冻结
 
 ## 项目与论文主线
 
