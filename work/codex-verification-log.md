@@ -1,5 +1,12 @@
 # Codex Verification Log
 
+## 2026-09-08 用户完成TD窗口清理并保存
+
+- 用户执行当前窗口清理后确认保存；重新展开磁盘主工程，`/project1`直接子节点仅剩`T01_TelemetryPanel`，六个默认演示根节点已不存在。
+- `project1.parm`显示源为`./T01_TelemetryPanel/Output/display_out`，检查返回`SAVED_PROJECT_CLEANUP_PASS`。
+- 用户保存后TOE SHA-256：`3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED`。此记录接续此前离线候选哈希，不改写历史报告。
+- 新增Backup目录、T01_TelemetryPanel.3.toe与tmp保留且不纳入提交。仅证明保存后的工程结构与绑定正确，不扩大为新版A界面运行验收。
+
 ## 2026-09-08 TD工程壳离线清理
 
 - toeexpand/toecollapse回读验证：默认演示条目0，T-01展开文件49/49字节一致；project1显示源已指向T-01。
