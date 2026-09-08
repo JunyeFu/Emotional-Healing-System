@@ -1,5 +1,11 @@
 # Codex Verification Log
 
+## 2026-09-08 T-01工作台设计预览
+
+- 直接查看生成图：会话、设备质量、目标实际对照、时钟、链路统计和降级状态分区完整，无可见文字遮挡或裁切；仅证明当前等待状态设计预览。
+- 图片SHA-256：`7A7EC54FD7246F51F795489CC3210CB7895E09D1CD7201BC472DD40D54E1DF70`。
+- 原生运行验证未执行：TD自动化接口127.0.0.1:9981返回ECONNREFUSED。原签署运行证据未替换。
+
 > Use this template to record evidence for local project tasks. Add newest entries at the top.
 
 ## Template

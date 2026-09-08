@@ -1,5 +1,11 @@
 # Codex Blackboard
 
+## 2026-09-08 T-01工作台生图重设计
+
+- 已读取T-01任务范围、构建脚本、适配器与旧截图；确认旧整页文本存在右侧裁切与底部溢出。
+- 使用内置image_gen两轮生成浅色分区设计，保存至`02-技术研发/03-TouchDesigner/t01_telemetry_panel/design/`，包含图片、提示词与实施验收规格。
+- TD自动化接口9981连接被拒绝；新toe/tox尚未重建。下一步是连接TD后按规格实现原生分区显示，并验证多状态和长文本。任务状态未迁移。
+
 > Purpose: lightweight project-local working memory for the current task. Keep this file factual, brief, and easy to reset.
 
 ## Current Task Goal
