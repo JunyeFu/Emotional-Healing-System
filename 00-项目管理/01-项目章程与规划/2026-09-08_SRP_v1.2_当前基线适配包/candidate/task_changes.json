@@ -26,7 +26,7 @@
       "after": {
         "depends_on": "F-02|R-01|G-01|U12-01",
         "title": "【研究工具】Level A构念与静态/回放独立重建材料",
-        "completion_condition": "可先生成不依赖U-07最终构建的材料；真实执行需UP-05；最终渲染再复核，不能把材料完成当真人研究完成"
+        "completion_condition": "可先生成不依赖U-07最终构建的材料；真实执行需U12-05；最终渲染再复核，不能把材料完成当真人研究完成"
       }
     },
     {
@@ -38,7 +38,7 @@
       },
       "after": {
         "depends_on": "Q-01|U12-05",
-        "completion_condition": "在UP-05实际覆盖的批准范围执行Level A；真实专家原始记录与修订决定，失败退回Q-01"
+        "completion_condition": "在U12-05实际覆盖的批准范围执行Level A；真实专家原始记录与修订决定，失败退回Q-01"
       }
     },
     {
@@ -62,7 +62,7 @@
       },
       "after": {
         "depends_on": "Q-02|E-01|U12-05",
-        "completion_condition": "在UP-05覆盖且有真实设备研究许可时执行；真实设备/正式活动超出范围则等待G-05对应批准；不得借静态许可运行未获准设备研究"
+        "completion_condition": "在U12-05覆盖且有真实设备研究许可时执行；真实设备/正式活动超出范围则等待G-05对应批准；不得借静态许可运行未获准设备研究"
       }
     },
     {
@@ -87,7 +87,7 @@
         "title": "【统计实现】PANAS主要比较、支持测量与新功效模拟",
         "deliverables": "PANAS版本计分;ANCOVA/HC3及有界插补合并;步骤理解与努力;双侧效应/CI;零正反情景Monte Carlo;联合部署成功率",
         "acceptance_criteria": "AC1主要beta为native减abstract，双侧.05；AC2设备缺失不删除有效PANAS且SCCI仅操纵；AC3地板缺失/不同方向/护栏均覆盖；AC4确认性等效默认关闭，不用旧192/240锚点代替新功效；AC5主要前测先于分条件教学的候选时序及相应估计目标通过受控冻结，不能把处理后前测当无干预基线",
-        "completion_condition": "依据UP-04与真实盲态参数完成并独立复算；不依据正式有利结果选指标或效应"
+        "completion_condition": "依据U12-04与真实盲态参数完成并独立复算；不依据正式有利结果选指标或效应"
       },
       "reason": "A-03-SPEC remains DONE; new spec belongs to U12-04; frozen input is unchanged."
     },
@@ -105,7 +105,7 @@
         "depends_on": "E-03|X-01|Z-01|A-02|A-03-CAL|G-05|U12-11",
         "title": "【预注册与锁定】阶段一情绪比较与独立功能护栏锁定",
         "deliverables": "主要情绪SAP;PANAS与许可;固定教学预算;功能界值理由;新N与停止规则;隐藏清单;构建与算法哈希;结果中立报告分支",
-        "acceptance_criteria": "AC1真实批准、UP-06正式入口阻断及UP-11数值冻结全部完成；AC2主要结果与护栏分开且所有预设结果均报告；AC3任一未关闭项拒绝B-02实例化，不能沿用旧Gate2值替代",
+        "acceptance_criteria": "AC1真实批准、U12-06正式入口阻断及U12-11数值冻结全部完成；AC2主要结果与护栏分开且所有预设结果均报告；AC3任一未关闭项拒绝B-02实例化，不能沿用旧Gate2值替代",
         "completion_condition": "真实预注册回执与冻结字段版本一致；本包最终文档或空模板不构成放行；共同准备、前测、揭示与分条件教学的时序和处理范围必须一致"
       }
     },
@@ -149,13 +149,16 @@
     },
     {
       "task_id": "A-04",
-      "disposition": "KEEP_EXISTING_A06_ROUTE",
-      "proposed": {
-        "depends_on": "A-05|U12-10",
-        "title": "【核心最终分析】阶段一证据归档与独立复现",
-        "deliverables": "核心分析报告;正反结论复核;全部主次结果;缺失偏离;数据字典;合成与真实重建边界;独立复现",
-        "acceptance_criteria": "AC1核心不依赖E-06；AC2beta方向/区间与主张一致；AC3无阶段三也能完成核心证据包，已实施扩展记录在披露清单",
-        "completion_condition": "核心证据与限定结论可复现；不是必须显著；扩展分析由UP-08独立承接"
+      "disposition": "CANDIDATE_ONLY",
+      "before": {
+        "deliverables": "Gate1至3估计目标报告;三个PF与联合Gate2;次要FDR;复合实例效应区间;策略OPE支持ESS熵回退校准;数据字典;偏离缺失降级附录;复现脚本",
+        "acceptance_criteria": "AC1全部表图从两阶段锁库一键生成且逐Gate总体分配结果偏离缺失模型一致；AC2Gate顺序主次探索FDR和失败降级无越级；AC3数据字典公开层级合成数据与干净环境重建通过G-02检查",
+        "completion_condition": "只报告数据支持的结果并保留失败结论不确定性和主张降级"
+      },
+      "after": {
+        "deliverables": "阶段三独立扩展估计目标与锁定分析;全部预设结果与区间;次要FDR;偏离停止与回退暴露;独立复现日志",
+        "acceptance_criteria": "AC1保持阶段三分析范围及A-05/E-06依赖；AC2独立报告扩展预设结果，功能护栏或SCCI失败不隐藏预设情绪结果；AC3不以旧联合Gate2或有序门作为结果报告前置；AC4完整披露停止、偏离、缺失与回退，结论限于冻结估计目标",
+        "completion_condition": "按独立扩展SAP完成锁定分析与复现，不要求原生获胜；保留全部预设结果，不以功能护栏或SCCI失败删除结果；U12-08复核附录，A-06关闭实际研究范围"
       }
     },
     {
@@ -195,7 +198,7 @@
         "title": "【论文写作】提示比较的情绪收益、代价与设计边界",
         "deliverables": "结果中立主稿;主张证据表;真实设计规则;正反/等效选项/不确定分支;补充材料;可选扩展披露",
         "acceptance_criteria": "AC1所有结果与A-06一致；AC2不把原生等同隐藏且不显著不是等效；AC3没有E-06仍能形成完整核心稿；AC4扩展已运行时如实披露并按相应分析状态附上",
-        "completion_condition": "完成符合证据的核心稿，不要求原生胜出；扩展仅在UP-08证据就绪时写相应结果"
+        "completion_condition": "完成符合证据的核心稿，不要求原生胜出；扩展仅在U12-08证据就绪时写相应结果"
       }
     },
     {
@@ -205,7 +208,7 @@
         "completion_condition": "提交动作需项目负责人确认且不把投稿写成发表或把受限内容伪装公开"
       },
       "after": {
-        "completion_condition": "核对提交当天期刊说明/数据政策/AI披露，独立复现和真实作者同意；核心路线不要求UP-08或E-06；实际公开/投稿须人类授权"
+        "completion_condition": "核对提交当天期刊说明/数据政策/AI披露，独立复现和真实作者同意；核心路线不要求U12-08或E-06；实际公开/投稿须人类授权"
       }
     },
     {

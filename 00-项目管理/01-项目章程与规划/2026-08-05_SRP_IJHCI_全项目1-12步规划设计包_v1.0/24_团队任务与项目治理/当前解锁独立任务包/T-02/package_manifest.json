@@ -4,9 +4,9 @@
   "task_id": "T-02",
   "status": "READY",
   "registry_sha256": "4CC5C7D9E2D9CDE89A4DB3E9E8983B7D099799950B9D82C475F3213B6F528982",
-  "input_snapshot_id": "395E389B91D3E0FBFF5B866861B6B671288CEB85D4C26AADD019C6687AC074A3",
+  "input_snapshot_id": "F4680AC286921D91F60F0A94F113AC9264B1580F6035E65C30E261A1A7203E6E",
   "previous_input_snapshot_id": "395E389B91D3E0FBFF5B866861B6B671288CEB85D4C26AADD019C6687AC074A3",
-  "input_changed": false,
+  "input_changed": true,
   "candidate_identity": null,
   "source_files": [
     {
@@ -54,8 +54,8 @@
     {
       "source_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md",
       "package_path": "inputs/08_README.md",
-      "sha256": "1C48D6D2001B17BB06B4D4C86469D31C0F8D8478ABC6D45541C98970A82F1429",
-      "size_bytes": 1258
+      "sha256": "FEC87F24850F8D2EE2F2CC03DAFB527682A9B9CFDB594982A2F0AB990AC65BF5",
+      "size_bytes": 1928
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md",
@@ -66,8 +66,8 @@
     {
       "source_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe",
       "package_path": "inputs/10_T01_TelemetryPanel.toe",
-      "sha256": "38ECA7FAD11A989DA4EF3923A4277E557A966586CDD2F7C2F1EC251CCFE57E44",
-      "size_bytes": 11570
+      "sha256": "3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED",
+      "size_bytes": 10746
     },
     {
       "source_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox",

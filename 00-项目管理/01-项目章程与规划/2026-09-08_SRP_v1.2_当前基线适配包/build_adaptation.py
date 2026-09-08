@@ -34,7 +34,7 @@ def write_json(path, value):
 
 def remap(value):
     if isinstance(value, str):
-        return re.sub(r"\bUP-\d{2}\b", lambda m: MAP.get(m[0], m[0]), value)
+        return re.sub(r"(?<![A-Za-z0-9_-])UP-\d{2}(?![A-Za-z0-9_-])", lambda m: MAP.get(m[0], m[0]), value)
     if isinstance(value, list):
         return [remap(v) for v in value]
     if isinstance(value, dict):
@@ -94,8 +94,11 @@ def build():
         tid = m["task_id"]
         proposed = remap(m["changes"])
         if tid == "A-04":
-            changes.append({"task_id": tid, "disposition": "KEEP_EXISTING_A06_ROUTE", "proposed": proposed})
-            continue
+            proposed = {
+                "deliverables": "阶段三独立扩展估计目标与锁定分析;全部预设结果与区间;次要FDR;偏离停止与回退暴露;独立复现日志",
+                "acceptance_criteria": "AC1保持阶段三分析范围及A-05/E-06依赖；AC2独立报告扩展预设结果，功能护栏或SCCI失败不隐藏预设情绪结果；AC3不以旧联合Gate2或有序门作为结果报告前置；AC4完整披露停止、偏离、缺失与回退，结论限于冻结估计目标",
+                "completion_condition": "按独立扩展SAP完成锁定分析与复现，不要求原生获胜；保留全部预设结果，不以功能护栏或SCCI失败删除结果；U12-08复核附录，A-06关闭实际研究范围"
+            }
         if tid == "A-03":
             changes.append({"task_id": tid, "disposition": "PENDING_SCOPE_REACCEPTANCE", "proposed": proposed,
                             "reason": "A-03-SPEC remains DONE; new spec belongs to U12-04; frozen input is unchanged."})
@@ -125,6 +128,9 @@ def build():
             r["depends_on"] = "A-04|E-05"
         if r["task_id"] == "U12-12":
             r["depends_on"] = "W-03|A-06"
+        if r["task_id"] == "U12-11":
+            r["depends_on"] += "|A-03-CAL"
+            r["acceptance_criteria"] += "；最终样本与界值冻结必须消费已完成A-03-CAL的盲态校准版本与证据哈希"
         index[r["task_id"]] = r
     candidate = HERE / "candidate"
     write_csv(candidate / "task_registry.csv", list(index.values()))

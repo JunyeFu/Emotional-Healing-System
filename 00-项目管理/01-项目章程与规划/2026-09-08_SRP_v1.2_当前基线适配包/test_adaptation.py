@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from build_adaptation import HERE, REPO, SOURCE, read_json, rows, sha, write_json
+from build_adaptation import HERE, REPO, SOURCE, read_json, remap, rows, sha, write_json
 
 
 def graph_errors(tasks, milestones, route):
@@ -69,6 +69,29 @@ class AdaptationTests(unittest.TestCase):
         self.assertFalse(any(r["task_id"].startswith("UP-") for r in self.tasks))
         for r in self.tasks:
             self.assertTrue(r["title"].startswith("【" + r["domain"] + "】"))
+
+    def test_chinese_adjacent_task_references(self):
+        self.assertEqual(remap("需UP-05；UP-06正式入口"), "需U12-05；U12-06正式入口")
+        self.assertEqual(remap("XUP-05 UP-051"), "XUP-05 UP-051")
+        changes = read_json(HERE / "candidate/task_changes.json")["changes"]
+        for item in changes:
+            for field in ("after", "proposed"):
+                self.assertNotIn("UP-", str(item.get(field, {})))
+        for task in self.tasks:
+            if task["task_id"].startswith("U12-"):
+                self.assertNotIn("UP-", str(task))
+
+    def test_final_freeze_waits_for_blind_calibration(self):
+        self.assertIn("A-03-CAL", self.index["U12-11"]["depends_on"].split("|"))
+        self.assertIn("证据哈希", self.index["U12-11"]["acceptance_criteria"])
+
+    def test_extension_keeps_scope_not_ordered_outcome_gates(self):
+        task = self.index["A-04"]
+        original = next(r for r in self.baseline if r["task_id"] == "A-04")
+        for field in ("task_id", "title", "status", "depends_on"):
+            self.assertEqual(task[field], original[field])
+        self.assertIn("功能护栏或SCCI失败不隐藏预设情绪结果", task["acceptance_criteria"])
+        self.assertIn("不以旧联合Gate2或有序门作为结果报告前置", task["acceptance_criteria"])
 
     def test_signed_and_in_progress_rows_preserved(self):
         protected = [r for r in self.baseline if r["status"] in {"DONE", "IN_PROGRESS", "IN_REVIEW"}]

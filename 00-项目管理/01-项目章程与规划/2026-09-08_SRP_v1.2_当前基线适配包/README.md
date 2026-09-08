@@ -2,7 +2,7 @@
 
 状态：`CANDIDATE_NOT_ACTIVE`。基线：`de4ebcbfea209674127c833dd9e69ad703a6634b`。
 
-接入阻断：既有T-02独立包对TD README和toe的输入哈希漂移尚未处理。该差异已存在于本包基线，不能在处理前宣称全仓分发校验通过；详见[验证记录](evidence/验证记录.md)。
+升级前收尾：既有T-02输入漂移已在保留旧版本、登记影响与明确运行边界后更新，活动任务状态不变。首次失败记录保留在[验证记录](evidence/验证记录.md)，当前结论见[升级前收尾](升级前收尾.md)。
 
 本包已经完成文件归档、基线差异适配和离线一致性验证；没有应用新研究协议，没有改动活动任务状态。下载目录原件保留。
 
@@ -14,7 +14,7 @@
 4. [候选任务注册表](candidate/task_registry.csv)与[字段差异](candidate/task_changes.json)：71条候选任务记录，68项固定任务、3项批次模板；另有3个里程碑，合计74个依赖节点。
 5. [候选研究合同](candidate/protocol_authority_v1.2.json)、[未填写研究模板](candidate/study_manifest_v1.2.template.json)、[两条收尾路线](candidate/release_routes.json)。
 6. [23项审计处置索引](candidate/audit_disposition.csv)：保留原问题编号，未验证事项不标为关闭。
-7. [本轮验证](evidence/adaptation_validation.json)：15项本地适配测试。外包自带48项测试及14项检查不属于本轮重跑结果。
+7. [本轮验证](evidence/adaptation_validation.json)：收尾修复后18项本地适配测试。外包自带48项测试及14项检查不属于本轮重跑结果。
 
 ## 独立候选任务
 

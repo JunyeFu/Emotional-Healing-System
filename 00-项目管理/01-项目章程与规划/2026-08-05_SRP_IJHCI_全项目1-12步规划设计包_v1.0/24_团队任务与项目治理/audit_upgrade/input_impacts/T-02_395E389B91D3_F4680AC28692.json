@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T-02",
+  "status": "READY",
+  "claimant": "",
+  "previous_input_snapshot_id": "395E389B91D3E0FBFF5B866861B6B671288CEB85D4C26AADD019C6687AC074A3",
+  "observed_input_snapshot_id": "F4680AC286921D91F60F0A94F113AC9264B1580F6035E65C30E261A1A7203E6E",
+  "disposition": "READY_INPUT_REFRESHED_WITH_SCOPE_NOTICE",
+  "authorization": "User requested pre-upgrade closeout; unclaimed READY input refresh only.",
+  "review_method": "Codex reviewed tracked TD cleanup and host-only workbench candidate documentation; no human or live runtime signoff.",
+  "previous_package_commit": "15a4c31",
+  "backup_directory": "D:/Agent/SRP-backups/preupgrade-15a4c31-20260908/当前解锁独立任务包",
+  "upstream_commits": ["833e561", "66824b2", "de4ebcb"],
+  "changes": [
+    {
+      "source_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md",
+      "previous_sha256": "1C48D6D2001B17BB06B4D4C86469D31C0F8D8478ABC6D45541C98970A82F1429",
+      "current_sha256": "FEC87F24850F8D2EE2F2CC03DAFB527682A9B9CFDB594982A2F0AB990AC65BF5",
+      "effect": "Documents demo removal and host-tested A-theme candidate; live UI remains unverified."
+    },
+    {
+      "source_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe",
+      "previous_sha256": "38ECA7FAD11A989DA4EF3923A4277E557A966586CDD2F7C2F1EC251CCFE57E44",
+      "current_sha256": "3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED",
+      "effect": "User-saved cleaned project shell; old runtime signoff does not attest this new byte identity."
+    }
+  ],
+  "unchanged": ["registry", "mapping", "A-03 frozen input", "U-02 input", "T-01 signed scope", "active protocol"],
+  "remaining_runtime_work": ["TD reopen and new shell runtime evidence", "A-theme native UI validation", "T-02 request channel implementation"],
+  "research_authorized": false
+}
