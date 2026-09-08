@@ -1705,3 +1705,20 @@
 
 - Tools/Governance/test_readme_progress.py：3 passed，覆盖首次插入、状态替换、重复生成及无章节README。
 - 首页SVG XML可解析，与权威团队任务SVG字节哈希一致；任务状态未改变，不重复生成研究证据。
+
+# 2026-09-08 GitHub README验证
+
+- 14个GitHub版本化文件链接通过git cat-file核对目标提交内文件存在。
+- git diff --check通过；README受限措辞扫描无匹配（rg返回1）。
+- 状态引用73ffbf5：20 DONE、U12-03 IN_REVIEW、6 READY。633/22测试数为该候选已有证据，本轮仅文档更新，不重新宣称运行产品测试。
+- 发布范围：README与工作流日志，不更新任务注册表或合并升级代码。
+# 2026-09-08 首页SVG发布验证
+
+- 升级生成器3项专项通过；首页SVG与任务图哈希一致、XML可解析、README相对路径存在。
+- 任务状态未改动，展示20 DONE、A-03 IN_PROGRESS、U12-03 IN_REVIEW、6 READY。
+# 2026-09-08 合并收尾验证
+
+- 合并工作树根pytest：633 passed in 55.75s；教学与README专项：25 passed。
+- 71项注册表、8个独立包/70快照、审计升级与v1.2治理均PASS。
+- README 14个链接存在；内嵌SVG XML可解析，字节哈希与任务图一致；冲突标记扫描无匹配；git diff --check通过。
+- 历史6处工作区字节身份仍按既有范围待追溯；本次未运行真实设备、Unity或TD验收。

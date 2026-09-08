@@ -1544,3 +1544,18 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 
 - 按用户要求内嵌团队任务SVG；任何任务状态变化都同步README、团队SVG和main首页展示，规则写入AGENTS。
 - render_governance_views生成README受控区块和assets/readme/team-task-progress.svg；默认首页仅发布展示文件与来源说明，不顺带合并实现。
+
+# 2026-09-08 GitHub首页更新
+
+- 按用户要求更新默认main的README，基于origin/main=145f7b20b5e2b3453235fb79090b982785b4c5a3创建codex/github-readme；不合并升级实现。
+- 首页按升级工作线73ffbf5提供状态、研究主线和14个已核对版本化文件链接，明确main文件与升级状态的范围区别。
+- 仅发布README和本次工作/验证记录；保留未跟踪TD素材与tmp，完成后返回codex/u12-03-fair-training继续项目工作。
+# 2026-09-08 首页内嵌团队SVG
+
+- 首页直接展示升级工作线852cfd8生成的团队任务进度图，保留来源与main范围区分；同步习惯写入AGENTS。
+- 生成与幂等测试在升级工作线实现；本分支仅同步README、SVG、规则及日志。
+# 2026-09-08 升级工作线合并收尾
+
+- 用户授权完成收尾、推送并自动合并。将origin/main首页提交合入codex/u12-03-fair-training，保留新版首页、同步规则与双方历史工作记录。
+- 首页导航改为当前仓库相对路径，进度摘要与SVG同源生成；移除尚未合并的临时描述。
+- 状态保持20 DONE、U12-03 IN_REVIEW、6 READY；合并不代签。原未跟踪TD资产与tmp保持排除。
