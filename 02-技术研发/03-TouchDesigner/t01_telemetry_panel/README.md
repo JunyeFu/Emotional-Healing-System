@@ -4,7 +4,9 @@
 
 ## 文件
 
-当前候选界面设计见 [A 主题功能清单与预览](design/workbench-v3.md)；尚未替换下列运行制品。
+当前候选界面设计见 [A 主题功能清单与预览](design/workbench-v3.md)；该主题尚未在运行制品中实现。
+
+2026-09-08：磁盘 `.toe` 已移除六个根级默认演示节点及其内部节点，并修正 `/project1` 显示入口。T-01 内部49个展开文件字节不变，`.tox` 未改。此次工程壳清理为离线验证候选，旧运行证据只对应原哈希；见[清理与布局复核](design/layout-review-v1.md)。A主题仍未在运行制品实现。
 
 - `t01_telemetry.py`：纯Python不可变快照适配器。
 - `T01_TelemetryPanel.toe/.tox`：TouchDesigner 2025.32820制品。

@@ -1,0 +1,40 @@
+{
+  "scope": "OFFLINE_TOE_CLEANUP_NOT_RUNTIME_ACCEPTANCE",
+  "source_sha256": "38ECA7FAD11A989DA4EF3923A4277E557A966586CDD2F7C2F1EC251CCFE57E44",
+  "candidate_sha256": "46D96C1E6886691C01064CAD82817AC900EAAD850BFB1652E0CF8BBE13151603",
+  "removed_nodes": [
+    "/project1/geo1",
+    "/project1/noise1",
+    "/project1/chopto1",
+    "/project1/displace1",
+    "/project1/moviefilein1",
+    "/project1/out1"
+  ],
+  "removed_entries": [
+    "project1/geo1.n",
+    "project1/geo1.parm",
+    "project1/geo1.network",
+    "project1/geo1.gnode",
+    "project1/geo1/in1.n",
+    "project1/geo1/box1.n",
+    "project1/geo1/box1.parm",
+    "project1/geo1/out1.n",
+    "project1/geo1/phong1.n",
+    "project1/geo1/phong1.parm",
+    "project1/geo1/texture1.n",
+    "project1/geo1/texture1.parm",
+    "project1/out1.n",
+    "project1/noise1.n",
+    "project1/noise1.parm",
+    "project1/chopto1.n",
+    "project1/chopto1.parm",
+    "project1/displace1.n",
+    "project1/displace1.parm",
+    "project1/moviefilein1.n",
+    "project1/moviefilein1.parm"
+  ],
+  "preserved_core_files": 49,
+  "core_byte_identity": "PASS",
+  "display_binding": "./T01_TelemetryPanel/Output/display_out",
+  "candidate": "D:\\Agent\\03-SRP\\tmp\\td-cleanup-candidate-lf\\clean.toe"
+}

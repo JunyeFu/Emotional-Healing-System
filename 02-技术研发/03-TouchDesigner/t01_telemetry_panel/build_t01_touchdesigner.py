@@ -288,6 +288,7 @@ def build():
     display_source.outputConnectors[0].connect(display_out)
     display_out.display = True
     display_out.render = True
+    _set(project_root, "top", "./T01_TelemetryPanel/Output/display_out")
 
     _table(
         root,

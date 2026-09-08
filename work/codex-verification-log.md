@@ -1,5 +1,13 @@
 # Codex Verification Log
 
+## 2026-09-08 TD工程壳离线清理
+
+- toeexpand/toecollapse回读验证：默认演示条目0，T-01展开文件49/49字节一致；project1显示源已指向T-01。
+- 新TOE SHA-256：46D96C1E6886691C01064CAD82817AC900EAAD850BFB1652E0CF8BBE13151603；旧哈希与删除条目见design/default-demo-cleanup-report.json。
+- 首轮TOC CRLF导致打包错误，改为LF后通过回读；失败副本没有覆盖源工程。
+- MCP接口ECONNREFUSED；未操作当前窗口、未完成运行重开验收。旧证据保持原制品身份。
+- T-01专项测试17 passed；git diff --check通过。构建脚本同步设置显示绑定，需随下次TD重建验证。
+
 ## 2026-09-08 A主题功能盘点与v3首页
 
 - 读取T-01/T-02实际边界与字段；P-01传输仍返回TD_STATE_CHANGE_NOT_AVAILABLE，P-02归档读取不等于现成TD导出服务。
