@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import json
 import hashlib
+import runpy
 from pathlib import Path
 from typing import Any
 
 
-CONTRACT = Path(__file__).with_name("release_routes_v1.0.json")
+GOV = Path(__file__).resolve().parent.parent
+CONTRACT = runpy.run_path(str(GOV / "governance_profile.py"))["load_profile"](GOV)["routes"]
 
 
 def _stage3_activity_count(

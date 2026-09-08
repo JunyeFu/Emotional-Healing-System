@@ -1,0 +1,9 @@
+{
+  "version": "1.2",
+  "task": "U12-01",
+  "base_commit": "bdda9f955c4de7e96bd07fb03fd6a63c8ef0ac8a",
+  "research_authority": "../00_总控/protocol_authority_v1.2.json",
+  "formal_collection_allowed": false,
+  "runtime_migration_task": "U12-06",
+  "legacy_contracts_remain_historical": true
+}

@@ -1,0 +1,10 @@
+{
+  "task_id": "A-03",
+  "status": "SCOPE_EXTENSION_PENDING_NEW_SPEC_REVIEW",
+  "preserved": ["original task row", "A-03-SPEC DONE", "existing input_snapshot_id", "original signed candidate"],
+  "new_spec_owner": "U12-04",
+  "new_spec_required_by": "A-03-REAL",
+  "calibration_consumers": ["G-03", "U12-11"],
+  "rule": "Historical SPEC only validates its signed estimands. PANAS primary analysis requires separately reviewed new specification before REAL/CAL completion.",
+  "human_acceptance_of_new_spec": null
+}

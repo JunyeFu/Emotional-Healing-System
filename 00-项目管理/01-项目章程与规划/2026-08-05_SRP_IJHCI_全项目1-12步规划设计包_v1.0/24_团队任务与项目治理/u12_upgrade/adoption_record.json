@@ -1,0 +1,11 @@
+{
+  "status": "IMPLEMENTATION_IN_PROGRESS",
+  "base_commit": "bdda9f955c4de7e96bd07fb03fd6a63c8ef0ac8a",
+  "source_adaptation_commit": "703ca504bd3c5da0b61327be5c74909f999e5d2e",
+  "old_count": 59,
+  "new_count": 71,
+  "preserved_done": 18,
+  "changes": "candidate fields adopted; U12 acceptance made explicit; W-04 consumes U12-12",
+  "human_signoff": null,
+  "research_authorized": false
+}

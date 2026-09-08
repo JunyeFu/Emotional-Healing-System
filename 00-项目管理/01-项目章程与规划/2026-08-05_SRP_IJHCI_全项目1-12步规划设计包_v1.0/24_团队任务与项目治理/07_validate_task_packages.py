@@ -6,17 +6,20 @@ import csv
 import json
 import pathlib
 import re
+import runpy
 import sys
 
 
 ROOT = pathlib.Path(__file__).parent
+GOVERNANCE = runpy.run_path(str(ROOT / "governance_profile.py"))
+PROFILE = GOVERNANCE["load_profile"](ROOT)
 REGISTRY = ROOT / "05_可领取任务包.csv"
 RESOURCES = ROOT / "08_任务技能与国内学习资料_v1.0.md"
 HANDBOOK = ROOT / "04_可领取树型任务包_v2.0.md"
 PACKAGE_MAP = ROOT / "12_独立任务包文件映射_v1.0.json"
 PACKAGE_OUTPUT = ROOT / "当前解锁独立任务包"
-RELEASE_ROUTES = ROOT / "audit_upgrade" / "release_routes_v1.0.json"
-MILESTONE_CONTRACT = ROOT / "audit_upgrade" / "task_milestones_v1.0.json"
+RELEASE_ROUTES = PROFILE["routes"]
+MILESTONE_CONTRACT = PROFILE["milestones"]
 MILESTONE_STATUS = ROOT / "audit_upgrade" / "task_milestone_status_v1.0.json"
 VALID_STATUSES = {
     "READY", "IN_PROGRESS", "IN_REVIEW", "DONE",
@@ -85,6 +88,15 @@ UPGRADE_MARKERS = {
     "W-03": ("实时IJHCI作者说明快照", "数据可用性声明", "独立复现日志"),
     "A-06": ("阶段一主论文", "条件式阶段三", "范围关闭回执"),
 }
+if PROFILE["version"] == "1.2":
+    UPGRADE_MARKERS.update({
+        "Q-01": ("独立重建", "静态/回放"),
+        "G-03": ("主要情绪SAP", "功能界值理由", "U12-11"),
+        "A-05": ("PANAS主要beta", "PF护栏", "次要FDR"),
+        "W-02": ("A-06", "结果中立主稿", "设计边界"),
+        "G-04": ("扩展估计目标", "ESS", "不成为核心稿依赖"),
+        "W-03": ("独立复现", "数据政策", "人类授权"),
+    })
 
 
 def split(value: str, separator: str = "|") -> list[str]:
@@ -163,8 +175,8 @@ def main() -> int:
     node_status.update({str(key): str(value) for key, value in milestone_statuses.items()})
     node_wave = {task_id: row["wave"] for task_id, row in rows_by_id.items()}
     node_wave.update({milestone_id: rows_by_id["A-03"]["wave"] for milestone_id in milestone_ids})
-    if len(rows) != 59:
-        errors.append(f"expected 59 registry entries, found {len(rows)}")
+    if len(rows) != PROFILE["count"]:
+        errors.append(f"expected {PROFILE['count']} registry entries, found {len(rows)}")
     if len(ids) != len(known):
         errors.append("task_id values must be unique")
 
@@ -234,6 +246,7 @@ def main() -> int:
                 f"{task_id}: dispatch task has incomplete dependencies "
                 f"{sorted(incomplete_dependencies)}"
             )
+        errors.extend(GOVERNANCE["validate_u12_acceptance"](row, incomplete_dependencies, ROOT))
         if row["status"] == "WAIT_DEP" and dependencies and not incomplete_dependencies:
             errors.append(f"{task_id}: WAIT_DEP is stale because all dependencies are DONE")
         if row["status"] == "DONE":
@@ -285,8 +298,8 @@ def main() -> int:
     template_ids = {row["task_id"] for row in rows if row["kind"] == "TEMPLATE"}
     if template_ids != EXPECTED_TEMPLATES:
         errors.append(f"template set is {sorted(template_ids)}, expected {sorted(EXPECTED_TEMPLATES)}")
-    if len(rows) - len(template_ids) != 56:
-        errors.append("expected 56 fixed task packages")
+    if len(rows) - len(template_ids) != PROFILE["fixed"]:
+        errors.append(f"expected {PROFILE['fixed']} fixed task packages")
 
     if milestone_ids != {"A-03-SPEC", "A-03-REAL", "A-03-CAL"}:
         errors.append("A-03 milestone set is invalid")
@@ -324,10 +337,10 @@ def main() -> int:
             else:
                 conditional_consumers[source].add(target)
                 graph[target].add(source)
-        if rows_by_id.get("A-06", {}).get("depends_on") != "A-05":
-            errors.append("A-06 must have A-05 as its unconditional dependency")
-        if rows_by_id.get("W-02", {}).get("depends_on") != "W-01|A-06":
-            errors.append("W-02 must consume W-01 and A-06")
+        if rows_by_id.get("A-06", {}).get("depends_on") != PROFILE["a06_dependencies"]:
+            errors.append("A-06 unconditional dependencies do not match governance version")
+        if rows_by_id.get("W-02", {}).get("depends_on") != PROFILE["w02_dependencies"]:
+            errors.append("W-02 dependencies do not match governance version")
 
     completion_graph = combined_dependency_graph(graph, milestones, "A-03")
     for task_id in sorted(dependency_cycle_nodes(completion_graph)):
@@ -385,7 +398,7 @@ def main() -> int:
         return 1
 
     print(
-        "PASS: 59 registry entries; fixed=56; templates=3; "
+        f"PASS: {PROFILE['count']} registry entries; fixed={PROFILE['fixed']}; templates=3; "
         f"DONE={','.join(sorted(done))}; READY={','.join(sorted(ready))}; "
         f"IN_REVIEW={','.join(sorted(row['task_id'] for row in rows if row['status'] == 'IN_REVIEW'))}; "
         f"terminal={TERMINAL_TASK}"

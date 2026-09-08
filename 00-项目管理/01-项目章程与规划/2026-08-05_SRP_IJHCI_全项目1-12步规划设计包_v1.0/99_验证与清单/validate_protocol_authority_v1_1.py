@@ -178,7 +178,7 @@ def main() -> int:
             print(f"ERROR: {error}")
         return 1
 
-    print("PASS: protocol authority v1.1 and active execution files are consistent")
+    print("PASS: legacy protocol v1.1 compatibility checks; current research authority is selected by active_governance.json")
     return 0
 
 

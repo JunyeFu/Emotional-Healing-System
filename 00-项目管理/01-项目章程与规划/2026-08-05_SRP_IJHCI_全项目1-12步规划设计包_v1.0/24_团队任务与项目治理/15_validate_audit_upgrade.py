@@ -8,6 +8,7 @@ import importlib.util
 import json
 import os
 import re
+import runpy
 import subprocess
 from pathlib import Path
 
@@ -16,6 +17,7 @@ ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT.parents[3]
 UPGRADE = ROOT / "audit_upgrade"
 REGISTRY = ROOT / "05_可领取任务包.csv"
+PROFILE = runpy.run_path(str(ROOT / "governance_profile.py"))["load_profile"](ROOT)
 
 
 def project_file(relative: str) -> Path | None:
@@ -134,14 +136,20 @@ def main() -> int:
     with REGISTRY.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
     by_id = {row["task_id"]: row for row in rows}
+    acceptance_check = runpy.run_path(str(ROOT / "governance_profile.py"))["validate_u12_acceptance"]
+    lifecycle = {tid: row["status"] for tid, row in by_id.items()}
+    lifecycle.update(json.loads((UPGRADE / "task_milestone_status_v1.0.json").read_text(encoding="utf-8"))["statuses"])
+    for row in rows:
+        incomplete = {d for d in row["depends_on"].split("|") if d and lifecycle.get(d) != "DONE"}
+        errors.extend(acceptance_check(row, incomplete, ROOT))
     templates = {row["task_id"] for row in rows if row["kind"] == "TEMPLATE"}
-    if len(rows) != 59 or len(by_id) != 59:
-        errors.append("REGISTRY_MUST_HAVE_59_UNIQUE_TASKS")
-    if len(rows) - len(templates) != 56 or templates != {"B-01", "B-02", "B-03"}:
+    if len(rows) != PROFILE["count"] or len(by_id) != PROFILE["count"]:
+        errors.append("REGISTRY_VERSION_COUNT_MISMATCH")
+    if len(rows) - len(templates) != PROFILE["fixed"] or templates != {"B-01", "B-02", "B-03"}:
         errors.append("REGISTRY_KIND_COUNTS_INVALID")
-    if by_id.get("A-06", {}).get("depends_on") != "A-05":
+    if by_id.get("A-06", {}).get("depends_on") != PROFILE["a06_dependencies"]:
         errors.append("A06_UNCONDITIONAL_DEPENDENCY_INVALID")
-    if by_id.get("W-02", {}).get("depends_on") != "W-01|A-06":
+    if by_id.get("W-02", {}).get("depends_on") != PROFILE["w02_dependencies"]:
         errors.append("W02_ROUTE_DEPENDENCY_INVALID")
 
     source = json.loads((UPGRADE / "source_record_v1.0.json").read_text(encoding="utf-8"))
@@ -155,7 +163,7 @@ def main() -> int:
         if hashlib.sha256(content).hexdigest().upper() != source.get("source_byte_sha256"):
             errors.append("AUDIT_SOURCE_HASH_MISMATCH")
 
-    routes = json.loads((UPGRADE / "release_routes_v1.0.json").read_text(encoding="utf-8"))
+    routes = json.loads(PROFILE["routes"].read_text(encoding="utf-8"))
     if set(routes.get("routes", {})) != {"stage1_only", "with_stage3"}:
         errors.append("RELEASE_ROUTES_INVALID")
     if routes.get("stage3_started_evidence_sources") != [
@@ -163,7 +171,7 @@ def main() -> int:
     ]:
         errors.append("STAGE3_ACTIVITY_SOURCES_INVALID")
 
-    milestones = json.loads((UPGRADE / "task_milestones_v1.0.json").read_text(encoding="utf-8"))
+    milestones = json.loads(PROFILE["milestones"].read_text(encoding="utf-8"))
     milestone_status = json.loads(
         (UPGRADE / "task_milestone_status_v1.0.json").read_text(encoding="utf-8")
     )
@@ -184,7 +192,7 @@ def main() -> int:
     expected_milestone_consumers = {
         "A-03-SPEC": ["X-01"],
         "A-03-REAL": ["Q-03"],
-        "A-03-CAL": ["G-03"],
+        "A-03-CAL": ["G-03", "U12-11"] if PROFILE["version"] == "1.2" else ["G-03"],
     }
     for item in milestone_rows:
         if item.get("consumers") != expected_milestone_consumers.get(item.get("id")):
@@ -193,7 +201,7 @@ def main() -> int:
         "A-03": "F-02",
         "X-01": "P-01|A-03-SPEC|G-02",
         "Q-03": "I-01|Q-02|A-01|A-03-REAL",
-        "G-03": "E-03|X-01|Z-01|A-02|A-03-CAL|G-05",
+        "G-03": PROFILE["g03_dependencies"],
     }
     for task_id, dependencies in expected_task_dependencies.items():
         if by_id.get(task_id, {}).get("depends_on") != dependencies:
@@ -342,8 +350,16 @@ def main() -> int:
                         errors.append(f"{upgrade_id}:EVIDENCE_REFERENCE_UNAVAILABLE")
                         continue
                     observed = hashlib.sha256(evidence_path.read_bytes()).hexdigest().upper()
-                    if observed != item.get("byte_sha256"):
+                    if PROFILE["version"] == "1.0" and observed != item.get("byte_sha256"):
                         errors.append(f"{upgrade_id}:EVIDENCE_HASH_MISMATCH")
+
+    if PROFILE["version"] == "1.2":
+        binding = runpy.run_path(str(ROOT / "u12_upgrade/freeze_legacy_evidence.py"))
+        errors.extend(binding["validate"]())
+        report = json.loads((ROOT / "u12_upgrade/legacy_evidence_binding.json").read_text(encoding="utf-8"))
+        unresolved = sum(e["original_byte_identity"] == "UNRESOLVED_WORKTREE_BYTES" for refs in report["entries"].values() for e in refs)
+        if unresolved:
+            print(f"NOTE: historical Git objects verified; {unresolved} original worktree byte identities remain unverified (not a new acceptance).")
 
     if by_id.get("A-06", {}).get("status") == "DONE":
         closure_path = UPGRADE / "a06_route_closure_v1.json"
@@ -379,7 +395,7 @@ def main() -> int:
         for error in errors:
             print("ERROR:", error)
         return 1
-    print("PASS: audit upgrade batch0-1 contracts; tasks=59; fixed=56; findings=24; upgrades=12")
+    print(f"PASS: audit governance {PROFILE['version']}; tasks={PROFILE['count']}; fixed={PROFILE['fixed']}; historical findings=24; upgrades=12")
     return 0
 
 

@@ -1,0 +1,143 @@
+{
+  "commit": "bdda9f955c4de7e96bd07fb03fd6a63c8ef0ac8a",
+  "original_manifest_git_sha256": "179C27490E3DFB7A29F52D9935E5FE3EB803564A885B504CFBA970203DD196DB",
+  "entries": {
+    "UP-01": [
+      {
+        "reference": "audit:source_record_v1.0.json",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/source_record_v1.0.json",
+        "git_blob_sha256": "95843A4CF9439F3BCCC0E6E8F9F2EF580557148A5131EE6232AA71D59358CD73",
+        "original_declared_byte_sha256": "95843A4CF9439F3BCCC0E6E8F9F2EF580557148A5131EE6232AA71D59358CD73",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      },
+      {
+        "reference": "audit:findings_disposition_v1.0.csv",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/findings_disposition_v1.0.csv",
+        "git_blob_sha256": "E9D0F12A6C68BB1CFA3EC218B642C9D984D4FEFAA469359C0D0334B3CC6D2543",
+        "original_declared_byte_sha256": "E9D0F12A6C68BB1CFA3EC218B642C9D984D4FEFAA469359C0D0334B3CC6D2543",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      }
+    ],
+    "UP-02": [
+      {
+        "reference": "audit:release_routes_v1.0.json",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/release_routes_v1.0.json",
+        "git_blob_sha256": "58EEBB7F99EE40B5E53AC0E4AE83D9B102A781E1A66196936138F962CF13B472",
+        "original_declared_byte_sha256": "58EEBB7F99EE40B5E53AC0E4AE83D9B102A781E1A66196936138F962CF13B472",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      },
+      {
+        "reference": "governance:07_validate_task_packages.py",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/07_validate_task_packages.py",
+        "git_blob_sha256": "3D8BB80636A1DF928F99BC9AB78BD003D433409F52722206822DE6F20F700077",
+        "original_declared_byte_sha256": "2984674D4B187085DDA3C5931D1466B005591DCEC8F53A1FE6ACE5FB35F3FBE3",
+        "original_byte_identity": "UNRESOLVED_WORKTREE_BYTES"
+      }
+    ],
+    "UP-03": [
+      {
+        "reference": "project:02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
+        "repository_path": "02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
+        "git_blob_sha256": "759B51A9700DA92B845D1DE5E6478217341255DDF4B501EEC8938BFCC13F12DC",
+        "original_declared_byte_sha256": "759B51A9700DA92B845D1DE5E6478217341255DDF4B501EEC8938BFCC13F12DC",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      },
+      {
+        "reference": "project:02-技术研发/srp_session_store/evidence_bundle.py",
+        "repository_path": "02-技术研发/srp_session_store/evidence_bundle.py",
+        "git_blob_sha256": "9FEF178FE64EAB61761C4BBEE80C924AC895102171B9A7B08D9C67B89BF204BF",
+        "original_declared_byte_sha256": "9FEF178FE64EAB61761C4BBEE80C924AC895102171B9A7B08D9C67B89BF204BF",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      }
+    ],
+    "UP-04": [
+      {
+        "reference": "audit:external_capability_matrix_v1.0.csv",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+        "git_blob_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD",
+        "original_declared_byte_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      }
+    ],
+    "UP-05": [
+      {
+        "reference": "audit:task_milestones_v1.0.json",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.0.json",
+        "git_blob_sha256": "285173B311500DB71B94CF6BD6A901154EF5A0BE57253671748EF593EA0171F3",
+        "original_declared_byte_sha256": "285173B311500DB71B94CF6BD6A901154EF5A0BE57253671748EF593EA0171F3",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      }
+    ],
+    "UP-06": [
+      {
+        "reference": "governance:05_可领取任务包.csv",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+        "git_blob_sha256": "4CC5C7D9E2D9CDE89A4DB3E9E8983B7D099799950B9D82C475F3213B6F528982",
+        "original_declared_byte_sha256": "0DDFCDDAEF34B1869AFA5E3C42C5EA52DFF6FB5176CC4629894FDD745CC9D5A0",
+        "original_byte_identity": "UNRESOLVED_WORKTREE_BYTES"
+      }
+    ],
+    "UP-07": [
+      {
+        "reference": "governance:05_可领取任务包.csv",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+        "git_blob_sha256": "4CC5C7D9E2D9CDE89A4DB3E9E8983B7D099799950B9D82C475F3213B6F528982",
+        "original_declared_byte_sha256": "0DDFCDDAEF34B1869AFA5E3C42C5EA52DFF6FB5176CC4629894FDD745CC9D5A0",
+        "original_byte_identity": "UNRESOLVED_WORKTREE_BYTES"
+      }
+    ],
+    "UP-08": [
+      {
+        "reference": "governance:05_可领取任务包.csv",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+        "git_blob_sha256": "4CC5C7D9E2D9CDE89A4DB3E9E8983B7D099799950B9D82C475F3213B6F528982",
+        "original_declared_byte_sha256": "0DDFCDDAEF34B1869AFA5E3C42C5EA52DFF6FB5176CC4629894FDD745CC9D5A0",
+        "original_byte_identity": "UNRESOLVED_WORKTREE_BYTES"
+      }
+    ],
+    "UP-09": [
+      {
+        "reference": "governance:13_render_ready_task_packages.py",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/13_render_ready_task_packages.py",
+        "git_blob_sha256": "1A4D47A292FF3D06D4427CB4C91F6CB3E1DCBB151503C0524C7B61244B62D927",
+        "original_declared_byte_sha256": "8F90FC6195FC828379B7E0C9EC590D10724B0C6E76EE1730862744E45A80D3AE",
+        "original_byte_identity": "UNRESOLVED_WORKTREE_BYTES"
+      },
+      {
+        "reference": "governance:14_validate_ready_task_packages.py",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/14_validate_ready_task_packages.py",
+        "git_blob_sha256": "53D95C4C6EC8FD77F5E1D79090215D330892F3496B1D3E024A3657111A1C6657",
+        "original_declared_byte_sha256": "825C1D60B60D0C25729BE6E7D3F59693D53673B9F8DFC2C7C6B6D665C517A4E5",
+        "original_byte_identity": "UNRESOLVED_WORKTREE_BYTES"
+      }
+    ],
+    "UP-10": [
+      {
+        "reference": "audit:external_capability_matrix_v1.0.csv",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+        "git_blob_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD",
+        "original_declared_byte_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      }
+    ],
+    "UP-11": [
+      {
+        "reference": "audit:release_routes_v1.0.json",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/release_routes_v1.0.json",
+        "git_blob_sha256": "58EEBB7F99EE40B5E53AC0E4AE83D9B102A781E1A66196936138F962CF13B472",
+        "original_declared_byte_sha256": "58EEBB7F99EE40B5E53AC0E4AE83D9B102A781E1A66196936138F962CF13B472",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      }
+    ],
+    "UP-12": [
+      {
+        "reference": "audit:external_capability_matrix_v1.0.csv",
+        "repository_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+        "git_blob_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD",
+        "original_declared_byte_sha256": "6F3D58C0F8179892BCE663ACE3D18637B6696DCE5FC252053C1320E003FAAEFD",
+        "original_byte_identity": "RECONSTRUCTABLE"
+      }
+    ]
+  },
+  "scope": "GIT_HISTORY_IDENTITY_ONLY_NOT_RETROACTIVE_ACCEPTANCE"
+}

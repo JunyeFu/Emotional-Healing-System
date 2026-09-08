@@ -23,6 +23,8 @@ def load_route_module():
     assert spec.loader is not None
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
+    # These fixtures preserve the signed v1.0 route semantics; v1.2 has separate tests.
+    module.CONTRACT = UPGRADE / "release_routes_v1.0.json"
     return module
 
 

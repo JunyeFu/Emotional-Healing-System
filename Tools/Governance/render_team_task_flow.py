@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import csv
 import html
+import json
+import runpy
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -70,6 +72,15 @@ def shorten(value: str, limit: int) -> str:
 def main() -> None:
     with REGISTRY.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
+    task_count = len(rows)
+    profile = runpy.run_path(str(GOV / "governance_profile.py"))["load_profile"](GOV)
+    milestones = json.loads(profile["milestones"].read_text(encoding="utf-8"))["milestones"]
+    states = json.loads((GOV / "audit_upgrade/task_milestone_status_v1.0.json").read_text(encoding="utf-8"))["statuses"]
+    for item in milestones:
+        rows.append({"task_id": item["id"], "title": "【分析里程碑】" + item["id"],
+                     "domain": "分析里程碑", "wave": "W4", "status": states[item["id"]],
+                     "depends_on": "|".join(item["depends_on"]), "effort_person_days": "-"})
+    conditional_edges = json.loads(profile["routes"].read_text(encoding="utf-8"))["conditional_edges"]
     by_id = {row["task_id"]: row for row in rows}
     by_wave: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in rows:
@@ -95,10 +106,10 @@ def main() -> None:
         "</defs>",
         '<rect width="100%" height="100%" fill="#f8fafc"/>',
         '<text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>',
-        '<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">状态快照 · 2026-09-06 · A-03-SPEC DONE，X-01 已解锁；G-05 继续承接外部准入</text>',
+        f'<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">2026-09-08 · 治理{profile["version"]} · {task_count}任务及3里程碑 · 虚线为开展阶段三后的条件依赖</text>',
     ]
 
-    counts = Counter(row["status"] for row in rows)
+    counts = Counter(row["status"] for row in rows[:task_count])
     x = 70
     for status in ("DONE", "READY", "IN_PROGRESS", "IN_REVIEW", "WAIT_DEP", "WAIT_DEP_EXTERNAL", "BLOCKED_EXTERNAL"):
         stroke, fill = STATUS[status]
@@ -135,7 +146,8 @@ def main() -> None:
 
     for row in rows:
         tx, ty = positions[row["task_id"]]
-        for dep in [item for item in row["depends_on"].split("|") if item in positions]:
+        conditional = {e["from"] for e in conditional_edges if e["to"] == row["task_id"]}
+        for dep in [item for item in row["depends_on"].split("|") if item in positions] + sorted(conditional):
             sx, sy = positions[dep]
             if sx == tx:
                 start_x, start_y = sx + col_w / 2, sy + node_h
@@ -147,7 +159,8 @@ def main() -> None:
                 end_x, end_y = tx, ty + node_h / 2
                 bend = max(45, (end_x - start_x) * 0.42)
                 path = f"M {start_x} {start_y} C {start_x + bend} {start_y}, {end_x - bend} {end_y}, {end_x} {end_y}"
-            out.append(f'<path d="{path}" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>')
+            dash = ' stroke-dasharray="8 6"' if dep in conditional else ''
+            out.append(f'<path d="{path}" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"{dash}/>')
 
     for row in rows:
         task_id = row["task_id"]
@@ -160,8 +173,8 @@ def main() -> None:
         out.extend([
             f'<g filter="url(#shadow)"><rect x="{x0}" y="{y0}" width="{col_w}" height="{node_h}" rx="13" fill="white" stroke="{stroke}" stroke-width="3"{dash}/>',
             f'<rect x="{x0}" y="{y0}" width="12" height="{node_h}" rx="6" fill="{domain_fill}"/>',
-            f'<rect x="{x0 + 22}" y="{y0 + 16}" width="76" height="30" rx="8" fill="{domain_fill}"/>',
-            f'<text x="{x0 + 60}" y="{y0 + 37}" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">{task_id}</text>',
+            f'<rect x="{x0 + 22}" y="{y0 + 16}" width="145" height="30" rx="8" fill="{domain_fill}"/>',
+            f'<text x="{x0 + 94}" y="{y0 + 37}" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">{task_id}</text>',
             f'<rect x="{x0 + col_w - 174}" y="{y0 + 16}" width="156" height="30" rx="15" fill="{status_fill}" stroke="{stroke}"/>',
             f'<text x="{x0 + col_w - 96}" y="{y0 + 37}" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="{stroke}">{row["status"]}</text>',
             f'<text x="{x0 + 24}" y="{y0 + 75}" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">{esc(shorten(title, 24))}</text>',
