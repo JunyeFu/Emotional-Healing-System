@@ -24,7 +24,9 @@ def main():
     state = next(r["status"] for r in rows if r["task_id"] == "U12-01")
     counts = Counter(r["status"] for r in rows)
     ready = "/".join(r["task_id"] for r in rows if r["status"] == "READY")
-    summary = f"治理v1.2：71项任务（68固定+3模板）；DONE={counts['DONE']}项（含18项原签收）；U12-01为{state}，A-03为IN_PROGRESS，A-03-SPEC为DONE；READY={ready}；真实准入与研究数值仍未冻结"
+    active = "/".join(r["task_id"] for r in rows if r["status"] == "IN_PROGRESS") or "无"
+    review = "/".join(r["task_id"] for r in rows if r["status"] == "IN_REVIEW") or "无"
+    summary = f"治理v1.2：71项任务（68固定+3模板）；DONE={counts['DONE']}项（含18项原签收）；IN_PROGRESS={active}；IN_REVIEW={review}；A-03-SPEC为DONE；READY={ready}；真实准入与研究数值仍未冻结"
     for name, pattern, prefix in (("README.md", r"^> SRP .*?$", "> SRP · 4人团队 · "),
                                   ("AGENTS.md", r"^> (?:2026/5/20 |当前阶段：).*?$", "> 当前阶段：")):
         path = ROOT / name

@@ -9,7 +9,7 @@
 | Q-01 | READY | 【研究工具】Level A构念与静态/回放独立重建材料 | 4人日 | [Q-01/TASK.md](Q-01/TASK.md) |
 | T-02 | READY | 【TouchDesigner】人工标记中止请求与告警 | 3人日 | [T-02/TASK.md](T-02/TASK.md) |
 | U-02 | READY | 【Unity】四层SceneAdapter实现与降级 | 3人日 | [U-02/TASK.md](U-02/TASK.md) |
-| U12-02 | READY | 【测量实现】步骤实例测量与实际未知负测试 | 3人日 | [U12-02/TASK.md](U12-02/TASK.md) |
+| U12-02 | IN_PROGRESS | 【测量实现】步骤实例测量与实际未知负测试 | 3人日 | [U12-02/TASK.md](U12-02/TASK.md) |
 | U12-03 | READY | 【教学设计】两方案公平教学与形成性比较合同 | 3人日 | [U12-03/TASK.md](U12-03/TASK.md) |
 | U12-04 | READY | 【统计规格】PANAS主结果SAP与新功效规格 | 4人日 | [U12-04/TASK.md](U12-04/TASK.md) |
 | U12-06 | READY | 【运行准入】正式入口v1.2准入合同接线与负测试 | 4人日 | [U12-06/TASK.md](U12-06/TASK.md) |

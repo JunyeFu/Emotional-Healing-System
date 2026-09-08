@@ -1,0 +1,2888 @@
+[
+  {
+    "clip_id": "clip-001",
+    "material_sha256": "df63f3aa97abc77c5a1b227ea5dac505499425c2505f2afee042b77a330da420",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-002",
+    "material_sha256": "773c8006b504ba33328963308b36361291c898607dcbd8260df9e3a51784ee4f",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-003",
+    "material_sha256": "e38d0172ffbf17b72ac9d43f2173e8eae8363445e5c2efab146ba654965a4af9",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-004",
+    "material_sha256": "429db011ee00cf7cb95ec55a4c3af03772f68aab0a91eec004e1361bb861ee54",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-005",
+    "material_sha256": "d9289b01417a4029ad41bbe3344a5fcd346a47837afe85b859f1d1a7b0bdd813",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-006",
+    "material_sha256": "072a3e6ead404ce699eeecd2f69bbbcd760306e1b3f867b841b38997b89f6982",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-007",
+    "material_sha256": "1459357275c2fd42ad4c2be6cf1d951fa90c2bc6c1fd4c50036f396052a5cfd8",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-008",
+    "material_sha256": "07c7e08965b77f29cdb9dd1a57c77f9059065ca39c58916fbb06e68ff6b24bb0",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-009",
+    "material_sha256": "d1774e8098cee8762c002bf09e711fc9409127b747334114afb7f0cf85c2076d",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-010",
+    "material_sha256": "4a62662c969e523cfd2fbf762d8f30f1c46b1fc619d2eb83a58de750ea45d904",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-011",
+    "material_sha256": "c5a0592ed799d5bbd79add61a9e08438d224725d599a508beb36087ee663a218",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-012",
+    "material_sha256": "820021d6da71be9245b6065627f41be415f1a01a0626e18323e73f75a27ce69e",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-013",
+    "material_sha256": "87d2adcd4e981fd9a45a2547114d778a556cf78546b825f368ab8df762324248",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-014",
+    "material_sha256": "501a425eb9e3f9b9290ade850c9a9e0d1e71864b52b2c5bc83c6f0444871906b",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-015",
+    "material_sha256": "0589d96198f990fec85a3b4bbe9e95f7b57c14d5d065147433c1030d19a58426",
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,120 @@
+{
+  "evidence_class": "SYNTHETIC_ONLY",
+  "case_count": 15,
+  "source_text_sha256_lf": {
+    "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json": "418d707266b4347df4c4054ca0f4c007d737c129575106ff4f00c4bada6b679a",
+    "02-技术研发/srp_step_measurement/measurement.py": "bfc8cb0dc1446b9c8e6a150951763c6961eaf2ede1604ff24ec83468f546b5cb",
+    "02-技术研发/srp_step_measurement/build_evidence.py": "a2e71f6b70f81c8a470e475040d5ce799dd987903beb4c763271571817cd0b52",
+    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json": "0af481df8105de3ae7a275982f653f36e94450699199df011fd1dce6f23001d2",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md": "bca2cbf8dd2ab7e942d4c2c671d95860d5ed363e8353b977482925d88f1762c8"
+  },
+  "cases": [
+    {
+      "event_id": "storm-inhale_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "storm-hold_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "storm-exhale_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "storm-hold_2",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "heat-inhale_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "heat-exhale_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "snow-inhale_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "snow-exhale_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "fade-inhale_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "fade-inhale_2",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "fade-exhale_1",
+      "expected_relation": "SAME_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "hold-swap",
+      "expected_relation": "DIFFERENT_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "second-inhale-missing",
+      "expected_relation": "DIFFERENT_STEP",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "actual-unknown-disconnected",
+      "expected_relation": "UNKNOWN",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    },
+    {
+      "event_id": "wrong-cycle",
+      "expected_relation": "DIFFERENT_CYCLE",
+      "status": "PASS",
+      "condition_pair_equal": true,
+      "clip_render_review": "PENDING"
+    }
+  ],
+  "real_annotation_validated": false,
+  "formal_ready": false
+}
