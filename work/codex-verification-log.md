@@ -1464,3 +1464,9 @@
 | Boundary | G-01/G-02的`DONE`只覆盖已签收方案、实现和候选证据；G-05外部证据仍为`WAIT_DEP_EXTERNAL`。 |
 | Focused Regression | 任务包治理测试`4 passed`。 |
 | Full Regression | `py -3.14 -m pytest -q`结果`471 passed in 32.34s`。 |
+# 2026-09-08 GitHub README验证
+
+- 14个GitHub版本化文件链接通过git cat-file核对目标提交内文件存在。
+- git diff --check通过；README受限措辞扫描无匹配（rg返回1）。
+- 状态引用73ffbf5：20 DONE、U12-03 IN_REVIEW、6 READY。633/22测试数为该候选已有证据，本轮仅文档更新，不重新宣称运行产品测试。
+- 发布范围：README与工作流日志，不更新任务注册表或合并升级代码。

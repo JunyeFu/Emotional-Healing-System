@@ -1379,3 +1379,8 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - G-05编号避开既有G-03/G-04，位于W3研究治理与执行泳道，状态为`WAIT_DEP_EXTERNAL`，依赖G-01/G-02并阻断E-01、G-03和W-03。
 - 注册表现为58项、55个固定任务、3个模板；`DONE=16`、`READY=T-02/U-01/U-02`、`IN_REVIEW=0`、`WAIT_DEP_EXTERNAL=5`。当前分发包仅保留三项READY任务。
 - G-05未关闭前不得推断正式环境、机构路径、资产许可、U8实地演练或正式阶段已经通过。
+# 2026-09-08 GitHub首页更新
+
+- 按用户要求更新默认main的README，基于origin/main=145f7b20b5e2b3453235fb79090b982785b4c5a3创建codex/github-readme；不合并升级实现。
+- 首页按升级工作线73ffbf5提供状态、研究主线和14个已核对版本化文件链接，明确main文件与升级状态的范围区别。
+- 仅发布README和本次工作/验证记录；保留未跟踪TD素材与tmp，完成后返回codex/u12-03-fair-training继续项目工作。
