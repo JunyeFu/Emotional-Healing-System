@@ -1540,3 +1540,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 交付候选180秒两臂教学、四层与重复步骤脚本、匹配矩阵、形成性修改规则和空白记录模板。
 - 旧天气简表与v2.2步骤不一致，教学采用F-05；R-01旧报告门不沿用，情绪报告遵守v1.2。正式预算仍null，时序仍待U12-04/U12-11冻结。
 - 候选9317f0b649547c2ae1d900fb39f6f486a9407baa，Pauli独立复核PASS；22项专项与633项根回归通过，U12-03进入IN_REVIEW。真实片段、理解证据和机构资格继续由下游完成，本任务不代签。
+# 2026-09-08 README内嵌团队进度图
+
+- 按用户要求内嵌团队任务SVG；任何任务状态变化都同步README、团队SVG和main首页展示，规则写入AGENTS。
+- render_governance_views生成README受控区块和assets/readme/team-task-progress.svg；默认首页仅发布展示文件与来源说明，不顺带合并实现。

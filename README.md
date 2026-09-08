@@ -2,6 +2,16 @@
 
 > SRP · 4人团队 · 治理v1.2：71项任务（68固定+3模板）；DONE=20项（含18项原签收）；IN_PROGRESS=A-03；IN_REVIEW=U12-03；A-03-SPEC为DONE；READY=U-02/T-02/Q-01/U12-04/U12-06/U12-07；真实准入与研究数值仍未冻结
 
+<!-- TEAM_PROGRESS_START -->
+## 团队任务进度
+
+治理v1.2：71项任务（68固定+3模板）；DONE=20项（含18项原签收）；IN_PROGRESS=A-03；IN_REVIEW=U12-03；A-03-SPEC为DONE；READY=U-02/T-02/Q-01/U12-04/U12-06/U12-07；真实准入与研究数值仍未冻结
+
+[![团队任务进度图](assets/readme/team-task-progress.svg)](assets/readme/team-task-progress.svg)
+
+点击图可打开原始SVG放大查看。图与摘要由同一任务注册表生成。
+<!-- TEAM_PROGRESS_END -->
+
 ## 项目与论文主线
 
 本项目构建无需参与者操作的天气与呼吸复合体验。Unity呈现四个固定模块，Python拥有会话、目标协议、真实设备、时间、质量、状态和记录权威；TouchDesigner负责实验员观察及受控请求，不是参与者画面依赖。

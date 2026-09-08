@@ -131,6 +131,9 @@
 
 ### 独立任务包习惯
 
+- 任何任务状态变化（含DONE）都必须运行`Tools/Governance/render_governance_views.py`，同步README进度摘要、两张团队SVG及首页内嵌图`assets/readme/team-task-progress.svg`，校验状态一致后发布。
+- GitHub默认main首页也须同步README与内嵌SVG；工作分支尚未合并时，只发布首页文档/图及必要记录，注明其来源版本并同步版本化导航，不顺带合并实现。只更新工作分支不算首页更新完成。
+
 - 每次任务注册表的`READY`、`IN_PROGRESS`或`IN_REVIEW`集合变化，必须同步更新独立任务包文件映射，并重新生成当前解锁任务包。
 - 每个分发任务必须有独立目录，至少包含`TASK.md`、`FILES.md`、`package_manifest.json`和必要输入文件快照；不得只在总手册中给出一段描述。
 - 领取时冻结`input_snapshot_id`；上游输入变化必须生成影响记录，不能无声替换任务执行者的输入判断。

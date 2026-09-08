@@ -18,6 +18,21 @@ def write(path, text):
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
+def progress_section(text, summary):
+    block = ("<!-- TEAM_PROGRESS_START -->\n## 团队任务进度\n\n"
+             + summary + "\n\n"
+             + "[![团队任务进度图](assets/readme/team-task-progress.svg)](assets/readme/team-task-progress.svg)\n\n"
+             + "点击图可打开原始SVG放大查看。图与摘要由同一任务注册表生成。\n"
+             + "<!-- TEAM_PROGRESS_END -->")
+    if "<!-- TEAM_PROGRESS_START -->" in text:
+        return re.sub(r"<!-- TEAM_PROGRESS_START -->.*?<!-- TEAM_PROGRESS_END -->",
+                      lambda _: block, text, flags=re.DOTALL)
+    index = text.find("\n## ")
+    if index == -1:
+        return text.rstrip() + "\n\n" + block + "\n"
+    return text[:index] + "\n" + block + "\n" + text[index:]
+
+
 def main():
     with (GOV / "05_可领取任务包.csv").open(encoding="utf-8-sig", newline="") as f:
         rows = list(csv.DictReader(f))
@@ -33,6 +48,7 @@ def main():
         text = path.read_text(encoding="utf-8")
         text = re.sub(pattern, lambda _: prefix + summary, text, flags=re.MULTILINE)
         if name == "README.md":
+            text = progress_section(text, summary)
             text = text.replace("单篇IJHCI目标稿以完整提示表示方案及设计知识为主贡献。", "单篇IJHCI目标稿比较场景原生与抽象控件式呼吸提示的情绪收益、代价与设计边界，不预设原生获胜。")
             text = text.replace("| 当前研究参数 | [protocol_authority_v1.1.json]", "| 当前研究候选参数 | [protocol_authority_v1.2.json]")
             text = text.replace("/00_总控/protocol_authority_v1.1.json)", "/00_总控/protocol_authority_v1.2.json)")
@@ -94,6 +110,8 @@ def main():
     write(destination / "SRP_任务状态与门禁解释清单_v1.0.svg", '\n'.join(out))
     runpy.run_path(str(ROOT / "Tools/Governance/render_team_task_flow.py"))["main"]()
     write(destination / "SRP_项目任务关联与门禁流程_v1.0.svg", (ROOT / "00-项目管理/看板与进度/SRP团队任务分工与门禁_当前状态.svg").read_text(encoding="utf-8"))
+    write(ROOT / "assets/readme/team-task-progress.svg",
+          (destination / "SRP_项目任务关联与门禁流程_v1.0.svg").read_text(encoding="utf-8"))
     print("WROTE: governance entrypoints, board, tree, brief and SVG pair")
 
 
