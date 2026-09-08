@@ -1693,3 +1693,11 @@
 - 20项DONE、7项READY，无新解锁；当前分发8包70快照，A-03输入未改。U12-02成员交付入口保留至task_member_outputs/U12-02，旧快照可从Git恢复。
 - 两张SVG/PNG与6页任务概要PDF已同步，PDF核对DONE=20并检查排版；过期待签署链接检查无命中。
 - 本次签收不扩大真实片段、独立标注或测量有效性；原TD未跟踪文件与tmp保持原样。
+# 2026-09-08 U12-03公平教学候选
+
+- 候选：9317f0b649547c2ae1d900fb39f6f486a9407baa；独立Pauli只读复核PASS。
+- 专项：test_contract.py 22 passed；validate.py、build_evidence.py --check通过。
+- 根pytest：633 passed in 52.22s。
+- 注册表71项、DONE20、IN_REVIEW=U12-03、READY6；独立包8项/70快照。治理v1.2、审计升级及v1.1兼容校验通过。
+- 两SVG/PNG与概要Markdown/PDF同步；PDF6页，状态文本检查与首页视觉检查通过。
+- 证据范围为教学合同与合成一致性；真实片段、配音测时、参与者理解、正式预算/时序仍待后续任务完成。原未跟踪TD文件与tmp保留，不纳入提交。

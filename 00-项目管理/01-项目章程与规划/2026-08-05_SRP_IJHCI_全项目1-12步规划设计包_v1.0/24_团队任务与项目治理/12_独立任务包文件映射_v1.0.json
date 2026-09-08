@@ -63,6 +63,7 @@
       ]
     },
     "U12-03": {
+      "implementation_commit": "9317f0b649547c2ae1d900fb39f6f486a9407baa",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/consumers.json",
