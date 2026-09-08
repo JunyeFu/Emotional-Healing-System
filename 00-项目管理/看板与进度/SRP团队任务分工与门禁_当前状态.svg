@@ -7,13 +7,13 @@
 <text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>
 <text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">2026-09-08 · 治理1.2 · 71任务及3里程碑 · 虚线为开展阶段三后的条件依赖</text>
 <rect x="70" y="132" width="114" height="38" rx="19" fill="#dcfce7" stroke="#166534"/>
-<text x="127.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#166534">DONE 19</text>
+<text x="127.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#166534">DONE 20</text>
 <rect x="198" y="132" width="114" height="38" rx="19" fill="#dbeafe" stroke="#1d4ed8"/>
 <text x="255.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#1d4ed8">READY 7</text>
 <rect x="326" y="132" width="186" height="38" rx="19" fill="#ffedd5" stroke="#9a3412"/>
 <text x="419.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#9a3412">IN_PROGRESS 1</text>
 <rect x="526" y="132" width="162" height="38" rx="19" fill="#f3e8ff" stroke="#6b21a8"/>
-<text x="607.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#6b21a8">IN_REVIEW 1</text>
+<text x="607.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#6b21a8">IN_REVIEW 0</text>
 <rect x="702" y="132" width="162" height="38" rx="19" fill="#f1f5f9" stroke="#475569"/>
 <text x="783.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#475569">WAIT_DEP 22</text>
 <rect x="878" y="132" width="258" height="38" rx="19" fill="#ffe4e6" stroke="#9f1239"/>
@@ -759,12 +759,12 @@
 <text x="94" y="1099" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">三轮主线权威与消费者迁移清单</text>
 <text x="94" y="1127" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：研究治理 · 2人日</text>
 <text x="94" y="1151" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：起点任务</text></g>
-<g filter="url(#shadow)"><rect x="604" y="2518" width="500" height="138" rx="13" fill="white" stroke="#6b21a8" stroke-width="3"/>
+<g filter="url(#shadow)"><rect x="604" y="2518" width="500" height="138" rx="13" fill="white" stroke="#166534" stroke-width="3"/>
 <rect x="604" y="2518" width="12" height="138" rx="6" fill="#e2e8f0"/>
 <rect x="626" y="2534" width="145" height="30" rx="8" fill="#e2e8f0"/>
 <text x="698" y="2555" text-anchor="middle" font-family="Consolas, sans-serif" font-size="17" font-weight="700" fill="#0f172a">U12-02</text>
-<rect x="930" y="2534" width="156" height="30" rx="15" fill="#f3e8ff" stroke="#6b21a8"/>
-<text x="1008" y="2555" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#6b21a8">IN_REVIEW</text>
+<rect x="930" y="2534" width="156" height="30" rx="15" fill="#dcfce7" stroke="#166534"/>
+<text x="1008" y="2555" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#166534">DONE</text>
 <text x="628" y="2593" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">步骤实例测量与实际未知负测试</text>
 <text x="628" y="2621" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：测量实现 · 3人日</text>
 <text x="628" y="2645" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：U12-01 · F-02 · F-05</text></g>

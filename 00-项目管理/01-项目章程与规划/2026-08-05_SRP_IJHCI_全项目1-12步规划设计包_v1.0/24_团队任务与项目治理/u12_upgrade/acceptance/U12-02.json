@@ -1,0 +1,20 @@
+{
+  "task_id": "U12-02",
+  "candidate_commit": "ba495b54e6939c2bb1c4a07592400f82c0292864",
+  "signature_commit": "28bf474643cda6c59480ea3d478749269d5cf3eb",
+  "date": "2026-09-08 +08:00",
+  "independent_review": {
+    "status": "PASS",
+    "reviewer": "Carson",
+    "role": "INDEPENDENT_AGENT",
+    "report_path": "02-技术研发/srp_step_measurement/U12-02_独立复核记录.md",
+    "sha256_lf": "64b612a8fb9baaf51272722d2318f512361e7851cc4c9b89196e31b65c2d687b"
+  },
+  "human_review": {
+    "status": "PASS",
+    "reviewer": "傅钧烨",
+    "role": "HUMAN_SECOND_REVIEWER",
+    "report_path": "02-技术研发/srp_step_measurement/U12-02_第二人审核报告_已签署.md",
+    "sha256_lf": "c3cad3a3b163572363527c8bdef364bf0a7c49e1ea64802b387a34bd0ce9279a"
+  }
+}

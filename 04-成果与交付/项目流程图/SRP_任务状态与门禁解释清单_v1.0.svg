@@ -3,7 +3,7 @@
 <g font-family="Microsoft YaHei, sans-serif" fill="#202124">
 <text x="50" y="60" font-size="32" font-weight="bold">SRP 任务状态与研究准入</text>
 <text x="50" y="105" font-size="20">71任务 / 68固定 / 3模板 · U12-01 DONE · READY U-02/T-02/Q-01/U12-03/U12-04/U12-06/U12-07</text>
-<text x="50" y="143" font-size="18">DONE 19项（含18项原签收）；未冻结数值、真实资格和运行接线不自动放行。</text>
+<text x="50" y="143" font-size="18">DONE 20项（含18项原签收）；未冻结数值、真实资格和运行接线不自动放行。</text>
 <text x="50" y="184" font-size="18">任务与领域</text><text x="1080" y="184" font-size="18">状态</text><text x="1340" y="184" font-size="18">前置依赖</text>
 <rect x="35" y="205" width="1730" height="59" fill="#edf5ed"/>
 <text x="50" y="241" font-size="20">F-01 【合同与协议】运行合同v2与fixture</text>
@@ -245,9 +245,9 @@
 <text x="50" y="3899" font-size="20">U12-01 【研究治理】三轮主线权威与消费者迁移清单</text>
 <text x="1080" y="3899" font-size="18">DONE</text>
 <text x="1340" y="3899" font-size="13">-</text>
-<rect x="35" y="3925" width="1730" height="59" fill="#ffffff"/>
+<rect x="35" y="3925" width="1730" height="59" fill="#edf5ed"/>
 <text x="50" y="3961" font-size="20">U12-02 【测量实现】步骤实例测量与实际未知负测试</text>
-<text x="1080" y="3961" font-size="18">IN_REVIEW</text>
+<text x="1080" y="3961" font-size="18">DONE</text>
 <text x="1340" y="3961" font-size="13">U12-01|F-02|F-05</text>
 <rect x="35" y="3987" width="1730" height="59" fill="#eef2f8"/>
 <text x="50" y="4023" font-size="20">U12-03 【教学设计】两方案公平教学与形成性比较合同</text>
