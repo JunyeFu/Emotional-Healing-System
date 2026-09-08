@@ -1,0 +1,11 @@
+Edit the reference UI image to produce a NEW corrected SRP operator workstation home overview. Preserve STYLE A: white / very light gray background, crisp charcoal Chinese sans serif type, thin dividers, modest teal accents, clean readable native desktop application, flat sections, no shadows, no illustrations or organ icons. Landscape 16:9 high resolution. All content must fit, no overlap, no clipped words. It is a design preview, no live data. Rebuild information architecture to match the following exact content. Do not keep obsolete source text.
+HEADER: title "SRP 实验工作台"; small badge "设计预览"; status "等待遥测". Right tools icon plus labels "导出", "截图", "人工标记", "中止请求". All tools visually disabled light gray, including abort gray outline, not actionable red.
+NAV: "总览" selected teal underline, "链路与时钟", "事件与审计".
+SESSION STRIP two compact rows: row1 "会话 ID  —" (wide), "运行模式  —", "协议版本  —". row2 "天气模块  —", "模块位置  —", "流程段  —", "提示条件  —".
+MAIN TOP 2 columns, left 40% right60%. LEFT title "设备与信号质量". table headers "来源 | 设备状态 | 信号质量 SQI". rows "呼吸 | 未知 | —" and "心电 | 未知 | —". Empty restrained teal and amber SQI bars only, no waveform. RIGHT title "呼吸跟随对照"; columns "指标 | 目标 | 实际"; four rows "周期序号 | — | —", "步骤标识 | — | —", "呼吸相位 | — | —", "相位进度 | — | —".
+NEXT full width unframed band title "交互状态估计与场景反馈". Three equally spaced label/value pairs: "实际识别置信度 —", "场景恢复值 —", "恢复值锁定 —". Compact, not oversized numbers.
+NEXT full width title "降级与异常". Two rows, no overlap: first "降级状态 —" and "降级原因 —"; second "最近接收错误 —". Clear empty space to allow longer reason.
+NEXT thin stats band title "TD 链路摘要" with six columns "有效接收 0", "序号缺口 0", "重复帧 0", "乱序帧 0", "无效帧 0", "重连 0". Zero here means initialized local counters only.
+BOTTOM small section "操作请求" text "请求与审计通道未接入" and "导出与截图待实现". Do NOT display fake event table or fake ACK success.
+FOOTER left "TD 末帧年龄 — ms" and "帧序号 —"; right "UDP 127.0.0.1:5005 · 显示上限 20 Hz".
+Avoid any emotion score, fake actual measurements, branded online devices, health claims, pause/start controls, weather selectors, invented timing, giant type, glossy panels. Use large enough Chinese labels, disciplined margin24 and gutters16. Comfortable readable layout, keep all content visible.

@@ -4,6 +4,8 @@
 
 ## 文件
 
+当前候选界面设计见 [A 主题功能清单与预览](design/workbench-v3.md)；尚未替换下列运行制品。
+
 - `t01_telemetry.py`：纯Python不可变快照适配器。
 - `T01_TelemetryPanel.toe/.tox`：TouchDesigner 2025.32820制品。
 - `build_t01_touchdesigner.py`：幂等构建脚本。

@@ -1,5 +1,13 @@
 # Codex Verification Log
 
+## 2026-09-08 A主题功能盘点与v3首页
+
+- 读取T-01/T-02实际边界与字段；P-01传输仍返回TD_STATE_CHANGE_NOT_AVAILABLE，P-02归档读取不等于现成TD导出服务。
+- T-01专项回归：`py -3.14 -m pytest -q 02-技术研发/03-TouchDesigner/t01_telemetry_panel/tests`，17 passed。
+- v3本地引用全部存在，功能表20项；新增设计与提示词措辞扫描无匹配（rg退出码1）；`git diff --check`通过。PNG字节SHA-256为`EEAD9A1606CA7BBE6E68AF68A680F763DEEE53F544CF06F7FAAD26172311CF51`。
+- 内置image_gen以A图为参考生成v3首页，保存workbench-v3-aligned.png；可见各区域无明显遮挡，生成文字最终由原生组件按规格重排，不作为字段字形精确验收。
+- 本轮是静态功能和设计交付；未运行新的TD界面、请求或导出验收。不改变任务状态和既有签收。
+
 ## 2026-09-08 T-01工作台设计预览
 
 - 直接查看生成图：会话、设备质量、目标实际对照、时钟、链路统计和降级状态分区完整，无可见文字遮挡或裁切；仅证明当前等待状态设计预览。
