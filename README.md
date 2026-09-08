@@ -6,6 +6,16 @@ SRP面向短时负性情绪调节的交互研究，比较**场景原生提示**�
 
 ## 版本与进度
 
+<!-- TEAM_PROGRESS_START -->
+### 团队任务进度图
+
+升级工作线进度：20项DONE；A-03进行中；U12-03待签收；6项READY。图源为升级工作线`852cfd8`，不是main历史注册表的完成声明。
+
+[![团队任务进度图](assets/readme/team-task-progress.svg)](assets/readme/team-task-progress.svg)
+
+点击图可打开原始SVG放大查看。任务状态变化时同步更新本区块、下方状态表和SVG。
+<!-- TEAM_PROGRESS_END -->
+
 **更新日期：2026-09-08。** 以下进度对应升级工作线 [73ffbf5](https://github.com/JunyeFu/Emotional-Healing-System/blob/73ffbf5/README.md)，不是声称这些实现已经合并到 `main`。本次首页更新仅同步说明与导航；主分支内的历史文档仍保留其原验收范围。
 
 | 项目 | 升级工作线状态 |

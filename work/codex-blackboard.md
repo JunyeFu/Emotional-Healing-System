@@ -1384,3 +1384,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 按用户要求更新默认main的README，基于origin/main=145f7b20b5e2b3453235fb79090b982785b4c5a3创建codex/github-readme；不合并升级实现。
 - 首页按升级工作线73ffbf5提供状态、研究主线和14个已核对版本化文件链接，明确main文件与升级状态的范围区别。
 - 仅发布README和本次工作/验证记录；保留未跟踪TD素材与tmp，完成后返回codex/u12-03-fair-training继续项目工作。
+# 2026-09-08 首页内嵌团队SVG
+
+- 首页直接展示升级工作线852cfd8生成的团队任务进度图，保留来源与main范围区分；同步习惯写入AGENTS。
+- 生成与幂等测试在升级工作线实现；本分支仅同步README、SVG、规则及日志。

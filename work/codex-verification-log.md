@@ -1470,3 +1470,7 @@
 - git diff --check通过；README受限措辞扫描无匹配（rg返回1）。
 - 状态引用73ffbf5：20 DONE、U12-03 IN_REVIEW、6 READY。633/22测试数为该候选已有证据，本轮仅文档更新，不重新宣称运行产品测试。
 - 发布范围：README与工作流日志，不更新任务注册表或合并升级代码。
+# 2026-09-08 首页SVG发布验证
+
+- 升级生成器3项专项通过；首页SVG与任务图哈希一致、XML可解析、README相对路径存在。
+- 任务状态未改动，展示20 DONE、A-03 IN_PROGRESS、U12-03 IN_REVIEW、6 READY。

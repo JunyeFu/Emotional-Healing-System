@@ -130,6 +130,9 @@
 
 ### 独立任务包习惯
 
+- 任何任务状态变化（含DONE）都必须同步README摘要和团队SVG；升级工作线使用`Tools/Governance/render_governance_views.py`生成受控进度区块与`assets/readme/team-task-progress.svg`。
+- GitHub默认main首页也须同步README状态表、内嵌SVG及版本化来源链接。工作分支尚未合并时，只发布首页文档/图及必要记录，注明来源版本，不顺带合并实现；只更新工作分支不算首页更新完成。
+
 - 每次任务注册表出现新的`READY`项，必须同步更新独立任务包文件映射，并重新生成当前解锁任务包。
 - 每个`READY`任务必须有独立目录，至少包含`TASK.md`、`FILES.md`、`package_manifest.json`和必要输入文件快照；不得只在总手册中给出一段描述。
 - 输入快照只用于领取和审阅，项目原路径始终是修改权威；Unity、TouchDesigner等大型工程以工作目录列入包内，不复制缓存和生成目录。
