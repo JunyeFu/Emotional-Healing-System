@@ -39,7 +39,8 @@
         "E-03"
       ],
       "consumers": [
-        "G-03"
+        "G-03",
+        "U12-11"
       ],
       "deliverables": [
         "blind_calibration_receipt",

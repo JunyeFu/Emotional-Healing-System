@@ -1515,3 +1515,8 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 备份：`D:/Agent/SRP-backups/u12-01-bdda9f9-20260908/tracked-baseline.zip`；原未跟踪TD资产及tmp不纳入提交。
 - 独立复核发现的签收校验、候选保护及旧证据绑定问题已修复并补回归。原证据6处工作区字节身份仍待U12-09追溯，不重写原声明。
 - 下一硬门：U12-01独立复审及真实第二人签收；本轮不得代填DONE或合并main。
+# 2026-09-08 U12-01真实签收
+
+- 傅钧烨明确签收DONE，审核候选47c81744884ae380e047cafb722aeb332c8cda29；签收提交8d75f1a97e91d9d6588d4cccf4492ab73e716826。审阅已有证据，不声称本人重新运行。
+- U12-01转DONE，总DONE为19；新增READY为Q-01、U12-02/03/04/06/07，与原T-02/U-02组成8项可领取集合。U12-05保持WAIT_DEP_EXTERNAL；Q-01仅先行材料制作可领取，真人执行仍等待U12-05。
+- 分发包同步，A-03输入保持冻结。历史6处字节追溯项继续由U12-09处理，正式活动仍未放行。

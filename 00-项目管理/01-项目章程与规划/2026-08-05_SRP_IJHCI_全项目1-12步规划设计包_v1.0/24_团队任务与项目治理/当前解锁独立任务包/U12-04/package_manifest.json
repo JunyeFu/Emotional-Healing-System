@@ -1,0 +1,59 @@
+{
+  "package_schema_version": "1.0",
+  "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
+  "task_id": "U12-04",
+  "status": "READY",
+  "registry_sha256": "7119740D834BEDD43D170648C48097308684C11DA614C7DA5512DDC10C8D5D29",
+  "input_snapshot_id": "236F924514D791AE5506457027E2598CE5C27B29F6A0CE39101F3262142843C3",
+  "previous_input_snapshot_id": null,
+  "input_changed": false,
+  "candidate_identity": null,
+  "source_files": [
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+      "package_path": "inputs/01_protocol_authority_v1.2.json",
+      "sha256": "3E5015BBA65588FF852E05B1831CB062E606F3ECB78C1F5B008FE61840D59DE6",
+      "size_bytes": 6469
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/consumers.json",
+      "package_path": "inputs/02_consumers.json",
+      "sha256": "2F68C3877531DB831C6CC4FDF22A0D039FA2491E988C4EFA8AA46A91C164A91E",
+      "size_bytes": 2670
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/study_manifest_v1.2.template.json",
+      "package_path": "inputs/03_study_manifest_v1.2.template.json",
+      "sha256": "43A720E65F10EB49818B3130143C57B7BF1DA106A312B9A9430603EC35DD088B",
+      "size_bytes": 1301
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/release_routes_v1.2.json",
+      "package_path": "inputs/04_release_routes_v1.2.json",
+      "sha256": "D9248B5EBE79EA40EB41A5CAD44DB0BF84BFB0A0EDAD085F8EC3192F37568331",
+      "size_bytes": 1201
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.2.json",
+      "package_path": "inputs/05_task_milestones_v1.2.json",
+      "sha256": "D38328914584CDBBFA32601C89F3E50DD7A4D3A336930EBCD5A471CC7115BBA8",
+      "size_bytes": 995
+    },
+    {
+      "source_path": "00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-04/inputs/task_input.json",
+      "package_path": "inputs/06_task_input.json",
+      "sha256": "C992685599FB0F246A30AAA7AF2A8D4C58835347C54AE8F412266B36B4A40D28",
+      "size_bytes": 7144
+    },
+    {
+      "source_path": "02-技术研发/02-信号处理/a03_gate2_spec/scoring.py",
+      "package_path": "inputs/07_scoring.py",
+      "sha256": "0614BE9D9447FCF13C836CC2252D0EB6A23653D91D3B52C14A3DC953A19E291A",
+      "size_bytes": 8783
+    }
+  ],
+  "working_paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0",
+    "02-技术研发"
+  ]
+}

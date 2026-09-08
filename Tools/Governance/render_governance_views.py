@@ -24,7 +24,7 @@ def main():
     state = next(r["status"] for r in rows if r["task_id"] == "U12-01")
     counts = Counter(r["status"] for r in rows)
     ready = "/".join(r["task_id"] for r in rows if r["status"] == "READY")
-    summary = f"治理v1.2：71项任务（68固定+3模板）；18项原签收DONE保留；U12-01为{state}，A-03为IN_PROGRESS，A-03-SPEC为DONE；READY={ready}；真实准入与研究数值仍未冻结"
+    summary = f"治理v1.2：71项任务（68固定+3模板）；DONE={counts['DONE']}项（含18项原签收）；U12-01为{state}，A-03为IN_PROGRESS，A-03-SPEC为DONE；READY={ready}；真实准入与研究数值仍未冻结"
     for name, pattern, prefix in (("README.md", r"^> SRP .*?$", "> SRP · 4人团队 · "),
                                   ("AGENTS.md", r"^> (?:2026/5/20 |当前阶段：).*?$", "> 当前阶段：")):
         path = ROOT / name
@@ -45,7 +45,7 @@ def main():
     board += "## 当前任务\n\n| 状态 | 任务 |\n|---|---|\n"
     for status in ("DONE", "READY", "IN_PROGRESS", "IN_REVIEW"):
         board += f"| {status} | {'、'.join(r['task_id'] for r in rows if r['status'] == status) or '无'} |\n"
-    board += "\n## 下一硬门\n\nU12-01实现候选经独立复核和真实第二人签收后，才按依赖解锁U12后续任务。G-05真实资格、U12-11数值冻结、U12-06运行接线继续阻断正式研究；不允许以文件存在代替。\n"
+    board += "\n## 下一硬门\n\nU12-01已由傅钧烨签收；当前READY任务可自主领取。U12-02/03/04/06交付汇入U12-09一致性复核，U12-07准备结果中立写作模板。U12-05仍等待外部条件。G-05真实资格、U12-11数值冻结、U12-06运行接线继续阻断正式研究。\n"
     write(ROOT / "00-项目管理/看板与进度/当前阶段看板.md", board)
     tree = "# 四人团队职责与任务树\n\n> " + summary + "\n\n"
     tree += "固定任务自主领取，领域归属明确；每个交付均需输入、分阶段过程、验收与证据。单一集成人负责注册表、协议和共享Unity资源，不按固定人员整块承包模块。\n\n"
@@ -63,7 +63,7 @@ def main():
         part = [r for r in rows if r["wave"] == wave]
         brief += f"| {wave} | {sum(r['kind']=='FIXED' for r in part)} | {sum(r['kind']=='TEMPLATE' for r in part)} |\n"
     brief += "\n# 固定任务的统一过程与验收\n\n核对冻结输入，按领域实施，执行正例与负例或取得真实回执，提交独立复核与真实第二人签收。只有READY任务可领取；每个分发包包含TASK、FILES、manifest与输入快照。\n\n"
-    brief += "A-03-SPEC保持原签收；U12-04为新规格，A-03-REAL消费后进入CAL。U12-11必须消费盲态校准版本，再冻结N与界值。U12-01实现完成只进入IN_REVIEW。\n\n"
+    brief += f"A-03-SPEC保持原签收；U12-04为新规格，A-03-REAL消费后进入CAL。U12-11必须消费盲态校准版本，再冻结N与界值。U12-01当前为{state}，签收范围见真实第二人报告。\n\n"
     brief += "# 完整任务目录\n\n\\small\n\n| 编号 | 领域与任务 | 状态 |\n|---|---|---|\n"
     for r in rows:
         brief += f"| {r['task_id']} | {r['title']} | {r['status']} |\n"
@@ -79,7 +79,7 @@ def main():
            '<g font-family="Microsoft YaHei, sans-serif" fill="#202124">',
            '<text x="50" y="60" font-size="32" font-weight="bold">SRP 任务状态与研究准入</text>',
            f'<text x="50" y="105" font-size="20">71任务 / 68固定 / 3模板 · U12-01 {state} · READY {ready}</text>',
-           '<text x="50" y="143" font-size="18">DONE 18项保留原签收；未冻结数值、真实资格和运行接线不自动放行。</text>',
+           f'<text x="50" y="143" font-size="18">DONE {counts["DONE"]}项（含18项原签收）；未冻结数值、真实资格和运行接线不自动放行。</text>',
            '<text x="50" y="184" font-size="18">任务与领域</text><text x="1080" y="184" font-size="18">状态</text><text x="1340" y="184" font-size="18">前置依赖</text>']
     for i, r in enumerate(rows):
         y = 205 + i * row_h
