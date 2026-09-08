@@ -1,5 +1,11 @@
 # Codex Verification Log
 
+## 2026-09-08 A主题原生构建主机验证
+
+- T-01专项测试含新增显示模型测试共27 passed；包含缺值、置信度、原始身份、历史值、错误及长字段。
+- 官方Text COMP、Layout、Panel Execute与OP Viewer TOP文档用于核对参数和显示入口；回调脚本通过Python语法检查。
+- MCP仍返回ECONNREFUSED；未生成新运行制品、未完成截图和交互验收。候选脚本只在TD成功执行后另存候选，不覆盖已签收主工程。
+
 ## 2026-09-08 用户完成TD窗口清理并保存
 
 - 用户执行当前窗口清理后确认保存；重新展开磁盘主工程，`/project1`直接子节点仅剩`T01_TelemetryPanel`，六个默认演示根节点已不存在。
