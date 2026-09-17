@@ -1,5 +1,11 @@
 # Codex Blackboard
 
+## 2026-09-17 SRP目录收敛为单入口
+
+- 用户要求D:\Agent下SRP只保留一个入口。22个D盘worktree（约28.5GB）已移除；差异证据135文件归档`_archive/worktree-evidence/`；SRP-backups与f03-validation验证环境迁入`_archive/`；完整登记快照存`_archive/worktree-registry-20260917.txt`。
+- 分支与提交零丢失：5个任务分支已全部并入main，20个detached证据提交仍可按哈希检出复现。两个.codex树因codex.exe运行中且不在Agent目录，未动。
+- 新目录约定已写入AGENTS.md：并行worktree用`git worktree add _worktrees/<任务名>`、任务合并后即删；`_archive/`与`_worktrees/`经`.git/info/exclude`本地排除；不得在仓库根运行`git clean -x`类命令。
+
 ## 2026-09-08 A主题原生重建候选
 
 - 新增workbench_view.py、build_workbench_a.py和10个主机测试实例；复用现有UDP适配器，三页原生布局、完整字段、禁用操作入口。
@@ -1559,3 +1565,12 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 用户授权完成收尾、推送并自动合并。将origin/main首页提交合入codex/u12-03-fair-training，保留新版首页、同步规则与双方历史工作记录。
 - 首页导航改为当前仓库相对路径，进度摘要与SVG同源生成；移除尚未合并的临时描述。
 - 状态保持20 DONE、U12-03 IN_REVIEW、6 READY；合并不代签。原未跟踪TD资产与tmp保持排除。
+
+## 2026-09-08 Huang Bin U-01 delivery intake
+
+- Goal: verify remote delivery identity and eligibility for U-01 closure / U-02 claim.
+- Evidence: fetched origin/codex/u-01-reliable-control at d5be86b86ca028c7decf10adf50923911458e007; inspected 9be3b0c runtime/test diff and delivery log. Branch contains 18 commits beyond main and 38 changed files relative to merge base 145f7b2.
+- Finding: live registry already marks U-01 DONE on codex/u-01-unity-control; signed acceptance binds 6c09f71d, not this candidate. U-02 is READY and unclaimed with F-03/F-05/V-03 prerequisites.
+- Evidence gap: new branch log reports EditMode 85/85 and PlayMode 9/9, but references another machine's XML/review paths; no new XML is committed in its branch delta. No independent Unity run performed in this intake.
+- Decision: intake only; do not transfer existing signoff to d5be86b or change registry. Next: reconcile the two implementations and obtain candidate-bound test evidence before candidate acceptance. U-02 must use current task inputs and freeze its claim snapshot.
+- Risk: reported PAT exposure requires owner-side revocation; no secret read, printed, revoked, or generated in this intake. Existing untracked TD/tmp assets preserved.

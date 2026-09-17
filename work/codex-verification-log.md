@@ -1,5 +1,13 @@
 # Codex Verification Log
 
+## 2026-09-17 SRP目录体系收敛（Agent顶层唯一入口）
+
+- 审计确认25个登记worktree中，D盘22个全部干净或仅含evidence/Unity设置差异；5个codex任务分支（f-03/f-04/f-05×2/t-01）0提交领先于main，两个.codex detached树（b7d12db/6760743）可达main。
+- 13个脏worktree的差异内容（evidence证据+Unity设置churn，共135文件）先归档至`_archive/worktree-evidence/<原目录名>/`再移除；SRP-backups与03-SRP-f03-validation整体迁入`_archive/`；重组前完整登记快照存`_archive/worktree-registry-20260917.txt`。
+- 移除22个D盘worktree（03-SRP-f03-worktree因Windows长路径分两步清除）；codex.exe运行中，两个.codex树按约定不动。回收约28.5GB。
+- 验证：20个detached证据提交`git cat-file -t`全部返回commit；28个codex分支保留；`git status --short`与重组前一致；`D:\Agent`顶层SRP相关仅剩`03-SRP/`；`_archive`合计1.6GB。
+- 回滚方式：worktree按登记快照`git worktree add <路径> <提交或分支>`重建；归档仅移动未删除。
+
 ## 2026-09-08 A主题原生构建主机验证
 
 - T-01专项测试含新增显示模型测试共27 passed；包含缺值、置信度、原始身份、历史值、错误及长字段。
@@ -1722,3 +1730,12 @@
 - 71项注册表、8个独立包/70快照、审计升级与v1.2治理均PASS。
 - README 14个链接存在；内嵌SVG XML可解析，字节哈希与任务图一致；冲突标记扫描无匹配；git diff --check通过。
 - 历史6处工作区字节身份仍按既有范围待追溯；本次未运行真实设备、Unity或TD验收。
+
+## 2026-09-08 Huang Bin U-01 delivery intake
+
+- Goal: verify remote delivery identity and eligibility for U-01 closure / U-02 claim.
+- Evidence: fetched origin/codex/u-01-reliable-control at d5be86b86ca028c7decf10adf50923911458e007; inspected 9be3b0c runtime/test diff and delivery log. Branch contains 18 commits beyond main and 38 changed files relative to merge base 145f7b2.
+- Finding: live registry already marks U-01 DONE on codex/u-01-unity-control; signed acceptance binds 6c09f71d, not this candidate. U-02 is READY and unclaimed with F-03/F-05/V-03 prerequisites.
+- Evidence gap: new branch log reports EditMode 85/85 and PlayMode 9/9, but references another machine's XML/review paths; no new XML is committed in its branch delta. No independent Unity run performed in this intake.
+- Decision: intake only; do not transfer existing signoff to d5be86b or change registry. Next: reconcile the two implementations and obtain candidate-bound test evidence before candidate acceptance. U-02 must use current task inputs and freeze its claim snapshot.
+- Risk: reported PAT exposure requires owner-side revocation; no secret read, printed, revoked, or generated in this intake. Existing untracked TD/tmp assets preserved.

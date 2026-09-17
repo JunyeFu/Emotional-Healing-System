@@ -139,3 +139,10 @@
 - 领取时冻结`input_snapshot_id`；上游输入变化必须生成影响记录，不能无声替换任务执行者的输入判断。
 - 输入快照只用于领取和审阅，项目原路径始终是修改权威；Unity、TouchDesigner等大型工程以工作目录列入包内，不复制缓存和生成目录。
 - 状态提交前必须同时通过任务注册表校验和独立任务包校验；缺包、错包、哈希漂移或READY集合不一致时不得分发。
+
+### 本地目录布局约定（2026-09-17收敛）
+
+- `D:\Agent\03-SRP` 是 SRP 在 `D:\Agent` 下的唯一入口；禁止在 Agent 顶层再创建 `03-SRP-*`、`f03v*`、`SRP-backups` 之类的平行目录。
+- 并行任务需要 worktree 时：`git worktree add _worktrees/<任务名>`，任务合并后立即 `git worktree remove` 回收，不留常驻树；`_archive/` 存放历史备份、验证环境快照与证据差异，两者均经 `.git/info/exclude` 本地排除，不入库不提交。
+- 历史审计文档中出现的旧路径（如 `D:/Agent/f03v8`、`03-SRP-f05-evidence-*`）是当时事实记录，不回改；对应差异已归档至 `_archive/worktree-evidence/`，登记快照见 `_archive/worktree-registry-20260917.txt`，提交仍可按哈希检出到 `_worktrees/` 复现。
+- 不得在仓库根运行 `git clean -x` / `git clean -fdx`：会连同清除被本地排除的 `_archive/` 与 `_worktrees/`。
