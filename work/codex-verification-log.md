@@ -1,5 +1,11 @@
 # Codex Verification Log
 
+## 2026-09-19 入口改名前置加固（03-SRP → emotional-healing-system）
+
+- 6处硬编码路径改为动态识别：validate_team_tool_baseline.py workspace断言改为比对PROJECT_ROOT；render_governance_views.py看板链接、13_render_ready_task_packages.py包内链接改为PROJECT_ROOT.as_posix()拼接；build_adaptation.py说明文本改为"仓库根目录"；clean_default_demo.ps1 Scratch默认参数改为$PSScriptRoot相对推导；build_briefs.ps1跨项目builder路径改为AGENT_ROOT环境变量可覆盖。
+- team_tool_baseline_v1.0.json的workspace字段随改名同步更新；改名后`git worktree repair`修复各worktree链接。
+- 预期：改名后校验脚本、治理视图渲染、任务包生成、PDF简报构建均不依赖旧绝对路径。
+
 ## 2026-09-17 SRP目录体系收敛（Agent顶层唯一入口）
 
 - 审计确认25个登记worktree中，D盘22个全部干净或仅含evidence/Unity设置差异；5个codex任务分支（f-03/f-04/f-05×2/t-01）0提交领先于main，两个.codex detached树（b7d12db/6760743）可达main。

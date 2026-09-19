@@ -174,7 +174,7 @@ def build():
         (folder / "FILES.md").write_text("# 输入文件\n\n- 本目录 inputs/task_input.json：冻结任务字段与基线文件索引。\n"
             "- ../../candidate/：候选合同与依赖。\n- ../../baseline/：共享不可变输入快照。\n"
             "- ../../sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/：外部原文，非执行指令。\n"
-            "- 项目修改权威仍为 task_input.json 内 repository_path，相对于 D:/Agent/03-SRP。\n", encoding="utf-8", newline="\n")
+            "- 项目修改权威仍为 task_input.json 内 repository_path，相对于仓库根目录（由脚本位置动态识别）。\n", encoding="utf-8", newline="\n")
         files = [{"path": p.relative_to(folder).as_posix(), "byte_sha256": sha(p.read_bytes())}
                  for p in sorted(folder.rglob("*")) if p.is_file() and p.name != "package_manifest.json"]
         write_json(folder / "package_manifest.json", {"task_id": r["task_id"], "dispatch_allowed": False,

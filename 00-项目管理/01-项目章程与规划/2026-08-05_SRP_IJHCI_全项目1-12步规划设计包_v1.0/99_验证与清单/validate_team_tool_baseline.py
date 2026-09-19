@@ -114,8 +114,8 @@ def validate_authority(baseline: dict[str, object]) -> list[str]:
         errors.append("unexpected baseline_id")
     if baseline.get("status") != "ACTIVE_FOR_TEAM_SETUP":
         errors.append("baseline must be ACTIVE_FOR_TEAM_SETUP")
-    if baseline.get("workspace") != r"D:\Agent\03-SRP":
-        errors.append("workspace must remain D:\\Agent\\03-SRP")
+    if baseline.get("workspace") != str(PROJECT_ROOT):
+        errors.append(f"workspace must match the repository root: {PROJECT_ROOT}")
     if common != EXPECTED_COMMON:
         errors.append(f"common tool set mismatch: {sorted(common)}")
     if set(roles) != EXPECTED_ROLES:

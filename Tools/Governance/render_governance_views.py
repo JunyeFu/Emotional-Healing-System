@@ -57,7 +57,7 @@ def main():
             text = re.sub(r"^\| 看当前执行权威 .*?$", f"| 看当前执行权威 | `{GUIDE}` + `active_governance.json`（治理目录） |", text, flags=re.MULTILINE)
         write(path, text)
     board = "# 当前阶段看板\n\n> 2026-09-08 | " + summary + "\n\n"
-    board += f"当前设计与责任入口：[U12-01](/D:/Agent/03-SRP/{GUIDE})。\n\n"
+    board += f"当前设计与责任入口：[U12-01](/{(ROOT / GUIDE).as_posix()})。\n\n"
     board += "## 研究与工程分开\n\n阶段一独立支撑核心论文；阶段二/三为条件式扩展。PANAS主要比较候选与PF功能护栏分开，SCCI只作操纵检查。原新颖性REVISE_REQUIRED和研究证据缺口不因工程迁移自动解除。\n\n"
     board += "原18项签收保留原范围；新TD界面与工程壳仍需实机证据。A-03新统计规格由U12-04提供，REAL/CAL不得沿用旧规格冒充新校准。\n\n"
     board += "## 当前任务\n\n| 状态 | 任务 |\n|---|---|\n"

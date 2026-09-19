@@ -290,11 +290,11 @@ def files_markdown(
         source = str(item["source_path"])
         package_path = str(item["package_path"])
         lines.append(
-            f"| [{source}](D:/Agent/03-SRP/{source}) | [{package_path}]({package_path}) | `{item['sha256']}` |"
+            f"| [{source}]({PROJECT_ROOT.as_posix()}/{source}) | [{package_path}]({package_path}) | `{item['sha256']}` |"
         )
     lines.extend(["", "## 实现工作目录", ""])
     for relative in working_paths:
-        lines.append(f"- [{relative}](D:/Agent/03-SRP/{relative})")
+        lines.append(f"- [{relative}]({PROJECT_ROOT.as_posix()}/{relative})")
     lines.extend(
         [
             "",

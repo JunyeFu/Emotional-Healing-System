@@ -1,5 +1,10 @@
 # Codex Blackboard
 
+## 2026-09-19 SRP入口改名 emotional-healing-system
+
+- 用户确认全套入口改名方案。前置加固已完成（6处硬编码路径动态化，见验证日志2026-09-19条目）；改名后需：git worktree repair、team_tool_baseline_v1.0.json的workspace字段更新、记忆库按sha256(小写反斜杠路径)[:16]新键迁移。
+- 会话残留：改名时本会话工作目录会失效，D:\Agent\03-SRP留有空占位目录，会话关闭后删除。
+
 ## 2026-09-17 SRP目录收敛为单入口
 
 - 用户要求D:\Agent下SRP只保留一个入口。22个D盘worktree（约28.5GB）已移除；差异证据135文件归档`_archive/worktree-evidence/`；SRP-backups与f03-validation验证环境迁入`_archive/`；完整登记快照存`_archive/worktree-registry-20260917.txt`。

@@ -56,7 +56,7 @@ Python是流程与时间权威。Unity不依赖TD提供画面；TD不能直接�
 └── work/           Codex黑板与验证日志
 ```
 
-本地开发遵循[AGENTS.md](AGENTS.md)的目录约定（2026-09-17收敛）：SRP在`D:\Agent`下只保留`03-SRP`一个入口；并行任务worktree统一放在`_worktrees/`、合并后即删，历史备份与证据差异归档在`_archive/`。两者仅存在于本机，经`.git/info/exclude`本地排除，不入库不出现在克隆中；不得在仓库根运行`git clean -x`类命令。
+本地开发遵循[AGENTS.md](AGENTS.md)的目录约定（2026-09-19收敛）：SRP在`D:\Agent`下只保留`emotional-healing-system`一个入口（原名`03-SRP`）；并行任务worktree统一放在`_worktrees/`、合并后即删，历史备份与证据差异归档在`_archive/`。两者仅存在于本机，经`.git/info/exclude`本地排除，不入库不出现在克隆中；不得在仓库根运行`git clean -x`类命令。
 
 ## 开发与交付入口
 
@@ -80,7 +80,7 @@ Python是流程与时间权威。Unity不依赖TD提供画面；TD不能直接�
 按环境基线配置依赖后，可运行：
 
 ```powershell
-Set-Location 'D:\Agent\03-SRP'
+Set-Location 'D:\Agent\emotional-healing-system'
 git status --short
 py -3.14 -m pytest -q
 git diff --check

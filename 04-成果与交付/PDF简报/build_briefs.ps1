@@ -3,7 +3,8 @@ $env:PYTHONUTF8 = '1'
 
 $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $python = 'D:\MathModelingTools\envs\cumcm\python.exe'
-$builder = 'D:\Agent\01-math-modeling\math-modeling\runtime\build_paper.py'
+$agentRoot = if ($env:AGENT_ROOT) { $env:AGENT_ROOT } else { 'D:\Agent' }
+$builder = Join-Path $agentRoot 'math-modeling\math-modeling\runtime\build_paper.py'
 $output = Join-Path $projectRoot 'output\pdf'
 
 if (-not (Test-Path -LiteralPath $python)) {

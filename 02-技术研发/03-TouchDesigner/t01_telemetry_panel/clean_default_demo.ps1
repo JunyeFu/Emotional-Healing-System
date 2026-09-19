@@ -1,8 +1,9 @@
 param(
     [string]$TdBin = 'D:\TouchDesigner\bin',
-    [string]$Scratch = 'D:\Agent\03-SRP\tmp\td-cleanup-candidate'
+    [string]$Scratch = ''
 )
 $ErrorActionPreference = 'Stop'
+if (-not $Scratch) { $Scratch = Join-Path $PSScriptRoot '..\..\..\tmp\td-cleanup-candidate' }
 $source = Join-Path $PSScriptRoot 'T01_TelemetryPanel.toe'
 $scratchPath = [IO.Path]::GetFullPath($Scratch)
 if (Test-Path -LiteralPath $scratchPath) { throw 'Scratch must be a new directory' }
