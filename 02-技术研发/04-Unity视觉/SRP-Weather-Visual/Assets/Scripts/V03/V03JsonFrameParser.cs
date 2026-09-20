@@ -24,7 +24,7 @@ namespace SRP.V03
             try
             {
                 var scanner = new JsonScanner(json);
-                frame = ParseObject(scanner);
+                frame = ParseObject(ref scanner);
                 return true;
             }
             catch (V03JsonException ex)
@@ -35,7 +35,7 @@ namespace SRP.V03
             }
         }
 
-        private static V03FrameDto ParseObject(JsonScanner s)
+        private static V03FrameDto ParseObject(ref JsonScanner s)
         {
             if (s.Peek != '{') throw new V03JsonException("E_EXPECT_OBJECT_START");
             s.Advance();
@@ -60,52 +60,52 @@ namespace SRP.V03
 
                 switch (key)
                 {
-                    case "schema_version": dto.SchemaVersion = ExpectString(s); break;
-                    case "message_type": dto.MessageType = ExpectString(s); break;
-                    case "session_id": dto.SessionId = ExpectString(s); break;
-                    case "frame_seq": dto.FrameSeq = ExpectLong(s); break;
+                    case "schema_version": dto.SchemaVersion = ExpectString(ref s); break;
+                    case "message_type": dto.MessageType = ExpectString(ref s); break;
+                    case "session_id": dto.SessionId = ExpectString(ref s); break;
+                    case "frame_seq": dto.FrameSeq = ExpectLong(ref s); break;
 
-                    case "clock_domain_id": dto.ClockDomainId = ExpectString(s); break;
-                    case "source_monotonic_ns": dto.SourceMonotonicNs = ExpectLong(s); break;
-                    case "received_monotonic_ns": dto.ReceivedMonotonicNs = ExpectLong(s); break;
-                    case "sent_monotonic_ns": dto.SentMonotonicNs = ExpectLong(s); break;
-                    case "clock_offset_ns": dto.ClockOffsetNs = ExpectLong(s); break;
-                    case "clock_drift_ppm": dto.ClockDriftPpm = ExpectDouble(s); break;
-                    case "sync_uncertainty_ns": dto.SyncUncertaintyNs = ExpectLong(s); break;
+                    case "clock_domain_id": dto.ClockDomainId = ExpectString(ref s); break;
+                    case "source_monotonic_ns": dto.SourceMonotonicNs = ExpectLong(ref s); break;
+                    case "received_monotonic_ns": dto.ReceivedMonotonicNs = ExpectLong(ref s); break;
+                    case "sent_monotonic_ns": dto.SentMonotonicNs = ExpectLong(ref s); break;
+                    case "clock_offset_ns": dto.ClockOffsetNs = ExpectLong(ref s); break;
+                    case "clock_drift_ppm": dto.ClockDriftPpm = ExpectDouble(ref s); break;
+                    case "sync_uncertainty_ns": dto.SyncUncertaintyNs = ExpectLong(ref s); break;
 
-                    case "module_id": dto.ModuleId = ExpectString(s); break;
-                    case "module_position": dto.ModulePosition = (int)ExpectLong(s); break;
-                    case "segment": dto.Segment = ExpectString(s); break;
-                    case "cue_mode": dto.CueMode = ExpectString(s); break;
-                    case "runtime_mode": dto.RuntimeMode = ExpectString(s); break;
-                    case "policy_decision_id": dto.PolicyDecisionId = ExpectString(s); break;
+                    case "module_id": dto.ModuleId = ExpectString(ref s); break;
+                    case "module_position": dto.ModulePosition = (int)ExpectLong(ref s); break;
+                    case "segment": dto.Segment = ExpectString(ref s); break;
+                    case "cue_mode": dto.CueMode = ExpectString(ref s); break;
+                    case "runtime_mode": dto.RuntimeMode = ExpectString(ref s); break;
+                    case "policy_decision_id": dto.PolicyDecisionId = ExpectString(ref s); break;
 
-                    case "target_phase": dto.TargetPhase = ExpectString(s); break;
-                    case "target_progress": dto.TargetProgress = (float)ExpectDouble(s); break;
-                    case "target_cycle_index": dto.TargetCycleIndex = ExpectNullableInt(s); break;
-                    case "target_step_id": dto.TargetStepId = ExpectNullableString(s); break;
+                    case "target_phase": dto.TargetPhase = ExpectString(ref s); break;
+                    case "target_progress": dto.TargetProgress = (float)ExpectDouble(ref s); break;
+                    case "target_cycle_index": dto.TargetCycleIndex = ExpectNullableInt(ref s); break;
+                    case "target_step_id": dto.TargetStepId = ExpectNullableString(ref s); break;
 
-                    case "actual_phase": dto.ActualPhase = ExpectString(s); break;
-                    case "actual_progress": dto.ActualProgress = (float)ExpectDouble(s); break;
-                    case "actual_cycle_index": dto.ActualCycleIndex = ExpectNullableInt(s); break;
-                    case "actual_step_id": dto.ActualStepId = ExpectNullableString(s); break;
-                    case "actual_confidence": dto.ActualConfidence = (float)ExpectDouble(s); break;
+                    case "actual_phase": dto.ActualPhase = ExpectString(ref s); break;
+                    case "actual_progress": dto.ActualProgress = (float)ExpectDouble(ref s); break;
+                    case "actual_cycle_index": dto.ActualCycleIndex = ExpectNullableInt(ref s); break;
+                    case "actual_step_id": dto.ActualStepId = ExpectNullableString(ref s); break;
+                    case "actual_confidence": dto.ActualConfidence = (float)ExpectDouble(ref s); break;
 
-                    case "recovery_value": dto.RecoveryValue = (float)ExpectDouble(s); break;
-                    case "recovery_locked": recoveryLocked = ExpectBool(s); break;
+                    case "recovery_value": dto.RecoveryValue = (float)ExpectDouble(ref s); break;
+                    case "recovery_locked": recoveryLocked = ExpectBool(ref s); break;
 
                     case "signal_quality":
                         // 嵌套对象 {"resp":0.92,"ecg":0.88}
-                        ParseSignalQuality(s, out resp, out ecg);
+                        ParseSignalQuality(ref s, out resp, out ecg);
                         break;
 
-                    case "fallback_state": dto.FallbackState = ExpectString(s); break;
-                    case "fallback_reason": dto.FallbackReason = ExpectNullableString(s); break;
-                    case "resp_device_state": dto.RespDeviceState = ExpectString(s); break;
-                    case "ecg_device_state": dto.EcgDeviceState = ExpectString(s); break;
+                    case "fallback_state": dto.FallbackState = ExpectString(ref s); break;
+                    case "fallback_reason": dto.FallbackReason = ExpectNullableString(ref s); break;
+                    case "resp_device_state": dto.RespDeviceState = ExpectString(ref s); break;
+                    case "ecg_device_state": dto.EcgDeviceState = ExpectString(ref s); break;
 
                     default:
-                        SkipValue(s); // 前向兼容：未知字段跳过
+                        SkipValue(ref s); // 前向兼容：未知字段跳过
                         break;
                 }
 
@@ -120,8 +120,10 @@ namespace SRP.V03
             return dto;
         }
 
-        private static void ParseSignalQuality(JsonScanner s, out float? resp, out float? ecg)
+        private static void ParseSignalQuality(ref JsonScanner s, out float? resp, out float? ecg)
         {
+            // 嵌套对象的闭合 '}' 必须由本方法自行消费：
+            // 外层 ParseObject 无法区分嵌套对象的 '}' 与整个帧对象的 '}'。
             resp = null; ecg = null;
             if (s.Peek != '{') throw new V03JsonException("E_EXPECT_OBJECT_START");
             s.Advance();
@@ -136,9 +138,9 @@ namespace SRP.V03
 
                 switch (key)
                 {
-                    case "resp": resp = (float)ExpectDouble(s); break;
-                    case "ecg": ecg = (float)ExpectDouble(s); break;
-                    default: SkipValue(s); break;
+                    case "resp": resp = (float)ExpectDouble(ref s); break;
+                    case "ecg": ecg = (float)ExpectDouble(ref s); break;
+                    default: SkipValue(ref s); break;
                 }
 
                 if (s.Peek == ',') { s.Advance(); continue; }
@@ -147,36 +149,36 @@ namespace SRP.V03
             }
         }
 
-        private static string ExpectString(JsonScanner s) =>
+        private static string ExpectString(ref JsonScanner s) =>
             s.Peek == '"' ? s.ParseString() : throw new V03JsonException("E_EXPECT_STRING");
 
-        private static string ExpectNullableString(JsonScanner s)
+        private static string ExpectNullableString(ref JsonScanner s)
         {
             if (s.IsNull())
             {
                 s.ConsumeNull();
                 return null;
             }
-            return ExpectString(s);
+            return ExpectString(ref s);
         }
 
-        private static int? ExpectNullableInt(JsonScanner s)
+        private static int? ExpectNullableInt(ref JsonScanner s)
         {
             if (s.IsNull())
             {
                 s.ConsumeNull();
                 return null;
             }
-            return (int)Math.Round(ExpectDouble(s), MidpointRounding.AwayFromZero);
+            return (int)Math.Round(ExpectDouble(ref s), MidpointRounding.AwayFromZero);
         }
 
-        private static long ExpectLong(JsonScanner s) => (long)ExpectDouble(s);
+        private static long ExpectLong(ref JsonScanner s) => (long)ExpectDouble(ref s);
 
-        private static double ExpectDouble(JsonScanner s) => s.ParseNumber();
+        private static double ExpectDouble(ref JsonScanner s) => s.ParseNumber();
 
-        private static bool ExpectBool(JsonScanner s) => s.ParseBool();
+        private static bool ExpectBool(ref JsonScanner s) => s.ParseBool();
 
-        private static void SkipValue(JsonScanner s) => s.SkipAnyValue();
+        private static void SkipValue(ref JsonScanner s) => s.SkipAnyValue();
 
         private sealed class V03JsonException : Exception
         {
