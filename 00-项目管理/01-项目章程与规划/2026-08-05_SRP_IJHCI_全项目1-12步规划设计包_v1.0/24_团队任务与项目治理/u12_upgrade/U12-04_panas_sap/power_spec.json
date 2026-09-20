@@ -1,0 +1,71 @@
+{
+  "spec_id": "U12-04-POWER-SPEC-candidate-v1.0",
+  "status": "CANDIDATE_NOT_RESEARCH_FROZEN",
+  "evidence_class": "DESIGN_AND_SYNTHETIC_ONLY",
+  "purpose": "为 PANAS 主结果（stage_1）提供 N×效应 功效网格，作为正式样本量冻结的参考输入；本规格不冻结 N 与效应值。",
+  "authority": "00_总控/protocol_authority_v1.2.json",
+  "model": {
+    "formula": "NA_post ~ cue_mode + centered_NA_pre + randomization_strata",
+    "contrast": "native_minus_abstract",
+    "native_code": 1,
+    "abstract_code": 0,
+    "lower_is_better": true,
+    "variance": "HC3",
+    "test": "two_sided",
+    "alpha": 0.05,
+    "ci_level": 0.95,
+    "unit": "participant"
+  },
+  "simulation": {
+    "engine": "deterministic_monte_carlo",
+    "seed": 20260906,
+    "replications": 1000,
+    "analysis_sets": ["PRIMARY_CONSERVATIVE", "OBSERVED_CASE"],
+    "target_power": 0.9,
+    "decision_rule": "grid_reference_not_frozen"
+  },
+  "grid": {
+    "n_total_grid": [48, 96, 144, 192, 240],
+    "effect_grid_cohens_d": [0.2, 0.3, 0.4, 0.5],
+    "balance": "1:1",
+    "per_condition_anchor": 24,
+    "block_size_candidate": 48
+  },
+  "data_generation": {
+    "rho_pre_post": 0.5,
+    "centered_pre_sd": 1.0,
+    "strata_effect_sd": 0.1,
+    "noise_sd": 1.0,
+    "missing_post_rate_native": 0.02,
+    "missing_post_rate_abstract": 0.01
+  },
+  "analysis_sets_definition": {
+    "PRIMARY_CONSERVATIVE": {
+      "inclusion": "all_randomized",
+      "missing_policy": "carry_forward_pre_no_change",
+      "note": "保守：缺失后测按无变化处理（lower_is_better 下低估 native 优势）"
+    },
+    "OBSERVED_CASE": {
+      "inclusion": "complete_four_module_with_post",
+      "missing_policy": "complete_post_only",
+      "note": "仅使用观测到 NA_post 的参与者"
+    }
+  },
+  "outputs": {
+    "power_grid_json": "power_grid.json",
+    "power_report_md": "power_report.md"
+  },
+  "frozen": {
+    "n_frozen": false,
+    "effect_frozen": false,
+    "margin_frozen": false,
+    "justification": "真实冻结前不设定单点 N 与最小重要差值；本网格由协议锚点（48/192/240、目标功效 0.9）与双分析集生成"
+  },
+  "limitations": [
+    "SYNTHETIC_PARAMETERS_ARE_NOT_REAL_CALIBRATION",
+    "FORMAL_N_AND_MARGIN_NOT_FROZEN",
+    "OLD_ANCHORS_ARE_NOT_FINAL_POWER",
+    "EQUIVALENCE_POWER_NOT_CLAIMED",
+    "MISSINGNESS_POLICY_PRE-FREEZE"
+  ]
+}
