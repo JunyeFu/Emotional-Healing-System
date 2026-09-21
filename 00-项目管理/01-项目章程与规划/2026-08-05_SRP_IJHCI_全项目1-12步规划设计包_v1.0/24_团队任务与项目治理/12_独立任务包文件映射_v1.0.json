@@ -18,6 +18,8 @@
       ]
     },
     "U-02": {
+      "implementation_commit": "9078bc19f1efa2a512e2bb4992568c869fa895b2",
+      "implementation_branch": "codex/u-02-grip",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
         "03-测试与实验/F-03_技术验收记录_已签署.md",

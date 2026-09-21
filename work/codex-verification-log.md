@@ -1751,3 +1751,9 @@
 - 注册表校验、独立包校验、审计升级校验、治理v1.2校验和legacy协议校验待提交前运行。
 - PDF重建成功：221278 bytes，中文`pdftotext`提取正常，包含DONE=21和U12-03 IN_REVIEW。
 - 原有未跟踪 `02-技术研发/03-TouchDesigner/t01_telemetry_panel/Backup/`、`T01_TelemetryPanel.3.toe`及`tmp/`未暂存。
+# 2026-09-21 U-02复核准备
+
+- 注册表、独立包、审计升级、治理v1.2校验通过；7个独立包、63个输入快照。
+- Unity EditMode实跑：98/98 Passed，0 failed，0 skipped；结果与日志留在未跟踪`tmp/`，未提交用户临时目录。
+- 三张持久SVG、README/AGENTS、看板、任务树和固定概要已由当前注册表重生成；状态为U-02/U12-03 IN_REVIEW。
+- 外部证据目录`D:\Coze\SRP\evidence`不存在于当前环境，未将其声明冒充可访问证据；独立复核待返回。

@@ -1584,3 +1584,9 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 依据本地main=203cdd1、origin/main=d701a40及当前注册表，确认U12-04已签收DONE；状态为DONE=21、U12-03 IN_REVIEW、READY=U-02/T-02/Q-01/U12-06/U12-07。
 - 运行治理生成器，更新三张持久任务SVG、README内嵌图、AGENTS、当前阶段看板、团队任务树和固定任务概要Markdown；图表日期改为2026-09-21。
 - 直接重建固定任务概要PDF并指定Microsoft YaHei，中文文本提取正常。远端fetch因SSH代理命令失效未刷新，但已使用本地origin/main引用，推送前保留原未跟踪TD资产和tmp。
+# 2026-09-21 U-02进入独立复核
+
+- 用户确认U-02已在main完成；核对提交链：D2 `8ed6471`、D3 `9078bc1`、任务回填 `5de412c`，实现文件确实存在主线。
+- U-02由READY迁移IN_REVIEW，候选绑定`9078bc1`，分支`codex/u-02-grip`；重新生成7个当前独立任务包。
+- 本机Unity 6000.4.9f1 EditMode实跑98/98 Passed；外部`D:\Coze\SRP\evidence`当前不可访问，录像/参数快照/隔离报告待独立复核确认。
+- 当前状态DONE=21、IN_REVIEW=U-02/U12-03、READY=T-02/Q-01/U12-06/U12-07；不代签DONE。
