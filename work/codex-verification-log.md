@@ -1799,3 +1799,10 @@
 - 独立Agent：Jason `01a0c2d7-acc0-7951-957b-fb42e22ef5fc`；候选：`0c75f84ea0d4d50be71f5575a0ea553d675f7862`；结论：`REVISE`。
 - Agent实跑Q-01测试6/6与4/4通过、材料校验器返回有效，但通过反例证明现有检查未覆盖4项P1，因此不接受原本的材料完成结论。
 - 当前权威状态改为`INDEPENDENT_REVIEW_REVISE_REQUIRED`；未变更注册表状态，未生成团队第二人签收。
+
+## 2026-09-21 Q-01修复与独立复审
+
+- `py -3.14 -m pytest <Q-01>/tests -q`：16 passed，3 subtests passed。
+- `py -3.14 <Q-01>/tools/validate_q01_materials.py`：`Q01_MATERIALS_VALID`。
+- 空白模板完整CLI：`INCOMPLETE`。
+- 独立Agent第三轮复审：`PASS`，无未关闭P0-P2。
