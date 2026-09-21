@@ -24,6 +24,14 @@ class Q01MaterialValidationTests(unittest.TestCase):
         for token in MODULE.FORBIDDEN_BLIND_TOKENS:
             self.assertNotIn(token.lower(), payload)
 
+    def test_distributed_blind_markdown_has_no_identity_tokens(self) -> None:
+        payload = "\n".join(
+            (ROOT / relative).read_text(encoding="utf-8").lower()
+            for relative in MODULE.BLIND_MARKDOWN_FILES
+        )
+        for token in MODULE.FORBIDDEN_BLIND_TOKENS:
+            self.assertNotIn(token.lower(), payload)
+
     def test_both_tasks_cover_unavailable_input(self) -> None:
         tasks = MODULE.load_json("reconstruction_tasks_v1.0.json")["tasks"]
         for task in tasks:

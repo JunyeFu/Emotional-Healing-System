@@ -21,6 +21,10 @@ FORBIDDEN_BLIND_TOKENS = {
     "圆环",
     "进度条",
 }
+BLIND_MARKDOWN_FILES = (
+    "02_盲态独立重建任务书.md",
+    "05_盲态材料母版与编号方案.md",
+)
 
 
 def repository_root() -> Path:
@@ -46,6 +50,14 @@ def validate_materials() -> list[str]:
     tasks = load_json("reconstruction_tasks_v1.0.json")
     assignments = read_csv("blind_assignment_template_v1.0.csv")
     items = read_csv("expert_item_bank_v1.0.csv")
+
+    if tuple(contract["blind_material_files"]) != BLIND_MARKDOWN_FILES:
+        errors.append("BLIND_MARKDOWN_FILE_SET_MISMATCH")
+    for relative in BLIND_MARKDOWN_FILES:
+        blind_payload = (ROOT / relative).read_text(encoding="utf-8").lower()
+        for token in FORBIDDEN_BLIND_TOKENS:
+            if token.lower() in blind_payload:
+                errors.append(f"BLIND_MARKDOWN_IDENTITY_LEAK:{relative}:{token}")
 
     contract_items = [item["id"] for item in contract["expert_items"]]
     if [row["item_id"] for row in items] != contract_items:

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "task_id": "Q-01",
-  "status": "INDEPENDENT_REVIEW_REVISE_REQUIRED",
+  "status": "REVISION_IMPLEMENTED_PENDING_INDEPENDENT_REREVIEW",
   "claim_scope": "candidate_four_layer_design_knowledge",
   "roles": {
     "expert": {
@@ -21,6 +21,12 @@
     },
     "rater": {
       "count": 2
+    },
+    "adjudicator": {
+      "count": 1,
+      "role_groups": {
+        "research_lead": 1
+      }
     }
   },
   "role_rules": {
@@ -41,6 +47,7 @@
     {"id": "E10", "name": "neutral_material_and_identity_masking"}
   ],
   "expert_gate": {
+    "required_dimensions": ["relevance", "comprehensiveness", "clarity", "construct_purity"],
     "valid_score_min": 3,
     "i_cvi_min": 0.78,
     "s_cvi_ave_min": 0.9,
@@ -74,6 +81,10 @@
     "blind_assignment": "materials/blind_assignment_template_v1.0.csv",
     "expert_item_bank": "materials/expert_item_bank_v1.0.csv"
   },
+  "blind_material_files": [
+    "02_盲态独立重建任务书.md",
+    "05_盲态材料母版与编号方案.md"
+  ],
   "not_claimed": [
     "level_a_executed",
     "level_b_executed",

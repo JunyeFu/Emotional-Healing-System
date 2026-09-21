@@ -28,6 +28,8 @@ def roster_rows() -> list[dict[str, str]]:
     for index in range(1, 3):
         rows.append({"person_code": f"R{index:02}", "role": "rater", "role_group": "blind_visual",
                      "framework_author": "0", "eligible": "1", "conflict_note": ""})
+    rows.append({"person_code": "A01", "role": "adjudicator", "role_group": "research_lead",
+                 "framework_author": "0", "eligible": "1", "conflict_note": ""})
     return rows
 
 
@@ -71,6 +73,16 @@ class Q01FrameworkTests(unittest.TestCase):
         result = evaluate(roster_rows(), reviews, reconstruction_rows(), CONTRACT)
         self.assertEqual("REVISE", result["decision"])
 
+    def test_each_expert_dimension_is_gated(self) -> None:
+        for dimension in ("comprehensiveness", "clarity", "construct_purity"):
+            reviews = expert_rows()
+            for row in reviews:
+                if row["item_id"] == "E01" and row["reviewer_code"] in {"E01", "E02"}:
+                    row[dimension] = "2"
+            with self.subTest(dimension=dimension):
+                result = evaluate(roster_rows(), reviews, reconstruction_rows(), CONTRACT)
+                self.assertEqual("REVISE", result["decision"])
+
     def test_unstable_reconstruction_downgrades_claim(self) -> None:
         scores = reconstruction_rows({"D01", "D02"})
         result = evaluate(roster_rows(), expert_rows(), scores, CONTRACT)
@@ -82,9 +94,44 @@ class Q01FrameworkTests(unittest.TestCase):
         result = evaluate(roster_rows(), expert_rows(), scores, CONTRACT)
         self.assertEqual("REVISE", result["decision"])
 
+    def test_adjudication_resolves_disagreement_without_rewriting_scores(self) -> None:
+        scores = reconstruction_rows()
+        scores[0]["target_correct"] = "0"
+        adjudications = [{
+            "designer_code": "D01", "task_id": "R-UNSEEN-RHYTHM",
+            "field": "target_correct", "adjudicator_code": "A01",
+            "final_value": "1", "rationale": "Reviewed both coded observations",
+        }]
+        result = evaluate(
+            roster_rows(), expert_rows(), scores, CONTRACT, adjudications
+        )
+        self.assertEqual("PASS", result["decision"])
+        self.assertEqual([], result["reconstruction_gate"]["unresolved_disagreements"])
+
+    def test_unknown_adjudicator_is_incomplete(self) -> None:
+        scores = reconstruction_rows()
+        scores[0]["target_correct"] = "0"
+        adjudications = [{
+            "designer_code": "D01", "task_id": "R-UNSEEN-RHYTHM",
+            "field": "target_correct", "adjudicator_code": "UNKNOWN",
+            "final_value": "1", "rationale": "Invalid identity",
+        }]
+        result = evaluate(
+            roster_rows(), expert_rows(), scores, CONTRACT, adjudications
+        )
+        self.assertEqual("INCOMPLETE", result["decision"])
+        self.assertIn(
+            "ADJUDICATOR_UNKNOWN:UNKNOWN",
+            result["reconstruction_gate"]["adjudication_errors"],
+        )
+
     def test_incomplete_roster_is_incomplete(self) -> None:
         roster = [row for row in roster_rows() if row["person_code"] != "R02"]
         result = evaluate(roster, expert_rows(), reconstruction_rows(), CONTRACT)
+        self.assertEqual("INCOMPLETE", result["decision"])
+
+    def test_empty_templates_are_incomplete_without_crashing(self) -> None:
+        result = evaluate([], [], [], CONTRACT, [])
         self.assertEqual("INCOMPLETE", result["decision"])
 
     def test_csv_templates_are_readable(self) -> None:
@@ -94,7 +141,7 @@ class Q01FrameworkTests(unittest.TestCase):
                 writer = csv.DictWriter(handle, fieldnames=roster_rows()[0].keys())
                 writer.writeheader()
                 writer.writerows(roster_rows())
-            self.assertEqual(14, len(read_csv(path)))
+            self.assertEqual(15, len(read_csv(path)))
 
 
 if __name__ == "__main__":

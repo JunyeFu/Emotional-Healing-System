@@ -12,7 +12,7 @@
 
 ## 2. 专家审查
 
-向8名专家分别发放`01_构念专家审查包.md`、`04_课题实际构念与证据矩阵.md`和个人评分表。独立回收后运行汇总工具；若任一I-CVI、S-CVI/Ave或关键阻断不满足合同，先修订再决定是否开启独立重建。
+向8名专家分别发放`01_构念专家审查包.md`、`04_课题实际构念与证据矩阵.md`和个人评分表。独立回收后运行汇总工具；若四个维度中任一逐项I-CVI、S-CVI/Ave或关键阻断不满足合同，先修订再决定是否开启独立重建。
 
 ## 3. 独立重建
 
@@ -27,10 +27,10 @@
 运行：
 
 ```powershell
-py -3.14 tools/summarize_q01.py --roster templates/roster.csv --expert templates/expert_reviews.csv --reconstruction templates/reconstruction_scores.csv --out q01_summary.json
+py -3.14 tools/summarize_q01.py --roster templates/roster.csv --expert templates/expert_reviews.csv --reconstruction templates/reconstruction_scores.csv --adjudication templates/adjudications.csv --out q01_summary.json
 ```
 
-按工具输出形成`PASS`、`REVISE`、`DOWNGRADE_TO_FOUR_SCENE_DESIGN_PATTERN`或`INCOMPLETE`。任何修订写入`templates/revision_log.csv`并升级版本；原始独立记录不覆盖。
+先将工具报告的逐字段分歧填入`templates/adjudications.csv`再复算；裁定人必须存在于角色表且每条记录包含理由。按工具输出形成`PASS`、`REVISE`、`DOWNGRADE_TO_FOUR_SCENE_DESIGN_PATTERN`或`INCOMPLETE`。任何修订写入`templates/revision_log.csv`并升级版本；原始独立记录不覆盖。
 
 ## 6. 空白执行报告
 
@@ -41,8 +41,8 @@ py -3.14 tools/summarize_q01.py --roster templates/roster.csv --expert templates
 | 专家角色构成 | 待回填 |
 | 设计者角色构成 | 待回填 |
 | 评分者构成 | 待回填 |
-| I-CVI范围 | 待计算 |
-| S-CVI/Ave | 待计算 |
+| 四维I-CVI范围 | 待计算 |
+| 四维S-CVI/Ave | 待计算 |
 | 关键阻断项 | 待汇总 |
 | 双任务通过人数 | 待计算 |
 | 评分分歧 | 待裁定 |

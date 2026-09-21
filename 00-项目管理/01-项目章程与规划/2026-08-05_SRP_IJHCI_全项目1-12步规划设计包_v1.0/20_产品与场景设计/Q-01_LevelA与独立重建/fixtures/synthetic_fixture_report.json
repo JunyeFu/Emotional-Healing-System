@@ -5,8 +5,12 @@
   "cases": [
     {"id": "all_gates_pass", "expected_decision": "PASS"},
     {"id": "expert_item_below_threshold", "expected_decision": "REVISE"},
+    {"id": "each_expert_dimension_below_threshold", "expected_decision": "REVISE"},
     {"id": "reconstruction_not_stable", "expected_decision": "DOWNGRADE_TO_FOUR_SCENE_DESIGN_PATTERN"},
     {"id": "rater_disagreement", "expected_decision": "REVISE"},
+    {"id": "adjudicated_rater_disagreement", "expected_decision": "PASS"},
+    {"id": "unknown_adjudicator", "expected_decision": "INCOMPLETE"},
+    {"id": "empty_templates", "expected_decision": "INCOMPLETE"},
     {"id": "incomplete_roster", "expected_decision": "INCOMPLETE"}
   ],
   "material_validation": {
@@ -23,5 +27,5 @@
       "RATER_ADJUDICATION_INPUT_MISSING"
     ]
   },
-  "verification": "PASS_10_TESTS_2026-09-21"
+  "verification": "PASS_15_TESTS_AND_3_DIMENSION_SUBTESTS_2026-09-21"
 }

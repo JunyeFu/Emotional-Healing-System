@@ -1,6 +1,6 @@
 # Q-01 Level A构念审查与独立重建框架 v1.0
 
-> 状态：`INDEPENDENT_REVIEW_REVISE_REQUIRED`
+> 状态：`REVISION_IMPLEMENTED_PENDING_INDEPENDENT_REREVIEW`
 > 任务：Q-01【研究工具】
 > 目的：判断候选四层语法是否具备内容完整性、边界清晰度和跨场景生成性。
 > 边界：本目录没有真实专家、独立设计者或盲态评分数据，不关闭Level A、Level B或Gate 2。
@@ -32,7 +32,7 @@ Q-01不评价短时负性情绪结果，不比较天气顺序，不检验单一�
 | 盲态评分者 | 2 | 熟悉视觉表达但未参与框架和重建 | 匿名重建结果、评分规则和参考真值 | 查看设计者身份、条件名称和相互评分 |
 | 裁定人 | 1 | 项目研究负责人 | 自动汇总、原始意见和分歧记录 | 改写原始评分或事后改变阈值 |
 
-同一人不得跨任专家、设计者或评分者。框架作者不得进入三个评分人员池。
+同一人不得跨任专家、设计者、评分者或裁定人。框架作者不得进入任一人员池。
 
 ## 4. 五阶段过程
 
@@ -52,8 +52,9 @@ Q-01不评价短时负性情绪结果，不比较天气顺序，不检验单一�
 专家独立评价`framework_contract_v1.0.json`中的10个项目。每项使用1至4分评价相关性、完整性、表达清晰度和构念纯度，并单独标记关键阻断项。
 
 - `3/4`计入内容有效；
-- `I-CVI >= 0.78`；8名完整评分实际要求至少7名给出3或4；
-- `S-CVI/Ave >= 0.90`；
+- 相关性、完整性、表达清晰度和构念纯度四个维度分别计算`I-CVI`与`S-CVI/Ave`；
+- 每个维度的逐项`I-CVI >= 0.78`；8名完整评分实际要求至少7名给出3或4；
+- 每个维度的`S-CVI/Ave >= 0.90`；
 - 不允许存在未关闭关键阻断项；
 - 必须同时保留逐项分布和开放意见。
 
@@ -79,7 +80,7 @@ Q-01不评价短时负性情绪结果，不比较天气顺序，不检验单一�
 - 是否泄露现有条件身份；
 - 是否仅靠颜色承载关键区别。
 
-两名评分者任一字段不一致时进入`REVISE`并交裁定人记录分歧；不得静默取平均。
+两名评分者任一字段不一致时进入`REVISE`并交裁定人逐字段填写`adjudications.csv`；工具保留原评分并仅消费独立裁定记录，不得静默取平均。
 
 ### Q1-4 自动裁定与交接
 
@@ -108,6 +109,7 @@ Q-01不评价短时负性情绪结果，不比较天气顺序，不检验单一�
 | `templates/roster.csv` | 匿名角色与资格登记模板 |
 | `templates/expert_reviews.csv` | 专家逐项评分模板 |
 | `templates/reconstruction_scores.csv` | 两名评分者逐任务评分模板 |
+| `templates/adjudications.csv` | 逐字段分歧的独立裁定记录模板 |
 | `templates/revision_log.csv` | 版本差异与处置日志模板 |
 | `tools/summarize_q01.py` | 自动检查完整性并输出裁定摘要 |
 | `tests/test_summarize_q01.py` | PASS、REVISE、DOWNGRADE三类合成验证 |
@@ -125,7 +127,7 @@ Q-01不评价短时负性情绪结果，不比较天气顺序，不检验单一�
 py -3.14 tests/test_summarize_q01.py
 py -3.14 tests/test_validate_q01_materials.py
 py -3.14 tools/validate_q01_materials.py
-py -3.14 tools/summarize_q01.py --roster <roster.csv> --expert <expert_reviews.csv> --reconstruction <reconstruction_scores.csv> --out <summary.json>
+py -3.14 tools/summarize_q01.py --roster <roster.csv> --expert <expert_reviews.csv> --reconstruction <reconstruction_scores.csv> --adjudication <adjudications.csv> --out <summary.json>
 ```
 
 ## 6. 验收映射
