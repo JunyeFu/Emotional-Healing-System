@@ -124,6 +124,8 @@
 <path d="M 1638 2089.0 C 1683 2089.0, 1627 429.0, 1672 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 1638 2255.0 C 1683 2255.0, 1627 429.0, 1672 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 1104 761.0 C 1342.56 761.0, 1433.44 429.0, 1672 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
+<path d="M 1638 429.0 C 1683 429.0, 1627 429.0, 1672 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
+<path d="M 1638 595.0 C 1683 595.0, 1627 429.0, 1672 429.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 570 595.0 C 1032.84 595.0, 1209.16 595.0, 1672 595.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 1104 1757.0 C 1342.56 1757.0, 1433.44 595.0, 1672 595.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
 <path d="M 1104 595.0 C 1342.56 595.0, 1433.44 595.0, 1672 595.0" fill="none" stroke="#94a3b8" stroke-width="1.4" opacity="0.46" marker-end="url(#arrow)"/>
@@ -536,7 +538,7 @@
 <text x="2076" y="397" text-anchor="middle" font-family="Consolas, sans-serif" font-size="13" font-weight="700" fill="#9f1239">WAIT_DEP_EXTERNAL</text>
 <text x="1696" y="435" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">无TD双真机完整链外部延迟与重放</text>
 <text x="1696" y="463" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：系统集成 · 5人日</text>
-<text x="1696" y="487" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：P-01 · P-02 · S-02 · U-08 · T-02 · G-02</text></g>
+<text x="1696" y="487" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：P-01 · P-02 · S-02 · U-08 · T-02 · G-02 ·…</text></g>
 <g filter="url(#shadow)"><rect x="1672" y="526" width="500" height="138" rx="13" fill="white" stroke="#166534" stroke-width="3"/>
 <rect x="1672" y="526" width="12" height="138" rx="6" fill="#e2e8f0"/>
 <rect x="1694" y="542" width="145" height="30" rx="8" fill="#e2e8f0"/>

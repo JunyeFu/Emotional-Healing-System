@@ -174,7 +174,7 @@
 <rect x="35" y="2738" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
 <text x="50" y="2771" font-size="20">I-01 【系统集成】无TD双真机完整链外部延迟与重放</text>
 <text x="1080" y="2771" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="2771" font-size="13">P-01|P-02|S-02|U-08|T-02|G-02</text>
+<text x="1340" y="2771" font-size="13">P-01|P-02|S-02|U-08|T-02|G-02|D-01|D-02</text>
 <rect x="35" y="2800" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
 <text x="50" y="2833" font-size="20">Q-01 【研究工具】Level A构念与静态/回放独立重建材料</text>
 <text x="1080" y="2833" font-size="18">DONE</text>
