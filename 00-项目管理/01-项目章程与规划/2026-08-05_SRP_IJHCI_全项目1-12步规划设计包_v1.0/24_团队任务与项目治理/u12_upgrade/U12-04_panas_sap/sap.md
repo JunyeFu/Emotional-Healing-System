@@ -27,7 +27,7 @@
 | 检验 | two_sided 双侧 | `primary.test` |
 | α | 0.05 | `primary.alpha` |
 | 置信区间 | 0.95（双侧） | `primary.ci_level` |
-| 治疗前协变量 | 仅基线（centered_NA_pre），post_treatment_covariates=false | `primary.post_treatment_covariates_in_primary_model` |
+| 结果前协变量 | 仅基线（centered_NA_pre），post_treatment_covariates=false | `primary.post_treatment_covariates_in_primary_model` |
 | 基线 | 必须采集并纳入（pretreatment_baseline_required=true） | `primary.pretreatment_baseline_required` |
 | 最小重要差值 | null（UNFROZEN，待真实冻结） | `primary.minimum_important_affect_difference` |
 
@@ -110,7 +110,7 @@
 
 以下声明**一律不主张**（全部 false）：
 
-- 全项目因果效应、独立天气效应、独立呼吸结构效应、单一视觉机制效应、长期效应、短期 vs 长期交互、诊断或治疗效果。
+- 全项目因果效应、独立天气效应、独立呼吸结构效应、单一视觉机制效应、长期效应、短期 vs 长期交互，以及超出本项目交互状态估计范围的效果。
 
 ## 11. 需要正式冻结的条目（Required Freezes，15 项）
 

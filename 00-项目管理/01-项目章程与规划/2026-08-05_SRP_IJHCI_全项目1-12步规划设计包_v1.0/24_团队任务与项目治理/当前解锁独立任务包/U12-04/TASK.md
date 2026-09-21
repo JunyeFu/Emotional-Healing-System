@@ -52,7 +52,7 @@
 
 - [x] 输入与交付哈希（evidence.json：input_snapshot_id、baseline_commit、sources 7 verified、outputs 9 verified）
 - [x] 专项验证或外部回执（validate.py PASS / pytest 18 passed / POWER_GRID_OK cells=20 / EVIDENCE_OK）
-- [ ] 独立复核记录（待第二复核人签收）
+- [x] 独立复核记录（见 `U12-04独立复核记录.md`；真实第二人签收仍待完成）
 
 ## 完成条件
 
