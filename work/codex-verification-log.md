@@ -1789,3 +1789,8 @@
 - 固定提交复核发现并修正两项P1：忽略的CSV未入Git、fade共享复色与Cumulative混写。修正后需从Git树重跑同组验证。
 - 修正后复验：Q-01专项10/10通过；根pytest `633 passed`；71项注册表、7个分发包、审计治理v1.2和U12治理均通过。
 - `git ls-tree`确认四份机器材料均已进入Git；复核后无未关闭P0-P2，Q-01继续`IN_PROGRESS`，未触发治理视图重绘。
+
+# 2026-09-21 实验与写作阶段SVG分区验证
+- 两张独立SVG均含`phase-preparation`、`phase-experiment`、`phase-writing`及两道门的稳定元素ID；4项专项测试通过。
+- Edge无界面渲染两张完整PNG并人工检查：三色矩形连续、门线处于W4/W5与W5/W6边界、标签未被任务卡遮挡。
+- 重复生成哈希不变；71项注册表、7个分发包和`git diff --check`通过。任务状态未改变，保留TD与tmp未跟踪内容。

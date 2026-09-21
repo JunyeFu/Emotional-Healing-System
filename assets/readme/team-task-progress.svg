@@ -6,6 +6,18 @@
 <rect width="100%" height="100%" fill="#f8fafc"/>
 <text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>
 <text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">2026-09-21 · 治理1.2 · 71任务及3里程碑 · 虚线为开展阶段三后的条件依赖</text>
+<rect id="phase-preparation" x="52" y="298" width="2672" height="3121" rx="18" fill="#eaf2ff"/>
+<text x="72" y="3401" font-family="Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#334155">实验开始前 · 设计、实现、预试与冻结</text>
+<rect id="phase-experiment" x="2722" y="298" width="536" height="3121" rx="18" fill="#fff3d6"/>
+<text x="2742" y="3401" font-family="Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#334155">实验执行与锁库</text>
+<rect id="phase-writing" x="3256" y="298" width="536" height="3121" rx="18" fill="#e9f8ee"/>
+<text x="3276" y="3401" font-family="Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#334155">实验完成后 · 结果写作与交付</text>
+<line id="gate-experiment-start" x1="2723.0" y1="292" x2="2723.0" y2="3419" stroke="#c2410c" stroke-width="4" stroke-dasharray="12 8"/>
+<rect x="2595.0" y="3337" width="256" height="34" rx="17" fill="#fff7ed" stroke="#c2410c"/>
+<text x="2723.0" y="3360" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#c2410c">实验开始门 · G-03 DONE</text>
+<line id="gate-experiment-complete" x1="3257.0" y1="292" x2="3257.0" y2="3419" stroke="#15803d" stroke-width="4" stroke-dasharray="12 8"/>
+<rect x="3129.0" y="3337" width="256" height="34" rx="17" fill="#f0fdf4" stroke="#15803d"/>
+<text x="3257.0" y="3360" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#15803d">实验完成门 · A-06 DONE</text>
 <rect x="70" y="132" width="114" height="38" rx="19" fill="#dcfce7" stroke="#166534"/>
 <text x="127.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#166534">DONE 22</text>
 <rect x="198" y="132" width="114" height="38" rx="19" fill="#dbeafe" stroke="#1d4ed8"/>
@@ -885,10 +897,11 @@
 <text x="2230" y="1763" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#0f172a">A-03-CAL</text>
 <text x="2230" y="1791" font-family="Microsoft YaHei, sans-serif" font-size="14" fill="#475569">类型：分析里程碑 · -人日</text>
 <text x="2230" y="1815" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：A-03-REAL · E-03</text></g>
-<rect x="70" y="3468" width="3704" height="210" rx="18" fill="white" stroke="#cbd5e1"/>
-<text x="94" y="3508" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#0f172a">读图规则</text>
-<text x="94" y="3542" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">箭头表示任务依赖；节点底部同时列出依赖，便于在连线密集处核对。边框表示状态，左侧色条表示任务类型。</text>
-<text x="94" y="3574" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">READY 仅表示所有仓库内前置任务已 DONE 且可领取，不表示实现、正式构建或联合运行已经完成。</text>
-<text x="94" y="3606" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">IN_REVIEW 仍受复核或外部门约束；WAIT_DEP_EXTERNAL / BLOCKED_EXTERNAL 不可由仓库内文件自行关闭。</text>
-<text x="94" y="3646" font-family="Consolas, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">Source: 05_可领取任务包.csv · Renderer: Tools/Governance/render_team_task_flow.py</text>
+<rect x="70" y="3443" width="3704" height="235" rx="18" fill="white" stroke="#cbd5e1"/>
+<text x="94" y="3483" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#0f172a">读图规则</text>
+<text x="94" y="3517" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">箭头表示任务依赖；节点底部同时列出依赖，便于在连线密集处核对。边框表示状态，左侧色条表示任务类型。</text>
+<text x="94" y="3549" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">READY 仅表示所有仓库内前置任务已 DONE 且可领取，不表示实现、正式构建或联合运行已经完成。</text>
+<text x="94" y="3581" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">IN_REVIEW 仍受复核或外部门约束；WAIT_DEP_EXTERNAL / BLOCKED_EXTERNAL 不可由仓库内文件自行关闭。</text>
+<text x="94" y="3613" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">蓝区在实验开始门前；黄区由 G-03 放行正式阶段一并持续到 A-06 范围关闭；绿区才可启动 W-02 结果写作。</text>
+<text x="94" y="3650" font-family="Consolas, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">Source: 05_可领取任务包.csv · Renderer: Tools/Governance/render_team_task_flow.py</text>
 </svg>

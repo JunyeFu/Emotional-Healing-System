@@ -1,292 +1,304 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="4662" viewBox="0 0 1800 4662">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="4747" viewBox="0 0 1800 4747">
 <rect width="100%" height="100%" fill="#fafafa"/>
 <g font-family="Microsoft YaHei, sans-serif" fill="#202124">
 <text x="50" y="60" font-size="32" font-weight="bold">SRP 任务状态与研究准入</text>
 <text x="50" y="105" font-size="20">2026-09-21 · 71任务 / 68固定 / 3模板 · U12-01 DONE · READY V-05/T-02/U12-06/U12-07</text>
 <text x="50" y="143" font-size="18">DONE 22项（含18项原签收）；未冻结数值、真实资格和运行接线不自动放行。</text>
-<text x="50" y="184" font-size="18">任务与领域</text><text x="1080" y="184" font-size="18">状态</text><text x="1340" y="184" font-size="18">前置依赖</text>
-<rect x="35" y="205" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="241" font-size="20">F-01 【合同与协议】运行合同v2与fixture</text>
-<text x="1080" y="241" font-size="18">DONE</text>
-<text x="1340" y="241" font-size="13">-</text>
-<rect x="35" y="267" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="303" font-size="20">F-02 【研究设计】Gate2构念SCCI四层理解与Level A/B材料</text>
-<text x="1080" y="303" font-size="18">DONE</text>
-<text x="1340" y="303" font-size="13">-</text>
-<rect x="35" y="329" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="365" font-size="20">F-03 【Unity】可复现工程与测试构建基线</text>
-<text x="1080" y="365" font-size="18">DONE</text>
-<text x="1340" y="365" font-size="13">-</text>
-<rect x="35" y="391" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="427" font-size="20">F-04 【TouchDesigner】只读操作台壳</text>
-<text x="1080" y="427" font-size="18">DONE</text>
-<text x="1340" y="427" font-size="13">-</text>
-<rect x="35" y="453" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="489" font-size="20">F-05 【合同与协议】相位实例v2.2与消费者迁移</text>
-<text x="1080" y="489" font-size="18">DONE</text>
-<text x="1340" y="489" font-size="13">F-01|P-01|P-02</text>
-<rect x="35" y="515" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="551" font-size="20">G-01 【研究治理】伦理材料许可招募产能与角色台账</text>
-<text x="1080" y="551" font-size="18">DONE</text>
-<text x="1340" y="551" font-size="13">F-02</text>
-<rect x="35" y="577" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="613" font-size="20">G-02 【数据治理】数据分级跨阶段去重与资产许可</text>
-<text x="1080" y="613" font-size="18">DONE</text>
-<text x="1340" y="613" font-size="13">F-01</text>
-<rect x="35" y="639" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="675" font-size="20">P-01 【Python核心】manifest与会话编排</text>
-<text x="1080" y="675" font-size="18">DONE</text>
-<text x="1340" y="675" font-size="13">F-01</text>
-<rect x="35" y="701" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="737" font-size="20">P-02 【数据记录】L0/L1追加记录与重放</text>
-<text x="1080" y="737" font-size="18">DONE</text>
-<text x="1340" y="737" font-size="13">F-01</text>
-<rect x="35" y="763" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="799" font-size="20">U-01 【Unity】可靠控制技术探针与渲染回执</text>
-<text x="1080" y="799" font-size="18">DONE</text>
-<text x="1340" y="799" font-size="13">F-01|F-03|F-05|P-01</text>
-<rect x="35" y="825" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="861" font-size="20">U-02 【Unity】四层SceneAdapter实现与降级</text>
-<text x="1080" y="861" font-size="18">DONE</text>
-<text x="1340" y="861" font-size="13">F-03|F-05|V-03</text>
-<rect x="35" y="887" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="923" font-size="20">T-01 【TouchDesigner】遥测设备质量与时钟面板</text>
-<text x="1080" y="923" font-size="18">DONE</text>
-<text x="1340" y="923" font-size="13">F-01|F-04|F-05</text>
-<rect x="35" y="949" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="985" font-size="20">R-01 【体验设计】四层候选语法完整表示方案与中性说明</text>
-<text x="1080" y="985" font-size="18">DONE</text>
-<text x="1340" y="985" font-size="13">F-02</text>
-<rect x="35" y="1011" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="1047" font-size="20">V-01 【Unity前期设计】研究体验契约与完整旅程</text>
-<text x="1080" y="1047" font-size="18">DONE</text>
-<text x="1340" y="1047" font-size="13">F-02|R-01</text>
-<rect x="35" y="1073" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="1109" font-size="20">V-02 【Unity前期设计】四天气场景与呼吸提示设计确认</text>
-<text x="1080" y="1109" font-size="18">DONE</text>
-<text x="1340" y="1109" font-size="13">V-01</text>
-<rect x="35" y="1135" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="1171" font-size="20">V-03 【Unity前期设计】四层视听映射与资产来源基线</text>
-<text x="1080" y="1171" font-size="18">DONE</text>
-<text x="1340" y="1171" font-size="13">V-02|R-01</text>
-<rect x="35" y="1197" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="1233" font-size="20">V-04 【Unity前期设计】完整分镜与真实时长声音预演</text>
-<text x="1080" y="1233" font-size="18">DONE</text>
-<text x="1340" y="1233" font-size="13">V-03</text>
-<rect x="35" y="1259" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1295" font-size="20">D-01 【设备接入】Polar H10真实ECG与RR适配</text>
-<text x="1080" y="1295" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="1295" font-size="13">P-02</text>
-<rect x="35" y="1321" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1357" font-size="20">D-02 【设备接入】PLUX respiBAN BLE呼吸与运动适配</text>
-<text x="1080" y="1357" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="1357" font-size="13">P-02</text>
-<rect x="35" y="1383" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1419" font-size="20">S-01 【信号处理】双设备同步SQI与降级状态</text>
-<text x="1080" y="1419" font-size="18">WAIT_DEP</text>
-<text x="1340" y="1419" font-size="13">D-01|D-02</text>
-<rect x="35" y="1445" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1481" font-size="20">S-02 【交互状态估计】呼吸事件周期与在线PF</text>
-<text x="1080" y="1481" font-size="18">WAIT_DEP</text>
-<text x="1340" y="1481" font-size="13">S-01|R-01</text>
-<rect x="35" y="1507" width="1730" height="59" fill="#eef2f8"/>
-<text x="50" y="1543" font-size="20">V-05 【Unity预制作】四模块全旅程灰盒与形成性回退门</text>
-<text x="1080" y="1543" font-size="18">READY</text>
-<text x="1340" y="1543" font-size="13">F-03|U-02|V-04</text>
-<rect x="35" y="1569" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1605" font-size="20">U-03 【Unity场景】最高风险天气纵向切片与模板冻结</text>
-<text x="1080" y="1605" font-size="18">WAIT_DEP</text>
-<text x="1340" y="1605" font-size="13">U-01|U-02|V-05</text>
-<rect x="35" y="1631" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1667" font-size="20">U-04 【Unity场景】剩余天气A四层适配器</text>
-<text x="1080" y="1667" font-size="18">WAIT_DEP</text>
-<text x="1340" y="1667" font-size="13">U-03|V-03</text>
-<rect x="35" y="1693" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1729" font-size="20">U-05 【Unity场景】剩余天气B四层适配器</text>
-<text x="1080" y="1729" font-size="18">WAIT_DEP</text>
-<text x="1340" y="1729" font-size="13">U-03|V-03</text>
-<rect x="35" y="1755" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1791" font-size="20">U-06 【Unity场景】剩余天气C四层适配器</text>
-<text x="1080" y="1791" font-size="18">WAIT_DEP</text>
-<text x="1340" y="1791" font-size="13">U-03|V-03</text>
-<rect x="35" y="1817" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1853" font-size="20">U-07 【Unity场景】抽象完整表示方案适配器</text>
-<text x="1080" y="1853" font-size="18">WAIT_DEP</text>
-<text x="1340" y="1853" font-size="13">F-05|U-03|R-01|V-03</text>
-<rect x="35" y="1879" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="1915" font-size="20">U-08 【Unity成品】跨场景视听一致性性能与可访问性</text>
-<text x="1080" y="1915" font-size="18">WAIT_DEP</text>
-<text x="1340" y="1915" font-size="13">G-02|U-03|U-04|U-05|U-06|U-07</text>
-<rect x="35" y="1941" width="1730" height="59" fill="#eef2f8"/>
-<text x="50" y="1977" font-size="20">T-02 【TouchDesigner】人工标记中止请求与告警</text>
-<text x="1080" y="1977" font-size="18">READY</text>
-<text x="1340" y="1977" font-size="13">T-01|P-01</text>
-<rect x="35" y="2003" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2039" font-size="20">A-01 【离线分析】L0至L3确定性重建</text>
-<text x="1080" y="2039" font-size="18">WAIT_DEP</text>
-<text x="1340" y="2039" font-size="13">P-02|S-02</text>
-<rect x="35" y="2065" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2101" font-size="20">A-02 【统计实现】机会分母PF护栏及缺失敏感性</text>
-<text x="1080" y="2101" font-size="18">WAIT_DEP</text>
-<text x="1340" y="2101" font-size="13">A-01</text>
-<rect x="35" y="2127" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2163" font-size="20">A-03 【统计实现】Gate2联合测量估计目标与Monte Carlo样本模拟</text>
-<text x="1080" y="2163" font-size="18">IN_PROGRESS</text>
-<text x="1340" y="2163" font-size="13">F-02</text>
-<rect x="35" y="2189" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="2225" font-size="20">W-01 【论文准备】2015至2026最近工作击穿与主线论文骨架</text>
-<text x="1080" y="2225" font-size="18">DONE</text>
-<text x="1340" y="2225" font-size="13">F-02|R-01</text>
-<rect x="35" y="2251" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2287" font-size="20">I-01 【系统集成】无TD双真机完整链外部延迟与重放</text>
-<text x="1080" y="2287" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="2287" font-size="13">P-01|P-02|S-02|U-08|T-02|G-02</text>
-<rect x="35" y="2313" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2349" font-size="20">Q-01 【研究工具】Level A构念与静态/回放独立重建材料</text>
-<text x="1080" y="2349" font-size="18">IN_PROGRESS</text>
-<text x="1340" y="2349" font-size="13">F-02|R-01|G-01|U12-01</text>
-<rect x="35" y="2375" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2411" font-size="20">Q-02 【研究工具】Level B两条件认知可访问性与需求特征预试</text>
-<text x="1080" y="2411" font-size="18">WAIT_DEP</text>
-<text x="1340" y="2411" font-size="13">U-08|Q-01|U12-02|U12-03</text>
-<rect x="35" y="2437" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2473" font-size="20">Q-03 【研究工具】Level C采集标注与阈值冻结工具</text>
-<text x="1080" y="2473" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="2473" font-size="13">I-01|Q-02|A-01|A-03-REAL</text>
-<rect x="35" y="2499" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="2535" font-size="20">X-01 【随机化】阶段一三清单分层隐藏概率与重复防护</text>
-<text x="1080" y="2535" font-size="18">DONE</text>
-<text x="1340" y="2535" font-size="13">P-01|A-03-SPEC|G-02</text>
-<rect x="35" y="2561" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2597" font-size="20">X-02 【策略实现】参与者分组策略学习OPE支持与重放</text>
-<text x="1080" y="2597" font-size="18">WAIT_DEP</text>
-<text x="1340" y="2597" font-size="13">A-03</text>
-<rect x="35" y="2623" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2659" font-size="20">X-03 【策略运行】阶段三同构建策略随机接入与防在线学习</text>
-<text x="1080" y="2659" font-size="18">WAIT_DEP</text>
-<text x="1340" y="2659" font-size="13">X-01|X-02|U-01</text>
-<rect x="35" y="2685" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2721" font-size="20">Z-01 【构建交付】干净检出构建复现与候选制品</text>
-<text x="1080" y="2721" font-size="18">WAIT_DEP</text>
-<text x="1340" y="2721" font-size="13">I-01|A-02|A-03|U-08|G-02</text>
-<rect x="35" y="2747" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2783" font-size="20">G-05 【外部准入】正式环境机构路径许可与U8实地闭环</text>
-<text x="1080" y="2783" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="2783" font-size="13">G-01|G-02</text>
-<rect x="35" y="2809" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2845" font-size="20">E-01 【研究执行】Level A专家审查执行</text>
-<text x="1080" y="2845" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="2845" font-size="13">Q-01|U12-05</text>
-<rect x="35" y="2871" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2907" font-size="20">E-02 【研究执行】Level B认知预试执行与关闭</text>
-<text x="1080" y="2907" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="2907" font-size="13">Q-02|E-01|U12-05</text>
-<rect x="35" y="2933" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="2969" font-size="20">B-01 【研究批次】Level C会话批次模板</text>
-<text x="1080" y="2969" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="2969" font-size="13">Q-03|E-02</text>
-<rect x="35" y="2995" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3031" font-size="20">E-03 【研究关闭】Level C汇总门与阈值冻结</text>
-<text x="1080" y="3031" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3031" font-size="13">Q-03|E-02|B-01</text>
-<rect x="35" y="3057" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3093" font-size="20">G-03 【预注册与锁定】阶段一情绪比较与独立功能护栏锁定</text>
-<text x="1080" y="3093" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3093" font-size="13">E-03|X-01|Z-01|A-02|A-03-CAL|G-05|U12-11</text>
-<rect x="35" y="3119" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3155" font-size="20">B-02 【正式批次】阶段一会话批次模板</text>
-<text x="1080" y="3155" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3155" font-size="13">G-03</text>
-<rect x="35" y="3181" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3217" font-size="20">E-04 【研究关闭】阶段一批次汇总锁库与揭盲授权</text>
-<text x="1080" y="3217" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3217" font-size="13">G-03|B-02</text>
-<rect x="35" y="3243" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3279" font-size="20">A-05 【锁定分析】阶段一情绪差异、功能护栏与完整过程结果</text>
-<text x="1080" y="3279" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3279" font-size="13">A-02|A-03|E-04</text>
-<rect x="35" y="3305" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3341" font-size="20">E-05 【策略冻结】阶段二OPE支持ESS稳定性与策略签署</text>
-<text x="1080" y="3341" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3341" font-size="13">A-05|X-02</text>
-<rect x="35" y="3367" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3403" font-size="20">G-04 【预注册与锁定】阶段三部署策略估计目标与同构建锁定</text>
-<text x="1080" y="3403" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3403" font-size="13">E-05|X-03|Z-01</text>
-<rect x="35" y="3429" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3465" font-size="20">B-03 【正式批次】阶段三会话批次模板</text>
-<text x="1080" y="3465" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3465" font-size="13">G-04</text>
-<rect x="35" y="3491" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3527" font-size="20">E-06 【研究关闭】阶段三批次汇总锁库与揭盲授权</text>
-<text x="1080" y="3527" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3527" font-size="13">G-04|B-03</text>
-<rect x="35" y="3553" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3589" font-size="20">A-04 【最终分析】估计目标三重门FDR策略审计与复现</text>
-<text x="1080" y="3589" font-size="18">BLOCKED_EXTERNAL</text>
-<text x="1340" y="3589" font-size="13">A-05|E-06</text>
-<rect x="35" y="3615" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3651" font-size="20">A-06 【研究关闭】阶段一主论文与条件式阶段三范围关闭</text>
-<text x="1080" y="3651" font-size="18">WAIT_DEP</text>
-<text x="1340" y="3651" font-size="13">A-05|U12-10</text>
-<rect x="35" y="3677" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3713" font-size="20">W-02 【论文写作】提示比较的情绪收益、代价与设计边界</text>
-<text x="1080" y="3713" font-size="18">WAIT_DEP</text>
-<text x="1340" y="3713" font-size="13">W-01|A-06|U12-07</text>
-<rect x="35" y="3739" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3775" font-size="20">W-03 【投稿复现】IJHCI实时规范数据声明与独立复现包</text>
-<text x="1080" y="3775" font-size="18">WAIT_DEP</text>
-<text x="1340" y="3775" font-size="13">W-02|Z-01|G-05</text>
-<rect x="35" y="3801" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="3837" font-size="20">W-04 【成果交接】软件视频海报权属材料与归档</text>
-<text x="1080" y="3837" font-size="18">WAIT_DEP</text>
-<text x="1340" y="3837" font-size="13">W-03|Z-01|U12-12</text>
-<rect x="35" y="3863" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="3899" font-size="20">U12-01 【研究治理】三轮主线权威与消费者迁移清单</text>
-<text x="1080" y="3899" font-size="18">DONE</text>
-<text x="1340" y="3899" font-size="13">-</text>
-<rect x="35" y="3925" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="3961" font-size="20">U12-02 【测量实现】步骤实例测量与实际未知负测试</text>
-<text x="1080" y="3961" font-size="18">DONE</text>
-<text x="1340" y="3961" font-size="13">U12-01|F-02|F-05</text>
-<rect x="35" y="3987" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="4023" font-size="20">U12-03 【教学设计】两方案公平教学与形成性比较合同</text>
-<text x="1080" y="4023" font-size="18">IN_REVIEW</text>
-<text x="1340" y="4023" font-size="13">U12-01|R-01</text>
-<rect x="35" y="4049" width="1730" height="59" fill="#edf5ed"/>
-<text x="50" y="4085" font-size="20">U12-04 【统计规格】PANAS主结果SAP与新功效规格</text>
-<text x="1080" y="4085" font-size="18">DONE</text>
-<text x="1340" y="4085" font-size="13">U12-01|F-02</text>
-<rect x="35" y="4111" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="4147" font-size="20">U12-05 【外部准入】早期静态与回放研究真实准入</text>
-<text x="1080" y="4147" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="4147" font-size="13">U12-01|G-01|G-02</text>
-<rect x="35" y="4173" width="1730" height="59" fill="#eef2f8"/>
-<text x="50" y="4209" font-size="20">U12-06 【运行准入】正式入口v1.2准入合同接线与负测试</text>
-<text x="1080" y="4209" font-size="18">READY</text>
-<text x="1340" y="4209" font-size="13">U12-01|F-01|P-01|G-02</text>
-<rect x="35" y="4235" width="1730" height="59" fill="#eef2f8"/>
-<text x="50" y="4271" font-size="20">U12-07 【论文写作】结果前中立核心稿与正反模板</text>
-<text x="1080" y="4271" font-size="18">READY</text>
-<text x="1340" y="4271" font-size="13">U12-01|W-01</text>
-<rect x="35" y="4297" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="4333" font-size="20">U12-08 【扩展分析】可选阶段三独立分析附录</text>
-<text x="1080" y="4333" font-size="18">WAIT_DEP</text>
-<text x="1340" y="4333" font-size="13">A-04|E-05</text>
-<rect x="35" y="4359" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="4395" font-size="20">U12-09 【一致性验收】升级影响覆盖与合同一致性复核</text>
-<text x="1080" y="4395" font-size="18">WAIT_DEP</text>
-<text x="1340" y="4395" font-size="13">U12-02|U12-03|U12-04|U12-06</text>
-<rect x="35" y="4421" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="4457" font-size="20">U12-10 【结果复核】阶段一结果分类与主张独立复核</text>
-<text x="1080" y="4457" font-size="18">WAIT_DEP</text>
-<text x="1340" y="4457" font-size="13">A-05</text>
-<rect x="35" y="4483" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="4519" font-size="20">U12-11 【研究冻结】正式样本阈值资源与机构签署冻结</text>
-<text x="1080" y="4519" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="4519" font-size="13">G-05|E-03|U12-09|A-03-CAL</text>
-<rect x="35" y="4545" width="1730" height="59" fill="#ffffff"/>
-<text x="50" y="4581" font-size="20">U12-12 【成果交接】成果部署选择与公开交接决定</text>
-<text x="1080" y="4581" font-size="18">WAIT_DEP_EXTERNAL</text>
-<text x="1340" y="4581" font-size="13">W-03|A-06</text>
+<rect x="45" y="166" width="490" height="42" rx="8" fill="#eaf2ff"/><text x="65" y="193" font-size="17">实验开始前 · G-03未关闭</text>
+<rect x="555" y="166" width="490" height="42" rx="8" fill="#fff3d6"/><text x="575" y="193" font-size="17">G-03 DONE后 · 实验执行与锁库</text>
+<rect x="1065" y="166" width="690" height="42" rx="8" fill="#e9f8ee"/><text x="1085" y="193" font-size="17">A-06 DONE后 · W-02结果写作与交付</text>
+<text x="50" y="238" font-size="18">任务与领域</text><text x="1080" y="238" font-size="18">状态</text><text x="1340" y="238" font-size="18">前置依赖</text>
+<rect id="phase-preparation" x="25" y="255" width="1750" height="3472" fill="#eaf2ff"/>
+<rect id="phase-experiment" x="25" y="3727" width="1750" height="682" fill="#fff3d6"/>
+<rect id="phase-writing" x="25" y="4409" width="1750" height="248" fill="#e9f8ee"/>
+<rect x="35" y="258" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="291" font-size="20">F-01 【合同与协议】运行合同v2与fixture</text>
+<text x="1080" y="291" font-size="18">DONE</text>
+<text x="1340" y="291" font-size="13">-</text>
+<rect x="35" y="320" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="353" font-size="20">F-02 【研究设计】Gate2构念SCCI四层理解与Level A/B材料</text>
+<text x="1080" y="353" font-size="18">DONE</text>
+<text x="1340" y="353" font-size="13">-</text>
+<rect x="35" y="382" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="415" font-size="20">F-03 【Unity】可复现工程与测试构建基线</text>
+<text x="1080" y="415" font-size="18">DONE</text>
+<text x="1340" y="415" font-size="13">-</text>
+<rect x="35" y="444" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="477" font-size="20">F-04 【TouchDesigner】只读操作台壳</text>
+<text x="1080" y="477" font-size="18">DONE</text>
+<text x="1340" y="477" font-size="13">-</text>
+<rect x="35" y="506" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="539" font-size="20">U12-01 【研究治理】三轮主线权威与消费者迁移清单</text>
+<text x="1080" y="539" font-size="18">DONE</text>
+<text x="1340" y="539" font-size="13">-</text>
+<rect x="35" y="568" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="601" font-size="20">F-05 【合同与协议】相位实例v2.2与消费者迁移</text>
+<text x="1080" y="601" font-size="18">DONE</text>
+<text x="1340" y="601" font-size="13">F-01|P-01|P-02</text>
+<rect x="35" y="630" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="663" font-size="20">G-01 【研究治理】伦理材料许可招募产能与角色台账</text>
+<text x="1080" y="663" font-size="18">DONE</text>
+<text x="1340" y="663" font-size="13">F-02</text>
+<rect x="35" y="692" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="725" font-size="20">G-02 【数据治理】数据分级跨阶段去重与资产许可</text>
+<text x="1080" y="725" font-size="18">DONE</text>
+<text x="1340" y="725" font-size="13">F-01</text>
+<rect x="35" y="754" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="787" font-size="20">P-01 【Python核心】manifest与会话编排</text>
+<text x="1080" y="787" font-size="18">DONE</text>
+<text x="1340" y="787" font-size="13">F-01</text>
+<rect x="35" y="816" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="849" font-size="20">P-02 【数据记录】L0/L1追加记录与重放</text>
+<text x="1080" y="849" font-size="18">DONE</text>
+<text x="1340" y="849" font-size="13">F-01</text>
+<rect x="35" y="878" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="911" font-size="20">U-01 【Unity】可靠控制技术探针与渲染回执</text>
+<text x="1080" y="911" font-size="18">DONE</text>
+<text x="1340" y="911" font-size="13">F-01|F-03|F-05|P-01</text>
+<rect x="35" y="940" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="973" font-size="20">U-02 【Unity】四层SceneAdapter实现与降级</text>
+<text x="1080" y="973" font-size="18">DONE</text>
+<text x="1340" y="973" font-size="13">F-03|F-05|V-03</text>
+<rect x="35" y="1002" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1035" font-size="20">T-01 【TouchDesigner】遥测设备质量与时钟面板</text>
+<text x="1080" y="1035" font-size="18">DONE</text>
+<text x="1340" y="1035" font-size="13">F-01|F-04|F-05</text>
+<rect x="35" y="1064" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1097" font-size="20">R-01 【体验设计】四层候选语法完整表示方案与中性说明</text>
+<text x="1080" y="1097" font-size="18">DONE</text>
+<text x="1340" y="1097" font-size="13">F-02</text>
+<rect x="35" y="1126" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1159" font-size="20">V-01 【Unity前期设计】研究体验契约与完整旅程</text>
+<text x="1080" y="1159" font-size="18">DONE</text>
+<text x="1340" y="1159" font-size="13">F-02|R-01</text>
+<rect x="35" y="1188" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1221" font-size="20">V-02 【Unity前期设计】四天气场景与呼吸提示设计确认</text>
+<text x="1080" y="1221" font-size="18">DONE</text>
+<text x="1340" y="1221" font-size="13">V-01</text>
+<rect x="35" y="1250" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1283" font-size="20">V-03 【Unity前期设计】四层视听映射与资产来源基线</text>
+<text x="1080" y="1283" font-size="18">DONE</text>
+<text x="1340" y="1283" font-size="13">V-02|R-01</text>
+<rect x="35" y="1312" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1345" font-size="20">V-04 【Unity前期设计】完整分镜与真实时长声音预演</text>
+<text x="1080" y="1345" font-size="18">DONE</text>
+<text x="1340" y="1345" font-size="13">V-03</text>
+<rect x="35" y="1374" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1407" font-size="20">U12-02 【测量实现】步骤实例测量与实际未知负测试</text>
+<text x="1080" y="1407" font-size="18">DONE</text>
+<text x="1340" y="1407" font-size="13">U12-01|F-02|F-05</text>
+<rect x="35" y="1436" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1469" font-size="20">U12-03 【教学设计】两方案公平教学与形成性比较合同</text>
+<text x="1080" y="1469" font-size="18">IN_REVIEW</text>
+<text x="1340" y="1469" font-size="13">U12-01|R-01</text>
+<rect x="35" y="1498" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1531" font-size="20">U12-04 【统计规格】PANAS主结果SAP与新功效规格</text>
+<text x="1080" y="1531" font-size="18">DONE</text>
+<text x="1340" y="1531" font-size="13">U12-01|F-02</text>
+<rect x="35" y="1560" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1593" font-size="20">U12-05 【外部准入】早期静态与回放研究真实准入</text>
+<text x="1080" y="1593" font-size="18">WAIT_DEP_EXTERNAL</text>
+<text x="1340" y="1593" font-size="13">U12-01|G-01|G-02</text>
+<rect x="35" y="1622" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1655" font-size="20">D-01 【设备接入】Polar H10真实ECG与RR适配</text>
+<text x="1080" y="1655" font-size="18">WAIT_DEP_EXTERNAL</text>
+<text x="1340" y="1655" font-size="13">P-02</text>
+<rect x="35" y="1684" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1717" font-size="20">D-02 【设备接入】PLUX respiBAN BLE呼吸与运动适配</text>
+<text x="1080" y="1717" font-size="18">WAIT_DEP_EXTERNAL</text>
+<text x="1340" y="1717" font-size="13">P-02</text>
+<rect x="35" y="1746" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1779" font-size="20">S-01 【信号处理】双设备同步SQI与降级状态</text>
+<text x="1080" y="1779" font-size="18">WAIT_DEP</text>
+<text x="1340" y="1779" font-size="13">D-01|D-02</text>
+<rect x="35" y="1808" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1841" font-size="20">S-02 【交互状态估计】呼吸事件周期与在线PF</text>
+<text x="1080" y="1841" font-size="18">WAIT_DEP</text>
+<text x="1340" y="1841" font-size="13">S-01|R-01</text>
+<rect x="35" y="1870" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1903" font-size="20">V-05 【Unity预制作】四模块全旅程灰盒与形成性回退门</text>
+<text x="1080" y="1903" font-size="18">READY</text>
+<text x="1340" y="1903" font-size="13">F-03|U-02|V-04</text>
+<rect x="35" y="1932" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="1965" font-size="20">U-03 【Unity场景】最高风险天气纵向切片与模板冻结</text>
+<text x="1080" y="1965" font-size="18">WAIT_DEP</text>
+<text x="1340" y="1965" font-size="13">U-01|U-02|V-05</text>
+<rect x="35" y="1994" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2027" font-size="20">U-04 【Unity场景】剩余天气A四层适配器</text>
+<text x="1080" y="2027" font-size="18">WAIT_DEP</text>
+<text x="1340" y="2027" font-size="13">U-03|V-03</text>
+<rect x="35" y="2056" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2089" font-size="20">U-05 【Unity场景】剩余天气B四层适配器</text>
+<text x="1080" y="2089" font-size="18">WAIT_DEP</text>
+<text x="1340" y="2089" font-size="13">U-03|V-03</text>
+<rect x="35" y="2118" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2151" font-size="20">U-06 【Unity场景】剩余天气C四层适配器</text>
+<text x="1080" y="2151" font-size="18">WAIT_DEP</text>
+<text x="1340" y="2151" font-size="13">U-03|V-03</text>
+<rect x="35" y="2180" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2213" font-size="20">U-07 【Unity场景】抽象完整表示方案适配器</text>
+<text x="1080" y="2213" font-size="18">WAIT_DEP</text>
+<text x="1340" y="2213" font-size="13">F-05|U-03|R-01|V-03</text>
+<rect x="35" y="2242" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2275" font-size="20">U-08 【Unity成品】跨场景视听一致性性能与可访问性</text>
+<text x="1080" y="2275" font-size="18">WAIT_DEP</text>
+<text x="1340" y="2275" font-size="13">G-02|U-03|U-04|U-05|U-06|U-07</text>
+<rect x="35" y="2304" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2337" font-size="20">T-02 【TouchDesigner】人工标记中止请求与告警</text>
+<text x="1080" y="2337" font-size="18">READY</text>
+<text x="1340" y="2337" font-size="13">T-01|P-01</text>
+<rect x="35" y="2366" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2399" font-size="20">A-01 【离线分析】L0至L3确定性重建</text>
+<text x="1080" y="2399" font-size="18">WAIT_DEP</text>
+<text x="1340" y="2399" font-size="13">P-02|S-02</text>
+<rect x="35" y="2428" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2461" font-size="20">A-02 【统计实现】机会分母PF护栏及缺失敏感性</text>
+<text x="1080" y="2461" font-size="18">WAIT_DEP</text>
+<text x="1340" y="2461" font-size="13">A-01</text>
+<rect x="35" y="2490" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2523" font-size="20">A-03 【统计实现】Gate2联合测量估计目标与Monte Carlo样本模拟</text>
+<text x="1080" y="2523" font-size="18">IN_PROGRESS</text>
+<text x="1340" y="2523" font-size="13">F-02</text>
+<rect x="35" y="2552" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2585" font-size="20">W-01 【论文准备】2015至2026最近工作击穿与主线论文骨架</text>
+<text x="1080" y="2585" font-size="18">DONE</text>
+<text x="1340" y="2585" font-size="13">F-02|R-01</text>
+<rect x="35" y="2614" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2647" font-size="20">U12-06 【运行准入】正式入口v1.2准入合同接线与负测试</text>
+<text x="1080" y="2647" font-size="18">READY</text>
+<text x="1340" y="2647" font-size="13">U12-01|F-01|P-01|G-02</text>
+<rect x="35" y="2676" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2709" font-size="20">U12-07 【论文写作】结果前中立核心稿与正反模板</text>
+<text x="1080" y="2709" font-size="18">READY</text>
+<text x="1340" y="2709" font-size="13">U12-01|W-01</text>
+<rect x="35" y="2738" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2771" font-size="20">I-01 【系统集成】无TD双真机完整链外部延迟与重放</text>
+<text x="1080" y="2771" font-size="18">WAIT_DEP_EXTERNAL</text>
+<text x="1340" y="2771" font-size="13">P-01|P-02|S-02|U-08|T-02|G-02</text>
+<rect x="35" y="2800" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2833" font-size="20">Q-01 【研究工具】Level A构念与静态/回放独立重建材料</text>
+<text x="1080" y="2833" font-size="18">IN_PROGRESS</text>
+<text x="1340" y="2833" font-size="13">F-02|R-01|G-01|U12-01</text>
+<rect x="35" y="2862" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2895" font-size="20">Q-02 【研究工具】Level B两条件认知可访问性与需求特征预试</text>
+<text x="1080" y="2895" font-size="18">WAIT_DEP</text>
+<text x="1340" y="2895" font-size="13">U-08|Q-01|U12-02|U12-03</text>
+<rect x="35" y="2924" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="2957" font-size="20">Q-03 【研究工具】Level C采集标注与阈值冻结工具</text>
+<text x="1080" y="2957" font-size="18">WAIT_DEP_EXTERNAL</text>
+<text x="1340" y="2957" font-size="13">I-01|Q-02|A-01|A-03-REAL</text>
+<rect x="35" y="2986" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3019" font-size="20">X-01 【随机化】阶段一三清单分层隐藏概率与重复防护</text>
+<text x="1080" y="3019" font-size="18">DONE</text>
+<text x="1340" y="3019" font-size="13">P-01|A-03-SPEC|G-02</text>
+<rect x="35" y="3048" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3081" font-size="20">X-02 【策略实现】参与者分组策略学习OPE支持与重放</text>
+<text x="1080" y="3081" font-size="18">WAIT_DEP</text>
+<text x="1340" y="3081" font-size="13">A-03</text>
+<rect x="35" y="3110" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3143" font-size="20">X-03 【策略运行】阶段三同构建策略随机接入与防在线学习</text>
+<text x="1080" y="3143" font-size="18">WAIT_DEP</text>
+<text x="1340" y="3143" font-size="13">X-01|X-02|U-01</text>
+<rect x="35" y="3172" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3205" font-size="20">Z-01 【构建交付】干净检出构建复现与候选制品</text>
+<text x="1080" y="3205" font-size="18">WAIT_DEP</text>
+<text x="1340" y="3205" font-size="13">I-01|A-02|A-03|U-08|G-02</text>
+<rect x="35" y="3234" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3267" font-size="20">G-05 【外部准入】正式环境机构路径许可与U8实地闭环</text>
+<text x="1080" y="3267" font-size="18">WAIT_DEP_EXTERNAL</text>
+<text x="1340" y="3267" font-size="13">G-01|G-02</text>
+<rect x="35" y="3296" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3329" font-size="20">U12-09 【一致性验收】升级影响覆盖与合同一致性复核</text>
+<text x="1080" y="3329" font-size="18">WAIT_DEP</text>
+<text x="1340" y="3329" font-size="13">U12-02|U12-03|U12-04|U12-06</text>
+<rect x="35" y="3358" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3391" font-size="20">E-01 【研究执行】Level A专家审查执行</text>
+<text x="1080" y="3391" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3391" font-size="13">Q-01|U12-05</text>
+<rect x="35" y="3420" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3453" font-size="20">E-02 【研究执行】Level B认知预试执行与关闭</text>
+<text x="1080" y="3453" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3453" font-size="13">Q-02|E-01|U12-05</text>
+<rect x="35" y="3482" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3515" font-size="20">B-01 【研究批次】Level C会话批次模板</text>
+<text x="1080" y="3515" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3515" font-size="13">Q-03|E-02</text>
+<rect x="35" y="3544" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3577" font-size="20">E-03 【研究关闭】Level C汇总门与阈值冻结</text>
+<text x="1080" y="3577" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3577" font-size="13">Q-03|E-02|B-01</text>
+<rect x="35" y="3606" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3639" font-size="20">G-03 【预注册与锁定】阶段一情绪比较与独立功能护栏锁定</text>
+<text x="1080" y="3639" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3639" font-size="13">E-03|X-01|Z-01|A-02|A-03-CAL|G-05|U12-11</text>
+<rect x="35" y="3668" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3701" font-size="20">U12-11 【研究冻结】正式样本阈值资源与机构签署冻结</text>
+<text x="1080" y="3701" font-size="18">WAIT_DEP_EXTERNAL</text>
+<text x="1340" y="3701" font-size="13">G-05|E-03|U12-09|A-03-CAL</text>
+<rect x="35" y="3730" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3763" font-size="20">B-02 【正式批次】阶段一会话批次模板</text>
+<text x="1080" y="3763" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3763" font-size="13">G-03</text>
+<rect x="35" y="3792" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3825" font-size="20">E-04 【研究关闭】阶段一批次汇总锁库与揭盲授权</text>
+<text x="1080" y="3825" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3825" font-size="13">G-03|B-02</text>
+<rect x="35" y="3854" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3887" font-size="20">A-05 【锁定分析】阶段一情绪差异、功能护栏与完整过程结果</text>
+<text x="1080" y="3887" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3887" font-size="13">A-02|A-03|E-04</text>
+<rect x="35" y="3916" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="3949" font-size="20">E-05 【策略冻结】阶段二OPE支持ESS稳定性与策略签署</text>
+<text x="1080" y="3949" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="3949" font-size="13">A-05|X-02</text>
+<rect x="35" y="3978" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4011" font-size="20">G-04 【预注册与锁定】阶段三部署策略估计目标与同构建锁定</text>
+<text x="1080" y="4011" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="4011" font-size="13">E-05|X-03|Z-01</text>
+<rect x="35" y="4040" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4073" font-size="20">B-03 【正式批次】阶段三会话批次模板</text>
+<text x="1080" y="4073" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="4073" font-size="13">G-04</text>
+<rect x="35" y="4102" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4135" font-size="20">E-06 【研究关闭】阶段三批次汇总锁库与揭盲授权</text>
+<text x="1080" y="4135" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="4135" font-size="13">G-04|B-03</text>
+<rect x="35" y="4164" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4197" font-size="20">A-04 【最终分析】估计目标三重门FDR策略审计与复现</text>
+<text x="1080" y="4197" font-size="18">BLOCKED_EXTERNAL</text>
+<text x="1340" y="4197" font-size="13">A-05|E-06</text>
+<rect x="35" y="4226" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4259" font-size="20">A-06 【研究关闭】阶段一主论文与条件式阶段三范围关闭</text>
+<text x="1080" y="4259" font-size="18">WAIT_DEP</text>
+<text x="1340" y="4259" font-size="13">A-05|U12-10</text>
+<rect x="35" y="4288" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4321" font-size="20">U12-08 【扩展分析】可选阶段三独立分析附录</text>
+<text x="1080" y="4321" font-size="18">WAIT_DEP</text>
+<text x="1340" y="4321" font-size="13">A-04|E-05</text>
+<rect x="35" y="4350" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4383" font-size="20">U12-10 【结果复核】阶段一结果分类与主张独立复核</text>
+<text x="1080" y="4383" font-size="18">WAIT_DEP</text>
+<text x="1340" y="4383" font-size="13">A-05</text>
+<rect x="35" y="4412" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4445" font-size="20">W-02 【论文写作】提示比较的情绪收益、代价与设计边界</text>
+<text x="1080" y="4445" font-size="18">WAIT_DEP</text>
+<text x="1340" y="4445" font-size="13">W-01|A-06|U12-07</text>
+<rect x="35" y="4474" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4507" font-size="20">W-03 【投稿复现】IJHCI实时规范数据声明与独立复现包</text>
+<text x="1080" y="4507" font-size="18">WAIT_DEP</text>
+<text x="1340" y="4507" font-size="13">W-02|Z-01|G-05</text>
+<rect x="35" y="4536" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4569" font-size="20">W-04 【成果交接】软件视频海报权属材料与归档</text>
+<text x="1080" y="4569" font-size="18">WAIT_DEP</text>
+<text x="1340" y="4569" font-size="13">W-03|Z-01|U12-12</text>
+<rect x="35" y="4598" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
+<text x="50" y="4631" font-size="20">U12-12 【成果交接】成果部署选择与公开交接决定</text>
+<text x="1080" y="4631" font-size="18">WAIT_DEP_EXTERNAL</text>
+<text x="1340" y="4631" font-size="13">W-03|A-06</text>
+<line id="gate-experiment-start" x1="25" y1="3727" x2="1775" y2="3727" stroke="#c2410c" stroke-width="4"/>
+<rect x="760" y="3709" width="280" height="36" rx="18" fill="white" stroke="#c2410c"/>
+<text x="900" y="3733" text-anchor="middle" font-size="16" font-weight="bold" fill="#c2410c">实验开始门 · G-03 DONE</text>
+<line id="gate-experiment-complete" x1="25" y1="4409" x2="1775" y2="4409" stroke="#15803d" stroke-width="4"/>
+<rect x="760" y="4391" width="280" height="36" rx="18" fill="white" stroke="#15803d"/>
+<text x="900" y="4415" text-anchor="middle" font-size="16" font-weight="bold" fill="#15803d">实验完成门 · A-06 DONE</text>
 </g></svg>

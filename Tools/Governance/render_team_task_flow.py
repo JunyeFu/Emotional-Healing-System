@@ -17,6 +17,11 @@ REGISTRY = GOV / "05_可领取任务包.csv"
 OUTPUT = ROOT / "00-项目管理/看板与进度/SRP团队任务分工与门禁_当前状态.svg"
 
 WAVES = [f"W{i}" for i in range(7)]
+PHASES = (
+    ("phase-preparation", "实验开始前 · 设计、实现、预试与冻结", "#eaf2ff", ("W0", "W1", "W2", "W3", "W4")),
+    ("phase-experiment", "实验执行与锁库", "#fff3d6", ("W5",)),
+    ("phase-writing", "实验完成后 · 结果写作与交付", "#e9f8ee", ("W6",)),
+)
 STATUS = {
     "DONE": ("#166534", "#dcfce7"),
     "READY": ("#1d4ed8", "#dbeafe"),
@@ -93,6 +98,7 @@ def main() -> None:
     width = margin_x * 2 + len(WAVES) * col_w + (len(WAVES) - 1) * col_gap
     max_rows = max(len(by_wave[wave]) for wave in WAVES)
     height = top + max_rows * (node_h + row_gap) + 420
+    legend_y = height - 325
     positions: dict[str, tuple[float, float]] = {}
     for wave_index, wave in enumerate(WAVES):
         x = margin_x + wave_index * (col_w + col_gap)
@@ -109,6 +115,29 @@ def main() -> None:
         '<text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>',
         f'<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">{date.today().isoformat()} · 治理{profile["version"]} · {task_count}任务及3里程碑 · 虚线为开展阶段三后的条件依赖</text>',
     ]
+
+    phase_bottom = legend_y - 24
+    for phase_id, label, fill, phase_waves in PHASES:
+        first = WAVES.index(phase_waves[0])
+        last = WAVES.index(phase_waves[-1])
+        left = margin_x + first * (col_w + col_gap) - 18
+        right = margin_x + last * (col_w + col_gap) + col_w + 18
+        out.extend([
+            f'<rect id="{phase_id}" x="{left}" y="298" width="{right-left}" height="{phase_bottom-298}" rx="18" fill="{fill}"/>',
+            f'<text x="{left+20}" y="{phase_bottom-18}" font-family="Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#334155">{label}</text>',
+        ])
+
+    experiment_start_x = margin_x + WAVES.index("W5") * (col_w + col_gap) - col_gap / 2
+    experiment_complete_x = margin_x + WAVES.index("W6") * (col_w + col_gap) - col_gap / 2
+    for gate_id, gate_x, label, fill, stroke in (
+        ("gate-experiment-start", experiment_start_x, "实验开始门 · G-03 DONE", "#fff7ed", "#c2410c"),
+        ("gate-experiment-complete", experiment_complete_x, "实验完成门 · A-06 DONE", "#f0fdf4", "#15803d"),
+    ):
+        out.extend([
+            f'<line id="{gate_id}" x1="{gate_x}" y1="292" x2="{gate_x}" y2="{phase_bottom}" stroke="{stroke}" stroke-width="4" stroke-dasharray="12 8"/>',
+            f'<rect x="{gate_x-128}" y="{phase_bottom-82}" width="256" height="34" rx="17" fill="{fill}" stroke="{stroke}"/>',
+            f'<text x="{gate_x}" y="{phase_bottom-59}" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="{stroke}">{label}</text>',
+        ])
 
     counts = Counter(row["status"] for row in rows[:task_count])
     x = 70
@@ -183,14 +212,14 @@ def main() -> None:
             f'<text x="{x0 + 24}" y="{y0 + 127}" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#64748b">依赖：{esc(shorten(deps, 42))}</text></g>',
         ])
 
-    legend_y = height - 300
     out.extend([
-        f'<rect x="70" y="{legend_y}" width="{width - 140}" height="210" rx="18" fill="white" stroke="#cbd5e1"/>',
+        f'<rect x="70" y="{legend_y}" width="{width - 140}" height="235" rx="18" fill="white" stroke="#cbd5e1"/>',
         f'<text x="94" y="{legend_y + 40}" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#0f172a">读图规则</text>',
         f'<text x="94" y="{legend_y + 74}" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">箭头表示任务依赖；节点底部同时列出依赖，便于在连线密集处核对。边框表示状态，左侧色条表示任务类型。</text>',
         f'<text x="94" y="{legend_y + 106}" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">READY 仅表示所有仓库内前置任务已 DONE 且可领取，不表示实现、正式构建或联合运行已经完成。</text>',
         f'<text x="94" y="{legend_y + 138}" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">IN_REVIEW 仍受复核或外部门约束；WAIT_DEP_EXTERNAL / BLOCKED_EXTERNAL 不可由仓库内文件自行关闭。</text>',
-        f'<text x="94" y="{legend_y + 178}" font-family="Consolas, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">Source: 05_可领取任务包.csv · Renderer: Tools/Governance/render_team_task_flow.py</text>',
+        f'<text x="94" y="{legend_y + 170}" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">蓝区在实验开始门前；黄区由 G-03 放行正式阶段一并持续到 A-06 范围关闭；绿区才可启动 W-02 结果写作。</text>',
+        f'<text x="94" y="{legend_y + 207}" font-family="Consolas, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">Source: 05_可领取任务包.csv · Renderer: Tools/Governance/render_team_task_flow.py</text>',
         "</svg>",
     ])
     OUTPUT.write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")

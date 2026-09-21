@@ -12,6 +12,12 @@ ROOT = Path(__file__).resolve().parents[2]
 PLAN = ROOT / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 GOV = PLAN / "24_团队任务与项目治理"
 GUIDE = (GOV / "u12_upgrade/README.md").relative_to(ROOT).as_posix()
+WAVES = [f"W{i}" for i in range(7)]
+PHASES = (
+    ("phase-preparation", "实验开始前：设计、实现、预试与冻结", "#eaf2ff", ("W0", "W1", "W2", "W3", "W4")),
+    ("phase-experiment", "实验执行与锁库", "#fff3d6", ("W5",)),
+    ("phase-writing", "实验完成后：结果写作与交付", "#e9f8ee", ("W6",)),
+)
 
 
 def write(path, text):
@@ -92,9 +98,12 @@ def main():
     brief += "\n\\normalsize\n\n# 核心收尾与条件式扩展\n\nA-05、U12-10和A-06构成核心证据关闭；W-02消费A-06与结果中立稿。开展阶段三时附A-04、U12-08与真实台账，不允许用人工布尔值隐去已开展活动。W-04最后消费U12-12。\n\n"
     brief += "# 当前限制与下一步\n\n正式采集尚未放行；新研究数值、教学时序、量表许可与机构资格仍需冻结。运行v1.2接线归U12-06，旧程序不会因设计JSON而自动获得新门。Unity和TD新画面、真实设备与LIVE_E2E证据不能由本次治理测试替代。\n"
     write(ROOT / "04-成果与交付/PDF简报/02_固定任务概要.md", brief)
-    # Compact status companion to the full dependency graph, with stable row heights.
+    # Compact status companion to the full dependency graph, grouped by research phase.
+    wave_order = {wave: index for index, wave in enumerate(WAVES)}
+    rows = [row for _, row in sorted(enumerate(rows), key=lambda item: (wave_order[item[1]["wave"]], item[0]))]
     width, row_h = 1800, 62
-    height = 260 + len(rows) * row_h
+    list_top = 255
+    height = list_top + len(rows) * row_h + 90
     esc = html.escape
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
            '<rect width="100%" height="100%" fill="#fafafa"/>',
@@ -102,13 +111,39 @@ def main():
            '<text x="50" y="60" font-size="32" font-weight="bold">SRP 任务状态与研究准入</text>',
            f'<text x="50" y="105" font-size="20">{iso_date} · 71任务 / 68固定 / 3模板 · U12-01 {state} · READY {ready}</text>',
            f'<text x="50" y="143" font-size="18">DONE {counts["DONE"]}项（含18项原签收）；未冻结数值、真实资格和运行接线不自动放行。</text>',
-           '<text x="50" y="184" font-size="18">任务与领域</text><text x="1080" y="184" font-size="18">状态</text><text x="1340" y="184" font-size="18">前置依赖</text>']
+           '<rect x="45" y="166" width="490" height="42" rx="8" fill="#eaf2ff"/><text x="65" y="193" font-size="17">实验开始前 · G-03未关闭</text>',
+           '<rect x="555" y="166" width="490" height="42" rx="8" fill="#fff3d6"/><text x="575" y="193" font-size="17">G-03 DONE后 · 实验执行与锁库</text>',
+           '<rect x="1065" y="166" width="690" height="42" rx="8" fill="#e9f8ee"/><text x="1085" y="193" font-size="17">A-06 DONE后 · W-02结果写作与交付</text>',
+           '<text x="50" y="238" font-size="18">任务与领域</text><text x="1080" y="238" font-size="18">状态</text><text x="1340" y="238" font-size="18">前置依赖</text>']
+
+    phase_ranges = []
+    for phase_id, label, fill, phase_waves in PHASES:
+        indices = [index for index, row in enumerate(rows) if row["wave"] in phase_waves]
+        phase_ranges.append((phase_id, label, fill, min(indices), max(indices)))
+    for phase_id, label, fill, first, last in phase_ranges:
+        y = list_top + first * row_h
+        zone_h = (last - first + 1) * row_h
+        out.append(f'<rect id="{phase_id}" x="25" y="{y}" width="1750" height="{zone_h}" fill="{fill}"/>')
+
+    start_index = next(index for index, row in enumerate(rows) if row["wave"] == "W5")
+    complete_index = next(index for index, row in enumerate(rows) if row["wave"] == "W6")
+    compact_gates = []
+    for gate_id, index, label, stroke in (
+        ("gate-experiment-start", start_index, "实验开始门 · G-03 DONE", "#c2410c"),
+        ("gate-experiment-complete", complete_index, "实验完成门 · A-06 DONE", "#15803d"),
+    ):
+        y = list_top + index * row_h
+        compact_gates.extend([
+            f'<line id="{gate_id}" x1="25" y1="{y}" x2="1775" y2="{y}" stroke="{stroke}" stroke-width="4"/>',
+            f'<rect x="760" y="{y-18}" width="280" height="36" rx="18" fill="white" stroke="{stroke}"/>',
+            f'<text x="900" y="{y+6}" text-anchor="middle" font-size="16" font-weight="bold" fill="{stroke}">{label}</text>',
+        ])
     for i, r in enumerate(rows):
-        y = 205 + i * row_h
-        fill = '#edf5ed' if r['status'] == 'DONE' else '#eef2f8' if r['status'] == 'READY' else '#ffffff'
-        out.append(f'<rect x="35" y="{y}" width="1730" height="{row_h-3}" fill="{fill}"/>')
+        y = list_top + i * row_h
+        out.append(f'<rect x="35" y="{y+3}" width="1730" height="{row_h-6}" fill="#ffffff" fill-opacity="0.72"/>')
         for x, value, size in ((50, r['task_id'] + ' ' + r['title'], 20), (1080, r['status'], 18), (1340, r['depends_on'] or '-', 13)):
             out.append(f'<text x="{x}" y="{y+36}" font-size="{size}">{esc(value)}</text>')
+    out.extend(compact_gates)
     out.append('</g></svg>')
     destination = ROOT / "04-成果与交付/项目流程图"
     write(destination / "SRP_任务状态与门禁解释清单_v1.0.svg", '\n'.join(out))
