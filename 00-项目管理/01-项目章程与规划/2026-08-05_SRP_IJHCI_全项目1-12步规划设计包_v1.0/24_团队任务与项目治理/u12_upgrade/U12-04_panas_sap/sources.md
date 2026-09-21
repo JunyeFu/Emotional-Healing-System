@@ -122,7 +122,7 @@
 - 单一视觉机制效应：false
 - 长期效应：false
 - 短长交互：false
-- 诊断/治疗有效性：false
+- 超出项目范围的有效性：false
 
 来源字段：protocol_authority_v1.2.json `claim_boundaries.*`（全部 false）。
 
