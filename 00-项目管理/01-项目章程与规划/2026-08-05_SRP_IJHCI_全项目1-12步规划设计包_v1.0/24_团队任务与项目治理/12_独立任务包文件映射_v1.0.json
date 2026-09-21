@@ -103,7 +103,8 @@
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
       ]
     },
-    "Q-01": {
+  "Q-01": {
+      "implementation_commit": "f42ebc372af7a45034dab85f79d60c9be648e75f",
       "source_files": [
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/consumers.json",

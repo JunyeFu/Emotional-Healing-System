@@ -1591,3 +1591,8 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 本机Unity 6000.4.9f1 EditMode实跑98/98 Passed；外部`D:\Coze\SRP\evidence`原路径不可访问，但远端`codex/u-02-grip`提交`ab25a6b8df85c1326164eb8f9f0804d6d790dc87`已提供四项可读取证据。
 - U-02任务包验收：远端XML 98/98、参数快照输入SHA-256一致、24项层级隔离报告、120帧降级演示均已核对；技术验收通过，继续`IN_REVIEW`，等待真实第二人签收，证据提交尚未进入`main`。
 - 傅钧烨于2026-09-21以团队总监、真实团队第二人复核身份签收U-02 PASS；U-02迁移为DONE，V-05因依赖闭合迁移为READY，证据合并仍需完成。
+
+# 2026-09-21 Q-01领取
+- Q-01由READY领取为IN_PROGRESS，领取人Codex，分支`codex/q-01-research-tool`；领取输入快照已冻结。
+- Q-01负责构念专家包、盲态编号、独立重建、CVI与盲态评分、适用边界和版本差异；不等同于Unity/TD实现、真人研究或论文结果。
+- 领取基线绑定当前主线提交`f42ebc372af7a45034dab85f79d60c9be648e75f`，尚未形成Q-01完成候选或复核结论。

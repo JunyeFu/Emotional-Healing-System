@@ -3,9 +3,9 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "V-05",
   "status": "READY",
-  "registry_sha256": "2F04691C666FC16C4F0A5F2B878017D30D0BC98907FCCD85D553DD6091E1DA05",
+  "registry_sha256": "43E0BEACACF5477F2E660DCB7E429B06DE7F83561F53E5DABC85F6C2DC15790B",
   "input_snapshot_id": "F316E3B342814654570FD48527DDAB2510B91B67A45FE3E09284F9F8F0F9A578",
-  "previous_input_snapshot_id": null,
+  "previous_input_snapshot_id": "F316E3B342814654570FD48527DDAB2510B91B67A45FE3E09284F9F8F0F9A578",
   "input_changed": false,
   "candidate_identity": null,
   "source_files": [

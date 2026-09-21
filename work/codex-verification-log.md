@@ -1768,3 +1768,10 @@
 - 傅钧烨以团队总监、真实团队第二人复核身份签收U-02，结论`PASS`，日期`2026-09-21 +08:00`。
 - U-02由`IN_REVIEW`迁移为`DONE`；依赖重算后V-05由`WAIT_DEP`迁移为`READY`。
 - U-02任务包移出当前可领取集合，V-05任务包加入当前可领取集合；注册表、包映射、看板、README、三张SVG和固定任务概要已重生成。
+
+# 2026-09-21 Q-01领取校验
+- `13_render_ready_task_packages.py`通过，当前分发集合为A-03、Q-01、T-02、U12-03、U12-06、U12-07、V-05。
+- `07_validate_task_packages.py`通过：71项注册任务，DONE=21，READY=T-02/U12-06/U12-07/V-05，IN_REVIEW=U12-03。
+- `14_validate_ready_task_packages.py`通过：7个分发包、56个输入快照。
+- Q-01映射补入领取基线`f42ebc372af7a45034dab85f79d60c9be648e75f`，仅用于候选身份追溯，不表示任务已完成。
+- 已保留TouchDesigner备份目录、`T01_TelemetryPanel.3.toe`和`tmp/`未跟踪内容，未纳入任务提交。
