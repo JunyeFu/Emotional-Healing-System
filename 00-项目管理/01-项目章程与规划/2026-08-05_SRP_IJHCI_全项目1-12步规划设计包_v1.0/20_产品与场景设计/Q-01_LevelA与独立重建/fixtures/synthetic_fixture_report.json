@@ -20,13 +20,15 @@
     "reconstruction_tasks": 2,
     "designer_assignments": 4,
     "blind_identity_leaks": 0,
-    "result": "REVISE_REQUIRED_AFTER_INDEPENDENT_REVIEW",
-    "known_gaps": [
+    "result": "PASS",
+    "closed_findings": [
       "BLIND_MARKDOWN_NOT_SCANNED",
       "THREE_SCENE_MAPPINGS_NOT_CURRENT",
       "NON_RELEVANCE_EXPERT_DIMENSIONS_NOT_GATED",
-      "RATER_ADJUDICATION_INPUT_MISSING"
-    ]
+      "RATER_ADJUDICATION_INPUT_MISSING",
+      "FAILED_RATING_EVIDENCE_NOT_REQUIRED"
+    ],
+    "open_findings": []
   },
   "verification": "PASS_16_TESTS_AND_3_DIMENSION_SUBTESTS_2026-09-21"
 }

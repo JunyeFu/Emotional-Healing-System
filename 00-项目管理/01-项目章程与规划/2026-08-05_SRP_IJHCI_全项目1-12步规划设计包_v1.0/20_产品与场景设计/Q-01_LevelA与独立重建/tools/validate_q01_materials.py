@@ -50,6 +50,14 @@ def validate_materials() -> list[str]:
     tasks = load_json("reconstruction_tasks_v1.0.json")
     assignments = read_csv("blind_assignment_template_v1.0.csv")
     items = read_csv("expert_item_bank_v1.0.csv")
+    fixture = json.loads(
+        (ROOT / "fixtures" / "synthetic_fixture_report.json").read_text(encoding="utf-8")
+    )
+
+    if fixture["material_validation"]["result"] != "PASS":
+        errors.append("SYNTHETIC_REPORT_RESULT_NOT_PASS")
+    if fixture["material_validation"].get("open_findings"):
+        errors.append("SYNTHETIC_REPORT_OPEN_FINDINGS")
 
     if tuple(contract["blind_material_files"]) != BLIND_MARKDOWN_FILES:
         errors.append("BLIND_MARKDOWN_FILE_SET_MISMATCH")
