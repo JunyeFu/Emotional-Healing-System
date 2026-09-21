@@ -1590,4 +1590,4 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - U-02由READY迁移IN_REVIEW，候选绑定`9078bc1`，分支`codex/u-02-grip`；重新生成7个当前独立任务包。
 - 本机Unity 6000.4.9f1 EditMode实跑98/98 Passed；外部`D:\Coze\SRP\evidence`原路径不可访问，但远端`codex/u-02-grip`提交`ab25a6b8df85c1326164eb8f9f0804d6d790dc87`已提供四项可读取证据。
 - U-02任务包验收：远端XML 98/98、参数快照输入SHA-256一致、24项层级隔离报告、120帧降级演示均已核对；技术验收通过，继续`IN_REVIEW`，等待真实第二人签收，证据提交尚未进入`main`。
-- 当前状态DONE=21、IN_REVIEW=U-02/U12-03、READY=T-02/Q-01/U12-06/U12-07；不代签DONE。
+- 傅钧烨于2026-09-21以团队总监、真实团队第二人复核身份签收U-02 PASS；U-02迁移为DONE，V-05因依赖闭合迁移为READY，证据合并仍需完成。
