@@ -1,7 +1,7 @@
 # U12-04 PANAS 主结果 SAP 与新功效规格
 
 任务类型：统计规格（SAP + 功效模拟规格）｜波次 W1｜4 人日｜FIXED｜process_profile=P-ANALYSIS
-状态：CANDIDATE_NOT_RESEARCH_FROZEN（设计+合成证据，未做真实数据声明）
+状态：DONE（2026-09-21，傅钧烨第二人签收）；CANDIDATE_NOT_RESEARCH_FROZEN（设计+合成证据，未做真实数据声明）
 
 ## 交付物
 
@@ -46,3 +46,9 @@ $dir = "D:\Agent\03-SRP\00-项目管理\01-项目章程与规划\2026-08-05_SRP_
 ## 未冻结项（须在真实数据可用前冻结）
 
 minimum_important_affect_difference、missingness_and_mnar、functional_margin_justification、final_power_and_n 等 15 项（见 contract.json `required_freezes`）。本包不主张任何研究级结论。
+
+## 复核与签收
+
+- 独立 Agent 复核：见任务包中的 `U12-04独立复核记录.md`。
+- 真实第二人签收：傅钧烨，2026-09-21。
+- 签收范围：本任务交付、合成验证证据与结论边界；不扩大为真实数据、正式样本量或研究冻结。
