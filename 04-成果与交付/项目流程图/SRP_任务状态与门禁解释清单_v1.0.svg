@@ -2,8 +2,8 @@
 <rect width="100%" height="100%" fill="#fafafa"/>
 <g font-family="Microsoft YaHei, sans-serif" fill="#202124">
 <text x="50" y="60" font-size="32" font-weight="bold">SRP 任务状态与研究准入</text>
-<text x="50" y="105" font-size="20">2026-09-21 · 71任务 / 68固定 / 3模板 · U12-01 DONE · READY V-05/T-02/U12-06/U12-07</text>
-<text x="50" y="143" font-size="18">DONE 23项（含18项原签收）；未冻结数值、真实资格和运行接线不自动放行。</text>
+<text x="50" y="105" font-size="20">2026-09-21 · 71任务 / 68固定 / 3模板 · U12-01 DONE · READY V-05/T-02/U12-06</text>
+<text x="50" y="143" font-size="18">DONE 24项（含18项原签收）；未冻结数值、真实资格和运行接线不自动放行。</text>
 <rect x="45" y="166" width="490" height="42" rx="8" fill="#eaf2ff"/><text x="65" y="193" font-size="17">实验开始前 · G-03未关闭</text>
 <rect x="555" y="166" width="490" height="42" rx="8" fill="#fff3d6"/><text x="575" y="193" font-size="17">G-03 DONE后 · 实验执行与锁库</text>
 <rect x="1065" y="166" width="690" height="42" rx="8" fill="#e9f8ee"/><text x="1085" y="193" font-size="17">A-06 DONE后 · W-02结果写作与交付</text>
@@ -169,7 +169,7 @@
 <text x="1340" y="2647" font-size="13">U12-01|F-01|P-01|G-02</text>
 <rect x="35" y="2676" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
 <text x="50" y="2709" font-size="20">U12-07 【论文写作】结果前中立核心稿与正反模板</text>
-<text x="1080" y="2709" font-size="18">READY</text>
+<text x="1080" y="2709" font-size="18">DONE</text>
 <text x="1340" y="2709" font-size="13">U12-01|W-01</text>
 <rect x="35" y="2738" width="1730" height="56" fill="#ffffff" fill-opacity="0.72"/>
 <text x="50" y="2771" font-size="20">I-01 【系统集成】无TD双真机完整链外部延迟与重放</text>

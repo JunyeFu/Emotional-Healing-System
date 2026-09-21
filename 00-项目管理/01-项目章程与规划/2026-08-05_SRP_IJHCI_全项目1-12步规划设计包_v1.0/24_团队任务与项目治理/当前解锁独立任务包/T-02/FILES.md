@@ -6,24 +6,24 @@
 
 | 项目权威路径 | 包内快照 | SHA-256 |
 |---|---|---|
-| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json](D:/Agent/03-SRP/_worktrees/q01-signoff/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json) | [inputs/01_protocol_authority_v1.1.json](inputs/01_protocol_authority_v1.1.json) | `66DCF22A6B98E9B35FE069AA19373228E9E2070A2508F253801ACA3669E51794` |
-| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md](D:/Agent/03-SRP/_worktrees/q01-signoff/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md) | [inputs/02_06_目标运行接口_v2.md](inputs/02_06_目标运行接口_v2.md) | `9754D8B6F55DBB7D45B187F434388EA27E258EE6EA0FC31B88B023E6827BAF28` |
-| [02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md) | [inputs/03_P-01_第二人审核报告_已签署.md](inputs/03_P-01_第二人审核报告_已签署.md) | `4FF85DBD10522F9E2D25394A55976E321F6DE8C44F1122094B197B1495664395` |
-| [03-测试与实验/T-01_独立Agent审核报告_2026-09-02.md](D:/Agent/03-SRP/_worktrees/q01-signoff/03-测试与实验/T-01_独立Agent审核报告_2026-09-02.md) | [inputs/04_T-01_独立Agent审核报告_2026-09-02.md](inputs/04_T-01_独立Agent审核报告_2026-09-02.md) | `1C85F493F32599A5BCD0AD086EBD7AB2AFF69AD656E4D23549767562BAC07ACA` |
-| [03-测试与实验/T-01_第二人审核报告_已签署.md](D:/Agent/03-SRP/_worktrees/q01-signoff/03-测试与实验/T-01_第二人审核报告_已签署.md) | [inputs/05_T-01_第二人审核报告_已签署.md](inputs/05_T-01_第二人审核报告_已签署.md) | `9594B05CC73B4B811FA8E289C9DE77A2FD15830969EBEC23CF37891CDCB8EAFC` |
-| [02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md) | [inputs/06_F-04_独立团队总监二轮复审签收报告_已签署.md](inputs/06_F-04_独立团队总监二轮复审签收报告_已签署.md) | `DA5A87B33A6752ED9122D726877EB5D3A8771F20D5D59D0F1620986A2D4EC927` |
-| [02-技术研发/05-通信协议/contracts/README.md](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/05-通信协议/contracts/README.md) | [inputs/07_README.md](inputs/07_README.md) | `E0EC5C41AB857126D843A0B82AB74B75695C9DDD78BCC36D8AFC0F8EC5AA7117` |
-| [02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md) | [inputs/08_README.md](inputs/08_README.md) | `FEC87F24850F8D2EE2F2CC03DAFB527682A9B9CFDB594982A2F0AB990AC65BF5` |
-| [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md) | [inputs/09_T01_技术验收记录.md](inputs/09_T01_技术验收记录.md) | `41CA88390036B56C7F82999BF9AD68711759C6E9755D042C7C729E21624EF6C8` |
-| [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe) | [inputs/10_T01_TelemetryPanel.toe](inputs/10_T01_TelemetryPanel.toe) | `3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED` |
-| [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox) | [inputs/11_T01_TelemetryPanel.tox](inputs/11_T01_TelemetryPanel.tox) | `F0614B20CF71E3C6E83B98D4CCC8A3CAD2F953A557DC2AAAEF809B15530AB8AE` |
+| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json) | [inputs/01_protocol_authority_v1.1.json](inputs/01_protocol_authority_v1.1.json) | `66DCF22A6B98E9B35FE069AA19373228E9E2070A2508F253801ACA3669E51794` |
+| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md) | [inputs/02_06_目标运行接口_v2.md](inputs/02_06_目标运行接口_v2.md) | `9754D8B6F55DBB7D45B187F434388EA27E258EE6EA0FC31B88B023E6827BAF28` |
+| [02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md](D:/Agent/03-SRP/02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md) | [inputs/03_P-01_第二人审核报告_已签署.md](inputs/03_P-01_第二人审核报告_已签署.md) | `4FF85DBD10522F9E2D25394A55976E321F6DE8C44F1122094B197B1495664395` |
+| [03-测试与实验/T-01_独立Agent审核报告_2026-09-02.md](D:/Agent/03-SRP/03-测试与实验/T-01_独立Agent审核报告_2026-09-02.md) | [inputs/04_T-01_独立Agent审核报告_2026-09-02.md](inputs/04_T-01_独立Agent审核报告_2026-09-02.md) | `1C85F493F32599A5BCD0AD086EBD7AB2AFF69AD656E4D23549767562BAC07ACA` |
+| [03-测试与实验/T-01_第二人审核报告_已签署.md](D:/Agent/03-SRP/03-测试与实验/T-01_第二人审核报告_已签署.md) | [inputs/05_T-01_第二人审核报告_已签署.md](inputs/05_T-01_第二人审核报告_已签署.md) | `9594B05CC73B4B811FA8E289C9DE77A2FD15830969EBEC23CF37891CDCB8EAFC` |
+| [02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md](D:/Agent/03-SRP/02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md) | [inputs/06_F-04_独立团队总监二轮复审签收报告_已签署.md](inputs/06_F-04_独立团队总监二轮复审签收报告_已签署.md) | `DA5A87B33A6752ED9122D726877EB5D3A8771F20D5D59D0F1620986A2D4EC927` |
+| [02-技术研发/05-通信协议/contracts/README.md](D:/Agent/03-SRP/02-技术研发/05-通信协议/contracts/README.md) | [inputs/07_README.md](inputs/07_README.md) | `E0EC5C41AB857126D843A0B82AB74B75695C9DDD78BCC36D8AFC0F8EC5AA7117` |
+| [02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md](D:/Agent/03-SRP/02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md) | [inputs/08_README.md](inputs/08_README.md) | `FEC87F24850F8D2EE2F2CC03DAFB527682A9B9CFDB594982A2F0AB990AC65BF5` |
+| [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md](D:/Agent/03-SRP/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md) | [inputs/09_T01_技术验收记录.md](inputs/09_T01_技术验收记录.md) | `41CA88390036B56C7F82999BF9AD68711759C6E9755D042C7C729E21624EF6C8` |
+| [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe](D:/Agent/03-SRP/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe) | [inputs/10_T01_TelemetryPanel.toe](inputs/10_T01_TelemetryPanel.toe) | `3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED` |
+| [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox](D:/Agent/03-SRP/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox) | [inputs/11_T01_TelemetryPanel.tox](inputs/11_T01_TelemetryPanel.tox) | `F0614B20CF71E3C6E83B98D4CCC8A3CAD2F953A557DC2AAAEF809B15530AB8AE` |
 
 ## 实现工作目录
 
-- [02-技术研发/03-TouchDesigner/t01_telemetry_panel](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/03-TouchDesigner/t01_telemetry_panel)
-- [02-技术研发/03-TouchDesigner/f04_readonly_console](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/03-TouchDesigner/f04_readonly_console)
-- [02-技术研发/05-通信协议/contracts](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/05-通信协议/contracts)
-- [02-技术研发/srp_session_core](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/srp_session_core)
+- [02-技术研发/03-TouchDesigner/t01_telemetry_panel](D:/Agent/03-SRP/02-技术研发/03-TouchDesigner/t01_telemetry_panel)
+- [02-技术研发/03-TouchDesigner/f04_readonly_console](D:/Agent/03-SRP/02-技术研发/03-TouchDesigner/f04_readonly_console)
+- [02-技术研发/05-通信协议/contracts](D:/Agent/03-SRP/02-技术研发/05-通信协议/contracts)
+- [02-技术研发/srp_session_core](D:/Agent/03-SRP/02-技术研发/srp_session_core)
 
 ## 权威规则
 
