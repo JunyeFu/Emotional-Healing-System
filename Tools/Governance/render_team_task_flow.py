@@ -6,6 +6,7 @@ import csv
 import html
 import json
 import runpy
+from datetime import date
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -106,7 +107,7 @@ def main() -> None:
         "</defs>",
         '<rect width="100%" height="100%" fill="#f8fafc"/>',
         '<text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>',
-        f'<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">2026-09-08 · 治理{profile["version"]} · {task_count}任务及3里程碑 · 虚线为开展阶段三后的条件依赖</text>',
+        f'<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">{date.today().isoformat()} · 治理{profile["version"]} · {task_count}任务及3里程碑 · 虚线为开展阶段三后的条件依赖</text>',
     ]
 
     counts = Counter(row["status"] for row in rows[:task_count])

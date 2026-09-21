@@ -5,7 +5,7 @@
 </defs>
 <rect width="100%" height="100%" fill="#f8fafc"/>
 <text x="70" y="68" font-family="Microsoft YaHei, sans-serif" font-size="38" font-weight="700" fill="#0f172a">SRP 团队任务分工、依赖与门禁</text>
-<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">2026-09-08 · 治理1.2 · 71任务及3里程碑 · 虚线为开展阶段三后的条件依赖</text>
+<text x="70" y="108" font-family="Microsoft YaHei, sans-serif" font-size="19" fill="#475569">2026-09-21 · 治理1.2 · 71任务及3里程碑 · 虚线为开展阶段三后的条件依赖</text>
 <rect x="70" y="132" width="114" height="38" rx="19" fill="#dcfce7" stroke="#166534"/>
 <text x="127.0" y="157" text-anchor="middle" font-family="Consolas, sans-serif" font-size="15" font-weight="700" fill="#166534">DONE 21</text>
 <rect x="198" y="132" width="114" height="38" rx="19" fill="#dbeafe" stroke="#1d4ed8"/>

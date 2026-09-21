@@ -1745,3 +1745,9 @@
 - Evidence gap: new branch log reports EditMode 85/85 and PlayMode 9/9, but references another machine's XML/review paths; no new XML is committed in its branch delta. No independent Unity run performed in this intake.
 - Decision: intake only; do not transfer existing signoff to d5be86b or change registry. Next: reconcile the two implementations and obtain candidate-bound test evidence before candidate acceptance. U-02 must use current task inputs and freeze its claim snapshot.
 - Risk: reported PAT exposure requires owner-side revocation; no secret read, printed, revoked, or generated in this intake. Existing untracked TD/tmp assets preserved.
+# 2026-09-21 持久SVG与控制文档验证
+
+- `render_governance_views.py`通过，三张持久SVG和README内嵌SVG均由当前注册表生成；图中日期为2026-09-21。
+- 注册表校验、独立包校验、审计升级校验、治理v1.2校验和legacy协议校验待提交前运行。
+- PDF重建成功：221278 bytes，中文`pdftotext`提取正常，包含DONE=21和U12-03 IN_REVIEW。
+- 原有未跟踪 `02-技术研发/03-TouchDesigner/t01_telemetry_panel/Backup/`、`T01_TelemetryPanel.3.toe`及`tmp/`未暂存。

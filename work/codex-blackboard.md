@@ -1579,3 +1579,8 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - Evidence gap: new branch log reports EditMode 85/85 and PlayMode 9/9, but references another machine's XML/review paths; no new XML is committed in its branch delta. No independent Unity run performed in this intake.
 - Decision: intake only; do not transfer existing signoff to d5be86b or change registry. Next: reconcile the two implementations and obtain candidate-bound test evidence before candidate acceptance. U-02 must use current task inputs and freeze its claim snapshot.
 - Risk: reported PAT exposure requires owner-side revocation; no secret read, printed, revoked, or generated in this intake. Existing untracked TD/tmp assets preserved.
+# 2026-09-21 持久SVG与控制文档同步
+
+- 依据本地main=203cdd1、origin/main=d701a40及当前注册表，确认U12-04已签收DONE；状态为DONE=21、U12-03 IN_REVIEW、READY=U-02/T-02/Q-01/U12-06/U12-07。
+- 运行治理生成器，更新三张持久任务SVG、README内嵌图、AGENTS、当前阶段看板、团队任务树和固定任务概要Markdown；图表日期改为2026-09-21。
+- 直接重建固定任务概要PDF并指定Microsoft YaHei，中文文本提取正常。远端fetch因SSH代理命令失效未刷新，但已使用本地origin/main引用，推送前保留原未跟踪TD资产和tmp。

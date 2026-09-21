@@ -4,6 +4,7 @@ import html
 import json
 import re
 import runpy
+from datetime import date
 from collections import Counter
 from pathlib import Path
 
@@ -34,6 +35,9 @@ def progress_section(text, summary):
 
 
 def main():
+    today = date.today()
+    iso_date = today.isoformat()
+    zh_date = f"{today.year} 年 {today.month} 月 {today.day} 日"
     with (GOV / "05_可领取任务包.csv").open(encoding="utf-8-sig", newline="") as f:
         rows = list(csv.DictReader(f))
     state = next(r["status"] for r in rows if r["task_id"] == "U12-01")
@@ -56,7 +60,7 @@ def main():
         else:
             text = re.sub(r"^\| 看当前执行权威 .*?$", f"| 看当前执行权威 | `{GUIDE}` + `active_governance.json`（治理目录） |", text, flags=re.MULTILINE)
         write(path, text)
-    board = "# 当前阶段看板\n\n> 2026-09-08 | " + summary + "\n\n"
+    board = f"# 当前阶段看板\n\n> {iso_date} | " + summary + "\n\n"
     board += f"当前设计与责任入口：[U12-01](/{(ROOT / GUIDE).as_posix()})。\n\n"
     board += "## 研究与工程分开\n\n阶段一独立支撑核心论文；阶段二/三为条件式扩展。PANAS主要比较候选与PF功能护栏分开，SCCI只作操纵检查。原新颖性REVISE_REQUIRED和研究证据缺口不因工程迁移自动解除。\n\n"
     board += "原18项签收保留原范围；新TD界面与工程壳仍需实机证据。A-03新统计规格由U12-04提供，REAL/CAL不得沿用旧规格冒充新校准。\n\n"
@@ -72,7 +76,7 @@ def main():
     tree += "Unity主线保持 V-05 → U-03风险切片 → U-04至U-07扩展 → U-08 → I-01；设备和真实许可按各自依赖汇入。\n\n"
     tree += "[领取手册](04_可领取树型任务包_v2.0.md) | [独立任务包](当前解锁独立任务包/README.md) | [v1.2研究治理](u12_upgrade/README.md)\n"
     write(GOV / "00_四人团队职责与任务树.md", tree)
-    brief = ('---\ntitle: "SRP 固定任务概要"\nauthor: "SRP 项目组"\ndate: "2026 年 9 月 8 日"\nlang: zh-CN\n---\n\n'
+    brief = (f'---\ntitle: "SRP 固定任务概要"\nauthor: "SRP 项目组"\ndate: "{zh_date}"\nlang: zh-CN\n---\n\n'
              '\\begin{center}\n\\textbf{摘\\quad 要}\n\\end{center}\n\n' + summary + '。阶段一核心论文独立关闭，阶段三按真实活动记录形成条件式扩展。\n\n'
              '\\textbf{关键词：} 任务分解；版本治理；交互状态估计；证据链\n\n'
              '# 任务分解问题\n\n研究目标是比较两种完整提示方案的情绪收益、代价与设计边界。任务图含71条任务与3个独立里程碑节点；68项固定任务、3项批次模板。历史DONE只覆盖原验收范围。\n\n'
@@ -96,7 +100,7 @@ def main():
            '<rect width="100%" height="100%" fill="#fafafa"/>',
            '<g font-family="Microsoft YaHei, sans-serif" fill="#202124">',
            '<text x="50" y="60" font-size="32" font-weight="bold">SRP 任务状态与研究准入</text>',
-           f'<text x="50" y="105" font-size="20">71任务 / 68固定 / 3模板 · U12-01 {state} · READY {ready}</text>',
+           f'<text x="50" y="105" font-size="20">{iso_date} · 71任务 / 68固定 / 3模板 · U12-01 {state} · READY {ready}</text>',
            f'<text x="50" y="143" font-size="18">DONE {counts["DONE"]}项（含18项原签收）；未冻结数值、真实资格和运行接线不自动放行。</text>',
            '<text x="50" y="184" font-size="18">任务与领域</text><text x="1080" y="184" font-size="18">状态</text><text x="1340" y="184" font-size="18">前置依赖</text>']
     for i, r in enumerate(rows):
