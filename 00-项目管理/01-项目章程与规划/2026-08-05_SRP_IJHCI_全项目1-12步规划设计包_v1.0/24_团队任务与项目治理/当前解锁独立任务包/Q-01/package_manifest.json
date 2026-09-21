@@ -1,13 +1,13 @@
 {
   "package_schema_version": "1.0",
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
-  "task_id": "U12-07",
-  "status": "READY",
-  "registry_sha256": "BCD680DFC5BF172300485B9BD271C827533069C3A00D3021A7DE983D2C2A79F5",
-  "input_snapshot_id": "F816769755011E0A4AAE28ADD0DA96548B70CE0A1EB3A8F1AC29E1F7F25FBD9A",
-  "previous_input_snapshot_id": "F816769755011E0A4AAE28ADD0DA96548B70CE0A1EB3A8F1AC29E1F7F25FBD9A",
+  "task_id": "Q-01",
+  "status": "IN_PROGRESS",
+  "registry_sha256": "3E60E0A371FE1D237E06C66033ECC5DB662EF3E4FD94371FF50508262EF94794",
+  "input_snapshot_id": "1B92F6AD85E013D432544C95E78BDDE18AC4ABC851CB7C47AE6685A4C29EFB29",
+  "previous_input_snapshot_id": "1B92F6AD85E013D432544C95E78BDDE18AC4ABC851CB7C47AE6685A4C29EFB29",
   "input_changed": false,
-  "candidate_identity": null,
+  "candidate_identity": "f42ebc372af7a45034dab85f79d60c9be648e75f",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
@@ -40,10 +40,10 @@
       "size_bytes": 995
     },
     {
-      "source_path": "00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-07/inputs/task_input.json",
-      "package_path": "inputs/06_task_input.json",
-      "sha256": "302E8C641B6DD877852B9AD4F8E5A97990DA4640F5C73D3D737C90FB0089A2AE",
-      "size_bytes": 7122
+      "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/R-01_四层表示方案/R-01_四层候选语法与完整表示方案_v0.9-candidate.md",
+      "package_path": "inputs/06_R-01_四层候选语法与完整表示方案_v0.9-candidate.md",
+      "sha256": "624D1EF0AD97BFF05EFE6A9DADED816B1A4E89B7DDAD7A394CEBC1226A99D79F",
+      "size_bytes": 71233
     }
   ],
   "working_paths": [
