@@ -1,1 +1,1 @@
-designer_code,task_id,rater_code,target_correct,actual_correct,cumulative_correct,fallback_correct,forbidden_coupling,identity_leak,color_only,comment
+designer_code,task_id,rater_code,target_correct,actual_correct,cumulative_correct,fallback_correct,forbidden_coupling,identity_leak,color_only,evidence_location,comment

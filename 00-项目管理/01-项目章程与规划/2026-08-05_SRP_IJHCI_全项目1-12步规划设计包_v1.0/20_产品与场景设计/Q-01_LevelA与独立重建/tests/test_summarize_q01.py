@@ -55,7 +55,8 @@ def reconstruction_rows(failing_designers: set[str] | None = None) -> list[dict[
                     "target_correct": "0" if failed else "1", "actual_correct": "1",
                     "cumulative_correct": "1", "fallback_correct": "1",
                     "forbidden_coupling": "0", "identity_leak": "0", "color_only": "0",
-                    "comment": "",
+                    "evidence_location": "frame-01" if failed else "",
+                    "comment": "Target object missing" if failed else "",
                 })
     return rows
 
@@ -91,12 +92,16 @@ class Q01FrameworkTests(unittest.TestCase):
     def test_rater_disagreement_requires_revision(self) -> None:
         scores = reconstruction_rows()
         scores[0]["target_correct"] = "0"
+        scores[0]["evidence_location"] = "frame-01"
+        scores[0]["comment"] = "Target object missing"
         result = evaluate(roster_rows(), expert_rows(), scores, CONTRACT)
         self.assertEqual("REVISE", result["decision"])
 
     def test_adjudication_resolves_disagreement_without_rewriting_scores(self) -> None:
         scores = reconstruction_rows()
         scores[0]["target_correct"] = "0"
+        scores[0]["evidence_location"] = "frame-01"
+        scores[0]["comment"] = "Target object missing"
         adjudications = [{
             "designer_code": "D01", "task_id": "R-UNSEEN-RHYTHM",
             "field": "target_correct", "adjudicator_code": "A01",
@@ -111,6 +116,8 @@ class Q01FrameworkTests(unittest.TestCase):
     def test_unknown_adjudicator_is_incomplete(self) -> None:
         scores = reconstruction_rows()
         scores[0]["target_correct"] = "0"
+        scores[0]["evidence_location"] = "frame-01"
+        scores[0]["comment"] = "Target object missing"
         adjudications = [{
             "designer_code": "D01", "task_id": "R-UNSEEN-RHYTHM",
             "field": "target_correct", "adjudicator_code": "UNKNOWN",
@@ -123,6 +130,18 @@ class Q01FrameworkTests(unittest.TestCase):
         self.assertIn(
             "ADJUDICATOR_UNKNOWN:UNKNOWN",
             result["reconstruction_gate"]["adjudication_errors"],
+        )
+
+    def test_failed_rating_without_evidence_is_incomplete(self) -> None:
+        scores = reconstruction_rows()
+        scores[0]["target_correct"] = "0"
+        scores[0]["evidence_location"] = ""
+        scores[0]["comment"] = ""
+        result = evaluate(roster_rows(), expert_rows(), scores, CONTRACT, [])
+        self.assertEqual("INCOMPLETE", result["decision"])
+        self.assertIn(
+            "RATING_EVIDENCE_MISSING:D01:R-UNSEEN-RHYTHM:R01",
+            result["reconstruction_gate"]["rating_errors"],
         )
 
     def test_incomplete_roster_is_incomplete(self) -> None:

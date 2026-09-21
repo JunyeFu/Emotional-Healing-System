@@ -10,6 +10,7 @@
     {"id": "rater_disagreement", "expected_decision": "REVISE"},
     {"id": "adjudicated_rater_disagreement", "expected_decision": "PASS"},
     {"id": "unknown_adjudicator", "expected_decision": "INCOMPLETE"},
+    {"id": "failed_rating_without_evidence", "expected_decision": "INCOMPLETE"},
     {"id": "empty_templates", "expected_decision": "INCOMPLETE"},
     {"id": "incomplete_roster", "expected_decision": "INCOMPLETE"}
   ],
@@ -27,5 +28,5 @@
       "RATER_ADJUDICATION_INPUT_MISSING"
     ]
   },
-  "verification": "PASS_15_TESTS_AND_3_DIMENSION_SUBTESTS_2026-09-21"
+  "verification": "PASS_16_TESTS_AND_3_DIMENSION_SUBTESTS_2026-09-21"
 }

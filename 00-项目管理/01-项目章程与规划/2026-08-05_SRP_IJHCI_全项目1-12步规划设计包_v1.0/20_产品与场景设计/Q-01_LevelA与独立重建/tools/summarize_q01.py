@@ -166,6 +166,7 @@ def evaluate_reconstruction(
         "color_only",
     )
     valid_scores = True
+    rating_errors: list[str] = []
     grouped: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
     for row in rows:
         try:
@@ -175,6 +176,19 @@ def evaluate_reconstruction(
             continue
         if any(value not in {0, 1} for value in values):
             valid_scores = False
+        has_failure = any(value == 0 for value in values[:4]) or any(
+            value == 1 for value in values[4:]
+        )
+        if has_failure and (
+            not row.get("evidence_location", "").strip()
+            or not row.get("comment", "").strip()
+        ):
+            rating_errors.append(
+                "RATING_EVIDENCE_MISSING:"
+                f"{row.get('designer_code', '')}:"
+                f"{row.get('task_id', '')}:"
+                f"{row.get('rater_code', '')}"
+            )
         grouped[(row.get("designer_code", ""), row.get("task_id", ""))].append(row)
 
     adjudication_errors: list[str] = []
@@ -250,6 +264,7 @@ def evaluate_reconstruction(
     passed = (
         complete
         and valid_scores
+        and not rating_errors
         and not adjudication_errors
         and not disagreements
         and designers_passing_both >= threshold["designers_passing_both_tasks_min"]
@@ -259,7 +274,10 @@ def evaluate_reconstruction(
         )
     )
     return {
-        "complete": complete and valid_scores and not adjudication_errors,
+        "complete": (
+            complete and valid_scores and not rating_errors and not adjudication_errors
+        ),
+        "rating_errors": rating_errors,
         "unresolved_disagreements": disagreements,
         "adjudicated_disagreements": adjudicated,
         "adjudication_errors": adjudication_errors,
