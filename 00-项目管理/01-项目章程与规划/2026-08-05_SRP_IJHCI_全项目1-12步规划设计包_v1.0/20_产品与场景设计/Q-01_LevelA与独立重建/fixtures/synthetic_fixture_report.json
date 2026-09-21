@@ -15,7 +15,13 @@
     "reconstruction_tasks": 2,
     "designer_assignments": 4,
     "blind_identity_leaks": 0,
-    "result": "PASS"
+    "result": "REVISE_REQUIRED_AFTER_INDEPENDENT_REVIEW",
+    "known_gaps": [
+      "BLIND_MARKDOWN_NOT_SCANNED",
+      "THREE_SCENE_MAPPINGS_NOT_CURRENT",
+      "NON_RELEVANCE_EXPERT_DIMENSIONS_NOT_GATED",
+      "RATER_ADJUDICATION_INPUT_MISSING"
+    ]
   },
   "verification": "PASS_10_TESTS_2026-09-21"
 }

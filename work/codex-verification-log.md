@@ -1794,3 +1794,8 @@
 - 两张独立SVG均含`phase-preparation`、`phase-experiment`、`phase-writing`及两道门的稳定元素ID；4项专项测试通过。
 - Edge无界面渲染两张完整PNG并人工检查：三色矩形连续、门线处于W4/W5与W5/W6边界、标签未被任务卡遮挡。
 - 重复生成哈希不变；71项注册表、7个分发包和`git diff --check`通过。任务状态未改变，保留TD与tmp未跟踪内容。
+
+# 2026-09-21 Q-01独立Agent复核结果
+- 独立Agent：Jason `01a0c2d7-acc0-7951-957b-fb42e22ef5fc`；候选：`0c75f84ea0d4d50be71f5575a0ea553d675f7862`；结论：`REVISE`。
+- Agent实跑Q-01测试6/6与4/4通过、材料校验器返回有效，但通过反例证明现有检查未覆盖4项P1，因此不接受原本的材料完成结论。
+- 当前权威状态改为`INDEPENDENT_REVIEW_REVISE_REQUIRED`；未变更注册表状态，未生成团队第二人签收。

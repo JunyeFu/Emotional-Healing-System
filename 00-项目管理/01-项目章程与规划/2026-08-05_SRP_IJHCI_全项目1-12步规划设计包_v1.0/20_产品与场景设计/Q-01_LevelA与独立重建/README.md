@@ -1,9 +1,10 @@
 # Q-01 Level A构念审查与独立重建框架 v1.0
 
-> 状态：`MATERIALS_COMPLETE_NOT_EXECUTED`
+> 状态：`INDEPENDENT_REVIEW_REVISE_REQUIRED`
 > 任务：Q-01【研究工具】
 > 目的：判断候选四层语法是否具备内容完整性、边界清晰度和跨场景生成性。
 > 边界：本目录没有真实专家、独立设计者或盲态评分数据，不关闭Level A、Level B或Gate 2。
+> 当前复核：候选`0c75f84`经独立Agent复核为`REVISE`，4项P1见`09_独立Agent复核报告_REVISE.md`。
 
 ## 1. 研究位置
 
