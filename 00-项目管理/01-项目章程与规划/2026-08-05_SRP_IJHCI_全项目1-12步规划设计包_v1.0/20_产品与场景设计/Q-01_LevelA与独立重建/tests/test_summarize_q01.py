@@ -1,0 +1,101 @@
+from __future__ import annotations
+
+import csv
+import json
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
+
+from summarize_q01 import evaluate, read_csv  # noqa: E402
+
+
+CONTRACT = json.loads((ROOT / "framework_contract_v1.0.json").read_text(encoding="utf-8"))
+
+
+def roster_rows() -> list[dict[str, str]]:
+    rows = []
+    for index, group in enumerate(["construct_method"] * 3 + ["hci_visual"] * 3 + ["runtime_system"] * 2, 1):
+        rows.append({"person_code": f"E{index:02}", "role": "expert", "role_group": group,
+                     "framework_author": "0", "eligible": "1", "conflict_note": ""})
+    for index, group in enumerate(["hci_visual"] * 2 + ["realtime_game"] * 2, 1):
+        rows.append({"person_code": f"D{index:02}", "role": "designer", "role_group": group,
+                     "framework_author": "0", "eligible": "1", "conflict_note": ""})
+    for index in range(1, 3):
+        rows.append({"person_code": f"R{index:02}", "role": "rater", "role_group": "blind_visual",
+                     "framework_author": "0", "eligible": "1", "conflict_note": ""})
+    return rows
+
+
+def expert_rows() -> list[dict[str, str]]:
+    return [
+        {"reviewer_code": f"E{reviewer:02}", "item_id": f"E{item:02}",
+         "relevance": "4", "comprehensiveness": "4", "clarity": "4",
+         "construct_purity": "4", "critical_blocker": "0", "comment": ""}
+        for reviewer in range(1, 9)
+        for item in range(1, 11)
+    ]
+
+
+def reconstruction_rows(failing_designers: set[str] | None = None) -> list[dict[str, str]]:
+    failing_designers = failing_designers or set()
+    rows = []
+    for designer in [f"D{i:02}" for i in range(1, 5)]:
+        for task in ["R-UNSEEN-RHYTHM", "R-NON-WEATHER"]:
+            for rater in ["R01", "R02"]:
+                failed = designer in failing_designers
+                rows.append({
+                    "designer_code": designer, "task_id": task, "rater_code": rater,
+                    "target_correct": "0" if failed else "1", "actual_correct": "1",
+                    "cumulative_correct": "1", "fallback_correct": "1",
+                    "forbidden_coupling": "0", "identity_leak": "0", "color_only": "0",
+                    "comment": "",
+                })
+    return rows
+
+
+class Q01FrameworkTests(unittest.TestCase):
+    def test_all_gates_pass(self) -> None:
+        result = evaluate(roster_rows(), expert_rows(), reconstruction_rows(), CONTRACT)
+        self.assertEqual("PASS", result["decision"])
+
+    def test_expert_item_below_threshold_requires_revision(self) -> None:
+        reviews = expert_rows()
+        for row in reviews:
+            if row["item_id"] == "E01" and row["reviewer_code"] in {"E01", "E02"}:
+                row["relevance"] = "2"
+        result = evaluate(roster_rows(), reviews, reconstruction_rows(), CONTRACT)
+        self.assertEqual("REVISE", result["decision"])
+
+    def test_unstable_reconstruction_downgrades_claim(self) -> None:
+        scores = reconstruction_rows({"D01", "D02"})
+        result = evaluate(roster_rows(), expert_rows(), scores, CONTRACT)
+        self.assertEqual("DOWNGRADE_TO_FOUR_SCENE_DESIGN_PATTERN", result["decision"])
+
+    def test_rater_disagreement_requires_revision(self) -> None:
+        scores = reconstruction_rows()
+        scores[0]["target_correct"] = "0"
+        result = evaluate(roster_rows(), expert_rows(), scores, CONTRACT)
+        self.assertEqual("REVISE", result["decision"])
+
+    def test_incomplete_roster_is_incomplete(self) -> None:
+        roster = [row for row in roster_rows() if row["person_code"] != "R02"]
+        result = evaluate(roster, expert_rows(), reconstruction_rows(), CONTRACT)
+        self.assertEqual("INCOMPLETE", result["decision"])
+
+    def test_csv_templates_are_readable(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "rows.csv"
+            with path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=roster_rows()[0].keys())
+                writer.writeheader()
+                writer.writerows(roster_rows())
+            self.assertEqual(14, len(read_csv(path)))
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

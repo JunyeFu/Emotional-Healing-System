@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "generated_for": "Q-01 framework verification",
+  "real_activity_data": false,
+  "cases": [
+    {"id": "all_gates_pass", "expected_decision": "PASS"},
+    {"id": "expert_item_below_threshold", "expected_decision": "REVISE"},
+    {"id": "reconstruction_not_stable", "expected_decision": "DOWNGRADE_TO_FOUR_SCENE_DESIGN_PATTERN"},
+    {"id": "rater_disagreement", "expected_decision": "REVISE"},
+    {"id": "incomplete_roster", "expected_decision": "INCOMPLETE"}
+  ],
+  "verification": "PASS_6_TESTS_2026-09-21"
+}

@@ -1596,3 +1596,8 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - Q-01由READY领取为IN_PROGRESS，领取人Codex，分支`codex/q-01-research-tool`；领取输入快照已冻结。
 - Q-01负责构念专家包、盲态编号、独立重建、CVI与盲态评分、适用边界和版本差异；不等同于Unity/TD实现、真人研究或论文结果。
 - 领取基线绑定当前主线提交`f42ebc372af7a45034dab85f79d60c9be648e75f`，尚未形成Q-01完成候选或复核结论。
+
+# 2026-09-21 Q-01框架设计
+- 完成Q-01五阶段框架：权威冻结、八专家审查、四设计者双任务重建、双盲态评分、自动裁定。
+- 角色池互斥；专家审查与目标使用者可理解性分开；独立重建失败只降称四场景设计模式，不改变阶段一完整方案比较。
+- 新增机器合同、三份执行材料、CSV模板、自动汇总工具及PASS/REVISE/DOWNGRADE/INCOMPLETE合成测试。真实活动仍等待U12-05及活动资格，Q-01保持IN_PROGRESS。

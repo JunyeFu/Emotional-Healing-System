@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "task_id": "Q-01",
+  "status": "FRAMEWORK_READY_NOT_EXECUTED",
+  "claim_scope": "candidate_four_layer_design_knowledge",
+  "roles": {
+    "expert": {
+      "count": 8,
+      "role_groups": {
+        "construct_method": 3,
+        "hci_visual": 3,
+        "runtime_system": 2
+      }
+    },
+    "designer": {
+      "count": 4,
+      "role_groups": {
+        "hci_visual": 2,
+        "realtime_game": 2
+      }
+    },
+    "rater": {
+      "count": 2
+    }
+  },
+  "role_rules": {
+    "cross_role_forbidden": true,
+    "framework_author_eligible": false,
+    "identity_mapping_location": "REPOSITORY_EXTERNAL_APPROVED_LOCATION"
+  },
+  "expert_items": [
+    {"id": "E01", "name": "target_role_and_source"},
+    {"id": "E02", "name": "actual_role_and_source"},
+    {"id": "E03", "name": "cumulative_role_and_timescale"},
+    {"id": "E04", "name": "fallback_role_and_non_evaluation"},
+    {"id": "E05", "name": "source_independence"},
+    {"id": "E06", "name": "timescale_independence"},
+    {"id": "E07", "name": "visual_separability_without_color_only"},
+    {"id": "E08", "name": "condition_event_equivalence"},
+    {"id": "E09", "name": "claim_boundary"},
+    {"id": "E10", "name": "neutral_material_and_identity_masking"}
+  ],
+  "expert_gate": {
+    "valid_score_min": 3,
+    "i_cvi_min": 0.78,
+    "s_cvi_ave_min": 0.9,
+    "open_critical_blockers_allowed": 0,
+    "complete_case_required": true
+  },
+  "reconstruction_tasks": [
+    {"id": "R-UNSEEN-RHYTHM", "transfer_axis": "unseen_temporal_structure"},
+    {"id": "R-NON-WEATHER", "transfer_axis": "non_weather_scene"}
+  ],
+  "reconstruction_gate": {
+    "raters_per_output": 2,
+    "all_four_layers_required": true,
+    "forbidden_couplings_allowed": 0,
+    "identity_leaks_allowed": 0,
+    "designers_passing_both_tasks_min": 3,
+    "designers_passing_each_task_min": 3,
+    "unresolved_rater_disagreements_allowed": 0,
+    "threshold_origin": "SRP_PROJECT_SPECIFIC_PREEXECUTION_RULE"
+  },
+  "decisions": [
+    "PASS",
+    "REVISE",
+    "DOWNGRADE_TO_FOUR_SCENE_DESIGN_PATTERN",
+    "INCOMPLETE"
+  ],
+  "execution_gate": "U12-05_AND_ACTIVITY_QUALIFICATION_REQUIRED",
+  "not_claimed": [
+    "level_a_executed",
+    "level_b_executed",
+    "gate_2_closed",
+    "unity_final_render_validated",
+    "participant_result_observed"
+  ]
+}
