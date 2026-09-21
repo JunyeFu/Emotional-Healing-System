@@ -1806,3 +1806,10 @@
 - `py -3.14 <Q-01>/tools/validate_q01_materials.py`：`Q01_MATERIALS_VALID`。
 - 空白模板完整CLI：`INCOMPLETE`。
 - 独立Agent第三轮复审：`PASS`，无未关闭P0-P2。
+
+## 2026-09-21 Q-01第二人签收
+
+- 傅钧烨以团队总监、真实团队第二人复核身份签收`PASS`，日期`2026-09-21 +08:00`；Q-01由`IN_PROGRESS`迁移为`DONE`。
+- Q-01专项测试16/16通过，材料校验返回`Q01_MATERIALS_VALID`；71项注册表和6个当前独立任务包校验通过。
+- 三张持久SVG、README、AGENTS、当前阶段看板、团队任务树和固定任务概要Markdown已按同一注册表重绘；`git diff --check`通过。
+- 签收仅关闭Q-01工具与材料交付；真人Level A活动仍归E-01，Q-02与E-01未因本次签收提前解锁。

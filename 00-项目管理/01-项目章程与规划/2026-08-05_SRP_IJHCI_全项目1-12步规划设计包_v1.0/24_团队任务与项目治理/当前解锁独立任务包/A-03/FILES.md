@@ -6,17 +6,17 @@
 
 | 项目权威路径 | 包内快照 | SHA-256 |
 |---|---|---|
-| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json) | [inputs/01_protocol_authority_v1.1.json](inputs/01_protocol_authority_v1.1.json) | `66DCF22A6B98E9B35FE069AA19373228E9E2070A2508F253801ACA3669E51794` |
-| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md) | [inputs/02_01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md](inputs/02_01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md) | `BCA2CBF8DD2AB7E942D4C2C671D95860D5ED363E8353B977482925D88F1762C8` |
-| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md) | [inputs/03_02_F-02_验收记录.md](inputs/03_02_F-02_验收记录.md) | `90E1C97EA29A3A1C367FD97B596786CDEFA7C915E338D1C153F15DE504F2D607` |
-| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/00_离线处理总设计.md](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/00_离线处理总设计.md) | [inputs/04_00_离线处理总设计.md](inputs/04_00_离线处理总设计.md) | `6B9D203D56D5B665FFFCB9638E3D4544B6BA3DC71935B52F690574DD5AA9688D` |
-| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.0.json](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.0.json) | [inputs/05_task_milestones_v1.0.json](inputs/05_task_milestones_v1.0.json) | `285173B311500DB71B94CF6BD6A901154EF5A0BE57253671748EF593EA0171F3` |
-| [02-技术研发/02-信号处理/评分模型设计.md](D:/Agent/03-SRP/02-技术研发/02-信号处理/评分模型设计.md) | [inputs/06_评分模型设计.md](inputs/06_评分模型设计.md) | `C5789AE28253CE0C1D4D8C57AAB63D215C9517D1145A49DC72669784F456972D` |
+| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json](D:/Agent/03-SRP/_worktrees/q01-signoff/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json) | [inputs/01_protocol_authority_v1.1.json](inputs/01_protocol_authority_v1.1.json) | `66DCF22A6B98E9B35FE069AA19373228E9E2070A2508F253801ACA3669E51794` |
+| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md](D:/Agent/03-SRP/_worktrees/q01-signoff/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md) | [inputs/02_01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md](inputs/02_01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md) | `BCA2CBF8DD2AB7E942D4C2C671D95860D5ED363E8353B977482925D88F1762C8` |
+| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md](D:/Agent/03-SRP/_worktrees/q01-signoff/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md) | [inputs/03_02_F-02_验收记录.md](inputs/03_02_F-02_验收记录.md) | `90E1C97EA29A3A1C367FD97B596786CDEFA7C915E338D1C153F15DE504F2D607` |
+| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/00_离线处理总设计.md](D:/Agent/03-SRP/_worktrees/q01-signoff/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/00_离线处理总设计.md) | [inputs/04_00_离线处理总设计.md](inputs/04_00_离线处理总设计.md) | `6B9D203D56D5B665FFFCB9638E3D4544B6BA3DC71935B52F690574DD5AA9688D` |
+| [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.0.json](D:/Agent/03-SRP/_worktrees/q01-signoff/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.0.json) | [inputs/05_task_milestones_v1.0.json](inputs/05_task_milestones_v1.0.json) | `285173B311500DB71B94CF6BD6A901154EF5A0BE57253671748EF593EA0171F3` |
+| [02-技术研发/02-信号处理/评分模型设计.md](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/02-信号处理/评分模型设计.md) | [inputs/06_评分模型设计.md](inputs/06_评分模型设计.md) | `C5789AE28253CE0C1D4D8C57AAB63D215C9517D1145A49DC72669784F456972D` |
 
 ## 实现工作目录
 
-- [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析](D:/Agent/03-SRP/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析)
-- [02-技术研发/02-信号处理](D:/Agent/03-SRP/02-技术研发/02-信号处理)
+- [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析](D:/Agent/03-SRP/_worktrees/q01-signoff/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析)
+- [02-技术研发/02-信号处理](D:/Agent/03-SRP/_worktrees/q01-signoff/02-技术研发/02-信号处理)
 
 ## 权威规则
 
