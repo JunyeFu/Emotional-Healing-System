@@ -1606,3 +1606,4 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 以协议v1.2、R-01、参与者产品总规格、四场景实现总规范、V-04交接和F-02为当前依据；旧版《四种天气设计》明确列为历史材料，不参与本轮裁定。
 - 补齐十项课题证据矩阵、两套盲态任务逐秒事件、顺序平衡、功能真值、发放SOP和空白执行报告；真实身份、评分和结果均未代填。
 - 工具状态为`MATERIALS_COMPLETE_NOT_EXECUTED`，Q-01任务仍保持`IN_PROGRESS`；真人Level A由E-01在U12-05及活动资格成立后执行。
+- 固定提交复核发现两份CSV被全局忽略，以及fade整屏复色被误写进Cumulative；均已修正，复核报告绑定候选`772ac58`。

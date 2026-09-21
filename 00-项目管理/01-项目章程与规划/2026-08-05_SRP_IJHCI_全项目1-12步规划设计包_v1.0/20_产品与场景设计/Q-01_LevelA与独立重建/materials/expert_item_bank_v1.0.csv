@@ -1,0 +1,11 @@
+item_id,item_name,primary_question,critical_failure
+E01,target_role_and_source,目标层是否只表达目标协议与转换,目标被实际或累计信息改写
+E02,actual_role_and_source,实际层是否只表达当前估计与可信程度,复制目标或补入模拟值
+E03,cumulative_role_and_timescale,累计层是否为模块内慢变量,随短阶段摆动或不可用时增长
+E04,fallback_role_and_non_evaluation,降级层是否只表达信息可用性,评价个人或改变目标
+E05,source_independence,四层是否分别消费唯一权威输入,跨层读取制造一致性
+E06,timescale_independence,四层时间尺度是否与职责相符,多层同周期难以区分
+E07,visual_separability_without_color_only,任意两层是否至少两个视觉维度可分,只靠颜色或文字区分
+E08,condition_event_equivalence,两条件事件与信息量是否一致,一侧获得额外信息或反馈
+E09,claim_boundary,主张是否限于完整方案和候选四层知识,外推单机制或单场景效果
+E10,neutral_material_and_identity_masking,盲态材料是否隐藏条件与现有答案,措辞或素材泄露预期方向

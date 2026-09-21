@@ -1786,3 +1786,4 @@
 - `tools/validate_q01_materials.py`通过：6份当前权威文件可访问，10个专家项与合同一致，2项任务覆盖质量状态，4名设计者顺序平衡，盲态身份泄露为0。
 - `tests/test_validate_q01_materials.py` 4/4通过；`tests/test_summarize_q01.py` 6/6通过；`git diff --check`通过。
 - 输入不可用节点均满足Response为空、Trend冻结；未生成或代填真实人员、CVI、重建得分和裁定。
+- 固定提交复核发现并修正两项P1：忽略的CSV未入Git、fade共享复色与Cumulative混写。修正后需从Git树重跑同组验证。
