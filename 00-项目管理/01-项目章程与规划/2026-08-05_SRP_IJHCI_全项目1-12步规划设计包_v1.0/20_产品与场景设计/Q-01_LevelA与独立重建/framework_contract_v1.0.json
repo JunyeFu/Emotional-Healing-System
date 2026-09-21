@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "task_id": "Q-01",
-  "status": "FRAMEWORK_READY_NOT_EXECUTED",
+  "status": "MATERIALS_COMPLETE_NOT_EXECUTED",
   "claim_scope": "candidate_four_layer_design_knowledge",
   "roles": {
     "expert": {
@@ -68,6 +68,12 @@
     "INCOMPLETE"
   ],
   "execution_gate": "U12-05_AND_ACTIVITY_QUALIFICATION_REQUIRED",
+  "material_files": {
+    "project_evidence": "materials/project_evidence_matrix_v1.0.json",
+    "reconstruction_tasks": "materials/reconstruction_tasks_v1.0.json",
+    "blind_assignment": "materials/blind_assignment_template_v1.0.csv",
+    "expert_item_bank": "materials/expert_item_bank_v1.0.csv"
+  },
   "not_claimed": [
     "level_a_executed",
     "level_b_executed",

@@ -1,6 +1,6 @@
 # Q-01 Level A构念审查与独立重建框架 v1.0
 
-> 状态：`FRAMEWORK_READY_NOT_EXECUTED`
+> 状态：`MATERIALS_COMPLETE_NOT_EXECUTED`
 > 任务：Q-01【研究工具】
 > 目的：判断候选四层语法是否具备内容完整性、边界清晰度和跨场景生成性。
 > 边界：本目录没有真实专家、独立设计者或盲态评分数据，不关闭Level A、Level B或Gate 2。
@@ -111,11 +111,19 @@ Q-01不评价短时负性情绪结果，不比较天气顺序，不检验单一�
 | `tools/summarize_q01.py` | 自动检查完整性并输出裁定摘要 |
 | `tests/test_summarize_q01.py` | PASS、REVISE、DOWNGRADE三类合成验证 |
 | `fixtures/synthetic_fixture_report.json` | 合成验证预期与本轮结果 |
+| `04_课题实际构念与证据矩阵.md` | 当前权威、四场景实例和十项审查证据 |
+| `05_盲态材料母版与编号方案.md` | 两项确定性任务、事件时间线和顺序平衡 |
+| `06_重建真值与评分键.md` | 不规定画风的功能真值与评分依据 |
+| `07_完整执行SOP与空白报告.md` | 从冻结到裁定的执行流程及空白报告 |
+| `materials/` | 专家项目、盲态任务和分配的机器可读版本 |
+| `tools/validate_q01_materials.py` | 材料一致性、权威路径和身份泄露检查 |
 
 运行：
 
 ```powershell
 py -3.14 tests/test_summarize_q01.py
+py -3.14 tests/test_validate_q01_materials.py
+py -3.14 tools/validate_q01_materials.py
 py -3.14 tools/summarize_q01.py --roster <roster.csv> --expert <expert_reviews.csv> --reconstruction <reconstruction_scores.csv> --out <summary.json>
 ```
 
@@ -129,7 +137,7 @@ py -3.14 tools/summarize_q01.py --roster <roster.csv> --expert <expert_reviews.c
 
 ## 7. 执行门
 
-本框架可在仓库内完成设计和合成验证。真实邀请、评分和重建活动必须等待U12-05及对应活动资格；最终Unity渲染形成后还需按相同匿名规则复核。框架通过不代表完整体验、真实设备链或论文结果通过。
+本目录已完成可直接发放的材料、确定性事件、评分键、空白报告和自动校验。真实邀请、评分和重建活动必须等待U12-05及对应活动资格，并由E-01执行；最终Unity渲染形成后还需按相同匿名规则复核。材料完整不代表Level A通过、完整体验通过或论文结果成立。
 
 ## 8. 参考来源
 

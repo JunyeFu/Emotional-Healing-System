@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "tasks": [
+    {
+      "id": "R-UNSEEN-RHYTHM",
+      "material_code": "M-A",
+      "scene": "moss_courtyard",
+      "duration_seconds": 14,
+      "required_states": ["GOOD", "DEGRADED", "UNUSABLE", "DISCONNECTED"],
+      "keyframes_seconds": [1, 2, 5, 7, 9, 14],
+      "events": [
+        {"t": 0, "guide": "P1_START", "response": "P1_0.00", "trend": 0.10, "availability": "GOOD"},
+        {"t": 1, "guide": "P1_ACTIVE", "response": "P1_0.45", "trend": 0.10, "availability": "GOOD"},
+        {"t": 2, "guide": "P2_START", "response": "P1_0.90", "trend": 0.10, "availability": "GOOD"},
+        {"t": 3, "guide": "P3_START", "response": "P2_COMPLETE", "trend": 0.18, "availability": "GOOD"},
+        {"t": 5, "guide": "P3_ACTIVE", "response": "P3_0.35", "trend": 0.18, "availability": "DEGRADED"},
+        {"t": 7, "guide": "P1_START", "response": null, "trend": 0.18, "availability": "UNUSABLE"},
+        {"t": 9, "guide": "P2_START", "response": null, "trend": 0.18, "availability": "DISCONNECTED"},
+        {"t": 10, "guide": "P3_START", "response": "P1_0.80", "trend": 0.18, "availability": "GOOD"},
+        {"t": 14, "guide": "END", "response": "P3_COMPLETE", "trend": 0.32, "availability": "GOOD"}
+      ]
+    },
+    {
+      "id": "R-NON-WEATHER",
+      "material_code": "M-B",
+      "scene": "luminous_archive",
+      "duration_seconds": 16,
+      "required_states": ["GOOD", "DEGRADED", "UNUSABLE"],
+      "keyframes_seconds": [2, 3, 8, 11, 13, 16],
+      "events": [
+        {"t": 0, "guide": "A_START", "response": "A_0.00", "trend": 0.20, "availability": "GOOD"},
+        {"t": 2, "guide": "A_ACTIVE", "response": "A_0.55", "trend": 0.20, "availability": "GOOD"},
+        {"t": 3, "guide": "B_START", "response": "A_0.85", "trend": 0.20, "availability": "GOOD"},
+        {"t": 5, "guide": "C_START", "response": "B_COMPLETE", "trend": 0.28, "availability": "GOOD"},
+        {"t": 8, "guide": "A_START", "response": "C_0.75", "trend": 0.28, "availability": "DEGRADED"},
+        {"t": 11, "guide": "B_START", "response": null, "trend": 0.28, "availability": "UNUSABLE"},
+        {"t": 13, "guide": "C_START", "response": "C_0.10", "trend": 0.28, "availability": "GOOD"},
+        {"t": 16, "guide": "END", "response": "C_COMPLETE", "trend": 0.44, "availability": "GOOD"}
+      ]
+    }
+  ]
+}

@@ -9,5 +9,13 @@
     {"id": "rater_disagreement", "expected_decision": "REVISE"},
     {"id": "incomplete_roster", "expected_decision": "INCOMPLETE"}
   ],
-  "verification": "PASS_6_TESTS_2026-09-21"
+  "material_validation": {
+    "authority_files_present": true,
+    "expert_items": 10,
+    "reconstruction_tasks": 2,
+    "designer_assignments": 4,
+    "blind_identity_leaks": 0,
+    "result": "PASS"
+  },
+  "verification": "PASS_10_TESTS_2026-09-21"
 }

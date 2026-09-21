@@ -1781,3 +1781,8 @@
 - `py_compile`通过；两个JSON文件通过标准库解析。
 - 注册表校验和独立任务包校验通过，Q-01冻结输入未发生漂移。
 - Q-01目录不含项目禁用措辞；真实专家、独立设计者和盲态评分活动尚未执行，状态保持`IN_PROGRESS`。
+
+# 2026-09-21 Q-01完整材料验证
+- `tools/validate_q01_materials.py`通过：6份当前权威文件可访问，10个专家项与合同一致，2项任务覆盖质量状态，4名设计者顺序平衡，盲态身份泄露为0。
+- `tests/test_validate_q01_materials.py` 4/4通过；`tests/test_summarize_q01.py` 6/6通过；`git diff --check`通过。
+- 输入不可用节点均满足Response为空、Trend冻结；未生成或代填真实人员、CVI、重建得分和裁定。
