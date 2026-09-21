@@ -1787,3 +1787,5 @@
 - `tests/test_validate_q01_materials.py` 4/4通过；`tests/test_summarize_q01.py` 6/6通过；`git diff --check`通过。
 - 输入不可用节点均满足Response为空、Trend冻结；未生成或代填真实人员、CVI、重建得分和裁定。
 - 固定提交复核发现并修正两项P1：忽略的CSV未入Git、fade共享复色与Cumulative混写。修正后需从Git树重跑同组验证。
+- 修正后复验：Q-01专项10/10通过；根pytest `633 passed`；71项注册表、7个分发包、审计治理v1.2和U12治理均通过。
+- `git ls-tree`确认四份机器材料均已进入Git；复核后无未关闭P0-P2，Q-01继续`IN_PROGRESS`，未触发治理视图重绘。
