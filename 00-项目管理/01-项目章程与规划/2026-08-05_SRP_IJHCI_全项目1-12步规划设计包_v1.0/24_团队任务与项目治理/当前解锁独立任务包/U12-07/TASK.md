@@ -4,16 +4,16 @@
 
 ## 领取登记
 
-- 领取人：未领取
-- 分支：`codex/<task-id>-<short-name>`
+- 领取人：Codex(Grip)/小彬
+- 分支：`codex/u12-07-neutral-core-draft`
 - 第二复核人：未指定
-- 领取时间：未领取
+- 领取时间：2026-09-21
 
 ## 任务边界
 
 - 领域：论文写作
 - 波次：W2
-- 状态：`READY`
+- 状态：`IN_PROGRESS`
 - 类型：FIXED
 - 预计工作量：3人日
 - 前置依赖：U12-01、W-01
