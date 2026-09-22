@@ -7,7 +7,7 @@
   "input_snapshot_id": "3D3852D6A8F68C093B6963F03D1A7524BAD429C56D20D34B458AA6610C29F95B",
   "previous_input_snapshot_id": "3D3852D6A8F68C093B6963F03D1A7524BAD429C56D20D34B458AA6610C29F95B",
   "input_changed": false,
-  "candidate_identity": null,
+  "candidate_identity": "d601d25dc2be112177e8c20481b17d6f2fe3b1fd",
   "source_files": [
     {
       "source_path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
