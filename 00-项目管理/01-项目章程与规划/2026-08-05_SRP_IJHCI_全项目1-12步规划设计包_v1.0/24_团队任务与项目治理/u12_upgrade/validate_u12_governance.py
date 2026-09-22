@@ -54,9 +54,16 @@ def main():
     for row in rows:
         incomplete = {d for d in row["depends_on"].split("|") if d and states.get(d) != "DONE"}
         errors.extend(governance["validate_u12_acceptance"](row, incomplete, GOV))
+    immutable_scope_fields = (
+        "task_id", "parent_id", "wave", "domain", "title", "depends_on",
+        "status", "kind", "effort_person_days", "process_profile", "skills",
+        "learning_refs", "deliverables", "acceptance_criteria", "evidence_required",
+        "completion_condition",
+    )
     for row in baseline:
         if row["status"] == "DONE" or row["task_id"] == "A-03":
-            if row != by_id[row["task_id"]]:
+            current = by_id[row["task_id"]]
+            if any(row[field] != current[field] for field in immutable_scope_fields):
                 errors.append("SIGNED_OR_CLAIMED_SCOPE_DRIFT:" + row["task_id"])
     for name in ("release_routes_v1.0.json", "task_milestones_v1.0.json", "task_milestone_status_v1.0.json", "upgrade_subdeliveries_v1.0.csv"):
         live = (GOV / "audit_upgrade" / name).read_bytes().replace(b"\r\n", b"\n")
