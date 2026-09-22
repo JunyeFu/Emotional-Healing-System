@@ -9,7 +9,7 @@ SRP面向短时负性情绪调节的交互研究，比较**场景原生提示**�
 <!-- TEAM_PROGRESS_START -->
 ## 团队任务进度
 
-治理v1.2：71项任务（68固定+3模板）；DONE=24项（含18项原签收）；IN_PROGRESS=A-03；IN_REVIEW=U12-03；A-03-SPEC为DONE；READY=V-05/T-02/U12-06；真实准入与研究数值仍未冻结
+治理v1.2：71项任务（68固定+3模板）；DONE=24项（含18项原签收）；IN_PROGRESS=A-03/U12-06；IN_REVIEW=U12-03；A-03-SPEC为DONE；READY=V-05/T-02；真实准入与研究数值仍未冻结
 
 [![团队任务进度图](assets/readme/team-task-progress.svg)](assets/readme/team-task-progress.svg)
 
