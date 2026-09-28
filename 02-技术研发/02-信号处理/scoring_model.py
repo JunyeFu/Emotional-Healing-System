@@ -1,9 +1,11 @@
 """
-SRP Scoring Model v2.1 — 4 independent dimensions → weather composite.
+Legacy SRP scoring prototype used by the v1.2 development entrypoint.
 
-4 non-overlapping physiological pathways, each backed by SCI Q1 literature.
-See: srp参考文献/06-scoring-model-evidence/README.md (16 papers)
-     dimension_spec.py for dimension metadata and presets
+This is not the signed runtime v2.1/v2.2 contract, S-02 event detection,
+or opportunity-based Protocol Fidelity. The four score labels and presets
+are development heuristics, not established independent pathways.
+Historical design: agent/tasks/S-02/archive/评分模型设计.md.
+Current handoff: agent/tasks/S-02/outputs/current-events.md.
 
 Architecture:
   4 raw signals → 4 independent scores → 1 weather composite

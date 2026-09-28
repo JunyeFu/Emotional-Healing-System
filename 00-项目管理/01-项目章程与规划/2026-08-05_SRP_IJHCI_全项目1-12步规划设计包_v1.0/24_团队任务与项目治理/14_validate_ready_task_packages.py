@@ -8,12 +8,14 @@ import hashlib
 import json
 import pathlib
 import re
+import runpy
 import subprocess
 import sys
 
 
 ROOT = pathlib.Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT.parents[3]
+resolve_source = runpy.run_path(str(PROJECT_ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_source']
 REGISTRY = ROOT / "05_可领取任务包.csv"
 MAPPING = ROOT / "12_独立任务包文件映射_v1.0.json"
 OUTPUT = ROOT / "当前解锁独立任务包"
@@ -164,13 +166,13 @@ def main() -> int:
                     errors.append(f"{task_id}: package file is not in Git index {relative}")
 
         for item in manifest.get("source_files", []):
-            source = (PROJECT_ROOT / item["source_path"]).resolve()
+            source = resolve_source(PROJECT_ROOT, task_id, row['status'], item['source_path'])
             snapshot = (package_dir / item["package_path"]).resolve()
             if PROJECT_ROOT not in source.parents or not source.is_file():
                 errors.append(f"{task_id}: invalid source {item['source_path']}")
                 continue
             tracked = subprocess.run(
-                ["git", "ls-files", "--error-unmatch", "--", item["source_path"]],
+                ["git", "ls-files", "--error-unmatch", "--", source.relative_to(PROJECT_ROOT).as_posix()],
                 cwd=PROJECT_ROOT,
                 capture_output=True,
                 check=False,

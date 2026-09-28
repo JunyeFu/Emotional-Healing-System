@@ -1,0 +1,19 @@
+{
+  "task_id": "S-02",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\02-技术研发\\02-信号处理\\tests",
+        "D:\\Agent\\srp\\02-技术研发\\05-通信协议\\tests\\contract",
+        "D:\\Agent\\srp\\agent\\tasks\\S-02\\execution\\test_s02_contract.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "legacy signal regression and signed protocol plus current handoff software checks only",
+  "real_device_acceptance": "NOT_RUN"
+}

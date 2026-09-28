@@ -12,6 +12,7 @@ import shutil
 
 ROOT = pathlib.Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT.parents[3]
+resolve_source = runpy.run_path(str(PROJECT_ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_source']
 REGISTRY = ROOT / "05_可领取任务包.csv"
 MAPPING = ROOT / "12_独立任务包文件映射_v1.0.json"
 HANDBOOK_RENDERER = ROOT / "10_render_task_handbook.py"
@@ -135,8 +136,8 @@ def render_evidence_checklist(
     return render_checklist(items, None, False)
 
 
-def safe_source(relative: str) -> pathlib.Path:
-    path = (PROJECT_ROOT / relative).resolve()
+def safe_source(relative: str, task_id: str = '', status: str = '') -> pathlib.Path:
+    path = resolve_source(PROJECT_ROOT, task_id, status, relative)
     if PROJECT_ROOT not in path.parents or not path.is_file():
         raise ValueError(f"invalid source file: {relative}")
     return path
@@ -344,7 +345,7 @@ def main() -> None:
 
         copied: list[dict[str, object]] = []
         for index, relative in enumerate(task_map["source_files"], start=1):
-            source = safe_source(relative)
+            source = safe_source(relative, task_id, row['status'])
             snapshot_name = f"{index:02d}_{source.name}"
             destination = inputs_dir / snapshot_name
             if source.suffix.lower() in TEXT_SUFFIXES:

@@ -19,10 +19,10 @@
     "V-04",
     "D-01",
     "D-02",
-    "S-01"
+    "S-01",
+    "S-02"
   ],
   "remaining_packages": [
-    "S-02",
     "V-05",
     "U-03",
     "U-04",
@@ -614,6 +614,34 @@
       "status": "OPEN_REAL_OWNER",
       "description": "实际领取人为空；阈值和精度需前测冻结，不代填验收",
       "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+    },
+    {
+      "task_id": "S-02",
+      "id": "S02-N01",
+      "status": "FIXED_ACTIVE_DESIGN_ENTRY",
+      "description": "旧综合评分设计实际归档，活动入口改为步骤事件及机会PF，不借用旧文献主张",
+      "source": "agent/tasks/S-02/outputs/current-events.md"
+    },
+    {
+      "task_id": "S-02",
+      "id": "S02-N02",
+      "status": "FIXED_FROZEN_SOURCE_RELOCATION",
+      "description": "精确迁移保留A-03来源身份与原文，生成/校验仍检查哈希，副本未刷新",
+      "source": "agent/normalization-relocations.json"
+    },
+    {
+      "task_id": "S-02",
+      "id": "S02-N03",
+      "status": "OPEN_REAL_EVENTS_AND_PF",
+      "description": "四结构算法、真实标注和在线离线差未交付，容差与覆盖门仍待冻结",
+      "source": "agent/tasks/S-02/outputs/current-events.json"
+    },
+    {
+      "task_id": "S-02",
+      "id": "S02-N04",
+      "status": "OPEN_REAL_OWNER_AND_A03_DECISION",
+      "description": "实际领取人为空；A-03负责人须处理冻结旧评分来源影响，不代填裁定",
+      "source": "agent/tasks/S-02/evidence/consumer-impact.md"
     }
   ]
 }

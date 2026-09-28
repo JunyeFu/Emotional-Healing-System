@@ -162,11 +162,11 @@ def main():
             chain.add_paragraph(f"{finding['id']} {finding['status']}：{finding['description']}")
     chain.add_heading('待整理队列', level=1)
     remaining = [r['task_id'] for r in rows if r['task_id'] not in completed]
-    count = chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包。")
+    next_task = remaining[0] if remaining else '目录整体迁移'
+    count = chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包；根目录双层迁移未完成。下一项{next_task}。")
     count.paragraph_format.keep_with_next = True
     queue = chain.add_paragraph('、'.join(remaining))
     queue.paragraph_format.keep_together = True
-    chain.add_paragraph('根目录仍有旧业务目录，最终双层迁移未完成。下一包按上述队列顺序推进。')
     chain.save(ROOT / 'human/project-review.docx')
     progress = {'completed_packages': completed, 'remaining_packages': remaining,
                 'root_migration_complete': False, 'findings': findings}

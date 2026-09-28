@@ -8,5 +8,14 @@
       "migration_commit": "11a7971207af35726cb147e84187d24ac650983e",
       "reason": "Execution entry moved to Agent layer; historical scope and acceptance remain unchanged. Schema-check improvements were separately recorded in the task summary."
     }
+  ],
+  "frozen_sources": [
+    {
+      "task_id": "A-03",
+      "old_project_path": "02-技术研发/02-信号处理/评分模型设计.md",
+      "new_project_path": "agent/tasks/S-02/archive/评分模型设计.md",
+      "impact_path": "agent/tasks/S-02/evidence/consumer-impact.md",
+      "reason": "S-02 archives retired scoring design; preserve A-03 frozen source identity and original content, without accepting it as current research design."
+    }
   ]
 }
