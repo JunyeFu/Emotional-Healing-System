@@ -1912,3 +1912,12 @@
 - 初次Word生成发现错误的v2.2目录来源，已改为真实Schema和fixtures路径；生成与--check通过。本包3页、串联6页逐页可读，当前包措辞检查无命中。
 - 规范化10/71包，下一包U-02；真实渲染集成、教学登记与正式全链仍开放，不由本轮探针验证关闭。
 - Unity原始日志自带行尾空格，按已有F-03/F-05规则增加本包日志原字节属性，不改写日志内容；重新暂存后git diff --cached --check通过。
+
+## 2026-09-28 U-02双层规范化
+
+- verify.py实际运行Unity6000.4.9f1：EditMode105/105、PlayMode3/3；历史XML98项及127文件逐字节验证通过，参数规范化文本SHA-256一致。
+- 受控开发构建成功；隐藏窗口ScreenCapture及自动离屏相机曾保存黑帧，像素门实际拒绝frame_0000.png。改用StandardRequest显式渲染后120帧非空，ffprobe读取120帧960x600/12fps。
+- 主Agent与Raman独立查看0/24/48/72/96五阶段图，无残影和明显裁切；独立Agent重算全部像素门，最小标准差38.853，复审无开放P0-P3。
+- 07_validate_task_packages.py验证71项；14_validate_ready_task_packages.py验证5包46快照。状态未迁移，历史签署及进行中快照未改。
+- build_task_reviews.py U-02及--check通过。本包Word3页、串联Word6页逐页检查；当前TASK/outputs/复审报告不合规措辞检查无命中。
+- 本轮生成的空Resources目录与meta已清理；构建写入的preloadedAssets已恢复原值，未改正式Player配置。失败尝试归档，新证据不覆盖历史原件。

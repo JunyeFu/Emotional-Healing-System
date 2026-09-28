@@ -67,7 +67,7 @@ namespace SRP.V03
             sampleIntervalSeconds = sampleInterval;
         }
 
-        // ---- 会话生命周期（编排器在 segment 边界驱动）----
+        // ---- 会话生命周期（编排器在模块或会话边界驱动）----
 
         public void NotifySessionBegin() => SessionActive = true;
 

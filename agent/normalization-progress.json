@@ -9,10 +9,10 @@
     "G-02",
     "P-01",
     "P-02",
-    "U-01"
+    "U-01",
+    "U-02"
   ],
   "remaining_packages": [
-    "U-02",
     "T-01",
     "R-01",
     "V-01",
@@ -320,6 +320,41 @@
       "status": "OPEN_DOWNSTREAM_RENDER_INTEGRATION",
       "description": "适配器实际呈现、核心前教学接入和正式全链仍待下游；golden不能替代这些证据",
       "source": "agent/tasks/U-01/outputs/current-control-contract.md"
+    },
+    {
+      "task_id": "U-02",
+      "id": "U02-N01",
+      "status": "FIXED",
+      "description": "Recovery按模块/会话边界重置，锁定换段保持；新增生命周期回归通过",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
+    },
+    {
+      "task_id": "U-02",
+      "id": "U02-N02",
+      "status": "FIXED",
+      "description": "四天气合法空步骤与F-05对齐；非空缺实例仍拒绝",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
+    },
+    {
+      "task_id": "U-02",
+      "id": "U02-N03",
+      "status": "FIXED",
+      "description": "开发驱动条件编译，构建取得F-03作用域授权；正式门未放宽",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
+    },
+    {
+      "task_id": "U-02",
+      "id": "U02-N04",
+      "status": "FIXED",
+      "description": "历史原件可读取；新显式渲染演示120帧像素通过且五阶段可读，不再使用零图/黑帧成功计数",
+      "source": "agent/tasks/U-02/evidence/runtime/demo/pixel-check.json"
+    },
+    {
+      "task_id": "U-02",
+      "id": "U02-N05",
+      "status": "OPEN_DOWNSTREAM_INTEGRATION_AND_PATCH_SIGNOFF",
+      "description": "最终天气接线、实际回执、真实设备与正式运行仍待下游；本轮新补丁未追加真人签署",
+      "source": "agent/tasks/U-02/outputs/current-adapter-contract.md"
     }
   ]
 }

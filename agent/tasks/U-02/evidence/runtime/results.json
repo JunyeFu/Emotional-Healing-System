@@ -1,0 +1,22 @@
+{
+  "editmode_passed": 105,
+  "playmode_passed": 3,
+  "suites": {
+    "SRP.F03.Tests.DevReplayEditModeTests": 3,
+    "SRP.U01.Tests.U01EditModeTests": 14,
+    "SRP.V03.Tests.BackgroundSealTests": 4,
+    "SRP.V03.Tests.DegradationPolicyTests": 8,
+    "SRP.V03.Tests.LayerIsolationTests": 8,
+    "SRP.V03.Tests.LayerZeroCrosstalkTests": 12,
+    "SRP.V03.Tests.ParameterBoundsSnapshotTests": 8,
+    "SRP.V03.Tests.QualityBehaviorMatrixTests": 9,
+    "SRP.V03.Tests.RecoveryLockTests": 7,
+    "SRP.V03.Tests.V03FrameGoldenTests": 6,
+    "SRP.V03.Tests.V03FrameValidationTests": 16,
+    "SRP.V03.Tests.V03SceneAdapterTickTests": 10
+  },
+  "historical_editmode_passed": 98,
+  "historical_frames": 120,
+  "parameter_normalized_text_sha256": "8b7d2335cadbfdbe30e0a4364b644610cdc1bf13eb3da5651740635e4e90d937",
+  "scope": "Synthetic layers and Unity control probe; no formal build, final weather scene video or live devices"
+}

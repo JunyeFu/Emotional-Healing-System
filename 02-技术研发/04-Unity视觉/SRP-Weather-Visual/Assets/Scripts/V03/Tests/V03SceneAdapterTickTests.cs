@@ -1,11 +1,12 @@
 using NUnit.Framework;
+using System.IO;
 using UnityEngine;
 
 namespace SRP.V03.Tests
 {
     /// <summary>
     /// 编排器投影拆分最小验证：合法帧 → 四层各收各的投影；非法帧拒收计数；
-    /// 无帧保持现状；链路级降级分发；segment 边界重置锁定。
+    /// 无帧保持现状；链路级降级分发；模块边界重置锁定。
     /// 层间零串扰的完整负测试矩阵在 D3（设计文档 §7 阶段3）。
     /// </summary>
     public sealed class V03SceneAdapterTickTests
@@ -167,7 +168,7 @@ namespace SRP.V03.Tests
         }
 
         [Test]
-        public void Tick_SegmentChange_ResetsRecoveryLock_AndFiresBackgroundHook()
+        public void Tick_LockTransition_PreservesRecoveryLock_AndFiresBackgroundHook()
         {
             Assert.IsTrue(V03JsonFrameParser.TryParse(Frame20Json, out var f20, out _));
             source.Next = f20;
@@ -181,17 +182,62 @@ namespace SRP.V03.Tests
             adapter.Tick();
             Assert.IsTrue(recovery.IsLocked);
 
-            // segment 变化 + 恢复 GOOD → 边界重置解锁 → 新段首帧直通
-            f20.Segment = "closed_loop_cooldown";
+            var lockedValue = recovery.CurrentOutputValue;
+            // 同一模块进入锁定转场，不重置累计结果。
+            f20.Segment = "lock_transition";
             f20.FallbackState = "GOOD";
             f20.FallbackReason = null;
             f20.RecoveryValue = 0.5f;
             adapter.Tick();
 
-            Assert.IsFalse(recovery.IsLocked, "会话边界重置解锁");
-            Assert.AreEqual(0.5f, recovery.CurrentOutputValue, 1e-6f, "重置后首帧直通新值");
-            Assert.AreEqual("closed_loop_cooldown", background.LastSessionSegment);
+            Assert.IsTrue(recovery.IsLocked);
+            Assert.AreEqual(lockedValue, recovery.CurrentOutputValue, 1e-6f);
+            Assert.AreEqual("lock_transition", background.LastSessionSegment);
             Assert.AreEqual(2, background.SegmentChangeCount);
+        }
+
+        [Test]
+        public void Tick_ModuleChangeInSameSegment_ResetsRecoveryLock()
+        {
+            Assert.IsTrue(V03JsonFrameParser.TryParse(Frame20Json, out var frame, out _));
+            source.Next = frame;
+            source.HasFrame = true;
+            adapter.Tick();
+            adapter.NotifyLinkDown(V03LinkState.Unusable);
+            Assert.IsTrue(recovery.IsLocked);
+
+            frame.ModuleId = "heat";
+            frame.ModulePosition = 1;
+            frame.TargetPhase = "inhale";
+            frame.TargetStepId = "inhale_1";
+            frame.RecoveryValue = 0.5f;
+            Assert.IsTrue(adapter.Tick());
+            Assert.IsFalse(recovery.IsLocked);
+            Assert.AreEqual(0.5f, recovery.CurrentOutputValue, 1e-6f);
+        }
+
+        [Test]
+        public void Tick_NewSessionInSameModule_ResetsRecoveryLock()
+        {
+            Assert.IsTrue(V03JsonFrameParser.TryParse(Frame20Json, out var frame, out _));
+            source.Next = frame;
+            source.HasFrame = true;
+            adapter.Tick();
+            adapter.NotifyLinkDown(V03LinkState.Unusable);
+            frame.SessionId = "new-session";
+            frame.RecoveryValue = 0.6f;
+            Assert.IsTrue(adapter.Tick());
+            Assert.IsFalse(recovery.IsLocked);
+            Assert.AreEqual(0.6f, recovery.CurrentOutputValue, 1e-6f);
+        }
+
+        [Test]
+        public void DemoDriver_IsExcludedFromReleaseCompilation()
+        {
+            var path = Path.Combine(Application.dataPath, "Scripts/V03/DevTools/V03DegradationDemoDriver.cs");
+            var sourceText = File.ReadAllText(path);
+            StringAssert.StartsWith("#if UNITY_EDITOR || DEVELOPMENT_BUILD", sourceText);
+            StringAssert.EndsWith("#endif", sourceText.TrimEnd());
         }
 
         [Test]

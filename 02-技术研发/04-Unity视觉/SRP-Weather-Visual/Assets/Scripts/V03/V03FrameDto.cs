@@ -159,7 +159,8 @@ namespace SRP.V03
             }
 
             // 规则5 的帧级前置：storm hold_*、fade inhale_* 必须有步骤实例字段可区分
-            if (V03ModuleMap.RequiresV22StepBinding(f.ModuleId) && !hasTargetStep)
+            if (V03ModuleMap.RequiresV22StepBinding(f.ModuleId) && !hasTargetStep &&
+                !TargetLayerView.IsNonePhase(f.TargetPhase))
                 errors.Add("E_V22_BINDING_MISSING");
 
             // fallback_state 必须落在质量四态枚举内

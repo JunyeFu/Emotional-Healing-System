@@ -1,0 +1,20 @@
+{
+  "task_id": "U-02",
+  "checks": [
+    {
+      "name": "historical-import",
+      "exit_code": 0,
+      "log": "agent/tasks/U-02/evidence/runtime/historical-import.log"
+    },
+    {
+      "name": "editmode",
+      "exit_code": 0,
+      "log": "agent/tasks/U-02/evidence/runtime/editmode.log"
+    },
+    {
+      "name": "playmode",
+      "exit_code": 0,
+      "log": "agent/tasks/U-02/evidence/runtime/playmode.log"
+    }
+  ]
+}

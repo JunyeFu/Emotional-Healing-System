@@ -1,0 +1,14 @@
+{
+  "task_id": "U-02",
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/task_member_outputs/U-02",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/docs/adr/0003-reset-recovery-between-modules.md",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_参数边界与锁定规则_v1.0.json",
+    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03",
+    "02-技术研发/05-通信协议/runtime_contract_v22.py",
+    "agent/tasks/U-01/outputs/current-control-contract.md",
+    "agent/tasks/U-02/archive/evidence-v1"
+  ]
+}

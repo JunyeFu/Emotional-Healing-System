@@ -1,7 +1,7 @@
 {
     "name": "SRP.V03",
     "rootNamespace": "SRP.V03",
-    "references": [],
+    "references": ["Unity.ugui"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

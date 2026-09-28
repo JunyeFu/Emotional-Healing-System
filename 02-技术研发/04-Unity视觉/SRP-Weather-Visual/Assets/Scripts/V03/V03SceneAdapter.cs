@@ -20,6 +20,9 @@ namespace SRP.V03
 
         private IV03TelemetrySource source;
         private string lastAppliedSegment;
+        private string lastSessionId;
+        private string lastModuleId;
+        private int lastModulePosition = -1;
 
         public int RejectedFrameCount { get; private set; }
         public int AppliedFrameCount { get; private set; }
@@ -60,8 +63,10 @@ namespace SRP.V03
                 return false;
             }
 
-            // 会话边界：segment 变化 → 重置锁定/滤波 + 背景换场钩子
-            if (!string.Equals(frame.Segment, lastAppliedSegment, StringComparison.Ordinal))
+            // 累计结果在模块内保持，包括 lock_transition；只在模块或会话边界重置。
+            if (!string.Equals(frame.SessionId, lastSessionId, StringComparison.Ordinal) ||
+                !string.Equals(frame.ModuleId, lastModuleId, StringComparison.Ordinal) ||
+                frame.ModulePosition != lastModulePosition)
             {
                 if (recoveryLayer != null)
                 {
@@ -69,8 +74,13 @@ namespace SRP.V03
                     recoveryLayer.ResetSession();
                     recoveryLayer.NotifySessionBegin();
                 }
-                if (backgroundPass != null)
-                    backgroundPass.OnSessionSegmentChanged(frame.Segment);
+                lastSessionId = frame.SessionId;
+                lastModuleId = frame.ModuleId;
+                lastModulePosition = frame.ModulePosition;
+            }
+            if (!string.Equals(frame.Segment, lastAppliedSegment, StringComparison.Ordinal))
+            {
+                backgroundPass?.OnSessionSegmentChanged(frame.Segment);
                 lastAppliedSegment = frame.Segment;
             }
 

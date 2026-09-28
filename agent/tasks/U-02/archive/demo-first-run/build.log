@@ -1,0 +1,449 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.4/staging' branch; Version is '6000.4.9f1 (f7258d6eebbe) revision 16197005'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Channel LicenseClient-fujunye doesn't exist
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'zh' Physical Memory: 31965 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-09-28T10:12:20Z
+[Licensing::Module] Successfully launched the LicensingClient (PId: 29848)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-fujunye" at "2026-09-28T10:12:20.2896984Z"
+
+COMMAND LINE ARGUMENTS:
+D:\UnityEngine\6000.4.9f1\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-projectPath
+D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual
+-executeMethod
+SRP.V03.DevTools.V03DemoBuild.BuildPlayer
+-logFile
+D:\Agent\srp\agent\tasks\U-02\evidence\runtime\demo\build.log
+--v03-out=D:\Agent\srp\.artifacts-local\task-normalization\U-02\demo-player
+Successfully changed project path to: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual
+D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 29848, path: "D:/UnityEngine/6000.4.9f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+Player connection [44680]  Target information:
+
+Player connection [44680]  * "[IP] 192.168.1.63 [Port] 55504 [Flags] 2 [Guid] 3868329590 [EditorId] 3868329590 [Version] 1048832 [Id] WindowsEditor(7,fujunye) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [44680]  * "[IP] 172.31.96.1 [Port] 55504 [Flags] 2 [Guid] 3868329590 [EditorId] 3868329590 [Version] 1048832 [Id] WindowsEditor(7,fujunye) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [44680]  * "[IP] 198.18.0.1 [Port] 55504 [Flags] 2 [Guid] 3868329590 [EditorId] 3868329590 [Version] 1048832 [Id] WindowsEditor(7,fujunye) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [44680] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [44680] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              3e8da3dd054047c99f062d07d76832ef
+  Correlation Id:          c8b3b28dbb68900e40e8d08cf87bd06c
+  External correlation Id: 1020144920245977793
+  Machine Id:              A3z+bovYMTQAxNAIhKAEqyJFIVw=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-fujunye" (connect: 0.24s, validation: 0.15s, handshake: 0.04s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-fujunye-notifications" at "2026-09-28T10:12:20.4742206Z"
+[Licensing::Module] Connected to LicensingClient (PId: 29848, launch time: 0.01, total connection time: 0.43s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 15669700954561-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.47s
+[Package Manager] Connected to IPC stream "Upm-5648" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.4.9f1 (f7258d6eebbe)
+[Subsystems] Discovering subsystems at path D:/UnityEngine/6000.4.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Initialize mono
+Mono path[0] = 'D:/UnityEngine/6000.4.9f1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEngine/6000.4.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/UnityEngine/6000.4.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56648
+CodeReloadManager initialized
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/UnityEngine/6000.4.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: D:/UnityEngine/6000.4.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.004406 seconds.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.277 seconds
+Domain Reload Profiling: 587ms
+	BeginReloadAssembly (100ms)
+		CreateAndSetChildDomain (12ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (129ms)
+		LoadAssemblies (87ms)
+		AnalyzeDomain (123ms)
+			TypeCache.Refresh (123ms)
+				TypeCache.ScanAssembly (114ms)
+	FinalizeReload (278ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (37ms)
+			BeforeProcessingInitializeOnLoad (57ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (63ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 72 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.2d.animation@14.0.4 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.animation@011d329ac58b)
+    com.unity.2d.aseprite@4.0.2 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.aseprite@ccedfadacc51)
+    com.unity.2d.psdimporter@13.0.3 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.psdimporter@e58d0a2c1d48)
+    com.unity.2d.spriteshape@14.0.1 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.spriteshape@da3647ffbbd7)
+    com.unity.2d.tilemap.extras@7.0.1 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.tilemap.extras@66df903b3633)
+    com.unity.2d.tooling@2.0.2 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.tooling@9d6aff712598)
+    com.unity.cinemachine@3.1.7 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.cinemachine@f3f96bcb59af)
+    com.unity.collab-proxy@2.12.4 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.collab-proxy@0b1559bcd34e)
+    com.unity.ide.rider@3.0.40 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.ide.rider@e4950c6d131b)
+    com.unity.ide.visualstudio@2.0.27 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.ide.visualstudio@dc1ddd4f09b6)
+    com.unity.inputsystem@1.19.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.inputsystem@21a28c3a6c83)
+    com.unity.probuilder@6.1.2 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.probuilder@8be9724b2335)
+    com.unity.timeline@1.8.12 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.timeline@8cd8509afae5)
+    com.unity.visualscripting@1.9.11 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.visualscripting@8bed5ad90189)
+    com.unity.settings-manager@2.1.1 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86)
+    com.unity.splines@2.8.4 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.splines@9b00833aca09)
+    com.unity.2d.common@13.0.2 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.common@edfe77495b67)
+    com.unity.mathematics@1.3.3 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.nuget.newtonsoft-json@3.2.2 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.burst@1.8.29 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.burst@6bb9aca3ef38)
+    com.unity.searcher@4.9.4 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.unity.nuget.mono-cecil@1.11.6 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.4.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.test-framework.performance@aa81a99c4a75)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.sprite@b95cc7beb645)
+    com.unity.2d.tilemap@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.2d.tilemap@771fb19abead)
+    com.unity.multiplayer.center@1.0.1 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.4.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.render-pipelines.universal@5e27d3932650)
+    com.unity.test-framework@1.6.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.test-framework@76560ee600cb)
+    com.unity.ugui@2.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.ugui@1f2d1ab0d950)
+    com.unity.visualeffectgraph@17.4.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.visualeffectgraph@1d000c792c1e)
+    com.unity.modules.accessibility@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.shadergraph@17.4.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.shadergraph@06b482f4a9ba)
+    com.unity.render-pipelines.core@17.4.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.render-pipelines.core@d0f56ad6832a)
+    com.unity.ext.nunit@2.0.5 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.universal-config@17.4.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.render-pipelines.universal-config@0db4263b9e6b)
+    com.unity.collections@6.4.0 (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.unity.collections@5b6ebd78ccc0)
+  Git packages:
+    com.coplaydev.unity-mcp@https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#78ee5418415953b79c358bfe6355fcc3fde7912b (location: D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Library\PackageCache\com.coplaydev.unity-mcp@efaf786e8772)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.03 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Starting: D:\UnityEngine\6000.4.9f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s358ms
+[1068/1399  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.32 seconds), 1 items updated, 1399 evaluated
+AssetDatabase: script compilation time: 0.705179s
+Begin MonoManager ReloadAssembly
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Animation.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Animation.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Aseprite.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Aseprite.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Common.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Common.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Psdimporter.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Psdimporter.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.SpriteShape.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.SpriteShape.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.BurstCompatibilityGen.dll at Library/ScriptAssemblies/Unity.Collections.BurstCompatibilityGen.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.DocCodeSamples.dll at Library/ScriptAssemblies/Unity.Collections.DocCodeSamples.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.PerformanceTests.dll at Library/ScriptAssemblies/Unity.Collections.PerformanceTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.dll at Library/ScriptAssemblies/Unity.Collections.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.Playmode.dll at Library/ScriptAssemblies/Unity.Collections.Tests.Playmode.dll not valid. Loading of assembly skipped.
+Assembly Unity.InputSystem.IntegrationTests.dll at Library/ScriptAssemblies/Unity.InputSystem.IntegrationTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Mathematics.Tests.dll at Library/ScriptAssemblies/Unity.Mathematics.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Nuget.Mono-Cecil.dll at Library/ScriptAssemblies/Unity.Nuget.Mono-Cecil.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Config.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Searcher.EditorTests.dll at Library/ScriptAssemblies/Unity.Searcher.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Settings.Tests.dll at Library/ScriptAssemblies/Unity.Settings.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.ShaderGraph.Editor.Tests.dll at Library/ScriptAssemblies/Unity.ShaderGraph.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.UnifiedRayTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.VisualEffectGraph.Editor.Tests.dll at Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.VisualEffectGraph.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+<b><color=#2EA3FF>MCP-FOR-UNITY</color></b>: Auto-discovered 30 tools and 18 resources (48 total handlers)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MCPForUnity.Editor.Helpers.McpLog:Info (string,bool) (at ./Library/PackageCache/com.coplaydev.unity-mcp@efaf786e8772/Editor/Helpers/McpLog.cs:40)
+MCPForUnity.Editor.Tools.CommandRegistry:AutoDiscoverCommands () (at ./Library/PackageCache/com.coplaydev.unity-mcp@efaf786e8772/Editor/Tools/CommandRegistry.cs:100)
+MCPForUnity.Editor.Tools.CommandRegistry:Initialize () (at ./Library/PackageCache/com.coplaydev.unity-mcp@efaf786e8772/Editor/Tools/CommandRegistry.cs:50)
+MCPForUnity.Editor.Services.Transport.TransportCommandDispatcher:EnsureInitialised () (at ./Library/PackageCache/com.coplaydev.unity-mcp@efaf786e8772/Editor/Services/Transport/TransportCommandDispatcher.cs:203)
+MCPForUnity.Editor.Services.Transport.TransportCommandDispatcher:.cctor () (at ./Library/PackageCache/com.coplaydev.unity-mcp@efaf786e8772/Editor/Services/Transport/TransportCommandDispatcher.cs:76)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: ./Library/PackageCache/com.coplaydev.unity-mcp@efaf786e8772/Editor/Helpers/McpLog.cs Line: 40)
+
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-SRP-Weather-Visual
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  4.055 seconds
+Domain Reload Profiling: 4964ms
+	BeginReloadAssembly (272ms)
+		DisableScriptedObjects (23ms)
+		CreateAndSetChildDomain (148ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (557ms)
+		LoadAssemblies (310ms)
+		AnalyzeDomain (311ms)
+			TypeCache.Refresh (223ms)
+				TypeCache.ScanAssembly (209ms)
+			BuildScriptInfoCaches (78ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (4056ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (25ms)
+			BeforeProcessingInitializeOnLoad (148ms)
+			ProcessInitializeOnLoadAttributes (3415ms)
+			ProcessInitializeOnLoadMethodAttributes (309ms)
+			AfterProcessingInitializeOnLoad (4ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+(Values over 0.050ms)
+Asset Pipeline Refresh (id=13779294994491e4eb87ea07fa24cda2): Total: 6.403 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=4532 ms
+		Asset DB Callback time: managed=161 ms, native=34 ms
+		Scripting: domain reloads=1, domain reload time=912 ms, compile time=706 ms, other=55 ms
+		Project Asset Count: scripts=1886, non-scripts=4313
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokePackagesCallback: 35.959ms
+	ApplyChangesToAssetFolders: 0.548ms
+	Scan: 107.442ms
+	CategorizeScriptCompilationAssets: 55.474ms
+	ProcessAssetsWithTransientArtifactChanges: 87.586ms
+	CategorizeAssets: 63.881ms
+	CompileScripts: 706.147ms
+	ImportOutOfDateAssets: 4068.270ms (4066.189ms without children)
+		UnloadImportedAssets: 0.705ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.743ms
+		OnDemandSchedulerStart: 0.604ms
+	PostProcessAllAssets: 161.656ms
+		MonoPostProcessAllAssets: 161.587ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 90.836ms
+			SyncVS.PostprocessSyncProject 30.522ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 9.163ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 4.292ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 1.842ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 1.612ms
+			CinemachineSettings.OnPostprocessAllAssets 0.806ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.746ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.550ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.440ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.351ms
+			DomainReloadProcessor.OnPostprocessAllAssets 0.255ms
+	UnloadStreamsBegin: 2.131ms
+	PersistCurrentRevisions: 0.160ms
+	GenerateScriptTypeHashes: 2.481ms
+	GenerateScriptTypeSerializationHashes: 4.217ms
+	Untracked: 1107.969ms
+
+Application.AssetDatabase Initial Refresh End
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Scanning for USB devices : 14.745ms
+Initializing Unity extensions:
+Unloading 36 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9003 unused Assets / (3.1 MB). Loaded Objects now: 9888.
+Memory consumption went from 219.8 MB to 216.7 MB.
+Total: 8.667200 ms (FindLiveObjects: 0.449500 ms CreateObjectMapping: 0.282900 ms MarkObjects: 6.357700 ms  DeleteObjects: 1.575500 ms)
+
+Start importing Assets/Settings/UniversalRP.asset using Guid(681886c5eb7344803b6206f758bf0b1c) (NativeFormatImporter) -> (Import Result ID: '42e768dffa186910e24cba4c63a42fe3') in 0.0068939 seconds [static dependencies only]. Details - ImportResultOutputID=c76afcf7d9fc85b72a702b1189f2a845 DependenciesID=5033cea953f5e92f526f817f06fafb70 StaticDependenciesID=1379999542b1f1305f6ff300275c6610 
+Refreshing native plugins compatible for Editor in 2.08 ms, found 5 plugins.
+Asset Pipeline Refresh (id=4c98702bdf5bef64f9dffa09f132a53a): Total: 0.157 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+1 URP assets included in build
+- UniversalRP - Assets/Settings/UniversalRP.asset
+	 - ForwardRenderer - Assets/Settings/ForwardRenderer.asset - UnityEngine.Rendering.Universal.UniversalRendererData
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.Rendering.Universal.URPPreprocessBuild:LogIncludedAssets (System.Collections.Generic.List`1<UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset>) (at ./Library/PackageCache/com.unity.render-pipelines.universal@5e27d3932650/Editor/BuildProcessors/URPPreprocessBuild.cs:73)
+UnityEditor.Rendering.Universal.URPPreprocessBuild:OnPreprocessBuild (UnityEditor.Build.Reporting.BuildReport) (at ./Library/PackageCache/com.unity.render-pipelines.universal@5e27d3932650/Editor/BuildProcessors/URPPreprocessBuild.cs:32)
+UnityEditor.Build.BuildPipelineInterfaces/<>c__DisplayClass17_0:<OnBuildPreProcess>b__1 (UnityEditor.Build.IPreprocessBuildWithReport)
+UnityEditor.Build.BuildPipelineInterfaces:InvokeCallbackInterfacesPair<UnityEditor.Build.IPreprocessBuild, UnityEditor.Build.IPreprocessBuildWithReport> (System.Collections.Generic.List`1<UnityEditor.Build.IPreprocessBuild>,System.Action`1<UnityEditor.Build.IPreprocessBuild>,System.Collections.Generic.List`1<UnityEditor.Build.IPreprocessBuildWithReport>,System.Action`1<UnityEditor.Build.IPreprocessBuildWithReport>,bool)
+UnityEditor.Build.BuildPipelineInterfaces:OnBuildPreProcess (UnityEditor.Build.Reporting.BuildReport)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions)
+SRP.V03.DevTools.V03DemoBuild:BuildPlayer () (at Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs:61)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.universal@5e27d3932650/Editor/BuildProcessors/URPPreprocessBuild.cs Line: 73)
+
+BuildFailedException: UNCONTROLLED_DEVELOPMENT_BUILD
+  at SRP.Editor.FormalBuildGate.OnPreprocessBuild (UnityEditor.Build.Reporting.BuildReport report) [0x0003a] in D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Assets\Scripts\Editor\FormalBuildGate.cs:47 
+  at UnityEditor.Build.BuildPipelineInterfaces+<>c__DisplayClass17_0.<OnBuildPreProcess>b__1 (UnityEditor.Build.IPreprocessBuildWithReport bpp) [0x00000] in <d1fb1d0952624d8d8a5f883a28c2a524>:0 
+  at UnityEditor.Build.BuildPipelineInterfaces.InvokeCallbackInterfacesPair[T1,T2] (System.Collections.Generic.List`1[T] oneInterfaces, System.Action`1[T] invocationOne, System.Collections.Generic.List`1[T] twoInterfaces, System.Action`1[T] invocationTwo, System.Boolean exitOnFailure) [0x000b9] in <d1fb1d0952624d8d8a5f883a28c2a524>:0 
+UnityEngine.DebugLogHandler:Internal_LogException_Injected(Exception, IntPtr)
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEditor.Build.BuildPipelineInterfaces:InvokeCallbackInterfacesPair(List`1, Action`1, List`1, Action`1, Boolean)
+UnityEditor.Build.BuildPipelineInterfaces:OnBuildPreProcess(BuildReport)
+UnityEditor.BuildPipeline:BuildPlayerInternal_Injected(String[], ManagedSpanWrapper&, ManagedSpanWrapper&, BuildTargetGroup, BuildTarget, Int32, BuildOptions, String[], Boolean)
+UnityEditor.BuildPipeline:BuildPlayerInternal(String[], String, String, BuildTargetGroup, BuildTarget, Int32, BuildOptions, String[], Boolean)
+UnityEditor.BuildPipeline:BuildPlayer(BuildPlayerOptions)
+SRP.V03.DevTools.V03DemoBuild:BuildPlayer() (at Assets\Scripts\V03\DevTools\Editor\V03DemoBuild.cs:61)
+
+(Filename: Assets/Scripts/Editor/FormalBuildGate.cs Line: 47)
+
+Start importing Assets/Resources using Guid(d7c83541c591f2b469d3c80c83e9dee9) (DefaultImporter) -> (Import Result ID: 'd4c529e3787e95bf9912ce1c88556f0e') in 0.001773 seconds [static dependencies only]. Details - ImportResultOutputID=8ab2a74842ddc26f2eac0e3fceaa6f55 DependenciesID=1934f4f4a4be5c620f7f33c44002e065 StaticDependenciesID=ca8a3179838fb18f19c94ff97c5a2fe7 
+Asset Pipeline Refresh (id=1c7a887bcc4803c478296064d2e49281): Total: 0.041 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Settings/UniversalRP.asset using Guid(681886c5eb7344803b6206f758bf0b1c) (NativeFormatImporter) -> (Import Result ID: '42e768dffa186910e24cba4c63a42fe3') in 0.0014294 seconds [static dependencies only]. Details - ImportResultOutputID=c76afcf7d9fc85b72a702b1189f2a845 DependenciesID=5033cea953f5e92f526f817f06fafb70 StaticDependenciesID=1379999542b1f1305f6ff300275c6610 
+Asset Pipeline Refresh (id=c217709197ca69a4badbe661b32746df): Total: 0.015 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+DisplayProgressNotification: Build Failed
+Error building Player: BuildFailedException: UNCONTROLLED_DEVELOPMENT_BUILD
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 49 unused Assets / (10.8 KB). Loaded Objects now: 9899.
+Memory consumption went from 264.5 MB to 264.5 MB.
+Total: 7.469900 ms (FindLiveObjects: 0.415700 ms CreateObjectMapping: 0.139600 ms MarkObjects: 6.888000 ms  DeleteObjects: 0.026000 ms)
+
+Build Finished, Result: Failure.
+##utp:{"type":"PlayerBuildInfo","version":2,"phase":"Immediate","time":1790590349697,"processId":5648,"steps":[{"description":"Preprocess Player","duration":302}],"duration":302}
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (Import Result ID: '0cf3a9fcff65eeab03f856251276fb45') in 0.0030434 seconds [static dependencies only]. Details - ImportResultOutputID=d3ca6db29495033f6ec6c171ea098da8 DependenciesID=55d3d0724ac1f65e2de83fe64fda8a8c StaticDependenciesID=7fb2c4d23d249ecd5a92001b56314071 
+Start importing ProjectSettings/GraphicsSettings.asset using Guid(00000000000000006100000000000000) (LibraryAssetImporter) -> (Import Result ID: 'c4ed9cc67c58f8878519e55ca239c1fe') in 0.0014226 seconds [static dependencies only]. Details - ImportResultOutputID=5bd38efc7568c0c855c21a11ad435b27 DependenciesID=df8305c34f25208f20540c9d0043e3e1 StaticDependenciesID=84efcc5ff8235d7073a1f9c093f3b280 
+Start importing Assets/UniversalRenderPipelineGlobalSettings.asset using Guid(93b439a37f63240aca3dd4e01d978a9f) (NativeFormatImporter) -> (Import Result ID: 'f1eeb1570315935b01fe2404797e2117') in 0.0014144 seconds [static dependencies only]. Details - ImportResultOutputID=45e980d0d462dc079788ea0ae7e61811 DependenciesID=68e517626cf6c026f8e80d347e8de092 StaticDependenciesID=3cb184e6fc4e6263d81e324f85e8fe6c 
+Refreshing native plugins compatible for Editor in 2.01 ms, found 5 plugins.
+Asset Pipeline Refresh (id=b854fcc9282e28c40b72d4e84b9fb2f1): Total: 0.038 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+InvalidOperationException: V03 demo build failed: Failed errors=2
+  at SRP.V03.DevTools.V03DemoBuild.BuildPlayer () [0x000be] in D:\Agent\srp\02-技术研发\04-Unity视觉\SRP-Weather-Visual\Assets\Scripts\V03\DevTools\Editor\V03DemoBuild.cs:63 
+
+(Filename: Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs Line: 63)
+
+executeMethod method SRP.V03.DevTools.V03DemoBuild.BuildPlayer threw exception.
+Exiting without the bug reporter. Application will terminate with return code 1

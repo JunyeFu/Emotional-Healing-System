@@ -351,24 +351,30 @@ namespace SRP.V03.Tests
             }
             Assert.AreEqual(10, recovery.LockedFrameIgnoreCount);
 
-            // segment 边界：解锁 + 首帧直通 + 背景钩子记录一次
+            // 下一模块：解锁并以该模块新值起步，不以段变化代替模块边界。
             var fb = Frame(13);
-            fb.Segment = "closed_loop_cooldown";
+            fb.ModuleId = "heat";
+            fb.ModulePosition = 1;
+            fb.TargetPhase = "inhale";
+            fb.TargetStepId = "inhale_1";
             fb.RecoveryValue = 0.5f;
             Tick(fb);
             Assert.IsFalse(recovery.IsLocked, "session boundary must unlock");
             Assert.AreEqual(0.5f, recovery.CurrentOutputValue, 1e-6f, "first frame after reset passes through");
-            Assert.AreEqual("closed_loop_cooldown", background.LastSessionSegment);
-            Assert.AreEqual(2, background.SegmentChangeCount, "segment change fires hook exactly once");
+            Assert.AreEqual("closed_loop", background.LastSessionSegment);
+            Assert.AreEqual(1, background.SegmentChangeCount);
 
             // 边界后恢复低通跟随（第二帧不直通）
             var fc = Frame(14);
-            fc.Segment = "closed_loop_cooldown";
+            fc.ModuleId = "heat";
+            fc.ModulePosition = 1;
+            fc.TargetPhase = "inhale";
+            fc.TargetStepId = "inhale_1";
             fc.RecoveryValue = 0.8f;
             Tick(fc);
             Assert.Greater(recovery.CurrentOutputValue, 0.5f + 1e-5f, "following resumes after reset");
             Assert.Less(recovery.CurrentOutputValue, 0.8f - 1e-5f, "post-reset frames go through low-pass, not passthrough");
-            Assert.AreEqual(2, background.SegmentChangeCount, "same-segment frames must not re-fire the hook");
+            Assert.AreEqual(1, background.SegmentChangeCount, "same-segment frames must not re-fire the hook");
         }
 
         // ------------------------------------------------------------------

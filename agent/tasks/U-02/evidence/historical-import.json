@@ -1,0 +1,8 @@
+{
+  "task_id": "U-02",
+  "source_commit": "ab25a6b8df85c1326164eb8f9f0804d6d790dc87",
+  "source_prefix": "03-\u6d4b\u8bd5\u4e0e\u5b9e\u9a8c/evidence/U-02-grip/",
+  "file_count": 127,
+  "byte_comparison": "PASS",
+  "scope": "Signed historical evidence; not a new run or new signoff"
+}

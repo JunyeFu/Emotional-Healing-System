@@ -2,7 +2,8 @@
     "name": "SRP.V03.DevTools.Editor",
     "rootNamespace": "SRP.V03.DevTools",
     "references": [
-        "SRP.V03"
+        "SRP.V03",
+        "SRP.F03.Editor"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,0 +1,5 @@
+# 本轮首跑失败与修复
+
+首次修改模块级重置后，Unity EditMode返回2；101项中旧Unlock_OnlyAtSessionBoundary_ThenFollowsAgain仍把不存在的closed_loop_cooldown段当会话边界，预期解锁，实际正确保持锁定。
+
+保留此处XML与日志，不把失败结果覆盖成通过。随后按V-03模块级合同修正该测试，另补四天气合法空步骤消费测试，再生成evidence/runtime当前结果。

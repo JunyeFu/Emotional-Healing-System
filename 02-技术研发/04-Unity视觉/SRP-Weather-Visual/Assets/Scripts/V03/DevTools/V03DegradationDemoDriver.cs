@@ -1,7 +1,10 @@
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
 using System;
 using System.Collections;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 namespace SRP.V03
 {
@@ -54,23 +57,29 @@ namespace SRP.V03
                     SchemaVersion = "2.2",
                     FrameSeq = FrameCounter,
                     SessionId = "S-DEMO-0001",
+                    ClockDomainId = "demo-clock",
+                    SourceMonotonicNs = FrameCounter * 50_000_000L,
+                    ReceivedMonotonicNs = FrameCounter * 50_000_000L,
+                    SentMonotonicNs = FrameCounter * 50_000_000L,
                     ModuleId = "storm",
-                    Segment = "demo_main",
-                    CueMode = "rhythmic",
-                    TargetPhase = "inhale_1",
+                    Segment = "closed_loop",
+                    CueMode = "scene_native",
+                    RuntimeMode = "dev_replay",
+                    TargetPhase = "inhale",
                     TargetProgress = rhythm,
                     TargetCycleIndex = 1,
-                    TargetStepId = "storm_inhale_v22",
-                    ActualPhase = "inhale_1",
+                    TargetStepId = "inhale_1",
+                    ActualPhase = "inhale",
                     ActualProgress = rhythm,
                     ActualCycleIndex = 1,
-                    ActualStepId = "storm_inhale_v22",
+                    ActualStepId = "inhale_1",
                     ActualConfidence = Stage == DemoStage.Degraded ? 0.62f : 0.93f,
                     RecoveryValue = rhythm,
                     RecoveryLocked = false,
                     SignalQualityResp = Stage == DemoStage.Degraded ? 0.71f : 0.92f,
                     SignalQualityEcg = Stage == DemoStage.Degraded ? 0.68f : 0.88f,
                     RespDeviceState = Stage == DemoStage.Unusable ? "DEGRADED" : "CONNECTED",
+                    EcgDeviceState = "CONNECTED",
                     FallbackState = state,
                     FallbackReason = Stage == DemoStage.Good ? null : "demo injected fault",
                 };
@@ -96,6 +105,9 @@ namespace SRP.V03
         private string autoCaptureDir;
         private int autoFrameCounter;
         private bool autoDone;
+        private RenderTexture captureTarget;
+        private Camera captureCamera;
+        private Text captureText;
 
         private void Awake()
         {
@@ -108,7 +120,7 @@ namespace SRP.V03
             adapter.ConfigureLayers(target, actual, recovery, fallback, background);
             adapter.Bind(stub);
             clearTex = new Texture2D(1, 1);
-            clearTex.SetPixel(0, 0, new Color(0f, 0f, 0f, 0.55f));
+            clearTex.SetPixel(0, 0, new Color(0.08f, 0.09f, 0.10f, 1f));
             clearTex.Apply();
 
             foreach (string a in Environment.GetCommandLineArgs())
@@ -117,13 +129,61 @@ namespace SRP.V03
                     autoCaptureDir = a.Substring(CaptureArg.Length);
             }
             if (!string.IsNullOrEmpty(autoCaptureDir))
+            {
+                CreateCaptureView();
                 StartCoroutine(AutoRun());
+            }
+        }
+
+        private void CreateCaptureView()
+        {
+            Application.runInBackground = true;
+            var camera = new GameObject("CaptureCamera").AddComponent<Camera>();
+            captureCamera = camera;
+            camera.enabled = false;
+            camera.clearFlags = CameraClearFlags.SolidColor;
+            camera.backgroundColor = new Color(0.08f, 0.09f, 0.10f, 1f);
+            camera.cullingMask = 1 << 5;
+            captureTarget = new RenderTexture(960, 600, 24);
+            captureTarget.Create();
+            camera.targetTexture = captureTarget;
+            var canvasObject = new GameObject("CaptureCanvas", typeof(RectTransform), typeof(Canvas));
+            canvasObject.layer = 5;
+            var canvas = canvasObject.GetComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceCamera;
+            canvas.worldCamera = camera;
+            canvas.planeDistance = 1f;
+            var textObject = new GameObject("LayerStatus", typeof(RectTransform), typeof(Text));
+            textObject.layer = 5;
+            textObject.transform.SetParent(canvasObject.transform, false);
+            captureText = textObject.GetComponent<Text>();
+            captureText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            captureText.fontSize = 18;
+            captureText.color = new Color(0.92f, 0.96f, 1f);
+            captureText.alignment = TextAnchor.UpperLeft;
+            captureText.supportRichText = true;
+            var rect = captureText.rectTransform;
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.offsetMin = new Vector2(32f, 32f);
+            rect.offsetMax = new Vector2(-32f, -32f);
+        }
+
+        private void LateUpdate()
+        {
+            if (captureText != null)
+                captureText.text = "<b>U-02 Development Degradation Demo</b>\n\nStage: "
+                    + StageTitle(stage) + "\n\n" + LayerStatusText()
+                    + "\n\nSynthetic component probe, not a formal weather scene.\n"
+                    + "GOOD follows input; DEGRADED reduces certainty.\n"
+                    + "UNUSABLE / DISCONNECTED lock recovery; ResetSession unlocks.\n"
+                    + "Background has no target-rhythm interface.";
         }
 
         private IEnumerator AutoRun()
         {
             Directory.CreateDirectory(autoCaptureDir);
-            yield return null; // 等待首帧 OnGUI 布局稳定
+            yield return null;
 
             DemoStage[] sequence =
             {
@@ -137,7 +197,12 @@ namespace SRP.V03
                 for (int i = 0; i < FramesPerStage; i++)
                 {
                     yield return new WaitForEndOfFrame();
-                    CaptureFrame();
+                    if (!CaptureFrame())
+                    {
+                        Debug.LogError("V03_DEMO_CAPTURE_FAILED frame=" + autoFrameCounter);
+                        Application.Quit(1);
+                        yield break;
+                    }
                     autoFrameCounter++;
                 }
             }
@@ -153,15 +218,31 @@ namespace SRP.V03
             }
         }
 
-        private void CaptureFrame()
+        private bool CaptureFrame()
         {
-            var tex = ScreenCapture.CaptureScreenshotAsTexture();
-            byte[] png = tex == null ? null : tex.EncodeToPNG();
-            if (tex != null) DestroyImmediate(tex);
-            if (png == null) return;
+            if (captureTarget == null || !captureTarget.IsCreated()) return false;
+            Canvas.ForceUpdateCanvases();
+            RenderPipeline.SubmitRenderRequest(captureCamera,
+                new RenderPipeline.StandardRequest { destination = captureTarget });
+            var previous = RenderTexture.active;
+            var tex = new Texture2D(captureTarget.width, captureTarget.height, TextureFormat.RGB24, false);
+            byte[] png;
+            try
+            {
+                RenderTexture.active = captureTarget;
+                tex.ReadPixels(new Rect(0, 0, captureTarget.width, captureTarget.height), 0, 0);
+                tex.Apply();
+                png = tex.EncodeToPNG();
+            }
+            finally
+            {
+                RenderTexture.active = previous;
+                Destroy(tex);
+            }
             string path = Path.Combine(autoCaptureDir,
                 "frame_" + autoFrameCounter.ToString("D4") + ".png");
             File.WriteAllBytes(path, png);
+            return true;
         }
 
         private void Update()
@@ -184,7 +265,7 @@ namespace SRP.V03
             stub.Stage = next;
             if (next == DemoStage.ResetSession)
             {
-                // 会话边界重置：segment 变化 → ResetSession 解锁
+                // 演示显式结束并重置，不代表研究模块内的段切换。
                 recovery.NotifySessionEnd();
                 recovery.ResetSession();
                 recovery.NotifySessionBegin();
@@ -204,13 +285,15 @@ namespace SRP.V03
                 normal = { textColor = new Color(0.92f, 0.96f, 1f) }
             };
 
-            float w = Mathf.Min(720f, Screen.width - 40f);
-            GUI.DrawTexture(new Rect(20f, 20f, w, Screen.height - 40f), clearTex);
+            float w = Screen.width - 40f;
+            GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), clearTex);
 
             float y = 34f;
             GUI.Label(new Rect(40f, y, w - 40f, 32f),
-                "U-02 Degradation Demo  |  Stage: " + StageTitle(stage), headerStyle);
-            y += 46f;
+                "U-02 Degradation Demo", headerStyle);
+            y += 34f;
+            GUI.Label(new Rect(40f, y, w - 40f, 32f), "Stage: " + StageTitle(stage), headerStyle);
+            y += 42f;
 
             string[] labels = { "1 GOOD", "2 DEGRADED", "3 UNUSABLE", "4 DISCONNECTED", "5 ResetSession" };
             DemoStage[] vals =
@@ -226,13 +309,7 @@ namespace SRP.V03
             }
             y += 52f;
 
-            string text =
-                $"Target    phase=<b>{target.CurrentPhase}</b> progress={target.CurrentProgress:F3} behavior={target.LastBehavior}\n" +
-                $"Actual    mode={actual.CurrentOpacityMode} opacity={actual.CurrentOpacity:F3} static={actual.IsStaticFrame} conf={actual.CurrentConfidence:F2}\n" +
-                $"Recovery  locked=<b>{recovery.IsLocked}</b> out={recovery.CurrentOutputValue:F3} ignored={recovery.LockedFrameIgnoreCount}\n" +
-                $"Fallback  marker={fallback.CurrentMarker} certainty={fallback.CurrentVisibleCertainty:F3} reason={fallback.CurrentReason}\n" +
-                $"Background segChanges={background.SegmentChangeCount} (zero rhythm interface)\n" +
-                $"Adapter   applied={adapter.AppliedFrameCount} rejected={adapter.RejectedFrameCount} quality={adapter.LastQualityState}";
+            string text = LayerStatusText();
 
             var lines = text.Split('\n');
             foreach (var line in lines)
@@ -245,8 +322,20 @@ namespace SRP.V03
             string hint =
                 "Observe: GOOD follows frames; DEGRADED low-certainty envelope;\n" +
                 "UNUSABLE/DISCONNECTED freeze recovery lock (frames ignored);\n" +
-                "ResetSession is the ONLY unlock path; background never carries rhythm.";
+                "ResetSession explicitly ends and resets this development probe.";
             GUI.Label(new Rect(40f, y, w - 40f, 80f), hint, monoStyle);
+        }
+
+        private string LayerStatusText()
+        {
+            return
+                $"Target    phase=<b>{target.CurrentPhase}</b> progress={target.CurrentProgress:F3} behavior={target.LastBehavior}\n" +
+                $"Actual    mode={actual.CurrentOpacityMode} opacity={actual.CurrentOpacity:F3} static={actual.IsStaticFrame} conf={actual.CurrentConfidence:F2}\n" +
+                $"Recovery  locked=<b>{recovery.IsLocked}</b> out={recovery.CurrentOutputValue:F3} ignored={recovery.LockedFrameIgnoreCount}\n" +
+                $"Fallback  marker={fallback.CurrentMarker} certainty={fallback.CurrentVisibleCertainty:F3} reason={fallback.CurrentReason}\n" +
+                $"Background segChanges={background.SegmentChangeCount} (zero rhythm interface)\n" +
+                $"Adapter   applied={adapter.AppliedFrameCount} rejected={adapter.RejectedFrameCount} quality={adapter.LastQualityState}";
+
         }
 
         private static string StageTitle(DemoStage s)
@@ -264,6 +353,12 @@ namespace SRP.V03
         private void OnDestroy()
         {
             if (clearTex != null) DestroyImmediate(clearTex);
+            if (captureTarget != null)
+            {
+                captureTarget.Release();
+                Destroy(captureTarget);
+            }
         }
     }
 }
+#endif

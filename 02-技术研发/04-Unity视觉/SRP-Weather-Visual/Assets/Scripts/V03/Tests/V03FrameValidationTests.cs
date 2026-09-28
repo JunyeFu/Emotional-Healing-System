@@ -109,11 +109,27 @@ namespace SRP.V03.Tests
             f.ModuleId = "storm";
             f.TargetStepId = null;
             f.TargetCycleIndex = null;
-            f.TargetPhase = "none";
+            f.TargetPhase = "inhale";
             f.TargetProgress = 0f;
             var errors = V03FrameValidator.Validate(f);
             // storm 属 F-05_V2_2_REQUIRED：缺步骤实例绑定 → 阻塞相关 runtime 实现
             Assert.IsTrue(Contains(errors, "E_V22_BINDING_MISSING"), string.Join(",", errors));
+        }
+
+        [Test]
+        [TestCase("storm")]
+        [TestCase("heat")]
+        [TestCase("snow")]
+        [TestCase("fade")]
+        public void Rule4_AllWeatherEmptyTargetStep_Accepted(string moduleId)
+        {
+            var f = BuildValidFrame();
+            f.ModuleId = moduleId;
+            f.TargetStepId = null;
+            f.TargetCycleIndex = null;
+            f.TargetPhase = "none";
+            f.TargetProgress = 0f;
+            Assert.AreEqual(0, V03FrameValidator.Validate(f).Count);
         }
 
         [Test]
