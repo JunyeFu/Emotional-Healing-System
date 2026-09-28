@@ -164,7 +164,8 @@ def main():
     remaining = [r['task_id'] for r in rows if r['task_id'] not in completed]
     count = chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包。")
     count.paragraph_format.keep_with_next = True
-    chain.add_paragraph('、'.join(remaining))
+    queue = chain.add_paragraph('、'.join(remaining))
+    queue.paragraph_format.keep_together = True
     chain.add_paragraph('根目录仍有旧业务目录，最终双层迁移未完成。下一包按上述队列顺序推进。')
     chain.save(ROOT / 'human/project-review.docx')
     progress = {'completed_packages': completed, 'remaining_packages': remaining,

@@ -8,8 +8,11 @@ import pathlib
 import re
 import sys
 
+from jsonschema import Draft202012Validator
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+
+REPO = pathlib.Path(__file__).resolve().parents[4]
+ROOT = REPO / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 R01 = ROOT / "20_产品与场景设计" / "R-01_四层表示方案"
 PACKAGE = R01 / "R-01_四层候选语法与完整表示方案_v0.9-candidate.md"
 ACCEPTANCE = R01 / "R-01_验收记录.md"
@@ -96,6 +99,15 @@ def main() -> int:
     except (OSError, json.JSONDecodeError, ValueError) as exc:
         errors.append(f"JSON asset error: {exc}")
     else:
+        Draft202012Validator.check_schema(schema)
+        validator = Draft202012Validator(schema)
+        for name, value in (("native", native), ("abstract", abstract)):
+            for error in validator.iter_errors(value):
+                errors.append(f"{name} schema error at {list(error.path)}: {error.message}")
+        for name, value in (("missing", missing), ("coupled", coupled),
+                            ("unusable", unusable), ("confound", confound)):
+            if not list(validator.iter_errors(value)):
+                errors.append(f"{name} negative unexpectedly accepted by schema")
         if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
             errors.append("schema is not Draft 2020-12")
         if native.get("cue_mode") != "scene_native":

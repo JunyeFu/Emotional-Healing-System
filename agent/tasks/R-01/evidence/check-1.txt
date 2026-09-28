@@ -1,0 +1,1 @@
+PASS: R-01 candidate package; AC1-AC3; schema+2 valid fixtures+4 negatives; R-01=DONE; W-01 downstream unblocked

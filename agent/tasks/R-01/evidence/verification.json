@@ -1,0 +1,75 @@
+{
+  "task_id": "R-01",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\agent\\tasks\\R-01\\execution\\validate_candidate.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\R-01\\execution\\test_candidate.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": "current v1.2 primary/manipulation/native interpretation",
+      "exit_code": 0
+    }
+  ],
+  "schema_error_paths": {
+    "invalid-confound-budget.json": [
+      [
+        "confound_budget",
+        "motion_energy_relative_difference"
+      ],
+      [
+        "confound_budget",
+        "mean_luminance_absolute_difference"
+      ],
+      [
+        "confound_budget",
+        "visual_complexity_relative_difference"
+      ],
+      [
+        "confound_budget",
+        "eccentricity_difference_degrees"
+      ],
+      [
+        "confound_budget",
+        "occlusion_absolute_difference"
+      ],
+      [
+        "confound_budget",
+        "event_salience_relative_difference"
+      ]
+    ],
+    "invalid-coupled-actual.json": [
+      [
+        "layers",
+        "actual",
+        "source"
+      ]
+    ],
+    "invalid-missing-fallback.json": [
+      [
+        "layers"
+      ]
+    ],
+    "invalid-unusable-behavior.json": [
+      [
+        "fallback_contract",
+        "UNUSABLE"
+      ]
+    ],
+    "valid-storm-abstract-pacer.json": [],
+    "valid-storm-scene-native.json": []
+  },
+  "scope": "candidate configuration and current usage, not Unity or human evidence"
+}

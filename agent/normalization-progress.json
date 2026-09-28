@@ -11,10 +11,10 @@
     "P-02",
     "U-01",
     "U-02",
-    "T-01"
+    "T-01",
+    "R-01"
   ],
   "remaining_packages": [
-    "R-01",
     "V-01",
     "V-02",
     "V-03",
@@ -397,6 +397,34 @@
       "status": "FIXED_AND_INDEPENDENTLY_VERIFIED",
       "description": "独立复核两项验证器漏检及旧链接已修复，9项回归覆盖原复现；独立57项通过，复审无新P0-P3",
       "source": "agent/tasks/T-01/evidence/independent-review.md"
+    },
+    {
+      "task_id": "R-01",
+      "id": "R01-N01",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "旧Gate 2报告门不适用于v1.2，当前研究与天气使用入口已对齐，历史保留",
+      "source": "agent/tasks/R-01/outputs/current-representation.md"
+    },
+    {
+      "task_id": "R-01",
+      "id": "R01-N02",
+      "status": "FIXED",
+      "description": "旧校验器实际Schema漏检已修复，13项正负回归通过",
+      "source": "agent/tasks/R-01/evidence/verification.json"
+    },
+    {
+      "task_id": "R-01",
+      "id": "R01-N03",
+      "status": "OPEN_HUMAN_REVIEW",
+      "description": "历史仅模型候选审查，无真实团队双签；不代署，由团队总监安排",
+      "source": "agent/tasks/R-01/TASK.md"
+    },
+    {
+      "task_id": "R-01",
+      "id": "R01-N04",
+      "status": "OPEN_DOWNSTREAM_CONFIGURATIONS",
+      "description": "仅storm双条件合法fixture，真实四结构配置与渲染由U-03至U-07补齐",
+      "source": "agent/tasks/R-01/evidence/consumer-impact.md"
     }
   ]
 }

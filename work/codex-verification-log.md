@@ -1,5 +1,13 @@
 # Codex Verification Log
 
+## 2026-09-28 R-01规范化验证
+
+- py -3.14 agent/tasks/R-01/execution/verify.py：候选完整性、实际Schema、13项pytest及当前v1.2三项角色检查通过。
+- 历史R-01候选/Schema/fixture/验收与U12-03冻结快照git diff为空；不新增真人签收。
+- 注册表71项通过；因唯一执行路径迁移导致registry hash变化，生成器刷新5包元数据，47份快照校验通过，未更新进行中输入。
+- Word本包3页、串联8页，所有变化页面视觉检查通过；串联前6页与已查版本像素一致；修正待整理队列跨页拆开的问题。
+- 当前13/71包，下一包V-01；四天气合法配置与真人材料证据待下游，根目录迁移仍未完成。
+
 ## 2026-09-19 入口改名前置加固（03-SRP → emotional-healing-system）
 
 - 6处硬编码路径改为动态识别：validate_team_tool_baseline.py workspace断言改为比对PROJECT_ROOT；render_governance_views.py看板链接、13_render_ready_task_packages.py包内链接改为PROJECT_ROOT.as_posix()拼接；build_adaptation.py说明文本改为"仓库根目录"；clean_default_demo.ps1 Scratch默认参数改为$PSScriptRoot相对推导；build_briefs.ps1跨项目builder路径改为AGENT_ROOT环境变量可覆盖。

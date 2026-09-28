@@ -3,10 +3,10 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "T-02",
   "status": "READY",
-  "registry_sha256": "F490F67BF642B4CA29658B5B3738DB3FFF437F21AA54EC93D7478FD233C02D95",
+  "registry_sha256": "DC7752B5921129AEB7BF1417A767D06B5EC9CD30C960C00D332628183183EF9E",
   "input_snapshot_id": "E921C5EDD9ADE7138C2EFFCE13E41F92011D576170E23940701BE5BF2367F7D6",
-  "previous_input_snapshot_id": "785945CA1401732769377E3C37C3ED55A25CCCEEC2D5051CD0D1F06A1E3E47C6",
-  "input_changed": true,
+  "previous_input_snapshot_id": "E921C5EDD9ADE7138C2EFFCE13E41F92011D576170E23940701BE5BF2367F7D6",
+  "input_changed": false,
   "candidate_identity": null,
   "source_files": [
     {
