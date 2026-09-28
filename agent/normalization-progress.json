@@ -38,10 +38,10 @@
     "Q-02",
     "Q-03",
     "X-01",
-    "X-02"
+    "X-02",
+    "X-03"
   ],
   "remaining_packages": [
-    "X-03",
     "Z-01",
     "G-05",
     "E-01",
@@ -1118,6 +1118,27 @@
       "status": "OPEN_MODEL_OPE_DATA_AND_RESPONSIBILITY",
       "description": "训练器、OPE/ESS、真实锁定资料、负责人及E-05冻结证据仍缺，WAIT_DEP未签署",
       "source": "agent/tasks/X-02/outputs/current-policy.json"
+    },
+    {
+      "task_id": "X-03",
+      "id": "X03-N01",
+      "status": "FIXED_V22_CAPABILITY_DESCRIPTION",
+      "description": "活动说明订正，v2.2步骤身份不等于动态顺序，当前冻结策略仍拒绝",
+      "source": "agent/tasks/X-03/outputs/current-runtime.md"
+    },
+    {
+      "task_id": "X-03",
+      "id": "X03-N02",
+      "status": "FIXED_TEST_STORE_BINDING",
+      "description": "测试复现核心/代理存储不一致，绑定同一耐久存储后复测；业务和安全重放边界不改",
+      "source": "agent/tasks/X-03/evidence/initial-failure-disposition.md"
+    },
+    {
+      "task_id": "X-03",
+      "id": "X03-N03",
+      "status": "OPEN_DYNAMIC_RUNTIME_AND_REAL_EVIDENCE",
+      "description": "加载器、动态顺序/状态、策略安全重放、同构建及真实冻结/真链未交付，WAIT_DEP未签署",
+      "source": "agent/tasks/X-03/outputs/current-runtime.json"
     }
   ]
 }

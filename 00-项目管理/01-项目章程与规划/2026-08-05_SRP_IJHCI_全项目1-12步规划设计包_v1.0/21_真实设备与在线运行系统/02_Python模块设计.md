@@ -42,5 +42,5 @@
 - 算法版本写入每个派生文件；
 - 正式阈值不从结果方向反推。
 - Unity只维护渲染镜像，TouchDesigner只读；两者都不能推进`SessionCore`状态。
-- v2.1只支持预先确定的完整天气顺序；阶段三冻结策略在v2.2合同完成前返回`ADAPTIVE_SEQUENCE_REQUIRES_V2_2`。
+- 当前P-01在v2.1及v2.2均只支持预先确定的完整天气顺序；F-05步骤合同不提供动态顺序接口。阶段三冻结策略仍返回历史原因码`ADAPTIVE_SEQUENCE_REQUIRES_V2_2`，实际升级、决策状态和安全重放交接见`agent/tasks/X-03/outputs/current-runtime.md`，不能仅换版本号绕过。
 - 默认P-01依赖只允许合成回放；P-02候选未签收或未正式装配、X-01和G-02正式门未接入时，`formal_*`失败关闭。

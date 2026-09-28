@@ -1,0 +1,7 @@
+{
+  "date": "2026-09-29",
+  "root_pytest": {"command": "py -3.14 -m pytest -q", "passed": 635, "seconds": 49.46, "exit_code": 0},
+  "task_registry": {"entries": 71, "exit_code": 0},
+  "independent_packages": {"packages": 5, "snapshots": 61, "exit_code": 0},
+  "scope": "Python and unchanged governance; no dynamic runtime, same-build evidence or new signature"
+}

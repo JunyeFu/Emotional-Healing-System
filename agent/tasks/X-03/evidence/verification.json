@@ -1,0 +1,25 @@
+{
+  "task_id": "X-03",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\X-03\\execution\\test_runtime_handoff.py",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_core\\test_manifest.py",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_store\\test_recording_replay.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "existing fixed core and replay restrictions, current runtime handoff only",
+  "dynamic_policy": "NOT_IMPLEMENTED",
+  "readonly_model": "NOT_VERIFIED",
+  "real_stage3": "NOT_RUN",
+  "unity_same_build": "NOT_VERIFIED",
+  "td": "NOT_RUN",
+  "new_independent_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_RUN"
+}
