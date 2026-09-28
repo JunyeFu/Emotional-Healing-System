@@ -32,10 +32,10 @@
     "A-01",
     "A-02",
     "A-03",
-    "W-01"
+    "W-01",
+    "I-01"
   ],
   "remaining_packages": [
-    "I-01",
     "Q-01",
     "Q-02",
     "Q-03",
@@ -978,6 +978,34 @@
       "status": "HANDOFF_U12_07_SIGNED_TEXT_REVISION",
       "description": "已签收U12-07仍含旧RQ/有序门/八题写法，隔离当前权威并需其新候选修订，不改签名",
       "source": "agent/tasks/W-01/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "I-01",
+      "id": "I01-N01",
+      "status": "CLARIFIED_RECORDING_AND_OPTIONAL_TD",
+      "description": "同一记录代理装配、L1先存后发及无TD独立体验交接明确，不删除T-02原依赖",
+      "source": "agent/tasks/I-01/outputs/current-integration.md"
+    },
+    {
+      "task_id": "I-01",
+      "id": "I01-N02",
+      "status": "CLARIFIED_EXTERNAL_DISPLAY_MEASUREMENT",
+      "description": "软件渲染回执不等于屏幕外部时间，跨时钟映射与冻结阈值仍待实测",
+      "source": "agent/tasks/I-01/outputs/current-integration.json"
+    },
+    {
+      "task_id": "I-01",
+      "id": "I01-N03",
+      "status": "OPEN_REAL_CHAIN_AND_OWNER",
+      "description": "真实双设备、最终八呈现、完整装配、多小时压力、外部延迟和真实负责人仍缺，保持WAIT_DEP_EXTERNAL",
+      "source": "agent/tasks/I-01/TASK.md"
+    },
+    {
+      "task_id": "I-01",
+      "id": "I01-N04",
+      "status": "OPEN_TEACHING_EXPOSURE_INTEGRATION",
+      "description": "核心start登记不能覆盖教学后退出，需P-01/U12-11完成首次条件教学前登记",
+      "source": "02-技术研发/srp_session_core/README.md"
     }
   ]
 }

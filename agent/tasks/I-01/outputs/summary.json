@@ -1,0 +1,33 @@
+{
+  "task_id": "I-01",
+  "title": "I01 双真机完整链与外部延迟交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "I-01仍WAIT_DEP_EXTERNAL、未领取。固定五目录和真实验收交接已建立，216项交接/主机回归通过；真实双设备、八种呈现、装配、外部延迟、多小时压力及干净机器证据未交付，不构成LIVE_E2E或业务签收。",
+  "historical_acceptance": {"reviewer": "未签署", "date": "尚未发生", "commit": "", "method": "Codex核对注册表、当前上游说明、真实接口fixture与主机测试；未启动Unity/TD或设备，未取得外部测量与真人签收。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["约5人日、P-INTEGRATION；原八项依赖不改。一个真实领取人负责跨模块闭环，当前负责人和复核人均未指定；本轮整理不替代团队领取。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1双真机在干净机器完成默认800秒四天气各一次；AC2关闭TD/Spout仍体验、采集与落盘，端口和权限负测通过；AC3外部延迟P95、偏差、漂移、不确定度及故障行为达到事前冻结目标。", "五天依次核对输入及资格、装配纵向链、外部测量、故障与压力、封存重放及移交；pytest与Unity中文教程沿用原任务链接，不新增学习平台或强制工具。"]},
+    {"heading": "实际交付", "paragraphs": ["新增TASK、来源、当前装配JSON/Markdown、校验入口、主机验证与总结。检查未发现I-01专属旧活动工具，因此没有虚构删除或搬迁；共享代码和历史签署保持原位，整体收拢仍待执行。", "明确同一RecordingSessionCore供控制服务与主机，真实通知留L0、L1耐久后发送遥测；TD可选但T-02原依赖仍保留。未创建设备模拟完成或伪造正式门。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["四时间点为设备采样、主机接收、主机发送及Unity软件渲染；当前回执有rendered_monotonic_ns，但不是屏幕外部测量。跨时钟须映射，不直接相减；ACK超时不作为呈现延迟阈值。", "24排列×双条件是48条主机覆盖，不等于48次真人运行。核心800秒不含前后测和教学；教学前登记暴露尚待P-01/U12-11接入，不能只靠核心start。真实配置、外部测量目标和多小时压力时长均未冻结。"]},
+    {"heading": "验证与结果", "paragraphs": ["216项通过，其中15项本包交接/负例和201项已有SessionCore/SessionStore主机测试；覆盖TCP身份、重试、端口/权限、UDP、记录及无副作用重放的既有行为。没有以主机测试替代Unity像素或双设备链。", "根回归635项、注册表71项及5包61快照通过，结果见evidence/regression.json；对应方法和数量只支持软件回归。LIVE_E2E、外部屏幕、真机持续采集及干净机器仍未执行。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["原任务仅列四时间戳与外部延迟，缺当前软件回执和显示测量的区分；当前交接明确时钟域、事件关联、P95与不确定度，未倒填阈值。泛化测试目录导航新增本包真实入口，不把他包签收称完整链完成。", "首次核验完成子进程后因evidence目录不存在未保存结果，已在运行前创建固定目录并重跑；初次失败说明保留。无归档工具不虚构清理，无真实姓名不代填签收。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["根任务目录只留TASK和inputs/execution/evidence/outputs/archive。工具执行写本包证据，源码仍是共享唯一模块；历史与冻结输入不改，最终根目录双层迁移统一更新引用。", "当前解释由Agent事实生成Word；未发现可清理旧I-01执行脚本，archive记录实际检查与保留理由，而不是空称已迁移。业务状态未变，不重复生成SVG。"]},
+    {"heading": "上下游交接", "paragraphs": ["D-01/D-02交原始通知，S-01交时钟/SQI，S-02交Actual与在线PF；P-01定状态时钟，P-02定存储与重放，U-08交八呈现成品，T-02交可选操作台请求。接口和实际资格不能由DONE标签代替。", "Q-03需要真实系统和A-03-REAL等前置；X-01/Z-01按原依赖消费完整链，当前不解锁。仓库外受限原件、活动许可归G-05及数据责任人；主机负载、签署基线和样片不代替LIVE_E2E。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["本包无真人签署或已完成声明；Codex本轮负责规范化，不接替真实设备与集成负责人。后续复核须针对实际同次证据，不能把其他任务傅钧烨签收移植到本包。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["规范化34/71、剩余37、下一Q-01。当前交接可用于领取和装配；真实工程关闭仍受原AC、外部门与证据约束。整体任务与根目录迁移继续。"]},
+    {"heading": "审阅来源", "paragraphs": ["实际注册表及手册、P-01/P-02公开接口、D/S/U/T当前交接、v2.2回执fixture及Python主机测试；没有重新联网审查或新增机构批准。"]}
+  ],
+  "findings": [
+    {"id": "I01-N01", "status": "CLARIFIED_RECORDING_AND_OPTIONAL_TD", "description": "同一记录代理装配、L1先存后发及无TD独立体验交接明确，不删除T-02原依赖", "source": "agent/tasks/I-01/outputs/current-integration.md"},
+    {"id": "I01-N02", "status": "CLARIFIED_EXTERNAL_DISPLAY_MEASUREMENT", "description": "软件渲染回执不等于屏幕外部时间，跨时钟映射与冻结阈值仍待实测", "source": "agent/tasks/I-01/outputs/current-integration.json"},
+    {"id": "I01-N03", "status": "OPEN_REAL_CHAIN_AND_OWNER", "description": "真实双设备、最终八呈现、完整装配、多小时压力、外部延迟和真实负责人仍缺，保持WAIT_DEP_EXTERNAL", "source": "agent/tasks/I-01/TASK.md"},
+    {"id": "I01-N04", "status": "OPEN_TEACHING_EXPOSURE_INTEGRATION", "description": "核心start登记不能覆盖教学后退出，需P-01/U12-11完成首次条件教学前登记", "source": "02-技术研发/srp_session_core/README.md"}
+  ],
+  "next_task": "Q-01",
+  "source_links": [
+    {"label": "当前完整链与外部测量交接", "path": "agent/tasks/I-01/outputs/current-integration.md"},
+    {"label": "当前状态和未冻结目标", "path": "agent/tasks/I-01/outputs/current-integration.json"},
+    {"label": "本轮主机核验", "path": "agent/tasks/I-01/evidence/verification.json"},
+    {"label": "实施过程及验收工作单", "path": "agent/tasks/I-01/TASK.md"}
+  ]
+}

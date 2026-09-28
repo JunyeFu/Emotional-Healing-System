@@ -1,0 +1,23 @@
+{
+  "task_id": "I-01",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\I-01\\execution\\test_integration_handoff.py",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_core",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_store"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "handoff and synthetic Python host transport, recording and replay tests only",
+  "real_devices": "NOT_RUN",
+  "unity": "NOT_RUN",
+  "td": "NOT_RUN",
+  "external_measurement": "NOT_RUN",
+  "live_e2e": "NOT_RUN"
+}

@@ -35,6 +35,7 @@
 | 看机会PF护栏与缺失统计 | `agent/tasks/A-02/outputs/current-statistics.md`（两分析集、候选MI与正式冻结边界） |
 | 看测量计分与合成可行性 | `agent/tasks/A-03/outputs/current-statistics.md`（SPEC原签署、REAL/CAL及当前SAP交接） |
 | 看最近工作与论文骨架 | `agent/tasks/W-01/outputs/current-paper.md`（历史候选范围、PANAS主比较及A-06核心收尾） |
+| 看双真机完整链与外部延迟 | `agent/tasks/I-01/outputs/current-integration.md`（同一记录代理、无TD运行及尚未交付的LIVE_E2E） |
 | 看真实设备采集交接 | `agent/tasks/D-01/outputs/current-acquisition.md`（ECG/RR原始通道、P-02记录与待完成验收） |
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |
 | 看双设备同步与SQI | `agent/tasks/S-01/outputs/current-quality.md`（连接与质量区分、时钟字段与未完成取证） |

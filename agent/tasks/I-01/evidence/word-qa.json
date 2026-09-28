@@ -1,0 +1,11 @@
+{
+  "task_id": "I-01",
+  "date": "2026-09-29",
+  "summary_pages": 3,
+  "summary_inspected_pages": [1, 2, 3],
+  "chain_pages": 19,
+  "chain_previously_inspected_identical_pages": "1-18, byte-identical to W-01 rendered pages",
+  "chain_inspected_pages": [19],
+  "result": "PASS",
+  "scope": "Readable text and no visible clipping; not real-system or human acceptance"
+}

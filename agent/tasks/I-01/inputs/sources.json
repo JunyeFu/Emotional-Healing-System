@@ -1,0 +1,17 @@
+{
+  "task_id": "I-01",
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "02-技术研发/srp_session_core/README.md",
+    "agent/tasks/P-02/outputs/current-store-contract.md",
+    "agent/tasks/D-01/outputs/current-acquisition.md",
+    "agent/tasks/D-02/outputs/current-acquisition.md",
+    "agent/tasks/S-01/outputs/current-quality.json",
+    "agent/tasks/S-02/outputs/current-events.md",
+    "agent/tasks/U-08/outputs/current-product.md",
+    "agent/tasks/T-02/outputs/current-operator-contract.md",
+    "02-技术研发/05-通信协议/contracts/fixtures-v2.2/valid/render-receipt.json",
+    "02-技术研发/tests/session_core/test_transport.py",
+    "02-技术研发/tests/session_store/test_recording_replay.py"
+  ]
+}
