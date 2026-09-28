@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-29",
+  "root_pytest": {"passed": 635, "seconds": 50.10, "exit_code": 0},
+  "task_registry": {"entries": 71, "exit_code": 0},
+  "independent_packages": {"packages": 5, "snapshots": 61, "exit_code": 0},
+  "specialized_tests": {"passed": 22, "seconds": 7.00, "exit_code": 0},
+  "actual_asset_gate": {"items": 225, "blockers": 269, "release_allowed": false, "exit_code": 2},
+  "scope": "Existing authority and read-only gates; no candidate build, clean checkout rebuild or new signature"
+}

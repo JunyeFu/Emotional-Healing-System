@@ -1,0 +1,130 @@
+{
+  "task_id": "Z-01",
+  "title": "Z01 候选制品与干净重建交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "Z-01仍WAIT_DEP、未领取未签收。工具权威三处偏离已修复，22项专项通过；当前资产扫描225项、269个阻断，三个匹配候选、完整锁与独立干净重建未交付。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "本包无独立候选验收或真实签署。本轮Codex整理与实测不继承F-03/T-01/G-02签收范围。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "约5人日，依赖I-01/A-02/A-03/U-08/G-02。候选与阶段锁定、公开批准分开；核心稿不因本包而等待可选阶段三。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1另一人从干净检出重建；AC2Unity/Python/TD版本与协议配置匹配且无TD体验成立；AC3完整环境锁、SBOM、许可和实际制品字节哈希齐全。",
+        "五日依次接收上游、独立环境、三个制品、样例与清单、独立复现。需交付负责人、重建者和签收人，TASK附国内Git/文档资料。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK与五目录、现状、消费者影响及12项新专项。工具原清单/说明逐字节归档，现权威订正定位、11项直接依赖与已固定MCP，校验器同步修复。",
+        "运行业务、包锁、资产台账、原签署及领取快照不改，没有伪造候选构建器或SBOM。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "实际权威检查复现旧目录、漏依赖和要求#main三处错误；相对检出根、extras查分发包、MCP精确提交按既有工程订正，不升级软件。",
+        "F-03仅DEV-REPLAY，T-01可读性候选未新签收，默认仅SampleScene。U-08真实结构若变，正式门同步升级验收，不补空壳或用开发授权绕过。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "22项专项通过：12项新交接/基线负测及10项既有资产/Unity门测试；工具权威复测通过。首次测试误读依赖字段，改depends_on后复测，原输出保留。",
+        "真实资产门阻断：225项、269问题，未登记57、忽略文件194、移除11、哈希变化4、待替换3。台账未改，当前不得发布；根与治理回归见regression.json。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "原清单仅供历史解释；当前规则修复不是成员安装或正式环境通过。新许可结果不能用旧PASS覆盖。",
+        "含时间戳的两次构建不强求二进制相同，每次制品分别字节哈希，功能与输入输出复现另验；资产报告不替代跨栈完整SBOM。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "五目录保存来源、脚本、实测、现状与历史，Word从同一事实生成。无旧Z-01工具可迁移；F-03/T-01不重复复制，共享工程待全包后实际收拢。",
+        "快照映射未引用本轮两清单，输入身份和业务状态保持；不重绘业务SVG，不冒充根目录已迁移。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "U-08供参与者构建、I-01供真链、A-02/A-03供统计配置、A-01供离线样例、T-02供操作台；G-02真实门和G-05批准分别满足。",
+        "候选交G-03/G-04阶段锁定、W-03独立投稿复现与公开审批、W-04归档；实际版本与运行匹配不以标签相同或上游DONE代替。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "交付负责人、独立重建者和复核人未落实。不代填环境通过、候选PASS或真人名字；上游签署只在其原范围成立。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计41/71、剩余30，下一G-05。完整候选、传递锁、SBOM、真链和独立重建仍缺，WAIT_DEP保持；整体目录收拢继续。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "注册表、环境清单/校验器、实际包锁与正式门、开发构建、TD候选和上游交接、本轮真实资产扫描。没有Unity/TD重跑或干净构建，没有新独立Agent或真实签收。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "Z01-N01",
+      "status": "FIXED_CURRENT_TOOL_AUTHORITY",
+      "description": "旧目录、两项漏依赖和MCP浮动校验按现有工程修复，旧原件归档，未变软件版本",
+      "source": "agent/tasks/Z-01/evidence/failure-disposition.md"
+    },
+    {
+      "id": "Z01-N02",
+      "status": "OPEN_ACTUAL_ASSET_BLOCKERS",
+      "description": "当前225资产项、269阻断，不能沿用旧许可报告或把开发构建发布为参与者候选",
+      "source": "agent/tasks/Z-01/evidence/asset-scan.json"
+    },
+    {
+      "id": "Z01-N03",
+      "status": "OPEN_CANDIDATE_REBUILD_AND_OWNERS",
+      "description": "三个匹配候选、完整锁/SBOM、独立干净重建与责任人未交付，WAIT_DEP保持",
+      "source": "agent/tasks/Z-01/outputs/current-delivery.json"
+    }
+  ],
+  "next_task": "G-05",
+  "source_links": [
+    {
+      "label": "候选与重建交接",
+      "path": "agent/tasks/Z-01/outputs/current-delivery.md"
+    },
+    {
+      "label": "实际未完成字段",
+      "path": "agent/tasks/Z-01/outputs/current-delivery.json"
+    },
+    {
+      "label": "软件核查与真实门",
+      "path": "agent/tasks/Z-01/evidence/verification.json"
+    },
+    {
+      "label": "偏离修复与复测",
+      "path": "agent/tasks/Z-01/evidence/failure-disposition.md"
+    },
+    {
+      "label": "当前消费者影响",
+      "path": "agent/tasks/Z-01/evidence/consumer-impact.md"
+    }
+  ]
+}

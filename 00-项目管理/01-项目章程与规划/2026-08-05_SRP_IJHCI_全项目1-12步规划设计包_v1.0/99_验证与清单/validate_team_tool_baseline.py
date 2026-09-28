@@ -86,7 +86,7 @@ def file_product_version(path: pathlib.Path) -> str | None:
 
 def package_version(name: str) -> str | None:
     try:
-        return importlib.metadata.version(name)
+        return importlib.metadata.version(name.partition("[")[0])
     except importlib.metadata.PackageNotFoundError:
         return None
 
@@ -114,7 +114,7 @@ def validate_authority(baseline: dict[str, object]) -> list[str]:
         errors.append("unexpected baseline_id")
     if baseline.get("status") != "ACTIVE_FOR_TEAM_SETUP":
         errors.append("baseline must be ACTIVE_FOR_TEAM_SETUP")
-    if baseline.get("workspace") != str(PROJECT_ROOT):
+    if (PROJECT_ROOT / baseline["workspace"]).resolve() != PROJECT_ROOT.resolve():
         errors.append(f"workspace must match the repository root: {PROJECT_ROOT}")
     if common != EXPECTED_COMMON:
         errors.append(f"common tool set mismatch: {sorted(common)}")
@@ -177,8 +177,9 @@ def validate_authority(baseline: dict[str, object]) -> list[str]:
             errors.append(f"Unity package mismatch {package_id}: {actual!r}")
 
     mcp_source = dependencies.get("com.coplaydev.unity-mcp", "")
-    if "#main" not in mcp_source:
-        errors.append("known Unity MCP #main drift marker changed without baseline review")
+    expected_mcp = baseline["unity_packages"]["com.coplaydev.unity-mcp"]
+    if mcp_source.rsplit("#", 1)[-1] != expected_mcp:
+        errors.append("Unity MCP manifest must pin the same commit as the package lock")
 
     return errors
 

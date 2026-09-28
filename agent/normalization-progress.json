@@ -39,10 +39,10 @@
     "Q-03",
     "X-01",
     "X-02",
-    "X-03"
+    "X-03",
+    "Z-01"
   ],
   "remaining_packages": [
-    "Z-01",
     "G-05",
     "E-01",
     "E-02",
@@ -1139,6 +1139,27 @@
       "status": "OPEN_DYNAMIC_RUNTIME_AND_REAL_EVIDENCE",
       "description": "加载器、动态顺序/状态、策略安全重放、同构建及真实冻结/真链未交付，WAIT_DEP未签署",
       "source": "agent/tasks/X-03/outputs/current-runtime.json"
+    },
+    {
+      "task_id": "Z-01",
+      "id": "Z01-N01",
+      "status": "FIXED_CURRENT_TOOL_AUTHORITY",
+      "description": "旧目录、两项漏依赖和MCP浮动校验按现有工程修复，旧原件归档，未变软件版本",
+      "source": "agent/tasks/Z-01/evidence/failure-disposition.md"
+    },
+    {
+      "task_id": "Z-01",
+      "id": "Z01-N02",
+      "status": "OPEN_ACTUAL_ASSET_BLOCKERS",
+      "description": "当前225资产项、269阻断，不能沿用旧许可报告或把开发构建发布为参与者候选",
+      "source": "agent/tasks/Z-01/evidence/asset-scan.json"
+    },
+    {
+      "task_id": "Z-01",
+      "id": "Z01-N03",
+      "status": "OPEN_CANDIDATE_REBUILD_AND_OWNERS",
+      "description": "三个匹配候选、完整锁/SBOM、独立干净重建与责任人未交付，WAIT_DEP保持",
+      "source": "agent/tasks/Z-01/outputs/current-delivery.json"
     }
   ]
 }

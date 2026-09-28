@@ -2,9 +2,7 @@
   "baseline_id": "SRP-TEAM-TOOLS-v1.0",
   "status": "ACTIVE_FOR_TEAM_SETUP",
   "frozen_on": "2026-08-06",
-  "workspace": ".",
-  "workspace_resolution": "relative_to_repository_root",
-  "alignment_revision": "2026-09-29-Z-01",
+  "workspace": "D:\\Agent\\03-SRP",
   "platform": {
     "id": "windows_11_x64",
     "minimum_version": "10.0.26100",
@@ -72,9 +70,7 @@
     "biosppy": "2.2.4",
     "bleak": "3.0.2",
     "peakutils": "1.3.5",
-    "pytest": "9.0.3",
-    "python-osc": "1.10.2",
-    "jsonschema[format]": "4.25.1"
+    "pytest": "9.0.3"
   },
   "unity_packages": {
     "com.unity.render-pipelines.universal": "17.4.0",
@@ -115,7 +111,7 @@
   "known_gaps": [
     "Coordinator workstation does not currently have Zotero 9.0.6 installed; this is a local gap only for design or experiment/TD/governance ownership.",
     "Shared Zotero library access remains a manual check for every team member.",
-    "Unity MCP is pinned to the existing F-03 commit; this does not establish a final product build.",
+    "Unity MCP manifest uses #main even though packages-lock records a resolved commit.",
     "Python direct dependencies are pinned, but a complete transitive lock is still required before LIVE_E2E.",
     "TouchDesigner MCP service dependencies are not installed and the helper is not acceptance evidence."
   ]

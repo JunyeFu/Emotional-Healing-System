@@ -1,0 +1,7 @@
+Command: py -3.14 99_验证与清单/validate_team_tool_baseline.py
+Exit code: 1
+ERROR: workspace must match the repository root: D:\Agent\srp
+ERROR: Python direct dependency file does not match machine authority
+ERROR: known Unity MCP #main drift marker changed without baseline review
+
+This is a transcription of the observed tool output, not a raw log file.

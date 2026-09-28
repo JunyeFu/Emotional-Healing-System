@@ -8,8 +8,6 @@
 >
 > 状态：`ACTIVE_FOR_TEAM_SETUP`
 >
-> 对齐修订：2026-09-29，按Z-01实查订正仓库定位、11项现有直接依赖及F-03已固定的MCP提交。原清单存于`agent/tasks/Z-01/archive/`；本修订不是软件升级、成员环境验收或正式环境冻结。
->
 > 机器可读权威：[team_tool_baseline_v1.0.json](team_tool_baseline_v1.0.json)
 >
 > 校验器：[validate_team_tool_baseline.py](../99_验证与清单/validate_team_tool_baseline.py)
@@ -20,7 +18,7 @@
 2. 四人的工具可用范围相同，岗位差异只定义主要职责和验收深度，不允许用“非本岗位”为由省略Unity、TouchDesigner或Python数据处理环境。
 3. 精确版本在一个任务周期内禁止个人单独升级；需要升级时必须同时修改机器清单、依赖文件、验证记录和受影响制品。
 4. 工具已安装只代表环境入口可用，不代表Unity制品、真实设备链、Level、Gate或研究结果成立。
-5. 当前工作仓库为`D:\Agent\srp`。机器清单的`workspace=.`相对当前检出根解析，不依赖旧绝对目录；校验与构建从各自检出根执行。
+5. 当前项目唯一有效目录为`D:\Agent\03-SRP`。所有校验、提交和制品路径均从该目录执行。
 
 ## 2. 四人都必须具备的公共基线
 
@@ -37,7 +35,7 @@
 | Visual Studio Code x64 | `1.131.0` | 精确版本；关闭个人抢先升级 | Markdown、Python、JSON、CSV和Git审查 |
 | Unity Editor | `6000.4.9f1`，revision `f7258d6eebbe` | 精确版本；以项目`ProjectVersion.txt`为权威 | 运行完整Unity体验、检查场景、回放数据和复核构建 |
 | TouchDesigner x64 | `2025.32820` | 精确版本 | 打开操作台、回放数据、检查记录与实时可视化 |
-| Python数据处理栈 | [requirements-baseline-py3.14.txt](../../../../02-技术研发/requirements-baseline-py3.14.txt)中的11项直接依赖 | 精确直接依赖 | 采集桥接、交互状态估计、数据质控、统计准备和项目验证 |
+| Python数据处理栈 | [requirements-baseline-py3.14.txt](../../../../02-技术研发/requirements-baseline-py3.14.txt)中的9项直接依赖 | 精确直接依赖 | 采集桥接、交互状态估计、数据质控、统计准备和项目验证 |
 
 全员还必须具备GitHub仓库访问权限、个人SSH密钥和Zotero共享库的只读或更高权限。Unity与Python/数据负责人可以通过Zotero Web Library完成共享访问验收，不要求本机安装Zotero。访问凭据不写入仓库，也不由版本号代替权限验收。
 
@@ -61,7 +59,7 @@ Zotero是本节的唯一岗位安装例外：设计负责人和承担论文证�
 - 能使用TouchDesigner和Python回放同一数据，定位Unity输入、时钟或显示异常属于哪一层。
 - MCP for Unity固定到当前解析提交`78ee5418415953b79c358bfe6355fcc3fde7912b`，仅作编辑器自动化；最终验收仍以Unity测试、构建、日志和录像为准。
 
-`Packages/manifest.json`与`packages-lock.json`已按F-03固定同一MCP提交，校验器同时检查两处；`#main`或其他不匹配提交仍拒绝。旧KlakSpout包不属于目标运行依赖，不能把Spout可用写成Unity完成条件。开发构建不能替代Z-01候选制品验收。
+`Packages/manifest.json`中的Unity MCP仍引用`#main`，但`packages-lock.json`记录了当前解析提交。该写法存在重新解析漂移风险，在F-03或首次包变更前必须改为固定提交或形成等价的离线包证据。旧KlakSpout包不属于目标运行依赖，不能把Spout可用写成Unity完成条件。
 
 ### 3.3 Python/数据负责人
 
@@ -78,10 +76,8 @@ Zotero是本节的唯一岗位安装例外：设计负责人和承担论文证�
 | bleak | `3.0.2` |
 | PeakUtils | `1.3.5` |
 | pytest | `9.0.3` |
-| python-osc | `1.10.2` |
-| jsonschema[format] | `4.25.1` |
 
-原九项版本来自历史42项回归快照；本轮仅补齐依赖文件已使用的python-osc与jsonschema。当前文件仍只固定直接依赖；完整传递依赖锁和干净环境重建证据仍待Z-01及实际LIVE_E2E提供。
+这些版本来自当前已通过42项项目回归的本机直接依赖快照。当前文件只冻结直接依赖；正式LIVE_E2E前还必须生成完整传递依赖锁和干净环境重建证据。
 
 ### 3.4 实验/TD/治理负责人
 
@@ -104,7 +100,7 @@ Zotero是本节的唯一岗位安装例外：设计负责人和承担论文证�
 
 ## 5. 每人领取任务前的最低验收
 
-1. 在当前检出根（本机`D:\Agent\srp`）运行`git status --short`，能够看到当前用户工作区状态。
+1. 在`D:\Agent\03-SRP`运行`git status --short`，能够看到当前用户工作区状态。
 2. 运行公共环境检查；该模式检查Unity、TouchDesigner和Python数据处理栈，不要求Zotero本机安装：
 
    ```powershell
@@ -116,9 +112,7 @@ Zotero是本节的唯一岗位安装例外：设计负责人和承担论文证�
 5. 验收输出、实际OS Build、工具路径和偏差原因写入任务证据，不允许只发安装截图。
 6. 任一精确版本不一致时，先形成升级或降级记录；不得让工具自动改写Unity包锁、Python直接依赖或Zotero共享库格式后再补说明。
 
-## 6. 历史中枢机审计
-
-以下保留2026-08-06的机器观测，不代表2026-09-29或其他成员当前安装通过。本轮仅校验仓库权威；实际本机能力须另跑`--local-role`并保存结果。
+## 6. 当前中枢机审计
 
 | 项 | 当前值 | 对基线 |
 |---|---|:---:|

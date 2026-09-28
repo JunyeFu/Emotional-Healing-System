@@ -63,3 +63,6 @@ agent/tasks/X-01/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/X-02/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/X-03/evidence/initial-store-binding-failure.txt -text whitespace=-blank-at-eol
 agent/tasks/X-01/evidence/initial-encoding-failure.txt -text whitespace=-blank-at-eol
+agent/tasks/Z-01/archive/team-tool-baseline-before-z01.json -text whitespace=cr-at-eol
+agent/tasks/Z-01/archive/team-tools-before-z01.md -text whitespace=cr-at-eol
+agent/tasks/Z-01/evidence/initial-test-field-failure.txt -text whitespace=-blank-at-eol
