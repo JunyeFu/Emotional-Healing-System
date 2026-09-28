@@ -4,10 +4,10 @@
     "F-02",
     "F-03",
     "F-04",
-    "F-05"
+    "F-05",
+    "G-01"
   ],
   "remaining_packages": [
-    "G-01",
     "G-02",
     "P-01",
     "P-02",
@@ -187,6 +187,34 @@
       "status": "FIXED",
       "description": "合同入口兼容规则明确限定v2.1，不再误读为全版本拒绝v2.2",
       "source": "02-技术研发/05-通信协议/contracts/README.md"
+    },
+    {
+      "task_id": "G-01",
+      "id": "G01-N01",
+      "status": "FIXED",
+      "description": "步骤五入口已按真实签收DONE与G-05责任范围订正",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/00_第5步计划.md"
+    },
+    {
+      "task_id": "G-01",
+      "id": "G01-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前稿按v1.2前测先于分条件教学、当前测量与G-02/P-02口径编制；正式冻结仍待后续任务",
+      "source": "agent/tasks/G-01/outputs/current-governance.md"
+    },
+    {
+      "task_id": "G-01",
+      "id": "G01-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "528与112保留历史情景，人员和日产能矛盾不再作为当前承诺",
+      "source": "agent/tasks/G-01/outputs/current-governance.md"
+    },
+    {
+      "task_id": "G-01",
+      "id": "G01-N04",
+      "status": "OPEN_EXTERNAL_OWNER_AND_EVIDENCE",
+      "description": "G-05未领取，真实角色、机构许可与现场占用/值班能力尚无回执，由团队总监安排真实负责人",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     }
   ]
 }

@@ -1,0 +1,77 @@
+{
+  "task_id": "G-01",
+  "review_date": "2026-09-28",
+  "scope": "Material/current-use alignment only; no new human signature or participant evidence.",
+  "checks": [
+    {
+      "command": "source locations",
+      "exit_code": 0,
+      "result": "12 source locations exist"
+    },
+    {
+      "command": "signed material completeness",
+      "exit_code": 0,
+      "result": "12 historical materials present; not approved new-study materials"
+    },
+    {
+      "command": "historical originals",
+      "exit_code": 0,
+      "result": "Historical material and signed report bytes unchanged from HEAD"
+    },
+    {
+      "command": "registered scope",
+      "exit_code": 0,
+      "result": "G-01/P-02 DONE; G-05 external work pending"
+    },
+    {
+      "command": "baseline and training order",
+      "exit_code": 0,
+      "result": "Baseline precedes condition reveal/training; post precedes understanding"
+    },
+    {
+      "command": "research remains unfrozen",
+      "exit_code": 0,
+      "result": "Candidate timeline and 180-second teaching do not authorize formal collection"
+    },
+    {
+      "command": "historical capacity arithmetic",
+      "exit_code": 0,
+      "result": "5/7 theoretical daily slots, 140/112 historical rehearsal, 165 appointments; not observed capacity"
+    },
+    {
+      "command": "external qualification state",
+      "exit_code": 0,
+      "result": "13 external qualifications pending; none converted to authorization"
+    },
+    {
+      "command": "current-use corrections",
+      "exit_code": 0,
+      "result": "Current usage covers timing, route, privacy, staffing, activity qualifications and P-02 status"
+    },
+    {
+      "command": "active entry link",
+      "exit_code": 0,
+      "result": "Step-five entry links actual Agent current-use source and signed DONE scope"
+    },
+    {
+      "command": "current wording",
+      "exit_code": 0,
+      "result": "Current-use material and entry meet project wording rule"
+    },
+    {
+      "command": "teaching contract tests",
+      "exit_code": 0,
+      "result": "......................                                                   [100%]\n22 passed in 0.04s"
+    },
+    {
+      "command": "task registry",
+      "exit_code": 0,
+      "result": "PASS: 71 registry entries; fixed=68; templates=3; DONE=F-01,F-02,F-03,F-04,F-05,G-01,G-02,P-01,P-02,Q-01,R-01,T-01,U-01,U-02,U12-01,U12-02,U12-04,U12-07,V-01,V-02,V-03,V-04,W-01,X-01; READY=T-02,V-05; IN_REVIEW=U12-03; terminal=W-04"
+    },
+    {
+      "command": "dispatch snapshots",
+      "exit_code": 0,
+      "result": "PASS: dispatch packages=5; snapshots=44; tasks=A-03,T-02,U12-03,U12-06,V-05"
+    }
+  ]
+}
