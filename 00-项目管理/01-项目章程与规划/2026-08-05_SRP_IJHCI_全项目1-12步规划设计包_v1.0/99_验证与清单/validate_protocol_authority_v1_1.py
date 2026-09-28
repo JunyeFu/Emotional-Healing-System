@@ -10,6 +10,7 @@ import sys
 PACKAGE = pathlib.Path(__file__).resolve().parents[1]
 PROJECT_ROOT = PACKAGE.parents[2]
 LEGACY_OFFLINE = PROJECT_ROOT / "agent/tasks/A-01/archive"
+LEGACY_STATISTICS = PROJECT_ROOT / "agent/tasks/A-02/archive"
 AUTHORITY = PACKAGE / "00_总控" / "protocol_authority_v1.1.json"
 
 ACTIVE_FILES = [
@@ -36,7 +37,7 @@ ACTIVE_FILES = [
     LEGACY_OFFLINE / "02_QC与分析集规则.md",
     LEGACY_OFFLINE / "03_呼吸事件与Protocol_Fidelity.md",
     PACKAGE / "22_离线处理与科研分析" / "05_问卷与访谈处理.md",
-    PACKAGE / "22_离线处理与科研分析" / "06_统计模型与图表计划.md",
+    LEGACY_STATISTICS / "06_统计模型与图表计划.md",
     PACKAGE / "23_后续可解释序列编排研究" / "00_后续研究总设计.md",
     PACKAGE / "23_后续可解释序列编排研究" / "01_数据与方法储备.md",
     PACKAGE / "24_团队任务与项目治理" / "00_四人团队职责与任务树.md",
@@ -80,7 +81,7 @@ REQUIRED_MARKERS = {
         "expected_cycle_opportunity",
         "TECH_UNOBSERVABLE",
     ),
-    PACKAGE / "22_离线处理与科研分析" / "06_统计模型与图表计划.md": (
+    LEGACY_STATISTICS / "06_统计模型与图表计划.md": (
         "四层理解",
         "randomization_strata",
         "FDR",

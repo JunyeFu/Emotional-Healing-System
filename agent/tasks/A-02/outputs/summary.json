@@ -1,0 +1,34 @@
+{
+  "task_id": "A-02",
+  "title": "A02 机会PF护栏与缺失统计审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "A-02仍WAIT_DEP、未领取。旧统计计划已原文归档，29项专项通过；主要PANAS、PF护栏及SCCI分开报告。两分析集、100次候选插补和敏感性完整流水线未交付，U12-04签收不等于本包完成。",
+  "historical_acceptance": {"reviewer": "未签署", "date": "尚未发生", "commit": "", "method": "Codex审阅实际候选合同与合成工具，执行口径/归档核验；没有A-02真实数据分析、正式冻结或真人签署。U12-04历史签收只保留原范围。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["前置A-01，5人日、P-ANALYSIS；实际L3尚未交付，业务状态与责任人不变。当前读到的是候选规格和功效工具，不是完整机会护栏与缺失处理实现。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1机会分母与技术不可观测分别建模；AC2继承非劣候选界值有依据且两分析集可重建；AC3护栏失败仍计算和报告独立PANAS主要比较。交付合成报告、模型测试、偏移网格和复现命令。", "五天按字段与冻结对齐、计数及两分析集、插补合并、偏移敏感性、下游复跑及签收推进。国内技能资料在TASK.md，不虚构领取或预填通过。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK和五目录，当前统计合同JSON/Markdown、来源、核验入口、消费者影响与原文迁移记录。旧统计计划实际归档，原位置导航当前A-02及U12-04候选。", "历史v1.1验证器仅改统计文件读取位置，不放宽旧规则。U12-04原始代码、签署与A-03冻结SPEC未修改；没有新增业务插补或分析集流水线。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["S-02三态、应有分母、完成率、可观测PF与保守PF定义保持一致。零分母标缺失，设备不可观测不改为执行失败，不从应有分母删除；四模块权重各25%，缺模块不重平均。", "PANAS主要比较与PF护栏分开。0.075为待论证候选，整体平均不能推出每模块非劣；SCCI为操纵检查，不用旧Gate 1→2门序挡住预设情绪结果。"]},
+    {"heading": "验证与结果", "paragraphs": ["29项专项通过：11项本包现状/归档/合成工具检查和18项U12-04既有合同测试。候选SAP一致性、历史v1.1校验通过；结果及环境见evidence/verification.json。", "实际调用合成工具，确认缺失后测用前测代填、观测集仅按后测是否可观测筛选。固定种子正向、反向、零效应三情景重复结果相同；这不是100次MI、MNAR或完整四模块分析集验收。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧统计计划与研究v1.2结果中心冲突，已原文归档并改当前入口。非劣界、最终N、缺失机制和合并估计规则未冻结；等效默认关闭，未显著不能写成等效或反向优效。", "U12-04的PRIMARY_CONSERVATIVE只是合成前测代填情景，名称不保证实际偏倚保守；OBSERVED_CASE不等于完整四模块资格。当前交接明确两者不能替代A-02交付，不改历史签收结论。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["旧统计原件按迁移前字节哈希保留，原路径当前导航链接可用。inputs/execution/evidence/outputs/archive职责固定，Agent事实先更新，再生成Word。", "A-03进行中及其他复核/进行中快照不刷新；U12-04历史工具待其逐包规范化。其他业务和共享目录仍待总体根迁移。"]},
+    {"heading": "上下游交接", "paragraphs": ["A-01交L3、原分配、问卷引用及机会三态/缺失原因；A-02分别重建全部随机分配与完整四模块集，不按结果方向筛人。量表缺失与过程缺失分开，设备失败不自动删除有效PANAS。", "U12-04供候选SAP，U12-11/G-03完成数值冻结；A-05消费锁定分析集与敏感性结果，Z-01复现合成样例。A-03旧有序门只属原范围，冻结输入不自动追认本次新规则。", "仍需实际两集构建、有界MI及合并、偏移网格/tipping point、不可估计处理与下游复跑。所有结果按实际证据交接，不能用候选100次或旧N写成正式完成。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["无本包真实领取、完整业务实现或签收。傅钧烨2026-09-21签收U12-04的范围是候选SAP及合成证据，不转移给A-02。WAIT_DEP保持，不代填独立复核或真人结论。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["规范化31/71，剩余40，下一A-03。单包总结与串联审阅从Agent输出生成，整体任务整理和根目录双层迁移继续，未宣称总目标完成。"]},
+    {"heading": "审阅来源", "paragraphs": ["依据当前注册表、研究v1.2、S-02定义、A-01交接、U12-04实际合同/SAP/功效代码和签署元数据；历史统计与A-03 SPEC用于定位偏离而不是当前冻结值。"]}
+  ],
+  "findings": [
+    {"id": "A02-N01", "status": "FIXED_LEGACY_ORDERED_STATISTICS", "description": "旧统计有序门计划原文归档，当前导航改PANAS主比较、PF护栏与SCCI分开报告", "source": "agent/tasks/A-02/outputs/current-statistics.md"},
+    {"id": "A02-N02", "status": "CLARIFIED_SYNTHETIC_NOT_MI", "description": "实际合成前测代填不是100次多重插补，OBSERVED_CASE不核验完整四模块资格，不能转移U12-04签名", "source": "agent/tasks/A-02/evidence/consumer-impact.md"},
+    {"id": "A02-N03", "status": "OPEN_ANALYSIS_SETS_MI_AND_SENSITIVITY", "description": "两分析集、有界插补合并、偏移网格和tipping point及下游复跑尚未交付", "source": "agent/tasks/A-02/outputs/current-statistics.json"},
+    {"id": "A02-N04", "status": "OPEN_FREEZE_AND_REAL_OWNER", "description": "缺失模型、功能界值、正式N和真实责任人未落实，规范化不改业务WAIT_DEP", "source": "agent/tasks/A-02/TASK.md"}
+  ],
+  "next_task": "A-03",
+  "source_links": [
+    {"label": "当前PF与缺失统计交接", "path": "agent/tasks/A-02/outputs/current-statistics.md"},
+    {"label": "范围与未冻结字段", "path": "agent/tasks/A-02/outputs/current-statistics.json"},
+    {"label": "实际专项与回归结果", "path": "agent/tasks/A-02/evidence/verification.json"},
+    {"label": "历史签收及下游影响", "path": "agent/tasks/A-02/evidence/consumer-impact.md"},
+    {"label": "过程验收与学习资料", "path": "agent/tasks/A-02/TASK.md"}
+  ]
+}

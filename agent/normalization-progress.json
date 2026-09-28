@@ -29,10 +29,10 @@
     "U-07",
     "U-08",
     "T-02",
-    "A-01"
+    "A-01",
+    "A-02"
   ],
   "remaining_packages": [
-    "A-02",
     "A-03",
     "W-01",
     "I-01",
@@ -901,6 +901,34 @@
       "status": "OPEN_PERMISSION_THRESHOLDS_AND_OWNER",
       "description": "受限原件授权读取、真实算法阈值、实际责任人和消费者验收仍待落实",
       "source": "agent/tasks/A-01/TASK.md"
+    },
+    {
+      "task_id": "A-02",
+      "id": "A02-N01",
+      "status": "FIXED_LEGACY_ORDERED_STATISTICS",
+      "description": "旧统计有序门计划原文归档，当前导航改PANAS主比较、PF护栏与SCCI分开报告",
+      "source": "agent/tasks/A-02/outputs/current-statistics.md"
+    },
+    {
+      "task_id": "A-02",
+      "id": "A02-N02",
+      "status": "CLARIFIED_SYNTHETIC_NOT_MI",
+      "description": "实际合成前测代填不是100次多重插补，OBSERVED_CASE不核验完整四模块资格，不能转移U12-04签名",
+      "source": "agent/tasks/A-02/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "A-02",
+      "id": "A02-N03",
+      "status": "OPEN_ANALYSIS_SETS_MI_AND_SENSITIVITY",
+      "description": "两分析集、有界插补合并、偏移网格和tipping point及下游复跑尚未交付",
+      "source": "agent/tasks/A-02/outputs/current-statistics.json"
+    },
+    {
+      "task_id": "A-02",
+      "id": "A02-N04",
+      "status": "OPEN_FREEZE_AND_REAL_OWNER",
+      "description": "缺失模型、功能界值、正式N和真实责任人未落实，规范化不改业务WAIT_DEP",
+      "source": "agent/tasks/A-02/TASK.md"
     }
   ]
 }

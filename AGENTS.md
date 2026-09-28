@@ -32,6 +32,7 @@
 | 看成品预算与可访问交接 | `agent/tasks/U-08/outputs/current-product.md`（预算先行、八呈现范围与实际发布门） |
 | 看TD请求与告警交接 | `agent/tasks/T-02/outputs/current-operator-contract.md`（请求未实现、ACK分离与旧遥控归档） |
 | 看离线重建与原始证据消费 | `agent/tasks/A-01/outputs/current-rebuild.md`（六类输入、只读重放及未交付流水线） |
+| 看机会PF护栏与缺失统计 | `agent/tasks/A-02/outputs/current-statistics.md`（两分析集、候选MI与正式冻结边界） |
 | 看最近工作与论文骨架 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md` |
 | 看真实设备采集交接 | `agent/tasks/D-01/outputs/current-acquisition.md`（ECG/RR原始通道、P-02记录与待完成验收） |
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |
