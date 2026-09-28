@@ -17,6 +17,8 @@
 | [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md](D:/Agent/srp/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md) | [inputs/09_T01_技术验收记录.md](inputs/09_T01_技术验收记录.md) | `41CA88390036B56C7F82999BF9AD68711759C6E9755D042C7C729E21624EF6C8` |
 | [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe](D:/Agent/srp/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe) | [inputs/10_T01_TelemetryPanel.toe](inputs/10_T01_TelemetryPanel.toe) | `3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED` |
 | [02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox](D:/Agent/srp/02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox) | [inputs/11_T01_TelemetryPanel.tox](inputs/11_T01_TelemetryPanel.tox) | `F0614B20CF71E3C6E83B98D4CCC8A3CAD2F953A557DC2AAAEF809B15530AB8AE` |
+| [02-技术研发/srp_session_core/README.md](D:/Agent/srp/02-技术研发/srp_session_core/README.md) | [inputs/12_README.md](inputs/12_README.md) | `8B6EC0E4E0467D94755D1A9123B3D093EF15265F46238843AB048D8D5D5E54DE` |
+| [agent/tasks/P-01/execution/generate_golden_trace.py](D:/Agent/srp/agent/tasks/P-01/execution/generate_golden_trace.py) | [inputs/13_generate_golden_trace.py](inputs/13_generate_golden_trace.py) | `52216979B43DB06FF95E4FB7363F2EFA6086F18EF9BE6C31649E50E932665BCC` |
 
 ## 实现工作目录
 

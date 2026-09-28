@@ -403,7 +403,7 @@ def test_session_events_validate_against_machine_schema(
 
 
 def test_committed_golden_trace_is_deterministic() -> None:
-    from srp_session_core.generate_golden_trace import build_trace
+    from generate_golden_trace import build_trace
 
     path = (
         Path(__file__).resolve().parents[2]

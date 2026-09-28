@@ -4,8 +4,8 @@
   "task_id": "T-02",
   "status": "READY",
   "registry_sha256": "F490F67BF642B4CA29658B5B3738DB3FFF437F21AA54EC93D7478FD233C02D95",
-  "input_snapshot_id": "8CF99D004D437FDE8B1089C236E30AFEA3EB6E995D2B7F97305347ACA301953D",
-  "previous_input_snapshot_id": "45F3C358807501B569EC45EA1AAFEB2F4B1C2D821EE9B69263AE42D31164EAEC",
+  "input_snapshot_id": "0B40F943658E13F21ED6793BE0753ADD981C312671216B97B6B5D20760FE11C4",
+  "previous_input_snapshot_id": "DA964FDE371049BB092BC6A57E9C6C2852362F3690F4DABFC1B3B4A842A81BF5",
   "input_changed": true,
   "candidate_identity": null,
   "source_files": [
@@ -74,6 +74,18 @@
       "package_path": "inputs/11_T01_TelemetryPanel.tox",
       "sha256": "F0614B20CF71E3C6E83B98D4CCC8A3CAD2F953A557DC2AAAEF809B15530AB8AE",
       "size_bytes": 7414
+    },
+    {
+      "source_path": "02-技术研发/srp_session_core/README.md",
+      "package_path": "inputs/12_README.md",
+      "sha256": "8B6EC0E4E0467D94755D1A9123B3D093EF15265F46238843AB048D8D5D5E54DE",
+      "size_bytes": 4861
+    },
+    {
+      "source_path": "agent/tasks/P-01/execution/generate_golden_trace.py",
+      "package_path": "inputs/13_generate_golden_trace.py",
+      "sha256": "52216979B43DB06FF95E4FB7363F2EFA6086F18EF9BE6C31649E50E932665BCC",
+      "size_bytes": 7273
     }
   ],
   "working_paths": [

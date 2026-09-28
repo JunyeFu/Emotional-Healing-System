@@ -1,0 +1,14 @@
+{
+  "equal_to_historical_fixture": true,
+  "counts": {
+    "control_events": 19,
+    "acks": 19,
+    "render_receipts": 12,
+    "session_events": 54,
+    "policy_decisions": 4
+  },
+  "status": "COMPLETED",
+  "trace_hash": "sha256:0c7638a423f5c5f2b520ebc0f2886b12d49ab925941ce8f2c0b5e22bd2bbcb14",
+  "session_elapsed_ns": 800000000000,
+  "scope": "Synthetic v2.1 core trace; no teaching, devices or live rendering."
+}

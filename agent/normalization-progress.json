@@ -6,10 +6,10 @@
     "F-04",
     "F-05",
     "G-01",
-    "G-02"
+    "G-02",
+    "P-01"
   ],
   "remaining_packages": [
-    "P-01",
     "P-02",
     "U-01",
     "U-02",
@@ -243,6 +243,27 @@
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "P-01仅在核心start登记暴露，新版条件教学接入与退出阻断由P-01/U12-11完成，当前尚未正式闭环",
       "source": "02-技术研发/07-数据治理/docs/downstream_contracts.md"
+    },
+    {
+      "task_id": "P-01",
+      "id": "P01-N01",
+      "status": "FIXED",
+      "description": "golden工具实际迁入execution，新运行不覆盖历史样例，434项及轨迹一致性通过",
+      "source": "agent/tasks/P-01/execution/verify.py"
+    },
+    {
+      "task_id": "P-01",
+      "id": "P01-N02",
+      "status": "FIXED",
+      "description": "当前入口按F-05/P-02实际DONE、固定顺序范围和有效目录订正",
+      "source": "02-技术研发/srp_session_core/README.md"
+    },
+    {
+      "task_id": "P-01",
+      "id": "P01-N03",
+      "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
+      "description": "核心前条件教学尚未接入；P-01/U12-11冻结后登记首次暴露并补退出再预约负测，本轮未关闭",
+      "source": "02-技术研发/srp_session_core/README.md"
     }
   ]
 }

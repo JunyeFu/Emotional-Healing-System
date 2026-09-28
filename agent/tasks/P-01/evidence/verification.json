@@ -1,0 +1,38 @@
+{
+  "task_id": "P-01",
+  "review_date": "2026-09-28",
+  "scope": "Core and consumers regression; not real training or formal eligibility.",
+  "checks": [
+    {
+      "command": "session-consumers",
+      "exit_code": 0,
+      "result": "........................................................................ [ 16%]\n........................................................................ [ 33%]\n........................................................................ [ 49%]\n........................................................................ [ 66%]\n........................................................................ [ 82%]\n........................................................................ [ 99%]\n..                                                                       [100%]\n434 passed in 20.14s",
+      "source": "agent/tasks/P-01/evidence/runtime/session-consumers.log"
+    },
+    {
+      "command": "golden-generator",
+      "exit_code": 0,
+      "result": "D:\\Agent\\srp\\agent\\tasks\\P-01\\evidence\\runtime\\four-module-trace-v1.json",
+      "source": "agent/tasks/P-01/evidence/runtime/golden-generator.log"
+    },
+    {
+      "command": "golden-comparison",
+      "exit_code": 0,
+      "result": {
+        "equal_to_historical_fixture": true,
+        "counts": {
+          "control_events": 19,
+          "acks": 19,
+          "render_receipts": 12,
+          "session_events": 54,
+          "policy_decisions": 4
+        },
+        "status": "COMPLETED",
+        "trace_hash": "sha256:0c7638a423f5c5f2b520ebc0f2886b12d49ab925941ce8f2c0b5e22bd2bbcb14",
+        "session_elapsed_ns": 800000000000,
+        "scope": "Synthetic v2.1 core trace; no teaching, devices or live rendering."
+      },
+      "source": "agent/tasks/P-01/evidence/runtime/golden-comparison.json"
+    }
+  ]
+}
