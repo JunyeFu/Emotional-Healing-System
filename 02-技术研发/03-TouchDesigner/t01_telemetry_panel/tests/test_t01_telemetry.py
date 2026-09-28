@@ -299,7 +299,7 @@ def test_host_artifacts_are_deterministic_and_permission_closed(tmp_path: Path) 
 
 
 def test_touchdesigner_builder_has_exact_root_and_read_only_callbacks() -> None:
-    source = (BASE / "build_t01_touchdesigner.py").read_text(encoding="utf-8")
+    source = (BASE.parents[2] / "agent/tasks/T-01/execution/build_t01_touchdesigner.py").read_text(encoding="utf-8")
     assert "existing = op(ROOT_PATH)" in source
     assert "existing.destroy()" in source
     assert "def onReceive(dat, rowIndex, message, bytes, peer):" in source

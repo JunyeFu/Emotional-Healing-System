@@ -14,6 +14,9 @@ agent/tasks/U-02/evidence/runtime/**/*.log -text whitespace=-blank-at-eol,-blank
 agent/tasks/U-02/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 agent/tasks/U-02/archive/evidence-v1/** -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 agent/tasks/U-02/archive/*-run/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/T-01/evidence/**/*.json text eol=lf
+agent/tasks/T-01/evidence/runtime/*.toe -text
+agent/tasks/T-01/evidence/runtime/touchdesigner/screenshots/*.png -text
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.asset text eol=lf
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.json text eol=lf
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.meta text eol=lf

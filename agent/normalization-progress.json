@@ -10,10 +10,10 @@
     "P-01",
     "P-02",
     "U-01",
-    "U-02"
+    "U-02",
+    "T-01"
   ],
   "remaining_packages": [
-    "T-01",
     "R-01",
     "V-01",
     "V-02",
@@ -355,6 +355,48 @@
       "status": "OPEN_DOWNSTREAM_INTEGRATION_AND_PATCH_SIGNOFF",
       "description": "最终天气接线、实际回执、真实设备与正式运行仍待下游；本轮新补丁未追加真人签署",
       "source": "agent/tasks/U-02/outputs/current-adapter-contract.md"
+    },
+    {
+      "task_id": "T-01",
+      "id": "T01-N01",
+      "status": "FIXED",
+      "description": "五个执行工具迁入Agent层，新结果不覆盖历史；过期清理工具归档",
+      "source": "agent/tasks/T-01/execution/README.md"
+    },
+    {
+      "task_id": "T-01",
+      "id": "T01-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前TOE身份与旧清理候选不同，49项内部功能一致、13项编辑器布局变化，实际TD探针通过",
+      "source": "agent/tasks/T-01/evidence/cleanup_comparison.json"
+    },
+    {
+      "task_id": "T-01",
+      "id": "T01-N03",
+      "status": "FIXED_CANDIDATE",
+      "description": "旧Text TOP裁切已在独立可读候选修复并实跑，未覆盖历史制品",
+      "source": "agent/tasks/T-01/evidence/runtime/layout_repair.json"
+    },
+    {
+      "task_id": "T-01",
+      "id": "T01-N04",
+      "status": "OPEN_DOWNSTREAM_NATIVE_UI",
+      "description": "A主题原生控件、导航和尺寸验收继续交T-02，不由本次旧界面修复代替",
+      "source": "agent/tasks/T-01/outputs/current-td-contract.md"
+    },
+    {
+      "task_id": "T-01",
+      "id": "T01-N05",
+      "status": "OPEN_HUMAN_REVIEW",
+      "description": "可读性修复候选待真人对当前范围签收，历史签名不转移",
+      "source": "agent/tasks/T-01/outputs/current-td-contract.md"
+    },
+    {
+      "task_id": "T-01",
+      "id": "T01-N06",
+      "status": "FIXED_AND_INDEPENDENTLY_VERIFIED",
+      "description": "独立复核两项验证器漏检及旧链接已修复，9项回归覆盖原复现；独立57项通过，复审无新P0-P3",
+      "source": "agent/tasks/T-01/evidence/independent-review.md"
     }
   ]
 }

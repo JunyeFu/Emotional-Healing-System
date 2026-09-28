@@ -1,0 +1,36 @@
+{
+  "source_sha256": "3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED",
+  "candidate_sha256": "B03DC5685A2910D7E110D990E7C3B361DC28A0B312985D0E8712C2DDC67B939E",
+  "scope": "Legacy Text TOP readability only, not A-theme implementation",
+  "patches": {
+    "panel_text": {
+      "fontsizexunit": "pixels",
+      "fontsizeyunit": "pixels",
+      "fontsizex": "18",
+      "fontsizey": "18",
+      "fontautosize": "nofit",
+      "positionunit": "pixels",
+      "position1": "20",
+      "position2": "-20",
+      "linespacingunit": "pixels",
+      "linespacing": "6"
+    },
+    "resp_sqi_bar": {
+      "centery": "-0.36",
+      "centerx": "-0.21",
+      "sizey": "0.025"
+    },
+    "ecg_sqi_bar": {
+      "centery": "-0.36",
+      "centerx": "0.21",
+      "sizey": "0.025"
+    },
+    "stream_badge": {
+      "centerx": "0.46",
+      "centery": "0.46",
+      "sizey": "0.035",
+      "sizex": "0.035"
+    }
+  },
+  "official_parameter_reference": "https://derivative.ca/UserGuide/Text_TOP"
+}

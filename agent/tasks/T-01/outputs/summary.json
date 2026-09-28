@@ -1,0 +1,74 @@
+{
+  "task_id": "T-01",
+  "title": "T01 只读遥测面板与候选制品审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "T-01历史DONE与原签收范围保留。执行脚本已迁入Agent层，57项专项及验证器回归通过；实际TD重开与五阶段UDP行为通过。旧界面文字裁切已在独立可读性候选修复并逐张检查；新候选未代签，A主题和真实设备链不由本轮关闭。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-02 +08:00",
+    "commit": "c3b84ba36a63c3b19f7fa35db37ff6aebe106dd3",
+    "method": "真实第二人签收8790cd3ae4db3543c038efc21deec635605cb06f的本机只读基线；本轮整理及新视觉候选不转移该签名。"
+  },
+  "sections": [
+    {"heading": "当前结论", "paragraphs": [
+      "本轮执行Codex。既有网络基线、当前磁盘工程、可读性候选和A主题分别记录；规范化完成不改变任务注册状态或研究准入。"
+    ]},
+    {"heading": "目标与完成标准", "paragraphs": [
+      "原包约3人日。AC1为合法遥测显示，AC2为丢包、乱序、断流和恢复正确，AC3为只读权限及Python权威不变。上游F-01/F-04/F-05，工程输入127.0.0.1:5005。",
+      "本轮要求真实迁移执行工具、分类过期文件、原件与新结果隔离，验证当前实现，修复已观测画面问题，再串联总结检查上下游。",
+      "所需Python、UDP及TD DAT/TOP布局技能；国内学习资料使用项目技能表L-TD，链接见审阅来源。TD版本按实际2025.32820使用。"
+    ]},
+    {"heading": "实际交付", "paragraphs": [
+      "五个Python执行脚本迁入execution，旧清理脚本归入archive；verify.py/verify.ps1成为主机入口。新增隔离TD探针与可读候选生成器，构建器同步有效字体参数。",
+      "固定TASK及五目录、23件制品比较、当前TOE内容比较、实际TD截图与状态、本包Word和项目串联Word。共享运行模块和历史证据保留权威位置，最终整体迁移。"
+    ]},
+    {"heading": "执行过程与关键决定", "paragraphs": [
+      "原候选哈希、旧清理候选与当前TOE不同。展开核对49项内部文件，13项仅编辑器位置、视口或选择标识变化，功能代码和参数一致；六个默认演示节点不存在。",
+      "不回写历史报告。实际隐藏启动隔离TD副本，以校验钩子捕获只读输出；发现大字体导致长行和底部裁切，另存ReadableBaseline候选并再次实跑。"
+    ]},
+    {"heading": "验证与结果", "paragraphs": [
+      "57项主机测试通过，含48项T-01/F-04及9项验证器回归。原23件证据符合清单，实际13件原始字节、10件Git换行；LFS身份仅由合成回归验证。历史TOX和签署未修改。",
+      "TD2025.32820实际重开22节点，12项端口、错误与权限门通过；8项链路检查通过：SessionCore发布、合法帧、丢包2、重复1、乱序1、2秒断流、恢复及统计保留。",
+      "五张新截图逐张确认文字完整、无SQI条遮挡。输入为合同fixture和开发回放，不是设备实采；LIVE与formal_stage_1文字是消息内容，不是正式活动证据。"
+    ]},
+    {"heading": "偏离与修复闭环", "paragraphs": [
+      "T01-N01：执行工具散落模块且默认覆盖历史，已迁入Agent并将新输出隔离。T01-N02：当前TOE与旧清理哈希混读，已通过展开比较及实际重开建立当前身份。",
+      "T01-N03：旧fontsize参数无效、长行和底部被裁切，已用18px有效参数与20px边距修复独立候选，正文和SQI条分开。A主题原生控件验收与新候选真人签收继续开放。",
+      "独立复核发现新增核心条目漏检、LFS指针未核对及旧链接失效。已补双向集合比较、OID/长度对应检查、两处链接与9项回归，未用旧测试通过掩盖漏检。"
+    ]},
+    {"heading": "目录与文件整理", "paragraphs": [
+      "五个旧Python入口移除，无兼容转发；旧清理工具归档并明确不再执行。新运行输出固定evidence/runtime，原模块TOE/TOX、23项证据和签收保留，不按名字旧删除。"
+    ]},
+    {"heading": "上下游交接", "paragraphs": [
+      "P-01发布只读遥测，P-02记录运行事实；TD不推进流程、不估算呼吸步骤、不写回顺序，TD缺席不影响Unity体验。帧龄与管线字段不代表设备到屏幕延迟。",
+      "T-02完成请求/回执、导出与操作功能，并验收A主题原生布局；D/S/I负责真实设备和全链。本包只支持工程消费能力，不支持研究效果结论。下一规范化包R-01检查表示方案与当前研究问题。"
+    ]},
+    {"heading": "审阅与责任签收", "paragraphs": [
+      "原独立Agent复核与傅钧烨签署保持原对象。新候选的自动与截图复测不等于真人签收，本轮不代填姓名、日期或PASS。责任由团队总监安排，现有DONE不扩大范围。",
+      "本轮独立Agent Carver首轮发现2项P2和1项P3；修复后独立实跑57项通过，复审无新P0-P3。复审核对已有TD证据与五张截图，没有由该Agent再次启动TD。"
+    ]},
+    {"heading": "收尾与下一包", "paragraphs": [
+      "明确路径提交并推送codex/task-package-normalization，不自动合并。已整理12/71包，剩余59包；下一包R-01，全项目及最终根目录双层迁移仍未完成。"
+    ]},
+    {"heading": "审阅来源", "paragraphs": [
+      "inputs引用合同、实现、设计与原签署，evidence保存本轮比较和真实截图，outputs为当前交接及总结。串联Word据此展示当前事实，不将A主题主机测试误写为TD运行。"
+    ]}
+  ],
+  "findings": [
+    {"id": "T01-N01", "status": "FIXED", "description": "五个执行工具迁入Agent层，新结果不覆盖历史；过期清理工具归档", "source": "agent/tasks/T-01/execution/README.md"},
+    {"id": "T01-N02", "status": "FIXED_CURRENT_USAGE", "description": "当前TOE身份与旧清理候选不同，49项内部功能一致、13项编辑器布局变化，实际TD探针通过", "source": "agent/tasks/T-01/evidence/cleanup_comparison.json"},
+    {"id": "T01-N03", "status": "FIXED_CANDIDATE", "description": "旧Text TOP裁切已在独立可读候选修复并实跑，未覆盖历史制品", "source": "agent/tasks/T-01/evidence/runtime/layout_repair.json"},
+    {"id": "T01-N04", "status": "OPEN_DOWNSTREAM_NATIVE_UI", "description": "A主题原生控件、导航和尺寸验收继续交T-02，不由本次旧界面修复代替", "source": "agent/tasks/T-01/outputs/current-td-contract.md"},
+    {"id": "T01-N05", "status": "OPEN_HUMAN_REVIEW", "description": "可读性修复候选待真人对当前范围签收，历史签名不转移", "source": "agent/tasks/T-01/outputs/current-td-contract.md"},
+    {"id": "T01-N06", "status": "FIXED_AND_INDEPENDENTLY_VERIFIED", "description": "独立复核两项验证器漏检及旧链接已修复，9项回归覆盖原复现；独立57项通过，复审无新P0-P3", "source": "agent/tasks/T-01/evidence/independent-review.md"}
+  ],
+  "next_task": "R-01",
+  "source_links": [
+    {"label": "当前TD使用与交接", "path": "agent/tasks/T-01/outputs/current-td-contract.md"},
+    {"label": "本轮验证", "path": "agent/tasks/T-01/evidence/verification.json"},
+    {"label": "实际TD探针", "path": "agent/tasks/T-01/evidence/runtime/probe_report.json"},
+    {"label": "原第二人签收", "path": "03-测试与实验/T-01_第二人审核报告_已签署.md"},
+    {"label": "本轮独立复审", "path": "agent/tasks/T-01/evidence/independent-review.md"},
+    {"label": "国内任务技能与学习资料", "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"}
+  ]
+}

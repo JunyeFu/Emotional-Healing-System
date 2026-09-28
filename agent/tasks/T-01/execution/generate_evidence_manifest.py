@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 
 
-BASE_DIR = Path(__file__).resolve().parent
-OUTPUT = BASE_DIR / "evidence" / "evidence_manifest.json"
+BASE_DIR = Path(__file__).resolve().parents[1] / "evidence" / "runtime"
+OUTPUT = BASE_DIR / "evidence_manifest.json"
 INCLUDE = (
     "T01_TelemetryPanel.toe",
     "T01_TelemetryPanel.tox",
@@ -39,6 +39,7 @@ INCLUDE = (
 def main() -> None:
     artifacts = {}
     for relative in INCLUDE:
+        relative = relative.removeprefix("evidence/")
         path = BASE_DIR / relative
         if not path.is_file():
             raise FileNotFoundError(relative)

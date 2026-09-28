@@ -1,0 +1,23 @@
+{
+  "signed_core_files": 49,
+  "functional_differences": [],
+  "editor_layout_only": [
+    "project1/T01_TelemetryPanel.n",
+    "project1/T01_TelemetryPanel/ConsoleShell.n",
+    "project1/T01_TelemetryPanel/ConsoleShell/background.n",
+    "project1/T01_TelemetryPanel/ConsoleShell/composite.n",
+    "project1/T01_TelemetryPanel/ConsoleShell/ecg_sqi_bar.n",
+    "project1/T01_TelemetryPanel/ConsoleShell/panel_text.n",
+    "project1/T01_TelemetryPanel/ConsoleShell/resp_sqi_bar.n",
+    "project1/T01_TelemetryPanel/ConsoleShell/stream_badge.n",
+    "project1/T01_TelemetryPanel/Output.n",
+    "project1/T01_TelemetryPanel/Runtime.n",
+    "project1/T01_TelemetryPanel/Sources.n",
+    "project1/T01_TelemetryPanel/node_errors.n",
+    "project1/T01_TelemetryPanel/node_permissions.n"
+  ],
+  "remaining_demo_entries": [],
+  "display_bound": true,
+  "old_cleanup_candidate_sha256": "46D96C1E6886691C01064CAD82817AC900EAAD850BFB1652E0CF8BBE13151603",
+  "current_toe_sha256": "3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED"
+}

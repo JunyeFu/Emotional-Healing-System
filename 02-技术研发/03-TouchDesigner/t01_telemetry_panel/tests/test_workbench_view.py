@@ -73,7 +73,7 @@ def test_percent_missing_and_zero_are_distinct(value, expected):
 
 
 def test_candidate_builder_callbacks_compile_without_running_td():
-    tree = ast.parse((BASE / 'build_workbench_a.py').read_text(encoding='utf-8'))
+    tree = ast.parse((BASE.parents[2] / 'agent/tasks/T-01/execution/build_workbench_a.py').read_text(encoding='utf-8'))
     runtime = next(n.value.value for n in tree.body if isinstance(n, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'RUNTIME' for t in n.targets))
     compile(runtime, '<TD frame callback>', 'exec')
     assert '50_000_000' in runtime

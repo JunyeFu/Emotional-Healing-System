@@ -1,6 +1,6 @@
 # SRP · 实验体验与论文证据系统
 
-任务包双层整理入口：[人类审阅与Word总结](human/README.md) · [Agent执行层](agent/README.md)。F-01至F-05、G-01/G-02、P-01/P-02及U-01/U-02已完成本轮整理，共11/71包；下一包T-01，整体目录迁移仍在逐包推进。Unity当前使用入口见[可靠控制说明](agent/tasks/U-01/outputs/current-control-contract.md)与[四层适配说明](agent/tasks/U-02/outputs/current-adapter-contract.md)。
+任务包双层整理入口：[人类审阅与Word总结](human/README.md) · [Agent执行层](agent/README.md)。F-01至F-05、G-01/G-02、P-01/P-02、U-01/U-02及T-01已完成本轮整理，共12/71包；下一包R-01，整体目录迁移仍在逐包推进。Unity当前使用入口见[可靠控制说明](agent/tasks/U-01/outputs/current-control-contract.md)与[四层适配说明](agent/tasks/U-02/outputs/current-adapter-contract.md)，TD当前入口见[只读遥测交接](agent/tasks/T-01/outputs/current-td-contract.md)。
 
 > 四天气场景 · 两种呼吸提示方案 · 真实设备输入 · 可追溯研究证据
 

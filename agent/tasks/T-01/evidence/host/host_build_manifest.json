@@ -1,0 +1,11 @@
+{
+  "artifact_hashes": {
+    "field_manifest.json": "F78A33D45DF11A0DB4D4B7EE658EADEBBB09CB3A800D1DA92C13B8AD94265157",
+    "node_permissions.json": "CCE2812F031517574D3A42F7AA08A1D65097E98855816BB848EF9939EBA3A646",
+    "node_plan.json": "E32145E212101D665EEEFE354A0BB987B0326EEBAC8FE9E2B2F3BF7943733909"
+  },
+  "evidence_boundary": "HOST_PLAN_ONLY_NOT_TOUCHDESIGNER_RUNTIME",
+  "manifest_schema_version": "t01-host-build-manifest-v1",
+  "node_count": 21,
+  "touchdesigner_required_build": "2025.32820"
+}

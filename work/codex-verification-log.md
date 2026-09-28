@@ -1921,3 +1921,14 @@
 - 07_validate_task_packages.py验证71项；14_validate_ready_task_packages.py验证5包46快照。状态未迁移，历史签署及进行中快照未改。
 - build_task_reviews.py U-02及--check通过。本包Word3页、串联Word6页逐页检查；当前TASK/outputs/复审报告不合规措辞检查无命中。
 - 本轮生成的空Resources目录与meta已清理；构建写入的preloadedAssets已恢复原值，未改正式Player配置。失败尝试归档，新证据不覆盖历史原件。
+
+## 2026-09-28 T-01双层规范化
+
+- verify.py执行48项T-01/F-04测试通过，23件原证据按字节清单核对；Git文本换行与LFS物化口径区分，历史签署及证据git diff --exit-code通过。
+- 当前TOE展开49项内部文件，13项.n仅tile、v、current选择标识变化；功能代码与参数一致，无默认演示条目，project1显示绑定正确。
+- run_td_probe.py实际隐藏启动TD2025.32820隔离副本，22节点/12门通过；SessionCore/TelemetryPublisher发布及五阶段UDP通过，丢包2、重复1、乱序1、断流超过2秒、恢复统计保留。
+- 旧截图实测裁切，repair_readonly_layout.py另存B03DC568开头候选；run_td_probe.py --readable复测8项行为通过，五张1280x720截图逐张检查，完整状态与SQI不遮挡。
+- 早期Git文本字节口径和DAT序列化长度校验失败已修正；没有用失败尝试生成PASS。没有触碰原TOE/TOX或用户TD进程。
+- 注册表71项通过；T-02新增来源先显式暂存，再通过分发5包47快照校验。其他领取/复核输入未变。Word生成及--check通过，本包3页、串联7页逐页检查，TASK/outputs措辞无命中。
+- 独立复核实际复现新增核心文件漏检与LFS指针无身份校验；补compare_core_files和git_artifact_policy，9项测试覆盖合法字节/换行/LFS、错误OID/size、核心新增/删除/功能/编辑器布局，含原48项共57 passed。旧A构建器及清理工具两处链接均修正。
+- Carver独立复审57 passed（48+9），首轮2P2/1P3全部关闭，报告保留两轮记录；实际核对原23件、49项展开内容、probe身份及五张截图与状态。复审未启动TD，不代填真人签名。

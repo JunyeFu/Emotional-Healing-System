@@ -5,7 +5,7 @@
 ## 本轮代码
 
 - [workbench_view.py](../workbench_view.py)：纯只读显示映射；保留周期和步骤身份，缺值不补零，开发回放与断流历史值明确标识。
-- [build_workbench_a.py](../build_workbench_a.py)：在现有T-01内新增WorkbenchA原生候选，复用原UDP适配器，不创建网络输出。三页分别为总览、链路与时钟、事件与审计。
+- [build_workbench_a.py](../../../../agent/tasks/T-01/execution/build_workbench_a.py)：在现有T-01内新增WorkbenchA原生候选，复用原UDP适配器，不创建网络输出。三页分别为总览、链路与时钟、事件与审计。
 - 使用Container/Text/Button COMP与Panel Execute DAT；运行逻辑放Base COMP。总览短文本按可用区域收束，完整字段在详情逐行显示并支持滚动。业务字段不可编辑。
 - 显示回调最高20Hz，文字只在变化时写入；SQI未知为空。导出、截图、人工标记和中止按钮禁用。
 - 成功构建后禁用旧文本刷新，将Output与Perform入口指向候选原生面板；另存`T01_Workbench_A.candidate.toe`。源TOE和TOX不覆盖。失败时恢复旧显示绑定并清除本次新增节点。
@@ -16,7 +16,7 @@
 打开主工程，在Python Textport执行：
 
 ```python
-from pathlib import Path; p = Path(project.folder) / 'build_workbench_a.py'; exec(compile(p.read_text(encoding='utf-8'), str(p), 'exec'), dict(globals(), __file__=str(p), __name__='__main__'))
+from pathlib import Path; p = Path(r'D:\Agent\srp\agent\tasks\T-01\execution\build_workbench_a.py'); exec(compile(p.read_text(encoding='utf-8'), str(p), 'exec'), dict(globals(), __file__=str(p), __name__='__main__'))
 ```
 
 成功应输出`WORKBENCH_A_CANDIDATE_SAVED`及候选路径。打开`/project1/T01_TelemetryPanel/WorkbenchA`的独立面板查看或使用Perform窗口。如果出现异常，不保存覆盖主工程，保留完整Textport错误用于修正。

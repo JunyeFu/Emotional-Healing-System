@@ -8,7 +8,7 @@
 - 删除 `/project1/geo1`（含内部节点）、`noise1`、`chopto1`、`displace1`、`moviefilein1`、默认 `out1`，共21个序列化条目。保留系统 `/local`、`/perform` 与全部 T-01 内容。
 - 原工程 `project1.parm` 的 `top 0 ./out1` 仍指向演示输出，现改为 `./T01_TelemetryPanel/Output/display_out`。构建脚本同步设置该入口，不再遗漏。
 - 清理前后T-01组件内49个展开文件SHA-256逐项相同。`.tox`无需修改，因为删除对象位于它的导出根之外。
-- [清理报告](default-demo-cleanup-report.json)记录精确前后哈希；[清理脚本](../clean_default_demo.ps1)只生成候选，不自行替换源工程。
+- [清理报告](default-demo-cleanup-report.json)记录精确前后哈希；[历史清理脚本](../../../../agent/tasks/T-01/archive/clean_default_demo.ps1)当时只生成候选，不自行替换源工程；当前已归档，不再执行。
 - 自动化接口 `127.0.0.1:9981` 返回 ECONNREFUSED，未关闭当前TD进程、未声称当前窗口已刷新或新工程运行验收通过。当前窗口可能仍持有旧工程；重新加载磁盘工程前应处理窗口内未保存改动，不能把旧窗口再次保存覆盖本次清理。
 - 旧工程可从本次提交的父版本恢复；旧运行截图和签收报告保留历史身份，不把新TOE哈希代填到旧运行证据。
 

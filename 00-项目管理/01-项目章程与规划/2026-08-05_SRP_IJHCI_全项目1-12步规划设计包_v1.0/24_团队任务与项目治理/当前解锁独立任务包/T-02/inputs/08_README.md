@@ -2,6 +2,8 @@
 
 本目录是T-01独立运行制品，不修改F-04签署目录。`T01_TelemetryPanel.toe/.tox`只读监听`127.0.0.1:5005`，显示Python权威发布的v2.2遥测和TD本地链路统计。
 
+当前使用和修复范围以[Agent交接说明](../../../agent/tasks/T-01/outputs/current-td-contract.md)为入口；原签收与新候选分开。2026-09-28实际TD探针通过，独立可读性候选修复旧文字裁切；A主题原生控件仍待验证。
+
 ## 文件
 
 A主题原生构建候选已开始实现，执行入口与验证边界见[实施记录](design/workbench-a-implementation.md)。目前仅通过主机测试，等待TD内执行。
@@ -12,9 +14,7 @@ A主题原生构建候选已开始实现，执行入口与验证边界见[实施
 
 - `t01_telemetry.py`：纯Python不可变快照适配器。
 - `T01_TelemetryPanel.toe/.tox`：TouchDesigner 2025.32820制品。
-- `build_t01_touchdesigner.py`：幂等构建脚本。
-- `verify_t01_touchdesigner_reopen.py`：重开、节点权限和错误门。
-- `replay_t01_udp.py`：F-05 fixture、真实`SessionCore + TelemetryPublisher`及异常链路发送器。
+- 构建、重开校验、回放和清单脚本已实际迁入[Agent执行层](../../../agent/tasks/T-01/execution/README.md)，没有旧位置转发副本。
 - `evidence/`：节点计划、状态、截图、回放视频和SHA-256清单。
 
 ## 主机专项测试

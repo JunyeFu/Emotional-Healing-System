@@ -1,8 +1,12 @@
 """Run in TD Textport; build the A-theme candidate without overwriting signed artifacts."""
 from pathlib import Path
+import sys
 
 ROOT = "/project1/T01_TelemetryPanel"
-BASE = Path(__file__).resolve().parent
+TASK_DIR = Path(__file__).resolve().parents[1]
+BASE = TASK_DIR.parents[2] / "02-技术研发/03-TouchDesigner/t01_telemetry_panel"
+RUNTIME_DIR = TASK_DIR / "evidence" / "runtime"
+sys.path.insert(0, str(BASE))
 SHELL = ROOT + "/WorkbenchA"
 
 RUNTIME = '''
@@ -97,7 +101,7 @@ def button(parent, name, label, enabled=False):
 
 def _build():
     root = op(ROOT)
-    if root is None or Path(project.folder).resolve() != BASE:
+    if root is None or Path(project.folder).resolve() not in (BASE, RUNTIME_DIR):
         raise RuntimeError("Open the authoritative T01 project before running this builder")
     if root.op('WorkbenchA') is not None:
         raise RuntimeError("WorkbenchA already exists; inspect it before rebuilding")
@@ -180,7 +184,8 @@ def _build():
     errors = shell.errors(recurse=True) + shell.scriptErrors(recurse=True)
     if errors:
         raise RuntimeError(errors)
-    target = BASE / 'T01_Workbench_A.candidate.toe'
+    RUNTIME_DIR.mkdir(parents=True, exist_ok=True)
+    target = RUNTIME_DIR / 'T01_Workbench_A.candidate.toe'
     if target.exists():
         raise RuntimeError('Candidate file already exists; refusing overwrite')
     if not project.save(str(target)):
@@ -191,8 +196,8 @@ def _build():
 
 def build():
     root = op(ROOT)
-    target = BASE / 'T01_Workbench_A.candidate.toe'
-    if root is None or Path(project.folder).resolve() != BASE:
+    target = RUNTIME_DIR / 'T01_Workbench_A.candidate.toe'
+    if root is None or Path(project.folder).resolve() not in (BASE, RUNTIME_DIR):
         raise RuntimeError('Open the authoritative T01 project first')
     if root.op('WorkbenchA') is not None or root.op('Output/workbench_a_view') is not None or target.exists():
         raise RuntimeError('Candidate already exists; inspect it before rebuilding')

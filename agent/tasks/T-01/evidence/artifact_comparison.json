@@ -1,0 +1,189 @@
+{
+  "candidate": "8790cd3ae4db3543c038efc21deec635605cb06f",
+  "artifacts": [
+    {
+      "path": "T01_TelemetryPanel.toe",
+      "signed_sha256": "38ECA7FAD11A989DA4EF3923A4277E557A966586CDD2F7C2F1EC251CCFE57E44",
+      "git_blob_sha256": "38ECA7FAD11A989DA4EF3923A4277E557A966586CDD2F7C2F1EC251CCFE57E44",
+      "git_policy": "raw_bytes",
+      "current_sha256": "3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED",
+      "same_bytes": false
+    },
+    {
+      "path": "T01_TelemetryPanel.tox",
+      "signed_sha256": "F0614B20CF71E3C6E83B98D4CCC8A3CAD2F953A557DC2AAAEF809B15530AB8AE",
+      "git_blob_sha256": "F0614B20CF71E3C6E83B98D4CCC8A3CAD2F953A557DC2AAAEF809B15530AB8AE",
+      "git_policy": "raw_bytes",
+      "current_sha256": "F0614B20CF71E3C6E83B98D4CCC8A3CAD2F953A557DC2AAAEF809B15530AB8AE",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/host/field_manifest.json",
+      "signed_sha256": "F78A33D45DF11A0DB4D4B7EE658EADEBBB09CB3A800D1DA92C13B8AD94265157",
+      "git_blob_sha256": "F78A33D45DF11A0DB4D4B7EE658EADEBBB09CB3A800D1DA92C13B8AD94265157",
+      "git_policy": "raw_bytes",
+      "current_sha256": "F78A33D45DF11A0DB4D4B7EE658EADEBBB09CB3A800D1DA92C13B8AD94265157",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/host/host_build_manifest.json",
+      "signed_sha256": "0911F99DD251DEF1C8BA2C21C459E76D7842BF859FF8934415652C220520A86C",
+      "git_blob_sha256": "0911F99DD251DEF1C8BA2C21C459E76D7842BF859FF8934415652C220520A86C",
+      "git_policy": "raw_bytes",
+      "current_sha256": "0911F99DD251DEF1C8BA2C21C459E76D7842BF859FF8934415652C220520A86C",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/host/node_permissions.json",
+      "signed_sha256": "BD2BCB7BC28E94BABF8DDAAF31E6876929ADC6174DB69181C928D219C9B7702E",
+      "git_blob_sha256": "BD2BCB7BC28E94BABF8DDAAF31E6876929ADC6174DB69181C928D219C9B7702E",
+      "git_policy": "raw_bytes",
+      "current_sha256": "BD2BCB7BC28E94BABF8DDAAF31E6876929ADC6174DB69181C928D219C9B7702E",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/host/node_plan.json",
+      "signed_sha256": "07006EB3834F24A02ADFA73C428890D4A0161B5409F5D81C1E2B8F5726A04282",
+      "git_blob_sha256": "07006EB3834F24A02ADFA73C428890D4A0161B5409F5D81C1E2B8F5726A04282",
+      "git_policy": "raw_bytes",
+      "current_sha256": "07006EB3834F24A02ADFA73C428890D4A0161B5409F5D81C1E2B8F5726A04282",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/capture_manifest.json",
+      "signed_sha256": "92ED08AC8DD6EC667AEB27F4403B649F9F2F1953E4EA91BF8E4C5C544C9A93D9",
+      "git_blob_sha256": "ECE27662F2E9F52831782041B3463E94DCA7F995CD367327680A0FFFB3C26492",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "92ED08AC8DD6EC667AEB27F4403B649F9F2F1953E4EA91BF8E4C5C544C9A93D9",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/node_errors.json",
+      "signed_sha256": "8608FF89E777AFDF102E1125F6C55E23CAE4655B61BCE89BE9B9EA83F00CF64E",
+      "git_blob_sha256": "682C4BBB8FB225F0ACFF72621376301F91C7B1702076D71036CF561437C789E7",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "8608FF89E777AFDF102E1125F6C55E23CAE4655B61BCE89BE9B9EA83F00CF64E",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/node_inventory.json",
+      "signed_sha256": "58F12976B210051BBE2F837979BD549CD6EC3EA1A4B297FE24FCA3093AA6D463",
+      "git_blob_sha256": "DC7F70BF20399477DFC8DDFBA5525672854488F6953B0AD9F283FC8B92EDD6B5",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "58F12976B210051BBE2F837979BD549CD6EC3EA1A4B297FE24FCA3093AA6D463",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/reopen_report.json",
+      "signed_sha256": "84C153D5C4DA426F2355A9EDEC9FE0EE7F964EC1FEE0D372B48F0933CE42100D",
+      "git_blob_sha256": "94295299FB4B25D7FDB98845E4F941603C8B3DABC693502A6973ED539AAB2665",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "84C153D5C4DA426F2355A9EDEC9FE0EE7F964EC1FEE0D372B48F0933CE42100D",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/runtime_build_manifest.json",
+      "signed_sha256": "F2FB49098AF3703721C961CF4CE7595BCA60CD73B6D2E06E3C9DD94A37BBC64D",
+      "git_blob_sha256": "F12E3E08AFB8E4F24902BDF4947472254F5BF7896590E1623862C8C138E8FD86",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "F2FB49098AF3703721C961CF4CE7595BCA60CD73B6D2E06E3C9DD94A37BBC64D",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/screenshots/disconnected.png",
+      "signed_sha256": "7FBFA6F9C31088D26167CCAA1B68F4C079103175947ACF8E44078C1FA9903613",
+      "git_blob_sha256": "7FBFA6F9C31088D26167CCAA1B68F4C079103175947ACF8E44078C1FA9903613",
+      "git_policy": "raw_bytes",
+      "current_sha256": "7FBFA6F9C31088D26167CCAA1B68F4C079103175947ACF8E44078C1FA9903613",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/screenshots/fixture_good.png",
+      "signed_sha256": "566F32EC2327B0169793F4D46137CF145CBC0FA1B8521EF054E7913F97CBA0A7",
+      "git_blob_sha256": "566F32EC2327B0169793F4D46137CF145CBC0FA1B8521EF054E7913F97CBA0A7",
+      "git_policy": "raw_bytes",
+      "current_sha256": "566F32EC2327B0169793F4D46137CF145CBC0FA1B8521EF054E7913F97CBA0A7",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/screenshots/out_of_order.png",
+      "signed_sha256": "044205669A3CDC43C617037E9BAEE1DC0351B27DC0A174B0A3BFE376C844BFAC",
+      "git_blob_sha256": "044205669A3CDC43C617037E9BAEE1DC0351B27DC0A174B0A3BFE376C844BFAC",
+      "git_policy": "raw_bytes",
+      "current_sha256": "044205669A3CDC43C617037E9BAEE1DC0351B27DC0A174B0A3BFE376C844BFAC",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/screenshots/publisher_live.png",
+      "signed_sha256": "B3CBC4AB753044503C71E9EC9F728AA4B40409C73EDB453E64DFC72ADEFF3CD4",
+      "git_blob_sha256": "B3CBC4AB753044503C71E9EC9F728AA4B40409C73EDB453E64DFC72ADEFF3CD4",
+      "git_policy": "raw_bytes",
+      "current_sha256": "B3CBC4AB753044503C71E9EC9F728AA4B40409C73EDB453E64DFC72ADEFF3CD4",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/screenshots/recovered.png",
+      "signed_sha256": "8EA27BBC15E5CCA0FFD1A1C64B39B4C8489B01C591C31D4AF4937F3707DFF62D",
+      "git_blob_sha256": "8EA27BBC15E5CCA0FFD1A1C64B39B4C8489B01C591C31D4AF4937F3707DFF62D",
+      "git_policy": "raw_bytes",
+      "current_sha256": "8EA27BBC15E5CCA0FFD1A1C64B39B4C8489B01C591C31D4AF4937F3707DFF62D",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/states/disconnected.json",
+      "signed_sha256": "9A351EF6543434264535F58802799E5B4FAD72D1C41279754616BC956E6E9908",
+      "git_blob_sha256": "04C661B58E25FBA39BDBAFA604664D0E77CBF17C402CD3FA6370BA6A6A2C55EA",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "9A351EF6543434264535F58802799E5B4FAD72D1C41279754616BC956E6E9908",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/states/fixture_good.json",
+      "signed_sha256": "A127034D0719B4CD282BE372C3CEFD4292BA24E2CB6D2D0FAD1C0539779DEBB9",
+      "git_blob_sha256": "72D8C153532B0B5E7F26DF42DD0A3D3C5C3526A0FA11018A55483412D23660D1",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "A127034D0719B4CD282BE372C3CEFD4292BA24E2CB6D2D0FAD1C0539779DEBB9",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/states/out_of_order.json",
+      "signed_sha256": "CB0076D3F05DE5BDBF6AEA2E6A0865DF7AA91F391F630C6EA1F38496C51CC64B",
+      "git_blob_sha256": "8C40E10D30D33B372D5924D201CAD59F20D0C376E1F9694ADA90AC5755A555B1",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "CB0076D3F05DE5BDBF6AEA2E6A0865DF7AA91F391F630C6EA1F38496C51CC64B",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/states/publisher_live.json",
+      "signed_sha256": "CD8353E174604C39F158F7DBCFD0B1833BA3775535D1614684B4C2688A957B13",
+      "git_blob_sha256": "15F844A67EB3BEEA59BE3580D41BFE28542F918BD63D3E6636D11D414BED169C",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "CD8353E174604C39F158F7DBCFD0B1833BA3775535D1614684B4C2688A957B13",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/states/recovered.json",
+      "signed_sha256": "9A861602C90B292C41B3A62962BD07E07DCD36626B885BA04FB144323D047625",
+      "git_blob_sha256": "4C4F761D7FA7E6CEB512254E48FD3CC882DD56DD9F065DD5B35BC73CA50B0699",
+      "git_policy": "git_normalized_text_vs_signed_checkout_bytes",
+      "current_sha256": "9A861602C90B292C41B3A62962BD07E07DCD36626B885BA04FB144323D047625",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/video/fixture_replay.ffconcat",
+      "signed_sha256": "2697BFFDCB305B92C30EF5083A44E703360C9F334AD73BE84662EF6B87CA0359",
+      "git_blob_sha256": "2697BFFDCB305B92C30EF5083A44E703360C9F334AD73BE84662EF6B87CA0359",
+      "git_policy": "raw_bytes",
+      "current_sha256": "2697BFFDCB305B92C30EF5083A44E703360C9F334AD73BE84662EF6B87CA0359",
+      "same_bytes": true
+    },
+    {
+      "path": "evidence/touchdesigner/video/fixture_replay.mp4",
+      "signed_sha256": "580DB8EEB06E957D3B277D3D7CFBBCAEA6261EBCAAB6E0CEC59094EDCEB1DD5A",
+      "git_blob_sha256": "580DB8EEB06E957D3B277D3D7CFBBCAEA6261EBCAAB6E0CEC59094EDCEB1DD5A",
+      "git_policy": "raw_bytes",
+      "current_sha256": "580DB8EEB06E957D3B277D3D7CFBBCAEA6261EBCAAB6E0CEC59094EDCEB1DD5A",
+      "same_bytes": true
+    }
+  ]
+}

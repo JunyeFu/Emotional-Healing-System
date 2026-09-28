@@ -8,8 +8,8 @@ import json
 from pathlib import Path
 
 
-BASE_DIR = Path(__file__).resolve().parent
-EVIDENCE_DIR = BASE_DIR / "evidence" / "touchdesigner"
+TASK_DIR = Path(__file__).resolve().parents[1]
+EVIDENCE_DIR = TASK_DIR / "evidence" / "runtime" / "touchdesigner"
 SCREENSHOT_DIR = EVIDENCE_DIR / "screenshots"
 STATE_DIR = EVIDENCE_DIR / "states"
 REPORT_PATH = EVIDENCE_DIR / "reopen_report.json"

@@ -9,17 +9,20 @@ from pathlib import Path
 import sys
 
 
-BASE_DIR = Path(__file__).resolve().parent
-if str(BASE_DIR) not in sys.path:
-    sys.path.insert(0, str(BASE_DIR))
+TASK_DIR = Path(__file__).resolve().parents[1]
+REPO_ROOT = TASK_DIR.parents[2]
+BASE_DIR = REPO_ROOT / "02-技术研发/03-TouchDesigner/t01_telemetry_panel"
+sys.path.insert(0, str(BASE_DIR))
+sys.path.insert(0, str(REPO_ROOT / "02-技术研发"))
 
 from t01_node_plan import ROOT_PATH, TD_BUILD, build_node_plan, write_host_artifacts
 
 
-HOST_EVIDENCE = BASE_DIR / "evidence" / "host"
-TD_EVIDENCE = BASE_DIR / "evidence" / "touchdesigner"
-TOE_PATH = BASE_DIR / "T01_TelemetryPanel.toe"
-TOX_PATH = BASE_DIR / "T01_TelemetryPanel.tox"
+RUNTIME_DIR = TASK_DIR / "evidence" / "runtime"
+HOST_EVIDENCE = RUNTIME_DIR / "host"
+TD_EVIDENCE = RUNTIME_DIR / "touchdesigner"
+TOE_PATH = RUNTIME_DIR / "T01_TelemetryPanel.toe"
+TOX_PATH = RUNTIME_DIR / "T01_TelemetryPanel.tox"
 WIDTH = 1280
 HEIGHT = 720
 
@@ -261,13 +264,22 @@ def build():
     _set(background, "colorg", 0.045)
     _set(background, "colorb", 0.075)
     _set(background, "colora", 1.0)
-    stream_badge = _rectangle(shell, "stream_badge", "stream_badge", (0.42, 0.48, 0.58), 0.40, 0.40, 0.12, 0.08)
-    resp_bar = _rectangle(shell, "resp_sqi_bar", "resp_sqi_bar", (0.13, 0.72, 0.92), 0.25, 0.13, 0.02, 0.045)
-    ecg_bar = _rectangle(shell, "ecg_sqi_bar", "ecg_sqi_bar", (0.95, 0.76, 0.20), 0.25, 0.04, 0.02, 0.045)
+    stream_badge = _rectangle(shell, "stream_badge", "stream_badge", (0.42, 0.48, 0.58), 0.46, 0.46, 0.035, 0.035)
+    resp_bar = _rectangle(shell, "resp_sqi_bar", "resp_sqi_bar", (0.13, 0.72, 0.92), -0.21, -0.36, 0.02, 0.025)
+    ecg_bar = _rectangle(shell, "ecg_sqi_bar", "ecg_sqi_bar", (0.95, 0.76, 0.20), 0.21, -0.36, 0.02, 0.025)
     text = _create(shell, textTOP, "panel_text", "telemetry_text")
     _configure_top(text)
     _set(text, "text", "T-01 TELEMETRY PANEL\nREAD ONLY / WAITING FOR UDP 5005")
-    _set(text, "fontsize", 2)
+    _set(text, "fontsizexunit", "pixels")
+    _set(text, "fontsizeyunit", "pixels")
+    _set(text, "fontsizex", 18)
+    _set(text, "fontsizey", 18)
+    _set(text, "fontautosize", "nofit")
+    _set(text, "positionunit", "pixels")
+    _set(text, "position1", 20)
+    _set(text, "position2", -20)
+    _set(text, "linespacingunit", "pixels")
+    _set(text, "linespacing", 6)
     _set(text, "fontcolorr", 0.88)
     _set(text, "fontcolorg", 0.94)
     _set(text, "fontcolorb", 1.0)

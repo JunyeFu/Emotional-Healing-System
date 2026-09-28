@@ -1,0 +1,38 @@
+{
+  "task_id": "T-01",
+  "review_date": "2026-09-28",
+  "checks": [
+    {
+      "command": "pytest T-01 + F-04",
+      "exit_code": 0,
+      "result": ".........................................................                [100%]\n57 passed in 0.15s"
+    },
+    {
+      "command": "write_host_artifacts",
+      "exit_code": 0,
+      "result": "Current node, field and permission plans generated"
+    },
+    {
+      "command": "signed Git bytes and current artifact identity",
+      "exit_code": 0,
+      "result": "23 signed artifacts verified with explicit Git text/LFS policy; current TOE retains all signed core files and removes root demos",
+      "source": "agent/tasks/T-01/evidence/artifact_comparison.json"
+    },
+    {
+      "command": "run_td_probe.py",
+      "exit_code": 0,
+      "result": {
+        "publisher_live": true,
+        "fixture_live": true,
+        "lost_two": true,
+        "duplicate_one": true,
+        "out_of_order_one": true,
+        "disconnect_after_two_seconds": true,
+        "recovered_live": true,
+        "counters_preserved": true
+      },
+      "source": "agent/tasks/T-01/evidence/runtime/probe_report.json"
+    }
+  ],
+  "scope": "Read-only TD candidate verification, not real-device or final A-theme acceptance"
+}

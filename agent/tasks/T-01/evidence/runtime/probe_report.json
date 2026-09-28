@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "checks": {
+    "publisher_live": true,
+    "fixture_live": true,
+    "lost_two": true,
+    "duplicate_one": true,
+    "out_of_order_one": true,
+    "disconnect_after_two_seconds": true,
+    "recovered_live": true,
+    "counters_preserved": true
+  },
+  "source_toe": "agent/tasks/T-01/evidence/runtime/T01_ReadableBaseline.candidate.toe",
+  "source_toe_sha256": "B03DC5685A2910D7E110D990E7C3B361DC28A0B312985D0E8712C2DDC67B939E",
+  "scope": "Actual isolated TD reopen and fixture UDP consumption; no real devices or A-theme acceptance"
+}
