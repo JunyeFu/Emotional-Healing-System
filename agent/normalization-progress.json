@@ -52,10 +52,10 @@
     "A-05",
     "E-05",
     "G-04",
-    "B-03"
+    "B-03",
+    "E-06"
   ],
   "remaining_packages": [
-    "E-06",
     "A-04",
     "A-06",
     "W-02",
@@ -1433,6 +1433,34 @@
       "status": "OPEN_REAL_ADMISSION_INSTANCES_AND_DYNAMIC_REPLAY",
       "description": "独立批准、策略动态运行、同构建配置、教学暴露、正式规则与真实实例/QC及实名职责仍缺",
       "source": "agent/tasks/B-03/outputs/current-batch.json"
+    },
+    {
+      "task_id": "E-06",
+      "id": "E06-N01",
+      "status": "CLARIFIED_FULL_BLOCK_NO_GO_AND_ACTUAL_SCOPE",
+      "description": "完整块计划与尾块/停止分开，NO_GO不能隐去已启动活动；正式裁定仍待G-04",
+      "source": "agent/tasks/E-06/outputs/current-closeout.md"
+    },
+    {
+      "task_id": "E-06",
+      "id": "E06-N02",
+      "status": "FIXED_BALANCE_POLICY_AND_BLINDING_HANDOFF",
+      "description": "分配汇总不证明策略/分析资格，全组件与实际加载另审，两原生组不自动盲态，当前入口和手册同步",
+      "source": "agent/tasks/E-06/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "E-06",
+      "id": "E06-N03",
+      "status": "FIXED_LOCK_VS_UNBLIND_AUTHORITY_HANDOFF",
+      "description": "会话封存/原件核查/研究锁库/揭盲授权分开，具体对象与真实角色签署不由软件PASS代替",
+      "source": "agent/tasks/E-06/outputs/lock-review-template.json"
+    },
+    {
+      "task_id": "E-06",
+      "id": "E06-N04",
+      "status": "OPEN_REAL_BATCHES_POLICY_LOCK_AND_AUTHORIZATION",
+      "description": "全部真实实例/QC、策略动态证据、盲态重建/SAP及真实锁库签署/揭盲仍缺",
+      "source": "agent/tasks/E-06/outputs/current-closeout.json"
     }
   ]
 }
