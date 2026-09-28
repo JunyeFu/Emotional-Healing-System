@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "source_task": "E-03",
+  "date": "2026-09-29",
+  "source_path": "24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+  "change": "INSTITUTION_LEVEL_C activity corrected from E-03 to B-01|E-03; evidence owner, evidence reference and PENDING_EXTERNAL remain unchanged",
+  "disposition": "LIVE_SCOPE_NOTICE_FROZEN_INPUTS_UNCHANGED_PENDING_OWNER_REVIEW",
+  "affected_tasks": [
+    {"task_id": "U12-03", "status": "IN_REVIEW", "input_snapshot_id": "6DE6369FB49BDA2E6F5AD2B2F7406FAFF68566B78A3D2CC1FD69657C6D9042F2", "effect": "Teaching or device activity must check actual Level C scope; this notice does not change the reviewed training candidate"},
+    {"task_id": "U12-06", "status": "IN_PROGRESS", "input_snapshot_id": "3D3852D6A8F68C093B6963F03D1A7524BAD429C56D20D34B458AA6610C29F95B", "effect": "Formal runtime admission should consume the B-01 Level C activity, not infer approval from E-03 closeout; implementation still pending"}
+  ],
+  "research_authorized": false,
+  "frozen_packages_replaced": false,
+  "source_changed_is_runtime_interception": false
+}

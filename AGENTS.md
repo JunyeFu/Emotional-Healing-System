@@ -42,6 +42,7 @@
 | 看认知访谈与可访问预试 | `agent/tasks/Q-02/outputs/current-level-b.md`（人数冲突、单条件路径及待真人执行） |
 | 看技术预试与阈值冻结 | `agent/tasks/Q-03/outputs/current-level-c.md`（48单元非运行预览、盲态及真实工具缺口） |
 | 看Level C批次执行 | `agent/tasks/B-01/outputs/current-batch.md`（分配与完成分开、六类原件和真实QC缺口） |
+| 看Level C技术关闭 | `agent/tasks/E-03/outputs/current-closeout.md`（真实汇总、CAL与研究冻结分开，当前配置和签署仍缺） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |

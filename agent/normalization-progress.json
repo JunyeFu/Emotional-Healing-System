@@ -44,10 +44,10 @@
     "G-05",
     "E-01",
     "E-02",
-    "B-01"
+    "B-01",
+    "E-03"
   ],
   "remaining_packages": [
-    "E-03",
     "G-03",
     "B-02",
     "E-04",
@@ -1244,6 +1244,27 @@
       "status": "OPEN_REAL_ACTIVITY_TOOLING_AND_FREEZE",
       "description": "实际批准、实名人员、Level C分配、真机链、人数/退出/暴露规则及真实QC未完成",
       "source": "agent/tasks/B-01/outputs/current-batch.json"
+    },
+    {
+      "task_id": "E-03",
+      "id": "E03-N01",
+      "status": "FIXED_LEVEL_C_ACTIVITY_SCOPE",
+      "description": "Level C资格行补齐B-01实际采集，仍PENDING_EXTERNAL；在研输入冻结未刷新并留影响记录",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
+    },
+    {
+      "task_id": "E-03",
+      "id": "E03-N02",
+      "status": "FIXED_CLOSEOUT_CAL_AND_FREEZE_HANDOFF",
+      "description": "技术关闭、CAL、研究冻结分开；既有工程AC与旧事件门不混同，步骤9及手册消费者对齐",
+      "source": "agent/tasks/E-03/outputs/current-closeout.md"
+    },
+    {
+      "task_id": "E-03",
+      "id": "E03-N03",
+      "status": "OPEN_REAL_EVIDENCE_AND_APPROVAL",
+      "description": "真实全部批次、实名人员、盲态门定义/独立验证、技术配置及签署未完成",
+      "source": "agent/tasks/E-03/outputs/current-closeout.json"
     }
   ]
 }
