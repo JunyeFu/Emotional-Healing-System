@@ -11,6 +11,10 @@ MODULE_ROOT = Path(__file__).resolve().parents[2]
 if str(MODULE_ROOT) not in sys.path:
     sys.path.insert(0, str(MODULE_ROOT))
 
+EXECUTION_ROOT = MODULE_ROOT.parent / 'agent/tasks/P-02/execution'
+if str(EXECUTION_ROOT) not in sys.path:
+    sys.path.insert(0, str(EXECUTION_ROOT))
+
 
 @pytest.fixture
 def manifest_factory():

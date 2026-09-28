@@ -1,0 +1,23 @@
+{
+  "task_id": "P-02",
+  "source_policy": "shared_storage_single_authority_historical_acceptance_preserved",
+  "paths": [
+    "02-技术研发/srp_session_store/archive.py",
+    "02-技术研发/srp_session_store/adapters.py",
+    "02-技术研发/srp_session_store/replay.py",
+    "02-技术研发/srp_session_store/evidence_bundle.py",
+    "agent/tasks/P-02/outputs/current-store-contract.md",
+    "02-技术研发/srp_session_store/README.md",
+    "02-技术研发/srp_session_store/config",
+    "02-技术研发/srp_session_store/contracts",
+    "02-技术研发/srp_session_store/fixtures/golden/session-archive-v1",
+    "02-技术研发/srp_session_store/evidence/synthetic_stress_report.json",
+    "02-技术研发/srp_session_store/P-02_第二人审核报告_已签署.md",
+    "02-技术研发/srp_session_store/P-02_技术验收记录.md",
+    "02-技术研发/tests/session_store",
+    "agent/tasks/P-01/evidence/runtime/four-module-trace-v1.json",
+    "02-技术研发/07-数据治理/docs/downstream_contracts.md",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+  ]
+}

@@ -8,7 +8,8 @@ import tempfile
 from typing import Any, Mapping
 
 
-MODULE_ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[4]
+MODULE_ROOT = ROOT / '02-技术研发'
 if str(MODULE_ROOT) not in sys.path:
     sys.path.insert(0, str(MODULE_ROOT))
 
@@ -102,7 +103,7 @@ def build_archive(root: Path) -> dict[str, Any]:
 
 
 def main() -> int:
-    expected_parent = (Path(__file__).with_name("fixtures") / "golden").resolve()
+    expected_parent = (ROOT / "agent/tasks/P-02/evidence/runtime").resolve()
     output = expected_parent / "session-archive-v1"
     if output.exists():
         resolved = output.resolve()

@@ -9,7 +9,8 @@ import tracemalloc
 from typing import Any
 
 
-MODULE_ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[4]
+MODULE_ROOT = ROOT / '02-技术研发'
 if str(MODULE_ROOT) not in sys.path:
     sys.path.insert(0, str(MODULE_ROOT))
 
@@ -185,7 +186,7 @@ def evidence_passed(report: dict[str, object]) -> bool:
 
 def main() -> int:
     report = run_stress()
-    output = Path(__file__).with_name("evidence") / "synthetic_stress_report.json"
+    output = ROOT / "agent/tasks/P-02/evidence/runtime/synthetic_stress_report.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_bytes(json.dumps(report, ensure_ascii=True, indent=2, sort_keys=True).encode("utf-8") + b"\n")
     print(output)

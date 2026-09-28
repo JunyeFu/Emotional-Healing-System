@@ -1,6 +1,6 @@
 # SRP · 实验体验与论文证据系统
 
-任务包双层整理入口：[人类审阅与Word总结](human/README.md) · [Agent执行层](agent/README.md)。F-01至F-05、G-01/G-02及P-01已完成本轮整理；下一包P-02，整体目录迁移仍在逐包推进。
+任务包双层整理入口：[人类审阅与Word总结](human/README.md) · [Agent执行层](agent/README.md)。F-01至F-05、G-01/G-02及P-01/P-02已完成本轮整理；下一包U-01，整体目录迁移仍在逐包推进。
 
 > 四天气场景 · 两种呼吸提示方案 · 真实设备输入 · 可追溯研究证据
 
@@ -68,7 +68,7 @@ Python是流程与时间权威。Unity不依赖TD提供画面；TD不能直接�
 | 研究候选参数 | [protocol_authority_v1.2.json](00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json) |
 | 运行协议与步骤身份 | [F-05 v2.2接口基线](02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md) |
 | Python会话编排 | [P-01 SessionCore](02-技术研发/srp_session_core/README.md) |
-| 追加存储与确定性重放 | [P-02 SessionStore](02-技术研发/srp_session_store/README.md) |
+| 追加存储与确定性重放 | [P-02 当前合同说明](agent/tasks/P-02/outputs/current-store-contract.md) |
 | 数据治理与权限 | [G-02](02-技术研发/07-数据治理/README.md) |
 | 步骤实例理解测量 | [U12-02](02-技术研发/srp_step_measurement/README.md) |
 | 公平教学与形成性比较 | [U12-03教学合同](00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-03_fair_training/README.md) |

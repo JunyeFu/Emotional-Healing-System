@@ -5,8 +5,8 @@ from pathlib import Path
 
 from srp_session_store import ReplayReader, SessionReplayer
 from srp_session_store.canonical import file_sha256
-from srp_session_store.generate_golden_archive import build_archive
-from srp_session_store.generate_stress_report import evidence_passed, run_stress
+from generate_golden_archive import build_archive
+from generate_stress_report import evidence_passed, run_stress
 
 
 def test_full_p01_golden_trace_is_recorded_and_replayed(tmp_path):
@@ -44,6 +44,7 @@ def test_golden_fixture_is_forced_to_lf_in_git():
     repository = Path(__file__).resolve().parents[3]
     attributes = (repository / ".gitattributes").read_text(encoding="utf-8")
     assert "02-技术研发/srp_session_store/fixtures/golden/** text eol=lf" in attributes
+    assert "agent/tasks/P-02/evidence/runtime/session-archive-v1/** text eol=lf" in attributes
     fixture = repository / "02-技术研发" / "srp_session_store" / "fixtures" / "golden"
     for path in fixture.rglob("*"):
         if path.is_file():
@@ -81,3 +82,17 @@ def test_committed_golden_archive_hashes_and_replay_are_stable(tmp_path):
         "trace_hash",
     ):
         assert regenerated[key] == evidence[key]
+
+
+def test_normalized_task_archive_preserves_bytes_and_replay():
+    repository = Path(__file__).resolve().parents[3]
+    fixture = repository / 'agent/tasks/P-02/evidence/runtime/session-archive-v1'
+    evidence = json.loads((fixture / 'evidence.json').read_text(encoding='utf-8'))
+    for item in evidence['files']:
+        path = fixture / item['path']
+        assert path.stat().st_size == item['size_bytes']
+        assert file_sha256(path) == item['sha256']
+        assert b'\r\n' not in path.read_bytes()
+    reader = ReplayReader.open(fixture, 'S-P01-GOLDEN-0001')
+    assert reader.verify().valid
+    assert SessionReplayer(reader).replay_core().actual_final_hash == evidence['replay_hash']

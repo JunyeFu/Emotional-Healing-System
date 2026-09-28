@@ -1,0 +1,9 @@
+{
+  "equal_to_historical_evidence": true,
+  "operation_count": 46,
+  "replay_valid": true,
+  "replay_hash": "sha256:87909e0b6c760fad28eca64ce5f9d307fe5db3ca765057d206b2aca315712c95",
+  "final_state_hash": "sha256:15c1ca56c79e109974078656960712ec99c6b2327ddda3de9e0a6895c417f8af",
+  "file_count": 19,
+  "scope": "Synthetic core archive; no restricted originals or live devices."
+}
