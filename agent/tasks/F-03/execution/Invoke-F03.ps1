@@ -5,17 +5,19 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..')).Path
+$repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..\..\..')).Path
 $unityRoot = Join-Path $repoRoot '02-技术研发\04-Unity视觉\SRP-Weather-Visual'
-$lockPath = Join-Path $PSScriptRoot 'f03-environment-lock.json'
-$evidenceRoot = Join-Path $repoRoot '03-测试与实验\evidence\F-03'
+$lockPath = Join-Path $PSScriptRoot '..\inputs\f03-environment-lock.json'
+$evidenceRelativePath = 'agent/tasks/F-03/evidence/runtime'
+$evidenceRoot = Join-Path $repoRoot $evidenceRelativePath
 $buildRoot = Join-Path $unityRoot 'Builds\F03-DevReplay'
 $lock = Get-Content -LiteralPath $lockPath -Raw | ConvertFrom-Json
 $unityExe = $lock.unity_executable -replace '/', '\'
 $environmentModule = Join-Path $PSScriptRoot 'F03Environment.psm1'
 Import-Module $environmentModule -Force
 $implementationPaths = @(
-    'Tools/F03',
+    'agent/tasks/F-03/execution',
+    'agent/tasks/F-03/inputs',
     '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
 )
 $script:preRunIdentity = $null
@@ -50,7 +52,7 @@ function Complete-F03RunIdentity {
     $postStatus = @(Get-F03GitStatus -RepoRoot $repoRoot)
     $unexpected = @($postStatus | Where-Object {
         $path = if ($_.Length -gt 3) { $_.Substring(3).Replace('\', '/') } else { $_ }
-        -not $path.StartsWith('03-测试与实验/evidence/F-03/', [StringComparison]::Ordinal)
+        -not $path.StartsWith($evidenceRelativePath + '/', [StringComparison]::Ordinal)
     })
     if ($unexpected.Count -gt 0) {
         throw "F03_POST_RUN_SCOPE_DRIFT: $($unexpected -join '; ')"
@@ -69,7 +71,7 @@ function Complete-F03RunIdentity {
         pre_git_status = $script:preRunIdentity.pre_git_status
         post_git_status_before_identity_report = $postStatus
         post_changes_limited_to_evidence_scope = $true
-        evidence_scope = '03-测试与实验/evidence/F-03/'
+        evidence_scope = $evidenceRelativePath + '/'
     }) -Path (Join-Path $evidenceRoot 'run_identity_report.json')
 }
 
@@ -342,6 +344,7 @@ function Test-F03Player {
         $startInfo.FileName = Join-Path $stagedBuild 'SRP-F03-DevReplay.exe'
         $startInfo.WorkingDirectory = $stagedBuild
         $startInfo.UseShellExecute = $false
+        $startInfo.CreateNoWindow = $true
         foreach ($argument in @("--f03-capture=$tempScreenshot", '--f03-auto-quit', '-logFile', $tempPlayerLog, '-screen-width', '1280', '-screen-height', '720', '-screen-fullscreen', '0')) {
             [void]$startInfo.ArgumentList.Add($argument)
         }
@@ -357,7 +360,15 @@ function Test-F03Player {
         Copy-Item -LiteralPath $tempPlayerLog -Destination $playerLog -Force
     }
     finally {
-        if (Test-Path -LiteralPath $tempRoot) { Remove-Item -LiteralPath $tempRoot -Recurse -Force }
+        if (Test-Path -LiteralPath $tempRoot) {
+            $resolved = (Resolve-Path -LiteralPath $tempRoot).Path
+            $expectedParent = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd('\')
+            if ((Split-Path -Parent $resolved) -ne $expectedParent -or
+                (Split-Path -Leaf $resolved) -notmatch '^srp-f03-player-[0-9a-f]{32}$') {
+                throw 'F03_TEMP_CLEANUP_OUTSIDE_EXPECTED_DIRECTORY'
+            }
+            Remove-Item -LiteralPath $resolved -Recurse -Force
+        }
     }
 
     $afterUdp = @(Get-NetUDPEndpoint -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -in $ports } | Select-Object LocalAddress, LocalPort, OwningProcess)

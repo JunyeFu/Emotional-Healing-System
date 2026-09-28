@@ -30,9 +30,9 @@ Describe 'F-03 environment evidence helpers' {
     }
 
     It 'binds the environment lock to canonical project file hashes' {
-        $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
+        $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
         $unityRoot = Join-Path $repoRoot '02-技术研发\04-Unity视觉\SRP-Weather-Visual'
-        $lock = Get-Content (Join-Path $PSScriptRoot '..\f03-environment-lock.json') -Raw | ConvertFrom-Json
+        $lock = Get-Content (Join-Path $PSScriptRoot '..\..\inputs\f03-environment-lock.json') -Raw | ConvertFrom-Json
 
         $lock.hash_policy | Should Be 'sha256_lf_no_trailing_ws_text_v1'
         foreach ($property in $lock.hashes.PSObject.Properties) {
@@ -42,8 +42,8 @@ Describe 'F-03 environment evidence helpers' {
     }
 
     It 'creates a stable hash for the committed implementation tree' {
-        $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
-        $paths = @('Tools/F03', '02-技术研发/04-Unity视觉/SRP-Weather-Visual')
+        $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
+        $paths = @('agent/tasks/F-03/execution', 'agent/tasks/F-03/inputs', '02-技术研发/04-Unity视觉/SRP-Weather-Visual')
         $first = Get-F03ImplementationTreeHash -RepoRoot $repoRoot -RelativePaths $paths
         $second = Get-F03ImplementationTreeHash -RepoRoot $repoRoot -RelativePaths $paths
 
@@ -52,7 +52,7 @@ Describe 'F-03 environment evidence helpers' {
     }
 
     It 'checks out Unity serialized text with LF line endings' {
-        $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
+        $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
         $samples = @(
             '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Scenes/F03DevReplay.unity',
             '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/DefaultVolumeProfile.asset',

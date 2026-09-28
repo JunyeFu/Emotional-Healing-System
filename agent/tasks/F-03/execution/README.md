@@ -3,10 +3,10 @@
 从项目根目录运行：
 
 ```powershell
-pwsh -File Tools/F03/Invoke-F03.ps1 -Mode all
+pwsh -File agent/tasks/F-03/execution/Invoke-F03.ps1 -Mode all
 ```
 
-可选模式为`verify`、`test`、`build`、`formal-negative`和`all`。构建输出位于Unity工程的`Builds/F03-DevReplay/`并保持Git忽略；验收证据写入`03-测试与实验/evidence/F-03/`。
+可选模式为`verify`、`test`、`build`、`formal-negative`和`all`。构建输出位于Unity工程的`Builds/F03-DevReplay/`并保持Git忽略；当前复测证据写入`agent/tasks/F-03/evidence/runtime/`，历史已签收证据保留在`03-测试与实验/evidence/F-03/`，不被新运行覆盖。
 
 所有模式都要求运行前Git工作树干净，并记录提交、实现树哈希及运行前后状态。环境锁对文本使用`sha256_lf_no_trailing_ws_text_v1`，因此LF/CRLF检出不构成漂移，其他内容变化仍失败关闭。
 
