@@ -1,0 +1,24 @@
+{
+  "task_id": "A-03",
+  "evidence_class": "SYNTHETIC_ONLY",
+  "checks": [
+    {
+      "per_condition": 24,
+      "matches_signed_json": true,
+      "decision": "SYNTHETIC_SENSITIVITY_POINT_NO_GO",
+      "target_joint": 0.072
+    },
+    {
+      "per_condition": 85,
+      "matches_signed_json": true,
+      "decision": "SYNTHETIC_EXISTING_PLANNING_ANCHOR_NO_GO",
+      "target_joint": 0.646
+    },
+    {
+      "per_condition": 96,
+      "matches_signed_json": true,
+      "decision": "SYNTHETIC_COMPLETE_TARGET_NO_GO",
+      "target_joint": 0.721
+    }
+  ]
+}

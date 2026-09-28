@@ -54,3 +54,5 @@ agent/tasks/T-02/archive/legacy-td-authoring/** -text whitespace=-blank-at-eol,-
 agent/tasks/A-01/archive/*.md -text
 agent/tasks/A-01/evidence/initial-hash-policy-failure.txt -text whitespace=-blank-at-eol
 agent/tasks/A-02/archive/06_统计模型与图表计划.md -text
+agent/tasks/A-03/archive/README_spec_legacy.md -text whitespace=cr-at-eol
+agent/tasks/A-03/archive/08_sample_size_anchors.py -text whitespace=cr-at-eol

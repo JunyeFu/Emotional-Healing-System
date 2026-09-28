@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.1",
+  "evidence_class": "SYNTHETIC_ONLY",
+  "seed": 20260906,
+  "replications": 1000,
+  "decision_scope": "complete_target",
+  "participants_per_condition": 96,
+  "total_participants_per_replication": 192,
+  "planning_anchor_source": "CONTROL_BASELINE_BALANCED_COMPLETE_TARGET_96_PER_GROUP",
+  "formal_margins": null,
+  "formal_sample_size": null,
+  "synthetic_sensitivity_thresholds": {
+    "scci_min_difference": 0.35,
+    "comprehension_min_difference": -0.75,
+    "critical_layer_min_difference": -1.25,
+    "effort_max_difference": 1.0,
+    "stage_error_max_difference": 0.08
+  },
+  "scenarios": {
+    "target": {
+      "PRIMARY_CONSERVATIVE": {
+        "pass_probability": {
+          "scci": 1.0,
+          "comprehension": 0.959,
+          "critical_layers": 1.0,
+          "effort": 0.968,
+          "stage_error": 0.784,
+          "joint": 0.726
+        },
+        "joint_mc_standard_error": 0.014104041973845655
+      },
+      "OBSERVED_CASE": {
+        "pass_probability": {
+          "scci": 1.0,
+          "comprehension": 0.964,
+          "critical_layers": 1.0,
+          "effort": 0.994,
+          "stage_error": 1.0,
+          "joint": 0.958
+        },
+        "joint_mc_standard_error": 0.006343185319695463
+      },
+      "BOTH_ANALYSIS_SETS": {
+        "joint_pass_probability": 0.721,
+        "joint_mc_standard_error": 0.014183053267896867
+      }
+    },
+    "null_manipulation": {
+      "PRIMARY_CONSERVATIVE": {
+        "pass_probability": {
+          "scci": 0.0,
+          "comprehension": 0.961,
+          "critical_layers": 1.0,
+          "effort": 0.974,
+          "stage_error": 0.807,
+          "joint": 0.0
+        },
+        "joint_mc_standard_error": 0.0
+      },
+      "OBSERVED_CASE": {
+        "pass_probability": {
+          "scci": 0.0,
+          "comprehension": 0.964,
+          "critical_layers": 1.0,
+          "effort": 0.993,
+          "stage_error": 1.0,
+          "joint": 0.0
+        },
+        "joint_mc_standard_error": 0.0
+      },
+      "BOTH_ANALYSIS_SETS": {
+        "joint_pass_probability": 0.0,
+        "joint_mc_standard_error": 0.0
+      }
+    },
+    "ceiling": {
+      "PRIMARY_CONSERVATIVE": {
+        "pass_probability": {
+          "scci": 0.994,
+          "comprehension": 1.0,
+          "critical_layers": 1.0,
+          "effort": 0.989,
+          "stage_error": 0.872,
+          "joint": 0.859
+        },
+        "joint_mc_standard_error": 0.011005407761641547
+      },
+      "OBSERVED_CASE": {
+        "pass_probability": {
+          "scci": 1.0,
+          "comprehension": 1.0,
+          "critical_layers": 1.0,
+          "effort": 1.0,
+          "stage_error": 1.0,
+          "joint": 1.0
+        },
+        "joint_mc_standard_error": 0.0
+      },
+      "BOTH_ANALYSIS_SETS": {
+        "joint_pass_probability": 0.859,
+        "joint_mc_standard_error": 0.011005407761641547
+      }
+    },
+    "differential_missing": {
+      "PRIMARY_CONSERVATIVE": {
+        "pass_probability": {
+          "scci": 0.025,
+          "comprehension": 0.006,
+          "critical_layers": 1.0,
+          "effort": 0.065,
+          "stage_error": 0.011,
+          "joint": 0.0
+        },
+        "joint_mc_standard_error": 0.0
+      },
+      "OBSERVED_CASE": {
+        "pass_probability": {
+          "scci": 1.0,
+          "comprehension": 0.606,
+          "critical_layers": 1.0,
+          "effort": 0.685,
+          "stage_error": 0.983,
+          "joint": 0.404
+        },
+        "joint_mc_standard_error": 0.015517216245190372
+      },
+      "BOTH_ANALYSIS_SETS": {
+        "joint_pass_probability": 0.0,
+        "joint_mc_standard_error": 0.0
+      }
+    },
+    "item_shift": {
+      "PRIMARY_CONSERVATIVE": {
+        "pass_probability": {
+          "scci": 0.0,
+          "comprehension": 0.955,
+          "critical_layers": 1.0,
+          "effort": 0.966,
+          "stage_error": 0.801,
+          "joint": 0.0
+        },
+        "joint_mc_standard_error": 0.0
+      },
+      "OBSERVED_CASE": {
+        "pass_probability": {
+          "scci": 0.0,
+          "comprehension": 0.965,
+          "critical_layers": 1.0,
+          "effort": 0.993,
+          "stage_error": 1.0,
+          "joint": 0.0
+        },
+        "joint_mc_standard_error": 0.0
+      },
+      "BOTH_ANALYSIS_SETS": {
+        "joint_pass_probability": 0.0,
+        "joint_mc_standard_error": 0.0
+      }
+    }
+  },
+  "decision": "SYNTHETIC_COMPLETE_TARGET_NO_GO",
+  "limitations": [
+    "SYNTHETIC_PARAMETERS_ARE_NOT_REAL_CALIBRATION",
+    "LEVEL_A_B_AND_C_EVIDENCE_NOT_PRESENT",
+    "FORMAL_MARGINS_AND_SAMPLE_SIZE_NOT_FROZEN",
+    "RECRUITMENT_CAP_240_NOT_MODELED_AS_COMPLETE_OUTCOMES"
+  ]
+}

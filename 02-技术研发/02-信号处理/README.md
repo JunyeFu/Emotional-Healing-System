@@ -6,4 +6,6 @@
 
 旧评分设计已实际归入[历史归档](../../agent/tasks/S-02/archive/评分模型设计.md)。A-03已领取输入副本保持冻结，迁移影响见[消费者影响记录](../../agent/tasks/S-02/evidence/consumer-impact.md)。
 
+A-03计分与合成实现的当前入口见[统计交接](../../agent/tasks/A-03/outputs/current-statistics.md)。历史SPEC已签收，正式计分仍拒绝；新版SAP候选与REAL/CAL分开，复现写新目录，不覆盖历史报告。
+
 `a03_gate2_spec/`继续保持所属研究任务的实现和验收范围；其中阶段错误率不是S-02的机会PF。当前研究由PANAS主要结果、独立功能护栏和SCCI操纵检查组成，不沿用旧有序门限制预设情绪结果报告。

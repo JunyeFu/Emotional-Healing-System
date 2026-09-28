@@ -30,10 +30,10 @@
     "U-08",
     "T-02",
     "A-01",
-    "A-02"
+    "A-02",
+    "A-03"
   ],
   "remaining_packages": [
-    "A-03",
     "W-01",
     "I-01",
     "Q-01",
@@ -929,6 +929,27 @@
       "status": "OPEN_FREEZE_AND_REAL_OWNER",
       "description": "缺失模型、功能界值、正式N和真实责任人未落实，规范化不改业务WAIT_DEP",
       "source": "agent/tasks/A-02/TASK.md"
+    },
+    {
+      "task_id": "A-03",
+      "id": "A03-N01",
+      "status": "FIXED_FORMAL_CAPABILITY_AND_OVERWRITE",
+      "description": "正式模式说明订正，旧入口归档，CLI拒绝覆盖报告且复现写新目录",
+      "source": "agent/tasks/A-03/evidence/verification.json"
+    },
+    {
+      "task_id": "A-03",
+      "id": "A03-N02",
+      "status": "FIXED_CURRENT_NEW_SPEC_ACCEPTANCE",
+      "description": "范围影响补已存在U12-04候选签署，不扩大为REAL/CAL或正式冻结",
+      "source": "agent/tasks/A-03/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "A-03",
+      "id": "A03-N03",
+      "status": "OPEN_REAL_CAL_AND_CURRENT_MEASUREMENT",
+      "description": "真实适配、步骤实例测量映射、真实模型和盲态校准尚未交付",
+      "source": "agent/tasks/A-03/outputs/current-statistics.json"
     }
   ]
 }

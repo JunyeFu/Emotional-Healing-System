@@ -59,4 +59,6 @@
 
 | 31 | A-02 机会PF护栏与缺失统计 | [总结](tasks/A-02/summary.docx) | 旧统计计划归档，29项专项通过；合成前测代填不等于MI，两分析集及敏感性流水线未交付，保持WAIT_DEP |
 
+| 32 | A-03 测量计分与合成可行性 | [总结](tasks/A-03/summary.docx) | 旧入口与锚点实际归档，CLI禁止覆盖，当前SAP签收已交接；REAL/CAL仍缺，保持IN_PROGRESS |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

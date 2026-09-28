@@ -1,5 +1,13 @@
 # Codex Verification Log
 
+## 2026-09-29 A-03规范化复测
+
+- `py -3.14 agent/tasks/A-03/execution/verify.py`：39项通过，含原SPEC31项与本包8项；候选SAP及历史协议通过。
+- `py -3.14 agent/tasks/A-03/execution/reproduce.py`：独立新目录复现24/85/96，各情景1000次；三份JSON与原报告相同，共同通过概率0.072/0.646/0.721。结果见本包evidence/reproduction.json。
+- 根pytest635通过（62.76秒）；注册表71项、分发5包61快照通过；无快照/原报告/签署/里程碑改动，措辞扫描无命中，diff检查通过。
+- 单包Word3页检查；串联18页，前17页图像字节与已审版本一致，第18页检查，未见裁切或溢出。32/71规范化，REAL/CAL未交付，不推定正式统计或研究完成。
+- 暂存检查首次把保留的README原CRLF判为行尾空白；只对两个原文字节归档设whitespace=cr-at-eol，未修改原件或放宽全局规则。失败原因存本包evidence/initial-staged-check-failure.txt，修正后复查。
+
 ## 2026-09-29 A-02规范化验证
 
 - 旧06统计计划原始字节实际归档，迁移前后SHA-256均817984B06CC9D53B48EF7482F58E9A01330F446A57E596F800B51FD9C22EDB72，当前导航全部可访问；v1.1验证只改读取位置并通过。

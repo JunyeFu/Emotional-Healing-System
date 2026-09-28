@@ -382,7 +382,8 @@ def main() -> None:
         decision_scope=args.decision_scope,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    with args.output.open("x", encoding="utf-8") as stream:
+        stream.write(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print(f"{report['decision']}: {args.output}")
 
 

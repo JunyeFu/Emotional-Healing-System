@@ -1,0 +1,20 @@
+{
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/A-03/package_manifest.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/task_milestones_v1.0.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/A-03_scope_impact.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/acceptance/U12-04.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/A-03_SPEC",
+    "03-测试与实验/A-03-SPEC_第二人审核报告_已签署.md",
+    "02-技术研发/02-信号处理/a03_gate2_spec",
+    "02-技术研发/tests/a03_spec",
+    "agent/tasks/A-01/outputs/current-rebuild.md",
+    "agent/tasks/A-02/outputs/current-statistics.md"
+  ],
+  "frozen_input_snapshot_id": "570E00EC295CE4ABDBB1C1EF2C19FDFB3FADD6CEF7B63BDAE2CCF0F929E64309",
+  "archived_byte_hashes": {
+    "README_spec_legacy.md": "B1EBEF7125AEA8F8EEFACF3ED4A36F41995F75A58602195493E54855CFB28351",
+    "08_sample_size_anchors.py": "CAC9FA727386F876FF7556FC64985E5810EC3AC412DA1346DF10C0E6AC1C6055"
+  }
+}
