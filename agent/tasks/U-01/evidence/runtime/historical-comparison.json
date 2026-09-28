@@ -1,0 +1,5 @@
+{
+  "state-mirror-trace.json": true,
+  "ack-render-receipt-sequence.json": true,
+  "network-fault-log.json": true
+}

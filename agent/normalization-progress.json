@@ -8,10 +8,10 @@
     "G-01",
     "G-02",
     "P-01",
-    "P-02"
+    "P-02",
+    "U-01"
   ],
   "remaining_packages": [
-    "U-01",
     "U-02",
     "T-01",
     "R-01",
@@ -292,6 +292,34 @@
       "status": "OPEN_DOWNSTREAM_REAL_EVIDENCE",
       "description": "A-01须获授权读取实际六类原件；核心前教学需冻结后交接真实记录，本轮合成归档不能关闭这些事项",
       "source": "agent/tasks/P-02/outputs/current-store-contract.md"
+    },
+    {
+      "task_id": "U-01",
+      "id": "U01-N01",
+      "status": "FIXED",
+      "description": "Editor证据写入本包runtime，不再覆盖历史签收目录",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"
+    },
+    {
+      "task_id": "U-01",
+      "id": "U01-N02",
+      "status": "FIXED",
+      "description": "主机校验入口实际迁入execution，新旧证据验证及17项Unity复测通过",
+      "source": "agent/tasks/U-01/execution/verify.py"
+    },
+    {
+      "task_id": "U-01",
+      "id": "U01-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前说明区分ACK、确认生成、发送失败与实际呈现；历史签署原字节保留",
+      "source": "agent/tasks/U-01/outputs/current-control-contract.md"
+    },
+    {
+      "task_id": "U-01",
+      "id": "U01-N04",
+      "status": "OPEN_DOWNSTREAM_RENDER_INTEGRATION",
+      "description": "适配器实际呈现、核心前教学接入和正式全链仍待下游；golden不能替代这些证据",
+      "source": "agent/tasks/U-01/outputs/current-control-contract.md"
     }
   ]
 }

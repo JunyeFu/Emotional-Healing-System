@@ -1,0 +1,31 @@
+{
+  "task_id": "U-01",
+  "scope": "Unity control probe; synthetic golden, not formal build or live device chain",
+  "checks": [
+    {
+      "name": "editmode",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/editmode-unity.log"
+    },
+    {
+      "name": "playmode",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/playmode-unity.log"
+    },
+    {
+      "name": "generate",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/generate-unity.log"
+    },
+    {
+      "name": "verify-current",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/verify-current.log"
+    },
+    {
+      "name": "verify-historical",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/verify-historical.log"
+    }
+  ]
+}

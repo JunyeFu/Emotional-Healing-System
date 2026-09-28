@@ -15,5 +15,6 @@
 | 7 | G-02 数据治理实现 | [总结](tasks/G-02/summary.docx) | 隐私工具迁入Agent层，139项专项和233项消费者通过；正式配置与资产门仍阻断 |
 | 8 | P-01 会话编排 | [总结](tasks/P-01/summary.docx) | golden工具迁入Agent层，434项回归及800秒轨迹比较通过；核心前教学暴露接入仍待冻结 |
 | 9 | P-02 追加记录与重放 | [总结](tasks/P-02/summary.docx) | 两个工具迁入Agent层，467项回归及6项golden复测通过，800秒合成负载通过；真实原件读取不由束清单授权 |
+| 10 | U-01 Unity可靠控制 | [总结](tasks/U-01/summary.docx) | 校验脚本迁入Agent层，14项EditMode和3项PlayMode实跑通过；新旧轨迹一致，实际呈现仍待下游 |
 
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

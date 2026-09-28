@@ -1701,3 +1701,11 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 新归档19文件与历史证据一致，46次核心调用重放通过；LF规则和新目录字节测试补齐后6项golden复测通过。
 - 旧README是U12-06冻结输入，保留原字节；当前订正另存outputs/current-store-contract.md并由根入口指向，不覆盖进行中快照。
 - 真实原件访问及教学记录仍待A-01/P-01/U12-11，未用合成材料代替。Word3页、串联5页逐页审阅，规范化9包、剩余62包，下一包U-01。
+
+## 2026-09-28 U-01双层规范化
+
+- 主机verify_u01.py从历史证据目录实际迁入execution；统一verify.py/verify.ps1，Editor生成器新输出固定本包runtime，清理空日志。
+- Unity 6000.4.9f1实际EditMode14项、PlayMode3项通过；新旧19控制/19ACK/12回执及3项网络矩阵语义一致。
+- 当前说明区分ACK、确认生成、发送失败和实际呈现；历史报告候选IN_REVIEW不回写，当前DONE与真实签收维持原范围。
+- 71项注册表、5包/46份冻结输入通过，历史三报告与五份证据原字节不变。本包Word3页、串联Word6页均已逐页检查。
+- 实际场景呈现、核心前教学和正式全链继续由下游完成。规范化10/71包，剩余61包，下一包U-02；根目录最终双层迁移未完成。

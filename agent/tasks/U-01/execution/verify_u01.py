@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import argparse
 import importlib.util
 import sys
 import types
@@ -8,7 +9,8 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[4]
+ROOT = Path(__file__).resolve().parents[1] / 'evidence' / 'runtime'
 
 EXPECTED_TESTS = {
     "editmode-results.xml": {
@@ -40,7 +42,7 @@ def load_json(name: str) -> dict:
 
 
 def load_golden() -> dict:
-    path = ROOT.parents[2] / "02-技术研发" / "srp_session_core" / "fixtures" / "golden" / "four-module-trace-v1.json"
+    path = REPO / "02-技术研发" / "srp_session_core" / "fixtures" / "golden" / "four-module-trace-v1.json"
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
@@ -50,7 +52,7 @@ def require(condition: bool, message: str) -> None:
 
 
 def load_contract_modules() -> tuple[object, object]:
-    protocol_dir = ROOT.parents[2] / "02-技术研发" / "05-通信协议"
+    protocol_dir = REPO / "02-技术研发" / "05-通信协议"
     package_name = "05-通信协议"
     package = types.ModuleType(package_name)
     package.__path__ = [str(protocol_dir)]
@@ -171,6 +173,9 @@ def main() -> int:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--evidence-dir', type=Path, default=ROOT)
+    ROOT = parser.parse_args().evidence_dir.resolve()
     try:
         raise SystemExit(main())
     except (AssertionError, KeyError, ValueError, ET.ParseError) as exc:

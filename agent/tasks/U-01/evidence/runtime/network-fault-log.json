@@ -1,0 +1,24 @@
+{
+    "evidence_type": "U01_NETWORK_FAULT_MATRIX",
+    "schema_version": "2.2",
+    "rows": [
+        {
+            "case_id": "wrong_schema_welcome",
+            "observed": "rejected",
+            "expected": "rejected",
+            "result": "PASS"
+        },
+        {
+            "case_id": "reconnect_same_client_identity",
+            "observed": "test_passed",
+            "expected": "test_passed",
+            "result": "PASS"
+        },
+        {
+            "case_id": "closed_socket_send",
+            "observed": "send_returns_false",
+            "expected": "send_returns_false",
+            "result": "PASS"
+        }
+    ]
+}

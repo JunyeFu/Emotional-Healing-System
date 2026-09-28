@@ -17,7 +17,7 @@ namespace SRP.U01.Editor
         public static void Generate()
         {
             var root = Path.GetFullPath(Path.Combine(Application.dataPath, "../../../.."));
-            var output = Path.Combine(root, "03-测试与实验", "evidence", "U-01");
+            var output = Path.Combine(root, "agent", "tasks", "U-01", "evidence", "runtime");
             Directory.CreateDirectory(output);
 
             var tracePath = Path.Combine(root, "02-技术研发", "srp_session_core", "fixtures", "golden", "four-module-trace-v1.json");

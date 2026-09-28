@@ -9,6 +9,7 @@ agent/tasks/F-04/evidence/host/*.json text eol=lf
 agent/tasks/F-05/evidence/runtime/*.json text eol=lf
 agent/tasks/F-05/evidence/runtime/*.sha256 text eol=lf
 agent/tasks/F-05/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/U-01/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.asset text eol=lf
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.json text eol=lf
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.meta text eol=lf

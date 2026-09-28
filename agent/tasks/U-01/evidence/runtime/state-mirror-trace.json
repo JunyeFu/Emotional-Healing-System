@@ -1,0 +1,157 @@
+{
+    "evidence_type": "U01_STATE_MIRROR_TRACE",
+    "rows": [
+        {
+            "sequence": 1,
+            "event_type": "prepare",
+            "result": "applied",
+            "status": "Prepared",
+            "module_id": "",
+            "segment": ""
+        },
+        {
+            "sequence": 2,
+            "event_type": "start",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "",
+            "segment": ""
+        },
+        {
+            "sequence": 3,
+            "event_type": "module",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "storm",
+            "segment": ""
+        },
+        {
+            "sequence": 4,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "storm",
+            "segment": "demo"
+        },
+        {
+            "sequence": 5,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "storm",
+            "segment": "closed_loop"
+        },
+        {
+            "sequence": 6,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "storm",
+            "segment": "lock_transition"
+        },
+        {
+            "sequence": 7,
+            "event_type": "module",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "heat",
+            "segment": ""
+        },
+        {
+            "sequence": 8,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "heat",
+            "segment": "demo"
+        },
+        {
+            "sequence": 9,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "heat",
+            "segment": "closed_loop"
+        },
+        {
+            "sequence": 10,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "heat",
+            "segment": "lock_transition"
+        },
+        {
+            "sequence": 11,
+            "event_type": "module",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "snow",
+            "segment": ""
+        },
+        {
+            "sequence": 12,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "snow",
+            "segment": "demo"
+        },
+        {
+            "sequence": 13,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "snow",
+            "segment": "closed_loop"
+        },
+        {
+            "sequence": 14,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "snow",
+            "segment": "lock_transition"
+        },
+        {
+            "sequence": 15,
+            "event_type": "module",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "fade",
+            "segment": ""
+        },
+        {
+            "sequence": 16,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "fade",
+            "segment": "demo"
+        },
+        {
+            "sequence": 17,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "fade",
+            "segment": "closed_loop"
+        },
+        {
+            "sequence": 18,
+            "event_type": "segment",
+            "result": "applied",
+            "status": "Running",
+            "module_id": "fade",
+            "segment": "lock_transition"
+        },
+        {
+            "sequence": 19,
+            "event_type": "end",
+            "result": "applied",
+            "status": "Completed",
+            "module_id": "fade",
+            "segment": "lock_transition"
+        }
+    ]
+}

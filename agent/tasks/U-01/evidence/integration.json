@@ -1,0 +1,11 @@
+{
+  "task_id": "U-01",
+  "checks": [
+    {"name": "task_registry", "exit_code": 0, "result": "71 entries; 68 fixed; 3 templates; statuses unchanged"},
+    {"name": "dispatch_packages", "exit_code": 0, "result": "5 packages; 46 frozen snapshots"},
+    {"name": "signed_originals_unchanged", "exit_code": 0, "result": "git diff --exit-code: three reports and five historical XML/JSON files"},
+    {"name": "word_structure_and_text", "exit_code": 0, "result": "build_task_reviews.py U-01 --check; source path corrected before successful generation"},
+    {"name": "page_review", "exit_code": 0, "result": "All pages inspected: task 3; chain 6"},
+    {"name": "wording_check", "exit_code": 0, "result": "rg forbidden terms: no matches (rg exit 1)"}
+  ]
+}
