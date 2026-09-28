@@ -71,3 +71,4 @@ agent/tasks/G-05/archive/legacy-package/* -text whitespace=cr-at-eol
 agent/tasks/E-01/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/E-02/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/E-02/evidence/initial-check-1.txt -text whitespace=-blank-at-eol
+agent/tasks/B-01/evidence/initial-handoff.txt -text whitespace=-blank-at-eol

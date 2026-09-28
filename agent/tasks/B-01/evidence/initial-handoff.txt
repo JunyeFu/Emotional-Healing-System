@@ -1,0 +1,36 @@
+F.....F................................................................. [ 33%]
+........................................................................ [ 66%]
+........................................................................ [100%]
+================================== FAILURES ===================================
+________________ test_template_registry_and_no_real_acceptance ________________
+
+    def test_template_registry_and_no_real_acceptance():
+        with (GOV / '05_可领取任务包.csv').open(encoding='utf-8-sig', newline='') as stream:
+            row = next(r for r in csv.DictReader(stream) if r['task_id'] == 'B-01')
+        value = load('current-batch.json')
+        assert row['status'] == value['business_status'] == 'BLOCKED_EXTERNAL'
+>       assert row['task_kind'] == value['task_kind'] == 'TEMPLATE'
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'task_kind'
+
+agent\tasks\B-01\execution\test_batch_handoff.py:28: KeyError
+_______ test_exposure_interruption_annotation_and_reporting_boundaries ________
+
+    def test_exposure_interruption_annotation_and_reporting_boundaries():
+        value = load('current-batch.json')
+        assert value['one_core_experience_per_person'] is True
+        assert value['post_exposure_repeat_allowed'] is value['interruption_resumes_experience'] is False
+        assert value['annotation_roles'] == {'independent_annotators': 2, 'adjudicator': 1, 'named_people': []}
+        assert value['actual_may_copy_target'] is False
+        assert value['primary_affect_reporting_blocked_by_functional_or_scci_failure'] is False
+        text = (TASK / 'outputs/current-batch.md').read_text(encoding='utf-8')
+        for point in ('教学已可能展示核心材料', '不能恢复体验进度', '不强制每批6比6',
+                      '尚未完成双人标注时标QC待补', '不能按“完成各24”定向补人', '未知null而非零'):
+>           assert point in text
+E           AssertionError: assert '不能恢复体验进度' in '# B-01当前Level C批次执行与汇总交接\n\n## 模板与真实批次\n\nB-01是可重复TEMPLATE、BLOCKED_EXTERNAL，不是已经招募或关闭的批次。Q-03工具、E-02真实关闭及本活动批准仍缺，负责人/.../manifest和自动盲态QC，数据负责人管理原件与封存，两标注者/裁定者交Actual，E-03负责人汇总与真实关闭；当前全部待实名。Word从此Agent层事实生成，不把模板规范化写成B-01业务完成，根目录整体迁移仍未完成。\n'
+
+agent\tasks\B-01\execution\test_batch_handoff.py:102: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/B-01/execution/test_batch_handoff.py::test_template_registry_and_no_real_acceptance
+FAILED agent/tasks/B-01/execution/test_batch_handoff.py::test_exposure_interruption_annotation_and_reporting_boundaries
+2 failed, 214 passed in 5.07s

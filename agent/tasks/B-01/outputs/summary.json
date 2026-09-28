@@ -1,0 +1,34 @@
+{
+  "task_id": "B-01",
+  "title": "B01 Level C批次模板与执行交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "B-01保持TEMPLATE、BLOCKED_EXTERNAL，未领取未签收。当前批次流程、人数口径、空白登记及QC骨架已整理；真实分配、会话、批次QC和活动未生成，不把48设计单元当48参与者。",
+  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "无真实批次签收；本轮为规范化及合成核查，没有新独立Agent或真人复核签名。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["每实例最多12人、约1至5人日，依赖Q-03及E-02真实关闭和对应批准。人员、分配/manifest工具、真机链与材料冻结仍缺，正式采集不放行。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1跨阶段唯一人员和manifest；AC2真实双设备与量表等六类原件按计划保存、缺失明示；AC3批次封存/完整性、覆盖、分配平衡及偏离有据可查，全部实例向E-03移交。", "四段为实例准备、会话前检查、真实执行、QC关闭。活动/工具/操作/数据/标注/汇总/复核职责明确，但均待实名；TASK附继承中文教程和实际模块入口。"]},
+    {"heading": "实际交付", "paragraphs": ["TASK和五目录、15项输入来源、当前批次说明与缺口JSON建立；新增空白批次登记表头及NOT_RUN的QC骨架，没有真实实例或正式manifest。", "P-01/P-02/G-02仍共享模块权威，Q-03预览和历史报告只引用，不建第二随机化器、记录器或计分器；骨架不是运行合同或正式GateReceipt。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["实测P-01支持Level C固定顺序且禁止PolicyDecision；X-01仍拒绝Level C分配。问题是分配适配未交付，不是整个P-01不支持；不能改阶段标签或照预览枚举执行。", "48人/各24是技术预试锚点，四个12人切片非固定四批；平衡按分配而非完成，不强制每批6比6。退出不足交研究负责人/E-03裁定，不能定向补人或删退出。"]},
+    {"heading": "验证与结果", "paragraphs": ["216项专项通过，覆盖实际Level C顺序接口、禁策略决策、空表/空QC、Q-03预览和拒绝分配，以及既有会话/存储合成测试；根回归635项通过，完整结果见verification.json。", "注册71项、独立分发5包61快照通过；软件通过不证明本批真人、设备、外部显示延迟、六类原件或审批通过。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["当前说明修正48预览等于已完成、完成数定向补人和阶段一策略决策照搬的误用。核心start前登记不掩盖教学已可能暴露；中断封存不恢复体验进度，新会话身份也不允许已暴露者重复。", "初测214通过2失败，测试误用CSV列名及文字断言，修正后通过，原输出和处置保留；QC六类字段使用RawEvidenceBundle真实枚举，避免下游再翻译一套名字。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["当前入口为outputs说明、登记及QC骨架；未发现独立B-01旧工具需移动，archive不伪造副本。历史19报告已在既有材料，保留24人/两次会话原文及Q-03隔离说明，不作当前采集表。", "真人记录、身份映射和受限原件放获批仓库外；Word从Agent层生成，业务状态不变，根目录双层整体迁移仍未完成。"]},
+    {"heading": "上下游交接", "paragraphs": ["Q-03交实际分配/manifest、盲态工具与材料，E-02交真实修订关闭，G-05/U12-05按本活动交批准；I/D/S/P交同版本真机、时钟、回执和记录链。", "B-01向E-03交全部实际实例、六类原件索引、封存检查、独立标注/分歧、人数口径和偏离。标注未完成时QC待补，不能即时假PASS；E-03/校准/冻结继续，不靠效果方向调参或堵塞可选阶段三以外的核心论文。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["当前负责人、操作员、两标注者与第三裁定者、数据及E-03接收/复核人均待落实。签收须绑定真实批次与精确材料，不用空表或软件证据代替活动结果。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计45/71，剩余26，下一E-03。模板整理完成不表示B-01实例已执行或DONE，真实许可/工具/人数规则和QC仍待关闭，根目录整体迁移继续。"]},
+    {"heading": "审阅来源", "paragraphs": ["实际注册/任务手册、Q-03规划与现状、E-02关闭缺口、P-01接口、P-02六类证据合同及软件结果。没有新外部搜索、真人执行、真机画面或签署。"]}
+  ],
+  "findings": [
+    {"id": "B01-N01", "status": "FIXED_CURRENT_TEMPLATE_AND_INTERFACE_SCOPE", "description": "建立单次核心批次入口，区分P-01已支持与X-01分配缺口，空表不作真实批次", "source": "agent/tasks/B-01/outputs/current-batch.md"},
+    {"id": "B01-N02", "status": "FIXED_COUNT_AND_QC_HANDOFF", "description": "分配/暴露/完成/停止/取消分开，六类原件沿现有枚举；未标注不假PASS，退出不足不定向补人", "source": "agent/tasks/B-01/outputs/batch-qc-template.json"},
+    {"id": "B01-N03", "status": "OPEN_REAL_ACTIVITY_TOOLING_AND_FREEZE", "description": "实际批准、实名人员、Level C分配、真机链、人数/退出/暴露规则及真实QC未完成", "source": "agent/tasks/B-01/outputs/current-batch.json"}
+  ],
+  "next_task": "E-03",
+  "source_links": [
+    {"label": "当前批次执行与汇总交接", "path": "agent/tasks/B-01/outputs/current-batch.md"},
+    {"label": "实例与外部缺口", "path": "agent/tasks/B-01/outputs/current-batch.json"},
+    {"label": "空白批次登记", "path": "agent/tasks/B-01/outputs/batch-register-template.csv"},
+    {"label": "未执行QC骨架", "path": "agent/tasks/B-01/outputs/batch-qc-template.json"},
+    {"label": "软件检查与回归", "path": "agent/tasks/B-01/evidence/verification.json"},
+    {"label": "初次失败处置", "path": "agent/tasks/B-01/evidence/failure-disposition.md"}
+  ]
+}

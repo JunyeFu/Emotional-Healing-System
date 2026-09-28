@@ -43,10 +43,10 @@
     "Z-01",
     "G-05",
     "E-01",
-    "E-02"
+    "E-02",
+    "B-01"
   ],
   "remaining_packages": [
-    "B-01",
     "E-03",
     "G-03",
     "B-02",
@@ -1223,6 +1223,27 @@
       "status": "OPEN_REAL_FREEZE_ACTIVITY_AND_CLOSURE",
       "description": "人数/阈值与材料冻结、实际批准/角色/记录、真实构建复测和签署未完成",
       "source": "agent/tasks/E-02/outputs/current-execution.json"
+    },
+    {
+      "task_id": "B-01",
+      "id": "B01-N01",
+      "status": "FIXED_CURRENT_TEMPLATE_AND_INTERFACE_SCOPE",
+      "description": "建立单次核心批次入口，区分P-01已支持与X-01分配缺口，空表不作真实批次",
+      "source": "agent/tasks/B-01/outputs/current-batch.md"
+    },
+    {
+      "task_id": "B-01",
+      "id": "B01-N02",
+      "status": "FIXED_COUNT_AND_QC_HANDOFF",
+      "description": "分配/暴露/完成/停止/取消分开，六类原件沿现有枚举；未标注不假PASS，退出不足不定向补人",
+      "source": "agent/tasks/B-01/outputs/batch-qc-template.json"
+    },
+    {
+      "task_id": "B-01",
+      "id": "B01-N03",
+      "status": "OPEN_REAL_ACTIVITY_TOOLING_AND_FREEZE",
+      "description": "实际批准、实名人员、Level C分配、真机链、人数/退出/暴露规则及真实QC未完成",
+      "source": "agent/tasks/B-01/outputs/current-batch.json"
     }
   ]
 }

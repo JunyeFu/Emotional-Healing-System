@@ -1,0 +1,20 @@
+{
+  "task_id": "B-01",
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/04_可领取树型任务包_v2.0.md",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "agent/tasks/Q-03/outputs/current-level-c.md",
+    "agent/tasks/Q-03/outputs/current-level-c.json",
+    "agent/tasks/Q-03/outputs/design-cell-preview.json",
+    "agent/tasks/E-02/outputs/current-execution.md",
+    "agent/tasks/G-05/outputs/current-admission.md",
+    "agent/tasks/X-01/outputs/current-randomization.md",
+    "02-技术研发/srp_session_core/sequence.py",
+    "02-技术研发/srp_session_core/core.py",
+    "02-技术研发/srp_session_store/README.md",
+    "02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
+    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
+  ]
+}
