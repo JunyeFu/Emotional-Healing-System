@@ -1,4 +1,4 @@
-"""Validate V-01 deliverables against the live protocol authority."""
+"""Validate the signed V-01 v1.0 design against its historical v1.1 authority."""
 
 from __future__ import annotations
 
@@ -8,7 +8,8 @@ import re
 import sys
 
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+REPO = pathlib.Path(__file__).resolve().parents[4]
+ROOT = REPO / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 V01 = ROOT / "20_产品与场景设计" / "V-01_研究体验契约与完整旅程"
 CONTRACT = V01 / "v01-experience-contract-v1.0.json"
 PROTOCOL_AUTHORITY = ROOT / "00_总控" / "protocol_authority_v1.1.json"

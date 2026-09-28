@@ -12,10 +12,10 @@
     "U-01",
     "U-02",
     "T-01",
-    "R-01"
+    "R-01",
+    "V-01"
   ],
   "remaining_packages": [
-    "V-01",
     "V-02",
     "V-03",
     "V-04",
@@ -425,6 +425,41 @@
       "status": "OPEN_DOWNSTREAM_CONFIGURATIONS",
       "description": "仅storm双条件合法fixture，真实四结构配置与渲染由U-03至U-07补齐",
       "source": "agent/tasks/R-01/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "V-01",
+      "id": "V01-N01",
+      "status": "FIXED_DESIGN_CANDIDATE",
+      "description": "当前14节点补前测后教学、后测后其他测量，22项时序与约束回归通过",
+      "source": "agent/tasks/V-01/outputs/current-experience.json"
+    },
+    {
+      "task_id": "V-01",
+      "id": "V01-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "旧研究门和两条件同一参与者措辞不用于当前v1.2设计",
+      "source": "agent/tasks/V-01/outputs/current-experience.md"
+    },
+    {
+      "task_id": "V-01",
+      "id": "V01-N03",
+      "status": "OPEN_DOWNSTREAM_EXPOSURE",
+      "description": "教学首材料前暴露登记需U12-06/X-01连接G-02/P-01/P-02，设计候选不是运行证据",
+      "source": "agent/tasks/V-01/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "V-01",
+      "id": "V01-N04",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "旧开放项不重开已选镜头/双环/天气，fade复色与累计独立",
+      "source": "agent/tasks/V-01/outputs/current-experience.md"
+    },
+    {
+      "task_id": "V-01",
+      "id": "V01-N05",
+      "status": "OPEN_HUMAN_REVIEW",
+      "description": "新候选未继承历史签名，正式时序冻结及真人审阅由责任人完成",
+      "source": "agent/tasks/V-01/TASK.md"
     }
   ]
 }

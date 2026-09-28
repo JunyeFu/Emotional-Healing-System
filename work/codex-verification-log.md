@@ -1,5 +1,13 @@
 # Codex Verification Log
 
+## 2026-09-28 V-01规范化验证
+
+- py -3.14 agent/tasks/V-01/execution/verify.py：历史v1.0/v1.1、当前14节点、22项pytest和V-02消费者均通过。
+- 07_validate_task_packages.py：71项通过；14_validate_ready_task_packages.py：5包47快照通过。
+- 原设计、签署和分发包git diff为空；Word结构及来源检查通过，措辞检查无命中。
+- 本包3页逐页检查，串联7/8页检查，前6页与上一轮已查页像素一致；无文字遮挡或内容截断。
+- 当前适用候选不是教学运行证据，不改P-01 Schema，不代签；规范化14/71，下一包V-02，根目录最终迁移仍未完成。
+
 ## 2026-09-28 R-01规范化验证
 
 - py -3.14 agent/tasks/R-01/execution/verify.py：候选完整性、实际Schema、13项pytest及当前v1.2三项角色检查通过。

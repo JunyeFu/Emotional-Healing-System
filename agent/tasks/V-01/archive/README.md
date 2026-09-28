@@ -1,0 +1,5 @@
+# 历史保留及旧入口整理
+
+旧validate_v01_experience_contract.py已实际迁到execution/validate_historical.py并删除原入口。明确验证签署时的v1.1权威，不再称“live authority”。原候选JSON、五份设计稿、README、独立复核和签署仍保留原目录，V-02等原始消费不改。
+
+当前旅程在outputs单独版本化。不能回改原12节点合同来让旧校验器通过新时序，也不能把原签名转到当前14节点候选。未复制原设计稿为多份新权威。
