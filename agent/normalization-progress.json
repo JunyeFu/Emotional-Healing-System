@@ -36,10 +36,10 @@
     "I-01",
     "Q-01",
     "Q-02",
-    "Q-03"
+    "Q-03",
+    "X-01"
   ],
   "remaining_packages": [
-    "X-01",
     "X-02",
     "X-03",
     "Z-01",
@@ -1076,6 +1076,27 @@
       "status": "OPEN_REAL_DATA_AND_FREEZE",
       "description": "真实链/Level B/REAL/人员和批准仍缺；所有当前阈值、配置和签署未冻结，业务状态不变",
       "source": "agent/tasks/Q-03/outputs/current-level-c.json"
+    },
+    {
+      "task_id": "X-01",
+      "id": "X01-N01",
+      "status": "FIXED_TOOL_MIGRATION_AND_EXCLUSIVE_REPRODUCTION",
+      "description": "两工具实际迁入Agent，旧README归档，合成复现新目录排他写入且消费者修正",
+      "source": "agent/tasks/X-01/outputs/consumer-impact.md"
+    },
+    {
+      "task_id": "X-01",
+      "id": "X01-N02",
+      "status": "FIXED_CURRENT_CAPABILITY_DESCRIPTION",
+      "description": "固定48块、动作区间见证、调用方角色与正式权限边界按真实实现订正，原签署不改",
+      "source": "agent/tasks/X-01/outputs/current-randomization.md"
+    },
+    {
+      "task_id": "X-01",
+      "id": "X01-N03",
+      "status": "OPEN_FORMAL_CONTEXT_AND_RUNTIME_ADAPTERS",
+      "description": "实名权限、正式分层清单、Level C适配及阶段三实时策略未完成，本轮工具修订未新签收",
+      "source": "agent/tasks/X-01/outputs/current-randomization.json"
     }
   ]
 }

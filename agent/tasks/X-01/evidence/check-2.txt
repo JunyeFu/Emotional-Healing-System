@@ -1,0 +1,1 @@
+X01_VERIFY_PASS lists=2 records=384 stage1=192 stage3=192

@@ -1,0 +1,30 @@
+{
+  "task_id": "X-01",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\X-01\\execution\\test_current_handoff.py",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\randomization"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\agent\\tasks\\X-01\\execution\\verify_x01.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "synthetic software, original artifacts and migrated tool reproduction only",
+  "real_activity": "NOT_RUN",
+  "formal_list": "NOT_GENERATED",
+  "unity": "NOT_RUN",
+  "td": "NOT_RUN",
+  "new_independent_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_RUN"
+}

@@ -8,7 +8,7 @@ import sys
 import jsonschema
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[4] / "02-技术研发/08-随机化"
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -35,7 +35,7 @@ def _forbidden_keys(payload: object) -> set[str]:
 
 def verify(root: Path = ROOT) -> list[str]:
     errors: list[str] = []
-    list_schema = _read(root / "contracts/randomization-list-v1.schema.json")
+    list_schema = _read(ROOT / "contracts/randomization-list-v1.schema.json")
     raw_plans = {
         stage: _read(root / f"fixtures/synthetic/{stage}_list_v1.json")
         for stage in ("stage_1", "stage_3")

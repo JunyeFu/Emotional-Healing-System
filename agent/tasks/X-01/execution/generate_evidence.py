@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 from collections import Counter
 from dataclasses import asdict
 from itertools import permutations
@@ -9,7 +10,7 @@ import sys
 from tempfile import TemporaryDirectory
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[4] / "02-技术研发/08-随机化"
 TECH_ROOT = ROOT.parent
 for path in (ROOT, TECH_ROOT):
     if str(path) not in sys.path:
@@ -32,7 +33,7 @@ WEATHERS = ("storm", "heat", "snow", "fade")
 
 def _write(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="\n") as handle:
+    with path.open("x", encoding="utf-8", newline="\n") as handle:
         json.dump(payload, handle, ensure_ascii=True, sort_keys=True, indent=2)
         handle.write("\n")
 
@@ -45,10 +46,15 @@ def _gate_evidence(reservation_id: str) -> tuple[GateEvidence, ...]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Reproduce synthetic X-01 evidence in a new directory")
+    parser.add_argument("--output-root", type=Path, required=True)
+    args = parser.parse_args()
+    output_root = args.output_root.resolve()
+    output_root.mkdir(parents=True, exist_ok=False)
     stage_1 = generate_list("stage_1", STRATA, 2, b"x01-synthetic-stage-1-seed")
     stage_3 = generate_list("stage_3", STRATA, 2, b"x01-synthetic-stage-3-seed")
-    _write(ROOT / "fixtures/synthetic/stage_1_list_v1.json", stage_1.to_dict())
-    _write(ROOT / "fixtures/synthetic/stage_3_list_v1.json", stage_3.to_dict())
+    _write(output_root / "fixtures/synthetic/stage_1_list_v1.json", stage_1.to_dict())
+    _write(output_root / "fixtures/synthetic/stage_3_list_v1.json", stage_3.to_dict())
 
     probability_vectors = set()
     for index, sequence in enumerate(permutations(WEATHERS)):
@@ -69,7 +75,7 @@ def main() -> int:
         "expected_probability_vector": [0.25, 1 / 3, 0.5, 1.0],
         "contract_validation": "PASS",
     }
-    _write(ROOT / "evidence/probability_report_v1.json", probability_report)
+    _write(output_root / "evidence/probability_report_v1.json", probability_report)
 
     with TemporaryDirectory(prefix="srp-x01-") as temporary:
         store = RandomizationStore(
@@ -100,7 +106,7 @@ def main() -> int:
                 )
         balance = [asdict(store.audit_balance("stage_1", item, actor_role="auditor")) for item in STRATA]
         _write(
-            ROOT / "evidence/balance_report_v1.json",
+            output_root / "evidence/balance_report_v1.json",
             {
                 "evidence_status": "SYNTHETIC_ONLY",
                 "balance_basis": "assigned",
@@ -130,12 +136,12 @@ def main() -> int:
             "audit": asdict(audit),
             "expected_conflict_code_for_new_request_same_reservation": "RESERVATION_ALREADY_ALLOCATED",
         }
-        _write(ROOT / "fixtures/synthetic/duplicate_audit_fixture_v1.json", duplicate_report)
+        _write(output_root / "fixtures/synthetic/duplicate_audit_fixture_v1.json", duplicate_report)
 
     stage_1_arms = Counter(record.arm for record in stage_1.records)
     stage_3_arms = Counter(record.arm for record in stage_3.records)
     _write(
-        ROOT / "evidence/x01_validation_report_v1.json",
+        output_root / "evidence/x01_validation_report_v1.json",
         {
             "evidence_status": "SYNTHETIC_ONLY",
             "stage_1": {

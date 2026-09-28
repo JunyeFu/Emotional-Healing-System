@@ -39,6 +39,7 @@
 | 看构念专家与独立重建材料 | `agent/tasks/Q-01/outputs/current-level-a.md`（原材料签收、当前专家解释及待真人执行） |
 | 看认知访谈与可访问预试 | `agent/tasks/Q-02/outputs/current-level-b.md`（人数冲突、单条件路径及待真人执行） |
 | 看技术预试与阈值冻结 | `agent/tasks/Q-03/outputs/current-level-c.md`（48单元非运行预览、盲态及真实工具缺口） |
+| 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看真实设备采集交接 | `agent/tasks/D-01/outputs/current-acquisition.md`（ECG/RR原始通道、P-02记录与待完成验收） |
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |
 | 看双设备同步与SQI | `agent/tasks/S-01/outputs/current-quality.md`（连接与质量区分、时钟字段与未完成取证） |

@@ -10,6 +10,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2] / "08-随机化"
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT.parents[1] / "agent/tasks/X-01/execution"))
 
 from verify_x01 import verify
 
