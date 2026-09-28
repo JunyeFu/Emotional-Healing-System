@@ -1,0 +1,125 @@
+{
+  "task_id": "F-02",
+  "title": "F02 构念与测量任务总结",
+  "review_date": "2026-09-28",
+  "conclusion": "F-02注册状态为DONE，覆盖候选测量材料和模型AC审查。本轮已建立当前适用入口，替换旧联合门使用规则，复测通过45项步骤测量测试。未取得F-02真实第二人签收或真人测量证据。",
+  "historical_acceptance": {
+    "reviewer": "Codex独立AC审查",
+    "date": "2026-08-06",
+    "commit": null,
+    "method": "历史结论为PASS_FOR_CANDIDATE_PACKAGE，仅候选材料审查；原记录未登记固定审核提交，明确要求另行安排真实第二人签收。本轮不代签。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本轮实施人为Codex；审阅动作是检查当前适用范围与下游交接，不改写任务状态或历史签署。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1：SCCI只作操纵检查；AC2：理解与心智努力保持条件中性，问卷目标不超过5分钟；AC3：看条件效果前选题冻结，提供序数项目和条件差异审查方法。",
+        "范围包括构念图、候选问卷、专家表、访谈及修改记录；不包括真人活动与正式研究冻结。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "历史材料含4个SCCI主候选、8道四层理解题、心智努力、目的猜测及Level A/B方法。",
+        "本轮交付当前适用说明、执行脚本、实际验证记录和本Word。步骤题直接引用U12-02实现，不复制代码。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "读取原材料、验收及v1.2合同，再与U12-02、U12-04对照；生成当前说明，执行检查与回归，最后生成总结。",
+        "主要情绪结果与功能解释分开。历史原件保留，新增当前入口负责告诉执行者采用什么规则。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "历史材料结构检查通过；当前说明与研究合同、SAP的关键角色字段一致；步骤材料确定性复算通过；pytest为45 passed。",
+        "这些结果支持候选内容与代码一致性，不证明真实信号可识别、问卷有效或情绪效应。五分钟仍为待实测目标。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "F02-N01：旧“SCCI联合门”会限制当前情绪报告。已用Agent当前说明明确其不适用于新研究，PANAS比较按预设报告。",
+        "F02-N02：旧C-A2粗相位关系、C-C2常识固定答案与v2.2不符。当前入口改用步骤实例与片段累计变化；U12-02复测通过。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK.md说明责任和AC；inputs引用原件；execution放生成与验证脚本；evidence存本轮结果；outputs存适用说明及结构化总结。",
+        "archive记录历史保留理由，不把旧签署或冻结快照当冗余删除。共享源码及旧业务目录仍等待全项目迁移。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "F-02没有任务前置。它消费F-01后续F-05步骤合同、U12-02材料与U12-04结果规格；候选构念继续交给Q-01/Q-02。",
+        "Q-01/Q-02承担真实内容与认知过程验证，S-02提供独立标注，U-02/U-07提供同源片段。具体人员领取以注册表为准，不由本Word补填。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "F02-N03：所读历史验收明确模型审查不能代替真实第二人，本轮仍未取得该签署。保持待安排，不把DONE改写为全部治理已闭合。",
+        "真实Level A/B、许可、正式时序、阈值与分析冻结由对应研究任务完成；不由本次目录规范化解除。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "本轮在codex/task-package-normalization分支整理；commit与push以实际Git记录为准，本文不预填未发生的提交或合并。",
+        "下一包为F-03，核对Unity基线、实际测试与构建证据，再整理人类层和执行层。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "结构化总结：agent/tasks/F-02/outputs/summary.json；复测记录：同包evidence/verification.json；当前适用说明：同包outputs/current-measurement.md。",
+        "项目串联审阅：human/project-review.docx。下方链接分别打开当前说明、历史审查及当前研究权威。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F02-N01",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "历史有序联合门与v1.2情绪报告规则冲突，当前使用入口已改为PANAS主结果与SCCI操纵检查分开",
+      "source": "agent/tasks/F-02/outputs/current-measurement.md"
+    },
+    {
+      "id": "F02-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "旧粗相位关系题和常识累计题由U12-02步骤实例及片段变化候选替代",
+      "source": "02-技术研发/srp_step_measurement/README.md"
+    },
+    {
+      "id": "F02-N03",
+      "status": "OPEN_HUMAN_REVIEW",
+      "description": "历史验收仅模型候选审查，所读来源未取得F-02真实第二人签署；责任由团队总监安排",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+    }
+  ],
+  "next_task": "F-03",
+  "source_links": [
+    {
+      "label": "打开 F-02 当前适用说明",
+      "path": "agent/tasks/F-02/outputs/current-measurement.md"
+    },
+    {
+      "label": "打开 F-02 历史候选审查记录",
+      "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+    },
+    {
+      "label": "打开当前 v1.2 研究合同",
+      "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json"
+    }
+  ]
+}

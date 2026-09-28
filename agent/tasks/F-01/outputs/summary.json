@@ -3,17 +3,113 @@
   "title": "F01 合同与协议任务总结",
   "review_date": "2026-09-28",
   "conclusion": "F-01注册表为DONE，历史第二人报告已签署PASS。本轮读取核心合同、验收记录和签署对象，并完成53项合同与CSV测试及PowerShell消费者复测。当前完成范围是v2.1合同与消费者校验边界。",
-  "historical_acceptance": {"reviewer": "傅钧烨", "date": "2026-08-12", "commit": "6c27c94a53c3eaa57d77b12a74626eb7442bfc0e", "method": "见证既有验证结果并审阅文件，未声称本人重新运行"},
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-08-12",
+    "commit": "6c27c94a53c3eaa57d77b12a74626eb7442bfc0e",
+    "method": "见证既有验证结果并审阅文件，未声称本人重新运行"
+  },
   "sections": [
-    {"heading": "任务职责与交付", "paragraphs": ["本包固定manifest、控制事件、ACK、遥测、策略决策和渲染回执的v2.1线格式。JSON Schema与Python参考校验器对同一输入给出一致边界；ControlEventLedger负责跨消息幂等与序号。", "交付包括runtime_contract.py、runtime-contract-v2.1.schema.json、11个fixture、兼容字段过滤、迁移说明与TCP5010和UDP5005/5006端口登记。"]},
-    {"heading": "验收与当前复测", "paragraphs": ["AC1由合法fixture与Schema及Python差分测试支持。AC2覆盖缺字段、错版本、正式Mock、未知构建、重复控制和陈旧序号。AC3验证未知兼容字段校验后被过滤。", "2026年9月28日在D:/Agent/srp执行合同与CSV专项，结果53 passed；PowerShell消费者输出frame_seq=10,11。此次执行结果保存在Agent层evidence/verification.json，历史签收结论保持原范围。"]},
-    {"heading": "偏离发现与修复", "paragraphs": ["当前合同README仍将F-05 v2.2描述为候选待复核，与注册表DONE冲突。已修正入口状态说明；v2.1不可变，v2.2按独立版本与消费者适配入口使用。", "历史技术验收记录中仍有当时IN_REVIEW与旧测试计数，属于历史记录，不作为当前治理状态。当前Word明确引用真实签署日期和对象，避免把历史候选结论当成当前结论。"]},
-    {"heading": "上下游交接", "paragraphs": ["本包没有前置任务。G-02和P-01消费v2.1字段及失败关闭规则；F-05消费v2.1基线扩展步骤实例；Unity与TD依各自协议消费者任务接入。", "SessionCore拥有流程、顺序和时钟权威。Unity反馈ACK及渲染回执，TD读取遥测。合同通过不代表网络服务、正式构建、真实设备和参与者活动已完成。"]},
-    {"heading": "目录整理与下一包", "paragraphs": ["执行层采用TASK.md、inputs、execution、evidence、outputs、archive固定目录；人类总结只保留summary.docx。核心实现仍由共享模块原路径提供，最终根目录迁移需连同其消费者路径完成。", "下一包按注册表顺序进入F-02。串联时重点检查当前v1.2研究主线如何消费测量材料，以及历史DONE的范围与后续升级任务是否一致。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本轮实施人为Codex；请按历史签收范围和本轮复测检查交接，不把合同完成等同于所有消费者运行完成。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1合法fixture通过；AC2缺字段、错版本、正式Mock与重复控制失败关闭；AC3未知兼容字段校验后过滤。",
+        "本包固定v2.1线格式与校验行为，后续步骤实例由F-05的v2.2独立扩展。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本包固定manifest、控制事件、ACK、遥测、策略决策和渲染回执的v2.1线格式。JSON Schema与Python参考校验器对同一输入给出一致边界；ControlEventLedger负责跨消息幂等与序号。",
+        "交付包括runtime_contract.py、runtime-contract-v2.1.schema.json、11个fixture、兼容字段过滤、迁移说明与TCP5010和UDP5005/5006端口登记。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "读取合同、Schema、验收与真实签署对象，执行合同及CSV测试与PowerShell消费者，修正合同当前入口，再生成总结。",
+        "历史记录不重写；当前合同入口状态跟随注册表，两个协议版本不混用。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "AC1由合法fixture与Schema及Python差分测试支持。AC2覆盖缺字段、错版本、正式Mock、未知构建、重复控制和陈旧序号。AC3验证未知兼容字段校验后被过滤。",
+        "2026年9月28日在D:/Agent/srp执行合同与CSV专项，结果53 passed；PowerShell消费者输出frame_seq=10,11。此次执行结果保存在Agent层evidence/verification.json，历史签收结论保持原范围。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "当前合同README仍将F-05 v2.2描述为候选待复核，与注册表DONE冲突。已修正入口状态说明；v2.1不可变，v2.2按独立版本与消费者适配入口使用。",
+        "历史技术验收记录中仍有当时IN_REVIEW与旧测试计数，属于历史记录，不作为当前治理状态。当前Word明确引用真实签署日期和对象，避免把历史候选结论当成当前结论。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "统一执行目录包括TASK.md、inputs、execution、evidence、outputs、archive。总结只由结构化输出生成，临时渲染文件不进入交付目录。",
+        "本轮没有可安全删除的历史原件；共享实现仍在原模块目录，最终根目录迁移需处理其消费者路径。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "本包没有前置任务。G-02和P-01消费v2.1字段及失败关闭规则；F-05消费v2.1基线扩展步骤实例；Unity与TD依各自协议消费者任务接入。",
+        "SessionCore拥有流程、顺序和时钟权威。Unity反馈ACK及渲染回执，TD读取遥测。合同通过不代表网络服务、正式构建、真实设备和参与者活动已完成。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "历史报告已由真实第二人签署PASS。实现、验证、签收范围与Unity画面、正式构建、真实设备链分别判断。",
+        "本轮属于候选接口复测与目录整理，不追加新的真人签署。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "实现与规范化已推送到codex/task-package-normalization，原记录保留在Git历史；本轮进一步统一Word模板，不改变F-01状态。",
+        "下一包为F-02，重点检查当前研究主线怎样消费候选测量材料，以及历史DONE范围是否被扩张。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "结构化总结：agent/tasks/F-01/outputs/summary.json；验证记录：同包evidence/verification.json。",
+        "项目串联审阅：human/project-review.docx。下方链接打开协议入口与已签署报告。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "F01-N01", "status": "FIXED", "description": "合同入口F-05状态与注册表不一致", "source": "02-技术研发/05-通信协议/contracts/README.md"},
-    {"id": "F01-N02", "status": "OPEN_PROJECT_MIGRATION", "description": "根目录旧业务目录仍待逐包归属与最终迁移", "source": "agent/normalization.md"}
+    {
+      "id": "F01-N01",
+      "status": "FIXED",
+      "description": "合同入口F-05状态与注册表不一致",
+      "source": "02-技术研发/05-通信协议/contracts/README.md"
+    },
+    {
+      "id": "F01-N02",
+      "status": "OPEN_PROJECT_MIGRATION",
+      "description": "根目录旧业务目录仍待逐包归属与最终迁移",
+      "source": "agent/normalization.md"
+    }
   ],
-  "next_task": "F-02"
+  "next_task": "F-02",
+  "source_links": [
+    {
+      "label": "打开合同与协议当前入口",
+      "path": "02-技术研发/05-通信协议/contracts/README.md"
+    },
+    {
+      "label": "打开 F-01 已签署报告",
+      "path": "02-技术研发/05-通信协议/F-01_第二人审核报告_已签署.md"
+    }
+  ]
 }

@@ -50,19 +50,36 @@ def document(title):
 def render_summary(summary, output):
     doc = document(summary['title'])
     doc.add_paragraph(f"审阅日期 {summary['review_date']}    任务 {summary['task_id']}")
-    doc.add_paragraph(summary['conclusion'])
-    acceptance = summary['historical_acceptance']
-    doc.add_heading('历史签收对象', level=1)
-    doc.add_paragraph(f"审核人 {acceptance['reviewer']}    日期 {acceptance['date']}")
-    doc.add_paragraph(f"审核提交 {acceptance['commit']}")
-    doc.add_paragraph(acceptance['method'])
-    for section in summary['sections']:
-        doc.add_heading(section['heading'], level=1)
+    numbering = ('一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一')
+    for index, section in enumerate(summary['sections']):
+        if index in (3, 7):
+            doc.add_page_break()
+        doc.add_heading(f"{numbering[index]} {section['heading']}", level=1)
+        if index == 0:
+            doc.add_paragraph(summary['conclusion'])
         for paragraph in section['paragraphs']:
             doc.add_paragraph(paragraph)
-    doc.add_heading('审阅来源', level=1)
-    doc.add_paragraph(f"Agent层总结 agent/tasks/{summary['task_id']}/outputs/summary.json")
-    doc.add_paragraph(f"验证记录 agent/tasks/{summary['task_id']}/evidence/verification.json")
+        if index == 8:
+            acceptance = summary['historical_acceptance']
+            doc.add_paragraph(f"历史审核人 {acceptance['reviewer']}    日期 {acceptance['date']}")
+            if acceptance.get('commit'):
+                doc.add_paragraph(f"历史审核提交 {acceptance['commit']}")
+            doc.add_paragraph(acceptance['method'])
+    for source in summary.get('source_links', []):
+        paragraph = doc.add_paragraph()
+        link = OxmlElement('w:hyperlink')
+        relationship = doc.part.relate_to(
+            (ROOT / source['path']).resolve().as_uri(),
+            'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink',
+            is_external=True,
+        )
+        link.set(qn('r:id'), relationship)
+        run = OxmlElement('w:r')
+        text = OxmlElement('w:t')
+        text.text = source['label']
+        run.append(text)
+        link.append(run)
+        paragraph._p.append(link)
     output.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output)
 
@@ -88,8 +105,16 @@ def check_task(task_id, registry):
     evidence = read_json(package / 'evidence/verification.json')
     if summary['task_id'] != task_id or evidence['task_id'] != task_id:
         raise ValueError('Task identity mismatch')
-    if not evidence['checks'] or any(c['exit_code'] != 0 for c in evidence['checks']):
-        raise ValueError(f'Unresolved verification failure: {task_id}')
+    headings = ('当前结论', '目标与完成标准', '实际交付', '执行过程与关键决定',
+                '验证与结果', '偏离与修复闭环', '目录与文件整理', '上下游交接',
+                '审阅与责任签收', '收尾与下一包', '审阅来源')
+    if tuple(section['heading'] for section in summary['sections']) != headings:
+        raise ValueError(f'Summary does not follow the common template: {task_id}')
+    if not evidence['checks']:
+        raise ValueError(f'Missing verification record: {task_id}')
+    for check in evidence['checks']:
+        if check['exit_code'] != 0 and not check.get('disposition'):
+            raise ValueError(f'Undocumented verification failure: {task_id}')
     return summary
 
 
@@ -104,9 +129,13 @@ def main():
     summary = check_task(args.task_id, registry)
     if args.check:
         review = ROOT / 'human/tasks' / args.task_id / 'summary.docx'
+        if not review.is_file():
+            raise ValueError(f'Missing human summary: {args.task_id}')
         if review.is_file():
             text = '\n'.join(p.text for p in Document(review).paragraphs)
-            expected = [summary['conclusion'], summary['historical_acceptance']['commit']]
+            expected = [summary['conclusion']]
+            if summary['historical_acceptance'].get('commit'):
+                expected.append(summary['historical_acceptance']['commit'])
             expected.extend(p for s in summary['sections'] for p in s['paragraphs'])
             if any(value not in text for value in expected):
                 raise ValueError(f'Word content drift: {args.task_id}')
@@ -133,7 +162,8 @@ def main():
             chain.add_paragraph(f"{finding['id']} {finding['status']}：{finding['description']}")
     chain.add_heading('待整理队列', level=1)
     remaining = [r['task_id'] for r in rows if r['task_id'] not in completed]
-    chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包。")
+    count = chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包。")
+    count.paragraph_format.keep_with_next = True
     chain.add_paragraph('、'.join(remaining))
     chain.add_paragraph('根目录仍有旧业务目录，最终双层迁移未完成。下一包按上述队列顺序推进。')
     chain.save(ROOT / 'human/project-review.docx')

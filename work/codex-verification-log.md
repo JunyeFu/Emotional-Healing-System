@@ -1835,3 +1835,10 @@
 - 合同与CSV专项：53 passed in 1.34s；非Python消费者：PASS，frame_seq=10,11。
 - 从agent/tasks/F-01/outputs/summary.json生成human/tasks/F-01/summary.docx及human/project-review.docx；渲染至本地.artifacts-local/task-normalization并逐页检查。
 - 规范化整体目标仍在执行，剩余70包与根目录业务内容迁移未完成。
+
+## 2026-09-28 F-02双层规范化
+
+- 历史候选结构校验PASS；当前使用规则与v1.2及U12-04关键字段一致；U12-02合成材料复算PASS；步骤测量45 passed in 0.16s。
+- 修复当前入口对旧联合门、粗相位题及常识累计题的采用方式；历史原件及冻结快照不改写，真实第二人签署不代填。
+- F-01与F-02总结按十一项中文模板重建，各3页；项目串联审阅2页，已逐页检查。DOCX正文与结构化总结一致性检查通过。
+- 已整理2包，剩余69包，下一包F-03；最终根目录双层迁移仍未完成。
