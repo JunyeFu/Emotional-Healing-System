@@ -43,4 +43,6 @@
 
 | 23 | U-03 最高风险天气纵向切片 | [总结](tasks/U-03/summary.docx) | 旧场景设计实际归档，修复当前背景卷轴字段；180项专项通过，fade真实切片及模板仍未验收，保持WAIT_DEP |
 
+| 24 | U-04 剩余天气A适配器 | [总结](tasks/U-04/summary.docx) | 明确A/B/C未绑定，不默认storm；旧框架及Editor工具原文归档，34项设计与105项Unity回归通过，新天气仍WAIT_DEP |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

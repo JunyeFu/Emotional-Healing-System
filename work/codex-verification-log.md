@@ -2032,3 +2032,12 @@
 - 根pytest635 passed in 48.21s；注册表71项及独立分发5包54快照通过。其他冻结包无diff，领取/签署状态不变。
 - Word结构、来源及内容检查通过；单包3页逐页审阅，串联13页前11页与V-05已审阅版本PNG字节一致，第12/13页重新检查，无截断重叠。
 - 仅有BackgroundPass说明变更，无Unity天气运行或真人形成性验收。本包仍WAIT_DEP，累计23/71，下一U-04；整体根目录双层迁移尚未完成。
+
+## 2026-09-28 U-04规范化验证
+
+- 静态来源确认V-02没有A/B/C分配，剩余storm/heat/snow；StormScene引用旧WeatherController且含Traveler/Shield/WeatherDirector，不含U-01桥与V03适配脚本GUID。当前入口保留未分配事实。
+- 两个旧Editor类名及GUID无其他C#或场景/Prefab/asset引用，连同meta和旧框架原文归档，迁移时五份文件Git识别100%相同；共享运行对象保留。
+- 专项34 passed in 0.09s，V-03当前校验通过；Unity6000.4.9f1 EditMode实际105/105通过，证据写U-04而不覆盖原签收。根pytest635 passed in 53.90s。
+- 71项注册表及5个分发包54快照通过，READY仍T-02/V-05，冻结包无改动。结构、来源及Word正文检查通过；新增活动文件措辞与git diff检查在发布前执行。
+- 单包Word3页逐页查看，串联13页前12页与U-03已审阅PNG字节一致，第13页重新检查，无截断重叠。当前没有U-04实际适配器、Play、Profiler、预算签收或真人签署；累计24/71，下一U-05。
+- 首次暂存diff检查仅在Unity原始日志发现生成的行尾空格。按该单一文件设置-text与关闭blank-at-eol检查，保留原始字节；源码仍执行原检查，不改写日志或放宽其他文件。

@@ -1824,3 +1824,10 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 旧TD/Spout四天气场景设计实际原文迁入archive，Git重命名100%；活动入口已订正。修复V-03当前生成器八条背景行卷轴残留，BackgroundPass仅改说明，不伪称整屏复色已实现。
 - 专项180项及根pytest635项通过，71项注册表及5包54快照通过。READY V-05刷新当前映射，其余进行中/复核中冻结包未变。
 - 单包Word3页逐页检查，串联13页前11页与V-05已审阅版本PNG一致，第12/13页重新检查。累计23/71，剩余48，下一U-04；根目录整体迁移与真实运行缺口仍继续处理。
+
+## 2026-09-28 U-04双层规范化
+
+- 上一轮U-03形成实际进展；本轮继续U-04。A/B/C未绑定技术ID，保持selected_weather=null并回填V-02当前交接；不默认storm，不擅自冻结新分配或签名。
+- 旧Unity框架、两个Editor生成工具及meta实际原文归档，迁移前无类名/GUID消费者；工程原入口改当前交接。StormScene和WeatherDirector仍有序列化引用，不在本包删除。
+- 34项设计检查、105项Unity EditMode、根pytest635项、71项注册表与5包54快照通过；无新天气Play或Profiler验收，WAIT_DEP与未领取不改。
+- 单包Word3页、串联13页已审阅，串联前12页与U-03已检查版本PNG一致，第13页重新检查。累计24/71，剩余47，下一U-05；根目录整体双层迁移仍继续。
