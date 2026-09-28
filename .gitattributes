@@ -76,3 +76,4 @@ agent/tasks/G-03/archive/02_当前状态与不可跨越门禁.md -text whitespac
 agent/tasks/G-03/evidence/initial-handoff.txt -text whitespace=-blank-at-eol
 agent/tasks/B-02/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/E-04/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/A-05/archive/*.md -text whitespace=cr-at-eol

@@ -1,0 +1,33 @@
+{
+  "task_id": "A-05",
+  "title": "A05 阶段一锁定分析交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "A-05仍BLOCKED_EXTERNAL、未领取未签收；真实锁定输入、授权和完整分析流水线尚缺。旧问卷说明已实际归档，当前交接对齐PANAS主比较、独立功能护栏和过程结果；合成工具验证不代表真实效果。",
+  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "A-05没有真实签署。本轮为目录规范化及候选合成核查，没有新独立Agent审核或真人签收；U12-04原签收仅限候选SAP。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["固定任务约5人日，依赖A-02、A-03、E-04；分析、数据授权、独立复跑和结果接收人均未实名。本轮交付执行说明和空结果提纲，不生成效应、CI、FDR或研究结论。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1全部结果来自同一锁定数据，PANAS与设备指标分别报告；AC2功能或操纵检查失败不隐去有效情绪比较；AC3报告正向、反向、小差异和不确定结果，未冻结时不宣称等效；AC4可选训练仅用批准轨迹和合法在线状态。", "过程为核对锁定输入与授权、确定冻结模型和分析集、生成全部预设结果、独立复跑及图表关联、交A-06和论文任务；当前真实前置均未完成。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK及五目录、18项真实来源、当前分析说明和机器状态、NOT_RUN空结果提纲；验证脚本消费实际HC3、BH和候选SAP实现。", "旧问卷原件移入archive并保留字节，原路径改当前导航；第11步、统计入口、任务手册及历史验证消费者对齐。没有修改原协议Schema、原签署或在研输入快照。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["PANAS负性后测的候选ANCOVA调整前测及随机分层，native-minus-abstract负值有利原生；HC3、双侧0.05与95%CI仍须正式SAP冻结，不把体验后PF/SCCI/努力加入主模型。", "所有随机分配分析与完整四模块PF资格分别处理；传感器失败不丢有效问卷，操作完成不等于分析可评估。前测先于条件教学是当前待冻结时序，比较范围含完整提示方案而非单独视觉机制。"]},
+    {"heading": "验证与结果", "paragraphs": ["70项专项28.29秒通过，覆盖A-05交接、A-02、U12-04合同及A-03规格；已知合成方向和BH结果核验实际工具，正式PANAS计分仍拒绝未完成CAL。", "根pytest 635项49.57秒通过；候选SAP、历史协议、v1.2治理、71项注册和5包61快照检查通过。没有真实数据分析、Unity/TD、设备运行、锁库、正式冻结或新签署。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧问卷把阶段一PANAS作背景且条件教学先于前测，实际归档后改当前入口。结果分轴报告，功能失败不隐藏情绪比较，跨零不等于等效或抽象获胜。", "U12-04文字将观测集与完整四模块并列，实际脚本仅筛后测可观察；48是总块而非每臂数。待受控修订已记consumer-impact，不改历史签收。该脚本无正式MI/MNAR，BH helper不是完整FDR流水线。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["一个旧原件按原字节迁入archive；输入、执行、证据、输出和归档固定归属，错误日志不带受限身份。先修Agent当前事实，再生成本总结和串联Word。", "空结果提纲没有统计数值、授权或签名，不伪造U12-10分类器或训练manifest；根目录整体双层迁移仍未完成。"]},
+    {"heading": "上下游交接", "paragraphs": ["E-04交真实锁库及揭盲授权，A-01交原件重建，A-02交机会计数/资格/缺失，A-03及U12-11交真实冻结SAP；现有候选工具不能替代这些交付。", "A-06、W-02/W-03消费同一主张—结果—图表—输入—代码链，U12-10按冻结规则分类；核心论文不依赖阶段三。若批准训练，参与者分组且只用决策前状态，后测仅作离线标签。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["分析负责人、数据授权人、独立复跑人、结果复核人、论文接收人和可选训练批准人仍待实名；当前未填姓名、PASS或DONE。候选规格历史签收与A-05真实分析签收分开。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计50/71包规范化，剩余21，下一E-05。A-05业务仍BLOCKED_EXTERNAL；完整真实分析、正式参数、结果和签收未交付，整体双层根目录迁移继续。"]},
+    {"heading": "审阅来源", "paragraphs": ["实际注册与v1.2协议、A-01至A-03、E-04、X-02、U12-04原签收及候选源码、U12-07空表和旧问卷原件；本轮无新网页研究或真人活动。"]}
+  ],
+  "findings": [
+    {"id": "A05-N01", "status": "FIXED_ARCHIVE_AND_CURRENT_CONSUMERS", "description": "旧问卷实际归档，当前PANAS/时序入口及历史验证消费者修复", "source": "agent/tasks/A-05/archive/README.md"},
+    {"id": "A05-N02", "status": "OPEN_CANDIDATE_SAP_WORDING_REVISION", "description": "观测集资格与48块表述和实现不同，保留签收原件并登记受控修订", "source": "agent/tasks/A-05/evidence/consumer-impact.md"},
+    {"id": "A05-N03", "status": "OPEN_REAL_LOCKED_ANALYSIS_AND_OWNERS", "description": "真实锁库授权、正式SAP、完整分析和分类流水线、实名复跑及签收缺", "source": "agent/tasks/A-05/outputs/current-analysis.json"}
+  ],
+  "next_task": "E-05",
+  "source_links": [
+    {"label": "当前阶段一分析交接", "path": "agent/tasks/A-05/outputs/current-analysis.md"},
+    {"label": "实际能力与缺口", "path": "agent/tasks/A-05/outputs/current-analysis.json"},
+    {"label": "未执行结果提纲", "path": "agent/tasks/A-05/outputs/analysis-report-template.json"},
+    {"label": "候选签署范围和修订影响", "path": "agent/tasks/A-05/evidence/consumer-impact.md"},
+    {"label": "专项和回归证据", "path": "agent/tasks/A-05/evidence/verification.json"}
+  ]
+}

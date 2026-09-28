@@ -16,6 +16,7 @@ LEGACY_POLICY = PROJECT_ROOT / "agent/tasks/X-02/archive"
 LEGACY_LOCK = PROJECT_ROOT / "agent/tasks/G-03/archive"
 LEGACY_EXECUTION = PROJECT_ROOT / "agent/tasks/B-02/archive"
 LEGACY_CLOSEOUT = PROJECT_ROOT / "agent/tasks/E-04/archive"
+LEGACY_MEASUREMENT = PROJECT_ROOT / "agent/tasks/A-05/archive"
 AUTHORITY = PACKAGE / "00_总控" / "protocol_authority_v1.1.json"
 
 ACTIVE_FILES = [
@@ -47,6 +48,7 @@ ACTIVE_FILES = [
     LEGACY_OFFLINE / "02_QC与分析集规则.md",
     LEGACY_OFFLINE / "03_呼吸事件与Protocol_Fidelity.md",
     PACKAGE / "22_离线处理与科研分析" / "05_问卷与访谈处理.md",
+    LEGACY_MEASUREMENT / "05_问卷与访谈处理.md",
     LEGACY_STATISTICS / "06_统计模型与图表计划.md",
     LEGACY_POLICY / "00_后续研究总设计.md",
     LEGACY_POLICY / "01_数据与方法储备.md",
@@ -96,7 +98,7 @@ REQUIRED_MARKERS = {
         "randomization_strata",
         "FDR",
     ),
-    PACKAGE / "22_离线处理与科研分析" / "05_问卷与访谈处理.md": (
+    LEGACY_MEASUREMENT / "05_问卷与访谈处理.md": (
         "先完成PANAS后测",
         "研究目的和条件猜测",
     ),

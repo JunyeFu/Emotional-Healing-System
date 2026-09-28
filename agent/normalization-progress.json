@@ -48,10 +48,10 @@
     "E-03",
     "G-03",
     "B-02",
-    "E-04"
+    "E-04",
+    "A-05"
   ],
   "remaining_packages": [
-    "A-05",
     "E-05",
     "G-04",
     "B-03",
@@ -1328,6 +1328,27 @@
       "status": "OPEN_REAL_BATCHES_RECONSTRUCTION_LOCK_AND_AUTHORIZATION",
       "description": "全部真实批次、盲态QC/重建、正式SAP、锁库工具与真实签名/授权仍缺",
       "source": "agent/tasks/E-04/outputs/current-closeout.json"
+    },
+    {
+      "task_id": "A-05",
+      "id": "A05-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_CONSUMERS",
+      "description": "旧问卷实际归档，当前PANAS/时序入口及历史验证消费者修复",
+      "source": "agent/tasks/A-05/archive/README.md"
+    },
+    {
+      "task_id": "A-05",
+      "id": "A05-N02",
+      "status": "OPEN_CANDIDATE_SAP_WORDING_REVISION",
+      "description": "观测集资格与48块表述和实现不同，保留签收原件并登记受控修订",
+      "source": "agent/tasks/A-05/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "A-05",
+      "id": "A05-N03",
+      "status": "OPEN_REAL_LOCKED_ANALYSIS_AND_OWNERS",
+      "description": "真实锁库授权、正式SAP、完整分析和分类流水线、实名复跑及签收缺",
+      "source": "agent/tasks/A-05/outputs/current-analysis.json"
     }
   ]
 }
