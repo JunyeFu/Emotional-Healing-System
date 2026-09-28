@@ -1,0 +1,14 @@
+{
+  "task_id": "F-05",
+  "review_date": "2026-09-28",
+  "implementation_commit": "2def28b1f0dadc2ebc8bbe99d2d3713de4f10211",
+  "scope": "Migrated F-05 entry, contract and P-01/P-02 regressions, preserved historical seal; not live runtime or participant evidence.",
+  "checks": [
+    {"command": "pwsh -NoProfile -File agent/tasks/F-05/execution/verify.ps1", "exit_code": 0, "result": "Clean source before run; 87 contract, 116 P-01, 84 P-02 tests passed; current seal and historical worktree/Git seal verified"},
+    {"command": "contract pytest via F-05 entry", "exit_code": 0, "result": "87 passed", "source": "agent/tasks/F-05/evidence/runtime/contract-tests.log"},
+    {"command": "P-01 pytest via F-05 entry", "exit_code": 0, "result": "116 passed", "source": "agent/tasks/F-05/evidence/runtime/p01-tests.log"},
+    {"command": "P-02 pytest via F-05 entry", "exit_code": 0, "result": "84 passed", "source": "agent/tasks/F-05/evidence/runtime/p02-tests.log"},
+    {"command": "verify_f05_v22.py", "exit_code": 0, "result": "v2.1 unchanged; v2.2 schema rebuild; 22 fixture hashes; 5 equal Unity/TD consumer frames", "source": "agent/tasks/F-05/evidence/runtime/f05-verification.json"},
+    {"command": "f05_evidence.py current and historical verification", "exit_code": 0, "result": "Current eight-file seal verifies; historical worktree and HEAD blobs verify without overwrite", "source": "agent/tasks/F-05/evidence/runtime/evidence_manifest.json"}
+  ]
+}

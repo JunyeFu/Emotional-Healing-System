@@ -4,7 +4,7 @@
 
 本目录是F-01交付的机器可读合同。`runtime-contract-v2.1.schema.json`是线格式、必填字段、枚举和无状态跨字段约束的机器权威；`runtime_contract.py`是标准库参考实现。两者必须对同一fixture和差分负例产生相同的接受或拒绝结果。`ControlEventLedger`单独负责无法由JSON Schema表达的跨消息幂等与序号状态。
 
-`runtime-contract-v2.2.schema.json`和`runtime_contract_v22.py`是独立的版本化候选。它们保留v2.1全部规则，并新增呼吸配置身份和目标/实际的周期步骤实例字段。调用方只能经`srp_session_core.contract_adapter.validate_message()`进入版本分派，不得把v2.2字段作为v2.1未知字段使用。
+`runtime-contract-v2.2.schema.json`和`runtime_contract_v22.py`是F-05已签收的独立版本化合同。它们保留v2.1全部规则，并新增呼吸配置身份和目标/实际的周期步骤实例字段。调用方只能经`srp_session_core.contract_adapter.validate_message()`进入版本分派，不得把v2.2字段作为v2.1未知字段使用。
 
 ## 权威边界
 
@@ -15,7 +15,7 @@
 - 正式模式禁止Mock、未知Unity构建、缺失manifest和退休字段`calm_index`。
 - Unity、TouchDesigner或其他消费者不得只复制字段名；必须用Schema生成/校验无状态消息，并实现合同测试fixture。Python特有错误码不能改变Schema的接受/拒绝边界。
 
-## 兼容规则
+## v2.1兼容规则
 
 1. `schema_version`不等于`2.1`时失败关闭。
 2. 缺失必需字段、非法枚举、非有限数值和正式Mock失败关闭。

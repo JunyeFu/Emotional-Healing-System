@@ -3,10 +3,10 @@
     "F-01",
     "F-02",
     "F-03",
-    "F-04"
+    "F-04",
+    "F-05"
   ],
   "remaining_packages": [
-    "F-05",
     "G-01",
     "G-02",
     "P-01",
@@ -166,6 +166,27 @@
       "status": "OPEN_DOWNSTREAM_VISUAL_REVIEW",
       "description": "历史呼吸页说明覆盖曲线，需在T-01检查当前布局；本轮主机门不关闭画面可读性问题",
       "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
+    },
+    {
+      "task_id": "F-05",
+      "id": "F05-N01",
+      "status": "FIXED",
+      "description": "根Tools工具迁入固定任务层，默认新运行不覆盖历史封存",
+      "source": "agent/tasks/F-05/execution/Invoke-F05.ps1"
+    },
+    {
+      "task_id": "F-05",
+      "id": "F05-N02",
+      "status": "FIXED",
+      "description": "当前接口基线和迁移指南已按真实签收修正DONE及下游范围",
+      "source": "02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md"
+    },
+    {
+      "task_id": "F-05",
+      "id": "F05-N03",
+      "status": "FIXED",
+      "description": "合同入口兼容规则明确限定v2.1，不再误读为全版本拒绝v2.2",
+      "source": "02-技术研发/05-通信协议/contracts/README.md"
     }
   ]
 }

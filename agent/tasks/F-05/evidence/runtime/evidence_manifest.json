@@ -1,0 +1,36 @@
+{
+  "manifest_schema": "f05-evidence-manifest-v2",
+  "tested_git_commit": "2def28b1f0dadc2ebc8bbe99d2d3713de4f10211",
+  "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
+  "leaves": {
+    "contract-tests.log": {
+      "sha256": "691af984c1fa66d17babbd8775aac2e771877344e2f53e0da0b9340d4ace48fc",
+      "canonical_size_bytes": 179
+    },
+    "p01-tests.log": {
+      "sha256": "212f61fc0f12cd32e2ad3a8b0a050715048eb2b5866ac3472fd079dc2a1fd3b6",
+      "canonical_size_bytes": 180
+    },
+    "p02-tests.log": {
+      "sha256": "edab99e2dee1723d6ae58068cd64eca1d2ce4411a039b08db03ce44a5d7b3dd9",
+      "canonical_size_bytes": 179
+    },
+    "f05-contract-verifier.log": {
+      "sha256": "9955c4bf83234815fb944de7d9b3c46dea6506dc9fe8ca0a756dd7121b77445a",
+      "canonical_size_bytes": 238
+    },
+    "f05-verification.json": {
+      "sha256": "9955c4bf83234815fb944de7d9b3c46dea6506dc9fe8ca0a756dd7121b77445a",
+      "canonical_size_bytes": 238
+    },
+    "git-diff-check.log": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "canonical_size_bytes": 1
+    }
+  },
+  "hash_index": {
+    "path": "evidence_hashes.sha256",
+    "sha256": "b7ea272ef3f062e122c3c20fa7e1efacb346676e92312b67f5aaa080af1aaed5",
+    "canonical_size_bytes": 510
+  }
+}
