@@ -1,5 +1,15 @@
 # Codex Verification Log
 
+## 2026-09-28 V-03规范化验证
+
+- 旧validate_v03_deliverables.py实跑失败于asset_registry比对，原因是历史78项含57直接包而当前56包已移除Spout。未改原签署台账。
+- 历史验证读取f09f0d5候选的manifest/许可原件；Git LF还原当时Windows CRLF后与原两项字节哈希一致。Draft 2020-12实际执行，准备及40行/78项历史复算通过。
+- py -3.14 agent/tasks/V-03/execution/verify.py：历史准备/交付、当前映射、V-02消费及64项pytest通过。当前56包登记和v2.2字段检查不表示正式许可。
+- 本轮新增生成脚本首次缺输出目录，补正目录创建并订正校验Schema键后重跑通过；生成器不写签署原件的回归通过。
+- 07_validate_task_packages.py：71项通过；14_validate_ready_task_packages.py：5包47快照通过；build_task_reviews.py V-03 --check通过。
+- 原V-03目录与分发快照git diff为空，措辞及差异检查通过。Word3页逐页检查；串联第9页检查，前8页与V-02已查页像素一致，无截断或遮挡。
+- 规范化16/71，下一V-04，剩余55包及最终根目录迁移继续。未新增真人签收、Unity运行或参与者结果。
+
 ## 2026-09-28 V-02规范化验证
 
 - py -3.14 agent/tasks/V-02/execution/verify.py：历史场景、当前V-04来源与V-01旅程检查通过，26项pytest通过。首次测试收集因新文件的函数声明缺失失败，补正后完整重跑通过。

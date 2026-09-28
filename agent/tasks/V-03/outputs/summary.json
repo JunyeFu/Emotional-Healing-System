@@ -1,0 +1,144 @@
+{
+  "task_id": "V-03",
+  "title": "V03 四层视听映射与资产基线审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "V-03原DONE和设计签收保留。三工具及资产测试迁入Agent，修复历史资产校验混用当前依赖与生成器覆盖签署文件的问题。当前40行对齐v2.2、固定镜头、fade有效时间复色及累计锁定；64项回归和新旧交接通过，素材许可与真实呈现仍待下游。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨（团队总监、真实第二人）",
+    "date": "2026-08-24 +08:00",
+    "commit": "e6d642e1eacb659edd965439bad6e6f643519c0e",
+    "method": "审阅f09f0d5f1f35c98ea447eb3545c18fbb3fb36925及已有验证，不表述为本人重跑；签名不转移到本轮新输出。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "原负责人Codex，原包约3人日，前置V-02/R-01；DONE与傅钧烨原签收保留。本轮更新当前使用入口，不改原规划、合同和签署，不把设计确认写成运行完成。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1四天气四层独立且背景不泄露节律；AC2双条件信息时点和失败状态可比较，未知实际不补零；AC3七类资产登记和七维风险排序形成切片交接。",
+        "技能为反馈映射、声音设计、动态参数和资产来源规划；国内资料沿用L-UNITYLEARN/L-RESEARCH/L-DATASEC，统一学习入口见审阅来源。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "三份工具和原8项资产测试实际迁入execution，删除旧入口。current-mapping.json保留4天气×2条件×5层的40行，asset-drift.json记录57到56个直接包的真实变化。",
+        "TASK及五目录、命令证据、当前使用说明、消费者影响和Word事实源齐备；原13份ADR及签署文件保持原件。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "旧交付校验实跑在资产生成比对失败：生成器读取当前manifest，而原台账记录签收时57包。历史复算显式读取f09f0d5候选Git原件，验证Windows CRLF证据字节；当前依赖另检56包。",
+        "生成器直接运行只写本包historical-rebuild，避免覆盖已签署JSON。当前40行补v2.2周期/步骤字段，fade累计只管独立轮廓纹理；全屏复色按有效时间，段切换不得重启累计生命周期。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "历史准备与交付通过，实际Draft 2020-12验证开启；历史78项资产和57直接包复算通过。当前56包登记与F-05字段存在性通过，V-02当前交接通过。",
+        "64项回归包括原8项资产负测、40行来源串扰、镜头/素材/fade规则、累计锁定、四天气v2.2、重复行、历史哈希及生成器不写签署目录。未运行Unity或真实设备。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "V03-N01历史与当前依赖混用已分开；N02生成器覆盖签署路径已改并负测。N03旧卷轴、粗相位和累计颜色在当前40行及使用说明订正，未回写历史。",
+        "原七维双评分仍支持先做fade的设计排序，但旧卷轴成本不是当前性能实测；不凭本轮技术检查改切片或宣布素材已许可。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "execution包含历史生成、历史交付/准备检查、当前生成/检查和两个测试文件；输出、证据和历史保留理由分开。旧99脚本与02技术目录测试删除，不留兼容入口。",
+        "共享Unity运行实现仍保持程序集目录；原签收材料和冻结领取输入不动，根目录整体迁移尚未完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "V-02当前场景、R-01四层与U-02累计生命周期共同约束当前映射。F-05提供实际v2.2字段；V-04后续素材、镜头和fade裁定优先，不把旧设计Schema当网络Schema。",
+        "V-05/U-03至U-07验证真实天气及同源双条件；G-02/U-08逐实例映射32素材及许可，U12-06/X-01接教学暴露。旧21设计项不是现有32素材完整清单，缺口保留。下一规范化包V-04。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "历史独立复核与傅钧烨签署只覆盖f09f0d5候选；本轮Codex技术复测不是新真人签收，没有代填新签名或新独立Agent复核。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "明确路径提交并推送codex/task-package-normalization，不自动合并。规范化16/71，剩余55包；下一V-04，最终双层目录与真实下游证据继续推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前映射、依赖变化、实际命令、消费者影响和原签署见可点击链接；Word只从Agent事实生成，修复先落执行层。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "V03-N01",
+      "status": "FIXED_AND_RETESTED",
+      "description": "历史78项/57包按签收原件复算，当前56包独立验证，不因合法移除Spout否定历史",
+      "source": "agent/tasks/V-03/execution/validate_historical.py"
+    },
+    {
+      "id": "V03-N02",
+      "status": "FIXED_AND_RETESTED",
+      "description": "生成器输出改本包候选目录，测试确认不写签署原件",
+      "source": "agent/tasks/V-03/execution/generate_historical.py"
+    },
+    {
+      "id": "V03-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前40行对齐v2.2、固定镜头、fade时间复色及同模块累计锁定",
+      "source": "agent/tasks/V-03/outputs/current-mapping.json"
+    },
+    {
+      "id": "V03-N04",
+      "status": "OPEN_DOWNSTREAM_ASSET_INSTANCES",
+      "description": "旧21设计项不替代32素材逐实例许可映射，G-02/U-08负责完成",
+      "source": "agent/tasks/V-03/evidence/consumer-impact.md"
+    }
+  ],
+  "next_task": "V-04",
+  "source_links": [
+    {
+      "label": "当前四层与资产交接",
+      "path": "agent/tasks/V-03/outputs/current-mapping.md"
+    },
+    {
+      "label": "当前40行映射",
+      "path": "agent/tasks/V-03/outputs/current-mapping.json"
+    },
+    {
+      "label": "当前依赖变化",
+      "path": "agent/tasks/V-03/outputs/asset-drift.json"
+    },
+    {
+      "label": "实跑命令证据",
+      "path": "agent/tasks/V-03/evidence/verification.json"
+    },
+    {
+      "label": "下游影响",
+      "path": "agent/tasks/V-03/evidence/consumer-impact.md"
+    },
+    {
+      "label": "原真实签收",
+      "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_技术验收记录_已签署.md"
+    },
+    {
+      "label": "国内技能资料",
+      "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    }
+  ]
+}

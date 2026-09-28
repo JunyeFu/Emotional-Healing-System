@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 import itertools
+import hashlib
 import json
 import runpy
+import subprocess
 from pathlib import Path
 
-try:
-    from jsonschema import Draft202012Validator
-except ModuleNotFoundError:  # The repository's frozen runner is `py -3.14`.
-    Draft202012Validator = None
+from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[4]
@@ -20,7 +19,7 @@ BASE = (
     / "20_产品与场景设计"
     / "V-03_四层视听映射与资产来源基线"
 )
-GENERATOR = Path(__file__).with_name("generate_v03_contracts.py")
+GENERATOR = Path(__file__).with_name("generate_historical.py")
 UNITY_PROJECT = ROOT / "02-技术研发" / "04-Unity视觉" / "SRP-Weather-Visual"
 UNITY_MANIFEST = UNITY_PROJECT / "Packages" / "manifest.json"
 G02_ASSET_LEDGER = UNITY_PROJECT / "Governance" / "asset_license_ledger.json"
@@ -53,6 +52,16 @@ FORBIDDEN_WORDS = (
 
 def load_json(name: str) -> dict[str, object]:
     return json.loads((BASE / name).read_text(encoding="utf-8"))
+
+
+def historical_authority(path: str, expected_hash: str) -> bytes:
+    blob = subprocess.check_output([
+        'git', 'show', 'f09f0d5f1f35c98ea447eb3545c18fbb3fb36925:' + path
+    ], cwd=ROOT)
+    # Original Windows evidence hashed the CRLF checkout, not the LF Git blob.
+    checkout = blob.replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')
+    assert hashlib.sha256(checkout).hexdigest() == expected_hash, 'signed authority bytes mismatch'
+    return checkout
 
 
 def validate_asset_registry(
@@ -160,7 +169,10 @@ def main() -> None:
     assert schema == generated["mapping_schema"](), "mapping Schema drifted from generator"
     assert parameters == generated["parameter_contract"](), "parameter JSON drifted from generator"
     assert risk_data == generated["risk_contract"](), "risk JSON drifted from generator"
-    assert asset_data == generated["asset_registry"](), "asset registry drifted from generator"
+    authorities = asset_data['authorities']
+    historical_manifest = historical_authority(authorities['unity_manifest'], authorities['unity_manifest_sha256'])
+    historical_ledger = historical_authority(authorities['g02_asset_ledger'], authorities['g02_asset_ledger_sha256'])
+    assert asset_data == generated["asset_registry"](historical_manifest, historical_ledger), "historical asset registry drifted from generator"
     assert mapping["schema_id"] == "V03_DESIGN_SEMANTICS_1_0"
     assert schema["$id"] == "urn:srp:v03:design-semantics:1.0"
     draft_validation_active = Draft202012Validator is not None
@@ -290,8 +302,8 @@ def main() -> None:
     assert risk_data["selected_u03_weather"] == "fade"
     assert risk_data["selection_status"] == "FROZEN_FOR_V03_DESIGN_HANDOFF"
 
-    manifest = json.loads(UNITY_MANIFEST.read_text(encoding="utf-8"))
-    asset_ledger = json.loads(G02_ASSET_LEDGER.read_text(encoding="utf-8"))
+    manifest = json.loads(historical_manifest)
+    asset_ledger = json.loads(historical_ledger)
     validate_asset_registry(
         asset_data,
         manifest["dependencies"],

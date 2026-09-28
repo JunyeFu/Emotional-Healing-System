@@ -8,15 +8,15 @@ from pathlib import Path
 import pytest
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[4]
 PACKAGE = (
     ROOT
     / "00-项目管理"
     / "01-项目章程与规划"
     / "2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 )
-GENERATOR_PATH = PACKAGE / "99_验证与清单" / "generate_v03_contracts.py"
-VALIDATOR_PATH = PACKAGE / "99_验证与清单" / "validate_v03_deliverables.py"
+GENERATOR_PATH = Path(__file__).with_name('generate_historical.py')
+VALIDATOR_PATH = Path(__file__).with_name('validate_historical.py')
 UNITY_PROJECT = ROOT / "02-技术研发" / "04-Unity视觉" / "SRP-Weather-Visual"
 
 

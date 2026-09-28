@@ -14,10 +14,10 @@
     "T-01",
     "R-01",
     "V-01",
-    "V-02"
+    "V-02",
+    "V-03"
   ],
   "remaining_packages": [
-    "V-03",
     "V-04",
     "D-01",
     "D-02",
@@ -495,6 +495,34 @@
       "status": "OPEN_DOWNSTREAM",
       "description": "真实呈现由V-05/U任务验证，资产许可与教学接入分别待G/U12/X任务",
       "source": "agent/tasks/V-02/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "V-03",
+      "id": "V03-N01",
+      "status": "FIXED_AND_RETESTED",
+      "description": "历史78项/57包按签收原件复算，当前56包独立验证，不因合法移除Spout否定历史",
+      "source": "agent/tasks/V-03/execution/validate_historical.py"
+    },
+    {
+      "task_id": "V-03",
+      "id": "V03-N02",
+      "status": "FIXED_AND_RETESTED",
+      "description": "生成器输出改本包候选目录，测试确认不写签署原件",
+      "source": "agent/tasks/V-03/execution/generate_historical.py"
+    },
+    {
+      "task_id": "V-03",
+      "id": "V03-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前40行对齐v2.2、固定镜头、fade时间复色及同模块累计锁定",
+      "source": "agent/tasks/V-03/outputs/current-mapping.json"
+    },
+    {
+      "task_id": "V-03",
+      "id": "V03-N04",
+      "status": "OPEN_DOWNSTREAM_ASSET_INSTANCES",
+      "description": "旧21设计项不替代32素材逐实例许可映射，G-02/U-08负责完成",
+      "source": "agent/tasks/V-03/evidence/consumer-impact.md"
     }
   ]
 }

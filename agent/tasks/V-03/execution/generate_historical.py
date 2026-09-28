@@ -944,8 +944,8 @@ def design_asset_entries() -> list[dict[str, object]]:
     return entries
 
 
-def direct_package_entries() -> list[dict[str, object]]:
-    manifest = json.loads(UNITY_MANIFEST.read_text(encoding="utf-8"))
+def direct_package_entries(manifest_bytes: bytes | None = None) -> list[dict[str, object]]:
+    manifest = json.loads(UNITY_MANIFEST.read_bytes() if manifest_bytes is None else manifest_bytes)
     entries: list[dict[str, object]] = []
     for package_id, version in sorted(manifest["dependencies"].items()):
         if package_id == "com.coplaydev.unity-mcp":
@@ -991,9 +991,11 @@ def direct_package_entries() -> list[dict[str, object]]:
     return entries
 
 
-def asset_registry() -> dict[str, object]:
+def asset_registry(manifest_bytes: bytes | None = None, ledger_bytes: bytes | None = None) -> dict[str, object]:
+    manifest_bytes = UNITY_MANIFEST.read_bytes() if manifest_bytes is None else manifest_bytes
+    ledger_bytes = G02_ASSET_LEDGER.read_bytes() if ledger_bytes is None else ledger_bytes
     design_entries = design_asset_entries()
-    package_entries = direct_package_entries()
+    package_entries = direct_package_entries(manifest_bytes)
     entries = design_entries + package_entries
     return {
         "registry_id": "SRP_V03_ASSET_SOURCE_REPLACEMENT_REGISTRY",
@@ -1005,9 +1007,9 @@ def asset_registry() -> dict[str, object]:
         ),
         "authorities": {
             "unity_manifest": UNITY_MANIFEST.relative_to(ROOT).as_posix(),
-            "unity_manifest_sha256": hashlib.sha256(UNITY_MANIFEST.read_bytes()).hexdigest(),
+            "unity_manifest_sha256": hashlib.sha256(manifest_bytes).hexdigest(),
             "g02_asset_ledger": G02_ASSET_LEDGER.relative_to(ROOT).as_posix(),
-            "g02_asset_ledger_sha256": hashlib.sha256(G02_ASSET_LEDGER.read_bytes()).hexdigest(),
+            "g02_asset_ledger_sha256": hashlib.sha256(ledger_bytes).hexdigest(),
         },
         "required_categories": list(ASSET_REQUIRED_CATEGORIES),
         "required_fields": list(ASSET_REQUIRED_FIELDS),
@@ -1026,14 +1028,16 @@ def write_json(path: Path, payload: dict[str, object]) -> None:
 
 
 def main() -> None:
-    write_json(BASE / "V-03_四层视听映射合同_v1.0.json", mapping_contract())
+    output = Path(__file__).resolve().parents[1] / 'outputs/historical-rebuild'
+    output.mkdir(parents=True, exist_ok=True)
+    write_json(output / "V-03_四层视听映射合同_v1.0.json", mapping_contract())
     write_json(
-        BASE / "V-03_四层视听映射合同_v1.0.schema.json",
+        output / "V-03_四层视听映射合同_v1.0.schema.json",
         mapping_schema(),
     )
-    write_json(BASE / "V-03_参数边界与锁定规则_v1.0.json", parameter_contract())
-    write_json(BASE / "V-03_工程风险评分_v1.0.json", risk_contract())
-    write_json(BASE / "V-03_资产来源与替换台账_v1.0.json", asset_registry())
+    write_json(output / "V-03_参数边界与锁定规则_v1.0.json", parameter_contract())
+    write_json(output / "V-03_工程风险评分_v1.0.json", risk_contract())
+    write_json(output / "V-03_资产来源与替换台账_v1.0.json", asset_registry())
     print(
         "generated V-03 mapping rows=40, schema, parameters, dual risk scores "
         "and asset registry"

@@ -1,0 +1,13 @@
+{
+  "historical_direct_packages": 57,
+  "current_direct_packages": 56,
+  "removed": [
+    "jp.keijiro.klak.spout"
+  ],
+  "added": [],
+  "version_changes": {},
+  "historical_design_entries": 21,
+  "current_asset_route": "complete_background_and_32_independent_assets_from_V04",
+  "formal_license_clearance": "NOT_ESTABLISHED_BY_V03",
+  "instance_registration_owner": "G-02/U-08"
+}

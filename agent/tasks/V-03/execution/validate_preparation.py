@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+# This checks the signed preparation, not the latest runtime readiness.
+
 import json
 from pathlib import Path
 
