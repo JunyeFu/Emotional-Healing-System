@@ -2,7 +2,7 @@
 
 跨项目逐包总结使用[通用中文Word模板](templates/通用中文逐包任务总结模板.docx)，填写与Agent层回填规则见[模板说明](../agent/templates/task-review/README.md)。
 
-任务领取、执行与交接也可直接使用[通用中文逐包任务模板 v2.0](templates/通用中文逐包任务模板_v2.0.docx)：采用三页可编辑表单，包含验收要求、过程划分、学习资料、上下游关系与责任签收，不绑定 SRP 领域。
+任务领取、执行与交接统一使用[通用中文逐包任务模板 v3.0](templates/通用中文逐包任务模板_v3.0.docx)，或使用[Word正式模板](templates/通用中文逐包任务模板_v3.0.dotx)新建任务文档。包含验收要求、责任人、过程出口、学习资料、上下游关系与按需签收，不绑定 SRP 领域；旧版保留为历史参考，不再作为新任务入口。
 
 从 [项目串联审阅](project-review.docx) 阅读总体偏离和交接关系，再打开各包 Word。Word 由 `agent/tasks/<编号>/outputs/summary.json` 生成，修订从执行层开始，再重新生成 Word。
 
