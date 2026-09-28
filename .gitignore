@@ -32,6 +32,8 @@ Desktop.ini
 
 # Project-specific
 *.csv
+!agent/tasks/Q-02/outputs/responses.csv
+!agent/tasks/Q-02/outputs/revisions.csv
 !**/当前解锁独立任务包/**/inputs/*.csv
 !**/24_团队任务与项目治理/audit_upgrade/*.csv
 !requirements.txt

@@ -1,5 +1,13 @@
 # Codex Verification Log
 
+## 2026-09-29 Q-02规范化验证
+
+- `py -3.14 agent/tasks/Q-02/execution/verify.py`：53 passed in 0.16s，含8项新交接检查和45项既有步骤测量；生成器PASS deterministic synthetic materials and byte hashes。空表无真人行、私有答案不进参与者题面；无实际访谈或渲染证据。
+- 根pytest635 passed in 50.50s；注册表71项、分发5包61快照通过。原F-02、U12-02题库、U12-03复核输入、注册和签署均未改，未重新生成分发或业务SVG。
+- 提交范围检查发现全局*.csv忽略了两空模板，增加两个精确路径例外后纳入；全局数据CSV规则不变，模板无真人行已由专项测试检查。
+- Word3页逐页检查；串联21页前19页与Q-01 PNG字节一致，20/21页已检查。builder --check与diff检查通过；本包不合规措辞扫描无命中。
+- 当前人数来源冲突、真实责任人、实际四结构双条件片段、活动许可及Unity回归仍未完成；Q-02保持WAIT_DEP，无新独立Agent/真人签收。规范化36/71，下一Q-03，根目录双层迁移未完成。
+
 ## 2026-09-29 Q-01规范化验证
 
 - `py -3.14 agent/tasks/Q-01/execution/verify.py`：21 passed、3 subtests passed（0.29秒），材料Q01_MATERIALS_VALID。原11项汇总、5项材料及5项新核验分别覆盖CVI/分歧/降称、匿名材料、原字节/导航/当前降级和空表CLI/不可覆盖。

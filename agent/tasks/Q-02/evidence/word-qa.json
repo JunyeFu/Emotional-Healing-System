@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-29",
+  "summary_pages": 3,
+  "summary_pages_visually_reviewed": [1, 2, 3],
+  "chain_pages": 21,
+  "chain_pages_byte_identical_to_previous_review": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "chain_changed_pages_visually_reviewed": [20, 21],
+  "result": "PASS",
+  "scope": "document content and rendered layout; not independent research or human acceptance"
+}

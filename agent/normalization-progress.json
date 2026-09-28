@@ -34,10 +34,10 @@
     "A-03",
     "W-01",
     "I-01",
-    "Q-01"
+    "Q-01",
+    "Q-02"
   ],
   "remaining_packages": [
-    "Q-02",
     "Q-03",
     "X-01",
     "X-02",
@@ -1034,6 +1034,27 @@
       "status": "PRESERVED_SIGNATURE_CURRENT_REVISION_UNSIGNED",
       "description": "原合同待签署状态保留历史，真实签收以报告为准；本轮修订不继承旧签名",
       "source": "agent/tasks/Q-01/outputs/current-level-a.json"
+    },
+    {
+      "task_id": "Q-02",
+      "id": "Q02-N01",
+      "status": "FIXED_CURRENT_PROCESS_AND_TEMPLATE",
+      "description": "通用联调改为认知访谈交接；独立作答/追问分计时，末尾猜测不暴露未分配条件",
+      "source": "agent/tasks/Q-02/outputs/interview-guide.md"
+    },
+    {
+      "task_id": "Q-02",
+      "id": "Q02-N02",
+      "status": "OPEN_SAMPLE_AND_ROLE_FREEZE",
+      "description": "旧24至32与E-02当前12至16人数口径不同；当前人数、轮次和真实负责人未冻结",
+      "source": "agent/tasks/Q-02/outputs/current-level-b.json"
+    },
+    {
+      "task_id": "Q-02",
+      "id": "Q02-N03",
+      "status": "OPEN_REAL_ACTIVITY_AND_RENDERING",
+      "description": "两臂四结构真实片段、访谈、修订关闭与最终Unity回归尚缺，保持WAIT_DEP",
+      "source": "agent/tasks/Q-02/TASK.md"
     }
   ]
 }
