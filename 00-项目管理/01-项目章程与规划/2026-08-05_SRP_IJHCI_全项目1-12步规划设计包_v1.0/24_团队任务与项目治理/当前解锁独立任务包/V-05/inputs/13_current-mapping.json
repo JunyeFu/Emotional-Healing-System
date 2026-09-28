@@ -232,7 +232,7 @@
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
       "visual_carrier": "STORM_PASS_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_STORM_AMBIENT_MASTER",
-      "update_trigger": "SESSION_SEGMENT_AND_SCROLL_TIMELINE",
+      "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
         "GOOD": "UNCHANGED",
         "DEGRADED": "UNCHANGED",
@@ -246,7 +246,7 @@
         "quality",
         "respiratory_period"
       ],
-      "evidence_hook": "BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW"
+      "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     },
     {
       "technical_id": "storm",
@@ -384,7 +384,7 @@
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
       "visual_carrier": "STORM_PASS_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_STORM_AMBIENT_MASTER",
-      "update_trigger": "SESSION_SEGMENT_AND_SCROLL_TIMELINE",
+      "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
         "GOOD": "UNCHANGED",
         "DEGRADED": "UNCHANGED",
@@ -398,7 +398,7 @@
         "quality",
         "respiratory_period"
       ],
-      "evidence_hook": "BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW"
+      "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     },
     {
       "technical_id": "heat",
@@ -532,7 +532,7 @@
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
       "visual_carrier": "SALT_FLAT_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_HEAT_AMBIENT_MASTER",
-      "update_trigger": "SESSION_SEGMENT_AND_SCROLL_TIMELINE",
+      "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
         "GOOD": "UNCHANGED",
         "DEGRADED": "UNCHANGED",
@@ -546,7 +546,7 @@
         "quality",
         "respiratory_period"
       ],
-      "evidence_hook": "BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW"
+      "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     },
     {
       "technical_id": "heat",
@@ -680,7 +680,7 @@
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
       "visual_carrier": "SALT_FLAT_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_HEAT_AMBIENT_MASTER",
-      "update_trigger": "SESSION_SEGMENT_AND_SCROLL_TIMELINE",
+      "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
         "GOOD": "UNCHANGED",
         "DEGRADED": "UNCHANGED",
@@ -694,7 +694,7 @@
         "quality",
         "respiratory_period"
       ],
-      "evidence_hook": "BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW"
+      "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     },
     {
       "technical_id": "snow",
@@ -828,7 +828,7 @@
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
       "visual_carrier": "SNOW_FOREST_REPLAYABLE_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_SNOW_AMBIENT_MASTER",
-      "update_trigger": "SESSION_SEGMENT_AND_SCROLL_TIMELINE",
+      "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
         "GOOD": "UNCHANGED",
         "DEGRADED": "UNCHANGED",
@@ -842,7 +842,7 @@
         "quality",
         "respiratory_period"
       ],
-      "evidence_hook": "BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW"
+      "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     },
     {
       "technical_id": "snow",
@@ -976,7 +976,7 @@
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
       "visual_carrier": "SNOW_FOREST_REPLAYABLE_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_SNOW_AMBIENT_MASTER",
-      "update_trigger": "SESSION_SEGMENT_AND_SCROLL_TIMELINE",
+      "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
         "GOOD": "UNCHANGED",
         "DEGRADED": "UNCHANGED",
@@ -990,7 +990,7 @@
         "quality",
         "respiratory_period"
       ],
-      "evidence_hook": "BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW"
+      "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     },
     {
       "technical_id": "fade",
@@ -1127,7 +1127,7 @@
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
       "visual_carrier": "MIST_WETLAND_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_FADE_AMBIENT_MASTER",
-      "update_trigger": "SESSION_SEGMENT_AND_SCROLL_TIMELINE",
+      "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
         "GOOD": "UNCHANGED",
         "DEGRADED": "UNCHANGED",
@@ -1141,7 +1141,7 @@
         "quality",
         "respiratory_period"
       ],
-      "evidence_hook": "BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW"
+      "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     },
     {
       "technical_id": "fade",
@@ -1278,7 +1278,7 @@
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
       "visual_carrier": "MIST_WETLAND_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_FADE_AMBIENT_MASTER",
-      "update_trigger": "SESSION_SEGMENT_AND_SCROLL_TIMELINE",
+      "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
         "GOOD": "UNCHANGED",
         "DEGRADED": "UNCHANGED",
@@ -1292,7 +1292,7 @@
         "quality",
         "respiratory_period"
       ],
-      "evidence_hook": "BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW"
+      "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     }
   ],
   "camera": {

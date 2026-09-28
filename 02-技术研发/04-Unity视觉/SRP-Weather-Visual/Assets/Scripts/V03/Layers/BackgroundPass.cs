@@ -6,8 +6,8 @@ namespace SRP.V03
     /// Background 显式 no-op 封印（合同 background 行四态 UNCHANGED，AC3 后半句）。
     /// - 零节律接口：不暴露 SetPhase / SetProgress / 任何随呼吸推进的成员；
     ///   背景动画读取不到 quality / respiratory_period（period 泄露禁令）。
-    /// - 仅保留会话级换场钩子（update_trigger = SESSION_SEGMENT_AND_SCROLL_TIMELINE）。
-    /// evidence_hook: BACKGROUND_HASH_SCROLL_LOG_AND_PERIOD_LEAKAGE_REVIEW（U-03 承接）。
+    /// - 仅保留会话级换场钩子，固定镜头环境不得跟随呼吸形成周期。
+    /// U-03 另行实现模块有效时间驱动的整屏复色；此钩子不提供颜色动画。
     /// </summary>
     public sealed class BackgroundPass : MonoBehaviour
     {

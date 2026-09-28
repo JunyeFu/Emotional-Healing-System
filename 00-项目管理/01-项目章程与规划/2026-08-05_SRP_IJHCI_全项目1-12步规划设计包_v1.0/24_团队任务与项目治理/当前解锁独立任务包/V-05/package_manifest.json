@@ -4,8 +4,8 @@
   "task_id": "V-05",
   "status": "READY",
   "registry_sha256": "DC7752B5921129AEB7BF1417A767D06B5EC9CD30C960C00D332628183183EF9E",
-  "input_snapshot_id": "835C66212B6F0997EE7E30FB21B3174E101A5349C545880A83363388CCFCC9FD",
-  "previous_input_snapshot_id": "03B5B37FF1CF4C86F05DDCDCB79FC2DE9A460C9824D6D5B6F96F949798C666FE",
+  "input_snapshot_id": "E56F4DC3EA27EB43B1A352B70962D458F39BD67145694095D025BE1364F39B0F",
+  "previous_input_snapshot_id": "835C66212B6F0997EE7E30FB21B3174E101A5349C545880A83363388CCFCC9FD",
   "input_changed": true,
   "candidate_identity": null,
   "source_files": [
@@ -84,8 +84,8 @@
     {
       "source_path": "agent/tasks/V-03/outputs/current-mapping.json",
       "package_path": "inputs/13_current-mapping.json",
-      "sha256": "7ED10FC8EBF636B216B0DA6105486157BFCF71EB5A3CDCA5619DCC9299B1E6E6",
-      "size_bytes": 41971
+      "sha256": "540D4AB76BB2BCA13FD93DC55B92C2BC90A2B93E8A713235549F38556E3A7C8A",
+      "size_bytes": 41979
     },
     {
       "source_path": "agent/tasks/V-04/outputs/current-preview.json",

@@ -1,0 +1,36 @@
+{
+  "task_id": "U-03",
+  "title": "U03 最高风险天气切片现状审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "U-03保持WAIT_DEP、未领取；切片对象是fade，双条件完整模块、真实回执、形成性问题关闭及公共模板尚未验收。本轮已归档旧场景设计，修复当前背景映射残留的卷轴字段，180项专项通过。",
+  "historical_acceptance": {
+    "reviewer": "未签署", "date": "尚未发生", "commit": "",
+    "method": "本轮Codex审阅来源、接口和当前设计并执行主机检查；未运行U-03 Unity切片，不代填真人签收或模板冻结。"
+  },
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["依赖U-01、U-02、V-05，约5人日，过程配置P-DEV。领取人、分支及复核人为空；V-05真实灰盒和评审未完成，不能用既有U-02演示或V-04样片解锁。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1依据V-03风险选择fade；AC2完整模块中四层、声音、降级和渲染回执同时成立，无参与者操作；AC3关闭形成性问题后冻结Prefab、图层、音频总线、生命周期、性能和证据模板。", "必需交付Play录像、控制与回执、Profiler、截图、问题关闭和模板冻结证据。本包包含fade最小完整抽象对照，不反向等待U-07推广其余天气。技能及国内资料见TASK.md。"]},
+    {"heading": "实际交付", "paragraphs": ["建立Agent固定五目录、当前切片交接、来源和专项检查；历史四天气场景设计原文迁入archive。共享Unity工程和旧脚本保留模块归属，不复制缓存或宣称旧FadeScene符合新合同。", "当前V-03生成器及八条背景行已从卷轴入口改为固定镜头入口；BackgroundPass仅更正说明，仍只是换段钩子。READY V-05快照同步，历史签署和其他冻结包不改。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["保留V-03七维双评分及差异裁定选定fade的事实；原评分含旧卷轴成本，不能当作当前性能实测。实际时序采用F-05 v2.2：主吸2.5秒、补吸1.5秒、长呼6秒，步骤与周期身份明确。", "固定镜头、完整底图和独立RGBA素材，无TD/Spout运行依赖。整屏从完全褪色按模块有效时间恢复，约95%达到原彩，暂停冻结；水系表达呼吸，Recovery仅轮廓/纹理。双条件共用复色曲线和声音。"]},
+    {"heading": "验证与结果", "paragraphs": ["180项专项通过，覆盖8项U-03检查、56项当前映射回归及116项SessionCore回归；当前V-03校验通过，40行、v2.2字段及56直接包一致。", "注册表71项、5个分发包54份快照通过，READY仍T-02/V-05。只证明设计交接与Python核心，不证明U-03天气画面、真实设备或模板验收。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧活动设计要求TD渲染呼吸圈、旅人滚动和calm_index复色，与现有方向冲突；原文实际归档，AGENTS及技术入口改当前切片。当前生成器还残留SCROLL字段的问题也已从Agent源修复，不只在Word覆盖。", "首次执行脚本漏建evidence目录导致写入失败，已修复并复测。降级可见性、真实声音与性能候选仍需运行证据冻结；BackgroundPass不提供整屏复色，不以其存在关闭渲染缺口。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["TASK定义任务；inputs记录实际来源；execution保存验证；evidence保存本轮检查与影响；outputs保存当前交接及总结；archive保留旧原文与原因。Git识别旧设计100%内容不变的重命名。", "旧Unity C#可能有序列化引用，不在本包删除。共享模块和根目录整体迁移仍待后续逐包处理；本包没有可归档的历史运行签署。"]},
+    {"heading": "上下游交接", "paragraphs": ["V-05提供实际通过的灰盒及问题关闭，V-03/V-04提供有效映射和素材；U-01提供控制镜像与ConfirmRendered，U-02提供四层视图与累计锁定。Python仍为计时权威，ACK不是实际呈现回执。", "U-04至U-07等待本包真实模板验收，U-08接性能及构建，G-02/G-05接许可及活动资格。模块默认200秒，不以68秒样片替代完整模块；素材存在不自动证明许可。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["实际领取与复核人未落实，不能用P-DEV替代姓名。无U-03签署，WAIT_DEP不改；实际完成后按任务要求独立复核、真人签收，再放行其余天气。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计23/71包，剩余48，下一U-04。已先修执行层再生成Word与串联审阅，未把规范化当成业务DONE，根目录双层收拢仍未完成。"]},
+    {"heading": "审阅来源", "paragraphs": ["依据注册表、V-03原风险评分与当前映射、V-04预演、V-05交接、U-01/U-02实际接口及v2.2配置。历史选择、现有适配逻辑和未交付的天气渲染明确分开。"]}
+  ],
+  "findings": [
+    {"id": "U03-N01", "status": "FIXED_LEGACY_ACTIVE_ENTRY", "description": "旧TD/Spout场景设计原文实际归档，当前入口改固定镜头fade双条件交接", "source": "agent/tasks/U-03/archive/README.md"},
+    {"id": "U03-N02", "status": "FIXED_CURRENT_BACKGROUND_SCROLL_FIELDS", "description": "V-03当前生成器八行去除卷轴更新与取证字段，READY V-05同步，历史与冻结签署不改", "source": "agent/tasks/U-03/evidence/consumer-impact.md"},
+    {"id": "U03-N03", "status": "VERIFIED_HANDOFF_NOT_RENDERED_SLICE", "description": "180项设计和核心检查通过，fade选择及v2.2双吸配置一致，不是Unity切片验收", "source": "agent/tasks/U-03/evidence/verification.json"},
+    {"id": "U03-N04", "status": "OPEN_RUNTIME_TEMPLATE_AND_OWNER", "description": "V-05、实际负责人、双条件渲染、回执、Profiler和形成性模板冻结仍待交付，不解锁其余天气", "source": "agent/tasks/U-03/TASK.md"}
+  ],
+  "next_task": "U-04",
+  "source_links": [
+    {"label": "当前fade切片交接", "path": "agent/tasks/U-03/outputs/current-slice.md"},
+    {"label": "实际验证记录", "path": "agent/tasks/U-03/evidence/verification.json"},
+    {"label": "迁移与消费者影响", "path": "agent/tasks/U-03/evidence/consumer-impact.md"},
+    {"label": "步骤验收及国内资料", "path": "agent/tasks/U-03/TASK.md"}
+  ]
+}

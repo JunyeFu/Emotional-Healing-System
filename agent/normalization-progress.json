@@ -21,10 +21,10 @@
     "D-02",
     "S-01",
     "S-02",
-    "V-05"
+    "V-05",
+    "U-03"
   ],
   "remaining_packages": [
-    "U-03",
     "U-04",
     "U-05",
     "U-06",
@@ -670,6 +670,34 @@
       "status": "OPEN_HUMAN_REVIEW_AND_OWNER",
       "description": "实际领取人和形成性评审缺失，问题关闭及真人签收待实施，U-03不提前解锁",
       "source": "agent/tasks/V-05/TASK.md"
+    },
+    {
+      "task_id": "U-03",
+      "id": "U03-N01",
+      "status": "FIXED_LEGACY_ACTIVE_ENTRY",
+      "description": "旧TD/Spout场景设计原文实际归档，当前入口改固定镜头fade双条件交接",
+      "source": "agent/tasks/U-03/archive/README.md"
+    },
+    {
+      "task_id": "U-03",
+      "id": "U03-N02",
+      "status": "FIXED_CURRENT_BACKGROUND_SCROLL_FIELDS",
+      "description": "V-03当前生成器八行去除卷轴更新与取证字段，READY V-05同步，历史与冻结签署不改",
+      "source": "agent/tasks/U-03/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U-03",
+      "id": "U03-N03",
+      "status": "VERIFIED_HANDOFF_NOT_RENDERED_SLICE",
+      "description": "180项设计和核心检查通过，fade选择及v2.2双吸配置一致，不是Unity切片验收",
+      "source": "agent/tasks/U-03/evidence/verification.json"
+    },
+    {
+      "task_id": "U-03",
+      "id": "U03-N04",
+      "status": "OPEN_RUNTIME_TEMPLATE_AND_OWNER",
+      "description": "V-05、实际负责人、双条件渲染、回执、Profiler和形成性模板冻结仍待交付，不解锁其余天气",
+      "source": "agent/tasks/U-03/TASK.md"
     }
   ]
 }

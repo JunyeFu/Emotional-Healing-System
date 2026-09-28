@@ -24,6 +24,7 @@
 | 看当前视听映射与资产 | `agent/tasks/V-03/outputs/current-mapping.md`（40行映射、累计生命周期与真实依赖差异） |
 | 看当前样片与完整旅程交接 | `agent/tasks/V-04/outputs/current-preview.md`（有效样片、32素材、核心预演与教学测量边界） |
 | 看当前全旅程灰盒任务 | `agent/tasks/V-05/outputs/current-graybox.md`（48主机组合与真实Unity灰盒验收分开） |
+| 看最高风险天气切片 | `agent/tasks/U-03/outputs/current-slice.md`（fade双条件、固定镜头与真实模板验收边界） |
 | 看最近工作与论文骨架 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md` |
 | 看真实设备采集交接 | `agent/tasks/D-01/outputs/current-acquisition.md`（ECG/RR原始通道、P-02记录与待完成验收） |
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |
@@ -53,7 +54,7 @@
 │   ├── 01-数据采集/README.md        Polar H10 + 呼吸胸带；当前D-01交接见Agent层
 │   ├── 02-信号处理/README.md        旧开发原型与当前S-02交接分开
 │   ├── 03-TouchDesigner/TD原型规划.md 历史原型；正式目标为只读操作台
-│   ├── 04-Unity视觉/场景设计.md      4天气场景+旅人Sprite
+│   ├── 04-Unity视觉/SRP-Weather-Visual/ 共享Unity工程；当前切片交接见Agent层
 │   └── 05-通信协议/contracts/README.md v2.1合同与20Hz遥测入口
 ├── 03-测试与实验/
 │   └── README.md                验证与证据模块入口

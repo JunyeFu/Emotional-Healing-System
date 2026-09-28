@@ -18,7 +18,7 @@
 | [agent/tasks/V-05/outputs/current-graybox.json](D:/Agent/srp/agent/tasks/V-05/outputs/current-graybox.json) | [inputs/10_current-graybox.json](inputs/10_current-graybox.json) | `9087FEE4444022E3781E540EAD82C3B6A0EF3575D1E5879E81ADD8CD4A174AB4` |
 | [agent/tasks/V-05/outputs/current-graybox.md](D:/Agent/srp/agent/tasks/V-05/outputs/current-graybox.md) | [inputs/11_current-graybox.md](inputs/11_current-graybox.md) | `28661E84622F77821EE32EDB016BB4A0DAD6718B328A6FF1FC4511DCC43CB48F` |
 | [agent/tasks/V-01/outputs/current-experience.json](D:/Agent/srp/agent/tasks/V-01/outputs/current-experience.json) | [inputs/12_current-experience.json](inputs/12_current-experience.json) | `D39F6B19E999DC92526C470F94858467C65DC972226BE8955B12DAF51851F13F` |
-| [agent/tasks/V-03/outputs/current-mapping.json](D:/Agent/srp/agent/tasks/V-03/outputs/current-mapping.json) | [inputs/13_current-mapping.json](inputs/13_current-mapping.json) | `7ED10FC8EBF636B216B0DA6105486157BFCF71EB5A3CDCA5619DCC9299B1E6E6` |
+| [agent/tasks/V-03/outputs/current-mapping.json](D:/Agent/srp/agent/tasks/V-03/outputs/current-mapping.json) | [inputs/13_current-mapping.json](inputs/13_current-mapping.json) | `540D4AB76BB2BCA13FD93DC55B92C2BC90A2B93E8A713235549F38556E3A7C8A` |
 | [agent/tasks/V-04/outputs/current-preview.json](D:/Agent/srp/agent/tasks/V-04/outputs/current-preview.json) | [inputs/14_current-preview.json](inputs/14_current-preview.json) | `C74C1824E6B08E14DA24CA28072B7170C2B514B085B5332B4BEBCD522DF25815` |
 | [agent/tasks/U-02/outputs/current-adapter-contract.md](D:/Agent/srp/agent/tasks/U-02/outputs/current-adapter-contract.md) | [inputs/15_current-adapter-contract.md](inputs/15_current-adapter-contract.md) | `C49C94068F34716A8D3E00A275704AA51CEC2C45876E08088C99B16253FA8934` |
 

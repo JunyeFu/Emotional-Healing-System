@@ -40,6 +40,8 @@ python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tes
 
 跨项目模块关系见根目录 `PROJECT_MODULES.md`。`visualizer.py` 是 M05 输出的本地观察工具，不是正式运行闭环的必需模块。
 
+Unity当前fade切片入口见[U-03交接](../agent/tasks/U-03/outputs/current-slice.md)，仍等待V-05。旧TD/Spout场景设计已原文迁入[历史归档](../agent/tasks/U-03/archive/场景设计.md)，不作为当前运行合同。
+
 ## 测试
 
 ```bash

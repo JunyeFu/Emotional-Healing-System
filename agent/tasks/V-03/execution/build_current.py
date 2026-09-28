@@ -31,6 +31,9 @@ def current_mapping():
     data['weather_profiles']['fade']['recovery'] = 'OUTLINE_AND_TEXTURE_ONLY'
     for row in data['rows']:
         layer = row['layer']
+        if layer == 'background':
+            row['update_trigger'] = 'SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT'
+            row['evidence_hook'] = 'FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW'
         if layer in ('target', 'actual'):
             row['runtime_slot_binding'] = 'F-05_V2_2_REQUIRED'
             row['source_fields'] += [f'{layer}_cycle_index', f'{layer}_step_id']

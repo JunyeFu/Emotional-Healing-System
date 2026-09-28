@@ -1,0 +1,41 @@
+{
+  "task_id": "U-03",
+  "status": "WAIT_DEP",
+  "claimant": null,
+  "depends_on": ["U-01", "U-02", "V-05"],
+  "selected_weather": "fade",
+  "selection_scope": "V03_HISTORICAL_DESIGN_HANDOFF_NOT_CURRENT_PERFORMANCE",
+  "cue_modes": ["scene_native", "abstract_pacer"],
+  "runtime_schema_version": "2.2",
+  "clock_authority": "P-01",
+  "camera_mode": "FIXED",
+  "requires_td_or_spout": false,
+  "steps": [
+    {"step_id": "inhale_1", "phase": "inhale", "duration_seconds": 2.5},
+    {"step_id": "inhale_2", "phase": "inhale", "duration_seconds": 1.5},
+    {"step_id": "exhale_1", "phase": "exhale", "duration_seconds": 6}
+  ],
+  "fade_color": {
+    "color_scope": "whole_screen_both_conditions",
+    "color_source": "module_effective_time",
+    "initial_color": "fully_desaturated",
+    "restoration_fraction": 0.95,
+    "pause_freezes_color": true
+  },
+  "actual_source": "INDEPENDENT_ACTUAL_ESTIMATE_NOT_TARGET_COPY",
+  "recovery_carrier": "OUTLINE_AND_TEXTURE_ONLY",
+  "recovery_lifecycle": {
+    "reset_on": ["session_id", "module_id", "module_position"],
+    "segment_change_resets_recovery": false,
+    "same_module_locked_value_can_resume": false,
+    "force_success_endpoint": false
+  },
+  "quality_cases": ["GOOD", "DEGRADED", "UNUSABLE", "DISCONNECTED"],
+  "render_receipt_boundary": "ConfirmRendered_AFTER_ACTUAL_RENDER",
+  "current_background_pass": "SEGMENT_HOOK_ONLY_NOT_COLOR_RENDERER",
+  "default_module_seconds": 200,
+  "acceptance_evidence": ["Play录像", "控制与回执序列", "形成性问题关闭表", "Profiler报告", "模板冻结哈希", "截图组"],
+  "actual_slice_acceptance": "NOT_RUN",
+  "template_freeze": "NOT_COMPLETED",
+  "formal_collection_allowed": false
+}
