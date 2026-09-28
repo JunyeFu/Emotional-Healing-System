@@ -35,4 +35,6 @@
 
 | 19 | D-02 真实呼吸与运动采集 | [总结](tasks/D-02/summary.docx) | 原生呼吸批次修复，37项软件测试通过；专用SDK、真机与30分钟证据仍待完成，状态保持WAIT_DEP_EXTERNAL |
 
+| 20 | S-01 双设备同步与SQI | [总结](tasks/S-01/summary.docx) | 修复启动前已连接和连接即good，125项软件检查通过；真实同步、SQI算法与配置仍未完成，保持WAIT_DEP |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

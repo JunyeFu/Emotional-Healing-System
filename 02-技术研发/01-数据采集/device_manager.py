@@ -44,7 +44,7 @@ class DeviceManager:
         self._rate_hz = rate_hz
         self._started = False
 
-        # Signal quality tracking
+        # Legacy status field; connection alone cannot establish measured SQI.
         self.signal_quality: dict[str, str] = {}
 
     # ── Registration ────────────────────────────────────────────────────────
@@ -225,9 +225,9 @@ class DeviceManager:
             try:
                 ok = await driver.connect()
                 if ok:
-                    self._connected[name] = True
-                    self.signal_quality[name] = "good"
                     await driver.start_streaming()
+                    self._connected[name] = True
+                    self.signal_quality[name] = "unknown"
                     return True
             except Exception as e:
                 logger.warning(

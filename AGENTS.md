@@ -26,6 +26,7 @@
 | 看最近工作与论文骨架 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md` |
 | 看真实设备采集交接 | `agent/tasks/D-01/outputs/current-acquisition.md`（ECG/RR原始通道、P-02记录与待完成验收） |
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |
+| 看双设备同步与SQI | `agent/tasks/S-01/outputs/current-quality.md`（连接与质量区分、时钟字段与未完成取证） |
 | 看评分模型 | `02-技术研发/02-信号处理/评分模型设计.md` |
 | 看通信协议 | `02-技术研发/05-通信协议/contracts/README.md` |
 | 看会话编排 | `02-技术研发/srp_session_core/README.md` |

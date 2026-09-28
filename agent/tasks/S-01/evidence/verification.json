@@ -1,0 +1,19 @@
+{
+  "task_id": "S-01",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\02-技术研发\\01-数据采集\\tests",
+        "D:\\Agent\\srp\\02-技术研发\\05-通信协议\\tests\\contract",
+        "D:\\Agent\\srp\\agent\\tasks\\S-01\\execution\\test_s01_contract.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "shared acquisition and protocol software tests plus current handoff checks only",
+  "real_device_acceptance": "NOT_RUN"
+}

@@ -18,10 +18,10 @@
     "V-03",
     "V-04",
     "D-01",
-    "D-02"
+    "D-02",
+    "S-01"
   ],
   "remaining_packages": [
-    "S-01",
     "S-02",
     "V-05",
     "U-03",
@@ -593,6 +593,27 @@
       "status": "FIXED_GOVERNANCE_RELOCATION",
       "description": "全仓发现R-01迁移路径误判，补精确映射；未知路径、其他任务和验收条件变化仍拒绝",
       "source": "agent/normalization-relocations.json"
+    },
+    {
+      "task_id": "S-01",
+      "id": "S01-N01",
+      "status": "FIXED_LINK_QUALITY_CONFUSION",
+      "description": "启动前已连接和连接即good已修复，质量保持unknown",
+      "source": "02-技术研发/01-数据采集/device_manager.py"
+    },
+    {
+      "task_id": "S-01",
+      "id": "S01-N02",
+      "status": "OPEN_REAL_SYNC_AND_SQI",
+      "description": "缺实测双时钟映射、质量算法配置及误差报告，不能以旧原型关闭",
+      "source": "agent/tasks/S-01/outputs/current-quality.md"
+    },
+    {
+      "task_id": "S-01",
+      "id": "S01-N03",
+      "status": "OPEN_REAL_OWNER",
+      "description": "实际领取人为空；阈值和精度需前测冻结，不代填验收",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     }
   ]
 }
