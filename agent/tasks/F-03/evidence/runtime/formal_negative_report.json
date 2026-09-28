@@ -1,0 +1,14 @@
+{
+  "schema_version": "f03-formal-negative-report-v2",
+  "result": "PASS",
+  "manifest_contract": "F-01 runtime-contract-v2.1 regression passed, including missing-field rejection",
+  "manifest_contract_log_sha256": "e52b088d2cd413376378ee5eeb0dad3e8d806bc809b8edf4fefb02cb84860314",
+  "unauthorized_development_exit_code": 1,
+  "unauthorized_development_expected_failure": true,
+  "unity_formal_gate_exit_code": 1,
+  "unity_formal_gate_expected_failure": true,
+  "same_run_asset_report_sha256": "94db70367dafd69802d50d63e34d4712b1d85f2ad921fb8068d49e1ced7791be",
+  "same_run_asset_items": 233,
+  "same_run_asset_blockers": 259,
+  "runtime_manifest_handshake_owner": "U-01"
+}

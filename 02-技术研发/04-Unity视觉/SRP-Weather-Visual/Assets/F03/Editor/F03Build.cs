@@ -67,14 +67,16 @@ namespace SRP.F03.Editor
                 ?? throw new BuildFailedException("F03_UNITY_ROOT_UNAVAILABLE");
             var outputDirectory = Path.Combine(unityRoot, "Builds", "F03-DevReplay", "unauthorized-probe");
             PrepareOutputDirectory(unityRoot, outputDirectory);
-            BuildPipeline.BuildPlayer(new BuildPlayerOptions
+            var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
             {
                 scenes = new[] { F03SceneContract.SourceScenePath },
                 locationPathName = Path.Combine(outputDirectory, "unauthorized.exe"),
                 target = BuildTarget.StandaloneWindows64,
                 options = BuildOptions.Development | BuildOptions.StrictMode
             });
-            throw new BuildFailedException("UNAUTHORIZED_DEVELOPMENT_BUILD_UNEXPECTEDLY_COMPLETED");
+            throw new BuildFailedException(report.summary.result == BuildResult.Succeeded
+                ? "UNAUTHORIZED_DEVELOPMENT_BUILD_UNEXPECTEDLY_COMPLETED"
+                : "UNAUTHORIZED_DEVELOPMENT_BUILD_REJECTED_AS_EXPECTED");
         }
 
         private static void CreateGeneratedBuildScene(string commit, string buildUtc, string revision)
