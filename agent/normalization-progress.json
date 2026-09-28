@@ -40,10 +40,10 @@
     "X-01",
     "X-02",
     "X-03",
-    "Z-01"
+    "Z-01",
+    "G-05"
   ],
   "remaining_packages": [
-    "G-05",
     "E-01",
     "E-02",
     "B-01",
@@ -1160,6 +1160,34 @@
       "status": "OPEN_CANDIDATE_REBUILD_AND_OWNERS",
       "description": "三个匹配候选、完整锁/SBOM、独立干净重建与责任人未交付，WAIT_DEP保持",
       "source": "agent/tasks/Z-01/outputs/current-delivery.json"
+    },
+    {
+      "task_id": "G-05",
+      "id": "G05-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_ENTRIES",
+      "description": "五旧文件实际归档，原路径改导航，旧目录/早期整体门/固定六行说明订正",
+      "source": "agent/tasks/G-05/outputs/current-admission.md"
+    },
+    {
+      "task_id": "G-05",
+      "id": "G05-N02",
+      "status": "FIXED_VERIFY_OUTPUT_DIRECTORY",
+      "description": "初次核查脚本未创建evidence，补固定目录初始化后完整复测通过",
+      "source": "agent/tasks/G-05/evidence/failure-disposition.md"
+    },
+    {
+      "task_id": "G-05",
+      "id": "G05-N03",
+      "status": "OPEN_REAL_OWNERS_AND_RECEIPTS",
+      "description": "13项外部资格待定，本机六项未过，机构/专机/许可与两周U8无真实签收",
+      "source": "agent/tasks/G-05/outputs/current-admission.json"
+    },
+    {
+      "task_id": "G-05",
+      "id": "G05-N04",
+      "status": "OPEN_GLOBAL_DONE_VS_OPTIONAL_STAGE3",
+      "description": "现有整体DONE要求13项含阶段三，核心按活动准入的关闭规则仍须治理裁定，未伪造资格或修改门",
+      "source": "agent/tasks/G-05/outputs/current-admission.md"
     }
   ]
 }

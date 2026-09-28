@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-29",
+  "root_pytest": {"passed": 635, "seconds": 50.34, "exit_code": 0},
+  "specialized_tests": {"passed": 28, "seconds": 0.11, "exit_code": 0},
+  "task_registry": {"entries": 71, "exit_code": 0},
+  "independent_packages": {"packages": 5, "snapshots": 61, "exit_code": 0},
+  "audit_governance": {"version": "1.2", "exit_code": 0},
+  "local_environment": {"formal_ready": false, "failed_checks": 6, "exit_code": 2},
+  "scope": "Current sources and read-only local environment; no external receipts, formal machine or real U8"
+}

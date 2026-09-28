@@ -1,0 +1,26 @@
+{
+  "task_id": "G-05",
+  "status": "WAIT_DEP_EXTERNAL",
+  "dependencies": [
+    "G-01",
+    "G-02"
+  ],
+  "claimant": null,
+  "reviewer": null,
+  "capabilities": 13,
+  "qualified_capabilities": 0,
+  "scope": "activity_specific_receipts",
+  "real_institution_receipt": null,
+  "questionnaire_permission": null,
+  "approved_retention": null,
+  "real_roles_and_training": null,
+  "formal_machine_receipt": null,
+  "asset_release_allowed": false,
+  "u8_real_rehearsal": null,
+  "u8_result": null,
+  "early_scope_authority": "U12-05",
+  "global_done_rule": "ALL_13_QUALIFIED_CURRENT_GOVERNANCE",
+  "stage3_qualification": "PENDING_EXTERNAL_NOT_FABRICATED",
+  "real_gate": null,
+  "new_acceptance": null
+}

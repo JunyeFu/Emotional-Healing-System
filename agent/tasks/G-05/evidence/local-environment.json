@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "code": "GOVERNANCE_ROOT_UNSET",
+      "passed": false
+    },
+    {
+      "code": "BACKUP_ROOT_UNSET",
+      "passed": false
+    },
+    {
+      "code": "SEALED_KEY_EVIDENCE_UNSET",
+      "passed": false
+    },
+    {
+      "code": "DATA_ADMIN_ACCOUNT_UNSET",
+      "passed": false
+    },
+    {
+      "code": "DEDUP_CREDENTIAL_AVAILABLE",
+      "passed": false
+    },
+    {
+      "code": "RETENTION_APPROVAL_PENDING",
+      "passed": false
+    }
+  ],
+  "formal_ready": false
+}

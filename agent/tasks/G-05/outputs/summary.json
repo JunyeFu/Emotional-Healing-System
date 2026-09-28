@@ -1,0 +1,136 @@
+{
+  "task_id": "G-05",
+  "title": "G05 外部准入与正式机器交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "G-05仍WAIT_DEP_EXTERNAL、未领取未签收。五份过期包/手册原件实际归档，当前准入与专机入口订正；28项专项通过，本机六项仍失败，十三项外部资格均待真实证据。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "G-01/G-02责任迁移已经批准，但没有G-05机构、专机或U8签收。本轮Codex整理与只读核查不替代真实外部回执。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "依赖G-01/G-02，约5人日项目内工作，外部等待另计。材料/软件DONE不证明实际资格；机构、量表、保留期限、人员和两周现场仍缺。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1真实机构、M-001及角色培训签署；AC2正式专机全部适用检查和恢复通过、当前许可清零；AC3两周真实漏斗/故障/恢复和U8 PASS或NO_GO对应活动资格。",
+        "五段过程为责任范围、外部回执、专机资产、实地U8、另一人复核交接；需真实机构/数据/许可/现场责任人，TASK附国内研究方法、数据安全和Git资料。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK与固定五目录、13项当前来源、机器/活动说明、真实缺口字段及23项新检查建立。旧第58号三文件和两专机手册逐字节实际归档，原位置改当前导航。",
+        "当前入口去除旧绝对目录、早期整体硬门与固定六行误解；软件合同、资格矩阵、旧签署、资产台账和领取快照保持。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "早期静态/回放按U12-05实际批准范围执行，不扩大到真机研究。六类专机配置会展开多项检查，全部适用项通过才有软件门PASS，仍需真实专机与另一人见证。",
+        "凭据创建仅获批后人工执行，本轮不调用、不写密钥/ACL/期限；APPROVED字符串不能替代机构批准。实验使用、论文展示、再分发各有用途许可。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "28项专项通过：23项新来源/归档/活动负测与5项既有环境测试。13项缺失资格分别被现有校验器拒绝，导航和五原件字节通过；治理升级校验通过。",
+        "本机只读formal_ready=false，治理根、备份根、密封证据、管理员、凭据与期限六项失败；没有正式配置或现场活动。初次脚本未建evidence，修复后结果成功保存；根/分发结果见regression.json。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧G-05/专机说明不再执行，原件供历史解释；Z-01当前225项/269资产阻断不能被旧三组报告覆盖。角色编号不算真实人选，G-01历史528/112不作当前N。",
+        "现有G-05整体DONE规则要求13项含可选阶段三资格，核心路线按活动准入的收尾仍需治理任务裁定。不伪造阶段三资格、不擅改全包规则。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "任务根只有TASK和五目录，历史原件不复制成当前执行版本；共享原路径导航保留消费者，原manifest明确仅历史导航。Word从Agent事实生成。",
+        "五活动包映射未引用本轮迁移材料，冻结身份未更新；共享治理代码和机构原件仍待整体迁移，规范化不重绘业务SVG。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "G-01供当前材料、G-02供治理门，U12-05供早期批准；G-05取得真人回执、正式机器、用途许可和现场吞吐，不能由Agent材料或总监单签代替。",
+        "U-08/I-01/Z-01消费真实环境/资产；G-03/G-04及U12-11按对应活动冻结，W-03审公开。核心与可选阶段三分开报告，13项全包规则与核心闭环问题保留待裁定。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "注册明确未领取、未指定；本轮不代填负责人、机构批准或PASS。已有G-01/G-02批准只成立于其原材料/软件范围。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计42/71、剩余29，下一E-01。机构/许可/期限/角色、正式机器和真实U8均未关闭，状态不变；目录整体迁移继续。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "注册、责任迁移、13项资格/证据合同、现有校验器、G-01/G-02/Z-01当前交接及本机只读环境报告。无新机构联系、招募、真实采集或新独立Agent/真人签署。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "G05-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_ENTRIES",
+      "description": "五旧文件实际归档，原路径改导航，旧目录/早期整体门/固定六行说明订正",
+      "source": "agent/tasks/G-05/outputs/current-admission.md"
+    },
+    {
+      "id": "G05-N02",
+      "status": "FIXED_VERIFY_OUTPUT_DIRECTORY",
+      "description": "初次核查脚本未创建evidence，补固定目录初始化后完整复测通过",
+      "source": "agent/tasks/G-05/evidence/failure-disposition.md"
+    },
+    {
+      "id": "G05-N03",
+      "status": "OPEN_REAL_OWNERS_AND_RECEIPTS",
+      "description": "13项外部资格待定，本机六项未过，机构/专机/许可与两周U8无真实签收",
+      "source": "agent/tasks/G-05/outputs/current-admission.json"
+    },
+    {
+      "id": "G05-N04",
+      "status": "OPEN_GLOBAL_DONE_VS_OPTIONAL_STAGE3",
+      "description": "现有整体DONE要求13项含阶段三，核心按活动准入的关闭规则仍须治理裁定，未伪造资格或修改门",
+      "source": "agent/tasks/G-05/outputs/current-admission.md"
+    }
+  ],
+  "next_task": "E-01",
+  "source_links": [
+    {
+      "label": "活动准入与专机当前说明",
+      "path": "agent/tasks/G-05/outputs/current-admission.md"
+    },
+    {
+      "label": "真实缺口与状态",
+      "path": "agent/tasks/G-05/outputs/current-admission.json"
+    },
+    {
+      "label": "专项与本机门结果",
+      "path": "agent/tasks/G-05/evidence/verification.json"
+    },
+    {
+      "label": "原件归档",
+      "path": "agent/tasks/G-05/archive/README.md"
+    },
+    {
+      "label": "消费者影响",
+      "path": "agent/tasks/G-05/evidence/consumer-impact.md"
+    }
+  ]
+}

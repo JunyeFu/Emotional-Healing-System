@@ -1,0 +1,2 @@
+NOTE: historical Git objects verified; 6 original worktree byte identities remain unverified (not a new acceptance).
+PASS: audit governance 1.2; tasks=71; fixed=68; historical findings=24; upgrades=12

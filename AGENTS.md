@@ -43,6 +43,7 @@
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |
 | 看候选制品与干净重建交接 | `agent/tasks/Z-01/outputs/current-delivery.md`（工具权威订正、真实资产阻断及未完成候选） |
+| 看外部准入与正式专机 | `agent/tasks/G-05/outputs/current-admission.md`（活动范围、六类配置与真实凭证缺口） |
 | 看真实设备采集交接 | `agent/tasks/D-01/outputs/current-acquisition.md`（ECG/RR原始通道、P-02记录与待完成验收） |
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |
 | 看双设备同步与SQI | `agent/tasks/S-01/outputs/current-quality.md`（连接与质量区分、时钟字段与未完成取证） |
