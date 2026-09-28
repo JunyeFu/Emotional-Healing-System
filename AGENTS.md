@@ -49,6 +49,7 @@
 | 看阶段一锁定分析交接 | `agent/tasks/A-05/outputs/current-analysis.md`（PANAS主比较、功能护栏与过程分开，真实分析仍未执行） |
 | 看可选策略冻结交接 | `agent/tasks/E-05/outputs/current-freeze.md`（事前选择标准与最终模型冻结分开，真实策略及签署仍缺） |
 | 看可选阶段三独立冻结 | `agent/tasks/G-04/outputs/current-extension.md`（两原生组策略比较、独立准入和同构建，真实放行仍缺） |
+| 看可选阶段三批次模板 | `agent/tasks/B-03/outputs/current-batch.md`（12人批次、48分配块、真实决策及部分运行交接） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |

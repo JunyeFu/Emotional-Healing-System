@@ -2261,3 +2261,10 @@
 - 旧协议兼容、v1.2治理、71项注册表、5分发包/61快照全部PASS。当前formal collection仍blocked。
 - 专项覆盖阶段三48行真实分配接口、两原生组策略比较、回退估计目标、真实v2.2拒绝及默认正式门、直接活动矩阵与候选不构成批准。未运行真实阶段三、Unity、TD或独立签收。
 - 单包3页、串联28页渲染检查通过，前27页与E-05已查页相同；Word来源结构另由build_task_reviews.py --check验证。规范化52/71、下一B-03，根目录迁移未完成。
+
+## 2026-09-29 B-03规范化验证
+
+- 仓库外D:\Agent调用verify.ps1，首轮143 passed/1 failed：合成finish原因码含连字符不符合P-01，保留initial-handoff.txt和initial-checks.json。修fixture为SYNTHETIC_TEST，不改运行合同。
+- 复测144 passed in 5.99s，根635 passed in 50.15s；历史协议、v1.2治理、71项注册、5分发包/61快照全部PASS。
+- 实际stage_3 48行清单和24随机路径消息验证，开发prepare/finish两操作封存及只读重放状态一致；未启动体验，不代表动态策略或真实800秒系统通过。真实实例为零，业务仍BLOCKED_EXTERNAL。
+- 单包3页全查，串联29页变化28/29页查，前27页与G-04已查图相同；Word结构/来源和diff检查用于收尾。规范化53/71、下一E-06，根目录迁移未完成。
