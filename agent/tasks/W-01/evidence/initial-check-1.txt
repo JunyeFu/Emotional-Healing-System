@@ -1,0 +1,23 @@
+..............F                                                          [100%]
+================================== FAILURES ===================================
+____________________ test_active_links_and_sources_resolve ____________________
+
+    def test_active_links_and_sources_resolve():
+        for path in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / path).exists(), path
+        nav = PLAN / '25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md'
+        for path in (nav, TASK / 'outputs/current-paper.md'):
+            for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
+>               assert (path.parent / link).resolve().exists(), link
+E               AssertionError: ../evidence/verification.json
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/tasks/W-01/evidence/verification.json').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/tasks/W-01/evidence/verification.json') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/tasks/W-01/outputs') / '../evidence/verification.json').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/tasks/W-01/outputs') = WindowsPath('D:/Agent/srp/agent/tasks/W-01/outputs/current-paper.md').parent
+
+agent\tasks\W-01\execution\test_w01_current.py:90: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/W-01/execution/test_w01_current.py::test_active_links_and_sources_resolve
+1 failed, 14 passed in 0.28s

@@ -1,0 +1,15 @@
+{
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/active_governance.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-07_neutral_core_draft",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/acceptance/U12-07.json",
+    "agent/tasks/R-01/outputs/current-representation.md",
+    "agent/tasks/A-02/outputs/current-statistics.md",
+    "agent/tasks/A-03/outputs/current-statistics.md"
+  ],
+  "archived_report_sha256_bytes": "A3F55CCBC2A93D5F2C75191AEC0BF625CB35C177A954B45467BF58E39FA67D83",
+  "validator_before_migration_sha256_bytes": "BA84E54FD2118887217A06DCEC9E801F10F7FC437C52C629A883ECC22B03A3BA"
+}

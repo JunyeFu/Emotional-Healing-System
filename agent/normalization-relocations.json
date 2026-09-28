@@ -7,6 +7,14 @@
       "new_plan_path": "../../../agent/tasks/R-01/execution/validate_candidate.py",
       "migration_commit": "11a7971207af35726cb147e84187d24ac650983e",
       "reason": "Execution entry moved to Agent layer; historical scope and acceptance remain unchanged. Schema-check improvements were separately recorded in the task summary."
+    },
+    {
+      "task_id": "W-01",
+      "field": "evidence_required",
+      "old_plan_path": "99_验证与清单/validate_w01_package.py",
+      "new_plan_path": "../../../agent/tasks/W-01/execution/validate_candidate.py",
+      "source_commit": "6fa45af",
+      "reason": "Execution entry moved to Agent layer; original candidate and acceptance scope preserved. Current W-02 route is checked separately from its historical A-04 wording."
     }
   ],
   "frozen_sources": [

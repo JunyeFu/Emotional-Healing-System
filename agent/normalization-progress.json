@@ -31,10 +31,10 @@
     "T-02",
     "A-01",
     "A-02",
-    "A-03"
+    "A-03",
+    "W-01"
   ],
   "remaining_packages": [
-    "W-01",
     "I-01",
     "Q-01",
     "Q-02",
@@ -950,6 +950,34 @@
       "status": "OPEN_REAL_CAL_AND_CURRENT_MEASUREMENT",
       "description": "真实适配、步骤实例测量映射、真实模型和盲态校准尚未交付",
       "source": "agent/tasks/A-03/outputs/current-statistics.json"
+    },
+    {
+      "task_id": "W-01",
+      "id": "W01-N01",
+      "status": "FIXED_ACTIVE_PRIMARY_AND_CORE_ROUTE",
+      "description": "旧骨架原文归档，当前PANAS主比较独立报告；W-02走A-06核心关闭不等A-04",
+      "source": "agent/tasks/W-01/outputs/current-paper.md"
+    },
+    {
+      "task_id": "W-01",
+      "id": "W01-N02",
+      "status": "MOVED_EXECUTION_WITH_SCOPE_PRESERVED",
+      "description": "验证器实际迁入Agent，精确登记证据路径，历史原验收不改",
+      "source": "agent/tasks/W-01/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "W-01",
+      "id": "W01-N03",
+      "status": "OPEN_LITERATURE_AND_REAL_REVIEWERS",
+      "description": "旧15篇及13行记录不是原生综述分母或新全文复查，双人真实审查与关键字段仍缺",
+      "source": "agent/tasks/W-01/outputs/current-paper.json"
+    },
+    {
+      "task_id": "W-01",
+      "id": "W01-N04",
+      "status": "HANDOFF_U12_07_SIGNED_TEXT_REVISION",
+      "description": "已签收U12-07仍含旧RQ/有序门/八题写法，隔离当前权威并需其新候选修订，不改签名",
+      "source": "agent/tasks/W-01/evidence/consumer-impact.md"
     }
   ]
 }

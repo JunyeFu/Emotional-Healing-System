@@ -3,19 +3,20 @@
 from __future__ import annotations
 
 import csv
+import json
 import pathlib
 import re
 import sys
 
 
-HERE = pathlib.Path(__file__).resolve().parent
-PACKAGE_ROOT = HERE.parent
+REPO = pathlib.Path(__file__).resolve().parents[4]
+PACKAGE_ROOT = REPO / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 DELIVERY_DIR = next(PACKAGE_ROOT.glob("25_*"))
 W01_DIR = next(DELIVERY_DIR.glob("W-01_*"))
 TASK_DIR = next(PACKAGE_ROOT.glob("24_*"))
 REGISTRY = next(TASK_DIR.glob("05_*.csv"))
 
-REPORT = next(W01_DIR.glob("W-01_2015-2026*_v0.9-candidate.md"))
+REPORT = next((REPO / "agent/tasks/W-01/archive").glob("W-01_2015-2026*_v0.9-candidate.md"))
 ACCEPTANCE = next(W01_DIR.glob("W-01_*验收记录.md"))
 BIBLIOGRAPHY = W01_DIR / "w01-references.bib"
 CSV_EXPECTATIONS = {
@@ -75,6 +76,37 @@ def normalize_doi(value: str) -> str:
 def load_csv(path: pathlib.Path) -> list[dict[str, str]]:
     with path.open(encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def current_errors(current: dict, protocol: dict, rows: dict) -> list[str]:
+    errors = []
+    expected = {
+        "primary_outcome": protocol["primary"]["outcome"],
+        "contrast": protocol["primary"]["contrast"],
+        "report_affect_when_guard_fails": protocol["primary"]["report_even_if_functional_guard_fails"],
+        "scci_role": protocol["manipulation_check"]["role"],
+        "confirmatory_equivalence_enabled": protocol["equivalence"]["confirmatory_enabled"],
+        "core_requires_stage_3": protocol["stage_2_3"]["required_for_core_paper"],
+        "formal_randomized_n": protocol["sample_planning"]["formal_randomized_n"],
+    }
+    for field, value in expected.items():
+        if current.get(field) != value:
+            errors.append(f"current paper differs from active authority: {field}")
+    if set(current.get("w02_dependencies", [])) != set(rows["W-02"]["depends_on"].split("|")):
+        errors.append("current paper W-02 dependency mismatch")
+    if current.get("acceptance_scope") != "HISTORICAL_CANDIDATE_PACKAGE_ONLY" or current.get("novelty_status") != "REVISE_REQUIRED":
+        errors.append("historical candidate acceptance expanded")
+    claims = current.get("claims", [])
+    if {claim.get("id") for claim in claims} != {f"C{i}" for i in range(1, 7)} or len(claims) != 6:
+        errors.append("six current claims required")
+    for claim in claims:
+        if any(not claim.get(key) for key in ("scope", "requires", "counterexample", "fallback")):
+            errors.append(f"claim lacks evidence or counterexample: {claim.get('id')}")
+        if claim.get("status") != "PLANNED_NOT_OBSERVED":
+            errors.append("unobserved claim reported as observed")
+    if current.get("current_search_update") != "NOT_RUN" or current.get("human_dual_source_review") != "NOT_DELIVERED":
+        errors.append("unperformed source review expanded")
+    return errors
 
 
 def main() -> int:
@@ -150,7 +182,9 @@ def main() -> int:
     if rows_by_id.get("W-01", {}).get("status") != "DONE":
         errors.append("W-01 must be DONE at candidate-package scope")
     if rows_by_id.get("W-02", {}).get("status") != "WAIT_DEP":
-        errors.append("W-02 must remain WAIT_DEP because A-04 is incomplete")
+        errors.append("W-02 must remain WAIT_DEP until its current dependencies close")
+    if set(rows_by_id.get("W-02", {}).get("depends_on", "").split("|")) != {"W-01", "A-06", "U12-07"}:
+        errors.append("W-02 current core route must depend on W-01, A-06 and U12-07, not A-04")
     if "REVISE_REQUIRED" not in rows_by_id.get("W-01", {}).get("completion_condition", ""):
         errors.append("W-01 completion condition must preserve REVISE_REQUIRED")
 
@@ -158,12 +192,17 @@ def main() -> int:
         "PASS_FOR_CANDIDATE_PACKAGE",
         "W-01=DONE",
         "REVISE_REQUIRED",
-        "W-02仍同时依赖A-04",
+        "W-02仍同时依赖A-04",  # Preserve this marker only in the historical record.
         "5856C9C848E13285A42CFDCD212595D53DDAFA0B37B3F69CA028AF143018CD7E",
     )
     for marker in required_acceptance_markers:
         if marker not in acceptance_text:
             errors.append(f"acceptance record missing marker: {marker}")
+
+    current = json.loads((REPO / "agent/tasks/W-01/outputs/current-paper.json").read_text(encoding="utf-8"))
+    active = json.loads((TASK_DIR / "active_governance.json").read_text(encoding="utf-8-sig"))
+    protocol = json.loads((TASK_DIR / active["research_authority"]).read_text(encoding="utf-8-sig"))
+    errors.extend(current_errors(current, protocol, rows_by_id))
 
     if errors:
         for error in errors:
@@ -171,7 +210,7 @@ def main() -> int:
         return 1
 
     print(
-        "PASS: W-01 candidate package; "
+        "PASS: W-01 historical candidate package and current W-02 dependency route; "
         "search_rows=13; core_sources=15; claims=6; bib_entries=15; "
         "novelty=REVISE_REQUIRED; W-02=WAIT_DEP"
     )

@@ -1,0 +1,8 @@
+Command: py -3.14 <governance>/14_validate_ready_task_packages.py
+Exit code: 1
+ERROR: V-05: stale registry hash
+ERROR: T-02: stale registry hash
+ERROR: A-03: stale registry hash
+ERROR: U12-03: stale registry hash
+ERROR: U12-06: stale registry hash
+Disposition: W-01 execution path changes the registry fingerprint. Update only registry_sha256 in these five manifests, never input snapshots or candidate identities.

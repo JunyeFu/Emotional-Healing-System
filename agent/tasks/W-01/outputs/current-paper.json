@@ -1,0 +1,31 @@
+{
+  "task_id": "W-01",
+  "business_status": "DONE",
+  "acceptance_scope": "HISTORICAL_CANDIDATE_PACKAGE_ONLY",
+  "novelty_status": "REVISE_REQUIRED",
+  "literature_cutoff": "2026-08-06",
+  "current_search_update": "NOT_RUN",
+  "native_database_export": "NOT_DELIVERED",
+  "human_dual_source_review": "NOT_DELIVERED",
+  "historical_corpus": {"search_log_rows": 13, "core_sources": 15, "doi_audit_rows": 15, "claims": 6, "bib_entries": 15},
+  "working_title": "场景原生与抽象控件式呼吸提示 短时负性情绪调节的比较证据与设计边界",
+  "research_status": "PLANNED_NOT_OBSERVED",
+  "primary_outcome": "panas_negative_affect_post_adjusted_for_pre",
+  "contrast": "native_minus_abstract",
+  "report_affect_when_guard_fails": true,
+  "scci_role": "manipulation_only",
+  "confirmatory_equivalence_enabled": false,
+  "core_requires_stage_3": false,
+  "w02_dependencies": ["W-01", "A-06", "U12-07"],
+  "formal_randomized_n": null,
+  "claims": [
+    {"id": "C1", "scope": "完整提示方案构造与可检验比较，不声称场景融合概念首创", "requires": "当前R-01合同、双条件实现与公平性实测", "counterexample": "相邻全文已覆盖同一合同；实际材料差异越界", "fallback": "具体方案案例与材料局限", "status": "PLANNED_NOT_OBSERVED"},
+    {"id": "C2", "scope": "四层设计规则的有限迁移性", "requires": "Q-01独立重建、盲评、未见实例与负例", "counterexample": "未见结构重建失败或层间耦合", "fallback": "四场景设计模式，不称通用框架", "status": "PLANNED_NOT_OBSERVED"},
+    {"id": "C3", "scope": "两完整方案短时负性情绪收益、功能代价与边界", "requires": "冻结PANAS主比较、PF两集护栏、理解/努力/错误及所有预设结果", "counterexample": "情绪与功能方向冲突、缺失/效度不足或抽象更优", "fallback": "报告可靠反向结果、边界或证据不足，不隐去PANAS", "status": "PLANNED_NOT_OBSERVED"},
+    {"id": "C4", "scope": "由比较、过程及重建证据支撑的有限设计知识", "requires": "主张与原始材料/代码/图表关联，正负案例与真实复核", "counterexample": "仅开发者故事或缺乏负例", "fallback": "候选设计规则和案例总结", "status": "PLANNED_NOT_OBSERVED"},
+    {"id": "C5", "scope": "条件式顺序扩展，不作为核心论文前提", "requires": "策略支持、合法概率、分组验证与独立前瞻研究", "counterexample": "支持不足、均匀回退或研究未开展", "fallback": "披露未开展/部分开展与限制，不称最佳顺序", "status": "PLANNED_NOT_OBSERVED"},
+    {"id": "C6", "scope": "独立运行与可复跑系统支持", "requires": "真实设备全链、呈现回执、故障行为及干净重建", "counterexample": "代码存在但真实全链缺失", "fallback": "软件底座及合成验证，不称LIVE_E2E", "status": "PLANNED_NOT_OBSERVED"}
+  ],
+  "result_sections": ["样本与实现效度", "PANAS主要情绪比较", "独立功能护栏及完整过程", "缺失与敏感性", "独立重建与设计边界", "实际开展的条件式扩展"],
+  "consumer_followups": ["U12-07旧RQ1与有序门句式另行修订，不继承签署", "W-02消费A-06实际核心关闭而非A-04", "更新最近工作检索与双人全文复核需真实资料及人员"]
+}

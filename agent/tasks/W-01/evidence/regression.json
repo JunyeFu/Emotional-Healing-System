@@ -1,0 +1,12 @@
+{
+  "task_id": "W-01",
+  "date": "2026-09-29",
+  "checks": [
+    {"command": "py -3.14 -m pytest -q", "exit_code": 0, "passed": 635, "seconds": 50.59},
+    {"command": "py -3.14 <governance>/07_validate_task_packages.py", "exit_code": 0, "registry_entries": 71},
+    {"command": "py -3.14 <governance>/14_validate_ready_task_packages.py", "exit_code": 0, "packages": 5, "snapshots": 61}
+  ],
+  "prior_failures": ["initial-check-1.txt", "initial-dispatch-failure.txt"],
+  "disposition": "distinguish runner outputs from static inputs; refresh registry reference only, preserving all input identities",
+  "scope": "software and governance; not literature novelty, full-text review or research results"
+}

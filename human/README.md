@@ -61,4 +61,6 @@
 
 | 32 | A-03 测量计分与合成可行性 | [总结](tasks/A-03/summary.docx) | 旧入口与锚点实际归档，CLI禁止覆盖，当前SAP签收已交接；REAL/CAL仍缺，保持IN_PROGRESS |
 
+| 33 | W-01 最近工作与中立论文骨架 | [总结](tasks/W-01/summary.docx) | 旧骨架原文归档，验证器迁入Agent；16项专项通过，当前PANAS/A-06路线订正，文献与真实双审仍缺 |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。
