@@ -2055,3 +2055,11 @@
 - Word单包3页、串联14页完成页面检查；串联前12页与已审阅U-04 PNG字节一致，第13/14页重新检查。活动措辞检查发现日志描述包含禁用字样，替换后重新生成Word；历史原文不改。结构、来源、正文与git diff检查用于本包发布。
 - 累计25/71，下一U-06。未执行新天气Play、Profiler、真人签收或正式活动，不更新任务状态和SVG，整体根目录迁移未完成。
 - 暂存时Git提示归档换行转换，仅对四份原件设置-text，专项补检查text属性；不放宽其他文件或改原文。补跑38项验证，Unity运行源码未再次改变，不重复跑EditMode。
+
+## 2026-09-28 U-06规范化验证
+
+- 确认FinalBuild/FinalRebuild/ComprehensiveFix类名和meta GUID无活动C#/unity/prefab/asset引用，Git跟踪代码中无旧executeMethod调用。六份原件与38d2fb1字节比较一致，-text仅用于这些原件；Heat/Snow场景字节未变。
+- 本包14项与V-02 26项合计40 passed in 0.67s；V-03当前40行映射、56直接包检查通过。Unity6000.4.9f1实际EditMode105/105通过，XML入包，运行日志留.artifacts-local。
+- 根pytest635 passed in 51.26s，注册表71项及独立分发5包54快照通过。其他冻结包无改动，READY仍T-02/V-05；本包实际天气、性能和人员未落实，不改变WAIT_DEP。
+- Word单包3页、串联15页完成检查，前13页与已审阅U-05 PNG字节一致，14/15页重新检查。内容复核区分两个StormScene工具的Scene1Director，订正Agent源后重新生成单包；链中交接结论不变。结构、来源、正文及活动措辞检查用于发布。
+- 没有执行新构建；默认列表与F-03显式DEV-REPLAY仅为源码证据，不能替代U-08成品。累计26/71，下一U-07，根目录双层迁移未完成；状态和SVG不变。

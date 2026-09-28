@@ -24,10 +24,10 @@
     "V-05",
     "U-03",
     "U-04",
-    "U-05"
+    "U-05",
+    "U-06"
   ],
   "remaining_packages": [
-    "U-06",
     "U-07",
     "U-08",
     "T-02",
@@ -761,6 +761,34 @@
       "status": "OPEN_OWNER_PLAY_AND_PROFILER",
       "description": "实际负责人、Play、Profiler、声音和真人签收仍缺，业务状态不变",
       "source": "agent/tasks/U-05/TASK.md"
+    },
+    {
+      "task_id": "U-06",
+      "id": "U06-N01",
+      "status": "OPEN_WEATHER_C_ALLOCATION",
+      "description": "A/B/C均未明确分配，C不默认snow，公共模板仍待U-03",
+      "source": "agent/tasks/U-06/outputs/current-adapter.json"
+    },
+    {
+      "task_id": "U-06",
+      "id": "U06-N02",
+      "status": "FIXED_LEGACY_FINAL_AND_FIX_MENUS",
+      "description": "三项旧素材重导入和场景重建菜单及meta原文归档，活动工程无引用，共享回归通过",
+      "source": "agent/tasks/U-06/archive/README.md"
+    },
+    {
+      "task_id": "U-06",
+      "id": "U06-N03",
+      "status": "VERIFIED_DEV_BUILD_BOUNDARY_NOT_PRODUCT",
+      "description": "默认列表为SampleScene；旧Final菜单不打包，F-03显式DEV-REPLAY不证明最终天气制品",
+      "source": "agent/tasks/U-06/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U-06",
+      "id": "U06-N04",
+      "status": "OPEN_BUDGET_OWNER_AND_REAL_ACCEPTANCE",
+      "description": "预算规格、实际负责人、天气Play和Profiler仍缺，40项专项及105项EditMode不替代验收",
+      "source": "agent/tasks/U-06/evidence/verification.json"
     }
   ]
 }

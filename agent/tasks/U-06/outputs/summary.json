@@ -1,0 +1,39 @@
+{
+  "task_id": "U-06",
+  "title": "U06 剩余天气C适配器现状审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "U-06仍WAIT_DEP、未领取，C没有明确技术ID，不默认snow。三项旧Final/Fix场景重建菜单及meta已原文归档；40项专项和105项Unity EditMode通过，真实天气、性能及成品未验收。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "本轮Codex审阅实际源码、移出弃用Editor菜单并复跑共享程序集；没有签收天气C或执行新构建，不代填实际负责人。"
+  },
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["依赖U-03、V-03，约4人日；P-DEV为过程配置。实际领取人、分支及复核人为空，公共模板未验收。A/B/C均未分配，C候选storm、heat、snow，不能按第三项或排除法认定snow。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["交付实际分配的一个天气SceneAdapter、四层参数、音频与测试场景。AC1技术ID及机制一致可辨识；AC2四层独立、降级可见且不改公共模板；AC3目标设备性能及声音达到U-08预算。", "必需Play、Profiler、截图、参数表与模板漂移检查。四天按输入对齐、模板实现、分层联调、目标设备验收和交接推进；技能及国内教程在TASK.md，不以旧场景或菜单名称代替成果。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK和五目录、当前天气C交接、来源与复测入口，保留未分配和未验收事实。三包共同消费V-02分配和U-03模板，不重复认领剩余天气。", "FinalBuild、FinalRebuild、ComprehensiveFix及三个meta原文移出Assets归档，旧菜单不再注册；未修改旧天气场景、素材、F-03工具或默认构建配置。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["三菜单会全量重导入Sprites为Point/32 PPU，清空并保存旧四天气或StormScene，再创建旅人和旧背景；两个StormScene工具还附旧Scene1Director。确认活动类名/GUID无消费者后归档，不继续使用Final/Fix命名的旧生产路径。", "默认EditorBuildSettings只启用SampleScene；旧菜单没有BuildPipeline.BuildPlayer。F-03真实开发构建显式生成F03DevReplayBuild并采用Development选项，不靠默认列表；它的DEV-REPLAY验收不转为天气或正式制品完成。"]},
+    {"heading": "验证与结果", "paragraphs": ["40项专项通过，含14项U-06分配、原字节迁移、旧场景保留、构建职责及预算依赖检查和26项V-02规则；V-03当前40行映射、56直接包检查通过。Unity6000.4.9f1 EditMode实跑105项全部通过。", "71项注册表及5个分发包54快照通过，READY仍T-02/V-05；冻结包未改。本轮未执行天气Play、Profiler、真实回执或构建，自动结果只证明清理后的共享编译和既有行为。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧菜单名及日志中的all scenes ready容易与最终成品混淆，实际源码只有旧场景重建。已从活动工程移出并保留原字节，再以真实构建源区分开发和最终交付，不只改Word措辞。", "A/B/C绑定、U-03模板、真实负责人和U-08预算仍待落实；U-08整体依赖U-06，而U-06 AC3消费其预算，先提供规格再交集成结果。当前不擅自改依赖、定阈值或冻结新里程碑。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["TASK、inputs、execution、evidence、outputs、archive职责固定；六份原件与38d2fb1字节一致并禁用换行转换，meta GUID保留。实际Unity工程仍由共享模块维护，不复制缓存。", "U-04/U-05归档引用原入口，历史许可扫描不回写；测试XML入包，运行日志留.artifacts-local。其余旧工具、共享模块与根目录双层迁移仍待后续，不宣称清理完整工程。"]},
+    {"heading": "上下游交接", "paragraphs": ["V-02给出互斥完整的A/B/C技术ID，U-03验收公共模板；U-04至U-06分别覆盖三个剩余天气，V-03提供分层映射、V-04提供有效素材。三包未分配时不能用清单或排除法替代决定；Python保持顺序及时钟权威。", "U-07消费双条件接口及抽象四结构推广，U-08先明确设备/预算规格，再接收视听、性能、最终场景清单与独立构建；F-03仅承接开发构建，不代替U-08成品。G-02/G-05负责许可与活动资格，回执和ACK分开。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["无U-06历史签署，实际实施和复核人员未登记。Agent本轮仅负责规范化、静态核对和自动复测；WAIT_DEP保持，真实Play、Profiler、问题关闭及签收按任务要求落实。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计26/71包，剩余45，下一U-07。完成实际旧工具清理和Agent交接后生成单包与串联Word；整体目标仍包含剩余任务、共享模块和根目录收拢，不在本包关闭。"]},
+    {"heading": "审阅来源", "paragraphs": ["读取注册表、V-02/V-03/V-04、U-01至U-05交接、旧Editor源码、实际场景、默认构建配置与F-03构建源。天气设计、旧原型、共享回归、开发构建和正式制品分别判断。"]}
+  ],
+  "findings": [
+    {"id": "U06-N01", "status": "OPEN_WEATHER_C_ALLOCATION", "description": "A/B/C均未明确分配，C不默认snow，公共模板仍待U-03", "source": "agent/tasks/U-06/outputs/current-adapter.json"},
+    {"id": "U06-N02", "status": "FIXED_LEGACY_FINAL_AND_FIX_MENUS", "description": "三项旧素材重导入和场景重建菜单及meta原文归档，活动工程无引用，共享回归通过", "source": "agent/tasks/U-06/archive/README.md"},
+    {"id": "U06-N03", "status": "VERIFIED_DEV_BUILD_BOUNDARY_NOT_PRODUCT", "description": "默认列表为SampleScene；旧Final菜单不打包，F-03显式DEV-REPLAY不证明最终天气制品", "source": "agent/tasks/U-06/evidence/consumer-impact.md"},
+    {"id": "U06-N04", "status": "OPEN_BUDGET_OWNER_AND_REAL_ACCEPTANCE", "description": "预算规格、实际负责人、天气Play和Profiler仍缺，40项专项及105项EditMode不替代验收", "source": "agent/tasks/U-06/evidence/verification.json"}
+  ],
+  "next_task": "U-07",
+  "source_links": [
+    {"label": "当前天气C交接", "path": "agent/tasks/U-06/outputs/current-adapter.md"},
+    {"label": "验证及范围记录", "path": "agent/tasks/U-06/evidence/verification.json"},
+    {"label": "Unity EditMode结果", "path": "agent/tasks/U-06/evidence/editmode-results.xml"},
+    {"label": "迁移及构建职责核对", "path": "agent/tasks/U-06/evidence/consumer-impact.md"},
+    {"label": "步骤验收及国内资料", "path": "agent/tasks/U-06/TASK.md"}
+  ]
+}

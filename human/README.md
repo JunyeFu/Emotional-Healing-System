@@ -47,4 +47,6 @@
 
 | 25 | U-05 剩余天气B适配器 | [总结](tasks/U-05/summary.docx) | 不默认heat；旧Heat/Snow无脚本绑定，两个旧修改菜单及meta归档，38项专项及105项Unity回归通过；预算规格与真实天气仍待落实 |
 
+| 26 | U-06 剩余天气C适配器 | [总结](tasks/U-06/summary.docx) | 不默认snow；三项旧Final/Fix工具及meta归档，40项专项及105项Unity回归通过；开发构建不替代最终天气制品，真实验收仍待落实 |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

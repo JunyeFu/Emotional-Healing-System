@@ -38,3 +38,9 @@ agent/tasks/U-05/archive/CleanAndRebuildScenes.cs -text
 agent/tasks/U-05/archive/CleanAndRebuildScenes.cs.meta -text
 agent/tasks/U-05/archive/CleanupWeatherDuplicates.cs -text
 agent/tasks/U-05/archive/CleanupWeatherDuplicates.cs.meta -text
+agent/tasks/U-06/archive/FinalBuild.cs -text
+agent/tasks/U-06/archive/FinalBuild.cs.meta -text
+agent/tasks/U-06/archive/FinalRebuild.cs -text
+agent/tasks/U-06/archive/FinalRebuild.cs.meta -text
+agent/tasks/U-06/archive/ComprehensiveFix.cs -text
+agent/tasks/U-06/archive/ComprehensiveFix.cs.meta -text
