@@ -6,3 +6,4 @@ import sys
 
 MODULE_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(MODULE_ROOT))
+sys.path.insert(0, str(MODULE_ROOT.parents[1] / 'agent/tasks/G-02/execution'))

@@ -1,0 +1,39 @@
+{
+  "task_id": "G-02",
+  "review_date": "2026-09-28",
+  "scope": "Governance regression and read-only gates; synthetic inputs, not real participant evidence.",
+  "checks": [
+    {
+      "command": "governance-tests",
+      "exit_code": 0,
+      "result": "........................................................................ [ 51%]\n...................................................................      [100%]\n139 passed in 10.05s",
+      "source": "agent/tasks/G-02/evidence/runtime/governance-tests.log"
+    },
+    {
+      "command": "synthetic-rehearsal",
+      "exit_code": 0,
+      "result": "G02_SYNTHETIC_REHEARSAL_PASS",
+      "source": "agent/tasks/G-02/evidence/runtime/synthetic-rehearsal.log"
+    },
+    {
+      "command": "repository-privacy",
+      "exit_code": 0,
+      "result": "G02_REPOSITORY_PRIVACY_PASS violations=0",
+      "source": "agent/tasks/G-02/evidence/runtime/repository-privacy.log"
+    },
+    {
+      "command": "formal-environment",
+      "exit_code": 2,
+      "result": "G02_FORMAL_ENV_BLOCKED failures=6",
+      "source": "agent/tasks/G-02/evidence/runtime/formal-environment.log",
+      "disposition": "Expected failure-closed gate; real readiness remains blocked."
+    },
+    {
+      "command": "asset-scan",
+      "exit_code": 2,
+      "result": "G02_ASSET_GATE_BLOCKED items=233 blockers=259",
+      "source": "agent/tasks/G-02/evidence/runtime/asset-scan.log",
+      "disposition": "Expected failure-closed gate; real readiness remains blocked."
+    }
+  ]
+}

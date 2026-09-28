@@ -20,6 +20,7 @@ DANGEROUS_SUFFIXES = {
 }
 ARTIFACT_ROOTS = (
     PurePosixPath("02-技术研发/07-数据治理/evidence"),
+    PurePosixPath("agent/tasks/G-02/evidence"),
     PurePosixPath(
         "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance"
     ),

@@ -5,10 +5,10 @@
     "F-03",
     "F-04",
     "F-05",
-    "G-01"
+    "G-01",
+    "G-02"
   ],
   "remaining_packages": [
-    "G-02",
     "P-01",
     "P-02",
     "U-01",
@@ -215,6 +215,34 @@
       "status": "OPEN_EXTERNAL_OWNER_AND_EVIDENCE",
       "description": "G-05未领取，真实角色、机构许可与现场占用/值班能力尚无回执，由团队总监安排真实负责人",
       "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+    },
+    {
+      "task_id": "G-02",
+      "id": "G02-N01",
+      "status": "FIXED",
+      "description": "隐私工具实际迁入固定执行层，新运行不覆盖历史证据",
+      "source": "agent/tasks/G-02/execution/verify.py"
+    },
+    {
+      "task_id": "G-02",
+      "id": "G02-N02",
+      "status": "FIXED",
+      "description": "新G-02证据目录纳入隐私扫描并通过负测试",
+      "source": "agent/tasks/G-02/execution/verify_repository_privacy.py"
+    },
+    {
+      "task_id": "G-02",
+      "id": "G02-N03",
+      "status": "FIXED",
+      "description": "当前资产计数与本轮233/259对齐，DONE与外部责任分开",
+      "source": "02-技术研发/07-数据治理/README.md"
+    },
+    {
+      "task_id": "G-02",
+      "id": "G02-N04",
+      "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
+      "description": "P-01仅在核心start登记暴露，新版条件教学接入与退出阻断由P-01/U12-11完成，当前尚未正式闭环",
+      "source": "02-技术研发/07-数据治理/docs/downstream_contracts.md"
     }
   ]
 }

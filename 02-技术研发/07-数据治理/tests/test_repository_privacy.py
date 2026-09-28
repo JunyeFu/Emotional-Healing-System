@@ -9,6 +9,16 @@ from verify_repository_privacy import find_privacy_violations
 EVIDENCE_PATH = "02-技术研发/07-数据治理/evidence/report.json"
 
 
+def test_agent_evidence_is_scanned_without_echo(tmp_path: Path) -> None:
+    path = 'agent/tasks/G-02/evidence/runtime/report.json'
+    _write(tmp_path, path, json.dumps({'phone_hash': 'hidden', 'note': '+8613912345678'}))
+    violations = find_privacy_violations(tmp_path, [path])
+    assert {item['code'] for item in violations} == {
+        'E164_VALUE', 'FORBIDDEN_IDENTITY_FIELD', 'PHONE_VALUE',
+    }
+    assert '13912345678' not in json.dumps(violations)
+
+
 def _write(repo: Path, relative: str, value: str) -> None:
     path = repo / relative
     path.parent.mkdir(parents=True, exist_ok=True)

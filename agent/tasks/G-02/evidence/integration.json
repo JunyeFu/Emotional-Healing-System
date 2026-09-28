@@ -1,0 +1,9 @@
+{
+  "task_id": "G-02",
+  "review_date": "2026-09-28",
+  "checks": [
+    {"command": "pytest -q 02-技术研发/tests/session_core 02-技术研发/tests/session_store 02-技术研发/tests/randomization", "exit_code": 0, "result": "233 passed in 7.50s; existing Python consumers, not new teaching exposure integration"},
+    {"command": "07_validate_task_packages.py", "exit_code": 0, "result": "71 entries; statuses unchanged"},
+    {"command": "14_validate_ready_task_packages.py", "exit_code": 0, "result": "5 active packages; 44 snapshots; no frozen input updates"}
+  ]
+}

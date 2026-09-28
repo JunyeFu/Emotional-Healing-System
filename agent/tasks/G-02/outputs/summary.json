@@ -1,0 +1,69 @@
+{
+  "task_id": "G-02",
+  "title": "G02 数据治理实现与消费边界审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "G-02已签收DONE，覆盖治理实现与合成技术路径。本轮将隐私工具迁入Agent执行层，新增新目录负测试并完成139项专项及233项Python消费者回归；正式环境六项缺失、资产259条阻断仍开放。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-08-21 +08:00；外部责任迁移2026-09-04 +08:00",
+    "commit": "ea132c8f26db76d1a1f97daebea5e97258d969c4",
+    "method": "见证已有验证并审阅文件；原对象03d7426，不声明本人重跑。后续转DONE不扩大至正式专机与许可清零。"
+  },
+  "sections": [
+    {"heading": "当前结论", "paragraphs": [
+      "当前执行Codex；本轮不追加真实签署，不更改注册状态。G-05承接实际专机、机构期限和资产许可，代码及合成通过不能代替这些资格。"
+    ]},
+    {"heading": "目标与完成标准", "paragraphs": [
+      "AC1：L0至L5分级、最小权限及联系令牌/身份映射/密钥隔离；AC2：四阶段事务去重、暴露边界、并发唯一预约与授权恢复；AC3：未知许可、未登记、漂移和未跟踪资产阻止发布。",
+      "本轮要求迁移执行工具而不丢失隐私覆盖，新证据不覆盖历史原件；依据实际扫描修正当前入口，并核对新教学流程对消费者的影响。"
+    ]},
+    {"heading": "实际交付", "paragraphs": [
+      "verify_repository_privacy.py已从旧治理目录实际迁入agent/tasks/G-02/execution；新增verify.py与verify.ps1统一执行。tests/conftest.py改用新工具位置，无旧路径转发副本。",
+      "新证据固定evidence/runtime，Word由outputs/summary.json生成。共享srp_governance、配置和测试仍保持原模块唯一实现，最终模块迁移另行修复消费者引用。"
+    ]},
+    {"heading": "执行过程与关键决定", "paragraphs": [
+      "读取原真实签收、治理修复与责任迁移，核对手机号E.164、HMAC、SQLite状态机、凭据与备份规则。迁移工具后将新G-02证据目录加入原扫描范围，补充同样不回显原值的负测试。",
+      "只读检查正式环境与资产，不生成凭据、不填写批准编号、不改变正式根目录。README转向新证据，历史138项测试及189/215扫描不改写。"
+    ]},
+    {"heading": "验证与结果", "paragraphs": [
+      "治理专项139项通过，合成16个在用预约与16个既往暴露组合、暴露前释放、完成/退出阻断、并发与认证恢复通过；现有P-01/P-02/X-01消费者233项通过。",
+      "正式环境正确阻断六项配置，Unity扫描233项与259条阻断。仓库隐私门在候选文件暂存后检查Git跟踪集合；本轮未运行Unity、TD或真实设备。注册表71项、分发5包/44快照通过。"
+    ]},
+    {"heading": "偏离与修复闭环", "paragraphs": [
+      "G02-N01：旧脚本散落模块且README命令覆盖旧证据，已实际迁入固定execution并改用新输出。G02-N02：新目录原不受隐私扫描覆盖，已加入扫描根并通过负测试。",
+      "G02-N03：README把旧资产计数当当前结果，已修正为本轮233/259；下游表按既有DONE和G-05外部责任订正。G02-N04：P-01只在核心start登记暴露，与新版核心前教学有缺口，已明确交接，技术接入尚未完成。"
+    ]},
+    {"heading": "目录与文件整理", "paragraphs": [
+      "TASK维护验收与责任，inputs引用实现和历史签收，execution保存工具，evidence区分本轮与历史，outputs保存总结，archive说明保留理由。旧工具文件已移除。",
+      "历史签署、验收和旧evidence保留原字节，不能用本轮计数替换；共享模块和全项目根目录收拢仍待后续，不把七包整理当成全仓迁移完成。"
+    ]},
+    {"heading": "上下游交接", "paragraphs": [
+      "G-01角色表应消费实际G-02的HMAC和隔离规则；P-01先查manifest隐私，P-02仅追加受限L0/L1，X-01仅使用公开不透明决策。Z-01受资产门约束，W-03仅按实际授权与披露范围发布。",
+      "新版分条件教学发生在核心之前，首次研究暴露登记不能仅等到核心start；P-01/U12-11须冻结边界、接入登记，并验证教学后退出仍不可重复参与。本轮只订正消费合同，233项既有测试不证明这个新流程已闭环。",
+      "G-05仍未领取，正式配置、保留期限、资产用途和现场证据由真实责任人落实。下一包P-01核对编排与暴露接口，不替代真实研究或论文比较证据。"
+    ]},
+    {"heading": "审阅与责任签收", "paragraphs": [
+      "原03d7426对象在ea132c8签署，2026-09-04治理修复与外部责任拆分随后转DONE。原签名、复核方式和未完成范围保持不变。",
+      "本轮属于工具迁移、Python复测与当前入口订正，未追加独立Agent审查或真人签收，未关闭正式准入。"
+    ]},
+    {"heading": "收尾与下一包", "paragraphs": [
+      "在codex/task-package-normalization按明确路径提交推送。规范化7包、剩余64包，下一包P-01；共享根目录迁移仍未完成。",
+      "继续动作是检查P-01输入门、暴露与编排边界，先修复Agent权威再生成Word；条件教学候选仍须受控冻结，不能临时绕开正式门。"
+    ]},
+    {"heading": "审阅来源", "paragraphs": [
+      "evidence/verification.json与runtime记录本轮治理门；integration.json记录消费者与治理校验。human/project-review.docx串联七包，以下链接打开当前源、签署与报告。"
+    ]}
+  ],
+  "findings": [
+    {"id": "G02-N01", "status": "FIXED", "description": "隐私工具实际迁入固定执行层，新运行不覆盖历史证据", "source": "agent/tasks/G-02/execution/verify.py"},
+    {"id": "G02-N02", "status": "FIXED", "description": "新G-02证据目录纳入隐私扫描并通过负测试", "source": "agent/tasks/G-02/execution/verify_repository_privacy.py"},
+    {"id": "G02-N03", "status": "FIXED", "description": "当前资产计数与本轮233/259对齐，DONE与外部责任分开", "source": "02-技术研发/07-数据治理/README.md"},
+    {"id": "G02-N04", "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE", "description": "P-01仅在核心start登记暴露，新版条件教学接入与退出阻断由P-01/U12-11完成，当前尚未正式闭环", "source": "02-技术研发/07-数据治理/docs/downstream_contracts.md"}
+  ],
+  "next_task": "P-01",
+  "source_links": [
+    {"label": "打开 G-02 当前执行入口", "path": "agent/tasks/G-02/execution/verify.py"},
+    {"label": "打开原真实第二人签收", "path": "02-技术研发/07-数据治理/G-02_第二人审核报告_已签署.md"},
+    {"label": "打开本轮环境和资产结果", "path": "agent/tasks/G-02/evidence/verification.json"}
+  ]
+}

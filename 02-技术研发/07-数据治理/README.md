@@ -19,6 +19,7 @@
 | Unity资产许可门 | [srp_governance/assets.py](srp_governance/assets.py)、[Unity Governance](../04-Unity视觉/SRP-Weather-Visual/Governance/) |
 | 下游消费规则 | [docs/downstream_contracts.md](docs/downstream_contracts.md) |
 | 命令行 | [g02.py](g02.py) |
+| 当前任务核验与Word | [Agent执行入口](../../agent/tasks/G-02/execution/verify.ps1)、[人类总结](../../human/tasks/G-02/summary.docx) |
 
 固定HMAC凭据只允许首次初始化：目标已存在时`provision`失败关闭，密钥轮换必须另走显式审计流程。Manifest隐私门同时搜索独立值和普通文本中嵌入的手机号、邮箱，错误不回显原值。
 
@@ -53,32 +54,13 @@ from srp_governance import (
 ## 验证命令
 
 ```powershell
-Set-Location 'D:\Agent\03-SRP'
-
-py -3.14 -m pytest '02-技术研发/07-数据治理/tests' -q
-
-py -3.14 '02-技术研发/07-数据治理/g02.py' synthetic-rehearsal `
-  --output '02-技术研发/07-数据治理/evidence/synthetic_rehearsal_report.json'
-
-py -3.14 '02-技术研发/07-数据治理/verify_repository_privacy.py' `
-  --repo-root . `
-  --output '02-技术研发/07-数据治理/evidence/repository_privacy_report.json'
+Set-Location 'D:\Agent\srp'
+py -3.14 'agent/tasks/G-02/execution/verify.py'
 ```
 
-正式环境检查和资产扫描在门未关闭时预期返回退出码`2`，这表示正确阻断，不表示命令故障：
-
-```powershell
-py -3.14 '02-技术研发/07-数据治理/g02.py' check-environment `
-  --repo-root . `
-  --output '02-技术研发/07-数据治理/evidence/formal_environment_report.json'
-
-py -3.14 '02-技术研发/07-数据治理/g02.py' scan-assets `
-  --repo-root . `
-  --unity-root '02-技术研发/04-Unity视觉/SRP-Weather-Visual' `
-  --ledger '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_license_ledger.json' `
-  --baseline '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Governance/asset_inventory.json' `
-  --output '02-技术研发/07-数据治理/evidence/asset_scan_report.json'
-```
+该入口运行专项、合成演练、隐私、正式环境和资产门，新输出固定到`agent/tasks/G-02/evidence/runtime/`。
+正式环境和资产门退出`2`表示正确阻断，汇总必须保留实际结果，不等于准入通过。原evidence为历史证据，不由新入口覆盖。
+仓库隐私工具已迁入Agent层；仅扫描Git跟踪文件，新增候选文件应暂存后再执行发布前检查。
 
 ## 当前门状态
 
@@ -86,7 +68,7 @@ py -3.14 '02-技术研发/07-数据治理/g02.py' scan-assets `
 |---|---|---|
 | 合成跨阶段矩阵 | 32个主动/既往暴露组合、释放重入、完成/退出阻断、并发和密钥认证备份恢复均通过 | 合成技术路径通过 |
 | 正式专机 | 治理根、备份根、密封恢复证据、数据管理员账户、凭据和保留期限均未配置 | 正式录入阻断 |
-| Unity资产 | 2026-09-04复扫189项，产生215个失败关闭项；新增、变更、移除、ignored发布文件及许可缺口仍未闭环 | 正式发布阻断 |
+| Unity资产 | 2026-09-28本轮复扫233项、259条阻断；原189/215保留为2026-09-04历史结果 | 正式发布阻断 |
 | 第二人复核 | 傅钧烨已完成候选级复核并在提交`ea132c8`签署`PASS` | 第二人复核门已关闭；G-02为`DONE`，外部门由G-05继续阻断 |
 
-证据见[evidence/](evidence/)和[G-02_技术验收记录.md](G-02_技术验收记录.md)。
+当前证据见[本轮核验](../../agent/tasks/G-02/evidence/verification.json)，历史证据见[evidence/](evidence/)和[G-02_技术验收记录.md](G-02_技术验收记录.md)。本轮专项139项通过，含新增Agent证据目录负测试；历史签收138项不改写。
