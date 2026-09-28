@@ -1,0 +1,33 @@
+{
+  "task_id": "E-02",
+  "title": "E02 认知预试执行与关闭交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "E-02仍BLOCKED_EXTERNAL、未领取未签收。两旧第8步方案实际归档，当前四层认知预试、单条件/单次体验和修订关闭交接订正；70项合成/交接检查通过，没有真人预试或新Unity回归。",
+  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "本包没有真实活动签收；上游软件或材料签收不等于Level B完成，本轮无新独立Agent或真人签署。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["约5人日项目内工作，依赖Q-02/E-01/U12-05；上游和Level B资格仍未闭环。真实招募、独立作答、访谈、构建复测和签署没有执行。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1按冻结总量/每条件/每轮完成人数及两条件四结构覆盖；AC2关键误解双人编码、原分歧裁定与修订或有据保留闭环；AC3精确关闭构建的真实Unity回归、完整表示检查和签署对应一致。", "五段为范围/材料、演练招募、实际记录、编码修订、复测关闭；负责人、两编码者、Unity修订与研究冻结责任人待实名，TASK附继承中文学习资料。"]},
+    {"heading": "实际交付", "paragraphs": ["TASK与五目录、13项输入来源、当前真人执行SOP和缺口JSON、只读核查及合成结果建立。两旧方案逐字节移入archive，原位置仅当前导航。", "Q-02提纲/两空CSV保持单一权威，题库代码/答案、教学合同及冻结快照不改；本包不复制真人表或第二份计分实现。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["旧三层、双环、固定12人和重复后95%理解门不再执行。注册12至16人、旧F-02总24至32人及当前未冻结之间的冲突明确保留，不擅定样本数或关闭阈值。", "完整路径先前测再揭示/教学，核心无回答，后测后独立作答再追问；形成性教学另标。每人一条件、一次核心体验，新修订轮用新人，不重复核心或展示另一条件作配对。"]},
+    {"heading": "验证与结果", "paragraphs": ["70项专项通过，覆盖当前依赖/活动资格、人数未冻结、时序和报告边界、空表来源、两原件字节及导航；既有步骤测量合成材料和字节检查通过。", "注册71项及分发5包61快照通过，根回归见verification.json日志；这些检查不证明真人覆盖、最终屏幕、真设备活动或关闭构建。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["当前说明修正旧重复理解、三层和人数暗定；技术未呈现/未知实际输入不填零或算答错，帮助不能回填首次正确，不用教学预算补填达标时间。理解/猜测不隐去有效PANAS。", "初测69通过1失败，文字断言“不填零”与正文“不能填零”不匹配，修正测试后70通过；原输出和原因保留，未改变实际研究规则。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["两原件实际归档，旧导航仍可打开；活动消费者未发现脚本或快照引用旧方案，冻结身份不更新。90_既有执行材料旧访谈脚本已属历史，不再复制当前流程。", "真实原件/身份/录像在获批仓库外，仓库空模板不装真人数据；Word从Agent事实生成，业务状态未改，不重绘业务SVG，根目录整体迁移仍待完成。"]},
+    {"heading": "上下游交接", "paragraphs": ["Q-02交材料与提纲，E-01交真实Level A关闭，U12-05及对应资格交实际批准；U/V和教学/测量交同版本呈现。E-02交真实覆盖、独立回答、原始问题/分歧、成对修订和关闭候选。", "B-01/Q-03/E-03继续等待自己的真机、分析与批准；U12-04/U12-11消费时序/成本/缺失及冻结依据，W/A保留功能不足和设计边界，核心主情绪比较独立报告。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["当前领取人、审核人和两编码者未落实；活动批准、量表许可、人数阈值、材料和实际复测仍缺。签收须真实另一人审精确候选，填写本人复跑或见证方式，不预填PASS。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计44/71，剩余27，下一B-01。E-02保持BLOCKED_EXTERNAL，不把70合成检查当真人Level B通过；根目录双层整体迁移继续。"]},
+    {"heading": "审阅来源", "paragraphs": ["实际注册表、Level B资格、Q-02当前说明/提纲/空表、教学/测量权威、E-01/G-05交接、两历史方案和本轮软件结果；无真实招募、设备活动、访谈或新渲染复核。"]}
+  ],
+  "findings": [
+    {"id": "E02-N01", "status": "FIXED_ARCHIVE_AND_CURRENT_RULES", "description": "两旧第8步方案实际归档，三层/重复理解/固定12人不再作当前执行门", "source": "agent/tasks/E-02/outputs/current-execution.md"},
+    {"id": "E02-N02", "status": "FIXED_LITERAL_ASSERTION", "description": "初次文本断言与正文不匹配，修正后复测通过，不改研究语义", "source": "agent/tasks/E-02/evidence/failure-disposition.md"},
+    {"id": "E02-N03", "status": "OPEN_REAL_FREEZE_ACTIVITY_AND_CLOSURE", "description": "人数/阈值与材料冻结、实际批准/角色/记录、真实构建复测和签署未完成", "source": "agent/tasks/E-02/outputs/current-execution.json"}
+  ],
+  "next_task": "B-01",
+  "source_links": [
+    {"label": "真人执行与关闭交接", "path": "agent/tasks/E-02/outputs/current-execution.md"},
+    {"label": "真实活动及冻结缺口", "path": "agent/tasks/E-02/outputs/current-execution.json"},
+    {"label": "软件检查与回归", "path": "agent/tasks/E-02/evidence/verification.json"},
+    {"label": "初次失败与修复", "path": "agent/tasks/E-02/evidence/failure-disposition.md"},
+    {"label": "两旧原件归档", "path": "agent/tasks/E-02/archive/README.md"}
+  ]
+}

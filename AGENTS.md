@@ -38,6 +38,7 @@
 | 看双真机完整链与外部延迟 | `agent/tasks/I-01/outputs/current-integration.md`（同一记录代理、无TD运行及尚未交付的LIVE_E2E） |
 | 看构念专家与独立重建材料 | `agent/tasks/Q-01/outputs/current-level-a.md`（原材料签收、当前专家解释及待真人执行） |
 | 看Level A真实执行 | `agent/tasks/E-01/outputs/current-execution.md`（活动范围、八专家与独立重建、真实结果和修订缺口） |
+| 看Level B真实执行 | `agent/tasks/E-02/outputs/current-execution.md`（人数冲突、独立回答和双人编码、真实修订关闭缺口） |
 | 看认知访谈与可访问预试 | `agent/tasks/Q-02/outputs/current-level-b.md`（人数冲突、单条件路径及待真人执行） |
 | 看技术预试与阈值冻结 | `agent/tasks/Q-03/outputs/current-level-c.md`（48单元非运行预览、盲态及真实工具缺口） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |

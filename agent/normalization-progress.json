@@ -42,10 +42,10 @@
     "X-03",
     "Z-01",
     "G-05",
-    "E-01"
+    "E-01",
+    "E-02"
   ],
   "remaining_packages": [
-    "E-02",
     "B-01",
     "E-03",
     "G-03",
@@ -1202,6 +1202,27 @@
       "status": "OPEN_REAL_ACTIVITY_AND_MATERIAL_FREEZE",
       "description": "批准、15名人员、评分含义冻结、真实结果及签署未完成，CLI报告不自带完整原始来源束",
       "source": "agent/tasks/E-01/outputs/current-execution.md"
+    },
+    {
+      "task_id": "E-02",
+      "id": "E02-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_RULES",
+      "description": "两旧第8步方案实际归档，三层/重复理解/固定12人不再作当前执行门",
+      "source": "agent/tasks/E-02/outputs/current-execution.md"
+    },
+    {
+      "task_id": "E-02",
+      "id": "E02-N02",
+      "status": "FIXED_LITERAL_ASSERTION",
+      "description": "初次文本断言与正文不匹配，修正后复测通过，不改研究语义",
+      "source": "agent/tasks/E-02/evidence/failure-disposition.md"
+    },
+    {
+      "task_id": "E-02",
+      "id": "E02-N03",
+      "status": "OPEN_REAL_FREEZE_ACTIVITY_AND_CLOSURE",
+      "description": "人数/阈值与材料冻结、实际批准/角色/记录、真实构建复测和签署未完成",
+      "source": "agent/tasks/E-02/outputs/current-execution.json"
     }
   ]
 }

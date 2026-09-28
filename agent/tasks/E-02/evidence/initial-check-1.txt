@@ -1,0 +1,16 @@
+................F.....................................................   [100%]
+================================== FAILURES ===================================
+_____ test_current_prose_preserves_observed_failures_without_fake_closure _____
+
+    def test_current_prose_preserves_observed_failures_without_fake_closure():
+        text = (TASK / 'TASK.md').read_text(encoding='utf-8') + (TASK / 'outputs/current-execution.md').read_text(encoding='utf-8')
+        assert not re.search('诊断|治疗|疾病|患者|医疗设备|临床', text)
+        for term in ('新修订轮使用新人', '不填零', '双人', '原分歧', 'null/NOT_MEASURED',
+                     'FORMATIVE_TRAINING_ONLY', '交互状态估计', '不预填PASS或DONE'):
+>           assert term in text
+E           AssertionError: assert '不填零' in '# E-02【研究执行】Level B认知预试执行与关闭\n\n注册BLOCKED_EXTERNAL，依赖Q-02|E-01|U12-05，约5人日项目内工作；负责人、分支及审核人均未落实。本轮规范化与合成核查不作为真人活动或签收。\...\n\n## 本轮整理\n\n两旧第8步方案已实际移入archive，原位置为当前导航。三层、双环、固定12人及重复理解门不再作为当前执行规则。Q-02模板/提纲、原始签署与领取快照不改；本轮只核查软件/归档，根目录整体迁移仍继续。\n'
+
+agent\tasks\E-02\execution\test_execution_handoff.py:116: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/E-02/execution/test_execution_handoff.py::test_current_prose_preserves_observed_failures_without_fake_closure
+1 failed, 69 passed in 0.41s

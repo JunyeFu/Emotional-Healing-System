@@ -1,0 +1,1 @@
+PASS: deterministic synthetic materials and byte hashes
