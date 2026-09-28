@@ -45,4 +45,6 @@
 
 | 24 | U-04 剩余天气A适配器 | [总结](tasks/U-04/summary.docx) | 明确A/B/C未绑定，不默认storm；旧框架及Editor工具原文归档，34项设计与105项Unity回归通过，新天气仍WAIT_DEP |
 
+| 25 | U-05 剩余天气B适配器 | [总结](tasks/U-05/summary.docx) | 不默认heat；旧Heat/Snow无脚本绑定，两个旧修改菜单及meta归档，38项专项及105项Unity回归通过；预算规格与真实天气仍待落实 |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

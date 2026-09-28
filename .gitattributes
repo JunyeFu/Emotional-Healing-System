@@ -34,3 +34,7 @@ agent/tasks/T-01/evidence/runtime/touchdesigner/screenshots/*.png -text
 .artifacts-local/V-04/H3/fixed-combined-review-candidate-v2/*.mp4 filter=lfs diff=lfs merge=lfs -text
 .artifacts-local/V-04/full-duration-animatic-candidate-v1/*.mp4 filter=lfs diff=lfs merge=lfs -text
 agent/tasks/U-04/evidence/editmode-unity.log -text whitespace=-blank-at-eol
+agent/tasks/U-05/archive/CleanAndRebuildScenes.cs -text
+agent/tasks/U-05/archive/CleanAndRebuildScenes.cs.meta -text
+agent/tasks/U-05/archive/CleanupWeatherDuplicates.cs -text
+agent/tasks/U-05/archive/CleanupWeatherDuplicates.cs.meta -text

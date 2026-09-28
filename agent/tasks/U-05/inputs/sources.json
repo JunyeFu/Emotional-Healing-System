@@ -1,0 +1,25 @@
+{
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/04_可领取树型任务包_v2.0.md",
+    "agent/tasks/V-02/outputs/current-scenes.json",
+    "agent/tasks/V-02/outputs/current-scenes.md",
+    "agent/tasks/V-03/outputs/current-mapping.json",
+    "agent/tasks/V-04/outputs/current-preview.json",
+    "agent/tasks/U-03/outputs/current-slice.json",
+    "agent/tasks/U-04/outputs/current-adapter.json",
+    "agent/tasks/U-04/archive/README.md",
+    "agent/tasks/U-01/outputs/current-control-contract.md",
+    "agent/tasks/U-02/outputs/current-adapter-contract.md",
+    "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
+    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/HeatScene.unity",
+    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/SnowScene.unity",
+    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Runtime/U01RuntimeBridge.cs.meta",
+    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs.meta",
+    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
+    "agent/tasks/U-05/archive/CleanAndRebuildScenes.cs",
+    "agent/tasks/U-05/archive/CleanAndRebuildScenes.cs.meta",
+    "agent/tasks/U-05/archive/CleanupWeatherDuplicates.cs",
+    "agent/tasks/U-05/archive/CleanupWeatherDuplicates.cs.meta"
+  ]
+}

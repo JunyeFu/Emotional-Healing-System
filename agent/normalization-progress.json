@@ -23,10 +23,10 @@
     "S-02",
     "V-05",
     "U-03",
-    "U-04"
+    "U-04",
+    "U-05"
   ],
   "remaining_packages": [
-    "U-05",
     "U-06",
     "U-07",
     "U-08",
@@ -726,6 +726,41 @@
       "status": "OPEN_TEMPLATE_PERFORMANCE_AND_OWNER",
       "description": "U-03模板、真实负责人、Play和Profiler以及U-08预算仍待取得，WAIT_DEP不改变",
       "source": "agent/tasks/U-04/TASK.md"
+    },
+    {
+      "task_id": "U-05",
+      "id": "U05-N01",
+      "status": "OPEN_WEATHER_B_ALLOCATION",
+      "description": "B未明确分配，不按列表第二项默认heat；模板仍待U-03验收",
+      "source": "agent/tasks/U-05/outputs/current-adapter.json"
+    },
+    {
+      "task_id": "U-05",
+      "id": "U05-N02",
+      "status": "FIXED_OBSOLETE_SCENE_MUTATION_MENUS",
+      "description": "两个无引用旧Editor场景修改菜单及meta原文归档，逐字节比较与共享Unity回归通过",
+      "source": "agent/tasks/U-05/archive/README.md"
+    },
+    {
+      "task_id": "U-05",
+      "id": "U05-N03",
+      "status": "VERIFIED_SHARED_REGRESSION_NOT_WEATHER",
+      "description": "38项专项与105项EditMode通过；旧Heat/Snow无脚本绑定，不等于天气B适配器验收",
+      "source": "agent/tasks/U-05/evidence/verification.json"
+    },
+    {
+      "task_id": "U-05",
+      "id": "U05-N04",
+      "status": "OPEN_BUDGET_SPEC_BEFORE_INTEGRATION",
+      "description": "U-05 AC3消费U-08预算，而U-08整体依赖U-05，需先落实预算规格，不伪造性能通过",
+      "source": "agent/tasks/U-05/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U-05",
+      "id": "U05-N05",
+      "status": "OPEN_OWNER_PLAY_AND_PROFILER",
+      "description": "实际负责人、Play、Profiler、声音和真人签收仍缺，业务状态不变",
+      "source": "agent/tasks/U-05/TASK.md"
     }
   ]
 }
