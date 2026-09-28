@@ -1,0 +1,126 @@
+{
+  "task_id": "D-01",
+  "title": "D01 真实心电采集任务现状审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "D-01仍WAIT_DEP_EXTERNAL、未领取。旧Polar骨架及两份方案已实际归档；当前交接订正ECG通道、独立呼吸带与原始包记录。30项软件检查通过，不是H10真机或30分钟验收。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "没有真实设备验收、独立Agent结论或第二人签署；Codex本轮完成规范化，不代填责任人或真机PASS。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "原任务约4人日、前置P-02已完成；等待设备与目标机兼容。P-HARDWARE是岗位角色，不是实际领取人，注册表没有签署。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1真机连续30分钟；AC2 ECG/RR时间戳和序号完整；AC3断流重连，正式模式不回退Mock。交付适配器、配置、原始记录、状态事件及丢包报告。",
+        "技能为BLE、ECG/RR解码、时间戳和重连；国内资料沿用L-BLE/L-PY，官方协议来源已核验并记录。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "旧ble_device骨架及两份设备方案迁入archive并删除旧路径；新增固定目录、当前通道与P-02交接、官方来源、六项当前检查及Word事实源。",
+        "DeviceManager/Driver、RingBuffer和FrameClock仍是共享历史模块；PolarH10Source曾为NotImplementedError，当前没有真实驱动或30分钟原件。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "先核对注册表、存储接口和旧代码，再核验Polar官方说明与源码。退役旧错误计划，不在无设备证据下生成假采集结果或添加新SDK。",
+        "旧HR特征不是ECG；PMD通道与TYPE_0三字节微伏分别说明，EDR不能替代D-02真实呼吸带。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "原24项采集模块测试通过；整理后24项加六项当前检查，共30项通过。检查当前状态、通道职责、RawPacket字段、归档和实际存储字段约束。",
+        "未进行BLE扫描、连接、真实连续采集或重连。官方能力不证明当前Windows机、固件及软件组合可用。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧方案以10Hz聚合与CSV为正式链，误写ECG通道及int16，并允许EDR主呼吸；当前交接从真实通知保留字节至P-02，遥测交P-01统一发布。",
+        "软件复测不能关闭UP-06/M06真实兼容风险；适配器、设备及30分钟报告仍待实际责任人交付。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "inputs/execution/outputs/evidence/archive已分开。三件旧材料有据归档，共享代码不按任务复制，后续整体迁至agent/modules时修复消费者。",
+        "原学习目录与注册表继续作来源；旧技术目录新增README转入当前口径，最终根目录迁移尚未完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "D-01原始ECG/RR包由P-02追加保存，D-02提供真实呼吸主通道；S-01做同步、SQI与时钟域，S-02做交互状态估计。通知原件先于降采样保存。",
+        "设备时间不能冒充主机时间，未知为null，原因另记L1；有payload的RawPacket不能填缺包原因，来源用polar_h10_ecg/rr。I-01须双真机800秒全链，G-05现场准入分别落实。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "P-HARDWARE须由真实成员领取并冻结输入，独立复核和真实第二人签收发生在设备交付后。本轮审阅只记录现状，不更改WAIT_DEP_EXTERNAL。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化18/71包，剩余53；下一D-02。明确路径提交并推送工作分支，任务状态未变，根目录双层迁移继续。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前事实由Agent层生成Word，官方来源和取证边界见当前说明；真实采集未完成的项目在Word中明确列出。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "D01-N01",
+      "status": "FIXED_CURRENT_HANDOFF",
+      "description": "旧HR特征/ECG、EDR及聚合记录口径已在当前交接订正，骨架有据归档",
+      "source": "agent/tasks/D-01/outputs/current-acquisition.md"
+    },
+    {
+      "id": "D01-N02",
+      "status": "OPEN_REAL_HARDWARE",
+      "description": "缺实际驱动、Windows兼容与30分钟真机记录，不能关闭UP-06/M06",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
+    },
+    {
+      "id": "D01-N03",
+      "status": "OPEN_REAL_OWNER",
+      "description": "岗位P-HARDWARE未落实实际领取人，领取与输入冻结须由治理流程完成",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+    }
+  ],
+  "next_task": "D-02",
+  "source_links": [
+    {
+      "label": "当前真实采集交接",
+      "path": "agent/tasks/D-01/outputs/current-acquisition.md"
+    },
+    {
+      "label": "原始包公开接口",
+      "path": "02-技术研发/srp_session_store/models.py"
+    },
+    {
+      "label": "规范化验证记录",
+      "path": "agent/tasks/D-01/evidence/verification.json"
+    },
+    {
+      "label": "国内技能资料",
+      "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    }
+  ]
+}

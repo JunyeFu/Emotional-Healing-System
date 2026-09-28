@@ -1,0 +1,33 @@
+{
+  "task_id": "D-01",
+  "status": "WAIT_DEP_EXTERNAL",
+  "claimant": null,
+  "responsibility_role": "P-HARDWARE",
+  "formal_driver_implemented": false,
+  "real_hardware_verified": false,
+  "continuous_capture_evidence_seconds": null,
+  "required_continuous_capture_seconds": 1800,
+  "ecg": {
+    "channel": "polar_pmd",
+    "service_uuid": "fb005c80-02e7-f387-1cad-8acd2d8df0c8",
+    "control_uuid": "fb005c81-02e7-f387-1cad-8acd2d8df0c8",
+    "data_uuid": "fb005c82-02e7-f387-1cad-8acd2d8df0c8",
+    "nominal_sample_rate_hz": 130,
+    "type_0_sample_bytes": 3,
+    "unit": "microvolt"
+  },
+  "heart_rate_rr": {"channel": "standard_heart_rate_service", "raw_ecg": false},
+  "primary_respiration_source": "D-02_REAL_RESPIRATION_BELT_NOT_EDR",
+  "formal_mock_fallback_allowed": false,
+  "raw_notification_preserved_before_aggregation": true,
+  "raw_source_ids": ["polar_h10_ecg", "polar_h10_rr"],
+  "formal_source_policy": "real",
+  "raw_packet_fields": [
+    "source_id", "source_policy", "packet_seq", "device_time_ns",
+    "host_received_monotonic_ns", "clock_domain_id", "sample_count", "payload", "missing_reason_code"
+  ],
+  "unknown_time_policy": "null_with_l1_clock_reason_not_raw_packet_missing_reason",
+  "device_time_is_host_time": false,
+  "downstream": ["P-02", "D-02", "S-01", "S-02", "I-01"],
+  "acceptance_pending": ["target_windows_hardware_compatibility", "real_ecg_and_rr_notifications", "raw_packet_adapter", "30_minute_record", "reconnect_gaps", "independent_and_human_review"]
+}

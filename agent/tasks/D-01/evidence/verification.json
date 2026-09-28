@@ -1,0 +1,18 @@
+{
+  "task_id": "D-01",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\02-技术研发\\01-数据采集\\tests",
+        "D:\\Agent\\srp\\agent\\tasks\\D-01\\execution\\test_current.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "normalization and legacy shared software tests only; no BLE scan or real hardware acceptance",
+  "real_device_acceptance": "NOT_RUN"
+}

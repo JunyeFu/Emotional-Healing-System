@@ -16,10 +16,10 @@
     "V-01",
     "V-02",
     "V-03",
-    "V-04"
+    "V-04",
+    "D-01"
   ],
   "remaining_packages": [
-    "D-01",
     "D-02",
     "S-01",
     "S-02",
@@ -544,6 +544,27 @@
       "status": "HANDOFF_OPEN",
       "description": "原800秒核心预演不含新教学/测量旅程；交V05及U12-06/X01",
       "source": "agent/tasks/V-04/outputs/current-preview.md"
+    },
+    {
+      "task_id": "D-01",
+      "id": "D01-N01",
+      "status": "FIXED_CURRENT_HANDOFF",
+      "description": "旧HR特征/ECG、EDR及聚合记录口径已在当前交接订正，骨架有据归档",
+      "source": "agent/tasks/D-01/outputs/current-acquisition.md"
+    },
+    {
+      "task_id": "D-01",
+      "id": "D01-N02",
+      "status": "OPEN_REAL_HARDWARE",
+      "description": "缺实际驱动、Windows兼容与30分钟真机记录，不能关闭UP-06/M06",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
+    },
+    {
+      "task_id": "D-01",
+      "id": "D01-N03",
+      "status": "OPEN_REAL_OWNER",
+      "description": "岗位P-HARDWARE未落实实际领取人，领取与输入冻结须由治理流程完成",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     }
   ]
 }

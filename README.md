@@ -1,6 +1,6 @@
 # SRP · 实验体验与论文证据系统
 
-任务包双层整理入口：[人类审阅与Word总结](human/README.md) · [Agent执行层](agent/README.md)。F-01至F-05、G-01/G-02、P-01/P-02、U-01/U-02、T-01、R-01及V-01至V-04已完成本轮整理，共17/71包；下一包D-01，整体目录迁移仍在逐包推进。Unity当前使用入口见[可靠控制说明](agent/tasks/U-01/outputs/current-control-contract.md)与[四层适配说明](agent/tasks/U-02/outputs/current-adapter-contract.md)，TD当前入口见[只读遥测交接](agent/tasks/T-01/outputs/current-td-contract.md)。当前四层设计使用[表示方案适用说明](agent/tasks/R-01/outputs/current-representation.md)。当前完整旅程见[体验与时序说明](agent/tasks/V-01/outputs/current-experience.md)，天气设计见[当前场景交接](agent/tasks/V-02/outputs/current-scenes.md)，视听和资产见[当前40行映射交接](agent/tasks/V-03/outputs/current-mapping.md)。当前样片见[有效预演与旅程边界](agent/tasks/V-04/outputs/current-preview.md)。
+任务包双层整理入口：[人类审阅与Word总结](human/README.md) · [Agent执行层](agent/README.md)。F-01至F-05、G-01/G-02、P-01/P-02、U-01/U-02、T-01、R-01、V-01至V-04及D-01已完成本轮整理，共18/71包；下一包D-02，整体目录迁移仍在逐包推进。Unity当前使用入口见[可靠控制说明](agent/tasks/U-01/outputs/current-control-contract.md)与[四层适配说明](agent/tasks/U-02/outputs/current-adapter-contract.md)，TD当前入口见[只读遥测交接](agent/tasks/T-01/outputs/current-td-contract.md)。当前四层设计使用[表示方案适用说明](agent/tasks/R-01/outputs/current-representation.md)。当前完整旅程见[体验与时序说明](agent/tasks/V-01/outputs/current-experience.md)，天气设计见[当前场景交接](agent/tasks/V-02/outputs/current-scenes.md)，视听和资产见[当前40行映射交接](agent/tasks/V-03/outputs/current-mapping.md)。当前样片见[有效预演与旅程边界](agent/tasks/V-04/outputs/current-preview.md)。设备现状见[真实采集交接](agent/tasks/D-01/outputs/current-acquisition.md)。
 
 > 四天气场景 · 两种呼吸提示方案 · 真实设备输入 · 可追溯研究证据
 
