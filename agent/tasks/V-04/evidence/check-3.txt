@@ -1,0 +1,1 @@
+PASS: V-04 storm-candidate-v2 machine gate; 12s four-phase dual-condition media, stable holds, divergent actual, shared fixed camera, environment and audio verified; human review pending

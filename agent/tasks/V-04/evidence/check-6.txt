@@ -1,0 +1,1 @@
+PASS: V-04 corridor-candidate-v1 machine gate; 12s 30/40/30 transition, exact condition parity, no cue layers, neutral corridor, no next-baseline leak and shared audio verified

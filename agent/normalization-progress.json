@@ -15,10 +15,10 @@
     "R-01",
     "V-01",
     "V-02",
-    "V-03"
+    "V-03",
+    "V-04"
   ],
   "remaining_packages": [
-    "V-04",
     "D-01",
     "D-02",
     "S-01",
@@ -523,6 +523,27 @@
       "status": "OPEN_DOWNSTREAM_ASSET_INSTANCES",
       "description": "旧21设计项不替代32素材逐实例许可映射，G-02/U-08负责完成",
       "source": "agent/tasks/V-03/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "V-04",
+      "id": "V04-N01",
+      "status": "FIXED",
+      "description": "迁移后的工具绑定与报告隔离，原JSON不变",
+      "source": "agent/tasks/V-04/execution/verify_historical.py"
+    },
+    {
+      "task_id": "V-04",
+      "id": "V04-N02",
+      "status": "FIXED",
+      "description": "早期禁止Git跟踪规则与已签收LFS媒体冲突，改真实内容核验",
+      "source": "agent/tasks/V-04/execution/verify_historical.py"
+    },
+    {
+      "task_id": "V-04",
+      "id": "V04-N03",
+      "status": "HANDOFF_OPEN",
+      "description": "原800秒核心预演不含新教学/测量旅程；交V05及U12-06/X01",
+      "source": "agent/tasks/V-04/outputs/current-preview.md"
     }
   ]
 }

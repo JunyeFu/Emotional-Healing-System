@@ -226,8 +226,10 @@ def main() -> None:
     )
     validate_geometry(render["cue_geometry_metrics"], config["machine_gates"])
     require(manifest["asset_status"]["formal_use_allowed"] is False, "H2 v11 cannot be formal-use enabled")
-    require(bool(git_lines("check-ignore", "--", config["outputs"]["artifact_root"])), "H2 v11 media root must be ignored")
-    require(not git_lines("ls-files", "--", config["outputs"]["artifact_root"]), "H2 v11 media must not be tracked")
+    from verify_historical import validate_media_tracking
+    tracked_count = validate_media_tracking(config['outputs']['artifact_root'])
+    require(tracked_count > 0 or bool(git_lines('check-ignore', '--', config['outputs']['artifact_root'])),
+            'H2 v11 must be versioned LFS media or ignored local review input')
     print(
         "PASS: V-04 H2 candidate-v11 machine gate; fixed camera, media, color envelope, water clipping, "
         "three-step geometry, actual-step fidelity, grayscale cues and condition parity verified; "

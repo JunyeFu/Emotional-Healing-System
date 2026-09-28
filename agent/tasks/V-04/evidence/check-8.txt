@@ -1,0 +1,1 @@
+PASS: v04-full-duration-animatic-candidate-v1; 800s audio+silent; 24 nodes; pixel checks

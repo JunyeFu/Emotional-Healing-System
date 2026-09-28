@@ -15,6 +15,7 @@ REPO = next(parent for parent in HERE.parents if (parent / ".git").exists())
 CONFIG = HERE / "V-04_完整时长Animatic配置_v1.0.json"
 MANIFEST = HERE / "V-04_完整时长Animatic候选清单_v1.0.json"
 REPORT = HERE / "V-04_完整时长Animatic深度机器验收记录_v1.0.json"
+LOCK_PATH = HERE / "V-04_toolchain-lock_v1.0.json"
 
 
 def require(condition: bool, message: str) -> None:
@@ -90,7 +91,7 @@ def best_translation(first: np.ndarray, second: np.ndarray) -> tuple[int, int, f
 def main() -> None:
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    lock = json.loads((HERE / "V-04_toolchain-lock_v1.0.json").read_text(encoding="utf-8"))
+    lock = json.loads(LOCK_PATH.read_text(encoding="utf-8"))
     ffmpeg = Path(lock["ffmpeg"]["ffmpeg_executable"])
     ffprobe = Path(lock["ffmpeg"]["ffprobe_executable"])
     artifact_root = REPO / config["outputs"]["artifact_root"]

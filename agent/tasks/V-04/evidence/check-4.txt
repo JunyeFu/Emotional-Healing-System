@@ -1,0 +1,1 @@
+PASS: V-04 heat-candidate-v2 machine gate; 10s 4-6 dual-condition media, longer exhale path, divergent actual, shared fixed camera, environment and audio verified; human review pending

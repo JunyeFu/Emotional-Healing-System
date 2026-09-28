@@ -104,8 +104,9 @@ def main() -> None:
 
     ignored = git_lines("check-ignore", "--", str(SOURCE.relative_to(REPO)).replace("\\", "/"))
     require(bool(ignored), "candidate source directory must remain ignored by Git")
-    tracked_local = git_lines("ls-files", "--", ".artifacts-local", ".tools")
-    require(not tracked_local, "local source assets or tools must not be tracked")
+    from verify_historical import validate_media_tracking
+    validate_media_tracking('.artifacts-local/V-04')
+    require(not git_lines('ls-files', '--', '.tools'), 'development tools must remain local')
     local_files = [path for path in (REPO / ".artifacts-local" / "V-04" / "H1").rglob("*") if path.is_file()]
     require(
         all(path.suffix.lower() == ".png" for path in local_files),
