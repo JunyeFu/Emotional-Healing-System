@@ -2,10 +2,10 @@
   "completed_packages": [
     "F-01",
     "F-02",
-    "F-03"
+    "F-03",
+    "F-04"
   ],
   "remaining_packages": [
-    "F-04",
     "F-05",
     "G-01",
     "G-02",
@@ -138,6 +138,34 @@
       "status": "OPEN_DOWNSTREAM_ASSET_GATE",
       "description": "当前同次资产报告为233项与259条阻断；对应资产、许可和发布任务需处理，不由本包放行",
       "source": "agent/tasks/F-03/evidence/runtime/asset_blocking_report.json"
+    },
+    {
+      "task_id": "F-04",
+      "id": "F04-N01",
+      "status": "FIXED",
+      "description": "TD执行脚本已迁入Agent层，新制品与新证据不覆盖历史签收原件",
+      "source": "agent/tasks/F-04/execution/README.md"
+    },
+    {
+      "task_id": "F-04",
+      "id": "F04-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前fixture清单明确原始字节哈希，历史Git/LF口径不改写",
+      "source": "agent/tasks/F-04/evidence/host/host_build_manifest.json"
+    },
+    {
+      "task_id": "F-04",
+      "id": "F04-N03",
+      "status": "FIXED",
+      "description": "已签收静态基线与壳内未启用能力不再表述为项目任务未完成",
+      "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/README.md"
+    },
+    {
+      "task_id": "F-04",
+      "id": "F04-N04",
+      "status": "OPEN_DOWNSTREAM_VISUAL_REVIEW",
+      "description": "历史呼吸页说明覆盖曲线，需在T-01检查当前布局；本轮主机门不关闭画面可读性问题",
+      "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
     }
   ]
 }

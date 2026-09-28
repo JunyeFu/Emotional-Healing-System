@@ -7,10 +7,10 @@ import json
 from pathlib import Path
 
 
-BASE_DIR = Path(__file__).resolve().parent
+TASK_DIR = Path(__file__).resolve().parents[1]
 ROOT_PATH = "/project1/F04_ReadonlyConsole"
-REPORT_PATH = BASE_DIR / "evidence" / "touchdesigner" / "reopen_report.json"
-TOE_PATH = BASE_DIR / "F04_ReadonlyConsole.toe"
+REPORT_PATH = TASK_DIR / "evidence" / "touchdesigner" / "reopen_report.json"
+TOE_PATH = TASK_DIR / "outputs" / "touchdesigner" / "F04_ReadonlyConsole.toe"
 PAGE_IDS = (
     "session_version", "device_connection", "respiration_waveform",
     "ecg_rr_quality", "phase_comparison", "cycle_result",
@@ -168,6 +168,7 @@ def verify():
         "toe_sha256": sha256(TOE_PATH.read_bytes()).hexdigest().upper(),
         "pass": all(checks.values()),
     }
+    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     if not report["pass"]:
         raise RuntimeError("F04_REOPEN_FAIL {}".format(checks))

@@ -9,7 +9,9 @@ from pathlib import Path
 import sys
 
 
-BASE_DIR = Path(__file__).resolve().parent
+TASK_DIR = Path(__file__).resolve().parents[1]
+REPO_DIR = TASK_DIR.parents[2]
+BASE_DIR = REPO_DIR / "02-技术研发/03-TouchDesigner/f04_readonly_console"
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
@@ -17,11 +19,11 @@ from f04_console import BANNER, PAGE_DEFINITIONS, SCENARIO_IDS, StaticFixtureAda
 
 
 FIXTURE_PATH = BASE_DIR / "fixtures" / "f04-static-display-fixture-v1.json"
-HOST_EVIDENCE = BASE_DIR / "evidence" / "host"
-TD_EVIDENCE = BASE_DIR / "evidence" / "touchdesigner"
+HOST_EVIDENCE = TASK_DIR / "evidence" / "host"
+TD_EVIDENCE = TASK_DIR / "evidence" / "touchdesigner"
 SCREENSHOT_DIR = TD_EVIDENCE / "screenshots"
-TOE_PATH = BASE_DIR / "F04_ReadonlyConsole.toe"
-TOX_PATH = BASE_DIR / "F04_ReadonlyConsole.tox"
+TOE_PATH = TASK_DIR / "outputs" / "touchdesigner" / "F04_ReadonlyConsole.toe"
+TOX_PATH = TOE_PATH.with_suffix(".tox")
 ROOT_PATH = "/project1/F04_ReadonlyConsole"
 PAGE_WIDTH = 1280
 PAGE_HEIGHT = 480
@@ -638,6 +640,7 @@ def build():
         "screenshot_sha256": {}, "screenshot_state": "PENDING_POST_COOK", "node_count": len(inventory), "udp_5005_active": bool(udp.par.active.eval()),
         "node_plan_schema_version": node_plan["plan_schema_version"], "evidence_boundary": "DEV_REPLAY_ONLY_NOT_LIVE",
     })
+    TOE_PATH.parent.mkdir(parents=True, exist_ok=True)
     root.save(str(TOX_PATH))
     saved = project.save(str(TOE_PATH))
     if not saved:

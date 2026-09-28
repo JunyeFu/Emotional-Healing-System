@@ -177,6 +177,11 @@ def test_source_tree_contains_no_forbidden_capability_tokens():
         if path.is_file() and path.suffix.lower() in {".py", ".json", ".md"}
         and path.name != Path(__file__).name
     )
+    execution = ROOT.parents[2] / "agent/tasks/F-04/execution"
+    source_text += "\n" + "\n".join(
+        path.read_text(encoding="utf-8").lower()
+        for path in execution.glob("*.py")
+    )
     assert not [token for token in forbidden if token in source_text]
 
 
@@ -279,6 +284,7 @@ def test_host_artifacts_are_deterministic_and_include_permissions_and_hashes(tmp
     second = write_host_artifacts(tmp_path / "second", FIXTURE)
     assert first["artifact_hashes"] == second["artifact_hashes"]
     assert first["fixture_sha256"] == second["fixture_sha256"]
+    assert first["fixture_sha256_policy"] == "raw_bytes"
     assert first["page_count"] == 10
     assert first["page_scenario_combinations"] == 50
     assert first["touchdesigner_required_build"] == "2025.32820"
@@ -292,7 +298,8 @@ def test_host_artifacts_are_deterministic_and_include_permissions_and_hashes(tmp
 
 
 def test_touchdesigner_builder_has_exact_root_guard_and_runtime_evidence_steps():
-    source = (ROOT / "build_f04_touchdesigner.py").read_text(encoding="utf-8")
+    execution = ROOT.parents[2] / "agent/tasks/F-04/execution"
+    source = (execution / "build_f04_touchdesigner.py").read_text(encoding="utf-8")
     assert "op('/project1/F04_ReadonlyConsole')" in source
     assert "existing.destroy()" in source
     assert "udp.par.active = False" in source
@@ -309,3 +316,8 @@ def test_touchdesigner_builder_has_exact_root_guard_and_runtime_evidence_steps()
     assert "selectCHOP" in source
     assert "mathCHOP" in source
     assert "opviewerTOP" in source
+    assert 'TASK_DIR / "outputs" / "touchdesigner"' in source
+    assert 'TASK_DIR / "evidence" / "touchdesigner"' in source
+    reopen = (execution / "verify_f04_touchdesigner_reopen.py").read_text(encoding="utf-8")
+    assert 'TASK_DIR / "outputs" / "touchdesigner"' in reopen
+    assert 'TASK_DIR / "evidence" / "touchdesigner"' in reopen

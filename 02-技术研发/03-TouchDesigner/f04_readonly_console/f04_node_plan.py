@@ -264,6 +264,7 @@ def write_host_artifacts(output_dir: str | Path, fixture_path: str | Path) -> di
         "touchdesigner_required_build": TD_BUILD,
         "fixture_schema_version": fixture["fixture_schema_version"],
         "fixture_sha256": sha256(fixture_bytes).hexdigest().upper(),
+        "fixture_sha256_policy": "raw_bytes",
         "page_count": len(PAGE_DEFINITIONS),
         "scenario_count": len(fixture["scenarios"]),
         "page_scenario_combinations": len(PAGE_DEFINITIONS) * len(fixture["scenarios"]),
@@ -272,12 +273,3 @@ def write_host_artifacts(output_dir: str | Path, fixture_path: str | Path) -> di
     }
     _write_json(output / "host_build_manifest.json", manifest)
     return manifest
-
-
-if __name__ == "__main__":
-    base = Path(__file__).resolve().parent
-    written = write_host_artifacts(
-        base / "evidence" / "host",
-        base / "fixtures" / "f04-static-display-fixture-v1.json",
-    )
-    print(json.dumps(written, ensure_ascii=False, indent=2))

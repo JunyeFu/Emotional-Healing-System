@@ -9,5 +9,6 @@
 | 1 | F-01 合同与协议 | [总结](tasks/F-01/summary.docx) | 已补齐执行层与本轮复测，Word已完成页面审阅 |
 | 2 | F-02 构念与测量 | [总结](tasks/F-02/summary.docx) | 当前适用入口已与v1.2对齐；模型候选审查与真实签收分开 |
 | 3 | F-03 Unity工程基线 | [总结](tasks/F-03/summary.docx) | 执行工具已迁入Agent层，完整Unity复测通过；正式资产门仍阻断 |
+| 4 | F-04 TD只读操作台 | [总结](tasks/F-04/summary.docx) | 执行脚本与新旧制品隔离；主机38项回归及历史制品身份通过，当前未重跑TD |
 
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

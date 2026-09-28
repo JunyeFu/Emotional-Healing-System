@@ -1,6 +1,6 @@
 # F-04 模块化图形化只读操作台
 
-本目录是 F-04 的 TouchDesigner 2025.32820 升级候选。它使用本地静态
+本目录保留 F-04 已签收的 TouchDesigner 2025.32820 静态基线。它使用本地静态
 fixture 演示 10 个页面与 5 个确定性场景，不是正式设备消费者，也不产生
 运行控制。所有页面持续显示 `READ ONLY / DEV-REPLAY / NOT LIVE`。
 
@@ -13,6 +13,7 @@ fixture 演示 10 个页面与 5 个确定性场景，不是正式设备消费�
   本地显示，不得进入正式线格式。
 - UDP 5005 仅保留停用的 `T-01 NOT ACTIVE` 占位。人工标记与中止仅显示
   `enabled=false / T-02 NOT ACTIVE`，不存在发送回调。
+- 上述标识仅描述F-04壳内未启用的能力，不表示项目T-01未完成。
 
 ## 图形结构
 
@@ -28,17 +29,13 @@ fixture 演示 10 个页面与 5 个确定性场景，不是正式设备消费�
 从仓库根目录运行：
 
 ```text
-py -3.14 -m pytest 02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py -q
-py -3.14 02-技术研发/03-TouchDesigner/f04_readonly_console/f04_node_plan.py
+py -3.14 agent/tasks/F-04/execution/verify_host.py
 ```
 
-在 TouchDesigner 2025.32820 中执行 `build_f04_touchdesigner.py`。构建器只替换
-`/project1/F04_ReadonlyConsole`，保存正式 `.tox/.toe`，并在工程完成 cook 后
-生成 10 张 GOOD 页面截图和 4 张其他场景差异截图。重新打开正式 `.toe` 后执行：
-
-```text
-exec(open(r'<当前仓库根目录>\02-技术研发\03-TouchDesigner\f04_readonly_console\verify_f04_touchdesigner_reopen.py', encoding='utf-8').read())
-```
+TD执行脚本已迁入 [F-04执行层](../../../agent/tasks/F-04/execution/README.md)。
+新候选保存在任务outputs，新主机/TD证据保存在任务evidence；不覆盖本目录的历史签收制品。
+当前主机清单的 `fixture_sha256_policy=raw_bytes` 表明哈希使用原始字节，
+历史签收里的Git/LF规范化哈希保持原有含义，不直接与CRLF字节哈希混比。
 
 机器验收结果记录于 `F-04_技术验收记录.md`。首轮独立总监审计与整改映射
 记录于 `F-04_团队总监首轮审计整改记录.md`。用户授权的独立团队总监已在

@@ -4,6 +4,7 @@
 03-测试与实验/evidence/F-05/** text eol=lf
 agent/tasks/F-03/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 agent/tasks/F-03/evidence/runtime/asset_blocking_report.json -text
+agent/tasks/F-04/evidence/host/*.json text eol=lf
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.asset text eol=lf
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.json text eol=lf
 02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.meta text eol=lf
