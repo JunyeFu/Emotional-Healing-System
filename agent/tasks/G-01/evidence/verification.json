@@ -1,6 +1,6 @@
 {
   "task_id": "G-01",
-  "review_date": "2026-09-28",
+  "review_date": "2026-09-29",
   "scope": "Material/current-use alignment only; no new human signature or participant evidence.",
   "checks": [
     {
@@ -17,6 +17,11 @@
       "command": "historical originals",
       "exit_code": 0,
       "result": "Historical material and signed report bytes unchanged from HEAD"
+    },
+    {
+      "command": "archived historical material 11",
+      "exit_code": 0,
+      "result": "Material 11 is physically archived with original bytes; current step-seven file is navigation only"
     },
     {
       "command": "registered scope",
@@ -71,7 +76,7 @@
     {
       "command": "dispatch snapshots",
       "exit_code": 0,
-      "result": "PASS: dispatch packages=5; snapshots=44; tasks=A-03,T-02,U12-03,U12-06,V-05"
+      "result": "PASS: dispatch packages=5; snapshots=61; tasks=A-03,T-02,U12-03,U12-06,V-05"
     }
   ]
 }

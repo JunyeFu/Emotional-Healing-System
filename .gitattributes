@@ -68,3 +68,4 @@ agent/tasks/Z-01/archive/team-tools-before-z01.md -text whitespace=cr-at-eol
 agent/tasks/Z-01/evidence/initial-test-field-failure.txt -text whitespace=-blank-at-eol
 agent/tasks/G-05/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/G-05/archive/legacy-package/* -text whitespace=cr-at-eol
+agent/tasks/E-01/archive/*.md -text whitespace=cr-at-eol

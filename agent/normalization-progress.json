@@ -41,10 +41,10 @@
     "X-02",
     "X-03",
     "Z-01",
-    "G-05"
+    "G-05",
+    "E-01"
   ],
   "remaining_packages": [
-    "E-01",
     "E-02",
     "B-01",
     "E-03",
@@ -1188,6 +1188,20 @@
       "status": "OPEN_GLOBAL_DONE_VS_OPTIONAL_STAGE3",
       "description": "现有整体DONE要求13项含阶段三，核心按活动准入的关闭规则仍须治理裁定，未伪造资格或修改门",
       "source": "agent/tasks/G-05/outputs/current-admission.md"
+    },
+    {
+      "task_id": "E-01",
+      "id": "E01-N01",
+      "status": "FIXED_ARCHIVE_AND_CONSUMER",
+      "description": "三旧第7步文件实际归档，当前执行与G-01原件核查订正，不再用6/8与旧全路线门",
+      "source": "agent/tasks/E-01/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "E-01",
+      "id": "E01-N02",
+      "status": "OPEN_REAL_ACTIVITY_AND_MATERIAL_FREEZE",
+      "description": "批准、15名人员、评分含义冻结、真实结果及签署未完成，CLI报告不自带完整原始来源束",
+      "source": "agent/tasks/E-01/outputs/current-execution.md"
     }
   ]
 }

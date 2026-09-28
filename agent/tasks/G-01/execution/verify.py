@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import math
 import re
@@ -36,13 +37,17 @@ def main():
     record('source locations', all((ROOT / p).exists() for p in sources), f'{len(sources)} source locations exist')
     material_dir = PLAN / '06_步骤05_伦理与预试材料'
     materials = list(material_dir.glob('G-01-*.md'))
-    materials += list((PLAN / '08_步骤07_伦理提交与LevelA').glob('G-01-11_*.md'))
+    archived_11 = ROOT / 'agent/tasks/E-01/archive/G-01-11_伦理提交执行检查清单.md'
+    materials.append(archived_11)
     ids = sorted(int(re.match(r'G-01-(\d+)_', p.name)[1]) for p in materials)
     record('signed material completeness', ids == list(range(1, 13)), '12 historical materials present; not approved new-study materials')
     unchanged = subprocess.check_output(
-        ['git', 'diff', 'HEAD', '--', *(str(p.relative_to(ROOT)) for p in materials),
+        ['git', 'diff', 'HEAD', '--', *(str(p.relative_to(ROOT)) for p in materials if p != archived_11),
          '03-测试与实验/G-01_G-02_治理修复团队总监签收报告_已签署.md'], cwd=ROOT)
     record('historical originals', not unchanged, 'Historical material and signed report bytes unchanged from HEAD')
+    original_hash = read_json(ROOT / 'agent/tasks/E-01/inputs/sources.json')['archived_bytes'][archived_11.name]
+    record('archived historical material 11', hashlib.sha256(archived_11.read_bytes()).hexdigest().upper() == original_hash,
+           'Material 11 is physically archived with original bytes; current step-seven file is navigation only')
 
     registry = {r['task_id']: r for r in read_csv(GOV / '05_可领取任务包.csv')}
     record('registered scope', registry['G-01']['status'] == 'DONE'
@@ -92,7 +97,7 @@ def main():
         result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
         record(name, result.returncode == 0, result.stdout.strip() + result.stderr.strip())
     destination = TASK / 'evidence/verification.json'
-    report = {'task_id': 'G-01', 'review_date': '2026-09-28',
+    report = {'task_id': 'G-01', 'review_date': '2026-09-29',
               'scope': 'Material/current-use alignment only; no new human signature or participant evidence.',
               'checks': checks}
     destination.parent.mkdir(parents=True, exist_ok=True)

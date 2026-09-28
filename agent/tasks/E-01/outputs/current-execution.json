@@ -1,0 +1,23 @@
+{
+  "task_id": "E-01",
+  "business_status": "BLOCKED_EXTERNAL",
+  "claimant": null,
+  "reviewer": null,
+  "dependencies": ["Q-01", "U12-05"],
+  "activity_capability": "INSTITUTION_LEVEL_A",
+  "activity_capability_status": "PENDING_EXTERNAL",
+  "material_scope": "STATIC_OR_REPLAY_ONLY_AS_ACTUALLY_APPROVED",
+  "role_counts": {"expert": 8, "designer": 4, "rater": 2, "adjudicator": 1},
+  "role_total": 15,
+  "expert_rows_expected": 80,
+  "reconstruction_rows_expected": 16,
+  "real_activity": "NOT_RUN",
+  "material_revision_freeze": "PENDING_REVIEW",
+  "real_people_verified": false,
+  "real_result": null,
+  "result_provenance": "REAL_EXECUTION_RECORD_REQUIRED_OUTSIDE_REPOSITORY",
+  "new_human_acceptance": "NOT_SIGNED",
+  "new_independent_review": "NOT_RUN",
+  "affect_comparison_gated_by_reconstruction": false,
+  "requires_entire_g05_done": false
+}
