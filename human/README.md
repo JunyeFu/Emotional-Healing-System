@@ -85,5 +85,6 @@
 | 45 | B-01 Level C批次模板 | [总结](tasks/B-01/summary.docx) | 空登记及QC骨架、实际Level C接口对齐；模板仍BLOCKED_EXTERNAL，分配工具、人员、批准与真实批次仍缺 |
 | 46 | E-03 Level C技术关闭 | [总结](tasks/E-03/summary.docx) | 补齐B-01活动范围并保留冻结输入；130专项通过，真实报告/配置/CAL和签署未生成，状态不变 |
 | 47 | G-03 阶段一预注册与研究冻结 | [总结](tasks/G-03/summary.docx) | 旧当前门禁实际归档，15项冻结/真实预注册/运行接线分开；传递依赖已有，状态仍BLOCKED_EXTERNAL |
+| 48 | B-02 阶段一正式批次模板 | [总结](tasks/B-02/summary.docx) | 两旧方案实际归档，135专项及根635通过；批次与分配块、完成与分析集分开，正式实例/批准/角色仍缺 |
 
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

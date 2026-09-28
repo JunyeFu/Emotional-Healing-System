@@ -46,10 +46,10 @@
     "E-02",
     "B-01",
     "E-03",
-    "G-03"
+    "G-03",
+    "B-02"
   ],
   "remaining_packages": [
-    "B-02",
     "E-04",
     "A-05",
     "E-05",
@@ -1286,6 +1286,27 @@
       "status": "OPEN_REAL_FREEZE_PREREGISTRATION_AND_RUNTIME",
       "description": "15项真实冻结、阶段一资格、预注册、入口/教学暴露接线与实名签收缺；G-05全项关闭与可选阶段三冲突未裁定",
       "source": "agent/tasks/G-03/outputs/current-freeze.json"
+    },
+    {
+      "task_id": "B-02",
+      "id": "B02-N01",
+      "status": "FIXED_ARCHIVE_AND_EXECUTION_ENTRIES",
+      "description": "两旧第10步方案按原字节归档，新入口及历史校验对齐v1.2未冻结N/时序与条件式扩展",
+      "source": "agent/tasks/B-02/archive/README.md"
+    },
+    {
+      "task_id": "B-02",
+      "id": "B02-N02",
+      "status": "FIXED_BATCH_ALLOCATION_AND_QC_HANDOFF",
+      "description": "区分12人批次与48分配块、操作完成与分析集、教学暴露和数据恢复，空QC不授权锁库",
+      "source": "agent/tasks/B-02/outputs/current-batch.md"
+    },
+    {
+      "task_id": "B-02",
+      "id": "B02-N03",
+      "status": "OPEN_REAL_APPROVAL_RUNTIME_AND_BATCHES",
+      "description": "真实批准/冻结、清单权限、运行整合、人员、所有批次/QC及签收仍未交付",
+      "source": "agent/tasks/B-02/outputs/current-batch.json"
     }
   ]
 }

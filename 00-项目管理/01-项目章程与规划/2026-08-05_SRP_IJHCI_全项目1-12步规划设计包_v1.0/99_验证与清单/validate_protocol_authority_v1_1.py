@@ -14,6 +14,7 @@ LEGACY_STATISTICS = PROJECT_ROOT / "agent/tasks/A-02/archive"
 LEGACY_LEVEL_C = PROJECT_ROOT / "agent/tasks/Q-03/archive"
 LEGACY_POLICY = PROJECT_ROOT / "agent/tasks/X-02/archive"
 LEGACY_LOCK = PROJECT_ROOT / "agent/tasks/G-03/archive"
+LEGACY_EXECUTION = PROJECT_ROOT / "agent/tasks/B-02/archive"
 AUTHORITY = PACKAGE / "00_总控" / "protocol_authority_v1.1.json"
 
 ACTIVE_FILES = [
@@ -33,6 +34,8 @@ ACTIVE_FILES = [
     LEGACY_LEVEL_C / "01_详细执行方案.md",
     PACKAGE / "11_步骤10_正式研究执行" / "00_第10步计划.md",
     PACKAGE / "11_步骤10_正式研究执行" / "01_详细执行方案.md",
+    LEGACY_EXECUTION / "00_第10步计划.md",
+    LEGACY_EXECUTION / "01_详细执行方案.md",
     PACKAGE / "12_步骤11_离线处理分析与论文写作" / "00_第11步计划.md",
     PACKAGE / "12_步骤11_离线处理分析与论文写作" / "01_详细执行方案.md",
     PACKAGE / "20_产品与场景设计" / "00_参与者产品总规格.md",
