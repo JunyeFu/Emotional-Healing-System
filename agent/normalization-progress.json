@@ -54,10 +54,10 @@
     "G-04",
     "B-03",
     "E-06",
-    "A-04"
+    "A-04",
+    "A-06"
   ],
   "remaining_packages": [
-    "A-06",
     "W-02",
     "W-03",
     "W-04",
@@ -1482,6 +1482,34 @@
       "status": "OPEN_REAL_LOCK_SAP_ANALYSIS_AND_REPRODUCTION",
       "description": "真实锁库/揭盲、独立SAP、全分析/FDR/图表和独立复跑未取得",
       "source": "agent/tasks/A-04/outputs/current-analysis.json"
+    },
+    {
+      "task_id": "A-06",
+      "id": "A06-N01",
+      "status": "FIXED_CURRENT_CLOSEOUT_HANDOFF",
+      "description": "三台账、部分扩展、双人范围签署及写作前置进入当前消费者",
+      "source": "agent/tasks/A-06/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "A-06",
+      "id": "A06-N02",
+      "status": "FIXED_STALE_NORMALIZATION_ENTRY",
+      "description": "规范化入口旧44/71和下一B-01已按当前机器队列订正",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "A-06",
+      "id": "A06-N03",
+      "status": "CLARIFIED_METADATA_VS_REAL_CLOSURE",
+      "description": "内层路线ok不验证签署原件，外层另验Git/报告，真实来源与双人身份仍需人核对",
+      "source": "agent/tasks/A-06/outputs/current-scope.md"
+    },
+    {
+      "task_id": "A-06",
+      "id": "A06-N04",
+      "status": "OPEN_REAL_RESULTS_LEDGERS_AND_DUAL_SIGNATURE",
+      "description": "实际分析分类、完整台账来源、具体范围关闭及双人回执未取得",
+      "source": "agent/tasks/A-06/outputs/current-scope.json"
     }
   ]
 }

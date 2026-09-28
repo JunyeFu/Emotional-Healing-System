@@ -1,0 +1,53 @@
+{
+  "task_id": "A-06",
+  "business_status": "WAIT_DEP",
+  "depends_on": [
+    "A-05",
+    "U12-10"
+  ],
+  "claimant": null,
+  "reviewer": null,
+  "real_scope_closure": "NOT_RUN",
+  "real_activity_ledgers_verified": false,
+  "selected_route": null,
+  "production_closure_exists": false,
+  "research_responsible_person": null,
+  "independent_human_reviewer": null,
+  "signed_report_ref": null,
+  "scope_receipt": null,
+  "inner_evaluator_scope": "A06_ROUTE_METADATA_ONLY",
+  "inner_evaluator_authorization": false,
+  "inner_ok_proves_signed_report": false,
+  "ordinary_governance_pass_executes_a06_done_branch": false,
+  "activity_count_is_unique_participant_count": false,
+  "empty_package_instance_list_proves_no_stage3": false,
+  "missing_results_may_be_fabricated": false,
+  "stage3_started_sources": [
+    "stage3_assignment_ledger",
+    "stage3_exposure_ledger",
+    "B-03_instance_registry"
+  ],
+  "core_required_done": [
+    "A-05",
+    "W-01",
+    "U12-10"
+  ],
+  "extension_required_done": [
+    "A-05",
+    "A-04",
+    "W-01",
+    "U12-10",
+    "U12-08"
+  ],
+  "extension_required_result_families": [
+    "stage3_results",
+    "deviations",
+    "stop_records",
+    "fallback_exposure"
+  ],
+  "no_stage3_scope": "NO_STAGE3",
+  "with_stage3_scope": "INCLUDE_STAGE3",
+  "closed_scope_is_recruitment_or_submission_authorization": false,
+  "normalization_is_business_completion": false,
+  "root_migration_complete": false
+}

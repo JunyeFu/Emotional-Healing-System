@@ -1,0 +1,136 @@
+{
+  "task_id": "A-06",
+  "title": "A06 实际研究范围关闭与论文交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "A-06仍WAIT_DEP，未领取未签收。已规范核心/扩展两路线、三台账真实来源核查、元数据与外层签署的区别及双人责任；真实结果、台账核对和范围回执仍缺。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有A-06真人签署。本轮是作者Agent接口与合成检查，不产生独立研究复核或真实范围授权。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务4人日，依赖A-05|U12-10，未领取未签收。A-05真实分析、U12-10分类、实际三台账核对与范围回执尚缺，生产关闭实例未创建。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1阶段一锁定结果及真实NO_STAGE3回执足以进入核心稿，未开展扩展不假DONE；AC2任一阶段三活动须消费A-04/U12-08及结果、偏离、停止、回退；AC3两路线无环，缺结果/回执或隐去活动时不能关闭。",
+        "四段为锁定结果与角色、三台账完整来源核对、核心/扩展路线和独立复核、真实双人签署后论文交接。最终关闭不是开展扩展的前置许可。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK和五目录、15项实际来源、当前范围说明/机器状态、NOT_RUN空审阅提纲、真实接口的合成验证入口。没有签名、正式范围回执、投稿或公开记录。",
+        "第11步两入口、治理v1.2导航和v2.0手册同步；Agent规范化说明旧44/71与下一B-01订正为当前机器进度。共享治理代码保留单一入口，没有旧A-06实例可搬移。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "三类台账分别为分配、暴露和B-03实例，任一部分/取消/停止活动都不能被省略。三表总行数不是唯一人数，B-03空登记不证明无活动；真实保管者须核对完整来源。",
+        "路线函数只返回A06_ROUTE_METADATA_ONLY及authorization=false；完整治理DONE分支另核对真实Git候选、已跟踪报告、字节身份及标记。当前普通治理PASS没有执行真实A-06 DONE分支。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "62专项通过，直接使用当前v1.2路线：核心元数据路径、三类部分活动、缺A-05/U12-10或扩展分析/四结果族、台账缺失/篡改/计数错误和布尔值代替证据均核对。",
+        "合成内层ok=true时，真实外层函数仍因候选不是Git提交、签署报告不存在而拒绝，证明两个检查层不相互替代。根635项回归及协议、治理、注册、分发通过，实际命令见verification.json；不生成实际研究结论。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "发现规范化说明仍停44/71，与实际55包队列不一致，已用当前机器进度订正并注明下方逐包内容是历史，不再由旧文字决定下一包。",
+        "一般交付四阶段改为实际范围关闭四阶段，真实来源核查、双人签收和W-02其他前置明确。规范化不能关闭真实台账/结果/签署缺口。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK、inputs、execution、evidence、outputs、archive固定归属。现有route_evaluator、关闭Schema及15_validate_audit_upgrade是共享实现，只引用不重复搬移；旧第11步原件在E-04。",
+        "先修Agent与消费者，再生成单包/串联Word。生产Schema要求PASS，故未签署的空提纲不冒充符合Schema的生产实例；受限原件及填妥台账留获准仓库外。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "A-05交同版锁定结果和图表，U12-10交真实分类/主张复核；数据保管者交三台账与授权。已有扩展则E-06/A-04/U12-08交全部范围、结果和偏离/停止/回退。当前未齐，不完成范围关闭。",
+        "W-02仍依赖W-01、A-06、U12-07，单一范围回执不能自动解锁所有写作条件。W-02/W-03用同版主张—结果—图表—输入—代码；W-04/U12-12后续交接，关闭不自动授权采集、投稿或公开受限数据。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "研究负责人、真实第二人、数据保管者待实名。receipt只有一个reviewer字段，注册要求的双人证据需在真实报告分别落实，软件标记不能证明真人身份或权限。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计56/71包规范化，余15，下一W-02。A-06业务仍WAIT_DEP、真实范围关闭未执行；全部任务整理后仍需完成根目录人类层/Agent层物理迁移及运行引用验证。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "实际注册、治理选择与v1.2路线、路线函数/关闭Schema/外层签署检查、A-05/A-04/E-06/B-03实际交接和既有治理测试。未新增网页研究、真实人员或外部回执。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "A06-N01",
+      "status": "FIXED_CURRENT_CLOSEOUT_HANDOFF",
+      "description": "三台账、部分扩展、双人范围签署及写作前置进入当前消费者",
+      "source": "agent/tasks/A-06/evidence/consumer-impact.md"
+    },
+    {
+      "id": "A06-N02",
+      "status": "FIXED_STALE_NORMALIZATION_ENTRY",
+      "description": "规范化入口旧44/71和下一B-01已按当前机器队列订正",
+      "source": "agent/normalization.md"
+    },
+    {
+      "id": "A06-N03",
+      "status": "CLARIFIED_METADATA_VS_REAL_CLOSURE",
+      "description": "内层路线ok不验证签署原件，外层另验Git/报告，真实来源与双人身份仍需人核对",
+      "source": "agent/tasks/A-06/outputs/current-scope.md"
+    },
+    {
+      "id": "A06-N04",
+      "status": "OPEN_REAL_RESULTS_LEDGERS_AND_DUAL_SIGNATURE",
+      "description": "实际分析分类、完整台账来源、具体范围关闭及双人回执未取得",
+      "source": "agent/tasks/A-06/outputs/current-scope.json"
+    }
+  ],
+  "next_task": "W-02",
+  "source_links": [
+    {
+      "label": "实际范围关闭交接",
+      "path": "agent/tasks/A-06/outputs/current-scope.md"
+    },
+    {
+      "label": "当前状态与缺口",
+      "path": "agent/tasks/A-06/outputs/current-scope.json"
+    },
+    {
+      "label": "未签署审阅提纲",
+      "path": "agent/tasks/A-06/outputs/scope-review-template.json"
+    },
+    {
+      "label": "实际验证结果",
+      "path": "agent/tasks/A-06/evidence/verification.json"
+    },
+    {
+      "label": "消费者修正",
+      "path": "agent/tasks/A-06/evidence/consumer-impact.md"
+    }
+  ]
+}

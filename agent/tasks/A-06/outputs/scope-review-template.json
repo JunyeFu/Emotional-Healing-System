@@ -1,0 +1,40 @@
+{
+  "task_id": "A-06",
+  "status": "NOT_RUN",
+  "is_production_route_closure": false,
+  "selected_route": null,
+  "stage1_results_ref": null,
+  "independent_classification_ref": null,
+  "activity_sources_review": {
+    "stage3_assignment_ledger": null,
+    "stage3_exposure_ledger": null,
+    "B03_instance_registry": null
+  },
+  "unique_participant_count": null,
+  "actual_stage3_scope": null,
+  "extension_results_ref": null,
+  "extension_appendix_ref": null,
+  "deviations_ref": null,
+  "stop_records_ref": null,
+  "fallback_exposure_ref": null,
+  "signature_reviews": {
+    "research_responsible": {
+      "name": null,
+      "role": null,
+      "date": null,
+      "object": null,
+      "method": null,
+      "conclusion": null
+    },
+    "independent_second_person": {
+      "name": null,
+      "role": null,
+      "date": null,
+      "object": null,
+      "method": null,
+      "conclusion": null
+    }
+  },
+  "production_receipt_ref": null,
+  "next_consumer": "W-02"
+}
