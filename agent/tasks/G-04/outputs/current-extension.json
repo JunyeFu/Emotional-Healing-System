@@ -1,0 +1,52 @@
+{
+  "task_id": "G-04",
+  "business_status": "BLOCKED_EXTERNAL",
+  "depends_on": [
+    "E-05",
+    "X-03",
+    "Z-01"
+  ],
+  "claimant": null,
+  "reviewer": null,
+  "optional_extension": true,
+  "required_for_core_paper": false,
+  "protocol_status": "DESIGN_CANDIDATE_NOT_PREREGISTERED",
+  "formal_collection_allowed": false,
+  "arms": [
+    "frozen_policy",
+    "balanced_random"
+  ],
+  "cue_mode_both_arms": "scene_native",
+  "candidate_treatment_variable": "assigned_policy_arm",
+  "candidate_primary_model": "NA_post ~ assigned_policy_arm + centered_NA_pre + randomization_strata",
+  "contrast": "policy_minus_random",
+  "fallback_in_estimand": true,
+  "reroute_fallback_to_random_arm": false,
+  "new_unexposed_cohort_required": true,
+  "randomization_block_size_implemented": 48,
+  "balanced_random_sequences_per_block": 24,
+  "policy_sequence_in_allocation_list": null,
+  "final_randomized_n": null,
+  "recruitment_cap": null,
+  "formal_gate3_definition": null,
+  "formal_pf_margin": null,
+  "same_unity_build_verified": false,
+  "shared_presentation_config_verified": false,
+  "actual_policy_manifest": null,
+  "actual_preregistration_receipt": null,
+  "required_direct_activity_capabilities": [
+    "INSTITUTION_STAGE3",
+    "RETENTION_AND_PRIVACY",
+    "STATION_CAPACITY_STAGE3"
+  ],
+  "qualified_direct_activity_capabilities": 0,
+  "shared_questionnaire_stage3_scope_verified": false,
+  "shared_formal_machine_stage3_scope_verified": false,
+  "v22_dynamic_policy_supported": false,
+  "default_formal_adapters_fail_closed": true,
+  "protocol_flag_is_runtime_interceptor": false,
+  "candidate_stage1_model_is_stage3_model": false,
+  "real_stage3": "NOT_RUN",
+  "real_responsible_people": null,
+  "root_migration_complete": false
+}

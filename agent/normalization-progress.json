@@ -50,10 +50,10 @@
     "B-02",
     "E-04",
     "A-05",
-    "E-05"
+    "E-05",
+    "G-04"
   ],
   "remaining_packages": [
-    "G-04",
     "B-03",
     "E-06",
     "A-04",
@@ -1377,6 +1377,34 @@
       "status": "FIXED_POWERSHELL_ROOT_ENTRYPOINT",
       "description": "静态审查发现初稿根路径少一层，按现有方式修正并从仓库外实调复测",
       "source": "agent/tasks/E-05/evidence/entrypoint-fix.md"
+    },
+    {
+      "task_id": "G-04",
+      "id": "G04-N01",
+      "status": "FIXED_POLICY_CONTRAST_HANDOFF",
+      "description": "两scene_native组必须比较策略分配，阶段一cue_mode模板不是扩展模型；候选未冒充正式冻结",
+      "source": "agent/tasks/G-04/outputs/current-extension.md"
+    },
+    {
+      "task_id": "G-04",
+      "id": "G04-N02",
+      "status": "FIXED_RESULT_GATE_AND_ADMISSION_HANDOFF",
+      "description": "Gate3结果判据、采集前资格、共享配置与同构建分开，修正三个入口和手册",
+      "source": "agent/tasks/G-04/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "G-04",
+      "id": "G04-N03",
+      "status": "OPEN_DYNAMIC_DEPLOYMENT_AND_BUILD",
+      "description": "48行分配已可生成但v2.2仍拒绝动态策略，同构建/共享配置没有真实验证",
+      "source": "agent/tasks/G-04/outputs/current-extension.json"
+    },
+    {
+      "task_id": "G-04",
+      "id": "G04-N04",
+      "status": "OPEN_REAL_FREEZE_AND_ACTIVITY_SCOPE",
+      "description": "正式N/方法/预注册、三项直接许可、共享量表专机阶段三范围及真实责任人仍缺",
+      "source": "agent/tasks/G-04/outputs/preregistration-review-template.json"
     }
   ]
 }
