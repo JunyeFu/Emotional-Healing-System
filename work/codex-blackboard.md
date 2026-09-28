@@ -1831,3 +1831,8 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 旧Unity框架、两个Editor生成工具及meta实际原文归档，迁移前无类名/GUID消费者；工程原入口改当前交接。StormScene和WeatherDirector仍有序列化引用，不在本包删除。
 - 34项设计检查、105项Unity EditMode、根pytest635项、71项注册表与5包54快照通过；无新天气Play或Profiler验收，WAIT_DEP与未领取不改。
 - 单包Word3页、串联13页已审阅，串联前12页与U-03已检查版本PNG一致，第13页重新检查。累计24/71，剩余47，下一U-05；根目录整体双层迁移仍继续。
+
+## 2026-09-28 通用中文逐包任务模板
+
+- 按本次请求完善已有v4模板，覆盖科研、开发、建模、课程和投资研究；明确启动验收、真实负责人和Agent职责，不新增业务状态或强制复核流程。
+- 生成DOCX与DOTX，四页渲染逐页审阅；仅改模板、生成器、使用说明和必要工作记录，不推进U-05或改变24/71规范化进度。
