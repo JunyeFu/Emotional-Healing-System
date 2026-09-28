@@ -9,7 +9,7 @@ import pytest
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
-TOOL = PROJECT_ROOT / "Tools" / "F05" / "f05_evidence.py"
+TOOL = PROJECT_ROOT / "agent" / "tasks" / "F-05" / "execution" / "f05_evidence.py"
 LEAVES = (
     "contract-tests.log",
     "p01-tests.log",

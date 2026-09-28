@@ -1,0 +1,18 @@
+{
+  "task_id": "F-05",
+  "source_policy": "reference_shared_contracts_keep_historical_signatures_unchanged",
+  "paths": [
+    "02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md",
+    "02-技术研发/05-通信协议/contracts/F-05_v2.2消费者迁移指南.md",
+    "02-技术研发/05-通信协议/contracts/verify_f05_v22.py",
+    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+    "02-技术研发/05-通信协议/runtime_contract_v22.py",
+    "02-技术研发/05-通信协议/contracts/consumer-fixtures/v2.2",
+    "02-技术研发/srp_session_core/contract_adapter.py",
+    "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
+    "02-技术研发/srp_session_store/README.md",
+    "03-测试与实验/F-05_第二人审核报告_已签署.md",
+    "03-测试与实验/F-05_集成签收确认_傅钧烨_2026-09-01.md",
+    "03-测试与实验/evidence/F-05"
+  ]
+}

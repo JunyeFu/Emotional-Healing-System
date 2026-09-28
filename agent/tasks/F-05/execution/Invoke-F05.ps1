@@ -1,15 +1,12 @@
 [CmdletBinding()]
 param(
     [ValidateSet('test', 'verify', 'all')]
-    [string]$Action = 'all',
-    [string]$EvidenceDir
+    [string]$Action = 'all'
 )
 
 $ErrorActionPreference = 'Stop'
-$repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
-if (-not $EvidenceDir) {
-    $EvidenceDir = Join-Path $repoRoot '03-测试与实验\evidence\F-05'
-}
+$repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '../../../..')).Path
+$EvidenceDir = Join-Path $PSScriptRoot '../evidence/runtime'
 
 function Invoke-F05Command {
     param(
@@ -47,9 +44,9 @@ try {
         }
     }
     if ($Action -eq 'all') {
-        & py -3.14 'Tools/F05/f05_evidence.py' seal --evidence-dir $EvidenceDir --tested-git-commit (git rev-parse HEAD).Trim()
+        & py -3.14 (Join-Path $PSScriptRoot 'f05_evidence.py') seal --evidence-dir $EvidenceDir --tested-git-commit (git rev-parse HEAD).Trim()
         if ($LASTEXITCODE -ne 0) { throw 'F05_EVIDENCE_SEAL_FAILED' }
-        & py -3.14 'Tools/F05/f05_evidence.py' verify --evidence-dir $EvidenceDir
+        & py -3.14 (Join-Path $PSScriptRoot 'f05_evidence.py') verify --evidence-dir $EvidenceDir
         if ($LASTEXITCODE -ne 0) { throw 'F05_EVIDENCE_VERIFY_FAILED' }
     }
 }
