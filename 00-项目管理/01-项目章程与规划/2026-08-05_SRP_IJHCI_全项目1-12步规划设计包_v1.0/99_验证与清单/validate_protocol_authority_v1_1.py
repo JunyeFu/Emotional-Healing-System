@@ -13,12 +13,14 @@ LEGACY_OFFLINE = PROJECT_ROOT / "agent/tasks/A-01/archive"
 LEGACY_STATISTICS = PROJECT_ROOT / "agent/tasks/A-02/archive"
 LEGACY_LEVEL_C = PROJECT_ROOT / "agent/tasks/Q-03/archive"
 LEGACY_POLICY = PROJECT_ROOT / "agent/tasks/X-02/archive"
+LEGACY_LOCK = PROJECT_ROOT / "agent/tasks/G-03/archive"
 AUTHORITY = PACKAGE / "00_总控" / "protocol_authority_v1.1.json"
 
 ACTIVE_FILES = [
     PACKAGE / "README.md",
     PACKAGE / "00_总控" / "01_十二步路线图与状态.md",
     PACKAGE / "00_总控" / "02_当前状态与不可跨越门禁.md",
+    LEGACY_LOCK / "02_当前状态与不可跨越门禁.md",
     PACKAGE / "00_总控" / "03_项目研究论文成果一体化.md",
     PACKAGE / "00_总控" / "04_2026_2027建议主计划.md",
     PACKAGE / "00_总控" / "05_风险登记册.csv",

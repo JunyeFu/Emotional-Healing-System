@@ -45,10 +45,10 @@
     "E-01",
     "E-02",
     "B-01",
-    "E-03"
+    "E-03",
+    "G-03"
   ],
   "remaining_packages": [
-    "G-03",
     "B-02",
     "E-04",
     "A-05",
@@ -1265,6 +1265,27 @@
       "status": "OPEN_REAL_EVIDENCE_AND_APPROVAL",
       "description": "真实全部批次、实名人员、盲态门定义/独立验证、技术配置及签署未完成",
       "source": "agent/tasks/E-03/outputs/current-closeout.json"
+    },
+    {
+      "task_id": "G-03",
+      "id": "G03-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_GATE_CONSUMERS",
+      "description": "旧当前门禁有序报告/强制策略描述实际归档，新入口及历史验证/步骤9/手册按当前范围消费",
+      "source": "agent/tasks/G-03/outputs/current-freeze.md"
+    },
+    {
+      "task_id": "G-03",
+      "id": "G03-N02",
+      "status": "VERIFIED_EXISTING_RUNTIME_DEPENDENCY",
+      "description": "U12-06已由U12-11/U12-09传递依赖，无重复新增边或冻结快照改写",
+      "source": "agent/tasks/G-03/outputs/current-freeze.json"
+    },
+    {
+      "task_id": "G-03",
+      "id": "G03-N03",
+      "status": "OPEN_REAL_FREEZE_PREREGISTRATION_AND_RUNTIME",
+      "description": "15项真实冻结、阶段一资格、预注册、入口/教学暴露接线与实名签收缺；G-05全项关闭与可选阶段三冲突未裁定",
+      "source": "agent/tasks/G-03/outputs/current-freeze.json"
     }
   ]
 }

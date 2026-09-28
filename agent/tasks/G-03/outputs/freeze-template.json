@@ -1,0 +1,33 @@
+{
+  "document_type": "UNFILLED_HANDOFF_INDEX_NOT_APPROVAL",
+  "task_id": "G-03",
+  "status": "NOT_RUN",
+  "formal_collection_allowed": false,
+  "research_version": null,
+  "frozen_study_manifest_ref": null,
+  "sap_ref": null,
+  "calibration_receipt_ref": null,
+  "randomization_hidden_list_ref": null,
+  "build_and_algorithm_identity_ref": null,
+  "preregistration_receipt_ref": null,
+  "preregistration_timestamp": null,
+  "required_freezes": {
+    "panas_version_and_permission": {"status": "PENDING", "evidence_ref": null},
+    "eligibility_and_recruitment": {"status": "PENDING", "evidence_ref": null},
+    "training_budget": {"status": "PENDING", "evidence_ref": null},
+    "randomization_and_concealment": {"status": "PENDING", "evidence_ref": null},
+    "minimum_important_affect_difference": {"status": "PENDING", "evidence_ref": null},
+    "missingness_and_mnar": {"status": "PENDING", "evidence_ref": null},
+    "functional_margin_justification": {"status": "PENDING", "evidence_ref": null},
+    "critical_error_thresholds": {"status": "PENDING", "evidence_ref": null},
+    "final_power_and_n": {"status": "PENDING", "evidence_ref": null},
+    "stopping_rule": {"status": "PENDING", "evidence_ref": null},
+    "institutional_scope": {"status": "PENDING", "evidence_ref": null},
+    "live_e2e": {"status": "PENDING", "evidence_ref": null},
+    "runtime_gate_integration": {"status": "PENDING", "evidence_ref": null},
+    "data_retention_and_access": {"status": "PENDING", "evidence_ref": null},
+    "pretreatment_baseline_and_condition_training_order": {"status": "PENDING", "evidence_ref": null}
+  },
+  "review": {"reviewer": null, "method": null, "date": null, "conclusion": null},
+  "downstream": {"task_id": "B-02", "release_allowed": false, "receiver": null, "receipt_ref": null}
+}

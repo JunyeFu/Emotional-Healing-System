@@ -1,0 +1,33 @@
+{
+  "task_id": "G-03",
+  "title": "G03 阶段一预注册与研究冻结交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "G-03仍BLOCKED_EXTERNAL，未领取未签收。旧当前门禁按字节归档，新入口按v1.2分别处理情绪比较、功能护栏及真实准入；15项冻结与真实预注册未完成，规范化不放行B-02。",
+  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "没有真实G-03预注册签收，本轮仅规范化和软件核查；未提交外部预注册、未新增独立Agent复审或真人签名。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["约5人日，依赖E-03/X-01/Z-01/A-02/A-03-CAL/G-05/U12-11。当前协议为治理采用的设计候选，正式参与者采集不允许；真实角色、批准、数值、构建和预注册回执未齐。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1真实批准、U12-06运行接线、CAL及U12-11研究冻结完成；AC2PANAS主要比较、PF独立护栏和SCCI操纵检查分别预设与报告；AC3精确版本与真实预注册回执一致，未关闭不得实例化B-02。", "五段覆盖范围接收、统计/资源冻结、工程版本与暴露接线、真人复核及实际预注册、下游移交；TASK列责任与继承中文教程，真实负责人仍待实名。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK与五目录、20项来源、当前冻结交接与真实缺口JSON、15项未填写索引及软件核查。旧总控门禁实际归档，原路径导航、历史验证器和步骤9/手册消费者已修正。", "注册依赖未改：G-03→U12-11→U12-09→U12-06已经存在；不因缺直接边重复添加，不刷新在研U12-06输入，也不制造新的批准台账。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["E-03技术关闭、REAL后CAL、U12-11研究冻结和G-03真实预注册分别交付；候选SAP签收不代替数值冻结。48、192/240及合成功效不是正式N，0.075仍需论证。", "前测先于条件揭示/教学，教学加核心是处理范围候选。首次条件教学必须登记暴露；当前P-01只在核心start登记，接线仍待完成，教学后退出不能再预约。"]},
+    {"heading": "验证与结果", "paragraphs": ["33项专项复测通过，核查注册/传递依赖、15项空索引、主比较与功能门、活动资格、CAL/可选路线、原件和导航。P-01缺适配器正式prepare拒绝，合成回执能到PREPARED；后者不是批准证据。", "初测错误P-01来源路径修正并留原输出；历史协议、v1.2治理、71项注册、独立包及根回归见verification.json，不证明真实预注册、准入接线或参与者结果。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["观察到旧当前门禁仍写v1.1有序结果门及强制后续策略，按字节归档，新当前入口改为v1.2独立报告和条件式扩展；历史校验器同时消费原件与新导航，不改旧签署。", "真实15项冻结、预注册、准入接线/教学暴露及责任人仍缺。G-05整体13项DONE与可选阶段三的收尾冲突保持未裁定，不能在本包伪造资格或改DONE。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["旧总控门禁仅迁一份，archive记录原件与消费者；当前TASK、输入引用、核查、结果和交接各归固定目录。原SAP/旧协议/在研快照保持，受限原件和隐藏分配不进入公开仓库。", "总结由Agent事实生成，空索引不是正式配置或运行门，业务状态未变；根目录整体双层迁移仍未完成。"]},
+    {"heading": "上下游交接", "paragraphs": ["E-03供技术关闭、A-03供REAL/CAL、A-02/U12-04供统计规则、U12-11供数值/资源冻结、X-01/Z-01供隐藏清单和同构建，G-05供阶段一适用回执；不能互用候选或旧锚点放行。", "U12-06接六类正式入口并提供负测/真实签收。B-02只消费已关闭G-03版本，最多12人一实例，按分配平衡，禁止按方向/p值或完成缺格补人；A-05/A-06/W沿同一SAP关闭核心论文，不强制未开展阶段三DONE。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["研究、测量/统计、工程集成、数据/许可、现场及另一人复核均待实名。Agent仅本轮规范化，不代签、不代提交外部系统；真实预注册对象、时间戳、签收和变更需一致。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计47/71，剩余24，下一B-02。G-03业务仍阻塞，真实冻结、准入及外部回执未完成；不以软件通过代替研究准入，整体双层迁移继续。"]},
+    {"heading": "审阅来源", "paragraphs": ["实际注册、v1.2协议/SAP、活动矩阵与CAL里程碑、P-01源码/测试、在研U12-06快照和当前上下游交接。本轮无新网页研究、真人活动、设备运行或新签署。"]}
+  ],
+  "findings": [
+    {"id": "G03-N01", "status": "FIXED_ARCHIVE_AND_CURRENT_GATE_CONSUMERS", "description": "旧当前门禁有序报告/强制策略描述实际归档，新入口及历史验证/步骤9/手册按当前范围消费", "source": "agent/tasks/G-03/outputs/current-freeze.md"},
+    {"id": "G03-N02", "status": "VERIFIED_EXISTING_RUNTIME_DEPENDENCY", "description": "U12-06已由U12-11/U12-09传递依赖，无重复新增边或冻结快照改写", "source": "agent/tasks/G-03/outputs/current-freeze.json"},
+    {"id": "G03-N03", "status": "OPEN_REAL_FREEZE_PREREGISTRATION_AND_RUNTIME", "description": "15项真实冻结、阶段一资格、预注册、入口/教学暴露接线与实名签收缺；G-05全项关闭与可选阶段三冲突未裁定", "source": "agent/tasks/G-03/outputs/current-freeze.json"}
+  ],
+  "next_task": "B-02",
+  "source_links": [
+    {"label": "当前预注册与研究冻结交接", "path": "agent/tasks/G-03/outputs/current-freeze.md"},
+    {"label": "实际缺口与依赖边界", "path": "agent/tasks/G-03/outputs/current-freeze.json"},
+    {"label": "15项未填写交接索引", "path": "agent/tasks/G-03/outputs/freeze-template.json"},
+    {"label": "历史门禁归档处置", "path": "agent/tasks/G-03/archive/README.md"},
+    {"label": "软件核查与回归", "path": "agent/tasks/G-03/evidence/verification.json"}
+  ]
+}

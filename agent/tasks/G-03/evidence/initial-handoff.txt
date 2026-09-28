@@ -1,0 +1,16 @@
+........F........................                                        [100%]
+================================== FAILURES ===================================
+__________________ test_current_handoff_and_all_source_paths __________________
+
+    def test_current_handoff_and_all_source_paths():
+        for path in read(TASK / 'inputs/sources.json')['paths']:
+>           assert (ROOT / path).is_file(), path
+E           AssertionError: agent/tasks/P-01/outputs/current-session-contract.md
+E           assert False
+E            +  where False = is_file()
+E            +    where is_file = (WindowsPath('D:/Agent/srp') / 'agent/tasks/P-01/outputs/current-session-contract.md').is_file
+
+agent\tasks\G-03\execution\test_freeze_handoff.py:125: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/G-03/execution/test_freeze_handoff.py::test_current_handoff_and_all_source_paths
+1 failed, 32 passed in 0.26s
