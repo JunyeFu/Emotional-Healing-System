@@ -1,0 +1,40 @@
+{
+  "task_id": "E-05",
+  "status": "NOT_RUN",
+  "scope": "REVIEW_OUTLINE_NOT_POLICY_MANIFEST_OR_GATE",
+  "authorized_training_bundle": null,
+  "stage1_lock_and_unblinding_receipt": null,
+  "pre_unblinding_selection_criteria": {
+    "version": null,
+    "approved_at": null,
+    "approver": null,
+    "evidence": null
+  },
+  "model_card": null,
+  "training_logs": null,
+  "participant_fold_plan": null,
+  "cross_fitted_ope_report": null,
+  "ess_and_support_report": null,
+  "ablation_entropy_calibration_stability_report": null,
+  "probability_audit": null,
+  "quality_fallback_report": null,
+  "final_refit_model": null,
+  "scaler": null,
+  "temperature": null,
+  "uniform_mixture": null,
+  "state_and_action_definition": null,
+  "seed_and_rng_definition": null,
+  "deterministic_readonly_replay": null,
+  "artifact_hashes": null,
+  "decision": "NOT_DECIDED",
+  "stage3_authorized": false,
+  "superiority_claim_allowed": false,
+  "human_signoff": {
+    "reviewer": null,
+    "date": null,
+    "object": null,
+    "conclusion": null
+  },
+  "deployment_receiver": null,
+  "partial_extension_activity_evidence": null
+}

@@ -1,0 +1,3 @@
+# PowerShell入口修复
+
+提交前文件审查发现，初稿对脚本文件连续四次Split-Path会定位agent而非仓库根，导致相对verify.py入口失效。改用既有包的PSScriptRoot相对四级解析，随后从仓库外实际调用verify.ps1验证；该问题由静态审查发现，未伪造运行失败日志。

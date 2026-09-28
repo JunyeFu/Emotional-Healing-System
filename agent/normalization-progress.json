@@ -49,10 +49,10 @@
     "G-03",
     "B-02",
     "E-04",
-    "A-05"
+    "A-05",
+    "E-05"
   ],
   "remaining_packages": [
-    "E-05",
     "G-04",
     "B-03",
     "E-06",
@@ -1349,6 +1349,34 @@
       "status": "OPEN_REAL_LOCKED_ANALYSIS_AND_OWNERS",
       "description": "真实锁库授权、正式SAP、完整分析和分类流水线、实名复跑及签收缺",
       "source": "agent/tasks/A-05/outputs/current-analysis.json"
+    },
+    {
+      "task_id": "E-05",
+      "id": "E05-N01",
+      "status": "FIXED_PRECRITERIA_VS_FINAL_FREEZE_HANDOFF",
+      "description": "揭盲前选择标准与后分析最终模型冻结分开，无事前凭证不补日期或有利门槛",
+      "source": "agent/tasks/E-05/outputs/current-freeze.md"
+    },
+    {
+      "task_id": "E-05",
+      "id": "E05-N02",
+      "status": "FIXED_U12_08_CONSUMERS_AND_WORD",
+      "description": "U12-08实际为扩展分析附录，修正X-02/X-03当前执行和Word，避免循环职责",
+      "source": "agent/tasks/E-05/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "E-05",
+      "id": "E05-N03",
+      "status": "OPEN_REAL_MODEL_OPE_APPROVAL_AND_SIGNATURE",
+      "description": "真实训练、支持报告、正式方法/阈值、事前批准及最终模型签署尚缺，不解除活动门",
+      "source": "agent/tasks/E-05/outputs/current-freeze.json"
+    },
+    {
+      "task_id": "E-05",
+      "id": "E05-N04",
+      "status": "FIXED_POWERSHELL_ROOT_ENTRYPOINT",
+      "description": "静态审查发现初稿根路径少一层，按现有方式修正并从仓库外实调复测",
+      "source": "agent/tasks/E-05/evidence/entrypoint-fix.md"
     }
   ]
 }
