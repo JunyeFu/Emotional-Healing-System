@@ -75,3 +75,4 @@ agent/tasks/B-01/evidence/initial-handoff.txt -text whitespace=-blank-at-eol
 agent/tasks/G-03/archive/02_当前状态与不可跨越门禁.md -text whitespace=cr-at-eol
 agent/tasks/G-03/evidence/initial-handoff.txt -text whitespace=-blank-at-eol
 agent/tasks/B-02/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/E-04/archive/*.md -text whitespace=cr-at-eol

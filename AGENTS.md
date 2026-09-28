@@ -45,6 +45,7 @@
 | 看Level C技术关闭 | `agent/tasks/E-03/outputs/current-closeout.md`（真实汇总、CAL与研究冻结分开，当前配置和签署仍缺） |
 | 看阶段一预注册与研究冻结 | `agent/tasks/G-03/outputs/current-freeze.md`（15项冻结、真实回执及运行接线分开，旧门禁已归档） |
 | 看阶段一正式批次模板 | `agent/tasks/B-02/outputs/current-batch.md`（12人批次与48人分配块分开，全部实例盲态QC交锁库任务） |
+| 看阶段一锁库与揭盲交接 | `agent/tasks/E-04/outputs/current-closeout.md`（会话封存/原件核查/研究锁库/揭盲授权分开，真实关闭仍未执行） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |
