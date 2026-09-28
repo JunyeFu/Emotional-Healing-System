@@ -53,4 +53,6 @@
 
 | 28 | U-08 视听性能与可访问成品 | [总结](tasks/U-08/summary.docx) | 两个旧Build Scene菜单及meta归档，40项专项及105项Unity回归通过；预算字段和八呈现范围对齐，真实制品仍待验收，保持WAIT_DEP |
 
+| 29 | T-02 人工标记中止请求与告警 | [总结](tasks/T-02/summary.docx) | 15份旧TD引导/遥控原件归档，276项专项通过；真实TD请求仍禁用，请求ACK/mark/告警历史/操作录像及负责人仍缺，保持READY |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

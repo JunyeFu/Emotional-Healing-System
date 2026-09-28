@@ -27,10 +27,10 @@
     "U-05",
     "U-06",
     "U-07",
-    "U-08"
+    "U-08",
+    "T-02"
   ],
   "remaining_packages": [
-    "T-02",
     "A-01",
     "A-02",
     "A-03",
@@ -845,6 +845,34 @@
       "status": "OPEN_FORMAL_ASSEMBLY_ACCESSIBILITY_AND_LICENSE",
       "description": "默认SampleScene、开发EXE及软件许可门不证明成品，实际装配/U4/性能/许可清零和负责人仍待落实",
       "source": "agent/tasks/U-08/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "T-02",
+      "id": "T02-N01",
+      "status": "FIXED_LEGACY_AUTHORING_ARCHIVE",
+      "description": "15份旧TD引导、任意脚本遥控及原型工程实际原文归档，当前导航修正，不再混作操作员请求",
+      "source": "agent/tasks/T-02/archive/README.md"
+    },
+    {
+      "task_id": "T-02",
+      "id": "T02-N02",
+      "status": "OPEN_TD_REQUEST_AND_DURABLE_MARK",
+      "description": "真实TCP TD请求仍统一拒绝，内部manual_mark不支持；请求handler/ACK/耐久标记及正向权限验收仍缺",
+      "source": "agent/tasks/T-02/outputs/current-operator-contract.json"
+    },
+    {
+      "task_id": "T-02",
+      "id": "T02-N03",
+      "status": "CLARIFIED_ACK_AND_ALARM_AUTHORITY",
+      "description": "请求ACK不等于UnityACK，发送不等于执行；告警确认不改变质量、阈值或会话",
+      "source": "agent/tasks/T-02/outputs/current-operator-contract.md"
+    },
+    {
+      "task_id": "T-02",
+      "id": "T02-N04",
+      "status": "OPEN_UI_EVIDENCE_AND_OWNER",
+      "description": "告警历史、实际A主题操作、日志/录像及真实负责人未交付；导出截图扩展另验，不扩大本包基础验收",
+      "source": "agent/tasks/T-02/TASK.md"
     }
   ]
 }

@@ -44,7 +44,7 @@
     },
     "T-02": {
       "source_files": [
-        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.1.json",
+        "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
         "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md",
         "02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md",
         "03-测试与实验/T-01_独立Agent审核报告_2026-09-02.md",
@@ -57,13 +57,22 @@
         "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe",
         "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox",
         "02-技术研发/srp_session_core/README.md",
-        "agent/tasks/P-01/execution/generate_golden_trace.py"
+        "agent/tasks/P-01/execution/generate_golden_trace.py",
+        "agent/tasks/T-02/TASK.md",
+        "agent/tasks/T-02/outputs/current-operator-contract.md",
+        "agent/tasks/T-02/outputs/current-operator-contract.json",
+        "02-技术研发/srp_session_core/models.py",
+        "02-技术研发/srp_session_core/transport.py",
+        "02-技术研发/srp_session_store/README.md",
+        "02-技术研发/srp_session_store/adapters.py"
       ],
       "working_paths": [
+        "agent/tasks/T-02",
         "02-技术研发/03-TouchDesigner/t01_telemetry_panel",
         "02-技术研发/03-TouchDesigner/f04_readonly_console",
         "02-技术研发/05-通信协议/contracts",
-        "02-技术研发/srp_session_core"
+        "02-技术研发/srp_session_core",
+        "02-技术研发/srp_session_store"
       ]
     },
     "U12-03": {

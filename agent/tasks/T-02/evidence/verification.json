@@ -1,0 +1,36 @@
+{
+  "task_id": "T-02",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\T-02\\execution\\test_t02_contract.py",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_core",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_store",
+        "D:\\Agent\\srp\\02-技术研发\\03-TouchDesigner\\t01_telemetry_panel\\tests",
+        "D:\\Agent\\srp\\02-技术研发\\03-TouchDesigner\\f04_readonly_console\\tests"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "existing producer regression, live loopback TD rejection, archival and handoff checks",
+  "specialist_pytest_passed": 276,
+  "normalization_tests_passed": 27,
+  "root_pytest_passed": 635,
+  "registry_entries_validated": 71,
+  "dispatch_packages_validated": 5,
+  "dispatch_snapshots_validated": 61,
+  "frozen_packages_and_v05_diff_exit_code": 0,
+  "summary_word_pages_reviewed": 3,
+  "chain_word_pages": 17,
+  "chain_unchanged_pages_compared": 15,
+  "chain_changed_pages_reviewed": [16, 17],
+  "td_requests": "NOT_IMPLEMENTED",
+  "td_operator_video": "NOT_RUN",
+  "unity_runtime": "NOT_RUN",
+  "real_device_chain": "NOT_RUN",
+  "human_acceptance": "NOT_RUN"
+}

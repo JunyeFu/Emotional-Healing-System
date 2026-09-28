@@ -25,6 +25,8 @@ py -3.14 -m pytest -q "02-技术研发/03-TouchDesigner/t01_telemetry_panel/test
 
 运行制品没有UDP/TCP输出、Spout、文件输出或T-02请求回调。正式模式只接受v2.2；`dev_replay`兼容v2.1但步骤身份显示为不可用且不作推断。
 
+人工标记、中止请求、告警与请求ACK的真实接口缺口见[T-02当前交接](../../../agent/tasks/T-02/outputs/current-operator-contract.md)。旧TD引导工程和任意脚本遥控已迁入T-02历史归档；不作为本制品或操作员请求的执行入口。
+
 ## 完成边界
 
 本目录只证明本机TD对Python权威v2.2遥测的只读网络消费、显示和异常恢复基线，不证明真实设备链、Unity联合运行、T-02请求通道、外部端到屏幕延迟、正式构建、科学有效性或`LIVE_E2E`。

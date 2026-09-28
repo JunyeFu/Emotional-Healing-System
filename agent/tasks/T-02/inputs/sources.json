@@ -1,0 +1,21 @@
+{
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md",
+    "agent/tasks/T-01/outputs/current-td-contract.md",
+    "02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md",
+    "02-技术研发/03-TouchDesigner/t01_telemetry_panel/design/workbench-v3.md",
+    "agent/tasks/T-01/execution/build_workbench_a.py",
+    "02-技术研发/03-TouchDesigner/f04_readonly_console/README.md",
+    "02-技术研发/srp_session_core/README.md",
+    "02-技术研发/srp_session_core/models.py",
+    "02-技术研发/srp_session_core/core.py",
+    "02-技术研发/srp_session_core/transport.py",
+    "02-技术研发/srp_session_store/README.md",
+    "02-技术研发/srp_session_store/adapters.py",
+    "02-技术研发/srp_session_store/contracts/append-record-v1.schema.json",
+    "02-技术研发/05-通信协议/contracts/README.md",
+    "agent/tasks/T-02/inputs/legacy-relocations.json"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "baseline_commit": "3d74dbb",
+  "policy": "preserve_original_checkout_bytes",
+  "files": [
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/TD原型规划.md",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/TD原型规划.md",
+      "bytes": 6132,
+      "sha256": "7681EC0CB3787CD9D855C31807EE6AE3481850399532E26825477AFD817BEF4D"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/step-3-breath-animation.md",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/step-3-breath-animation.md",
+      "bytes": 3652,
+      "sha256": "3F987558C288B061103843E7EBBA88466B2566C2EB24641CC3523964487BE8DC"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/build_srp.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/build_srp.py",
+      "bytes": 7984,
+      "sha256": "417C89989F3204BDE7EC112A47A9F249E49CF8318D0D2398814022F30C30B8C0"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/td_minimal.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/td_minimal.py",
+      "bytes": 142,
+      "sha256": "C47C75B6BFED40C04FEE20D220F2AC8B6F694A7F39E62EF8DA9B5AC6E3CADBEE"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/step3_fix.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/step3_fix.py",
+      "bytes": 3398,
+      "sha256": "62AA0CB65D7A0F4E80AD3CB3F68E0BA032BE9E614239023FE96F4B01E51D0E91"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/step3_visual_fix.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/step3_visual_fix.py",
+      "bytes": 1601,
+      "sha256": "FD82638A403AF2C42A17BEA87C833C47434E377F4995580DEDB9F1764E1C2DE9"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/osc_bridge/README.md",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/osc_bridge/README.md",
+      "bytes": 4400,
+      "sha256": "BB225A772B02CADF065307F070C37C416FDD51C028E66FCF4FF9CC7B08F9AB35"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/osc_bridge/osc_controller.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/osc_bridge/osc_controller.py",
+      "bytes": 8939,
+      "sha256": "690AB7698114A344FD1B056F3A2C10BB5BD85550D80FA56F580F994041EE3BA8"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/osc_bridge/td_debug.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/osc_bridge/td_debug.py",
+      "bytes": 429,
+      "sha256": "F6D3E289932FAC41FF022F43C086C47527A38918169403A46459F3B1DB15AD1D"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/osc_bridge/td_osc_callbacks.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/osc_bridge/td_osc_callbacks.py",
+      "bytes": 2777,
+      "sha256": "6104F6E939EAC1B662B95F61F5A997B4C285F2346AFBEAA7F832E5CAB154708E"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/osc_bridge/td_osc_receiver.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/osc_bridge/td_osc_receiver.py",
+      "bytes": 4181,
+      "sha256": "2D69010F392E4E5B1D4BA8082EAC4C2894037E4449E724C48FD44BFE96DA803B"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/osc_bridge/td_webserver_callbacks.py",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/osc_bridge/td_webserver_callbacks.py",
+      "bytes": 6190,
+      "sha256": "D2E874B2E49F6BF8D2D39DF29C2EE921F00A7D92BF93FC7A7FAEEC3DA4B3960A"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/呼吸引导.toe",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/呼吸引导.toe",
+      "bytes": 23946,
+      "sha256": "F2A637E1CB8CBAAE5DF599338A63AEE0845CA2F0DEF7AA26841E848F5BB44F3E"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/呼吸引导.2.toe",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/呼吸引导.2.toe",
+      "bytes": 23946,
+      "sha256": "F2A637E1CB8CBAAE5DF599338A63AEE0845CA2F0DEF7AA26841E848F5BB44F3E"
+    },
+    {
+      "original_path": "02-技术研发/03-TouchDesigner/Backup/呼吸引导.1.toe",
+      "archive_path": "agent/tasks/T-02/archive/legacy-td-authoring/Backup/呼吸引导.1.toe",
+      "bytes": 25066,
+      "sha256": "31A66CA8038D8342DD71114FF59EF560E4AEB28BF07883349A3DBF50E8EAAA60"
+    }
+  ]
+}
