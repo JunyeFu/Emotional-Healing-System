@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-29",
+  "summary_pages": 3,
+  "summary_pages_visually_checked": [1, 2, 3],
+  "chain_pages": 22,
+  "chain_pages_identical_to_reviewed_x01": "1-20",
+  "chain_changed_pages_visually_checked": [21, 22],
+  "result": "PASS_NO_CLIPPING_OR_OVERLAP",
+  "scope": "readable document layout, not policy validation or human approval"
+}

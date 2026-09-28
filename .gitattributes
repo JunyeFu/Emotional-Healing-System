@@ -60,4 +60,5 @@ agent/tasks/W-01/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/Q-01/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/Q-03/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/X-01/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/X-02/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/X-01/evidence/initial-encoding-failure.txt -text whitespace=-blank-at-eol

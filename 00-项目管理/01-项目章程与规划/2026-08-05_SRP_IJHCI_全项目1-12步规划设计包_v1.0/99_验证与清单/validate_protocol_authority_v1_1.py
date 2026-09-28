@@ -12,6 +12,7 @@ PROJECT_ROOT = PACKAGE.parents[2]
 LEGACY_OFFLINE = PROJECT_ROOT / "agent/tasks/A-01/archive"
 LEGACY_STATISTICS = PROJECT_ROOT / "agent/tasks/A-02/archive"
 LEGACY_LEVEL_C = PROJECT_ROOT / "agent/tasks/Q-03/archive"
+LEGACY_POLICY = PROJECT_ROOT / "agent/tasks/X-02/archive"
 AUTHORITY = PACKAGE / "00_总控" / "protocol_authority_v1.1.json"
 
 ACTIVE_FILES = [
@@ -39,8 +40,8 @@ ACTIVE_FILES = [
     LEGACY_OFFLINE / "03_呼吸事件与Protocol_Fidelity.md",
     PACKAGE / "22_离线处理与科研分析" / "05_问卷与访谈处理.md",
     LEGACY_STATISTICS / "06_统计模型与图表计划.md",
-    PACKAGE / "23_后续可解释序列编排研究" / "00_后续研究总设计.md",
-    PACKAGE / "23_后续可解释序列编排研究" / "01_数据与方法储备.md",
+    LEGACY_POLICY / "00_后续研究总设计.md",
+    LEGACY_POLICY / "01_数据与方法储备.md",
     PACKAGE / "24_团队任务与项目治理" / "00_四人团队职责与任务树.md",
     PACKAGE / "24_团队任务与项目治理" / "04_可领取树型任务包_v2.0.md",
     PACKAGE / "24_团队任务与项目治理" / "05_可领取任务包.csv",
@@ -91,7 +92,7 @@ REQUIRED_MARKERS = {
         "先完成PANAS后测",
         "研究目的和条件猜测",
     ),
-    PACKAGE / "23_后续可解释序列编排研究" / "00_后续研究总设计.md": (
+    LEGACY_POLICY / "00_后续研究总设计.md": (
         "参与者分组交叉拟合",
         "有效样本量",
         "行为概率",

@@ -37,10 +37,10 @@
     "Q-01",
     "Q-02",
     "Q-03",
-    "X-01"
+    "X-01",
+    "X-02"
   ],
   "remaining_packages": [
-    "X-02",
     "X-03",
     "Z-01",
     "G-05",
@@ -1097,6 +1097,27 @@
       "status": "OPEN_FORMAL_CONTEXT_AND_RUNTIME_ADAPTERS",
       "description": "实名权限、正式分层清单、Level C适配及阶段三实时策略未完成，本轮工具修订未新签收",
       "source": "agent/tasks/X-01/outputs/current-randomization.json"
+    },
+    {
+      "task_id": "X-02",
+      "id": "X02-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_ROUTE",
+      "description": "两旧方案实际归档，导航及历史消费者修复，核心PANAS与可选策略范围分离",
+      "source": "agent/tasks/X-02/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "X-02",
+      "id": "X02-N02",
+      "status": "FIXED_HANDOFF_NOT_IMPLEMENTATION",
+      "description": "分组/时序/概率/块依赖与奖励方向明确，正式方法和阈值未冻结，不宣称完成策略模型",
+      "source": "agent/tasks/X-02/outputs/current-policy.md"
+    },
+    {
+      "task_id": "X-02",
+      "id": "X02-N03",
+      "status": "OPEN_MODEL_OPE_DATA_AND_RESPONSIBILITY",
+      "description": "训练器、OPE/ESS、真实锁定资料、负责人及E-05冻结证据仍缺，WAIT_DEP未签署",
+      "source": "agent/tasks/X-02/outputs/current-policy.json"
     }
   ]
 }

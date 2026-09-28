@@ -1,0 +1,33 @@
+{
+  "task_id": "X-02",
+  "title": "X02 策略学习与离线评价交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "X-02仍WAIT_DEP、未领取且未签署。两旧v1.1方案原文归档，当前交接与历史消费者修复，42项专项通过；没有训练器、OPE、ESS、实际模型或冻结报告，核心论文不等待可选扩展。",
+  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "没有X-02历史签署。本轮Codex整理与软件检查，不代表独立Agent复核、真实训练或真人方法批准。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["约5人日，依赖整个A-03，实施/复核负责人为空。SPEC已签收不等于REAL/CAL或阶段一锁定资料可用；当前只有规范化任务与方法交接。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1嵌套交叉验证、缩放、bootstrap和区间按参与者分组；AC2合法动作正概率且报告支持/OPE/ESS；AC3不稳定、低质量或支持不足时用冻结均匀/更简策略，同输入种子逐决策可重放。", "五天依次对齐输入、分组训练、离线评价、回退消融、重放交接。TASK列国内资料和明确产物，需真实实现/统计复核/集成人领取，不把通用分析流程当已完成模型。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK与五目录，当前状态/方法说明和JSON、来源、消费者影响及9项交接测试。两份旧23目录方案实际原文归档，原位置导航当前入口；旧验证器修复读取归档。", "共享随机化和Schema未改，没有虚构旧模型工具迁移。当前验收只是交接/既有行为核对，不生成合成模型、OPE价值、ESS或校准图来冒充交付。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["旧有序功能门不支配当前PANAS主比较；可选扩展不阻断核心收尾。策略学习用锁定阶段一scene_native轨迹，X-01供顺序前缀行为概率，实际前状态由记录构建。", "末测可作末端结果，不进入状态；未来信息、阶段三结果和实名禁入，心电只离线解释。PF/SQI/降级为护栏，不任意混成奖励；预测负性维度若越低越好，选择方向须一致。"]},
+    {"heading": "验证与结果", "paragraphs": ["42项专项通过，9项新交接/原件/路线/Schema检查与33项既有随机化。实际阶段一scene_native覆盖24排列，位置概率乘积1/24；v2.2目标概率null不能当完整目标分布。", "历史v1.1消费者通过；原文件字节核对与当前导航通过。根回归及治理结果见regression.json；没有真实训练、OPE/ESS、冻结、Unity/TD或新独立/真人复核。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧门序和当前研究定位冲突通过原文归档、导航与消费者修复处理，历史阈值和标记不改写。当前奖励、OPE估计器、温度、混合率和支持/ESS阈值为null，不借旧20%候选当正式值。", "外层评价不调参，缩放只拟合当折训练者；bootstrap按人。完整块随机化的跨人依赖另需设计一致推断，不能宣称按人分组自动消除；最高均值顺序不能证明普遍最优。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["本包只有TASK与inputs/execution/evidence/outputs/archive。两旧方案限定原字节归档，当前Word由Agent结构化事实生成；未改领取状态或冻结输入。", "共享业务模块仍为原权威入口，整个根目录收拢待全包逐次完成。规范化状态不代替研究或模型签收，无业务状态变化不重绘SVG。"]},
+    {"heading": "上下游交接", "paragraphs": ["A-01提供完整轨迹/原件/L3，A-03提供真实测量与锁定结果，X-01供分配身份和行为概率；缺失/支持按位置及候选历史处理，研究编号只作分组键。", "E-05/U12-08冻结真实模型、方法、阈值及模型核查结果；X-03只读加载和逐决策部署，P-01保持编排权威。阶段三独立队列比较包含回退的部署策略，同一锁定资料的学习/OPE不是确认性优效。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["Codex完成当前材料整理，不领取整个X-02。训练、统计复核和集成负责人尚未落实，无模型卡或真人签署，不借A-03-SPEC或X-01原签署填本包PASS。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计39/71、剩余32，下一X-03。训练器、评价器、支持/ESS报告、真实资料、人员与策略冻结仍未交付，WAIT_DEP不变，整体双层迁移继续。"]},
+    {"heading": "审阅来源", "paragraphs": ["注册表/任务手册、两旧方案、当前投稿路线、A-01/A-03/X-01交接、实际随机化与v2.2 Schema。本轮未新增网页方法核验、受限数据或外部批准。"]}
+  ],
+  "findings": [
+    {"id": "X02-N01", "status": "FIXED_ARCHIVE_AND_CURRENT_ROUTE", "description": "两旧方案实际归档，导航及历史消费者修复，核心PANAS与可选策略范围分离", "source": "agent/tasks/X-02/evidence/consumer-impact.md"},
+    {"id": "X02-N02", "status": "FIXED_HANDOFF_NOT_IMPLEMENTATION", "description": "分组/时序/概率/块依赖与奖励方向明确，正式方法和阈值未冻结，不宣称完成策略模型", "source": "agent/tasks/X-02/outputs/current-policy.md"},
+    {"id": "X02-N03", "status": "OPEN_MODEL_OPE_DATA_AND_RESPONSIBILITY", "description": "训练器、OPE/ESS、真实锁定资料、负责人及E-05冻结证据仍缺，WAIT_DEP未签署", "source": "agent/tasks/X-02/outputs/current-policy.json"}
+  ],
+  "next_task": "X-03",
+  "source_links": [
+    {"label": "当前策略数据与方法交接", "path": "agent/tasks/X-02/outputs/current-policy.md"},
+    {"label": "未实现与未冻结字段", "path": "agent/tasks/X-02/outputs/current-policy.json"},
+    {"label": "实际专项结果", "path": "agent/tasks/X-02/evidence/verification.json"},
+    {"label": "原件归档与字节记录", "path": "agent/tasks/X-02/archive/README.md"},
+    {"label": "消费者和下游影响", "path": "agent/tasks/X-02/evidence/consumer-impact.md"}
+  ]
+}

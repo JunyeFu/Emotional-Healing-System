@@ -1,0 +1,32 @@
+{
+  "task_id": "X-02",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\X-02\\execution\\test_policy_handoff.py",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\randomization"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\00-项目管理\\01-项目章程与规划\\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\\99_验证与清单\\validate_protocol_authority_v1_1.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "current handoff, archive bytes, route and existing synthetic allocation/protocol only",
+  "real_training": "NOT_RUN",
+  "ope": "NOT_IMPLEMENTED",
+  "ess": "NOT_IMPLEMENTED",
+  "policy_freeze": "NOT_RUN",
+  "unity": "NOT_RUN",
+  "td": "NOT_RUN",
+  "new_independent_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_RUN"
+}
