@@ -33,4 +33,6 @@
 
 | 18 | D-01 真实ECG与RR采集 | [总结](tasks/D-01/summary.docx) | 旧骨架与两份方案已归档，30项软件检查通过；真实驱动、30分钟记录与实际领取人仍待落实，不变更WAIT_DEP_EXTERNAL |
 
+| 19 | D-02 真实呼吸与运动采集 | [总结](tasks/D-02/summary.docx) | 原生呼吸批次修复，37项软件测试通过；专用SDK、真机与30分钟证据仍待完成，状态保持WAIT_DEP_EXTERNAL |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

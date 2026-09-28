@@ -94,6 +94,19 @@ def test_historical_acceptance_and_frozen_input_preserved():
     assert validator["main"]() == 0
 
 
+@pytest.mark.parametrize("task_id,field,suffix,expected", [
+    ("R-01", "evidence_required", "", True),
+    ("R-01", "evidence_required", ";unregistered.py", False),
+    ("F-01", "evidence_required", "", False),
+    ("R-01", "acceptance_criteria", "", False),
+])
+def test_scope_relocation_only_allows_registered_execution_path(task_id, field, suffix, expected):
+    matches = runpy.run_path(str(GOV / "u12_upgrade/validate_u12_governance.py"))["scope_field_matches"]
+    old = "required.md;99_验证与清单/validate_r01_package.py"
+    new = "required.md;../../../agent/tasks/R-01/execution/validate_candidate.py" + suffix
+    assert matches(task_id, field, old, new) is expected
+
+
 def test_done_requires_dependencies_and_human_evidence(tmp_path):
     validate = runpy.run_path(str(GOV / "governance_profile.py"))["validate_u12_acceptance"]
     issues = validate({"task_id": "U12-02", "status": "DONE"}, ["U12-01"], tmp_path)

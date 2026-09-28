@@ -64,6 +64,7 @@ def test_missing_device():
     assert frame.ecg_raw is None
     assert frame.ecg_samples == ()
     assert frame.respiration_raw is None
+    assert frame.resp_samples == ()
     assert frame.eda_raw is None
     assert frame.temp_skin is None
     assert not any(frame.signal_validity.values())
@@ -86,6 +87,37 @@ def test_native_ecg_batch_is_preserved():
     second = clock._assemble(time.time())
     assert second.ecg_raw is None
     assert second.ecg_samples == ()
+
+
+def test_native_respiration_batch_preserves_400_hz_samples():
+    resp = RingBuffer(800)
+    expected = [(i / 400, float(i)) for i in range(40)]
+    for timestamp, value in expected:
+        resp.push(timestamp, value)
+    clock = FrameClock(resp_buf=resp)
+    clock.resp_connected = True
+    first = clock._assemble(0.1)
+    assert first.resp_samples == tuple(expected)
+    assert first.signal_validity['resp'] is True
+    assert first.respiration_raw == 38.0
+
+    second = clock._assemble(0.2)
+    assert second.resp_samples == ()
+    assert second.signal_validity['resp'] is False
+    assert second.respiration_raw == first.respiration_raw
+
+
+def test_native_respiration_cursor_only_returns_new_samples():
+    resp = RingBuffer(800)
+    resp.push(1.0, 10.0)
+    clock = FrameClock(resp_buf=resp)
+    clock.resp_connected = True
+    assert clock._assemble(1.0).resp_samples == ((1.0, 10.0),)
+    resp.push(1.0025, 11.0)
+    resp.push(1.005, 12.0)
+    assert clock._assemble(1.01).resp_samples == ((1.0025, 11.0), (1.005, 12.0))
+    clock.resp_connected = False
+    assert clock._assemble(1.02).resp_samples == ()
 
 
 if __name__ == "__main__":

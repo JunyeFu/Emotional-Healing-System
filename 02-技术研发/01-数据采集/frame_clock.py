@@ -1,9 +1,9 @@
 """SRP frame clock.
 
-The clock emits 10 Hz coordination frames while preserving every native ECG
-sample and timestamp collected since the previous tick. Feature extraction
-must consume ``ecg_samples``; ``ecg_raw`` is display-only and is never an
-averaged substitute for the native stream.
+The clock emits 10 Hz coordination frames while preserving native ECG and respiration
+samples and timestamps collected since the previous tick. Feature extraction
+must consume ``ecg_samples`` and ``resp_samples``; the scalar fields are
+display-only and cannot substitute for the native stream.
 """
 
 import time
@@ -27,7 +27,7 @@ class RawFrame:
     """
     timestamp: float
 
-    # Respiration (PLUX belt >=25Hz → 10Hz downsample)
+    # Legacy display average; the native respiration batch is authoritative.
     respiration_raw: Optional[float] = None
 
     # ECG display snapshot plus the authoritative native-rate batch.
@@ -51,6 +51,7 @@ class RawFrame:
     weather_type: str = "storm"
     guidance_prompt: str = ""
     signal_validity: dict[str, bool] = field(default_factory=dict)
+    resp_samples: tuple[tuple[float, float], ...] = ()
 
 
 class FrameClock(threading.Thread):
@@ -83,6 +84,7 @@ class FrameClock(threading.Thread):
         self._stop = threading.Event()
         self.frame_id = 0
         self._last_ecg_timestamp = float("-inf")
+        self._last_resp_timestamp = float("-inf")
 
         # Device connection flags (set by DeviceManager after connect)
         self.ecg_connected = False
@@ -126,11 +128,15 @@ class FrameClock(threading.Thread):
             ecg_samples = []
             ecg_val = None
 
-        # Respiration: downsample ≥25→10Hz (approx 3 samples)
+        # Preserve the native batch before computing the legacy display average.
         if self.resp_connected and self.resp_buf and not self.resp_buf.is_empty:
+            resp_samples = self.resp_buf.read_after(self._last_resp_timestamp)
+            if resp_samples:
+                self._last_resp_timestamp = resp_samples[-1][0]
             resp_window = self.resp_buf.read_window(3)
             resp_val = sum(resp_window) / len(resp_window) if resp_window else None
         else:
+            resp_samples = []
             resp_val = None
 
         # EDA: use latest (4 Hz → hold last value)
@@ -154,13 +160,14 @@ class FrameClock(threading.Thread):
         return RawFrame(
             timestamp=ts,
             respiration_raw=resp_val,
+            resp_samples=tuple(resp_samples),
             ecg_raw=ecg_val,
             ecg_samples=tuple(ecg_samples),
             eda_raw=eda_val,
             acc_magnitude=acc_val,
             temp_skin=temp_val,
             signal_validity={
-                "resp": resp_val is not None,
+                "resp": bool(resp_samples),
                 "ecg": bool(ecg_samples),
                 "eda": eda_val is not None,
                 "acc": acc_val is not None,

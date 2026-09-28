@@ -17,10 +17,10 @@
     "V-02",
     "V-03",
     "V-04",
-    "D-01"
+    "D-01",
+    "D-02"
   ],
   "remaining_packages": [
-    "D-02",
     "S-01",
     "S-02",
     "V-05",
@@ -565,6 +565,34 @@
       "status": "OPEN_REAL_OWNER",
       "description": "岗位P-HARDWARE未落实实际领取人，领取与输入冻结须由治理流程完成",
       "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+    },
+    {
+      "task_id": "D-02",
+      "id": "D02-N01",
+      "status": "FIXED_NATIVE_BATCH",
+      "description": "共享呼吸帧原生样本丢失已补批次与时间戳，旧均值仅作显示",
+      "source": "02-技术研发/01-数据采集/frame_clock.py"
+    },
+    {
+      "task_id": "D-02",
+      "id": "D02-N02",
+      "status": "OPEN_VENDOR_AND_HARDWARE",
+      "description": "缺respiBAN专用SDK、原始通知接口及真实30分钟记录，UP-06/M06仍开放",
+      "source": "agent/tasks/D-02/outputs/current-acquisition.md"
+    },
+    {
+      "task_id": "D-02",
+      "id": "D02-N03",
+      "status": "OPEN_REAL_OWNER",
+      "description": "P-HARDWARE尚未落实实际领取人，不代填签收",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+    },
+    {
+      "task_id": "D-02",
+      "id": "D02-N04",
+      "status": "FIXED_GOVERNANCE_RELOCATION",
+      "description": "全仓发现R-01迁移路径误判，补精确映射；未知路径、其他任务和验收条件变化仍拒绝",
+      "source": "agent/normalization-relocations.json"
     }
   ]
 }

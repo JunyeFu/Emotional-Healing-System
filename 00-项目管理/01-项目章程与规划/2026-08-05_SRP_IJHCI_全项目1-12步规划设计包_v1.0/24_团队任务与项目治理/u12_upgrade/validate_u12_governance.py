@@ -40,6 +40,24 @@ def semantic_errors(rows, protocol, milestones):
     return errors
 
 
+def scope_field_matches(task_id, field, previous, current):
+    if previous == current:
+        return True
+    if field != "evidence_required":
+        return False
+    items = previous.split(";")
+    for entry in read(REPO / "agent/normalization-relocations.json")["entries"]:
+        if entry["task_id"] != task_id or entry["field"] != field:
+            continue
+        target = (PLAN / entry["new_plan_path"]).resolve()
+        if not target.is_relative_to(REPO) or not target.is_file():
+            return False
+        if (PLAN / entry["old_plan_path"]).exists():
+            return False
+        items = [entry["new_plan_path"] if item == entry["old_plan_path"] else item for item in items]
+    return ";".join(items) == current
+
+
 def main():
     with (GOV / "05_可领取任务包.csv").open(encoding="utf-8-sig", newline="") as f:
         rows = list(csv.DictReader(f))
@@ -63,7 +81,8 @@ def main():
     for row in baseline:
         if row["status"] == "DONE" or row["task_id"] == "A-03":
             current = by_id[row["task_id"]]
-            if any(row[field] != current[field] for field in immutable_scope_fields):
+            if any(not scope_field_matches(row["task_id"], field, row[field], current[field])
+                   for field in immutable_scope_fields):
                 errors.append("SIGNED_OR_CLAIMED_SCOPE_DRIFT:" + row["task_id"])
     for name in ("release_routes_v1.0.json", "task_milestones_v1.0.json", "task_milestone_status_v1.0.json", "upgrade_subdeliveries_v1.0.csv"):
         live = (GOV / "audit_upgrade" / name).read_bytes().replace(b"\r\n", b"\n")

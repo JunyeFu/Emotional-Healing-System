@@ -1,0 +1,30 @@
+{
+  "task_id": "D-02",
+  "status": "WAIT_DEP_EXTERNAL",
+  "claimant": null,
+  "device_model": "PLUX respiBAN BLE",
+  "formal_driver_implemented": false,
+  "real_hardware_verified": false,
+  "vendor_sdk_received": false,
+  "windows_sdk_compatibility_verified": false,
+  "wire_layout_verified": false,
+  "formal_mock_fallback_allowed": false,
+  "edr_primary_substitution_allowed": false,
+  "nominal_sample_rate_hz": 400,
+  "channels": [
+    {"name": "respiration", "count": 1, "resolution_bits": 28},
+    {"name": "accelerometer", "count": 3, "resolution_bits": 16},
+    {"name": "gyroscope", "count": 3, "resolution_bits": 16}
+  ],
+  "raw_source_id": "plux_respiban",
+  "raw_source_policy": "real",
+  "raw_packet_fields": ["source_id", "source_policy", "packet_seq", "device_time_ns", "host_received_monotonic_ns", "clock_domain_id", "sample_count", "payload", "missing_reason_code"],
+  "native_respiration_field": "resp_samples",
+  "display_only_field": "respiration_raw",
+  "device_time_is_host_time": false,
+  "unknown_device_time_policy": "null; record clock reason separately in L1, not missing_reason_code with a present payload",
+  "decoded_sdk_values_are_wire_bytes": false,
+  "required_continuous_capture_seconds": 1800,
+  "continuous_capture_evidence_seconds": null,
+  "pending_deliveries": ["vendor SDK and license", "target-machine and Python compatibility", "verified channel order and wire bytes", "real adapter", "30-minute respiration and motion capture", "disconnect and reconnect evidence", "dual-device compatibility evidence", "named owner and review"]
+}

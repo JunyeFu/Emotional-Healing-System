@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-09-28",
+  "sources": [
+    {"url": "https://support.pluxbiosignals.com/wp-content/uploads/2024/05/respiBAN_BLE_Datasheet.pdf", "location": "pages 4-7 and 9-10", "supports": "respiBAN BLE identification, 400Hz, respiration 28-bit and six motion channels 16-bit; axes and units"},
+    {"url": "https://support.pluxbiosignals.com/knowledge-base/official-plux-application-programming-interfaces-apis/", "location": "Wearables APIs", "supports": "respiBAN-specific APIs available on request; public Hub samples do not establish respiBAN protocol"},
+    {"url": "https://support.pluxbiosignals.com/knowledge-base/respiban-ble-getting-started/", "location": "Sensor Positioning and Step 1", "supports": "inductive belt positioning and fixed acquisition rate"}
+  ],
+  "vendor_sdk_received": false,
+  "gatt_layout_verified": false,
+  "python_3_14_compatibility_verified": false
+}

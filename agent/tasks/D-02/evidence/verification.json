@@ -1,0 +1,19 @@
+{
+  "task_id": "D-02",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\02-技术研发\\01-数据采集\\tests",
+        "D:\\Agent\\srp\\agent\\tasks\\D-01\\execution\\test_current.py",
+        "D:\\Agent\\srp\\agent\\tasks\\D-02\\execution\\test_d02_contract.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "software normalization, synthetic native batch and P-02 consumer checks only",
+  "real_device_acceptance": "NOT_RUN"
+}
