@@ -1,0 +1,21 @@
+{
+  "task_id": "V-02",
+  "status": "CURRENT_USAGE_OF_EXISTING_DECISIONS",
+  "scope": "scene_design_handoff_not_runtime_evidence",
+  "authority": {"sequence": "python_manifest", "session_clock": "python", "touchdesigner": "optional_read_only", "participant_core_input": false},
+  "camera": {"mode": "FIXED", "weather_scroll": false, "parallax": false, "pause_freezes_motion": true},
+  "conditions": {"modes": ["scene_native", "abstract_pacer"], "exclusive_phase_cues": true, "same_target_events": true, "same_algorithms": true, "same_audio": true, "same_timing": true, "same_background": true, "same_cumulative_function": true, "formal_input": "each_participant_real_input", "formative_input": "same_source", "abstract_form": "centered_unfilled_double_ring", "native_requires_hidden": false},
+  "assets": {"background": "complete_fixed_image", "effects": "ai_independent_rgba_assets", "reconstruction_required": false, "release_requires_license": true, "art_style": "high_precision_3d_game_environment_2d_reference"},
+  "modules": [
+    {"id": "storm", "scene": "风雨隘口", "mechanism": "雨幕风门", "breathing": "box_3_3_3_3"},
+    {"id": "heat", "scene": "热浪盐原", "mechanism": "冷流风道", "breathing": "long_exhale_4_6"},
+    {"id": "snow", "scene": "雪雾松林", "mechanism": "粉雪升沉", "breathing": "equal_inhale_exhale_5_5"},
+    {"id": "fade", "scene": "彩色湿地（原灰霾湿地概念）", "mechanism": "色潮回流", "breathing": "double_inhale_long_exhale"}
+  ],
+  "fade": {"color_scope": "whole_screen_both_conditions", "color_source": "module_effective_time", "initial_color": "fully_desaturated", "restoration_fraction": 0.95, "water_cue_source": "target_step_or_actual_estimate", "recovery_role": "independent_contour_and_texture", "pause_freezes_color": true},
+  "runtime_contract": "F-05_v2.2_all_four_demo_cycle_identity",
+  "transition": "shared_mountain_mist_corridor_not_weather_camera_revision",
+  "journey": "V-01_current_14_nodes_training_outside_core",
+  "research": {"native_win_required": false, "report_prespecified_affect_if_function_guard_fails": true},
+  "formal_collection_allowed": false
+}

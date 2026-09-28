@@ -13,10 +13,10 @@
     "U-02",
     "T-01",
     "R-01",
-    "V-01"
+    "V-01",
+    "V-02"
   ],
   "remaining_packages": [
-    "V-02",
     "V-03",
     "V-04",
     "D-01",
@@ -460,6 +460,41 @@
       "status": "OPEN_HUMAN_REVIEW",
       "description": "新候选未继承历史签名，正式时序冻结及真人审阅由责任人完成",
       "source": "agent/tasks/V-01/TASK.md"
+    },
+    {
+      "task_id": "V-02",
+      "id": "V02-N01",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前固定镜头覆盖旧卷轴，局部非周期运动及共同转场分开",
+      "source": "agent/tasks/V-02/outputs/current-scenes.md"
+    },
+    {
+      "task_id": "V-02",
+      "id": "V02-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "完整底图加独立素材覆盖旧拆层生产路线，许可未自动放行",
+      "source": "agent/tasks/V-02/outputs/current-scenes.md"
+    },
+    {
+      "task_id": "V-02",
+      "id": "V02-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "fade有效时间复色与步骤水系、累计轮廓纹理分开",
+      "source": "agent/tasks/V-02/outputs/current-scenes.json"
+    },
+    {
+      "task_id": "V-02",
+      "id": "V02-N04",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "四天气完整demo均要求v2.2身份，不采用粗相位兼容捷径",
+      "source": "agent/tasks/V-02/outputs/current-scenes.md"
+    },
+    {
+      "task_id": "V-02",
+      "id": "V02-N05",
+      "status": "OPEN_DOWNSTREAM",
+      "description": "真实呈现由V-05/U任务验证，资产许可与教学接入分别待G/U12/X任务",
+      "source": "agent/tasks/V-02/evidence/consumer-impact.md"
     }
   ]
 }

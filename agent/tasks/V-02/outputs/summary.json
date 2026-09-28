@@ -1,0 +1,145 @@
+{
+  "task_id": "V-02",
+  "title": "V02 四天气场景与呼吸提示设计交接审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "保留V-02原DONE及设计签收。历史校验器迁入Agent，当前交接明确V-04固定镜头、独立素材和fade有效时间复色优先于旧稿；新旧设计校验及26项回归通过。真实呈现、许可及教学接入仍由下游完成。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨（团队总监、真实第二人）",
+    "date": "2026-08-21 +08:00",
+    "commit": "c04a7be5017164ce8bdfa4ee7f0270c75bb37368",
+    "method": "审阅3ebbdeedfd3c16688ae406d34c18e4f319f2afac及既有验证，不表述为本人重跑。本轮整理不转移该签名。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "原负责人Codex Agent、约4人日，本轮沿用原DONE，不改变注册状态。新入口整理后续已确认裁定，原签名不转移到新的运行或研究时序。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1四个稳定ID各映射一个顺序无关场景和核心机制，体验无手部操作；AC2双条件互斥并匹配目标、算法、时序、音频与累计；AC3资产与许可明确，F-05承担v2.2、V-03排序风险、U-03验证切片。",
+        "所需概念设计、场景映射、控制变量与资产规划；国内资料沿用L-UNITYLEARN及L-RESEARCH，可点击统一学习资料入口。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK及五目录齐备；历史校验器实际迁入execution，删除旧99入口并修正V-01重跑引用。当前场景JSON和使用说明位于outputs；四次命令结果在evidence。",
+        "原26项ADR、四场景规格、决策日志、独立复核和签署保持原件，不用当前文档回改历史。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "对比V-02原v1.0和V-04已采用合同，三项后续裁定优先：四天气固定镜头、完整底图加独立RGBA素材、fade复色随模块有效时间。",
+        "水系目标和实际仍承担双吸长呼步骤，累计轮廓纹理独立。天气前方表示画面中远景，不借镜头移动表现长呼气。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "历史基线校验通过，覆盖四模块及两条件设计确认；当前交接校验通过，读取V-04来源及V-01的14节点。26项回归拒绝旧卷轴、拆层、恢复值/步骤复色、错呼吸映射、重复天气等规则误用。",
+        "本轮未运行Unity或真实设备，设计校验不证明画面和参与者结果。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "V02-N01横向卷轴、N02拆层路线及N03累计驱动颜色均已在当前入口订正，原签收材料保留。",
+        "V02-N04旧heat/snow粗相位兼容不代表完整demo兼容，当前全部使用F-05 v2.2周期身份。教学、许可与真实呈现缺口仍交下游。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧校验器删除且无兼容转发，当前与历史验证名称区分。共享历史业务目录暂留，最终根目录迁移尚未完成；未移动或刷新进行中领取快照。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "V-01当前时序先前测再教学，后测后其他测量；教学在800秒核心外，首次条件材料前暴露登记接入仍待U12-06/X-01。R-01提供四层与结果范围，不预设原生胜出。",
+        "V-03/V-04提供风险与有效视觉，V-05/U-03至U-07实现同源双条件和回执。G-02/G-05/U-08提供许可与真实资格，条件相同算法不意味着正式不同参与者波形相同。下一规范化包V-03。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原傅钧烨2026-08-21签收设计确认，不扩大为运行或正式构建；本轮仅Codex技术校验，没有代填新的真人签署或独立复核。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "明确路径提交并推送codex/task-package-normalization，不自动合并。规范化15/71，余56包，下一V-03；整体双层目录迁移继续。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前交接、命令证据、影响清单、原签收和国内学习资料见下列可点击来源。Word事实从Agent层生成，不仅在Word里修补旧设计。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "V02-N01",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前固定镜头覆盖旧卷轴，局部非周期运动及共同转场分开",
+      "source": "agent/tasks/V-02/outputs/current-scenes.md"
+    },
+    {
+      "id": "V02-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "完整底图加独立素材覆盖旧拆层生产路线，许可未自动放行",
+      "source": "agent/tasks/V-02/outputs/current-scenes.md"
+    },
+    {
+      "id": "V02-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "fade有效时间复色与步骤水系、累计轮廓纹理分开",
+      "source": "agent/tasks/V-02/outputs/current-scenes.json"
+    },
+    {
+      "id": "V02-N04",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "四天气完整demo均要求v2.2身份，不采用粗相位兼容捷径",
+      "source": "agent/tasks/V-02/outputs/current-scenes.md"
+    },
+    {
+      "id": "V02-N05",
+      "status": "OPEN_DOWNSTREAM",
+      "description": "真实呈现由V-05/U任务验证，资产许可与教学接入分别待G/U12/X任务",
+      "source": "agent/tasks/V-02/evidence/consumer-impact.md"
+    }
+  ],
+  "next_task": "V-03",
+  "source_links": [
+    {
+      "label": "当前场景交接",
+      "path": "agent/tasks/V-02/outputs/current-scenes.md"
+    },
+    {
+      "label": "机器可读交接",
+      "path": "agent/tasks/V-02/outputs/current-scenes.json"
+    },
+    {
+      "label": "本轮命令证据",
+      "path": "agent/tasks/V-02/evidence/verification.json"
+    },
+    {
+      "label": "消费者影响",
+      "path": "agent/tasks/V-02/evidence/consumer-impact.md"
+    },
+    {
+      "label": "原真实签收",
+      "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-02_天气概念与呼吸提示专项原型/V-02_技术验收记录_已签署.md"
+    },
+    {
+      "label": "国内技能资料",
+      "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    }
+  ]
+}

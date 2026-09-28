@@ -1,5 +1,13 @@
 # Codex Verification Log
 
+## 2026-09-28 V-02规范化验证
+
+- py -3.14 agent/tasks/V-02/execution/verify.py：历史场景、当前V-04来源与V-01旅程检查通过，26项pytest通过。首次测试收集因新文件的函数声明缺失失败，补正后完整重跑通过。
+- 07_validate_task_packages.py：71项通过；14_validate_ready_task_packages.py：5包47快照通过。
+- build_task_reviews.py V-02 --check通过；原V-02目录及当前分发快照git diff为空，未转移历史签名。
+- Word3页逐页检查，串联8/9页检查；前7页与V-01最终已查页像素一致。无截断或遮挡；当前设计不等于Unity运行。
+- 规范化15/71，剩余56包；下一V-03。当前旧卷轴、拆层及累计复色误用在Agent入口修正后回填Word，根目录整体迁移尚未完成。
+
 ## 2026-09-28 V-01规范化验证
 
 - py -3.14 agent/tasks/V-01/execution/verify.py：历史v1.0/v1.1、当前14节点、22项pytest和V-02消费者均通过。

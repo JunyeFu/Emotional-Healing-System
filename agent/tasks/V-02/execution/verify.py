@@ -1,4 +1,4 @@
-"""Record scoped historical and current V-01 checks."""
+"""Run scoped historical and current scene handoff checks."""
 import json
 from pathlib import Path
 import subprocess
@@ -6,18 +6,16 @@ import sys
 
 TASK = Path(__file__).resolve().parents[1]
 REPO = TASK.parents[2]
-DESIGN = REPO / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 
 
 def main():
-    (TASK / 'evidence').mkdir(exist_ok=True)
-    checks = []
     commands = [
         [sys.executable, str(TASK / 'execution/validate_historical.py')],
         [sys.executable, str(TASK / 'execution/validate_current.py')],
         [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_current.py')],
-        [sys.executable, str(REPO / 'agent/tasks/V-02/execution/validate_historical.py')],
+        [sys.executable, str(REPO / 'agent/tasks/V-01/execution/validate_current.py')],
     ]
+    checks = []
     for index, command in enumerate(commands):
         result = subprocess.run(command, cwd=REPO, capture_output=True, text=True, encoding='utf-8')
         output = result.stdout + result.stderr
@@ -25,8 +23,8 @@ def main():
         print(output, end='')
         checks.append({'command': command, 'exit_code': result.returncode})
     (TASK / 'evidence/verification.json').write_text(json.dumps({
-        'task_id': 'V-01', 'checks': checks,
-        'scope': 'historical design, current candidate usage and V-02 dependency, not Unity runtime or human approval'
+        'task_id': 'V-02', 'checks': checks,
+        'scope': 'historical scene confirmation and current handoff; no rendered runtime or research result'
     }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return int(any(c['exit_code'] != 0 for c in checks))
 

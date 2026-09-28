@@ -20,6 +20,7 @@
 | 看天气设计 | `01-需求与设计/情绪天气方案/四种天气设计.md` |
 | 看四层表示方案 | `agent/tasks/R-01/outputs/current-representation.md`（当前适用与历史来源） |
 | 看完整参与者旅程 | `agent/tasks/V-01/outputs/current-experience.md`（当前时序候选与运行交接） |
+| 看当前四天气交接 | `agent/tasks/V-02/outputs/current-scenes.md`（固定镜头、独立素材与fade职责） |
 | 看最近工作与论文骨架 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md` |
 | 看设备方案 | `02-技术研发/01-数据采集/设备方案.md` |
 | 看评分模型 | `02-技术研发/02-信号处理/评分模型设计.md` |

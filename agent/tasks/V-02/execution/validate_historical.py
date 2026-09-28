@@ -1,4 +1,4 @@
-"""Validate the V-02 scene-design baseline and its authority boundaries."""
+"""Validate signed V-02 v1.0 against its historical design authorities."""
 
 from __future__ import annotations
 
@@ -8,7 +8,8 @@ import pathlib
 import sys
 
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+REPO = pathlib.Path(__file__).resolve().parents[4]
+ROOT = REPO / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 V02 = ROOT / "20_产品与场景设计" / "V-02_天气概念与呼吸提示专项原型"
 CONTRACT = V02 / "v02-scene-baseline-v1.0.json"
 PROTOCOL = ROOT / "00_总控" / "protocol_authority_v1.1.json"
