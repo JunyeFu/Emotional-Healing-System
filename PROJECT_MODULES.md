@@ -137,7 +137,7 @@ G-02只对外返回不透明预约和审计ID。去重库、研究编号映射�
 | V1 | Python单元/性质测试、Unity Edit/Play Mode、TD离线fixture | 软件集成 |
 | V2 | 记录重放、故障注入、Unity无TD运行、外部呈现延迟与多小时真机压力 | Level C候选构建 |
 | V3 | Level A/B/C及冻结报告 | 正式阶段预注册 |
-| V4 | 锁库、双分析、三重门和复现报告 | 论文结论 |
+| V4 | 获准锁库及揭盲、情绪主比较与功能/过程分轴、独立扩展及复现报告（[A-05](agent/tasks/A-05/outputs/current-analysis.md)、[A-04](agent/tasks/A-04/outputs/current-analysis.md)） | 与实际研究范围一致的论文结论 |
 
 ## 6. 当前实现事实
 

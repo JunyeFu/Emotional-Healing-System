@@ -51,6 +51,7 @@
 | 看可选阶段三独立冻结 | `agent/tasks/G-04/outputs/current-extension.md`（两原生组策略比较、独立准入和同构建，真实放行仍缺） |
 | 看可选阶段三批次模板 | `agent/tasks/B-03/outputs/current-batch.md`（12人批次、48分配块、真实决策及部分运行交接） |
 | 看可选阶段三研究关闭 | `agent/tasks/E-06/outputs/current-closeout.md`（全部活动、策略不变性、研究锁库与揭盲分别授权） |
+| 看可选阶段三锁定分析 | `agent/tasks/A-04/outputs/current-analysis.md`（原分配部署比较、独立SAP与真实复现缺口） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |

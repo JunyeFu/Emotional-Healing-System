@@ -1,0 +1,130 @@
+{
+  "task_id": "A-04",
+  "title": "A04 阶段三锁定分析与复现审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "A-04仍BLOCKED_EXTERNAL、未领取未签收；已规范两原生组的策略部署比较、回退原分配、独立统计参数与全部结果出口。旧三重门不再作为报告前置，真实锁库/SAP/分析及独立复现仍缺。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有A-04真实签署；本轮作者Agent仅做合同与合成数值核查，没有新增独立复核或实际研究复跑。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务5人日，未领取、未复核或签收。真实阶段三实例零，E-06锁库/揭盲和G-04独立SAP未取得；模板不生成正式分析。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1保持独立阶段三范围及A-05/E-06依赖；AC2全部预设情绪及区间独立报告；AC3不用旧Gate2/有序门挡结果；AC4完整披露停止、偏离、缺失及回退，限冻结部署估计目标。",
+        "四段为锁定输入及角色、原分配情绪与功能分轴、冻结缺失/FDR及策略审计、同版图表和独立复现后交接。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK和五目录、15项实际来源、当前分析说明/机器状态、NOT_RUN空报告、验证脚本和测试。真实效应、CI、FDR结果、图表和复跑签署均未生成。",
+        "第11步两个入口、统计图表导航及手册同步；模块总览V4旧三重门改为情绪/功能分轴及独立扩展，注册旧名、依赖和历史签署不改。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "两组均scene_native，候选处理assigned_policy_arm，policy=1/random=0，对比policy_minus_random，负值有利策略；不是阶段一native-minus-abstract比较。",
+        "回退留原分配，部署效果包括回退；阶段三独立模型/界值/缺失/FDR参数不自动继承阶段一。实际序列受状态与选择影响，不能直接排名声称顺序因果作用或个性化机制。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "36专项通过：当前注册/来源/路线、G-04/E-06缺口及原分配规则；实际既有HC3 helper在合成负/零/正效应下保持策略减随机方向，BH helper只做阈值核查，不是完整家族分析。",
+        "根回归635项通过，协议、治理、71项注册、5包/61快照分发PASS；没有真实分析、Unity/TD运行、独立研究复跑或真人签收。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "首轮pytest同名文件收集冲突，已实际改A-04测试名称；第二轮35通过1失败，来源把包误写单文件，已改__init__.py，复测36通过。",
+        "首轮原输出保留；第二轮原日志因仓库外相对移动失败后被覆盖，repair-notes明确记录观察诊断，不冒充原stdout。当前消费者和Word共同订正，真实输入缺口仍OPEN。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "执行材料按TASK/inputs/execution/evidence/outputs/archive归属。共享旧第11步原文已归档E-04、旧统计原文在A-02，仅引用，不复制。没有旧A-04真实程序或实例可搬移。",
+        "先修Agent事实与实际消费者，再生成Word和串联审阅；不刷新在研快照，不改变业务状态或重绘SVG，整体根目录物理迁移仍未完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "E-06交精确锁库及同对象揭盲授权，G-04交独立SAP、分配/停止规则，A-01/A-02交获准六类原件重建、分析集及缺失，X-03交真实策略全组件/状态/分布/回退与无副作用重放。当前未齐。",
+        "A-05阶段一参数和U12-10核心分类不无合同直接套用；扩展结果交U12-08专门复核、A-06核实全部实际范围，W-02/W-03消费同一结果/图表/输入/代码。未开展扩展不要求A-04 DONE，部分活动不得声称NO_STAGE3。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "分析负责人、独立复跑者、结果复核及真实签收人待实名。作者Agent合成自检不等于独立复现或真人签收，不预填日期、PASS或授权。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计55/71包规范化，余16，下一A-06。A-04仍BLOCKED_EXTERNAL，正式分析及签收未执行；继续逐包后完成根目录双层物理迁移与引用/运行验证。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "实际注册及v1.2路线/协议、G-04/A-05/E-06/A-01/A-02/X-03/B-03交接，既有候选HC3与BH helper、已归档统计及第11步原文；未新增网页结论或真实实验结果。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "A04-N01",
+      "status": "FIXED_CURRENT_SCOPE_AND_MODULE_CONSUMERS",
+      "description": "旧三重门与当前验收分开，阶段三部署比较及四段过程进入实际消费者",
+      "source": "agent/tasks/A-04/evidence/consumer-impact.md"
+    },
+    {
+      "id": "A04-N02",
+      "status": "FIXED_TEST_IDENTITY_AND_PACKAGE_SOURCE",
+      "description": "测试同名及包源路径实际修复，复测36通过；第二失败原输出丢失已明确",
+      "source": "agent/tasks/A-04/evidence/repair-notes.md"
+    },
+    {
+      "id": "A04-N03",
+      "status": "OPEN_REAL_LOCK_SAP_ANALYSIS_AND_REPRODUCTION",
+      "description": "真实锁库/揭盲、独立SAP、全分析/FDR/图表和独立复跑未取得",
+      "source": "agent/tasks/A-04/outputs/current-analysis.json"
+    }
+  ],
+  "next_task": "A-06",
+  "source_links": [
+    {
+      "label": "阶段三当前分析交接",
+      "path": "agent/tasks/A-04/outputs/current-analysis.md"
+    },
+    {
+      "label": "实际状态与缺口",
+      "path": "agent/tasks/A-04/outputs/current-analysis.json"
+    },
+    {
+      "label": "未运行分析报告",
+      "path": "agent/tasks/A-04/outputs/analysis-report-template.json"
+    },
+    {
+      "label": "验证结果",
+      "path": "agent/tasks/A-04/evidence/verification.json"
+    },
+    {
+      "label": "实际失败修复",
+      "path": "agent/tasks/A-04/evidence/repair-notes.md"
+    }
+  ]
+}

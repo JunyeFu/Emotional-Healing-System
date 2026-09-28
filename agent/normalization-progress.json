@@ -53,10 +53,10 @@
     "E-05",
     "G-04",
     "B-03",
-    "E-06"
+    "E-06",
+    "A-04"
   ],
   "remaining_packages": [
-    "A-04",
     "A-06",
     "W-02",
     "W-03",
@@ -1461,6 +1461,27 @@
       "status": "OPEN_REAL_BATCHES_POLICY_LOCK_AND_AUTHORIZATION",
       "description": "全部真实实例/QC、策略动态证据、盲态重建/SAP及真实锁库签署/揭盲仍缺",
       "source": "agent/tasks/E-06/outputs/current-closeout.json"
+    },
+    {
+      "task_id": "A-04",
+      "id": "A04-N01",
+      "status": "FIXED_CURRENT_SCOPE_AND_MODULE_CONSUMERS",
+      "description": "旧三重门与当前验收分开，阶段三部署比较及四段过程进入实际消费者",
+      "source": "agent/tasks/A-04/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "A-04",
+      "id": "A04-N02",
+      "status": "FIXED_TEST_IDENTITY_AND_PACKAGE_SOURCE",
+      "description": "测试同名及包源路径实际修复，复测36通过；第二失败原输出丢失已明确",
+      "source": "agent/tasks/A-04/evidence/repair-notes.md"
+    },
+    {
+      "task_id": "A-04",
+      "id": "A04-N03",
+      "status": "OPEN_REAL_LOCK_SAP_ANALYSIS_AND_REPRODUCTION",
+      "description": "真实锁库/揭盲、独立SAP、全分析/FDR/图表和独立复跑未取得",
+      "source": "agent/tasks/A-04/outputs/current-analysis.json"
     }
   ]
 }

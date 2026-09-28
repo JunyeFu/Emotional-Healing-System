@@ -1,0 +1,56 @@
+{
+  "task_id": "A-04",
+  "status": "NOT_RUN",
+  "research_lock_id": null,
+  "unblind_authorization_ref": null,
+  "formal_sap_ref": null,
+  "primary": {
+    "status": "NOT_RUN",
+    "contrast": "policy_minus_random",
+    "estimate": null,
+    "ci_lower": null,
+    "ci_upper": null,
+    "p_value": null,
+    "n": null
+  },
+  "participant_flow": {
+    "assigned": null,
+    "exposed": null,
+    "completed": null,
+    "panas_available": null,
+    "complete_four_module": null,
+    "withdrawn": null
+  },
+  "functional_guard": {
+    "status": "NOT_RUN",
+    "analysis_sets": [
+      "all_randomized",
+      "complete_four_module"
+    ],
+    "margin": null
+  },
+  "secondary_fdr": {
+    "status": "NOT_RUN",
+    "family_ref": null,
+    "method": null,
+    "results": []
+  },
+  "strategy_audit": {
+    "status": "NOT_RUN",
+    "frozen_identity_ref": null,
+    "actual_decisions_ref": null,
+    "fallback_exposure_ref": null
+  },
+  "deviations_ref": null,
+  "stop_records_ref": null,
+  "result_category": "NOT_RUN",
+  "figures": [],
+  "independent_reproduction_ref": null,
+  "human_review": {
+    "reviewer": null,
+    "role": null,
+    "date": null,
+    "object": null,
+    "conclusion": null
+  }
+}

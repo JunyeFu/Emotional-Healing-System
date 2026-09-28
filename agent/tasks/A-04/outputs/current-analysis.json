@@ -1,0 +1,39 @@
+{
+  "task_id": "A-04",
+  "business_status": "BLOCKED_EXTERNAL",
+  "depends_on": [
+    "A-05",
+    "E-06"
+  ],
+  "claimant": null,
+  "reviewer": null,
+  "real_analysis": "NOT_RUN",
+  "formal_stage3_sap_ref": null,
+  "research_lock_id": null,
+  "unblind_authorization": null,
+  "actual_instances": 0,
+  "arms": [
+    "frozen_policy",
+    "balanced_random"
+  ],
+  "cue_mode_both_arms": "scene_native",
+  "candidate_treatment_variable": "assigned_policy_arm",
+  "candidate_model": "NA_post ~ assigned_policy_arm + centered_NA_pre + randomization_strata",
+  "contrast": "policy_minus_random",
+  "candidate_policy_code": 1,
+  "candidate_random_code": 0,
+  "lower_is_better": true,
+  "fallback_preserves_assignment": true,
+  "primary_reporting_blocked_by_guard_or_scci": false,
+  "stage1_parameters_automatically_inherited": false,
+  "stage1_classifier_applies_without_extension_contract": false,
+  "sequence_rank_is_causal_effect": false,
+  "bh_helper_is_full_fdr_pipeline": false,
+  "equivalence_confirmatory_enabled": false,
+  "new_unexposed_cohort_required": true,
+  "formal_analysis_implemented": false,
+  "independent_reproduction": "NOT_RUN",
+  "optional_stage3_required_for_core_paper": false,
+  "normalization_is_business_completion": false,
+  "root_migration_complete": false
+}
