@@ -1,0 +1,27 @@
+{
+  "task_id": "Q-01",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\Q-01\\execution"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\agent\\tasks\\Q-01\\execution\\validate_q01_materials.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "synthetic material/scoring, current handoff and migration",
+  "real_level_a": "NOT_RUN",
+  "real_role_verification": "NOT_RUN",
+  "final_render_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_RUN"
+}

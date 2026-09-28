@@ -8,7 +8,8 @@ from pathlib import Path
 from statistics import mean
 
 
-ROOT = Path(__file__).resolve().parents[1]
+REPO = Path(__file__).resolve().parents[4]
+ROOT = REPO / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建'
 DEFAULT_CONTRACT = ROOT / "framework_contract_v1.0.json"
 
 
@@ -335,7 +336,8 @@ def main() -> int:
         contract,
         read_csv(args.adjudication),
     )
-    args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    with args.out.open('x', encoding='utf-8') as stream:
+        stream.write(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(result["decision"])
     return 0
 

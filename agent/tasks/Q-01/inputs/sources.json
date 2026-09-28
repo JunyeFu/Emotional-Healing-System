@@ -1,0 +1,18 @@
+{
+  "task_id": "Q-01",
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建/framework_contract_v1.0.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建/11_第二人审核报告_已签署.md",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建/materials/reconstruction_tasks_v1.0.json",
+    "agent/tasks/R-01/outputs/current-representation.md",
+    "agent/tasks/F-02/outputs/current-measurement.md",
+    "agent/tasks/V-03/outputs/current-mapping.json",
+    "agent/tasks/V-04/outputs/current-preview.md"
+  ],
+  "archived_bytes": {
+    "README_materials_legacy.md": "7C8B46260C212BFAD6A367B72D2B40E4ECBE31F1E153C80FC80A1B4ECE71895A",
+    "04_课题实际构念与证据矩阵.md": "19E2895EAE07B3F709973AE3CF00A9577E696BFE024F2E44E009A5660A30CC1C",
+    "07_完整执行SOP与空白报告.md": "8898227B3CE455588B04A35A4B85FFEAD0A32E4F8EBF7D3A3F07F43A76049FA9"
+  }
+}

@@ -33,10 +33,10 @@
     "A-02",
     "A-03",
     "W-01",
-    "I-01"
+    "I-01",
+    "Q-01"
   ],
   "remaining_packages": [
-    "Q-01",
     "Q-02",
     "Q-03",
     "X-01",
@@ -1006,6 +1006,34 @@
       "status": "OPEN_TEACHING_EXPOSURE_INTEGRATION",
       "description": "核心start登记不能覆盖教学后退出，需P-01/U12-11完成首次条件教学前登记",
       "source": "02-技术研发/srp_session_core/README.md"
+    },
+    {
+      "task_id": "Q-01",
+      "id": "Q01-N01",
+      "status": "FIXED_EXECUTION_AND_EXCLUSIVE_OUTPUT",
+      "description": "两工具两测试实际迁入执行层，同名输出拒绝覆盖，CSV与裁定不变",
+      "source": "agent/tasks/Q-01/execution/summarize_q01.py"
+    },
+    {
+      "task_id": "Q-01",
+      "id": "Q01-N02",
+      "status": "FIXED_CURRENT_EXPERT_HANDOFF",
+      "description": "旧说明归档，当前专家解释对齐静态断续降级、具体步骤和fade复色，评分含义变更须新版本复核",
+      "source": "agent/tasks/Q-01/outputs/current-level-a.md"
+    },
+    {
+      "task_id": "Q-01",
+      "id": "Q01-N03",
+      "status": "OPEN_REAL_ACTIVITY_AND_ROLES",
+      "description": "E-01负责人、15名真实人员及资格未落实，材料DONE不表示Level A或最终渲染通过",
+      "source": "agent/tasks/Q-01/TASK.md"
+    },
+    {
+      "task_id": "Q-01",
+      "id": "Q01-N04",
+      "status": "PRESERVED_SIGNATURE_CURRENT_REVISION_UNSIGNED",
+      "description": "原合同待签署状态保留历史，真实签收以报告为准；本轮修订不继承旧签名",
+      "source": "agent/tasks/Q-01/outputs/current-level-a.json"
     }
   ]
 }

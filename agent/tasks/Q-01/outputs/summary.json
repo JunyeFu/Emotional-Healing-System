@@ -1,0 +1,34 @@
+{
+  "task_id": "Q-01",
+  "title": "Q01 构念审查与独立重建材料审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "Q-01原工具材料范围DONE不改。两工具两测试实际迁入Agent，三份旧说明原文归档；21项及3子测试通过，CLI拒绝覆盖。当前专家交接已对齐静态断续降级和当前测量；真人角色、Level A活动、最终渲染及本轮修订签收仍未完成。",
+  "historical_acceptance": {"reviewer": "傅钧烨", "date": "2026-09-21 +08:00", "commit": "e86b5b7c4564fa855e349e7bc7f4508d2ba6099a", "method": "原报告针对候选a9b5c69和独立Agent复审33190ad，只关闭工具材料交付；不表示真人活动、最终渲染或研究结果。本轮不追加或代填真人签署。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["原实施Codex，约4人日、P-DESIGN，依赖F-02/R-01/G-01/U12-01。真实执行归E-01与对应活动资格，本包规范化不改变DONE原范围，也不把本轮修改视为已签收。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1八专家和独立设计者可追踪且非框架作者；AC2四层完整、禁止耦合、降级可见及评分重算；AC3转移不稳定自动降称并冻结版本差异。材料、真实角色和最终呈现分别验证。", "四天按权威与隔离、十项目和双任务填充、CVI及盲态评分、合成复测与交接推进；国内研究方法与Datawhale资料保留任务原入口，不强制增加新工具。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK与五目录、当前Level A说明/JSON、来源、消费者影响和验证。summarize_q01、validate_q01_materials及两份测试移入execution，旧活动副本移除。原合同、CSV、盲态任务、评分键和签署不改。", "原README、专家矩阵和SOP三份按字节归档，原路径改当前导航。CLI保持CSV、阈值和四种裁定，只改排他创建，不覆盖原评分结果；不为整理生成模拟真人成绩。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["旧合同元数据停在待第二人，是历史版本；当前签收从真实报告与注册表读取，不篡改原合同。角色代码唯一和framework_author字段不能证明真人独立性，活动负责人须在获批外部位置核验身份与资格。", "当前专家说明用R-01/F-02/V-03/V-04真实入口；UNUSABLE/DISCONNECTED保留最后合法几何、静态断续轮廓，输入null不等于全部几何删除。Fallback不读取实际置信，fade复色不作累计改善。盲态设计者不能收到专家修订全文。"]},
+    {"heading": "验证与结果", "paragraphs": ["21项测试及3子测试通过：原汇总11项、原材料5项及本包5项。覆盖四种裁定、分歧/裁定、四维CVI、匿名材料泄露、原字节、来源和CLI真实空表INCOMPLETE及同名拒绝覆盖。材料校验Q01_MATERIALS_VALID通过。", "根回归635项、注册表71项及5包61快照通过，结果保存在evidence/regression.json；软件与合成材料检查不证明八专家、四设计者或最终渲染真实通过。本轮未执行真人活动或新的独立Agent审核。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["观察到旧CLI直接write_text可覆盖同名结果，改为排他创建并负测旧字节保持；没有改统计阈值或原始评分。旧工具路径实际迁移，当前导航修正，原说明按迁移前SHA-256核对。", "旧专家矩阵的降级概括与现行静态轮廓规则不同，当前专家/评分者交接订正。若改变评分含义，须先冻结新版本并复核；不能沿旧DONE或旧签名直接开始E-01，原盲态任务与评分键保留。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["Agent任务只留TASK及inputs/execution/evidence/outputs/archive；新软件证据不覆盖原fixture报告。共享原合同和材料留原目录作为唯一原件，最终整体收拢时修复引用，不复制活动版本。", "旧README及两份说明原文字节归档，当前旧路径只提供导航；历史相对命令按原来源解释。注册状态和冻结分发输入不改，不重绘业务SVG。"]},
+    {"heading": "上下游交接", "paragraphs": ["R-01/F-02交当前语法和测量边界，V-03/V-04及U/V交真实同源材料与最终渲染。Q-02检验目标使用者理解，不能用专家表达清晰度评分替代。独立转移不足只收缩设计知识主张，不隐藏有效PANAS比较。", "E-01须落实U12-05、G-05对应资格、负责人及15名真实人员；匿名角色代码不是招募完成。W-01/W-02消费真实转移、分歧和局限，本轮不解除研究门或把四场景实现当通用生成性证据。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["历史真实签收覆盖原a9b5c69候选与33190ad独立复审，当前软件/专家解释修订尚无新签署。原实施责任与真实活动责任分开，不将框架作者或团队总监自动填入独立角色池。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计35/71、剩余36、下一Q-02。规范化与Word完成不等于Level A执行完成；真实活动、最终渲染、修订复核及根目录双层迁移继续。"]},
+    {"heading": "审阅来源", "paragraphs": ["原Q-01合同、模板、两项盲态任务、复审与签署，迁移工具和测试，以及当前R/F/V交接；未重新联网验证方法学文献或取得新的机构批准。"]}
+  ],
+  "findings": [
+    {"id": "Q01-N01", "status": "FIXED_EXECUTION_AND_EXCLUSIVE_OUTPUT", "description": "两工具两测试实际迁入执行层，同名输出拒绝覆盖，CSV与裁定不变", "source": "agent/tasks/Q-01/execution/summarize_q01.py"},
+    {"id": "Q01-N02", "status": "FIXED_CURRENT_EXPERT_HANDOFF", "description": "旧说明归档，当前专家解释对齐静态断续降级、具体步骤和fade复色，评分含义变更须新版本复核", "source": "agent/tasks/Q-01/outputs/current-level-a.md"},
+    {"id": "Q01-N03", "status": "OPEN_REAL_ACTIVITY_AND_ROLES", "description": "E-01负责人、15名真实人员及资格未落实，材料DONE不表示Level A或最终渲染通过", "source": "agent/tasks/Q-01/TASK.md"},
+    {"id": "Q01-N04", "status": "PRESERVED_SIGNATURE_CURRENT_REVISION_UNSIGNED", "description": "原合同待签署状态保留历史，真实签收以报告为准；本轮修订不继承旧签名", "source": "agent/tasks/Q-01/outputs/current-level-a.json"}
+  ],
+  "next_task": "Q-02",
+  "source_links": [
+    {"label": "当前Level A与真实活动交接", "path": "agent/tasks/Q-01/outputs/current-level-a.md"},
+    {"label": "当前状态与阈值边界", "path": "agent/tasks/Q-01/outputs/current-level-a.json"},
+    {"label": "软件材料与合成验证", "path": "agent/tasks/Q-01/evidence/verification.json"},
+    {"label": "历史文件处置", "path": "agent/tasks/Q-01/archive/README.md"},
+    {"label": "任务过程验收及国内资料", "path": "agent/tasks/Q-01/TASK.md"}
+  ]
+}

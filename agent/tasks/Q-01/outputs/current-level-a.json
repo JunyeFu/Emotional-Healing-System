@@ -1,0 +1,32 @@
+{
+  "task_id": "Q-01",
+  "business_status": "DONE",
+  "original_acceptance_scope": "TOOLS_AND_MATERIALS_ONLY",
+  "current_revision_acceptance": "NOT_SIGNED",
+  "real_activity": "NOT_RUN",
+  "final_render_review": "NOT_RUN",
+  "affect_comparison_gated_by_reconstruction": false,
+  "role_counts": {"expert": 8, "designer": 4, "rater": 2, "adjudicator": 1},
+  "real_people_verified": false,
+  "cvi_dimensions": ["relevance", "comprehensiveness", "clarity", "construct_purity"],
+  "i_cvi_min": 0.78,
+  "s_cvi_ave_min": 0.9,
+  "designers_passing_both_min": 3,
+  "designers_passing_each_min": 3,
+  "unresolved_disagreements_allowed": 0,
+  "claim_when_transfer_fails": "FOUR_SCENE_DESIGN_PATTERN",
+  "unknown_input_may_be_zero_filled": false,
+  "unusable_actual_display": "FREEZE_LAST_VALID_GEOMETRY_AND_APPLY_STATIC_BROKEN_OUTLINE",
+  "fallback_reads_actual_confidence": false,
+  "fade_saturation_source": "MODULE_EFFECTIVE_TIME",
+  "current_expert_sources": [
+    "agent/tasks/R-01/outputs/current-representation.md",
+    "agent/tasks/F-02/outputs/current-measurement.md",
+    "agent/tasks/V-03/outputs/current-mapping.json",
+    "agent/tasks/V-04/outputs/current-preview.md"
+  ],
+  "blind_inputs_unchanged": true,
+  "cli_overwrite_allowed": false,
+  "execution_owner": null,
+  "execution_requires": ["U12-05", "G-05_ACTIVITY_QUALIFICATION", "E-01_OWNER_AND_ROLES", "MATERIAL_VERSION_FREEZE"]
+}
