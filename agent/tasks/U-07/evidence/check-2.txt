@@ -1,0 +1,1 @@
+PASS current V-03: mapping=40; runtime fields=v2.2; direct packages=56; fixed camera and fade separation; no license clearance

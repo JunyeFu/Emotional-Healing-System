@@ -1,0 +1,39 @@
+{
+  "task_id": "U-07",
+  "title": "U07 抽象完整表示方案现状审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "U-07仍WAIT_DEP、未领取，U-03公共模板未验收。旧抽象规格原文归档，当前四结构、四态降级及两条件匹配入口已订正；41项专项通过，不构成真实双环、四天气或混杂实测验收。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "本轮Codex读取实际源码、设计和注册表，归档原规格并复测当前交接；没有真人签收，没有新Unity运行或实际双环验证。"
+  },
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["依赖F-05、U-03、R-01、V-03，约4人日，P-DEV。实际领取人、分支和复核人为空；没有以Agent整理代领或提前解锁U-08。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["交付抽象SceneAdapter、四结构配置、完整方案fixture、条件差异遥测及六类视觉混杂报告。AC1形式和步骤边界正确；AC2四层功能与奖励时点匹配；AC3必须匹配项通过、六类差异完整记录。", "必需Play录像、完整表示方案矩阵、差异遥测、混杂审计、截图和测试报告。四天按输入、模板实现、同源联调和验收交接推进；Unity、UI动画及信息量匹配的国内资料在TASK.md。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK和五目录、当前结构化规则、实施交接、来源、专项复测和消费影响。四个技术ID均对齐v2.2：storm 3/3/3/3、heat 4/6、snow 5/5、fade 2.5/1.5/6。", "旧双环规格实际原文移入archive，原位置成为当前导航；泛化低质量淡出不再作为执行规则。没有复制storm为四天气配置，没有制作替代性的主机渲染证据。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["外环目标、内环独立实际，居中空心双环；步骤和周期身份不可被粗phase替代，双吸两步不能合并。实际空步骤隐藏，累计同模块锁定保持；具体半径、线宽和第二吸发现性仍由U-03实跑定参。", "GOOD无额外标记，DEGRADED降低确定性，UNUSABLE/DISCONNECTED静态断续实际轮廓；无合法实际不生成成功。Fallback只作用实际载体，同帧置信与状态上限组合。旧PromptDisplay仍被WeatherController调用，保留旧原型但不当抽象渲染。"]},
+    {"heading": "验证与结果", "paragraphs": ["41项专项通过，含15项U-07规则、归档和消费检查及26项V-02检查；V-03当前40行及56直接包、R-01原候选Schema与正负fixture校验通过。首次相对导航少一层，修复源文件后重跑通过，保留初次失败记录。", "根pytest635项通过，71项注册表及5个分发包54快照通过，READY仍T-02/V-05，业务和冻结输入不改。本轮不改Unity源码，不重复运行共享105项EditMode；它们是U-06既有证据，不转为本包真实渲染验收。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧低质量淡出规格与当前四态不一致，已从活动设计入口移开，保留原字节和历史R-01链接；当前规则增加空步骤和实例身份说明，不覆盖原签署。导航错误经专项实际发现、修正和复测，不只在Word里改结论。", "四结构真实Unity配置、同源视频、层级掩膜、差异遥测、六类实测及真实负责人仍缺。10%、2度及显示规格仅为历史工程候选，不擅自升级为正式范围或用绿色软件检查填满业务验收。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["TASK、inputs、execution、evidence、outputs、archive职责固定。原规格与2e9498a字节比较一致，限定-text保留原换行；历史候选和签署原件不改。原导航仍可打开，领取中的副本与input_snapshot_id不更新。", "共享Unity工程、旧PromptDisplay和现有逻辑投影留在模块，不复制缓存；本轮只归档有证据冲突的原规格。其他包、共享模块和根目录双层迁移仍待继续。"]},
+    {"heading": "上下游交接", "paragraphs": ["U-03先做fade最小完整双条件并冻结模板，U-07复用后推广四结构，不形成反向等待。U-04至U-06负责其余天气，A/B/C未分配不能由本包代定。F-05提供合同，R-01提供完整方案比较边界，V-02/V-03提供形式及映射。", "两条件匹配目标事实、算法、累计、降级、时长、背景、声音、奖励、教学测量、显示、负担及事件真值。形成性同源，正式参与者各自真实输入。抽象关闭原生周期载体，fade整屏复色随有效时间且不表示成绩；六类处理差异完整报告，不要求像素同一。", "U-08消费真实配置与集成输入；Q-01/Q-02及U12-02消费同源片段和真值，论文任务按实际收益、代价和边界报告，不保证原生获胜、不单独归因天气或呼吸法。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["无U-07历史签署，实施、复核人员尚未登记。本轮Agent职责仅为规范化、资料订正与自动检查；业务WAIT_DEP不变。真实Play、混杂证据及任务要求的签收由实际领取人申请。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计27/71包，剩余44，下一U-08。先从Agent层修正当前设计与归档，再生成单包和串联Word；不因当前文档可读而关闭剩余任务、模块或根目录整体迁移。"]},
+    {"heading": "审阅来源", "paragraphs": ["读取任务注册表、F-05配置、U-02实际源码、U-03切片、R-01当前适用与原候选、V-02/V-03/V-04以及旧PromptDisplay调用。区分历史规格、当前交接、软件投影和实际呈现。"]}
+  ],
+  "findings": [
+    {"id": "U07-N01", "status": "FIXED_STALE_GENERIC_FADE_SPEC", "description": "旧低质量内环淡出规格原文归档，原入口导航当前四态规则；历史候选与签署不改", "source": "agent/tasks/U-07/archive/README.md"},
+    {"id": "U07-N02", "status": "FIXED_AND_RETESTED_POINTER_LINK", "description": "首次导航相对路径失败，源文件修正并专项复测通过，原失败记录保留", "source": "agent/tasks/U-07/evidence/verification.json"},
+    {"id": "U07-N03", "status": "OPEN_FOUR_STRUCTURE_RENDER_AND_CONFOUND_EVIDENCE", "description": "四结构真实双环配置、Play、掩膜、差异遥测及混杂实测未交付，两个storm示例和逻辑投影不代替", "source": "agent/tasks/U-07/outputs/current-abstract.json"},
+    {"id": "U07-N04", "status": "OPEN_TEMPLATE_OWNER_AND_FORMAL_LIMITS", "description": "U-03模板、实际负责人和正式视觉范围未冻结，U-03最小对照不反向等待U-07推广", "source": "agent/tasks/U-07/TASK.md"}
+  ],
+  "next_task": "U-08",
+  "source_links": [
+    {"label": "当前抽象完整方案交接", "path": "agent/tasks/U-07/outputs/current-abstract.md"},
+    {"label": "结构化四结构及匹配要求", "path": "agent/tasks/U-07/outputs/current-abstract.json"},
+    {"label": "验证范围与结果", "path": "agent/tasks/U-07/evidence/verification.json"},
+    {"label": "原规格归档与消费影响", "path": "agent/tasks/U-07/evidence/consumer-impact.md"},
+    {"label": "任务步骤验收与国内资料", "path": "agent/tasks/U-07/TASK.md"}
+  ]
+}

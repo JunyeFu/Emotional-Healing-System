@@ -25,10 +25,10 @@
     "U-03",
     "U-04",
     "U-05",
-    "U-06"
+    "U-06",
+    "U-07"
   ],
   "remaining_packages": [
-    "U-07",
     "U-08",
     "T-02",
     "A-01",
@@ -789,6 +789,34 @@
       "status": "OPEN_BUDGET_OWNER_AND_REAL_ACCEPTANCE",
       "description": "预算规格、实际负责人、天气Play和Profiler仍缺，40项专项及105项EditMode不替代验收",
       "source": "agent/tasks/U-06/evidence/verification.json"
+    },
+    {
+      "task_id": "U-07",
+      "id": "U07-N01",
+      "status": "FIXED_STALE_GENERIC_FADE_SPEC",
+      "description": "旧低质量内环淡出规格原文归档，原入口导航当前四态规则；历史候选与签署不改",
+      "source": "agent/tasks/U-07/archive/README.md"
+    },
+    {
+      "task_id": "U-07",
+      "id": "U07-N02",
+      "status": "FIXED_AND_RETESTED_POINTER_LINK",
+      "description": "首次导航相对路径失败，源文件修正并专项复测通过，原失败记录保留",
+      "source": "agent/tasks/U-07/evidence/verification.json"
+    },
+    {
+      "task_id": "U-07",
+      "id": "U07-N03",
+      "status": "OPEN_FOUR_STRUCTURE_RENDER_AND_CONFOUND_EVIDENCE",
+      "description": "四结构真实双环配置、Play、掩膜、差异遥测及混杂实测未交付，两个storm示例和逻辑投影不代替",
+      "source": "agent/tasks/U-07/outputs/current-abstract.json"
+    },
+    {
+      "task_id": "U-07",
+      "id": "U07-N04",
+      "status": "OPEN_TEMPLATE_OWNER_AND_FORMAL_LIMITS",
+      "description": "U-03模板、实际负责人和正式视觉范围未冻结，U-03最小对照不反向等待U-07推广",
+      "source": "agent/tasks/U-07/TASK.md"
     }
   ]
 }

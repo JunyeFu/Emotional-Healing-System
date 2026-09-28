@@ -1,0 +1,24 @@
+.............F...........................                                [100%]
+================================== FAILURES ===================================
+________________ test_original_specification_archived_verbatim ________________
+
+    def test_original_specification_archived_verbatim():
+        relative = OLD_SPEC.relative_to(ROOT).as_posix()
+        original = subprocess.run(['git', 'show', f'2e9498a:{relative}'], cwd=ROOT, capture_output=True, check=True).stdout
+        assert original == (TASK / 'archive/06_抽象双环对照规格.md').read_bytes()
+        pointer = OLD_SPEC.read_text(encoding='utf-8-sig')
+        assert 'U-07' in pointer and '当前四态规则' in pointer
+        for link in re.findall(r'\]\(([^)]+)\)', pointer):
+>           assert (OLD_SPEC.parent / link).resolve().is_file(), link
+E           AssertionError: ../../../agent/tasks/U-07/outputs/current-abstract.md
+E           assert False
+E            +  where False = is_file()
+E            +    where is_file = WindowsPath('D:/Agent/srp/00-项目管理/agent/tasks/U-07/outputs/current-abstract.md').is_file
+E            +      where WindowsPath('D:/Agent/srp/00-项目管理/agent/tasks/U-07/outputs/current-abstract.md') = resolve()
+E            +        where resolve = (WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计') / '../../../agent/tasks/U-07/outputs/current-abstract.md').resolve
+E            +          where WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计') = WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/06_抽象双环对照规格.md').parent
+
+agent\tasks\U-07\execution\test_u07_contract.py:141: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U-07/execution/test_u07_contract.py::test_original_specification_archived_verbatim
+1 failed, 40 passed in 0.25s
