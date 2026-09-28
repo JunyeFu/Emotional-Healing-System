@@ -49,3 +49,4 @@ agent/tasks/U-08/archive/BuildScene1.cs -text
 agent/tasks/U-08/archive/BuildScene1.cs.meta -text
 agent/tasks/U-08/archive/BuildScene2D.cs -text
 agent/tasks/U-08/archive/BuildScene2D.cs.meta -text
+agent/tasks/U-08/evidence/initial-lineending-failure.txt -text whitespace=-blank-at-eol
