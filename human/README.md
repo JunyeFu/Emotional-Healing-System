@@ -51,4 +51,6 @@
 
 | 27 | U-07 抽象完整表示方案 | [总结](tasks/U-07/summary.docx) | 旧双环规格原文归档，41项专项通过；四结构及匹配入口订正，真实双环、混杂及负责人仍缺，保持WAIT_DEP |
 
+| 28 | U-08 视听性能与可访问成品 | [总结](tasks/U-08/summary.docx) | 两个旧Build Scene菜单及meta归档，40项专项及105项Unity回归通过；预算字段和八呈现范围对齐，真实制品仍待验收，保持WAIT_DEP |
+
 未进入本表的任务仍在规范化队列中；它们已有的 DONE、IN_PROGRESS 和 IN_REVIEW 状态以原任务注册表为准。

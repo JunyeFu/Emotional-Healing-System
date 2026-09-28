@@ -1,0 +1,39 @@
+{
+  "task_id": "U-08",
+  "title": "U08 视听性能与可访问性成品现状审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U-08仍WAIT_DEP、未领取。两个旧Build Scene菜单及meta已原文归档，40项专项和105项Unity EditMode通过；成品规格、五适配器覆盖和发布职责已整理，目标设备预算、真实可访问路径及Windows成品尚未验收。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "本轮Codex审阅源码和实际设计，移出弃用Editor菜单并复跑共享程序集；没有新制品或目标设备验收，不代填负责人及真人签收。"
+  },
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["依赖G-02、U-03至U-07，约5人日，P-INTEGRATION。领取人、分支、复核人为空；本轮是规范化与过期工具清理，不提前解锁I-01或Z-01。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["交付统一视听、分辨率及必要字幕，颜色非唯一与对比度审计，低运动/静音路径、性能预算、Windows候选、无TD手册及许可报告。AC1完整独立旅程；AC2目标设备性能与运动闪烁；AC3可访问路径和许可失败关闭。", "五适配器为四个原生天气加共享抽象，不是第五天气；至少八种天气/条件呈现、48条顺序/条件轨迹。800秒仅为核心，教学及测量在外。五天步骤和国内Unity、测试、Profiler资料在TASK.md。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK和五目录、当前规格字段与成品交接、来源、消费者影响和验证入口。预算字段明确待填，要求先给U-03至U-07规格，再完成组合验收；未添加任意机器或数值。", "BuildScene1、BuildScene2D及meta原文移出Assets，两个旧菜单不再注册。共享正式发布门、F-03/U-01/V03开发工具、旧场景与素材均保留，没有执行旧场景重建。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["两个旧Build Scene工具全量重导入Point/32PPU素材，清空StormScene并生成旅人、防护罩、分段背景和旧Scene1Director；无BuildPlayer。确认活动类名/GUID无消费者后归档，保留历史扫描和框架原文。", "默认构建列表只启用SampleScene，F-03显式Development和V03 Stub演示不替代完整制品。FormalBuildGate仍检查资产、四场景及FormalRuntimeController；最终实际控制装配、场景清单和门对齐尚待完成，不以删除或放宽门发布。"]},
+    {"heading": "验证与结果", "paragraphs": ["40项专项通过，含14项U-08规格、原文迁移和成品职责检查及26项V-02；V-03当前40行和56直接包检查通过。Unity6000.4.9f1实际EditMode105/105通过，XML入包，运行日志留本地。", "首次正式门未改检查误比较Git LF与工作区CRLF，修正测试按既有换行规则比较源码后复测，原失败记录保留；归档原件仍逐字节比较。根pytest635项、71项注册表及5包54快照通过，状态与冻结输入不变。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧生产菜单名称与实际功能不符，已实际移出编译目录。旧视觉预算中的卷轴及三个视差带不再执行；当前消费固定镜头和局部提示，原签署不回写。研究U4可访问门不等于U-04，五适配器不等于仅验五个场景。", "上游性能验收需要U-08预算，本包整体又依赖上游；当前交接采用规格先行，不改注册表依赖。目标设备、正式范围、真实双条件、低运动/静音、Profiler、构建和许可清零仍未完成，null不表示通过。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["TASK、inputs、execution、evidence、outputs、archive职责固定。四份旧工具原件与742da55字节一致、GUID保留并限定-text；FormalBuildGate按既有源码换行规则未改，旧StormScene字节未变。", "共享Unity模块不复制缓存，历史资产扫描不改写为当前发布结果；32设计素材不是全部依赖许可。其余共享模块和根目录业务内容仍待整体双层迁移。"]},
+    {"heading": "上下游交接", "paragraphs": ["U-03先给fade双条件模板，U-04至U-06给三个明确天气，U-07给四结构抽象配置；当前A/B/C尚未分配。U-08先给目标设备和预算规格，再按真实结果完成整合；不会要求整体DONE才给规格。", "formal_frozen会话前冻结且参与者不调参，demo_accessible仅启动前减运动/静音且不形成正式证据。两条件同背景、声音和累计，fade整屏复色随有效时间，暂停冻结视觉及音轨并从冻结位置恢复；不新增核心阶段条件特有文字。", "成品交I-01/Z-01，G-02提供发布许可门、G-05取得真实外部关闭；D/S/I承担真实设备联调。实际许可、U4、Windows候选和无TD运行须分别留证，不将共享回归或开发EXE转为正式活动准入。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["U-08没有历史真人签署，实际实施和复核人员仍未落实。Agent本轮只负责规范化、清理及自动验证；业务WAIT_DEP保持，后续真实制品和目标设备证据由领取人提交复核签收。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计28/71包，剩余43，下一T-02。先修执行层与归档，再生成单包和串联Word。整体目标仍包含其余包、共享模块和根目录收拢，不在本包关闭。"]},
+    {"heading": "审阅来源", "paragraphs": ["读取注册表、总控U4定义、V-02原声音与配置裁定、当前V-01至V-04、U-03至U-07、G-02范围及真实Unity场景/构建源码。区分历史预算、当前字段、开发产物和正式制品。"]}
+  ],
+  "findings": [
+    {"id": "U08-N01", "status": "FIXED_LEGACY_SCENE_BUILD_MENUS", "description": "两个无引用旧场景重建菜单及meta原文归档，不再与Windows成品构建混淆，共享回归通过", "source": "agent/tasks/U-08/archive/README.md"},
+    {"id": "U08-N02", "status": "OPEN_TARGET_BUDGET_FREEZE", "description": "提供上游先行规格字段和交接顺序，但真实目标设备及性能阈值尚未冻结，null不表示通过", "source": "agent/tasks/U-08/outputs/current-product.json"},
+    {"id": "U08-N03", "status": "CLARIFIED_EIGHT_CASES_AND_RESEARCH_U4", "description": "五适配器须覆盖四天气双条件八呈现、48顺序条件轨迹；研究U4不等于任务U-04", "source": "agent/tasks/U-08/TASK.md"},
+    {"id": "U08-N04", "status": "OPEN_FORMAL_ASSEMBLY_ACCESSIBILITY_AND_LICENSE", "description": "默认SampleScene、开发EXE及软件许可门不证明成品，实际装配/U4/性能/许可清零和负责人仍待落实", "source": "agent/tasks/U-08/evidence/consumer-impact.md"}
+  ],
+  "next_task": "T-02",
+  "source_links": [
+    {"label": "当前成品与上下游交接", "path": "agent/tasks/U-08/outputs/current-product.md"},
+    {"label": "规格字段与实际验收状态", "path": "agent/tasks/U-08/outputs/current-product.json"},
+    {"label": "验证范围与结果", "path": "agent/tasks/U-08/evidence/verification.json"},
+    {"label": "共享Unity测试结果", "path": "agent/tasks/U-08/evidence/editmode-results.xml"},
+    {"label": "过程验收与国内资料", "path": "agent/tasks/U-08/TASK.md"}
+  ]
+}

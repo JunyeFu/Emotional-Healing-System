@@ -26,10 +26,10 @@
     "U-04",
     "U-05",
     "U-06",
-    "U-07"
+    "U-07",
+    "U-08"
   ],
   "remaining_packages": [
-    "U-08",
     "T-02",
     "A-01",
     "A-02",
@@ -817,6 +817,34 @@
       "status": "OPEN_TEMPLATE_OWNER_AND_FORMAL_LIMITS",
       "description": "U-03模板、实际负责人和正式视觉范围未冻结，U-03最小对照不反向等待U-07推广",
       "source": "agent/tasks/U-07/TASK.md"
+    },
+    {
+      "task_id": "U-08",
+      "id": "U08-N01",
+      "status": "FIXED_LEGACY_SCENE_BUILD_MENUS",
+      "description": "两个无引用旧场景重建菜单及meta原文归档，不再与Windows成品构建混淆，共享回归通过",
+      "source": "agent/tasks/U-08/archive/README.md"
+    },
+    {
+      "task_id": "U-08",
+      "id": "U08-N02",
+      "status": "OPEN_TARGET_BUDGET_FREEZE",
+      "description": "提供上游先行规格字段和交接顺序，但真实目标设备及性能阈值尚未冻结，null不表示通过",
+      "source": "agent/tasks/U-08/outputs/current-product.json"
+    },
+    {
+      "task_id": "U-08",
+      "id": "U08-N03",
+      "status": "CLARIFIED_EIGHT_CASES_AND_RESEARCH_U4",
+      "description": "五适配器须覆盖四天气双条件八呈现、48顺序条件轨迹；研究U4不等于任务U-04",
+      "source": "agent/tasks/U-08/TASK.md"
+    },
+    {
+      "task_id": "U-08",
+      "id": "U08-N04",
+      "status": "OPEN_FORMAL_ASSEMBLY_ACCESSIBILITY_AND_LICENSE",
+      "description": "默认SampleScene、开发EXE及软件许可门不证明成品，实际装配/U4/性能/许可清零和负责人仍待落实",
+      "source": "agent/tasks/U-08/evidence/consumer-impact.md"
     }
   ]
 }

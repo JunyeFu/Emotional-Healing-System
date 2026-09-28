@@ -9,6 +9,7 @@
 - [U-05剩余天气B](../../../agent/tasks/U-05/outputs/current-adapter.md)：B未明确分配，旧Heat/Snow场景无当前桥和四层脚本绑定；性能预算需先落实。
 - [U-06剩余天气C](../../../agent/tasks/U-06/outputs/current-adapter.md)：C不默认snow，旧Final/Fix菜单已归档；开发构建与最终天气制品分开。
 - [U-07抽象完整方案](../../../agent/tasks/U-07/outputs/current-abstract.md)：四结构与四态遵守当前入口，真实双环配置和混杂实测仍待完成。
+- [U-08成品与可访问交接](../../../agent/tasks/U-08/outputs/current-product.md)：预算先行、八呈现/48轨迹、真实可访问与发布门；开发EXE不替代成品。
 - [旧工程框架原文](../../../agent/tasks/U-04/archive/PROJECT_FRAMEWORK.md)：旅人、背景分段、TD/Spout及旧“已完成”陈述仅供历史理解。
 
 固定镜头、完整底图和独立素材为当前方向；已有旧场景文件不证明当前天气或正式构建通过。过期Editor生成工具已移出Assets，不再用它们批量改写场景。
