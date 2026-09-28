@@ -1,0 +1,14 @@
+{
+  "task_id": "F-01",
+  "source_policy": "reference_project_authority_without_duplicate_implementation",
+  "paths": [
+    "02-技术研发/05-通信协议/runtime_contract.py",
+    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.1.schema.json",
+    "02-技术研发/05-通信协议/contracts/fixtures",
+    "02-技术研发/05-通信协议/contracts/README.md",
+    "02-技术研发/05-通信协议/contracts/port-registration-v2.1.md",
+    "02-技术研发/05-通信协议/MIGRATION_v1.2_to_v2.1.md",
+    "02-技术研发/05-通信协议/F-01_技术验收记录.md",
+    "02-技术研发/05-通信协议/F-01_第二人审核报告_已签署.md"
+  ]
+}

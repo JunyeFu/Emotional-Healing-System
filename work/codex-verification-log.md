@@ -1827,3 +1827,11 @@
 - 结论：A-03 为 `PARTIAL_PASS_WITH_BLOCKER`（A-03-SPEC 内容已核验，A-03-REAL/A-03-CAL 未完成）；T-02 为 `NOT_REVIEWABLE_MISSING_DELIVERABLES`；U12-06 为 `NOT_REVIEWABLE_TASK_OUTPUT_MISSING`；V-05 为 `NOT_REVIEWABLE_TASK_OUTPUT_MISSING`。
 - 明确边界：上游输入包、既有代码测试、V-03/V-04 或 T-01/F-04 历史签收不能代替本任务内容复核；未代替真实第二人签收。
 - 验证：逐项文件检查完成；新增记录仅为审计文档，无产品代码变更。
+# 2026-09-28 F-01双层规范化
+
+- 通用中文逐包Word模板三页已生成并逐页渲染检查；包含结论、交付、验证修复、文件整理、上下游、真实签收和下一包。模板源与说明位于agent/templates/task-review/，人类版本位于human/templates/。
+
+- 工作区 D:/Agent/srp，原03-SRP入口不存在；开始git status为空。
+- 合同与CSV专项：53 passed in 1.34s；非Python消费者：PASS，frame_seq=10,11。
+- 从agent/tasks/F-01/outputs/summary.json生成human/tasks/F-01/summary.docx及human/project-review.docx；渲染至本地.artifacts-local/task-normalization并逐页检查。
+- 规范化整体目标仍在执行，剩余70包与根目录业务内容迁移未完成。

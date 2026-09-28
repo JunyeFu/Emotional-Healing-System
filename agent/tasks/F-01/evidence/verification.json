@@ -1,0 +1,11 @@
+{
+  "task_id": "F-01",
+  "date": "2026-09-28",
+  "workspace": "D:/Agent/srp",
+  "baseline_commit": "94ff333",
+  "checks": [
+    {"command": "py -3.14 -m pytest 02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py 02-技术研发/05-通信协议/tests/test_csv_logger.py -q", "exit_code": 0, "result": "53 passed in 1.34s"},
+    {"command": "pwsh -NoProfile -File 02-技术研发/05-通信协议/contracts/verify_non_python_consumer.ps1", "exit_code": 0, "result": "PASS_NON_PYTHON_CONSUMER; frame_seq=10,11"}
+  ],
+  "interpretation": "当前合同与CSV专项复测通过；未重签历史报告，未执行Unity、TD或真实设备活动。"
+}
