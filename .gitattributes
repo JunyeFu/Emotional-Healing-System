@@ -58,3 +58,4 @@ agent/tasks/A-03/archive/README_spec_legacy.md -text whitespace=cr-at-eol
 agent/tasks/A-03/archive/08_sample_size_anchors.py -text whitespace=cr-at-eol
 agent/tasks/W-01/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/Q-01/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/Q-03/archive/*.md -text whitespace=cr-at-eol

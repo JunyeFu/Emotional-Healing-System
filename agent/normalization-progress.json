@@ -35,10 +35,10 @@
     "W-01",
     "I-01",
     "Q-01",
-    "Q-02"
+    "Q-02",
+    "Q-03"
   ],
   "remaining_packages": [
-    "Q-03",
     "X-01",
     "X-02",
     "X-03",
@@ -1055,6 +1055,27 @@
       "status": "OPEN_REAL_ACTIVITY_AND_RENDERING",
       "description": "两臂四结构真实片段、访谈、修订关闭与最终Unity回归尚缺，保持WAIT_DEP",
       "source": "agent/tasks/Q-02/TASK.md"
+    },
+    {
+      "task_id": "Q-03",
+      "id": "Q03-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_ROUTE",
+      "description": "两旧方案实际原文归档，导航与历史校验消费者修正；当前PANAS及可选扩展范围对齐",
+      "source": "agent/tasks/Q-03/archive/README.md"
+    },
+    {
+      "task_id": "Q-03",
+      "id": "Q03-N02",
+      "status": "OPEN_REAL_LEVEL_C_TOOL_IMPLEMENTATION",
+      "description": "X-01不支持Level C；48单元仅覆盖预览，真实分配/manifest、标注UI和自动门报告未完成",
+      "source": "agent/tasks/Q-03/outputs/current-level-c.md"
+    },
+    {
+      "task_id": "Q-03",
+      "id": "Q03-N03",
+      "status": "OPEN_REAL_DATA_AND_FREEZE",
+      "description": "真实链/Level B/REAL/人员和批准仍缺；所有当前阈值、配置和签署未冻结，业务状态不变",
+      "source": "agent/tasks/Q-03/outputs/current-level-c.json"
     }
   ]
 }

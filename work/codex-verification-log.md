@@ -1,5 +1,12 @@
 # Codex Verification Log
 
+## 2026-09-29 Q-03规范化验证
+
+- `py -3.14 agent/tasks/Q-03/execution/verify.py`：48设计单元预览检查PASS；85 passed in 1.45s（本包7项及既有随机化/步骤测量78项）；历史v1.1协议检查PASS，读归档原件且未放宽规则。
+- 根pytest635 passed in 50.68s；71项注册、5分发包61快照通过。两旧文件字节哈希核对通过，原位置为当前导航，历史90报告保留未改，冻结输入和签署不更新。
+- Word3页逐页检查；串联21页前19页与Q-02 PNG字节一致，20/21页已看图。builder --check通过，本包当前文件措辞扫描无命中，历史原文不回写。
+- X-01对level_c返回STAGE_UNSUPPORTED，不拿stage_1改标签。规划预览不是实际manifest/隐藏分配；真实工具、Level B关闭、A-03-REAL、校准和签署仍缺。规范化37/71、下一X-01，业务WAIT_DEP_EXTERNAL保持，根目录迁移未完成。
+
 ## 2026-09-29 Q-02规范化验证
 
 - `py -3.14 agent/tasks/Q-02/execution/verify.py`：53 passed in 0.16s，含8项新交接检查和45项既有步骤测量；生成器PASS deterministic synthetic materials and byte hashes。空表无真人行、私有答案不进参与者题面；无实际访谈或渲染证据。
