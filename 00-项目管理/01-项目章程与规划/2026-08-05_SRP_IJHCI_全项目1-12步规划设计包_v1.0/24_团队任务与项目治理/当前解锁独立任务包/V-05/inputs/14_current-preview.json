@@ -1,0 +1,29 @@
+{
+  "task_id": "V-04",
+  "status": "CURRENT_HANDOFF_NOT_NEW_HUMAN_ACCEPTANCE",
+  "historical_candidate": "cf56a94fc8cf70737336fafbef4445d09225eead",
+  "camera": "FIXED",
+  "background_choices": {"storm": "B", "heat": "C", "snow": "C", "fade": "v5"},
+  "asset_strategy": "32_INDEPENDENT_PNG_NOT_BACKGROUND_LAYER_EXPORT",
+  "assets_per_weather": 8,
+  "paired_core_preview_seconds": 800,
+  "combined_mechanism_preview_seconds": 68,
+  "preview_order_is_runtime_sequence": false,
+  "source_fps": 2,
+  "output_fps": 30,
+  "core_preview_includes_condition_training": false,
+  "preview_input": "synthetic_design_timing_not_live_state_estimation",
+  "fade_fullscreen_color_source": "module_effective_time_not_recovery_or_breath_step",
+  "native_contains_review_hud_not_participant_ui": true,
+  "current_journey_source": "agent/tasks/V-01/outputs/current-experience.json",
+  "research_contract_version": "1.2",
+  "runtime_schema_version": "2.2",
+  "formal_use_allowed": false,
+  "pending_consumers": ["V-05", "U-03", "U-07", "U-08", "U12-06", "X-01", "G-02"],
+  "pending": [
+    "full_journey_graybox_including_training_and_measurement_boundaries",
+    "real_v2_2_step_identity_and_render_receipts",
+    "unity_32_asset_license_mapping_and_final_visual_fidelity",
+    "independent_recovery_outline_texture_not_fullscreen_saturation"
+  ]
+}

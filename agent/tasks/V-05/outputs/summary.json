@@ -1,0 +1,37 @@
+{
+  "task_id": "V-05",
+  "title": "V05 全旅程灰盒任务现状审阅",
+  "review_date": "2026-09-28",
+  "conclusion": "V-05仍READY、未领取；完整Unity灰盒、全旅程录像和真人形成性评审尚未交付。当前输入已补齐，24顺序×双条件Python核心矩阵及119项专项通过；不能由此解锁U-03或签收灰盒。",
+  "historical_acceptance": {
+    "reviewer": "未签署", "date": "尚未发生", "commit": "",
+    "method": "本轮Codex核对当前设计与任务包、执行主机复测并修正文档；未运行V-05 Unity灰盒或真人评审，不代填第二人PASS。"
+  },
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["依赖F-03、U-02、V-04，约5人日，过程配置P-DEV。实际领取人、分支与复核人为空；过程配置不是已落实的责任人。已有上游壳、降级演示和样片不等于本包交付。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1用DEV-REPLAY完成任意合法manifest顺序且四模块各一次，不需要核心界面操作；AC2占位画面和声音核对构图、提示、节奏、转场及双条件信息；AC3关键问题回退V-02至V-04关闭，评审人员不进入正式样本。", "五天过程为输入对齐、Unity灰盒、四层适配、完整旅程录像及真实评审回退。技能为Unity灰盒、DEV-REPLAY、流程验证和形成性评审，国内资料链接见TASK.md，不把旧手册版本当成工程版本。"]},
+    {"heading": "实际交付", "paragraphs": ["建立固定五目录、当前灰盒交接和Python矩阵工具；READY独立包新增七份当前来源，覆盖V-01旅程、V-03映射、V-04预演、U-02累计生命周期与本包要求。原八份历史与工程来源保留。", "48个合成用例各完成四模块、12段、19控制及19模拟ACK，核心默认800秒，两条件段时轴一致。没有Unity渲染回执、像素、教学运行或真人记录。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["按V-01当前14节点承接前测后教学、核心后先后测再其他测量；教学候选180秒不纳入800秒且未正式冻结。Unity不读取问卷答案，Python仍为流程与单调时钟权威。", "固定镜头及独立素材沿用有效裁定；fade整屏复色随模块有效时间，水系提示随步骤，累计表现另有职责。同模块换段不重置累计，原生不等于隐藏，评审HUD不进入参与者画面。"]},
+    {"heading": "验证与结果", "paragraphs": ["119项专项通过，含116项既有SessionCore回归及3项当前任务检查；24顺序×两条件v2.2矩阵通过，模拟ACK和开发回放范围明确。", "根pytest635 passed in 49.66s；71项注册表及5个分发包54份快照通过。A-03、U12-03、U12-06冻结输入身份未变，当前READY集合仍T-02/V-05。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["原包缺当前旅程、映射、预演及累计交接的问题已在Agent输入映射修复并重生成，不只在Word写建议。P-DEV误写岗位及误用字段已订正为process_profile；Windows子进程错误输出编码失败通过显式UTF-8修复，119项复测通过。", "首次分条件教学前暴露登记仍需P-01/U12-06/X-01与U12-11联调冻结，核心start登记不覆盖它。本包仅说明开发灰盒边界，未新增正式教学实现或借主机证据关闭缺口。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["本包没有可据迁移的旧V-05执行工具或历史签署；archive说明不伪造历史，Unity公共工程继续由模块维护，不复制缓存与共享实现。", "TASK及inputs、execution、evidence、outputs、archive分别归类；当前48用例和检查结果放evidence，不混成最终运行验收。根目录整体收拢仍待其余任务完成。"]},
+    {"heading": "上下游交接", "paragraphs": ["V-01提供完整旅程，V-02至V-04提供有效视觉与回退依据，F-03/U-01/U-02提供Unity基线、控制镜像及四层适配；P-01负责流程时钟，P-02负责记录。灰盒实际运行仍待领取人实施。", "U-03消费通过复核和真人签收的灰盒及问题关闭矩阵，不消费48主机组合作为替代。形成性活动人员与去重交G-02/G-05；正式设备证据由D/S/I任务取得，32素材来源不代替真实许可。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["无V-05历史签署，不改变READY。实际成员领取后提供Edit/Play结果、完整录像、形成性评审与关闭矩阵，再按流程申请独立复核及真实责任人签收；本轮没有取得这些证据。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计22/71包，剩余49，下一U-03。先修Agent执行与输入事实，再生成单包Word和串联审阅；明确路径提交推送，不把规范化标记变成任务DONE。"]},
+    {"heading": "审阅来源", "paragraphs": ["依据任务注册表、当前旅程/映射/预演、U-01/U-02接口、P-01公开接口、v2.2合同与原独立包。历史签收、开发检查和未完成真实活动分开。"]}
+  ],
+  "findings": [
+    {"id": "V05-N01", "status": "FIXED_CURRENT_INPUTS", "description": "补齐七份当前来源，保留原历史输入，其他进行中及复核中的冻结身份不变", "source": "agent/tasks/V-05/evidence/consumer-impact.md"},
+    {"id": "V05-N02", "status": "VERIFIED_HOST_MATRIX_NOT_UNITY", "description": "48组合v2.2核心与两条件时轴通过，只有合成ACK，不是Unity回执或全旅程运行", "source": "agent/tasks/V-05/evidence/runtime/core-matrix.json"},
+    {"id": "V05-N03", "status": "OPEN_UNITY_GRAYBOX_AND_FULL_JOURNEY", "description": "完整灰盒、教学运行、真实回执及完整录像未交付；核心800秒不含教学与测量", "source": "agent/tasks/V-05/outputs/current-graybox.md"},
+    {"id": "V05-N04", "status": "OPEN_HUMAN_REVIEW_AND_OWNER", "description": "实际领取人和形成性评审缺失，问题关闭及真人签收待实施，U-03不提前解锁", "source": "agent/tasks/V-05/TASK.md"}
+  ],
+  "next_task": "U-03",
+  "source_links": [
+    {"label": "当前全旅程灰盒交接", "path": "agent/tasks/V-05/outputs/current-graybox.md"},
+    {"label": "主机验证记录", "path": "agent/tasks/V-05/evidence/verification.json"},
+    {"label": "48组合主机矩阵", "path": "agent/tasks/V-05/evidence/runtime/core-matrix.json"},
+    {"label": "输入更新与冻结影响", "path": "agent/tasks/V-05/evidence/consumer-impact.md"},
+    {"label": "任务步骤及国内资料", "path": "agent/tasks/V-05/TASK.md"}
+  ]
+}

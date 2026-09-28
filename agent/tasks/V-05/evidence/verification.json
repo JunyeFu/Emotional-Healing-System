@@ -1,0 +1,26 @@
+{
+  "task_id": "V-05",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\agent\\tasks\\V-05\\execution\\check_core_matrix.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_core",
+        "D:\\Agent\\srp\\agent\\tasks\\V-05\\execution\\test_v05_contract.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Python v2.2 core matrix and current design checks only",
+  "unity_graybox_acceptance": "NOT_RUN",
+  "human_formative_review": "NOT_RUN"
+}

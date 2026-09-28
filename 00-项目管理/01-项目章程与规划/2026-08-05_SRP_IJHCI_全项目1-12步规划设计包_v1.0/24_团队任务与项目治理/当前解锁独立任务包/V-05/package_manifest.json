@@ -4,9 +4,9 @@
   "task_id": "V-05",
   "status": "READY",
   "registry_sha256": "DC7752B5921129AEB7BF1417A767D06B5EC9CD30C960C00D332628183183EF9E",
-  "input_snapshot_id": "F316E3B342814654570FD48527DDAB2510B91B67A45FE3E09284F9F8F0F9A578",
-  "previous_input_snapshot_id": "F316E3B342814654570FD48527DDAB2510B91B67A45FE3E09284F9F8F0F9A578",
-  "input_changed": false,
+  "input_snapshot_id": "835C66212B6F0997EE7E30FB21B3174E101A5349C545880A83363388CCFCC9FD",
+  "previous_input_snapshot_id": "03B5B37FF1CF4C86F05DDCDCB79FC2DE9A460C9824D6D5B6F96F949798C666FE",
+  "input_changed": true,
   "candidate_identity": null,
   "source_files": [
     {
@@ -56,11 +56,54 @@
       "package_path": "inputs/08_runtime-contract-v2.2.schema.json",
       "sha256": "0AF481DF8105DE3AE7A275982F653F36E94450699199DF011FD1DCE6F23001D2",
       "size_bytes": 47165
+    },
+    {
+      "source_path": "agent/tasks/V-05/TASK.md",
+      "package_path": "inputs/09_TASK.md",
+      "sha256": "C7ACAB79A9196E434A4C74AC9305FD88E11C5CE098CB32216E21E12E3063DA8B",
+      "size_bytes": 2873
+    },
+    {
+      "source_path": "agent/tasks/V-05/outputs/current-graybox.json",
+      "package_path": "inputs/10_current-graybox.json",
+      "sha256": "9087FEE4444022E3781E540EAD82C3B6A0EF3575D1E5879E81ADD8CD4A174AB4",
+      "size_bytes": 1659
+    },
+    {
+      "source_path": "agent/tasks/V-05/outputs/current-graybox.md",
+      "package_path": "inputs/11_current-graybox.md",
+      "sha256": "28661E84622F77821EE32EDB016BB4A0DAD6718B328A6FF1FC4511DCC43CB48F",
+      "size_bytes": 3194
+    },
+    {
+      "source_path": "agent/tasks/V-01/outputs/current-experience.json",
+      "package_path": "inputs/12_current-experience.json",
+      "sha256": "D39F6B19E999DC92526C470F94858467C65DC972226BE8955B12DAF51851F13F",
+      "size_bytes": 3045
+    },
+    {
+      "source_path": "agent/tasks/V-03/outputs/current-mapping.json",
+      "package_path": "inputs/13_current-mapping.json",
+      "sha256": "7ED10FC8EBF636B216B0DA6105486157BFCF71EB5A3CDCA5619DCC9299B1E6E6",
+      "size_bytes": 41971
+    },
+    {
+      "source_path": "agent/tasks/V-04/outputs/current-preview.json",
+      "package_path": "inputs/14_current-preview.json",
+      "sha256": "C74C1824E6B08E14DA24CA28072B7170C2B514B085B5332B4BEBCD522DF25815",
+      "size_bytes": 1329
+    },
+    {
+      "source_path": "agent/tasks/U-02/outputs/current-adapter-contract.md",
+      "package_path": "inputs/15_current-adapter-contract.md",
+      "sha256": "C49C94068F34716A8D3E00A275704AA51CEC2C45876E08088C99B16253FA8934",
+      "size_bytes": 3185
     }
   ],
   "working_paths": [
     "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计",
     "02-技术研发/04-Unity视觉/SRP-Weather-Visual",
-    "02-技术研发/05-通信协议/contracts"
+    "02-技术研发/05-通信协议/contracts",
+    "agent/tasks/V-05"
   ]
 }

@@ -14,12 +14,20 @@
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json](D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json) | [inputs/06_packages-lock.json](inputs/06_packages-lock.json) | `39EAD5E49380DA66353A48B66B6C4CBF392227272D61164C23C4B0B497946E61` |
 | [02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs](D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs) | [inputs/07_FormalBuildGate.cs](inputs/07_FormalBuildGate.cs) | `D669EC2F7AFA4827B06710DDC05922014D4D99B6F099DB6F272F9D1D1DD9AD0C` |
 | [02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json](D:/Agent/srp/02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json) | [inputs/08_runtime-contract-v2.2.schema.json](inputs/08_runtime-contract-v2.2.schema.json) | `0AF481DF8105DE3AE7A275982F653F36E94450699199DF011FD1DCE6F23001D2` |
+| [agent/tasks/V-05/TASK.md](D:/Agent/srp/agent/tasks/V-05/TASK.md) | [inputs/09_TASK.md](inputs/09_TASK.md) | `C7ACAB79A9196E434A4C74AC9305FD88E11C5CE098CB32216E21E12E3063DA8B` |
+| [agent/tasks/V-05/outputs/current-graybox.json](D:/Agent/srp/agent/tasks/V-05/outputs/current-graybox.json) | [inputs/10_current-graybox.json](inputs/10_current-graybox.json) | `9087FEE4444022E3781E540EAD82C3B6A0EF3575D1E5879E81ADD8CD4A174AB4` |
+| [agent/tasks/V-05/outputs/current-graybox.md](D:/Agent/srp/agent/tasks/V-05/outputs/current-graybox.md) | [inputs/11_current-graybox.md](inputs/11_current-graybox.md) | `28661E84622F77821EE32EDB016BB4A0DAD6718B328A6FF1FC4511DCC43CB48F` |
+| [agent/tasks/V-01/outputs/current-experience.json](D:/Agent/srp/agent/tasks/V-01/outputs/current-experience.json) | [inputs/12_current-experience.json](inputs/12_current-experience.json) | `D39F6B19E999DC92526C470F94858467C65DC972226BE8955B12DAF51851F13F` |
+| [agent/tasks/V-03/outputs/current-mapping.json](D:/Agent/srp/agent/tasks/V-03/outputs/current-mapping.json) | [inputs/13_current-mapping.json](inputs/13_current-mapping.json) | `7ED10FC8EBF636B216B0DA6105486157BFCF71EB5A3CDCA5619DCC9299B1E6E6` |
+| [agent/tasks/V-04/outputs/current-preview.json](D:/Agent/srp/agent/tasks/V-04/outputs/current-preview.json) | [inputs/14_current-preview.json](inputs/14_current-preview.json) | `C74C1824E6B08E14DA24CA28072B7170C2B514B085B5332B4BEBCD522DF25815` |
+| [agent/tasks/U-02/outputs/current-adapter-contract.md](D:/Agent/srp/agent/tasks/U-02/outputs/current-adapter-contract.md) | [inputs/15_current-adapter-contract.md](inputs/15_current-adapter-contract.md) | `C49C94068F34716A8D3E00A275704AA51CEC2C45876E08088C99B16253FA8934` |
 
 ## 实现工作目录
 
 - [00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计](D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计)
 - [02-技术研发/04-Unity视觉/SRP-Weather-Visual](D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual)
 - [02-技术研发/05-通信协议/contracts](D:/Agent/srp/02-技术研发/05-通信协议/contracts)
+- [agent/tasks/V-05](D:/Agent/srp/agent/tasks/V-05)
 
 ## 权威规则
 

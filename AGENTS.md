@@ -23,6 +23,7 @@
 | 看当前四天气交接 | `agent/tasks/V-02/outputs/current-scenes.md`（固定镜头、独立素材与fade职责） |
 | 看当前视听映射与资产 | `agent/tasks/V-03/outputs/current-mapping.md`（40行映射、累计生命周期与真实依赖差异） |
 | 看当前样片与完整旅程交接 | `agent/tasks/V-04/outputs/current-preview.md`（有效样片、32素材、核心预演与教学测量边界） |
+| 看当前全旅程灰盒任务 | `agent/tasks/V-05/outputs/current-graybox.md`（48主机组合与真实Unity灰盒验收分开） |
 | 看最近工作与论文骨架 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md` |
 | 看真实设备采集交接 | `agent/tasks/D-01/outputs/current-acquisition.md`（ECG/RR原始通道、P-02记录与待完成验收） |
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |

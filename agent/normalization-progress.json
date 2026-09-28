@@ -20,10 +20,10 @@
     "D-01",
     "D-02",
     "S-01",
-    "S-02"
+    "S-02",
+    "V-05"
   ],
   "remaining_packages": [
-    "V-05",
     "U-03",
     "U-04",
     "U-05",
@@ -642,6 +642,34 @@
       "status": "OPEN_REAL_OWNER_AND_A03_DECISION",
       "description": "实际领取人为空；A-03负责人须处理冻结旧评分来源影响，不代填裁定",
       "source": "agent/tasks/S-02/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "V-05",
+      "id": "V05-N01",
+      "status": "FIXED_CURRENT_INPUTS",
+      "description": "补齐七份当前来源，保留原历史输入，其他进行中及复核中的冻结身份不变",
+      "source": "agent/tasks/V-05/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "V-05",
+      "id": "V05-N02",
+      "status": "VERIFIED_HOST_MATRIX_NOT_UNITY",
+      "description": "48组合v2.2核心与两条件时轴通过，只有合成ACK，不是Unity回执或全旅程运行",
+      "source": "agent/tasks/V-05/evidence/runtime/core-matrix.json"
+    },
+    {
+      "task_id": "V-05",
+      "id": "V05-N03",
+      "status": "OPEN_UNITY_GRAYBOX_AND_FULL_JOURNEY",
+      "description": "完整灰盒、教学运行、真实回执及完整录像未交付；核心800秒不含教学与测量",
+      "source": "agent/tasks/V-05/outputs/current-graybox.md"
+    },
+    {
+      "task_id": "V-05",
+      "id": "V05-N04",
+      "status": "OPEN_HUMAN_REVIEW_AND_OWNER",
+      "description": "实际领取人和形成性评审缺失，问题关闭及真人签收待实施，U-03不提前解锁",
+      "source": "agent/tasks/V-05/TASK.md"
     }
   ]
 }
