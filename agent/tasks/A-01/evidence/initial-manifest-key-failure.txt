@@ -1,0 +1,17 @@
+............F........................................................... [ 73%]
+..........................                                               [100%]
+================================== FAILURES ===================================
+__________________ test_A03_frozen_total_design_is_unchanged __________________
+
+    def test_A03_frozen_total_design_is_unchanged():
+        path = PLAN / '22_离线处理与科研分析/00_离线处理总设计.md'
+        renderer = runpy.run_path(str(PLAN / '24_团队任务与项目治理/13_render_ready_task_packages.py'))
+        manifest = json.loads((PLAN / '24_团队任务与项目治理/当前解锁独立任务包/A-03/package_manifest.json').read_text(encoding='utf-8-sig'))
+>       frozen = next(item for item in manifest['files'] if item['source_path'].endswith('/00_离线处理总设计.md'))
+                                       ^^^^^^^^^^^^^^^^^
+E       KeyError: 'files'
+
+agent\tasks\A-01\execution\test_a01_contract.py:120: KeyError
+=========================== short test summary info ===========================
+FAILED agent/tasks/A-01/execution/test_a01_contract.py::test_A03_frozen_total_design_is_unchanged
+1 failed, 97 passed in 4.83s

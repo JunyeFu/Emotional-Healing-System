@@ -1,0 +1,7 @@
+{
+  "files": [
+    {"name": "02_QC与分析集规则.md", "sha256": "0B1DB080ED1FD968652D0DAD197B48B8E3B1ABCD61A19FE11CB0171E6DA69A8C"},
+    {"name": "03_呼吸事件与Protocol_Fidelity.md", "sha256": "4EEC1084423F71E16D32A66CD8BDBA191A03EACE1176ACA020294F0B446FC038"}
+  ],
+  "scope": "byte-preserving archival; not research approval"
+}

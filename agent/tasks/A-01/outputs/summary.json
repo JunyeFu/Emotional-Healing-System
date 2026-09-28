@@ -1,0 +1,34 @@
+{
+  "task_id": "A-01",
+  "title": "A01 离线重建范围与证据消费审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "A-01仍WAIT_DEP、未领取。旧QC/PF原文已归档，当前研究入口订正；98项专项通过。P-02提供记录读取和核心重放，但同步、事件、L3汇总与自动差报告尚未交付，本轮不构成业务签收。",
+  "historical_acceptance": {"reviewer": "未签署", "date": "尚未发生", "commit": "", "method": "Codex审阅实际存储接口与任务依赖，执行合成消费和迁移核验；没有真实数据权限、完整离线流水线或新真人签署。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["依赖P-02与S-02，约5人日、P-ANALYSIS。P-02已签收仅证明其存储及核心重放范围；S-02实际算法和冻结阈值未交付。业务状态、负责人及冻结分发不改。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1固定fixture逐层哈希稳定；AC2自动生成在线离线差报告；AC3每项排除有原因码。交付L0校验、同步L1、事件L2、汇总L3及版本manifest，不能以核心重放代替事件与汇总验收。", "五天按输入与授权、同步质量、事件机会、汇总差报告、复测交接推进。所需技能与国内教程在TASK.md；实际负责人仍待领取。"]},
+    {"heading": "实际交付", "paragraphs": ["建立TASK及五目录，当前重建JSON/Markdown、必要来源、迁移记录和可运行核验入口。两份旧QC/PF文件实际原文归档，原路径改为当前导航；历史验证器改读原件。", "修正PROJECT_MODULES的研究v1.1权威指向及M08入口，明确当前研究v1.2与运行v2.1/v2.2不同。没有新建业务离线流水线或修改已签收P-02实现。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["完整输入包含设备流、运行事实、问卷、分配、标注、配置构建。在线L1中的回执、暴露和教学事实不能仅从波形重造；离线结果单独写offline_derived命名空间。", "读取归档先verify strict，再iter_l0/iter_l1；迭代器不自动验证。受限引用只验证声明，authorization=False，实际原件仍需授权读取；explicit_none不构成必需原件齐备。"]},
+    {"heading": "验证与结果", "paragraphs": ["98项专项通过，含13项本包消费/迁移/冻结输入检查及85项已有存储回归。相同波形下五类非波形输入改变产生不同身份；golden两次重放46次调用、19控制及12回执，未开socket且原件逐字节不变。", "历史v1.1验证通过，负例仍返回缺标记而非路径异常。完整根回归与治理结果见evidence/verification.json；真实数据解码、同步、事件、汇总及签收均未执行。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧功能门不再控制主要情绪结果是否报告；设备缺失与量表缺失分开，PF护栏失败不隐藏预设PANAS比较。旧非劣界值是候选，不由A-01冻结。", "首次测试误用规范化哈希与字节哈希比较，第二次误用manifest字段files；已改为既有sha256函数及source_files并通过复测。两份失败记录保留，原文件未发生漂移。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["两份归档原件迁移前后字节哈希一致，限定-text保留。旧原路径为可点击导航，历史校验只移动读取位置、不改变旧门规则。", "A-03冻结总设计保持原文与快照身份；未改进行中或复核中的分发。其他分析和统计材料由所属任务逐包整理，共享模块及根业务目录待整体迁移。"]},
+    {"heading": "上下游交接", "paragraphs": ["S-01提供真实时钟和SQI，S-02提供独立Actual事件；目标步骤不得当作检测结果。时长容差、覆盖和在线离线差阈值仍未冻结，不能填示例值。", "L3交给A-02/A-03，保留机会三态、各类计数、缺失和原因码；缺模块不重新平均，量表与过程指标不合成一个情绪分。L4/L5最终分析和论文主张归后续任务。", "T-02人工标记服务还未实现，A-01不能补造缺失标记；核心重放不连接设备、不发控制、不重复登记暴露。实际差报告和下游消费验收继续开放。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["尚无本包领取人、完整交付或真实签署。本轮规范化不将WAIT_DEP改为DONE，不转移上游签名。后续按同一AC完成实际流水线与消费者复核再签收。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["规范化累计30/71，剩余41，下一A-02。单包与串联Word从Agent事实生成；全部任务与整体根目录迁移仍未关闭。"]},
+    {"heading": "审阅来源", "paragraphs": ["依据当前注册表、研究v1.2、P-02实际束校验/Reader/Replayer、S-01/S-02及T-02交接。冻结总设计只保留历史来源，不用旧Gate判定替代当前研究规则。"]}
+  ],
+  "findings": [
+    {"id": "A01-N01", "status": "FIXED_LEGACY_RULES_AND_AUTHORITY", "description": "旧QC/PF规则原文归档，模块地图改当前研究v1.2与A-01入口，主要情绪报告不再依赖旧功能门", "source": "agent/tasks/A-01/outputs/current-rebuild.md"},
+    {"id": "A01-N02", "status": "FIXED_AND_RETESTED_HASH_POLICY", "description": "本轮测试误用字节哈希及manifest字段，按既有口径修复，冻结输入未漂移且失败记录保留", "source": "agent/tasks/A-01/evidence/verification.json"},
+    {"id": "A01-N03", "status": "OPEN_OFFLINE_PIPELINE_AND_DIFF_REPORT", "description": "存储读取及核心重放不等于同步、事件、L3重建和自动差报告，完整AC未交付", "source": "agent/tasks/A-01/outputs/current-rebuild.json"},
+    {"id": "A01-N04", "status": "OPEN_PERMISSION_THRESHOLDS_AND_OWNER", "description": "受限原件授权读取、真实算法阈值、实际责任人和消费者验收仍待落实", "source": "agent/tasks/A-01/TASK.md"}
+  ],
+  "next_task": "A-02",
+  "source_links": [
+    {"label": "当前离线重建与研究交接", "path": "agent/tasks/A-01/outputs/current-rebuild.md"},
+    {"label": "当前实现范围与冻结缺口", "path": "agent/tasks/A-01/outputs/current-rebuild.json"},
+    {"label": "真实核验结果与失败闭环", "path": "agent/tasks/A-01/evidence/verification.json"},
+    {"label": "原件归档与保留理由", "path": "agent/tasks/A-01/archive/README.md"},
+    {"label": "实施步骤验收与资料", "path": "agent/tasks/A-01/TASK.md"}
+  ]
+}

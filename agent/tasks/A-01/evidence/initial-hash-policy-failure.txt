@@ -1,0 +1,17 @@
+............F........................................................... [ 73%]
+..........................                                               [100%]
+================================== FAILURES ===================================
+__________________ test_A03_frozen_total_design_is_unchanged __________________
+
+    def test_A03_frozen_total_design_is_unchanged():
+        path = PLAN / '22_离线处理与科研分析/00_离线处理总设计.md'
+>       assert hashlib.sha256(path.read_bytes()).hexdigest().upper() == '6B9D203D56D5B665FFFCB9638E3D4544B6BA3DC71935B52F690574DD5AA9688D'
+E       AssertionError: assert '7369E16DE8DC...17936FFBE9601' == '6B9D203D56D5...574DD5AA9688D'
+E         
+E         - 6B9D203D56D5B665FFFCB9638E3D4544B6BA3DC71935B52F690574DD5AA9688D
+E         + 7369E16DE8DC5029A23CA5938336D7191A4A4DDEC4B4414FF3B17936FFBE9601
+
+agent\tasks\A-01\execution\test_a01_contract.py:118: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/A-01/execution/test_a01_contract.py::test_A03_frozen_total_design_is_unchanged
+1 failed, 97 passed in 4.76s

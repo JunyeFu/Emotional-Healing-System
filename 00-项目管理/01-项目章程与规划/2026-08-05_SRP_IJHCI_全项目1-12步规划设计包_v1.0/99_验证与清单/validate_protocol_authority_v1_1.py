@@ -8,6 +8,8 @@ import sys
 
 
 PACKAGE = pathlib.Path(__file__).resolve().parents[1]
+PROJECT_ROOT = PACKAGE.parents[2]
+LEGACY_OFFLINE = PROJECT_ROOT / "agent/tasks/A-01/archive"
 AUTHORITY = PACKAGE / "00_总控" / "protocol_authority_v1.1.json"
 
 ACTIVE_FILES = [
@@ -31,8 +33,8 @@ ACTIVE_FILES = [
     PACKAGE / "20_产品与场景设计" / "00_参与者产品总规格.md",
     PACKAGE / "21_真实设备与在线运行系统" / "06_目标运行接口_v2.md",
     PACKAGE / "22_离线处理与科研分析" / "01_核心数据字典.csv",
-    PACKAGE / "22_离线处理与科研分析" / "02_QC与分析集规则.md",
-    PACKAGE / "22_离线处理与科研分析" / "03_呼吸事件与Protocol_Fidelity.md",
+    LEGACY_OFFLINE / "02_QC与分析集规则.md",
+    LEGACY_OFFLINE / "03_呼吸事件与Protocol_Fidelity.md",
     PACKAGE / "22_离线处理与科研分析" / "05_问卷与访谈处理.md",
     PACKAGE / "22_离线处理与科研分析" / "06_统计模型与图表计划.md",
     PACKAGE / "23_后续可解释序列编排研究" / "00_后续研究总设计.md",
@@ -74,7 +76,7 @@ REQUIRED_MARKERS = {
         "PolicyDecision",
         "LIVE_E2E",
     ),
-    PACKAGE / "22_离线处理与科研分析" / "03_呼吸事件与Protocol_Fidelity.md": (
+    LEGACY_OFFLINE / "03_呼吸事件与Protocol_Fidelity.md": (
         "expected_cycle_opportunity",
         "TECH_UNOBSERVABLE",
     ),
@@ -161,13 +163,13 @@ def main() -> int:
         text = path.read_text(encoding="utf-8-sig")
         for marker in FORBIDDEN_STALE_MARKERS:
             if marker in text:
-                fail(errors, f"{path.relative_to(PACKAGE)} contains stale marker {marker!r}")
+                fail(errors, f"{path.relative_to(PROJECT_ROOT)} contains stale marker {marker!r}")
 
     for path, markers in REQUIRED_MARKERS.items():
         text = path.read_text(encoding="utf-8-sig")
         for marker in markers:
             if marker not in text:
-                fail(errors, f"{path.relative_to(PACKAGE)} missing v1.1 marker {marker!r}")
+                fail(errors, f"{path.relative_to(PROJECT_ROOT)} missing v1.1 marker {marker!r}")
 
     for path in HISTORICAL_FILES:
         if "SUPERSEDED_FOR_EXECUTION" not in path.read_text(encoding="utf-8-sig"):

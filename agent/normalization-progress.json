@@ -28,10 +28,10 @@
     "U-06",
     "U-07",
     "U-08",
-    "T-02"
+    "T-02",
+    "A-01"
   ],
   "remaining_packages": [
-    "A-01",
     "A-02",
     "A-03",
     "W-01",
@@ -873,6 +873,34 @@
       "status": "OPEN_UI_EVIDENCE_AND_OWNER",
       "description": "告警历史、实际A主题操作、日志/录像及真实负责人未交付；导出截图扩展另验，不扩大本包基础验收",
       "source": "agent/tasks/T-02/TASK.md"
+    },
+    {
+      "task_id": "A-01",
+      "id": "A01-N01",
+      "status": "FIXED_LEGACY_RULES_AND_AUTHORITY",
+      "description": "旧QC/PF规则原文归档，模块地图改当前研究v1.2与A-01入口，主要情绪报告不再依赖旧功能门",
+      "source": "agent/tasks/A-01/outputs/current-rebuild.md"
+    },
+    {
+      "task_id": "A-01",
+      "id": "A01-N02",
+      "status": "FIXED_AND_RETESTED_HASH_POLICY",
+      "description": "本轮测试误用字节哈希及manifest字段，按既有口径修复，冻结输入未漂移且失败记录保留",
+      "source": "agent/tasks/A-01/evidence/verification.json"
+    },
+    {
+      "task_id": "A-01",
+      "id": "A01-N03",
+      "status": "OPEN_OFFLINE_PIPELINE_AND_DIFF_REPORT",
+      "description": "存储读取及核心重放不等于同步、事件、L3重建和自动差报告，完整AC未交付",
+      "source": "agent/tasks/A-01/outputs/current-rebuild.json"
+    },
+    {
+      "task_id": "A-01",
+      "id": "A01-N04",
+      "status": "OPEN_PERMISSION_THRESHOLDS_AND_OWNER",
+      "description": "受限原件授权读取、真实算法阈值、实际责任人和消费者验收仍待落实",
+      "source": "agent/tasks/A-01/TASK.md"
     }
   ]
 }

@@ -51,3 +51,5 @@ agent/tasks/U-08/archive/BuildScene2D.cs -text
 agent/tasks/U-08/archive/BuildScene2D.cs.meta -text
 agent/tasks/U-08/evidence/initial-lineending-failure.txt -text whitespace=-blank-at-eol
 agent/tasks/T-02/archive/legacy-td-authoring/** -text whitespace=-blank-at-eol,-blank-at-eof
+agent/tasks/A-01/archive/*.md -text
+agent/tasks/A-01/evidence/initial-hash-policy-failure.txt -text whitespace=-blank-at-eol
