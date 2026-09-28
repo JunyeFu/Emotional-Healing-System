@@ -1,10 +1,10 @@
 {
   "completed_packages": [
     "F-01",
-    "F-02"
+    "F-02",
+    "F-03"
   ],
   "remaining_packages": [
-    "F-03",
     "F-04",
     "F-05",
     "G-01",
@@ -110,6 +110,34 @@
       "status": "OPEN_HUMAN_REVIEW",
       "description": "历史验收仅模型候选审查，所读来源未取得F-02真实第二人签署；责任由团队总监安排",
       "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+    },
+    {
+      "task_id": "F-03",
+      "id": "F03-N01",
+      "status": "FIXED",
+      "description": "根Tools/F03执行工具已迁入统一Agent任务层，旧活动入口移除",
+      "source": "agent/tasks/F-03/execution/Invoke-F03.ps1"
+    },
+    {
+      "task_id": "F-03",
+      "id": "F03-N02",
+      "status": "FIXED",
+      "description": "现行Unity协调入口F-03 READY与签收DONE矛盾已修正",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md"
+    },
+    {
+      "task_id": "F-03",
+      "id": "F03-N03",
+      "status": "FIXED",
+      "description": "未授权构建已被拦截但探针输出意外完成，已改为按实际结果报告并完整复测",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs"
+    },
+    {
+      "task_id": "F-03",
+      "id": "F03-N04",
+      "status": "OPEN_DOWNSTREAM_ASSET_GATE",
+      "description": "当前同次资产报告为233项与259条阻断；对应资产、许可和发布任务需处理，不由本包放行",
+      "source": "agent/tasks/F-03/evidence/runtime/asset_blocking_report.json"
     }
   ]
 }

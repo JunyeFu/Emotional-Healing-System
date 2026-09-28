@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="98" result="Passed" total="98" passed="98" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:56Z" duration="7.3023289">
-  <test-suite type="TestSuite" id="1000" name="SRP-Weather-Visual" fullname="SRP-Weather-Visual" runstate="Runnable" testcasecount="98" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:56Z" duration="7.302329" total="98" passed="98" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="98" result="Passed" total="98" passed="98" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:35Z" duration="7.5050019">
+  <test-suite type="TestSuite" id="1000" name="SRP-Weather-Visual" fullname="SRP-Weather-Visual" runstate="Runnable" testcasecount="98" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:35Z" duration="7.505002" total="98" passed="98" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="EditMode" />
     </properties>
-    <test-suite type="Assembly" id="1006" name="SRP.F03.EditModeTests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.F03.EditModeTests.dll" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.308778" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1006" name="SRP.F03.EditModeTests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.F03.EditModeTests.dll" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:28Z" duration="0.323669" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="54116" />
+        <property name="_PID" value="53196" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="EditMode" />
         <property name="EditorOnly" value="True" />
       </properties>
-      <test-suite type="TestSuite" id="1007" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.308562" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1007" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:28Z" duration="0.323416" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1008" name="F03" fullname="SRP.F03" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.308463" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1008" name="F03" fullname="SRP.F03" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:28Z" duration="0.323311" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestSuite" id="1009" name="Tests" fullname="SRP.F03.Tests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.308351" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestSuite" id="1009" name="Tests" fullname="SRP.F03.Tests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:28Z" duration="0.323195" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="TestFixture" id="1002" name="DevReplayEditModeTests" fullname="SRP.F03.Tests.DevReplayEditModeTests" classname="SRP.F03.Tests.DevReplayEditModeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.307752" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1002" name="DevReplayEditModeTests" fullname="SRP.F03.Tests.DevReplayEditModeTests" classname="SRP.F03.Tests.DevReplayEditModeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:28Z" duration="0.322519" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1003" name="BannerExposesNonFormalIdentityAndBuildEvidence" fullname="SRP.F03.Tests.DevReplayEditModeTests.BannerExposesNonFormalIdentityAndBuildEvidence" methodname="BannerExposesNonFormalIdentityAndBuildEvidence" classname="SRP.F03.Tests.DevReplayEditModeTests" runstate="Runnable" seed="709904131" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.007165" asserts="0">
+              <test-case id="1003" name="BannerExposesNonFormalIdentityAndBuildEvidence" fullname="SRP.F03.Tests.DevReplayEditModeTests.BannerExposesNonFormalIdentityAndBuildEvidence" methodname="BannerExposesNonFormalIdentityAndBuildEvidence" classname="SRP.F03.Tests.DevReplayEditModeTests" runstate="Runnable" seed="304449411" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:27Z" duration="0.008258" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1004" name="DevelopmentBuildRequiresExplicitF03Authorization" fullname="SRP.F03.Tests.DevReplayEditModeTests.DevelopmentBuildRequiresExplicitF03Authorization" methodname="DevelopmentBuildRequiresExplicitF03Authorization" classname="SRP.F03.Tests.DevReplayEditModeTests" runstate="Runnable" seed="1558337511" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.000359" asserts="0">
+              <test-case id="1004" name="DevelopmentBuildRequiresExplicitF03Authorization" fullname="SRP.F03.Tests.DevReplayEditModeTests.DevelopmentBuildRequiresExplicitF03Authorization" methodname="DevelopmentBuildRequiresExplicitF03Authorization" classname="SRP.F03.Tests.DevReplayEditModeTests" runstate="Runnable" seed="1325621583" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:27Z" duration="0.000396" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1005" name="DevelopmentSceneContainsOnlyTheF03MarkerRuntime" fullname="SRP.F03.Tests.DevReplayEditModeTests.DevelopmentSceneContainsOnlyTheF03MarkerRuntime" methodname="DevelopmentSceneContainsOnlyTheF03MarkerRuntime" classname="SRP.F03.Tests.DevReplayEditModeTests" runstate="Runnable" seed="191856882" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.291675" asserts="0">
+              <test-case id="1005" name="DevelopmentSceneContainsOnlyTheF03MarkerRuntime" fullname="SRP.F03.Tests.DevReplayEditModeTests.DevelopmentSceneContainsOnlyTheF03MarkerRuntime" methodname="DevelopmentSceneContainsOnlyTheF03MarkerRuntime" classname="SRP.F03.Tests.DevReplayEditModeTests" runstate="Runnable" seed="332240563" result="Passed" start-time="2026-09-28 07:55:27Z" end-time="2026-09-28 07:55:28Z" duration="0.302598" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -42,100 +42,100 @@
         </test-suite>
       </test-suite>
     </test-suite>
-    <test-suite type="Assembly" id="1025" name="SRP.U01.EditModeTests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.U01.EditModeTests.dll" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:56Z" duration="6.947249" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1025" name="SRP.U01.EditModeTests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.U01.EditModeTests.dll" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:35Z" duration="7.131463" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="54116" />
+        <property name="_PID" value="53196" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="EditMode" />
         <property name="EditorOnly" value="True" />
       </properties>
-      <test-suite type="TestSuite" id="1026" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:56Z" duration="6.946030" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1026" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:35Z" duration="7.129861" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1027" name="U01" fullname="SRP.U01" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:56Z" duration="6.945813" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1027" name="U01" fullname="SRP.U01" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:35Z" duration="7.129589" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestSuite" id="1028" name="Tests" fullname="SRP.U01.Tests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:56Z" duration="6.945619" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestSuite" id="1028" name="Tests" fullname="SRP.U01.Tests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:35Z" duration="7.129385" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="TestFixture" id="1010" name="U01EditModeTests" fullname="SRP.U01.Tests.U01EditModeTests" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:56Z" duration="6.945354" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1010" name="U01EditModeTests" fullname="SRP.U01.Tests.U01EditModeTests" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:35Z" duration="7.128962" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1021" name="AckSerializationKeepsPythonContractNullSemantics" fullname="SRP.U01.Tests.U01EditModeTests.AckSerializationKeepsPythonContractNullSemantics" methodname="AckSerializationKeepsPythonContractNullSemantics" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="2013982431" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.008497" asserts="0">
+              <test-case id="1021" name="AckSerializationKeepsPythonContractNullSemantics" fullname="SRP.U01.Tests.U01EditModeTests.AckSerializationKeepsPythonContractNullSemantics" methodname="AckSerializationKeepsPythonContractNullSemantics" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="1179746367" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:28Z" duration="0.008252" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1024" name="ConfirmedReceiptSurvivesDuplicateControlWithoutMirrorDrift" fullname="SRP.U01.Tests.U01EditModeTests.ConfirmedReceiptSurvivesDuplicateControlWithoutMirrorDrift" methodname="ConfirmedReceiptSurvivesDuplicateControlWithoutMirrorDrift" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="2124513450" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.002588" asserts="0">
+              <test-case id="1024" name="ConfirmedReceiptSurvivesDuplicateControlWithoutMirrorDrift" fullname="SRP.U01.Tests.U01EditModeTests.ConfirmedReceiptSurvivesDuplicateControlWithoutMirrorDrift" methodname="ConfirmedReceiptSurvivesDuplicateControlWithoutMirrorDrift" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="1260692874" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:28Z" duration="0.002621" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1017" name="DeliveryFactoryPreservesIdentityAndRejectsInvalidFailureReceipt" fullname="SRP.U01.Tests.U01EditModeTests.DeliveryFactoryPreservesIdentityAndRejectsInvalidFailureReceipt" methodname="DeliveryFactoryPreservesIdentityAndRejectsInvalidFailureReceipt" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="242546513" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:49Z" duration="0.001909" asserts="0">
+              <test-case id="1017" name="DeliveryFactoryPreservesIdentityAndRejectsInvalidFailureReceipt" fullname="SRP.U01.Tests.U01EditModeTests.DeliveryFactoryPreservesIdentityAndRejectsInvalidFailureReceipt" methodname="DeliveryFactoryPreservesIdentityAndRejectsInvalidFailureReceipt" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="450673700" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:28Z" duration="0.002484" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1016" name="DisposeDoesNotWaitForABlockedSendLock" fullname="SRP.U01.Tests.U01EditModeTests.DisposeDoesNotWaitForABlockedSendLock" methodname="DisposeDoesNotWaitForABlockedSendLock" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="105608928" result="Passed" start-time="2026-09-28 07:50:49Z" end-time="2026-09-28 07:50:52Z" duration="2.405289" asserts="0">
+              <test-case id="1016" name="DisposeDoesNotWaitForABlockedSendLock" fullname="SRP.U01.Tests.U01EditModeTests.DisposeDoesNotWaitForABlockedSendLock" methodname="DisposeDoesNotWaitForABlockedSendLock" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="160974563" result="Passed" start-time="2026-09-28 07:55:28Z" end-time="2026-09-28 07:55:30Z" duration="2.420421" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1012" name="ExactRetryIsIdempotentButAlteredDuplicateAndOldSequenceAreRejected" fullname="SRP.U01.Tests.U01EditModeTests.ExactRetryIsIdempotentButAlteredDuplicateAndOldSequenceAreRejected" methodname="ExactRetryIsIdempotentButAlteredDuplicateAndOldSequenceAreRejected" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="221735277" result="Passed" start-time="2026-09-28 07:50:52Z" end-time="2026-09-28 07:50:52Z" duration="0.000809" asserts="0">
+              <test-case id="1012" name="ExactRetryIsIdempotentButAlteredDuplicateAndOldSequenceAreRejected" fullname="SRP.U01.Tests.U01EditModeTests.ExactRetryIsIdempotentButAlteredDuplicateAndOldSequenceAreRejected" methodname="ExactRetryIsIdempotentButAlteredDuplicateAndOldSequenceAreRejected" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="936972042" result="Passed" start-time="2026-09-28 07:55:30Z" end-time="2026-09-28 07:55:30Z" duration="0.000962" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1018" name="FailedOldConnectionIsDisposedWithoutTouchingNewGeneration" fullname="SRP.U01.Tests.U01EditModeTests.FailedOldConnectionIsDisposedWithoutTouchingNewGeneration" methodname="FailedOldConnectionIsDisposedWithoutTouchingNewGeneration" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="127005220" result="Passed" start-time="2026-09-28 07:50:52Z" end-time="2026-09-28 07:50:52Z" duration="0.006408" asserts="0">
+              <test-case id="1018" name="FailedOldConnectionIsDisposedWithoutTouchingNewGeneration" fullname="SRP.U01.Tests.U01EditModeTests.FailedOldConnectionIsDisposedWithoutTouchingNewGeneration" methodname="FailedOldConnectionIsDisposedWithoutTouchingNewGeneration" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="818622421" result="Passed" start-time="2026-09-28 07:55:30Z" end-time="2026-09-28 07:55:30Z" duration="0.006379" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1014" name="FormalV21AndWrongHandshakeFailClosed" fullname="SRP.U01.Tests.U01EditModeTests.FormalV21AndWrongHandshakeFailClosed" methodname="FormalV21AndWrongHandshakeFailClosed" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="2123162662" result="Passed" start-time="2026-09-28 07:50:52Z" end-time="2026-09-28 07:50:52Z" duration="0.000460" asserts="0">
+              <test-case id="1014" name="FormalV21AndWrongHandshakeFailClosed" fullname="SRP.U01.Tests.U01EditModeTests.FormalV21AndWrongHandshakeFailClosed" methodname="FormalV21AndWrongHandshakeFailClosed" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="577545050" result="Passed" start-time="2026-09-28 07:55:30Z" end-time="2026-09-28 07:55:30Z" duration="0.000427" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1011" name="GoldenControlTraceIsMirroredWithoutLocalSequencing" fullname="SRP.U01.Tests.U01EditModeTests.GoldenControlTraceIsMirroredWithoutLocalSequencing" methodname="GoldenControlTraceIsMirroredWithoutLocalSequencing" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="1435477877" result="Passed" start-time="2026-09-28 07:50:52Z" end-time="2026-09-28 07:50:52Z" duration="0.003706" asserts="0">
+              <test-case id="1011" name="GoldenControlTraceIsMirroredWithoutLocalSequencing" fullname="SRP.U01.Tests.U01EditModeTests.GoldenControlTraceIsMirroredWithoutLocalSequencing" methodname="GoldenControlTraceIsMirroredWithoutLocalSequencing" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="1155848319" result="Passed" start-time="2026-09-28 07:55:30Z" end-time="2026-09-28 07:55:30Z" duration="0.002646" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1019" name="IncomingFrameLimitIncludesLineFeed" fullname="SRP.U01.Tests.U01EditModeTests.IncomingFrameLimitIncludesLineFeed" methodname="IncomingFrameLimitIncludesLineFeed" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="1442210133" result="Passed" start-time="2026-09-28 07:50:52Z" end-time="2026-09-28 07:50:54Z" duration="2.561106" asserts="0">
+              <test-case id="1019" name="IncomingFrameLimitIncludesLineFeed" fullname="SRP.U01.Tests.U01EditModeTests.IncomingFrameLimitIncludesLineFeed" methodname="IncomingFrameLimitIncludesLineFeed" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="894715957" result="Passed" start-time="2026-09-28 07:55:30Z" end-time="2026-09-28 07:55:33Z" duration="2.755340" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1022" name="NullableCycleIdentityIsPreservedAndNegativeCycleIsRejected" fullname="SRP.U01.Tests.U01EditModeTests.NullableCycleIdentityIsPreservedAndNegativeCycleIsRejected" methodname="NullableCycleIdentityIsPreservedAndNegativeCycleIsRejected" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="2039109064" result="Passed" start-time="2026-09-28 07:50:54Z" end-time="2026-09-28 07:50:54Z" duration="0.005380" asserts="0">
+              <test-case id="1022" name="NullableCycleIdentityIsPreservedAndNegativeCycleIsRejected" fullname="SRP.U01.Tests.U01EditModeTests.NullableCycleIdentityIsPreservedAndNegativeCycleIsRejected" methodname="NullableCycleIdentityIsPreservedAndNegativeCycleIsRejected" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="1230529460" result="Passed" start-time="2026-09-28 07:55:33Z" end-time="2026-09-28 07:55:33Z" duration="0.005114" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1015" name="ReliableClientReconnectsAndKeepsTheSameIdentity" fullname="SRP.U01.Tests.U01EditModeTests.ReliableClientReconnectsAndKeepsTheSameIdentity" methodname="ReliableClientReconnectsAndKeepsTheSameIdentity" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="1422445817" result="Passed" start-time="2026-09-28 07:50:54Z" end-time="2026-09-28 07:50:56Z" duration="1.897452" asserts="0">
+              <test-case id="1015" name="ReliableClientReconnectsAndKeepsTheSameIdentity" fullname="SRP.U01.Tests.U01EditModeTests.ReliableClientReconnectsAndKeepsTheSameIdentity" methodname="ReliableClientReconnectsAndKeepsTheSameIdentity" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="56027810" result="Passed" start-time="2026-09-28 07:55:33Z" end-time="2026-09-28 07:55:35Z" duration="1.867177" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1013" name="StaleAndMismatchedTelemetryCannotOverwriteLatestMirrorFrame" fullname="SRP.U01.Tests.U01EditModeTests.StaleAndMismatchedTelemetryCannotOverwriteLatestMirrorFrame" methodname="StaleAndMismatchedTelemetryCannotOverwriteLatestMirrorFrame" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="1276609215" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.003402" asserts="0">
+              <test-case id="1013" name="StaleAndMismatchedTelemetryCannotOverwriteLatestMirrorFrame" fullname="SRP.U01.Tests.U01EditModeTests.StaleAndMismatchedTelemetryCannotOverwriteLatestMirrorFrame" methodname="StaleAndMismatchedTelemetryCannotOverwriteLatestMirrorFrame" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="942797388" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.003531" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1023" name="V21TelemetryAndSharedStateRulesMatchTheAuthoritativeContract" fullname="SRP.U01.Tests.U01EditModeTests.V21TelemetryAndSharedStateRulesMatchTheAuthoritativeContract" methodname="V21TelemetryAndSharedStateRulesMatchTheAuthoritativeContract" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="647654370" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.007351" asserts="0">
+              <test-case id="1023" name="V21TelemetryAndSharedStateRulesMatchTheAuthoritativeContract" fullname="SRP.U01.Tests.U01EditModeTests.V21TelemetryAndSharedStateRulesMatchTheAuthoritativeContract" methodname="V21TelemetryAndSharedStateRulesMatchTheAuthoritativeContract" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="2101625588" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.007314" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1020" name="V22TelemetryFixturesMatchTheAuthoritativeContract" fullname="SRP.U01.Tests.U01EditModeTests.V22TelemetryFixturesMatchTheAuthoritativeContract" methodname="V22TelemetryFixturesMatchTheAuthoritativeContract" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="423165797" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.038640" asserts="0">
+              <test-case id="1020" name="V22TelemetryFixturesMatchTheAuthoritativeContract" fullname="SRP.U01.Tests.U01EditModeTests.V22TelemetryFixturesMatchTheAuthoritativeContract" methodname="V22TelemetryFixturesMatchTheAuthoritativeContract" classname="SRP.U01.Tests.U01EditModeTests" runstate="Runnable" seed="791881473" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.043343" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -146,529 +146,529 @@
         </test-suite>
       </test-suite>
     </test-suite>
-    <test-suite type="Assembly" id="1120" name="SRP.V03.Tests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.V03.Tests.dll" runstate="Runnable" testcasecount="81" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.040776" total="81" passed="81" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1120" name="SRP.V03.Tests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.V03.Tests.dll" runstate="Runnable" testcasecount="81" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.043120" total="81" passed="81" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="54116" />
+        <property name="_PID" value="53196" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="EditMode" />
         <property name="EditorOnly" value="True" />
       </properties>
-      <test-suite type="TestSuite" id="1121" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="81" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.039979" total="81" passed="81" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1121" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="81" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.042187" total="81" passed="81" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1122" name="V03" fullname="SRP.V03" runstate="Runnable" testcasecount="81" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.039389" total="81" passed="81" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1122" name="V03" fullname="SRP.V03" runstate="Runnable" testcasecount="81" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.041594" total="81" passed="81" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestSuite" id="1123" name="Tests" fullname="SRP.V03.Tests" runstate="Runnable" testcasecount="81" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.038688" total="81" passed="81" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestSuite" id="1123" name="Tests" fullname="SRP.V03.Tests" runstate="Runnable" testcasecount="81" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.041013" total="81" passed="81" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="TestFixture" id="1029" name="BackgroundSealTests" fullname="SRP.V03.Tests.BackgroundSealTests" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.005171" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1029" name="BackgroundSealTests" fullname="SRP.V03.Tests.BackgroundSealTests" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.005410" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1033" name="NoStaticRhythmMembers" fullname="SRP.V03.Tests.BackgroundSealTests.NoStaticRhythmMembers" methodname="NoStaticRhythmMembers" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" seed="318804430" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.002729" asserts="0">
+              <test-case id="1033" name="NoStaticRhythmMembers" fullname="SRP.V03.Tests.BackgroundSealTests.NoStaticRhythmMembers" methodname="NoStaticRhythmMembers" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" seed="1418127865" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.002971" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1032" name="OnSessionSegmentChanged_RecordsSegment" fullname="SRP.V03.Tests.BackgroundSealTests.OnSessionSegmentChanged_RecordsSegment" methodname="OnSessionSegmentChanged_RecordsSegment" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" seed="34910009" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000273" asserts="0">
+              <test-case id="1032" name="OnSessionSegmentChanged_RecordsSegment" fullname="SRP.V03.Tests.BackgroundSealTests.OnSessionSegmentChanged_RecordsSegment" methodname="OnSessionSegmentChanged_RecordsSegment" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" seed="1972196933" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000301" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1030" name="PublicMethods_HaveNoRhythmInterfaces" fullname="SRP.V03.Tests.BackgroundSealTests.PublicMethods_HaveNoRhythmInterfaces" methodname="PublicMethods_HaveNoRhythmInterfaces" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" seed="633304071" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000646" asserts="0">
+              <test-case id="1030" name="PublicMethods_HaveNoRhythmInterfaces" fullname="SRP.V03.Tests.BackgroundSealTests.PublicMethods_HaveNoRhythmInterfaces" methodname="PublicMethods_HaveNoRhythmInterfaces" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" seed="1835984302" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000695" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1031" name="PublicProperties_HaveNoRhythmOrQualityState" fullname="SRP.V03.Tests.BackgroundSealTests.PublicProperties_HaveNoRhythmOrQualityState" methodname="PublicProperties_HaveNoRhythmOrQualityState" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" seed="1352806003" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000348" asserts="0">
+              <test-case id="1031" name="PublicProperties_HaveNoRhythmOrQualityState" fullname="SRP.V03.Tests.BackgroundSealTests.PublicProperties_HaveNoRhythmOrQualityState" methodname="PublicProperties_HaveNoRhythmOrQualityState" classname="SRP.V03.Tests.BackgroundSealTests" runstate="Runnable" seed="1379906950" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000363" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1034" name="DegradationPolicyTests" fullname="SRP.V03.Tests.DegradationPolicyTests" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.003436" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1034" name="DegradationPolicyTests" fullname="SRP.V03.Tests.DegradationPolicyTests" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.003711" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1039" name="CapCandidate_IsAnnotatedConstant_0_7" fullname="SRP.V03.Tests.DegradationPolicyTests.CapCandidate_IsAnnotatedConstant_0_7" methodname="CapCandidate_IsAnnotatedConstant_0_7" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="935209599" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000837" asserts="0">
+              <test-case id="1039" name="CapCandidate_IsAnnotatedConstant_0_7" fullname="SRP.V03.Tests.DegradationPolicyTests.CapCandidate_IsAnnotatedConstant_0_7" methodname="CapCandidate_IsAnnotatedConstant_0_7" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1649276529" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000803" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1036" name="Degraded_CapsVisibleCertaintyAt0_7" fullname="SRP.V03.Tests.DegradationPolicyTests.Degraded_CapsVisibleCertaintyAt0_7" methodname="Degraded_CapsVisibleCertaintyAt0_7" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="540974391" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000419" asserts="0">
+              <test-case id="1036" name="Degraded_CapsVisibleCertaintyAt0_7" fullname="SRP.V03.Tests.DegradationPolicyTests.Degraded_CapsVisibleCertaintyAt0_7" methodname="Degraded_CapsVisibleCertaintyAt0_7" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1149873416" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000450" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1037" name="Degraded_KeepsLowerConfidence_UnderCap" fullname="SRP.V03.Tests.DegradationPolicyTests.Degraded_KeepsLowerConfidence_UnderCap" methodname="Degraded_KeepsLowerConfidence_UnderCap" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1299251916" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000197" asserts="0">
+              <test-case id="1037" name="Degraded_KeepsLowerConfidence_UnderCap" fullname="SRP.V03.Tests.DegradationPolicyTests.Degraded_KeepsLowerConfidence_UnderCap" methodname="Degraded_KeepsLowerConfidence_UnderCap" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1905757858" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000216" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1040" name="Good_Cap_Is_One" fullname="SRP.V03.Tests.DegradationPolicyTests.Good_Cap_Is_One" methodname="Good_Cap_Is_One" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="806972981" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000148" asserts="0">
+              <test-case id="1040" name="Good_Cap_Is_One" fullname="SRP.V03.Tests.DegradationPolicyTests.Good_Cap_Is_One" methodname="Good_Cap_Is_One" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1729129609" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000155" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1035" name="Good_NoMarker_VisibleCertaintyEqualsConfidence" fullname="SRP.V03.Tests.DegradationPolicyTests.Good_NoMarker_VisibleCertaintyEqualsConfidence" methodname="Good_NoMarker_VisibleCertaintyEqualsConfidence" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1380992036" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000250" asserts="0">
+              <test-case id="1035" name="Good_NoMarker_VisibleCertaintyEqualsConfidence" fullname="SRP.V03.Tests.DegradationPolicyTests.Good_NoMarker_VisibleCertaintyEqualsConfidence" methodname="Good_NoMarker_VisibleCertaintyEqualsConfidence" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1775615537" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000275" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1041" name="Marker_Scope_IsActualCarrierOnly" fullname="SRP.V03.Tests.DegradationPolicyTests.Marker_Scope_IsActualCarrierOnly" methodname="Marker_Scope_IsActualCarrierOnly" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="593001616" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000163" asserts="0">
+              <test-case id="1041" name="Marker_Scope_IsActualCarrierOnly" fullname="SRP.V03.Tests.DegradationPolicyTests.Marker_Scope_IsActualCarrierOnly" methodname="Marker_Scope_IsActualCarrierOnly" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="173742573" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000224" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1042" name="Reason_IsCarriedThrough" fullname="SRP.V03.Tests.DegradationPolicyTests.Reason_IsCarriedThrough" methodname="Reason_IsCarriedThrough" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1833456132" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000177" asserts="0">
+              <test-case id="1042" name="Reason_IsCarriedThrough" fullname="SRP.V03.Tests.DegradationPolicyTests.Reason_IsCarriedThrough" methodname="Reason_IsCarriedThrough" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1674669136" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000217" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1038" name="UnusableAndDisconnected_MarkTemporarilyUnavailable" fullname="SRP.V03.Tests.DegradationPolicyTests.UnusableAndDisconnected_MarkTemporarilyUnavailable" methodname="UnusableAndDisconnected_MarkTemporarilyUnavailable" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="1151697613" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000257" asserts="0">
+              <test-case id="1038" name="UnusableAndDisconnected_MarkTemporarilyUnavailable" fullname="SRP.V03.Tests.DegradationPolicyTests.UnusableAndDisconnected_MarkTemporarilyUnavailable" methodname="UnusableAndDisconnected_MarkTemporarilyUnavailable" classname="SRP.V03.Tests.DegradationPolicyTests" runstate="Runnable" seed="701118604" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000306" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1043" name="LayerIsolationTests" fullname="SRP.V03.Tests.LayerIsolationTests" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.002422" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1043" name="LayerIsolationTests" fullname="SRP.V03.Tests.LayerIsolationTests" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.002514" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1045" name="ActualLayerView_FieldWhitelist_MatchesContract" fullname="SRP.V03.Tests.LayerIsolationTests.ActualLayerView_FieldWhitelist_MatchesContract" methodname="ActualLayerView_FieldWhitelist_MatchesContract" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="1106674156" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000432" asserts="0">
+              <test-case id="1045" name="ActualLayerView_FieldWhitelist_MatchesContract" fullname="SRP.V03.Tests.LayerIsolationTests.ActualLayerView_FieldWhitelist_MatchesContract" methodname="ActualLayerView_FieldWhitelist_MatchesContract" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="614029949" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000451" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1049" name="ActualView_CarriesNoCrossLayerFields" fullname="SRP.V03.Tests.LayerIsolationTests.ActualView_CarriesNoCrossLayerFields" methodname="ActualView_CarriesNoCrossLayerFields" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="1245011388" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000200" asserts="0">
+              <test-case id="1049" name="ActualView_CarriesNoCrossLayerFields" fullname="SRP.V03.Tests.LayerIsolationTests.ActualView_CarriesNoCrossLayerFields" methodname="ActualView_CarriesNoCrossLayerFields" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="1466676914" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000202" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1047" name="FallbackLayerView_FieldWhitelist_MatchesContract" fullname="SRP.V03.Tests.LayerIsolationTests.FallbackLayerView_FieldWhitelist_MatchesContract" methodname="FallbackLayerView_FieldWhitelist_MatchesContract" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="250927394" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000101" asserts="0">
+              <test-case id="1047" name="FallbackLayerView_FieldWhitelist_MatchesContract" fullname="SRP.V03.Tests.LayerIsolationTests.FallbackLayerView_FieldWhitelist_MatchesContract" methodname="FallbackLayerView_FieldWhitelist_MatchesContract" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="361084183" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000103" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1046" name="RecoveryLayerView_FieldWhitelist_MatchesContract" fullname="SRP.V03.Tests.LayerIsolationTests.RecoveryLayerView_FieldWhitelist_MatchesContract" methodname="RecoveryLayerView_FieldWhitelist_MatchesContract" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="590447038" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000087" asserts="0">
+              <test-case id="1046" name="RecoveryLayerView_FieldWhitelist_MatchesContract" fullname="SRP.V03.Tests.LayerIsolationTests.RecoveryLayerView_FieldWhitelist_MatchesContract" methodname="RecoveryLayerView_FieldWhitelist_MatchesContract" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="878228223" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000096" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1050" name="RecoveryView_CarriesNoQualityField" fullname="SRP.V03.Tests.LayerIsolationTests.RecoveryView_CarriesNoQualityField" methodname="RecoveryView_CarriesNoQualityField" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="689203146" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000158" asserts="0">
+              <test-case id="1050" name="RecoveryView_CarriesNoQualityField" fullname="SRP.V03.Tests.LayerIsolationTests.RecoveryView_CarriesNoQualityField" methodname="RecoveryView_CarriesNoQualityField" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="2088522194" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000161" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1044" name="TargetLayerView_FieldWhitelist_MatchesContract" fullname="SRP.V03.Tests.LayerIsolationTests.TargetLayerView_FieldWhitelist_MatchesContract" methodname="TargetLayerView_FieldWhitelist_MatchesContract" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="534824327" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000100" asserts="0">
+              <test-case id="1044" name="TargetLayerView_FieldWhitelist_MatchesContract" fullname="SRP.V03.Tests.LayerIsolationTests.TargetLayerView_FieldWhitelist_MatchesContract" methodname="TargetLayerView_FieldWhitelist_MatchesContract" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="964779571" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000099" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1048" name="TargetView_CarriesNoCrossLayerFields" fullname="SRP.V03.Tests.LayerIsolationTests.TargetView_CarriesNoCrossLayerFields" methodname="TargetView_CarriesNoCrossLayerFields" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="895337391" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000145" asserts="0">
+              <test-case id="1048" name="TargetView_CarriesNoCrossLayerFields" fullname="SRP.V03.Tests.LayerIsolationTests.TargetView_CarriesNoCrossLayerFields" methodname="TargetView_CarriesNoCrossLayerFields" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="641864003" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000147" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1051" name="Views_CarryValuesCorrectly" fullname="SRP.V03.Tests.LayerIsolationTests.Views_CarryValuesCorrectly" methodname="Views_CarryValuesCorrectly" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="72622806" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000319" asserts="0">
+              <test-case id="1051" name="Views_CarryValuesCorrectly" fullname="SRP.V03.Tests.LayerIsolationTests.Views_CarryValuesCorrectly" methodname="Views_CarryValuesCorrectly" classname="SRP.V03.Tests.LayerIsolationTests" runstate="Runnable" seed="1071115145" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000320" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1052" name="LayerZeroCrosstalkTests" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.009912" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1052" name="LayerZeroCrosstalkTests" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.010795" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1055" name="ActualConfidenceChange_FlowsOnlyThroughEnvelope" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.ActualConfidenceChange_FlowsOnlyThroughEnvelope" methodname="ActualConfidenceChange_FlowsOnlyThroughEnvelope" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1460156592" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.002418" asserts="0">
+              <test-case id="1055" name="ActualConfidenceChange_FlowsOnlyThroughEnvelope" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.ActualConfidenceChange_FlowsOnlyThroughEnvelope" methodname="ActualConfidenceChange_FlowsOnlyThroughEnvelope" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1566186899" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.002710" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1054" name="ActualPhaseProgressChange_Isolated_OtherLayersFrozen" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.ActualPhaseProgressChange_Isolated_OtherLayersFrozen" methodname="ActualPhaseProgressChange_Isolated_OtherLayersFrozen" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="909125654" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000836" asserts="0">
+              <test-case id="1054" name="ActualPhaseProgressChange_Isolated_OtherLayersFrozen" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.ActualPhaseProgressChange_Isolated_OtherLayersFrozen" methodname="ActualPhaseProgressChange_Isolated_OtherLayersFrozen" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1860787629" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000917" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1062" name="Background_ZeroRhythmLeakage_OverRhythmAndQualityNoise" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.Background_ZeroRhythmLeakage_OverRhythmAndQualityNoise" methodname="Background_ZeroRhythmLeakage_OverRhythmAndQualityNoise" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1552896668" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000533" asserts="0">
+              <test-case id="1062" name="Background_ZeroRhythmLeakage_OverRhythmAndQualityNoise" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.Background_ZeroRhythmLeakage_OverRhythmAndQualityNoise" methodname="Background_ZeroRhythmLeakage_OverRhythmAndQualityNoise" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1040511454" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000597" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1060" name="LinkDown_NoFakeSuccess_CountersAndOutputsHonest" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.LinkDown_NoFakeSuccess_CountersAndOutputsHonest" methodname="LinkDown_NoFakeSuccess_CountersAndOutputsHonest" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="32552534" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000646" asserts="0">
+              <test-case id="1060" name="LinkDown_NoFakeSuccess_CountersAndOutputsHonest" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.LinkDown_NoFakeSuccess_CountersAndOutputsHonest" methodname="LinkDown_NoFakeSuccess_CountersAndOutputsHonest" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="705337489" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000711" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1061" name="LinkDown_Recovery_ResumesHonestOutputs" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.LinkDown_Recovery_ResumesHonestOutputs" methodname="LinkDown_Recovery_ResumesHonestOutputs" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="2014468795" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000387" asserts="0">
+              <test-case id="1061" name="LinkDown_Recovery_ResumesHonestOutputs" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.LinkDown_Recovery_ResumesHonestOutputs" methodname="LinkDown_Recovery_ResumesHonestOutputs" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="666321581" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000414" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1058" name="Lock_HoldsAcrossMixedQualityFrames_AndDoesNotLeak" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.Lock_HoldsAcrossMixedQualityFrames_AndDoesNotLeak" methodname="Lock_HoldsAcrossMixedQualityFrames_AndDoesNotLeak" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1539233938" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000539" asserts="0">
+              <test-case id="1058" name="Lock_HoldsAcrossMixedQualityFrames_AndDoesNotLeak" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.Lock_HoldsAcrossMixedQualityFrames_AndDoesNotLeak" methodname="Lock_HoldsAcrossMixedQualityFrames_AndDoesNotLeak" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1294402637" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000561" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1056" name="RecoveryValueChange_Isolated_OtherLayersFrozen" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.RecoveryValueChange_Isolated_OtherLayersFrozen" methodname="RecoveryValueChange_Isolated_OtherLayersFrozen" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="751365226" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000702" asserts="0">
+              <test-case id="1056" name="RecoveryValueChange_Isolated_OtherLayersFrozen" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.RecoveryValueChange_Isolated_OtherLayersFrozen" methodname="RecoveryValueChange_Isolated_OtherLayersFrozen" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="2041635511" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000764" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1063" name="RejectedFrame_AllLayersFullyFrozen" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.RejectedFrame_AllLayersFullyFrozen" methodname="RejectedFrame_AllLayersFullyFrozen" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="839875907" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000634" asserts="0">
+              <test-case id="1063" name="RejectedFrame_AllLayersFullyFrozen" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.RejectedFrame_AllLayersFullyFrozen" methodname="RejectedFrame_AllLayersFullyFrozen" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="174022231" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000733" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1064" name="RejectedThenValidFrame_ResumesCleanly_NoHalfAppliedState" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.RejectedThenValidFrame_ResumesCleanly_NoHalfAppliedState" methodname="RejectedThenValidFrame_ResumesCleanly_NoHalfAppliedState" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="640886772" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000494" asserts="0">
+              <test-case id="1064" name="RejectedThenValidFrame_ResumesCleanly_NoHalfAppliedState" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.RejectedThenValidFrame_ResumesCleanly_NoHalfAppliedState" methodname="RejectedThenValidFrame_ResumesCleanly_NoHalfAppliedState" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1045274238" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000524" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1057" name="SignalQualityChange_Isolated_NoGlobalQualityShift" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.SignalQualityChange_Isolated_NoGlobalQualityShift" methodname="SignalQualityChange_Isolated_NoGlobalQualityShift" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="828150920" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000403" asserts="0">
+              <test-case id="1057" name="SignalQualityChange_Isolated_NoGlobalQualityShift" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.SignalQualityChange_Isolated_NoGlobalQualityShift" methodname="SignalQualityChange_Isolated_NoGlobalQualityShift" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1023695814" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000412" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1053" name="TargetChange_Isolated_OtherLayersFrozen" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.TargetChange_Isolated_OtherLayersFrozen" methodname="TargetChange_Isolated_OtherLayersFrozen" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="814639285" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000665" asserts="0">
+              <test-case id="1053" name="TargetChange_Isolated_OtherLayersFrozen" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.TargetChange_Isolated_OtherLayersFrozen" methodname="TargetChange_Isolated_OtherLayersFrozen" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="275223049" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000705" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1059" name="Unlock_OnlyAtSessionBoundary_ThenFollowsAgain" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.Unlock_OnlyAtSessionBoundary_ThenFollowsAgain" methodname="Unlock_OnlyAtSessionBoundary_ThenFollowsAgain" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="1782769910" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000446" asserts="0">
+              <test-case id="1059" name="Unlock_OnlyAtSessionBoundary_ThenFollowsAgain" fullname="SRP.V03.Tests.LayerZeroCrosstalkTests.Unlock_OnlyAtSessionBoundary_ThenFollowsAgain" methodname="Unlock_OnlyAtSessionBoundary_ThenFollowsAgain" classname="SRP.V03.Tests.LayerZeroCrosstalkTests" runstate="Runnable" seed="409287800" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000459" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1065" name="ParameterBoundsSnapshotTests" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.002328" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1065" name="ParameterBoundsSnapshotTests" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.002498" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1068" name="ActualVisual_Bounds_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.ActualVisual_Bounds_Snapshot" methodname="ActualVisual_Bounds_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="338095906" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000114" asserts="0">
+              <test-case id="1068" name="ActualVisual_Bounds_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.ActualVisual_Bounds_Snapshot" methodname="ActualVisual_Bounds_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="2026231291" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000114" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1072" name="AssertInRange_PassesInside_FailsOutside" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.AssertInRange_PassesInside_FailsOutside" methodname="AssertInRange_PassesInside_FailsOutside" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1391342711" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000753" asserts="0">
+              <test-case id="1072" name="AssertInRange_PassesInside_FailsOutside" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.AssertInRange_PassesInside_FailsOutside" methodname="AssertInRange_PassesInside_FailsOutside" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1187891685" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000840" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1073" name="Candidates_SitInsideTheirBounds" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.Candidates_SitInsideTheirBounds" methodname="Candidates_SitInsideTheirBounds" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="898794281" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000234" asserts="0">
+              <test-case id="1073" name="Candidates_SitInsideTheirBounds" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.Candidates_SitInsideTheirBounds" methodname="Candidates_SitInsideTheirBounds" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="166913496" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000252" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1066" name="PhaseInterpolation_Bounds_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.PhaseInterpolation_Bounds_Snapshot" methodname="PhaseInterpolation_Bounds_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1984290996" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000082" asserts="0">
+              <test-case id="1066" name="PhaseInterpolation_Bounds_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.PhaseInterpolation_Bounds_Snapshot" methodname="PhaseInterpolation_Bounds_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1920011708" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000075" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1070" name="RecoveryEndpoints_HeatSnowFade_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.RecoveryEndpoints_HeatSnowFade_Snapshot" methodname="RecoveryEndpoints_HeatSnowFade_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1414285027" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000083" asserts="0">
+              <test-case id="1070" name="RecoveryEndpoints_HeatSnowFade_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.RecoveryEndpoints_HeatSnowFade_Snapshot" methodname="RecoveryEndpoints_HeatSnowFade_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1108867634" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000088" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1069" name="RecoveryEndpoints_Storm_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.RecoveryEndpoints_Storm_Snapshot" methodname="RecoveryEndpoints_Storm_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="523704987" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000078" asserts="0">
+              <test-case id="1069" name="RecoveryEndpoints_Storm_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.RecoveryEndpoints_Storm_Snapshot" methodname="RecoveryEndpoints_Storm_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="820500441" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000083" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1067" name="RecoveryLowPass_Bounds_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.RecoveryLowPass_Bounds_Snapshot" methodname="RecoveryLowPass_Bounds_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1605042520" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000062" asserts="0">
+              <test-case id="1067" name="RecoveryLowPass_Bounds_Snapshot" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.RecoveryLowPass_Bounds_Snapshot" methodname="RecoveryLowPass_Bounds_Snapshot" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1697281463" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000064" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1071" name="SharedRules_Complete" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.SharedRules_Complete" methodname="SharedRules_Complete" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1666879835" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000076" asserts="0">
+              <test-case id="1071" name="SharedRules_Complete" fullname="SRP.V03.Tests.ParameterBoundsSnapshotTests.SharedRules_Complete" methodname="SharedRules_Complete" classname="SRP.V03.Tests.ParameterBoundsSnapshotTests" runstate="Runnable" seed="1912977380" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000076" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1074" name="QualityBehaviorMatrixTests" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.001870" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1074" name="QualityBehaviorMatrixTests" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.001941" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1076" name="ActualBehavior_MatchesContract" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.ActualBehavior_MatchesContract" methodname="ActualBehavior_MatchesContract" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="160003884" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000115" asserts="0">
+              <test-case id="1076" name="ActualBehavior_MatchesContract" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.ActualBehavior_MatchesContract" methodname="ActualBehavior_MatchesContract" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="433930670" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000115" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1079" name="BackgroundBehavior_AlwaysUnchanged" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.BackgroundBehavior_AlwaysUnchanged" methodname="BackgroundBehavior_AlwaysUnchanged" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="385730709" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000133" asserts="0">
+              <test-case id="1079" name="BackgroundBehavior_AlwaysUnchanged" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.BackgroundBehavior_AlwaysUnchanged" methodname="BackgroundBehavior_AlwaysUnchanged" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="2043641624" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000134" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1078" name="FallbackBehavior_MatchesContract" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.FallbackBehavior_MatchesContract" methodname="FallbackBehavior_MatchesContract" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="1959688593" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000134" asserts="0">
+              <test-case id="1078" name="FallbackBehavior_MatchesContract" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.FallbackBehavior_MatchesContract" methodname="FallbackBehavior_MatchesContract" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="1906555601" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000123" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1082" name="ModuleMap_MapsSceneModulesPerR01" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.ModuleMap_MapsSceneModulesPerR01" methodname="ModuleMap_MapsSceneModulesPerR01" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="308069928" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000163" asserts="0">
+              <test-case id="1082" name="ModuleMap_MapsSceneModulesPerR01" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.ModuleMap_MapsSceneModulesPerR01" methodname="ModuleMap_MapsSceneModulesPerR01" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="312281954" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000178" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1083" name="ModuleMap_V22RequiredModules_AreStormAndFade" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.ModuleMap_V22RequiredModules_AreStormAndFade" methodname="ModuleMap_V22RequiredModules_AreStormAndFade" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="1210337409" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000078" asserts="0">
+              <test-case id="1083" name="ModuleMap_V22RequiredModules_AreStormAndFade" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.ModuleMap_V22RequiredModules_AreStormAndFade" methodname="ModuleMap_V22RequiredModules_AreStormAndFade" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="703127381" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000081" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1077" name="RecoveryBehavior_MatchesContract" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.RecoveryBehavior_MatchesContract" methodname="RecoveryBehavior_MatchesContract" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="1846772528" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000107" asserts="0">
+              <test-case id="1077" name="RecoveryBehavior_MatchesContract" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.RecoveryBehavior_MatchesContract" methodname="RecoveryBehavior_MatchesContract" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="1079739640" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000101" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1075" name="TargetBehavior_MatchesContract" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.TargetBehavior_MatchesContract" methodname="TargetBehavior_MatchesContract" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="1697637559" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000099" asserts="0">
+              <test-case id="1075" name="TargetBehavior_MatchesContract" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.TargetBehavior_MatchesContract" methodname="TargetBehavior_MatchesContract" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="86078217" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000099" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1080" name="TryParseQualityState_AcceptsAllFourStates_CaseInsensitive" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.TryParseQualityState_AcceptsAllFourStates_CaseInsensitive" methodname="TryParseQualityState_AcceptsAllFourStates_CaseInsensitive" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="773854695" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000120" asserts="0">
+              <test-case id="1080" name="TryParseQualityState_AcceptsAllFourStates_CaseInsensitive" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.TryParseQualityState_AcceptsAllFourStates_CaseInsensitive" methodname="TryParseQualityState_AcceptsAllFourStates_CaseInsensitive" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="1771237332" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000153" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1081" name="TryParseQualityState_RejectsUnknownValue" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.TryParseQualityState_RejectsUnknownValue" methodname="TryParseQualityState_RejectsUnknownValue" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="688390817" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000069" asserts="0">
+              <test-case id="1081" name="TryParseQualityState_RejectsUnknownValue" fullname="SRP.V03.Tests.QualityBehaviorMatrixTests.TryParseQualityState_RejectsUnknownValue" methodname="TryParseQualityState_RejectsUnknownValue" classname="SRP.V03.Tests.QualityBehaviorMatrixTests" runstate="Runnable" seed="966066952" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000073" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1084" name="RecoveryLockTests" fullname="SRP.V03.Tests.RecoveryLockTests" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.003002" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1084" name="RecoveryLockTests" fullname="SRP.V03.Tests.RecoveryLockTests" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.003217" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1091" name="FrameLocked_ThenBoundaryReset_ThenFollowsAgain" fullname="SRP.V03.Tests.RecoveryLockTests.FrameLocked_ThenBoundaryReset_ThenFollowsAgain" methodname="FrameLocked_ThenBoundaryReset_ThenFollowsAgain" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="452708312" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000424" asserts="0">
+              <test-case id="1091" name="FrameLocked_ThenBoundaryReset_ThenFollowsAgain" fullname="SRP.V03.Tests.RecoveryLockTests.FrameLocked_ThenBoundaryReset_ThenFollowsAgain" methodname="FrameLocked_ThenBoundaryReset_ThenFollowsAgain" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="597822454" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000498" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1085" name="Lock_ImmuneTo100RandomFrames_AfterQualityLock" fullname="SRP.V03.Tests.RecoveryLockTests.Lock_ImmuneTo100RandomFrames_AfterQualityLock" methodname="Lock_ImmuneTo100RandomFrames_AfterQualityLock" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="1116987451" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000482" asserts="0">
+              <test-case id="1085" name="Lock_ImmuneTo100RandomFrames_AfterQualityLock" fullname="SRP.V03.Tests.RecoveryLockTests.Lock_ImmuneTo100RandomFrames_AfterQualityLock" methodname="Lock_ImmuneTo100RandomFrames_AfterQualityLock" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="153871091" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000524" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1086" name="Lock_TriggeredByFrameFlag_EvenWhenBehaviorIsFollow" fullname="SRP.V03.Tests.RecoveryLockTests.Lock_TriggeredByFrameFlag_EvenWhenBehaviorIsFollow" methodname="Lock_TriggeredByFrameFlag_EvenWhenBehaviorIsFollow" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="759944638" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000235" asserts="0">
+              <test-case id="1086" name="Lock_TriggeredByFrameFlag_EvenWhenBehaviorIsFollow" fullname="SRP.V03.Tests.RecoveryLockTests.Lock_TriggeredByFrameFlag_EvenWhenBehaviorIsFollow" methodname="Lock_TriggeredByFrameFlag_EvenWhenBehaviorIsFollow" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="415486848" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000262" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1090" name="LowPass_ConvergesTowardTarget_WhenFollowing" fullname="SRP.V03.Tests.RecoveryLockTests.LowPass_ConvergesTowardTarget_WhenFollowing" methodname="LowPass_ConvergesTowardTarget_WhenFollowing" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="123156948" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000298" asserts="0">
+              <test-case id="1090" name="LowPass_ConvergesTowardTarget_WhenFollowing" fullname="SRP.V03.Tests.RecoveryLockTests.LowPass_ConvergesTowardTarget_WhenFollowing" methodname="LowPass_ConvergesTowardTarget_WhenFollowing" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="1136122447" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000248" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1087" name="QualityRecoveryToGood_DoesNotUnlock" fullname="SRP.V03.Tests.RecoveryLockTests.QualityRecoveryToGood_DoesNotUnlock" methodname="QualityRecoveryToGood_DoesNotUnlock" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="825272623" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000298" asserts="0">
+              <test-case id="1087" name="QualityRecoveryToGood_DoesNotUnlock" fullname="SRP.V03.Tests.RecoveryLockTests.QualityRecoveryToGood_DoesNotUnlock" methodname="QualityRecoveryToGood_DoesNotUnlock" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="557531000" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000254" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1089" name="ResetSession_AtSessionBoundary_UnlocksAndRestoresFollowing" fullname="SRP.V03.Tests.RecoveryLockTests.ResetSession_AtSessionBoundary_UnlocksAndRestoresFollowing" methodname="ResetSession_AtSessionBoundary_UnlocksAndRestoresFollowing" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="954859057" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000251" asserts="0">
+              <test-case id="1089" name="ResetSession_AtSessionBoundary_UnlocksAndRestoresFollowing" fullname="SRP.V03.Tests.RecoveryLockTests.ResetSession_AtSessionBoundary_UnlocksAndRestoresFollowing" methodname="ResetSession_AtSessionBoundary_UnlocksAndRestoresFollowing" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="2060324693" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000272" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1088" name="ResetSession_RejectedWhileSessionActive" fullname="SRP.V03.Tests.RecoveryLockTests.ResetSession_RejectedWhileSessionActive" methodname="ResetSession_RejectedWhileSessionActive" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="1347269319" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000227" asserts="0">
+              <test-case id="1088" name="ResetSession_RejectedWhileSessionActive" fullname="SRP.V03.Tests.RecoveryLockTests.ResetSession_RejectedWhileSessionActive" methodname="ResetSession_RejectedWhileSessionActive" classname="SRP.V03.Tests.RecoveryLockTests" runstate="Runnable" seed="746855127" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000233" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1092" name="V03FrameGoldenTests" fullname="SRP.V03.Tests.V03FrameGoldenTests" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.003252" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1092" name="V03FrameGoldenTests" fullname="SRP.V03.Tests.V03FrameGoldenTests" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.003560" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1098" name="Golden_AllFrames_PassValidator" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_AllFrames_PassValidator" methodname="Golden_AllFrames_PassValidator" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="560011686" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.001724" asserts="0">
+              <test-case id="1098" name="Golden_AllFrames_PassValidator" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_AllFrames_PassValidator" methodname="Golden_AllFrames_PassValidator" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="493912413" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.001918" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1093" name="Golden_Frame20_Storm_Hold1_ParsesAllFields" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame20_Storm_Hold1_ParsesAllFields" methodname="Golden_Frame20_Storm_Hold1_ParsesAllFields" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="962983824" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000344" asserts="0">
+              <test-case id="1093" name="Golden_Frame20_Storm_Hold1_ParsesAllFields" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame20_Storm_Hold1_ParsesAllFields" methodname="Golden_Frame20_Storm_Hold1_ParsesAllFields" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="1577957838" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000381" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1094" name="Golden_Frame21_Storm_Hold2_DistinguishesStepInstance" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame21_Storm_Hold2_DistinguishesStepInstance" methodname="Golden_Frame21_Storm_Hold2_DistinguishesStepInstance" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="1573620276" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000118" asserts="0">
+              <test-case id="1094" name="Golden_Frame21_Storm_Hold2_DistinguishesStepInstance" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame21_Storm_Hold2_DistinguishesStepInstance" methodname="Golden_Frame21_Storm_Hold2_DistinguishesStepInstance" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="1633321272" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000125" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1095" name="Golden_Frame22_Fade_Inhale1" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame22_Fade_Inhale1" methodname="Golden_Frame22_Fade_Inhale1" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="796305195" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000103" asserts="0">
+              <test-case id="1095" name="Golden_Frame22_Fade_Inhale1" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame22_Fade_Inhale1" methodname="Golden_Frame22_Fade_Inhale1" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="1823816080" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000127" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1096" name="Golden_Frame23_Fade_TargetActualDifferentSteps" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame23_Fade_TargetActualDifferentSteps" methodname="Golden_Frame23_Fade_TargetActualDifferentSteps" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="913661594" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000108" asserts="0">
+              <test-case id="1096" name="Golden_Frame23_Fade_TargetActualDifferentSteps" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame23_Fade_TargetActualDifferentSteps" methodname="Golden_Frame23_Fade_TargetActualDifferentSteps" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="1300420421" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000114" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1097" name="Golden_Frame24_Snow_ActualEmptyStep" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame24_Snow_ActualEmptyStep" methodname="Golden_Frame24_Snow_ActualEmptyStep" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="1896280978" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000133" asserts="0">
+              <test-case id="1097" name="Golden_Frame24_Snow_ActualEmptyStep" fullname="SRP.V03.Tests.V03FrameGoldenTests.Golden_Frame24_Snow_ActualEmptyStep" methodname="Golden_Frame24_Snow_ActualEmptyStep" classname="SRP.V03.Tests.V03FrameGoldenTests" runstate="Runnable" seed="842732906" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000142" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1099" name="V03FrameValidationTests" fullname="SRP.V03.Tests.V03FrameValidationTests" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.002356" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1099" name="V03FrameValidationTests" fullname="SRP.V03.Tests.V03FrameValidationTests" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.002480" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1109" name="BadFallbackState_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.BadFallbackState_Rejected" methodname="BadFallbackState_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="2058738142" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000260" asserts="0">
+              <test-case id="1109" name="BadFallbackState_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.BadFallbackState_Rejected" methodname="BadFallbackState_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="250432744" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000279" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1110" name="ConfidenceOutOfRange_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.ConfidenceOutOfRange_Rejected" methodname="ConfidenceOutOfRange_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1928215478" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000109" asserts="0">
+              <test-case id="1110" name="ConfidenceOutOfRange_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.ConfidenceOutOfRange_Rejected" methodname="ConfidenceOutOfRange_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1717746239" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000098" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1111" name="NullFrame_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.NullFrame_Rejected" methodname="NullFrame_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1875127458" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000072" asserts="0">
+              <test-case id="1111" name="NullFrame_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.NullFrame_Rejected" methodname="NullFrame_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="2104401492" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000073" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1101" name="Rule2_ActualStepIdWithoutCycleIndex_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule2_ActualStepIdWithoutCycleIndex_Rejected" methodname="Rule2_ActualStepIdWithoutCycleIndex_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1012703773" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000087" asserts="0">
+              <test-case id="1101" name="Rule2_ActualStepIdWithoutCycleIndex_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule2_ActualStepIdWithoutCycleIndex_Rejected" methodname="Rule2_ActualStepIdWithoutCycleIndex_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="103368367" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000089" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1100" name="Rule2_TargetCycleIndexWithoutStepId_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule2_TargetCycleIndexWithoutStepId_Rejected" methodname="Rule2_TargetCycleIndexWithoutStepId_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="380128853" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000086" asserts="0">
+              <test-case id="1100" name="Rule2_TargetCycleIndexWithoutStepId_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule2_TargetCycleIndexWithoutStepId_Rejected" methodname="Rule2_TargetCycleIndexWithoutStepId_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="176456184" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000088" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1104" name="Rule3_NonEmptyStepWithNonePhase_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule3_NonEmptyStepWithNonePhase_Rejected" methodname="Rule3_NonEmptyStepWithNonePhase_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1254939401" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000090" asserts="0">
+              <test-case id="1104" name="Rule3_NonEmptyStepWithNonePhase_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule3_NonEmptyStepWithNonePhase_Rejected" methodname="Rule3_NonEmptyStepWithNonePhase_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1897613677" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000105" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1105" name="Rule3_ProgressOutOfRange_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule3_ProgressOutOfRange_Rejected" methodname="Rule3_ProgressOutOfRange_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="417426986" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000081" asserts="0">
+              <test-case id="1105" name="Rule3_ProgressOutOfRange_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule3_ProgressOutOfRange_Rejected" methodname="Rule3_ProgressOutOfRange_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="596161490" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000087" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1102" name="Rule4_EmptyStepWithNonZeroProgress_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule4_EmptyStepWithNonZeroProgress_Rejected" methodname="Rule4_EmptyStepWithNonZeroProgress_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1499115682" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000094" asserts="0">
+              <test-case id="1102" name="Rule4_EmptyStepWithNonZeroProgress_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule4_EmptyStepWithNonZeroProgress_Rejected" methodname="Rule4_EmptyStepWithNonZeroProgress_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="2045687953" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000097" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1103" name="Rule4_EmptyStepWithPhaseNotNone_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule4_EmptyStepWithPhaseNotNone_Rejected" methodname="Rule4_EmptyStepWithPhaseNotNone_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="839989628" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000103" asserts="0">
+              <test-case id="1103" name="Rule4_EmptyStepWithPhaseNotNone_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule4_EmptyStepWithPhaseNotNone_Rejected" methodname="Rule4_EmptyStepWithPhaseNotNone_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1051463919" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000095" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1107" name="Rule5_V21CoarseModuleWithoutStepBinding_Accepted" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule5_V21CoarseModuleWithoutStepBinding_Accepted" methodname="Rule5_V21CoarseModuleWithoutStepBinding_Accepted" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1019897247" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000110" asserts="0">
+              <test-case id="1107" name="Rule5_V21CoarseModuleWithoutStepBinding_Accepted" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule5_V21CoarseModuleWithoutStepBinding_Accepted" methodname="Rule5_V21CoarseModuleWithoutStepBinding_Accepted" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1588582469" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000117" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1106" name="Rule5_V22RequiredModuleWithoutStepBinding_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule5_V22RequiredModuleWithoutStepBinding_Rejected" methodname="Rule5_V22RequiredModuleWithoutStepBinding_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1308229797" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000096" asserts="0">
+              <test-case id="1106" name="Rule5_V22RequiredModuleWithoutStepBinding_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.Rule5_V22RequiredModuleWithoutStepBinding_Rejected" methodname="Rule5_V22RequiredModuleWithoutStepBinding_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="996567758" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000107" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1108" name="UnknownModule_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.UnknownModule_Rejected" methodname="UnknownModule_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="1925279848" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000092" asserts="0">
+              <test-case id="1108" name="UnknownModule_Rejected" fullname="SRP.V03.Tests.V03FrameValidationTests.UnknownModule_Rejected" methodname="UnknownModule_Rejected" classname="SRP.V03.Tests.V03FrameValidationTests" runstate="Runnable" seed="2094211056" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000090" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1112" name="V03SceneAdapterTickTests" fullname="SRP.V03.Tests.V03SceneAdapterTickTests" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.003679" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1112" name="V03SceneAdapterTickTests" fullname="SRP.V03.Tests.V03SceneAdapterTickTests" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.003544" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1117" name="NotifyLinkDown_Disconnected_AbortsTargetToIdleSafety" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.NotifyLinkDown_Disconnected_AbortsTargetToIdleSafety" methodname="NotifyLinkDown_Disconnected_AbortsTargetToIdleSafety" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="924838062" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000531" asserts="0">
+              <test-case id="1117" name="NotifyLinkDown_Disconnected_AbortsTargetToIdleSafety" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.NotifyLinkDown_Disconnected_AbortsTargetToIdleSafety" methodname="NotifyLinkDown_Disconnected_AbortsTargetToIdleSafety" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="1345646791" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000580" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1116" name="NotifyLinkDown_Unusable_LocksRecovery_AndStillsActual" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.NotifyLinkDown_Unusable_LocksRecovery_AndStillsActual" methodname="NotifyLinkDown_Unusable_LocksRecovery_AndStillsActual" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="889350116" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000353" asserts="0">
+              <test-case id="1116" name="NotifyLinkDown_Unusable_LocksRecovery_AndStillsActual" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.NotifyLinkDown_Unusable_LocksRecovery_AndStillsActual" methodname="NotifyLinkDown_Unusable_LocksRecovery_AndStillsActual" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="2140677421" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000353" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1114" name="Tick_InvalidFrame_RejectedAndCounted_LayersKeepState" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_InvalidFrame_RejectedAndCounted_LayersKeepState" methodname="Tick_InvalidFrame_RejectedAndCounted_LayersKeepState" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="1183371658" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000359" asserts="0">
+              <test-case id="1114" name="Tick_InvalidFrame_RejectedAndCounted_LayersKeepState" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_InvalidFrame_RejectedAndCounted_LayersKeepState" methodname="Tick_InvalidFrame_RejectedAndCounted_LayersKeepState" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="1057606252" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000361" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1115" name="Tick_NoFrame_KeepsState_AndNotCountedAsRejected" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_NoFrame_KeepsState_AndNotCountedAsRejected" methodname="Tick_NoFrame_KeepsState_AndNotCountedAsRejected" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="925396363" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000314" asserts="0">
+              <test-case id="1115" name="Tick_NoFrame_KeepsState_AndNotCountedAsRejected" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_NoFrame_KeepsState_AndNotCountedAsRejected" methodname="Tick_NoFrame_KeepsState_AndNotCountedAsRejected" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="1273911660" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000329" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1118" name="Tick_SegmentChange_ResetsRecoveryLock_AndFiresBackgroundHook" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_SegmentChange_ResetsRecoveryLock_AndFiresBackgroundHook" methodname="Tick_SegmentChange_ResetsRecoveryLock_AndFiresBackgroundHook" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="1949553491" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000441" asserts="0">
+              <test-case id="1118" name="Tick_SegmentChange_ResetsRecoveryLock_AndFiresBackgroundHook" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_SegmentChange_ResetsRecoveryLock_AndFiresBackgroundHook" methodname="Tick_SegmentChange_ResetsRecoveryLock_AndFiresBackgroundHook" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="952902378" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000352" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1113" name="Tick_ValidFrame_ProjectsEachLayerOwnView" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_ValidFrame_ProjectsEachLayerOwnView" methodname="Tick_ValidFrame_ProjectsEachLayerOwnView" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="635641593" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000571" asserts="0">
+              <test-case id="1113" name="Tick_ValidFrame_ProjectsEachLayerOwnView" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_ValidFrame_ProjectsEachLayerOwnView" methodname="Tick_ValidFrame_ProjectsEachLayerOwnView" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="2031415723" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000467" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1119" name="Tick_WithoutBind_ReturnsFalse" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_WithoutBind_ReturnsFalse" methodname="Tick_WithoutBind_ReturnsFalse" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="1717147175" result="Passed" start-time="2026-09-28 07:50:56Z" end-time="2026-09-28 07:50:56Z" duration="0.000331" asserts="0">
+              <test-case id="1119" name="Tick_WithoutBind_ReturnsFalse" fullname="SRP.V03.Tests.V03SceneAdapterTickTests.Tick_WithoutBind_ReturnsFalse" methodname="Tick_WithoutBind_ReturnsFalse" classname="SRP.V03.Tests.V03SceneAdapterTickTests" runstate="Runnable" seed="1334259855" result="Passed" start-time="2026-09-28 07:55:35Z" end-time="2026-09-28 07:55:35Z" duration="0.000327" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />

@@ -3,8 +3,8 @@
   "result": "PASS",
   "player_exit_code": 0,
   "launch_mode": "manifest-verified ASCII staging copy",
-  "source_build_manifest_sha256": "7d78334fa00aca50ef7606c743c706ef56f51fa838526c1dc7feed152892fb1f",
-  "screenshot_sha256": "026809136f056fc54540157dd06b00f46ed549ca1f5125a65f4dabc451016a2b",
+  "source_build_manifest_sha256": "5e1b5de75d187b7d85cdcd1bcdd79150d3c8d51add80c324a993b79cb33492f1",
+  "screenshot_sha256": "e5b643766d6ecdaf8653d9683efe57e255fd23d8b3693b0c96354b9606b680fd",
   "before": {
     "udp": [],
     "tcp": []

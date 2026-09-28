@@ -2,8 +2,8 @@
   "schema_version": "f03-build-artifact-receipt-v1",
   "task_id": "F-03",
   "result": "PASS",
-  "git_commit": "71cad2b744156b7ea2eaf75d88fd26e3d95419c0",
-  "implementation_tree_sha256": "af186073c2a839caa27e5e6234146eef2a4dd75ddd682d22df4adfe74f6c75d3",
+  "git_commit": "c5ec6f541c9ea0efd32bf8484e9725ce02fef7de",
+  "implementation_tree_sha256": "433703db15c4ba0d5ce70a3588fe599c3ab6cd8b8a80d10628c0b9baea1e9d2a",
   "retention": "LOCAL_IGNORED_OUTPUTS_RETAIN_UNTIL_HUMAN_REVIEW",
   "git_publish_allowed": false,
   "runs": [
@@ -12,7 +12,7 @@
       "local_path": "D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Builds/F03-DevReplay/run-1",
       "file_count": 343,
       "total_bytes": 186949993,
-      "manifest_sha256": "7d78334fa00aca50ef7606c743c706ef56f51fa838526c1dc7feed152892fb1f",
+      "manifest_sha256": "5e1b5de75d187b7d85cdcd1bcdd79150d3c8d51add80c324a993b79cb33492f1",
       "files_rehashed": true
     },
     {
@@ -20,7 +20,7 @@
       "local_path": "D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Builds/F03-DevReplay/run-2",
       "file_count": 343,
       "total_bytes": 186949994,
-      "manifest_sha256": "1fe12b19a88ffef2f8bca43b8b804d42c598eecdd3cb1a9e1362ff633037e6ae",
+      "manifest_sha256": "5705e200f39cbdc17560dd262b3cc9abb2847111fa13d08a34d0af12eb920a4f",
       "files_rehashed": true
     }
   ]

@@ -1,0 +1,47 @@
+{
+  "task_id": "F-03",
+  "review_date": "2026-09-28",
+  "workspace": "D:/Agent/srp",
+  "implementation_commit": "c5ec6f541c9ea0efd32bf8484e9725ce02fef7de",
+  "scope": "F-03 migrated tools, Unity tests, repeat DEV-REPLAY builds, Player smoke and expected formal gate rejection; not formal release or participant evidence.",
+  "checks": [
+    {
+      "command": "pwsh -NoProfile -File agent/tasks/F-03/execution/verify.ps1",
+      "exit_code": 0,
+      "result": "Pester 6/6; F03_ALL_PASS; pre-run clean; only evidence changed"
+    },
+    {
+      "command": "Unity EditMode via F-03 entry",
+      "exit_code": 0,
+      "result": "98/98 Passed",
+      "source": "agent/tasks/F-03/evidence/runtime/editmode-results.xml"
+    },
+    {
+      "command": "Unity PlayMode via F-03 entry",
+      "exit_code": 0,
+      "result": "4/4 Passed",
+      "source": "agent/tasks/F-03/evidence/runtime/playmode-results.xml"
+    },
+    {
+      "command": "F-03 repeat build and retained artifact rehash",
+      "exit_code": 0,
+      "result": "343 files in each build; file sets agree; not byte-identical builds",
+      "source": "agent/tasks/F-03/evidence/runtime/build_artifact_receipt.json"
+    },
+    {
+      "command": "F-03 Player smoke",
+      "exit_code": 0,
+      "result": "Player exit 0, screenshot marker confirmed",
+      "source": "agent/tasks/F-03/evidence/runtime/player_smoke_report.json"
+    },
+    {
+      "command": "F-03 formal-negative path",
+      "exit_code": 0,
+      "result": "Expected process exits 1; same-run asset report 233 items/259 blockers; corrected rejection marker",
+      "source": "agent/tasks/F-03/evidence/runtime/formal_negative_report.json"
+    }
+  ],
+  "historical_acceptance": "PASS_ON_ORIGINAL_CANDIDATE",
+  "new_human_signature": "NOT_REQUESTED_OR_FABRICATED",
+  "formal_release": "BLOCKED"
+}

@@ -1,22 +1,22 @@
-Mono path[0] = 'C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-718fb723b8074c309fcbff52e573a66d/build/SRP-F03-DevReplay_Data/Managed'
-Mono config path = 'C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-718fb723b8074c309fcbff52e573a66d/build/MonoBleedingEdge/etc'
+Mono path[0] = 'C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-943afb770e474b18b3784a2baad5d590/build/SRP-F03-DevReplay_Data/Managed'
+Mono config path = 'C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-943afb770e474b18b3784a2baad5d590/build/MonoBleedingEdge/etc'
 CodeReloadManager initialized
 Found 3 interfaces on host : 0) 192.168.1.63 1) 172.31.96.1 2) 198.18.0.1
-Player connection [52152]  Target information:
+Player connection [42096]  Target information:
 
-Player connection [52152]  * "[IP] 192.168.1.63 [Port] 55000 [Flags] 2 [Guid] 3076996819 [EditorId] 778921911 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual" 
+Player connection [42096]  * "[IP] 192.168.1.63 [Port] 55000 [Flags] 2 [Guid] 2354360783 [EditorId] 589925035 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual" 
 
-Player connection [52152]  * "[IP] 172.31.96.1 [Port] 55000 [Flags] 2 [Guid] 3076996819 [EditorId] 778921911 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual" 
+Player connection [42096]  * "[IP] 172.31.96.1 [Port] 55000 [Flags] 2 [Guid] 2354360783 [EditorId] 589925035 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual" 
 
-Player connection [52152]  * "[IP] 198.18.0.1 [Port] 55000 [Flags] 2 [Guid] 3076996819 [EditorId] 778921911 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual" 
+Player connection [42096]  * "[IP] 198.18.0.1 [Port] 55000 [Flags] 2 [Guid] 2354360783 [EditorId] 589925035 [Version] 1048832 [Id] WindowsPlayer(2,fujunye) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] SRP-Weather-Visual" 
 
-Player connection [52152] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+Player connection [42096] Started UDP target info broadcast (1) on [225.0.0.222:54997].
 
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
 Initialize engine version: 6000.4.9f1 (f7258d6eebbe)
-[Subsystems] Discovering subsystems at path C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-718fb723b8074c309fcbff52e573a66d/build/SRP-F03-DevReplay_Data/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/fujunye/AppData/Local/Temp/srp-f03-player-943afb770e474b18b3784a2baad5d590/build/SRP-F03-DevReplay_Data/UnitySubsystems
 [D3D12 Device Filter] Vendor Name: NVIDIA
 [D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4080 SUPER
 [D3D12 Device Filter] Driver Version: 32.0.16.1714
@@ -34,7 +34,7 @@ Direct3D:
     App VRAM Budget: 15277 MB
     Driver:          32.0.16.1714
 Begin MonoManager ReloadAssembly
-- Finished resetting the current domain, in  0.002 seconds
+- Finished resetting the current domain, in  0.003 seconds
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
 [Physics::Module] Id: 0xf2b8ea05
@@ -43,8 +43,8 @@ Begin MonoManager ReloadAssembly
 [Physics::Module] Threading Mode: Multi-Threaded
 <RI> Initializing input.
 Using Windows.Gaming.Input
-UnloadTime: 0.605500 ms
-F03_DEV_REPLAY_READY commit=71cad2b744156b7ea2eaf75d88fd26e3d95419c0 unity=6000.4.9f1 | 6000.4.9f1 (f7258d6eebbe)
+UnloadTime: 0.618000 ms
+F03_DEV_REPLAY_READY commit=c5ec6f541c9ea0efd32bf8484e9725ce02fef7de unity=6000.4.9f1 | 6000.4.9f1 (f7258d6eebbe)
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -55,7 +55,7 @@ SRP.F03.DevReplayBanner:Start () (at D:/Agent/srp/02-技术研发/04-Unity视觉
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-F03_DEV_REPLAY_SCREENSHOT_WRITTEN path=C:\Users\fujunye\AppData\Local\Temp\srp-f03-player-718fb723b8074c309fcbff52e573a66d\capture.png
+F03_DEV_REPLAY_SCREENSHOT_WRITTEN path=C:\Users\fujunye\AppData\Local\Temp\srp-f03-player-943afb770e474b18b3784a2baad5d590\capture.png
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -74,4 +74,4 @@ Input Polling Thread exited.
 Input System module state changed to: Shutdown.
 CodeReloadManager destroyed
 GarbageCollector disposing of ComputeBuffer. Please use ComputeBuffer.Release() or .Dispose() to manually release the buffer.
-PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1790582005274,"processId":51760,"allocatedMemory":72552,"memoryLabels":[{"Default":5248},{"Thread":7168},{"Manager":15479},{"Shader":8},{"GfxDevice":2704},{"GfxThread":24},{"Audio":752},{"Serialization":520},{"Input":2440},{"JobScheduler":32768},{"String":575},{"PoolAlloc":192},{"CloudService":144},{"VR":1928},{"Video":144},{"NativeArray":3468},{"Subsystems":96},{"Gui":550},{"CoreBusinessMetrics":128}]}
+PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1790582283408,"processId":21052,"allocatedMemory":72552,"memoryLabels":[{"Default":5248},{"Thread":7168},{"Manager":15479},{"Shader":8},{"GfxDevice":2704},{"GfxThread":24},{"Audio":752},{"Serialization":520},{"Input":2440},{"JobScheduler":32768},{"String":575},{"PoolAlloc":192},{"CloudService":144},{"VR":1928},{"Video":144},{"NativeArray":3468},{"Subsystems":96},{"Gui":550},{"CoreBusinessMetrics":128}]}

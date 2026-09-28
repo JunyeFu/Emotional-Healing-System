@@ -1,0 +1,131 @@
+{
+  "task_id": "F-03",
+  "title": "F03 Unity工程基线任务总结",
+  "review_date": "2026-09-28",
+  "conclusion": "F-03历史已签收DONE。本轮将根Tools执行文件迁入Agent任务层，修正协调文档和负测试误报，完成真实Unity全流程复测。工程基线通过，正式资产许可门仍阻断。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-08-30 +08:00",
+    "commit": "a61eba6a62631780caaf60d8e2e431326d3082ba",
+    "method": "真实团队第二人审阅固定证据与独立Agent复审PASS，未表述为本人重新运行Unity。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "历史实施人为F-03独立对话Codex，真实第二人为傅钧烨；本轮Codex负责迁移、复测及总结。任务注册状态不变。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1：Unity版本、修订号和包锁可复现，漂移失败；AC2：Edit/Play测试与重复Windows开发构建；AC3：不依赖TD/Spout，未授权或正式发布负路径失败关闭。",
+        "本包只承担开发工程基线，不承担完整天气、实时流程、设备链或研究准入。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "唯一当前入口为agent/tasks/F-03/execution/Invoke-F03.ps1，环境锁在inputs，测试与模块均已迁入执行层。",
+        "本轮产生测试XML、双构建收据、Player截图、环境与正式门负报告。共享Unity源码仍由原工程维护。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "先核对签署与固定证据，迁移工具并提交，再从干净工作树执行完整复测；发现负测试日志误报后，修改Unity探针并再次完整验证。",
+        "新运行只写本包evidence/runtime，不覆盖历史已签收证据。原始机器日志按字节保留。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "当前Pester 6/6、EditMode 98/98、PlayMode 4/4；两次构建各343个文件，分别重算通过。相对文件集合一致，不声称两次构建逐字节相同。",
+        "Player启动及DEV-REPLAY标记已检查；F-01合同负测通过；正式门与未授权Development均拒绝，完整入口输出F03_ALL_PASS。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "F03-N01：执行文件分散在根Tools。已迁入统一任务结构并移除旧入口，迁移后的完整运行通过。",
+        "F03-N02：当前协调文档仍写READY。已按既有签收修正DONE；历史记录不改。F03-N03：探针把预期拦截误写为意外完成，已按构建结果修复并复测。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK说明责任与AC，inputs维护当前锁和来源，execution维护运行与测试，evidence存本轮结果，outputs生成总结，archive说明历史保留。",
+        "旧Tools/F03文件不再保留。Unity共享工程和历史签署仍在原业务目录，等待全项目统一迁移。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "F-03无注册前置。F-01/F-05提供接口版本，Python仍拥有流程与时钟权威。U-01/U-02/V-05分别消费测试构建基线，实现通信、四层适配及全旅程灰盒。",
+        "F03-N04：当前资产门为233项、259条阻断，正式发布仍不放行。许可处理交由对应资产与发布任务，不以F-03通过替代。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "本轮运行绑定c5ec6f5，源码未发生运行后漂移；本轮没有新的真实第二人签署，不改写旧签收范围。",
+        "历史签收对象还包括独立复审闭环8161fe12c21d2d66d35c3791bda5d3366d8be418。旧3/1测试与339文件属于当时证据，不当成当前计数。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "本轮源修改和复测结果在codex/task-package-normalization保存，发布以Git实际记录为准。下一包F-04，核对TD只读壳及当前操作台边界。",
+        "整体双层迁移仍未完成；当前仅关闭本包规范化与已发现源问题，不推定其他任务已整理。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "结构化总结：agent/tasks/F-03/outputs/summary.json；验证记录：同包evidence/verification.json；运行原件：同包evidence/runtime。",
+        "项目串联审阅：human/project-review.docx。下方链接打开运行入口、签署记录与本轮Player截图。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F03-N01",
+      "status": "FIXED",
+      "description": "根Tools/F03执行工具已迁入统一Agent任务层，旧活动入口移除",
+      "source": "agent/tasks/F-03/execution/Invoke-F03.ps1"
+    },
+    {
+      "id": "F03-N02",
+      "status": "FIXED",
+      "description": "现行Unity协调入口F-03 READY与签收DONE矛盾已修正",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md"
+    },
+    {
+      "id": "F03-N03",
+      "status": "FIXED",
+      "description": "未授权构建已被拦截但探针输出意外完成，已改为按实际结果报告并完整复测",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs"
+    },
+    {
+      "id": "F03-N04",
+      "status": "OPEN_DOWNSTREAM_ASSET_GATE",
+      "description": "当前同次资产报告为233项与259条阻断；对应资产、许可和发布任务需处理，不由本包放行",
+      "source": "agent/tasks/F-03/evidence/runtime/asset_blocking_report.json"
+    }
+  ],
+  "next_task": "F-04",
+  "source_links": [
+    {
+      "label": "打开 F-03 当前运行入口",
+      "path": "agent/tasks/F-03/execution/README.md"
+    },
+    {
+      "label": "打开 F-03 历史已签署验收",
+      "path": "03-测试与实验/F-03_技术验收记录_已签署.md"
+    },
+    {
+      "label": "打开本轮 DEV-REPLAY Player 截图",
+      "path": "agent/tasks/F-03/evidence/runtime/dev-replay-player.png"
+    }
+  ]
+}

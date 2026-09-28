@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.0629782">
-  <test-suite type="TestSuite" id="1018" name="SRP-Weather-Visual" fullname="SRP-Weather-Visual" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.062978" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.0566541">
+  <test-suite type="TestSuite" id="1018" name="SRP-Weather-Visual" fullname="SRP-Weather-Visual" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.056654" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="PlayMode" />
     </properties>
-    <test-suite type="Assembly" id="1003" name="SRP.F03.PlayModeTests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.F03.PlayModeTests.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.023897" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1003" name="SRP.F03.PlayModeTests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.F03.PlayModeTests.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.018824" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="16312" />
+        <property name="_PID" value="44016" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="PlayMode" />
         <property name="EditorOnly" value="False" />
       </properties>
-      <test-suite type="TestSuite" id="1004" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.023480" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1004" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.018510" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1005" name="F03" fullname="SRP.F03" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.023236" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1005" name="F03" fullname="SRP.F03" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.018315" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestSuite" id="1006" name="Tests" fullname="SRP.F03.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.022974" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestSuite" id="1006" name="Tests" fullname="SRP.F03.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.018094" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="TestFixture" id="1001" name="DevReplayPlayModeTests" fullname="SRP.F03.Tests.DevReplayPlayModeTests" classname="SRP.F03.Tests.DevReplayPlayModeTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.022017" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1001" name="DevReplayPlayModeTests" fullname="SRP.F03.Tests.DevReplayPlayModeTests" classname="SRP.F03.Tests.DevReplayPlayModeTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.017320" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1002" name="BannerRemainsVisibleAndNonFormalAcrossFrames" fullname="SRP.F03.Tests.DevReplayPlayModeTests.BannerRemainsVisibleAndNonFormalAcrossFrames" methodname="BannerRemainsVisibleAndNonFormalAcrossFrames" classname="SRP.F03.Tests.DevReplayPlayModeTests" runstate="Runnable" seed="127629427" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.012245" asserts="0">
+              <test-case id="1002" name="BannerRemainsVisibleAndNonFormalAcrossFrames" fullname="SRP.F03.Tests.DevReplayPlayModeTests.BannerRemainsVisibleAndNonFormalAcrossFrames" methodname="BannerRemainsVisibleAndNonFormalAcrossFrames" classname="SRP.F03.Tests.DevReplayPlayModeTests" runstate="Runnable" seed="1049370459" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.009786" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -33,36 +33,36 @@
         </test-suite>
       </test-suite>
     </test-suite>
-    <test-suite type="Assembly" id="1011" name="SRP.U01.PlayModeTests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.U01.PlayModeTests.dll" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.034357" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1011" name="SRP.U01.PlayModeTests.dll" fullname="D:/Agent/srp/02-技术研发/04-Unity视觉/SRP-Weather-Visual/Library/ScriptAssemblies/SRP.U01.PlayModeTests.dll" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.032998" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="16312" />
+        <property name="_PID" value="44016" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="PlayMode" />
         <property name="EditorOnly" value="False" />
       </properties>
-      <test-suite type="TestSuite" id="1012" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.031911" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1012" name="SRP" fullname="SRP" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.031395" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1013" name="U01" fullname="SRP.U01" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.031655" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1013" name="U01" fullname="SRP.U01" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.031195" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestSuite" id="1014" name="Tests" fullname="SRP.U01.Tests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.031401" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestSuite" id="1014" name="Tests" fullname="SRP.U01.Tests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.031007" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="TestFixture" id="1007" name="U01PlayModeTests" fullname="SRP.U01.Tests.U01PlayModeTests" classname="SRP.U01.Tests.U01PlayModeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.031145" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1007" name="U01PlayModeTests" fullname="SRP.U01.Tests.U01PlayModeTests" classname="SRP.U01.Tests.U01PlayModeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.030804" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1010" name="DisableAndEnablePreservesTheActiveMirror" fullname="SRP.U01.Tests.U01PlayModeTests.DisableAndEnablePreservesTheActiveMirror" methodname="DisableAndEnablePreservesTheActiveMirror" classname="SRP.U01.Tests.U01PlayModeTests" runstate="Runnable" seed="671254986" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.024278" asserts="0">
+              <test-case id="1010" name="DisableAndEnablePreservesTheActiveMirror" fullname="SRP.U01.Tests.U01PlayModeTests.DisableAndEnablePreservesTheActiveMirror" methodname="DisableAndEnablePreservesTheActiveMirror" classname="SRP.U01.Tests.U01PlayModeTests" runstate="Runnable" seed="465938461" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.023919" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1009" name="RenderReceiptRequiresAnExplicitFrameConfirmation" fullname="SRP.U01.Tests.U01PlayModeTests.RenderReceiptRequiresAnExplicitFrameConfirmation" methodname="RenderReceiptRequiresAnExplicitFrameConfirmation" classname="SRP.U01.Tests.U01PlayModeTests" runstate="Runnable" seed="788352354" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.004380" asserts="0">
+              <test-case id="1009" name="RenderReceiptRequiresAnExplicitFrameConfirmation" fullname="SRP.U01.Tests.U01PlayModeTests.RenderReceiptRequiresAnExplicitFrameConfirmation" methodname="RenderReceiptRequiresAnExplicitFrameConfirmation" classname="SRP.U01.Tests.U01PlayModeTests" runstate="Runnable" seed="1596306992" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.004589" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1008" name="UnityFramesDoNotAdvanceTheSessionMirror" fullname="SRP.U01.Tests.U01PlayModeTests.UnityFramesDoNotAdvanceTheSessionMirror" methodname="UnityFramesDoNotAdvanceTheSessionMirror" classname="SRP.U01.Tests.U01PlayModeTests" runstate="Runnable" seed="1181125841" result="Passed" start-time="2026-09-28 07:51:11Z" end-time="2026-09-28 07:51:11Z" duration="0.001751" asserts="0">
+              <test-case id="1008" name="UnityFramesDoNotAdvanceTheSessionMirror" fullname="SRP.U01.Tests.U01PlayModeTests.UnityFramesDoNotAdvanceTheSessionMirror" methodname="UnityFramesDoNotAdvanceTheSessionMirror" classname="SRP.U01.Tests.U01PlayModeTests" runstate="Runnable" seed="1860340655" result="Passed" start-time="2026-09-28 07:55:49Z" end-time="2026-09-28 07:55:49Z" duration="0.001632" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
