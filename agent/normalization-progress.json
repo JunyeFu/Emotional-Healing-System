@@ -63,10 +63,10 @@
     "U12-02",
     "U12-03",
     "U12-04",
-    "U12-05"
+    "U12-05",
+    "U12-06"
   ],
   "remaining_packages": [
-    "U12-06",
     "U12-07",
     "U12-08",
     "U12-09",
@@ -1726,6 +1726,41 @@
       "id": "U1205-N04",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "共享治理与旧根业务目录仍未整体迁入双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-06",
+      "id": "U1206-N01",
+      "status": "FIXED_ACTUAL_RELOCATION_AND_CURRENT_STATUS",
+      "description": "五旧原文实际归档，候选与旧READY核验入口修正，作者核查不继承独立身份",
+      "source": "agent/tasks/U12-06/archive/README.md"
+    },
+    {
+      "task_id": "U12-06",
+      "id": "U1206-N02",
+      "status": "PRESERVED_FROZEN_MEMBER_INPUT",
+      "description": "全部领取字节和输入/候选身份保持，原task_input精确迁移后继续核对",
+      "source": "agent/tasks/U12-06/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-06",
+      "id": "U1206-N03",
+      "status": "OPEN_SIX_RUNTIME_CONSUMERS",
+      "description": "六入口研究v1.2接线未验收，旧formal_capable合成适配器不证明真实准入",
+      "source": "agent/tasks/U12-06/evidence/runtime-observations.json"
+    },
+    {
+      "task_id": "U12-06",
+      "id": "U1206-N04",
+      "status": "OPEN_IMPLEMENTATION_REVIEW_AND_SIGNOFF",
+      "description": "实际实现候选、独立复核、真实第二人和对应外部研究证据仍缺，IN_PROGRESS不改",
+      "source": "agent/tasks/U12-06/outputs/current-runtime.json"
+    },
+    {
+      "task_id": "U12-06",
+      "id": "U1206-N05",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享模块与旧根业务目录尚未整体迁入人类/Agent双层",
       "source": "agent/normalization.md"
     }
   ]

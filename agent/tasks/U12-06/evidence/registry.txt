@@ -1,0 +1,1 @@
+PASS: 71 registry entries; fixed=68; templates=3; DONE=F-01,F-02,F-03,F-04,F-05,G-01,G-02,P-01,P-02,Q-01,R-01,T-01,U-01,U-02,U12-01,U12-02,U12-04,U12-07,V-01,V-02,V-03,V-04,W-01,X-01; READY=T-02,V-05; IN_REVIEW=U12-03; terminal=W-04

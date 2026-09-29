@@ -96,3 +96,4 @@ agent/tasks/U12-04/archive/** -text whitespace=cr-at-eol
 agent/tasks/U12-04/outputs/contract.json -text whitespace=cr-at-eol
 agent/tasks/U12-04/outputs/power/*.json text eol=lf
 agent/tasks/U12-05/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-06/archive/** -text whitespace=cr-at-eol

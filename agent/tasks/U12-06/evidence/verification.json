@@ -1,0 +1,76 @@
+{
+  "task_id": "U12-06",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\agent\\tasks\\U12-06\\execution\\observe_runtime.py"
+      ],
+      "exit_code": 0,
+      "log": "evidence/observations.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\U12-06\\execution\\test_runtime_handoff.py",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_core",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\session_store",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\randomization"
+      ],
+      "exit_code": 0,
+      "log": "evidence/handoff.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\00-项目管理\\01-项目章程与规划\\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\\99_验证与清单\\validate_protocol_authority_v1_1.py"
+      ],
+      "exit_code": 0,
+      "log": "evidence/legacy-protocol.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\00-项目管理\\01-项目章程与规划\\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\\24_团队任务与项目治理\\u12_upgrade\\validate_u12_governance.py"
+      ],
+      "exit_code": 0,
+      "log": "evidence/governance.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\00-项目管理\\01-项目章程与规划\\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\\24_团队任务与项目治理\\07_validate_task_packages.py"
+      ],
+      "exit_code": 0,
+      "log": "evidence/registry.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\00-项目管理\\01-项目章程与规划\\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\\24_团队任务与项目治理\\14_validate_ready_task_packages.py"
+      ],
+      "exit_code": 0,
+      "log": "evidence/dispatch.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "evidence/regression.txt"
+    }
+  ],
+  "scope": "normalization and existing P-01/P-02/X-01 software behavior",
+  "new_runtime_gate_acceptance": "NOT_DELIVERED",
+  "real_activity": "NOT_RUN",
+  "new_independent_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_SIGNED",
+  "unity": "NOT_RUN",
+  "td": "NOT_RUN"
+}

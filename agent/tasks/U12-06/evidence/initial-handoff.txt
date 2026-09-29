@@ -1,0 +1,19 @@
+.........F.............................................................. [ 29%]
+........................................................................ [ 58%]
+........................................................................ [ 87%]
+..............................                                           [100%]
+================================== FAILURES ===================================
+___________________ test_sources_and_navigation_are_actual ____________________
+
+    def test_sources_and_navigation_are_actual():
+        for source in read(TASK / 'inputs/sources.json')['paths']:
+>           assert (ROOT / source).is_file(), source
+E           AssertionError: agent/tasks/P-01/outputs/current-contract.md
+E           assert False
+E            +  where False = is_file()
+E            +    where is_file = (WindowsPath('D:/Agent/srp') / 'agent/tasks/P-01/outputs/current-contract.md').is_file
+
+agent\tasks\U12-06\execution\test_runtime_handoff.py:66: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-06/execution/test_runtime_handoff.py::test_sources_and_navigation_are_actual
+1 failed, 245 passed in 7.22s

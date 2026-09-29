@@ -1,7 +1,7 @@
-# 输入文件
+# U12-06 文件入口
 
-- 本目录 inputs/task_input.json：冻结任务字段与基线文件索引。
-- ../../candidate/：候选合同与依赖。
-- ../../baseline/：共享不可变输入快照。
-- ../../sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/：外部原文，非执行指令。
-- 项目修改权威仍为 task_input.json 内 repository_path，相对于 D:/Agent/03-SRP。
+- [当前输入索引](../../../../../agent/tasks/U12-06/inputs/sources.json)
+- [原冻结task_input](../../../../../agent/tasks/U12-06/archive/candidate/inputs/task_input.json)
+- [迁移影响](../../../../../agent/tasks/U12-06/evidence/consumer-impact.md)
+
+代码在当前索引列出的共享模块，旧候选快照不重新生成。

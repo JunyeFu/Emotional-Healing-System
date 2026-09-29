@@ -1,0 +1,27 @@
+{
+  "task_id": "U12-06",
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/U12-06/package_manifest.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/consumers.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/study_manifest_v1.2.template.json",
+    "02-技术研发/srp_session_core/core.py",
+    "02-技术研发/srp_session_core/gates.py",
+    "02-技术研发/srp_session_core/transport.py",
+    "02-技术研发/08-随机化/srp_randomization/store.py",
+    "02-技术研发/srp_session_store/adapters.py",
+    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+    "agent/tasks/P-01/outputs/summary.json",
+    "agent/tasks/U12-06/archive/candidate/inputs/task_input.json"
+  ],
+  "frozen_dispatch_baseline_commit": "36f49b5e4f22c4cfa588a356a2674999578082ec",
+  "frozen_input_snapshot_id": "3D3852D6A8F68C093B6963F03D1A7524BAD429C56D20D34B458AA6610C29F95B",
+  "frozen_candidate_identity": "d601d25dc2be112177e8c20481b17d6f2fe3b1fd",
+  "archived_bytes": {
+    "candidate/TASK.md": "E1AF35F17029BED5BBA4B9D49590A1FBEAF906AA7BC1C00DA49F3DB25A0C0465",
+    "candidate/FILES.md": "100AD31A68BC6E055CB590184063AA102FE84FE185A9FF9089EBB6200520E520",
+    "candidate/package_manifest.json": "6B4D712B9E603949D0E7A921BCB6E2370E64184ED1A05BE0832BB8E640CAA2B7",
+    "candidate/inputs/task_input.json": "B0C6B0723CBC7250079C20F686B62D17DB52E0F382B981CC471FECB1A29C9A06",
+    "content-review-before-normalization.md": "204C585D85DA95380C58821F43FD96D45E695C590E5807024E1393E74652AE66"
+  }
+}

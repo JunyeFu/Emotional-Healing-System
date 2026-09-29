@@ -1,0 +1,11 @@
+{
+  "task_id": "U12-06",
+  "failures": [
+    {"exit_code": 1, "log": "evidence/initial-handoff.txt", "observed": "1 failed, 245 passed", "disposition": "FIXED_NONEXISTENT_P01_SOURCE_PATH"},
+    {"exit_code": 1, "log": "evidence/initial-navigation.txt", "observed": "1 failed, 245 passed", "disposition": "FIXED_RELATIVE_LINK_DEPTH"},
+    {"exit_code": 1, "log": "evidence/initial-evidence-link.txt", "observed": "1 failed, 245 passed", "disposition": "FIXED_FIRST_RUN_LINK_TO_EXISTING_EVIDENCE_DIRECTORY"},
+    {"exit_code": 1, "log": "evidence/initial-dispatch.txt", "disposition": "TRACKED_EXACT_RELOCATED_INPUT_ORIGINAL"}
+  ],
+  "current_result": "evidence/verification.json",
+  "member_implementation_changed": false
+}

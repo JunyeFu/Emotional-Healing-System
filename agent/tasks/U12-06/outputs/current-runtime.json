@@ -1,0 +1,20 @@
+{
+  "task_id": "U12-06",
+  "status": "IN_PROGRESS",
+  "claimant": "傅钧烨",
+  "implementation_branch": "codex/u12-06-formal-gate",
+  "dependencies": ["U12-01", "F-01", "P-01", "G-02"],
+  "study_protocol_version": "1.2",
+  "runtime_contract_version": "2.2",
+  "transport_config_version": "1.1",
+  "runtime_consumers": 6,
+  "runtime_consumer_status": "PENDING_RUNTIME_MIGRATION",
+  "new_implementation_acceptance": null,
+  "real_approval": null,
+  "new_independent_review": null,
+  "new_human_acceptance": null,
+  "formal_collection_allowed": false,
+  "normalization_changes_shared_implementation": false,
+  "frozen_snapshot_preserved": true,
+  "root_migration_complete": false
+}
