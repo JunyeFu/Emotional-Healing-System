@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import subprocess
 from zipfile import ZipFile
+from verify_summary_refresh import verify_refreshed_word
 
 ROOT = Path(__file__).resolve().parents[2]
 EVIDENCE = ROOT / 'agent/evidence'
@@ -51,23 +52,28 @@ def main():
         if protected and entry['new'] in changed:
             raise ValueError('Frozen or historical original changed: ' + entry['new'])
     word_links = 0
+    revised_words = 0
     for entry in repairs['word_relationships_repaired']:
+        revised = verify_refreshed_word(entry['path'])
+        revised_words += revised
         before = subprocess.run(['git', 'show', '3ddd7f3:' + entry['path']], cwd=ROOT,
                                 stdout=subprocess.PIPE, check=True).stdout
         with ZipFile(io.BytesIO(before)) as original, ZipFile(ROOT / entry['path']) as current:
             if set(original.namelist()) != set(current.namelist()):
                 raise ValueError('Word archive members changed')
             for name in original.namelist():
-                if name != 'word/_rels/document.xml.rels' and original.read(name) != current.read(name):
+                allowed_parts = {'word/_rels/document.xml.rels'} | ({'word/document.xml'} if revised else set())
+                if name not in allowed_parts and original.read(name) != current.read(name):
                     raise ValueError('Word changed beyond current links: ' + entry['path'])
         word_links += entry['links']
     result = {'original_files': len(originals), 'unchanged_original_files': len(kept),
               'current_consumers_changed': changed, 'word_documents_checked': len(repairs['word_relationships_repaired']),
-              'word_hyperlinks_relocated': word_links, 'word_body_and_other_parts_unchanged': True,
+              'word_hyperlinks_relocated': word_links, 'word_body_and_other_parts_unchanged': revised_words == 0,
+              'current_summary_word_revisions_verified': revised_words,
               'frozen_dispatch_signed_acceptance_and_external_sources_preserved': True}
     (EVIDENCE / 'root-migration-governance-preservation.json').write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f'PASS {len(originals)} original files; {len(kept)} unchanged; {word_links} links in {result["word_documents_checked"]} unchanged Word bodies')
+    print(f'PASS {len(originals)} originals; {len(kept)} unchanged; {word_links} relocated links; {revised_words} source-verified current Word revisions')
 
 
 def package_tests(scope='governance', tasks=None):
@@ -95,7 +101,7 @@ def package_tests(scope='governance', tasks=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--package-tests', action='store_true')
-    parser.add_argument('--package-test-scope', choices=['governance', 'support', 'modules', 'local'], default='governance')
+    parser.add_argument('--package-test-scope', choices=['governance', 'support', 'modules', 'local', 'summary'], default='governance')
     parser.add_argument('--tasks', nargs='+', help='Retest repaired packages and retain other package results')
     args = parser.parse_args()
     if args.package_tests:

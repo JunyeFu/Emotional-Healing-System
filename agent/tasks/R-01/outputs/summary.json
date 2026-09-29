@@ -73,7 +73,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "明确路径提交并推送codex/task-package-normalization，不自动合并；当前已整理13/71包，其余58包及根目录最终迁移继续推进。下一包V-01，检查完整旅程与当前研究时序。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -109,7 +110,7 @@
       "source": "agent/tasks/R-01/evidence/consumer-impact.md"
     }
   ],
-  "next_task": "V-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "当前表示方案适用",

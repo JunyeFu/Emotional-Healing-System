@@ -3,31 +3,129 @@
   "title": "Q03 技术预试与盲态冻结工具交接审阅",
   "review_date": "2026-09-29",
   "conclusion": "Q-03仍WAIT_DEP_EXTERNAL、未领取且无签署。两旧执行方案原文归档，85项专项及历史协议检查通过；48个设计单元只是规划预览，真实manifest、标注界面、门报告和冻结工具尚未完成。",
-  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "未找到Q-03签署或独立工具实现；本轮Codex软件/规划核验不代表新的独立Agent或真人研究复核。"},
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "未找到Q-03签署或独立工具实现；本轮Codex软件/规划核验不代表新的独立Agent或真人研究复核。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["约5人日，依赖I-01/Q-02/A-01/A-03-REAL，注册角色为空。48人是技术预试锚点、两条件各24人单次；不等于正式阶段一N、功效证据或准入完成。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1可实例化48人平衡计划；AC2标注分歧和信号门自动报告；AC3冻结配置带真实身份与签署位。当前设计单元不能替代隐藏分配、manifest或工具验收。", "五天按输入与盲态冻结、独立Level C分配适配、双标注/裁定、盲态QC及校准、实际回归与交接推进。真实负责人和国内资料列在TASK，不把P-INTEGRATION通用流程当本包执行细节。"]},
-    {"heading": "实际交付", "paragraphs": ["建立TASK与五目录、当前Level C说明/JSON、原件来源与消费者影响；实现只枚举两条件24排列的48设计单元预览，四批容量各12，无实际人员、session_id或分配凭据。", "旧步骤9计划与详细方案实际原文归档，原位置改导航；历史v1.1验证器修复归档消费者。旧90材料报告仍是24人双会话来源，不复制填写为当前结果。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["观察到X-01只支持stage_1/stage_3，负测确认level_c返回STAGE_UNSUPPORTED。当前不改标签或放宽正式门；Q-03与X/P任务须另行实现Level C真实分配和manifest接口。", "B-01实际批次交E-03盲态汇总，再交A-03-CAL与U12-11/G-03冻结；Q-03只消费REAL，不反向要求最终CAL先完成。平衡按分配、不得按完成情况定向补人。"]},
-    {"heading": "验证与结果", "paragraphs": ["85项专项通过，含7项新交接/归档/真实拒绝负例与既有随机化、步骤材料测试。48单元覆盖两臂全部排列且不包含运行身份；历史协议检查和原字节核对通过。", "根Python、71项注册与5包61快照结果见evidence/regression.json。本轮未运行真实标注、设备预试、外部延迟、Unity/TD或新的独立Agent审核，软件检查不证明研究门。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧方案的有序报告门、强制扩展与FORMAL-1.1.0不再支配当前研究。当前PANAS主比较、PF护栏及SCCI操纵分开，不因功能失败隐去有效结果，阶段三不作为核心必经门。", "旧日志0.99、时钟50毫秒、延迟200毫秒及事件F1候选保存来源，未升级为当前冻结值；当前阈值、报告/构建/配置身份和签署均null。旧24人双会话模板禁止填新数据。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["本包仅TASK与inputs/execution/evidence/outputs/archive；两旧方案原文归档并核对SHA-256，历史校验读归档，原位置导航当前材料。没有伪造旧工具删除。", "共享随机化/测量及P-02模块仍是唯一原位置，最终根目录迁移再修复消费者。注册状态和冻结分发不改，不为结构整理重绘业务SVG；Word来自Agent事实而非直接改结论。"]},
-    {"heading": "上下游交接", "paragraphs": ["I-01交真实全链与外部测量，Q-02/E-02交真实Level B关闭，A-01交六类原件和离线L3，A-03-REAL交真实测量适配；S-02双标注遮蔽Target/条件/情绪/预测，不从目标补Actual或未知值。", "B-01每批最多12人，E-03汇总48人盲态报告，A-03-CAL校准后U12-11/G-03签署。Q-03真实分配、标注界面和自动门报告尚缺，真实负责人、审批与冻结不得由预览或软件PASS替代。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["Codex只负责当前材料与结构整理；工具领取人、B-01/E-03负责人、两标注者/裁定人、校准和研究冻结负责人未落实。没有真人签收，不借上游签署填本包PASS。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["规范化累计37/71、剩余34，下一X-01。真实Level C、工具完整实现、校准及根目录双层迁移仍待完成，WAIT_DEP_EXTERNAL不变。"]},
-    {"heading": "审阅来源", "paragraphs": ["注册表/手册、旧步骤9与旧报告、v1.2权威、I/Q/A/S当前交接、实际X-01生成器和U12-02标注计划。本轮无新网页检索、真实受限原件或外部批准。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "约5人日，依赖I-01/Q-02/A-01/A-03-REAL，注册角色为空。48人是技术预试锚点、两条件各24人单次；不等于正式阶段一N、功效证据或准入完成。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1可实例化48人平衡计划；AC2标注分歧和信号门自动报告；AC3冻结配置带真实身份与签署位。当前设计单元不能替代隐藏分配、manifest或工具验收。",
+        "五天按输入与盲态冻结、独立Level C分配适配、双标注/裁定、盲态QC及校准、实际回归与交接推进。真实负责人和国内资料列在TASK，不把P-INTEGRATION通用流程当本包执行细节。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立TASK与五目录、当前Level C说明/JSON、原件来源与消费者影响；实现只枚举两条件24排列的48设计单元预览，四批容量各12，无实际人员、session_id或分配凭据。",
+        "旧步骤9计划与详细方案实际原文归档，原位置改导航；历史v1.1验证器修复归档消费者。旧90材料报告仍是24人双会话来源，不复制填写为当前结果。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "观察到X-01只支持stage_1/stage_3，负测确认level_c返回STAGE_UNSUPPORTED。当前不改标签或放宽正式门；Q-03与X/P任务须另行实现Level C真实分配和manifest接口。",
+        "B-01实际批次交E-03盲态汇总，再交A-03-CAL与U12-11/G-03冻结；Q-03只消费REAL，不反向要求最终CAL先完成。平衡按分配、不得按完成情况定向补人。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "85项专项通过，含7项新交接/归档/真实拒绝负例与既有随机化、步骤材料测试。48单元覆盖两臂全部排列且不包含运行身份；历史协议检查和原字节核对通过。",
+        "根Python、71项注册与5包61快照结果见evidence/regression.json。本轮未运行真实标注、设备预试、外部延迟、Unity/TD或新的独立Agent审核，软件检查不证明研究门。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧方案的有序报告门、强制扩展与FORMAL-1.1.0不再支配当前研究。当前PANAS主比较、PF护栏及SCCI操纵分开，不因功能失败隐去有效结果，阶段三不作为核心必经门。",
+        "旧日志0.99、时钟50毫秒、延迟200毫秒及事件F1候选保存来源，未升级为当前冻结值；当前阈值、报告/构建/配置身份和签署均null。旧24人双会话模板禁止填新数据。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "本包仅TASK与inputs/execution/evidence/outputs/archive；两旧方案原文归档并核对SHA-256，历史校验读归档，原位置导航当前材料。没有伪造旧工具删除。",
+        "共享随机化、测量及P-02实现均以agent/modules为唯一权威位置，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。注册状态和冻结分发不改，不为结构整理重绘业务SVG；Word来自Agent事实而非直接改结论。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "I-01交真实全链与外部测量，Q-02/E-02交真实Level B关闭，A-01交六类原件和离线L3，A-03-REAL交真实测量适配；S-02双标注遮蔽Target/条件/情绪/预测，不从目标补Actual或未知值。",
+        "B-01每批最多12人，E-03汇总48人盲态报告，A-03-CAL校准后U12-11/G-03签署。Q-03真实分配、标注界面和自动门报告尚缺，真实负责人、审批与冻结不得由预览或软件PASS替代。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "Codex只负责当前材料与结构整理；工具领取人、B-01/E-03负责人、两标注者/裁定人、校准和研究冻结负责人未落实。没有真人签收，不借上游签署填本包PASS。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "注册表/手册、旧步骤9与旧报告、v1.2权威、I/Q/A/S当前交接、实际X-01生成器和U12-02标注计划。本轮无新网页检索、真实受限原件或外部批准。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "Q03-N01", "status": "FIXED_ARCHIVE_AND_CURRENT_ROUTE", "description": "两旧方案实际原文归档，导航与历史校验消费者修正；当前PANAS及可选扩展范围对齐", "source": "agent/tasks/Q-03/archive/README.md"},
-    {"id": "Q03-N02", "status": "OPEN_REAL_LEVEL_C_TOOL_IMPLEMENTATION", "description": "X-01不支持Level C；48单元仅覆盖预览，真实分配/manifest、标注UI和自动门报告未完成", "source": "agent/tasks/Q-03/outputs/current-level-c.md"},
-    {"id": "Q03-N03", "status": "OPEN_REAL_DATA_AND_FREEZE", "description": "真实链/Level B/REAL/人员和批准仍缺；所有当前阈值、配置和签署未冻结，业务状态不变", "source": "agent/tasks/Q-03/outputs/current-level-c.json"}
+    {
+      "id": "Q03-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_ROUTE",
+      "description": "两旧方案实际原文归档，导航与历史校验消费者修正；当前PANAS及可选扩展范围对齐",
+      "source": "agent/tasks/Q-03/archive/README.md"
+    },
+    {
+      "id": "Q03-N02",
+      "status": "OPEN_REAL_LEVEL_C_TOOL_IMPLEMENTATION",
+      "description": "X-01不支持Level C；48单元仅覆盖预览，真实分配/manifest、标注UI和自动门报告未完成",
+      "source": "agent/tasks/Q-03/outputs/current-level-c.md"
+    },
+    {
+      "id": "Q03-N03",
+      "status": "OPEN_REAL_DATA_AND_FREEZE",
+      "description": "真实链/Level B/REAL/人员和批准仍缺；所有当前阈值、配置和签署未冻结，业务状态不变",
+      "source": "agent/tasks/Q-03/outputs/current-level-c.json"
+    }
   ],
-  "next_task": "X-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前Level C工具与冻结交接", "path": "agent/tasks/Q-03/outputs/current-level-c.md"},
-    {"label": "48设计单元非运行预览", "path": "agent/tasks/Q-03/outputs/design-cell-preview.json"},
-    {"label": "真实状态与未冻结字段", "path": "agent/tasks/Q-03/outputs/current-level-c.json"},
-    {"label": "专项及历史验证", "path": "agent/tasks/Q-03/evidence/verification.json"},
-    {"label": "旧文件归档与原字节", "path": "agent/tasks/Q-03/archive/README.md"}
+    {
+      "label": "当前Level C工具与冻结交接",
+      "path": "agent/tasks/Q-03/outputs/current-level-c.md"
+    },
+    {
+      "label": "48设计单元非运行预览",
+      "path": "agent/tasks/Q-03/outputs/design-cell-preview.json"
+    },
+    {
+      "label": "真实状态与未冻结字段",
+      "path": "agent/tasks/Q-03/outputs/current-level-c.json"
+    },
+    {
+      "label": "专项及历史验证",
+      "path": "agent/tasks/Q-03/evidence/verification.json"
+    },
+    {
+      "label": "旧文件归档与原字节",
+      "path": "agent/tasks/Q-03/archive/README.md"
+    }
   ]
 }

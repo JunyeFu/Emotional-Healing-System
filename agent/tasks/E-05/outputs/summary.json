@@ -3,32 +3,136 @@
   "title": "E05 可选策略冻结与上下游审阅",
   "review_date": "2026-09-29",
   "conclusion": "E-05仍BLOCKED_EXTERNAL、未领取未签收；真实模型、OPE/ESS、事前标准和最终签署尚缺。已拆开揭盲前选择标准与分析后模型冻结，纠正U12-08职责，并同步修正X-02/X-03执行与人读总结。",
-  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "没有E-05真实签署。本轮为作者Agent规范化与合成接口核查，未安排新独立Agent审核或真人签名。"},
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有E-05真实签署。本轮为作者Agent规范化与合成接口核查，未安排新独立Agent审核或真人签名。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["固定任务约5人日，依赖A-05和X-02；训练、统计、数据授权、模型签署和部署接收人待实名。现无正式模型或策略manifest，空提纲仅供审阅，核心论文不等待可选扩展。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1仅用获准scene_native锁定轨迹，心电不进在线状态；AC2按事前标准核验OPE增益、支持、ESS、熵、校准、跨折稳定性与概率审计；AC3不足时记录均匀/更简候选或不开展，不宣称优效。", "五段为核对锁定输入及事前标准、独立重建、逐项支持裁定、最终产物冻结、真实签署交接；回退本身不授权阶段三，不开展不伪DONE。"]},
-    {"heading": "实际交付", "paragraphs": ["建立TASK及五目录、17项真实来源、当前冻结说明和机器状态、NOT_RUN空审阅提纲；不生成正式阈值、模型、签署哈希或准入凭证。", "修正X-02/X-03六个当前TASK/说明/总结输入及两份Word，增加两个扩展导航与手册入口；手册从重复实现模型改为复跑X-02和冻结验收，历史证据和在研快照不改。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["协议要求选择标准在核心揭盲前冻结，E-05却依赖A-05后分析。分开事前标准批准与最终模型签署；缺前者时真实责任人裁定探索性/不开展，不能倒填日期或事后选有利门槛。", "U12-08实际是依赖A-04/E-05的阶段三分析附录，不是冻结前置；只在当前消费者修正，不增加循环依赖。交叉拟合评价与最终全资料重拟合分开，训练内拟合不证明泛化。"]},
-    {"heading": "验证与结果", "paragraphs": ["61项专项通过，覆盖本包、X-02/X-03及既有随机化；实际24原生排列、四位置合法候选与行为概率1/4、1/3、1/2、1逐项核验，目标概率仍null，不冒充目标分布或OPE支持证据。", "根回归与协议、治理、注册、分发检查的实际命令和结果见verification.json；只证明规范化与现有软件接口，不证明真实训练、策略冻结、设备、Unity/TD或活动准入。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["修复U12-08冻结职责误写，当前X-02/X-03消费者及Word统一；两个冻结时间点和回退/准入区别明确。现v2.2仍拒绝frozen_policy，不能改版本或写manifest就宣称动态策略部署可用。", "正式奖励、OPE估计器和支持/ESS/熵/校准/稳定性阈值仍null，20%只是候选；真实模型卡、概率分布、独立复跑和签署未交付，不以空表或合成测试关闭。", "提交前发现PowerShell初稿定位agent而非仓库根，改用既有PSScriptRoot解析方式，从仓库外实际调用复测。未运行的初稿不伪造失败日志。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["旧扩展原件已实际归档X-02，本包引用现存来源，不重复复制历史权威。TASK、输入、执行、证据、输出与归档固定归属，原签署、在研快照及历史日志保留。", "先修Agent执行事实再重生三份任务Word及串联审阅；仅整理本包和实际受影响消费者，根目录双层整体迁移仍未完成。"]},
-    {"heading": "上下游交接", "paragraphs": ["A-05/E-04交真实锁定资料与授权，X-02交参与者分组训练/OPE/支持；G-03/U12-11及E-04交揭盲前标准来源。现真实条件均缺，不能反向把后分析选择写事前冻结。", "X-03只读加载，G-04另作独立准入/同构建，Z-01/I-01交真实制品和运行证据；U12-08消费后续扩展分析。A-06可关闭阶段一核心，实际扩展须披露分配、暴露、回退和停止记录。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["研究批准、训练分析、独立复跑、模型冻结签署与部署接收人待实名；无真人姓名、日期、PASS或DONE代填。本轮作者Agent检查与业务签署分别记录。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计51/71包规范化，剩余20，下一G-04。业务仍BLOCKED_EXTERNAL；真实训练、OPE、事前标准、模型签署和动态运行缺口保持，整体根目录迁移继续。"]},
-    {"heading": "审阅来源", "paragraphs": ["实际注册、v1.2协议/投稿路线、A-05/E-04/G-03、X-02/X-03当前合同与旧扩展原件、既有随机化和P-01/P-02源码；无新网页研究或真人活动。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务约5人日，依赖A-05和X-02；训练、统计、数据授权、模型签署和部署接收人待实名。现无正式模型或策略manifest，空提纲仅供审阅，核心论文不等待可选扩展。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1仅用获准scene_native锁定轨迹，心电不进在线状态；AC2按事前标准核验OPE增益、支持、ESS、熵、校准、跨折稳定性与概率审计；AC3不足时记录均匀/更简候选或不开展，不宣称优效。",
+        "五段为核对锁定输入及事前标准、独立重建、逐项支持裁定、最终产物冻结、真实签署交接；回退本身不授权阶段三，不开展不伪DONE。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立TASK及五目录、17项真实来源、当前冻结说明和机器状态、NOT_RUN空审阅提纲；不生成正式阈值、模型、签署哈希或准入凭证。",
+        "修正X-02/X-03六个当前TASK/说明/总结输入及两份Word，增加两个扩展导航与手册入口；手册从重复实现模型改为复跑X-02和冻结验收，历史证据和在研快照不改。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "协议要求选择标准在核心揭盲前冻结，E-05却依赖A-05后分析。分开事前标准批准与最终模型签署；缺前者时真实责任人裁定探索性/不开展，不能倒填日期或事后选有利门槛。",
+        "U12-08实际是依赖A-04/E-05的阶段三分析附录，不是冻结前置；只在当前消费者修正，不增加循环依赖。交叉拟合评价与最终全资料重拟合分开，训练内拟合不证明泛化。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "61项专项通过，覆盖本包、X-02/X-03及既有随机化；实际24原生排列、四位置合法候选与行为概率1/4、1/3、1/2、1逐项核验，目标概率仍null，不冒充目标分布或OPE支持证据。",
+        "根回归与协议、治理、注册、分发检查的实际命令和结果见verification.json；只证明规范化与现有软件接口，不证明真实训练、策略冻结、设备、Unity/TD或活动准入。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "修复U12-08冻结职责误写，当前X-02/X-03消费者及Word统一；两个冻结时间点和回退/准入区别明确。现v2.2仍拒绝frozen_policy，不能改版本或写manifest就宣称动态策略部署可用。",
+        "正式奖励、OPE估计器和支持/ESS/熵/校准/稳定性阈值仍null，20%只是候选；真实模型卡、概率分布、独立复跑和签署未交付，不以空表或合成测试关闭。",
+        "提交前发现PowerShell初稿定位agent而非仓库根，改用既有PSScriptRoot解析方式，从仓库外实际调用复测。未运行的初稿不伪造失败日志。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧扩展原件已实际归档X-02，本包引用现存来源，不重复复制历史权威。TASK、输入、执行、证据、输出与归档固定归属，原签署、在研快照及历史日志保留。",
+        "先修Agent执行事实再重生三份任务Word及串联审阅；仅整理本包和实际受影响消费者，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "A-05/E-04交真实锁定资料与授权，X-02交参与者分组训练/OPE/支持；G-03/U12-11及E-04交揭盲前标准来源。现真实条件均缺，不能反向把后分析选择写事前冻结。",
+        "X-03只读加载，G-04另作独立准入/同构建，Z-01/I-01交真实制品和运行证据；U12-08消费后续扩展分析。A-06可关闭阶段一核心，实际扩展须披露分配、暴露、回退和停止记录。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "研究批准、训练分析、独立复跑、模型冻结签署与部署接收人待实名；无真人姓名、日期、PASS或DONE代填。本轮作者Agent检查与业务签署分别记录。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "实际注册、v1.2协议/投稿路线、A-05/E-04/G-03、X-02/X-03当前合同与旧扩展原件、既有随机化和P-01/P-02源码；无新网页研究或真人活动。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "E05-N01", "status": "FIXED_PRECRITERIA_VS_FINAL_FREEZE_HANDOFF", "description": "揭盲前选择标准与后分析最终模型冻结分开，无事前凭证不补日期或有利门槛", "source": "agent/tasks/E-05/outputs/current-freeze.md"},
-    {"id": "E05-N02", "status": "FIXED_U12_08_CONSUMERS_AND_WORD", "description": "U12-08实际为扩展分析附录，修正X-02/X-03当前执行和Word，避免循环职责", "source": "agent/tasks/E-05/evidence/consumer-impact.md"},
-    {"id": "E05-N03", "status": "OPEN_REAL_MODEL_OPE_APPROVAL_AND_SIGNATURE", "description": "真实训练、支持报告、正式方法/阈值、事前批准及最终模型签署尚缺，不解除活动门", "source": "agent/tasks/E-05/outputs/current-freeze.json"},
-    {"id": "E05-N04", "status": "FIXED_POWERSHELL_ROOT_ENTRYPOINT", "description": "静态审查发现初稿根路径少一层，按现有方式修正并从仓库外实调复测", "source": "agent/tasks/E-05/evidence/entrypoint-fix.md"}
+    {
+      "id": "E05-N01",
+      "status": "FIXED_PRECRITERIA_VS_FINAL_FREEZE_HANDOFF",
+      "description": "揭盲前选择标准与后分析最终模型冻结分开，无事前凭证不补日期或有利门槛",
+      "source": "agent/tasks/E-05/outputs/current-freeze.md"
+    },
+    {
+      "id": "E05-N02",
+      "status": "FIXED_U12_08_CONSUMERS_AND_WORD",
+      "description": "U12-08实际为扩展分析附录，修正X-02/X-03当前执行和Word，避免循环职责",
+      "source": "agent/tasks/E-05/evidence/consumer-impact.md"
+    },
+    {
+      "id": "E05-N03",
+      "status": "OPEN_REAL_MODEL_OPE_APPROVAL_AND_SIGNATURE",
+      "description": "真实训练、支持报告、正式方法/阈值、事前批准及最终模型签署尚缺，不解除活动门",
+      "source": "agent/tasks/E-05/outputs/current-freeze.json"
+    },
+    {
+      "id": "E05-N04",
+      "status": "FIXED_POWERSHELL_ROOT_ENTRYPOINT",
+      "description": "静态审查发现初稿根路径少一层，按现有方式修正并从仓库外实调复测",
+      "source": "agent/tasks/E-05/evidence/entrypoint-fix.md"
+    }
   ],
-  "next_task": "G-04",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前策略冻结交接", "path": "agent/tasks/E-05/outputs/current-freeze.md"},
-    {"label": "真实冻结与实现缺口", "path": "agent/tasks/E-05/outputs/current-freeze.json"},
-    {"label": "未执行审阅提纲", "path": "agent/tasks/E-05/outputs/policy-review-template.json"},
-    {"label": "上下游消费者纠偏", "path": "agent/tasks/E-05/evidence/consumer-impact.md"},
-    {"label": "专项和回归证据", "path": "agent/tasks/E-05/evidence/verification.json"}
+    {
+      "label": "当前策略冻结交接",
+      "path": "agent/tasks/E-05/outputs/current-freeze.md"
+    },
+    {
+      "label": "真实冻结与实现缺口",
+      "path": "agent/tasks/E-05/outputs/current-freeze.json"
+    },
+    {
+      "label": "未执行审阅提纲",
+      "path": "agent/tasks/E-05/outputs/policy-review-template.json"
+    },
+    {
+      "label": "上下游消费者纠偏",
+      "path": "agent/tasks/E-05/evidence/consumer-impact.md"
+    },
+    {
+      "label": "专项和回归证据",
+      "path": "agent/tasks/E-05/evidence/verification.json"
+    }
   ]
 }

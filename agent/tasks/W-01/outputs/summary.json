@@ -3,32 +3,137 @@
   "title": "W01 最近工作与中立论文骨架审阅",
   "review_date": "2026-09-29",
   "conclusion": "W-01原候选范围DONE不改，新颖性仍REVISE_REQUIRED。旧骨架原文归档，验证器迁入Agent，当前PANAS主比较与A-06核心收尾入口订正；原生检索导出、全文双审和真实人员仍缺。",
-  "historical_acceptance": {"reviewer": "Codex独立AC审查", "date": "2026-08-06", "commit": "", "method": "原记录为模型生产与独立AC审查，PASS_FOR_CANDIDATE_PACKAGE；没有本包真人第二人签署，不代填姓名或提交。原验收不覆盖当前修订、新颖性成立或实证结果。"},
+  "historical_acceptance": {
+    "reviewer": "Codex独立AC审查",
+    "date": "2026-08-06",
+    "commit": "",
+    "method": "原记录为模型生产与独立AC审查，PASS_FOR_CANDIDATE_PACKAGE；没有本包真人第二人签署，不代填姓名或提交。原验收不覆盖当前修订、新颖性成立或实证结果。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["F-02/R-01前置，5人日、P-DELIVERY。历史生产者GPT Deep Research+Codex；不把角色占位写成两名真实文献审查者。本轮规范化不解锁正式研究。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1逐项最近工作、增量与反证而非未见相同工作；AC2七轴证据编码；AC3单篇完整提示比较主线，部署仅条件式扩展。真实库导出、全文页段及双人编码仍是未关闭项。", "五日按检索范围、结构提取、主张攻击、中立骨架、下游交接推进；国内写作与Markdown资料沿用任务体系，入口和责任见TASK.md。"]},
-    {"heading": "实际交付", "paragraphs": ["建立固定五目录、当前论文说明/六项主张JSON、来源、核验入口与消费者影响。旧67KB候选原文实际归档，原位置改当前导航；文献表、引用及原验收不改。", "验证器从规划包迁入execution；注册表仅精确替换该证据路径，迁移映射不放宽原范围。历史包结构与当前W-02依赖分别核验。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["当前问题为两个完整提示方案的短时情绪收益、执行和负担，不保证原生胜出。PANAS主比较独立于PF护栏和SCCI操纵；报告所有预设结果，未显著不当等效或反向优效。", "旧Gate1→2骨架、192/240人数及A-04写作等待不作当前权威。W-02消费A-06实际核心关闭；阶段三可选，已开展的扩展如实披露。"]},
-    {"heading": "验证与结果", "paragraphs": ["16项专项通过，历史13行日志、15篇矩阵/DOI/BibTeX、6项主张及原文身份通过。负例拒绝旧门阻断PANAS、提前等效、正式N、虚构双审与观察结果；五包只改注册表指纹的比较通过。", "根pytest635通过，治理、71项注册表和5包61快照通过。结构检查不证明全文结果、新颖性GO、真实研究完成或期刊录用；本轮未重新联网更新文献。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧骨架把功能门作为贡献成立中心，当前入口已按研究v1.2订正。旧A-04等待只保留在历史验收原件，迁移验证器单独检查当前W-02依赖，不继续当阻断理由。", "2026-09-29 U12-07旧RQ/门序/八题原稿已归档，当前方法、11表和解释规则修订，W-01实际入口已改；新规格非论文正文，独立和真人新签收仍待完成。文献截至2026-08-06，不伪造新检索日期。", "首轮链接测试误把执行后才生成的验证报告当作启动输入，已区分静态来源和本轮产物；失败日志保留，复测及Word结构检查验证实际报告存在。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["执行工具实际迁入Agent，过期骨架原文字节归档；历史文献表/BibTeX留原模块供核验，后续整体迁移不复制活动副本。导航、来源、注册表及迁移记录对齐。", "冻结领取输入不刷新；五包只更新注册表指纹，初次旧指纹失败记录保留，复测通过。状态无变化，不重复生成SVG。Word从当前Agent事实生成，未整理材料不视为已订正。"]},
-    {"heading": "上下游交接", "paragraphs": ["R-01/F-02及U12-02/U12-03供当前设计、步骤测量和公平性，U/V交实际呈现，A-02/A-03交统计边界与真实分析，Q-01交真实独立重建。四例实现不证明通用框架或独立天气效应。", "W-02依赖W-01|A-06|U12-07；核心写作不等A-04。U12-07当前规格已修，待新复核而不转移签名；A-06供实际范围、锁库和主张—结果—图表关联，W-03再消费同一证据。", "当前仍缺原生检索/去重、关键全文页段与两名真实来源审查者；15篇不是综述分母，DOI身份不是全文核验。只有当前可检查事实交下游，不沿用旧门序当新研究结论。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["本包无真实团队第二人签署，历史Codex候选审查不改为傅钧烨签收。U12-07已有真人签收只涵盖其精确候选，不使本轮新W-01或后续修订自动通过。本轮不虚构独立Agent复核。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["本包初次整理为第33包；2026-09-29随U12-07修订消费者，总进度66/71，余5，下一U12-08。业务DONE范围不变，总体整理和根目录双层迁移仍未完成。"]},
-    {"heading": "审阅来源", "paragraphs": ["原W-01全文与四张CSV/BibTeX/验收，实际验证器、注册表、活动协议v1.2、U12-07已签收稿和R-01/A-02/A-03当前交接。没有把历史文献编码伪装本轮全文复查。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "F-02/R-01前置，5人日、P-DELIVERY。历史生产者GPT Deep Research+Codex；不把角色占位写成两名真实文献审查者。本轮规范化不解锁正式研究。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1逐项最近工作、增量与反证而非未见相同工作；AC2七轴证据编码；AC3单篇完整提示比较主线，部署仅条件式扩展。真实库导出、全文页段及双人编码仍是未关闭项。",
+        "五日按检索范围、结构提取、主张攻击、中立骨架、下游交接推进；国内写作与Markdown资料沿用任务体系，入口和责任见TASK.md。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立固定五目录、当前论文说明/六项主张JSON、来源、核验入口与消费者影响。旧67KB候选原文实际归档，原位置改当前导航；文献表、引用及原验收不改。",
+        "验证器从规划包迁入execution；注册表仅精确替换该证据路径，迁移映射不放宽原范围。历史包结构与当前W-02依赖分别核验。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "当前问题为两个完整提示方案的短时情绪收益、执行和负担，不保证原生胜出。PANAS主比较独立于PF护栏和SCCI操纵；报告所有预设结果，未显著不当等效或反向优效。",
+        "旧Gate1→2骨架、192/240人数及A-04写作等待不作当前权威。W-02消费A-06实际核心关闭；阶段三可选，已开展的扩展如实披露。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "16项专项通过，历史13行日志、15篇矩阵/DOI/BibTeX、6项主张及原文身份通过。负例拒绝旧门阻断PANAS、提前等效、正式N、虚构双审与观察结果；五包只改注册表指纹的比较通过。",
+        "根pytest635通过，治理、71项注册表和5包61快照通过。结构检查不证明全文结果、新颖性GO、真实研究完成或期刊录用；本轮未重新联网更新文献。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧骨架把功能门作为贡献成立中心，当前入口已按研究v1.2订正。旧A-04等待只保留在历史验收原件，迁移验证器单独检查当前W-02依赖，不继续当阻断理由。",
+        "2026-09-29 U12-07旧RQ/门序/八题原稿已归档，当前方法、11表和解释规则修订，W-01实际入口已改；新规格非论文正文，独立和真人新签收仍待完成。文献截至2026-08-06，不伪造新检索日期。",
+        "首轮链接测试误把执行后才生成的验证报告当作启动输入，已区分静态来源和本轮产物；失败日志保留，复测及Word结构检查验证实际报告存在。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "执行工具实际迁入Agent，过期骨架原文字节归档；历史文献表/BibTeX留原模块供核验，后续整体迁移不复制活动副本。导航、来源、注册表及迁移记录对齐。",
+        "冻结领取输入不刷新；五包只更新注册表指纹，初次旧指纹失败记录保留，复测通过。状态无变化，不重复生成SVG。Word从当前Agent事实生成，未整理材料不视为已订正。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "R-01/F-02及U12-02/U12-03供当前设计、步骤测量和公平性，U/V交实际呈现，A-02/A-03交统计边界与真实分析，Q-01交真实独立重建。四例实现不证明通用框架或独立天气效应。",
+        "W-02依赖W-01|A-06|U12-07；核心写作不等A-04。U12-07当前规格已修，待新复核而不转移签名；A-06供实际范围、锁库和主张—结果—图表关联，W-03再消费同一证据。",
+        "当前仍缺原生检索/去重、关键全文页段与两名真实来源审查者；15篇不是综述分母，DOI身份不是全文核验。只有当前可检查事实交下游，不沿用旧门序当新研究结论。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "本包无真实团队第二人签署，历史Codex候选审查不改为傅钧烨签收。U12-07已有真人签收只涵盖其精确候选，不使本轮新W-01或后续修订自动通过。本轮不虚构独立Agent复核。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "原W-01全文与四张CSV/BibTeX/验收，实际验证器、注册表、活动协议v1.2、U12-07已签收稿和R-01/A-02/A-03当前交接。没有把历史文献编码伪装本轮全文复查。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "W01-N01", "status": "FIXED_ACTIVE_PRIMARY_AND_CORE_ROUTE", "description": "旧骨架原文归档，当前PANAS主比较独立报告；W-02走A-06核心关闭不等A-04", "source": "agent/tasks/W-01/outputs/current-paper.md"},
-    {"id": "W01-N02", "status": "MOVED_EXECUTION_WITH_SCOPE_PRESERVED", "description": "验证器实际迁入Agent，精确登记证据路径，历史原验收不改", "source": "agent/tasks/W-01/evidence/consumer-impact.md"},
-    {"id": "W01-N03", "status": "OPEN_LITERATURE_AND_REAL_REVIEWERS", "description": "旧15篇及13行记录不是原生综述分母或新全文复查，双人真实审查与关键字段仍缺", "source": "agent/tasks/W-01/outputs/current-paper.json"},
-    {"id": "W01-N04", "status": "FIXED_CURRENT_U1207_SPECIFICATION_REVIEW_PENDING", "description": "U12-07当前方法与表/解释规格已修且原稿归档，新复核签收仍待完成，不改签名", "source": "agent/tasks/W-01/evidence/consumer-impact.md"}
+    {
+      "id": "W01-N01",
+      "status": "FIXED_ACTIVE_PRIMARY_AND_CORE_ROUTE",
+      "description": "旧骨架原文归档，当前PANAS主比较独立报告；W-02走A-06核心关闭不等A-04",
+      "source": "agent/tasks/W-01/outputs/current-paper.md"
+    },
+    {
+      "id": "W01-N02",
+      "status": "MOVED_EXECUTION_WITH_SCOPE_PRESERVED",
+      "description": "验证器实际迁入Agent，精确登记证据路径，历史原验收不改",
+      "source": "agent/tasks/W-01/evidence/consumer-impact.md"
+    },
+    {
+      "id": "W01-N03",
+      "status": "OPEN_LITERATURE_AND_REAL_REVIEWERS",
+      "description": "旧15篇及13行记录不是原生综述分母或新全文复查，双人真实审查与关键字段仍缺",
+      "source": "agent/tasks/W-01/outputs/current-paper.json"
+    },
+    {
+      "id": "W01-N04",
+      "status": "FIXED_CURRENT_U1207_SPECIFICATION_REVIEW_PENDING",
+      "description": "U12-07当前方法与表/解释规格已修且原稿归档，新复核签收仍待完成，不改签名",
+      "source": "agent/tasks/W-01/evidence/consumer-impact.md"
+    }
   ],
-  "next_task": "I-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前论文骨架与下游", "path": "agent/tasks/W-01/outputs/current-paper.md"},
-    {"label": "六项当前主张与反证", "path": "agent/tasks/W-01/outputs/current-paper.json"},
-    {"label": "实际核验结果", "path": "agent/tasks/W-01/evidence/verification.json"},
-    {"label": "跨包偏离与历史范围", "path": "agent/tasks/W-01/evidence/consumer-impact.md"},
-    {"label": "过程验收与资料", "path": "agent/tasks/W-01/TASK.md"}
+    {
+      "label": "当前论文骨架与下游",
+      "path": "agent/tasks/W-01/outputs/current-paper.md"
+    },
+    {
+      "label": "六项当前主张与反证",
+      "path": "agent/tasks/W-01/outputs/current-paper.json"
+    },
+    {
+      "label": "实际核验结果",
+      "path": "agent/tasks/W-01/evidence/verification.json"
+    },
+    {
+      "label": "跨包偏离与历史范围",
+      "path": "agent/tasks/W-01/evidence/consumer-impact.md"
+    },
+    {
+      "label": "过程验收与资料",
+      "path": "agent/tasks/W-01/TASK.md"
+    }
   ]
 }

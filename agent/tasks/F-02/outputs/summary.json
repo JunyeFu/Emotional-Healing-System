@@ -75,8 +75,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "本轮在codex/task-package-normalization分支整理；commit与push以实际Git记录为准，本文不预填未发生的提交或合并。",
-        "下一包为F-03，核对Unity基线、实际测试与构建证据，再整理人类层和执行层。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -98,16 +98,16 @@
       "id": "F02-N02",
       "status": "FIXED_CURRENT_USAGE",
       "description": "旧粗相位关系题和常识累计题由U12-02步骤实例及片段变化候选替代",
-      "source": "02-技术研发/srp_step_measurement/README.md"
+      "source": "agent/modules/srp_step_measurement/README.md"
     },
     {
       "id": "F02-N03",
       "status": "OPEN_HUMAN_REVIEW",
       "description": "历史验收仅模型候选审查，所读来源未取得F-02真实第二人签署；责任由团队总监安排",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
     }
   ],
-  "next_task": "F-03",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开 F-02 当前适用说明",

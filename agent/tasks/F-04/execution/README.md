@@ -19,5 +19,5 @@ exec(compile(p.read_text(encoding='utf-8'), str(p), 'exec'), dict(globals(), __f
 按同样方式执行 `verify_f04_touchdesigner_reopen.py`，并再次人工检查导航、曲线与禁用操作。
 这些动作会改变当前TD工程，只在专用开发工程执行；历史签署目录不作为输出目标。
 
-共享模型与fixture仍由原模块维护；待整体业务目录迁移时统一修正引用。
+共享模型与fixture以agent/modules为权威入口，业务目录迁移及引用修复已验证。
 F-04是静态只读示例；T-01负责真实遥测消费，T-02负责请求入口，不由本脚本替代。

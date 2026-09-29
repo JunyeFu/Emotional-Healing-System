@@ -55,7 +55,7 @@
       "heading": "目录与文件整理",
       "paragraphs": [
         "统一执行目录包括TASK.md、inputs、execution、evidence、outputs、archive。总结只由结构化输出生成，临时渲染文件不进入交付目录。",
-        "本轮没有可安全删除的历史原件；共享实现仍在原模块目录，最终根目录迁移需处理其消费者路径。"
+        "本轮没有可安全删除的历史原件；共享实现已位于agent/modules，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
       ]
     },
     {
@@ -75,8 +75,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "实现与规范化已推送到codex/task-package-normalization，原记录保留在Git历史；本轮进一步统一Word模板，不改变F-01状态。",
-        "下一包为F-02，重点检查当前研究主线怎样消费候选测量材料，以及历史DONE范围是否被扩张。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -92,16 +92,16 @@
       "id": "F01-N01",
       "status": "FIXED",
       "description": "合同入口F-05状态与注册表不一致",
-      "source": "02-技术研发/05-通信协议/contracts/README.md"
+      "source": "agent/modules/05-通信协议/contracts/README.md"
     },
     {
       "id": "F01-N02",
-      "status": "OPEN_PROJECT_MIGRATION",
-      "description": "根目录旧业务目录仍待逐包归属与最终迁移",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     }
   ],
-  "next_task": "F-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开合同与协议当前入口",

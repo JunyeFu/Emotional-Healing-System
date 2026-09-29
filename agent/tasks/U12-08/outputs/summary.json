@@ -3,31 +3,131 @@
   "title": "U12 08 可选阶段三独立分析附录审阅",
   "review_date": "2026-09-29",
   "conclusion": "U12-08仍WAIT_DEP，未领取、未分析、未签收。四旧候选原件实际归档，当前附录与四结果族交接明确；策略冻结归E-05，真实估计归A-04。规范化不等于真实扩展分析或论文附录已完成。",
-  "historical_acceptance": {"reviewer": "未指定", "date": "未签署", "commit": null, "method": "无历史真实验收或签收；本轮为作者Agent整理及软件复测，独立复核与真实第二人尚未执行。"},
+  "historical_acceptance": {
+    "reviewer": "未指定",
+    "date": "未签署",
+    "commit": null,
+    "method": "无历史真实验收或签收；本轮为作者Agent整理及软件复测，独立复核与真实第二人尚未执行。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["依赖A-04/E-05，固定任务4人日。当前无真实SAP、锁库授权、附录、独立复现或领取人；空批次列表不证明实际活动完整为零。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1同一锁定输入及实际范围可追溯，四结果族覆盖完整；AC2核心稿不依赖未开展扩展，已开展完整披露、未做不写PASS；AC3绑定候选、独立复核与真实第二人，不继承阶段一参数或代签外部条件。", "过程为核对真实输入与范围、填充独立附录、必要复算与复核签收；本轮仅整理这些执行条件，不虚构实际研究结果。"]},
-    {"heading": "实际交付", "paragraphs": ["固定TASK及五目录、当前交接与结构化事实、八部分附录规格、源索引和软件验证入口。四原候选实际迁入archive/task-input，旧入口改为当前导航，原manifest、三文件字节和输入ID保持。", "X-02/X-03影响记录残留的共同冻结误述订正；A-04/A-06实际消费者连接本包。研究路线、原签收、登记状态和五个成员分发身份不改。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["阶段三两组均为scene_native，比较frozen_policy与balanced_random部署，候选policy_minus_random负值支持更低负性情绪；不是再比较原生与抽象。回退仍归原策略组，观察顺序排名不写因果效果。", "E-05冻结策略、A-04估计及复现、U12-08附录、A-06范围关闭分别负责。独立阶段三SAP未冻结，不套用阶段一HC3/N/0.075/MI或U12-10；有效情绪比较不因PF/SCCI未过门隐去。"]},
-    {"heading": "验证与结果", "paragraphs": ["54项专项2.22秒通过，涵盖当前注册、原件字节和输入ID、分析与范围合同、两路线及实际消费者，并复用部分活动与缺结果族的路线负测。协议/治理/71注册及5分发61快照通过。", "完整根Python回归的实际结果见verification.json及regression.txt。测试只读或临时合成台账，不接设备、不发控制、不登记真实暴露，软件元数据ok不授权研究或投稿。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧候选声称未注册，活动CSV已WAIT_DEP，当前入口据实订正，原文保留。两旧交接影响记录误将附录列为冻结，当前消费者和规格已明确真实职责，不改历史日志。", "首次动态移动命令被工具策略拒绝且未执行，核对两个绝对目录后使用固定LiteralPath完成四文件迁移；未放宽验证、伪填结果或改变业务状态。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["inputs仅索引真实来源；execution核查，evidence记录实际结果与影响，outputs保存当前附录交接及Word源，archive保留四候选。没有真实附录或旧执行工具可清理，不制造归档。", "研究原件仍留获准仓库外位置；共享治理及旧根业务目录尚未整体迁入human/agent，全部包后仍需实际迁移并修复运行引用。"]},
-    {"heading": "上下游交接", "paragraphs": ["E-05提供冻结策略全组件与支持，E-06供全部实例及精确锁库/授权，A-04供独立SAP、真实估计、缺失分析和复现。本包按三活动来源核对分配、暴露与部分运行，不用完成48分配块掩盖停止或退出。", "U12-08把stage3_results、deviations、stop_records、fallback_exposure交A-06；W-02/W-03消费同一锁定范围。未开展可由真实NO_STAGE3裁定走核心路线，已有活动不能因结果未完成切回未开展；不能估计时说明实际原因，不填虚构零值。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["当前未领取、未指定复核者、无第二人签收。真实结果和授权由实际责任人取得；作者软件核查不写成独立Agent验收，未产生业务PASS。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计67/71包规范化，余4，下一U12-09。U12-08 WAIT_DEP保持；本轮整理不是扩展完成，根目录双层物理迁移尚未完成。"]},
-    {"heading": "审阅来源", "paragraphs": ["当前注册、v1.2两路线和实际元数据评估器、四归档原候选、A-04/E-05/E-06/A-06当前交接、W-02/W-03写作边界及X-02/X-03消费者。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "依赖A-04/E-05，固定任务4人日。当前无真实SAP、锁库授权、附录、独立复现或领取人；空批次列表不证明实际活动完整为零。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1同一锁定输入及实际范围可追溯，四结果族覆盖完整；AC2核心稿不依赖未开展扩展，已开展完整披露、未做不写PASS；AC3绑定候选、独立复核与真实第二人，不继承阶段一参数或代签外部条件。",
+        "过程为核对真实输入与范围、填充独立附录、必要复算与复核签收；本轮仅整理这些执行条件，不虚构实际研究结果。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "固定TASK及五目录、当前交接与结构化事实、八部分附录规格、源索引和软件验证入口。四原候选实际迁入archive/task-input，旧入口改为当前导航，原manifest、三文件字节和输入ID保持。",
+        "X-02/X-03影响记录残留的共同冻结误述订正；A-04/A-06实际消费者连接本包。研究路线、原签收、登记状态和五个成员分发身份不改。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "阶段三两组均为scene_native，比较frozen_policy与balanced_random部署，候选policy_minus_random负值支持更低负性情绪；不是再比较原生与抽象。回退仍归原策略组，观察顺序排名不写因果效果。",
+        "E-05冻结策略、A-04估计及复现、U12-08附录、A-06范围关闭分别负责。独立阶段三SAP未冻结，不套用阶段一HC3/N/0.075/MI或U12-10；有效情绪比较不因PF/SCCI未过门隐去。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "54项专项2.22秒通过，涵盖当前注册、原件字节和输入ID、分析与范围合同、两路线及实际消费者，并复用部分活动与缺结果族的路线负测。协议/治理/71注册及5分发61快照通过。",
+        "完整根Python回归的实际结果见verification.json及regression.txt。测试只读或临时合成台账，不接设备、不发控制、不登记真实暴露，软件元数据ok不授权研究或投稿。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧候选声称未注册，活动CSV已WAIT_DEP，当前入口据实订正，原文保留。两旧交接影响记录误将附录列为冻结，当前消费者和规格已明确真实职责，不改历史日志。",
+        "首次动态移动命令被工具策略拒绝且未执行，核对两个绝对目录后使用固定LiteralPath完成四文件迁移；未放宽验证、伪填结果或改变业务状态。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "inputs仅索引真实来源；execution核查，evidence记录实际结果与影响，outputs保存当前附录交接及Word源，archive保留四候选。没有真实附录或旧执行工具可清理，不制造归档。",
+        "研究原件仍留获准仓库外位置；共享治理及旧根业务目录尚未整体迁入human/agent，全部包后仍需实际迁移并修复运行引用。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "E-05提供冻结策略全组件与支持，E-06供全部实例及精确锁库/授权，A-04供独立SAP、真实估计、缺失分析和复现。本包按三活动来源核对分配、暴露与部分运行，不用完成48分配块掩盖停止或退出。",
+        "U12-08把stage3_results、deviations、stop_records、fallback_exposure交A-06；W-02/W-03消费同一锁定范围。未开展可由真实NO_STAGE3裁定走核心路线，已有活动不能因结果未完成切回未开展；不能估计时说明实际原因，不填虚构零值。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "当前未领取、未指定复核者、无第二人签收。真实结果和授权由实际责任人取得；作者软件核查不写成独立Agent验收，未产生业务PASS。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前注册、v1.2两路线和实际元数据评估器、四归档原候选、A-04/E-05/E-06/A-06当前交接、W-02/W-03写作边界及X-02/X-03消费者。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "U1208-N01", "status": "FIXED_ACTUAL_RELOCATION_AND_CURRENT_STATUS", "description": "四原候选实际归档，旧未注册入口订正；原字节、manifest与输入ID保持", "source": "agent/tasks/U12-08/archive/README.md"},
-    {"id": "U1208-N02", "status": "FIXED_CURRENT_RESPONSIBILITIES_AND_CONSUMERS", "description": "独立附录非策略冻结，两影响记录订正，A-04/A-06连接当前附录", "source": "agent/tasks/U12-08/evidence/consumer-impact.md"},
-    {"id": "U1208-N03", "status": "OPEN_REAL_INPUTS_APPENDIX_AND_SIGNOFF", "description": "真实SAP/锁库/结果/全部活动/附录/独立复现与真人责任签收仍缺，WAIT_DEP保持", "source": "agent/tasks/U12-08/outputs/current-extension.json"},
-    {"id": "U1208-N04", "status": "OPEN_ROOT_MIGRATION", "description": "共享业务与旧根目录尚未整体迁入人类和Agent双层", "source": "agent/normalization.md"}
+    {
+      "id": "U1208-N01",
+      "status": "FIXED_ACTUAL_RELOCATION_AND_CURRENT_STATUS",
+      "description": "四原候选实际归档，旧未注册入口订正；原字节、manifest与输入ID保持",
+      "source": "agent/tasks/U12-08/archive/README.md"
+    },
+    {
+      "id": "U1208-N02",
+      "status": "FIXED_CURRENT_RESPONSIBILITIES_AND_CONSUMERS",
+      "description": "独立附录非策略冻结，两影响记录订正，A-04/A-06连接当前附录",
+      "source": "agent/tasks/U12-08/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1208-N03",
+      "status": "OPEN_REAL_INPUTS_APPENDIX_AND_SIGNOFF",
+      "description": "真实SAP/锁库/结果/全部活动/附录/独立复现与真人责任签收仍缺，WAIT_DEP保持",
+      "source": "agent/tasks/U12-08/outputs/current-extension.json"
+    },
+    {
+      "id": "U1208-N04",
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
+    }
   ],
-  "next_task": "U12-09",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前扩展附录交接", "path": "agent/tasks/U12-08/outputs/current-extension.md"},
-    {"label": "附录真实填充规格", "path": "agent/tasks/U12-08/outputs/appendix-spec.md"},
-    {"label": "本轮软件验证", "path": "agent/tasks/U12-08/evidence/verification.json"},
-    {"label": "迁移与消费者影响", "path": "agent/tasks/U12-08/evidence/consumer-impact.md"}
+    {
+      "label": "当前扩展附录交接",
+      "path": "agent/tasks/U12-08/outputs/current-extension.md"
+    },
+    {
+      "label": "附录真实填充规格",
+      "path": "agent/tasks/U12-08/outputs/appendix-spec.md"
+    },
+    {
+      "label": "本轮软件验证",
+      "path": "agent/tasks/U12-08/evidence/verification.json"
+    },
+    {
+      "label": "迁移与消费者影响",
+      "path": "agent/tasks/U12-08/evidence/consumer-impact.md"
+    }
   ]
 }

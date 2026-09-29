@@ -3,31 +3,129 @@
   "title": "W04 成果归档与团队移交审阅",
   "review_date": "2026-09-29",
   "conclusion": "W-04仍WAIT_DEP，未领取未签收。已将旧成果/公开方案实际归档，明确八项交付、真实部署与公开决定和新成员演练；最终制品、权属材料及接收证据仍缺。",
-  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "无W-04真人签署。本轮是作者Agent整理与软件复测，不是独立接收、外部权属或新产品签收。"},
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "无W-04真人签署。本轮是作者Agent整理与软件复测，不是独立接收、外部权属或新产品签收。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["固定任务5人日，依赖W-03|Z-01|U12-12，负责人和第二人未实名。没有实际最终移交包、新成员演练、部署选择或真实接收者。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1三个软件及媒体与论文采用的范围/配置/构建一致；AC2公开遵守W-03决定和真实许可；AC3新成员按说明实际干净重建并运行候选。外部录用或授权不作为可保证结果。", "四段为真实输入与接收人对齐、完整八对象整理、新成员演练及遗漏修复、精确对象复核后批准渠道移交。U12-12决定部署原生/抽象/研究原型，不预定原生获胜。"]},
-    {"heading": "实际交付", "paragraphs": ["TASK及五目录、九项真实来源、当前移交说明与机器状态、八项待交付索引、验证入口及消费者差异。旧公开顺序原文实际移入archive，原位置提供当前入口。", "手册、成果、AGENTS和README同步。八项实际文件、字节哈希及接收人均空，不把索引生成视为成品存在；无实际软件打包、录像、权属办理或对外发布。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["Unity完整目录、Python运行环境与锁、TD匹配工程各有真实版本和启动方式；三方不同提交可组成同一发布组合，但必须实际接口对应，完整体验不依赖TD。", "旧800秒合成核心预演和审查分辨率不冒充完整新旅程、真实交互状态估计或LIVE_E2E。海报与答辩用同版锁定数字和主张，权属/专利材料由真人审阅，不填造申请或授权。"]},
-    {"heading": "验证与结果", "paragraphs": ["15专项通过，核对当前注册/空角色、八对象空证据及实际来源、真实演练/部署/公开仍缺、预演不扩大、原方案字节身份和有效当前导航；跨W-02/W-03交接复测同时通过。", "根635项回归、协议、治理、71项注册及5个分发包/61快照通过，命令与原始输出见verification.json。本轮没有运行Unity/TD、真实分析复现、新成员演练或独立Agent验收。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧公开顺序未区分已批准事实与历史项目方案，已原文归档并改为消费W-03和U12-12实际决定；现行预演、媒体和完整产品范围分开。", "现有项目简报、素材与签收原件不是最终发布包，未交付项继续明确；不以成品整理倒推部署决定或以已有Git媒体证明公开许可。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["TASK及inputs、execution、evidence、outputs、archive固定归属。旧根业务方案实际迁入Agent，当前位置保留消费者；代码/媒体原件不重复复制，受限数据和凭据不进入公开包。", "先修Agent交接和范围，再生成单包及串联Word。归档版本、当前对象和受限保管渠道分别注明；保留/删除依真实批准，根目录整体物理迁移仍未完成。"]},
-    {"heading": "上下游交接", "paragraphs": ["W-03交精确稿版与公开/受限决定，Z-01交匹配候选、锁及许可，U12-12交基于A-06实际结果的部署选择。输入仍缺，不能完成最终交付或默认选获胜产品。", "接收者实际重建/运行，区分合成、获准真实分析、设备和画面各自范围，留下命令/结果/缺口与维护责任。独立复现已有真实日志可引用，但不能代替新成员实际演练；核心不要求未开展阶段三假DONE。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["交付负责人、接收人、维护者、权属/数据责任人和真实第二人待实名。无新签署、无独立接收，不把作者Agent自查填成团队移交PASS。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计59/71包规范化，余12，下一U12-01。W-04仍WAIT_DEP；全部旧业务目录收拢到人类层/Agent层和运行引用修复仍未结束。"]},
-    {"heading": "审阅来源", "paragraphs": ["实际注册、W-03/Z-01/V-04/W-02/G-05/A-06交接、原成果公开方案及当前验证。未新增外部权属检索或法律判断，没有真实人员接收和发布回执。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务5人日，依赖W-03|Z-01|U12-12，负责人和第二人未实名。没有实际最终移交包、新成员演练、部署选择或真实接收者。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1三个软件及媒体与论文采用的范围/配置/构建一致；AC2公开遵守W-03决定和真实许可；AC3新成员按说明实际干净重建并运行候选。外部录用或授权不作为可保证结果。",
+        "四段为真实输入与接收人对齐、完整八对象整理、新成员演练及遗漏修复、精确对象复核后批准渠道移交。U12-12决定部署原生/抽象/研究原型，不预定原生获胜。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK及五目录、九项真实来源、当前移交说明与机器状态、八项待交付索引、验证入口及消费者差异。旧公开顺序原文实际移入archive，原位置提供当前入口。",
+        "手册、成果、AGENTS和README同步。八项实际文件、字节哈希及接收人均空，不把索引生成视为成品存在；无实际软件打包、录像、权属办理或对外发布。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "Unity完整目录、Python运行环境与锁、TD匹配工程各有真实版本和启动方式；三方不同提交可组成同一发布组合，但必须实际接口对应，完整体验不依赖TD。",
+        "旧800秒合成核心预演和审查分辨率不冒充完整新旅程、真实交互状态估计或LIVE_E2E。海报与答辩用同版锁定数字和主张，权属/专利材料由真人审阅，不填造申请或授权。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "15专项通过，核对当前注册/空角色、八对象空证据及实际来源、真实演练/部署/公开仍缺、预演不扩大、原方案字节身份和有效当前导航；跨W-02/W-03交接复测同时通过。",
+        "根635项回归、协议、治理、71项注册及5个分发包/61快照通过，命令与原始输出见verification.json。本轮没有运行Unity/TD、真实分析复现、新成员演练或独立Agent验收。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧公开顺序未区分已批准事实与历史项目方案，已原文归档并改为消费W-03和U12-12实际决定；现行预演、媒体和完整产品范围分开。",
+        "现有项目简报、素材与签收原件不是最终发布包，未交付项继续明确；不以成品整理倒推部署决定或以已有Git媒体证明公开许可。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK及inputs、execution、evidence、outputs、archive固定归属。旧根业务方案实际迁入Agent，当前位置保留消费者；代码/媒体原件不重复复制，受限数据和凭据不进入公开包。",
+        "先修Agent交接和范围，再生成单包及串联Word。归档版本、当前对象和受限保管渠道分别注明；保留/删除依真实批准，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "W-03交精确稿版与公开/受限决定，Z-01交匹配候选、锁及许可，U12-12交基于A-06实际结果的部署选择。输入仍缺，不能完成最终交付或默认选获胜产品。",
+        "接收者实际重建/运行，区分合成、获准真实分析、设备和画面各自范围，留下命令/结果/缺口与维护责任。独立复现已有真实日志可引用，但不能代替新成员实际演练；核心不要求未开展阶段三假DONE。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "交付负责人、接收人、维护者、权属/数据责任人和真实第二人待实名。无新签署、无独立接收，不把作者Agent自查填成团队移交PASS。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "实际注册、W-03/Z-01/V-04/W-02/G-05/A-06交接、原成果公开方案及当前验证。未新增外部权属检索或法律判断，没有真实人员接收和发布回执。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "W04-N01", "status": "FIXED_ACTUAL_ARCHIVE_AND_HANDOVER", "description": "旧公开方案原文归档，八对象及真实部署/公开与接收范围明确", "source": "agent/tasks/W-04/evidence/consumer-impact.md"},
-    {"id": "W04-N02", "status": "OPEN_REAL_PRODUCTS_RIGHTS_AND_RECEIVERS", "description": "匹配成品、权属与公开决定、新成员演练和维护责任仍缺", "source": "agent/tasks/W-04/outputs/current-handover.json"},
-    {"id": "W04-N03", "status": "OPEN_ROOT_MIGRATION", "description": "逐包归档已执行，共享工程媒体治理等业务目录尚未整体迁入双层", "source": "agent/tasks/W-04/evidence/consumer-impact.md"}
+    {
+      "id": "W04-N01",
+      "status": "FIXED_ACTUAL_ARCHIVE_AND_HANDOVER",
+      "description": "旧公开方案原文归档，八对象及真实部署/公开与接收范围明确",
+      "source": "agent/tasks/W-04/evidence/consumer-impact.md"
+    },
+    {
+      "id": "W04-N02",
+      "status": "OPEN_REAL_PRODUCTS_RIGHTS_AND_RECEIVERS",
+      "description": "匹配成品、权属与公开决定、新成员演练和维护责任仍缺",
+      "source": "agent/tasks/W-04/outputs/current-handover.json"
+    },
+    {
+      "id": "W04-N03",
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
+    }
   ],
-  "next_task": "U12-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前成果与接收交接", "path": "agent/tasks/W-04/outputs/current-handover.md"},
-    {"label": "真实状态", "path": "agent/tasks/W-04/outputs/current-handover.json"},
-    {"label": "八对象待交付索引", "path": "agent/tasks/W-04/outputs/handover-index.json"},
-    {"label": "实际复测", "path": "agent/tasks/W-04/evidence/verification.json"},
-    {"label": "消费者与剩余缺口", "path": "agent/tasks/W-04/evidence/consumer-impact.md"}
+    {
+      "label": "当前成果与接收交接",
+      "path": "agent/tasks/W-04/outputs/current-handover.md"
+    },
+    {
+      "label": "真实状态",
+      "path": "agent/tasks/W-04/outputs/current-handover.json"
+    },
+    {
+      "label": "八对象待交付索引",
+      "path": "agent/tasks/W-04/outputs/handover-index.json"
+    },
+    {
+      "label": "实际复测",
+      "path": "agent/tasks/W-04/evidence/verification.json"
+    },
+    {
+      "label": "消费者与剩余缺口",
+      "path": "agent/tasks/W-04/evidence/consumer-impact.md"
+    }
   ]
 }

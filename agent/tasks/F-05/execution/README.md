@@ -15,4 +15,4 @@ pwsh -NoProfile -File agent/tasks/F-05/execution/verify.ps1
 证据工具保留原规范化策略和固定叶文件，不给Word或汇总文件追加无消费者的哈希链。
 本入口不启动Unity、TD或设备，不发送实验控制。
 
-共享协议仍位于原通信模块；统一业务目录迁移时修正消费者与合同工具路径。
+共享协议位于agent/modules/05-通信协议；迁移后的消费者与合同工具路径已验证。

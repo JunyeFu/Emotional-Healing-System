@@ -145,7 +145,7 @@ def main():
     if not args.chain_only:
         render_summary(summary, ROOT / 'human/tasks' / args.task_id / 'summary.docx')
     chain = document('SRP 任务包串联审阅')
-    chain.add_paragraph('本文件由已整理包的Agent层总结串联生成。用于检查任务完成范围和下游交接；未整理包不推定已核验。')
+    chain.add_paragraph('本文件由71包Agent层总结串联生成，检查实际交付、上下游衔接及项目偏离。规范化与任务业务状态分开；未完成的运行、研究和审批仍由原任务承担。')
     completed = []
     findings = []
     for row in rows:
@@ -184,6 +184,8 @@ def main():
             for entry in migrated[offset:offset + 2]
         ))
     chain.add_paragraph('旧框架及Mock/Spout手册已原样归档，当前人类概览位于human/project/README.md，运行入口位于agent/runtime/README.md。业务签署和进行中分发不因迁移而改变。')
+    chain.add_heading('迁移批次历史记录', level=2)
+    chain.add_paragraph('以下为各批完成时的原始记录，其中下一步和未完成表述保留当时语境；当前结果以上方逐包整理结果及根目录归属表为准。')
     if any(e['old'] == 'output' for e in migrated):
         delivery = read_json(ROOT / 'agent/evidence/root-migration-deliverables.json')
         chain.add_paragraph(delivery['human_review'])

@@ -75,7 +75,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "明确路径提交推送codex/task-package-normalization，不自动合并。规范化11/71包，剩余60包，下一包T-01；全部包及最终根目录双层迁移仍待完成。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -90,19 +91,19 @@
       "id": "U02-N01",
       "status": "FIXED",
       "description": "Recovery按模块/会话边界重置，锁定换段保持；新增生命周期回归通过",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
     },
     {
       "id": "U02-N02",
       "status": "FIXED",
       "description": "四天气合法空步骤与F-05对齐；非空缺实例仍拒绝",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
     },
     {
       "id": "U02-N03",
       "status": "FIXED",
       "description": "开发驱动条件编译，构建取得F-03作用域授权；正式门未放宽",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
     },
     {
       "id": "U02-N04",
@@ -117,7 +118,7 @@
       "source": "agent/tasks/U-02/outputs/current-adapter-contract.md"
     }
   ],
-  "next_task": "T-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开当前四层适配合同",

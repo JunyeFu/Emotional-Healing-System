@@ -55,7 +55,7 @@
       "heading": "目录与文件整理",
       "paragraphs": [
         "TASK维护验收与责任，inputs引用实现和历史签收，execution保存工具，evidence区分本轮与历史，outputs保存总结，archive说明保留理由。旧工具文件已移除。",
-        "历史签署、验收和旧evidence保留原字节，不能用本轮计数替换；共享模块和全项目根目录收拢仍待后续，不把七包整理当成全仓迁移完成。"
+        "历史签署、验收和旧evidence保留原字节，不能用本轮计数替换；根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
       ]
     },
     {
@@ -76,8 +76,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "在codex/task-package-normalization按明确路径提交推送。规范化7包、剩余64包，下一包P-01；共享根目录迁移仍未完成。",
-        "继续动作是检查P-01输入门、暴露与编排边界，先修复Agent权威再生成Word；条件教学候选仍须受控冻结，不能临时绕开正式门。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -104,16 +104,16 @@
       "id": "G02-N03",
       "status": "FIXED",
       "description": "当前资产计数与本轮233/259对齐，DONE与外部责任分开",
-      "source": "02-技术研发/07-数据治理/README.md"
+      "source": "agent/modules/07-数据治理/README.md"
     },
     {
       "id": "G02-N04",
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "P-01仅在核心start登记暴露，新版条件教学接入与退出阻断由P-01/U12-11完成，当前尚未正式闭环",
-      "source": "02-技术研发/07-数据治理/docs/downstream_contracts.md"
+      "source": "agent/modules/07-数据治理/docs/downstream_contracts.md"
     }
   ],
-  "next_task": "P-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开 G-02 当前执行入口",

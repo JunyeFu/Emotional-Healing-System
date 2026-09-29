@@ -115,5 +115,7 @@ agent/evidence/root-migration-local-package-tests/*.txt -text whitespace=-blank-
 agent/evidence/root-migration-modules-unity-*.log -text whitespace=-blank-at-eol
 agent/archive/root-migration/modules-inputs/** -text whitespace=cr-at-eol
 agent/archive/root-migration/local-inputs/** -text whitespace=cr-at-eol
+agent/archive/normalization-summary-inputs/** -text whitespace=cr-at-eol
+agent/evidence/root-migration-summary-package-tests/*.txt -text whitespace=-blank-at-eol
 agent/governance/**/tasks/U12-05/package_manifest.json -text whitespace=cr-at-eol
 agent/governance/**/tasks/U12-06/package_manifest.json -text whitespace=cr-at-eol

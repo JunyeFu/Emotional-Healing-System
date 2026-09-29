@@ -68,6 +68,7 @@
   ],
   "word_documents_checked": 15,
   "word_hyperlinks_relocated": 24,
-  "word_body_and_other_parts_unchanged": true,
+  "word_body_and_other_parts_unchanged": false,
+  "current_summary_word_revisions_verified": 15,
   "frozen_dispatch_signed_acceptance_and_external_sources_preserved": true
 }

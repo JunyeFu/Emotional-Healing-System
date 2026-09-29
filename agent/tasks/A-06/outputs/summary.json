@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "累计56/71包规范化，余15，下一W-02。A-06业务仍WAIT_DEP、真实范围关闭未执行；全部任务整理后仍需完成根目录人类层/Agent层物理迁移及运行引用验证。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -110,7 +111,7 @@
       "source": "agent/tasks/A-06/outputs/current-scope.json"
     }
   ],
-  "next_task": "W-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "实际范围关闭交接",

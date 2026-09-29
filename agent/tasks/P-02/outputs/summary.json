@@ -76,7 +76,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "在codex/task-package-normalization按明确路径提交推送，不自动合并。已规范化9包，剩余62包，下一包U-01；全部任务与最终根目录双层迁移仍保留在目标内。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -97,7 +98,7 @@
       "id": "P02-N02",
       "status": "FIXED",
       "description": "新归档目录LF规则及实际字节哈希与重放验证通过",
-      "source": "02-技术研发/tests/session_store/test_golden_archive.py"
+      "source": "agent/modules/tests/session_store/test_golden_archive.py"
     },
     {
       "id": "P02-N03",
@@ -112,7 +113,7 @@
       "source": "agent/tasks/P-02/outputs/current-store-contract.md"
     }
   ],
-  "next_task": "U-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开 P-02 当前合同说明",

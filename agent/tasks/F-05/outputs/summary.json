@@ -76,8 +76,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "本轮源修改及复测在codex/task-package-normalization保存，发布以Git实际记录为准。下一包G-01，检查研究准入材料、外部条件与G-05职责。",
-        "规范化进度5包，剩余66包。整体双层目录迁移仍在执行，未把局部工具迁移当作全项目整理完成。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -99,16 +99,16 @@
       "id": "F05-N02",
       "status": "FIXED",
       "description": "当前接口基线和迁移指南已按真实签收修正DONE及下游范围",
-      "source": "02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md"
+      "source": "agent/modules/05-通信协议/contracts/F-05_v2.2接口对齐基线.md"
     },
     {
       "id": "F05-N03",
       "status": "FIXED",
       "description": "合同入口兼容规则明确限定v2.1，不再误读为全版本拒绝v2.2",
-      "source": "02-技术研发/05-通信协议/contracts/README.md"
+      "source": "agent/modules/05-通信协议/contracts/README.md"
     }
   ],
-  "next_task": "G-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开 F-05 当前执行入口",

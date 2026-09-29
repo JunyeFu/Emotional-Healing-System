@@ -25,4 +25,4 @@
 - [中国大学MOOC研究方法检索](https://www.icourse163.org/search.htm?search=%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95)：独立审查与研究流程。
 - [Datawhale Joyful Pandas](https://github.com/datawhalechina/joyful-pandas)：评分表整理与可复算汇总。
 
-inputs引用权威与原件；execution保存工具和测试；evidence保存本轮软件结果；outputs保存当前专家交接及总结；archive保留旧说明的原字节。原合同、CSV模板、盲态材料、评分键与签署不改，整体根目录迁移时统一处理，不复制并行业务目录。
+inputs引用权威与原件；execution保存工具和测试；evidence保存本轮软件结果；outputs保存当前专家交接及总结；archive保留旧说明的原字节。原合同、CSV模板、盲态材料、评分键与签署不改，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。

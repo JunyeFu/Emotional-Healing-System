@@ -4,34 +4,134 @@
   "review_date": "2026-09-28",
   "conclusion": "U-04仍WAIT_DEP、未领取；剩余天气A没有明确技术ID分配，不能默认storm。旧Unity框架与两个Editor生成工具已原文归档，34项设计检查及105项Unity EditMode通过；真实天气适配器和性能未验收。",
   "historical_acceptance": {
-    "reviewer": "未签署", "date": "尚未发生", "commit": "",
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
     "method": "本轮Codex审阅源文件、清理无引用旧Editor工具并运行共享程序集回归；未实施或签收U-04新天气，不代填真实负责人。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["依赖U-03、V-03，约4人日，P-DEV为过程配置，领取人、分支及复核人为空。U-03模板未完成；V-02没有A/B/C绑定，当前selected_weather保持null，剩余集合storm、heat、snow。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1对象与V-02技术ID及概念分配一致、核心机制可辨识；AC2四层独立、降级可见且不修改U-03模板；AC3目标设备帧率、内存、加载和声音达U-08预算。", "交付一个天气SceneAdapter、四层参数、音频和测试场景；必需Play、Profiler、截图、参数表及模板漂移检查。四天按分配/输入、模板组装、分层联调、性能与交接推进，技能及国内学习链接见TASK.md。"]},
-    {"heading": "实际交付", "paragraphs": ["建立固定五目录、当前适配交接、来源与检查；在V-02当前说明明确剩余天气分配缺口。没有假定A等于storm或把旧StormScene当成新适配器。", "旧Unity PROJECT_FRAMEWORK及SetupWeatherScenes、SetupWeatherWalkScene连同meta原文归档；移出Assets停止旧菜单注册。工程原框架路径保留当前入口，共享旧场景和运行脚本不删除。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["迁移前检查类名与GUID：两个Editor工具没有C#、场景、Prefab或asset消费者。StormScene仍引用旧WeatherController，含Traveler、Shield、WeatherDirector，不含当前U-01桥或V03适配脚本引用；因此旧已完成陈述不能支撑新任务验收。", "沿用固定镜头、完整底图、独立素材及v2.2步骤身份。Target和Actual独立，Recovery不因换段或GOOD解锁，基础背景非周期；声音仅环境身份，不用旅人X位置推进研究流程。"]},
-    {"heading": "验证与结果", "paragraphs": ["34项专项通过，包含8项U-04来源/分配/迁移检查及26项V-02当前规则；V-03当前40行映射和56直接包一致。Unity6000.4.9f1共享EditMode实跑105项全部通过，证明移出旧工具后的编译与既有层/控制/基线回归。", "注册表71项、5个分发包54快照通过，其他冻结输入和READY集合不变。没有本天气Play录像、真实渲染回执、Profiler、声音预算或真人审阅，不把共享回归写成U-04验收。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧工程文档混入TD/Spout和StormScene已完成，旧Editor菜单还能建立旅人行走场景；本轮从实际文件归档及入口修复，Unity回归通过后再生成Word，不只改变文档说法。", "A/B/C分配缺口移交V-02，当前不擅自冻结。U-03模板及U-08实际预算未取得，不能自行设阈值并填PASS；真实领取与独立复核待落实。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["TASK、inputs、execution、evidence、outputs、archive分别放任务要求、来源、验证、真实检查、当前交接与旧原文。五份归档文件迁移时Git识别100%内容相同，保留原meta GUID。", "共享Unity工程仍由模块维护，不复制缓存；有实际序列化引用的旧StormScene和WeatherDirector保留待整体清理。根目录两层迁移尚未完成，本包无旧验收报告可冒充归档。"]},
-    {"heading": "上下游交接", "paragraphs": ["V-02需补互斥完整的A/B/C分配；U-03先验收公共模板，再由U-04至U-06分别消费剩余天气及V-03映射、V-04素材。模板未通过不提前生产三个正式适配器；Python始终是顺序及时钟权威。", "U-07消费天气条件切换与四结构提示交接，U-08消费真实视听/性能和构建，G-02/G-05消费许可与活动资格。U-04不把单天气扩成四天气完成，也不修改U-03最小抽象对照的职责。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["无U-04历史签收，领取人与复核人未指定。共享EditMode通过不能代替Play、Profiler、问题关闭及真实签署；WAIT_DEP不改，不把P-DEV当成人名。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计24/71包，剩余47，下一U-05。已从Agent文件清理和缺口订正生成单包与串联Word；任务规范化不等于业务DONE，整体根目录收拢仍待后续任务。"]},
-    {"heading": "审阅来源", "paragraphs": ["读取注册表、V-02当前及历史基线、U-03交接、V-03映射、V-04预演、实际Unity场景、类名与meta GUID。旧原型完成、设计选择、共享编译回归和新天气验收分别记录。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "依赖U-03、V-03，约4人日，P-DEV为过程配置，领取人、分支及复核人为空。U-03模板未完成；V-02没有A/B/C绑定，当前selected_weather保持null，剩余集合storm、heat、snow。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1对象与V-02技术ID及概念分配一致、核心机制可辨识；AC2四层独立、降级可见且不修改U-03模板；AC3目标设备帧率、内存、加载和声音达U-08预算。",
+        "交付一个天气SceneAdapter、四层参数、音频和测试场景；必需Play、Profiler、截图、参数表及模板漂移检查。四天按分配/输入、模板组装、分层联调、性能与交接推进，技能及国内学习链接见TASK.md。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立固定五目录、当前适配交接、来源与检查；在V-02当前说明明确剩余天气分配缺口。没有假定A等于storm或把旧StormScene当成新适配器。",
+        "旧Unity PROJECT_FRAMEWORK及SetupWeatherScenes、SetupWeatherWalkScene连同meta原文归档；移出Assets停止旧菜单注册。工程原框架路径保留当前入口，共享旧场景和运行脚本不删除。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "迁移前检查类名与GUID：两个Editor工具没有C#、场景、Prefab或asset消费者。StormScene仍引用旧WeatherController，含Traveler、Shield、WeatherDirector，不含当前U-01桥或V03适配脚本引用；因此旧已完成陈述不能支撑新任务验收。",
+        "沿用固定镜头、完整底图、独立素材及v2.2步骤身份。Target和Actual独立，Recovery不因换段或GOOD解锁，基础背景非周期；声音仅环境身份，不用旅人X位置推进研究流程。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "34项专项通过，包含8项U-04来源/分配/迁移检查及26项V-02当前规则；V-03当前40行映射和56直接包一致。Unity6000.4.9f1共享EditMode实跑105项全部通过，证明移出旧工具后的编译与既有层/控制/基线回归。",
+        "注册表71项、5个分发包54快照通过，其他冻结输入和READY集合不变。没有本天气Play录像、真实渲染回执、Profiler、声音预算或真人审阅，不把共享回归写成U-04验收。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧工程文档混入TD/Spout和StormScene已完成，旧Editor菜单还能建立旅人行走场景；本轮从实际文件归档及入口修复，Unity回归通过后再生成Word，不只改变文档说法。",
+        "A/B/C分配缺口移交V-02，当前不擅自冻结。U-03模板及U-08实际预算未取得，不能自行设阈值并填PASS；真实领取与独立复核待落实。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK、inputs、execution、evidence、outputs、archive分别放任务要求、来源、验证、真实检查、当前交接与旧原文。五份归档文件迁移时Git识别100%内容相同，保留原meta GUID。",
+        "共享Unity工程仍由模块维护，不复制缓存；有实际序列化引用的旧StormScene和WeatherDirector保留待整体清理。根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "V-02需补互斥完整的A/B/C分配；U-03先验收公共模板，再由U-04至U-06分别消费剩余天气及V-03映射、V-04素材。模板未通过不提前生产三个正式适配器；Python始终是顺序及时钟权威。",
+        "U-07消费天气条件切换与四结构提示交接，U-08消费真实视听/性能和构建，G-02/G-05消费许可与活动资格。U-04不把单天气扩成四天气完成，也不修改U-03最小抽象对照的职责。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "无U-04历史签收，领取人与复核人未指定。共享EditMode通过不能代替Play、Profiler、问题关闭及真实签署；WAIT_DEP不改，不把P-DEV当成人名。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "读取注册表、V-02当前及历史基线、U-03交接、V-03映射、V-04预演、实际Unity场景、类名与meta GUID。旧原型完成、设计选择、共享编译回归和新天气验收分别记录。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "U04-N01", "status": "OPEN_WEATHER_A_B_C_ALLOCATION", "description": "V-02未明确剩余天气A/B/C绑定，U-04保持selected_weather=null，不默认storm", "source": "agent/tasks/U-04/outputs/current-adapter.json"},
-    {"id": "U04-N02", "status": "FIXED_LEGACY_FRAMEWORK_AND_TOOLS", "description": "旧框架及两个无引用Editor生成器和meta原文归档，保留当前工程入口，105项Unity回归通过", "source": "agent/tasks/U-04/archive/README.md"},
-    {"id": "U04-N03", "status": "VERIFIED_SHARED_ASSEMBLY_NOT_ADAPTER", "description": "34项设计与105项EditMode通过，旧StormScene不含当前桥/适配脚本引用，不等于新天气验收", "source": "agent/tasks/U-04/evidence/verification.json"},
-    {"id": "U04-N04", "status": "OPEN_TEMPLATE_PERFORMANCE_AND_OWNER", "description": "U-03模板、真实负责人、Play和Profiler以及U-08预算仍待取得，WAIT_DEP不改变", "source": "agent/tasks/U-04/TASK.md"}
+    {
+      "id": "U04-N01",
+      "status": "OPEN_WEATHER_A_B_C_ALLOCATION",
+      "description": "V-02未明确剩余天气A/B/C绑定，U-04保持selected_weather=null，不默认storm",
+      "source": "agent/tasks/U-04/outputs/current-adapter.json"
+    },
+    {
+      "id": "U04-N02",
+      "status": "FIXED_LEGACY_FRAMEWORK_AND_TOOLS",
+      "description": "旧框架及两个无引用Editor生成器和meta原文归档，保留当前工程入口，105项Unity回归通过",
+      "source": "agent/tasks/U-04/archive/README.md"
+    },
+    {
+      "id": "U04-N03",
+      "status": "VERIFIED_SHARED_ASSEMBLY_NOT_ADAPTER",
+      "description": "34项设计与105项EditMode通过，旧StormScene不含当前桥/适配脚本引用，不等于新天气验收",
+      "source": "agent/tasks/U-04/evidence/verification.json"
+    },
+    {
+      "id": "U04-N04",
+      "status": "OPEN_TEMPLATE_PERFORMANCE_AND_OWNER",
+      "description": "U-03模板、真实负责人、Play和Profiler以及U-08预算仍待取得，WAIT_DEP不改变",
+      "source": "agent/tasks/U-04/TASK.md"
+    }
   ],
-  "next_task": "U-05",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前天气A适配交接", "path": "agent/tasks/U-04/outputs/current-adapter.md"},
-    {"label": "实际验证记录", "path": "agent/tasks/U-04/evidence/verification.json"},
-    {"label": "Unity EditMode结果", "path": "agent/tasks/U-04/evidence/editmode-results.xml"},
-    {"label": "归档及消费者影响", "path": "agent/tasks/U-04/evidence/consumer-impact.md"},
-    {"label": "步骤验收与国内资料", "path": "agent/tasks/U-04/TASK.md"}
+    {
+      "label": "当前天气A适配交接",
+      "path": "agent/tasks/U-04/outputs/current-adapter.md"
+    },
+    {
+      "label": "实际验证记录",
+      "path": "agent/tasks/U-04/evidence/verification.json"
+    },
+    {
+      "label": "Unity EditMode结果",
+      "path": "agent/tasks/U-04/evidence/editmode-results.xml"
+    },
+    {
+      "label": "归档及消费者影响",
+      "path": "agent/tasks/U-04/evidence/consumer-impact.md"
+    },
+    {
+      "label": "步骤验收与国内资料",
+      "path": "agent/tasks/U-04/TASK.md"
+    }
   ]
 }

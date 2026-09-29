@@ -3,32 +3,135 @@
   "title": "G04 可选阶段三独立冻结与上下游审阅",
   "review_date": "2026-09-29",
   "conclusion": "G-04仍BLOCKED_EXTERNAL、未领取未签收。已明确两原生组的部署策略比较、含回退估计目标、独立许可与同构建交接；真实策略运行、研究冻结、批准及预注册尚缺，核心论文不等待本包。",
-  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "没有G-04真实签署；本轮作者Agent核查，不代替独立复核、真人签收或正式放行。"},
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有G-04真实签署；本轮作者Agent核查，不代替独立复核、真人签收或正式放行。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["固定任务约5人日，依赖E-05/X-03/Z-01，研究、统计、数据、现场、集成、复核和签署人待实名。当前v1.2仍设计候选、正式参与者采集false，规范化不改变注册表状态。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1独立估计目标、真实策略、同构建与支持/ESS冻结；AC2独立范围与资源批准；AC3未放行不采集；AC4可选阶段三不成为核心稿前置。", "五段为范围与输入、独立统计与新队列、同构建真实运行、许可与预注册、真实复核移交。Gate3属于待冻结结果判据，不能先要求阶段三优效再允许开始。"]},
-    {"heading": "实际交付", "paragraphs": ["TASK及五目录、19项实际来源、当前说明和机器状态、未批准审阅提纲、专项验证入口。未生成正式N、界值、策略manifest、机构回执或签名。", "更新两个扩展导航、总控准入及v2.0手册，拆开候选统计、实际运行和活动资格。三项直接许可仍无回执；共享权限的阶段三范围也未确认。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["两组都用scene_native，策略分配是比较因素。阶段一cue_mode主模型不能识别此差异；候选NA_post按assigned_policy_arm及前测/分层校正，policy-minus-random负值有利策略，正式方法另批准。", "部署估计目标包含回退、不完全体验与停止，保留原分配组，不把回退者迁入随机组；有效PANAS与功能PF分别报告，不拿OPE或训练内拟合宣称真实增益。"]},
-    {"heading": "验证与结果", "paragraphs": ["61项专项通过，覆盖本包、E-05、X-03和既有随机化；实际48行块含24随机完整排列及24策略null行，分组概率均0.5。null不是回退顺序，不能补成固定策略部署。", "实际P-01 v2.2仍对策略路径返回ADAPTIVE_SEQUENCE_REQUIRES_V2_2；默认正式随机路径返回FORMAL_GATE_UNAVAILABLE且未生成控制。协议、治理、注册、分发及根回归日志见verification.json。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["已修复跨阶段直接沿用cue_mode模板的交接风险，明确Gate3结果与采集资格不同、同构建还需共享展示配置；实际入口指向本包，旧来源不升级为当前冻结。", "动态运行、正式方法/N、同构建、机构批准、预注册、共享许可适用范围及真实负责人仍缺。文档false或generic formal_capable不是机构许可，不以合成负测关闭真实活动门。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["固定TASK、inputs、execution、evidence、outputs、archive；旧独立扩展原件已实际归档X-02/G-03，本包引用原件而不重复复制，共享历史与进行中快照不改写。", "先纠正Agent当前事实和实际导航，再生成任务及串联Word。根目录双层整体迁移尚未完成，业务源代码和共享资源仍须在全包整理后实际迁移并验证。"]},
-    {"heading": "上下游交接", "paragraphs": ["E-05交揭盲前选择标准来源和获准最终策略，X-03交只读动态运行/重放，Z-01交同版制品；G-05交活动凭证，量表与专机需另确认阶段三适用范围。现均未满足，不实例化真实B-03。", "B-03/E-06交全部分配、暴露、回退及停止，A-04分析部署效果、U12-08附录；A-06依据实际活动决定范围。阶段一核心W-02/W-03不等待可选任务DONE，不以未开展布尔值隐去部分运行。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["未领取、未签收，没有真人姓名、日期或PASS代填。当前只做作者Agent自检，没有新独立Agent复核、参与者活动、真实设备或Unity/TD运行。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计52/71包规范化，剩余19，下一B-03。保持BLOCKED_EXTERNAL，继续逐包梳理和最终根目录物理迁移，不把材料整理完成等同于研究正式准入。"]},
-    {"heading": "审阅来源", "paragraphs": ["实际注册、v1.2协议/路线、活动矩阵与阶段一候选模板，E-05/X-03/X-01/G-05/Z-01/G-03当前交接及实际随机化和P-01源码；无新网页检索或真人活动。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务约5人日，依赖E-05/X-03/Z-01，研究、统计、数据、现场、集成、复核和签署人待实名。当前v1.2仍设计候选、正式参与者采集false，规范化不改变注册表状态。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1独立估计目标、真实策略、同构建与支持/ESS冻结；AC2独立范围与资源批准；AC3未放行不采集；AC4可选阶段三不成为核心稿前置。",
+        "五段为范围与输入、独立统计与新队列、同构建真实运行、许可与预注册、真实复核移交。Gate3属于待冻结结果判据，不能先要求阶段三优效再允许开始。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK及五目录、19项实际来源、当前说明和机器状态、未批准审阅提纲、专项验证入口。未生成正式N、界值、策略manifest、机构回执或签名。",
+        "更新两个扩展导航、总控准入及v2.0手册，拆开候选统计、实际运行和活动资格。三项直接许可仍无回执；共享权限的阶段三范围也未确认。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "两组都用scene_native，策略分配是比较因素。阶段一cue_mode主模型不能识别此差异；候选NA_post按assigned_policy_arm及前测/分层校正，policy-minus-random负值有利策略，正式方法另批准。",
+        "部署估计目标包含回退、不完全体验与停止，保留原分配组，不把回退者迁入随机组；有效PANAS与功能PF分别报告，不拿OPE或训练内拟合宣称真实增益。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "61项专项通过，覆盖本包、E-05、X-03和既有随机化；实际48行块含24随机完整排列及24策略null行，分组概率均0.5。null不是回退顺序，不能补成固定策略部署。",
+        "实际P-01 v2.2仍对策略路径返回ADAPTIVE_SEQUENCE_REQUIRES_V2_2；默认正式随机路径返回FORMAL_GATE_UNAVAILABLE且未生成控制。协议、治理、注册、分发及根回归日志见verification.json。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "已修复跨阶段直接沿用cue_mode模板的交接风险，明确Gate3结果与采集资格不同、同构建还需共享展示配置；实际入口指向本包，旧来源不升级为当前冻结。",
+        "动态运行、正式方法/N、同构建、机构批准、预注册、共享许可适用范围及真实负责人仍缺。文档false或generic formal_capable不是机构许可，不以合成负测关闭真实活动门。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "固定TASK、inputs、execution、evidence、outputs、archive；旧独立扩展原件已实际归档X-02/G-03，本包引用原件而不重复复制，共享历史与进行中快照不改写。",
+        "先纠正Agent当前事实和实际导航，再生成任务及串联Word。根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "E-05交揭盲前选择标准来源和获准最终策略，X-03交只读动态运行/重放，Z-01交同版制品；G-05交活动凭证，量表与专机需另确认阶段三适用范围。现均未满足，不实例化真实B-03。",
+        "B-03/E-06交全部分配、暴露、回退及停止，A-04分析部署效果、U12-08附录；A-06依据实际活动决定范围。阶段一核心W-02/W-03不等待可选任务DONE，不以未开展布尔值隐去部分运行。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "未领取、未签收，没有真人姓名、日期或PASS代填。当前只做作者Agent自检，没有新独立Agent复核、参与者活动、真实设备或Unity/TD运行。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "实际注册、v1.2协议/路线、活动矩阵与阶段一候选模板，E-05/X-03/X-01/G-05/Z-01/G-03当前交接及实际随机化和P-01源码；无新网页检索或真人活动。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "G04-N01", "status": "FIXED_POLICY_CONTRAST_HANDOFF", "description": "两scene_native组必须比较策略分配，阶段一cue_mode模板不是扩展模型；候选未冒充正式冻结", "source": "agent/tasks/G-04/outputs/current-extension.md"},
-    {"id": "G04-N02", "status": "FIXED_RESULT_GATE_AND_ADMISSION_HANDOFF", "description": "Gate3结果判据、采集前资格、共享配置与同构建分开，修正三个入口和手册", "source": "agent/tasks/G-04/evidence/consumer-impact.md"},
-    {"id": "G04-N03", "status": "OPEN_DYNAMIC_DEPLOYMENT_AND_BUILD", "description": "48行分配已可生成但v2.2仍拒绝动态策略，同构建/共享配置没有真实验证", "source": "agent/tasks/G-04/outputs/current-extension.json"},
-    {"id": "G04-N04", "status": "OPEN_REAL_FREEZE_AND_ACTIVITY_SCOPE", "description": "正式N/方法/预注册、三项直接许可、共享量表专机阶段三范围及真实责任人仍缺", "source": "agent/tasks/G-04/outputs/preregistration-review-template.json"}
+    {
+      "id": "G04-N01",
+      "status": "FIXED_POLICY_CONTRAST_HANDOFF",
+      "description": "两scene_native组必须比较策略分配，阶段一cue_mode模板不是扩展模型；候选未冒充正式冻结",
+      "source": "agent/tasks/G-04/outputs/current-extension.md"
+    },
+    {
+      "id": "G04-N02",
+      "status": "FIXED_RESULT_GATE_AND_ADMISSION_HANDOFF",
+      "description": "Gate3结果判据、采集前资格、共享配置与同构建分开，修正三个入口和手册",
+      "source": "agent/tasks/G-04/evidence/consumer-impact.md"
+    },
+    {
+      "id": "G04-N03",
+      "status": "OPEN_DYNAMIC_DEPLOYMENT_AND_BUILD",
+      "description": "48行分配已可生成但v2.2仍拒绝动态策略，同构建/共享配置没有真实验证",
+      "source": "agent/tasks/G-04/outputs/current-extension.json"
+    },
+    {
+      "id": "G04-N04",
+      "status": "OPEN_REAL_FREEZE_AND_ACTIVITY_SCOPE",
+      "description": "正式N/方法/预注册、三项直接许可、共享量表专机阶段三范围及真实责任人仍缺",
+      "source": "agent/tasks/G-04/outputs/preregistration-review-template.json"
+    }
   ],
-  "next_task": "B-03",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前独立阶段三交接", "path": "agent/tasks/G-04/outputs/current-extension.md"},
-    {"label": "实际冻结与运行缺口", "path": "agent/tasks/G-04/outputs/current-extension.json"},
-    {"label": "未批准预注册审阅提纲", "path": "agent/tasks/G-04/outputs/preregistration-review-template.json"},
-    {"label": "消费者修正范围", "path": "agent/tasks/G-04/evidence/consumer-impact.md"},
-    {"label": "实际验证结果", "path": "agent/tasks/G-04/evidence/verification.json"}
+    {
+      "label": "当前独立阶段三交接",
+      "path": "agent/tasks/G-04/outputs/current-extension.md"
+    },
+    {
+      "label": "实际冻结与运行缺口",
+      "path": "agent/tasks/G-04/outputs/current-extension.json"
+    },
+    {
+      "label": "未批准预注册审阅提纲",
+      "path": "agent/tasks/G-04/outputs/preregistration-review-template.json"
+    },
+    {
+      "label": "消费者修正范围",
+      "path": "agent/tasks/G-04/evidence/consumer-impact.md"
+    },
+    {
+      "label": "实际验证结果",
+      "path": "agent/tasks/G-04/evidence/verification.json"
+    }
   ]
 }

@@ -198,15 +198,22 @@ def verify():
         if item['old'].startswith('03-测试与实验/') and path.name != 'README.md' and not same:
             raise ValueError('Historical validation bytes changed: ' + item['new'])
         unchanged += same
+    revised_words = 0
     for item in repair['word_relationships_repaired']:
+        from verify_summary_refresh import verify_refreshed_word
+        revised = verify_refreshed_word(item['path'])
+        revised_words += revised
         before = subprocess.check_output(['git', 'show', original['baseline_commit'] + ':' + item['path']], cwd=ROOT)
         with ZipFile(io.BytesIO(before)) as previous, ZipFile(ROOT / item['path']) as current_word:
             assert previous.namelist() == current_word.namelist()
             for name in previous.namelist():
-                if name != 'word/_rels/document.xml.rels':
+                allowed_parts = {'word/_rels/document.xml.rels'} | ({'word/document.xml'} if revised else set())
+                if name not in allowed_parts:
                     assert previous.read(name) == current_word.read(name), (item['path'], name)
     result = {'original_files': len(original['files']), 'unchanged_original_files': unchanged,
-              'word_documents_link_only': len(repair['word_relationships_repaired']),
+              'word_documents_checked': len(repair['word_relationships_repaired']),
+              'word_documents_link_only': len(repair['word_relationships_repaired']) - revised_words,
+              'current_summary_word_revisions_verified': revised_words,
               'word_hyperlinks_relocated': sum(x['links'] for x in repair['word_relationships_repaired']),
               'historical_validation_and_reference_sources_preserved': True,
               'scope': 'Physical support root moves and current links, not new acceptance'}

@@ -73,7 +73,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "明确路径提交并推送codex/task-package-normalization，不自动合并。规范化14/71包，剩余57包；下一包V-02。最终根目录双层迁移和真实下游交付尚未完成。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -115,7 +116,7 @@
       "source": "agent/tasks/V-01/TASK.md"
     }
   ],
-  "next_task": "V-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "当前完整旅程",

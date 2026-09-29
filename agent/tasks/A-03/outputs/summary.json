@@ -3,31 +3,129 @@
   "title": "A03 测量计分与合成可行性审阅",
   "review_date": "2026-09-29",
   "conclusion": "A-03仍IN_PROGRESS，SPEC仅原范围DONE。旧入口及正态锚点实际归档，正式能力说明订正，CLI禁止覆盖报告；U12-04候选签收已交接，REAL/CAL和正式数值仍未完成。",
-  "historical_acceptance": {"reviewer": "傅钧烨", "date": "2026-09-06 +08:00", "commit": "4071c84bc03ab9d80f7ce5997034fe27737e5d51", "method": "审阅精确SPEC候选、已有机器与独立Agent复审结果，未称本人重跑。签收提交1f5f81b3d34ef9c90ddc30f9ec507ef28048525f；不涵盖本轮修订、REAL/CAL或整个A-03。"},
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-06 +08:00",
+    "commit": "4071c84bc03ab9d80f7ce5997034fe27737e5d51",
+    "method": "审阅精确SPEC候选、已有机器与独立Agent复审结果，未称本人重跑。签收提交1f5f81b3d34ef9c90ddc30f9ec507ef28048525f；不涵盖本轮修订、REAL/CAL或整个A-03。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["历史领取Codex、业务分支codex/a-03-spec，当前只进行规范化；5人日、P-ANALYSIS。领取时间未记不补造，整个A-03状态与冻结输入不变。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1构念独立，SCCI只作操纵；AC2项目差异、FDR、缺失和冻结原因码；AC3有界模拟覆盖上限、同复制两集共同通过、差异性缺失与完整可行性报告。正式验收还需REAL/CAL真实证据。", "五日按范围及字段、计分、模型及真实适配、模拟、下游复跑签收推进；技能与原领取包国内资料见TASK.md。当前PANAS主要比较与独立功能护栏分开。"]},
-    {"heading": "实际交付", "paragraphs": ["建立统一五目录、当前统计说明/结构化范围、来源、核验和复现工具。旧README及正态锚点工具原文归档，保留历史签署、估计目标和报告。", "修复CLI对已有报告覆盖，改排他创建；纯模拟、计分、门序不变。scope_impact补现有U12-04候选签署，不新签、不自动冻结。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["实际代码正式PANAS始终拒绝、正式联合门始终不可评估，旧README描述过度已订正。序数拟合仅候选，旧八项理解fixture不替代U12-02步骤实例测量。", "历史24/85/96合成共同通过概率和NO_GO只证明旧假设检查，不能当新版PANAS功效、最终N或阻止预设情绪比较。U12-04候选SAP签收与REAL/CAL分开。"]},
-    {"heading": "验证与结果", "paragraphs": ["39项专项通过：原SPEC31项加本包8项；新CLI负例、签署身份、当前来源和冻结包通过。固定种子复现三个1000次报告，写独立新目录并逐项比较历史JSON；结果见本轮证据。", "635项根回归通过，候选SAP、历史协议、71项注册表和5包61快照通过。软件与合成证据不替代量表许可、真实数据适配、盲态校准或正式研究冻结。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["修复正式能力说明与覆盖签收报告两处偏离，旧原件留存。新规格待审/null已落后于U12-04真实签署，回填精确候选；原签署范围不扩大。", "真实字段适配、序数模型、两分析集/缺失实现及Level C回执仍缺。旧正常近似工具活动入口移除，历史内联路径通过归档表解释，不改历史冻结基线。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["archive保留旧README和锚点原字节；当前工具输出新runtime，不覆盖历史报告。共享模块仍按实际归属维护，最后整体根目录迁移继续。", "领取manifest、TASK、FILES与快照不刷新，SPEC报告和三里程碑原件保持不变。新规范化Word只从当前Agent输出生成。"]},
-    {"heading": "上下游交接", "paragraphs": ["A-01交真实L3与六类原件引用，A-02交两分析集和缺失流程，U12-02交步骤实例测量，U12-04交已签收候选SAP；旧八项fixture不是新测量。REAL仍未完成，不提前释放真实数据资格。", "SPEC按原依赖供X-01；REAL供Q-03，E-03的Level C盲态材料供CAL，U12-11/G-03消费回执与冻结配置。A-05完整报告PANAS、护栏及过程结果，Z-01消费复现入口；不因可选策略扩展等待而隐藏核心结果。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["原SPEC历史真人签收保留。U12-04傅钧烨2026-09-21 PASS对象d701a4054a4a36030d37335efa65d67a93ed35c3是候选SAP与合成证据，不是A-03整体或正式冻结。本轮无新独立Agent或真人签署。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["规范化32/71，剩余39，下一W-01。单包与串联Word从当前事实生成；业务状态不改，全部任务整理和根目录两层实迁未完成。"]},
-    {"heading": "审阅来源", "paragraphs": ["当前注册表、冻结领取包、三里程碑、原SPEC签署与实际计分/模拟代码、U12-04真实候选签署、A-01/A-02当前交接。历史锚点不作为本轮正式结论。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "历史领取Codex、业务分支codex/a-03-spec，当前只进行规范化；5人日、P-ANALYSIS。领取时间未记不补造，整个A-03状态与冻结输入不变。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1构念独立，SCCI只作操纵；AC2项目差异、FDR、缺失和冻结原因码；AC3有界模拟覆盖上限、同复制两集共同通过、差异性缺失与完整可行性报告。正式验收还需REAL/CAL真实证据。",
+        "五日按范围及字段、计分、模型及真实适配、模拟、下游复跑签收推进；技能与原领取包国内资料见TASK.md。当前PANAS主要比较与独立功能护栏分开。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立统一五目录、当前统计说明/结构化范围、来源、核验和复现工具。旧README及正态锚点工具原文归档，保留历史签署、估计目标和报告。",
+        "修复CLI对已有报告覆盖，改排他创建；纯模拟、计分、门序不变。scope_impact补现有U12-04候选签署，不新签、不自动冻结。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "实际代码正式PANAS始终拒绝、正式联合门始终不可评估，旧README描述过度已订正。序数拟合仅候选，旧八项理解fixture不替代U12-02步骤实例测量。",
+        "历史24/85/96合成共同通过概率和NO_GO只证明旧假设检查，不能当新版PANAS功效、最终N或阻止预设情绪比较。U12-04候选SAP签收与REAL/CAL分开。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "39项专项通过：原SPEC31项加本包8项；新CLI负例、签署身份、当前来源和冻结包通过。固定种子复现三个1000次报告，写独立新目录并逐项比较历史JSON；结果见本轮证据。",
+        "635项根回归通过，候选SAP、历史协议、71项注册表和5包61快照通过。软件与合成证据不替代量表许可、真实数据适配、盲态校准或正式研究冻结。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "修复正式能力说明与覆盖签收报告两处偏离，旧原件留存。新规格待审/null已落后于U12-04真实签署，回填精确候选；原签署范围不扩大。",
+        "真实字段适配、序数模型、两分析集/缺失实现及Level C回执仍缺。旧正常近似工具活动入口移除，历史内联路径通过归档表解释，不改历史冻结基线。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "archive保留旧README和锚点原字节；当前工具输出新runtime，不覆盖历史报告。共享模块仍按实际归属维护，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。",
+        "领取manifest、TASK、FILES与快照不刷新，SPEC报告和三里程碑原件保持不变。新规范化Word只从当前Agent输出生成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "A-01交真实L3与六类原件引用，A-02交两分析集和缺失流程，U12-02交步骤实例测量，U12-04交已签收候选SAP；旧八项fixture不是新测量。REAL仍未完成，不提前释放真实数据资格。",
+        "SPEC按原依赖供X-01；REAL供Q-03，E-03的Level C盲态材料供CAL，U12-11/G-03消费回执与冻结配置。A-05完整报告PANAS、护栏及过程结果，Z-01消费复现入口；不因可选策略扩展等待而隐藏核心结果。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原SPEC历史真人签收保留。U12-04傅钧烨2026-09-21 PASS对象d701a4054a4a36030d37335efa65d67a93ed35c3是候选SAP与合成证据，不是A-03整体或正式冻结。本轮无新独立Agent或真人签署。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态IN_PROGRESS，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前注册表、冻结领取包、三里程碑、原SPEC签署与实际计分/模拟代码、U12-04真实候选签署、A-01/A-02当前交接。历史锚点不作为本轮正式结论。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "A03-N01", "status": "FIXED_FORMAL_CAPABILITY_AND_OVERWRITE", "description": "正式模式说明订正，旧入口归档，CLI拒绝覆盖报告且复现写新目录", "source": "agent/tasks/A-03/evidence/verification.json"},
-    {"id": "A03-N02", "status": "FIXED_CURRENT_NEW_SPEC_ACCEPTANCE", "description": "范围影响补已存在U12-04候选签署，不扩大为REAL/CAL或正式冻结", "source": "agent/tasks/A-03/evidence/consumer-impact.md"},
-    {"id": "A03-N03", "status": "OPEN_REAL_CAL_AND_CURRENT_MEASUREMENT", "description": "真实适配、步骤实例测量映射、真实模型和盲态校准尚未交付", "source": "agent/tasks/A-03/outputs/current-statistics.json"}
+    {
+      "id": "A03-N01",
+      "status": "FIXED_FORMAL_CAPABILITY_AND_OVERWRITE",
+      "description": "正式模式说明订正，旧入口归档，CLI拒绝覆盖报告且复现写新目录",
+      "source": "agent/tasks/A-03/evidence/verification.json"
+    },
+    {
+      "id": "A03-N02",
+      "status": "FIXED_CURRENT_NEW_SPEC_ACCEPTANCE",
+      "description": "范围影响补已存在U12-04候选签署，不扩大为REAL/CAL或正式冻结",
+      "source": "agent/tasks/A-03/evidence/consumer-impact.md"
+    },
+    {
+      "id": "A03-N03",
+      "status": "OPEN_REAL_CAL_AND_CURRENT_MEASUREMENT",
+      "description": "真实适配、步骤实例测量映射、真实模型和盲态校准尚未交付",
+      "source": "agent/tasks/A-03/outputs/current-statistics.json"
+    }
   ],
-  "next_task": "W-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前统计与里程碑交接", "path": "agent/tasks/A-03/outputs/current-statistics.md"},
-    {"label": "实际范围与未完成项", "path": "agent/tasks/A-03/outputs/current-statistics.json"},
-    {"label": "本轮核验结果", "path": "agent/tasks/A-03/evidence/verification.json"},
-    {"label": "原签署与消费者影响", "path": "agent/tasks/A-03/evidence/consumer-impact.md"},
-    {"label": "过程验收与资料", "path": "agent/tasks/A-03/TASK.md"}
+    {
+      "label": "当前统计与里程碑交接",
+      "path": "agent/tasks/A-03/outputs/current-statistics.md"
+    },
+    {
+      "label": "实际范围与未完成项",
+      "path": "agent/tasks/A-03/outputs/current-statistics.json"
+    },
+    {
+      "label": "本轮核验结果",
+      "path": "agent/tasks/A-03/evidence/verification.json"
+    },
+    {
+      "label": "原签署与消费者影响",
+      "path": "agent/tasks/A-03/evidence/consumer-impact.md"
+    },
+    {
+      "label": "过程验收与资料",
+      "path": "agent/tasks/A-03/TASK.md"
+    }
   ]
 }

@@ -3,32 +3,135 @@
   "title": "B03 可选阶段三批次与上下游审阅",
   "review_date": "2026-09-29",
   "conclusion": "B-03仍为未执行的TEMPLATE/BLOCKED_EXTERNAL，真实实例为零、未领取未签收。已建立两原生组批次、真实决策与全部部分活动交接；固定随机开发重放不冒充动态策略通过，G-04真实放行仍缺。",
-  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "没有B-03真人签署。本轮作者Agent规范化和合成软件核查，不代替独立复核、参与者执行或真实第二人签收。"},
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有B-03真人签署。本轮作者Agent规范化和合成软件核查，不代替独立复核、参与者执行或真实第二人签收。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["可重复模板，每实例最多12人、约5人日，依赖G-04；两组都用scene_native，比较冻结部署策略与均衡随机。正式策略、批准、预注册、同构建配置与真实现场角色均缺，核心论文不等待扩展。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1同版锁定stage_3分配；AC2策略决策可真实重放、随机组按分配累计平衡；AC3每人只一次且同构建及配置正确。缺动态证据不能用固定路径代替，未放行不创建真实实例。", "五段为接收独立冻结与责任、前测及新队列分配、真实运行与记录、原件QC与决策审计、复核和全部实例交接。完成状态与PANAS/技术可评估和分析集资格分开。"]},
-    {"heading": "实际交付", "paragraphs": ["建立TASK及五目录、22项现存来源、当前交接/机器状态、空批次登记和QC提纲、实际专项与治理证据；不生成正式manifest、参与者记录或真实QC结论。", "两个正式研究导航及v2.0手册增加阶段三入口，Agent与人读层对齐。旧第10步两原文已实际归档B-02，本包引用而不重复复制；在研快照和历史签署不改。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["48分配块含24随机完整排列与24策略null行，批次最多12人，不强制6比6。null不是回退序列，策略实际顺序不要求24排列均匀；按分配平衡，不按完成者缺格补人。", "注册仍写完整48块关闭，协议要求披露部分运行；显式保留差异，尾块/停止交G-04事前裁定。实际停止不为凑整继续，回退留原策略组，全部部分实例交E-06/A-06。"]},
-    {"heading": "验证与结果", "paragraphs": ["复测144专项通过，覆盖本包、G-04、X-03及既有随机化/存储。实际24随机路径PolicyDecision校验、位置概率与区间中点见证核对；消息只有所选动作概率/状态身份，不含完整分布或实测状态原件。", "实际均衡随机stage_3开发prepare后finish封存、两操作只读重放与状态哈希一致；未启动体验，不证明动态策略或800秒全链。协议、治理、注册、分发及根回归实际日志见verification.json。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["首轮143通过1失败，原因是合成finish用了不合法连字符原因码；改用既有SYNTHETIC_TEST，失败日志保留，运行合同未放宽。", "完整块与停止、固定见证与真实策略采样、单批QC与锁库揭盲分开。真实动态运行/重放、同构建配置、教学暴露接线、独立批准及正式尾块规则仍缺，不以空表关闭。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["TASK、inputs、execution、evidence、outputs、archive各有固定用途，输出空提纲明确NOT_RUN；受限人物和填表留获批仓库外，没有旧实例可迁移，不复制历史原文。", "先修Agent当前事实及导航，再生成总结与串联Word。注册状态保持、业务SVG不重复生成，整体根目录双层物理迁移仍未完成。"]},
-    {"heading": "上下游交接", "paragraphs": ["G-04交独立放行、最终N/停止、同构建/配置和预注册；X-01交stage_3清单，X-03交真实决策前状态、完整候选概率和安全重放，D/S/P/U/I与G-02/G-05交设备、记录、去重及活动资格。现真实条件未齐，不实例化。", "E-06接所有分配/暴露/退出、原件索引、盲态QC及停止；A-04按含回退部署目标分析，U12-08附录，A-06据真实分配/暴露/批次事实判范围。有部分运行不能自称NO_STAGE3；单批结束不授权揭盲。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["每实例唯一负责人、现场、清单保管/揭示、数据/QC、标注、策略审计及另一人复核均待实名。作者Agent合成检查与真实签收分开，没有姓名、日期、PASS或DONE代填。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计53/71包规范化、余18，下一E-06。业务BLOCKED_EXTERNAL与零真实实例保持，继续逐包及最终根目录迁移，不把规范化当作正式研究完成。"]},
-    {"heading": "审阅来源", "paragraphs": ["真实注册、协议/投稿路线/活动矩阵、G-04/X-03/X-01/B-02/P-02当前交接、实际随机化/编排/记录/重放源码及v2.2消息、六类证据合同；旧原文留已存在归档，无新网页研究或真人活动。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "可重复模板，每实例最多12人、约5人日，依赖G-04；两组都用scene_native，比较冻结部署策略与均衡随机。正式策略、批准、预注册、同构建配置与真实现场角色均缺，核心论文不等待扩展。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1同版锁定stage_3分配；AC2策略决策可真实重放、随机组按分配累计平衡；AC3每人只一次且同构建及配置正确。缺动态证据不能用固定路径代替，未放行不创建真实实例。",
+        "五段为接收独立冻结与责任、前测及新队列分配、真实运行与记录、原件QC与决策审计、复核和全部实例交接。完成状态与PANAS/技术可评估和分析集资格分开。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立TASK及五目录、22项现存来源、当前交接/机器状态、空批次登记和QC提纲、实际专项与治理证据；不生成正式manifest、参与者记录或真实QC结论。",
+        "两个正式研究导航及v2.0手册增加阶段三入口，Agent与人读层对齐。旧第10步两原文已实际归档B-02，本包引用而不重复复制；在研快照和历史签署不改。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "48分配块含24随机完整排列与24策略null行，批次最多12人，不强制6比6。null不是回退序列，策略实际顺序不要求24排列均匀；按分配平衡，不按完成者缺格补人。",
+        "注册仍写完整48块关闭，协议要求披露部分运行；显式保留差异，尾块/停止交G-04事前裁定。实际停止不为凑整继续，回退留原策略组，全部部分实例交E-06/A-06。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "复测144专项通过，覆盖本包、G-04、X-03及既有随机化/存储。实际24随机路径PolicyDecision校验、位置概率与区间中点见证核对；消息只有所选动作概率/状态身份，不含完整分布或实测状态原件。",
+        "实际均衡随机stage_3开发prepare后finish封存、两操作只读重放与状态哈希一致；未启动体验，不证明动态策略或800秒全链。协议、治理、注册、分发及根回归实际日志见verification.json。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "首轮143通过1失败，原因是合成finish用了不合法连字符原因码；改用既有SYNTHETIC_TEST，失败日志保留，运行合同未放宽。",
+        "完整块与停止、固定见证与真实策略采样、单批QC与锁库揭盲分开。真实动态运行/重放、同构建配置、教学暴露接线、独立批准及正式尾块规则仍缺，不以空表关闭。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK、inputs、execution、evidence、outputs、archive各有固定用途，输出空提纲明确NOT_RUN；受限人物和填表留获批仓库外，没有旧实例可迁移，不复制历史原文。",
+        "先修Agent当前事实及导航，再生成总结与串联Word。注册状态保持、业务SVG不重复生成，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "G-04交独立放行、最终N/停止、同构建/配置和预注册；X-01交stage_3清单，X-03交真实决策前状态、完整候选概率和安全重放，D/S/P/U/I与G-02/G-05交设备、记录、去重及活动资格。现真实条件未齐，不实例化。",
+        "E-06接所有分配/暴露/退出、原件索引、盲态QC及停止；A-04按含回退部署目标分析，U12-08附录，A-06据真实分配/暴露/批次事实判范围。有部分运行不能自称NO_STAGE3；单批结束不授权揭盲。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "每实例唯一负责人、现场、清单保管/揭示、数据/QC、标注、策略审计及另一人复核均待实名。作者Agent合成检查与真实签收分开，没有姓名、日期、PASS或DONE代填。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "真实注册、协议/投稿路线/活动矩阵、G-04/X-03/X-01/B-02/P-02当前交接、实际随机化/编排/记录/重放源码及v2.2消息、六类证据合同；旧原文留已存在归档，无新网页研究或真人活动。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "B03-N01", "status": "CLARIFIED_BLOCK_VS_BATCH_AND_STOP", "description": "48分配块与12人批次、完成者与分配分开；注册完整块与部分运行差异保留，尾块/停止仍待G-04冻结", "source": "agent/tasks/B-03/outputs/current-batch.md"},
-    {"id": "B03-N02", "status": "FIXED_FIXED_REPLAY_VS_POLICY_HANDOFF", "description": "固定随机重放、均衡中点见证及状态身份不冒充动态决策/完整分布/真实状态，当前消费者同步", "source": "agent/tasks/B-03/evidence/consumer-impact.md"},
-    {"id": "B03-N03", "status": "FIXED_REASON_CODE_FIXTURE_AND_RETESTED", "description": "初次合成原因码不合法，修测试后复测，保留失败记录且不放宽核心合同", "source": "agent/tasks/B-03/evidence/test-fixture-fix.md"},
-    {"id": "B03-N04", "status": "OPEN_REAL_ADMISSION_INSTANCES_AND_DYNAMIC_REPLAY", "description": "独立批准、策略动态运行、同构建配置、教学暴露、正式规则与真实实例/QC及实名职责仍缺", "source": "agent/tasks/B-03/outputs/current-batch.json"}
+    {
+      "id": "B03-N01",
+      "status": "CLARIFIED_BLOCK_VS_BATCH_AND_STOP",
+      "description": "48分配块与12人批次、完成者与分配分开；注册完整块与部分运行差异保留，尾块/停止仍待G-04冻结",
+      "source": "agent/tasks/B-03/outputs/current-batch.md"
+    },
+    {
+      "id": "B03-N02",
+      "status": "FIXED_FIXED_REPLAY_VS_POLICY_HANDOFF",
+      "description": "固定随机重放、均衡中点见证及状态身份不冒充动态决策/完整分布/真实状态，当前消费者同步",
+      "source": "agent/tasks/B-03/evidence/consumer-impact.md"
+    },
+    {
+      "id": "B03-N03",
+      "status": "FIXED_REASON_CODE_FIXTURE_AND_RETESTED",
+      "description": "初次合成原因码不合法，修测试后复测，保留失败记录且不放宽核心合同",
+      "source": "agent/tasks/B-03/evidence/test-fixture-fix.md"
+    },
+    {
+      "id": "B03-N04",
+      "status": "OPEN_REAL_ADMISSION_INSTANCES_AND_DYNAMIC_REPLAY",
+      "description": "独立批准、策略动态运行、同构建配置、教学暴露、正式规则与真实实例/QC及实名职责仍缺",
+      "source": "agent/tasks/B-03/outputs/current-batch.json"
+    }
   ],
-  "next_task": "E-06",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前阶段三批次交接", "path": "agent/tasks/B-03/outputs/current-batch.md"},
-    {"label": "实际实例与运行缺口", "path": "agent/tasks/B-03/outputs/current-batch.json"},
-    {"label": "空批次QC提纲", "path": "agent/tasks/B-03/outputs/batch-qc-template.json"},
-    {"label": "首轮问题与复测", "path": "agent/tasks/B-03/evidence/test-fixture-fix.md"},
-    {"label": "实际验证结果", "path": "agent/tasks/B-03/evidence/verification.json"}
+    {
+      "label": "当前阶段三批次交接",
+      "path": "agent/tasks/B-03/outputs/current-batch.md"
+    },
+    {
+      "label": "实际实例与运行缺口",
+      "path": "agent/tasks/B-03/outputs/current-batch.json"
+    },
+    {
+      "label": "空批次QC提纲",
+      "path": "agent/tasks/B-03/outputs/batch-qc-template.json"
+    },
+    {
+      "label": "首轮问题与复测",
+      "path": "agent/tasks/B-03/evidence/test-fixture-fix.md"
+    },
+    {
+      "label": "实际验证结果",
+      "path": "agent/tasks/B-03/evidence/verification.json"
+    }
   ]
 }

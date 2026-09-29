@@ -55,7 +55,7 @@
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "五目录与单一当前总结已落地；旧证据脚本删除，新运行结果独立保存。Unity Editor脚本不能拆离Assets，已修正输出路径，工程与根目录旧业务归属仍待最终统一迁移。"
+        "五目录与单一当前总结已落地；旧证据脚本删除，新运行结果独立保存。Unity Editor脚本不能拆离Assets，已修正输出路径，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
       ]
     },
     {
@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "按明确路径提交并推送codex/task-package-normalization，不自动合并。已整理10/71包，剩余61包，下一包U-02；全部包及最终根目录双层迁移仍在目标内。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -89,7 +90,7 @@
       "id": "U01-N01",
       "status": "FIXED",
       "description": "Editor证据写入本包runtime，不再覆盖历史签收目录",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"
     },
     {
       "id": "U01-N02",
@@ -110,7 +111,7 @@
       "source": "agent/tasks/U-01/outputs/current-control-contract.md"
     }
   ],
-  "next_task": "U-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开 U-01 当前控制说明",

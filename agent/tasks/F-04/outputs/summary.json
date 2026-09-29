@@ -76,8 +76,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "本轮文件在codex/task-package-normalization提交推送，具体发布以Git实际记录为准。下一包F-05，核对步骤合同与当前v2.2消费者。",
-        "规范化推进至4包，剩余67包；最终根目录双层迁移继续按包归属与交接收拢，不改变任务完成状态。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -105,16 +105,16 @@
       "id": "F04-N03",
       "status": "FIXED",
       "description": "已签收静态基线与壳内未启用能力不再表述为项目任务未完成",
-      "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/README.md"
+      "source": "agent/modules/03-TouchDesigner/f04_readonly_console/README.md"
     },
     {
       "id": "F04-N04",
       "status": "OPEN_DOWNSTREAM_VISUAL_REVIEW",
       "description": "历史呼吸页说明覆盖曲线，需在T-01检查当前布局；本轮主机门不关闭画面可读性问题",
-      "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
+      "source": "agent/modules/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
     }
   ],
-  "next_task": "F-05",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开 F-04 当前运行入口",

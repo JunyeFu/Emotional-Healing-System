@@ -1,0 +1,538 @@
+{
+  "scope": "All four normalization requirements; no new business acceptance or research approval",
+  "baseline": "dc436562203fcd29a3355748ac25b6c8026f1fdb",
+  "final_audit": true,
+  "requirements": {
+    "1_per_package_word": {
+      "packages": 71,
+      "pages": 213,
+      "source_match": true,
+      "changed_pages_inspected": 114
+    },
+    "2_agent_structure_and_obsolete_files": {
+      "packages": 71,
+      "structure": "TASK.md + inputs/execution/evidence/outputs/archive",
+      "disposition_records": 71,
+      "current_package_suites_passed": 60
+    },
+    "3_physical_human_agent_roots": {
+      "moves": 19,
+      "pending": 0,
+      "unexpected_root_entries": [],
+      "word_links": 330
+    },
+    "4_chained_review_and_source_first_fixes": {
+      "summaries_and_handoffs": 71,
+      "migration_findings_closed": 14,
+      "current_documents_refreshed": 26,
+      "business_and_historical_acceptance_preserved": true
+    }
+  },
+  "preservation": {
+    "frozen_dispatch_snapshots": 61,
+    "original_lfs_media": 48,
+    "registry_unchanged": true
+  },
+  "root_python_tests": 635,
+  "packages": [
+    {
+      "task_id": "F-01",
+      "business_status": "DONE",
+      "word_source_links": 2,
+      "archive_disposition": "agent/tasks/F-01/archive/README.md",
+      "word_sha256": "84707d7d97e6f15ed7e9f4fabffb6eea102a4bd394d975bd9bf94a4802f17589"
+    },
+    {
+      "task_id": "F-02",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/F-02/archive/README.md",
+      "word_sha256": "c8d8e3e06b80b8828d58d61321380788fed6938ec9ddfabaa007da9125c27455"
+    },
+    {
+      "task_id": "F-03",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/F-03/archive/README.md",
+      "word_sha256": "581b1fe8d0e5246dd6036e8cfb8639f2b543e7a1ba10964e3fe7d61dc52057c2"
+    },
+    {
+      "task_id": "F-04",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/F-04/archive/README.md",
+      "word_sha256": "9f62faaad334e6e4c777701a47a78d256ab8243b4d39ddb70663b4505ce1d917"
+    },
+    {
+      "task_id": "F-05",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/F-05/archive/README.md",
+      "word_sha256": "576e4a82bef550e79b5e462a7b46a00b2d8737e7df6a9d092fad1339bb0c9524"
+    },
+    {
+      "task_id": "G-01",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/G-01/archive/README.md",
+      "word_sha256": "2892611ac9dfc6ab69de47b6030f86664cdaaa3b616dc99329c5a610a0a38ca7"
+    },
+    {
+      "task_id": "G-02",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/G-02/archive/README.md",
+      "word_sha256": "97939e6ef019ef9f401459c1fc083b9034030a2cc4bcc4ae98853b42b8f00126"
+    },
+    {
+      "task_id": "P-01",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/P-01/archive/README.md",
+      "word_sha256": "a158bb829a15308ba759775561620c4b3c74cf5c94ef755b74f6d8e36e0f9f52"
+    },
+    {
+      "task_id": "P-02",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/P-02/archive/README.md",
+      "word_sha256": "a76621f8339bdbc8402919086181099fc646724e15e77e689f6f6340539514a9"
+    },
+    {
+      "task_id": "U-01",
+      "business_status": "DONE",
+      "word_source_links": 3,
+      "archive_disposition": "agent/tasks/U-01/archive/README.md",
+      "word_sha256": "4fcd2f5b3cb7ca50367cf861a6849890aaa56bd0d67c5488acd2ff6b0bb66afb"
+    },
+    {
+      "task_id": "U-02",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U-02/archive/README.md",
+      "word_sha256": "6d0990b6d1690d7ceca02bf36de8295ec44c234663975910e390259c758add5f"
+    },
+    {
+      "task_id": "T-01",
+      "business_status": "DONE",
+      "word_source_links": 6,
+      "archive_disposition": "agent/tasks/T-01/archive/README.md",
+      "word_sha256": "a6c2274b09e54f113d27694c9be15766ff686c3cbde763c543cbe97497da2fd2"
+    },
+    {
+      "task_id": "R-01",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/R-01/archive/README.md",
+      "word_sha256": "a0a91c90f6e3d78fbcacc5c9eca11f41075af44808d7a77460173a7f1cfac84d"
+    },
+    {
+      "task_id": "V-01",
+      "business_status": "DONE",
+      "word_source_links": 6,
+      "archive_disposition": "agent/tasks/V-01/archive/README.md",
+      "word_sha256": "6da47f430ad4fe39fe53a4322b79cd239553d3d8b8fa84cb844516e544013021"
+    },
+    {
+      "task_id": "V-02",
+      "business_status": "DONE",
+      "word_source_links": 6,
+      "archive_disposition": "agent/tasks/V-02/archive/README.md",
+      "word_sha256": "3be2183d68cbe427758b4fb0b843fa0fa257852f785cdb3505c161c5cf7cfa78"
+    },
+    {
+      "task_id": "V-03",
+      "business_status": "DONE",
+      "word_source_links": 7,
+      "archive_disposition": "agent/tasks/V-03/archive/README.md",
+      "word_sha256": "7c7142867671e28e5f35bd128027c2f2720923011e4d05b21c00ceb3c5cb972c"
+    },
+    {
+      "task_id": "V-04",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/V-04/archive/README.md",
+      "word_sha256": "07934c6917eccf72d69791e85214822122a86795e81df7ed7e9a5ef5aa28a2be"
+    },
+    {
+      "task_id": "D-01",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/D-01/archive/README.md",
+      "word_sha256": "4bac70d17a7ca3611fbdb50d9bf57867b6ffc01cabba227308d026a34d439b8e"
+    },
+    {
+      "task_id": "D-02",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/D-02/archive/README.md",
+      "word_sha256": "cef9c1b620d83c46754d529421487d5962d6431c40fc1842308b8b8c65bad10e"
+    },
+    {
+      "task_id": "S-01",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/S-01/archive/README.md",
+      "word_sha256": "40397c7312883fe710816ab8ddc0c18ea155703c33621c02ff2e63064fdeeb13"
+    },
+    {
+      "task_id": "S-02",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/S-02/archive/README.md",
+      "word_sha256": "be27b7e88ce329536996e80e1c84c7f24766e8f1f4f6cfa8a69fa23c7c48c677"
+    },
+    {
+      "task_id": "V-05",
+      "business_status": "READY",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/V-05/archive/README.md",
+      "word_sha256": "a9bc01317290955ec1ddd726329114861ac2ba8f7a070aae30ef3da4c8be0f00"
+    },
+    {
+      "task_id": "U-03",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/U-03/archive/README.md",
+      "word_sha256": "76f11e14d3afe99f9ac0c3c6abed70ee3f87e1f639f7de37e37d01de3c116413"
+    },
+    {
+      "task_id": "U-04",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U-04/archive/README.md",
+      "word_sha256": "6fd6c3a0034f5cbd2bb2a5682be16fb0dbd9e2f2d9d592d34d6698b8a0cf5504"
+    },
+    {
+      "task_id": "U-05",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U-05/archive/README.md",
+      "word_sha256": "bc8b171ad8413137ea5d5df288112b5b76bb7e087f0083504be54212e250df15"
+    },
+    {
+      "task_id": "U-06",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U-06/archive/README.md",
+      "word_sha256": "866e4da1a46e89bbfdc806877edfef7a49bcce273dfe14336bc93cc534af4ec1"
+    },
+    {
+      "task_id": "U-07",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U-07/archive/README.md",
+      "word_sha256": "0e5686c854999484398f5747496f0b04bf0f3bcd8ac26f4ec4fccbf3623712e5"
+    },
+    {
+      "task_id": "U-08",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U-08/archive/README.md",
+      "word_sha256": "1091191dd675ab26403ca18b2e7c7e5983d8718e7b292e0c74f5ab81931627c5"
+    },
+    {
+      "task_id": "T-02",
+      "business_status": "READY",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/T-02/archive/README.md",
+      "word_sha256": "02ea119962b969556e51628eda55a4c83990a35b76a2cb527bac299ea2cfd9e6"
+    },
+    {
+      "task_id": "A-01",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/A-01/archive/README.md",
+      "word_sha256": "accb6ac7215deb248a8c94eecedc33d624ed038930105f2f7c5fc6269b545405"
+    },
+    {
+      "task_id": "A-02",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/A-02/archive/README.md",
+      "word_sha256": "c37ba6059e546bb049ef0d9424c235e121a9868d50474b55a5c076ed4635aff0"
+    },
+    {
+      "task_id": "A-03",
+      "business_status": "IN_PROGRESS",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/A-03/archive/README.md",
+      "word_sha256": "fdf21d2fc802b607febf3a797efaa1fae812eb73cb8504e8bfdd0f7afc3f6388"
+    },
+    {
+      "task_id": "W-01",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/W-01/archive/README.md",
+      "word_sha256": "6386dbba1f7aef51f90fb007b8f795105c8b128d43550aea32463f3951598a04"
+    },
+    {
+      "task_id": "I-01",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/I-01/archive/README.md",
+      "word_sha256": "ccbb4ea42f071ad6be6b7ddff18f1c6d10d9d467051ea2cd24a54c715ca64703"
+    },
+    {
+      "task_id": "Q-01",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/Q-01/archive/README.md",
+      "word_sha256": "b533b087175b8f7abeedf819d22e614902eff3cb0cd2eca1bdbc835dd4cbe85d"
+    },
+    {
+      "task_id": "Q-02",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/Q-02/archive/README.md",
+      "word_sha256": "7dcc8bd3f80a826146b79e1536e287552ee28623aaa2a2ee77e446ab6bcd5821"
+    },
+    {
+      "task_id": "Q-03",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/Q-03/archive/README.md",
+      "word_sha256": "4a75327e655b28c54bd1d92d85757ca8ddfe83a89220f2585de99f3209b5ed72"
+    },
+    {
+      "task_id": "X-01",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/X-01/archive/README.md",
+      "word_sha256": "4979af8540f0893b9226358276568efe1b18cf6429592134b96ab01ad01c9277"
+    },
+    {
+      "task_id": "X-02",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/X-02/archive/README.md",
+      "word_sha256": "6c735bf94959b3563161aea1dbef375292ee3cbc301f0cc7f2addf3ef8b33073"
+    },
+    {
+      "task_id": "X-03",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/X-03/archive/README.md",
+      "word_sha256": "41ed323108617940ed3a9c2bf2a33b7b5dcba675bc6a8cd328bf7e4868c2e2e3"
+    },
+    {
+      "task_id": "Z-01",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/Z-01/archive/README.md",
+      "word_sha256": "b5e5300d16ce614649be83201365a4e66d89f76d7719c3afa70d3a3c4ecad5cc"
+    },
+    {
+      "task_id": "G-05",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/G-05/archive/README.md",
+      "word_sha256": "e6c6ef3758a4b1a548202b445b6ec50be555eb233d11e31d8cc87d84771e0173"
+    },
+    {
+      "task_id": "E-01",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/E-01/archive/README.md",
+      "word_sha256": "ee39b44fe8d9b7a66292e386df94650eb80fd561280a40fae4e8876a1a151c27"
+    },
+    {
+      "task_id": "E-02",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/E-02/archive/README.md",
+      "word_sha256": "9e4fd6204d043a3f5bd4251bb17d4d78de621492c3c9315e72853c6d717af695"
+    },
+    {
+      "task_id": "B-01",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 6,
+      "archive_disposition": "agent/tasks/B-01/archive/README.md",
+      "word_sha256": "860bdecf19e4606593f604b48a00e3fa2d2e645d960d592768cb52418caf1fef"
+    },
+    {
+      "task_id": "E-03",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/E-03/archive/README.md",
+      "word_sha256": "647a6b9e10894b9885cc2b9a7b01979ac03589ef3724e82d5d5efb5a6e00c158"
+    },
+    {
+      "task_id": "G-03",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/G-03/archive/README.md",
+      "word_sha256": "c94a5a22c2bfbe2c915230b604297e94c0cf3da7d0b34874ae5efaa3d3ad4f34"
+    },
+    {
+      "task_id": "B-02",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/B-02/archive/README.md",
+      "word_sha256": "0ee3fed733627380dbd400107edbe1194771d4c0c8cd94ddb3beea700bc28b9f"
+    },
+    {
+      "task_id": "E-04",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/E-04/archive/README.md",
+      "word_sha256": "1be2b8eebc1456b04b4c64d39694b8333a2635b49f5a16a6ccaa38ebda2846cb"
+    },
+    {
+      "task_id": "A-05",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/A-05/archive/README.md",
+      "word_sha256": "ac0c750a709d2e799d04be401636e32c8a9347495dcce9146d160212a10b105e"
+    },
+    {
+      "task_id": "E-05",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/E-05/archive/README.md",
+      "word_sha256": "3fc39f89df7445fa7883b70cde8ca108082e6a2098c3b5361678910bb3160af0"
+    },
+    {
+      "task_id": "G-04",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/G-04/archive/README.md",
+      "word_sha256": "6fb31dde45463da4d36b57597b362ac47f43a863d7395246c3c42d6ca4879ed5"
+    },
+    {
+      "task_id": "B-03",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/B-03/archive/README.md",
+      "word_sha256": "adce9e0622488eb64f524c5e1452be5252db133ad4f03660a1d11994d62c7643"
+    },
+    {
+      "task_id": "E-06",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/E-06/archive/README.md",
+      "word_sha256": "ffd3ba0efba74596d0168a6b4eaf81125b377c443d5956ade0e35d8fe1f0a1cd"
+    },
+    {
+      "task_id": "A-04",
+      "business_status": "BLOCKED_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/A-04/archive/README.md",
+      "word_sha256": "2df05e249b2c6d3026bce84579f44e87e033b5bad7e027940b0d76c2a8b61912"
+    },
+    {
+      "task_id": "A-06",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/A-06/archive/README.md",
+      "word_sha256": "1326d0022d9adaaddf29d95aef2cde1b223d22445b84be2cd95958d7d6742799"
+    },
+    {
+      "task_id": "W-02",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/W-02/archive/README.md",
+      "word_sha256": "ad14ecf03fe0318bff838a74d40b26a71f463ea6f9496568e073d6461496150d"
+    },
+    {
+      "task_id": "W-03",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/W-03/archive/README.md",
+      "word_sha256": "90424977e08a7ca04841770ef400ec9b05ec1283a1148e86f0a51907249cf3af"
+    },
+    {
+      "task_id": "W-04",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/W-04/archive/README.md",
+      "word_sha256": "a29304567208fe216e65642d83847ea70e2171613a27e2e8c51250db0ffa5442"
+    },
+    {
+      "task_id": "U12-01",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U12-01/archive/README.md",
+      "word_sha256": "2ce2f57c81853d2d22d5431128dc0e12e748c719ac1633a030b37c6c6d2b371c"
+    },
+    {
+      "task_id": "U12-02",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U12-02/archive/README.md",
+      "word_sha256": "1d3b88e3ec7f861c1adf08179a80cef02bed3854797204ff8ac445234a77af33"
+    },
+    {
+      "task_id": "U12-03",
+      "business_status": "IN_REVIEW",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/U12-03/archive/README.md",
+      "word_sha256": "694bfd2d038d3243b7375756928dd53ce854c5f8c4b8b2037d44f922fb527bbb"
+    },
+    {
+      "task_id": "U12-04",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U12-04/archive/README.md",
+      "word_sha256": "381db30f603cb99ca46aa7fd3feac20c0ce77be7ca0da9bf0101fb4b3380a34a"
+    },
+    {
+      "task_id": "U12-05",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U12-05/archive/README.md",
+      "word_sha256": "e64bf7a51e48c3ef094728c7910313997bfe88fe74f0906d5d7e06db1c92177c"
+    },
+    {
+      "task_id": "U12-06",
+      "business_status": "IN_PROGRESS",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U12-06/archive/README.md",
+      "word_sha256": "0af6079646dcd74b8c14c968eab4ddefeb311e47de87b9adb4a8cb98f46b80a3"
+    },
+    {
+      "task_id": "U12-07",
+      "business_status": "DONE",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U12-07/archive/README.md",
+      "word_sha256": "ab3acc1284794ab842fd0577317c5d414b3e128803f81474b59488e413773b5f"
+    },
+    {
+      "task_id": "U12-08",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/U12-08/archive/README.md",
+      "word_sha256": "0c75ae86fa63988be46e3781a96dfcff29ab93359c011d3820d885a94dcb99f8"
+    },
+    {
+      "task_id": "U12-09",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U12-09/archive/README.md",
+      "word_sha256": "ac5bda93c258126c4bd5dcd206cfa94c17b0f073e7d029c5c6f03d4849c74d65"
+    },
+    {
+      "task_id": "U12-10",
+      "business_status": "WAIT_DEP",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/U12-10/archive/README.md",
+      "word_sha256": "ed79d06b3b75a2e900cacef96ca51ad3daf1e5779a1b8e5d8d44e394f5539805"
+    },
+    {
+      "task_id": "U12-11",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "word_source_links": 4,
+      "archive_disposition": "agent/tasks/U12-11/archive/README.md",
+      "word_sha256": "e9099737ce9a36874a6e6be11bf34f40d52e4f704edf5203e123de5fb8b520c8"
+    },
+    {
+      "task_id": "U12-12",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "word_source_links": 5,
+      "archive_disposition": "agent/tasks/U12-12/archive/README.md",
+      "word_sha256": "4e404e9f508f3ed99fc74bd11eb5a3c8b5374306c537ea7c94496d64b6fe4f6b"
+    }
+  ],
+  "runtime_evidence": "Migration Unity/TD/media runs retained; final refresh changes only documents and tools",
+  "business_gaps": "Remain assigned to their existing task packages; normalization does not mark them DONE"
+}

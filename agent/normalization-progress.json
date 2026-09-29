@@ -73,21 +73,21 @@
     "U12-12"
   ],
   "remaining_packages": [],
-  "root_migration_complete": false,
+  "root_migration_complete": true,
   "findings": [
     {
       "task_id": "F-01",
       "id": "F01-N01",
       "status": "FIXED",
       "description": "合同入口F-05状态与注册表不一致",
-      "source": "02-技术研发/05-通信协议/contracts/README.md"
+      "source": "agent/modules/05-通信协议/contracts/README.md"
     },
     {
       "task_id": "F-01",
       "id": "F01-N02",
-      "status": "OPEN_PROJECT_MIGRATION",
-      "description": "根目录旧业务目录仍待逐包归属与最终迁移",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "F-02",
@@ -101,14 +101,14 @@
       "id": "F02-N02",
       "status": "FIXED_CURRENT_USAGE",
       "description": "旧粗相位关系题和常识累计题由U12-02步骤实例及片段变化候选替代",
-      "source": "02-技术研发/srp_step_measurement/README.md"
+      "source": "agent/modules/srp_step_measurement/README.md"
     },
     {
       "task_id": "F-02",
       "id": "F02-N03",
       "status": "OPEN_HUMAN_REVIEW",
       "description": "历史验收仅模型候选审查，所读来源未取得F-02真实第二人签署；责任由团队总监安排",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
     },
     {
       "task_id": "F-03",
@@ -122,14 +122,14 @@
       "id": "F03-N02",
       "status": "FIXED",
       "description": "现行Unity协调入口F-03 READY与签收DONE矛盾已修正",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md"
     },
     {
       "task_id": "F-03",
       "id": "F03-N03",
       "status": "FIXED",
       "description": "未授权构建已被拦截但探针输出意外完成，已改为按实际结果报告并完整复测",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs"
     },
     {
       "task_id": "F-03",
@@ -157,14 +157,14 @@
       "id": "F04-N03",
       "status": "FIXED",
       "description": "已签收静态基线与壳内未启用能力不再表述为项目任务未完成",
-      "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/README.md"
+      "source": "agent/modules/03-TouchDesigner/f04_readonly_console/README.md"
     },
     {
       "task_id": "F-04",
       "id": "F04-N04",
       "status": "OPEN_DOWNSTREAM_VISUAL_REVIEW",
       "description": "历史呼吸页说明覆盖曲线，需在T-01检查当前布局；本轮主机门不关闭画面可读性问题",
-      "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
+      "source": "agent/modules/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
     },
     {
       "task_id": "F-05",
@@ -178,21 +178,21 @@
       "id": "F05-N02",
       "status": "FIXED",
       "description": "当前接口基线和迁移指南已按真实签收修正DONE及下游范围",
-      "source": "02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md"
+      "source": "agent/modules/05-通信协议/contracts/F-05_v2.2接口对齐基线.md"
     },
     {
       "task_id": "F-05",
       "id": "F05-N03",
       "status": "FIXED",
       "description": "合同入口兼容规则明确限定v2.1，不再误读为全版本拒绝v2.2",
-      "source": "02-技术研发/05-通信协议/contracts/README.md"
+      "source": "agent/modules/05-通信协议/contracts/README.md"
     },
     {
       "task_id": "G-01",
       "id": "G01-N01",
       "status": "FIXED",
       "description": "步骤五入口已按真实签收DONE与G-05责任范围订正",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/00_第5步计划.md"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/00_第5步计划.md"
     },
     {
       "task_id": "G-01",
@@ -213,7 +213,7 @@
       "id": "G01-N04",
       "status": "OPEN_EXTERNAL_OWNER_AND_EVIDENCE",
       "description": "G-05未领取，真实角色、机构许可与现场占用/值班能力尚无回执，由团队总监安排真实负责人",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "task_id": "G-02",
@@ -234,14 +234,14 @@
       "id": "G02-N03",
       "status": "FIXED",
       "description": "当前资产计数与本轮233/259对齐，DONE与外部责任分开",
-      "source": "02-技术研发/07-数据治理/README.md"
+      "source": "agent/modules/07-数据治理/README.md"
     },
     {
       "task_id": "G-02",
       "id": "G02-N04",
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "P-01仅在核心start登记暴露，新版条件教学接入与退出阻断由P-01/U12-11完成，当前尚未正式闭环",
-      "source": "02-技术研发/07-数据治理/docs/downstream_contracts.md"
+      "source": "agent/modules/07-数据治理/docs/downstream_contracts.md"
     },
     {
       "task_id": "P-01",
@@ -255,14 +255,14 @@
       "id": "P01-N02",
       "status": "FIXED",
       "description": "当前入口按F-05/P-02实际DONE、固定顺序范围和有效目录订正",
-      "source": "02-技术研发/srp_session_core/README.md"
+      "source": "agent/modules/srp_session_core/README.md"
     },
     {
       "task_id": "P-01",
       "id": "P01-N03",
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "核心前条件教学尚未接入；P-01/U12-11冻结后登记首次暴露并补退出再预约负测，本轮未关闭",
-      "source": "02-技术研发/srp_session_core/README.md"
+      "source": "agent/modules/srp_session_core/README.md"
     },
     {
       "task_id": "P-02",
@@ -276,7 +276,7 @@
       "id": "P02-N02",
       "status": "FIXED",
       "description": "新归档目录LF规则及实际字节哈希与重放验证通过",
-      "source": "02-技术研发/tests/session_store/test_golden_archive.py"
+      "source": "agent/modules/tests/session_store/test_golden_archive.py"
     },
     {
       "task_id": "P-02",
@@ -297,7 +297,7 @@
       "id": "U01-N01",
       "status": "FIXED",
       "description": "Editor证据写入本包runtime，不再覆盖历史签收目录",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"
     },
     {
       "task_id": "U-01",
@@ -325,21 +325,21 @@
       "id": "U02-N01",
       "status": "FIXED",
       "description": "Recovery按模块/会话边界重置，锁定换段保持；新增生命周期回归通过",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
     },
     {
       "task_id": "U-02",
       "id": "U02-N02",
       "status": "FIXED",
       "description": "四天气合法空步骤与F-05对齐；非空缺实例仍拒绝",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
     },
     {
       "task_id": "U-02",
       "id": "U02-N03",
       "status": "FIXED",
       "description": "开发驱动条件编译，构建取得F-03作用域授权；正式门未放宽",
-      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
+      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
     },
     {
       "task_id": "U-02",
@@ -556,21 +556,21 @@
       "id": "D01-N02",
       "status": "OPEN_REAL_HARDWARE",
       "description": "缺实际驱动、Windows兼容与30分钟真机记录，不能关闭UP-06/M06",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
     },
     {
       "task_id": "D-01",
       "id": "D01-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "岗位P-HARDWARE未落实实际领取人，领取与输入冻结须由治理流程完成",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "task_id": "D-02",
       "id": "D02-N01",
       "status": "FIXED_NATIVE_BATCH",
       "description": "共享呼吸帧原生样本丢失已补批次与时间戳，旧均值仅作显示",
-      "source": "02-技术研发/01-数据采集/frame_clock.py"
+      "source": "agent/modules/01-数据采集/frame_clock.py"
     },
     {
       "task_id": "D-02",
@@ -584,7 +584,7 @@
       "id": "D02-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "P-HARDWARE尚未落实实际领取人，不代填签收",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "task_id": "D-02",
@@ -598,7 +598,7 @@
       "id": "S01-N01",
       "status": "FIXED_LINK_QUALITY_CONFUSION",
       "description": "启动前已连接和连接即good已修复，质量保持unknown",
-      "source": "02-技术研发/01-数据采集/device_manager.py"
+      "source": "agent/modules/01-数据采集/device_manager.py"
     },
     {
       "task_id": "S-01",
@@ -612,7 +612,7 @@
       "id": "S01-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "实际领取人为空；阈值和精度需前测冻结，不代填验收",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "task_id": "S-02",
@@ -1004,7 +1004,7 @@
       "id": "I01-N04",
       "status": "OPEN_TEACHING_EXPOSURE_INTEGRATION",
       "description": "核心start登记不能覆盖教学后退出，需P-01/U12-11完成首次条件教学前登记",
-      "source": "02-技术研发/srp_session_core/README.md"
+      "source": "agent/modules/srp_session_core/README.md"
     },
     {
       "task_id": "Q-01",
@@ -1249,7 +1249,7 @@
       "id": "E03-N01",
       "status": "FIXED_LEVEL_C_ACTIVITY_SCOPE",
       "description": "Level C资格行补齐B-01实际采集，仍PENDING_EXTERNAL；在研输入冻结未刷新并留影响记录",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
     },
     {
       "task_id": "E-03",
@@ -1576,9 +1576,9 @@
     {
       "task_id": "W-04",
       "id": "W04-N03",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "逐包归档已执行，共享工程媒体治理等业务目录尚未整体迁入双层",
-      "source": "agent/tasks/W-04/evidence/consumer-impact.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-01",
@@ -1604,9 +1604,9 @@
     {
       "task_id": "U12-01",
       "id": "U1201-N04",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "共享治理、工程、资料等业务目录尚未整体迁入human/agent",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-02",
@@ -1632,9 +1632,9 @@
     {
       "task_id": "U12-02",
       "id": "U1202-N04",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "共享运行模块及资料尚未整体迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-03",
@@ -1660,9 +1660,9 @@
     {
       "task_id": "U12-03",
       "id": "U1203-N04",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "旧根业务目录尚未整体迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-04",
@@ -1695,9 +1695,9 @@
     {
       "task_id": "U12-04",
       "id": "U1204-N05",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "共享模块与旧根业务目录尚未整体迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-05",
@@ -1723,9 +1723,9 @@
     {
       "task_id": "U12-05",
       "id": "U1205-N04",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "共享治理与旧根业务目录仍未整体迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-06",
@@ -1758,9 +1758,9 @@
     {
       "task_id": "U12-06",
       "id": "U1206-N05",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "共享模块与旧根业务目录尚未整体迁入人类/Agent双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-07",
@@ -1793,9 +1793,9 @@
     {
       "task_id": "U12-07",
       "id": "U1207-N04",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "根共享治理及工程尚未全部迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-08",
@@ -1821,9 +1821,9 @@
     {
       "task_id": "U12-08",
       "id": "U1208-N04",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "共享业务与旧根目录尚未整体迁入人类和Agent双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-09",
@@ -1856,9 +1856,9 @@
     {
       "task_id": "U12-09",
       "id": "U1209-N05",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "旧根业务与共享模块未整体迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-10",
@@ -1891,9 +1891,9 @@
     {
       "task_id": "U12-10",
       "id": "U1210-N05",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "旧根业务与共享模块尚未整体迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-11",
@@ -1926,9 +1926,9 @@
     {
       "task_id": "U12-11",
       "id": "U1211-N05",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "旧根业务与共享模块尚未整体迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     },
     {
       "task_id": "U12-12",
@@ -1961,9 +1961,9 @@
     {
       "task_id": "U12-12",
       "id": "U1212-N05",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "逐包71/71不替代旧业务目录整体迁移和运行验证",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     }
   ]
 }

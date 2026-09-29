@@ -16,7 +16,7 @@
 
 ## 当前队列
 
-队列由任务注册表顺序决定；当前规范化权威为[normalization-progress.json](normalization-progress.json)，业务状态仍读原注册表。本轮累计71/71包，余0，下一项根目录整体迁移；仍须完成旧业务目录物理迁移与运行引用修复，不能用逐包完成替代整体目标。
+队列由任务注册表顺序决定；当前规范化权威为[normalization-progress.json](normalization-progress.json)，业务状态仍读原注册表。71/71包已完成整理，19/19项根目录物理迁移与运行引用修复已完成；各包Word和串联Word均由当前Agent来源刷新并审阅。四项完成证据见[整体审计](evidence/normalization-completion-audit.json)。下文保留逐包推进时的历史记录，不代表当前未完成队列；业务缺口仍由原任务承担。
 
 U12-12四原候选实际归档，三方案八维、十二对象工作表与W-04八对象对齐，TASK两链接前缀订正。77项专项及根635通过；真实结果、范围关闭、作者/权利人批准、成品及独立第二人仍缺，WAIT_DEP_EXTERNAL和冻结成员输入保持。
 

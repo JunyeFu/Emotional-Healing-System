@@ -25,7 +25,7 @@ py -3.14 agent/tasks/U-01/execution/verify.py
 
 verify.py使用D:/UnityEngine/6000.4.9f1/Editor/Unity.exe，顺序运行14项EditMode、3项PlayMode、SRP.U01.Editor.U01EvidenceBuilder.Generate和新旧证据校验。Unity工程不能同时被另一个Editor进程占用。新结果不写历史签收目录。
 
-Editor生成器必须位于Assets/U01/Editor以保持程序集关系；最终根目录迁移将连同Unity工程整体移动，任务层只持有运行入口与证据。
+Editor生成器必须位于Assets/U01/Editor以保持程序集关系；根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。
 
 ## 上下游交接
 

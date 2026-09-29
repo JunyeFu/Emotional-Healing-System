@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "累计60/71包规范化，余11，下一U12-02。U12-01原业务DONE范围不变；根目录整体物理迁移和运行引用修复尚未完成。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -105,12 +106,12 @@
     },
     {
       "id": "U1201-N04",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "共享治理、工程、资料等业务目录尚未整体迁入human/agent",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     }
   ],
-  "next_task": "U12-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "当前主线与消费者交接",

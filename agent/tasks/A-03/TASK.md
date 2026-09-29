@@ -34,7 +34,7 @@ py -3.14 agent/tasks/A-03/execution/verify.py
 py -3.14 agent/tasks/A-03/execution/reproduce.py
 ```
 
-`inputs/`保存真实来源与迁移依据，`execution/`保存核验/复现脚本，`evidence/`保存本轮结果与消费者影响，`outputs/`保存当前事实和Word源，`archive/`保存有保留理由的旧资料。共享计分代码保持模块归属，随后参加整体根目录迁移；签署、历史报告和已领取快照不移动或覆盖。
+`inputs/`保存真实来源与迁移依据，`execution/`保存核验/复现脚本，`evidence/`保存本轮结果与消费者影响，`outputs/`保存当前事实和Word源，`archive/`保存有保留理由的旧资料。共享计分代码保持模块归属，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变；签署、历史报告和已领取快照不移动或覆盖。
 
 ## 必要技能与国内资料
 

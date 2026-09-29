@@ -3,32 +3,137 @@
   "title": "U12 11 正式研究参数与资源冻结审阅",
   "review_date": "2026-09-29",
   "conclusion": "U12-11仍WAIT_DEP_EXTERNAL、未领取未签署。四原候选实际归档，15项冻结材料与当前空索引已对齐，G-03交接订正；真实盲态校准、参数、机构/资源回执和第二人仍缺，本轮不冻结N或界值，不放行正式研究。",
-  "historical_acceptance": {"reviewer": "未指定", "date": "未签署", "commit": null, "method": "本轮为作者Agent整理和软件复测，没有本包独立复核或真实第二人签收，不代填机构结论。"},
+  "historical_acceptance": {
+    "reviewer": "未指定",
+    "date": "未签署",
+    "commit": null,
+    "method": "本轮为作者Agent整理和软件复测，没有本包独立复核或真实第二人签收，不代填机构结论。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["固定任务2人日，依赖G-05/E-03/U12-09/A-03-CAL，均未DONE。15冻结全部PENDING，CAL未交付，五阶段一资格无回执；原业务状态及在研输入不改。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1冻结输入、候选与来源可追溯；AC2必需字段和真实签署齐备，最终N/界值消费已完成CAL；AC3独立复核与第二人绑定同版证据，不代签外部条件。", "执行为真实来源收齐、盲态参数/资源裁定、签署交G-03预注册。现有空索引和作者软件复测不满足正式冻结验收。"]},
-    {"heading": "实际交付", "paragraphs": ["TASK及五目录、15项交付映射、只读现状生成器、当前参数/资格/依赖观察、复测入口与来源。四旧候选移入archive，三原件字节及snapshot保持；旧未注册入口改导航。", "G-03三份交付分工接本包当前说明，沿用其既有空索引而不新增批准台账；协议、SAP、研究数值、签署和成员分发保持。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["E-03真实盲态技术关闭后交A-03-CAL，再交U12-11数值/资源裁定，G-03取得同版预注册。技术关闭、SAP候选、研究冻结与外部回执分别交付，E-03不反向等待CAL。", "48/192/240是旧锚点，0.075/100/0.9及180秒是候选；真实N按随机分配，不按完整者补格。关注差异在PANAS原量尺上独立事前论证，不能从N或最有利条件差倒推。"]},
-    {"heading": "验证与结果", "paragraphs": ["39项专项1.00秒通过，覆盖原件、15项同源索引、六空参数、候选分离、REAL/CAL顺序、五活动资格和现有治理拒绝正式开关/N/等效/删CAL负测，复用G-03/E-03/A-03检查。根回归及协议/治理/注册/分发实际结果见verification.json。", "工具只读索引，不验证真实审批或每项冻结值。正式采集仍false，CAL/技术关闭未交付，真实参数冻结、独立复核及第二人均未运行。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["首轮1 failed/38 passed，本轮TASK映射链接漏outputs/前缀，修实际导航并保留初始日志；复测不放宽断言。初始查本包Agent入口尚不存在，随后建立固定结构，不当成旧实现已交付。", "G-05整体13项含阶段三与核心按活动资格的收尾冲突保留待治理裁定，不删依赖或伪造阶段三回执；候选功效网格未覆盖正式MI与联合护栏，不用它代替真实可行性。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["inputs只引用权威与上游，execution存现状读取和测试，evidence存失败/复测及影响，outputs存映射/交接/观察和Word源，archive存四原候选。没有旧真实实现或冻结报告可清理，不虚构归档。", "沿用G-03空索引、原协议/机构来源与历史签收，过期候选入口仅留导航。共享模块和整个旧业务目录仍待根迁移。"]},
-    {"heading": "上下游交接", "paragraphs": ["E-03交真实Level C技术关闭，A-03-CAL交盲态版本和证据，U12-09交真实一致性，G-05交对应批准/专机/期限/工位回执。数值裁定需真实统计与研究责任人，教学时序和首次教学暴露由U12-03/X-01/P-01/U12-06落实。", "同版冻结交G-03预注册、B-02运行和A-05/U12-10分析规则；800秒仅核心，资源还需安装/QC/量表/教学/清理和实际排班。有效PANAS不因PF/SCCI失败隐去，等效默认关闭，可选扩展独立处理。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["统计、研究、工程、数据/现场、机构和独立第二人须在实际材料中实名，目前未指定；任务路由不当作个人领取。Agent可计算整理，不能填写真实机构批准、N决定或第二人PASS。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计70/71包规范化，余1，下一U12-12。U12-11正式冻结仍待真实上游与签署；整体根目录双层物理迁移尚未完成。"]},
-    {"heading": "审阅来源", "paragraphs": ["活动注册、研究1.2 required_freezes、G-03空索引和分工、A-03里程碑及真实缺口、E-03技术关闭、G-05资格矩阵、U12-04候选功效、U12-06/U12-09接线状态和B-02/U12-10交接。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务2人日，依赖G-05/E-03/U12-09/A-03-CAL，均未DONE。15冻结全部PENDING，CAL未交付，五阶段一资格无回执；原业务状态及在研输入不改。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1冻结输入、候选与来源可追溯；AC2必需字段和真实签署齐备，最终N/界值消费已完成CAL；AC3独立复核与第二人绑定同版证据，不代签外部条件。",
+        "执行为真实来源收齐、盲态参数/资源裁定、签署交G-03预注册。现有空索引和作者软件复测不满足正式冻结验收。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK及五目录、15项交付映射、只读现状生成器、当前参数/资格/依赖观察、复测入口与来源。四旧候选移入archive，三原件字节及snapshot保持；旧未注册入口改导航。",
+        "G-03三份交付分工接本包当前说明，沿用其既有空索引而不新增批准台账；协议、SAP、研究数值、签署和成员分发保持。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "E-03真实盲态技术关闭后交A-03-CAL，再交U12-11数值/资源裁定，G-03取得同版预注册。技术关闭、SAP候选、研究冻结与外部回执分别交付，E-03不反向等待CAL。",
+        "48/192/240是旧锚点，0.075/100/0.9及180秒是候选；真实N按随机分配，不按完整者补格。关注差异在PANAS原量尺上独立事前论证，不能从N或最有利条件差倒推。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "39项专项1.00秒通过，覆盖原件、15项同源索引、六空参数、候选分离、REAL/CAL顺序、五活动资格和现有治理拒绝正式开关/N/等效/删CAL负测，复用G-03/E-03/A-03检查。根回归及协议/治理/注册/分发实际结果见verification.json。",
+        "工具只读索引，不验证真实审批或每项冻结值。正式采集仍false，CAL/技术关闭未交付，真实参数冻结、独立复核及第二人均未运行。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "首轮1 failed/38 passed，本轮TASK映射链接漏outputs/前缀，修实际导航并保留初始日志；复测不放宽断言。初始查本包Agent入口尚不存在，随后建立固定结构，不当成旧实现已交付。",
+        "G-05整体13项含阶段三与核心按活动资格的收尾冲突保留待治理裁定，不删依赖或伪造阶段三回执；候选功效网格未覆盖正式MI与联合护栏，不用它代替真实可行性。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "inputs只引用权威与上游，execution存现状读取和测试，evidence存失败/复测及影响，outputs存映射/交接/观察和Word源，archive存四原候选。没有旧真实实现或冻结报告可清理，不虚构归档。",
+        "沿用G-03空索引、原协议/机构来源与历史签收，过期候选入口仅留导航。共享模块和整个旧业务目录仍待根迁移。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "E-03交真实Level C技术关闭，A-03-CAL交盲态版本和证据，U12-09交真实一致性，G-05交对应批准/专机/期限/工位回执。数值裁定需真实统计与研究责任人，教学时序和首次教学暴露由U12-03/X-01/P-01/U12-06落实。",
+        "同版冻结交G-03预注册、B-02运行和A-05/U12-10分析规则；800秒仅核心，资源还需安装/QC/量表/教学/清理和实际排班。有效PANAS不因PF/SCCI失败隐去，等效默认关闭，可选扩展独立处理。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "统计、研究、工程、数据/现场、机构和独立第二人须在实际材料中实名，目前未指定；任务路由不当作个人领取。Agent可计算整理，不能填写真实机构批准、N决定或第二人PASS。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "活动注册、研究1.2 required_freezes、G-03空索引和分工、A-03里程碑及真实缺口、E-03技术关闭、G-05资格矩阵、U12-04候选功效、U12-06/U12-09接线状态和B-02/U12-10交接。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "U1211-N01", "status": "FIXED_ORIGINAL_ARCHIVE_AND_CURRENT_ENTRY", "description": "四旧候选实际归档，原字节/输入ID保留，旧未注册入口改活动导航", "source": "agent/tasks/U12-11/archive/README.md"},
-    {"id": "U1211-N02", "status": "DELIVERED_FIFTEEN_ITEM_HANDOFF_NOT_APPROVAL", "description": "15项材料与G-03既有空索引对齐，不建批准台账、不冻结候选数值", "source": "agent/tasks/U12-11/outputs/freeze-handoff.md"},
-    {"id": "U1211-N03", "status": "FIXED_NAVIGATION_AND_RETESTED", "description": "TASK映射漏outputs前缀已修，失败日志保留，G-03消费当前交接", "source": "agent/tasks/U12-11/evidence/consumer-impact.md"},
-    {"id": "U1211-N04", "status": "OPEN_REAL_CAL_PARAMETERS_RESOURCES_AND_SIGNOFF", "description": "真实CAL/N/界值/规则、机构和资源、独立第二人未交付；整体与活动资格冲突待裁定", "source": "agent/tasks/U12-11/outputs/current-freeze.md"},
-    {"id": "U1211-N05", "status": "OPEN_ROOT_MIGRATION", "description": "旧根业务与共享模块尚未整体迁入双层", "source": "agent/normalization.md"}
+    {
+      "id": "U1211-N01",
+      "status": "FIXED_ORIGINAL_ARCHIVE_AND_CURRENT_ENTRY",
+      "description": "四旧候选实际归档，原字节/输入ID保留，旧未注册入口改活动导航",
+      "source": "agent/tasks/U12-11/archive/README.md"
+    },
+    {
+      "id": "U1211-N02",
+      "status": "DELIVERED_FIFTEEN_ITEM_HANDOFF_NOT_APPROVAL",
+      "description": "15项材料与G-03既有空索引对齐，不建批准台账、不冻结候选数值",
+      "source": "agent/tasks/U12-11/outputs/freeze-handoff.md"
+    },
+    {
+      "id": "U1211-N03",
+      "status": "FIXED_NAVIGATION_AND_RETESTED",
+      "description": "TASK映射漏outputs前缀已修，失败日志保留，G-03消费当前交接",
+      "source": "agent/tasks/U12-11/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1211-N04",
+      "status": "OPEN_REAL_CAL_PARAMETERS_RESOURCES_AND_SIGNOFF",
+      "description": "真实CAL/N/界值/规则、机构和资源、独立第二人未交付；整体与活动资格冲突待裁定",
+      "source": "agent/tasks/U12-11/outputs/current-freeze.md"
+    },
+    {
+      "id": "U1211-N05",
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
+    }
   ],
-  "next_task": "U12-12",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前研究冻结交接", "path": "agent/tasks/U12-11/outputs/current-freeze.md"},
-    {"label": "十五项冻结材料映射", "path": "agent/tasks/U12-11/outputs/freeze-handoff.md"},
-    {"label": "现行空参数与资格观察", "path": "agent/tasks/U12-11/outputs/current-freeze.json"},
-    {"label": "本轮软件验证", "path": "agent/tasks/U12-11/evidence/verification.json"}
+    {
+      "label": "当前研究冻结交接",
+      "path": "agent/tasks/U12-11/outputs/current-freeze.md"
+    },
+    {
+      "label": "十五项冻结材料映射",
+      "path": "agent/tasks/U12-11/outputs/freeze-handoff.md"
+    },
+    {
+      "label": "现行空参数与资格观察",
+      "path": "agent/tasks/U12-11/outputs/current-freeze.json"
+    },
+    {
+      "label": "本轮软件验证",
+      "path": "agent/tasks/U12-11/evidence/verification.json"
+    }
   ]
 }

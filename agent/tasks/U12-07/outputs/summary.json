@@ -3,33 +3,141 @@
   "title": "U12 07 中立方法与结果解释规格审阅",
   "review_date": "2026-09-29",
   "conclusion": "U12-07历史三件套保持DONE及原签收范围。当前方法、11空表和两向结果解释规则已按PANAS主比较修订，旧原件实际归档、W-01/W-02真实消费者同步；新规格非论文正文，新复核和真实签收仍待完成。",
-  "historical_acceptance": {"reviewer": "傅钧烨", "date": "2026-09-11", "commit": "28008f5a4c9963a32488ef32b61dc6ad055562de", "method": "真实第二人PASS仅原三件套、来源绑定和阶段三边界；本轮修订不继承原签名，作者软件检查不冒称独立复核。"},
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-11",
+    "commit": "28008f5a4c9963a32488ef32b61dc6ad055562de",
+    "method": "真实第二人PASS仅原三件套、来源绑定和阶段三边界；本轮修订不继承原签名，作者软件检查不冒称独立复核。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["固定任务3人日，依赖U12-01|W-01；现有领取人Codex(Grip)/小彬、审核人傅钧烨保留。历史候选28008f5和签署b343839不改，真实数据及主稿未交付。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1原输入/版本/来源可核验；AC2方法规格、空表和解释规则不填造数据，不等未开展阶段三，两向结果均有准确边界；AC3新候选、独立复核、真人签收分别绑定。", "过程为原件核对与归档、现行研究与测量对齐、消费者和复测、Agent事实到单包及串联Word；不将写作候选当正式研究冻结。"]},
-    {"heading": "实际交付", "paragraphs": ["TASK和五目录，当前方法规格、11表字段、19类报告决策及结构化状态；六原文实际归档，独立报告保留索引并复制，四候选输入实际归档。", "W-01/W-02当前入口、W-02来源/测试及A-05真实来源已修正，关联Word同步生成。交付是作者决策规格，不是AI第一稿，不供直接复制投稿。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["RQ1改以基线校正PANAS为主，机会PF、理解负担和设计知识分别解释；原生不等于隐藏，绑定天气/结构不能拆独立因果效果。", "教学在PANAS前测后，180秒教学与800秒核心均区分候选/实际证据。理解题采用U12-02步骤实例及锁定算法，不复用旧粗相位0–8计分。"]},
-    {"heading": "验证与结果", "paragraphs": ["最终95项专项14.00秒、根635项47.64秒通过，协议/治理/71注册及5分发61快照通过。包含A-05来源与既有软件复测，检查搬迁字节、六输入/四输出历史身份、签收原文、11表及双向/缺失/护栏/等效规则、冻结对象和实际消费者；两历史输出政策描述差异单独记录。", "本轮无真实分析、主稿、Unity/TD运行、新独立复核或真人修订签收；软件结构通过只支持当前规范化。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧RQ功能优先、强制门序、粗相位计分和无PANAS空表已从当前消费者隔离，原签署文字不改。情绪CI负/正/跨零分别解释，功能或SCCI失败不抹掉有效主要比较；确认性等效默认关闭。", "首轮2失败/83通过、第二轮1失败/84通过：修二进制比较工具后，确认原方法稿/来源表无末尾LF，历史哈希未依声明补LF。六输入依声明、四输出依实际算法吻合，Git正文签收后未变；保留原件、两轮失败和精确政策差异，不假称声明全部吻合。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["当前规格在outputs，检查工具在execution，真实日志在evidence，索引在inputs，旧稿及候选在archive。原独立报告索引和真实签署保留，历史sources字节/规范化表述差异注明。", "在研/复核/可领取冻结输入不刷新，业务状态及注册不变；根共享工程与治理目录整体迁移仍未完成。"]},
-    {"heading": "上下游交接", "paragraphs": ["U12-02交真实步骤测量，U12-03教学与时序，U12-04/A-03统计与冻结，U/V/I交实际呈现与完整链。W-01真实全文、A-05同版数字图表和A-06实际范围仍未齐。", "W-02消费当前三个规格，U12-10消费结果分类规则；真实作者写主稿，W-03核生成式工具政策与真实投稿授权。实际部分扩展仍须披露，不等未开展阶段三。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["原独立Agent和傅钧烨签收仅原候选；当前规格新复核、新真人签收尚未完成。正式N/界值、研究冻结、数据权限和真实结果不能由写作模板代填，DONE不扩大。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["本轮规范化66/71、余5，下一U12-08。研究边界和原签收保留，新规格待复核；根目录物理迁移和运行引用修复仍需全部包之后完成。"]},
-    {"heading": "审阅来源", "paragraphs": ["注册表、研究v1.2、原签收/原稿/四候选输入、当前步骤测量/教学/统计、A-05/A-06、W-01/W-02/W-03交接。没有新增文献搜索或声称已取得真实研究/投稿结果。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务3人日，依赖U12-01|W-01；现有领取人Codex(Grip)/小彬、审核人傅钧烨保留。历史候选28008f5和签署b343839不改，真实数据及主稿未交付。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1原输入/版本/来源可核验；AC2方法规格、空表和解释规则不填造数据，不等未开展阶段三，两向结果均有准确边界；AC3新候选、独立复核、真人签收分别绑定。",
+        "过程为原件核对与归档、现行研究与测量对齐、消费者和复测、Agent事实到单包及串联Word；不将写作候选当正式研究冻结。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK和五目录，当前方法规格、11表字段、19类报告决策及结构化状态；六原文实际归档，独立报告保留索引并复制，四候选输入实际归档。",
+        "W-01/W-02当前入口、W-02来源/测试及A-05真实来源已修正，关联Word同步生成。交付是作者决策规格，不是AI第一稿，不供直接复制投稿。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "RQ1改以基线校正PANAS为主，机会PF、理解负担和设计知识分别解释；原生不等于隐藏，绑定天气/结构不能拆独立因果效果。",
+        "教学在PANAS前测后，180秒教学与800秒核心均区分候选/实际证据。理解题采用U12-02步骤实例及锁定算法，不复用旧粗相位0–8计分。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "最终95项专项14.00秒、根635项47.64秒通过，协议/治理/71注册及5分发61快照通过。包含A-05来源与既有软件复测，检查搬迁字节、六输入/四输出历史身份、签收原文、11表及双向/缺失/护栏/等效规则、冻结对象和实际消费者；两历史输出政策描述差异单独记录。",
+        "本轮无真实分析、主稿、Unity/TD运行、新独立复核或真人修订签收；软件结构通过只支持当前规范化。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧RQ功能优先、强制门序、粗相位计分和无PANAS空表已从当前消费者隔离，原签署文字不改。情绪CI负/正/跨零分别解释，功能或SCCI失败不抹掉有效主要比较；确认性等效默认关闭。",
+        "首轮2失败/83通过、第二轮1失败/84通过：修二进制比较工具后，确认原方法稿/来源表无末尾LF，历史哈希未依声明补LF。六输入依声明、四输出依实际算法吻合，Git正文签收后未变；保留原件、两轮失败和精确政策差异，不假称声明全部吻合。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "当前规格在outputs，检查工具在execution，真实日志在evidence，索引在inputs，旧稿及候选在archive。原独立报告索引和真实签署保留，历史sources字节/规范化表述差异注明。",
+        "在研/复核/可领取冻结输入不刷新，业务状态及注册不变；根共享工程与治理目录整体迁移仍未完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "U12-02交真实步骤测量，U12-03教学与时序，U12-04/A-03统计与冻结，U/V/I交实际呈现与完整链。W-01真实全文、A-05同版数字图表和A-06实际范围仍未齐。",
+        "W-02消费当前三个规格，U12-10消费结果分类规则；真实作者写主稿，W-03核生成式工具政策与真实投稿授权。实际部分扩展仍须披露，不等未开展阶段三。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原独立Agent和傅钧烨签收仅原候选；当前规格新复核、新真人签收尚未完成。正式N/界值、研究冻结、数据权限和真实结果不能由写作模板代填，DONE不扩大。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "注册表、研究v1.2、原签收/原稿/四候选输入、当前步骤测量/教学/统计、A-05/A-06、W-01/W-02/W-03交接。没有新增文献搜索或声称已取得真实研究/投稿结果。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "U1207-N01", "status": "FIXED_CURRENT_METHOD_TABLES_AND_RULES", "description": "旧RQ门序和缺PANAS表由当前方法、11表和两向规则替代，签收原文实际归档", "source": "agent/tasks/U12-07/outputs/current-method.md"},
-    {"id": "U1207-N02", "status": "FIXED_ACTUAL_CONSUMERS", "description": "W-01/W-02当前入口及W-02历史测试来源修复，关联Word同步", "source": "agent/tasks/U12-07/evidence/consumer-impact.md"},
-    {"id": "U1207-N03", "status": "OPEN_NEW_REVIEW_AND_REAL_WRITING", "description": "新规格非论文正文，独立/真人新签收、真实主稿/结果/冻结仍缺", "source": "agent/tasks/U12-07/outputs/current-writing.json"},
-    {"id": "U1207-N05", "status": "PREEXISTING_HASH_POLICY_DESCRIPTION_MISMATCH_PRESERVED", "description": "两历史输出无末尾LF且原哈希未补LF，与声明算法不同；原正文及证据保留", "source": "agent/tasks/U12-07/evidence/historical-hash-policy.json"},
-    {"id": "U1207-N04", "status": "OPEN_ROOT_MIGRATION", "description": "根共享治理及工程尚未全部迁入双层", "source": "agent/normalization.md"}
+    {
+      "id": "U1207-N01",
+      "status": "FIXED_CURRENT_METHOD_TABLES_AND_RULES",
+      "description": "旧RQ门序和缺PANAS表由当前方法、11表和两向规则替代，签收原文实际归档",
+      "source": "agent/tasks/U12-07/outputs/current-method.md"
+    },
+    {
+      "id": "U1207-N02",
+      "status": "FIXED_ACTUAL_CONSUMERS",
+      "description": "W-01/W-02当前入口及W-02历史测试来源修复，关联Word同步",
+      "source": "agent/tasks/U12-07/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1207-N03",
+      "status": "OPEN_NEW_REVIEW_AND_REAL_WRITING",
+      "description": "新规格非论文正文，独立/真人新签收、真实主稿/结果/冻结仍缺",
+      "source": "agent/tasks/U12-07/outputs/current-writing.json"
+    },
+    {
+      "id": "U1207-N05",
+      "status": "PREEXISTING_HASH_POLICY_DESCRIPTION_MISMATCH_PRESERVED",
+      "description": "两历史输出无末尾LF且原哈希未补LF，与声明算法不同；原正文及证据保留",
+      "source": "agent/tasks/U12-07/evidence/historical-hash-policy.json"
+    },
+    {
+      "id": "U1207-N04",
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
+    }
   ],
-  "next_task": "U12-08",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前方法规格", "path": "agent/tasks/U12-07/outputs/current-method.md"},
-    {"label": "11表字段规格", "path": "agent/tasks/U12-07/outputs/table-spec.md"},
-    {"label": "正反结果解释规则", "path": "agent/tasks/U12-07/outputs/reporting-rules.md"},
-    {"label": "真实复测日志", "path": "agent/tasks/U12-07/evidence/verification.json"},
-    {"label": "历史保留与消费者影响", "path": "agent/tasks/U12-07/evidence/consumer-impact.md"}
+    {
+      "label": "当前方法规格",
+      "path": "agent/tasks/U12-07/outputs/current-method.md"
+    },
+    {
+      "label": "11表字段规格",
+      "path": "agent/tasks/U12-07/outputs/table-spec.md"
+    },
+    {
+      "label": "正反结果解释规则",
+      "path": "agent/tasks/U12-07/outputs/reporting-rules.md"
+    },
+    {
+      "label": "真实复测日志",
+      "path": "agent/tasks/U12-07/evidence/verification.json"
+    },
+    {
+      "label": "历史保留与消费者影响",
+      "path": "agent/tasks/U12-07/evidence/consumer-impact.md"
+    }
   ]
 }

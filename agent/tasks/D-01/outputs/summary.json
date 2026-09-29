@@ -54,8 +54,8 @@
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "inputs/execution/outputs/evidence/archive已分开。三件旧材料有据归档，共享代码不按任务复制，后续整体迁至agent/modules时修复消费者。",
-        "原学习目录与注册表继续作来源；旧技术目录新增README转入当前口径，最终根目录迁移尚未完成。"
+        "inputs/execution/outputs/evidence/archive已分开。三件旧材料有据归档，共享代码不按任务复制，已迁至agent/modules且消费者已验证。",
+        "原学习目录与注册表继续作来源；旧技术目录新增README转入当前口径，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
       ]
     },
     {
@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化18/71包，剩余53；下一D-02。明确路径提交并推送工作分支，任务状态未变，根目录双层迁移继续。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -95,16 +96,16 @@
       "id": "D01-N02",
       "status": "OPEN_REAL_HARDWARE",
       "description": "缺实际驱动、Windows兼容与30分钟真机记录，不能关闭UP-06/M06",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
     },
     {
       "id": "D01-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "岗位P-HARDWARE未落实实际领取人，领取与输入冻结须由治理流程完成",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     }
   ],
-  "next_task": "D-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "当前真实采集交接",

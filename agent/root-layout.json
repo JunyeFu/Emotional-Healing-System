@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Physical root migration after all 71 task packages; not business acceptance",
-  "root_migration_complete": false,
+  "root_migration_complete": true,
   "entries": [
     {
       "old": "work",

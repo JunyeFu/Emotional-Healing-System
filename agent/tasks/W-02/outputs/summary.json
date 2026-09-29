@@ -10,29 +10,123 @@
     "method": "没有W-02真人签署。本轮为作者Agent整理及软件复测；U12-07既有签收只保留原候选范围，不转移到当前写作合同。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["固定任务5人日，依赖W-01|A-06|U12-07，责任人与复核人仍为空。A-06真实范围、A-05观测分析和完整稿未交付，八项主张索引均NOT_RUN。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1全部数字图表与同版A-06范围一致；AC2原生不等隐藏、未显著不等效；AC3核心稿不等未开展E-06；AC4已有扩展如实披露，U12-08真实结果就绪才填效应。", "四段为输入与责任对齐、同版结果中立主稿、主张与引用复核、真实签收后交W-03。没有项目外对照不能推出整个项目相对不参与的因果效果；天气和呼吸固定配对不能分别归因。"]},
-    {"heading": "实际交付", "paragraphs": ["TASK、15项来源、当前写作说明及机器状态、八项未观测主张索引、验证入口与消费者记录。旧结构和CSV原件实际移入archive，原位置保留当前导航及兼容列名的八行矩阵。", "当前第11步、手册、成果入口、AGENTS和README同步；历史v1.1验证器读取归档原件，当前协议仍由治理选择器确定。不新增实际论文、数据或作者。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["正文报告实际样本与实现效度后，先情绪主比较，再功能代价、理解/努力、缺失和设计知识。有效预设PANAS结果不被PF或SCCI失败隐去，native_minus_abstract负向为原生方向、正向为抽象方向；区间跨零不是等效或反向优势。", "实际教学时序、SAP和数值须冻结，旧推荐800秒及候选参数不冒充正式方法；核心体验不操作界面与前后问卷分开。独立重建及负例支持有边界规则，四个原团队场景不证明通用语法。", "W-03本轮官方核对发现AI细则不允许生成式AI起草论文正文，当前写作职责改为真人起草和论证，Agent按允许用途辅助并披露。项目管理Word不作为可直接提交的论文初稿。"]},
-    {"heading": "验证与结果", "paragraphs": ["51项专项通过，覆盖实际注册与协议、方向和不屏蔽情绪、原结构字节身份、两份实际归档及历史消费者、现行八行矩阵、U12-07原签署与冲突、真实来源和导航链接。", "根pytest 635项通过，耗时49.20秒；历史候选、协议、v1.2治理、71项注册及5包分发检查通过。命令和原始输出见verification.json；无实际结果、Unity/TD运行、投稿或新增独立审核。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧结构沿有序功能门、旧矩阵缺PANAS主比较，已实际归档并修正现行消费者；签收原件和历史验证标记保留，不将旧候选适用范围扩大。", "2026-09-29 U12-07旧原稿实际归档，当前方法、11表和两向解释规格已修，W-02来源和历史测试真实改读新/旧分层。记录FIXED_CURRENT_U1207_SPECIFICATION，当前规格非论文正文，新复核与真人签收仍未完成。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["TASK及inputs、execution、evidence、outputs、archive固定归属。当前输出与历史原件分开，共享治理及已签署U12-07留单一入口；没有对进行中输入自动刷新。", "先修Agent事实与真实消费者，再生成单包及串联Word。两份旧根业务文件已物理迁入Agent归档，其余共享业务目录仍待整体迁移，不能以本包完成替代目标。"]},
-    {"heading": "上下游交接", "paragraphs": ["A-05交同版锁定结果/图表，A-06交全部活动和范围回执，W-01交全文页段及文献增量，U12-07交当前写作规格而非论文第一稿，U12-10交真实分类。完整输入仍未齐，不写观测效果或宣布主稿完成。", "真实主稿及主张—数字—图表—输入—代码、补充材料交W-03；实际扩展须披露，A-04两原生组策略比较不能混作提示比较。当前作者贡献、公开权限和相似性检查待真实负责人，推送不等于投稿。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["论文负责人、文献与分析协作者、数据保管者、真实第二人尚未实名。作者Agent自查不等独立Agent复核；无新真实签署，W-02状态不变。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["本包初次整理为第57包；2026-09-29随U12-07修订来源与测试，总进度66/71，余5，下一U12-08。W-02仍WAIT_DEP，真实稿和复核待完成，根目录物理迁移及运行引用修复未结束。"]},
-    {"heading": "审阅来源", "paragraphs": ["实际注册、v1.2协议、A-05/A-06与文献/测量交接、两份历史原件、U12-07原签署及设计/空表/主张句。未新增文献搜索、最新期刊规范或真实人员结果。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务5人日，依赖W-01|A-06|U12-07，责任人与复核人仍为空。A-06真实范围、A-05观测分析和完整稿未交付，八项主张索引均NOT_RUN。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1全部数字图表与同版A-06范围一致；AC2原生不等隐藏、未显著不等效；AC3核心稿不等未开展E-06；AC4已有扩展如实披露，U12-08真实结果就绪才填效应。",
+        "四段为输入与责任对齐、同版结果中立主稿、主张与引用复核、真实签收后交W-03。没有项目外对照不能推出整个项目相对不参与的因果效果；天气和呼吸固定配对不能分别归因。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TASK、15项来源、当前写作说明及机器状态、八项未观测主张索引、验证入口与消费者记录。旧结构和CSV原件实际移入archive，原位置保留当前导航及兼容列名的八行矩阵。",
+        "当前第11步、手册、成果入口、AGENTS和README同步；历史v1.1验证器读取归档原件，当前协议仍由治理选择器确定。不新增实际论文、数据或作者。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "正文报告实际样本与实现效度后，先情绪主比较，再功能代价、理解/努力、缺失和设计知识。有效预设PANAS结果不被PF或SCCI失败隐去，native_minus_abstract负向为原生方向、正向为抽象方向；区间跨零不是等效或反向优势。",
+        "实际教学时序、SAP和数值须冻结，旧推荐800秒及候选参数不冒充正式方法；核心体验不操作界面与前后问卷分开。独立重建及负例支持有边界规则，四个原团队场景不证明通用语法。",
+        "W-03本轮官方核对发现AI细则不允许生成式AI起草论文正文，当前写作职责改为真人起草和论证，Agent按允许用途辅助并披露。项目管理Word不作为可直接提交的论文初稿。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "51项专项通过，覆盖实际注册与协议、方向和不屏蔽情绪、原结构字节身份、两份实际归档及历史消费者、现行八行矩阵、U12-07原签署与冲突、真实来源和导航链接。",
+        "根pytest 635项通过，耗时49.20秒；历史候选、协议、v1.2治理、71项注册及5包分发检查通过。命令和原始输出见verification.json；无实际结果、Unity/TD运行、投稿或新增独立审核。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧结构沿有序功能门、旧矩阵缺PANAS主比较，已实际归档并修正现行消费者；签收原件和历史验证标记保留，不将旧候选适用范围扩大。",
+        "2026-09-29 U12-07旧原稿实际归档，当前方法、11表和两向解释规格已修，W-02来源和历史测试真实改读新/旧分层。记录FIXED_CURRENT_U1207_SPECIFICATION，当前规格非论文正文，新复核与真人签收仍未完成。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK及inputs、execution、evidence、outputs、archive固定归属。当前输出与历史原件分开，共享治理及已签署U12-07留单一入口；没有对进行中输入自动刷新。",
+        "先修Agent事实与真实消费者，再生成单包及串联Word。两份旧根业务文件已物理迁入Agent归档，其余共享业务目录仍待整体迁移，不能以本包完成替代目标。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "A-05交同版锁定结果/图表，A-06交全部活动和范围回执，W-01交全文页段及文献增量，U12-07交当前写作规格而非论文第一稿，U12-10交真实分类。完整输入仍未齐，不写观测效果或宣布主稿完成。",
+        "真实主稿及主张—数字—图表—输入—代码、补充材料交W-03；实际扩展须披露，A-04两原生组策略比较不能混作提示比较。当前作者贡献、公开权限和相似性检查待真实负责人，推送不等于投稿。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "论文负责人、文献与分析协作者、数据保管者、真实第二人尚未实名。作者Agent自查不等独立Agent复核；无新真实签署，W-02状态不变。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "实际注册、v1.2协议、A-05/A-06与文献/测量交接、两份历史原件、U12-07原签署及设计/空表/主张句。未新增文献搜索、最新期刊规范或真实人员结果。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "W02-N01", "status": "FIXED_ACTUAL_ARCHIVE_AND_CONSUMERS", "description": "旧结构和矩阵实际归档，当前PANAS主比较及历史验证消费者对齐", "source": "agent/tasks/W-02/evidence/consumer-impact.md"},
-    {"id": "W02-N02", "status": "FIXED_CURRENT_U1207_SPECIFICATION_REVIEW_PENDING", "description": "旧稿归档、当前方法与11表/规则已修，真实来源测试已改；新复核签收仍缺", "source": "agent/tasks/W-02/evidence/consumer-impact.md"},
-    {"id": "W02-N03", "status": "OPEN_REAL_PAPER_AND_RESPONSIBILITY", "description": "真实范围结果主稿全文审查作者责任及相似性检查尚未落实", "source": "agent/tasks/W-02/outputs/current-manuscript.json"}
+    {
+      "id": "W02-N01",
+      "status": "FIXED_ACTUAL_ARCHIVE_AND_CONSUMERS",
+      "description": "旧结构和矩阵实际归档，当前PANAS主比较及历史验证消费者对齐",
+      "source": "agent/tasks/W-02/evidence/consumer-impact.md"
+    },
+    {
+      "id": "W02-N02",
+      "status": "FIXED_CURRENT_U1207_SPECIFICATION_REVIEW_PENDING",
+      "description": "旧稿归档、当前方法与11表/规则已修，真实来源测试已改；新复核签收仍缺",
+      "source": "agent/tasks/W-02/evidence/consumer-impact.md"
+    },
+    {
+      "id": "W02-N03",
+      "status": "OPEN_REAL_PAPER_AND_RESPONSIBILITY",
+      "description": "真实范围结果主稿全文审查作者责任及相似性检查尚未落实",
+      "source": "agent/tasks/W-02/outputs/current-manuscript.json"
+    }
   ],
-  "next_task": "W-03",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前写作与论文边界", "path": "agent/tasks/W-02/outputs/current-manuscript.md"},
-    {"label": "当前状态", "path": "agent/tasks/W-02/outputs/current-manuscript.json"},
-    {"label": "未观测主张索引", "path": "agent/tasks/W-02/outputs/claim-evidence.json"},
-    {"label": "实际复测", "path": "agent/tasks/W-02/evidence/verification.json"},
-    {"label": "消费者与签署稿冲突", "path": "agent/tasks/W-02/evidence/consumer-impact.md"}
+    {
+      "label": "当前写作与论文边界",
+      "path": "agent/tasks/W-02/outputs/current-manuscript.md"
+    },
+    {
+      "label": "当前状态",
+      "path": "agent/tasks/W-02/outputs/current-manuscript.json"
+    },
+    {
+      "label": "未观测主张索引",
+      "path": "agent/tasks/W-02/outputs/claim-evidence.json"
+    },
+    {
+      "label": "实际复测",
+      "path": "agent/tasks/W-02/evidence/verification.json"
+    },
+    {
+      "label": "消费者与签署稿冲突",
+      "path": "agent/tasks/W-02/evidence/consumer-impact.md"
+    }
   ]
 }

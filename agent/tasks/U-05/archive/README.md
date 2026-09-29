@@ -1,5 +1,7 @@
 # U-05 旧共享天气修改工具归档
 
+位置更新 2026-09-29：下文保留逐包整理时的归档决定与当时进度，旧路径和“待迁移”表述仅解释历史。19项根目录迁移现已落实；当前物理归属见[根目录归属表](../../../root-layout.json)，实际入口以本包TASK及outputs/current文档为准。
+
 CleanAndRebuildScenes.cs及meta、CleanupWeatherDuplicates.cs及meta保留原始字节。前者清空并保存四个旧天气场景，后者修改旅人/盾牌/闪电/旧WeatherDirector后保存；均不符合当前固定镜头与公共四层模板流程。
 
 迁移前检查活动Assets的C#、unity、prefab、asset类名和GUID，无其他引用。移出Assets停止编译与菜单注册，保留旧源码和meta GUID供追溯；不运行旧菜单，不修改旧场景。旧工具中的空引用问题随弃用归档，不给废弃流程增加修复。

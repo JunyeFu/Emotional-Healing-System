@@ -38,4 +38,4 @@ G-05应交INSTITUTION_STAGE1、QUESTIONNAIRE_PERMISSION、RETENTION_AND_PRIVACY�
 
 [G-03](../../G-03/outputs/current-freeze.md)汇总预注册，[B-02](../../B-02/outputs/current-batch.md)消费同版正式门，[U12-10](../../U12-10/outputs/current-classification.md)和A-05只用事前冻结的结果规则。有效PANAS比较不因PF/SCCI失败隐去，等效默认关闭，可选阶段三由独立路线处理。
 
-本包真实冻结、独立复核、机构批准及第二人均未完成，WAIT_DEP_EXTERNAL保留。下一U12-12；整体根目录双层物理迁移尚未完成，不把70/71包整理当项目业务DONE。
+本包真实冻结、独立复核、机构批准及第二人仍未完成，WAIT_DEP_EXTERNAL保留。71/71包整理与19/19根目录迁移不等于项目业务DONE。

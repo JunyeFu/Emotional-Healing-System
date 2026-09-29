@@ -1,7 +1,9 @@
 {
   "original_files": 889,
   "unchanged_original_files": 847,
-  "word_documents_link_only": 8,
+  "word_documents_checked": 8,
+  "word_documents_link_only": 0,
+  "current_summary_word_revisions_verified": 8,
   "word_hyperlinks_relocated": 9,
   "historical_validation_and_reference_sources_preserved": true,
   "scope": "Physical support root moves and current links, not new acceptance"

@@ -55,7 +55,7 @@
       "heading": "目录与文件整理",
       "paragraphs": [
         "活动合同/修订SAP/功效规格在outputs，工具在execution，新复测在evidence，原件在archive/signed-candidate。原acceptance及真人/独立记录不改，新生成器只写独立当前清单。",
-        "先修Agent与消费者，再生成U12-04及A-02/A-05 Word和串联审阅；共享业务模块和旧根目录仍待整体迁移。归档脚本不继续运行。"
+        "先修Agent与消费者，再生成U12-04及A-02/A-05 Word和串联审阅；根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。归档脚本不继续运行。"
       ]
     },
     {
@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "累计63/71包规范化，余8，下一U12-05。原候选限定DONE不变，活动修订尚待复核，整个根目录双层物理迁移及运行引用修复仍未完成。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -111,12 +112,12 @@
     },
     {
       "id": "U1204-N05",
-      "status": "OPEN_ROOT_MIGRATION",
-      "description": "共享模块与旧根业务目录尚未整体迁入双层",
-      "source": "agent/normalization.md"
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
     }
   ],
-  "next_task": "U12-05",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "当前统计交接",

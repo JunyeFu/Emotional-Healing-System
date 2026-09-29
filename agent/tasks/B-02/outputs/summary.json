@@ -3,31 +3,129 @@
   "title": "B02 阶段一正式批次模板与锁库交接审阅",
   "review_date": "2026-09-29",
   "conclusion": "B-02仍TEMPLATE/BLOCKED_EXTERNAL，真实实例为空、未领取未签收。两旧正式执行方案实际归档，当前批次按v1.2冻结版本、已分配平衡与单次体验对齐，不生成正式manifest或采集许可。",
-  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "没有真实B-02实例签收；本轮只做规范化、现有分配与存储合成核查，未新增独立Agent或真人署名。"},
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有真实B-02实例签收；本轮只做规范化、现有分配与存储合成核查，未新增独立Agent或真人署名。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["每实例最多12人、约5人日，依赖G-03。最终随机化N/上限、真实批准和预注册、完整运行准入接线未齐，不能正式执行；批次数量未确定。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1分配仅来自锁定X-01清单，索引/版本/条件/顺序一致；AC2真实来源、构建与每人一次体验成立，教学即登记暴露；AC3每批保留记录/QC/偏离和剩余覆盖，不按结果或完成缺格补人。", "五段是准入和职责、清单与揭示、按冻结时序执行、盲态QC及全部实例交接；真实负责人、操作、保管/揭示、数据与复核人均待实名。"]},
-    {"heading": "实际交付", "paragraphs": ["建立TASK和五目录、18项来源、当前批次说明/缺口、空登记及未执行QC骨架；不是QC工具、分配器或正式manifest。旧第10步两文按原字节移入archive，原路径导航及历史校验消费者同步修正。", "手册增加当前使用入口，旧每组96/上限240/全三阶段产能、教学前测顺序和可变块口径不再作为当前执行参数；原协议和签署不改。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["X-01实际固定48块，完整块每臂24顺序；12人批次不强制6比6，PARTIAL_BLOCK不直接判偏离，不固定批次数。最后不完整块处理需预注册，不临时凑整。", "X-01操作COMPLETE不等于PANAS完整或四模块可评估；分别统计分配/暴露/完成/退出及量表/设备缺失。教学暴露接线仍缺，中断仅恢复数据，新session_id不能再次体验。"]},
-    {"heading": "验证与结果", "paragraphs": ["135项专项通过，验证真实生成器完整48块与双提示24顺序、空登记/QC、当前N/时序、资格、停止/缺失边界、两原件字节及新导航；并复测既有随机化、存储和G-03交接。", "根pytest 635项通过，历史协议、v1.2治理、71项注册及5包61份分发快照通过，命令和输出见verification.json。所有数据为合成软件验证，没有真实参与者批次、Unity/TD、设备或新签署。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧第10步仍以96完成/240上限和教学先于前测作为执行流程，实际归档并以当前导航替换；候选N/时序需正式冻结，不在本轮填实。", "补齐批次和分配块单位、操作完成与分析集、待标注QC、教学暴露及锁库授权边界。真实运行整合、角色/批准、清单、批次记录和QC仍未交付，不以空模板伪DONE。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["两旧文件各迁一份，原始字节保持并保留历史验证；当前TASK、来源、核查、结果和交接按五目录归属。受限填表/原件不进公开仓库，Word从Agent事实生成。", "未生成正式manifest、真实实例或新的批准台账；业务状态不变，整体根目录双层迁移仍在推进。"]},
-    {"heading": "上下游交接", "paragraphs": ["G-03供同版本研究冻结/预注册和活动资格，X-01供分配，P/S/D/U/I供真实记录链，G-02/G-05供去重/权限与专机；当前软件签收不代替实际链或正式批准。", "E-04接全部实例、退出/失败、盲态QC、停止和偏离，单批结束不自动锁库/揭盲。A-01读取授权原件，A-05用同一锁定SAP报告PANAS与护栏；不以设备失败删除有效量表，也不要求可选阶段三完成。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["真实批次负责人、操作者、清单保管/揭示、数据/QC、标注裁定和另一人复核待安排；角色参数不是实际账号权限。当前无实例、真实签收或下游接收，不代签外部条件。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计48/71、剩余23，下一E-04。B-02仍阻塞；本轮完成结构和当前交接，不把模板/合成核查当正式批次，整体根目录迁移继续。"]},
-    {"heading": "审阅来源", "paragraphs": ["实际注册、v1.2/G-03冻结、X-01源码和签收范围、P-02记录及证据束、活动矩阵、两旧方案及专项结果。本轮无新网页研究或真人活动。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "每实例最多12人、约5人日，依赖G-03。最终随机化N/上限、真实批准和预注册、完整运行准入接线未齐，不能正式执行；批次数量未确定。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1分配仅来自锁定X-01清单，索引/版本/条件/顺序一致；AC2真实来源、构建与每人一次体验成立，教学即登记暴露；AC3每批保留记录/QC/偏离和剩余覆盖，不按结果或完成缺格补人。",
+        "五段是准入和职责、清单与揭示、按冻结时序执行、盲态QC及全部实例交接；真实负责人、操作、保管/揭示、数据与复核人均待实名。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立TASK和五目录、18项来源、当前批次说明/缺口、空登记及未执行QC骨架；不是QC工具、分配器或正式manifest。旧第10步两文按原字节移入archive，原路径导航及历史校验消费者同步修正。",
+        "手册增加当前使用入口，旧每组96/上限240/全三阶段产能、教学前测顺序和可变块口径不再作为当前执行参数；原协议和签署不改。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "X-01实际固定48块，完整块每臂24顺序；12人批次不强制6比6，PARTIAL_BLOCK不直接判偏离，不固定批次数。最后不完整块处理需预注册，不临时凑整。",
+        "X-01操作COMPLETE不等于PANAS完整或四模块可评估；分别统计分配/暴露/完成/退出及量表/设备缺失。教学暴露接线仍缺，中断仅恢复数据，新session_id不能再次体验。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "135项专项通过，验证真实生成器完整48块与双提示24顺序、空登记/QC、当前N/时序、资格、停止/缺失边界、两原件字节及新导航；并复测既有随机化、存储和G-03交接。",
+        "根pytest 635项通过，历史协议、v1.2治理、71项注册及5包61份分发快照通过，命令和输出见verification.json。所有数据为合成软件验证，没有真实参与者批次、Unity/TD、设备或新签署。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧第10步仍以96完成/240上限和教学先于前测作为执行流程，实际归档并以当前导航替换；候选N/时序需正式冻结，不在本轮填实。",
+        "补齐批次和分配块单位、操作完成与分析集、待标注QC、教学暴露及锁库授权边界。真实运行整合、角色/批准、清单、批次记录和QC仍未交付，不以空模板伪DONE。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "两旧文件各迁一份，原始字节保持并保留历史验证；当前TASK、来源、核查、结果和交接按五目录归属。受限填表/原件不进公开仓库，Word从Agent事实生成。",
+        "未生成正式manifest、真实实例或新的批准台账；业务状态不变，整体根目录双层迁移仍在推进。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "G-03供同版本研究冻结/预注册和活动资格，X-01供分配，P/S/D/U/I供真实记录链，G-02/G-05供去重/权限与专机；当前软件签收不代替实际链或正式批准。",
+        "E-04接全部实例、退出/失败、盲态QC、停止和偏离，单批结束不自动锁库/揭盲。A-01读取授权原件，A-05用同一锁定SAP报告PANAS与护栏；不以设备失败删除有效量表，也不要求可选阶段三完成。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "真实批次负责人、操作者、清单保管/揭示、数据/QC、标注裁定和另一人复核待安排；角色参数不是实际账号权限。当前无实例、真实签收或下游接收，不代签外部条件。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "实际注册、v1.2/G-03冻结、X-01源码和签收范围、P-02记录及证据束、活动矩阵、两旧方案及专项结果。本轮无新网页研究或真人活动。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "B02-N01", "status": "FIXED_ARCHIVE_AND_EXECUTION_ENTRIES", "description": "两旧第10步方案按原字节归档，新入口及历史校验对齐v1.2未冻结N/时序与条件式扩展", "source": "agent/tasks/B-02/archive/README.md"},
-    {"id": "B02-N02", "status": "FIXED_BATCH_ALLOCATION_AND_QC_HANDOFF", "description": "区分12人批次与48分配块、操作完成与分析集、教学暴露和数据恢复，空QC不授权锁库", "source": "agent/tasks/B-02/outputs/current-batch.md"},
-    {"id": "B02-N03", "status": "OPEN_REAL_APPROVAL_RUNTIME_AND_BATCHES", "description": "真实批准/冻结、清单权限、运行整合、人员、所有批次/QC及签收仍未交付", "source": "agent/tasks/B-02/outputs/current-batch.json"}
+    {
+      "id": "B02-N01",
+      "status": "FIXED_ARCHIVE_AND_EXECUTION_ENTRIES",
+      "description": "两旧第10步方案按原字节归档，新入口及历史校验对齐v1.2未冻结N/时序与条件式扩展",
+      "source": "agent/tasks/B-02/archive/README.md"
+    },
+    {
+      "id": "B02-N02",
+      "status": "FIXED_BATCH_ALLOCATION_AND_QC_HANDOFF",
+      "description": "区分12人批次与48分配块、操作完成与分析集、教学暴露和数据恢复，空QC不授权锁库",
+      "source": "agent/tasks/B-02/outputs/current-batch.md"
+    },
+    {
+      "id": "B02-N03",
+      "status": "OPEN_REAL_APPROVAL_RUNTIME_AND_BATCHES",
+      "description": "真实批准/冻结、清单权限、运行整合、人员、所有批次/QC及签收仍未交付",
+      "source": "agent/tasks/B-02/outputs/current-batch.json"
+    }
   ],
-  "next_task": "E-04",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前正式批次交接", "path": "agent/tasks/B-02/outputs/current-batch.md"},
-    {"label": "真实实例与责任缺口", "path": "agent/tasks/B-02/outputs/current-batch.json"},
-    {"label": "空批次登记", "path": "agent/tasks/B-02/outputs/batch-register-template.csv"},
-    {"label": "未执行QC提纲", "path": "agent/tasks/B-02/outputs/batch-qc-template.json"},
-    {"label": "软件核查与回归", "path": "agent/tasks/B-02/evidence/verification.json"}
+    {
+      "label": "当前正式批次交接",
+      "path": "agent/tasks/B-02/outputs/current-batch.md"
+    },
+    {
+      "label": "真实实例与责任缺口",
+      "path": "agent/tasks/B-02/outputs/current-batch.json"
+    },
+    {
+      "label": "空批次登记",
+      "path": "agent/tasks/B-02/outputs/batch-register-template.csv"
+    },
+    {
+      "label": "未执行QC提纲",
+      "path": "agent/tasks/B-02/outputs/batch-qc-template.json"
+    },
+    {
+      "label": "软件核查与回归",
+      "path": "agent/tasks/B-02/evidence/verification.json"
+    }
   ]
 }

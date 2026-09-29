@@ -3,31 +3,129 @@
   "title": "X03 策略运行与安全重放交接审阅",
   "review_date": "2026-09-29",
   "conclusion": "X-03仍WAIT_DEP、未领取未签署。当前P-01即使v2.2也拒绝frozen_policy，P-02拒绝任意策略核心重放；44项专项通过，活动说明已修正，但加载器、动态顺序、策略重放与同构建真链未完成。",
-  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "没有X-03独立运行签署。本轮Codex交接整理与软件复测，不代替E-05冻结、独立Agent或真实第二人。"},
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有X-03独立运行签署。本轮Codex交接整理与软件复测，不代替E-05冻结、独立Agent或真实第二人。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["约4人日，依赖X-01/X-02/U-01，完成条件另需E-05真实冻结策略。核心论文不等待此可选扩展，协议字段存在不等于策略运行已实现。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1错策略/分组/构建拒绝且两组相同scene_native制品；AC2模型运行只读、回退仍属策略分配臂；AC3实际前状态、候选、概率、随机抽样、理由/回退和版本完整记录并可重放。", "四天依次输入与版本合同、最小纵向链、故障/写保护、实际重放与真链验收。需Python/记录集成人、Unity验收人和研究冻结责任人，TASK附国内接口与测试资料。"]},
-    {"heading": "实际交付", "paragraphs": ["建立TASK及五目录、当前能力/未完成字段、消费者影响与9项实际接口测试。共享Python设计误把v2.2当自适应入口的活动句已修正；没有虚构本包旧加载器迁移。", "P-01/P-02业务、F-05 Schema、Unity代码、原签署和领取输入不改。旧序列方案已由X-02归档，本包引用不复制；T-02快照保持原身份。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["实际prepare仍sequence_mode=fixed，完整四天气及四条预配决策必需；FixedSequenceProvider.next忽略状态，SessionSnapshot没有PF/SQI/前量表。历史原因码不是换版本即可解除的门。", "策略manifest、前状态输入、动态动作提交和记录重放必须一起另行升级。每天气一次、段/时长/暴露/单调时间仍归P-01；已开始模块、重复tick/重发不重新抽动作。"]},
-    {"heading": "验证与结果", "paragraphs": ["44项专项通过，9项新真实限制/交接检查与35项既有manifest和记录重放。v2.2开发/正式frozen_policy均拒绝且无控制输出；固定提供者对变化状态保持同一动作，自定义重放核心未构造即拒绝。", "初次43过1失败来自测试核心仍用内存存储；按P-02装配绑定同一耐久存储后通过，原输出保留。根回归及治理结果见regression.json，没有模型写保护、两组制品或真实阶段三证据。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["v2.2步骤身份与动态顺序职责分开，活动说明订正；CoreUpdate已有policy_decisions记录不冒充动态策略验收。真实状态/完整分布不能从所选概率或hash补造。", "REPLAY_CORE_UNSAFE边界保留，不为插策略放宽任意工厂。未来受限确定性重建保持无网络/无暴露/无恢复旧体验；单独回放已选动作不足以证明模型重建。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["本包仅TASK与inputs/execution/evidence/outputs/archive，说明实际来源与无旧工具事实。共享权威与原签署不改，Word从Agent事实生成；不以规范化状态重绘业务SVG。", "根目录旧业务仍需全包后实际迁移，当前共享文件改说明不等于根迁移完成；冻结快照、状态和历史签名保持。"]},
-    {"heading": "上下游交接", "paragraphs": ["X-02提供模型与支持报告，E-05真实冻结，X-01分配、G-05资格；U-08供同一scene_native构建，U-01只维护渲染镜像，TD不选天气或装模型。", "P-01/P-02共同升级动态顺序及安全重放，控制发送前耐久提交；I-01验证800秒真链。均匀回退保留策略臂，正式身份错误不能借随机回退绕过，核心投稿不依赖可选阶段三。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["实施、记录/Unity集成及真实策略冻结责任人待落实。Codex仅整理与复测；上游签署不成为本包签署，未代填真实角色、模型卡或PASS。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计40/71、剩余31，下一Z-01。加载器、动态合同/状态、策略重放、只读证据、同构建与真链均缺，WAIT_DEP不变，整体目录收拢继续。"]},
-    {"heading": "审阅来源", "paragraphs": ["任务注册、当前路线、实际P-01序列/核心/快照、P-02重放与装配、Unity镜像及F-05 Schema、X-01/X-02交接。本轮无新网页方法研究、真机或机构批准。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "约4人日，依赖X-01/X-02/U-01，完成条件另需E-05真实冻结策略。核心论文不等待此可选扩展，协议字段存在不等于策略运行已实现。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1错策略/分组/构建拒绝且两组相同scene_native制品；AC2模型运行只读、回退仍属策略分配臂；AC3实际前状态、候选、概率、随机抽样、理由/回退和版本完整记录并可重放。",
+        "四天依次输入与版本合同、最小纵向链、故障/写保护、实际重放与真链验收。需Python/记录集成人、Unity验收人和研究冻结责任人，TASK附国内接口与测试资料。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立TASK及五目录、当前能力/未完成字段、消费者影响与9项实际接口测试。共享Python设计误把v2.2当自适应入口的活动句已修正；没有虚构本包旧加载器迁移。",
+        "P-01/P-02业务、F-05 Schema、Unity代码、原签署和领取输入不改。旧序列方案已由X-02归档，本包引用不复制；T-02快照保持原身份。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "实际prepare仍sequence_mode=fixed，完整四天气及四条预配决策必需；FixedSequenceProvider.next忽略状态，SessionSnapshot没有PF/SQI/前量表。历史原因码不是换版本即可解除的门。",
+        "策略manifest、前状态输入、动态动作提交和记录重放必须一起另行升级。每天气一次、段/时长/暴露/单调时间仍归P-01；已开始模块、重复tick/重发不重新抽动作。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "44项专项通过，9项新真实限制/交接检查与35项既有manifest和记录重放。v2.2开发/正式frozen_policy均拒绝且无控制输出；固定提供者对变化状态保持同一动作，自定义重放核心未构造即拒绝。",
+        "初次43过1失败来自测试核心仍用内存存储；按P-02装配绑定同一耐久存储后通过，原输出保留。根回归及治理结果见regression.json，没有模型写保护、两组制品或真实阶段三证据。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "v2.2步骤身份与动态顺序职责分开，活动说明订正；CoreUpdate已有policy_decisions记录不冒充动态策略验收。真实状态/完整分布不能从所选概率或hash补造。",
+        "REPLAY_CORE_UNSAFE边界保留，不为插策略放宽任意工厂。未来受限确定性重建保持无网络/无暴露/无恢复旧体验；单独回放已选动作不足以证明模型重建。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "本包仅TASK与inputs/execution/evidence/outputs/archive，说明实际来源与无旧工具事实。共享权威与原签署不改，Word从Agent事实生成；不以规范化状态重绘业务SVG。",
+        "根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变；冻结快照、状态和历史签名保持。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "X-02提供模型与支持报告，E-05真实冻结，X-01分配、G-05资格；U-08供同一scene_native构建，U-01只维护渲染镜像，TD不选天气或装模型。",
+        "P-01/P-02共同升级动态顺序及安全重放，控制发送前耐久提交；I-01验证800秒真链。均匀回退保留策略臂，正式身份错误不能借随机回退绕过，核心投稿不依赖可选阶段三。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "实施、记录/Unity集成及真实策略冻结责任人待落实。Codex仅整理与复测；上游签署不成为本包签署，未代填真实角色、模型卡或PASS。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "任务注册、当前路线、实际P-01序列/核心/快照、P-02重放与装配、Unity镜像及F-05 Schema、X-01/X-02交接。本轮无新网页方法研究、真机或机构批准。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "X03-N01", "status": "FIXED_V22_CAPABILITY_DESCRIPTION", "description": "活动说明订正，v2.2步骤身份不等于动态顺序，当前冻结策略仍拒绝", "source": "agent/tasks/X-03/outputs/current-runtime.md"},
-    {"id": "X03-N02", "status": "FIXED_TEST_STORE_BINDING", "description": "测试复现核心/代理存储不一致，绑定同一耐久存储后复测；业务和安全重放边界不改", "source": "agent/tasks/X-03/evidence/initial-failure-disposition.md"},
-    {"id": "X03-N03", "status": "OPEN_DYNAMIC_RUNTIME_AND_REAL_EVIDENCE", "description": "加载器、动态顺序/状态、策略安全重放、同构建及真实冻结/真链未交付，WAIT_DEP未签署", "source": "agent/tasks/X-03/outputs/current-runtime.json"}
+    {
+      "id": "X03-N01",
+      "status": "FIXED_V22_CAPABILITY_DESCRIPTION",
+      "description": "活动说明订正，v2.2步骤身份不等于动态顺序，当前冻结策略仍拒绝",
+      "source": "agent/tasks/X-03/outputs/current-runtime.md"
+    },
+    {
+      "id": "X03-N02",
+      "status": "FIXED_TEST_STORE_BINDING",
+      "description": "测试复现核心/代理存储不一致，绑定同一耐久存储后复测；业务和安全重放边界不改",
+      "source": "agent/tasks/X-03/evidence/initial-failure-disposition.md"
+    },
+    {
+      "id": "X03-N03",
+      "status": "OPEN_DYNAMIC_RUNTIME_AND_REAL_EVIDENCE",
+      "description": "加载器、动态顺序/状态、策略安全重放、同构建及真实冻结/真链未交付，WAIT_DEP未签署",
+      "source": "agent/tasks/X-03/outputs/current-runtime.json"
+    }
   ],
-  "next_task": "Z-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前策略运行与重放交接", "path": "agent/tasks/X-03/outputs/current-runtime.md"},
-    {"label": "实际能力与未完成字段", "path": "agent/tasks/X-03/outputs/current-runtime.json"},
-    {"label": "软件限制专项结果", "path": "agent/tasks/X-03/evidence/verification.json"},
-    {"label": "装配失败与复测", "path": "agent/tasks/X-03/evidence/initial-failure-disposition.md"},
-    {"label": "当前消费者影响", "path": "agent/tasks/X-03/evidence/consumer-impact.md"}
+    {
+      "label": "当前策略运行与重放交接",
+      "path": "agent/tasks/X-03/outputs/current-runtime.md"
+    },
+    {
+      "label": "实际能力与未完成字段",
+      "path": "agent/tasks/X-03/outputs/current-runtime.json"
+    },
+    {
+      "label": "软件限制专项结果",
+      "path": "agent/tasks/X-03/evidence/verification.json"
+    },
+    {
+      "label": "装配失败与复测",
+      "path": "agent/tasks/X-03/evidence/initial-failure-disposition.md"
+    },
+    {
+      "label": "当前消费者影响",
+      "path": "agent/tasks/X-03/evidence/consumer-impact.md"
+    }
   ]
 }

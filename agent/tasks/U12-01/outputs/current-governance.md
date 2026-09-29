@@ -30,6 +30,6 @@ U12-02的步骤测量候选和U12-04的SAP/合成规格已各自签收，已从�
 
 ## 原件和目录
 
-旧README、消费者清单及已完成的一次性签收脚本实际移入本包archive。当前README指向此处，consumers.json保留活动路径供现行治理和G-03测试读取；原签收JSON、报告、adoption_record及legacy_evidence_binding不改。当前在研输入快照不重生成。apply_governance、freeze_legacy_evidence和共享验证仍有活跃测试，待整体迁移处理。
+旧README、消费者清单及已完成的一次性签收脚本实际移入本包archive。当前README指向此处，consumers.json保留活动路径供现行治理和G-03测试读取；原签收JSON、报告、adoption_record及legacy_evidence_binding不改。当前在研输入快照不重生成。apply_governance、freeze_legacy_evidence和共享验证已随治理目录迁移，活跃测试及消费者已验证。
 
-原候选588根回归/23专项是2026-09-08历史记录，不当作本轮结果。本轮结果见evidence/verification.json。真实运行、设备和研究未在本轮执行。根目录全部业务目录迁入human/agent尚未结束。
+原候选588根回归/23专项是2026-09-08历史记录，不当作本轮结果。本轮结果见evidence/verification.json。真实运行、设备和研究未在本轮执行。根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。

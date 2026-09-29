@@ -55,7 +55,7 @@
       "heading": "目录与文件整理",
       "paragraphs": [
         "执行材料按TASK/inputs/execution/evidence/outputs/archive归属。共享旧第11步原文已归档E-04、旧统计原文在A-02，仅引用，不复制。没有旧A-04真实程序或实例可搬移。",
-        "先修Agent事实与实际消费者，再生成Word和串联审阅；不刷新在研快照，不改变业务状态或重绘SVG，整体根目录物理迁移仍未完成。"
+        "先修Agent事实与实际消费者，再生成Word和串联审阅；不刷新在研快照，不改变业务状态或重绘SVG，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
       ]
     },
     {
@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "累计55/71包规范化，余16，下一A-06。A-04仍BLOCKED_EXTERNAL，正式分析及签收未执行；继续逐包后完成根目录双层物理迁移与引用/运行验证。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -104,7 +105,7 @@
       "source": "agent/tasks/A-04/outputs/current-analysis.json"
     }
   ],
-  "next_task": "A-06",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "阶段三当前分析交接",

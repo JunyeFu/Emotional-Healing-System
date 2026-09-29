@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "累计38/71、剩余33，下一X-02。原软件DONE保持；正式分层、清单、ACL、当前资格联调和真实运行未验收，根目录双层迁移继续。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -104,7 +105,7 @@
       "source": "agent/tasks/X-01/outputs/current-randomization.json"
     }
   ],
-  "next_task": "X-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "当前随机化行为与正式缺口",

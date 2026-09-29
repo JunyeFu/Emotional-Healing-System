@@ -3,31 +3,129 @@
   "title": "E04 阶段一锁库与揭盲交接审阅",
   "review_date": "2026-09-29",
   "conclusion": "E-04仍BLOCKED_EXTERNAL、未领取未签收；没有真实批次、研究锁库或揭盲授权。两旧第11步有序门方案已实际归档，当前执行入口对齐PANAS主比较与全部批次盲态QC，不用会话封存和平衡报告替代真人授权。",
-  "historical_acceptance": {"reviewer": "未签收", "date": "无", "commit": null, "method": "没有真实E-04签署。本轮仅为目录规范化与合成软件核查，未安排新的独立Agent或真人署名。"},
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有真实E-04签署。本轮仅为目录规范化与合成软件核查，未安排新的独立Agent或真人署名。"
+  },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["固定任务约5人日，依赖G-03和全部B-02实例。真实批准、预注册、冻结、运行与数据尚缺；空清单仅辅助填写，不是研究锁库工具。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1全部批次QC及暴露去重；AC2分别报告分配平衡和完成者不平衡，不删人或补完成格；AC3排除、缺失原因和分析规则在揭盲前冻结，锁库与授权对应同一精确版本。", "五段过程为收齐实例和停止、授权核查原件/QC、盲态重建及规则、锁库复核、单独授权揭盲后交A-05；真实角色均待实名。"]},
-    {"heading": "实际交付", "paragraphs": ["建立TASK与五目录、20项实际来源、当前关闭说明和缺口、NOT_RUN的锁库审阅提纲；没有生成锁库ID/哈希、实际签名或批准。", "第11步两原件实际移入archive，新导航和历史校验消费者修复；手册用本任务关闭过程替换采集/演练通用流程，原协议与签署保持。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["12人批次与48分配块不同；X-01 audit_balance仅按分配行计算臂计数和操作完成，部分块返回PARTIAL_BLOCK，不核验逐顺序覆盖、PANAS或四模块分析资格。完整者缺格不构成追加理由。", "会话封存、原始证据核查、研究锁库、揭盲授权分开。manifest含cue_mode，仅改X/Y不是真盲态；保留原件并按冻结职责管理受限工作副本、条件映射和破盲记录。"]},
-    {"heading": "验证与结果", "paragraphs": ["156项专项通过，覆盖新交接、B-02、实际随机化/追加存储/去重代码；合成12分配、8操作完成、4中止验证部分块和审计边界，不代表真实批次。", "根pytest 635项通过；历史协议、v1.2治理、71项注册和5包61份分发快照通过，命令及输出见verification.json。没有Unity/TD、设备、参与者、真实锁库或新签署。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧第11步仍要求有序Gate 1/2且按部署扩展组织结果，归档后改当前PANAS独立报告及条件式扩展导航。SCCI/PF失败不隐去预设情绪比较，非显著不写等效或抽象获胜。", "补齐盲态与实际授权、分配/完成/分析集、受限声明与原件访问、待标注/QC和锁库后更正职责；真实批准/数据/锁库工具和签署仍未交付。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["两旧文按原字节各迁一份，保留历史校验；TASK、来源、核查、证据、输出与归档固定归属，受限人物映射不入公开清单。Word先从Agent事实生成，不在Word独自修复。", "不修改其他任务冻结输入、不新增重复依赖边、不生成虚构L4、哈希或签名。整体根目录双层迁移仍未完成。"]},
-    {"heading": "上下游交接", "paragraphs": ["G-03供同版冻结/预注册/资格，B-02交所有真实实例，P-02/G-02/X-01供实际原件、去重和分配核查；A-01盲态重建、A-02分析集/缺失、A-03/U12-11正式SAP仍需完成。", "A-05须取得锁定输入和真实授权后分析，A-06关闭实际核心范围、W-02/W-03用同一证据；可选阶段三不用伪DONE。揭盲后变更保留旧锁定对象与偏离，不能冒称事前冻结。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["研究、数据/QC、标注裁定、条件映射保管、独立锁库复核、揭盲授权和分析接收人均待实名；role参数不是账号权限。锁库签收和揭盲授权分别签，当前姓名、日期和范围为空。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计49/71、剩余22，下一A-05。E-04仍阻塞，没有真实锁库/揭盲；本轮完成固定目录、来源和当前交接，整体根目录迁移继续。"]},
-    {"heading": "审阅来源", "paragraphs": ["实际注册、v1.2协议/发布路线、G-03/B-02、X-01/G-02源码、P-02证据束、A-01至A-03交接及两旧原件；无新网页研究或真人活动。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务约5人日，依赖G-03和全部B-02实例。真实批准、预注册、冻结、运行与数据尚缺；空清单仅辅助填写，不是研究锁库工具。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1全部批次QC及暴露去重；AC2分别报告分配平衡和完成者不平衡，不删人或补完成格；AC3排除、缺失原因和分析规则在揭盲前冻结，锁库与授权对应同一精确版本。",
+        "五段过程为收齐实例和停止、授权核查原件/QC、盲态重建及规则、锁库复核、单独授权揭盲后交A-05；真实角色均待实名。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立TASK与五目录、20项实际来源、当前关闭说明和缺口、NOT_RUN的锁库审阅提纲；没有生成锁库ID/哈希、实际签名或批准。",
+        "第11步两原件实际移入archive，新导航和历史校验消费者修复；手册用本任务关闭过程替换采集/演练通用流程，原协议与签署保持。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "12人批次与48分配块不同；X-01 audit_balance仅按分配行计算臂计数和操作完成，部分块返回PARTIAL_BLOCK，不核验逐顺序覆盖、PANAS或四模块分析资格。完整者缺格不构成追加理由。",
+        "会话封存、原始证据核查、研究锁库、揭盲授权分开。manifest含cue_mode，仅改X/Y不是真盲态；保留原件并按冻结职责管理受限工作副本、条件映射和破盲记录。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "156项专项通过，覆盖新交接、B-02、实际随机化/追加存储/去重代码；合成12分配、8操作完成、4中止验证部分块和审计边界，不代表真实批次。",
+        "根pytest 635项通过；历史协议、v1.2治理、71项注册和5包61份分发快照通过，命令及输出见verification.json。没有Unity/TD、设备、参与者、真实锁库或新签署。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧第11步仍要求有序Gate 1/2且按部署扩展组织结果，归档后改当前PANAS独立报告及条件式扩展导航。SCCI/PF失败不隐去预设情绪比较，非显著不写等效或抽象获胜。",
+        "补齐盲态与实际授权、分配/完成/分析集、受限声明与原件访问、待标注/QC和锁库后更正职责；真实批准/数据/锁库工具和签署仍未交付。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "两旧文按原字节各迁一份，保留历史校验；TASK、来源、核查、证据、输出与归档固定归属，受限人物映射不入公开清单。Word先从Agent事实生成，不在Word独自修复。",
+        "不修改其他任务冻结输入、不新增重复依赖边、不生成虚构L4、哈希或签名。根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "G-03供同版冻结/预注册/资格，B-02交所有真实实例，P-02/G-02/X-01供实际原件、去重和分配核查；A-01盲态重建、A-02分析集/缺失、A-03/U12-11正式SAP仍需完成。",
+        "A-05须取得锁定输入和真实授权后分析，A-06关闭实际核心范围、W-02/W-03用同一证据；可选阶段三不用伪DONE。揭盲后变更保留旧锁定对象与偏离，不能冒称事前冻结。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "研究、数据/QC、标注裁定、条件映射保管、独立锁库复核、揭盲授权和分析接收人均待实名；role参数不是账号权限。锁库签收和揭盲授权分别签，当前姓名、日期和范围为空。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "实际注册、v1.2协议/发布路线、G-03/B-02、X-01/G-02源码、P-02证据束、A-01至A-03交接及两旧原件；无新网页研究或真人活动。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "E04-N01", "status": "FIXED_ARCHIVE_AND_CURRENT_ANALYSIS_ENTRIES", "description": "两旧第11步有序门原文实际归档，新导航/历史验证消费者和手册过程修复", "source": "agent/tasks/E-04/archive/README.md"},
-    {"id": "E04-N02", "status": "FIXED_LOCK_BLINDING_AND_CONSUMER_BOUNDARIES", "description": "封存、原件核查、锁库、揭盲分开；实际平衡接口不核验分析集或授权，盲态映射职责明确", "source": "agent/tasks/E-04/outputs/current-closeout.md"},
-    {"id": "E04-N03", "status": "OPEN_REAL_BATCHES_RECONSTRUCTION_LOCK_AND_AUTHORIZATION", "description": "全部真实批次、盲态QC/重建、正式SAP、锁库工具与真实签名/授权仍缺", "source": "agent/tasks/E-04/outputs/current-closeout.json"}
+    {
+      "id": "E04-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_ANALYSIS_ENTRIES",
+      "description": "两旧第11步有序门原文实际归档，新导航/历史验证消费者和手册过程修复",
+      "source": "agent/tasks/E-04/archive/README.md"
+    },
+    {
+      "id": "E04-N02",
+      "status": "FIXED_LOCK_BLINDING_AND_CONSUMER_BOUNDARIES",
+      "description": "封存、原件核查、锁库、揭盲分开；实际平衡接口不核验分析集或授权，盲态映射职责明确",
+      "source": "agent/tasks/E-04/outputs/current-closeout.md"
+    },
+    {
+      "id": "E04-N03",
+      "status": "OPEN_REAL_BATCHES_RECONSTRUCTION_LOCK_AND_AUTHORIZATION",
+      "description": "全部真实批次、盲态QC/重建、正式SAP、锁库工具与真实签名/授权仍缺",
+      "source": "agent/tasks/E-04/outputs/current-closeout.json"
+    }
   ],
-  "next_task": "A-05",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
-    {"label": "当前锁库与揭盲交接", "path": "agent/tasks/E-04/outputs/current-closeout.md"},
-    {"label": "真实关闭与责任缺口", "path": "agent/tasks/E-04/outputs/current-closeout.json"},
-    {"label": "未执行锁库审阅提纲", "path": "agent/tasks/E-04/outputs/lock-review-template.json"},
-    {"label": "历史来源与归档", "path": "agent/tasks/E-04/archive/README.md"},
-    {"label": "软件核查与回归", "path": "agent/tasks/E-04/evidence/verification.json"}
+    {
+      "label": "当前锁库与揭盲交接",
+      "path": "agent/tasks/E-04/outputs/current-closeout.md"
+    },
+    {
+      "label": "真实关闭与责任缺口",
+      "path": "agent/tasks/E-04/outputs/current-closeout.json"
+    },
+    {
+      "label": "未执行锁库审阅提纲",
+      "path": "agent/tasks/E-04/outputs/lock-review-template.json"
+    },
+    {
+      "label": "历史来源与归档",
+      "path": "agent/tasks/E-04/archive/README.md"
+    },
+    {
+      "label": "软件核查与回归",
+      "path": "agent/tasks/E-04/evidence/verification.json"
+    }
   ]
 }

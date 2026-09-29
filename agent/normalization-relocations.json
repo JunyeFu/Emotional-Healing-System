@@ -125,6 +125,22 @@
       "preserve_ready_dispatch": true,
       "impact_path": "agent/evidence/root-migration-local-impact.md",
       "reason": "Keep received input bytes while current local-tool paths are relocated."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "agent/tasks/T-01/outputs/current-td-contract.md",
+      "new_project_path": "agent/archive/normalization-summary-inputs/T-02/agent/tasks/T-01/outputs/current-td-contract.md",
+      "preserve_ready_dispatch": true,
+      "impact_path": "agent/evidence/normalization-summary-impact.md",
+      "reason": "Preserve received input while current normalization progress text is refreshed."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "agent/tasks/T-02/TASK.md",
+      "new_project_path": "agent/archive/normalization-summary-inputs/T-02/agent/tasks/T-02/TASK.md",
+      "preserve_ready_dispatch": true,
+      "impact_path": "agent/evidence/normalization-summary-impact.md",
+      "reason": "Preserve received input while current normalization progress text is refreshed."
     }
   ]
 }

@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "累计42/71、剩余29，下一E-01。机构/许可/期限/角色、正式机器和真实U8均未关闭，状态不变；目录整体迁移继续。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -110,7 +111,7 @@
       "source": "agent/tasks/G-05/outputs/current-admission.md"
     }
   ],
-  "next_task": "E-01",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "活动准入与专机当前说明",

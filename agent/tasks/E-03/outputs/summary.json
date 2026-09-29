@@ -55,7 +55,7 @@
       "heading": "目录与文件整理",
       "paragraphs": [
         "旧13/19已在历史材料，13标SUPERSEDED，19保留UNASSESSED及旧人数口径；旧步骤9原件由Q-03/archive和历史验证器消费，本包不复制原文或伪造归档。当前导航与报告提纲在Agent层。",
-        "受限原件及填表留获批仓库外，Word从执行事实生成；业务状态未变，根目录整体双层迁移仍未完成。"
+        "受限原件及填表留获批仓库外，Word从执行事实生成；业务状态未变，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
       ]
     },
     {
@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "累计46/71，剩余25，下一G-03。E-03仍等待真实批次、门定义、独立验证及签署，不把规范化或合成检查当业务DONE；根目录整体迁移继续。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -89,7 +90,7 @@
       "id": "E03-N01",
       "status": "FIXED_LEVEL_C_ACTIVITY_SCOPE",
       "description": "Level C资格行补齐B-01实际采集，仍PENDING_EXTERNAL；在研输入冻结未刷新并留影响记录",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
     },
     {
       "id": "E03-N02",
@@ -104,7 +105,7 @@
       "source": "agent/tasks/E-03/outputs/current-closeout.json"
     }
   ],
-  "next_task": "G-03",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "技术关闭与研究冻结交接",

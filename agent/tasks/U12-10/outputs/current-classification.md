@@ -30,4 +30,4 @@ functional_guard、delivery_valid和sensitivity独立输入、独立报告。护
 
 A-05当前空报告仍NOT_RUN，没有真实beta/CI/p/n；[A-05交接](../../A-05/outputs/current-analysis.md)更新为候选工具已具备、正式分类未交付。真实分类交[A-06](../../A-06/outputs/current-scope.md)和[W-02](../../W-02/outputs/current-manuscript.md)，执行[主张规则](claim-rules.md)并保留功能代价及设计边界。U12-07给中立规格不是已写真实主稿；可选阶段三另有估计目标，不能混进本分类。
 
-当前负责人、正式输入、真实结果、独立复核及签收仍缺；不自动发布或给部署推荐。根目录整体双层物理迁移仍未完成。
+当前负责人、正式输入、真实结果、独立复核及签收仍缺；不自动发布或给部署推荐。根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。

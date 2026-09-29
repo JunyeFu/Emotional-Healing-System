@@ -13,7 +13,7 @@
 | 3 冲突 | 对照当前比较方向、功能护栏和路线 | AC2不恢复480秒，不把原生等同隐藏；正式入口列未关闭项 |
 | 4 交接 | 保留原18项签收、A-03冻结输入及6处字节追溯 | AC3证据与原提交绑定，不代签外部条件；新变更另行复核 |
 
-当前输出见outputs/current-governance.md和current-governance.json，唯一活动消费者清单仍由共享治理consumers.json维护。归档旧清单、说明及一次性签收脚本；共享验证器仍被真实测试消费，后续整体根目录迁移时移动和修复，不复制新的活动实现。
+当前输出见outputs/current-governance.md和current-governance.json，唯一活动消费者清单仍由共享治理consumers.json维护。归档旧清单、说明及一次性签收脚本；共享验证器仍被真实测试消费，已随agent/governance实际迁移并修复，不复制新的活动实现。
 
 ## 执行
 

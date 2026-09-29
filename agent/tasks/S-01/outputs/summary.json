@@ -55,7 +55,7 @@
       "heading": "目录与文件整理",
       "paragraphs": [
         "没有旧S-01独立同步实现可迁移；新文件按inputs/execution/outputs/evidence/archive归属。共享代码不复制，旧评分与处理原型留给S-02继续审阅。",
-        "旧呼吸带方案引用D-01归档，现行输入引用D-01/D-02。根目录共享技术模块统一迁移尚未完成。"
+        "旧呼吸带方案引用D-01归档，现行输入引用D-01/D-02。根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
       ]
     },
     {
@@ -74,7 +74,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "累计20/71包，剩余51，下一S-02。先修复Agent代码与事实，再生成本Word和串联审阅；明确路径提交推送，根目录迁移继续。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -89,7 +90,7 @@
       "id": "S01-N01",
       "status": "FIXED_LINK_QUALITY_CONFUSION",
       "description": "启动前已连接和连接即good已修复，质量保持unknown",
-      "source": "02-技术研发/01-数据采集/device_manager.py"
+      "source": "agent/modules/01-数据采集/device_manager.py"
     },
     {
       "id": "S01-N02",
@@ -101,10 +102,10 @@
       "id": "S01-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "实际领取人为空；阈值和精度需前测冻结，不代填验收",
-      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     }
   ],
-  "next_task": "S-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "当前同步与质量交接",

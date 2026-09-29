@@ -57,7 +57,7 @@
       "heading": "目录与文件整理",
       "paragraphs": [
         "TASK与五固定目录组成执行包。当前结果、历史证据与生成工具分开，历史审核报告和技术验收记录保留，过期执行路径移除。",
-        "共享实现仍在技术模块，根目录双层收拢尚未完成；本轮迁移工具是真实整理，不把引用清单当作共享模块已经迁移。"
+        "共享实现已位于agent/modules，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变；本轮迁移工具是真实整理，不把引用清单当作共享模块已经迁移。"
       ]
     },
     {
@@ -78,7 +78,8 @@
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "在codex/task-package-normalization按明确路径提交推送，不自动合并。规范化8包、剩余63包，下一包P-02；全部任务及最终根目录迁移仍在目标范围内。"
+        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
+        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
       ]
     },
     {
@@ -99,16 +100,16 @@
       "id": "P01-N02",
       "status": "FIXED",
       "description": "当前入口按F-05/P-02实际DONE、固定顺序范围和有效目录订正",
-      "source": "02-技术研发/srp_session_core/README.md"
+      "source": "agent/modules/srp_session_core/README.md"
     },
     {
       "id": "P01-N03",
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "核心前条件教学尚未接入；P-01/U12-11冻结后登记首次暴露并补退出再预约负测，本轮未关闭",
-      "source": "02-技术研发/srp_session_core/README.md"
+      "source": "agent/modules/srp_session_core/README.md"
     }
   ],
-  "next_task": "P-02",
+  "next_task": "按业务注册表及实际依赖推进",
   "source_links": [
     {
       "label": "打开 P-01 当前执行入口",
