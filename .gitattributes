@@ -81,3 +81,6 @@ agent/tasks/W-02/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/W-02/archive/*.csv -text whitespace=cr-at-eol
 agent/tasks/W-03/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/W-04/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/U12-01/archive/original-README.md -text whitespace=cr-at-eol
+agent/tasks/U12-01/archive/consumers.json -text whitespace=cr-at-eol
+agent/tasks/U12-01/archive/record_u12_01_signoff.py -text whitespace=cr-at-eol

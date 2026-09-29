@@ -58,10 +58,10 @@
     "A-06",
     "W-02",
     "W-03",
-    "W-04"
+    "W-04",
+    "U12-01"
   ],
   "remaining_packages": [
-    "U12-01",
     "U12-02",
     "U12-03",
     "U12-04",
@@ -1580,6 +1580,34 @@
       "status": "OPEN_ROOT_MIGRATION",
       "description": "逐包归档已执行，共享工程媒体治理等业务目录尚未整体迁入双层",
       "source": "agent/tasks/W-04/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-01",
+      "id": "U1201-N01",
+      "status": "FIXED_SCOPED_CONSUMER_STATUS_AND_ARCHIVE",
+      "description": "两个已签收候选的滞后状态修正；旧说明、清单和一次性工具实际归档",
+      "source": "agent/tasks/U12-01/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-01",
+      "id": "U1201-N02",
+      "status": "FIXED_FROZEN_SOURCE_RESOLUTION",
+      "description": "两个在研包继续核对原件，当前清单独立消费，未改快照ID",
+      "source": "agent/tasks/U12-01/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-01",
+      "id": "U1201-N03",
+      "status": "OPEN_REAL_GATES_AND_LEGACY_BYTES",
+      "description": "六个正式入口、六处旧字节追溯及真实参数/活动准入仍缺",
+      "source": "agent/tasks/U12-01/outputs/current-governance.json"
+    },
+    {
+      "task_id": "U12-01",
+      "id": "U1201-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享治理、工程、资料等业务目录尚未整体迁入human/agent",
+      "source": "agent/normalization.md"
     }
   ]
 }

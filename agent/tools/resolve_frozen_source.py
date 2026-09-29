@@ -5,7 +5,7 @@ from pathlib import Path
 
 def resolve_source(project_root: Path, task_id: str, status: str, relative: str) -> Path:
     path = (project_root / relative).resolve()
-    if not path.is_relative_to(project_root) or path.is_file():
+    if not path.is_relative_to(project_root):
         return path
     if status not in {'IN_PROGRESS', 'IN_REVIEW'}:
         return path

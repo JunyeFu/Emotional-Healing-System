@@ -1,0 +1,13 @@
+{
+  "task_id": "U12-01",
+  "reviewer": "author Agent",
+  "independent_review": "NOT_RUN",
+  "human_acceptance": "NOT_SIGNED",
+  "summary_pages": 3,
+  "summary_inspected_pages": [1, 2, 3],
+  "chain_pages": 33,
+  "chain_inspected_changed_pages": [32, 33],
+  "chain_unchanged_pages": "1-31 identical PNG bytes to W-04 previously inspected render",
+  "layout": "PASS",
+  "root_migration_complete": false
+}

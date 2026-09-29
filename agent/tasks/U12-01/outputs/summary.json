@@ -1,0 +1,136 @@
+{
+  "task_id": "U12-01",
+  "title": "U12 01 主线治理与消费者迁移审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U12-01原治理实现保持DONE。旧说明、消费者清单与一次性签收工具已实际归档；两个已签收候选的滞后状态已修正，在研冻结输入仍核对原件。正式运行接线、真实准入和参数冻结未完成。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-08 +08:00",
+    "commit": "47c81744884ae380e047cafb722aeb332c8cda29",
+    "method": "原独立Agent Pascal定向复核，傅钧烨审阅提交和已有验证后签收治理实现；不是审核人重跑测试。签收提交8d75f1a97e91d9d6588d4cccf4492ab73e716826。本轮无新独立复核和真人签署。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务2人日，无前置；原领取人Codex，历史分支codex/u12-01-governance-migration。原候选、签名和范围保持，不把原签收扩为当前运行、设备或研究准入。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1冻结来源与版本可追溯；AC2不恢复480秒、不把原生等同隐藏、正式入口列未关闭项；AC3绑定原提交与独立/真人复核，不代签外部条件。",
+        "四段为版本对齐、15消费者核对、主线冲突处置和限定范围交接。原18项DONE与A-03冻结输入保留；新研究口径不改写v2.1/v2.2运行合同。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "固定TASK及五目录、12项真实来源、当前治理说明与机器状态、七行冲突矩阵、归档原件及验证入口。当前清单仍在共享治理位置唯一维护，现行消费者无需读取重复副本。",
+        "U12-02步骤候选和U12-04新SAP/合成规格状态由待复核改为限定候选已签收；真实标注/运行、REAL/CAL及参数冻结仍缺。业务状态和在研快照未更新。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "PANAS负性情绪后测经前测校正，native-minus-abstract负值偏向原生。机会PF为独立功能护栏、SCCI为操纵检查，功能失败不隐去有效预设情绪结果；不显著不是反向优势或确认性等效。",
+        "四天气固定镜头、双条件、800秒推荐核心及Unity独立体验保留。教学测量完整旅程另计，前测在分条件教学前的最终时序和正式N/界值仍待冻结。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "41专项通过，覆盖原签收身份、归档字节、15消费者、六个运行缺口、在研原件/当前读取区分及G-03交接。原588根回归和23专项仅是历史记录，不充作本轮结果。",
+        "根635项回归、协议/治理/71项注册及5分发包/61快照通过，原始输出见verification.json；没有运行Unity/TD、真实研究、外部备份恢复或重新启动独立Agent。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "首次README移动因归档导航同名失败，核对后恢复本轮开始时干净HEAD原件，再改名移动，字节哈希与移动前一致。",
+        "首次分发验证发现U12-03/U12-06的旧清单hash drift。登记原件迁移，让冻结来源解析优先按明确映射读取归档；READY/DONE和未登记路径仍读当前版本，未刷新快照或ID。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧说明、清单及一次性签收脚本实际迁入archive；原位置README指向当前Agent交接。原签收报告、acceptance、adoption_record和旧证据绑定未改。",
+        "共享治理迁移/冻结/验证工具有真实测试消费者，继续唯一维护；全部根业务目录收拢到human/agent和运行引用修复仍待后续完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "U12-02交步骤测量，U12-03交公平教学，U12-04交新SAP候选，U12-06补六正式入口，U12-09追溯六处旧工作区字节身份，U12-11冻结真实参数。清单false不会自动成为旧程序运行保护。",
+        "核心A-05→U12-10→A-06→W-02→W-03；实际扩展另需A-04/U12-08及真实活动记录。W-04消费U12-12部署决定；路线元数据PASS仍authorization=false，不代替活动和投稿批准。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "Pascal原定向独立复核范围及傅钧烨真实签收保留。本轮作者Agent只整理与复测，未取得新签署，不把历史审查复制成当前独立审查。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计60/71包规范化，余11，下一U12-02。U12-01原业务DONE范围不变；根目录整体物理迁移和运行引用修复尚未完成。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "现行注册、治理/研究协议、15消费者、原签收报告与JSON、旧证据绑定、A-03影响及核心/扩展路线。外部备份仅保留历史位置记录，本轮未证实其存在。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "U1201-N01",
+      "status": "FIXED_SCOPED_CONSUMER_STATUS_AND_ARCHIVE",
+      "description": "两个已签收候选的滞后状态修正；旧说明、清单和一次性工具实际归档",
+      "source": "agent/tasks/U12-01/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1201-N02",
+      "status": "FIXED_FROZEN_SOURCE_RESOLUTION",
+      "description": "两个在研包继续核对原件，当前清单独立消费，未改快照ID",
+      "source": "agent/tasks/U12-01/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1201-N03",
+      "status": "OPEN_REAL_GATES_AND_LEGACY_BYTES",
+      "description": "六个正式入口、六处旧字节追溯及真实参数/活动准入仍缺",
+      "source": "agent/tasks/U12-01/outputs/current-governance.json"
+    },
+    {
+      "id": "U1201-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享治理、工程、资料等业务目录尚未整体迁入human/agent",
+      "source": "agent/normalization.md"
+    }
+  ],
+  "next_task": "U12-02",
+  "source_links": [
+    {
+      "label": "当前主线与消费者交接",
+      "path": "agent/tasks/U12-01/outputs/current-governance.md"
+    },
+    {
+      "label": "原签收与当前缺口",
+      "path": "agent/tasks/U12-01/outputs/current-governance.json"
+    },
+    {
+      "label": "唯一活动消费者清单",
+      "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/consumers.json"
+    },
+    {
+      "label": "本轮复测",
+      "path": "agent/tasks/U12-01/evidence/verification.json"
+    },
+    {
+      "label": "归档和冻结输入修复",
+      "path": "agent/tasks/U12-01/evidence/consumer-impact.md"
+    }
+  ]
+}

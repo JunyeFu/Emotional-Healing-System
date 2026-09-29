@@ -56,6 +56,7 @@
 | 看当前单篇论文写作 | `agent/tasks/W-02/outputs/current-manuscript.md`（情绪收益、功能代价、设计边界与旧稿修订，真实主稿未交付） |
 | 看投稿政策与独立复现 | `agent/tasks/W-03/outputs/current-submission.md`（期刊页待核实、真实作者与公开权限、干净复现及提交授权分开） |
 | 看成果与新成员移交 | `agent/tasks/W-04/outputs/current-handover.md`（八对象、部署/公开决定及真实接收，最终移交仍未交付） |
+| 看主线治理与消费者迁移 | `agent/tasks/U12-01/outputs/current-governance.md`（原签收范围、限定候选与六运行缺口，冻结原件分别消费） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |
