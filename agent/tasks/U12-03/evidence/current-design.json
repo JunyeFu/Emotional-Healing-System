@@ -1,0 +1,27 @@
+{
+  "evidence_class": "DESIGN_AND_SYNTHETIC_ONLY",
+  "hash_policy": "UTF8_LF_TRAILING_WHITESPACE_REMOVED_FINAL_LF",
+  "input_snapshot_id": "6DE6369FB49BDA2E6F5AD2B2F7406FAFF68566B78A3D2CC1FD69657C6D9042F2",
+  "historical_candidate": "9317f0b649547c2ae1d900fb39f6f486a9407baa",
+  "sources": {
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json": "3e5015bba65588ff852e05b1831cb062e606f3ecb78c1f5b008fe61840d59de6",
+    "agent/tasks/R-01/outputs/current-representation.md": "7d9fdc33500c064b6535bcd5a869711f9a98adc66d6151c5f903213b2ffe3b99",
+    "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json": "418d707266b4347df4c4054ca0f4c007d737c129575106ff4f00c4bada6b679a",
+    "agent/tasks/U12-02/outputs/current-measurement.md": "375165023e354f64a5516541fdae651575d48294a15971513a5e03f0b9bf84f5",
+    "agent/tasks/U12-02/outputs/annotation-plan.md": "0a567b55f84c9e431b1bc0ae3ad4d11f02a52202135c29fb26b4b24d21d4eb5d"
+  },
+  "outputs": {
+    "outputs/contract.json": "3c5775a0464eff80299717c636a0608966465e399194ff21265ed96aa2d74037",
+    "outputs/teaching.md": "2885a476b3d2fd8a9349b0884a9bc2b50566fbf55317868ceb6a2361743e3cf1",
+    "outputs/formative.md": "b1fcd2a2d650bac6ece0357dae8f26be88bc363dbf80aa27279752e67583fa55",
+    "outputs/observation.template.json": "6877fb73f1680e159d763d973df84ccadf78b48ee9ed8327dae09d57ce0d3be0",
+    "outputs/current-training.md": "c8cf90f850dd0425013642f45098c1410aec1b8850272a1ab7a42cb6dd3b33ef",
+    "outputs/current-training.json": "849f888f04231f8895a0362bce110a3e82b635add94742cbe197f09a40a8e380",
+    "execution/validate.py": "4bc15b1536f8531704f64d31b5736822ca5644b3a6b223012c88f8e70ed5613c",
+    "execution/test_contract.py": "6a94caf92f069665c2dfc80ccd945f145535701a73f4c886eff5490293361e15",
+    "execution/build_evidence.py": "190a3384538b5c14129de6d422a245ef8912b8446e332c2e064f72263cc0acfc"
+  },
+  "real_clips": "PENDING",
+  "participant_observations": "PENDING",
+  "research_freeze": "PENDING"
+}

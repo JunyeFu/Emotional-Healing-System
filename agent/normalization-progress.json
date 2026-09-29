@@ -60,10 +60,10 @@
     "W-03",
     "W-04",
     "U12-01",
-    "U12-02"
+    "U12-02",
+    "U12-03"
   ],
   "remaining_packages": [
-    "U12-03",
     "U12-04",
     "U12-05",
     "U12-06",
@@ -1635,6 +1635,34 @@
       "id": "U1202-N04",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "共享运行模块及资料尚未整体迁入双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-03",
+      "id": "U1203-N01",
+      "status": "FIXED_ACTUAL_RELOCATION",
+      "description": "原13文件归档，活动材料与工具分离，历史身份不被新生成器覆盖",
+      "source": "agent/tasks/U12-03/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-03",
+      "id": "U1203-N02",
+      "status": "FIXED_FIVE_CONSUMERS",
+      "description": "G-01/E-02/Q-02/R-01/V-01读取新合同，冻结输入保持不变",
+      "source": "agent/tasks/U12-03/evidence/verification.json"
+    },
+    {
+      "task_id": "U12-03",
+      "id": "U1203-N03",
+      "status": "OPEN_REAL_TRAINING_AND_SIGNOFF",
+      "description": "实际语音/片段、理解与活动回执、正式预算时序和真人签署仍缺",
+      "source": "agent/tasks/U12-03/outputs/current-training.json"
+    },
+    {
+      "task_id": "U12-03",
+      "id": "U1203-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "旧根业务目录尚未整体迁入双层",
       "source": "agent/normalization.md"
     }
   ]

@@ -54,7 +54,7 @@ def main():
            and registry['G-05']['status'] == 'WAIT_DEP_EXTERNAL'
            and registry['P-02']['status'] == 'DONE', 'G-01/P-02 DONE; G-05 external work pending')
     authority = read_json(PLAN / '00_总控/protocol_authority_v1.2.json')
-    training = read_json(GOV / 'u12_upgrade/U12-03_fair_training/contract.json')
+    training = read_json(ROOT / 'agent/tasks/U12-03/outputs/contract.json')
     sequence = training['timeline']
     record('baseline and training order', sequence.index('panas_pre') < sequence.index('allocation_reveal')
            < sequence.index('condition_training') < sequence.index('core_800s')
@@ -89,7 +89,7 @@ def main():
     record('current wording', not prohibited.search(current + text), 'Current-use material and entry meet project wording rule')
     commands = [
         ('teaching contract tests', [sys.executable, '-m', 'pytest', '-q',
-         str(GOV / 'u12_upgrade/U12-03_fair_training/test_contract.py')]),
+         str(ROOT / 'agent/tasks/U12-03/execution/test_contract.py')]),
         ('task registry', [sys.executable, str(GOV / '07_validate_task_packages.py')]),
         ('dispatch snapshots', [sys.executable, str(GOV / '14_validate_ready_task_packages.py')]),
     ]

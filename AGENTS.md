@@ -58,6 +58,7 @@
 | 看成果与新成员移交 | `agent/tasks/W-04/outputs/current-handover.md`（八对象、部署/公开决定及真实接收，最终移交仍未交付） |
 | 看主线治理与消费者迁移 | `agent/tasks/U12-01/outputs/current-governance.md`（原签收范围、限定候选与六运行缺口，冻结原件分别消费） |
 | 看步骤实例测量交接 | `agent/tasks/U12-02/outputs/current-measurement.md`（八题、公开/私有合成材料与真实标注边界，原签收保留） |
+| 看两方案公平教学 | `agent/tasks/U12-03/outputs/current-training.md`（180秒候选、前测时序、真实理解与待签署分开） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |

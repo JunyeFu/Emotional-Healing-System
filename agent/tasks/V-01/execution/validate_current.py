@@ -75,7 +75,7 @@ def validate(view, protocol, training):
 def inputs():
     return (load(TASK / 'outputs/current-experience.json'),
             load(DESIGN / '00_总控/protocol_authority_v1.2.json'),
-            load(DESIGN / '24_团队任务与项目治理/u12_upgrade/U12-03_fair_training/contract.json'))
+            load(REPO / 'agent/tasks/U12-03/outputs/contract.json'))
 
 
 if __name__ == '__main__':

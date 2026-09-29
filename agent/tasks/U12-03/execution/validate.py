@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+OUTPUTS = HERE.parent / "outputs"
 ROOT = next(p for p in HERE.parents if (p / "AGENTS.md").exists())
 BREATH = ROOT / "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json"
 TIMELINE = ["neutral_preparation", "panas_pre", "allocation_reveal",
@@ -64,8 +65,8 @@ def validate(contract, breath, record):
 
 def main():
     read = lambda p: json.loads(p.read_text(encoding="utf-8"))
-    errors = validate(read(HERE / "contract.json"), read(BREATH),
-                      read(HERE / "observation.template.json"))
+    errors = validate(read(OUTPUTS / "contract.json"), read(BREATH),
+                      read(OUTPUTS / "observation.template.json"))
     if errors:
         raise SystemExit("\n".join(errors))
     print("PASS: teaching candidate consistency; real observations and research freeze remain pending")

@@ -61,7 +61,7 @@ def test_timing_and_reporting_match_material_owner(field):
 
 
 def test_actual_training_order_and_unmeasured_mastery():
-    training = read(GOV / 'u12_upgrade/U12-03_fair_training/contract.json')
+    training = read(ROOT / 'agent/tasks/U12-03/outputs/contract.json')
     steps = training['timeline']
     assert steps.index('panas_pre') < steps.index('allocation_reveal') < steps.index('condition_training')
     assert steps.index('condition_training') < steps.index('core_800s') < steps.index('panas_post')

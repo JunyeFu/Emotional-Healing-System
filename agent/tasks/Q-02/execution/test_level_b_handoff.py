@@ -39,7 +39,7 @@ def test_real_numbers_and_freeze_conflict_remain_explicit():
 
 def test_timing_and_no_reexposure_match_actual_training_contract():
     value = current()
-    training = json.loads((GOV / 'u12_upgrade/U12-03_fair_training/contract.json').read_text(encoding='utf-8'))
+    training = json.loads((ROOT / 'agent/tasks/U12-03/outputs/contract.json').read_text(encoding='utf-8'))
     protocol = json.loads((PLAN / '00_总控/protocol_authority_v1.2.json').read_text(encoding='utf-8'))
     assert value['training_candidate_seconds'] == training['candidate_budget_seconds'] == 180
     assert value['training_frozen_seconds'] is training['formal_training_budget_seconds'] is None

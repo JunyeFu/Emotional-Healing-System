@@ -1,0 +1,31 @@
+{
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/U12-03/package_manifest.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
+    "agent/tasks/R-01/outputs/current-representation.md",
+    "agent/tasks/U12-02/outputs/current-measurement.md",
+    "agent/tasks/U12-02/outputs/annotation-plan.md",
+    "agent/tasks/Q-02/outputs/current-level-b.md",
+    "agent/tasks/U12-01/outputs/current-governance.md",
+    "agent/tasks/U12-03/archive/candidate/evidence.json",
+    "agent/tasks/U12-03/archive/candidate/U12-03_独立复核记录.md",
+    "agent/tasks/U12-03/archive/candidate/U12-03_第二人审核报告_待签署.md"
+  ],
+  "archived_bytes": {
+    "技术验收记录.md": "F32A43808DBB771CCE2A736E52D5E8E14BF2EB3B704CB18914B0749565E3706D",
+    "build_evidence.py": "4A9A35C9570125D82C6B5F0359B0B45C7A4AF669D378053F9C1C8E94CE48A393",
+    "contract.json": "1D3E486E737124E7E9A32B133B8B3DABBFAEEC6D04ACE9A7BF048F973B764B68",
+    "evidence.json": "38AC948E1B3D4E4ADB2C5BAD5C700CCE839A4BE959689258235E967A26D3A7E6",
+    "formative.md": "131C61D955F5AE0B4C53E8A7465B68644ACD0E2A19A8ABDC1C61535993FD62FB",
+    "observation.template.json": "7C414662E7F954C3FFA563E2D4A7F5AF1AD65A9BCF79D79C3BCA3F362E361C86",
+    "README.md": "E9667891B354A106D68FBE74CAC62E7803BB14725AEB60856A28EC2470AC4443",
+    "sources.md": "9BB7C4575C492144FF14EE4883EDD366EACE9F2D5C765811DD1CCA919B6D36AD",
+    "teaching.md": "FD79CC1ADEB435F26577AD1A843F6E9508A0C41065F37F02809793B5AF521E64",
+    "test_contract.py": "33BADFA3647B0922730D9454A88C8FAB85DFF26B3EC352C28E100CA8E690F70C",
+    "U12-03_第二人审核报告_待签署.md": "1BDFA748416BAE3E2D1069505868BFB839AF56B526EA24FE993D91E523214DEE",
+    "U12-03_独立复核记录.md": "A5F8C12CAE33941B506AC597E41D0C7FB0C51F7982FD40F8AD98616311473514",
+    "validate.py": "965781F31FA142133625379F1ED6BEF79D5277F8E766F8844C56D5BC464A57CF"
+  }
+}

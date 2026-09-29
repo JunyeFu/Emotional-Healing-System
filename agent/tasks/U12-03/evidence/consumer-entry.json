@@ -1,0 +1,7 @@
+{
+  "task_id": "U12-03",
+  "command": "py -3.14 agent/tasks/G-01/execution/verify.py",
+  "exit_code": 0,
+  "result": "PASS G-01 current-use verification: 15 checks",
+  "scope": "current consumer and software checks only"
+}

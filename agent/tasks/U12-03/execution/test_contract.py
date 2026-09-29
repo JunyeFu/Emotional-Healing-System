@@ -6,12 +6,13 @@ from pathlib import Path
 import pytest
 
 HERE = Path(__file__).resolve().parent
+OUTPUTS = HERE.parent / "outputs"
 V = runpy.run_path(str(HERE / "validate.py"))
 
 
 def inputs():
     read = lambda p: json.loads(p.read_text(encoding="utf-8"))
-    return read(HERE / "contract.json"), read(V["BREATH"]), read(HERE / "observation.template.json")
+    return read(OUTPUTS / "contract.json"), read(V["BREATH"]), read(OUTPUTS / "observation.template.json")
 
 
 def test_candidate():

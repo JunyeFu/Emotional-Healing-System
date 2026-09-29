@@ -1,0 +1,132 @@
+{
+  "task_id": "U12-03",
+  "title": "U12 03 两方案公平教学与形成性交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U12-03保持IN_REVIEW。教学四文件及工具已归入Agent固定目录，原完整候选与冻结输入保留，五个实际消费者修复；180秒及教学时序仍是候选，真实片段、理解与正式冻结尚未完成。",
+  "historical_acceptance": {
+    "reviewer": "真实第二人待签署；原独立复核Pauli",
+    "date": "原独立审查2026-09-08 +08:00，真人日期待填写",
+    "commit": "9317f0b649547c2ae1d900fb39f6f486a9407baa",
+    "method": "原Pauli只读复核PASS，22项软件测试；本轮规范化由作者Agent执行，未产生新的独立复审或真实第二人签收。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务3人日，依赖U12-01/R-01；原领取Codex、分支codex/u12-03-fair-training。候选与冻结input_snapshot_id不改，真实第二人尚未签署。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1冻结来源与版本一致；AC2不改隐藏操纵、有限同预算，真实理解证据才关闭研究门；AC3候选、专项、独立审查和真实第二人对应，不代签外部条件。",
+        "过程为核对研究与步骤、确定匹配教学、执行形成性及配对修订、独立复核并真实签收。材料设计接受不代表正式活动通过。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "固定TASK与五目录、当前来源及状态、活动教学四文件、生成器/验证器与测试、实际消费者迁移、原完整13文件归档。原待签署、独立报告和技术记录保留原字节。",
+        "两臂180秒候选，七块20/30/30/30/30/20/20秒；每天气各一次示范与练习，storm两周期24秒、其他20秒。真实配音与片段时长尚未核验。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "中性准备后先PANAS前测，再揭示条件及教学；800秒核心之后PANAS后测，最后理解与其他测量。时序仍待U12-04/U12-11正式冻结，800秒含四次25秒demo，不加第二份100秒。",
+        "目标/实际/累计/不可用都教学，语义、预算、背景及语音匹配，仅载体定位不同；原生不等于隐藏。按分配天气顺序，不按掌握程度重复或筛慢学习者；帮助与停止如实记录。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "83专项通过：原22合同、13文件字节、原9交付与6来源身份、4活动材料逐字节、冻结输入/候选及Q-02/E-02交接；V-01当前14节点校验通过。",
+        "根635项回归及协议、治理、71任务注册、5分发包/61快照检查通过。原Pauli22项仅属历史复核；本轮不声称真实语音、片段、观察、正式时序或Unity/TD运行通过。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "原合同与工具混在治理子目录，旧证据生成器引用已迁移测量说明。现分离活动输出/脚本与原候选，当前身份改用R-01/U12-02实际入口，不覆盖旧evidence.json。",
+        "G-01/E-02/Q-02/R-01/V-01的实际读取和来源清单已修复；冻结包、原候选和成员交付不重写。旧入口只导航，原复核不自动用于新路径修改。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "原13文件实际归档，活动四文件保持相同字节另存outputs，只有活动目录供下游读取；旧脚本不继续运行。固定目录分别存来源、执行、复测、交接与历史。",
+        "先修Agent层事实和消费者，再生成Word；共享运行代码、Unity/TD及全部旧根业务资料仍待整体双层迁移。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "U12-01给主线，R-01给四层，F-05给storm 3/3/3/3、heat 4/6、snow 5/5、fade 2.5/1.5/6；旧天气文字不覆盖步骤合同，独立实际不借目标补值。",
+        "U-02/U-07/U12-09供同事件配对实片，Q-01/Q-02核验理解/帮助成本；U12-04/U12-11冻结处理估计、预算时序、阈值及回执，U12-06/X-01落实时间记录接线。真实观察未完成。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原Pauli独立PASS针对9317候选。本轮只有作者Agent目录与软件复测，无新独立Agent复审，也无真人签收；IN_REVIEW不改。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计62/71包规范化，余9，下一U12-04。教学候选不当作业务DONE，整体根目录物理迁移与运行引用修复尚未完成。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "原合同、教学/形成性与空表、原13文件及其哈希、Pauli报告、待签署报告、冻结分发输入、当前R-01/U12-02以及G-01/E-02/Q-02/V-01消费者。空记录与合成检查不是实测数据。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "U1203-N01",
+      "status": "FIXED_ACTUAL_RELOCATION",
+      "description": "原13文件归档，活动材料与工具分离，历史身份不被新生成器覆盖",
+      "source": "agent/tasks/U12-03/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1203-N02",
+      "status": "FIXED_FIVE_CONSUMERS",
+      "description": "G-01/E-02/Q-02/R-01/V-01读取新合同，冻结输入保持不变",
+      "source": "agent/tasks/U12-03/evidence/verification.json"
+    },
+    {
+      "id": "U1203-N03",
+      "status": "OPEN_REAL_TRAINING_AND_SIGNOFF",
+      "description": "实际语音/片段、理解与活动回执、正式预算时序和真人签署仍缺",
+      "source": "agent/tasks/U12-03/outputs/current-training.json"
+    },
+    {
+      "id": "U1203-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "旧根业务目录尚未整体迁入双层",
+      "source": "agent/normalization.md"
+    }
+  ],
+  "next_task": "U12-04",
+  "source_links": [
+    {
+      "label": "当前公平教学交接",
+      "path": "agent/tasks/U12-03/outputs/current-training.md"
+    },
+    {
+      "label": "活动合同",
+      "path": "agent/tasks/U12-03/outputs/contract.json"
+    },
+    {
+      "label": "本轮验证",
+      "path": "agent/tasks/U12-03/evidence/verification.json"
+    },
+    {
+      "label": "迁移与消费者",
+      "path": "agent/tasks/U12-03/evidence/consumer-impact.md"
+    }
+  ]
+}
