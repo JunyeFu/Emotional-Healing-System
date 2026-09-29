@@ -1,0 +1,9 @@
+{
+  "task_id": "U12-07",
+  "observed_failure": "build_task_reviews.py U12-07/W-01/W-02 failed while building chain: Missing source U12-07_neutral_core_draft/empty_table_spec.md",
+  "affected_consumer": "agent/tasks/A-05/inputs/sources.json",
+  "repair": "read archived old table for history and current table-spec.md for active requirements",
+  "status": "FIXED_AND_REBUILT",
+  "original_signed_text_changed": false,
+  "frozen_dispatch_inputs_refreshed": false
+}

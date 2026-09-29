@@ -64,10 +64,10 @@
     "U12-03",
     "U12-04",
     "U12-05",
-    "U12-06"
+    "U12-06",
+    "U12-07"
   ],
   "remaining_packages": [
-    "U12-07",
     "U12-08",
     "U12-09",
     "U12-10",
@@ -975,8 +975,8 @@
     {
       "task_id": "W-01",
       "id": "W01-N04",
-      "status": "HANDOFF_U12_07_SIGNED_TEXT_REVISION",
-      "description": "已签收U12-07仍含旧RQ/有序门/八题写法，隔离当前权威并需其新候选修订，不改签名",
+      "status": "FIXED_CURRENT_U1207_SPECIFICATION_REVIEW_PENDING",
+      "description": "U12-07当前方法与表/解释规格已修且原稿归档，新复核签收仍待完成，不改签名",
       "source": "agent/tasks/W-01/evidence/consumer-impact.md"
     },
     {
@@ -1521,8 +1521,8 @@
     {
       "task_id": "W-02",
       "id": "W02-N02",
-      "status": "OPEN_SIGNED_U1207_REVISION",
-      "description": "历史签署稿仍含旧RQ八题和有序门，原件不改，当前修订待完成",
+      "status": "FIXED_CURRENT_U1207_SPECIFICATION_REVIEW_PENDING",
+      "description": "旧稿归档、当前方法与11表/规则已修，真实来源测试已改；新复核签收仍缺",
       "source": "agent/tasks/W-02/evidence/consumer-impact.md"
     },
     {
@@ -1761,6 +1761,41 @@
       "id": "U1206-N05",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "共享模块与旧根业务目录尚未整体迁入人类/Agent双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-07",
+      "id": "U1207-N01",
+      "status": "FIXED_CURRENT_METHOD_TABLES_AND_RULES",
+      "description": "旧RQ门序和缺PANAS表由当前方法、11表和两向规则替代，签收原文实际归档",
+      "source": "agent/tasks/U12-07/outputs/current-method.md"
+    },
+    {
+      "task_id": "U12-07",
+      "id": "U1207-N02",
+      "status": "FIXED_ACTUAL_CONSUMERS",
+      "description": "W-01/W-02当前入口及W-02历史测试来源修复，关联Word同步",
+      "source": "agent/tasks/U12-07/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-07",
+      "id": "U1207-N03",
+      "status": "OPEN_NEW_REVIEW_AND_REAL_WRITING",
+      "description": "新规格非论文正文，独立/真人新签收、真实主稿/结果/冻结仍缺",
+      "source": "agent/tasks/U12-07/outputs/current-writing.json"
+    },
+    {
+      "task_id": "U12-07",
+      "id": "U1207-N05",
+      "status": "PREEXISTING_HASH_POLICY_DESCRIPTION_MISMATCH_PRESERVED",
+      "description": "两历史输出无末尾LF且原哈希未补LF，与声明算法不同；原正文及证据保留",
+      "source": "agent/tasks/U12-07/evidence/historical-hash-policy.json"
+    },
+    {
+      "task_id": "U12-07",
+      "id": "U1207-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "根共享治理及工程尚未全部迁入双层",
       "source": "agent/normalization.md"
     }
   ]

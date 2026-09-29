@@ -62,9 +62,11 @@ def test_u1207_signed_identity_and_conflict_not_overwritten():
     assert signature['human_review']['reviewer'] == '傅钧烨'
     assert signature['human_review']['status'] == 'PASS'
     impact = (TASK / 'evidence/consumer-impact.md').read_text(encoding='utf-8')
-    assert 'OPEN_SIGNED_U1207_REVISION' in impact and '第180行' in impact
-    old = (GOV / 'u12_upgrade/U12-07_neutral_core_draft/design_method.md').read_text(encoding='utf-8')
+    assert 'FIXED_CURRENT_U1207_SPECIFICATION' in impact and '第180行' in impact
+    old = (ROOT / 'agent/tasks/U12-07/archive/signed-candidate/design_method.md').read_text(encoding='utf-8')
     assert '结果必须按门控顺序呈现' in old
+    spec = (ROOT / 'agent/tasks/U12-07/outputs/current-method.md').read_text(encoding='utf-8')
+    assert 'PANAS' in spec and '非论文正文' in spec
     assert current()['old_u1207_signed_scope_automatically_current'] is False
 
 def test_unobserved_claim_matrix_and_optional_extension():

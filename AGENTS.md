@@ -62,6 +62,7 @@
 | 看PANAS统计规格与功效 | `agent/tasks/U12-04/outputs/current-statistics.md`（活动SAP/拟合修订与原签收、正式分析和N冻结分开） |
 | 看早期静态与回放真实准入 | `agent/tasks/U12-05/outputs/current-admission.md`（活动范围、真人权限与空真实回执，软件核查不放行研究） |
 | 看正式入口研究准入接线 | `agent/tasks/U12-06/outputs/current-runtime.md`（领取快照保留、六运行缺口与基础保护/研究批准分开） |
+| 看结果前中立写作规格 | `agent/tasks/U12-07/outputs/current-method.md`（PANAS主比较、11空表与两向规则；旧签收保留，新稿待真人） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |
