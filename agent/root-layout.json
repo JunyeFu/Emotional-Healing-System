@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "Physical root migration after all 71 task packages; not business acceptance",
+  "root_migration_complete": false,
+  "entries": [
+    {"old": "work", "new": "agent/work", "purpose": "Agent execution records", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-work.json"},
+    {"old": "00-项目管理", "new": "agent/governance", "purpose": "Authoritative governance, contracts and preserved sources", "status": "PENDING"},
+    {"old": "01-需求与设计", "new": "agent/design", "purpose": "Design sources consumed by implementation", "status": "PENDING"},
+    {"old": "02-技术研发", "new": "agent/modules", "purpose": "Shared Python, Unity and TD implementations", "status": "PENDING"},
+    {"old": "03-测试与实验", "new": "agent/validation", "purpose": "Verification sources and original signed evidence", "status": "PENDING"},
+    {"old": "04-成果与交付", "new": "agent/delivery", "purpose": "Delivery generation sources and retained original artifacts", "status": "PENDING"},
+    {"old": "srp参考文献", "new": "agent/references", "purpose": "Original references and source identification", "status": "PENDING"},
+    {"old": "Tools", "new": "agent/tools/legacy", "purpose": "Existing shared governance renderers", "status": "PENDING"},
+    {"old": "assets", "new": "human/assets", "purpose": "Human-facing README progress image", "status": "PENDING"},
+    {"old": "output", "new": "human/deliverables", "purpose": "Published human-readable PDF artifacts", "status": "PENDING"},
+    {"old": "PROJECT_FRAMEWORK.md", "new": "human/project/PROJECT_FRAMEWORK.md", "purpose": "Project overview", "status": "PENDING"},
+    {"old": "PROJECT_MODULES.md", "new": "human/project/PROJECT_MODULES.md", "purpose": "Current module overview", "status": "PENDING"},
+    {"old": "README_run.md", "new": "agent/runtime/README_run.md", "purpose": "Runtime entry instructions", "status": "PENDING"},
+    {"old": "_archive", "new": "agent/archive/local", "purpose": "Machine-local historical materials; not automatically published", "status": "PENDING"},
+    {"old": "_worktrees", "new": "agent/local/worktrees", "purpose": "Local checkout material; inspect active handles before moving", "status": "PENDING"},
+    {"old": "tmp", "new": "agent/local/tmp", "purpose": "Machine-local temporary material; not automatically published", "status": "PENDING"},
+    {"old": ".tools", "new": "agent/local/tools", "purpose": "Local production tools", "status": "PENDING"},
+    {"old": ".artifacts-local", "new": "agent/local/artifacts", "purpose": "Rendered QA and local evidence; tracked originals retained", "status": "PENDING"},
+    {"old": ".pytest_cache", "new": "agent/local/pytest-cache", "purpose": "Local test cache", "status": "PENDING"}
+  ],
+  "root_entries_retained": [".git", ".gitignore", ".gitattributes", ".mcp.json", ".codex", ".claude", "pytest.ini", "AGENTS.md", "README.md", "human", "agent"],
+  "preservation": "Signed originals, archived sources and active frozen dispatch bytes are not mechanically rewritten. Current consumers must resolve documented relocations without changing acceptance scope.",
+  "required_verification": ["No old business directory remains at root", "Runtime and generator paths repaired", "All 71 task sources and Word links resolve", "Frozen and signed originals retain bytes", "Python regression and governance/dispatch checks pass", "Unity and TD migration verified within their actual tested scope"]
+}

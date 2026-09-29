@@ -179,8 +179,8 @@
 ### 完成标准
 
 - 修改后必须用测试、命令、截图或文件检查验证。
-- 验证记录写入或参考 `work/codex-verification-log.md`。
-- 多步骤任务的目标、证据、风险和下一步队列记录在 `work/codex-blackboard.md`。
+- 验证记录写入或参考 `agent/work/codex-verification-log.md`。
+- 多步骤任务的目标、证据、风险和下一步队列记录在 `agent/work/codex-blackboard.md`。
 - 重复失败不得只重试；应沉淀为测试、脚本、文档或规则。
 - 收尾时检查 `git status --short`，只提交与任务相关的文件。
 
