@@ -82,7 +82,7 @@ def test_empty_report_and_training_release_do_not_invent_results():
     assert current()['approved_training_release'] is None
     assert current()['online_state_may_include_post_panas'] is False
     assert current()['observed_case_is_complete_four_module'] is current()['power_script_is_formal_mi_analysis'] is False
-    assert current()['result_classifier'] == 'U12-10_NOT_DELIVERED'
+    assert current()['result_classifier'] == 'U12-10_CANDIDATE_ONLY_FORMAL_NOT_DELIVERED'
 
 
 def test_candidate_signature_preserved_and_differences_recorded():

@@ -1,0 +1,34 @@
+{
+  "task_id": "U12-10",
+  "title": "U12 10 阶段一结果分类与主张审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U12-10仍WAIT_DEP、未领取未签署。四旧候选实际归档，复用外部分类算法并修Python3.14帮助文字启动报错；15合成案例和主张规则已交付，但A-05真实结果、正式阈值、独立复核及第二人签收仍缺，不认定正式分类完成。",
+  "historical_acceptance": {"reviewer": "未指定", "date": "未签署", "commit": null, "method": "本轮为作者Agent整理及软件复测；没有本包独立复核或真人验收，不代填结论。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["固定任务2人日，依赖A-05；活动注册已存在，旧未注册候选入口订正。当前正式研究数字与原签署范围不改，不接管成员在研输入。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["消费同版锁库、正式SAP和A-05结果，检查beta方向、95%CI尺度、功能/效度及允许主张。AC1输入与候选明确；AC2正反优势、小差异、不确定与等效不混淆；AC3真实独立复算和第二人绑定候选。", "过程为输入核对、分轴分类、逐项主张和下游交接。合成软件通过不能替代真实阶段一结果复核。"]},
+    {"heading": "实际交付", "paragraphs": ["固定TASK及五目录、候选classifier、15合成案例和重建报告、主张规则、当前交接、实际CLI及边界复测。四原候选归档，三文件字节与原输入ID保持；外部原工具副本归档且封包来源不改。", "A-05当前索引从分类器未交付订正为候选具备、正式未交付，Markdown接本包；空分析报告仍无beta/CI/p/n，不生成论文第一稿或真实结论。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["native-minus-abstract负值有利原生，正值有利抽象；必须是基线调整PANAS负性情绪而非组内变化、PF或标准化量。候选工具接人工数值，不拟合模型、不验证冻结或批准。", "95%CI方向和实际尺度分开，触0不建立方向、触±delta不算越界；小而可辨与界内标签可并存。等效始终关闭，合成delta=1不进入正式研究。"]},
+    {"heading": "验证与结果", "paragraphs": ["92项专项8.47秒通过，覆盖15正反/小差异/触边案例、20非法输入、护栏/效度/敏感性、原件身份、真实CLI/help、合成重建与A-05/A-06/U12-07交接。实际根回归与治理结果见verification.json。", "PF或SCCI失败不隐去有效情绪比较；delivery效度和敏感性标签独立保留，不自动部署。无法估计时记录原因，不用合成not_assessable占位数值替代真实缺失。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["首轮1 failed/91 passed，外部工具在Python3.14 argparse校验帮助文字时遇裸百分号，报badly formed help string。只改两处帮助文字并补实际help/输入CLI复测，原工具和失败日志保留。", "Evidence/_number/classify的语法树与原工具相同，未更改分类算法。正式锁库、SAP、关注差异、真实结果及签收仍缺，不能用候选软件解除研究阻断。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["inputs存实际来源及合成案例，execution存候选工具与测试，evidence存初始失败和最终日志，outputs存交接/规则/合成报告和Word源，archive存四候选与原工具。", "原外部审计包、历史签名、研究数字和冻结分发保持；旧候选位置只留导航。共享模块与旧业务目录仍待整体迁入双层，不将逐包整理写为根迁移完成。"]},
+    {"heading": "上下游交接", "paragraphs": ["A-05交真实锁库/SAP关联和完整主结果，U12-11/G-03交事前阈值和冻结，U12-07交中立解释规格。当前空报告及候选分类工具各自标注，不靠软件标签证明来源有效。", "真实分轴分类与允许主张交A-06关闭范围、W-02/W-03写作复现；情绪收益、功能代价和设计边界并列，正反结果均可报告。可选阶段三有独立估计目标，不能混入阶段一提示比较。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["真实结果复算人、独立复核者、研究负责人及第二人尚未指定，候选没有新签署。作者Agent复测只记录软件行为，不写成独立Agent或真人PASS；业务WAIT_DEP保持。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计69/71包规范化，余2，下一U12-11。真实分类仍待上游和签收，根目录整体物理迁移尚未完成。"]},
+    {"heading": "审阅来源", "paragraphs": ["活动任务注册、研究1.2、原候选manifest、外部原分类器及统计合同、A-05空报告/实际交接、U12-04统计范围、U12-07解释规则、A-06/W-02/G-03职责和本轮复测。"]}
+  ],
+  "findings": [
+    {"id": "U1210-N01", "status": "FIXED_ACTUAL_ARCHIVE_AND_CURRENT_ENTRY", "description": "四候选实际归档，原输入ID/三文件字节保留，未注册旧入口订正", "source": "agent/tasks/U12-10/archive/README.md"},
+    {"id": "U1210-N02", "status": "FIXED_PYTHON314_CLI_HELP_AND_RETESTED", "description": "两处裸百分号帮助文字导致CLI启动错误，原件/初始失败保留，算法不改且实际CLI复测", "source": "agent/tasks/U12-10/evidence/consumer-impact.md"},
+    {"id": "U1210-N03", "status": "DELIVERED_SYNTHETIC_CLASSIFIER_NOT_FORMAL_REVIEW", "description": "15合成案例和主张规则可重跑，A-05候选可用性订正，不填真实结果", "source": "agent/tasks/U12-10/outputs/current-classification.md"},
+    {"id": "U1210-N04", "status": "OPEN_REAL_RESULTS_FROZEN_RULES_AND_SIGNOFF", "description": "正式结果/SAP/阈值、独立复算和真实第二人未交付，WAIT_DEP保持", "source": "agent/tasks/U12-10/outputs/current-classification.md"},
+    {"id": "U1210-N05", "status": "OPEN_ROOT_MIGRATION", "description": "旧根业务与共享模块尚未整体迁入双层", "source": "agent/normalization.md"}
+  ],
+  "next_task": "U12-11",
+  "source_links": [
+    {"label": "当前结果分类交接", "path": "agent/tasks/U12-10/outputs/current-classification.md"},
+    {"label": "允许主张与限制", "path": "agent/tasks/U12-10/outputs/claim-rules.md"},
+    {"label": "15合成分类案例", "path": "agent/tasks/U12-10/outputs/synthetic-classification.json"},
+    {"label": "本轮软件验证", "path": "agent/tasks/U12-10/evidence/verification.json"}
+  ]
+}

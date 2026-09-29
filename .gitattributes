@@ -102,3 +102,5 @@ agent/tasks/U12-07/evidence/initial-handoff.txt -text whitespace=-blank-at-eol
 agent/tasks/U12-07/evidence/second-handoff.txt -text whitespace=-blank-at-eol
 agent/tasks/U12-08/archive/** -text whitespace=cr-at-eol
 agent/tasks/U12-09/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-10/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-10/execution/result_classifier.py -text whitespace=cr-at-eol

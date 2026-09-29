@@ -18,7 +18,7 @@
   "observed_case_is_complete_four_module": false,
   "power_script_is_formal_mi_analysis": false,
   "bh_helper_is_full_fdr_pipeline": false,
-  "result_classifier": "U12-10_NOT_DELIVERED",
+  "result_classifier": "U12-10_CANDIDATE_ONLY_FORMAL_NOT_DELIVERED",
   "approved_training_release": null,
   "online_state_may_include_post_panas": false,
   "optional_stage3_required_for_core_paper": false,

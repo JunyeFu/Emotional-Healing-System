@@ -1,0 +1,382 @@
+{
+  "scope": "SYNTHETIC_ONLY_NOT_RESEARCH_RESULTS",
+  "real_analysis": "NOT_RUN",
+  "formal_authorization": false,
+  "cases": [
+    {
+      "id": "native_large",
+      "result": {
+        "input": {
+          "estimate": -3.0,
+          "ci95": [
+            -4.0,
+            -2.0
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NATIVE_LOWER",
+        "practical_scale": "NATIVE_IMPORTANT_BENEFIT_SUPPORTED",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "abstract_large",
+      "result": {
+        "input": {
+          "estimate": 3.0,
+          "ci95": [
+            2.0,
+            4.0
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "ABSTRACT_LOWER",
+        "practical_scale": "ABSTRACT_IMPORTANT_BENEFIT_SUPPORTED",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "native_small",
+      "result": {
+        "input": {
+          "estimate": -0.2,
+          "ci95": [
+            -0.3,
+            -0.1
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NATIVE_LOWER",
+        "practical_scale": "WITHIN_PRESPECIFIED_PRACTICAL_BOUNDS",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "abstract_small",
+      "result": {
+        "input": {
+          "estimate": 0.2,
+          "ci95": [
+            0.1,
+            0.3
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "ABSTRACT_LOWER",
+        "practical_scale": "WITHIN_PRESPECIFIED_PRACTICAL_BOUNDS",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "uncertain_wide",
+      "result": {
+        "input": {
+          "estimate": 0.0,
+          "ci95": [
+            -4.0,
+            4.0
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NO_DIRECTION_ESTABLISHED",
+        "practical_scale": "IMPORTANT_EFFECT_NOT_EXCLUDED",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "uncertain_narrow",
+      "result": {
+        "input": {
+          "estimate": 0.0,
+          "ci95": [
+            -0.2,
+            0.2
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NO_DIRECTION_ESTABLISHED",
+        "practical_scale": "WITHIN_PRESPECIFIED_PRACTICAL_BOUNDS",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "touch_zero_native",
+      "result": {
+        "input": {
+          "estimate": -0.5,
+          "ci95": [
+            -1.0,
+            0.0
+          ],
+          "practical_delta": null
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NO_DIRECTION_ESTABLISHED",
+        "practical_scale": "THRESHOLD_NOT_FROZEN",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "touch_zero_abstract",
+      "result": {
+        "input": {
+          "estimate": 0.5,
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "practical_delta": null
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NO_DIRECTION_ESTABLISHED",
+        "practical_scale": "THRESHOLD_NOT_FROZEN",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "touch_negative_delta",
+      "result": {
+        "input": {
+          "estimate": -2.0,
+          "ci95": [
+            -3.0,
+            -1.0
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NATIVE_LOWER",
+        "practical_scale": "IMPORTANT_EFFECT_NOT_EXCLUDED",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "touch_positive_delta",
+      "result": {
+        "input": {
+          "estimate": 2.0,
+          "ci95": [
+            1.0,
+            3.0
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "ABSTRACT_LOWER",
+        "practical_scale": "IMPORTANT_EFFECT_NOT_EXCLUDED",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "threshold_missing",
+      "result": {
+        "input": {
+          "estimate": -2.0,
+          "ci95": [
+            -3.0,
+            -1.0
+          ],
+          "practical_delta": null
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NATIVE_LOWER",
+        "practical_scale": "THRESHOLD_NOT_FROZEN",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "guard_failed",
+      "result": {
+        "input": {
+          "estimate": 3.0,
+          "ci95": [
+            2.0,
+            4.0
+          ],
+          "practical_delta": 1.0
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "ABSTRACT_LOWER",
+        "practical_scale": "ABSTRACT_IMPORTANT_BENEFIT_SUPPORTED",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "FAIL",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "delivery_invalid",
+      "result": {
+        "input": {
+          "estimate": 3.0,
+          "ci95": [
+            2.0,
+            4.0
+          ],
+          "practical_delta": null
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "ABSTRACT_LOWER",
+        "practical_scale": "THRESHOLD_NOT_FROZEN",
+        "interpretation_scope": "DELIVERY_VALIDITY_LIMITED",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "not_assessable",
+      "result": {
+        "input": {
+          "estimate": 0.0,
+          "ci95": [
+            -1.0,
+            1.0
+          ],
+          "practical_delta": null
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NOT_ASSESSABLE",
+        "practical_scale": "NOT_ASSESSABLE",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "UNKNOWN",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    },
+    {
+      "id": "sensitive",
+      "result": {
+        "input": {
+          "estimate": -2.0,
+          "ci95": [
+            -3.0,
+            -1.0
+          ],
+          "practical_delta": null
+        },
+        "contrast": "native_minus_abstract; lower_negative_affect_is_better",
+        "direction_evidence": "NATIVE_LOWER",
+        "practical_scale": "THRESHOLD_NOT_FROZEN",
+        "interpretation_scope": "ASSIGNED_IMPLEMENTATIONS",
+        "functional_guard": "UNKNOWN",
+        "sensitivity": "SENSITIVE",
+        "prespecified_affect_result_must_be_reported": true,
+        "formal_equivalence_claim_allowed": false,
+        "automatic_deployment_recommendation": false,
+        "mechanism_or_all_explicit_vs_native_claim_allowed": false,
+        "long_term_or_treatment_efficacy_claim_allowed": false,
+        "note": "CI classification is not formal SAP execution. Functional failure does not hide affect results. Equivalence requires separately prespecified methods and margins; default is disabled."
+      }
+    }
+  ]
+}

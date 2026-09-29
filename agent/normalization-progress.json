@@ -67,10 +67,10 @@
     "U12-06",
     "U12-07",
     "U12-08",
-    "U12-09"
+    "U12-09",
+    "U12-10"
   ],
   "remaining_packages": [
-    "U12-10",
     "U12-11",
     "U12-12"
   ],
@@ -1859,6 +1859,41 @@
       "id": "U1209-N05",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "旧根业务与共享模块未整体迁入双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-10",
+      "id": "U1210-N01",
+      "status": "FIXED_ACTUAL_ARCHIVE_AND_CURRENT_ENTRY",
+      "description": "四候选实际归档，原输入ID/三文件字节保留，未注册旧入口订正",
+      "source": "agent/tasks/U12-10/archive/README.md"
+    },
+    {
+      "task_id": "U12-10",
+      "id": "U1210-N02",
+      "status": "FIXED_PYTHON314_CLI_HELP_AND_RETESTED",
+      "description": "两处裸百分号帮助文字导致CLI启动错误，原件/初始失败保留，算法不改且实际CLI复测",
+      "source": "agent/tasks/U12-10/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-10",
+      "id": "U1210-N03",
+      "status": "DELIVERED_SYNTHETIC_CLASSIFIER_NOT_FORMAL_REVIEW",
+      "description": "15合成案例和主张规则可重跑，A-05候选可用性订正，不填真实结果",
+      "source": "agent/tasks/U12-10/outputs/current-classification.md"
+    },
+    {
+      "task_id": "U12-10",
+      "id": "U1210-N04",
+      "status": "OPEN_REAL_RESULTS_FROZEN_RULES_AND_SIGNOFF",
+      "description": "正式结果/SAP/阈值、独立复算和真实第二人未交付，WAIT_DEP保持",
+      "source": "agent/tasks/U12-10/outputs/current-classification.md"
+    },
+    {
+      "task_id": "U12-10",
+      "id": "U1210-N05",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "旧根业务与共享模块尚未整体迁入双层",
       "source": "agent/normalization.md"
     }
   ]
