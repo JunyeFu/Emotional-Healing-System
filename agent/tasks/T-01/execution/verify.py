@@ -8,7 +8,7 @@ import time
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-MODULE = ROOT / '02-技术研发/03-TouchDesigner/t01_telemetry_panel'
+MODULE = ROOT / 'agent/modules/03-TouchDesigner/t01_telemetry_panel'
 sys.path.insert(0, str(MODULE))
 from t01_node_plan import write_host_artifacts
 
@@ -55,7 +55,7 @@ def main():
     evidence = TASK / 'evidence'
     evidence.mkdir(parents=True, exist_ok=True)
     tests = [str(MODULE / 'tests'),
-             str(ROOT / '02-技术研发/03-TouchDesigner/f04_readonly_console/tests'),
+             str(ROOT / 'agent/modules/03-TouchDesigner/f04_readonly_console/tests'),
              str(TASK / 'execution/test_verify.py')]
     result = subprocess.run([sys.executable, '-m', 'pytest', *tests, '-q'],
                             cwd=ROOT, capture_output=True, text=True, encoding='utf-8')

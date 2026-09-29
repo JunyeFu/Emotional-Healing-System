@@ -3,16 +3,18 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import runpy
 
 import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-05'
-UNITY = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 
 
 def read(path):
+    path = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path'](ROOT, path.relative_to(ROOT).as_posix())
     return json.loads(path.read_text(encoding='utf-8-sig'))
 
 
@@ -85,14 +87,14 @@ def test_legacy_scene_has_no_current_bridge_or_four_layer_adapter(name):
 
 @pytest.mark.parametrize('name', ['CleanAndRebuildScenes', 'CleanupWeatherDuplicates'])
 def test_archived_tool_bytes_and_no_activity_or_consumers(name):
-    original = f'02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
+    original = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
     assert not (ROOT / original).exists() and not (ROOT / (original + '.meta')).exists()
     archived = TASK / f'archive/{name}.cs'
     assert '[MenuItem(' in archived.read_text(encoding='utf-8-sig')
     # The reviewed pre-migration commit is fixed, so future reruns remain meaningful.
     for suffix in ['', '.meta']:
-        result = subprocess.run(['git', 'show', f'16fa5ad:{original}{suffix}'], cwd=ROOT, capture_output=True, check=True)
-        assert result.stdout == (TASK / f'archive/{name}.cs{suffix}').read_bytes()
+        before = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '16fa5ad', original + suffix)
+        assert before == (TASK / f'archive/{name}.cs{suffix}').read_bytes()
         attr = subprocess.run(['git', 'check-attr', 'text', '--', f'agent/tasks/U-05/archive/{name}.cs{suffix}'],
                               cwd=ROOT, capture_output=True, text=True, check=True)
         assert attr.stdout.rstrip().endswith(': text: unset')

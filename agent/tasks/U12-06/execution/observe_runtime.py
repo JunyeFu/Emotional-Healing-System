@@ -6,7 +6,7 @@ import sys
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-TECH = ROOT / '02-技术研发'
+TECH = ROOT / 'agent/modules'
 sys.path.insert(0, str(TECH))
 
 from srp_session_core import SessionCore, SessionCoreError

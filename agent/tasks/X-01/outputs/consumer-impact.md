@@ -2,10 +2,10 @@
 
 ## 实际迁移
 
-- `02-技术研发/08-随机化/verify_x01.py`移到`agent/tasks/X-01/execution/verify_x01.py`。
+- `agent/modules/08-随机化/verify_x01.py`移到`agent/tasks/X-01/execution/verify_x01.py`。
 - 同模块`generate_evidence.py`移到同一execution目录；必须显式传入不存在的`--output-root`，不覆盖原证据。
 - 原README原文移到archive，原位置改导航；原字节指纹见archive/README.md。
-- `02-技术研发/tests/randomization/test_verifier.py`实际导入新路径，无旧工具转发或双份执行权威。
+- `agent/modules/tests/randomization/test_verifier.py`实际导入新路径，无旧工具转发或双份执行权威。
 
 ## 消费边界
 

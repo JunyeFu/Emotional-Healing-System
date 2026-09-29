@@ -10,59 +10,121 @@
     "method": "见证已有验证并审阅03d7426219121e49554e405db9dd521b8ab1d819，未声明亲自重跑。本轮不追加真人签署。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": [
-      "当前执行Codex，不改变任务注册状态。归档和重放候选能力已复测，不表示真实设备持续采集、Unity/TD联调或实际研究结果已经完成。"
-    ]},
-    {"heading": "目标与完成标准", "paragraphs": [
-      "原包约4人日。AC1为中断数据恢复保留旧字节；AC2为篡改、删除、乱序、尾锚和封存漂移检测；AC3为完整核心调用确定性重放，不执行网络或外部暴露动作。",
-      "本轮迁移工具与新证据，保留历史原件，核对RawEvidenceBundle、下游原件访问和核心前教学交接，不改记录格式与P-01状态权威。"
-    ]},
-    {"heading": "实际交付", "paragraphs": [
-      "generate_golden_archive.py与generate_stress_report.py实际迁入agent/tasks/P-02/execution，旧位置删除，无转发副本。verify.py和verify.ps1为当前统一入口。",
-      "新19个归档文件、证据索引、比较报告和压力结果固定evidence/runtime；历史fixtures与压力原件不覆盖。TASK、来源、结构化总结与历史说明构成固定五目录。"
-    ]},
-    {"heading": "执行过程与关键决定", "paragraphs": [
-      "核对签署、归档、记录代理、重放和证据束；P-01仍为流程与时钟权威。代理耐久提交后返回控制，重放用已记录门回执，不执行外部动作。工具改写新输出，补LF与新目录字节验证。",
-      "Agent当前说明订正F-05候选、旧目录和命令，区分声明检查与原件检查。旧README为U12-06冻结输入，保留原字节。"
-    ]},
-    {"heading": "验证与结果", "paragraphs": [
-      "P-02/P-01/X-01/协议/G-02合计467项通过；新增新目录字节验证并补LF规则后，golden专项6项复测通过。原签收68项是历史结果，不覆盖为本轮计数。",
-      "重建19控制、19ACK、12回执、54事件、46操作；封存、最终状态、重放和19文件索引均与历史证据一致。新目录文件逐字节哈希验证通过。",
-      "800秒逻辑负载加速运行约62.51秒：PLUX 320000样本、Polar 104000样本、16000同步帧，L0共1600包，L1共16001条含封存事件；完整性和8点内存趋势通过。暖机后增长为0字节，峰值约55.16 MB；这是合成负载，不是800秒真机持续采集。"
-    ]},
-    {"heading": "偏离与修复闭环", "paragraphs": [
-      "P02-N01：两个工具默认覆盖旧证据，已实际迁移并改写新输出目录，旧签署与原件未改。P02-N02：新归档目录缺LF规则，已加入属性并验证实际文件哈希与重放。",
-      "P02-N03：旧README仍用F-05候选和旧入口，Agent层当前说明及根入口已订正。restricted_ref仅检查引用及哈希声明，当前说明明确authorization=False与A-01真实授权读取责任，不把元数据通过扩大成原件验证。",
-      "核心前教学尚未由P-01/U12-11正式接入；本包只能保存实际事件，不能从旧golden推断教学暴露。该交接继续开放。"
-    ]},
-    {"heading": "目录与文件整理", "paragraphs": [
-      "执行工具、新结果和总结固定归类；共享模块仍待最终迁移。旧README冻结漂移已通过保留原字节消除，订正另存outputs/current-store-contract.md，根入口已更新；U12-06输入不覆盖。"
-    ]},
-    {"heading": "上下游交接", "paragraphs": [
-      "F-01/F-05提供消息合同，P-01提供完整提交操作，G-02提供隐私与正式存储资格，X-01提供分配。设备适配器写原始通知包，同步和质量模块写L1，存储层不补零、不推断步骤。",
-      "A-01须先验证归档完整性，再在获授权环境读取束原件。restricted_ref不读取原件，束返回不授权；真实波形、问卷、分配、人工标注和运行事实缺失不能靠清单或合成golden补齐。真实证据重建仍待A-01/S-02。",
-      "教学流程冻结并接入后，由P-01/U12-11交接真实教学与首次暴露记录。本轮46操作只证明核心路径重放；I-01真实全链及正式环境继续独立验收。下一包U-01核对控制与渲染镜像消费。"
-    ]},
-    {"heading": "审阅与责任签收", "paragraphs": [
-      "本轮为执行迁移、合成验证与当前说明修正；没有追加独立Agent审核或真人签收，也没有代填受限访问资格。"
-    ]},
-    {"heading": "收尾与下一包", "paragraphs": [
-      "在codex/task-package-normalization按明确路径提交推送，不自动合并。已规范化9包，剩余62包，下一包U-01；全部任务与最终根目录双层迁移仍保留在目标内。"
-    ]},
-    {"heading": "审阅来源", "paragraphs": [
-      "inputs保存来源；verification.json与integration.json保存本轮验证。项目串联Word汇总九包及开放交接。"
-    ]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "当前执行Codex，不改变任务注册状态。归档和重放候选能力已复测，不表示真实设备持续采集、Unity/TD联调或实际研究结果已经完成。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "原包约4人日。AC1为中断数据恢复保留旧字节；AC2为篡改、删除、乱序、尾锚和封存漂移检测；AC3为完整核心调用确定性重放，不执行网络或外部暴露动作。",
+        "本轮迁移工具与新证据，保留历史原件，核对RawEvidenceBundle、下游原件访问和核心前教学交接，不改记录格式与P-01状态权威。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "generate_golden_archive.py与generate_stress_report.py实际迁入agent/tasks/P-02/execution，旧位置删除，无转发副本。verify.py和verify.ps1为当前统一入口。",
+        "新19个归档文件、证据索引、比较报告和压力结果固定evidence/runtime；历史fixtures与压力原件不覆盖。TASK、来源、结构化总结与历史说明构成固定五目录。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "核对签署、归档、记录代理、重放和证据束；P-01仍为流程与时钟权威。代理耐久提交后返回控制，重放用已记录门回执，不执行外部动作。工具改写新输出，补LF与新目录字节验证。",
+        "Agent当前说明订正F-05候选、旧目录和命令，区分声明检查与原件检查。旧README为U12-06冻结输入，保留原字节。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "P-02/P-01/X-01/协议/G-02合计467项通过；新增新目录字节验证并补LF规则后，golden专项6项复测通过。原签收68项是历史结果，不覆盖为本轮计数。",
+        "重建19控制、19ACK、12回执、54事件、46操作；封存、最终状态、重放和19文件索引均与历史证据一致。新目录文件逐字节哈希验证通过。",
+        "800秒逻辑负载加速运行约62.51秒：PLUX 320000样本、Polar 104000样本、16000同步帧，L0共1600包，L1共16001条含封存事件；完整性和8点内存趋势通过。暖机后增长为0字节，峰值约55.16 MB；这是合成负载，不是800秒真机持续采集。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "P02-N01：两个工具默认覆盖旧证据，已实际迁移并改写新输出目录，旧签署与原件未改。P02-N02：新归档目录缺LF规则，已加入属性并验证实际文件哈希与重放。",
+        "P02-N03：旧README仍用F-05候选和旧入口，Agent层当前说明及根入口已订正。restricted_ref仅检查引用及哈希声明，当前说明明确authorization=False与A-01真实授权读取责任，不把元数据通过扩大成原件验证。",
+        "核心前教学尚未由P-01/U12-11正式接入；本包只能保存实际事件，不能从旧golden推断教学暴露。该交接继续开放。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "执行工具、新结果和总结固定归类；共享模块仍待最终迁移。旧README冻结漂移已通过保留原字节消除，订正另存outputs/current-store-contract.md，根入口已更新；U12-06输入不覆盖。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "F-01/F-05提供消息合同，P-01提供完整提交操作，G-02提供隐私与正式存储资格，X-01提供分配。设备适配器写原始通知包，同步和质量模块写L1，存储层不补零、不推断步骤。",
+        "A-01须先验证归档完整性，再在获授权环境读取束原件。restricted_ref不读取原件，束返回不授权；真实波形、问卷、分配、人工标注和运行事实缺失不能靠清单或合成golden补齐。真实证据重建仍待A-01/S-02。",
+        "教学流程冻结并接入后，由P-01/U12-11交接真实教学与首次暴露记录。本轮46操作只证明核心路径重放；I-01真实全链及正式环境继续独立验收。下一包U-01核对控制与渲染镜像消费。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "本轮为执行迁移、合成验证与当前说明修正；没有追加独立Agent审核或真人签收，也没有代填受限访问资格。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "在codex/task-package-normalization按明确路径提交推送，不自动合并。已规范化9包，剩余62包，下一包U-01；全部任务与最终根目录双层迁移仍保留在目标内。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "inputs保存来源；verification.json与integration.json保存本轮验证。项目串联Word汇总九包及开放交接。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "P02-N01", "status": "FIXED", "description": "两个生成器实际迁入固定execution，新归档与压力不覆盖历史证据", "source": "agent/tasks/P-02/execution/verify.py"},
-    {"id": "P02-N02", "status": "FIXED", "description": "新归档目录LF规则及实际字节哈希与重放验证通过", "source": "02-技术研发/tests/session_store/test_golden_archive.py"},
-    {"id": "P02-N03", "status": "FIXED_CURRENT_USAGE", "description": "Agent当前入口使用新目录及F-05已签收状态，明确束不授权、不读取受限原件；U12-06冻结README保留", "source": "agent/tasks/P-02/outputs/current-store-contract.md"},
-    {"id": "P02-N04", "status": "OPEN_DOWNSTREAM_REAL_EVIDENCE", "description": "A-01须获授权读取实际六类原件；核心前教学需冻结后交接真实记录，本轮合成归档不能关闭这些事项", "source": "agent/tasks/P-02/outputs/current-store-contract.md"}
+    {
+      "id": "P02-N01",
+      "status": "FIXED",
+      "description": "两个生成器实际迁入固定execution，新归档与压力不覆盖历史证据",
+      "source": "agent/tasks/P-02/execution/verify.py"
+    },
+    {
+      "id": "P02-N02",
+      "status": "FIXED",
+      "description": "新归档目录LF规则及实际字节哈希与重放验证通过",
+      "source": "02-技术研发/tests/session_store/test_golden_archive.py"
+    },
+    {
+      "id": "P02-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "Agent当前入口使用新目录及F-05已签收状态，明确束不授权、不读取受限原件；U12-06冻结README保留",
+      "source": "agent/tasks/P-02/outputs/current-store-contract.md"
+    },
+    {
+      "id": "P02-N04",
+      "status": "OPEN_DOWNSTREAM_REAL_EVIDENCE",
+      "description": "A-01须获授权读取实际六类原件；核心前教学需冻结后交接真实记录，本轮合成归档不能关闭这些事项",
+      "source": "agent/tasks/P-02/outputs/current-store-contract.md"
+    }
   ],
   "next_task": "U-01",
   "source_links": [
-    {"label": "打开 P-02 当前合同说明", "path": "agent/tasks/P-02/outputs/current-store-contract.md"},
-    {"label": "打开原真实第二人签收", "path": "02-技术研发/srp_session_store/P-02_第二人审核报告_已签署.md"},
-    {"label": "打开本轮归档及压力结果", "path": "agent/tasks/P-02/evidence/verification.json"}
+    {
+      "label": "打开 P-02 当前合同说明",
+      "path": "agent/tasks/P-02/outputs/current-store-contract.md"
+    },
+    {
+      "label": "打开原真实第二人签收",
+      "path": "agent/modules/srp_session_store/P-02_第二人审核报告_已签署.md"
+    },
+    {
+      "label": "打开本轮归档及压力结果",
+      "path": "agent/tasks/P-02/evidence/verification.json"
+    }
   ]
 }

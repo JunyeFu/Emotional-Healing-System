@@ -10,61 +10,123 @@
     "method": "历史独立Agent在精确候选上完成TD实机复审并签署PASS；不改写为傅钧烨本人签署或本轮重新运行。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": [
-      "本轮实施与规范化核验由Codex完成，既有注册状态保持不变。当前TD尚未重开，本轮证据支持主机实现和历史制品保留，不支持新的TD运行结论。"
-    ]},
-    {"heading": "目标与完成标准", "paragraphs": [
-      "AC1至AC7覆盖10页5场景导航、图形与双曲线、不可变快照、停用通信和动作、无流程控制、保存重开50组合与独立授权复核。",
-      "本包负责本地静态只读壳。研究流程和时钟仍由Python掌握，正式设备、20Hz遥测、请求处理与研究结果不在本包验收范围。"
-    ]},
-    {"heading": "实际交付", "paragraphs": [
-      "TD构建和重开脚本已移至agent/tasks/F-04/execution；主机验证入口为同目录verify_host.py。新候选写outputs/touchdesigner，新运行证据写evidence。",
-      "共享模型、fixture、原TOE/TOX及签署原件保持现有位置。本轮新生成10页、5场景、50组合的主机清单，未生成新TD候选。"
-    ]},
-    {"heading": "执行过程与关键决定", "paragraphs": [
-      "先读取签署和实现，再迁移两份执行脚本，修正模块导入、新证据和制品输出位置；同步测试引用，删除会覆盖旧证据的node_plan直接执行入口。",
-      "保留共享页面实现供后续模块迁移。旧脚本不设转发副本，当前运行命令统一使用Agent层。Windows PowerShell策略阻止ps1入口，改用Python入口，不修改系统策略。"
-    ]},
-    {"heading": "验证与结果", "paragraphs": [
-      "本轮F-04与T-01主机回归38项通过，页面与只读能力约束扫描包含迁移后的脚本。当前fixture哈希明确标记raw_bytes，不与历史Git/LF哈希直接混比。",
-      "原TOE/TOX字节哈希与历史签署一致；历史重开报告13项检查为true且绑定同一TOE。另查看历史呼吸页和人工操作页截图；这些不是本轮TD实机证据。"
-    ]},
-    {"heading": "偏离与修复闭环", "paragraphs": [
-      "F04-N01：执行脚本散落且默认重建覆盖已签收原件。已迁入统一执行层，新输出与旧目录分离，并调整对应测试与文档。",
-      "F04-N02：fixture哈希口径不清。当前主机清单增加raw_bytes策略，保留历史规范化口径。F04-N03：候选及T-01停用标识易被当成项目现状，README已明确历史签收和壳内能力边界。",
-      "F04-N04：历史呼吸页截图中大字号说明覆盖曲线区域。主机测试和历史机器门不足以证明当前可读性；本轮未重建画面，交由T-01规范化检查现行工作台，不将此项写为已修复。"
-    ]},
-    {"heading": "目录与文件整理", "paragraphs": [
-      "TASK定义责任和AC；inputs引用真实来源；execution放脚本；evidence放主机清单和验证；outputs放总结及未来候选；archive记录历史保留理由。",
-      "共享模型、测试和签署原件仍在旧业务目录，后续整体收拢必须同步消费者引用；不得将本包结构整理误称全仓迁移完成。"
-    ]},
-    {"heading": "上下游交接", "paragraphs": [
-      "上游F-01提供v2.1遥测合同。T-01消费静态壳的快照与可视化思路并接入遥测；T-02负责操作者请求。F-04中的T-01 NOT ACTIVE只表示静态占位停用，不表示T-01任务未完成。",
-      "本轮与T-01联合主机测试通过；T-02是否完成及其功能签收在轮到该包时核验。TD不能替代Python会话权威，也不能用静态曲线替代设备记录。"
-    ]},
-    {"heading": "审阅与责任签收", "paragraphs": [
-      "历史独立任务为01a04c71-9894-73c3-aea1-30cb0d0280c0，实现提交为b910a0d0b04147c228263b444b1beecb5a27ba2d。原报告AC1至AC7通过。",
-      "本轮未代填第二人结论，也未追加实机签收。迁移脚本已通过主机引用检查；将来重建后的候选仍需重新打开TD并人工检查。"
-    ]},
-    {"heading": "收尾与下一包", "paragraphs": [
-      "本轮文件在codex/task-package-normalization提交推送，具体发布以Git实际记录为准。下一包F-05，核对步骤合同与当前v2.2消费者。",
-      "规范化推进至4包，剩余67包；最终根目录双层迁移继续按包归属与交接收拢，不改变任务完成状态。"
-    ]},
-    {"heading": "审阅来源", "paragraphs": [
-      "结构化总结：agent/tasks/F-04/outputs/summary.json；当前验证：同包evidence/verification.json；历史签收及制品：原f04_readonly_console模块。",
-      "项目串联Word由各包当前Agent层事实生成。以下链接分别打开当前运行入口、历史签署及当前验证记录。"
-    ]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本轮实施与规范化核验由Codex完成，既有注册状态保持不变。当前TD尚未重开，本轮证据支持主机实现和历史制品保留，不支持新的TD运行结论。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1至AC7覆盖10页5场景导航、图形与双曲线、不可变快照、停用通信和动作、无流程控制、保存重开50组合与独立授权复核。",
+        "本包负责本地静态只读壳。研究流程和时钟仍由Python掌握，正式设备、20Hz遥测、请求处理与研究结果不在本包验收范围。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "TD构建和重开脚本已移至agent/tasks/F-04/execution；主机验证入口为同目录verify_host.py。新候选写outputs/touchdesigner，新运行证据写evidence。",
+        "共享模型、fixture、原TOE/TOX及签署原件保持现有位置。本轮新生成10页、5场景、50组合的主机清单，未生成新TD候选。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "先读取签署和实现，再迁移两份执行脚本，修正模块导入、新证据和制品输出位置；同步测试引用，删除会覆盖旧证据的node_plan直接执行入口。",
+        "保留共享页面实现供后续模块迁移。旧脚本不设转发副本，当前运行命令统一使用Agent层。Windows PowerShell策略阻止ps1入口，改用Python入口，不修改系统策略。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "本轮F-04与T-01主机回归38项通过，页面与只读能力约束扫描包含迁移后的脚本。当前fixture哈希明确标记raw_bytes，不与历史Git/LF哈希直接混比。",
+        "原TOE/TOX字节哈希与历史签署一致；历史重开报告13项检查为true且绑定同一TOE。另查看历史呼吸页和人工操作页截图；这些不是本轮TD实机证据。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "F04-N01：执行脚本散落且默认重建覆盖已签收原件。已迁入统一执行层，新输出与旧目录分离，并调整对应测试与文档。",
+        "F04-N02：fixture哈希口径不清。当前主机清单增加raw_bytes策略，保留历史规范化口径。F04-N03：候选及T-01停用标识易被当成项目现状，README已明确历史签收和壳内能力边界。",
+        "F04-N04：历史呼吸页截图中大字号说明覆盖曲线区域。主机测试和历史机器门不足以证明当前可读性；本轮未重建画面，交由T-01规范化检查现行工作台，不将此项写为已修复。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK定义责任和AC；inputs引用真实来源；execution放脚本；evidence放主机清单和验证；outputs放总结及未来候选；archive记录历史保留理由。",
+        "共享模型、测试和签署原件仍在旧业务目录，后续整体收拢必须同步消费者引用；不得将本包结构整理误称全仓迁移完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "上游F-01提供v2.1遥测合同。T-01消费静态壳的快照与可视化思路并接入遥测；T-02负责操作者请求。F-04中的T-01 NOT ACTIVE只表示静态占位停用，不表示T-01任务未完成。",
+        "本轮与T-01联合主机测试通过；T-02是否完成及其功能签收在轮到该包时核验。TD不能替代Python会话权威，也不能用静态曲线替代设备记录。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "历史独立任务为01a04c71-9894-73c3-aea1-30cb0d0280c0，实现提交为b910a0d0b04147c228263b444b1beecb5a27ba2d。原报告AC1至AC7通过。",
+        "本轮未代填第二人结论，也未追加实机签收。迁移脚本已通过主机引用检查；将来重建后的候选仍需重新打开TD并人工检查。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "本轮文件在codex/task-package-normalization提交推送，具体发布以Git实际记录为准。下一包F-05，核对步骤合同与当前v2.2消费者。",
+        "规范化推进至4包，剩余67包；最终根目录双层迁移继续按包归属与交接收拢，不改变任务完成状态。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "结构化总结：agent/tasks/F-04/outputs/summary.json；当前验证：同包evidence/verification.json；历史签收及制品：原f04_readonly_console模块。",
+        "项目串联Word由各包当前Agent层事实生成。以下链接分别打开当前运行入口、历史签署及当前验证记录。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "F04-N01", "status": "FIXED", "description": "TD执行脚本已迁入Agent层，新制品与新证据不覆盖历史签收原件", "source": "agent/tasks/F-04/execution/README.md"},
-    {"id": "F04-N02", "status": "FIXED_CURRENT_USAGE", "description": "当前fixture清单明确原始字节哈希，历史Git/LF口径不改写", "source": "agent/tasks/F-04/evidence/host/host_build_manifest.json"},
-    {"id": "F04-N03", "status": "FIXED", "description": "已签收静态基线与壳内未启用能力不再表述为项目任务未完成", "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/README.md"},
-    {"id": "F04-N04", "status": "OPEN_DOWNSTREAM_VISUAL_REVIEW", "description": "历史呼吸页说明覆盖曲线，需在T-01检查当前布局；本轮主机门不关闭画面可读性问题", "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"}
+    {
+      "id": "F04-N01",
+      "status": "FIXED",
+      "description": "TD执行脚本已迁入Agent层，新制品与新证据不覆盖历史签收原件",
+      "source": "agent/tasks/F-04/execution/README.md"
+    },
+    {
+      "id": "F04-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前fixture清单明确原始字节哈希，历史Git/LF口径不改写",
+      "source": "agent/tasks/F-04/evidence/host/host_build_manifest.json"
+    },
+    {
+      "id": "F04-N03",
+      "status": "FIXED",
+      "description": "已签收静态基线与壳内未启用能力不再表述为项目任务未完成",
+      "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/README.md"
+    },
+    {
+      "id": "F04-N04",
+      "status": "OPEN_DOWNSTREAM_VISUAL_REVIEW",
+      "description": "历史呼吸页说明覆盖曲线，需在T-01检查当前布局；本轮主机门不关闭画面可读性问题",
+      "source": "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
+    }
   ],
   "next_task": "F-05",
   "source_links": [
-    {"label": "打开 F-04 当前运行入口", "path": "agent/tasks/F-04/execution/README.md"},
-    {"label": "打开 F-04 历史已签署复审", "path": "02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md"},
-    {"label": "打开本轮主机验证记录", "path": "agent/tasks/F-04/evidence/verification.json"}
+    {
+      "label": "打开 F-04 当前运行入口",
+      "path": "agent/tasks/F-04/execution/README.md"
+    },
+    {
+      "label": "打开 F-04 历史已签署复审",
+      "path": "agent/modules/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md"
+    },
+    {
+      "label": "打开本轮主机验证记录",
+      "path": "agent/tasks/F-04/evidence/verification.json"
+    }
   ]
 }

@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import shutil
 from urllib.parse import unquote, urlsplit
 from zipfile import ZipFile
 
@@ -18,6 +19,16 @@ MOVES = {'01-需求与设计': 'agent/design', '03-测试与实验': 'agent/vali
 EVIDENCE = ROOT / 'agent/evidence'
 ORIGINALS = EVIDENCE / 'root-migration-support-originals.json'
 REPAIRS = EVIDENCE / 'root-migration-support-repairs.json'
+SCOPE = 'support'
+
+
+def configure(scope):
+    global MOVES, ORIGINALS, REPAIRS, SCOPE
+    SCOPE = scope
+    if scope == 'modules':
+        MOVES = {'agent/modules': 'agent/modules'}
+        ORIGINALS = EVIDENCE / 'root-migration-modules-originals.json'
+        REPAIRS = EVIDENCE / 'root-migration-modules-repairs.json'
 
 
 def save(path, value):
@@ -51,6 +62,24 @@ def capture():
                for p in tracked() if relocate(p) != p]
     save(ORIGINALS, {'baseline_commit': subprocess.check_output(
         ['git', 'rev-parse', 'HEAD'], cwd=ROOT).decode().strip(), 'files': entries})
+    if SCOPE == 'modules':
+        bindings = []
+        for manifest in (ROOT / 'agent/governance').glob('**/当前解锁独立任务包/*/package_manifest.json'):
+            data = json.loads(manifest.read_text(encoding='utf-8-sig'))
+            for item in data['source_files']:
+                relative = item['source_path']
+                if relocate(relative) == relative or not (ROOT / relative).is_file():
+                    continue
+                preserved = 'agent/archive/root-migration/modules-inputs/' + relative.split('/', 1)[1]
+                destination = ROOT / preserved
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(ROOT / relative, destination)
+                bindings.append({'task_id': data['task_id'], 'old_project_path': relative,
+                                 'new_project_path': preserved,
+                                 'preserve_ready_dispatch': True,
+                                 'impact_path': 'agent/evidence/root-migration-modules-impact.md',
+                                 'reason': 'Preserve dispatch input bytes while relocating current shared runtime code.'})
+        save(EVIDENCE / 'root-migration-modules-inputs.json', {'bindings': bindings})
     print(f'CAPTURED {len(entries)} original files')
 
 
@@ -91,7 +120,10 @@ def repair():
             if doc:
                 text = rewrite_links(text, ROOT / relative, path)
             for old, new in MOVES.items():
-                text = text.replace(old + '/', new + '/').replace('"' + old + '"', '"' + new + '"')
+                text = text.replace(old + '/', new + '/').replace(old + '\\', new.replace('/', '\\') + '\\')
+                if path.suffix != '.cs':
+                    for quote in ('"', "'"):
+                        text = text.replace(quote + old + quote, quote + new + quote)
             encoded = (b'\xef\xbb\xbf' if before.startswith(b'\xef\xbb\xbf') else b'') + text.encode('utf-8')
             if encoded != before:
                 path.write_bytes(encoded)
@@ -136,6 +168,14 @@ def repair():
             path.write_bytes(output.getvalue())
             words.append({'path': path.relative_to(ROOT).as_posix(), 'links': count})
     save(REPAIRS, {'current_files_repaired': changed, 'word_relationships_repaired': words})
+    if SCOPE == 'modules':
+        mapping = ROOT / 'agent/normalization-relocations.json'
+        content = json.loads(mapping.read_text(encoding='utf-8'))
+        for binding in json.loads((EVIDENCE / 'root-migration-modules-inputs.json').read_text(encoding='utf-8'))['bindings']:
+            if (ROOT / relocate(binding['old_project_path'])).read_bytes() != (ROOT / binding['new_project_path']).read_bytes():
+                if binding not in content['frozen_sources']:
+                    content['frozen_sources'].append(binding)
+        save(mapping, content)
     print(f'REPAIRED {len(changed)} current consumers, {len(words)} Word relationship parts')
 
 
@@ -143,6 +183,10 @@ def verify():
     original = json.loads(ORIGINALS.read_text(encoding='utf-8'))
     repair = json.loads(REPAIRS.read_text(encoding='utf-8'))
     changed = set(repair['current_files_repaired']) | {'agent/design/README.md'}
+    if SCOPE == 'modules':
+        manual = EVIDENCE / 'root-migration-modules-manual.json'
+        if manual.exists():
+            changed.update(json.loads(manual.read_text(encoding='utf-8'))['files'])
     unchanged = 0
     for item in original['files']:
         path = ROOT / item['new']
@@ -166,12 +210,14 @@ def verify():
               'word_hyperlinks_relocated': sum(x['links'] for x in repair['word_relationships_repaired']),
               'historical_validation_and_reference_sources_preserved': True,
               'scope': 'Physical support root moves and current links, not new acceptance'}
-    save(EVIDENCE / 'root-migration-support-preservation.json', result)
+    save(EVIDENCE / f'root-migration-{SCOPE}-preservation.json', result)
     print('PASS', result)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('action', choices=['capture', 'repair', 'verify'])
+    parser.add_argument('--scope', choices=['support', 'modules'], default='support')
     args = parser.parse_args()
+    configure(args.scope)
     {'capture': capture, 'repair': repair, 'verify': verify}[args.action]()

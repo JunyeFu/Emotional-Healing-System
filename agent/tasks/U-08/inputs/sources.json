@@ -15,11 +15,11 @@
     "agent/tasks/U-06/outputs/current-adapter.json",
     "agent/tasks/U-07/outputs/current-abstract.json",
     "agent/tasks/G-02/TASK.md",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/EditorBuildSettings.asset",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/EditorBuildSettings.asset",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs",
     "agent/tasks/U-08/archive/BuildScene1.cs",
     "agent/tasks/U-08/archive/BuildScene2D.cs"
   ]

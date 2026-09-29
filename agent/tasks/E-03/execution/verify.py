@@ -18,7 +18,7 @@ def main():
                      ROOT / 'agent/tasks/B-01/execution/test_batch_handoff.py',
                      ROOT / 'agent/tasks/Q-03/execution/test_level_c_handoff.py',
                      ROOT / 'agent/tasks/G-05/execution/test_admission_handoff.py',
-                     ROOT / '02-技术研发/tests/session_store']),
+                     ROOT / 'agent/modules/tests/session_store']),
         ('legacy-protocol', [GOV.parent / '99_验证与清单/validate_protocol_authority_v1_1.py']),
         ('registry', [GOV / '07_validate_task_packages.py']),
         ('dispatch', [GOV / '14_validate_ready_task_packages.py']),

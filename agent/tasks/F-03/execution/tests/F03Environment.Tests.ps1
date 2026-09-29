@@ -31,7 +31,7 @@ Describe 'F-03 environment evidence helpers' {
 
     It 'binds the environment lock to canonical project file hashes' {
         $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
-        $unityRoot = Join-Path $repoRoot '02-技术研发\04-Unity视觉\SRP-Weather-Visual'
+        $unityRoot = Join-Path $repoRoot 'agent\modules\04-Unity视觉\SRP-Weather-Visual'
         $lock = Get-Content (Join-Path $PSScriptRoot '..\..\inputs\f03-environment-lock.json') -Raw | ConvertFrom-Json
 
         $lock.hash_policy | Should Be 'sha256_lf_no_trailing_ws_text_v1'
@@ -43,7 +43,7 @@ Describe 'F-03 environment evidence helpers' {
 
     It 'creates a stable hash for the committed implementation tree' {
         $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
-        $paths = @('agent/tasks/F-03/execution', 'agent/tasks/F-03/inputs', '02-技术研发/04-Unity视觉/SRP-Weather-Visual')
+        $paths = @('agent/tasks/F-03/execution', 'agent/tasks/F-03/inputs', 'agent/modules/04-Unity视觉/SRP-Weather-Visual')
         $first = Get-F03ImplementationTreeHash -RepoRoot $repoRoot -RelativePaths $paths
         $second = Get-F03ImplementationTreeHash -RepoRoot $repoRoot -RelativePaths $paths
 
@@ -54,10 +54,10 @@ Describe 'F-03 environment evidence helpers' {
     It 'checks out Unity serialized text with LF line endings' {
         $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
         $samples = @(
-            '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Scenes/F03DevReplay.unity',
-            '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/DefaultVolumeProfile.asset',
-            '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Runtime/DevReplayBanner.cs.meta',
-            '02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/Packages/com.unity.probuilder/Settings.json'
+            'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Scenes/F03DevReplay.unity',
+            'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/DefaultVolumeProfile.asset',
+            'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Runtime/DevReplayBanner.cs.meta',
+            'agent/modules/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/Packages/com.unity.probuilder/Settings.json'
         )
         $attributes = @(& git -C $repoRoot check-attr eol -- $samples)
 

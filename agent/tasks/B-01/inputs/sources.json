@@ -11,10 +11,10 @@
     "agent/tasks/E-02/outputs/current-execution.md",
     "agent/tasks/G-05/outputs/current-admission.md",
     "agent/tasks/X-01/outputs/current-randomization.md",
-    "02-技术研发/srp_session_core/sequence.py",
-    "02-技术研发/srp_session_core/core.py",
-    "02-技术研发/srp_session_store/README.md",
-    "02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
-    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
+    "agent/modules/srp_session_core/sequence.py",
+    "agent/modules/srp_session_core/core.py",
+    "agent/modules/srp_session_store/README.md",
+    "agent/modules/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
   ]
 }

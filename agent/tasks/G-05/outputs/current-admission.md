@@ -24,8 +24,8 @@ $env:SRP_GOVERNANCE_BACKUP_ROOT = '<approved-encrypted-backup-root>'
 $env:SRP_SEALED_KEY_RECOVERY_EVIDENCE = '<controlled-existence-evidence>'
 $env:SRP_DATA_ADMIN_ACCOUNT = '<authorized-windows-account>'
 $env:SRP_RETENTION_APPROVAL = 'APPROVED:<real-authority-reference>'
-py -3.14 '02-技术研发/07-数据治理/g02.py' provision-credential --confirm-target 'SRP/G02/dedup-hmac/v1'
-py -3.14 '02-技术研发/07-数据治理/g02.py' check-environment --repo-root . --output '<controlled-evidence-path>/formal_environment_report.json'
+py -3.14 'agent/modules/07-数据治理/g02.py' provision-credential --confirm-target 'SRP/G02/dedup-hmac/v1'
+py -3.14 'agent/modules/07-数据治理/g02.py' check-environment --repo-root . --output '<controlled-evidence-path>/formal_environment_report.json'
 ```
 
 凭据目标固定，已有有效密钥不得重复创建/覆盖；轮换须独立授权。工具不输出密钥。保留批准编号必须来自机构回执，任务执行者不自行填写期限。本机只读报告不是专机结果；正式报告须绑定真实机器、时间、执行人及另一人见证。

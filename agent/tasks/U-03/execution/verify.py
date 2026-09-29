@@ -14,7 +14,7 @@ def main():
     commands = [
         [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_u03_contract.py'),
          str(ROOT / 'agent/tasks/V-03/execution/test_current.py'),
-         str(ROOT / '02-技术研发/tests/session_core')],
+         str(ROOT / 'agent/modules/tests/session_core')],
         [sys.executable, str(ROOT / 'agent/tasks/V-03/execution/validate_current.py')],
     ]
     checks = []

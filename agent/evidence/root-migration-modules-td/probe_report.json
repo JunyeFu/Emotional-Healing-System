@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "checks": {
+    "publisher_live": true,
+    "fixture_live": true,
+    "lost_two": true,
+    "duplicate_one": true,
+    "out_of_order_one": true,
+    "disconnect_after_two_seconds": true,
+    "recovered_live": true,
+    "counters_preserved": true
+  },
+  "source_toe": "agent/modules/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe",
+  "source_toe_sha256": "3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED",
+  "scope": "Actual isolated TD reopen and fixture UDP consumption; no real devices or A-theme acceptance"
+}

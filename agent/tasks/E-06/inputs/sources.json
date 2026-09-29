@@ -13,11 +13,11 @@
     "agent/tasks/X-03/outputs/current-runtime.json",
     "agent/tasks/A-01/outputs/current-rebuild.md",
     "agent/tasks/A-02/outputs/current-statistics.md",
-    "02-技术研发/08-随机化/srp_randomization/generator.py",
-    "02-技术研发/08-随机化/srp_randomization/store.py",
-    "02-技术研发/srp_session_store/replay.py",
-    "02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
-    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+    "agent/modules/08-随机化/srp_randomization/generator.py",
+    "agent/modules/08-随机化/srp_randomization/store.py",
+    "agent/modules/srp_session_store/replay.py",
+    "agent/modules/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
     "agent/tasks/E-04/archive/00_第11步计划.md",
     "agent/tasks/E-04/archive/01_详细执行方案.md"
   ]

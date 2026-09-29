@@ -18,7 +18,7 @@ def main():
     commands = [
         ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_analysis_handoff.py',
                      ROOT / 'agent/tasks/A-02/execution/test_a02_contract.py',
-                     SAP / 'test_contract.py', ROOT / '02-技术研发/tests/a03_spec']),
+                     SAP / 'test_contract.py', ROOT / 'agent/modules/tests/a03_spec']),
         ('candidate-sap', [SAP / 'validate.py']),
         ('legacy-protocol', [PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py']),
         ('governance', [GOV / 'u12_upgrade/validate_u12_governance.py']),

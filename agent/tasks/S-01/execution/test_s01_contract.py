@@ -8,7 +8,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/S-01'
-sys.path.insert(0, str(ROOT / '02-技术研发'))
+sys.path.insert(0, str(ROOT / 'agent/modules'))
 v21 = import_module('05-通信协议.runtime_contract')
 v22 = import_module('05-通信协议.runtime_contract_v22')
 
@@ -18,7 +18,7 @@ def current():
 
 
 def fixture():
-    path = ROOT / '02-技术研发/05-通信协议/contracts/fixtures-v2.2/valid/telemetry-actual-unavailable.json'
+    path = ROOT / 'agent/modules/05-通信协议/contracts/fixtures-v2.2/valid/telemetry-actual-unavailable.json'
     return json.loads(path.read_text(encoding='utf-8'))
 
 

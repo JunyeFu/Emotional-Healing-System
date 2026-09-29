@@ -12,7 +12,7 @@ import time
 
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
-TECH_ROOT = REPO_ROOT / "02-技术研发"
+TECH_ROOT = REPO_ROOT / "agent/modules"
 if str(TECH_ROOT) not in sys.path:
     sys.path.insert(0, str(TECH_ROOT))
 

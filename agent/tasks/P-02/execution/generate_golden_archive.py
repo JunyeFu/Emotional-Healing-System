@@ -9,7 +9,7 @@ from typing import Any, Mapping
 
 
 ROOT = Path(__file__).resolve().parents[4]
-MODULE_ROOT = ROOT / '02-技术研发'
+MODULE_ROOT = ROOT / 'agent/modules'
 if str(MODULE_ROOT) not in sys.path:
     sys.path.insert(0, str(MODULE_ROOT))
 

@@ -9,7 +9,7 @@
     "agent/tasks/A-01/outputs/current-rebuild.md",
     "agent/tasks/A-03/outputs/current-statistics.md",
     "agent/tasks/X-01/outputs/current-randomization.json",
-    "02-技术研发/08-随机化/srp_randomization/generator.py",
-    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
+    "agent/modules/08-随机化/srp_randomization/generator.py",
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
   ]
 }

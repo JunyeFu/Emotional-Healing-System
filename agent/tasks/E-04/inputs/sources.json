@@ -15,10 +15,10 @@
     "agent/tasks/A-02/outputs/current-statistics.md",
     "agent/tasks/A-03/outputs/current-statistics.json",
     "agent/tasks/G-05/outputs/current-admission.json",
-    "02-技术研发/08-随机化/srp_randomization/store.py",
-    "02-技术研发/07-数据治理/srp_governance/registry.py",
-    "02-技术研发/srp_session_store/evidence_bundle.py",
-    "02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
+    "agent/modules/08-随机化/srp_randomization/store.py",
+    "agent/modules/07-数据治理/srp_governance/registry.py",
+    "agent/modules/srp_session_store/evidence_bundle.py",
+    "agent/modules/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
     "agent/tasks/E-04/archive/00_第11步计划.md",
     "agent/tasks/E-04/archive/01_详细执行方案.md"
   ]

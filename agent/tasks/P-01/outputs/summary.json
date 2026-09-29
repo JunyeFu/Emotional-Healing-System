@@ -10,60 +10,117 @@
     "method": "见证已有验证并审阅03d7426219121e49554e405db9dd521b8ab1d819；未声明亲自重跑，本轮不追加真人签署。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": [
-      "当前执行Codex，注册状态不变。核心时钟、固定顺序、控制与本机传输已复测；软件回归不代表正式教学、Unity画面、真实设备或研究结果。"
-    ]},
-    {"heading": "目标与完成标准", "paragraphs": [
-      "原包约6人日。AC1为确定性时钟、24顺序、双提示及暂停恢复；AC2为请求幂等和相同ID控制重试；AC3为非法转换、正式门失败关闭、四模块默认800秒回放。",
-      "本轮实际迁移执行工具，不改六个公共方法、Schema、协议时长或研究冻结字段；对照已签署原件，修正当前消费说明并生成可审阅Word。"
-    ]},
-    {"heading": "实际交付", "paragraphs": [
-      "generate_golden_trace.py从srp_session_core实际移入agent/tasks/P-01/execution；旧文件删除，无转发副本。测试导入改用固定执行层，verify.py及verify.ps1为本轮入口。",
-      "本轮轨迹和日志位于evidence/runtime，历史golden不覆盖。TASK、inputs、outputs与archive齐备；共享核心、配置、Schema仍为原模块唯一实现，后续整体迁移再收拢。"
-    ]},
-    {"heading": "执行过程与关键决定", "paragraphs": [
-      "先读取注册AC、技术验收、真实签署和当前start暴露逻辑，再检查P-02重放消费者。旧签署记录中的候选状态属于当时事实，保留原字节。",
-      "修正README把F-05和P-02称为候选的陈述，说明步骤v2.2不等于自适应顺序。新生成器默认写本轮证据，避免运行命令覆盖旧样例。",
-      "文档工具运行时无pytest，专项改用项目Python 3.14运行，无安装或环境变更。Word继续由专用文档运行时生成。"
-    ]},
-    {"heading": "验证与结果", "paragraphs": [
-      "P-01 116项、P-02 84项、协议95项、G-02 139项，共434项通过。覆盖现有24顺序、双提示、状态与时钟、TCP/UDP和重放消费；不执行真实设备或真人流程。",
-      "新轨迹与历史样例逐对象一致：19控制、19ACK、12渲染回执、54会话事件、4策略决策，最终COMPLETED且有效时长800秒；新结果可打开复算。",
-      "下游T-02未领取输入新增当前README和迁移后的生成器；进行中及复核包保持冻结。注册表与分发验证结果见integration.json。"
-    ]},
-    {"heading": "偏离与修复闭环", "paragraphs": [
-      "P01-N01：散落模块的执行工具且默认覆盖旧golden，已迁入固定目录并改用新输出，434项回归和golden比较通过。P01-N02：当前入口沿用F-05/P-02候选与旧目录，已修正。",
-      "P01-N03：G-02交接的核心前教学暴露缺口已在当前README明确；prepare不登记，首次核心start才登记。教学接入需P-01/U12-11冻结时序后实现，当前仍开放，不以历史DONE或本轮测试关闭。"
-    ]},
-    {"heading": "目录与文件整理", "paragraphs": [
-      "TASK与五固定目录组成执行包。当前结果、历史证据与生成工具分开，历史审核报告和技术验收记录保留，过期执行路径移除。",
-      "共享实现仍在技术模块，根目录双层收拢尚未完成；本轮迁移工具是真实整理，不把引用清单当作共享模块已经迁移。"
-    ]},
-    {"heading": "上下游交接", "paragraphs": [
-      "F-01/F-05决定消息版本；G-02提供隐私与暴露，X-01提供分配，P-02提供耐久追加与重放。Unity维护镜像而非流程时钟，TD不自行推进研究状态。",
-      "U12-06继续阻断未冻结正式运行。条件教学位于前测之后、核心之前的候选安排须由U12-11冻结；在展示条件教学前登记，并补教学后退出、未启动核心和再次预约负测。当前不能提前展示后再依赖核心start补登记。",
-      "T-02接收当前模块说明和新golden执行入口，P-02下一轮核对完整记录与确定性重放。I-01仍承担真实全链，研究情绪比较由真实前后测和研究分析支持，不能由本包工具结果替代。"
-    ]},
-    {"heading": "审阅与责任签收", "paragraphs": [
-      "历史真实签收针对03d7426对象，记录于ea132c8；原报告98项为当时证据，本轮434项另存，不改签署范围。",
-      "本轮完成工具迁移、专项复测和文档核对，没有追加独立Agent复查、真人签收或外部许可。待冻结教学和真实系统按下游责任继续办理。"
-    ]},
-    {"heading": "收尾与下一包", "paragraphs": [
-      "在codex/task-package-normalization按明确路径提交推送，不自动合并。规范化8包、剩余63包，下一包P-02；全部任务及最终根目录迁移仍在目标范围内。"
-    ]},
-    {"heading": "审阅来源", "paragraphs": [
-      "inputs/sources.json引用实现和历史签署，evidence/verification.json记录本轮测试与golden，integration.json记录治理验证。human/project-review.docx串联八包及开放交接。"
-    ]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "当前执行Codex，注册状态不变。核心时钟、固定顺序、控制与本机传输已复测；软件回归不代表正式教学、Unity画面、真实设备或研究结果。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "原包约6人日。AC1为确定性时钟、24顺序、双提示及暂停恢复；AC2为请求幂等和相同ID控制重试；AC3为非法转换、正式门失败关闭、四模块默认800秒回放。",
+        "本轮实际迁移执行工具，不改六个公共方法、Schema、协议时长或研究冻结字段；对照已签署原件，修正当前消费说明并生成可审阅Word。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "generate_golden_trace.py从srp_session_core实际移入agent/tasks/P-01/execution；旧文件删除，无转发副本。测试导入改用固定执行层，verify.py及verify.ps1为本轮入口。",
+        "本轮轨迹和日志位于evidence/runtime，历史golden不覆盖。TASK、inputs、outputs与archive齐备；共享核心、配置、Schema仍为原模块唯一实现，后续整体迁移再收拢。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "先读取注册AC、技术验收、真实签署和当前start暴露逻辑，再检查P-02重放消费者。旧签署记录中的候选状态属于当时事实，保留原字节。",
+        "修正README把F-05和P-02称为候选的陈述，说明步骤v2.2不等于自适应顺序。新生成器默认写本轮证据，避免运行命令覆盖旧样例。",
+        "文档工具运行时无pytest，专项改用项目Python 3.14运行，无安装或环境变更。Word继续由专用文档运行时生成。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "P-01 116项、P-02 84项、协议95项、G-02 139项，共434项通过。覆盖现有24顺序、双提示、状态与时钟、TCP/UDP和重放消费；不执行真实设备或真人流程。",
+        "新轨迹与历史样例逐对象一致：19控制、19ACK、12渲染回执、54会话事件、4策略决策，最终COMPLETED且有效时长800秒；新结果可打开复算。",
+        "下游T-02未领取输入新增当前README和迁移后的生成器；进行中及复核包保持冻结。注册表与分发验证结果见integration.json。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "P01-N01：散落模块的执行工具且默认覆盖旧golden，已迁入固定目录并改用新输出，434项回归和golden比较通过。P01-N02：当前入口沿用F-05/P-02候选与旧目录，已修正。",
+        "P01-N03：G-02交接的核心前教学暴露缺口已在当前README明确；prepare不登记，首次核心start才登记。教学接入需P-01/U12-11冻结时序后实现，当前仍开放，不以历史DONE或本轮测试关闭。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "TASK与五固定目录组成执行包。当前结果、历史证据与生成工具分开，历史审核报告和技术验收记录保留，过期执行路径移除。",
+        "共享实现仍在技术模块，根目录双层收拢尚未完成；本轮迁移工具是真实整理，不把引用清单当作共享模块已经迁移。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "F-01/F-05决定消息版本；G-02提供隐私与暴露，X-01提供分配，P-02提供耐久追加与重放。Unity维护镜像而非流程时钟，TD不自行推进研究状态。",
+        "U12-06继续阻断未冻结正式运行。条件教学位于前测之后、核心之前的候选安排须由U12-11冻结；在展示条件教学前登记，并补教学后退出、未启动核心和再次预约负测。当前不能提前展示后再依赖核心start补登记。",
+        "T-02接收当前模块说明和新golden执行入口，P-02下一轮核对完整记录与确定性重放。I-01仍承担真实全链，研究情绪比较由真实前后测和研究分析支持，不能由本包工具结果替代。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "历史真实签收针对03d7426对象，记录于ea132c8；原报告98项为当时证据，本轮434项另存，不改签署范围。",
+        "本轮完成工具迁移、专项复测和文档核对，没有追加独立Agent复查、真人签收或外部许可。待冻结教学和真实系统按下游责任继续办理。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "在codex/task-package-normalization按明确路径提交推送，不自动合并。规范化8包、剩余63包，下一包P-02；全部任务及最终根目录迁移仍在目标范围内。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "inputs/sources.json引用实现和历史签署，evidence/verification.json记录本轮测试与golden，integration.json记录治理验证。human/project-review.docx串联八包及开放交接。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "P01-N01", "status": "FIXED", "description": "golden工具实际迁入execution，新运行不覆盖历史样例，434项及轨迹一致性通过", "source": "agent/tasks/P-01/execution/verify.py"},
-    {"id": "P01-N02", "status": "FIXED", "description": "当前入口按F-05/P-02实际DONE、固定顺序范围和有效目录订正", "source": "02-技术研发/srp_session_core/README.md"},
-    {"id": "P01-N03", "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE", "description": "核心前条件教学尚未接入；P-01/U12-11冻结后登记首次暴露并补退出再预约负测，本轮未关闭", "source": "02-技术研发/srp_session_core/README.md"}
+    {
+      "id": "P01-N01",
+      "status": "FIXED",
+      "description": "golden工具实际迁入execution，新运行不覆盖历史样例，434项及轨迹一致性通过",
+      "source": "agent/tasks/P-01/execution/verify.py"
+    },
+    {
+      "id": "P01-N02",
+      "status": "FIXED",
+      "description": "当前入口按F-05/P-02实际DONE、固定顺序范围和有效目录订正",
+      "source": "02-技术研发/srp_session_core/README.md"
+    },
+    {
+      "id": "P01-N03",
+      "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
+      "description": "核心前条件教学尚未接入；P-01/U12-11冻结后登记首次暴露并补退出再预约负测，本轮未关闭",
+      "source": "02-技术研发/srp_session_core/README.md"
+    }
   ],
   "next_task": "P-02",
   "source_links": [
-    {"label": "打开 P-01 当前执行入口", "path": "agent/tasks/P-01/execution/verify.py"},
-    {"label": "打开原真实第二人签收", "path": "02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md"},
-    {"label": "打开本轮测试和轨迹结果", "path": "agent/tasks/P-01/evidence/verification.json"}
+    {
+      "label": "打开 P-01 当前执行入口",
+      "path": "agent/tasks/P-01/execution/verify.py"
+    },
+    {
+      "label": "打开原真实第二人签收",
+      "path": "agent/modules/srp_session_core/P-01_第二人审核报告_已签署.md"
+    },
+    {
+      "label": "打开本轮测试和轨迹结果",
+      "path": "agent/tasks/P-01/evidence/verification.json"
+    }
   ]
 }

@@ -11,7 +11,7 @@ TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
-sys.path.insert(0, str(ROOT / '02-技术研发/08-随机化'))
+sys.path.insert(0, str(ROOT / 'agent/modules/08-随机化'))
 from srp_randomization import generate_list
 
 
@@ -72,7 +72,7 @@ def test_empty_register_and_qc_have_real_source_families_not_approvals():
     assert qc['lock_and_unblind_authorized'] is False
     assert all(v is None for v in qc['review'].values())
     assert qc['archive_integrity']['status'] == qc['raw_evidence_bundle']['status'] == 'NOT_CHECKED'
-    schema = read(ROOT / '02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json')
+    schema = read(ROOT / 'agent/modules/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json')
     assert set(qc['raw_evidence_bundle']['required_sources']) == set(schema['properties']['families']['items']['enum'])
 
 

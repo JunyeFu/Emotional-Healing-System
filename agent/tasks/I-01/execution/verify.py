@@ -12,7 +12,7 @@ ROOT = TASK.parents[2]
 def main():
     (TASK / 'evidence').mkdir(parents=True, exist_ok=True)
     command = [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_integration_handoff.py'),
-               str(ROOT / '02-技术研发/tests/session_core'), str(ROOT / '02-技术研发/tests/session_store')]
+               str(ROOT / 'agent/modules/tests/session_core'), str(ROOT / 'agent/modules/tests/session_store')]
     run = subprocess.run(command, cwd=ROOT, env={**os.environ, 'PYTHONIOENCODING': 'utf-8'},
                          capture_output=True, text=True, encoding='utf-8')
     (TASK / 'evidence/check-1.txt').write_text(run.stdout + run.stderr, encoding='utf-8')

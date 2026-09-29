@@ -78,8 +78,8 @@
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |
 | 看双设备同步与SQI | `agent/tasks/S-01/outputs/current-quality.md`（连接与质量区分、时钟字段与未完成取证） |
 | 看呼吸事件与在线PF | `agent/tasks/S-02/outputs/current-events.md`（步骤身份、机会指标与未完成验收） |
-| 看通信协议 | `02-技术研发/05-通信协议/contracts/README.md` |
-| 看会话编排 | `02-技术研发/srp_session_core/README.md` |
+| 看通信协议 | `agent/modules/05-通信协议/contracts/README.md` |
+| 看会话编排 | `agent/modules/srp_session_core/README.md` |
 | 看验证与证据 | `agent/validation/README.md` |
 | 查文献 | `agent/references/`（历史库处于身份与来源复核隔离状态；论文证据以W-01为入口） |
 
@@ -99,7 +99,7 @@
 ├── agent/design/
 │   ├── README.md                设计模块入口
 │   └── 情绪天气方案/四种天气设计.md 4种天气→呼吸策略→视觉要素
-├── 02-技术研发/
+├── agent/modules/
 │   ├── 01-数据采集/README.md        Polar H10 + 呼吸胸带；当前D-01交接见Agent层
 │   ├── 02-信号处理/README.md        旧开发原型与当前S-02交接分开
 │   ├── 03-TouchDesigner/TD原型规划.md 历史原型；正式目标为只读操作台

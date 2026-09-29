@@ -1,0 +1,80 @@
+FF.........................                                              [100%]
+================================== FAILURES ===================================
+_ test_archive_keeps_checkout_bytes[02-\u6280\u672f\u7814\u53d1/03-TouchDesigner/TD\u539f\u578b\u89c4\u5212.md] _
+
+item = {'archive_path': 'agent/tasks/T-02/archive/legacy-td-authoring/TD原型规划.md', 'bytes': 6132, 'original_path': '02-技术研发/03-TouchDesigner/TD原型规划.md', 'sha256': '7681EC0CB3787CD9D855C31807EE6AE3481850399532E26825477AFD817BEF4D'}
+
+    @pytest.mark.parametrize('item', ARCHIVE['files'], ids=lambda item: item['original_path'])
+    def test_archive_keeps_checkout_bytes(item):
+        data = (ROOT / item['archive_path']).read_bytes()
+        assert len(data) == item['bytes']
+        assert sha256(data).hexdigest().upper() == item['sha256']
+        original = ROOT / item['original_path']
+        if original.suffix == '.md' and original.name in ('TD原型规划.md', 'step-3-breath-animation.md'):
+>           assert '当前' in original.read_text(encoding='utf-8')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\T-02\execution\test_t02_contract.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/03-TouchDesigner/TD原型规划.md')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\03-TouchDesigner\\TD原型规划.md'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ test_archive_keeps_checkout_bytes[02-\u6280\u672f\u7814\u53d1/03-TouchDesigner/step-3-breath-animation.md] _
+
+item = {'archive_path': 'agent/tasks/T-02/archive/legacy-td-authoring/step-3-breath-animation.md', 'bytes': 3652, 'original_p...ouchDesigner/step-3-breath-animation.md', 'sha256': '3F987558C288B061103843E7EBBA88466B2566C2EB24641CC3523964487BE8DC'}
+
+    @pytest.mark.parametrize('item', ARCHIVE['files'], ids=lambda item: item['original_path'])
+    def test_archive_keeps_checkout_bytes(item):
+        data = (ROOT / item['archive_path']).read_bytes()
+        assert len(data) == item['bytes']
+        assert sha256(data).hexdigest().upper() == item['sha256']
+        original = ROOT / item['original_path']
+        if original.suffix == '.md' and original.name in ('TD原型规划.md', 'step-3-breath-animation.md'):
+>           assert '当前' in original.read_text(encoding='utf-8')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\T-02\execution\test_t02_contract.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/03-TouchDesigner/step-3-breath-animation.md')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\03-TouchDesigner\\step-3-breath-animation.md'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+=========================== short test summary info ===========================
+FAILED agent/tasks/T-02/execution/test_t02_contract.py::test_archive_keeps_checkout_bytes[02-\u6280\u672f\u7814\u53d1/03-TouchDesigner/TD\u539f\u578b\u89c4\u5212.md]
+FAILED agent/tasks/T-02/execution/test_t02_contract.py::test_archive_keeps_checkout_bytes[02-\u6280\u672f\u7814\u53d1/03-TouchDesigner/step-3-breath-animation.md]
+2 failed, 25 passed in 0.37s

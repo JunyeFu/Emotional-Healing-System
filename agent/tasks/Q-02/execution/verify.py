@@ -13,7 +13,7 @@ def main():
     (TASK / 'evidence').mkdir(parents=True, exist_ok=True)
     commands = [
         [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_level_b_handoff.py'),
-         str(ROOT / '02-技术研发/tests/step_measurement')],
+         str(ROOT / 'agent/modules/tests/step_measurement')],
         [sys.executable, str(ROOT / 'agent/tasks/U12-02/execution/build_evidence.py'), '--check'],
     ]
     checks = []

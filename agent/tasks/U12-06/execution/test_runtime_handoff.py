@@ -59,7 +59,7 @@ def test_registration_and_consumer_gaps_remain_current():
     assert len(consumers) == 6
     assert all(item['status'] == 'PENDING_RUNTIME_MIGRATION' for item in consumers)
     for item in consumers:
-        assert (ROOT / item['path']).is_file()
+            assert runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path'](ROOT, item['path']).is_file()
 
 
 def test_sources_and_navigation_are_actual():

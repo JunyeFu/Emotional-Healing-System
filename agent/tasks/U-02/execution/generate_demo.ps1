@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '../../../..')).Path
 $unity = 'D:\UnityEngine\6000.4.9f1\Editor\Unity.exe'
-$project = Join-Path $root '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+$project = Join-Path $root 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 $evidence = Join-Path $root 'agent/tasks/U-02/evidence/runtime/demo'
 $player = Join-Path $root '.artifacts-local/task-normalization/U-02/demo-player'
 $frames = Join-Path $evidence 'frames'

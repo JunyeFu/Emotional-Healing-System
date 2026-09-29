@@ -14,9 +14,9 @@
     "agent/tasks/X-03/outputs/current-runtime.json",
     "agent/tasks/X-02/archive/00_后续研究总设计.md",
     "agent/tasks/X-02/archive/01_数据与方法储备.md",
-    "02-技术研发/08-随机化/srp_randomization/generator.py",
-    "02-技术研发/srp_session_core/sequence.py",
-    "02-技术研发/srp_session_store/replay.py",
-    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
+    "agent/modules/08-随机化/srp_randomization/generator.py",
+    "agent/modules/srp_session_core/sequence.py",
+    "agent/modules/srp_session_store/replay.py",
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
   ]
 }

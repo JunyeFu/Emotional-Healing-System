@@ -5,11 +5,12 @@ from __future__ import annotations
 import builtins
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 
 
 TASK_DIR = Path(__file__).resolve().parents[1]
-EVIDENCE_DIR = TASK_DIR / "evidence" / "runtime" / "touchdesigner"
+EVIDENCE_DIR = Path(os.environ.get('SRP_T01_PROBE_EVIDENCE_ROOT', str(TASK_DIR / 'evidence/runtime'))) / 'touchdesigner'
 SCREENSHOT_DIR = EVIDENCE_DIR / "screenshots"
 STATE_DIR = EVIDENCE_DIR / "states"
 REPORT_PATH = EVIDENCE_DIR / "reopen_report.json"

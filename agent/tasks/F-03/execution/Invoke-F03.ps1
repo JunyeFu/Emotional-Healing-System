@@ -6,7 +6,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..\..\..')).Path
-$unityRoot = Join-Path $repoRoot '02-技术研发\04-Unity视觉\SRP-Weather-Visual'
+$unityRoot = Join-Path $repoRoot 'agent\modules\04-Unity视觉\SRP-Weather-Visual'
 $lockPath = Join-Path $PSScriptRoot '..\inputs\f03-environment-lock.json'
 $evidenceRelativePath = 'agent/tasks/F-03/evidence/runtime'
 $evidenceRoot = Join-Path $repoRoot $evidenceRelativePath
@@ -18,7 +18,7 @@ Import-Module $environmentModule -Force
 $implementationPaths = @(
     'agent/tasks/F-03/execution',
     'agent/tasks/F-03/inputs',
-    '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+    'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 )
 $script:preRunIdentity = $null
 
@@ -392,7 +392,7 @@ function Test-F03Player {
 
 function Invoke-FormalNegative {
     $contractLogPath = Join-Path $evidenceRoot 'f01-contract-negative.log'
-    $contractOutput = @(& py -3.14 -m pytest '02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py' -q -vv 2>&1)
+    $contractOutput = @(& py -3.14 -m pytest 'agent/modules/05-通信协议/tests/contract/test_runtime_contract.py' -q -vv 2>&1)
     $contractExit = $LASTEXITCODE
     $contractOutput | Set-Content -LiteralPath $contractLogPath -Encoding utf8NoBOM
     if ($contractExit -ne 0) { throw 'F-01 contract negative regression failed' }

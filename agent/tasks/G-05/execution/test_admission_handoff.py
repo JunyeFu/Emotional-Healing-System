@@ -64,7 +64,7 @@ def test_registry_and_null_real_results():
 
 
 def test_current_navigation_links_resolve():
-    docs = ROOT / '02-技术研发/07-数据治理/docs'
+    docs = ROOT / 'agent/modules/07-数据治理/docs'
     for path in (LEGACY / 'TASK.md', LEGACY / 'FILES.md', docs / 'formal_machine_setup.md', docs / 'formal_environment_closure_runbook.md'):
         for target in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8-sig')):
             assert (path.parent / target).resolve().exists(), (path, target)

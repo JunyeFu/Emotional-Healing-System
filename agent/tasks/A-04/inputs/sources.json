@@ -13,7 +13,7 @@
     "agent/tasks/B-03/outputs/current-batch.json",
     "agent/tasks/X-03/outputs/current-runtime.json",
     "agent/tasks/U12-04/execution/power_simulation.py",
-    "02-技术研发/02-信号处理/a03_gate2_spec/__init__.py",
+    "agent/modules/02-信号处理/a03_gate2_spec/__init__.py",
     "agent/tasks/E-04/archive/01_详细执行方案.md",
     "agent/tasks/A-02/archive/06_统计模型与图表计划.md"
   ]

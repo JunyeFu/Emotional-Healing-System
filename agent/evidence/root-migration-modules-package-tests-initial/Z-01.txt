@@ -1,0 +1,256 @@
+EEEEEE......                                                             [100%]
+=================================== ERRORS ====================================
+__________ ERROR at setup of test_current_authority_and_direct_pins ___________
+
+    @pytest.fixture
+    def validator():
+        path = PLAN / '99_验证与清单/validate_team_tool_baseline.py'
+        spec = importlib.util.spec_from_file_location('z01_team_tools', path)
+        module = importlib.util.module_from_spec(spec)
+>       spec.loader.exec_module(module)
+
+agent\tasks\Z-01\execution\test_delivery_handoff.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+<frozen importlib._bootstrap_external>:759: in exec_module
+    ???
+<frozen importlib._bootstrap>:491: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    """Validate the SRP team tool baseline and optionally inspect a local role."""
+    
+    from __future__ import annotations
+    
+    import argparse
+    import importlib.metadata
+    import json
+    import pathlib
+    import platform
+    import re
+    import subprocess
+    import sys
+    
+    
+    HERE = pathlib.Path(__file__).resolve().parent
+    PACKAGE_ROOT = HERE.parent
+    PROJECT_ROOT = PACKAGE_ROOT.parents[3]
+    GOVERNANCE_DIR = next(PACKAGE_ROOT.glob("24_*"))
+    BASELINE_PATH = GOVERNANCE_DIR / "team_tool_baseline_v1.0.json"
+>   TECH_ROOT = next(PROJECT_ROOT.glob("02-*"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+
+agent\governance\01-项目章程与规划\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\99_验证与清单\validate_team_tool_baseline.py:20: StopIteration
+____ ERROR at setup of test_floating_or_mismatched_manifest_rejected[main] ____
+
+    @pytest.fixture
+    def validator():
+        path = PLAN / '99_验证与清单/validate_team_tool_baseline.py'
+        spec = importlib.util.spec_from_file_location('z01_team_tools', path)
+        module = importlib.util.module_from_spec(spec)
+>       spec.loader.exec_module(module)
+
+agent\tasks\Z-01\execution\test_delivery_handoff.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+<frozen importlib._bootstrap_external>:759: in exec_module
+    ???
+<frozen importlib._bootstrap>:491: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    """Validate the SRP team tool baseline and optionally inspect a local role."""
+    
+    from __future__ import annotations
+    
+    import argparse
+    import importlib.metadata
+    import json
+    import pathlib
+    import platform
+    import re
+    import subprocess
+    import sys
+    
+    
+    HERE = pathlib.Path(__file__).resolve().parent
+    PACKAGE_ROOT = HERE.parent
+    PROJECT_ROOT = PACKAGE_ROOT.parents[3]
+    GOVERNANCE_DIR = next(PACKAGE_ROOT.glob("24_*"))
+    BASELINE_PATH = GOVERNANCE_DIR / "team_tool_baseline_v1.0.json"
+>   TECH_ROOT = next(PROJECT_ROOT.glob("02-*"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+
+agent\governance\01-项目章程与规划\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\99_验证与清单\validate_team_tool_baseline.py:20: StopIteration
+_ ERROR at setup of test_floating_or_mismatched_manifest_rejected[0000000000000000000000000000000000000000] _
+
+    @pytest.fixture
+    def validator():
+        path = PLAN / '99_验证与清单/validate_team_tool_baseline.py'
+        spec = importlib.util.spec_from_file_location('z01_team_tools', path)
+        module = importlib.util.module_from_spec(spec)
+>       spec.loader.exec_module(module)
+
+agent\tasks\Z-01\execution\test_delivery_handoff.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+<frozen importlib._bootstrap_external>:759: in exec_module
+    ???
+<frozen importlib._bootstrap>:491: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    """Validate the SRP team tool baseline and optionally inspect a local role."""
+    
+    from __future__ import annotations
+    
+    import argparse
+    import importlib.metadata
+    import json
+    import pathlib
+    import platform
+    import re
+    import subprocess
+    import sys
+    
+    
+    HERE = pathlib.Path(__file__).resolve().parent
+    PACKAGE_ROOT = HERE.parent
+    PROJECT_ROOT = PACKAGE_ROOT.parents[3]
+    GOVERNANCE_DIR = next(PACKAGE_ROOT.glob("24_*"))
+    BASELINE_PATH = GOVERNANCE_DIR / "team_tool_baseline_v1.0.json"
+>   TECH_ROOT = next(PROJECT_ROOT.glob("02-*"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+
+agent\governance\01-项目章程与规划\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\99_验证与清单\validate_team_tool_baseline.py:20: StopIteration
+__________ ERROR at setup of test_missing_direct_dependency_rejected __________
+
+    @pytest.fixture
+    def validator():
+        path = PLAN / '99_验证与清单/validate_team_tool_baseline.py'
+        spec = importlib.util.spec_from_file_location('z01_team_tools', path)
+        module = importlib.util.module_from_spec(spec)
+>       spec.loader.exec_module(module)
+
+agent\tasks\Z-01\execution\test_delivery_handoff.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+<frozen importlib._bootstrap_external>:759: in exec_module
+    ???
+<frozen importlib._bootstrap>:491: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    """Validate the SRP team tool baseline and optionally inspect a local role."""
+    
+    from __future__ import annotations
+    
+    import argparse
+    import importlib.metadata
+    import json
+    import pathlib
+    import platform
+    import re
+    import subprocess
+    import sys
+    
+    
+    HERE = pathlib.Path(__file__).resolve().parent
+    PACKAGE_ROOT = HERE.parent
+    PROJECT_ROOT = PACKAGE_ROOT.parents[3]
+    GOVERNANCE_DIR = next(PACKAGE_ROOT.glob("24_*"))
+    BASELINE_PATH = GOVERNANCE_DIR / "team_tool_baseline_v1.0.json"
+>   TECH_ROOT = next(PROJECT_ROOT.glob("02-*"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+
+agent\governance\01-项目章程与规划\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\99_验证与清单\validate_team_tool_baseline.py:20: StopIteration
+_________ ERROR at setup of test_workspace_outside_checkout_rejected __________
+
+    @pytest.fixture
+    def validator():
+        path = PLAN / '99_验证与清单/validate_team_tool_baseline.py'
+        spec = importlib.util.spec_from_file_location('z01_team_tools', path)
+        module = importlib.util.module_from_spec(spec)
+>       spec.loader.exec_module(module)
+
+agent\tasks\Z-01\execution\test_delivery_handoff.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+<frozen importlib._bootstrap_external>:759: in exec_module
+    ???
+<frozen importlib._bootstrap>:491: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    """Validate the SRP team tool baseline and optionally inspect a local role."""
+    
+    from __future__ import annotations
+    
+    import argparse
+    import importlib.metadata
+    import json
+    import pathlib
+    import platform
+    import re
+    import subprocess
+    import sys
+    
+    
+    HERE = pathlib.Path(__file__).resolve().parent
+    PACKAGE_ROOT = HERE.parent
+    PROJECT_ROOT = PACKAGE_ROOT.parents[3]
+    GOVERNANCE_DIR = next(PACKAGE_ROOT.glob("24_*"))
+    BASELINE_PATH = GOVERNANCE_DIR / "team_tool_baseline_v1.0.json"
+>   TECH_ROOT = next(PROJECT_ROOT.glob("02-*"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+
+agent\governance\01-项目章程与规划\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\99_验证与清单\validate_team_tool_baseline.py:20: StopIteration
+________ ERROR at setup of test_extras_metadata_uses_distribution_name ________
+
+    @pytest.fixture
+    def validator():
+        path = PLAN / '99_验证与清单/validate_team_tool_baseline.py'
+        spec = importlib.util.spec_from_file_location('z01_team_tools', path)
+        module = importlib.util.module_from_spec(spec)
+>       spec.loader.exec_module(module)
+
+agent\tasks\Z-01\execution\test_delivery_handoff.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+<frozen importlib._bootstrap_external>:759: in exec_module
+    ???
+<frozen importlib._bootstrap>:491: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    """Validate the SRP team tool baseline and optionally inspect a local role."""
+    
+    from __future__ import annotations
+    
+    import argparse
+    import importlib.metadata
+    import json
+    import pathlib
+    import platform
+    import re
+    import subprocess
+    import sys
+    
+    
+    HERE = pathlib.Path(__file__).resolve().parent
+    PACKAGE_ROOT = HERE.parent
+    PROJECT_ROOT = PACKAGE_ROOT.parents[3]
+    GOVERNANCE_DIR = next(PACKAGE_ROOT.glob("24_*"))
+    BASELINE_PATH = GOVERNANCE_DIR / "team_tool_baseline_v1.0.json"
+>   TECH_ROOT = next(PROJECT_ROOT.glob("02-*"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   StopIteration
+
+agent\governance\01-项目章程与规划\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\99_验证与清单\validate_team_tool_baseline.py:20: StopIteration
+=========================== short test summary info ===========================
+ERROR agent/tasks/Z-01/execution/test_delivery_handoff.py::test_current_authority_and_direct_pins
+ERROR agent/tasks/Z-01/execution/test_delivery_handoff.py::test_floating_or_mismatched_manifest_rejected[main]
+ERROR agent/tasks/Z-01/execution/test_delivery_handoff.py::test_floating_or_mismatched_manifest_rejected[0000000000000000000000000000000000000000]
+ERROR agent/tasks/Z-01/execution/test_delivery_handoff.py::test_missing_direct_dependency_rejected
+ERROR agent/tasks/Z-01/execution/test_delivery_handoff.py::test_workspace_outside_checkout_rejected
+ERROR agent/tasks/Z-01/execution/test_delivery_handoff.py::test_extras_metadata_uses_distribution_name
+6 passed, 6 errors in 0.24s

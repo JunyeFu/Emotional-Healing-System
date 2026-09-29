@@ -10,9 +10,9 @@
     "agent/tasks/G-02/outputs/summary.json",
     "agent/tasks/Z-01/evidence/asset-scan.json",
     "agent/tasks/Z-01/outputs/current-delivery.md",
-    "02-技术研发/07-数据治理/srp_governance/environment.py",
-    "02-技术研发/07-数据治理/docs/formal_machine_setup.md",
-    "02-技术研发/07-数据治理/docs/formal_environment_closure_runbook.md",
-    "02-技术研发/07-数据治理/g02.py"
+    "agent/modules/07-数据治理/srp_governance/environment.py",
+    "agent/modules/07-数据治理/docs/formal_machine_setup.md",
+    "agent/modules/07-数据治理/docs/formal_environment_closure_runbook.md",
+    "agent/modules/07-数据治理/g02.py"
   ]
 }

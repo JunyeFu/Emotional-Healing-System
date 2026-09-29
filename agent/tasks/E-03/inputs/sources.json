@@ -16,7 +16,7 @@
     "agent/tasks/A-03/outputs/current-statistics.md",
     "agent/tasks/S-02/outputs/current-events.json",
     "agent/tasks/I-01/outputs/current-integration.md",
-    "02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
+    "agent/modules/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json",
     "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/90_既有执行材料/2026-08-05_SRP_IJHCI_第五步伦理与预试材料包_v1.0/13_LevelC技术预试SOP.md",
     "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/90_既有执行材料/2026-08-05_SRP_IJHCI_第五步伦理与预试材料包_v1.0/19_LevelC数据质量报告模板.json"
   ]

@@ -13,7 +13,7 @@ GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全
 def main():
     commands = [
         ('observations', [TASK / 'execution/observe_runtime.py']),
-        ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_runtime_handoff.py', ROOT / '02-技术研发/tests/session_core', ROOT / '02-技术研发/tests/session_store', ROOT / '02-技术研发/tests/randomization']),
+        ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_runtime_handoff.py', ROOT / 'agent/modules/tests/session_core', ROOT / 'agent/modules/tests/session_store', ROOT / 'agent/modules/tests/randomization']),
         ('legacy-protocol', [GOV.parent / '99_验证与清单/validate_protocol_authority_v1_1.py']),
         ('governance', [GOV / 'u12_upgrade/validate_u12_governance.py']),
         ('registry', [GOV / '07_validate_task_packages.py']),

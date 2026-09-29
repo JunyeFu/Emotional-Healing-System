@@ -7,7 +7,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-04'
-UNITY = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 
 
@@ -47,7 +47,7 @@ def test_remaining_set_does_not_invent_a_assignment():
 def test_fixed_camera_and_current_protocol():
     data = contract()
     scenes = read(ROOT / 'agent/tasks/V-02/outputs/current-scenes.json')
-    config = read(ROOT / '02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+    config = read(ROOT / 'agent/modules/srp_session_core/config/breath_protocol_config_v2.2.json')
     assert data['camera_mode'] == scenes['camera']['mode'] == 'FIXED'
     assert data['cue_modes'] == scenes['conditions']['modes']
     assert data['runtime_schema_version'] == config['breath_protocol_config_version']

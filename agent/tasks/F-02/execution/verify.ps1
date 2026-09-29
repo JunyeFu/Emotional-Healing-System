@@ -8,7 +8,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'F-02 historical candidate check failed' }
     py -3.14 'agent/tasks/U12-02/execution/build_evidence.py' --check
     if ($LASTEXITCODE -ne 0) { throw 'Step measurement evidence check failed' }
-    py -3.14 -m pytest -q '02-技术研发/tests/step_measurement'
+    py -3.14 -m pytest -q 'agent/modules/tests/step_measurement'
     if ($LASTEXITCODE -ne 0) { throw 'Step measurement regression failed' }
 } finally {
     Pop-Location

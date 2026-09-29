@@ -15,7 +15,7 @@ def main():
     commands = [
         [sys.executable, str(TASK / 'execution/build_preview.py')],
         [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_level_c_handoff.py'),
-         str(ROOT / '02-技术研发/tests/randomization'), str(ROOT / '02-技术研发/tests/step_measurement')],
+         str(ROOT / 'agent/modules/tests/randomization'), str(ROOT / 'agent/modules/tests/step_measurement')],
         [sys.executable, str(PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py')],
     ]
     checks = []

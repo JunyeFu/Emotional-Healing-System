@@ -112,7 +112,7 @@
     },
     {
       "label": "连接状态修复",
-      "path": "02-技术研发/01-数据采集/device_manager.py"
+      "path": "agent/modules/01-数据采集/device_manager.py"
     },
     {
       "label": "软件验证记录",

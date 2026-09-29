@@ -8,7 +8,7 @@ import sys
 import jsonschema
 
 
-ROOT = Path(__file__).resolve().parents[4] / "02-技术研发/08-随机化"
+ROOT = Path(__file__).resolve().parents[4] / "agent/modules/08-随机化"
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 

@@ -15,8 +15,8 @@
     "agent/tasks/E-04/outputs/current-closeout.md",
     "agent/tasks/E-04/outputs/current-closeout.json",
     "agent/tasks/X-02/outputs/current-policy.md",
-    "02-技术研发/02-信号处理/a03_gate2_spec/scoring.py",
-    "02-技术研发/02-信号处理/a03_gate2_spec/gate.py",
+    "agent/modules/02-信号处理/a03_gate2_spec/scoring.py",
+    "agent/modules/02-信号处理/a03_gate2_spec/gate.py",
     "agent/tasks/U12-07/archive/signed-candidate/empty_table_spec.md",
     "agent/tasks/U12-07/outputs/table-spec.md",
     "agent/tasks/A-05/archive/05_问卷与访谈处理.md"

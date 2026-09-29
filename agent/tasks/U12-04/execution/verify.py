@@ -21,7 +21,7 @@ def main():
                      ROOT / 'agent/tasks/A-04/execution/test_extension_analysis.py',
                      ROOT / 'agent/tasks/G-03/execution/test_freeze_handoff.py',
                      ROOT / 'agent/tasks/A-03/execution/test_a03_current.py',
-                     ROOT / '02-技术研发/tests/a03_spec']),
+                     ROOT / 'agent/modules/tests/a03_spec']),
         ('identities', [TASK / 'execution/build_evidence.py', '--check']),
         ('measurement', [ROOT / 'agent/tasks/F-02/execution/build_current_measurement.py', '--check']),
         ('legacy-protocol', [PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py']),

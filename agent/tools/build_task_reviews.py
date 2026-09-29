@@ -194,6 +194,9 @@ def main():
     if any(e['old'] == '01-需求与设计' for e in migrated):
         support = read_json(ROOT / 'agent/evidence/root-migration-support.json')
         chain.add_paragraph(support['human_review'])
+    if any(e['old'] == '02-技术研发' for e in migrated):
+        modules = read_json(ROOT / 'agent/evidence/root-migration-modules.json')
+        chain.add_paragraph(modules['human_review'])
     chain.save(ROOT / 'human/project-review.docx')
     progress = {'completed_packages': completed, 'remaining_packages': remaining,
                 'root_migration_complete': False, 'findings': findings}

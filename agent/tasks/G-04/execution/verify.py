@@ -17,7 +17,7 @@ def main():
         ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_extension_handoff.py',
                      ROOT / 'agent/tasks/E-05/execution/test_freeze_handoff.py',
                      ROOT / 'agent/tasks/X-03/execution/test_runtime_handoff.py',
-                     ROOT / '02-技术研发/tests/randomization']),
+                     ROOT / 'agent/modules/tests/randomization']),
         ('legacy-protocol', [PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py']),
         ('governance', [GOV / 'u12_upgrade/validate_u12_governance.py']),
         ('registry', [GOV / '07_validate_task_packages.py']),

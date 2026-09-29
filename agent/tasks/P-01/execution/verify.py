@@ -28,12 +28,12 @@ def main():
                        'source': log.relative_to(ROOT).as_posix()})
 
     run('session-consumers', ['-m', 'pytest', '-q',
-                            ROOT / '02-技术研发/tests/session_core',
-                            ROOT / '02-技术研发/tests/session_store',
-                            ROOT / '02-技术研发/05-通信协议/tests',
-                            ROOT / '02-技术研发/07-数据治理/tests'])
+                            ROOT / 'agent/modules/tests/session_core',
+                            ROOT / 'agent/modules/tests/session_store',
+                            ROOT / 'agent/modules/05-通信协议/tests',
+                            ROOT / 'agent/modules/07-数据治理/tests'])
     run('golden-generator', [TASK / 'execution/generate_golden_trace.py'])
-    original = ROOT / '02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json'
+    original = ROOT / 'agent/modules/srp_session_core/fixtures/golden/four-module-trace-v1.json'
     trace = json.loads((OUT / 'four-module-trace-v1.json').read_text(encoding='utf-8'))
     assert trace == json.loads(original.read_text(encoding='utf-8')) == build_trace()
     assert trace['summary']['status'] == 'COMPLETED'

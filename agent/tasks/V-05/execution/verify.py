@@ -13,7 +13,7 @@ def main():
     env = {**os.environ, 'PYTHONIOENCODING': 'utf-8', 'PYTHONUTF8': '1'}
     commands = [
         [sys.executable, str(TASK / 'execution/check_core_matrix.py')],
-        [sys.executable, '-m', 'pytest', '-q', str(ROOT / '02-技术研发/tests/session_core'),
+        [sys.executable, '-m', 'pytest', '-q', str(ROOT / 'agent/modules/tests/session_core'),
          str(TASK / 'execution/test_v05_contract.py')],
     ]
     for index, command in enumerate(commands, 1):

@@ -10,7 +10,7 @@ import pytest
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
-sys.path.insert(0, str(ROOT / '02-技术研发'))
+sys.path.insert(0, str(ROOT / 'agent/modules'))
 from srp_session_core.sequence import FixedSequenceProvider
 from srp_session_core.models import AssignmentBundle
 from srp_session_core.errors import SessionCoreError
@@ -85,7 +85,7 @@ def test_qc_is_not_pass_and_has_required_raw_sources():
     assert value['archive_integrity'] == {'status': 'NOT_CHECKED', 'report_ref': None}
     assert value['raw_evidence_bundle']['status'] == 'NOT_CHECKED'
     assert value['raw_evidence_bundle']['report_ref'] is None
-    schema = json.loads((ROOT / '02-技术研发/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json').read_text(encoding='utf-8'))
+    schema = json.loads((ROOT / 'agent/modules/srp_session_store/contracts/raw-evidence-bundle-v1.schema.json').read_text(encoding='utf-8'))
     assert set(value['raw_evidence_bundle']['required_sources']) == set(schema['properties']['families']['items']['enum'])
     assert all(v is None for v in value['review'].values())
 

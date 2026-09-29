@@ -1,5 +1,6 @@
 import csv
 import json
+import runpy
 from pathlib import Path
 import re
 import runpy
@@ -10,11 +11,12 @@ import pytest
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-07'
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
-UNITY = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 OLD_SPEC = PLAN / '20_产品与场景设计/06_抽象双环对照规格.md'
 
 
 def read(path):
+    path = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path'](ROOT, path.relative_to(ROOT).as_posix())
     return json.loads(path.read_text(encoding='utf-8-sig'))
 
 

@@ -13,10 +13,10 @@ def main():
     env = {**os.environ, 'PYTHONIOENCODING': 'utf-8', 'PYTHONUTF8': '1'}
     command = [sys.executable, '-m', 'pytest', '-q',
                str(TASK / 'execution/test_t02_contract.py'),
-               str(ROOT / '02-技术研发/tests/session_core'),
-               str(ROOT / '02-技术研发/tests/session_store'),
-               str(ROOT / '02-技术研发/03-TouchDesigner/t01_telemetry_panel/tests'),
-               str(ROOT / '02-技术研发/03-TouchDesigner/f04_readonly_console/tests')]
+               str(ROOT / 'agent/modules/tests/session_core'),
+               str(ROOT / 'agent/modules/tests/session_store'),
+               str(ROOT / 'agent/modules/03-TouchDesigner/t01_telemetry_panel/tests'),
+               str(ROOT / 'agent/modules/03-TouchDesigner/f04_readonly_console/tests')]
     run = subprocess.run(command, cwd=ROOT, env=env, capture_output=True,
                          text=True, encoding='utf-8')
     evidence = TASK / 'evidence'

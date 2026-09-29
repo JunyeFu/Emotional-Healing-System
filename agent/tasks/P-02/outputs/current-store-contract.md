@@ -4,7 +4,7 @@
 
 > 状态：`DONE_WITH_BOUNDED_SCOPE`。P-02已由傅钧烨完成真实第二人复核；本模块提供L0/L1不可覆盖追加、完整性校验和确定性重放，不推进会话状态，也不表示设备链或完整系统联调已经完成。
 
-F-05已签收，不增加存储层协议推断：P-02只持久化`contract_adapter.validate_message()`返回的已校验v2.1或v2.2消息，并在重放时保留版本和步骤字段原值。接口对齐见[运行合同F-05文档](../../../../02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
+F-05已签收，不增加存储层协议推断：P-02只持久化`contract_adapter.validate_message()`返回的已校验v2.1或v2.2消息，并在重放时保留版本和步骤字段原值。接口对齐见[运行合同F-05文档](../../../modules/05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
 
 ## 职责
 
@@ -66,7 +66,7 @@ SessionReplayer.replay_core(core_factory=None) -> ReplayReport
 - 已封存会话拒绝任何追加；同一会话只允许一个写者；
 - 中断恢复不截断旧段，只创建新段写入`PROCESS_INTERRUPTED`并封存，后续运行必须使用新`session_id`。
 
-配置见[session_store_config_v1.json](../../../../02-技术研发/srp_session_store/config/session_store_config_v1.json)，机器格式见[contracts](../../../../02-技术研发/srp_session_store/contracts)。
+配置见[session_store_config_v1.json](../../../modules/srp_session_store/config/session_store_config_v1.json)，机器格式见[contracts](../../../modules/srp_session_store/contracts)。
 
 ## L0与L1
 

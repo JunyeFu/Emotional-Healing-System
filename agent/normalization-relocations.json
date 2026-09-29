@@ -45,6 +45,78 @@
       "new_project_path": "agent/tasks/U12-01/archive/consumers.json",
       "impact_path": "agent/tasks/U12-01/evidence/consumer-impact.md",
       "reason": "Preserve the active task's original consumer-list snapshot; current governance uses updated scoped-acceptance statuses independently."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/05-通信协议/contracts/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/05-通信协议/contracts/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code.",
+      "preserve_ready_dispatch": true
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/03-TouchDesigner/t01_telemetry_panel/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code.",
+      "preserve_ready_dispatch": true
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/srp_session_core/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code.",
+      "preserve_ready_dispatch": true
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/srp_session_store/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_store/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code.",
+      "preserve_ready_dispatch": true
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/srp_session_core/gates.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/gates.py",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code.",
+      "preserve_ready_dispatch": true
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/srp_session_store/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_store/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code.",
+      "preserve_ready_dispatch": true
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code.",
+      "preserve_ready_dispatch": true
+    },
+    {
+      "task_id": "V-05",
+      "old_project_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code.",
+      "preserve_ready_dispatch": true
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "agent/tasks/P-01/execution/generate_golden_trace.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/p01-golden-generator.py",
+      "preserve_ready_dispatch": true,
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve the received generator input while its live module import path is repaired."
     }
   ]
 }

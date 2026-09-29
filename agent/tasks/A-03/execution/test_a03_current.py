@@ -12,7 +12,7 @@ TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
-sys.path.insert(0, str(ROOT / '02-技术研发/02-信号处理'))
+sys.path.insert(0, str(ROOT / 'agent/modules/02-信号处理'))
 from a03_gate2_spec import GateEvidence, GateResult, evaluate_ordered_gate, score_panas
 
 
@@ -66,7 +66,7 @@ def cli(output):
     return subprocess.run([
         sys.executable, '-m', 'a03_gate2_spec.simulation', '--output', str(output),
         '--seed', '17', '--replications', '100', '--per-condition', '2',
-    ], cwd=ROOT, env={**os.environ, 'PYTHONPATH': str(ROOT / '02-技术研发/02-信号处理'),
+    ], cwd=ROOT, env={**os.environ, 'PYTHONPATH': str(ROOT / 'agent/modules/02-信号处理'),
                     'PYTHONIOENCODING': 'utf-8'}, capture_output=True, text=True, encoding='utf-8')
 
 
@@ -94,6 +94,6 @@ def test_all_sources_and_current_module_links_resolve():
     for path in read_json(TASK / 'inputs/sources.json')['paths']:
         assert (ROOT / path).exists(), path
     import re
-    path = ROOT / '02-技术研发/02-信号处理/a03_gate2_spec/README.md'
+    path = ROOT / 'agent/modules/02-信号处理/a03_gate2_spec/README.md'
     for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
         assert (path.parent / link).resolve().exists(), link

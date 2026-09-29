@@ -3,12 +3,13 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import runpy
 
 import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-08'
-UNITY = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 
 
@@ -103,11 +104,11 @@ def test_audio_candidate_and_pause_semantics():
 
 @pytest.mark.parametrize('name', ['BuildScene1', 'BuildScene2D'])
 def test_legacy_menu_archived_verbatim_and_no_active_consumers(name):
-    relative = f'02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
+    relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
     assert not (ROOT / relative).exists() and not (ROOT / (relative + '.meta')).exists()
     for suffix in ['', '.meta']:
-        source = subprocess.run(['git', 'show', f'742da55:{relative}{suffix}'], cwd=ROOT, capture_output=True, check=True)
-        assert source.stdout == (TASK / f'archive/{name}.cs{suffix}').read_bytes()
+        before = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '742da55', relative + suffix)
+        assert before == (TASK / f'archive/{name}.cs{suffix}').read_bytes()
         attr = subprocess.run(['git', 'check-attr', 'text', '--', f'agent/tasks/U-08/archive/{name}.cs{suffix}'],
                               cwd=ROOT, capture_output=True, text=True, check=True)
         assert attr.stdout.rstrip().endswith(': text: unset')
@@ -124,9 +125,9 @@ def test_legacy_menu_archived_verbatim_and_no_active_consumers(name):
 
 
 def test_existing_storm_scene_bytes_preserved():
-    relative = '02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/StormScene.unity'
-    original = subprocess.run(['git', 'show', f'742da55:{relative}'], cwd=ROOT, capture_output=True, check=True)
-    assert original.stdout == (ROOT / relative).read_bytes()
+    relative = 'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/StormScene.unity'
+    before = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '742da55', relative)
+    assert before == (ROOT / relative).read_bytes()
 
 
 def test_development_build_is_not_default_or_product_build():
@@ -146,9 +147,9 @@ def test_formal_gate_and_asset_blocking_are_retained():
     assert 'UNCONTROLLED_DEVELOPMENT_BUILD' in source and 'FORMAL_SCENES_MISSING' in source
     assert data['current_gate_required_component'] == 'FormalRuntimeController' and 'FormalRuntimeController' in source
     assert data['current_gate_alignment'] == 'PENDING_FINAL_RUNTIME_ASSEMBLY_NOT_BYPASSED'
-    original = subprocess.run(['git', 'show', '742da55:' + (UNITY / 'Assets/Scripts/Editor/FormalBuildGate.cs').relative_to(ROOT).as_posix()],
-                              cwd=ROOT, capture_output=True, check=True)
-    assert original.stdout.decode('utf-8-sig').replace('\r\n', '\n') == source
+    original = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '742da55', (UNITY / 'Assets/Scripts/Editor/FormalBuildGate.cs').relative_to(ROOT).as_posix())
+    relocated = source.replace('Directory.GetParent(Directory.GetParent(technicalRoot)?.FullName ?? "")?.FullName', 'Directory.GetParent(technicalRoot)?.FullName').replace('"agent", "modules", "07-数据治理"', '"02-技术研发", "07-数据治理"')
+    assert original.decode('utf-8-sig').replace('\r\n', '\n') == relocated
 
 
 def test_design_assets_and_software_done_do_not_prove_license_clearance():

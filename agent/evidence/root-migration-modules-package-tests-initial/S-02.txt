@@ -1,0 +1,66 @@
+...........FF.F..                                                        [100%]
+================================== FAILURES ===================================
+__ test_frozen_source_relocation_preserves_content_and_identity[IN_PROGRESS] __
+
+status = 'IN_PROGRESS'
+
+    @pytest.mark.parametrize('status', ['IN_PROGRESS', 'IN_REVIEW'])
+    def test_frozen_source_relocation_preserves_content_and_identity(status):
+        resolver = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_source']
+        validator = runpy.run_path(str(PLAN / '24_团队任务与项目治理/14_validate_ready_task_packages.py'))
+        old = 'agent/modules/02-信号处理/评分模型设计.md'
+        resolved = resolver(ROOT, 'A-03', status, old)
+        assert resolved == TASK / 'archive/评分模型设计.md'
+        renderer = runpy.run_path(str(PLAN / '24_团队任务与项目治理/13_render_ready_task_packages.py'))
+        assert renderer['safe_source'](old, 'A-03', status) == resolved
+        package = PLAN / '24_团队任务与项目治理/当前解锁独立任务包/A-03'
+        manifest = json.loads((package / 'package_manifest.json').read_text(encoding='utf-8-sig'))
+>       item = next(x for x in manifest['source_files'] if x['source_path'] == old)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+agent\tasks\S-02\execution\test_s02_contract.py:109: StopIteration
+___ test_frozen_source_relocation_preserves_content_and_identity[IN_REVIEW] ___
+
+status = 'IN_REVIEW'
+
+    @pytest.mark.parametrize('status', ['IN_PROGRESS', 'IN_REVIEW'])
+    def test_frozen_source_relocation_preserves_content_and_identity(status):
+        resolver = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_source']
+        validator = runpy.run_path(str(PLAN / '24_团队任务与项目治理/14_validate_ready_task_packages.py'))
+        old = 'agent/modules/02-信号处理/评分模型设计.md'
+        resolved = resolver(ROOT, 'A-03', status, old)
+        assert resolved == TASK / 'archive/评分模型设计.md'
+        renderer = runpy.run_path(str(PLAN / '24_团队任务与项目治理/13_render_ready_task_packages.py'))
+        assert renderer['safe_source'](old, 'A-03', status) == resolved
+        package = PLAN / '24_团队任务与项目治理/当前解锁独立任务包/A-03'
+        manifest = json.loads((package / 'package_manifest.json').read_text(encoding='utf-8-sig'))
+>       item = next(x for x in manifest['source_files'] if x['source_path'] == old)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+agent\tasks\S-02\execution\test_s02_contract.py:109: StopIteration
+_ test_unregistered_or_non_frozen_source_is_not_redirected[A-03-READY-agent/modules/02-\u4fe1\u53f7\u5904\u7406/\u8bc4\u5206\u6a21\u578b\u8bbe\u8ba1.md] _
+
+task = 'A-03', status = 'READY', source = 'agent/modules/02-信号处理/评分模型设计.md'
+
+    @pytest.mark.parametrize('task,status,source', [
+        ('S-02', 'IN_PROGRESS', 'agent/modules/02-信号处理/评分模型设计.md'),
+        ('A-03', 'READY', 'agent/modules/02-信号处理/评分模型设计.md'),
+        ('A-03', 'IN_PROGRESS', 'agent/modules/02-信号处理/unknown.md'),
+        ('A-03', 'IN_PROGRESS', '../outside.md'),
+    ])
+    def test_unregistered_or_non_frozen_source_is_not_redirected(task, status, source):
+        resolver = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_source']
+>       assert resolver(ROOT, task, status, source) == (ROOT / source).resolve()
+E       AssertionError: assert WindowsPath('D:/Agent/srp/agent/tasks/S-02/archive/评分模型设计.md') == WindowsPath('D:/Agent/srp/agent/modules/02-信号处理/评分模型设计.md')
+E        +  where WindowsPath('D:/Agent/srp/agent/tasks/S-02/archive/评分模型设计.md') = <function resolve_source at 0x000001A1CF627A00>(WindowsPath('D:/Agent/srp'), 'A-03', 'READY', 'agent/modules/02-信号处理/评分模型设计.md')
+E        +  and   WindowsPath('D:/Agent/srp/agent/modules/02-信号处理/评分模型设计.md') = resolve()
+E        +    where resolve = (WindowsPath('D:/Agent/srp') / 'agent/modules/02-信号处理/评分模型设计.md').resolve
+
+agent\tasks\S-02\execution\test_s02_contract.py:121: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/S-02/execution/test_s02_contract.py::test_frozen_source_relocation_preserves_content_and_identity[IN_PROGRESS]
+FAILED agent/tasks/S-02/execution/test_s02_contract.py::test_frozen_source_relocation_preserves_content_and_identity[IN_REVIEW]
+FAILED agent/tasks/S-02/execution/test_s02_contract.py::test_unregistered_or_non_frozen_source_is_not_redirected[A-03-READY-agent/modules/02-\u4fe1\u53f7\u5904\u7406/\u8bc4\u5206\u6a21\u578b\u8bbe\u8ba1.md]
+3 failed, 14 passed in 0.22s

@@ -6,7 +6,7 @@
     {"old": "work", "new": "agent/work", "purpose": "Agent execution records", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-work.json"},
     {"old": "00-项目管理", "new": "agent/governance", "purpose": "Authoritative governance, contracts and preserved sources", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-governance.json"},
     {"old": "01-需求与设计", "new": "agent/design", "purpose": "Design sources consumed by implementation", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-support.json"},
-    {"old": "02-技术研发", "new": "agent/modules", "purpose": "Shared Python, Unity and TD implementations", "status": "PENDING"},
+    {"old": "02-技术研发", "new": "agent/modules", "purpose": "Shared Python, Unity and TD implementations", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-modules.json"},
     {"old": "03-测试与实验", "new": "agent/validation", "purpose": "Verification sources and original signed evidence", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-support.json"},
     {"old": "04-成果与交付", "new": "agent/delivery", "purpose": "Current delivery sources; diagrams in human/assets and local old Unity snapshot in agent/archive/delivery", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-delivery-source.json"},
     {"old": "srp参考文献", "new": "agent/references", "purpose": "Original references and source identification", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-support.json"},

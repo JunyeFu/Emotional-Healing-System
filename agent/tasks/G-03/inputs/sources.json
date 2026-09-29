@@ -16,10 +16,10 @@
     "agent/tasks/A-02/outputs/current-statistics.md",
     "agent/tasks/A-03/outputs/current-statistics.json",
     "agent/tasks/G-05/outputs/current-admission.json",
-    "02-技术研发/srp_session_core/README.md",
-    "02-技术研发/srp_session_core/gates.py",
-    "02-技术研发/srp_session_core/core.py",
-    "02-技术研发/tests/session_core/test_manifest.py",
+    "agent/modules/srp_session_core/README.md",
+    "agent/modules/srp_session_core/gates.py",
+    "agent/modules/srp_session_core/core.py",
+    "agent/modules/tests/session_core/test_manifest.py",
     "agent/tasks/G-03/archive/02_当前状态与不可跨越门禁.md"
   ]
 }

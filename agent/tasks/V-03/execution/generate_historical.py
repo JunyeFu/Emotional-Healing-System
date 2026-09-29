@@ -14,7 +14,7 @@ BASE = (
     / "20_产品与场景设计"
     / "V-03_四层视听映射与资产来源基线"
 )
-UNITY_PROJECT = ROOT / "02-技术研发" / "04-Unity视觉" / "SRP-Weather-Visual"
+UNITY_PROJECT = ROOT / "agent/modules" / "04-Unity视觉" / "SRP-Weather-Visual"
 UNITY_MANIFEST = UNITY_PROJECT / "Packages" / "manifest.json"
 G02_ASSET_LEDGER = UNITY_PROJECT / "Governance" / "asset_license_ledger.json"
 

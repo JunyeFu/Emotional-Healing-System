@@ -16,9 +16,9 @@
     "agent/tasks/G-03/outputs/current-freeze.md",
     "agent/tasks/G-03/archive/02_当前状态与不可跨越门禁.md",
     "agent/tasks/X-02/archive/00_后续研究总设计.md",
-    "02-技术研发/08-随机化/srp_randomization/generator.py",
-    "02-技术研发/srp_session_core/core.py",
-    "02-技术研发/srp_session_core/gates.py",
-    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
+    "agent/modules/08-随机化/srp_randomization/generator.py",
+    "agent/modules/srp_session_core/core.py",
+    "agent/modules/srp_session_core/gates.py",
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
   ]
 }

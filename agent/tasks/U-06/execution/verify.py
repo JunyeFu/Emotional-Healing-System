@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-UNITY = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 
 
 def main():

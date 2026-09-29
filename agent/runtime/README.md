@@ -1,10 +1,10 @@
 # SRP 当前运行入口
 
-本页组织已有运行权威，不新增启动器或宣称正式系统已经就绪。当前工作目录为`D:\Agent\srp`；共享工程目录还未完成双层迁移，后续真实位置以[root-layout.json](../root-layout.json)为准。
+本页组织已有运行权威，不新增启动器或宣称正式系统已经就绪。当前工作目录为`D:\Agent\srp`；共享工程已迁入`agent/modules/`，其余根目录迁移进度以[root-layout.json](../root-layout.json)为准。
 
 ## Python
 
-[P-01会话核心](../tasks/P-01/TASK.md)负责manifest、流程、时钟、可靠控制和遥测；[P-02记录存储](../tasks/P-02/outputs/current-store-contract.md)负责耐久追加、封存与只读重放。源码目前分别在`02-技术研发/srp_session_core/`与`02-技术研发/srp_session_store/`。
+[P-01会话核心](../tasks/P-01/TASK.md)负责manifest、流程、时钟、可靠控制和遥测；[P-02记录存储](../tasks/P-02/outputs/current-store-contract.md)负责耐久追加、封存与只读重放。源码目前分别在`agent/modules/srp_session_core/`与`agent/modules/srp_session_store/`。
 
 [U12-06研究接线](../tasks/U12-06/outputs/current-runtime.md)记录正式入口缺口；开发fixture不生成正式运行证据，正式环境仍须取得对应真实设备、权限、构建和研究批准。
 

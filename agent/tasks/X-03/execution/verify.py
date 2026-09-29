@@ -11,8 +11,8 @@ ROOT = TASK.parents[2]
 
 def main():
     command = [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_runtime_handoff.py'),
-               str(ROOT / '02-技术研发/tests/session_core/test_manifest.py'),
-               str(ROOT / '02-技术研发/tests/session_store/test_recording_replay.py')]
+               str(ROOT / 'agent/modules/tests/session_core/test_manifest.py'),
+               str(ROOT / 'agent/modules/tests/session_store/test_recording_replay.py')]
     run = subprocess.run(command, cwd=ROOT, env={**os.environ, 'PYTHONIOENCODING': 'utf-8'}, capture_output=True, text=True, encoding='utf-8')
     (TASK / 'evidence/check-1.txt').write_text(run.stdout + run.stderr, encoding='utf-8')
     (TASK / 'evidence/verification.json').write_text(json.dumps({

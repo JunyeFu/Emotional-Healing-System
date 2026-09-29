@@ -1,0 +1,30 @@
+.F.F                                                                     [100%]
+================================== FAILURES ===================================
+__________ test_original_synthetic_bytes_and_current_materials_match __________
+
+    def test_original_synthetic_bytes_and_current_materials_match():
+        original = TASK / 'archive/signed-candidate'
+        for name, digest in read(original / 'sha256.json').items():
+            assert hashlib.sha256((original / name).read_bytes()).hexdigest() == digest
+        artifacts = runpy.run_path(str(TASK / 'execution/build_evidence.py'))['artifacts']()
+        for name in ('input_cases.json', 'participant_items.json', 'private_answer_keys.json'):
+            assert artifacts[name] == (original / name).read_bytes()
+            assert artifacts[name] == (TASK / 'outputs/materials' / name).read_bytes()
+>       assert read(original / 'verification.json')['source_text_sha256_lf']['agent/modules/srp_step_measurement/build_evidence.py'] == hashlib.sha256((TASK / 'archive/build_evidence.py').read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'agent/modules/srp_step_measurement/build_evidence.py'
+
+agent\tasks\U12-02\execution\test_measurement_handoff.py:30: KeyError
+_________________ test_runtime_measurement_and_sources_exist __________________
+
+    def test_runtime_measurement_and_sources_exist():
+        old = read(TASK / 'archive/signed-candidate/verification.json')
+>       expected = old['source_text_sha256_lf']['agent/modules/srp_step_measurement/measurement.py']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'agent/modules/srp_step_measurement/measurement.py'
+
+agent\tasks\U12-02\execution\test_measurement_handoff.py:47: KeyError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-02/execution/test_measurement_handoff.py::test_original_synthetic_bytes_and_current_materials_match
+FAILED agent/tasks/U12-02/execution/test_measurement_handoff.py::test_runtime_measurement_and_sources_exist
+2 failed, 2 passed in 0.19s

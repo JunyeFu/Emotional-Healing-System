@@ -10,8 +10,8 @@
     "agent/tasks/A-03/outputs/current-statistics.json",
     "agent/tasks/S-01/outputs/current-quality.json",
     "agent/tasks/S-02/outputs/current-events.md",
-    "02-技术研发/srp_step_measurement/annotation_plan.md",
-    "02-技术研发/08-随机化/srp_randomization/generator.py",
+    "agent/modules/srp_step_measurement/annotation_plan.md",
+    "agent/modules/08-随机化/srp_randomization/generator.py",
     "agent/tasks/Q-03/archive/00_第9步计划.md",
     "agent/tasks/Q-03/archive/01_详细执行方案.md"
   ],

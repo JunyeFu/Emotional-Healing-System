@@ -8,7 +8,7 @@ import sys
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
-TECH = ROOT / "02-技术研发"
+TECH = ROOT / "agent/modules"
 sys.path.insert(0, str(TECH))
 from srp_step_measurement.measurement import CONFIG_PATH, PHASES, STEPS, make_material
 

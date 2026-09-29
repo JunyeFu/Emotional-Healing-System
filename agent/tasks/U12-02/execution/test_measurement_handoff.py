@@ -16,8 +16,8 @@ def test_actual_archives_and_preserved_acceptance():
         assert hashlib.sha256((TASK / 'archive' / name).read_bytes()).hexdigest().upper() == expected
     assert hashlib.sha256((TASK / 'outputs/annotation-plan.md').read_bytes()).hexdigest().upper() == current['annotation_plan_byte_sha256']
     assert hashlib.sha256((GOV / 'u12_upgrade/acceptance/U12-02.json').read_bytes()).hexdigest().upper() == current['acceptance_byte_sha256']
-    assert not (ROOT / '02-技术研发/srp_step_measurement/task_state.py').exists()
-    assert not (ROOT / '02-技术研发/srp_step_measurement/build_evidence.py').exists()
+    assert not (ROOT / 'agent/modules/srp_step_measurement/task_state.py').exists()
+    assert not (ROOT / 'agent/modules/srp_step_measurement/build_evidence.py').exists()
 
 def test_original_synthetic_bytes_and_current_materials_match():
     original = TASK / 'archive/signed-candidate'
@@ -45,7 +45,7 @@ def test_current_and_original_scope_not_relabelled():
 def test_runtime_measurement_and_sources_exist():
     old = read(TASK / 'archive/signed-candidate/verification.json')
     expected = old['source_text_sha256_lf']['02-技术研发/srp_step_measurement/measurement.py']
-    actual = ROOT / '02-技术研发/srp_step_measurement/measurement.py'
+    actual = ROOT / 'agent/modules/srp_step_measurement/measurement.py'
     assert hashlib.sha256(actual.read_bytes().replace(b'\r\n', b'\n')).hexdigest() == expected
     for path in read(TASK / 'inputs/sources.json')['paths']:
         assert (ROOT / path).is_file()

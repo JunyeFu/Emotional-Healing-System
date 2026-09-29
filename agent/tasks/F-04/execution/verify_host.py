@@ -7,7 +7,7 @@ import sys
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-MODULE = ROOT / '02-技术研发/03-TouchDesigner/f04_readonly_console'
+MODULE = ROOT / 'agent/modules/03-TouchDesigner/f04_readonly_console'
 sys.path.insert(0, str(MODULE))
 from f04_node_plan import write_host_artifacts
 
@@ -16,8 +16,8 @@ def main():
     evidence = TASK / 'evidence'
     evidence.mkdir(parents=True, exist_ok=True)
     tests = [
-        '02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py',
-        '02-技术研发/03-TouchDesigner/t01_telemetry_panel/tests/test_t01_telemetry.py',
+        'agent/modules/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py',
+        'agent/modules/03-TouchDesigner/t01_telemetry_panel/tests/test_t01_telemetry.py',
     ]
     result = subprocess.run([sys.executable, '-m', 'pytest', *tests, '-q'],
                             cwd=ROOT, capture_output=True, text=True, encoding='utf-8')

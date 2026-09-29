@@ -1,0 +1,165 @@
+{
+  "bindings": [
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/srp_session_core/P-01_第二人审核报告_已签署.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/P-01_第二人审核报告_已签署.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/05-通信协议/contracts/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/05-通信协议/contracts/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/03-TouchDesigner/t01_telemetry_panel/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.toe",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/03-TouchDesigner/t01_telemetry_panel/T01_TelemetryPanel.tox",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/srp_session_core/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/srp_session_core/models.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/models.py",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/srp_session_core/transport.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/transport.py",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/srp_session_store/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_store/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "02-技术研发/srp_session_store/adapters.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_store/adapters.py",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/srp_session_core/core.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/core.py",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/srp_session_core/gates.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/gates.py",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/srp_session_core/transport.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_core/transport.py",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/08-随机化/srp_randomization/store.py",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/08-随机化/srp_randomization/store.py",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/srp_session_store/README.md",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/srp_session_store/README.md",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "U12-06",
+      "old_project_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "V-05",
+      "old_project_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "V-05",
+      "old_project_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "V-05",
+      "old_project_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "V-05",
+      "old_project_path": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    },
+    {
+      "task_id": "V-05",
+      "old_project_path": "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+      "new_project_path": "agent/archive/root-migration/modules-inputs/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+      "impact_path": "agent/evidence/root-migration-modules-impact.md",
+      "reason": "Preserve dispatch input bytes while relocating current shared runtime code."
+    }
+  ]
+}

@@ -13,7 +13,7 @@
     "agent/tasks/E-01/outputs/current-execution.md",
     "agent/tasks/G-05/outputs/current-admission.md",
     "agent/tasks/Q-03/outputs/current-level-c.md",
-    "02-技术研发/srp_step_measurement/README.md"
+    "agent/modules/srp_step_measurement/README.md"
   ],
   "archived_bytes": {
     "00_第8步计划.md": "C5193CC5E718A28DBD2F59934AD675E84D6B97FA9D1A3C100FD08ECD5D86AE48",

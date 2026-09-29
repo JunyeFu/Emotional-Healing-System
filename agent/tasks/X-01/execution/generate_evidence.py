@@ -10,7 +10,7 @@ import sys
 from tempfile import TemporaryDirectory
 
 
-ROOT = Path(__file__).resolve().parents[4] / "02-技术研发/08-随机化"
+ROOT = Path(__file__).resolve().parents[4] / "agent/modules/08-随机化"
 TECH_ROOT = ROOT.parent
 for path in (ROOT, TECH_ROOT):
     if str(path) not in sys.path:

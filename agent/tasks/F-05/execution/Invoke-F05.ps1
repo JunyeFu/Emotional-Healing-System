@@ -30,12 +30,12 @@ try {
         Remove-Item -LiteralPath (Join-Path $EvidenceDir $name) -Force -ErrorAction SilentlyContinue
     }
     if ($Action -in @('test', 'all')) {
-        Invoke-F05Command -Name 'contract-tests' -Arguments @('-m', 'pytest', '02-技术研发/05-通信协议/tests/contract', '-q')
-        Invoke-F05Command -Name 'p01-tests' -Arguments @('-m', 'pytest', '02-技术研发/tests/session_core', '-q')
-        Invoke-F05Command -Name 'p02-tests' -Arguments @('-m', 'pytest', '02-技术研发/tests/session_store', '-q')
+        Invoke-F05Command -Name 'contract-tests' -Arguments @('-m', 'pytest', 'agent/modules/05-通信协议/tests/contract', '-q')
+        Invoke-F05Command -Name 'p01-tests' -Arguments @('-m', 'pytest', 'agent/modules/tests/session_core', '-q')
+        Invoke-F05Command -Name 'p02-tests' -Arguments @('-m', 'pytest', 'agent/modules/tests/session_store', '-q')
     }
     if ($Action -in @('verify', 'all')) {
-        Invoke-F05Command -Name 'f05-contract-verifier' -Arguments @('02-技术研发/05-通信协议/contracts/verify_f05_v22.py', '--report', (Join-Path $EvidenceDir 'f05-verification.json'))
+        Invoke-F05Command -Name 'f05-contract-verifier' -Arguments @('agent/modules/05-通信协议/contracts/verify_f05_v22.py', '--report', (Join-Path $EvidenceDir 'f05-verification.json'))
         $diffOutput = git diff --check 2>&1
         $diffText = [string]::Join([Environment]::NewLine, @($diffOutput))
         Set-Content -LiteralPath (Join-Path $EvidenceDir 'git-diff-check.log') -Value $diffText -Encoding utf8

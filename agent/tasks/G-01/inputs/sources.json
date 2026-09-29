@@ -12,7 +12,7 @@
     "agent/validation/G-01_G-02_治理修复团队总监签收报告_已签署.md",
     "agent/validation/G-01_Agent独立审核报告_2026-08-21.md",
     "agent/tasks/F-02/outputs/current-measurement.md",
-    "02-技术研发/07-数据治理/README.md",
-    "02-技术研发/srp_session_store/README.md"
+    "agent/modules/07-数据治理/README.md",
+    "agent/modules/srp_session_store/README.md"
   ]
 }

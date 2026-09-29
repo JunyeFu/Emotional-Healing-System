@@ -14,7 +14,7 @@ from replay_t01_udp import (_send_frames, anomaly_frames, fixture_frames,
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-MODULE = ROOT / '02-技术研发/03-TouchDesigner/t01_telemetry_panel'
+MODULE = ROOT / 'agent/modules/03-TouchDesigner/t01_telemetry_panel'
 EVIDENCE = TASK / 'evidence/runtime'
 TD_BIN = Path('D:/TouchDesigner/bin')
 
@@ -39,9 +39,15 @@ def wait_file(path, process_id, timeout=45):
 
 
 def main():
+    global EVIDENCE
     parser = argparse.ArgumentParser()
     parser.add_argument('--readable', action='store_true')
+    parser.add_argument('--evidence-root', type=Path, help='Keep this run separate from previous runtime evidence')
     args = parser.parse_args()
+    if args.evidence_root:
+        EVIDENCE = args.evidence_root.resolve()
+        if EVIDENCE.exists():
+            raise FileExistsError(EVIDENCE)
     if ps('Get-Process TouchDesigner -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Id'):
         raise RuntimeError('TouchDesigner is already running; preserve the open project')
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as port_check:
@@ -67,7 +73,9 @@ def main():
     error = scratch / 'error.json'
     bootstrap = f'''
 import traceback
-sys.path.insert(0, {str(ROOT / '02-技术研发')!r})
+import os
+os.environ['SRP_T01_PROBE_EVIDENCE_ROOT'] = {str(EVIDENCE)!r}
+sys.path.insert(0, {str(ROOT / 'agent/modules')!r})
 _normal_frame = onFrameStart
 _probe_ready = False
 _probe_frames = 0

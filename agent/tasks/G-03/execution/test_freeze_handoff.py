@@ -112,7 +112,7 @@ def test_runtime_adapters_are_real_but_not_new_v12_approval():
                 'durable_recording', 'unity_formal_build']
     assert all(e['status'] == 'PENDING_RUNTIME_MIGRATION' for e in consumers if e['id'] in required)
     assert len([e for e in consumers if e['id'] in required]) == 6
-    source = (ROOT / '02-技术研发/srp_session_core/gates.py').read_text(encoding='utf-8')
+    source = (ROOT / 'agent/modules/srp_session_core/gates.py').read_text(encoding='utf-8')
     assert 'FORMAL_GATE_UNAVAILABLE' in source and '_require_capability' in source
     value = read(TASK / 'outputs/current-freeze.json')
     assert value['default_formal_adapters_fail_closed'] is True

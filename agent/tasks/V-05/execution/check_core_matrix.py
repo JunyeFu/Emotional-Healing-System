@@ -7,12 +7,12 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/V-05'
-sys.path.insert(0, str(ROOT / '02-技术研发'))
+sys.path.insert(0, str(ROOT / 'agent/modules'))
 from srp_session_core import AssignmentBundle, OperatorRequest, SessionCore, load_breath_protocol_config
 
 
 def build_core_matrix():
-    golden = json.loads((ROOT / '02-技术研发/srp_session_core/fixtures/golden/four-module-trace-v1.json').read_text(encoding='utf-8'))
+    golden = json.loads((ROOT / 'agent/modules/srp_session_core/fixtures/golden/four-module-trace-v1.json').read_text(encoding='utf-8'))
     current = json.loads((TASK / 'outputs/current-graybox.json').read_text(encoding='utf-8'))
     breath = load_breath_protocol_config()
     cases = []

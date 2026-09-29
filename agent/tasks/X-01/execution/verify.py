@@ -13,7 +13,7 @@ def main():
     (TASK / 'evidence').mkdir(parents=True, exist_ok=True)
     commands = [
         [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_current_handoff.py'),
-         str(ROOT / '02-技术研发/tests/randomization')],
+         str(ROOT / 'agent/modules/tests/randomization')],
         [sys.executable, str(TASK / 'execution/verify_x01.py')],
     ]
     checks = []

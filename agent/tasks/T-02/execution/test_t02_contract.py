@@ -10,7 +10,7 @@ import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-TECH = ROOT / '02-技术研发'
+TECH = ROOT / 'agent/modules'
 sys.path.insert(0, str(TECH))
 from srp_session_core import OperatorRequest, RuntimeDependencies, SessionCore
 from srp_session_core.transport import ControlServer
@@ -36,10 +36,10 @@ def test_archive_keeps_checkout_bytes(item):
     data = (ROOT / item['archive_path']).read_bytes()
     assert len(data) == item['bytes']
     assert sha256(data).hexdigest().upper() == item['sha256']
-    original = ROOT / item['original_path']
+    original = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path'](ROOT, item['original_path'])
     if original.suffix == '.md' and original.name in ('TD原型规划.md', 'step-3-breath-animation.md'):
         assert '当前' in original.read_text(encoding='utf-8')
-        assert 'agent/tasks/T-02' in original.read_text(encoding='utf-8')
+        assert 'tasks/T-02' in original.read_text(encoding='utf-8')
     else:
         assert not original.exists()
 

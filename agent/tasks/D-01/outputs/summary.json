@@ -112,7 +112,7 @@
     },
     {
       "label": "原始包公开接口",
-      "path": "02-技术研发/srp_session_store/models.py"
+      "path": "agent/modules/srp_session_store/models.py"
     },
     {
       "label": "规范化验证记录",

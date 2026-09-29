@@ -10,8 +10,8 @@ REPO = TASK.parents[2]
 def main():
     (TASK / 'evidence').mkdir(exist_ok=True)
     command = [sys.executable, '-m', 'pytest', '-q',
-               str(REPO / '02-技术研发/01-数据采集/tests'),
-               str(REPO / '02-技术研发/05-通信协议/tests/contract'),
+               str(REPO / 'agent/modules/01-数据采集/tests'),
+               str(REPO / 'agent/modules/05-通信协议/tests/contract'),
                str(TASK / 'execution/test_s01_contract.py')]
     result = subprocess.run(command, cwd=REPO, capture_output=True, text=True, encoding='utf-8')
     output = result.stdout + result.stderr

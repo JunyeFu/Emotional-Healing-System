@@ -12,7 +12,7 @@ import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-MODULE = ROOT / '02-技术研发/08-随机化'
+MODULE = ROOT / 'agent/modules/08-随机化'
 GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 sys.path.insert(0, str(MODULE))
 sys.path.insert(0, str(TASK / 'execution'))
@@ -109,10 +109,16 @@ def test_real_cli_reproduces_six_original_artifacts_without_overwriting(tmp_path
 
 
 def test_original_reports_signatures_schema_and_business_code_unchanged():
-    protected = [str((MODULE / part).relative_to(ROOT)) for part in ('fixtures', 'evidence', 'contracts', 'config', 'srp_randomization', 'X-01_技术验收记录.md')]
-    run = subprocess.run(['git', 'diff', '--exit-code', '43d1a4b', '--', *protected], cwd=ROOT, capture_output=True)
-    assert run.returncode == 0, run.stdout.decode('utf-8', errors='replace')
-    git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
+    helpers = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))
+    git_bytes = helpers['git_source_bytes']
+    for part in ('fixtures', 'evidence', 'contracts', 'config', 'srp_randomization', 'X-01_技术验收记录.md'):
+        relative = (MODULE / part).relative_to(ROOT).as_posix()
+        original = helpers['historical_project_path'](ROOT, relative)
+        files = subprocess.check_output(['git', 'ls-tree', '-r', '-z', '--name-only', '43d1a4b', '--', original], cwd=ROOT).decode('utf-8').strip('\0').split('\0')
+        assert files, original
+        for name in files:
+            path = helpers['resolve_project_path'](ROOT, name)
+            assert path.read_bytes().replace(b'\r\n', b'\n') == git_bytes(ROOT, '43d1a4b', name).replace(b'\r\n', b'\n'), name
     for name in ('X-01_第二人审核报告_已签署.md', 'X-01_独立Agent复审报告_2026-09-06.md'):
         path = ROOT / 'agent/validation' / name
         original = git_bytes(ROOT, '43d1a4b', path.relative_to(ROOT).as_posix())

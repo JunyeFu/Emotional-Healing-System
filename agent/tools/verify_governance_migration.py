@@ -70,16 +70,20 @@ def main():
     print(f'PASS {len(originals)} original files; {len(kept)} unchanged; {word_links} links in {result["word_documents_checked"]} unchanged Word bodies')
 
 
-def package_tests(scope='governance'):
+def package_tests(scope='governance', tasks=None):
     prefix = f'root-migration-{scope}-package-tests'
     output = EVIDENCE / prefix
     output.mkdir(exist_ok=True)
-    results = []
+    report_path = EVIDENCE / (prefix + '.json')
+    results = json.loads(report_path.read_text(encoding='utf-8')) if tasks and report_path.exists() else []
     for directory in sorted({p.parent for p in (ROOT / 'agent/tasks').glob('*/execution/test_*.py')}):
+        if tasks and directory.parent.name not in tasks:
+            continue
         result = subprocess.run(['py', '-3.14', '-m', 'pytest', '-q', str(directory)], cwd=ROOT,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         task = directory.parent.name
         (output / (task + '.txt')).write_bytes(result.stdout)
+        results = [row for row in results if row['task_id'] != task]
         results.append({'task_id': task, 'exit_code': result.returncode})
         lines = result.stdout.decode('utf-8', 'replace').splitlines()
         print(task, result.returncode, lines[-1] if lines else '', flush=True)
@@ -91,8 +95,9 @@ def package_tests(scope='governance'):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--package-tests', action='store_true')
-    parser.add_argument('--package-test-scope', choices=['governance', 'support'], default='governance')
+    parser.add_argument('--package-test-scope', choices=['governance', 'support', 'modules'], default='governance')
+    parser.add_argument('--tasks', nargs='+', help='Retest repaired packages and retain other package results')
     args = parser.parse_args()
     if args.package_tests:
-        raise SystemExit(package_tests(args.package_test_scope))
+        raise SystemExit(package_tests(args.package_test_scope, args.tasks))
     main()

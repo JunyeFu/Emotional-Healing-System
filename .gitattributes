@@ -1,6 +1,6 @@
-02-技术研发/05-通信协议/contracts/fixtures/** text eol=lf
-02-技术研发/05-通信协议/contracts/fixture_hashes.sha256 text eol=lf
-02-技术研发/srp_session_store/fixtures/golden/** text eol=lf
+agent/modules/05-通信协议/contracts/fixtures/** text eol=lf
+agent/modules/05-通信协议/contracts/fixture_hashes.sha256 text eol=lf
+agent/modules/srp_session_store/fixtures/golden/** text eol=lf
 agent/tasks/P-02/evidence/runtime/session-archive-v1/** text eol=lf
 agent/validation/evidence/F-05/** text eol=lf
 agent/tasks/F-03/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
@@ -17,10 +17,10 @@ agent/tasks/U-02/archive/*-run/*.log -text whitespace=-blank-at-eol,-blank-at-eo
 agent/tasks/T-01/evidence/**/*.json text eol=lf
 agent/tasks/T-01/evidence/runtime/*.toe -text
 agent/tasks/T-01/evidence/runtime/touchdesigner/screenshots/*.png -text
-02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.asset text eol=lf
-02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.json text eol=lf
-02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.meta text eol=lf
-02-技术研发/04-Unity视觉/SRP-Weather-Visual/**/*.unity text eol=lf
+agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.asset text eol=lf
+agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.json text eol=lf
+agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.meta text eol=lf
+agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.unity text eol=lf
 .artifacts-local/V-04/H3/independent-asset-kit/*-individual-candidate-v1/*.png filter=lfs diff=lfs merge=lfs -text
 .artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png filter=lfs diff=lfs merge=lfs -text
 .artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png filter=lfs diff=lfs merge=lfs -text
@@ -109,5 +109,9 @@ agent/tasks/U12-10/execution/result_classifier.py -text whitespace=cr-at-eol
 agent/evidence/root-migration-governance-initial-tests.txt -text whitespace=-blank-at-eol
 agent/evidence/root-migration-governance-package-tests-initial/*.txt -text whitespace=-blank-at-eol
 agent/evidence/root-migration-support-package-tests-initial/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-modules-package-tests-initial/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-modules-package-tests/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-modules-unity-*.log -text whitespace=-blank-at-eol
+agent/archive/root-migration/modules-inputs/** -text whitespace=cr-at-eol
 agent/governance/**/tasks/U12-05/package_manifest.json -text whitespace=cr-at-eol
 agent/governance/**/tasks/U12-06/package_manifest.json -text whitespace=cr-at-eol

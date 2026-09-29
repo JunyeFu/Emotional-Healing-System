@@ -8,7 +8,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/D-02'
-sys.path.insert(0, str(ROOT / '02-技术研发'))
+sys.path.insert(0, str(ROOT / 'agent/modules'))
 from srp_session_store.models import RawPacket
 from srp_session_store.archive import SessionArchive
 from srp_session_store.errors import StoreError

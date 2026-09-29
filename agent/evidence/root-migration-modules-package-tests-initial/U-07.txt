@@ -1,0 +1,156 @@
+..FFFF.........                                                          [100%]
+================================== FAILURES ===================================
+______ test_four_structure_steps_derive_from_v22_not_coarse_phase[storm] ______
+
+weather = 'storm'
+
+    @pytest.mark.parametrize('weather', ['storm', 'heat', 'snow', 'fade'])
+    def test_four_structure_steps_derive_from_v22_not_coarse_phase(weather):
+        data = contract()
+>       config = read(ROOT / data['breathing_source'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-07\execution\test_u07_contract.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\tasks\U-07\execution\test_u07_contract.py:18: in read
+    return json.loads(path.read_text(encoding='utf-8-sig'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\srp_session_core\\config\\breath_protocol_config_v2.2.json'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+______ test_four_structure_steps_derive_from_v22_not_coarse_phase[heat] _______
+
+weather = 'heat'
+
+    @pytest.mark.parametrize('weather', ['storm', 'heat', 'snow', 'fade'])
+    def test_four_structure_steps_derive_from_v22_not_coarse_phase(weather):
+        data = contract()
+>       config = read(ROOT / data['breathing_source'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-07\execution\test_u07_contract.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\tasks\U-07\execution\test_u07_contract.py:18: in read
+    return json.loads(path.read_text(encoding='utf-8-sig'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\srp_session_core\\config\\breath_protocol_config_v2.2.json'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+______ test_four_structure_steps_derive_from_v22_not_coarse_phase[snow] _______
+
+weather = 'snow'
+
+    @pytest.mark.parametrize('weather', ['storm', 'heat', 'snow', 'fade'])
+    def test_four_structure_steps_derive_from_v22_not_coarse_phase(weather):
+        data = contract()
+>       config = read(ROOT / data['breathing_source'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-07\execution\test_u07_contract.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\tasks\U-07\execution\test_u07_contract.py:18: in read
+    return json.loads(path.read_text(encoding='utf-8-sig'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\srp_session_core\\config\\breath_protocol_config_v2.2.json'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+______ test_four_structure_steps_derive_from_v22_not_coarse_phase[fade] _______
+
+weather = 'fade'
+
+    @pytest.mark.parametrize('weather', ['storm', 'heat', 'snow', 'fade'])
+    def test_four_structure_steps_derive_from_v22_not_coarse_phase(weather):
+        data = contract()
+>       config = read(ROOT / data['breathing_source'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-07\execution\test_u07_contract.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\tasks\U-07\execution\test_u07_contract.py:18: in read
+    return json.loads(path.read_text(encoding='utf-8-sig'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\srp_session_core\\config\\breath_protocol_config_v2.2.json'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U-07/execution/test_u07_contract.py::test_four_structure_steps_derive_from_v22_not_coarse_phase[storm]
+FAILED agent/tasks/U-07/execution/test_u07_contract.py::test_four_structure_steps_derive_from_v22_not_coarse_phase[heat]
+FAILED agent/tasks/U-07/execution/test_u07_contract.py::test_four_structure_steps_derive_from_v22_not_coarse_phase[snow]
+FAILED agent/tasks/U-07/execution/test_u07_contract.py::test_four_structure_steps_derive_from_v22_not_coarse_phase[fade]
+4 failed, 11 passed in 0.35s

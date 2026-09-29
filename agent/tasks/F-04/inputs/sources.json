@@ -2,15 +2,15 @@
   "task_id": "F-04",
   "source_policy": "reference_shared_module_preserve_signed_artifacts",
   "paths": [
-    "02-技术研发/03-TouchDesigner/f04_readonly_console/f04_console.py",
-    "02-技术研发/03-TouchDesigner/f04_readonly_console/f04_node_plan.py",
-    "02-技术研发/03-TouchDesigner/f04_readonly_console/fixtures/f04-static-display-fixture-v1.json",
-    "02-技术研发/03-TouchDesigner/f04_readonly_console/F04_ReadonlyConsole.toe",
-    "02-技术研发/03-TouchDesigner/f04_readonly_console/F04_ReadonlyConsole.tox",
-    "02-技术研发/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md",
-    "02-技术研发/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/reopen_report.json",
-    "02-技术研发/03-TouchDesigner/t01_telemetry_panel/README.md",
-    "02-技术研发/05-通信协议/contracts/README.md",
+    "agent/modules/03-TouchDesigner/f04_readonly_console/f04_console.py",
+    "agent/modules/03-TouchDesigner/f04_readonly_console/f04_node_plan.py",
+    "agent/modules/03-TouchDesigner/f04_readonly_console/fixtures/f04-static-display-fixture-v1.json",
+    "agent/modules/03-TouchDesigner/f04_readonly_console/F04_ReadonlyConsole.toe",
+    "agent/modules/03-TouchDesigner/f04_readonly_console/F04_ReadonlyConsole.tox",
+    "agent/modules/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md",
+    "agent/modules/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/reopen_report.json",
+    "agent/modules/03-TouchDesigner/t01_telemetry_panel/README.md",
+    "agent/modules/05-通信协议/contracts/README.md",
     "agent/tasks/F-04/execution/README.md"
   ]
 }

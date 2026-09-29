@@ -20,7 +20,7 @@ def generate():
     sources = [
         PLAN / "00_总控/protocol_authority_v1.2.json",
         ROOT / "agent/tasks/R-01/outputs/current-representation.md",
-        ROOT / "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
+        ROOT / "agent/modules/srp_session_core/config/breath_protocol_config_v2.2.json",
         ROOT / "agent/tasks/U12-02/outputs/current-measurement.md",
         ROOT / "agent/tasks/U12-02/outputs/annotation-plan.md",
     ]

@@ -1,0 +1,18 @@
+....F.....                                                               [100%]
+================================== FAILURES ===================================
+_______________ test_output_matrices_rebuild_from_actual_inputs _______________
+
+    def test_output_matrices_rebuild_from_actual_inputs():
+        artifacts = runpy.run_path(str(TASK / 'execution/inspect_consistency.py'))['artifacts']()
+        for name, value in artifacts.items():
+>           assert (TASK / 'outputs' / name).read_bytes() == value, name
+E           AssertionError: consumer-matrix.csv
+E           assert b'\xef\xbb\xb...xe6\x94\xb6\n' == b'\xef\xbb\xb...xe6\x94\xb6\n'
+E             
+E             At index 1314 diff: b'0' != b'a'
+E             Use -v to get more diff
+
+agent\tasks\U12-09\execution\test_consistency_handoff.py:46: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-09/execution/test_consistency_handoff.py::test_output_matrices_rebuild_from_actual_inputs
+1 failed, 9 passed in 1.26s

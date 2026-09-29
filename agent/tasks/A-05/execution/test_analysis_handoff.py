@@ -15,7 +15,7 @@ ROOT = TASK.parents[2]
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 SAP = ROOT / 'agent/tasks/U12-04/execution'
-sys.path.insert(0, str(ROOT / '02-技术研发/02-信号处理'))
+sys.path.insert(0, str(ROOT / 'agent/modules/02-信号处理'))
 from a03_gate2_spec import ItemResponse, ResponseStatus, benjamini_hochberg, score_panas
 
 

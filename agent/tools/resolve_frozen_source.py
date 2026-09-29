@@ -48,11 +48,13 @@ def resolve_source(project_root: Path, task_id: str, status: str, relative: str)
     path = (project_root / relative).resolve()
     if not path.is_relative_to(project_root):
         return path
-    if status in {'IN_PROGRESS', 'IN_REVIEW'}:
+    if status in {'READY', 'IN_PROGRESS', 'IN_REVIEW'}:
         original_relative = historical_project_path(project_root, relative)
         mapping = project_root / 'agent/normalization-relocations.json'
         for entry in json.loads(mapping.read_text(encoding='utf-8'))['frozen_sources']:
             if entry['task_id'] != task_id or entry['old_project_path'] != original_relative:
+                continue
+            if status == 'READY' and not entry.get('preserve_ready_dispatch', False):
                 continue
             replacement = resolve_project_path(project_root, entry['new_project_path'])
             impact = resolve_project_path(project_root, entry['impact_path'])

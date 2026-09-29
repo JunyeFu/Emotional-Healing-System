@@ -78,7 +78,7 @@ def repair():
         current_code = path.suffix in {'.py', '.ps1'} and (
             (is_governance and current_governance_file(path)) or
             (is_task and '/execution/' in relative) or
-            relative.startswith(('agent/tools/governance/', '02-技术研发/tests/', 'agent/delivery/')) or
+            relative.startswith(('agent/tools/governance/', 'agent/modules/tests/', 'agent/delivery/')) or
             relative in {'agent/tools/build_task_reviews.py', 'agent/tools/verify_root_migration.py'}
         )
         current_doc = path.suffix == '.md' and (

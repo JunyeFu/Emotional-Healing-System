@@ -12,7 +12,7 @@ TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
-MODULE = ROOT / '02-技术研发/08-随机化'
+MODULE = ROOT / 'agent/modules/08-随机化'
 sys.path.insert(0, str(MODULE))
 sys.path.insert(0, str(ROOT / 'agent/tasks/X-01/execution'))
 from srp_randomization import generate_list, policy_decisions
@@ -72,7 +72,7 @@ def test_actual_native_allocation_and_conditional_probability():
 
 
 def test_actual_v22_record_is_not_full_target_distribution():
-    schema = json.loads((ROOT / '02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json').read_text(encoding='utf-8'))
+    schema = json.loads((ROOT / 'agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json').read_text(encoding='utf-8'))
     decision = policy_decisions(session_id='SYNTHETIC-X02', stage='stage_1', sequence=('fade', 'heat', 'storm', 'snow'), created_monotonic_ns=0)[0]
     Draft202012Validator(schema).validate(decision)
     assert {'behavior_probability', 'target_policy_probability', 'candidate_actions', 'fallback_applied', 'random_draw', 'state_snapshot_hash'} <= set(schema['$defs']['policy_decision']['required'])

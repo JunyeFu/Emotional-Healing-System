@@ -55,7 +55,7 @@ Python是流程与时间权威。Unity不依赖TD提供画面；TD不能直接�
 srp/
 ├── agent/governance/    治理、任务注册表、独立任务包与规划文档
 ├── agent/design/  情绪天气方案与体验设计
-├── 02-技术研发/    采集、信号处理、通信合同、SessionCore/Store、Unity与TD工程
+├── agent/modules/    采集、信号处理、通信合同、SessionCore/Store、Unity与TD工程
 ├── agent/validation/  验证入口与证据归档（evidence/）
 ├── agent/delivery/ 交付源码与构建工具；成品在human/deliverables/
 ├── agent/references/    历史文献库（处于身份与来源复核隔离状态，以W-01为论文证据入口）
@@ -70,11 +70,11 @@ srp/
 |---|---|
 | 研究主线与升级边界 | [v1.2治理说明](agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/README.md) |
 | 研究候选参数 | [protocol_authority_v1.2.json](agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json) |
-| 运行协议与步骤身份 | [F-05 v2.2接口基线](02-技术研发/05-通信协议/contracts/F-05_v2.2接口对齐基线.md) |
-| Python会话编排 | [P-01 SessionCore](02-技术研发/srp_session_core/README.md) |
+| 运行协议与步骤身份 | [F-05 v2.2接口基线](agent/modules/05-通信协议/contracts/F-05_v2.2接口对齐基线.md) |
+| Python会话编排 | [P-01 SessionCore](agent/modules/srp_session_core/README.md) |
 | 追加存储与确定性重放 | [P-02 当前合同说明](agent/tasks/P-02/outputs/current-store-contract.md) |
-| 数据治理与权限 | [G-02](02-技术研发/07-数据治理/README.md) |
-| 步骤实例理解测量 | [U12-02](02-技术研发/srp_step_measurement/README.md) |
+| 数据治理与权限 | [G-02](agent/modules/07-数据治理/README.md) |
+| 步骤实例理解测量 | [U12-02](agent/modules/srp_step_measurement/README.md) |
 | 公平教学与形成性比较 | [U12-03教学合同](agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-03_fair_training/README.md) |
 | 团队工具版本 | [环境冻结基线](agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/11_团队工具与环境冻结基线_v1.0.md) |
 | 完整任务概要 | [任务概要PDF](human/deliverables/pdf/02_固定任务概要.pdf) |

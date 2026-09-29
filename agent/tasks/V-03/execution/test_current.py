@@ -56,7 +56,7 @@ def test_no_duplicate_mapping():
 
 def test_historical_bytes_reject_wrong_hash():
     with pytest.raises(AssertionError, match='signed authority bytes mismatch'):
-        historical_authority('02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json', '0' * 64)
+        historical_authority('agent/modules/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json', '0' * 64)
 
 
 def test_generator_never_targets_signed_originals(monkeypatch):

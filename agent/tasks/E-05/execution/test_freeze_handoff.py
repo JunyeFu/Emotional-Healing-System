@@ -11,7 +11,7 @@ TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
-sys.path.insert(0, str(ROOT / '02-技术研发/08-随机化'))
+sys.path.insert(0, str(ROOT / 'agent/modules/08-随机化'))
 sys.path.insert(0, str(ROOT / 'agent/tasks/X-01/execution'))
 from srp_randomization import generate_list, policy_decisions
 
@@ -69,7 +69,7 @@ def test_actual_native_permutations_and_prefix_probabilities():
     records = generate_list('stage_1', ('SYNTHETIC',), 1, b'e05-probability-audit').records
     records = [r for r in records if r.arm == current()['training_arm']]
     assert {r.weather_sequence for r in records} == set(permutations(('storm', 'heat', 'snow', 'fade')))
-    schema = read(ROOT / '02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json')
+    schema = read(ROOT / 'agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json')
     for record in records:
         decisions = policy_decisions(session_id='SYNTHETIC-E05', stage='stage_1', sequence=record.weather_sequence, created_monotonic_ns=0)
         product = 1.0

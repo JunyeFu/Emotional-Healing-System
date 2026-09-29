@@ -6,7 +6,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/D-01'
-sys.path.insert(0, str(ROOT / '02-技术研发'))
+sys.path.insert(0, str(ROOT / 'agent/modules'))
 from srp_session_store.models import RawPacket
 from srp_session_store.archive import SessionArchive
 from srp_session_store.errors import StoreError
@@ -42,7 +42,7 @@ def test_channels_and_raw_storage():
 def test_archive_and_hardware_obligations():
     for name in ('ble_device.py', '设备方案.md', '真实设备方案.md'):
         assert (TASK / 'archive' / name).is_file()
-        assert not (ROOT / '02-技术研发/01-数据采集' / name).exists()
+        assert not (ROOT / 'agent/modules/01-数据采集' / name).exists()
     contract = current()
     assert contract['required_continuous_capture_seconds'] == 1800
     assert not contract['device_time_is_host_time']

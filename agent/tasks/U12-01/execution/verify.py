@@ -12,7 +12,7 @@ PLAN = GOV.parent
 
 def main():
     commands = [
-        ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_governance_handoff.py', ROOT / '02-技术研发/tests/test_u12_governance.py', ROOT / 'agent/tasks/G-03/execution/test_freeze_handoff.py']),
+        ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_governance_handoff.py', ROOT / 'agent/modules/tests/test_u12_governance.py', ROOT / 'agent/tasks/G-03/execution/test_freeze_handoff.py']),
         ('legacy-protocol', [PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py']),
         ('governance', [GOV / 'u12_upgrade/validate_u12_governance.py']),
         ('registry', [GOV / '07_validate_task_packages.py']),

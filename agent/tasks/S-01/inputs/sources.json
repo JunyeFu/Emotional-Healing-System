@@ -6,11 +6,11 @@
     "agent/tasks/D-01/outputs/current-acquisition.md",
     "agent/tasks/D-02/outputs/current-acquisition.md",
     "agent/tasks/U-02/outputs/current-adapter-contract.md",
-    "02-技术研发/01-数据采集/device_manager.py",
-    "02-技术研发/01-数据采集/frame_clock.py",
-    "02-技术研发/02-信号处理/signal_pipeline.py",
-    "02-技术研发/05-通信协议/runtime_contract.py",
-    "02-技术研发/05-通信协议/runtime_contract_v22.py",
-    "02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
+    "agent/modules/01-数据采集/device_manager.py",
+    "agent/modules/01-数据采集/frame_clock.py",
+    "agent/modules/02-信号处理/signal_pipeline.py",
+    "agent/modules/05-通信协议/runtime_contract.py",
+    "agent/modules/05-通信协议/runtime_contract_v22.py",
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
   ]
 }

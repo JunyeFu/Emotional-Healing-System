@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[4]
 PACKAGE = Path(__file__).resolve().parents[1]
 OUTPUT = PACKAGE / 'evidence/runtime'
 UNITY = Path('D:/UnityEngine/6000.4.9f1/Editor/Unity.exe')
-PROJECT = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+PROJECT = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 
 
 def main():

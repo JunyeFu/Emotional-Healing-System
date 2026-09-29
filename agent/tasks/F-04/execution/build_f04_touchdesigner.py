@@ -11,7 +11,7 @@ import sys
 
 TASK_DIR = Path(__file__).resolve().parents[1]
 REPO_DIR = TASK_DIR.parents[2]
-BASE_DIR = REPO_DIR / "02-技术研发/03-TouchDesigner/f04_readonly_console"
+BASE_DIR = REPO_DIR / "agent/modules/03-TouchDesigner/f04_readonly_console"
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 

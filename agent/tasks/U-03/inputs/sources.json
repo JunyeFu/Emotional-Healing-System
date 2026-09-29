@@ -9,12 +9,12 @@
     "agent/tasks/V-05/outputs/current-graybox.md",
     "agent/tasks/U-01/outputs/current-control-contract.md",
     "agent/tasks/U-02/outputs/current-adapter-contract.md",
-    "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Runtime/U01RuntimeBridge.cs",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/Layers/BackgroundPass.cs",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/FadeScene.unity",
-    "02-技术研发/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
+    "agent/modules/srp_session_core/config/breath_protocol_config_v2.2.json",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Runtime/U01RuntimeBridge.cs",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/Layers/BackgroundPass.cs",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/FadeScene.unity",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/ProjectSettings/ProjectVersion.txt",
     "agent/tasks/U-03/archive/场景设计.md"
   ]
 }

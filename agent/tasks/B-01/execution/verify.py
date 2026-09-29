@@ -16,7 +16,7 @@ def main():
     commands = [
         ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_batch_handoff.py',
                      ROOT / 'agent/tasks/Q-03/execution/test_level_c_handoff.py',
-                     ROOT / '02-技术研发/tests/session_core', ROOT / '02-技术研发/tests/session_store']),
+                     ROOT / 'agent/modules/tests/session_core', ROOT / 'agent/modules/tests/session_store']),
         ('registry', [GOV / '07_validate_task_packages.py']),
         ('dispatch', [GOV / '14_validate_ready_task_packages.py']),
         ('regression', ['-m', 'pytest', '-q']),

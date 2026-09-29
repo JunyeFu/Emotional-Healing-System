@@ -42,7 +42,7 @@ def load_json(name: str) -> dict:
 
 
 def load_golden() -> dict:
-    path = REPO / "02-技术研发" / "srp_session_core" / "fixtures" / "golden" / "four-module-trace-v1.json"
+    path = REPO / "agent/modules" / "srp_session_core" / "fixtures" / "golden" / "four-module-trace-v1.json"
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
@@ -52,7 +52,7 @@ def require(condition: bool, message: str) -> None:
 
 
 def load_contract_modules() -> tuple[object, object]:
-    protocol_dir = REPO / "02-技术研发" / "05-通信协议"
+    protocol_dir = REPO / "agent/modules" / "05-通信协议"
     package_name = "05-通信协议"
     package = types.ModuleType(package_name)
     package.__path__ = [str(protocol_dir)]

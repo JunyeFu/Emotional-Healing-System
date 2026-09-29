@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-29",
+  "scope": "Physical shared runtime migration and current consumers, not new business acceptance",
+  "move": {"old": "02-技术研发", "new": "agent/modules"},
+  "tracked_originals": 889,
+  "tracked_originals_unchanged": 847,
+  "word_documents_link_only": 8,
+  "word_hyperlinks_relocated": 9,
+  "dispatch_bindings_preserved": 23,
+  "verification": {
+    "root_pytest": "635 passed in 48.12s",
+    "task_packages_with_tests": 60,
+    "failed_task_packages": 0,
+    "g01_current_use_checks": 15,
+    "task_registry_entries": 71,
+    "dispatch_packages": 5,
+    "frozen_snapshots": 61,
+    "word_source_links": 330,
+    "chained_word_pages": 40,
+    "chained_word_unchanged_rendered_pages": "1-39",
+    "chained_word_changed_page_visually_checked": 40,
+    "unity_editmode": "105 passed",
+    "unity_playmode": "4 passed",
+    "touchdesigner_build": "2025.32820",
+    "td_reopen_checks": 12,
+    "td_udp_checks": 8,
+    "real_devices_or_formal_admission": "NOT_RUN"
+  },
+  "human_review": "共享Python、Unity和TD工程已实际迁入agent/modules，修正仓库定位、测试与启动路径。根Python635项、Unity EditMode105项及PlayMode4项通过；TD2025.32820隔离重开12项与UDP恢复8项通过。889个原文件与23个分发输入引用留存原始身份，签署和冻结快照不改写；当前文档链接随迁移修正。实际设备链、正式准入和研究结果仍不在本次验证范围。",
+  "root_migration_complete": false
+}

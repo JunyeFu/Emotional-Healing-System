@@ -10,7 +10,7 @@ REPO = TASK.parents[2]
 def main():
     (TASK / 'evidence').mkdir(exist_ok=True)
     commands = [[sys.executable, '-m', 'pytest', '-q',
-                 str(REPO / '02-技术研发/01-数据采集/tests'),
+                 str(REPO / 'agent/modules/01-数据采集/tests'),
                  str(TASK / 'execution/test_current.py')]]
     checks = []
     for index, command in enumerate(commands):

@@ -17,7 +17,7 @@ PACKAGE = (
 )
 GENERATOR_PATH = Path(__file__).with_name('generate_historical.py')
 VALIDATOR_PATH = Path(__file__).with_name('validate_historical.py')
-UNITY_PROJECT = ROOT / "02-技术研发" / "04-Unity视觉" / "SRP-Weather-Visual"
+UNITY_PROJECT = ROOT / "agent/modules" / "04-Unity视觉" / "SRP-Weather-Visual"
 
 
 def authorities() -> tuple[dict[str, str], set[str]]:

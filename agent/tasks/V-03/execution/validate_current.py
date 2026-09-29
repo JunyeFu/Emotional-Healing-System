@@ -21,7 +21,7 @@ def validate(data):
 def main():
     data = json.loads((TASK / 'outputs/current-mapping.json').read_text(encoding='utf-8'))
     errors = validate(data)
-    schema = json.loads((REPO / '02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json').read_text(encoding='utf-8'))
+    schema = json.loads((REPO / 'agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json').read_text(encoding='utf-8'))
     # The design's projection fields must exist in the actual F-05 telemetry definition.
     telemetry = schema['$defs']['telemetry_frame']['properties']
     for row in data['rows']:

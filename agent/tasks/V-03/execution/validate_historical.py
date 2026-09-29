@@ -20,7 +20,7 @@ BASE = (
     / "V-03_四层视听映射与资产来源基线"
 )
 GENERATOR = Path(__file__).with_name("generate_historical.py")
-UNITY_PROJECT = ROOT / "02-技术研发" / "04-Unity视觉" / "SRP-Weather-Visual"
+UNITY_PROJECT = ROOT / "agent/modules" / "04-Unity视觉" / "SRP-Weather-Visual"
 UNITY_MANIFEST = UNITY_PROJECT / "Packages" / "manifest.json"
 G02_ASSET_LEDGER = UNITY_PROJECT / "Governance" / "asset_license_ledger.json"
 
@@ -55,9 +55,7 @@ def load_json(name: str) -> dict[str, object]:
 
 
 def historical_authority(path: str, expected_hash: str) -> bytes:
-    blob = subprocess.check_output([
-        'git', 'show', 'f09f0d5f1f35c98ea447eb3545c18fbb3fb36925:' + path
-    ], cwd=ROOT)
+    blob = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, 'f09f0d5f1f35c98ea447eb3545c18fbb3fb36925', path)
     # Original Windows evidence hashed the CRLF checkout, not the LF Git blob.
     checkout = blob.replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')
     assert hashlib.sha256(checkout).hexdigest() == expected_hash, 'signed authority bytes mismatch'

@@ -12,7 +12,7 @@ PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_�
 
 def main():
     commands = [
-        [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_policy_handoff.py'), str(ROOT / '02-技术研发/tests/randomization')],
+        [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_policy_handoff.py'), str(ROOT / 'agent/modules/tests/randomization')],
         [sys.executable, str(PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py')],
     ]
     checks = []

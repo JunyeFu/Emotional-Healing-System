@@ -4,14 +4,14 @@
     "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
     "agent/validation/X-01_第二人审核报告_已签署.md",
     "agent/validation/X-01_独立Agent复审报告_2026-09-06.md",
-    "02-技术研发/08-随机化/X-01_技术验收记录.md",
-    "02-技术研发/08-随机化/config/randomization_config_v1.0.json",
-    "02-技术研发/08-随机化/srp_randomization/generator.py",
-    "02-技术研发/08-随机化/srp_randomization/store.py",
-    "02-技术研发/08-随机化/srp_randomization/gate.py",
+    "agent/modules/08-随机化/X-01_技术验收记录.md",
+    "agent/modules/08-随机化/config/randomization_config_v1.0.json",
+    "agent/modules/08-随机化/srp_randomization/generator.py",
+    "agent/modules/08-随机化/srp_randomization/store.py",
+    "agent/modules/08-随机化/srp_randomization/gate.py",
     "agent/tasks/A-03/outputs/current-statistics.json",
     "agent/tasks/Q-03/outputs/current-level-c.json",
-    "02-技术研发/srp_session_core/README.md",
+    "agent/modules/srp_session_core/README.md",
     "agent/tasks/X-01/archive/README_legacy.md"
   ]
 }

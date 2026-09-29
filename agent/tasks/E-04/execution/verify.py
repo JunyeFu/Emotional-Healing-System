@@ -17,8 +17,8 @@ def main():
     commands = [
         ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_closeout_handoff.py',
                      ROOT / 'agent/tasks/B-02/execution/test_batch_handoff.py',
-                     ROOT / '02-技术研发/tests/randomization', ROOT / '02-技术研发/tests/session_store',
-                     ROOT / '02-技术研发/07-数据治理/tests/test_registry.py']),
+                     ROOT / 'agent/modules/tests/randomization', ROOT / 'agent/modules/tests/session_store',
+                     ROOT / 'agent/modules/07-数据治理/tests/test_registry.py']),
         ('legacy-protocol', [PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py']),
         ('governance', [GOV / 'u12_upgrade/validate_u12_governance.py']),
         ('registry', [GOV / '07_validate_task_packages.py']),

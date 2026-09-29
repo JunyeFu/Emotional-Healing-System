@@ -25,14 +25,14 @@ Python是条件、顺序、时钟、协议、信号质量、事件、累计状�
 
 | ID | 模块 | 主要目录 | 小接口 | 不承担 |
 |---|---|---|---|---|
-| M00 | 研究与数据治理 | `agent/governance/`、`02-技术研发/07-数据治理/`、`agent/work/` | 冻结基线、任务状态、L0-L5分级、跨阶段去重、隐私与资产许可门 | 运行时状态计算、随机分配 |
+| M00 | 研究与数据治理 | `agent/governance/`、`agent/modules/07-数据治理/`、`agent/work/` | 冻结基线、任务状态、L0-L5分级、跨阶段去重、隐私与资产许可门 | 运行时状态计算、随机分配 |
 | M01 | 体验与测量设计 | `agent/design/`、规划包`20_` | 四层候选语法、完整表示方案、SCCI操纵检查与条件中性测量 | 设备驱动、运行编排 |
-| M02 | Python会话核心 | `02-技术研发/srp_session_core/` | manifest门、权威状态流、可靠控制服务和遥测发布门 | 设备协议细节、画面渲染、随机化生成 |
-| M03 | 真实设备采集 | `02-技术研发/01-数据采集/` | 时间戳原始样本、设备状态、质量元数据 | 情绪结论、天气控制 |
-| M04 | 在线交互状态估计 | `02-技术研发/02-信号处理/README.md` | 实际呼吸事件、质量、PF候选、累计更新；目标来自P-01 | 量表结论、正式统计 |
-| M05 | 运行合同与记录 | `02-技术研发/05-通信协议/`、`02-技术研发/srp_session_store/` | manifest、控制/ACK、20Hz遥测、L0/L1追加、完整性与重放 | 会话状态推进、场景内部动画、TD界面 |
-| M06 | Unity参与者制品 | `02-技术研发/04-Unity视觉/SRP-Weather-Visual/` | `ApplyTarget/Actual/Recovery/Fallback` | 随机化、阈值修改、TD依赖 |
-| M07 | TD实验员操作台 | `02-技术研发/03-TouchDesigner/` | 只读遥测、人工标记、中止请求 | 参与者提示、直接控制Unity |
+| M02 | Python会话核心 | `agent/modules/srp_session_core/` | manifest门、权威状态流、可靠控制服务和遥测发布门 | 设备协议细节、画面渲染、随机化生成 |
+| M03 | 真实设备采集 | `agent/modules/01-数据采集/` | 时间戳原始样本、设备状态、质量元数据 | 情绪结论、天气控制 |
+| M04 | 在线交互状态估计 | `agent/modules/02-信号处理/README.md` | 实际呼吸事件、质量、PF候选、累计更新；目标来自P-01 | 量表结论、正式统计 |
+| M05 | 运行合同与记录 | `agent/modules/05-通信协议/`、`agent/modules/srp_session_store/` | manifest、控制/ACK、20Hz遥测、L0/L1追加、完整性与重放 | 会话状态推进、场景内部动画、TD界面 |
+| M06 | Unity参与者制品 | `agent/modules/04-Unity视觉/SRP-Weather-Visual/` | `ApplyTarget/Actual/Recovery/Fallback` | 随机化、阈值修改、TD依赖 |
+| M07 | TD实验员操作台 | `agent/modules/03-TouchDesigner/` | 只读遥测、人工标记、中止请求 | 参与者提示、直接控制Unity |
 | M08 | 离线重建与分析 | `agent/tasks/A-01/outputs/current-rebuild.md`、规划包`22_` | 六类证据束到派生L1/L2/L3；A-02/A-03后续分析 | 覆盖原件、结果后改规则、宣称未交付流水线已完成 |
 | M09 | 验证与研究运行 | `agent/validation/`、规划包步骤7至10 | 单元、合同、重放、真机、Level A/B/C证据 | 越过外部门禁 |
 | M10 | 论文与成果交付 | `agent/delivery/`、规划包`25_`；人类成品在`human/deliverables/` | 单篇IJHCI、复现包、构建、展示、权属材料 | 把计划写成已完成 |
@@ -70,7 +70,7 @@ snapshot() -> SessionSnapshot
 - UDP 5005/5006分别向TD和Unity发送20Hz自包含 `TelemetryFrame`；
 - 所有消息包含schema版本、会话、序号和单调时间；
 - TCP 5010、UDP 5005和UDP 5006已登记到 `D:\Agent\全局端口注册表.md`；
-- 不可变v2.1合同见 `02-技术研发/05-通信协议/contracts/runtime-contract-v2.1.schema.json`，当前v2.2合同见 `02-技术研发/05-通信协议/contracts/runtime-contract-v2.2.schema.json`，完整语义见规划包 `21_真实设备与在线运行系统/06_目标运行接口_v2.md`。
+- 不可变v2.1合同见 `agent/modules/05-通信协议/contracts/runtime-contract-v2.1.schema.json`，当前v2.2合同见 `agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json`，完整语义见规划包 `21_真实设备与在线运行系统/06_目标运行接口_v2.md`。
 
 ### M05 Session Store
 
@@ -79,7 +79,7 @@ append_manifest -> append_raw_packet/append_l1 -> checkpoint -> seal
 verify -> iter_l0/iter_l1 -> replay_core
 ```
 
-P-02通过`RecordingSessionCore`在控制发送前耐久提交P-01输入和输出，但不计算任何状态转换。中断恢复只保留和封存数据，不恢复原体验进度；L0/L1格式与证据入口见`02-技术研发/srp_session_store/README.md`。
+P-02通过`RecordingSessionCore`在控制发送前耐久提交P-01输入和输出，但不计算任何状态转换。中断恢复只保留和封存数据，不恢复原体验进度；L0/L1格式与证据入口见`agent/modules/srp_session_store/README.md`。
 
 ### M06 SceneAdapter
 
@@ -116,7 +116,7 @@ privacy_lint_manifest -> P-01/P-02
 scan_unity_assets -> Unity FormalBuildGate -> Z-01
 ```
 
-G-02只对外返回不透明预约和审计ID。去重库、研究编号映射库和Windows凭据必须分离；其设计、实现和失败关闭合同已签收为`DONE`。正式专机、机构保留期限、Unity许可清零和实地准入由第58项G-05负责，任一未通过时正式阶段继续失败关闭。实现与证据入口见`02-技术研发/07-数据治理/README.md`。
+G-02只对外返回不透明预约和审计ID。去重库、研究编号映射库和Windows凭据必须分离；其设计、实现和失败关闭合同已签收为`DONE`。正式专机、机构保留期限、Unity许可清零和实地准入由第58项G-05负责，任一未通过时正式阶段继续失败关闭。实现与证据入口见`agent/modules/07-数据治理/README.md`。
 
 ## 4. 依赖规则
 
@@ -155,7 +155,7 @@ G-02只对外返回不透明预约和审计ID。去重库、研究编号映射�
 
 ```powershell
 Set-Location 'D:\Agent\srp'
-py -3.14 -m pytest '02-技术研发/01-数据采集/tests' '02-技术研发/02-信号处理/tests' '02-技术研发/05-通信协议/tests' '02-技术研发/07-数据治理/tests' '02-技术研发/tests' -q
+py -3.14 -m pytest 'agent/modules/01-数据采集/tests' 'agent/modules/02-信号处理/tests' 'agent/modules/05-通信协议/tests' 'agent/modules/07-数据治理/tests' 'agent/modules/tests' -q
 git diff --check
 git status --short
 ```

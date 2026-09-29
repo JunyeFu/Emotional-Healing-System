@@ -105,11 +105,11 @@
   "source_links": [
     {
       "label": "打开合同与协议当前入口",
-      "path": "02-技术研发/05-通信协议/contracts/README.md"
+      "path": "agent/modules/05-通信协议/contracts/README.md"
     },
     {
       "label": "打开 F-01 已签署报告",
-      "path": "02-技术研发/05-通信协议/F-01_第二人审核报告_已签署.md"
+      "path": "agent/modules/05-通信协议/F-01_第二人审核报告_已签署.md"
     }
   ]
 }

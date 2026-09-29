@@ -14,7 +14,7 @@ def main():
     env = {**os.environ, 'PYTHONIOENCODING': 'utf-8', 'PYTHONUTF8': '1'}
     commands = [
         [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_a01_contract.py'),
-         str(ROOT / '02-技术研发/tests/session_store')],
+         str(ROOT / 'agent/modules/tests/session_store')],
         [sys.executable, str(PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py')],
     ]
     evidence = TASK / 'evidence'

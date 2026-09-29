@@ -7,7 +7,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-03'
 PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
-UNITY = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
+UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 
 
 def read(path):
@@ -38,7 +38,7 @@ def test_registry_dependency_and_real_owner():
 
 
 def test_steps_are_current_config_not_old_autonomous_breathing():
-    config = read(ROOT / '02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+    config = read(ROOT / 'agent/modules/srp_session_core/config/breath_protocol_config_v2.2.json')
     assert contract()['steps'] == config['modules']['fade']['steps']
     assert contract()['runtime_schema_version'] == config['breath_protocol_config_version']
     assert sum(s['duration_seconds'] for s in contract()['steps']) == 10
@@ -78,7 +78,7 @@ def test_actual_interface_not_claimed_color_renderer():
 
 
 def test_legacy_design_is_archived_not_current_entry():
-    assert not (ROOT / '02-技术研发/04-Unity视觉/场景设计.md').exists()
+    assert not (ROOT / 'agent/modules/04-Unity视觉/场景设计.md').exists()
     archived = (TASK / 'archive/场景设计.md').read_text(encoding='utf-8-sig')
     assert 'Spout' in archived and 'calm_index' in archived
     assert '04-Unity视觉/场景设计.md' not in (ROOT / 'AGENTS.md').read_text(encoding='utf-8-sig')

@@ -13,8 +13,8 @@ GOV = PLAN / '24_团队任务与项目治理'
 def main():
     commands = [
         ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_scope_handoff.py',
-                     ROOT / '02-技术研发/tests/test_audit_upgrade_governance.py',
-                     ROOT / '02-技术研发/tests/test_u12_governance.py']),
+                     ROOT / 'agent/modules/tests/test_audit_upgrade_governance.py',
+                     ROOT / 'agent/modules/tests/test_u12_governance.py']),
         ('legacy-protocol', [PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py']),
         ('governance', [GOV / 'u12_upgrade/validate_u12_governance.py']),
         ('registry', [GOV / '07_validate_task_packages.py']),

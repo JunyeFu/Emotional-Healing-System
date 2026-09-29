@@ -118,7 +118,7 @@
     },
     {
       "label": "原生批次实现",
-      "path": "02-技术研发/01-数据采集/frame_clock.py"
+      "path": "agent/modules/01-数据采集/frame_clock.py"
     },
     {
       "label": "软件验证记录",
