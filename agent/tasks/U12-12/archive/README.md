@@ -1,0 +1,5 @@
+# U12-12 原候选归档
+
+task-input四文件由适配包旧任务目录实际迁入，字节和原文不改。原manifest绑定三输入，input_snapshot_id为ebb1976ce87611c552eac2c9447bd899c1f75789047c4750689be1e3f39f3eb1，dispatch_allowed=false。
+
+旧“尚未注册”只描述历史候选，当前活动WAIT_DEP_EXTERNAL。外部来源、原签署和成员在研输入不改；本包原无真实部署决定或公开清单成品，不继承其他DONE签名。

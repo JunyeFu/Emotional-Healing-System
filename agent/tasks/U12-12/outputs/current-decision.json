@@ -1,0 +1,108 @@
+{
+  "task_id": "U12-12",
+  "business_status": "WAIT_DEP_EXTERNAL",
+  "claimant": null,
+  "reviewer": null,
+  "scope": "CURRENT_HANDOFF_FACTS_NOT_PRODUCT_OR_PUBLIC_APPROVAL",
+  "depends_on": [
+    "W-03",
+    "A-06"
+  ],
+  "options": [
+    "scene_native",
+    "abstract_pacer",
+    "retain_research_prototype"
+  ],
+  "selected_option": null,
+  "real_decision": "NOT_MADE",
+  "decision_evidence_ref": null,
+  "real_scope_closure": "NOT_RUN",
+  "author_consent": "NOT_OBTAINED",
+  "upstream_publication_authorized": false,
+  "candidate_release_commit": null,
+  "clean_rebuild": "NOT_RUN",
+  "eight_handover_items": [
+    {
+      "id": "unity",
+      "object": "Unity参与者完整制品",
+      "source": "agent/tasks/Z-01/outputs/current-delivery.md",
+      "status": "NOT_DELIVERED",
+      "actual_path": null,
+      "byte_hash": null,
+      "receiver": null
+    },
+    {
+      "id": "python",
+      "object": "Python运行环境",
+      "source": "agent/tasks/Z-01/outputs/current-delivery.md",
+      "status": "NOT_DELIVERED",
+      "actual_path": null,
+      "byte_hash": null,
+      "receiver": null
+    },
+    {
+      "id": "td",
+      "object": "TD匹配操作台",
+      "source": "agent/tasks/Z-01/outputs/current-delivery.md",
+      "status": "NOT_DELIVERED",
+      "actual_path": null,
+      "byte_hash": null,
+      "receiver": null
+    },
+    {
+      "id": "video",
+      "object": "当前展示视频",
+      "source": "agent/tasks/V-04/outputs/current-preview.md",
+      "status": "NOT_DELIVERED",
+      "actual_path": null,
+      "byte_hash": null,
+      "receiver": null
+    },
+    {
+      "id": "poster",
+      "object": "海报与答辩",
+      "source": "agent/tasks/W-02/outputs/current-manuscript.md",
+      "status": "NOT_DELIVERED",
+      "actual_path": null,
+      "byte_hash": null,
+      "receiver": null
+    },
+    {
+      "id": "copyright",
+      "object": "软著材料",
+      "source": "agent/tasks/W-03/outputs/current-submission.md",
+      "status": "NOT_DELIVERED",
+      "actual_path": null,
+      "byte_hash": null,
+      "receiver": null
+    },
+    {
+      "id": "patent",
+      "object": "专利检索与交底记录",
+      "source": "agent/tasks/W-03/outputs/current-submission.md",
+      "status": "NOT_DELIVERED",
+      "actual_path": null,
+      "byte_hash": null,
+      "receiver": null
+    },
+    {
+      "id": "team",
+      "object": "团队移交包及演练",
+      "source": "agent/tasks/W-04/outputs/current-handover.md",
+      "status": "NOT_DELIVERED",
+      "actual_path": null,
+      "byte_hash": null,
+      "receiver": null
+    }
+  ],
+  "actual_handover_package": "NOT_DELIVERED",
+  "new_member_handover_exercise": "NOT_RUN",
+  "public_release_authorized": false,
+  "restricted_transfer_authorized": false,
+  "automatic_deployment_recommendation": false,
+  "native_is_default_winning_product": false,
+  "independent_review": "NOT_RUN",
+  "human_acceptance": "NOT_SIGNED",
+  "normalization_is_business_completion": false,
+  "root_migration_complete": false
+}

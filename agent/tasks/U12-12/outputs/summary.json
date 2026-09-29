@@ -1,0 +1,35 @@
+{
+  "task_id": "U12-12",
+  "title": "U12 12 成果部署选择与公开交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U12-12仍WAIT_DEP_EXTERNAL、未领取未签署。四原候选实际归档，方案选择与逐对象公开工作表、现状核查和W-04入口已对齐；真实结果、范围关闭、作者及权利人批准和最终成品尚缺。本轮没有选择获胜方案，也没有批准公开。",
+  "historical_acceptance": {"reviewer": "未指定", "date": "未签署", "commit": null, "method": "本轮由作者Agent整理和运行软件检查，不等于独立复核或真实第二人签收。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["固定任务2人日，依赖W-03与A-06。两上游实际交付未完成，Z-01匹配制品和干净重建未交付，W-04八对象未交付；业务状态、人员及已签署范围保持。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1同版研究结果、真实范围、制品及权属来源可追溯；AC2完整审阅收益、功能代价和适用边界，由真实作者、机构与权利人确认；AC3实际决定和公开清单经独立复核及第二人签收后交W-04。", "执行顺序为收齐真实证据、裁定成果方向及逐对象权限、移交打包和接收演练。当前工作表并不满足真实决定验收。"]},
+    {"heading": "实际交付", "paragraphs": ["TASK及五目录、来源清单、只读现状工具、三方案八维审阅表和十二对象公开范围工作表、专项测试与验证入口。四原候选完整归档，原输入身份与字节保持。", "W-04当前消费者链接更新为本包活动入口；八项成品仍使用其既有索引，不新增批准台账或虚构制品哈希。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["成果方向在scene_native、abstract_pacer和retain_research_prototype之间裁定，无默认胜者；同版真实情绪收益、功能、负担、效度和维护条件分别审阅。统计方向或合成案例不能自动选择产品。", "产品选择与对象公开是两类决定。研究关闭、Git推送、投稿、录用、部署及新成员接收各自记录事实；历史公开顺序不作当前授权。"]},
+    {"heading": "验证与结果", "paragraphs": ["77项专项通过，覆盖原件身份、实际注册状态、只读事实同源、三未选选项、八未交付对象、十五合成案例不自动部署、十二对象待决定和实际导航。完整软件及治理结果见verification.json。", "本轮不连接真实设备、Unity或TD，不取得实际许可，不产生论文结果。工具、静态检查或Python回归通过均不批准公开或部署。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["TASK两处工作表链接遗漏outputs前缀已修正，所有本包活动文档链接检查通过。旧候选尚未注册的表述保留在原件中，旧位置只保留当前导航。", "真实结果、A-06范围关闭、作者同意、逐对象权属批准、匹配成品、接收者及真实签署仍未完成；缺口归原任务处理，不由整理推定通过。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["inputs存权威来源，execution存只读核查和测试，evidence存实际日志及消费者影响，outputs存当前说明、空工作表和Word源，archive保留原四文件。没有旧真实部署程序可清理。", "原输入snapshot与签署不改，进行中及复核中的分发包不刷新。全部旧根目录的物理迁移仍是整体目标的下一项。"]},
+    {"heading": "上下游交接", "paragraphs": ["A-06交真实范围和全部实际活动，A-05/U12-10交真实比较，W-03交同版主稿、作者与公开权限，Z-01交匹配成品和独立干净重建；权利人和机构确认素材、SDK、量表及数据的实际许可。", "U12-12交同版选择理由、未选原因、逐对象范围与批准给W-04，W-04实际打包、接收演练及维护。Unity完整体验独立于TD；V-04预演不替代最终旅程或真实链。有效预设情绪结果不因功能失败隐去，等效默认不开启。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["当前负责人、独立复核者与真实签收人均未指定。Agent可整理、分析软件候选和核对来源，不能代填作者同意、机构权属决定或PASS。签收须限定到实际审阅的同版对象和范围。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["全部71/71任务包已形成双层逐包结构，下一项是根目录整体物理迁移和运行消费者修复；未完成这一项不能关闭整体目标。U12-12业务仍WAIT_DEP_EXTERNAL，没有真实公开或部署决定。"]},
+    {"heading": "审阅来源", "paragraphs": ["活动注册、四原候选、A-06实际范围、W-03投稿权限、Z-01制品状态、W-04八对象及接收缺口、U12-10十五合成案例、当前两个工作表及本轮软件验证。"]}
+  ],
+  "findings": [
+    {"id": "U1212-N01", "status": "FIXED_ORIGINAL_ARCHIVE_AND_CURRENT_ENTRY", "description": "四原候选实际归档，原字节及snapshot保持，旧入口改当前导航", "source": "agent/tasks/U12-12/archive/README.md"},
+    {"id": "U1212-N02", "status": "DELIVERED_HANDOFF_NOT_PRODUCT_OR_PUBLIC_APPROVAL", "description": "三方案八维与十二对象工作表对齐W-04八对象，未默认胜者或批准公开", "source": "agent/tasks/U12-12/outputs/current-decision.md"},
+    {"id": "U1212-N03", "status": "FIXED_LINKS_AND_RETESTED", "description": "TASK工作表前缀修正，W-04消费活动入口，专项检查通过", "source": "agent/tasks/U12-12/evidence/consumer-impact.md"},
+    {"id": "U1212-N04", "status": "OPEN_REAL_RESULTS_APPROVAL_ARTIFACTS_AND_SIGNOFF", "description": "真实决定、权属及作者批准、匹配成品和真实接收签署仍缺", "source": "agent/tasks/U12-12/outputs/current-decision.json"},
+    {"id": "U1212-N05", "status": "OPEN_ROOT_MIGRATION", "description": "逐包71/71不替代旧业务目录整体迁移和运行验证", "source": "agent/normalization.md"}
+  ],
+  "next_task": "目录整体迁移",
+  "source_links": [
+    {"label": "当前成果决定交接", "path": "agent/tasks/U12-12/outputs/current-decision.md"},
+    {"label": "方案选择工作表", "path": "agent/tasks/U12-12/outputs/decision-workbook.md"},
+    {"label": "逐对象公开工作表", "path": "agent/tasks/U12-12/outputs/publication-workbook.md"},
+    {"label": "实际现状观察", "path": "agent/tasks/U12-12/outputs/current-decision.json"},
+    {"label": "本轮软件验证", "path": "agent/tasks/U12-12/evidence/verification.json"}
+  ]
+}

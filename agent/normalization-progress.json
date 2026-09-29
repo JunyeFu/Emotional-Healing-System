@@ -69,11 +69,10 @@
     "U12-08",
     "U12-09",
     "U12-10",
-    "U12-11"
-  ],
-  "remaining_packages": [
+    "U12-11",
     "U12-12"
   ],
+  "remaining_packages": [],
   "root_migration_complete": false,
   "findings": [
     {
@@ -1929,6 +1928,41 @@
       "id": "U1211-N05",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "旧根业务与共享模块尚未整体迁入双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-12",
+      "id": "U1212-N01",
+      "status": "FIXED_ORIGINAL_ARCHIVE_AND_CURRENT_ENTRY",
+      "description": "四原候选实际归档，原字节及snapshot保持，旧入口改当前导航",
+      "source": "agent/tasks/U12-12/archive/README.md"
+    },
+    {
+      "task_id": "U12-12",
+      "id": "U1212-N02",
+      "status": "DELIVERED_HANDOFF_NOT_PRODUCT_OR_PUBLIC_APPROVAL",
+      "description": "三方案八维与十二对象工作表对齐W-04八对象，未默认胜者或批准公开",
+      "source": "agent/tasks/U12-12/outputs/current-decision.md"
+    },
+    {
+      "task_id": "U12-12",
+      "id": "U1212-N03",
+      "status": "FIXED_LINKS_AND_RETESTED",
+      "description": "TASK工作表前缀修正，W-04消费活动入口，专项检查通过",
+      "source": "agent/tasks/U12-12/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-12",
+      "id": "U1212-N04",
+      "status": "OPEN_REAL_RESULTS_APPROVAL_ARTIFACTS_AND_SIGNOFF",
+      "description": "真实决定、权属及作者批准、匹配成品和真实接收签署仍缺",
+      "source": "agent/tasks/U12-12/outputs/current-decision.json"
+    },
+    {
+      "task_id": "U12-12",
+      "id": "U1212-N05",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "逐包71/71不替代旧业务目录整体迁移和运行验证",
       "source": "agent/normalization.md"
     }
   ]

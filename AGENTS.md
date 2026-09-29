@@ -67,6 +67,7 @@
 | 看升级覆盖一致性 | `agent/tasks/U12-09/outputs/current-consistency.md`（15消费者与24 DONE影响、六历史字节缺口；静态索引不放行研究） |
 | 看阶段一结果分类 | `agent/tasks/U12-10/outputs/current-classification.md`（候选分轴分类与15合成案例，真实结果和签收仍缺） |
 | 看正式参数与资源冻结 | `agent/tasks/U12-11/outputs/current-freeze.md`（15项材料与空索引，CAL、数值、真实批准及签收未齐） |
+| 看成果选择与公开交接 | `agent/tasks/U12-12/outputs/current-decision.md`（三方案、十二对象与真实批准缺口，未自动选择或公开） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |
