@@ -1,6 +1,7 @@
 import csv
 import hashlib
 import json
+import re
 import runpy
 from pathlib import Path
 
@@ -25,7 +26,7 @@ def test_scoped_acceptance_not_formal_authorization():
     assert len(consumers['entries']) == 15
     for entry in consumers['entries']:
         root = GOV.parent if entry['root'] == 'plan' else ROOT
-        assert (root / entry['path']).is_file()
+        assert resolve_path(ROOT, (root / entry['path']).relative_to(ROOT).as_posix()).is_file()
         if entry['owner'] in ('U12-02', 'U12-04'):
             assert entry['status'] == 'SCOPED_CANDIDATE_ACCEPTED_NOT_LIVE'
             evidence = read(resolve_path(ROOT, entry['acceptance_path']))
@@ -50,7 +51,9 @@ def test_registry_and_historical_scope_preserved():
 def test_navigation_and_scope_sources_exist():
     for path in read(TASK / 'inputs/sources.json')['paths']:
         assert (ROOT / path).is_file()
-    assert 'agent/tasks/U12-01/outputs/current-governance.md' in (GOV / 'u12_upgrade/README.md').read_text(encoding='utf-8')
+    navigation = GOV / 'u12_upgrade/README.md'
+    targets = re.findall(r'\]\(([^)]+)\)', navigation.read_text(encoding='utf-8'))
+    assert any((navigation.parent / target).resolve() == TASK / 'outputs/current-governance.md' for target in targets)
     current = read(TASK / 'outputs/current-governance.json')
     assert current['current_independent_review'] == 'NOT_RUN'
     assert current['current_human_acceptance'] == 'NOT_SIGNED'

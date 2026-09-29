@@ -58,12 +58,13 @@ def consumer_rows():
     result = []
     for entry in read(GOV / 'u12_upgrade/consumers.json')['entries']:
         base = PLAN if entry['root'] == 'plan' else ROOT
+        actual = resolve_path(ROOT, (base / entry['path']).relative_to(ROOT).as_posix())
         result.append({'consumer_id': entry['id'], 'owner_task': entry['owner'],
                        'owner_claimant': registry[entry['owner']]['claimant'] or '未领取',
                        'registered_status': registry[entry['owner']]['status'],
                        'declared_consumer_status': entry['status'],
-                       'repository_path': (base / entry['path']).relative_to(ROOT).as_posix(),
-                       'path_exists': (base / entry['path']).is_file(),
+                       'repository_path': actual.relative_to(ROOT).as_posix(),
+                       'path_exists': actual.is_file(),
                        'acceptance_path': entry.get('acceptance_path', ''),
                        'evidence_limit': entry.get('limit', '静态索引；不证明真实运行或新研究签收')})
     return result

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import runpy
 import subprocess
 from pathlib import Path
 
@@ -90,6 +91,14 @@ def verify(evidence_dir: Path, *, git_tree: str | None = None, repo_root: Path |
             check=True,
             capture_output=True,
         ).stdout.decode("utf-8")
+        if not output:
+            paths = runpy.run_path(str(Path(__file__).resolve().parents[4] / 'agent/tools/resolve_frozen_source.py'))
+            previous_dir = paths['historical_project_path'](Path(repo_root), relative_dir)
+            if previous_dir != relative_dir:
+                relative_dir = previous_dir
+                output = subprocess.check_output(
+                    ['git', 'ls-tree', '-r', '--name-only', '-z', git_tree, '--', relative_dir],
+                    cwd=repo_root).decode('utf-8')
         names = {line[len(relative_dir) + 1 :] for line in output.split("\0") if line.startswith(relative_dir + "/")}
     else:
         if not evidence_dir.is_dir():

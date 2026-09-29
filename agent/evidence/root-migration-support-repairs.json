@@ -1,0 +1,67 @@
+{
+  "current_files_repaired": [
+    "02-技术研发/01-数据采集/mock_data.py",
+    "02-技术研发/02-信号处理/dimension_spec.py",
+    "02-技术研发/05-通信协议/csv_logger.py",
+    "02-技术研发/05-通信协议/tests/contract/test_f05_evidence.py",
+    "02-技术研发/07-数据治理/README.md",
+    "02-技术研发/08-随机化/README.md",
+    "02-技术研发/srp_session_store/README.md",
+    "agent/validation/README.md",
+    "AGENTS.md",
+    "README.md",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/README.md",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建/README.md",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/README.md",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-07_neutral_core_draft/README.md",
+    "agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-07/README.md",
+    "agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-08/README.md",
+    "agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-09/README.md",
+    "agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-10/README.md",
+    "agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-11/README.md",
+    "agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-12/README.md",
+    "agent/tasks/F-03/execution/README.md",
+    "agent/tasks/F-05/execution/verify.ps1",
+    "agent/tasks/G-01/execution/verify.py",
+    "agent/tasks/U-01/execution/verify.py",
+    "agent/tasks/X-01/execution/test_current_handoff.py",
+    "agent/tasks/Z-01/execution/test_delivery_handoff.py",
+    "human/project/PROJECT_MODULES.md",
+    "agent/tasks/A-03/inputs/sources.json",
+    "agent/tasks/F-03/inputs/sources.json",
+    "agent/tasks/F-03/outputs/summary.json",
+    "agent/tasks/F-05/inputs/sources.json",
+    "agent/tasks/F-05/outputs/summary.json",
+    "agent/tasks/G-01/inputs/sources.json",
+    "agent/tasks/G-02/inputs/sources.json",
+    "agent/tasks/T-01/inputs/sources.json",
+    "agent/tasks/T-01/outputs/summary.json",
+    "agent/tasks/U-01/inputs/sources.json",
+    "agent/tasks/U-01/outputs/summary.json",
+    "agent/tasks/X-01/inputs/sources.json",
+    "agent/tasks/X-01/outputs/summary.json",
+    "agent/tasks/Z-01/inputs/sources.json"
+  ],
+  "word_relationships_repaired": [
+    {
+      "path": "human/tasks/F-03/summary.docx",
+      "links": 1
+    },
+    {
+      "path": "human/tasks/F-05/summary.docx",
+      "links": 1
+    },
+    {
+      "path": "human/tasks/T-01/summary.docx",
+      "links": 1
+    },
+    {
+      "path": "human/tasks/U-01/summary.docx",
+      "links": 1
+    },
+    {
+      "path": "human/tasks/X-01/summary.docx",
+      "links": 1
+    }
+  ]
+}

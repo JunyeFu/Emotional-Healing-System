@@ -16,7 +16,7 @@
 | 备份恢复 | [srp_governance/backup.py](srp_governance/backup.py) |
 | Manifest隐私门 | [srp_governance/privacy.py](srp_governance/privacy.py) |
 | 正式环境检查 | [srp_governance/environment.py](srp_governance/environment.py)、[docs/formal_machine_setup.md](docs/formal_machine_setup.md) |
-| Unity资产许可门 | [srp_governance/assets.py](srp_governance/assets.py)、[Unity Governance](../04-Unity视觉/SRP-Weather-Visual/Governance/) |
+| Unity资产许可门 | [srp_governance/assets.py](srp_governance/assets.py)、[Unity Governance](../04-Unity视觉/SRP-Weather-Visual/Governance) |
 | 下游消费规则 | [docs/downstream_contracts.md](docs/downstream_contracts.md) |
 | 命令行 | [g02.py](g02.py) |
 | 当前任务核验与Word | [Agent执行入口](../../agent/tasks/G-02/execution/verify.ps1)、[人类总结](../../human/tasks/G-02/summary.docx) |
@@ -71,4 +71,4 @@ py -3.14 'agent/tasks/G-02/execution/verify.py'
 | Unity资产 | 2026-09-28本轮复扫233项、259条阻断；原189/215保留为2026-09-04历史结果 | 正式发布阻断 |
 | 第二人复核 | 傅钧烨已完成候选级复核并在提交`ea132c8`签署`PASS` | 第二人复核门已关闭；G-02为`DONE`，外部门由G-05继续阻断 |
 
-当前证据见[本轮核验](../../agent/tasks/G-02/evidence/verification.json)，历史证据见[evidence/](evidence/)和[G-02_技术验收记录.md](G-02_技术验收记录.md)。本轮专项139项通过，含新增Agent证据目录负测试；历史签收138项不改写。
+当前证据见[本轮核验](../../agent/tasks/G-02/evidence/verification.json)，历史证据见[evidence/](evidence)和[G-02_技术验收记录.md](G-02_技术验收记录.md)。本轮专项139项通过，含新增Agent证据目录负测试；历史签收138项不改写。

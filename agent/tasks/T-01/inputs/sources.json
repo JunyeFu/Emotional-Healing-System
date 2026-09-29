@@ -1,8 +1,8 @@
 {
   "task_id": "T-01",
   "paths": [
-    "03-测试与实验/T-01_第二人审核报告_已签署.md",
-    "03-测试与实验/T-01_独立Agent审核报告_2026-09-02.md",
+    "agent/validation/T-01_第二人审核报告_已签署.md",
+    "agent/validation/T-01_独立Agent审核报告_2026-09-02.md",
     "02-技术研发/03-TouchDesigner/t01_telemetry_panel/T01_技术验收记录.md",
     "02-技术研发/03-TouchDesigner/t01_telemetry_panel/t01_telemetry.py",
     "02-技术研发/03-TouchDesigner/t01_telemetry_panel/t01_node_plan.py",

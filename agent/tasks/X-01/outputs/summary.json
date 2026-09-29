@@ -10,29 +10,121 @@
     "method": "团队总监、独立第二人审阅原候选及已有验证结果，未表述为本人重跑；签收记录cad3e90c166f97037e12f44a4015aed37891c8b2。本轮工具修订未新增独立Agent复核或真人签收。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["约4人日，原实施Codex，依赖P-01/A-03-SPEC/G-02。当前结构整理不改变任务签收或外部活动资格；合成192条每阶段不是最终招募人数。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["AC1阶段一每48条完整块两条件各24排列一次、阶段三独立清单；AC2三项资格证据后揭示且概率可重建；AC3按分配平衡，重复、错版、耗尽失败关闭。当前实现固定48，不把任务通用可变块措辞等同任意块长。", "四天依次完成分层与职责、清单生成与保管、门及原子分配联调、负例与交接。TASK附国内上手资料，真实岗位需G-05实名配置，不能由原实施或审核姓名推定。"]},
-    {"heading": "实际交付", "paragraphs": ["建立TASK及五目录、当前行为说明/JSON、原件引用和交接测试。verify_x01.py、generate_evidence.py实际迁入execution，测试消费者改读新路径；业务、Schema、六份原合成证据及历史签署未改。", "原README按字节归档，模块入口改为当前导航。合成复现必须指定不存在的新目录、文件排他创建，不再直接覆盖原签署材料。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["实际清单只支持stage_1/stage_3；阶段一每臂覆盖24排列，阶段三frozen_policy清单序列为null。其回执拒绝转换为完整会话分配，X-03须供真实动态策略，不曲解为回退序列。", "均衡顺序的位置概率1/4、1/3、1/2、1；random_draw是动作区间中点见证而非真实在线抽样日志，state_snapshot_hash不是生理状态哈希。策略不能借固定序列帮助函数冒充实时概率。"]},
-    {"heading": "验证与结果", "paragraphs": ["41项专项通过，含8项当前交接/实际CLI/原件保护检查及33项既有随机化测试。两份原清单384条、六产物内容重建及重复输出目录拒绝通过。", "根pytest635项通过；71项注册及5包61快照校验通过。初次40过1失败来自UTF-8子进程被GBK解码，修复测试显式编码并保留初次输出；没有放宽覆盖拒绝断言。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["过期模块说明和覆盖原证据的工具行为已修复；本轮迁移未修改共享随机化业务或原签署。新工具版本尚未新签收，原DONE不能代替当前变更复核。", "固定48块、调用方角色检查、合成门和未冻结数值均按真实能力标注。Level C不受支持及阶段三运行接口缺口仍开放，未以标签替换绕过。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["任务仅TASK与inputs/execution/evidence/outputs/archive，旧README保留原字节；两个旧工具路径不留转发副本。原Schema、共享业务、合成fixture及证据仍在唯一模块位置。", "Word从Agent总结生成；注册表和冻结输入不改，SVG无业务状态变化不重绘。共享模块与旧根业务目录须在全包整理后实际迁移，整体目标尚未完成。"]},
-    {"heading": "上下游交接", "paragraphs": ["P-01消费清单哈希、索引、阶段、层、块、臂、预约许可与固定序列，仍是流程/时钟/暴露权威。G-02供去重预约，G-05落实实名权限、种子保管、仓库外存储与活动资格；U12-06/U12-11冻结前测、教学和揭示时序。", "Q-03需独立Level C分配及manifest适配；X-03提供真实状态、候选概率和动态步骤接口。阶段三是可选扩展，不能阻断核心论文；按完成情况定向补格仍不允许。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["历史六轮Agent最终PASS，其自身未跑pytest，动态证据由原主工作区提供。当前Codex只实施迁移与软件复测，不冒充新独立复核；真实custodian/allocator/auditor及种子负责人仍需落实。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计38/71、剩余33，下一X-02。原软件DONE保持；正式分层、清单、ACL、当前资格联调和真实运行未验收，根目录双层迁移继续。"]},
-    {"heading": "审阅来源", "paragraphs": ["任务注册、真实签署、历史独立复核、随机化业务/配置/Schema、P-01及A-03/Q-03交接。本轮无新网页研究、真实活动或外部批准。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "约4人日，原实施Codex，依赖P-01/A-03-SPEC/G-02。当前结构整理不改变任务签收或外部活动资格；合成192条每阶段不是最终招募人数。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1阶段一每48条完整块两条件各24排列一次、阶段三独立清单；AC2三项资格证据后揭示且概率可重建；AC3按分配平衡，重复、错版、耗尽失败关闭。当前实现固定48，不把任务通用可变块措辞等同任意块长。",
+        "四天依次完成分层与职责、清单生成与保管、门及原子分配联调、负例与交接。TASK附国内上手资料，真实岗位需G-05实名配置，不能由原实施或审核姓名推定。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立TASK及五目录、当前行为说明/JSON、原件引用和交接测试。verify_x01.py、generate_evidence.py实际迁入execution，测试消费者改读新路径；业务、Schema、六份原合成证据及历史签署未改。",
+        "原README按字节归档，模块入口改为当前导航。合成复现必须指定不存在的新目录、文件排他创建，不再直接覆盖原签署材料。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "实际清单只支持stage_1/stage_3；阶段一每臂覆盖24排列，阶段三frozen_policy清单序列为null。其回执拒绝转换为完整会话分配，X-03须供真实动态策略，不曲解为回退序列。",
+        "均衡顺序的位置概率1/4、1/3、1/2、1；random_draw是动作区间中点见证而非真实在线抽样日志，state_snapshot_hash不是生理状态哈希。策略不能借固定序列帮助函数冒充实时概率。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "41项专项通过，含8项当前交接/实际CLI/原件保护检查及33项既有随机化测试。两份原清单384条、六产物内容重建及重复输出目录拒绝通过。",
+        "根pytest635项通过；71项注册及5包61快照校验通过。初次40过1失败来自UTF-8子进程被GBK解码，修复测试显式编码并保留初次输出；没有放宽覆盖拒绝断言。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "过期模块说明和覆盖原证据的工具行为已修复；本轮迁移未修改共享随机化业务或原签署。新工具版本尚未新签收，原DONE不能代替当前变更复核。",
+        "固定48块、调用方角色检查、合成门和未冻结数值均按真实能力标注。Level C不受支持及阶段三运行接口缺口仍开放，未以标签替换绕过。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "任务仅TASK与inputs/execution/evidence/outputs/archive，旧README保留原字节；两个旧工具路径不留转发副本。原Schema、共享业务、合成fixture及证据仍在唯一模块位置。",
+        "Word从Agent总结生成；注册表和冻结输入不改，SVG无业务状态变化不重绘。共享模块与旧根业务目录须在全包整理后实际迁移，整体目标尚未完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "P-01消费清单哈希、索引、阶段、层、块、臂、预约许可与固定序列，仍是流程/时钟/暴露权威。G-02供去重预约，G-05落实实名权限、种子保管、仓库外存储与活动资格；U12-06/U12-11冻结前测、教学和揭示时序。",
+        "Q-03需独立Level C分配及manifest适配；X-03提供真实状态、候选概率和动态步骤接口。阶段三是可选扩展，不能阻断核心论文；按完成情况定向补格仍不允许。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "历史六轮Agent最终PASS，其自身未跑pytest，动态证据由原主工作区提供。当前Codex只实施迁移与软件复测，不冒充新独立复核；真实custodian/allocator/auditor及种子负责人仍需落实。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计38/71、剩余33，下一X-02。原软件DONE保持；正式分层、清单、ACL、当前资格联调和真实运行未验收，根目录双层迁移继续。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "任务注册、真实签署、历史独立复核、随机化业务/配置/Schema、P-01及A-03/Q-03交接。本轮无新网页研究、真实活动或外部批准。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "X01-N01", "status": "FIXED_TOOL_MIGRATION_AND_EXCLUSIVE_REPRODUCTION", "description": "两工具实际迁入Agent，旧README归档，合成复现新目录排他写入且消费者修正", "source": "agent/tasks/X-01/outputs/consumer-impact.md"},
-    {"id": "X01-N02", "status": "FIXED_CURRENT_CAPABILITY_DESCRIPTION", "description": "固定48块、动作区间见证、调用方角色与正式权限边界按真实实现订正，原签署不改", "source": "agent/tasks/X-01/outputs/current-randomization.md"},
-    {"id": "X01-N03", "status": "OPEN_FORMAL_CONTEXT_AND_RUNTIME_ADAPTERS", "description": "实名权限、正式分层清单、Level C适配及阶段三实时策略未完成，本轮工具修订未新签收", "source": "agent/tasks/X-01/outputs/current-randomization.json"}
+    {
+      "id": "X01-N01",
+      "status": "FIXED_TOOL_MIGRATION_AND_EXCLUSIVE_REPRODUCTION",
+      "description": "两工具实际迁入Agent，旧README归档，合成复现新目录排他写入且消费者修正",
+      "source": "agent/tasks/X-01/outputs/consumer-impact.md"
+    },
+    {
+      "id": "X01-N02",
+      "status": "FIXED_CURRENT_CAPABILITY_DESCRIPTION",
+      "description": "固定48块、动作区间见证、调用方角色与正式权限边界按真实实现订正，原签署不改",
+      "source": "agent/tasks/X-01/outputs/current-randomization.md"
+    },
+    {
+      "id": "X01-N03",
+      "status": "OPEN_FORMAL_CONTEXT_AND_RUNTIME_ADAPTERS",
+      "description": "实名权限、正式分层清单、Level C适配及阶段三实时策略未完成，本轮工具修订未新签收",
+      "source": "agent/tasks/X-01/outputs/current-randomization.json"
+    }
   ],
   "next_task": "X-02",
   "source_links": [
-    {"label": "当前随机化行为与正式缺口", "path": "agent/tasks/X-01/outputs/current-randomization.md"},
-    {"label": "当前事实字段", "path": "agent/tasks/X-01/outputs/current-randomization.json"},
-    {"label": "专项复测", "path": "agent/tasks/X-01/evidence/verification.json"},
-    {"label": "工具迁移与消费者影响", "path": "agent/tasks/X-01/outputs/consumer-impact.md"},
-    {"label": "原签署报告", "path": "03-测试与实验/X-01_第二人审核报告_已签署.md"}
+    {
+      "label": "当前随机化行为与正式缺口",
+      "path": "agent/tasks/X-01/outputs/current-randomization.md"
+    },
+    {
+      "label": "当前事实字段",
+      "path": "agent/tasks/X-01/outputs/current-randomization.json"
+    },
+    {
+      "label": "专项复测",
+      "path": "agent/tasks/X-01/evidence/verification.json"
+    },
+    {
+      "label": "工具迁移与消费者影响",
+      "path": "agent/tasks/X-01/outputs/consumer-impact.md"
+    },
+    {
+      "label": "原签署报告",
+      "path": "agent/validation/X-01_第二人审核报告_已签署.md"
+    }
   ]
 }

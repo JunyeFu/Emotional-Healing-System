@@ -55,12 +55,12 @@ class CSVLogger:
         """Initialize CSV logger.
 
         Args:
-            output_dir: Directory for CSV files. Defaults to 03-测试与实验/实验数据/
+            output_dir: Directory for CSV files. Defaults to agent/validation/实验数据/
             prefix: File prefix ("sim" for simulated, session ID for formal runs)
         """
         if output_dir is None:
             project_root = Path(__file__).resolve().parents[2]
-            output_dir = project_root / "03-测试与实验" / "实验数据"
+            output_dir = project_root / "agent/validation" / "实验数据"
         self.output_dir = os.path.abspath(os.fspath(output_dir))
         os.makedirs(self.output_dir, exist_ok=True)
 

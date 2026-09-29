@@ -1,0 +1,16 @@
+...F.                                                                    [100%]
+================================== FAILURES ===================================
+___________________ test_navigation_and_scope_sources_exist ___________________
+
+    def test_navigation_and_scope_sources_exist():
+        for path in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / path).is_file()
+>       assert 'agent/tasks/U12-01/outputs/current-governance.md' in (GOV / 'u12_upgrade/README.md').read_text(encoding='utf-8')
+E       AssertionError: assert 'agent/tasks/U12-01/outputs/current-governance.md' in '# 治理v1.2当前入口\n\nU12-01保留2026-09-08傅钧烨签收DONE及原候选身份。当前范围、冲突矩阵与下游交接见[Agent说明](../../../../../tasks/U12-01/outputs/curren...tasks/U12-01/archive/README.md)。原基线bdda9f955c4de7e96bd07fb03fd6a63c8ef0ac8a及外部备份记录保存在原件；本轮未核验外部备份存在，也不以其代替Git中的历史证据。\n'
+E        +  where '# 治理v1.2当前入口\n\nU12-01保留2026-09-08傅钧烨签收DONE及原候选身份。当前范围、冲突矩阵与下游交接见[Agent说明](../../../../../tasks/U12-01/outputs/curren...tasks/U12-01/archive/README.md)。原基线bdda9f955c4de7e96bd07fb03fd6a63c8ef0ac8a及外部备份记录保存在原件；本轮未核验外部备份存在，也不以其代替Git中的历史证据。\n' = read_text(encoding='utf-8')
+E        +    where read_text = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理') / 'u12_upgrade/README.md').read_text
+
+agent\tasks\U12-01\execution\test_governance_handoff.py:53: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-01/execution/test_governance_handoff.py::test_navigation_and_scope_sources_exist
+1 failed, 4 passed in 0.19s

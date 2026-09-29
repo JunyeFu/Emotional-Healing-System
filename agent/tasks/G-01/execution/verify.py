@@ -5,7 +5,9 @@ import csv
 import hashlib
 import json
 import math
+import os
 import re
+import runpy
 import subprocess
 import sys
 from pathlib import Path
@@ -41,10 +43,13 @@ def main():
     materials.append(archived_11)
     ids = sorted(int(re.match(r'G-01-(\d+)_', p.name)[1]) for p in materials)
     record('signed material completeness', ids == list(range(1, 13)), '12 historical materials present; not approved new-study materials')
-    unchanged = subprocess.check_output(
-        ['git', 'diff', 'HEAD', '--', *(str(p.relative_to(ROOT)) for p in materials if p != archived_11),
-         '03-测试与实验/G-01_G-02_治理修复团队总监签收报告_已签署.md'], cwd=ROOT)
-    record('historical originals', not unchanged, 'Historical material and signed report bytes unchanged from HEAD')
+    git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
+    protected = [p for p in materials if p != archived_11]
+    protected.append(ROOT / 'agent/validation/G-01_G-02_治理修复团队总监签收报告_已签署.md')
+    unchanged = all(p.read_bytes().replace(b'\r\n', b'\n') ==
+                    git_bytes(ROOT, 'HEAD', p.relative_to(ROOT).as_posix()).replace(b'\r\n', b'\n')
+                    for p in protected)
+    record('historical originals', unchanged, 'Historical material and signed report bytes unchanged from HEAD')
     original_hash = read_json(ROOT / 'agent/tasks/E-01/inputs/sources.json')['archived_bytes'][archived_11.name]
     record('archived historical material 11', hashlib.sha256(archived_11.read_bytes()).hexdigest().upper() == original_hash,
            'Material 11 is physically archived with original bytes; current step-seven file is navigation only')
@@ -94,7 +99,8 @@ def main():
         ('dispatch snapshots', [sys.executable, str(GOV / '14_validate_ready_task_packages.py')]),
     ]
     for name, command in commands:
-        result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
+        result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding='utf-8',
+                                env={**os.environ, 'PYTHONIOENCODING': 'utf-8'})
         record(name, result.returncode == 0, result.stdout.strip() + result.stderr.strip())
     destination = TASK / 'evidence/verification.json'
     report = {'task_id': 'G-01', 'review_date': '2026-09-29',

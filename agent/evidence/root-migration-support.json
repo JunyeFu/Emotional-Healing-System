@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-29",
+  "scope": "Physical design, validation and reference migration, not business acceptance",
+  "moves": {
+    "01-需求与设计": "agent/design",
+    "03-测试与实验": "agent/validation",
+    "srp参考文献": "agent/references"
+  },
+  "tracked_originals": 297,
+  "tracked_originals_unchanged": 295,
+  "word_documents_link_only": 5,
+  "word_hyperlinks_relocated": 5,
+  "human_review": "设计来源、验证原件和参考文献已实际迁入Agent层。297个已跟踪原文件中295个字节未变，两份当前导航修正；5份Word仅改来源链接。历史签署与冻结分发保持原件。文献库仍隔离：库存106条、实际101份PDF，缺少来源字段等问题未解除；目录迁移不产生新的论文证据。",
+  "reference_provenance": {
+    "status": "QUARANTINED_FOR_PROVENANCE_REVIEW",
+    "validator_exit_code": 1,
+    "inventory_entries": 106,
+    "physical_pdfs": 101,
+    "disposition": "Existing source qualification gap remains; no validator weakened"
+  },
+  "verification": {
+    "root_pytest": "635 passed in 48.15s",
+    "task_packages_with_tests": 60,
+    "failed_task_packages": 0,
+    "g01_current_use_checks": 15,
+    "f05_evidence_contract_tests": "4 passed in 0.80s",
+    "f05_historical_git_tree_seal": "PASS",
+    "governance_registry_dispatch": "PASS",
+    "chained_word_pages": 40,
+    "chained_word_unchanged_rendered_pages": "1-39",
+    "chained_word_changed_page_visually_checked": 40,
+    "unity_td_real_devices": "NOT_RUN"
+  },
+  "root_migration_complete": false
+}

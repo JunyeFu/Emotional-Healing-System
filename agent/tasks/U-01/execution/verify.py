@@ -44,10 +44,10 @@ def main():
                      '-logFile', str(OUTPUT / 'generate-unity.log')])
     run('verify-current', [sys.executable, str(PACKAGE / 'execution/verify_u01.py')])
     run('verify-historical', [sys.executable, str(PACKAGE / 'execution/verify_u01.py'),
-                             '--evidence-dir', str(ROOT / '03-测试与实验/evidence/U-01')])
+                             '--evidence-dir', str(ROOT / 'agent/validation/evidence/U-01')])
     names = ('state-mirror-trace.json', 'ack-render-receipt-sequence.json', 'network-fault-log.json')
     comparison = {name: json.loads((OUTPUT / name).read_text(encoding='utf-8-sig')) ==
-                  json.loads((ROOT / '03-测试与实验/evidence/U-01' / name).read_text(encoding='utf-8-sig'))
+                  json.loads((ROOT / 'agent/validation/evidence/U-01' / name).read_text(encoding='utf-8-sig'))
                   for name in names}
     (OUTPUT / 'historical-comparison.json').write_text(
         json.dumps(comparison, indent=2) + '\n', encoding='utf-8')

@@ -2,7 +2,7 @@
 02-技术研发/05-通信协议/contracts/fixture_hashes.sha256 text eol=lf
 02-技术研发/srp_session_store/fixtures/golden/** text eol=lf
 agent/tasks/P-02/evidence/runtime/session-archive-v1/** text eol=lf
-03-测试与实验/evidence/F-05/** text eol=lf
+agent/validation/evidence/F-05/** text eol=lf
 agent/tasks/F-03/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 agent/tasks/F-03/evidence/runtime/asset_blocking_report.json -text
 agent/tasks/F-04/evidence/host/*.json text eol=lf
@@ -108,5 +108,6 @@ agent/tasks/U12-12/archive/** -text whitespace=cr-at-eol
 agent/tasks/U12-10/execution/result_classifier.py -text whitespace=cr-at-eol
 agent/evidence/root-migration-governance-initial-tests.txt -text whitespace=-blank-at-eol
 agent/evidence/root-migration-governance-package-tests-initial/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-support-package-tests-initial/*.txt -text whitespace=-blank-at-eol
 agent/governance/**/tasks/U12-05/package_manifest.json -text whitespace=cr-at-eol
 agent/governance/**/tasks/U12-06/package_manifest.json -text whitespace=cr-at-eol

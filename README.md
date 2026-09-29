@@ -54,11 +54,11 @@ Python是流程与时间权威。Unity不依赖TD提供画面；TD不能直接�
 ```text
 srp/
 ├── agent/governance/    治理、任务注册表、独立任务包与规划文档
-├── 01-需求与设计/  情绪天气方案与体验设计
+├── agent/design/  情绪天气方案与体验设计
 ├── 02-技术研发/    采集、信号处理、通信合同、SessionCore/Store、Unity与TD工程
-├── 03-测试与实验/  验证入口与证据归档（evidence/）
+├── agent/validation/  验证入口与证据归档（evidence/）
 ├── agent/delivery/ 交付源码与构建工具；成品在human/deliverables/
-├── srp参考文献/    历史文献库（处于身份与来源复核隔离状态，以W-01为论文证据入口）
+├── agent/references/    历史文献库（处于身份与来源复核隔离状态，以W-01为论文证据入口）
 └── agent/work/     Codex黑板与验证日志
 ```
 

@@ -121,7 +121,7 @@
     },
     {
       "label": "打开 F-03 历史已签署验收",
-      "path": "03-测试与实验/F-03_技术验收记录_已签署.md"
+      "path": "agent/validation/F-03_技术验收记录_已签署.md"
     },
     {
       "label": "打开本轮 DEV-REPLAY Player 截图",

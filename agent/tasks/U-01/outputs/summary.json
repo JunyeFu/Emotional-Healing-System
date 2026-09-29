@@ -10,57 +10,119 @@
     "method": "审阅候选6c09f71d14bcb0288a4b83f87b177975c49bfe3d、已有机器证据与独立Agent复核，未声明亲自重跑。本轮不追加真人签署。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": [
-      "本轮执行Codex，规范化状态与任务状态分别记录。通过的自动化探针不替代最终参与者画面、正式制品和研究结果。"
-    ]},
-    {"heading": "目标与完成标准", "paragraphs": [
-      "原包约4人日。AC1为重复、乱序、丢包与重连保持控制身份；AC2为旧遥测不覆盖且Unity帧不推进模块；AC3为握手、断连和回执拒绝按合同失败关闭。",
-      "本轮要求迁移脚本、固定目录、新旧证据隔离，核对P-01/P-02与渲染适配器交接，再从Agent总结生成Word。"
-    ]},
-    {"heading": "实际交付", "paragraphs": [
-      "verify_u01.py实际从历史evidence目录迁入execution，无转发副本。新增verify.py与verify.ps1统一入口；Editor生成器改写agent/tasks/U-01/evidence/runtime，不覆盖签收原件。",
-      "TASK、输入来源、当前控制说明、验证记录和历史归档说明按固定五目录分类。共享Runtime、Editor和Tests保留Unity程序集结构，最终随工程整体迁移。"
-    ]},
-    {"heading": "执行过程与关键决定", "paragraphs": [
-      "读取注册表、签署、镜像、运行桥、回执门与生成器，确认Python拥有流程权威。Unity默认v2.2，v2.1仅开发回放；显式步骤身份沿用F-05，不从相位进度猜测。",
-      "保留历史报告的候选IN_REVIEW时点，当前使用稿说明实际DONE。校验器改为独立仓库根与可指定证据目录；新旧验证及三份JSON语义比较均实际执行。"
-    ]},
-    {"heading": "验证与结果", "paragraphs": [
-      "Unity 6000.4.9f1实际运行14项EditMode与3项PlayMode，全部通过；生成器成功。覆盖镜像时钟、重复身份、真实loopback重连、连接代隔离、UTF-8、1 MiB边界和回执实例身份。",
-      "新旧校验均通过：19控制、19ACK、12渲染回执、3项网络矩阵；最终镜像Completed。新三份JSON与历史语义一致，新XML保存本轮运行。golden回执是contract_golden_fixture，不是实际天气全旅程。",
-      "任务注册表71项通过，分发包5项与冻结输入46份通过；任务状态未迁移，受影响签署及五份历史证据保留原字节。"
-    ]},
-    {"heading": "偏离与修复闭环", "paragraphs": [
-      "U01-N01：原生成器会写回历史证据，已改为本包新目录。U01-N02：校验脚本混在证据目录，已迁入固定execution并修复路径；原命令仅保留为历史验收记录。",
-      "U01-N03：ACK、确认与成功发送容易混读，当前合同明确ACK非呈现；ConfirmRendered返回确认生成结果，发送失败由LastFailure表示，重连保持回执身份。实际渲染交接仍由下游完成。"
-    ]},
-    {"heading": "目录与文件整理", "paragraphs": [
-      "五目录与单一当前总结已落地；旧证据脚本删除，新运行结果独立保存。Unity Editor脚本不能拆离Assets，已修正输出路径，工程与根目录旧业务归属仍待最终统一迁移。"
-    ]},
-    {"heading": "上下游交接", "paragraphs": [
-      "F-03供工程基线，F-01/F-05供消息合同，P-01供控制和时间。P-02保存实际ACK与回执，不由golden推测实际画面。TD缺席不改变本组件。",
-      "U-02/U-03在对应帧呈现后调用ConfirmRendered；真实全链由I-01、正式制品由装配与构建任务验证。核心前教学需U12-11冻结及P-01登记暴露，本包不新增教学消息或正式资格。下一包U-02检查四层实现与实际接入。"
-    ]},
-    {"heading": "审阅与责任签收", "paragraphs": [
-      "历史独立Agent结果为PASS_NO_OPEN_P0_P3，原第二人签收仅覆盖技术探针。本轮为执行整理和实际Unity复测，未新增独立复审或真人签名。"
-    ]},
-    {"heading": "收尾与下一包", "paragraphs": [
-      "按明确路径提交并推送codex/task-package-normalization，不自动合并。已整理10/71包，剩余61包，下一包U-02；全部包及最终根目录双层迁移仍在目标内。"
-    ]},
-    {"heading": "审阅来源", "paragraphs": [
-      "inputs保存权威来源，evidence保存本轮XML、JSON和运行日志，outputs保存当前合同和总结。项目串联Word据此记录十包与开放交接。"
-    ]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本轮执行Codex，规范化状态与任务状态分别记录。通过的自动化探针不替代最终参与者画面、正式制品和研究结果。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "原包约4人日。AC1为重复、乱序、丢包与重连保持控制身份；AC2为旧遥测不覆盖且Unity帧不推进模块；AC3为握手、断连和回执拒绝按合同失败关闭。",
+        "本轮要求迁移脚本、固定目录、新旧证据隔离，核对P-01/P-02与渲染适配器交接，再从Agent总结生成Word。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "verify_u01.py实际从历史evidence目录迁入execution，无转发副本。新增verify.py与verify.ps1统一入口；Editor生成器改写agent/tasks/U-01/evidence/runtime，不覆盖签收原件。",
+        "TASK、输入来源、当前控制说明、验证记录和历史归档说明按固定五目录分类。共享Runtime、Editor和Tests保留Unity程序集结构，最终随工程整体迁移。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "读取注册表、签署、镜像、运行桥、回执门与生成器，确认Python拥有流程权威。Unity默认v2.2，v2.1仅开发回放；显式步骤身份沿用F-05，不从相位进度猜测。",
+        "保留历史报告的候选IN_REVIEW时点，当前使用稿说明实际DONE。校验器改为独立仓库根与可指定证据目录；新旧验证及三份JSON语义比较均实际执行。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "Unity 6000.4.9f1实际运行14项EditMode与3项PlayMode，全部通过；生成器成功。覆盖镜像时钟、重复身份、真实loopback重连、连接代隔离、UTF-8、1 MiB边界和回执实例身份。",
+        "新旧校验均通过：19控制、19ACK、12渲染回执、3项网络矩阵；最终镜像Completed。新三份JSON与历史语义一致，新XML保存本轮运行。golden回执是contract_golden_fixture，不是实际天气全旅程。",
+        "任务注册表71项通过，分发包5项与冻结输入46份通过；任务状态未迁移，受影响签署及五份历史证据保留原字节。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "U01-N01：原生成器会写回历史证据，已改为本包新目录。U01-N02：校验脚本混在证据目录，已迁入固定execution并修复路径；原命令仅保留为历史验收记录。",
+        "U01-N03：ACK、确认与成功发送容易混读，当前合同明确ACK非呈现；ConfirmRendered返回确认生成结果，发送失败由LastFailure表示，重连保持回执身份。实际渲染交接仍由下游完成。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "五目录与单一当前总结已落地；旧证据脚本删除，新运行结果独立保存。Unity Editor脚本不能拆离Assets，已修正输出路径，工程与根目录旧业务归属仍待最终统一迁移。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "F-03供工程基线，F-01/F-05供消息合同，P-01供控制和时间。P-02保存实际ACK与回执，不由golden推测实际画面。TD缺席不改变本组件。",
+        "U-02/U-03在对应帧呈现后调用ConfirmRendered；真实全链由I-01、正式制品由装配与构建任务验证。核心前教学需U12-11冻结及P-01登记暴露，本包不新增教学消息或正式资格。下一包U-02检查四层实现与实际接入。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "历史独立Agent结果为PASS_NO_OPEN_P0_P3，原第二人签收仅覆盖技术探针。本轮为执行整理和实际Unity复测，未新增独立复审或真人签名。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "按明确路径提交并推送codex/task-package-normalization，不自动合并。已整理10/71包，剩余61包，下一包U-02；全部包及最终根目录双层迁移仍在目标内。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "inputs保存权威来源，evidence保存本轮XML、JSON和运行日志，outputs保存当前合同和总结。项目串联Word据此记录十包与开放交接。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "U01-N01", "status": "FIXED", "description": "Editor证据写入本包runtime，不再覆盖历史签收目录", "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"},
-    {"id": "U01-N02", "status": "FIXED", "description": "主机校验入口实际迁入execution，新旧证据验证及17项Unity复测通过", "source": "agent/tasks/U-01/execution/verify.py"},
-    {"id": "U01-N03", "status": "FIXED_CURRENT_USAGE", "description": "当前说明区分ACK、确认生成、发送失败与实际呈现；历史签署原字节保留", "source": "agent/tasks/U-01/outputs/current-control-contract.md"},
-    {"id": "U01-N04", "status": "OPEN_DOWNSTREAM_RENDER_INTEGRATION", "description": "适配器实际呈现、核心前教学接入和正式全链仍待下游；golden不能替代这些证据", "source": "agent/tasks/U-01/outputs/current-control-contract.md"}
+    {
+      "id": "U01-N01",
+      "status": "FIXED",
+      "description": "Editor证据写入本包runtime，不再覆盖历史签收目录",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"
+    },
+    {
+      "id": "U01-N02",
+      "status": "FIXED",
+      "description": "主机校验入口实际迁入execution，新旧证据验证及17项Unity复测通过",
+      "source": "agent/tasks/U-01/execution/verify.py"
+    },
+    {
+      "id": "U01-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前说明区分ACK、确认生成、发送失败与实际呈现；历史签署原字节保留",
+      "source": "agent/tasks/U-01/outputs/current-control-contract.md"
+    },
+    {
+      "id": "U01-N04",
+      "status": "OPEN_DOWNSTREAM_RENDER_INTEGRATION",
+      "description": "适配器实际呈现、核心前教学接入和正式全链仍待下游；golden不能替代这些证据",
+      "source": "agent/tasks/U-01/outputs/current-control-contract.md"
+    }
   ],
   "next_task": "U-02",
   "source_links": [
-    {"label": "打开 U-01 当前控制说明", "path": "agent/tasks/U-01/outputs/current-control-contract.md"},
-    {"label": "打开原真实第二人签收", "path": "03-测试与实验/U-01_第二人审核报告_已签署.md"},
-    {"label": "打开本轮 Unity 验证结果", "path": "agent/tasks/U-01/evidence/verification.json"}
+    {
+      "label": "打开 U-01 当前控制说明",
+      "path": "agent/tasks/U-01/outputs/current-control-contract.md"
+    },
+    {
+      "label": "打开原真实第二人签收",
+      "path": "agent/validation/U-01_第二人审核报告_已签署.md"
+    },
+    {
+      "label": "打开本轮 Unity 验证结果",
+      "path": "agent/tasks/U-01/evidence/verification.json"
+    }
   ]
 }

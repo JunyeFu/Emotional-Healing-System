@@ -4,7 +4,7 @@ SRP Mock Data Generator v0.4 — Physiologically-grounded synthetic signals.
 Generates simulated multi-sensor physiological data at 10 Hz for pipeline
 development before real Polar H10 + respiratory belt + EDA sensors are available.
 
-Physiological basis (see srp参考文献/06-scoring-model-evidence/README.md):
+Physiological basis (see agent/references/06-scoring-model-evidence/README.md):
   - RSA (Respiratory Sinus Arrhythmia): HR ↑ during inhale, ↓ during exhale.
     Primary mechanism behind HRV. Amplitude 5–15 bpm in young adults.
   - Resonance frequency breathing: ~0.1 Hz (6 breaths/min) maximizes vagal tone.
@@ -44,7 +44,7 @@ import numpy as np
 # ACC rest seated: 0.01–0.05 g | ACC fidgeting: 0.05–0.15 g
 
 # ── 4-Dimension Literature Anchors ────────────────────────────────────────
-# See: srp参考文献/06-scoring-model-evidence/README.md (16 SCI Q1 papers)
+# See: agent/references/06-scoring-model-evidence/README.md (16 SCI Q1 papers)
 #
 # Dimension 1 — breath_sync:     RR tracking accuracy    呼吸→副交感
 # Dimension 2 — breath_depth:    Amplitude quality       呼吸→副交感

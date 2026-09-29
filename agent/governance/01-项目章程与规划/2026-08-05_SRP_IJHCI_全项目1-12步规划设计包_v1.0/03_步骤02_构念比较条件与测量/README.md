@@ -1,6 +1,6 @@
 # F-02 构念与测量入口
 
-当前使用 [F-02适用说明](../../../../../agent/tasks/F-02/outputs/current-measurement.md)，项目根内位置为 `agent/tasks/F-02/outputs/current-measurement.md`。Agent执行位置为 `agent/tasks/F-02/`，人类总结为 `human/tasks/F-02/summary.docx`。
+当前使用 [F-02适用说明](../../../../tasks/F-02/outputs/current-measurement.md)，项目根内位置为 `agent/tasks/F-02/outputs/current-measurement.md`。Agent执行位置为 `agent/tasks/F-02/`，人类总结为 `human/tasks/F-02/summary.docx`。
 
 - 下列v0.9候选和验收记录为历史原件，不改写其审查结论。
 - 新研究遵循 `00_总控/protocol_authority_v1.2.json`：PANAS为主要情绪结果，SCCI只作操纵检查，功能门不阻止报告预设情绪比较。

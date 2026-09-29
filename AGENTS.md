@@ -18,7 +18,7 @@
 | 看当前项目背景 | `human/project/README.md`；旧框架原文已归档至 `agent/archive/project/` |
 | 看当前运行入口 | `agent/runtime/README.md`；旧Mock/Spout手册已归档至 `agent/archive/runtime/` |
 | 看当前任务 | `agent/governance/看板与进度/当前阶段看板.md` |
-| 看天气设计 | `01-需求与设计/情绪天气方案/四种天气设计.md` |
+| 看天气设计 | `agent/design/情绪天气方案/四种天气设计.md` |
 | 看四层表示方案 | `agent/tasks/R-01/outputs/current-representation.md`（当前适用与历史来源） |
 | 看完整参与者旅程 | `agent/tasks/V-01/outputs/current-experience.md`（当前时序候选与运行交接） |
 | 看当前四天气交接 | `agent/tasks/V-02/outputs/current-scenes.md`（固定镜头、独立素材与fade职责） |
@@ -80,8 +80,8 @@
 | 看呼吸事件与在线PF | `agent/tasks/S-02/outputs/current-events.md`（步骤身份、机会指标与未完成验收） |
 | 看通信协议 | `02-技术研发/05-通信协议/contracts/README.md` |
 | 看会话编排 | `02-技术研发/srp_session_core/README.md` |
-| 看验证与证据 | `03-测试与实验/README.md` |
-| 查文献 | `srp参考文献/`（历史库处于身份与来源复核隔离状态；论文证据以W-01为入口） |
+| 看验证与证据 | `agent/validation/README.md` |
+| 查文献 | `agent/references/`（历史库处于身份与来源复核隔离状态；论文证据以W-01为入口） |
 
 ## 项目结构
 
@@ -96,7 +96,7 @@
 │   ├── README.md                管理模块入口
 │   ├── 项目规约/SRP项目规划书_李俊扬组_v2.1.docx  当前规划文档
 │   └── 看板与进度/当前阶段看板.md  任务跟踪 + 阶段状态
-├── 01-需求与设计/
+├── agent/design/
 │   ├── README.md                设计模块入口
 │   └── 情绪天气方案/四种天气设计.md 4种天气→呼吸策略→视觉要素
 ├── 02-技术研发/
@@ -105,11 +105,11 @@
 │   ├── 03-TouchDesigner/TD原型规划.md 历史原型；正式目标为只读操作台
 │   ├── 04-Unity视觉/SRP-Weather-Visual/ 共享Unity工程；当前切片交接见Agent层
 │   └── 05-通信协议/contracts/README.md v2.1合同与20Hz遥测入口
-├── 03-测试与实验/
+├── agent/validation/
 │   └── README.md                验证与证据模块入口
 ├── agent/delivery/
 │   └── README.md                交付源码与构建入口；人类成品在human/deliverables
-└── srp参考文献/
+└── agent/references/
     ├── 01-research-proposal/    10篇 综述/meta
     ├── 02-biosignal-hrv-eeg/    15篇 HRV/EEG
     ├── 04-gamification-emotion/ 35篇 游戏化/情绪/屏幕交互

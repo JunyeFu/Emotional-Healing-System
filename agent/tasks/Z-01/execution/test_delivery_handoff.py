@@ -94,7 +94,7 @@ def test_registry_and_open_delivery_identity():
 
 
 def test_existing_dev_build_does_not_grant_formal_candidate():
-    manifest = read(ROOT / '03-测试与实验/evidence/F-03/run-1-build-manifest.json')
+    manifest = read(ROOT / 'agent/validation/evidence/F-03/run-1-build-manifest.json')
     assert manifest['build_mode'] == 'DEV-REPLAY'
     assert manifest['formal_use_allowed'] is False
     assert len(manifest['files']) > 0

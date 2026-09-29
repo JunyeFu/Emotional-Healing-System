@@ -66,7 +66,7 @@
     {
       "command": "teaching contract tests",
       "exit_code": 0,
-      "result": "......................                                                   [100%]\n22 passed in 0.04s"
+      "result": "......................                                                   [100%]\n22 passed in 0.03s"
     },
     {
       "command": "task registry",

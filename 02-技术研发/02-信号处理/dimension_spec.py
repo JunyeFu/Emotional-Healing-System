@@ -4,7 +4,7 @@ SRP 4-Dimension Physiological Specification v1.0
 Each dimension maps to one independent ANS pathway with dedicated sensor
 and gold-standard metric. Non-overlapping by design.
 
-Literature: srp参考文献/06-scoring-model-evidence/README.md (16 SCI Q1 papers)
+Literature: agent/references/06-scoring-model-evidence/README.md (16 SCI Q1 papers)
 
   4 independent ANS pathways → 4 scores → 1 weather composite
 

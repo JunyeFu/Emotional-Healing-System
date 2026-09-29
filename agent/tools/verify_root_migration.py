@@ -82,6 +82,10 @@ def main():
                      'human/deliverables/README.md', 'human/deliverables/archive/README.md',
                      'agent/archive/delivery/README.md', 'agent/delivery/README.md',
                      'agent/delivery/briefs/README.md']
+    for old, new in (('01-需求与设计', 'agent/design'), ('03-测试与实验', 'agent/validation'),
+                     ('srp参考文献', 'agent/references')):
+        if any(e['old'] == old and e['status'] == 'MIGRATED' for e in layout['entries']):
+            current_paths.append(new + '/README.md')
     markdown_links = sum(check_markdown(ROOT / path) for path in current_paths)
     unexpected = sorted(p.name for p in ROOT.iterdir() if p.name not in layout['root_entries_retained'])
     if args.require_complete and (pending or unexpected or not layout['root_migration_complete']):

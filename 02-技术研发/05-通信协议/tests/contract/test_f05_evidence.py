@@ -96,7 +96,7 @@ def test_manifest_v2_has_fixed_leaf_set_and_never_hashes_itself(tmp_path: Path) 
 def test_git_tree_verification_matches_worktree_with_crlf_checkout(tmp_path: Path) -> None:
     tool = load_tool()
     repo = tmp_path / "repo"
-    evidence = repo / "03-测试与实验" / "evidence" / "F-05"
+    evidence = repo / "agent/validation" / "evidence" / "F-05"
     evidence.mkdir(parents=True)
     for index, name in enumerate(LEAVES):
         (evidence / name).write_bytes(f"leaf {index}  \r\nPASS\t\r\n".encode())

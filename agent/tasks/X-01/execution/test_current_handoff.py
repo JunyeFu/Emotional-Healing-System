@@ -4,6 +4,7 @@ from itertools import permutations
 import json
 import os
 from pathlib import Path
+import runpy
 import subprocess
 import sys
 
@@ -31,7 +32,7 @@ def test_registry_and_real_historical_signoff_scope():
     assert value['business_status'] == row['status'] == 'DONE'
     assert value['depends_on'] == row['depends_on'].split('|')
     assert value['claimant'] == row['claimant'] == 'Codex'
-    report = (ROOT / '03-测试与实验/X-01_第二人审核报告_已签署.md').read_text(encoding='utf-8')
+    report = (ROOT / 'agent/validation/X-01_第二人审核报告_已签署.md').read_text(encoding='utf-8')
     for field in ('reviewer', 'date', 'candidate', 'signature_commit'):
         assert value['historical_acceptance'][field] in report
     assert value['current_tool_revision_signed'] is False
@@ -109,6 +110,10 @@ def test_real_cli_reproduces_six_original_artifacts_without_overwriting(tmp_path
 
 def test_original_reports_signatures_schema_and_business_code_unchanged():
     protected = [str((MODULE / part).relative_to(ROOT)) for part in ('fixtures', 'evidence', 'contracts', 'config', 'srp_randomization', 'X-01_技术验收记录.md')]
-    protected += ['03-测试与实验/X-01_第二人审核报告_已签署.md', '03-测试与实验/X-01_独立Agent复审报告_2026-09-06.md']
     run = subprocess.run(['git', 'diff', '--exit-code', '43d1a4b', '--', *protected], cwd=ROOT, capture_output=True)
     assert run.returncode == 0, run.stdout.decode('utf-8', errors='replace')
+    git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
+    for name in ('X-01_第二人审核报告_已签署.md', 'X-01_独立Agent复审报告_2026-09-06.md'):
+        path = ROOT / 'agent/validation' / name
+        original = git_bytes(ROOT, '43d1a4b', path.relative_to(ROOT).as_posix())
+        assert path.read_bytes().replace(b'\r\n', b'\n') == original.replace(b'\r\n', b'\n')

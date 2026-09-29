@@ -11,8 +11,8 @@
     "02-技术研发/srp_session_core/contract_adapter.py",
     "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json",
     "02-技术研发/srp_session_store/README.md",
-    "03-测试与实验/F-05_第二人审核报告_已签署.md",
-    "03-测试与实验/F-05_集成签收确认_傅钧烨_2026-09-01.md",
-    "03-测试与实验/evidence/F-05"
+    "agent/validation/F-05_第二人审核报告_已签署.md",
+    "agent/validation/F-05_集成签收确认_傅钧烨_2026-09-01.md",
+    "agent/validation/evidence/F-05"
   ]
 }

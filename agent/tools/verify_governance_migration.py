@@ -70,8 +70,9 @@ def main():
     print(f'PASS {len(originals)} original files; {len(kept)} unchanged; {word_links} links in {result["word_documents_checked"]} unchanged Word bodies')
 
 
-def package_tests():
-    output = EVIDENCE / 'root-migration-governance-package-tests'
+def package_tests(scope='governance'):
+    prefix = f'root-migration-{scope}-package-tests'
+    output = EVIDENCE / prefix
     output.mkdir(exist_ok=True)
     results = []
     for directory in sorted({p.parent for p in (ROOT / 'agent/tasks').glob('*/execution/test_*.py')}):
@@ -82,7 +83,7 @@ def package_tests():
         results.append({'task_id': task, 'exit_code': result.returncode})
         lines = result.stdout.decode('utf-8', 'replace').splitlines()
         print(task, result.returncode, lines[-1] if lines else '', flush=True)
-    (EVIDENCE / 'root-migration-governance-package-tests.json').write_text(
+    (EVIDENCE / (prefix + '.json')).write_text(
         json.dumps(results, indent=2) + '\n', encoding='utf-8')
     return int(any(item['exit_code'] for item in results))
 
@@ -90,7 +91,8 @@ def package_tests():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--package-tests', action='store_true')
+    parser.add_argument('--package-test-scope', choices=['governance', 'support'], default='governance')
     args = parser.parse_args()
     if args.package_tests:
-        raise SystemExit(package_tests())
+        raise SystemExit(package_tests(args.package_test_scope))
     main()

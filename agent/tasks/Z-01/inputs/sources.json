@@ -12,7 +12,7 @@
     "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/manifest.json",
     "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Packages/packages-lock.json",
     "02-技术研发/07-数据治理/docs/downstream_contracts.md",
-    "03-测试与实验/evidence/F-03/run-1-build-manifest.json",
+    "agent/validation/evidence/F-03/run-1-build-manifest.json",
     "agent/tasks/F-03/evidence/runtime/build_artifact_receipt.json",
     "agent/tasks/T-01/outputs/current-td-contract.md",
     "agent/tasks/U-08/outputs/current-product.md",
