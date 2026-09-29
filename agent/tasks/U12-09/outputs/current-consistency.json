@@ -1,0 +1,28 @@
+{
+  "task_id": "U12-09",
+  "scope": "STATIC_AND_EXISTING_SOFTWARE_ONLY_NOT_BUSINESS_ACCEPTANCE",
+  "consumer_count": 15,
+  "consumer_status_counts": {
+    "GOVERNANCE_IMPLEMENTED": 4,
+    "PENDING_RUNTIME_MIGRATION": 7,
+    "SCOPED_CANDIDATE_ACCEPTED_NOT_LIVE": 2,
+    "PENDING_SCOPE_REVIEW": 1,
+    "PENDING_EXTERNAL": 1
+  },
+  "all_consumer_paths_exist": true,
+  "registered_done_count": 24,
+  "formal_blank_fields": [
+    "training.budget_seconds",
+    "primary.minimum_important_affect_difference",
+    "functional_guard.critical_module_error_thresholds",
+    "sample_planning.formal_randomized_n",
+    "missingness.model_and_mnar_grid"
+  ],
+  "formal_authorization": false,
+  "formal_gate_proved": false,
+  "legacy_unresolved_references": 6,
+  "legacy_declared_byte_matches_in_checked_sources": 0,
+  "new_independent_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_SIGNED",
+  "root_migration_complete": false
+}

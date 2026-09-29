@@ -1,0 +1,5 @@
+# U12-09原候选
+
+原适配包TASK、FILES、package_manifest和inputs/task_input四文件实际迁入task-input，内容不改。原manifest三文件字节及输入IDc8b0da9637cd58c685869e6a3d9b7f70c47d587567d0feb3cdc1ec26fad19cb2保留。
+
+旧TASK尚未注册说明已过期；现已活动WAIT_DEP。旧相对路径按原适配包结构解释，新消费使用inputs/sources.json。没有真实一致性实现验收或第二人报告可归档，不编造完成记录。

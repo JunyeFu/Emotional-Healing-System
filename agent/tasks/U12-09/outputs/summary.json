@@ -1,0 +1,35 @@
+{
+  "task_id": "U12-09",
+  "title": "U12 09 升级覆盖与合同一致性审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U12-09仍WAIT_DEP、未领取、未签署。四旧候选实际归档，已形成15消费者矩阵、24 DONE影响索引和六条旧字节的有限来源比对；静态路径均存在，但正式研究接线、真实证据与新签收仍缺，不能认定业务一致性验收完成。",
+  "historical_acceptance": {"reviewer": "未指定", "date": "未签署", "commit": null, "method": "本包无真实实现验收或第二人签收；作者Agent整理和复测，不写成独立Agent或真人验收。"},
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["依赖U12-02/U12-03/U12-04/U12-06，固定任务2人日。上游限定候选DONE、教学IN_REVIEW和正式接线IN_PROGRESS分别保留；本轮不接管真实领取人或刷新冻结输入。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1冻结输入、候选与变更覆盖明确；AC2主张/计分/步骤真值及实际消费一致，旧DONE仅旧对象，正式空字段不通过；AC3复测、独立复核与真实第二人绑定，不代签外部证据。", "过程为读取当前来源、逐消费者复核、影响交接和候选签收。当前只交静态及现有软件覆盖，真实运行一致性尚未验收。"]},
+    {"heading": "实际交付", "paragraphs": ["固定TASK/五目录、只读索引工具、15行消费者矩阵、24项DONE影响表、六引用旧字节观测、版本与覆盖交接、源索引及复测入口。四候选原文实际迁入archive，三原件字节及原输入ID保持。", "旧未注册入口改为当前WAIT_DEP导航；U12-06接当前一致性说明。消费者、原binding/manifest、签署、研究合同、业务代码及成员分发不改。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["研究1.2、运行Schema2.2、传输1.1分别约束研究、步骤身份和传输，数字不同不是冲突。PANAS主比较、PF独立护栏、SCCI操纵检查的范围不能被旧有序门覆盖。", "四治理实现、两限定候选、七待运行、教学待范围和外部待证据共15项；其中六运行归傅钧烨领取的U12-06。文件存在与旧合成formal适配器prepare不等于新研究门实际接线。"]},
+    {"heading": "验证与结果", "paragraphs": ["149项专项8.70秒通过，覆盖原件字节、当前登记、矩阵可重建、旧DONE索引不推新签收、五空字段、版本边界、原binding及测量/教学/统计/运行上游软件回归。协议/治理/71注册和5分发61快照通过。", "根回归的实际结果见verification.json与regression.txt。现行治理拒绝未批准正式开关与N填充，但这些测试不证明运行入口已消费研究冻结，formal_gate_proved保持false。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["六条UNRESOLVED_WORKTREE_BYTES对应四源文件，历史Git身份吻合；在Git、LF/CRLF/BOM、可访问基线及当前文件中，旧声明字节均未匹配。明确检查范围，不声明全历史不存在，不改签署原声明。", "初始查找的两基线脚本与误写的材料manifest不存在，已用实际目录和现有材料复测入口纠正；没有将缺失路径伪造为已找到。旧未注册说明过期，当前导航已订正。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["inputs为来源、execution为只读索引和复测、evidence为日志与影响、outputs为当前矩阵/事实和Word源，archive为四原候选。没有真实旧实现工具或验收报告可归档，不制造清理。", "研究原件、共享治理与工程保持当前归属；任务整理后仍须整体迁入双层并修运行路径。本包状态不变，规范化不是根目录迁移完成。"]},
+    {"heading": "上下游交接", "paragraphs": ["U12-02交步骤材料和真实标注缺口，U12-03交真实片段及教学冻结，U12-04交当前SAP和正式功效/缺失缺口，U12-06交六实际研究入口。历史签收只覆盖相应候选，正式教学预算/效应阈值/关键错误/N/MNAR仍空。", "当前覆盖交U12-06接线、U12-11数值、G-03冻结、I-01真实链和Z-01候选交付；旧字节恢复仍需真实匹配原件或有据范围裁定。作者复测不代独立复核/第二人，静态矩阵不解除研究设计或投稿授权。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["本包未领取、未指定独立复核者、未签署；U12-06傅钧烨领取保留。当前24 DONE表只索引已有审阅与缺口，不为缺真实签收的任务补造签名，不把旧签名移植到本轮。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计68/71包规范化，余3，下一U12-10。U12-09 WAIT_DEP、六字节缺口及正式研究阻断保持；整体根目录物理迁移尚未完成。"]},
+    {"heading": "审阅来源", "paragraphs": ["活动注册、15消费者、研究1.2、原历史binding及Git对象、实际可访问基线、24已整理DONE总结、五上游当前事实及专项，正式入口观测和真实链/冻结/交付交接。"]}
+  ],
+  "findings": [
+    {"id": "U1209-N01", "status": "FIXED_ACTUAL_RELOCATION_AND_CURRENT_ENTRY", "description": "四旧候选实际归档，原字节/输入ID保留，旧未注册入口订正", "source": "agent/tasks/U12-09/archive/README.md"},
+    {"id": "U1209-N02", "status": "DELIVERED_CURRENT_STATIC_INDICES_NOT_FORMAL_ACCEPTANCE", "description": "15消费者与24 DONE影响可重建，真实接线与签收不从路径存在推定", "source": "agent/tasks/U12-09/outputs/current-consistency.json"},
+    {"id": "U1209-N03", "status": "OPEN_SIX_ORIGINAL_WORKTREE_BYTE_IDENTITIES", "description": "六引用四源Git身份匹配，但检查的可访问来源未匹配旧声明字节，原binding不改", "source": "agent/tasks/U12-09/outputs/legacy-byte-observations.json"},
+    {"id": "U1209-N04", "status": "OPEN_REAL_CONSISTENCY_REVIEW_AND_SIGNOFF", "description": "真实测量/教学/统计冻结/运行接线与独立及真人签收仍缺，业务WAIT_DEP保持", "source": "agent/tasks/U12-09/outputs/current-consistency.md"},
+    {"id": "U1209-N05", "status": "OPEN_ROOT_MIGRATION", "description": "旧根业务与共享模块未整体迁入双层", "source": "agent/normalization.md"}
+  ],
+  "next_task": "U12-10",
+  "source_links": [
+    {"label": "当前一致性交接", "path": "agent/tasks/U12-09/outputs/current-consistency.md"},
+    {"label": "15消费者矩阵", "path": "agent/tasks/U12-09/outputs/consumer-matrix.csv"},
+    {"label": "24 DONE影响索引", "path": "agent/tasks/U12-09/outputs/old-done-impact.csv"},
+    {"label": "旧字节实际观测", "path": "agent/tasks/U12-09/outputs/legacy-byte-observations.json"},
+    {"label": "本轮软件验证", "path": "agent/tasks/U12-09/evidence/verification.json"}
+  ]
+}

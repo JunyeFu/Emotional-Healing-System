@@ -66,10 +66,10 @@
     "U12-05",
     "U12-06",
     "U12-07",
-    "U12-08"
+    "U12-08",
+    "U12-09"
   ],
   "remaining_packages": [
-    "U12-09",
     "U12-10",
     "U12-11",
     "U12-12"
@@ -1824,6 +1824,41 @@
       "id": "U1208-N04",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "共享业务与旧根目录尚未整体迁入人类和Agent双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-09",
+      "id": "U1209-N01",
+      "status": "FIXED_ACTUAL_RELOCATION_AND_CURRENT_ENTRY",
+      "description": "四旧候选实际归档，原字节/输入ID保留，旧未注册入口订正",
+      "source": "agent/tasks/U12-09/archive/README.md"
+    },
+    {
+      "task_id": "U12-09",
+      "id": "U1209-N02",
+      "status": "DELIVERED_CURRENT_STATIC_INDICES_NOT_FORMAL_ACCEPTANCE",
+      "description": "15消费者与24 DONE影响可重建，真实接线与签收不从路径存在推定",
+      "source": "agent/tasks/U12-09/outputs/current-consistency.json"
+    },
+    {
+      "task_id": "U12-09",
+      "id": "U1209-N03",
+      "status": "OPEN_SIX_ORIGINAL_WORKTREE_BYTE_IDENTITIES",
+      "description": "六引用四源Git身份匹配，但检查的可访问来源未匹配旧声明字节，原binding不改",
+      "source": "agent/tasks/U12-09/outputs/legacy-byte-observations.json"
+    },
+    {
+      "task_id": "U12-09",
+      "id": "U1209-N04",
+      "status": "OPEN_REAL_CONSISTENCY_REVIEW_AND_SIGNOFF",
+      "description": "真实测量/教学/统计冻结/运行接线与独立及真人签收仍缺，业务WAIT_DEP保持",
+      "source": "agent/tasks/U12-09/outputs/current-consistency.md"
+    },
+    {
+      "task_id": "U12-09",
+      "id": "U1209-N05",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "旧根业务与共享模块未整体迁入双层",
       "source": "agent/normalization.md"
     }
   ]

@@ -64,6 +64,7 @@
 | 看正式入口研究准入接线 | `agent/tasks/U12-06/outputs/current-runtime.md`（领取快照保留、六运行缺口与基础保护/研究批准分开） |
 | 看结果前中立写作规格 | `agent/tasks/U12-07/outputs/current-method.md`（PANAS主比较、11空表与两向规则；旧签收保留，新稿待真人） |
 | 看可选阶段三独立附录 | `agent/tasks/U12-08/outputs/current-extension.md`（四结果族、实际活动与策略冻结职责分开；真实附录和签收仍缺） |
+| 看升级覆盖一致性 | `agent/tasks/U12-09/outputs/current-consistency.md`（15消费者与24 DONE影响、六历史字节缺口；静态索引不放行研究） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |
