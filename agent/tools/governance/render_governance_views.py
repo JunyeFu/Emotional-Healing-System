@@ -8,7 +8,7 @@ from datetime import date
 from collections import Counter
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 PLAN = ROOT / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 GOV = PLAN / "24_团队任务与项目治理"
 GUIDE = (GOV / "u12_upgrade/README.md").relative_to(ROOT).as_posix()
@@ -28,7 +28,7 @@ def write(path, text):
 def progress_section(text, summary):
     block = ("<!-- TEAM_PROGRESS_START -->\n## 团队任务进度\n\n"
              + summary + "\n\n"
-             + "[![团队任务进度图](assets/readme/team-task-progress.svg)](assets/readme/team-task-progress.svg)\n\n"
+             + "[![团队任务进度图](human/assets/readme/team-task-progress.svg)](human/assets/readme/team-task-progress.svg)\n\n"
              + "点击图可打开原始SVG放大查看。图与摘要由同一任务注册表生成。\n"
              + "<!-- TEAM_PROGRESS_END -->")
     if "<!-- TEAM_PROGRESS_START -->" in text:
@@ -147,9 +147,9 @@ def main():
     out.append('</g></svg>')
     destination = ROOT / "04-成果与交付/项目流程图"
     write(destination / "SRP_任务状态与门禁解释清单_v1.0.svg", '\n'.join(out))
-    runpy.run_path(str(ROOT / "Tools/Governance/render_team_task_flow.py"))["main"]()
+    runpy.run_path(str(Path(__file__).with_name("render_team_task_flow.py")))["main"]()
     write(destination / "SRP_项目任务关联与门禁流程_v1.0.svg", (ROOT / "00-项目管理/看板与进度/SRP团队任务分工与门禁_当前状态.svg").read_text(encoding="utf-8"))
-    write(ROOT / "assets/readme/team-task-progress.svg",
+    write(ROOT / "human/assets/readme/team-task-progress.svg",
           (destination / "SRP_项目任务关联与门禁流程_v1.0.svg").read_text(encoding="utf-8"))
     print("WROTE: governance entrypoints, board, tree, brief and SVG pair")
 

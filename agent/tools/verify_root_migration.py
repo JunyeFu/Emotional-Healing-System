@@ -78,7 +78,10 @@ def main():
         word_links += check_word(task_id, summary)
     current_paths = ['human/project/README.md', 'human/project/PROJECT_MODULES.md',
                      'agent/runtime/README.md', 'agent/archive/project/README.md',
-                     'agent/archive/runtime/README.md']
+                     'agent/archive/runtime/README.md', 'README.md', 'human/README.md',
+                     'human/deliverables/README.md', 'human/deliverables/archive/README.md',
+                     'agent/archive/delivery/README.md', '04-成果与交付/README.md',
+                     '04-成果与交付/PDF简报/README.md']
     markdown_links = sum(check_markdown(ROOT / path) for path in current_paths)
     unexpected = sorted(p.name for p in ROOT.iterdir() if p.name not in layout['root_entries_retained'])
     if args.require_complete and (pending or unexpected or not layout['root_migration_complete']):

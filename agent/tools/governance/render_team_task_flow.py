@@ -11,7 +11,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 GOV = ROOT / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理"
 REGISTRY = GOV / "05_可领取任务包.csv"
 OUTPUT = ROOT / "00-项目管理/看板与进度/SRP团队任务分工与门禁_当前状态.svg"
@@ -219,7 +219,7 @@ def main() -> None:
         f'<text x="94" y="{legend_y + 106}" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">READY 仅表示所有仓库内前置任务已 DONE 且可领取，不表示实现、正式构建或联合运行已经完成。</text>',
         f'<text x="94" y="{legend_y + 138}" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">IN_REVIEW 仍受复核或外部门约束；WAIT_DEP_EXTERNAL / BLOCKED_EXTERNAL 不可由仓库内文件自行关闭。</text>',
         f'<text x="94" y="{legend_y + 170}" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#334155">蓝区在实验开始门前；黄区由 G-03 放行正式阶段一并持续到 A-06 范围关闭；绿区才可启动 W-02 结果写作。</text>',
-        f'<text x="94" y="{legend_y + 207}" font-family="Consolas, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">Source: 05_可领取任务包.csv · Renderer: Tools/Governance/render_team_task_flow.py</text>',
+        f'<text x="94" y="{legend_y + 207}" font-family="Consolas, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">Source: 05_可领取任务包.csv · Renderer: agent/tools/governance/render_team_task_flow.py</text>',
         "</svg>",
     ])
     OUTPUT.write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")

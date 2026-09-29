@@ -175,9 +175,15 @@ def main():
     pending = [e for e in layout['entries'] if e['status'] != 'MIGRATED']
     chain.add_heading('根目录物理迁移', level=1)
     chain.add_paragraph(f"实际迁移{len(migrated)}/{len(layout['entries'])}项，尚余{len(pending)}项；整体迁移未完成。逐包整理不代替运行入口、生成器、历史原件及当前Word来源检查。")
-    for entry in migrated:
-        chain.add_paragraph(f"{entry['old']} → {entry['new']}")
+    for offset in range(0, len(migrated), 2):
+        chain.add_paragraph('；'.join(
+            f"{entry['old']} → {entry['new']}"
+            for entry in migrated[offset:offset + 2]
+        ))
     chain.add_paragraph('旧框架及Mock/Spout手册已原样归档，当前人类概览位于human/project/README.md，运行入口位于agent/runtime/README.md。业务签署和进行中分发不因迁移而改变。')
+    if any(e['old'] == 'output' for e in migrated):
+        delivery = read_json(ROOT / 'agent/evidence/root-migration-deliverables.json')
+        chain.add_paragraph(delivery['human_review'])
     chain.save(ROOT / 'human/project-review.docx')
     progress = {'completed_packages': completed, 'remaining_packages': remaining,
                 'root_migration_complete': False, 'findings': findings}

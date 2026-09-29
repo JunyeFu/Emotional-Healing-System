@@ -20,4 +20,4 @@
 
 ## 数学建模论文规范简报
 
-三份项目简报及其可复现构建、验证入口见 `PDF简报/README.md`。最终 PDF 输出到项目根目录 `output/pdf/`，包括项目目标与可行性、固定任务概要、项目设计与实验流程。
+当前任务概要与构建入口见[简报说明](PDF简报/README.md)，PDF输出到`human/deliverables/pdf/`。旧三份简报已经归档至[历史简报](../human/deliverables/archive/README.md)，不得把旧机制或状态计数当成当前设计。

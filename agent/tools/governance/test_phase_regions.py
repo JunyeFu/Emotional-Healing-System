@@ -2,7 +2,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 FILES = (
     ROOT / "04-成果与交付/项目流程图/SRP_任务状态与门禁解释清单_v1.0.svg",
     ROOT / "04-成果与交付/项目流程图/SRP_项目任务关联与门禁流程_v1.0.svg",

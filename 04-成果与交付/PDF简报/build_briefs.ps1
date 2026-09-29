@@ -5,7 +5,7 @@ $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $python = 'D:\MathModelingTools\envs\cumcm\python.exe'
 $agentRoot = if ($env:AGENT_ROOT) { $env:AGENT_ROOT } else { 'D:\Agent' }
 $builder = Join-Path $agentRoot 'math-modeling\math-modeling\runtime\build_paper.py'
-$output = Join-Path $projectRoot 'output\pdf'
+$output = Join-Path $projectRoot 'human\deliverables\pdf'
 
 if (-not (Test-Path -LiteralPath $python)) {
     throw "Canonical math-modeling Python not found: $python"
@@ -14,10 +14,8 @@ if (-not (Test-Path -LiteralPath $builder)) {
     throw "Math-modeling PDF builder not found: $builder"
 }
 
-& $python (Join-Path $PSScriptRoot 'generate_brief_figures.py')
-
 $sources = Get-ChildItem -LiteralPath $PSScriptRoot -Filter '*.md' -File |
-    Where-Object { $_.Name -ne 'README.md' } |
+    Where-Object { $_.Name -eq '02_固定任务概要.md' } |
     Sort-Object Name
 
 foreach ($source in $sources) {

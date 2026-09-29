@@ -9,6 +9,7 @@ def test_insert_before_first_section():
     assert text.index("TEAM_PROGRESS_START") < text.index("## Overview")
     assert "DONE=20" in text
     assert text.count("![团队任务进度图]") == 1
+    assert '(human/assets/readme/team-task-progress.svg)' in text
 
 
 def test_refresh_replaces_old_state_and_preserves_prose():
@@ -22,3 +23,13 @@ def test_refresh_replaces_old_state_and_preserves_prose():
 
 def test_document_without_sections():
     assert "TEAM_PROGRESS_END" in render("# SRP\n", "DONE=20")
+
+
+def test_renderer_root_and_current_media_target():
+    namespace = runpy.run_path(str(Path(__file__).with_name("render_governance_views.py")))
+    root = Path(__file__).resolve().parents[3]
+    assert namespace['ROOT'] == root
+    assert namespace['GOV'].is_dir()
+    assert (root / 'human/assets/readme/team-task-progress.svg').is_file()
+    assert not (root / 'Tools').exists()
+    assert not (root / 'assets').exists()

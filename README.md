@@ -17,7 +17,7 @@ SRP面向短时负性情绪调节的交互研究，比较**场景原生提示**�
 
 治理v1.2：71项任务（68固定+3模板）；DONE=24项（含18项原签收）；IN_PROGRESS=A-03/U12-06；IN_REVIEW=U12-03；A-03-SPEC为DONE；READY=V-05/T-02；真实准入与研究数值仍未冻结
 
-[![团队任务进度图](assets/readme/team-task-progress.svg)](assets/readme/team-task-progress.svg)
+[![团队任务进度图](human/assets/readme/team-task-progress.svg)](human/assets/readme/team-task-progress.svg)
 
 点击图可打开原始SVG放大查看。图与摘要由同一任务注册表生成。
 <!-- TEAM_PROGRESS_END -->
@@ -77,7 +77,7 @@ Python是流程与时间权威。Unity不依赖TD提供画面；TD不能直接�
 | 步骤实例理解测量 | [U12-02](02-技术研发/srp_step_measurement/README.md) |
 | 公平教学与形成性比较 | [U12-03教学合同](00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-03_fair_training/README.md) |
 | 团队工具版本 | [环境冻结基线](00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/11_团队工具与环境冻结基线_v1.0.md) |
-| 完整任务概要 | [任务概要PDF](output/pdf/02_固定任务概要.pdf) |
+| 完整任务概要 | [任务概要PDF](human/deliverables/pdf/02_固定任务概要.pdf) |
 
 ## 验证与使用边界
 

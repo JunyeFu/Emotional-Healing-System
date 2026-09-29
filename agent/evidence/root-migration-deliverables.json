@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-29",
+  "physical_moves": ["Tools/Governance to agent/tools/governance", "assets to human/assets", "output to human/deliverables"],
+  "old_roots_absent": ["Tools", "assets", "output"],
+  "historical_pdf_disposition": "Three old published PDFs and one stale local duplicate moved unchanged to documented archives",
+  "observed_pdf_defects": ["Old task PDF said DONE=22 while registry and Markdown said 24", "Old design PDF retained superseded shield/path/fade and v1.1 research rules"],
+  "repair": "Build only current task summary into human/deliverables/pdf; archive v1.1 sources and figure generator/assets; compare PDF count and active sets with real registry",
+  "human_review": "治理工具和首页SVG已实际迁入双层；旧任务PDF的DONE=22与当前24不符，旧目标/流程PDF仍含退役机制，均已归档。当前六页任务概要由同版Markdown重建并核对注册表，不是参与者研究结果。",
+  "math_modeling_builder": "D:/Agent/math-modeling/math-modeling/runtime/build_paper.py",
+  "current_pdf": "human/deliverables/pdf/02_固定任务概要.pdf",
+  "current_pdf_pages": 6,
+  "current_pdf_sha256": "FB005CCC4F324E9EAB274EC8B301AFAB78E52CC44A95285E28F2BD5C13AD87F1",
+  "business_status_changed": false,
+  "frozen_dispatch_or_signed_evidence_rewritten": false,
+  "root_migration_complete": false
+}
