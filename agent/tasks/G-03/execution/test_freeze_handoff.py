@@ -59,7 +59,7 @@ def test_empty_index_matches_all_fifteen_authoritative_freezes():
 
 def test_primary_guardrail_and_candidate_numbers_remain_separate():
     protocol = read(PLAN / '00_总控/protocol_authority_v1.2.json')
-    sap = read(GOV / 'u12_upgrade/U12-04_panas_sap/contract.json')
+    sap = read(ROOT / 'agent/tasks/U12-04/outputs/contract.json')
     assert sap['formal_collection_allowed'] is protocol['formal_participant_collection_allowed'] is False
     assert sap['primary']['outcome'] == protocol['primary']['outcome'] == 'panas_negative_affect_post_adjusted_for_pre'
     assert sap['primary']['report_even_if_functional_guard_fails'] is True

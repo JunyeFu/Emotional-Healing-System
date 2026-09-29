@@ -61,10 +61,10 @@
     "W-04",
     "U12-01",
     "U12-02",
-    "U12-03"
+    "U12-03",
+    "U12-04"
   ],
   "remaining_packages": [
-    "U12-04",
     "U12-05",
     "U12-06",
     "U12-07",
@@ -1339,8 +1339,8 @@
     {
       "task_id": "A-05",
       "id": "A05-N02",
-      "status": "OPEN_CANDIDATE_SAP_WORDING_REVISION",
-      "description": "观测集资格与48块表述和实现不同，保留签收原件并登记受控修订",
+      "status": "FIXED_ACTIVE_SAP_WORDING_REVIEW_PENDING",
+      "description": "活动SAP观测集与48总人数已订正，原签收保留，正式分析与新修订复核仍待完成",
       "source": "agent/tasks/A-05/evidence/consumer-impact.md"
     },
     {
@@ -1663,6 +1663,41 @@
       "id": "U1203-N04",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "旧根业务目录尚未整体迁入双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-04",
+      "id": "U1204-N01",
+      "status": "FIXED_ACTUAL_RELOCATION",
+      "description": "12原文件实际归档，活动合同与原签署保留，当前输出和工具分离",
+      "source": "agent/tasks/U12-04/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-04",
+      "id": "U1204-N02",
+      "status": "FIXED_ACTIVE_SAP_AND_POWER_REVIEW_PENDING",
+      "description": "观测/完成集、48总人数、实际拟合自由度、效应标度和排他输出订正，活动复核待完成",
+      "source": "agent/tasks/U12-04/evidence/verification.json"
+    },
+    {
+      "task_id": "U12-04",
+      "id": "U1204-N03",
+      "status": "PREEXISTING_README_IDENTITY_MISMATCH_PRESERVED",
+      "description": "原清单README指纹本轮前已不吻合，8核心交付吻合，原件不覆盖",
+      "source": "agent/tasks/U12-04/archive/README.md"
+    },
+    {
+      "task_id": "U12-04",
+      "id": "U1204-N04",
+      "status": "OPEN_FORMAL_ANALYSIS_AND_FREEZE",
+      "description": "正式MI/MNAR、联合功效、真实计分及N/界值和15项条件仍未完成",
+      "source": "agent/tasks/U12-04/outputs/current-statistics.json"
+    },
+    {
+      "task_id": "U12-04",
+      "id": "U1204-N05",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享模块与旧根业务目录尚未整体迁入双层",
       "source": "agent/normalization.md"
     }
   ]

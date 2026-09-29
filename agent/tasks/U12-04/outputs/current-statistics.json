@@ -1,0 +1,24 @@
+{
+  "task_id": "U12-04",
+  "business_status": "DONE",
+  "claimant": "Codex(Grip)/小彬",
+  "historical_candidate": "d701a4054a4a36030d37335efa65d67a93ed35c3",
+  "historical_human_review": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-21",
+    "scope": "DESIGN_AND_SYNTHETIC_ONLY"
+  },
+  "formal_collection_allowed": false,
+  "formal_sap_frozen": false,
+  "formal_n": null,
+  "formal_mi_delivered": false,
+  "formal_joint_power_delivered": false,
+  "current_revision_human_acceptance": "NOT_SIGNED",
+  "current_revision_independent_review": "NOT_RUN",
+  "old_readme_evidence_identity": "PREEXISTING_MISMATCH_PRESERVED",
+  "current_analysis_sets_are_formal": false,
+  "observed_case_is_complete_four_module": false,
+  "effect_scale": "RESIDUAL_SD_NOT_MARGINAL_COHENS_D",
+  "baseline_coefficient_is_correlation": false,
+  "output_overwrite_allowed": false
+}

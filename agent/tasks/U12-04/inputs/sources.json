@@ -1,0 +1,30 @@
+{
+  "paths": [
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/acceptance/U12-04.json",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-04_第二人审核报告_已签署.md",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-04_panas_sap/U12-04独立复核记录.md",
+    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "agent/tasks/A-02/outputs/current-statistics.md",
+    "agent/tasks/A-03/outputs/current-statistics.md",
+    "agent/tasks/U12-03/outputs/current-training.md",
+    "agent/tasks/A-05/outputs/current-analysis.md",
+    "agent/tasks/U12-04/archive/signed-candidate/evidence.json",
+    "agent/tasks/U12-01/outputs/current-governance.md"
+  ],
+  "archived_bytes": {
+    "build_evidence.py": "5B70358938CBF9B8FC63958DEF011E30F575479AE3F8307E8DE72C774B624473",
+    "contract.json": "F29C08504D207CE510845C1952077185427168C6D2C2ACBD3CFD3237FA199A30",
+    "evidence.json": "3583F249024F499E795A51AC4F9481B513720DCFF68007D3E3A331EC213B8692",
+    "power_grid.json": "C8C33B0FC3028C0E4C9DD0FFD7D3821F09B37187C2B010C5EA62B0946DD74929",
+    "power_report.md": "A5D62CCA73FE21F4A3B9B6EAFB61CC2527E6705F2EFF88441432748C8FE11B53",
+    "power_simulation.py": "AB8618FC70578986FB4661ED2120516CCF2CF9997EC43EBE47A591CB60C61094",
+    "power_spec.json": "9296209ADB8131426D7A5AA250DAAE38E15B3D2C8F084F148FB6A469D823A70B",
+    "README.md": "01B48DA7E8A442777FB8128F25E2FEDCB9F9F81F395A46F714D5719E73BD9103",
+    "sap.md": "F89C6A9D89A7C7EFB631C41D26347D32CF4EBB8FA692B047E8AD9E3642463165",
+    "sources.md": "CDB8A8A57B46594F0B4E206C7B3C67C18A0C1A7D8333A4B8F8314AB5E5C20F22",
+    "test_contract.py": "64FA5DF277ACCBB91E6EB75D8D428A4302322B639A2CDEF0E5D0672B95D1FE2E",
+    "U12-04独立复核记录.md": "42F48FA23E69C270D82A972C6D8B22E9B789E4D6BC8AF4EABF1ACB9FC209928B",
+    "validate.py": "8D5BDCF391E3A9AC103514280574B662E79070C0BAF1C6C2437F67DB0B374135"
+  }
+}

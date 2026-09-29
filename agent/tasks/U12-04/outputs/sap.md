@@ -13,6 +13,8 @@
 - **交付物**：SAP、差值方向、参数来源、功效模拟规格
 - **证据类别**：DESIGN_AND_SYNTHETIC_ONLY（合成数据功效推演；真实数据与研究冻结另由对应任务交付）
 
+本轮活动修订：原2026-09-21签收候选保存在archive/signed-candidate，不继承其签名；正式SAP仍未冻结。
+
 ## 2. 主结果（Primary）
 
 | 属性 | 规格 | 来源 |
@@ -39,8 +41,8 @@
 
 ### 2.2 主结果分析集
 
-- 主结果以全随机化（all_randomized）为主要分析集；完整完成四模块者（complete_four_module）作为观测分析集。
-- 功效推演按 PRIMARY_CONSERVATIVE（保守）与 OBSERVED_CASE（观测）双分析集分别计算（与 A-03-SPEC Gate2 可行性模拟的分析集约定一致）。
+- 主结果以全随机化（all_randomized）为主要分析集；完整四模块者是功能护栏的另一个分析集，不能自动替代主结果分析集。
+- 本包合成推演沿用PRIMARY_CONSERVATIVE与OBSERVED_CASE命名：前者缺失后测用前测代填，不保证保守、不是正式MI；后者只筛后测可用，不检查四模块完成。正式主分析及缺失方案由A-02/U12-11冻结。
 
 ## 3. 功能护栏（Functional Guard）
 
@@ -80,7 +82,7 @@
 
 | 锚点 | 值 | 含义 |
 |---|---|---|
-| level_c_anchor | 48 | 每臂平衡序列数锚点（candidate） |
+| level_c_anchor | 48 | Level C总人数锚点（candidate），不是每臂48人 |
 | stage_1_old_complete_target | 192 | 旧完成目标（非最终功效锚点） |
 | stage_1_old_recruitment_cap | 240 | 旧招募上限（非最终） |
 | formal_randomized_n | null（UNFROZEN） | 正式随机化 N，待真实冻结 |
@@ -90,6 +92,7 @@
 | equivalence_power_not_claimed | true | 不声明等效功效 |
 
 - **N 与效应值不写死**：功效模拟以 N × 效应网格输出，由真实冻结决定最终 N。
+- 合成d按残差SD计，不是边际Cohen d；基线系数0.5不是相关系数。模拟只含两个随机层，不执行24天气序列分配，也不模拟真实四模块完成、PF联合功效或正式MI。
 
 ## 8. 序列与随机化（Sequence & Randomization）
 

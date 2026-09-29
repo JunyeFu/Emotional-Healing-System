@@ -26,15 +26,15 @@
   },
   "grid": {
     "n_total_grid": [48, 96, 144, 192, 240],
-    "effect_grid_cohens_d": [0.2, 0.3, 0.4, 0.5],
+    "effect_grid_residual_sd": [0.2, 0.3, 0.4, 0.5],
     "balance": "1:1",
     "per_condition_anchor": 24,
     "block_size_candidate": 48
   },
   "data_generation": {
-    "rho_pre_post": 0.5,
+    "baseline_coefficient": 0.5,
     "centered_pre_sd": 1.0,
-    "strata_effect_sd": 0.1,
+    "binary_strata_coefficient": 0.1,
     "noise_sd": 1.0,
     "missing_post_rate_native": 0.02,
     "missing_post_rate_abstract": 0.01
@@ -43,10 +43,10 @@
     "PRIMARY_CONSERVATIVE": {
       "inclusion": "all_randomized",
       "missing_policy": "carry_forward_pre_no_change",
-      "note": "保守：缺失后测按无变化处理（lower_is_better 下低估 native 优势）"
+      "note": "沿用历史名称，前测代填不保证保守，不是正式MI"
     },
     "OBSERVED_CASE": {
-      "inclusion": "complete_four_module_with_post",
+      "inclusion": "observed_post_only",
       "missing_policy": "complete_post_only",
       "note": "仅使用观测到 NA_post 的参与者"
     }
@@ -66,6 +66,8 @@
     "FORMAL_N_AND_MARGIN_NOT_FROZEN",
     "OLD_ANCHORS_ARE_NOT_FINAL_POWER",
     "EQUIVALENCE_POWER_NOT_CLAIMED",
-    "MISSINGNESS_POLICY_PRE-FREEZE"
+    "MISSINGNESS_POLICY_PRE-FREEZE",
+    "RESIDUAL_SD_NOT_MARGINAL_COHENS_D",
+    "NO_FORMAL_PRIMARY_OR_JOINT_GUARD_POWER_CLAIM"
   ]
 }

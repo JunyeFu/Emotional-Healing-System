@@ -1,0 +1,142 @@
+{
+  "task_id": "U12-04",
+  "title": "U12 04 PANAS主结果统计规格与功效交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U12-04保留原限定候选DONE。实际工具与12原文件已归入Agent层，活动SAP及功效实现纠错、六个消费者修复；新修订不继承原签名，正式缺失分析、样本量和研究冻结仍未完成。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-21",
+    "commit": "d701a4054a4a36030d37335efa65d67a93ed35c3",
+    "method": "原Codex-Agent记录独立PASS，傅钧烨签收设计与合成候选；本轮仅作者修订和软件复测，无新独立复审或真人签收。原签署对象不改，活动修订另记。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务4人日，依赖U12-01/F-02；原领取Codex(Grip)/小彬，历史分支codex/u12-04-panas-sap。2026-09-21原限定设计与合成候选签收，不是正式SAP或研究数值冻结。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1冻结输入、差值方向及参数来源可追溯；AC2双侧主比较、等效默认关，正反零及缺失情景覆盖，N/界值待真实冻结；AC3原提交、独立及真人签收保留，不代签外部条件。",
+        "四段为核对主结果、划分分析与解释、模拟合成网格、复测后交下游。正式MI、完整四模块资格、PF联合功效和真实样本量不由这份合成网格替代。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "固定TASK及五目录，12原文件实际归档，原独立记录保留签署索引位置且完整候选有同字节副本。活动合同保留原字节，SAP/功效规格与执行实现订正。",
+        "活动20单元总N×残差效应网格，各1000次、两分析情景；原网格/报告不覆盖。A-02/A-03/A-04/A-05/G-03/F-02实际入口修复，A-02/A-05结构化总结联动更新。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "阶段一基线调整PANAS负性情绪为主结果，native-minus-abstract；HC3双侧0.05。负值支持原生更低、正值支持抽象更低；不显著不等于反向优势或等效，功能或操纵失败不隐藏有效主比较。",
+        "0.075界、100次插补和0.9功效目标均候选。48是Level C总人数锚点，24是每臂序列数；已分配块不按完成补位。15项正式冻结尚缺，不从网格自动选定正式N。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "138专项33.64秒通过，覆盖原18合同、13原件字节、8核心指纹及既存README漂移、7原来源、签署绑定、拟合自由度、零效应CLI、拒绝覆盖与跨包消费。",
+        "新20单元网格确定性复算通过；F-02入口、协议/治理、71注册及5分发/61快照通过，根635项48.72秒通过。没有真实数据分析、正式功效校准、Unity/TD或新真人签署。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "原SAP把后测可用者写成四模块完成者、把48写成每臂数，活动版本已订正。模拟的d按残差SD，0.5是基线回归系数，前测代填不保证保守且不是MI；活动规格如实标注。",
+        "工具改按每次实际拟合n减4取t自由度，SciPy必需；零效应覆盖生效，奇数N不舍人，新目录排他写。首轮4项迁移失败已修实际导航和A-05目录区分，保存失败摘要；原README指纹漂移不伪装为原签收已修。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "活动合同/修订SAP/功效规格在outputs，工具在execution，新复测在evidence，原件在archive/signed-candidate。原acceptance及真人/独立记录不改，新生成器只写独立当前清单。",
+        "先修Agent与消费者，再生成U12-04及A-02/A-05 Word和串联审阅；共享业务模块和旧根目录仍待整体迁移。归档脚本不继续运行。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "A-02负责真实分析集、MI合并/MNAR及敏感性；A-03负责真实计分和盲态校准，U12-11冻结效应/界值/N及15项条件，G-03落实研究准入，A-05正式分析主比较。",
+        "F-02消费未改的合同，A-04仅复用HC3数学辅助而不继承阶段一SAP；U12-07/U12-10按独立PANAS、功能与操纵分类。原在研输入不刷新，合成两个随机层不代替24序列分配或真实数据。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原记录的Codex-Agent独立PASS和傅钧烨签收仍针对d701候选。本轮由作者Agent修订并复测，未产生新的独立Agent审查或真人签名，不把原签名转给活动工具。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计63/71包规范化，余8，下一U12-05。原候选限定DONE不变，活动修订尚待复核，整个根目录双层物理迁移及运行引用修复仍未完成。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "原SAP/合同/功效代码、网格及参数表，机器acceptance和真人/独立记录，研究v1.2与当前A-02/A-03/F-02/G-03/A-05交接。README漂移是本轮前已存在的清单差异，未推定真实研究完成。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "U1204-N01",
+      "status": "FIXED_ACTUAL_RELOCATION",
+      "description": "12原文件实际归档，活动合同与原签署保留，当前输出和工具分离",
+      "source": "agent/tasks/U12-04/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1204-N02",
+      "status": "FIXED_ACTIVE_SAP_AND_POWER_REVIEW_PENDING",
+      "description": "观测/完成集、48总人数、实际拟合自由度、效应标度和排他输出订正，活动复核待完成",
+      "source": "agent/tasks/U12-04/evidence/verification.json"
+    },
+    {
+      "id": "U1204-N03",
+      "status": "PREEXISTING_README_IDENTITY_MISMATCH_PRESERVED",
+      "description": "原清单README指纹本轮前已不吻合，8核心交付吻合，原件不覆盖",
+      "source": "agent/tasks/U12-04/archive/README.md"
+    },
+    {
+      "id": "U1204-N04",
+      "status": "OPEN_FORMAL_ANALYSIS_AND_FREEZE",
+      "description": "正式MI/MNAR、联合功效、真实计分及N/界值和15项条件仍未完成",
+      "source": "agent/tasks/U12-04/outputs/current-statistics.json"
+    },
+    {
+      "id": "U1204-N05",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享模块与旧根业务目录尚未整体迁入双层",
+      "source": "agent/normalization.md"
+    }
+  ],
+  "next_task": "U12-05",
+  "source_links": [
+    {
+      "label": "当前统计交接",
+      "path": "agent/tasks/U12-04/outputs/current-statistics.md"
+    },
+    {
+      "label": "活动SAP",
+      "path": "agent/tasks/U12-04/outputs/sap.md"
+    },
+    {
+      "label": "当前合成网格",
+      "path": "agent/tasks/U12-04/outputs/power/power_report.md"
+    },
+    {
+      "label": "本轮复测",
+      "path": "agent/tasks/U12-04/evidence/verification.json"
+    },
+    {
+      "label": "实际修订与消费",
+      "path": "agent/tasks/U12-04/evidence/consumer-impact.md"
+    }
+  ]
+}

@@ -92,3 +92,6 @@ agent/tasks/U12-03/outputs/contract.json -text whitespace=cr-at-eol
 agent/tasks/U12-03/outputs/teaching.md -text whitespace=cr-at-eol
 agent/tasks/U12-03/outputs/formative.md -text whitespace=cr-at-eol
 agent/tasks/U12-03/outputs/observation.template.json -text whitespace=cr-at-eol
+agent/tasks/U12-04/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-04/outputs/contract.json -text whitespace=cr-at-eol
+agent/tasks/U12-04/outputs/power/*.json text eol=lf

@@ -5,10 +5,10 @@ Primary model (protocol_authority_v1.2.json):
     contrast = native_minus_abstract, lower_is_better = true
     variance = HC3, test = two_sided, alpha = 0.05
 
-This script computes a power grid over total N x Cohen's d (native vs abstract)
+This script computes a grid over total N x residual-SD effect (native vs abstract)
 for two analysis sets:
   - PRIMARY_CONSERVATIVE : all randomized; missing NA_post carried forward
-    to pre (no change) -> conservative under lower_is_better.
+    to pre (no change); the inherited name does not guarantee conservatism.
   - OBSERVED_CASE        : participants with observed NA_post only.
 
 N and effect size are NOT frozen; the grid is a reference input for the
@@ -23,6 +23,7 @@ import math
 from pathlib import Path
 
 import numpy as np
+from scipy import stats as _stats
 
 ANALYSIS_SETS = ("PRIMARY_CONSERVATIVE", "OBSERVED_CASE")
 DEFAULT_N_GRID = (48, 96, 144, 192, 240)
@@ -30,18 +31,11 @@ DEFAULT_EFFECT_GRID = (0.2, 0.3, 0.4, 0.5)
 DEFAULT_SEED = 20260906
 DEFAULT_REPLICATIONS = 1000
 
-try:  # scipy improves the t-test critical values; fallback to normal approx.
-    from scipy import stats as _stats  # type: ignore
+def _two_sided_p(t_value: float, df: float) -> float:
+    return float(2.0 * _stats.t.sf(abs(t_value), df=df))
 
-    def _two_sided_p(t_value: float, df: float) -> float:
-        return float(2.0 * (1.0 - _stats.t.cdf(abs(t_value), df=df)))
 
-    T_DISTRIBUTION = True
-except Exception:  # pragma: no cover - fallback path
-    def _two_sided_p(t_value: float, df: float) -> float:  # noqa: ARG001
-        return float(2.0 * (1.0 - 0.5 * (1.0 + math.erf(abs(t_value) / math.sqrt(2.0)))))
-
-    T_DISTRIBUTION = False
+T_DISTRIBUTION = True
 
 
 def _ols_hc3(X: np.ndarray, y: np.ndarray) -> dict[str, float]:
@@ -55,11 +49,11 @@ def _ols_hc3(X: np.ndarray, y: np.ndarray) -> dict[str, float]:
     meat = resid * resid / (denom * denom)
     cov = xtx_inv @ (X.T * meat) @ X @ xtx_inv
     se = np.sqrt(np.diag(cov))
-    return {"beta": float(beta[1]), "se": float(se[1])}
+    return {"beta": float(beta[1]), "se": float(se[1]), "df": float(n - p)}
 
 
 def _generate_participants(
-    rng: np.random.Generator, n_total: int, effect_d: float, rho: float = 0.5
+    rng: np.random.Generator, n_total: int, effect_d: float, baseline_coefficient: float = 0.5
 ) -> dict[str, np.ndarray]:
     per_condition = n_total // 2
     n = per_condition * 2
@@ -69,7 +63,7 @@ def _generate_participants(
     pre = rng.normal(0.0, 1.0, size=n)
     noise = rng.normal(0.0, 1.0, size=n)
     effect = -effect_d * cue  # native lower on NA (lower_is_better)
-    post = 3.0 + effect + rho * pre + 0.1 * strata + noise
+    post = 3.0 + effect + baseline_coefficient * pre + 0.1 * strata + noise
     native = cue.astype(bool)
     observed = rng.random(size=n) < np.where(native, 0.98, 0.99)
     return {
@@ -116,6 +110,7 @@ def _cell_power(
     per_set: dict[str, list[float]] = {s: [] for s in ANALYSIS_SETS}
     estimates: dict[str, list[float]] = {s: [] for s in ANALYSIS_SETS}
     ses: dict[str, list[float]] = {s: [] for s in ANALYSIS_SETS}
+    dfs: dict[str, list[float]] = {s: [] for s in ANALYSIS_SETS}
 
     for _ in range(replications):
         results = _replicate(rng, n_total, effect_d)
@@ -125,10 +120,12 @@ def _cell_power(
             if math.isnan(beta) or math.isnan(se) or se <= 0.0:
                 continue
             t_value = beta / se
-            p_value = _two_sided_p(t_value, df=max(n_total - 4, 1))
+            df = results[analysis_set]["df"]
+            p_value = _two_sided_p(t_value, df=df)
             per_set[analysis_set].append(1.0 if p_value < 0.05 else 0.0)
             estimates[analysis_set].append(beta)
             ses[analysis_set].append(se)
+            dfs[analysis_set].append(df)
 
     cell: dict[str, object] = {"n_total": n_total, "effect_d": effect_d}
     for analysis_set in ANALYSIS_SETS:
@@ -141,6 +138,7 @@ def _cell_power(
             "mean_beta_estimate": float(np.mean(estimates[analysis_set])) if k else math.nan,
             "mean_hc3_se": float(np.mean(ses[analysis_set])) if k else math.nan,
             "valid_replications": k,
+            "mean_residual_df": float(np.mean(dfs[analysis_set])) if k else math.nan,
         }
     return cell
 
@@ -154,13 +152,17 @@ def run_power_grid(
 ) -> dict[str, object]:
     if replications < 100:
         raise ValueError("REPLICATIONS_TOO_SMALL")
+    if not n_grid or any(type(n) is not int or n < 48 or n % 2 for n in n_grid):
+        raise ValueError("TOTAL_N_REQUIRES_EVEN_INTEGER_AT_LEAST_48")
+    if not effect_grid or any(not math.isfinite(d) for d in effect_grid):
+        raise ValueError("FINITE_EFFECT_GRID_REQUIRED")
     cells = [
         _cell_power(seed + 1000 * ni + ei, replications, n_total, effect_d)
         for ni, n_total in enumerate(n_grid)
         for ei, effect_d in enumerate(effect_grid)
     ]
     return {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "evidence_class": "DESIGN_AND_SYNTHETIC_ONLY",
         "model": "NA_post ~ cue_mode + centered_NA_pre + randomization_strata",
         "contrast": "native_minus_abstract",
@@ -175,6 +177,11 @@ def run_power_grid(
         "n_grid": list(n_grid),
         "effect_grid": list(effect_grid),
         "t_distribution_used": T_DISTRIBUTION,
+        "effect_scale": "RESIDUAL_SD_NOT_MARGINAL_COHENS_D",
+        "baseline_coefficient": 0.5,
+        "observed_case_is_complete_four_module": False,
+        "missing_policy_is_formal_mi": False,
+        "carried_forward_guaranteed_conservative": False,
         "cells": cells,
         "frozen": {"n_frozen": False, "effect_frozen": False},
         "limitations": [
@@ -183,6 +190,8 @@ def run_power_grid(
             "OLD_ANCHORS_ARE_NOT_FINAL_POWER",
             "EQUIVALENCE_POWER_NOT_CLAIMED",
             "MISSINGNESS_POLICY_PRE_FREEZE",
+            "NO_FORMAL_PRIMARY_OR_JOINT_GUARD_POWER_CLAIM",
+            "UNCORRELATED_RANDOM_STRATA_NOT_FULL_24_SEQUENCE_ASSIGNMENT",
         ],
     }
 
@@ -204,11 +213,14 @@ def render_power_report(report: dict[str, object]) -> str:
     lines.append("- 对比：native_minus_abstract（lower_is_better）")
     lines.append("- 方差：HC3 稳健；检验：双侧；α = 0.05")
     lines.append("- 分析集：PRIMARY_CONSERVATIVE（all_randomized + 缺失 carry-forward）/ OBSERVED_CASE（仅观测到 NA_post）")
+    lines.append("- PRIMARY_CONSERVATIVE仅沿用名称，不保证保守；不是正式多重插补。OBSERVED_CASE不等于四模块完成者。")
+    lines.append("- d按合成残差SD=1计，不是边际Cohen d；基线0.5是回归系数，不是前后相关系数。")
+    lines.append("- Student t自由度取每次实际拟合行数减4，不借总随机化人数；SciPy为必需依赖。")
     lines.append(f"- seed = {report['seed']}；replications = {report['replications']}；t 分布临界值 = {report['t_distribution_used']}")
     lines.append("")
     lines.append("## 功效矩阵（拒绝率）")
     lines.append("")
-    lines.append("| N | d | PRIMARY_CONSERVATIVE | OBSERVED_CASE |")
+    lines.append("| 总N | 残差SD效应d | PRIMARY_CONSERVATIVE | OBSERVED_CASE |")
     lines.append("|---|---|---|---|")
     for cell in report["cells"]:  # type: ignore[union-attr]
         lines.append(
@@ -229,15 +241,17 @@ def render_power_report(report: dict[str, object]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="U12-04 PANAS power grid (synthetic)")
-    parser.add_argument("--output-dir", type=Path, default=Path(__file__).resolve().parent)
+    parser.add_argument("--output-dir", type=Path, default=Path(__file__).resolve().parents[1] / "outputs/power")
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument("--replications", type=int, default=DEFAULT_REPLICATIONS)
-    parser.add_argument("--n-total", type=int, default=0, help="single point N override")
-    parser.add_argument("--effect-d", type=float, default=0.0, help="single point d override")
+    parser.add_argument("--n-total", type=int, default=None, help="single point total N override")
+    parser.add_argument("--effect-d", type=float, default=None, help="single point residual-SD effect, including zero")
     args = parser.parse_args()
 
-    n_grid = (args.n_total,) if args.n_total else DEFAULT_N_GRID
-    effect_grid = (args.effect_d,) if args.effect_d else DEFAULT_EFFECT_GRID
+    n_grid = (args.n_total,) if args.n_total is not None else DEFAULT_N_GRID
+    effect_grid = (args.effect_d,) if args.effect_d is not None else DEFAULT_EFFECT_GRID
+    if args.output_dir.exists():
+        raise FileExistsError("OUTPUT_DIRECTORY_EXISTS")
     report = run_power_grid(
         seed=args.seed,
         replications=args.replications,
@@ -245,7 +259,7 @@ def main() -> None:
         effect_grid=effect_grid,  # type: ignore[arg-type]
     )
 
-    args.output_dir.mkdir(parents=True, exist_ok=True)
+    args.output_dir.mkdir(parents=True, exist_ok=False)
     grid_path = args.output_dir / "power_grid.json"
     report_path = args.output_dir / "power_report.md"
     grid_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

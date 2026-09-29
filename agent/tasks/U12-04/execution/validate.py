@@ -11,12 +11,13 @@ import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+OUTPUTS = HERE.parent / "outputs"
 ROOT = next(p for p in HERE.parents if (p / "AGENTS.md").exists())
 # protocol authority lives in the same v1.0 package root as this deliverable.
-PACKAGE_ROOT = HERE.parents[2]
+PACKAGE_ROOT = ROOT / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 PROTOCOL = PACKAGE_ROOT / "00_总控" / "protocol_authority_v1.2.json"
 # task registry lives in the sibling v1.2 package (same 01-项目章程与规划 parent).
-REGISTRY_ROOT = HERE.parents[3] / "2026-09-08_SRP_v1.2_当前基线适配包" / "tasks" / "U12-04"
+REGISTRY_ROOT = PACKAGE_ROOT.parent / "2026-09-08_SRP_v1.2_当前基线适配包" / "tasks" / "U12-04"
 
 REQUIRED_FREEZES = (
     "panas_version_and_permission",
@@ -157,7 +158,7 @@ def validate(contract: dict, protocol: dict, record: dict) -> list[str]:
 
 def main() -> None:
     read = lambda p: json.loads(p.read_text(encoding="utf-8"))  # noqa: E731
-    contract = read(HERE / "contract.json")
+    contract = read(OUTPUTS / "contract.json")
     protocol = read(PROTOCOL)
     record_path = REGISTRY_ROOT / "inputs" / "task_input.json"
     record = read(record_path) if record_path.exists() else {}

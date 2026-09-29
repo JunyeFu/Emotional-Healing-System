@@ -13,7 +13,7 @@ PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全
 def main():
     commands = [
         [sys.executable, '-m', 'pytest', '-q', str(TASK / 'execution/test_a03_current.py'), str(ROOT / '02-技术研发/tests/a03_spec')],
-        [sys.executable, str(PLAN / '24_团队任务与项目治理/u12_upgrade/U12-04_panas_sap/validate.py')],
+        [sys.executable, str(ROOT / 'agent/tasks/U12-04/execution/validate.py')],
         [sys.executable, str(PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py')],
     ]
     env = {**os.environ, 'PYTHONIOENCODING': 'utf-8', 'PYTHONUTF8': '1'}

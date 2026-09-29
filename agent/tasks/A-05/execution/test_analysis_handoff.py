@@ -14,7 +14,7 @@ TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
-SAP = GOV / 'u12_upgrade/U12-04_panas_sap'
+SAP = ROOT / 'agent/tasks/U12-04/execution'
 sys.path.insert(0, str(ROOT / '02-技术研发/02-信号处理'))
 from a03_gate2_spec import ItemResponse, ResponseStatus, benjamini_hochberg, score_panas
 
@@ -86,13 +86,13 @@ def test_empty_report_and_training_release_do_not_invent_results():
 
 
 def test_candidate_signature_preserved_and_differences_recorded():
-    assert read(SAP / 'contract.json')['status'] == 'CANDIDATE_NOT_RESEARCH_FROZEN'
-    signature = read(SAP.parent / 'acceptance/U12-04.json')
+    assert read(SAP.parent / 'outputs/contract.json')['status'] == 'CANDIDATE_NOT_RESEARCH_FROZEN'
+    signature = read(GOV / 'u12_upgrade/acceptance/U12-04.json')
     assert signature['human_review']['status'] == 'PASS' and signature['human_review']['reviewer'] == '傅钧烨'
     impact = (TASK / 'evidence/consumer-impact.md').read_text(encoding='utf-8')
     assert 'OBSERVED_CASE只筛后测可观察' in impact
     assert '48为总块、每臂24顺序' in impact
-    assert 'OPEN_CANDIDATE_REVISION' in impact
+    assert 'FIXED_ACTIVE_SAP_WORDING_REVIEW_PENDING' in impact
 
 
 def test_archived_questionnaire_and_current_navigation():

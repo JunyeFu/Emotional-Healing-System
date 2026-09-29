@@ -16,7 +16,7 @@ def load(path):
 
 def build_text():
     authority = load(PLAN / '00_总控/protocol_authority_v1.2.json')
-    sap = load(PLAN / '24_团队任务与项目治理/u12_upgrade/U12-04_panas_sap/contract.json')
+    sap = load(ROOT / 'agent/tasks/U12-04/outputs/contract.json')
     for section, fields in {
         'primary': ('outcome', 'candidate_model', 'report_even_if_functional_guard_fails'),
         'manipulation_check': ('role', 'blocks_prespecified_outcome_reporting'),
@@ -80,7 +80,7 @@ Q-01/Q-02负责真实内容审查与认知过程证据；S-02负责独立真实�
 - [历史模型审查]({prefix}/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md)
 - [当前研究合同]({prefix}/00_总控/protocol_authority_v1.2.json)
 - [当前步骤测量](../../../../02-技术研发/srp_step_measurement/README.md)
-- [当前分析规格]({prefix}/24_团队任务与项目治理/u12_upgrade/U12-04_panas_sap/contract.json)
+- [当前分析规格](../../U12-04/outputs/contract.json)
 
 复测入口：`agent/tasks/F-02/execution/verify.ps1`。人类总结从同包结构化summary生成，不直接修改Word掩盖执行层差异。
 """

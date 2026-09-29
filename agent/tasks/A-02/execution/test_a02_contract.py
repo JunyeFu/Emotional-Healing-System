@@ -11,7 +11,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/A-02'
 PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
-SAP = PLAN / '24_团队任务与项目治理/u12_upgrade/U12-04_panas_sap'
+SAP = ROOT / 'agent/tasks/U12-04/outputs'
 
 
 def read(path):
@@ -59,7 +59,7 @@ def test_current_freeze_and_missingness_match_authority():
 
 def test_signed_candidate_is_not_research_freeze():
     contract = read(SAP / 'contract.json')
-    acceptance = read(SAP.parent / 'acceptance/U12-04.json')
+    acceptance = read(PLAN / '24_团队任务与项目治理/u12_upgrade/acceptance/U12-04.json')
     assert acceptance['human_review']['status'] == 'PASS'
     assert acceptance['human_review']['reviewer'] == '傅钧烨'
     assert contract['status'] == 'CANDIDATE_NOT_RESEARCH_FROZEN'
@@ -68,7 +68,7 @@ def test_signed_candidate_is_not_research_freeze():
 
 
 def test_actual_power_missingness_is_carried_forward_not_MI(monkeypatch):
-    module = runpy.run_path(str(SAP / 'power_simulation.py'))
+    module = runpy.run_path(str(SAP.parent / 'execution/power_simulation.py'))
     replicate = module['_replicate']
     data = {
         'cue': np.array([0., 0., 1., 1., 0., 0., 1., 1.]),
@@ -94,7 +94,7 @@ def test_actual_power_missingness_is_carried_forward_not_MI(monkeypatch):
 
 @pytest.mark.parametrize('effect', [-0.3, 0., 0.3])
 def test_existing_synthetic_grid_is_deterministic_not_MI(effect):
-    module = runpy.run_path(str(SAP / 'power_simulation.py'))
+    module = runpy.run_path(str(SAP.parent / 'execution/power_simulation.py'))
     args = dict(seed=20260929, replications=100, n_grid=(48,), effect_grid=(effect,))
     first = module['run_power_grid'](**args)
     assert first == module['run_power_grid'](**args)
