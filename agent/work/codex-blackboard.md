@@ -2168,6 +2168,13 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 77专项0.61秒、根635项51.55秒、协议/治理/71注册/5分发61快照通过。真实决定、作者与权属批准、匹配成品和接收签署仍缺，WAIT_DEP_EXTERNAL保持。
 - 单包Word3页全查，串联39页38/39变化已查，前37页与U12-11渲染一致；71/71逐包完成，整体根目录双层物理迁移尚未完成。
 
+## 2026-09-29 成果源码与团队图双层迁移
+
+- 原成果根目录实际迁入agent/delivery，当前简报源码规范为briefs；两张团队SVG/PNG移入human/assets/diagrams，四文件与移动前Git原件逐字节一致。旧113MB Unity ZIP原样移入本机历史归档，仍忽略，不上传。
+- 构建、PDF验证、治理图生成与测试、模块导航和根README消费新位置。实跑发现Windows PowerShell中文相等匹配跳过源码，修为ASCII过滤与唯一源码检查；真正Pandoc/XeLaTeX重建六页通过。
+- 六专项通过；71包及330 Word链接通过。串联Word为40页，迁移独立成节，39/40已查，1至38与原审阅渲染相同；六PDF页与上一轮已查渲染相同。
+- 根迁移8/19，余11；业务状态、签署、成员冻结分发不改，未执行正式发布或Unity/TD/设备运行。
+
 ## 2026-09-29 根目录工具与人类交付迁移
 
 - Tools/Governance、首页SVG和PDF输出实际移入agent/tools/governance、human/assets和human/deliverables；空退役工具目录归档，不删除成员材料。

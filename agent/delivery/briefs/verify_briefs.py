@@ -10,7 +10,7 @@ import pdfplumber
 from pypdf import PdfReader
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 OUTPUT_DIR = ROOT / "human/deliverables/pdf"
 
 EXPECTED = {

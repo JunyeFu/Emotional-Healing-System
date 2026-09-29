@@ -33,3 +33,15 @@ def test_renderer_root_and_current_media_target():
     assert (root / 'human/assets/readme/team-task-progress.svg').is_file()
     assert not (root / 'Tools').exists()
     assert not (root / 'assets').exists()
+    assert not (root / '04-成果与交付').exists()
+    source = (root / 'agent/tools/governance/render_governance_views.py').read_text(encoding='utf-8')
+    assert '"agent/delivery/briefs/02_固定任务概要.md"' in source
+    assert 'destination = ROOT / "human/assets/diagrams"' in source
+
+
+def test_delivery_builder_does_not_skip_chinese_source_in_windows_powershell():
+    root = Path(__file__).resolve().parents[3]
+    source = (root / 'agent/delivery/briefs/build_briefs.ps1').read_text(encoding='utf-8')
+    assert "-Filter '02_*.md'" in source
+    assert '$sources.Count -ne 1' in source
+    assert "'..\\..\\..'" in source

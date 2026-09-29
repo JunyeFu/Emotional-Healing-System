@@ -130,7 +130,7 @@ def main():
         "implementation_commit": base_commit,
         "source_files": [(ADAPTER / name).relative_to(REPO).as_posix() for name in sources],
         "working_paths": [GOV.relative_to(REPO).as_posix(), (PLAN / "00_总控").relative_to(REPO).as_posix(),
-                          "agent/tools/governance", "04-成果与交付/PDF简报"],
+                          "agent/tools/governance", "agent/delivery/briefs"],
     }
     write(GOV / "12_独立任务包文件映射_v1.0.json", mapping)
     write(HERE / "adoption_record.json", {

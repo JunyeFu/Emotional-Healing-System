@@ -107,8 +107,8 @@
 │   └── 05-通信协议/contracts/README.md v2.1合同与20Hz遥测入口
 ├── 03-测试与实验/
 │   └── README.md                验证与证据模块入口
-├── 04-成果与交付/
-│   └── README.md                成果交付模块入口
+├── agent/delivery/
+│   └── README.md                交付源码与构建入口；人类成品在human/deliverables
 └── srp参考文献/
     ├── 01-research-proposal/    10篇 综述/meta
     ├── 02-biosignal-hrv-eeg/    15篇 HRV/EEG

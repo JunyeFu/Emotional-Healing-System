@@ -2,6 +2,7 @@
   "scope": "Physical completed moves and all current task/Word source links; not Unity/TD runtime or business acceptance",
   "migrated_roots": [
     "work",
+    "04-成果与交付",
     "Tools",
     "assets",
     "output",
@@ -14,7 +15,6 @@
     "01-需求与设计",
     "02-技术研发",
     "03-测试与实验",
-    "04-成果与交付",
     "srp参考文献",
     "_archive",
     "_worktrees",
@@ -25,7 +25,7 @@
   ],
   "task_packages_checked": 71,
   "word_source_links_checked": 330,
-  "current_markdown_links_checked": 193,
+  "current_markdown_links_checked": 199,
   "root_entries_still_to_classify": [
     ".artifacts-local",
     ".pytest_cache",
@@ -34,7 +34,6 @@
     "01-需求与设计",
     "02-技术研发",
     "03-测试与实验",
-    "04-成果与交付",
     "_archive",
     "_worktrees",
     "srp参考文献",

@@ -8,7 +8,7 @@
     {"old": "01-需求与设计", "new": "agent/design", "purpose": "Design sources consumed by implementation", "status": "PENDING"},
     {"old": "02-技术研发", "new": "agent/modules", "purpose": "Shared Python, Unity and TD implementations", "status": "PENDING"},
     {"old": "03-测试与实验", "new": "agent/validation", "purpose": "Verification sources and original signed evidence", "status": "PENDING"},
-    {"old": "04-成果与交付", "new": "agent/delivery", "purpose": "Delivery generation sources and retained original artifacts", "status": "PENDING"},
+    {"old": "04-成果与交付", "new": "agent/delivery", "purpose": "Current delivery sources; diagrams in human/assets and local old Unity snapshot in agent/archive/delivery", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-delivery-source.json"},
     {"old": "srp参考文献", "new": "agent/references", "purpose": "Original references and source identification", "status": "PENDING"},
     {"old": "Tools", "new": "agent/tools/governance", "purpose": "Current governance renderers moved from Tools/Governance; empty retired folders archived", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-deliverables.json"},
     {"old": "assets", "new": "human/assets", "purpose": "Human-facing README progress image", "status": "MIGRATED", "evidence": "agent/evidence/root-migration-deliverables.json"},

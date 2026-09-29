@@ -97,7 +97,7 @@ def main():
         brief += f"| {r['task_id']} | {r['title']} | {r['status']} |\n"
     brief += "\n\\normalsize\n\n# 核心收尾与条件式扩展\n\nA-05、U12-10和A-06构成核心证据关闭；W-02消费A-06与结果中立稿。开展阶段三时附A-04、U12-08与真实台账，不允许用人工布尔值隐去已开展活动。W-04最后消费U12-12。\n\n"
     brief += "# 当前限制与下一步\n\n正式采集尚未放行；新研究数值、教学时序、量表许可与机构资格仍需冻结。运行v1.2接线归U12-06，旧程序不会因设计JSON而自动获得新门。Unity和TD新画面、真实设备与LIVE_E2E证据不能由本次治理测试替代。\n"
-    write(ROOT / "04-成果与交付/PDF简报/02_固定任务概要.md", brief)
+    write(ROOT / "agent/delivery/briefs/02_固定任务概要.md", brief)
     # Compact status companion to the full dependency graph, grouped by research phase.
     wave_order = {wave: index for index, wave in enumerate(WAVES)}
     rows = [row for _, row in sorted(enumerate(rows), key=lambda item: (wave_order[item[1]["wave"]], item[0]))]
@@ -145,7 +145,7 @@ def main():
             out.append(f'<text x="{x}" y="{y+36}" font-size="{size}">{esc(value)}</text>')
     out.extend(compact_gates)
     out.append('</g></svg>')
-    destination = ROOT / "04-成果与交付/项目流程图"
+    destination = ROOT / "human/assets/diagrams"
     write(destination / "SRP_任务状态与门禁解释清单_v1.0.svg", '\n'.join(out))
     runpy.run_path(str(Path(__file__).with_name("render_team_task_flow.py")))["main"]()
     write(destination / "SRP_项目任务关联与门禁流程_v1.0.svg", (ROOT / "00-项目管理/看板与进度/SRP团队任务分工与门禁_当前状态.svg").read_text(encoding="utf-8"))

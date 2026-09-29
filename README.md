@@ -52,17 +52,17 @@ Python是流程与时间权威。Unity不依赖TD提供画面；TD不能直接�
 ## 仓库结构与本地约定
 
 ```text
-03-SRP/
+srp/
 ├── 00-项目管理/    治理、任务注册表、独立任务包与规划文档
 ├── 01-需求与设计/  情绪天气方案与体验设计
 ├── 02-技术研发/    采集、信号处理、通信合同、SessionCore/Store、Unity与TD工程
 ├── 03-测试与实验/  验证入口与证据归档（evidence/）
-├── 04-成果与交付/  论文与成果物
+├── agent/delivery/ 交付源码与构建工具；成品在human/deliverables/
 ├── srp参考文献/    历史文献库（处于身份与来源复核隔离状态，以W-01为论文证据入口）
-└── work/           Codex黑板与验证日志
+└── agent/work/     Codex黑板与验证日志
 ```
 
-本地开发遵循[AGENTS.md](AGENTS.md)的目录约定（2026-09-19收敛）：SRP在`D:\Agent`下只保留`emotional-healing-system`一个入口（原名`03-SRP`）；并行任务worktree统一放在`_worktrees/`、合并后即删，历史备份与证据差异归档在`_archive/`。两者仅存在于本机，经`.git/info/exclude`本地排除，不入库不出现在克隆中；不得在仓库根运行`git clean -x`类命令。
+当前唯一有效目录为`D:\Agent\srp`。根目录双层迁移依据[迁移清单](agent/root-layout.json)逐项推进；本机历史备份和工作树材料不随任务提交自动公开，不得在仓库根运行`git clean -x`类命令。
 
 ## 开发与交付入口
 
@@ -81,12 +81,12 @@ Python是流程与时间权威。Unity不依赖TD提供画面；TD不能直接�
 
 ## 验证与使用边界
 
-最近一次实现候选的根Python回归为**633项通过**，U12-03专项为**22项通过**。这是代码与合同一致性证据，不代表真实设备全链、参与者理解、正式研究或论文录用已经通过。
+本轮规范化根Python回归为**635项通过**，记录见[验证日志](agent/work/codex-verification-log.md)。这是代码与合同一致性证据，不代表真实设备全链、参与者理解、正式研究或论文录用已经通过。
 
 按环境基线配置依赖后，可运行：
 
 ```powershell
-Set-Location 'D:\Agent\emotional-healing-system'
+Set-Location 'D:\Agent\srp'
 git status --short
 py -3.14 -m pytest -q
 git diff --check
