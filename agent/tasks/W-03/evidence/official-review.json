@@ -1,0 +1,15 @@
+{
+  "checked_on": "2026-09-29",
+  "method": "official pages via web tool",
+  "full_page_snapshot_saved": false,
+  "journal_instructions": {"status": "UNVERIFIED_403", "url": "https://www.tandfonline.com/action/authorSubmission?show=instructions&journalCode=hihc20"},
+  "journal_data_policy_level": "UNVERIFIED",
+  "journal_anonymity_mode": "UNVERIFIED",
+  "submission_day_check": "NOT_RUN",
+  "basic_policy": {"status": "READ", "url": "https://authorservices.taylorandfrancis.com/data-sharing-policies/basic/"},
+  "ai_policy": {"status": "READ", "url": "https://taylorandfrancis.com/our-policies/ai-policy/"},
+  "ai_use_guidance": {"status": "READ", "url": "https://authorservices.taylorandfrancis.com/editorial-policies/using-ai-in-your-research-and-manuscript-preparations/"},
+  "image_policy": {"status": "READ", "url": "https://authorservices.taylorandfrancis.com/editorial-policies/images-and-figures/"},
+  "editorial_material_permission": "NOT_OBTAINED",
+  "publication_authorized": false
+}

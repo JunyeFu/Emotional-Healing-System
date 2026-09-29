@@ -1,0 +1,14 @@
+{
+  "task_id": "W-03",
+  "reviewer": "author Agent",
+  "independent_review": "NOT_RUN",
+  "human_acceptance": "NOT_SIGNED",
+  "summary_pages": 3,
+  "summary_inspected_pages": [1, 2, 3],
+  "chain_pages": 32,
+  "chain_inspected_changed_pages": [31, 32],
+  "chain_unchanged_pages": "1-30 identical PNG bytes to W-02 previously inspected render",
+  "w02_repair": {"pages": 3, "changed_page_inspected": 2, "unchanged_pages": [1, 3], "comparison": "same PNG bytes as previous W-02"},
+  "layout": "PASS",
+  "root_migration_complete": false
+}

@@ -18,6 +18,7 @@ LEGACY_EXECUTION = PROJECT_ROOT / "agent/tasks/B-02/archive"
 LEGACY_CLOSEOUT = PROJECT_ROOT / "agent/tasks/E-04/archive"
 LEGACY_MEASUREMENT = PROJECT_ROOT / "agent/tasks/A-05/archive"
 LEGACY_PAPER = PROJECT_ROOT / "agent/tasks/W-02/archive"
+LEGACY_SUBMISSION = PROJECT_ROOT / "agent/tasks/W-03/archive"
 AUTHORITY = PACKAGE / "00_总控" / "protocol_authority_v1.1.json"
 
 ACTIVE_FILES = [
@@ -62,6 +63,7 @@ ACTIVE_FILES = [
     LEGACY_PAPER / "01_主张证据矩阵.csv",
     PACKAGE / "25_论文投稿与成果交付" / "01_核心贡献_IJHCI立足性论证_v1.0.md",
     PACKAGE / "25_论文投稿与成果交付" / "02_投稿返修检查表.md",
+    LEGACY_SUBMISSION / "02_投稿返修检查表.md",
 ]
 
 FORBIDDEN_STALE_MARKERS = (

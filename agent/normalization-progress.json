@@ -56,10 +56,10 @@
     "E-06",
     "A-04",
     "A-06",
-    "W-02"
+    "W-02",
+    "W-03"
   ],
   "remaining_packages": [
-    "W-03",
     "W-04",
     "U12-01",
     "U12-02",
@@ -1531,6 +1531,34 @@
       "status": "OPEN_REAL_PAPER_AND_RESPONSIBILITY",
       "description": "真实范围结果主稿全文审查作者责任及相似性检查尚未落实",
       "source": "agent/tasks/W-02/outputs/current-manuscript.json"
+    },
+    {
+      "task_id": "W-03",
+      "id": "W03-N01",
+      "status": "FIXED_ARCHIVE_AND_WRITING_HANDOFF",
+      "description": "三旧文件实际归档，当前投稿及真人起草职责进入Agent和Word",
+      "source": "agent/tasks/W-03/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "W-03",
+      "id": "W03-N02",
+      "status": "OPEN_IJHCI_SPECIFIC_POLICY",
+      "description": "一般政策已读，期刊专属页403及提交当天核验仍待",
+      "source": "agent/tasks/W-03/evidence/official-review.json"
+    },
+    {
+      "task_id": "W-03",
+      "id": "W03-N03",
+      "status": "OPEN_REAL_PACKAGE_AND_REPRODUCTION",
+      "description": "真实稿件权限、独立干净重建、数字图表和作者授权仍缺",
+      "source": "agent/tasks/W-03/outputs/current-submission.json"
+    },
+    {
+      "task_id": "W-03",
+      "id": "W03-N04",
+      "status": "OPEN_G05_ACTIVITY_DEPENDENCY",
+      "description": "全包关闭与未开展阶段三资格/核心活动准入差异保留待裁定",
+      "source": "agent/tasks/W-03/evidence/consumer-impact.md"
     }
   ]
 }

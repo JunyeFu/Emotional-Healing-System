@@ -9,6 +9,7 @@
   "chain_inspected_changed_pages": [31],
   "chain_unchanged_pages": "1-30 identical PNG bytes to A-06 previously inspected render",
   "layout": "PASS",
+  "w03_followup": "Author Agent inspected revised page 2; pages 1 and 3 identical to previous render. AI-use responsibility corrected from Agent source; new independent review NOT_RUN.",
   "content_source": "outputs/summary.json",
   "root_migration_complete": false
 }
