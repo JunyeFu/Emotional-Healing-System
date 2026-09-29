@@ -1,0 +1,22 @@
+{
+  "task_id": "W-04",
+  "business_status": "WAIT_DEP",
+  "depends_on": ["W-03", "Z-01", "U12-12"],
+  "claimant": null,
+  "reviewer": null,
+  "actual_handover_package": "NOT_DELIVERED",
+  "new_member_handover_exercise": "NOT_RUN",
+  "actual_receiver": null,
+  "deployment_decision": "NOT_OBTAINED",
+  "public_release_authorized": false,
+  "restricted_transfer_authorized": false,
+  "actual_ip_application_receipt": null,
+  "external_award_or_acceptance_guaranteed": false,
+  "preview_is_live_e2e": false,
+  "python_tests_are_handover_exercise": false,
+  "old_fixed_public_order_is_current_authorization": false,
+  "native_is_default_winning_product": false,
+  "requires_unstarted_stage3_done": false,
+  "normalization_is_business_completion": false,
+  "root_migration_complete": false
+}

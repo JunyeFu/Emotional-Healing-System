@@ -1,0 +1,14 @@
+{
+  "task_id": "W-04",
+  "status": "NOT_DELIVERED",
+  "items": [
+    {"id": "unity", "object": "Unity参与者完整制品", "source": "agent/tasks/Z-01/outputs/current-delivery.md", "status": "NOT_DELIVERED", "actual_path": null, "byte_hash": null, "receiver": null},
+    {"id": "python", "object": "Python运行环境", "source": "agent/tasks/Z-01/outputs/current-delivery.md", "status": "NOT_DELIVERED", "actual_path": null, "byte_hash": null, "receiver": null},
+    {"id": "td", "object": "TD匹配操作台", "source": "agent/tasks/Z-01/outputs/current-delivery.md", "status": "NOT_DELIVERED", "actual_path": null, "byte_hash": null, "receiver": null},
+    {"id": "video", "object": "当前展示视频", "source": "agent/tasks/V-04/outputs/current-preview.md", "status": "NOT_DELIVERED", "actual_path": null, "byte_hash": null, "receiver": null},
+    {"id": "poster", "object": "海报与答辩", "source": "agent/tasks/W-02/outputs/current-manuscript.md", "status": "NOT_DELIVERED", "actual_path": null, "byte_hash": null, "receiver": null},
+    {"id": "copyright", "object": "软著材料", "source": "agent/tasks/W-03/outputs/current-submission.md", "status": "NOT_DELIVERED", "actual_path": null, "byte_hash": null, "receiver": null},
+    {"id": "patent", "object": "专利检索与交底记录", "source": "agent/tasks/W-03/outputs/current-submission.md", "status": "NOT_DELIVERED", "actual_path": null, "byte_hash": null, "receiver": null},
+    {"id": "team", "object": "团队移交包及演练", "source": "agent/tasks/W-04/outputs/current-handover.md", "status": "NOT_DELIVERED", "actual_path": null, "byte_hash": null, "receiver": null}
+  ]
+}

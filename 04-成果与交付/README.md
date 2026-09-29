@@ -16,6 +16,8 @@
 
 投稿和公开见[W-03](../agent/tasks/W-03/outputs/current-submission.md)，当前期刊专属页待核实，真实作者、许可及独立干净复现仍待落实；不把推送、合成样例或项目Word当投稿完成。
 
+最终成果与新成员接收见[W-04](../agent/tasks/W-04/outputs/current-handover.md)及[八项待交付索引](../agent/tasks/W-04/outputs/handover-index.json)。现有预演、简报和素材不等于同版最终产品；实际公开/受限移交及部署选择仍待真实决定。
+
 ## 数学建模论文规范简报
 
 三份项目简报及其可复现构建、验证入口见 `PDF简报/README.md`。最终 PDF 输出到项目根目录 `output/pdf/`，包括项目目标与可行性、固定任务概要、项目设计与实验流程。

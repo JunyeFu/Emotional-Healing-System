@@ -57,10 +57,10 @@
     "A-04",
     "A-06",
     "W-02",
-    "W-03"
+    "W-03",
+    "W-04"
   ],
   "remaining_packages": [
-    "W-04",
     "U12-01",
     "U12-02",
     "U12-03",
@@ -1559,6 +1559,27 @@
       "status": "OPEN_G05_ACTIVITY_DEPENDENCY",
       "description": "全包关闭与未开展阶段三资格/核心活动准入差异保留待裁定",
       "source": "agent/tasks/W-03/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "W-04",
+      "id": "W04-N01",
+      "status": "FIXED_ACTUAL_ARCHIVE_AND_HANDOVER",
+      "description": "旧公开方案原文归档，八对象及真实部署/公开与接收范围明确",
+      "source": "agent/tasks/W-04/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "W-04",
+      "id": "W04-N02",
+      "status": "OPEN_REAL_PRODUCTS_RIGHTS_AND_RECEIVERS",
+      "description": "匹配成品、权属与公开决定、新成员演练和维护责任仍缺",
+      "source": "agent/tasks/W-04/outputs/current-handover.json"
+    },
+    {
+      "task_id": "W-04",
+      "id": "W04-N03",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "逐包归档已执行，共享工程媒体治理等业务目录尚未整体迁入双层",
+      "source": "agent/tasks/W-04/evidence/consumer-impact.md"
     }
   ]
 }
