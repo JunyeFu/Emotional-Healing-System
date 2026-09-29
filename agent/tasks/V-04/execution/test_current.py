@@ -72,3 +72,15 @@ def test_lfs_mismatch_rejected(tmp_path, fault):
         entry['oid'] = '0' * 64
     with pytest.raises((AssertionError, FileNotFoundError)):
         validate_lfs_entry(entry, tmp_path)
+
+
+def test_historical_media_paths_resolve_without_changing_configs():
+    from verify_historical import MigratedProjectRoot, bind_module, RUNTIME
+    from types import SimpleNamespace
+    root = MigratedProjectRoot(REPO)
+    assert root / '.artifacts-local/V-04' == REPO / 'agent/local/artifacts/V-04'
+    assert root / '.tools' == REPO / 'agent/local/tools'
+    old = SimpleNamespace(__name__='historical_h1', SOURCE=REPO / '.artifacts-local/V-04/H1/candidates')
+    bind_module(old, RUNTIME / 'toolchain-bindings.json')
+    assert old.SOURCE == REPO / 'agent/local/artifacts/V-04/H1/candidates'
+    assert old.REPO / '.artifacts-local/V-04' == REPO / 'agent/local/artifacts/V-04'

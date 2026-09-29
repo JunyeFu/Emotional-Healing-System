@@ -13,7 +13,7 @@ UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 def main():
     evidence = TASK / 'evidence'
     evidence.mkdir(exist_ok=True)
-    local = ROOT / '.artifacts-local/task-normalization/U-08'
+    local = ROOT / 'agent/local/artifacts/task-normalization/U-08'
     local.mkdir(parents=True, exist_ok=True)
     env = {**os.environ, 'PYTHONIOENCODING': 'utf-8', 'PYTHONUTF8': '1'}
     commands = [
@@ -49,7 +49,7 @@ def main():
         'shared_editmode_passed': passed,
         'target_device_performance': 'NOT_RUN', 'accessibility_acceptance': 'NOT_RUN',
         'product_build': 'NOT_RUN', 'human_review': 'NOT_RUN',
-        'unity_log': '.artifacts-local/task-normalization/U-08/editmode-unity.log',
+        'unity_log': 'agent/local/artifacts/task-normalization/U-08/editmode-unity.log',
     }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return result.returncode
 

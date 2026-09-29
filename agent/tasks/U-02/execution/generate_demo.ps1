@@ -3,10 +3,10 @@ $root = (Resolve-Path (Join-Path $PSScriptRoot '../../../..')).Path
 $unity = 'D:\UnityEngine\6000.4.9f1\Editor\Unity.exe'
 $project = Join-Path $root 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
 $evidence = Join-Path $root 'agent/tasks/U-02/evidence/runtime/demo'
-$player = Join-Path $root '.artifacts-local/task-normalization/U-02/demo-player'
+$player = Join-Path $root 'agent/local/artifacts/task-normalization/U-02/demo-player'
 $frames = Join-Path $evidence 'frames'
-$ffmpeg = Join-Path $root '.tools/ffmpeg/9.0.1/ffmpeg-9.0.1-essentials_build/bin/ffmpeg.exe'
-$ffprobe = Join-Path $root '.tools/ffmpeg/9.0.1/ffmpeg-9.0.1-essentials_build/bin/ffprobe.exe'
+$ffmpeg = Join-Path $root 'agent/local/tools/ffmpeg/9.0.1/ffmpeg-9.0.1-essentials_build/bin/ffmpeg.exe'
+$ffprobe = Join-Path $root 'agent/local/tools/ffmpeg/9.0.1/ffmpeg-9.0.1-essentials_build/bin/ffprobe.exe'
 New-Item -ItemType Directory -Path $evidence,$player,$frames -Force | Out-Null
 $expectedFrames = [IO.Path]::GetFullPath((Join-Path $root 'agent/tasks/U-02/evidence/runtime/demo/frames'))
 if ((Resolve-Path -LiteralPath $frames).Path -ne $expectedFrames) { throw 'U02_DEMO_OUTPUT_PATH' }

@@ -87,7 +87,7 @@ def main():
         raise ValueError(f'UNEXPLAINED_SIGNED_EVIDENCE_DRIFT:{changed}')
     cleanup = json.loads((MODULE / 'design/default-demo-cleanup-report.json').read_text(encoding='utf-8-sig'))
     toe_hash = sha256((MODULE / 'T01_TelemetryPanel.toe').read_bytes()).hexdigest().upper()
-    scratch = ROOT / '.artifacts-local/task-normalization/T-01/identity' / time.strftime('%Y%m%d-%H%M%S')
+    scratch = ROOT / 'agent/local/artifacts/task-normalization/T-01/identity' / time.strftime('%Y%m%d-%H%M%S')
     scratch.mkdir(parents=True)
     expanded = []
     for label, content in [('signed', subprocess.check_output(['git', 'show', f'{CANDIDATE}:{PREFIX}/T01_TelemetryPanel.toe'], cwd=ROOT)),

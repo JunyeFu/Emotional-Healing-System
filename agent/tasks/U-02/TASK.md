@@ -16,7 +16,7 @@ AC1四层单独变化不串扰，符合V-03映射；AC2锁定后累计不变，�
 
 1. inputs/sources.json定位签署、参数、ADR与实现；archive/evidence-v1保留证据分支127文件原字节。
 2. execution/verify.ps1或py -3.14 execution/verify.py实际执行105项EditMode（U-02专项88、U-01共14、F-03共3）与3项PlayMode，并验证历史证据。
-3. execution/generate_demo.ps1构建受控开发演示，隐藏运行并录制实际离屏渲染五阶段120帧；逐帧像素检查、ffmpeg/ffprobe编码与解码验证，开发EXE只存.artifacts-local。
+3. execution/generate_demo.ps1构建受控开发演示，隐藏运行并录制实际离屏渲染五阶段120帧；逐帧像素检查、ffmpeg/ffprobe编码与解码验证，开发EXE只存agent/local/artifacts。
 4. 读取本轮结果和独立Agent复核，先修正outputs/current-adapter-contract.md及summary.json，再用共享工具生成Word并逐页审阅。
 5. 明确路径提交推送，后续补丁真实签收单独进行。任务DONE与本轮规范化进度分开记录。
 

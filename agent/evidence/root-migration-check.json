@@ -13,9 +13,7 @@
     "output",
     "PROJECT_FRAMEWORK.md",
     "PROJECT_MODULES.md",
-    "README_run.md"
-  ],
-  "pending_roots": [
+    "README_run.md",
     "_archive",
     "_worktrees",
     "tmp",
@@ -23,16 +21,10 @@
     ".artifacts-local",
     ".pytest_cache"
   ],
+  "pending_roots": [],
   "task_packages_checked": 71,
   "word_source_links_checked": 330,
   "current_markdown_links_checked": 206,
-  "root_entries_still_to_classify": [
-    ".artifacts-local",
-    ".pytest_cache",
-    ".tools",
-    "_archive",
-    "_worktrees",
-    "tmp"
-  ],
+  "root_entries_still_to_classify": [],
   "root_migration_complete": false
 }

@@ -52,7 +52,7 @@ def main():
         raise RuntimeError('TouchDesigner is already running; preserve the open project')
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as port_check:
         port_check.bind(('127.0.0.1', 5005))
-    scratch = ROOT / '.artifacts-local/task-normalization/T-01/probe' / time.strftime('%Y%m%d-%H%M%S')
+    scratch = ROOT / 'agent/local/artifacts/task-normalization/T-01/probe' / time.strftime('%Y%m%d-%H%M%S')
     scratch.mkdir(parents=True)
     EVIDENCE.mkdir(parents=True, exist_ok=True)
     toe = scratch / 'probe.toe'

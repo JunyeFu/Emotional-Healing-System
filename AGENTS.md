@@ -200,6 +200,6 @@
 ### 本地目录布局约定（2026-09-17收敛）
 
 - 当前实际唯一入口为`D:\Agent\srp`；`03-SRP`及`emotional-healing-system`只用于历史路径理解，禁止在Agent顶层创建平行项目目录。
-- 并行任务需要 worktree 时：`git worktree add _worktrees/<任务名>`，任务合并后立即 `git worktree remove` 回收，不留常驻树；`_archive/` 存放历史备份、验证环境快照与证据差异，两者均经 `.git/info/exclude` 本地排除，不入库不提交。
-- 历史审计文档中出现的旧路径（如 `D:/Agent/f03v8`、`03-SRP-f05-evidence-*`）是当时事实记录，不回改；对应差异已归档至 `_archive/worktree-evidence/`，登记快照见 `_archive/worktree-registry-20260917.txt`，提交仍可按哈希检出到 `_worktrees/` 复现。
+- 并行任务需要工作树时，优先使用Codex管理工作树；手工本机工作目录归入`agent/local/worktrees/`。历史备份、验证环境快照与证据差异归入`agent/archive/local/`，均被Git忽略，不入库不提交。不要移动仍在使用的工作树。
+- 历史审计文档中出现的旧路径（如 `D:/Agent/f03v8`、`03-SRP-f05-evidence-*`）是当时事实记录，不回改；对应差异已迁入 `agent/archive/local/worktree-evidence/`，登记快照见 `agent/archive/local/worktree-registry-20260917.txt`，提交仍可按哈希在独立工作树复现。
 - 不得在仓库根运行 `git clean -x` / `git clean -fdx`：会连同清除被本地排除的 `_archive/` 与 `_worktrees/`。

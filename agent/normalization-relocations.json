@@ -117,6 +117,14 @@
       "preserve_ready_dispatch": true,
       "impact_path": "agent/evidence/root-migration-modules-impact.md",
       "reason": "Preserve the received generator input while its live module import path is repaired."
+    },
+    {
+      "task_id": "V-05",
+      "old_project_path": "agent/tasks/U-02/outputs/current-adapter-contract.md",
+      "new_project_path": "agent/archive/root-migration/local-inputs/V-05/agent/tasks/U-02/outputs/current-adapter-contract.md",
+      "preserve_ready_dispatch": true,
+      "impact_path": "agent/evidence/root-migration-local-impact.md",
+      "reason": "Keep received input bytes while current local-tool paths are relocated."
     }
   ]
 }

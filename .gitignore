@@ -74,6 +74,8 @@ sysinfo.txt
 # V-04 local production tools and large preview artifacts
 /.tools/
 /.artifacts-local/
+/agent/local/
+/agent/archive/local/
 
 # G-02 governed local data and key material
 *.db

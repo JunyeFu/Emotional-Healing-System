@@ -18,7 +18,7 @@ def main():
     target = RUNTIME / 'T01_ReadableBaseline.candidate.toe'
     if target.exists():
         raise FileExistsError('Inspect the existing candidate before replacing it')
-    scratch = ROOT / '.artifacts-local/task-normalization/T-01/layout' / time.strftime('%Y%m%d-%H%M%S')
+    scratch = ROOT / 'agent/local/artifacts/task-normalization/T-01/layout' / time.strftime('%Y%m%d-%H%M%S')
     scratch.mkdir(parents=True)
     toe = scratch / 'candidate.toe'
     shutil.copyfile(source, toe)

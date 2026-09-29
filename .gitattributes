@@ -21,18 +21,18 @@ agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.asset text eol=lf
 agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.json text eol=lf
 agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.meta text eol=lf
 agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.unity text eol=lf
-.artifacts-local/V-04/H3/independent-asset-kit/*-individual-candidate-v1/*.png filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-snow.png filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/layerable-background-rebuild/v5/base/V-04-H3-LBR-v5-fade-base.png filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/storm-candidate-v2/storm-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/heat-candidate-v2/heat-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/snow-candidate-v2/snow-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H2/candidate-v11/fade-H2-v11-ambient.wav filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4 filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/H3/fixed-combined-review-candidate-v2/*.mp4 filter=lfs diff=lfs merge=lfs -text
-.artifacts-local/V-04/full-duration-animatic-candidate-v1/*.mp4 filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/independent-asset-kit/*-individual-candidate-v1/*.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-snow.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/layerable-background-rebuild/v5/base/V-04-H3-LBR-v5-fade-base.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/storm-candidate-v2/storm-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/heat-candidate-v2/heat-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/snow-candidate-v2/snow-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H2/candidate-v11/fade-H2-v11-ambient.wav filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4 filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/fixed-combined-review-candidate-v2/*.mp4 filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/full-duration-animatic-candidate-v1/*.mp4 filter=lfs diff=lfs merge=lfs -text
 agent/tasks/U-04/evidence/editmode-unity.log -text whitespace=-blank-at-eol
 agent/tasks/U-05/archive/CleanAndRebuildScenes.cs -text
 agent/tasks/U-05/archive/CleanAndRebuildScenes.cs.meta -text
@@ -111,7 +111,9 @@ agent/evidence/root-migration-governance-package-tests-initial/*.txt -text white
 agent/evidence/root-migration-support-package-tests-initial/*.txt -text whitespace=-blank-at-eol
 agent/evidence/root-migration-modules-package-tests-initial/*.txt -text whitespace=-blank-at-eol
 agent/evidence/root-migration-modules-package-tests/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-local-package-tests/*.txt -text whitespace=-blank-at-eol
 agent/evidence/root-migration-modules-unity-*.log -text whitespace=-blank-at-eol
 agent/archive/root-migration/modules-inputs/** -text whitespace=cr-at-eol
+agent/archive/root-migration/local-inputs/** -text whitespace=cr-at-eol
 agent/governance/**/tasks/U12-05/package_manifest.json -text whitespace=cr-at-eol
 agent/governance/**/tasks/U12-06/package_manifest.json -text whitespace=cr-at-eol

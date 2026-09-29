@@ -95,7 +95,7 @@ def package_tests(scope='governance', tasks=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--package-tests', action='store_true')
-    parser.add_argument('--package-test-scope', choices=['governance', 'support', 'modules'], default='governance')
+    parser.add_argument('--package-test-scope', choices=['governance', 'support', 'modules', 'local'], default='governance')
     parser.add_argument('--tasks', nargs='+', help='Retest repaired packages and retain other package results')
     args = parser.parse_args()
     if args.package_tests:

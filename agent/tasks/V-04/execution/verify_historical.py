@@ -9,6 +9,9 @@ from pathlib import Path
 import subprocess
 import sys
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / 'tools'))
+from resolve_frozen_source import resolve_project_path
+
 TASK = Path(__file__).resolve().parents[1]
 REPO = TASK.parents[2]
 SOURCE = REPO / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-04_完整分镜与真实时长声音预演'
@@ -33,7 +36,7 @@ def sha256(path):
 
 def bind_toolchain():
     lock = json.loads((SOURCE / 'V-04_toolchain-lock_v1.0.json').read_text(encoding='utf-8'))
-    tools = REPO / '.tools/ffmpeg/9.0.1/ffmpeg-9.0.1-essentials_build/bin'
+    tools = REPO / 'agent/local/tools/ffmpeg/9.0.1/ffmpeg-9.0.1-essentials_build/bin'
     for name in ('ffmpeg', 'ffprobe'):
         path = tools / f'{name}.exe'
         assert sha256(path) == lock['ffmpeg'][f'{name}_executable_sha256'], name
@@ -44,13 +47,21 @@ def bind_toolchain():
     return target
 
 
+class MigratedProjectRoot(type(Path())):
+    """Resolve historical media paths only inside archived validation modules."""
+    def __truediv__(self, value):
+        return resolve_project_path(Path(self), str(value))
+
+
 def bind_module(module, lock_path):
     # Archived modules retain historical filenames; only this entry selects current versions.
     for name, value in list(vars(module).items()):
         if isinstance(value, Path) and value.parent == ARCHIVE:
             setattr(module, name, SOURCE / value.name)
+        elif isinstance(value, Path) and value.is_relative_to(REPO):
+            setattr(module, name, resolve_project_path(REPO, value.relative_to(REPO).as_posix()))
     module.HERE = SOURCE
-    module.REPO = REPO
+    module.REPO = MigratedProjectRoot(REPO)
     if hasattr(module, 'LOCK_PATH'):
         module.LOCK_PATH = lock_path
     if module.__name__ == 'validate_v04_full_duration_animatic':
@@ -64,6 +75,7 @@ def validate_lfs_entry(entry, root=REPO):
 
 
 def validate_media_tracking(*paths):
+    paths = [resolve_project_path(REPO, path).relative_to(REPO).as_posix() for path in paths]
     tracked = subprocess.check_output(['git', 'ls-files', '--', *paths], cwd=REPO,
                                       text=True, encoding='utf-8').splitlines()
     entries = json.loads(subprocess.check_output(['git', 'lfs', 'ls-files', '--json'], cwd=REPO,

@@ -162,20 +162,22 @@ def main():
         for finding in item['findings']:
             findings.append({'task_id': row['task_id'], **finding})
             chain.add_paragraph(f"{finding['id']} {finding['status']}：{finding['description']}")
-    chain.add_heading('待整理队列', level=1)
+    layout = read_json(ROOT / 'agent/root-layout.json')
+    chain.add_heading('逐包整理结果', level=1)
     remaining = [r['task_id'] for r in rows if r['task_id'] not in completed]
-    next_task = remaining[0] if remaining else '目录整体迁移'
-    count = chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包；根目录双层迁移未完成。下一项{next_task}。")
+    complete = layout['root_migration_complete']
+    next_task = remaining[0] if remaining else ('业务任务按注册表推进' if complete else '当前总结刷新与整体完成审计')
+    completion = '已完成并验证' if complete else '尚待整体完成审计'
+    count = chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包；根目录双层整理{completion}。下一项{next_task}。")
     count.paragraph_format.keep_with_next = True
     if remaining:
         queue = chain.add_paragraph('、'.join(remaining))
         queue.paragraph_format.keep_together = True
-    layout = read_json(ROOT / 'agent/root-layout.json')
     migrated = [e for e in layout['entries'] if e['status'] == 'MIGRATED']
     pending = [e for e in layout['entries'] if e['status'] != 'MIGRATED']
     migration_heading = chain.add_heading('根目录物理迁移', level=1)
     migration_heading.paragraph_format.page_break_before = True
-    chain.add_paragraph(f"实际迁移{len(migrated)}/{len(layout['entries'])}项，尚余{len(pending)}项；整体迁移未完成。逐包整理不代替运行入口、生成器、历史原件及当前Word来源检查。")
+    chain.add_paragraph(f"实际迁移{len(migrated)}/{len(layout['entries'])}项，尚余{len(pending)}项；整体双层整理{completion}。逐包整理不代替运行入口、生成器、历史原件及当前Word来源检查。")
     for offset in range(0, len(migrated), 2):
         chain.add_paragraph('；'.join(
             f"{entry['old']} → {entry['new']}"
@@ -197,9 +199,12 @@ def main():
     if any(e['old'] == '02-技术研发' for e in migrated):
         modules = read_json(ROOT / 'agent/evidence/root-migration-modules.json')
         chain.add_paragraph(modules['human_review'])
+    if any(e['old'] == '.artifacts-local' for e in migrated):
+        local = read_json(ROOT / 'agent/evidence/root-migration-local.json')
+        chain.add_paragraph(local['human_review'])
     chain.save(ROOT / 'human/project-review.docx')
     progress = {'completed_packages': completed, 'remaining_packages': remaining,
-                'root_migration_complete': False, 'findings': findings}
+                'root_migration_complete': complete, 'findings': findings}
     (ROOT / 'agent/normalization-progress.json').write_text(
         json.dumps(progress, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     label = 'chained review only' if args.chain_only else f'{args.task_id} Word and chained review'

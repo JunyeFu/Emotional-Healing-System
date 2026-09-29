@@ -17,7 +17,7 @@ P-01拥有顺序、时间与会话权威。U-01网络入口校验外部合同、
 
 在D:/Agent/srp执行py -3.14 agent/tasks/U-02/execution/verify.py，或verify.ps1。105项EditMode中88项为U-02专项、17项为F-03/U-01联测；另3项PlayMode为U-01。参数输入采用既有规范化UTF-8/LF哈希，不能把Windows CRLF字节差异当设计变化。
 
-generate_demo.ps1消费本机Unity 6000.4.9f1及.tools/ffmpeg/9.0.1。新素材在evidence/runtime/demo；开发EXE只在.artifacts-local。历史127文件在archive/evidence-v1保持Git提交原字节；旧视频不代表本轮补丁后的运行。
+generate_demo.ps1消费本机Unity 6000.4.9f1及agent/local/tools/ffmpeg/9.0.1。新素材在evidence/runtime/demo；开发EXE只在agent/local/artifacts。历史127文件在archive/evidence-v1保持Git提交原字节；旧视频不代表本轮补丁后的运行。
 
 截图依据[Unity 6.4 RenderTexture](https://docs.unity3d.com/6000.4/Documentation/ScriptReference/RenderTexture.html)、[ReadPixels](https://docs.unity3d.com/6000.4/Documentation/ScriptReference/Texture2D.ReadPixels.html)及[URP显式渲染请求](https://docs.unity3d.com/cn/6000.0/Manual/urp/User-Render-Requests.html)，读取的是Unity实际UI渲染，不是主机重绘的替代图。
 
