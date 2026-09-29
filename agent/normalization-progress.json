@@ -65,10 +65,10 @@
     "U12-04",
     "U12-05",
     "U12-06",
-    "U12-07"
+    "U12-07",
+    "U12-08"
   ],
   "remaining_packages": [
-    "U12-08",
     "U12-09",
     "U12-10",
     "U12-11",
@@ -1796,6 +1796,34 @@
       "id": "U1207-N04",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "根共享治理及工程尚未全部迁入双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-08",
+      "id": "U1208-N01",
+      "status": "FIXED_ACTUAL_RELOCATION_AND_CURRENT_STATUS",
+      "description": "四原候选实际归档，旧未注册入口订正；原字节、manifest与输入ID保持",
+      "source": "agent/tasks/U12-08/archive/README.md"
+    },
+    {
+      "task_id": "U12-08",
+      "id": "U1208-N02",
+      "status": "FIXED_CURRENT_RESPONSIBILITIES_AND_CONSUMERS",
+      "description": "独立附录非策略冻结，两影响记录订正，A-04/A-06连接当前附录",
+      "source": "agent/tasks/U12-08/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-08",
+      "id": "U1208-N03",
+      "status": "OPEN_REAL_INPUTS_APPENDIX_AND_SIGNOFF",
+      "description": "真实SAP/锁库/结果/全部活动/附录/独立复现与真人责任签收仍缺，WAIT_DEP保持",
+      "source": "agent/tasks/U12-08/outputs/current-extension.json"
+    },
+    {
+      "task_id": "U12-08",
+      "id": "U1208-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享业务与旧根目录尚未整体迁入人类和Agent双层",
       "source": "agent/normalization.md"
     }
   ]
