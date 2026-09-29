@@ -83,8 +83,8 @@ def test_templates_are_blank_and_preserve_required_observations(name, required):
 
 def test_candidate_participant_materials_have_all_four_layers_without_private_keys():
     value = current()
-    materials = json.loads((ROOT / '02-技术研发/srp_step_measurement/evidence/participant_items.json').read_text(encoding='utf-8'))
-    keys = json.loads((ROOT / '02-技术研发/srp_step_measurement/evidence/private_answer_keys.json').read_text(encoding='utf-8'))
+    materials = json.loads((ROOT / 'agent/tasks/U12-02/outputs/materials/participant_items.json').read_text(encoding='utf-8'))
+    keys = json.loads((ROOT / 'agent/tasks/U12-02/outputs/materials/private_answer_keys.json').read_text(encoding='utf-8'))
     assert set(value['structures']) == {'storm', 'heat', 'snow', 'fade'}
     assert value['participant_receives_answer_key'] is False
     assert len(materials) == 15 and len(keys) == 30

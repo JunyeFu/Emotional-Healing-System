@@ -11,8 +11,8 @@
     "agent/tasks/F-02/outputs/current-measurement.md",
     "agent/tasks/U-08/outputs/current-product.md",
     "02-技术研发/srp_step_measurement/README.md",
-    "02-技术研发/srp_step_measurement/annotation_plan.md",
-    "02-技术研发/srp_step_measurement/evidence/participant_items.json",
-    "02-技术研发/srp_step_measurement/evidence/private_answer_keys.json"
+    "agent/tasks/U12-02/outputs/annotation-plan.md",
+    "agent/tasks/U12-02/outputs/materials/participant_items.json",
+    "agent/tasks/U12-02/outputs/materials/private_answer_keys.json"
   ]
 }

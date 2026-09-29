@@ -16,7 +16,7 @@ def main():
     commands = [
         ('check-1', ['-m', 'pytest', '-q', TASK / 'execution/test_execution_handoff.py',
                      ROOT / 'agent/tasks/Q-02/execution/test_level_b_handoff.py', ROOT / '02-技术研发/tests/step_measurement']),
-        ('check-2', [ROOT / '02-技术研发/srp_step_measurement/build_evidence.py', '--check']),
+        ('check-2', [ROOT / 'agent/tasks/U12-02/execution/build_evidence.py', '--check']),
         ('registry', [GOV / '07_validate_task_packages.py']),
         ('dispatch', [GOV / '14_validate_ready_task_packages.py']),
         ('regression', ['-m', 'pytest', '-q']),

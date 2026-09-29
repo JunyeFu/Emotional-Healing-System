@@ -1,0 +1,8132 @@
+[
+  {
+    "event_id": "storm-inhale_1",
+    "public_clip_id": "clip-001",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "fb55cc3dcdd0424bd77d79130ce492ffd68bb1d485a8b4415591d6871c108e33",
+    "material_sha256": "df63f3aa97abc77c5a1b227ea5dac505499425c2505f2afee042b77a330da420",
+    "seed": 20260908,
+    "source_frame_sha256": "b69f524b10ba440495d646d1552cd5877369b1143967c07b6371d94c2186e767",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "storm-inhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_1",
+        "option_index": 2
+      },
+      "C-T2": {
+        "value": "hold_1",
+        "option_index": 2
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 4
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 1
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 1
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 1
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 1
+      }
+    }
+  },
+  {
+    "event_id": "storm-inhale_1",
+    "public_clip_id": "clip-001",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "fb55cc3dcdd0424bd77d79130ce492ffd68bb1d485a8b4415591d6871c108e33",
+    "material_sha256": "df63f3aa97abc77c5a1b227ea5dac505499425c2505f2afee042b77a330da420",
+    "seed": 20260908,
+    "source_frame_sha256": "8b00e4754817e67eae8636236bc1fcac20cb47c34e1f508c08f3252f4cc639ef",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "storm-inhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_1",
+        "option_index": 2
+      },
+      "C-T2": {
+        "value": "hold_1",
+        "option_index": 2
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 4
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 1
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 1
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 1
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 1
+      }
+    }
+  },
+  {
+    "event_id": "storm-hold_1",
+    "public_clip_id": "clip-002",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "cdea8d040aea3ee939b50d6b69d9be73f3f29d067226064230428ac216a5e7d5",
+    "material_sha256": "773c8006b504ba33328963308b36361291c898607dcbd8260df9e3a51784ee4f",
+    "seed": 20260908,
+    "source_frame_sha256": "b1522bfd8443bfd6beb60580b0b828c220d941c88278db3aaed917a505a8bb60",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "storm-hold_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_1",
+        "option_index": 0
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 0
+      },
+      "C-A1": {
+        "value": "hold_1",
+        "option_index": 3
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 3
+      }
+    }
+  },
+  {
+    "event_id": "storm-hold_1",
+    "public_clip_id": "clip-002",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "cdea8d040aea3ee939b50d6b69d9be73f3f29d067226064230428ac216a5e7d5",
+    "material_sha256": "773c8006b504ba33328963308b36361291c898607dcbd8260df9e3a51784ee4f",
+    "seed": 20260908,
+    "source_frame_sha256": "b375e9c415c942f7116ceda3fd989ce3a50dc8e19126c98a1334050e0c4a94f2",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "storm-hold_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_1",
+        "option_index": 0
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 0
+      },
+      "C-A1": {
+        "value": "hold_1",
+        "option_index": 3
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 3
+      }
+    }
+  },
+  {
+    "event_id": "storm-exhale_1",
+    "public_clip_id": "clip-003",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "202b1b472f5ff8e3bae9e24557f528d0676153b10605ea53313cec96a151ae2e",
+    "material_sha256": "e38d0172ffbf17b72ac9d43f2173e8eae8363445e5c2efab146ba654965a4af9",
+    "seed": 20260908,
+    "source_frame_sha256": "6b5754088d3da43de88a37c72cd043bbc5c5301178269dafaf34ec74c8f8b76c",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "storm-exhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "exhale_1",
+        "option_index": 4
+      },
+      "C-T2": {
+        "value": "hold_2",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "exhale_1",
+        "option_index": 3
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 3
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 0
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 1
+      }
+    }
+  },
+  {
+    "event_id": "storm-exhale_1",
+    "public_clip_id": "clip-003",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "202b1b472f5ff8e3bae9e24557f528d0676153b10605ea53313cec96a151ae2e",
+    "material_sha256": "e38d0172ffbf17b72ac9d43f2173e8eae8363445e5c2efab146ba654965a4af9",
+    "seed": 20260908,
+    "source_frame_sha256": "bf357cce87e3d10a91ae197c4d1061bb4176d50e3ef18bda1371b7f25a89c1f7",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "storm-exhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "exhale_1",
+        "option_index": 4
+      },
+      "C-T2": {
+        "value": "hold_2",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "exhale_1",
+        "option_index": 3
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 3
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 0
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 1
+      }
+    }
+  },
+  {
+    "event_id": "storm-hold_2",
+    "public_clip_id": "clip-004",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "c788907d144c931c7870600a2a20cb161341af4d030d502c96bcc1cd190498d5",
+    "material_sha256": "429db011ee00cf7cb95ec55a4c3af03772f68aab0a91eec004e1361bb861ee54",
+    "seed": 20260908,
+    "source_frame_sha256": "624999ad61109ae87402acbd4c9e58e796e070b46eed5ed56dbce2aacf64cdea",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "storm-hold_2",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_2",
+        "option_index": 3
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "hold_2",
+        "option_index": 3
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 3
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "storm-hold_2",
+    "public_clip_id": "clip-004",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "c788907d144c931c7870600a2a20cb161341af4d030d502c96bcc1cd190498d5",
+    "material_sha256": "429db011ee00cf7cb95ec55a4c3af03772f68aab0a91eec004e1361bb861ee54",
+    "seed": 20260908,
+    "source_frame_sha256": "e4e6a65d667970b03222d40a4296bf0f0b18e571353a1239152de8e2d01137da",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "storm-hold_2",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_2",
+        "option_index": 3
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "hold_2",
+        "option_index": 3
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 3
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "heat-inhale_1",
+    "public_clip_id": "clip-005",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "2e77eeb7247f31b3602847bd82eb12cc00f1379ffcc1a4686f684dc226622e17",
+    "material_sha256": "d9289b01417a4029ad41bbe3344a5fcd346a47837afe85b859f1d1a7b0bdd813",
+    "seed": 20260908,
+    "source_frame_sha256": "b96a3d9e7edde8d5c17ec2ba51bc588b8ef8b2f3507a824a57e180f9fd5ebabd",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "heat",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "heat-inhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 2
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 2
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "heat-inhale_1",
+    "public_clip_id": "clip-005",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "2e77eeb7247f31b3602847bd82eb12cc00f1379ffcc1a4686f684dc226622e17",
+    "material_sha256": "d9289b01417a4029ad41bbe3344a5fcd346a47837afe85b859f1d1a7b0bdd813",
+    "seed": 20260908,
+    "source_frame_sha256": "30db64f24798a5649b8b20ae8cc8826c3a0f7ced2ead6641f3e413f515cf5f5e",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "heat",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "heat-inhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 2
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 2
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "heat-exhale_1",
+    "public_clip_id": "clip-006",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "32eed96094432d4636b06949298d5f5a5618df285374698d8904e2950669b50d",
+    "material_sha256": "072a3e6ead404ce699eeecd2f69bbbcd760306e1b3f867b841b38997b89f6982",
+    "seed": 20260908,
+    "source_frame_sha256": "a98e124e79a287def40f796d56ebf1493cf7cb87f4da06ca120e6ada7e69dfe4",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "heat",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "heat-exhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "exhale_1",
+        "option_index": 2
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 0
+      },
+      "C-A1": {
+        "value": "exhale_1",
+        "option_index": 2
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 0
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 3
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "heat-exhale_1",
+    "public_clip_id": "clip-006",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "32eed96094432d4636b06949298d5f5a5618df285374698d8904e2950669b50d",
+    "material_sha256": "072a3e6ead404ce699eeecd2f69bbbcd760306e1b3f867b841b38997b89f6982",
+    "seed": 20260908,
+    "source_frame_sha256": "c09e2a76553fc6be395ac739fd4e9654915182d9570796dfd37ca5d637cdb255",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "heat",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "heat-exhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "exhale_1",
+        "option_index": 2
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 0
+      },
+      "C-A1": {
+        "value": "exhale_1",
+        "option_index": 2
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 0
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 3
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "snow-inhale_1",
+    "public_clip_id": "clip-007",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "078e258798e24df87f4a6b1611ea150dee2d812006844c2d71531b419311cb0c",
+    "material_sha256": "1459357275c2fd42ad4c2be6cf1d951fa90c2bc6c1fd4c50036f396052a5cfd8",
+    "seed": 20260908,
+    "source_frame_sha256": "765ed6a66d0415486f876b888511fa48c0d401f716a7935985e09ff89d72a89a",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "snow",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "snow-inhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "snow-inhale_1",
+    "public_clip_id": "clip-007",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "078e258798e24df87f4a6b1611ea150dee2d812006844c2d71531b419311cb0c",
+    "material_sha256": "1459357275c2fd42ad4c2be6cf1d951fa90c2bc6c1fd4c50036f396052a5cfd8",
+    "seed": 20260908,
+    "source_frame_sha256": "902263e7319f94a884c0c5d0b461bd43913aba9132baa996fd842b4d5ba2cbc4",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "snow",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "snow-inhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "snow-exhale_1",
+    "public_clip_id": "clip-008",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "02805cdc5f4d58a61d24d1bd252cd25d7d371500892977e3122e2b6707abbaef",
+    "material_sha256": "07c7e08965b77f29cdb9dd1a57c77f9059065ca39c58916fbb06e68ff6b24bb0",
+    "seed": 20260908,
+    "source_frame_sha256": "13546a2de2ce189cf0a81c56c82c684fb39e39b41a9e9c969ffd004f2356db0c",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "snow",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "snow-exhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "exhale_1",
+        "option_index": 2
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 0
+      },
+      "C-A1": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 3
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 1
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 3
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "snow-exhale_1",
+    "public_clip_id": "clip-008",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "02805cdc5f4d58a61d24d1bd252cd25d7d371500892977e3122e2b6707abbaef",
+    "material_sha256": "07c7e08965b77f29cdb9dd1a57c77f9059065ca39c58916fbb06e68ff6b24bb0",
+    "seed": 20260908,
+    "source_frame_sha256": "dd0b554f5a109b03298c173f8ec206a89657158e3b45d56a60324a3fdfdc0420",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "snow",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "snow-exhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "exhale_1",
+        "option_index": 2
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 0
+      },
+      "C-A1": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 3
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 1
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 3
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 0
+      }
+    }
+  },
+  {
+    "event_id": "fade-inhale_1",
+    "public_clip_id": "clip-009",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "225b302017add3cd83a742ffc517254aa6de79b7f31175c644146cb976cd9848",
+    "material_sha256": "d1774e8098cee8762c002bf09e711fc9409127b747334114afb7f0cf85c2076d",
+    "seed": 20260908,
+    "source_frame_sha256": "c2f46483f942a73ec8cef1b8d6c10fa81025df72a11c6201c2393b800d462ca0",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "fade",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "fade-inhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "inhale_2",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 0
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 3
+      }
+    }
+  },
+  {
+    "event_id": "fade-inhale_1",
+    "public_clip_id": "clip-009",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "225b302017add3cd83a742ffc517254aa6de79b7f31175c644146cb976cd9848",
+    "material_sha256": "d1774e8098cee8762c002bf09e711fc9409127b747334114afb7f0cf85c2076d",
+    "seed": 20260908,
+    "source_frame_sha256": "fb5e21c751df072f63ea87e71c08f8f16fb881ccc2787fde62aa566dc028bd0d",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "fade",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "fade-inhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "inhale_2",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 0
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 3
+      }
+    }
+  },
+  {
+    "event_id": "fade-inhale_2",
+    "public_clip_id": "clip-010",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "39276f1a89182441f11ccbcf68c56ac9b560b7fd64800d1e242af4f4b72260b6",
+    "material_sha256": "4a62662c969e523cfd2fbf762d8f30f1c46b1fc619d2eb83a58de750ea45d904",
+    "seed": 20260908,
+    "source_frame_sha256": "563cfdc0ce58d44bd9d328eda659a82750754b6818b31376916c393f8bd97203",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "fade",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "fade-inhale_2",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_2",
+        "option_index": 3
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "inhale_2",
+        "option_index": 0
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 2
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 2
+      }
+    }
+  },
+  {
+    "event_id": "fade-inhale_2",
+    "public_clip_id": "clip-010",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "39276f1a89182441f11ccbcf68c56ac9b560b7fd64800d1e242af4f4b72260b6",
+    "material_sha256": "4a62662c969e523cfd2fbf762d8f30f1c46b1fc619d2eb83a58de750ea45d904",
+    "seed": 20260908,
+    "source_frame_sha256": "c6e4307d16bac8d460dd081a66a80ee9f3980e4a826f9277114e2dc08b95b72f",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "fade",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "fade-inhale_2",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_2",
+        "option_index": 3
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "inhale_2",
+        "option_index": 0
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 0
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 2
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 2
+      }
+    }
+  },
+  {
+    "event_id": "fade-exhale_1",
+    "public_clip_id": "clip-011",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "4fdc994bf9bcf8aae6efcb3f7d726c9eb3b752e8415f7637fc5f301d3e469ccf",
+    "material_sha256": "c5a0592ed799d5bbd79add61a9e08438d224725d599a508beb36087ee663a218",
+    "seed": 20260908,
+    "source_frame_sha256": "95f77a99e363bda2fbcf963d4923f82bfae5748cfbd08c93ec651af04efb168a",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "fade",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "fade-exhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 2
+      },
+      "C-A1": {
+        "value": "exhale_1",
+        "option_index": 0
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 3
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 0
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 1
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 2
+      }
+    }
+  },
+  {
+    "event_id": "fade-exhale_1",
+    "public_clip_id": "clip-011",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "4fdc994bf9bcf8aae6efcb3f7d726c9eb3b752e8415f7637fc5f301d3e469ccf",
+    "material_sha256": "c5a0592ed799d5bbd79add61a9e08438d224725d599a508beb36087ee663a218",
+    "seed": 20260908,
+    "source_frame_sha256": "1a483aa955466ebacfe6de5705b2de6e0b490b047b822923501c15c35d2c4ac8",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "fade",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "SAME_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "fade-exhale_1",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 2
+      },
+      "C-A1": {
+        "value": "exhale_1",
+        "option_index": 0
+      },
+      "C-A2": {
+        "value": "SAME_STEP",
+        "option_index": 3
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 0
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 1
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 2
+      }
+    }
+  },
+  {
+    "event_id": "hold-swap",
+    "public_clip_id": "clip-012",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "a195afda8650ea597ad8fa282cfe0cef6d7c8f9e2e3ca5660d6db77d78bc5604",
+    "material_sha256": "820021d6da71be9245b6065627f41be415f1a01a0626e18323e73f75a27ce69e",
+    "seed": 20260908,
+    "source_frame_sha256": "1cdadf06cae7a6139b93dd5c496633978a54821cf275c56decf9f19b6d31499c",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "DIFFERENT_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "hold-swap",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_2",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "hold_1",
+        "option_index": 0
+      },
+      "C-A2": {
+        "value": "DIFFERENT_STEP",
+        "option_index": 2
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 3
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 2
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 2
+      }
+    }
+  },
+  {
+    "event_id": "hold-swap",
+    "public_clip_id": "clip-012",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "a195afda8650ea597ad8fa282cfe0cef6d7c8f9e2e3ca5660d6db77d78bc5604",
+    "material_sha256": "820021d6da71be9245b6065627f41be415f1a01a0626e18323e73f75a27ce69e",
+    "seed": 20260908,
+    "source_frame_sha256": "5713318c9a5a02c47b409eb3185fc5bb068547c83142245831973d4d835864a4",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_2"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "next_target": {
+        "cycle_index": 1,
+        "step_id": "inhale_1"
+      },
+      "relation": "DIFFERENT_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "hold-swap",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_2",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "inhale_1",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "hold_1",
+        "option_index": 0
+      },
+      "C-A2": {
+        "value": "DIFFERENT_STEP",
+        "option_index": 2
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 3
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 2
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 2
+      }
+    }
+  },
+  {
+    "event_id": "second-inhale-missing",
+    "public_clip_id": "clip-013",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "708c9d3fd1b30f9deac1411de7d35c1f7adda0ee451041665905eb63c5dada1e",
+    "material_sha256": "87d2adcd4e981fd9a45a2547114d778a556cf78546b825f368ab8df762324248",
+    "seed": 20260908,
+    "source_frame_sha256": "88081e201e843da74114e68b51d9346dda1d0220bfcdd9cc779ea571d3275294",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "fade",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "DIFFERENT_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "second-inhale-missing",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_2",
+        "option_index": 3
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 3
+      },
+      "C-A2": {
+        "value": "DIFFERENT_STEP",
+        "option_index": 1
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 2
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 1
+      }
+    }
+  },
+  {
+    "event_id": "second-inhale-missing",
+    "public_clip_id": "clip-013",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "708c9d3fd1b30f9deac1411de7d35c1f7adda0ee451041665905eb63c5dada1e",
+    "material_sha256": "87d2adcd4e981fd9a45a2547114d778a556cf78546b825f368ab8df762324248",
+    "seed": 20260908,
+    "source_frame_sha256": "bf3a707f602fb26b29e2a1a68d8db2de809273b130ceb23ee9bcfa4d6850ffc5",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "fade",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "inhale_2"
+      },
+      "actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "display_actual": {
+        "cycle_index": 0,
+        "step_id": "inhale_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "DIFFERENT_STEP",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "second-inhale-missing",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_2",
+            "label": "第二次吸气（补吸）"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "inhale_1",
+            "label": "第一次吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "inhale_2",
+        "option_index": 3
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "inhale_1",
+        "option_index": 3
+      },
+      "C-A2": {
+        "value": "DIFFERENT_STEP",
+        "option_index": 1
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 2
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 1
+      }
+    }
+  },
+  {
+    "event_id": "actual-unknown-disconnected",
+    "public_clip_id": "clip-014",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "662981783544ee696a2b8ac3c7d7984c50f0416f4e8ee834fc8e3482cf7404f4",
+    "material_sha256": "501a425eb9e3f9b9290ade850c9a9e0d1e71864b52b2c5bc83c6f0444871906b",
+    "seed": 20260908,
+    "source_frame_sha256": "c2c8cb12dfc92bcacd65280118738b6fd51c0f06dc2a1d575a305e70a9083565",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "actual": null,
+      "display_actual": null,
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "UNKNOWN",
+      "actual_unknown_reason": "DEVICE_DISCONNECTED",
+      "fallback_state": "UNUSABLE",
+      "fallback_reason": "DEVICE_DISCONNECTED",
+      "resp_device_state": "DISCONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "actual-unknown-disconnected",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": null,
+      "actual_unknown_reason": "DEVICE_DISCONNECTED",
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "UNKNOWN",
+        "option_index": 4
+      },
+      "C-A2": {
+        "value": "UNKNOWN",
+        "option_index": 1
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "DISCONNECTED",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "TARGET_ONLY",
+        "option_index": 1
+      }
+    }
+  },
+  {
+    "event_id": "actual-unknown-disconnected",
+    "public_clip_id": "clip-014",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "662981783544ee696a2b8ac3c7d7984c50f0416f4e8ee834fc8e3482cf7404f4",
+    "material_sha256": "501a425eb9e3f9b9290ade850c9a9e0d1e71864b52b2c5bc83c6f0444871906b",
+    "seed": 20260908,
+    "source_frame_sha256": "801264366e80b5a23cc5f4c226374ed6a8a3ed2dbbbfc1b89108cc364457572f",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "actual": null,
+      "display_actual": null,
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "UNKNOWN",
+      "actual_unknown_reason": "DEVICE_DISCONNECTED",
+      "fallback_state": "UNUSABLE",
+      "fallback_reason": "DEVICE_DISCONNECTED",
+      "resp_device_state": "DISCONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "actual-unknown-disconnected",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": null,
+      "actual_unknown_reason": "DEVICE_DISCONNECTED",
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          },
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_1",
+        "option_index": 1
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 3
+      },
+      "C-A1": {
+        "value": "UNKNOWN",
+        "option_index": 4
+      },
+      "C-A2": {
+        "value": "UNKNOWN",
+        "option_index": 1
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 1
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 3
+      },
+      "C-D1": {
+        "value": "DISCONNECTED",
+        "option_index": 0
+      },
+      "C-D2": {
+        "value": "TARGET_ONLY",
+        "option_index": 1
+      }
+    }
+  },
+  {
+    "event_id": "wrong-cycle",
+    "public_clip_id": "clip-015",
+    "condition": "scene_native",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "95bedbc794cb0e569fa510a4aefd9263b6ee1a13f31898cf6030e35cd71d0892",
+    "material_sha256": "0589d96198f990fec85a3b4bbe9e95f7b57c14d5d065147433c1030d19a58426",
+    "seed": 20260908,
+    "source_frame_sha256": "06db7ac866dd736f73002daf129502ef302ea6228f5adfa833dbad16a9abdef2",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "actual": {
+        "cycle_index": 1,
+        "step_id": "hold_1"
+      },
+      "display_actual": {
+        "cycle_index": 1,
+        "step_id": "hold_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "DIFFERENT_CYCLE",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "wrong-cycle",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_1",
+        "option_index": 4
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "hold_1",
+        "option_index": 2
+      },
+      "C-A2": {
+        "value": "DIFFERENT_CYCLE",
+        "option_index": 2
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 3
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 1
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 3
+      }
+    }
+  },
+  {
+    "event_id": "wrong-cycle",
+    "public_clip_id": "clip-015",
+    "condition": "abstract_pacer",
+    "version": "u12-02-candidate-1",
+    "event_sha256": "95bedbc794cb0e569fa510a4aefd9263b6ee1a13f31898cf6030e35cd71d0892",
+    "material_sha256": "0589d96198f990fec85a3b4bbe9e95f7b57c14d5d065147433c1030d19a58426",
+    "seed": 20260908,
+    "source_frame_sha256": "cfdd582393fe6a3d8ecd01382a27c2b16c845ee48a0cc33ac1640b112d0971d0",
+    "evidence_class": "SYNTHETIC_FIXTURE",
+    "collection_timing": "AFTER_POST_PANAS",
+    "formal_measurement_validated": false,
+    "truth": {
+      "module_id": "storm",
+      "target": {
+        "cycle_index": 0,
+        "step_id": "hold_1"
+      },
+      "actual": {
+        "cycle_index": 1,
+        "step_id": "hold_1"
+      },
+      "display_actual": {
+        "cycle_index": 1,
+        "step_id": "hold_1"
+      },
+      "next_target": {
+        "cycle_index": 0,
+        "step_id": "exhale_1"
+      },
+      "relation": "DIFFERENT_CYCLE",
+      "actual_unknown_reason": null,
+      "fallback_state": "GOOD",
+      "fallback_reason": null,
+      "resp_device_state": "CONNECTED",
+      "recovery_value": 0.28,
+      "recovery_locked": false
+    },
+    "evidence": {
+      "event_id": "wrong-cycle",
+      "source_kind": "SYNTHETIC_FIXTURE",
+      "actual_source_ref": "fixture:independent-actual",
+      "actual_unknown_reason": null,
+      "clip_duration_ns": 4000000000,
+      "cumulative_band": "mid",
+      "cumulative_annotation_ref": "fixture:band-v1",
+      "previous_recovery_value": 0.25
+    },
+    "items": [
+      {
+        "item_id": "C-T1",
+        "layer": "target",
+        "prompt": "片段结束时，当前目标属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-T2",
+        "layer": "target",
+        "prompt": "按目标结构，当前目标之后的下一个步骤是什么？",
+        "options": [
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A1",
+        "layer": "actual",
+        "prompt": "片段结束时，显示的实际状态属于哪个具体步骤？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足，无法确定"
+          },
+          {
+            "value": "exhale_1",
+            "label": "呼气"
+          },
+          {
+            "value": "hold_1",
+            "label": "吸气后的停留"
+          },
+          {
+            "value": "hold_2",
+            "label": "呼气后的停留"
+          },
+          {
+            "value": "inhale_1",
+            "label": "吸气"
+          }
+        ]
+      },
+      {
+        "item_id": "C-A2",
+        "layer": "actual",
+        "prompt": "片段结束时，实际与目标的步骤身份是什么关系？",
+        "options": [
+          {
+            "value": "DIFFERENT_STEP",
+            "label": "同一轮的不同步骤"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "DIFFERENT_CYCLE",
+            "label": "处于不同轮次"
+          },
+          {
+            "value": "SAME_STEP",
+            "label": "同一轮的同一步骤"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C1",
+        "layer": "cumulative",
+        "prompt": "片段结束时，显示的累计信息处于哪个区间？",
+        "options": [
+          {
+            "value": "unknown",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "high",
+            "label": "较高区间"
+          },
+          {
+            "value": "low",
+            "label": "较低区间"
+          },
+          {
+            "value": "mid",
+            "label": "中间区间"
+          }
+        ]
+      },
+      {
+        "item_id": "C-C2",
+        "layer": "cumulative",
+        "prompt": "与片段起点相比，结束时显示的累计值怎样变化？",
+        "options": [
+          {
+            "value": "DECREASED",
+            "label": "降低"
+          },
+          {
+            "value": "INCREASED",
+            "label": "升高"
+          },
+          {
+            "value": "UNKNOWN",
+            "label": "当前信息不足"
+          },
+          {
+            "value": "UNCHANGED",
+            "label": "不变"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D1",
+        "layer": "degraded",
+        "prompt": "片段结束时，实际信息的可用情况是什么？",
+        "options": [
+          {
+            "value": "UNKNOWN",
+            "label": "片段未提供可判断的信息"
+          },
+          {
+            "value": "INPUT_LIMITED",
+            "label": "输入受限，不能可靠读取"
+          },
+          {
+            "value": "AVAILABLE",
+            "label": "当前可读取"
+          },
+          {
+            "value": "DISCONNECTED",
+            "label": "采集连接已中断"
+          }
+        ]
+      },
+      {
+        "item_id": "C-D2",
+        "layer": "degraded",
+        "prompt": "片段结束时，哪些步骤信息仍可可靠读取？",
+        "options": [
+          {
+            "value": "NEITHER",
+            "label": "两者均不可读取"
+          },
+          {
+            "value": "ACTUAL_ONLY",
+            "label": "仅实际"
+          },
+          {
+            "value": "TARGET_ONLY",
+            "label": "仅目标"
+          },
+          {
+            "value": "BOTH",
+            "label": "目标与实际"
+          }
+        ]
+      }
+    ],
+    "answer_key": {
+      "C-T1": {
+        "value": "hold_1",
+        "option_index": 4
+      },
+      "C-T2": {
+        "value": "exhale_1",
+        "option_index": 1
+      },
+      "C-A1": {
+        "value": "hold_1",
+        "option_index": 2
+      },
+      "C-A2": {
+        "value": "DIFFERENT_CYCLE",
+        "option_index": 2
+      },
+      "C-C1": {
+        "value": "mid",
+        "option_index": 3
+      },
+      "C-C2": {
+        "value": "INCREASED",
+        "option_index": 1
+      },
+      "C-D1": {
+        "value": "AVAILABLE",
+        "option_index": 2
+      },
+      "C-D2": {
+        "value": "BOTH",
+        "option_index": 3
+      }
+    }
+  }
+]

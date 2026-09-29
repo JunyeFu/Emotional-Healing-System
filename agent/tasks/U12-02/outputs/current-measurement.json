@@ -1,0 +1,30 @@
+{
+  "task_id": "U12-02",
+  "business_status": "DONE",
+  "accepted_scope": "step-instance measurement candidate and synthetic verification",
+  "candidate_commit": "ba495b54e6939c2bb1c4a07592400f82c0292864",
+  "signature_commit": "28bf474643cda6c59480ea3d478749269d5cf3eb",
+  "date": "2026-09-08 +08:00",
+  "human_reviewer": "傅钧烨",
+  "independent_reviewer": "Carson",
+  "runtime_interface_unchanged": true,
+  "case_count": 15,
+  "private_condition_materials": 30,
+  "participant_materials": 15,
+  "item_count": 8,
+  "real_annotation": "PENDING",
+  "real_render_equivalence": "PENDING",
+  "measurement_validity": "PENDING",
+  "formal_ready": false,
+  "new_independent_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_SIGNED",
+  "root_migration_complete": false,
+  "archive_byte_sha256": {
+    "original-README.md": "B82AFAE783720C853B218C26F129974D7F8678C46BE3364F67DACB2D580D6DB1",
+    "build_evidence.py": "A2E71F6B70F81C8A470E475040D5CE799DD987903BEB4C763271571817CD0B52",
+    "task_state.py": "6173DAD651D9907D4360EE965056545BD8A9A16FDD0BF8E26079D04A8CB70D79",
+    "技术验收记录.md": "4760FF6ADE36464009EF4086D67705AFA0908223B97F95CA9BA5D0048DCB7262"
+  },
+  "annotation_plan_byte_sha256": "0A567B55F84C9E431B1BC0AE3AD4D11F02A52202135C29FB26B4B24D21D4EB5D",
+  "acceptance_byte_sha256": "24502B604D54ADC9334D6BB58688C04030D23F4CABD4B69921DEDA8FE5BB0C8C"
+}

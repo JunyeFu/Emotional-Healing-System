@@ -1,0 +1,136 @@
+{
+  "task_id": "U12-02",
+  "title": "U12 02 步骤实例测量与材料交接审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U12-02保持原限定候选签收DONE。生成器、标注计划与合成材料已实际归入Agent层，F-02/Q-02/E-02消费者已修复；运行测量接口不改，真实片段、独立标注与测量有效性仍未完成。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-08 +08:00",
+    "commit": "ba495b54e6939c2bb1c4a07592400f82c0292864",
+    "method": "原独立Carson复核PASS，傅钧烨审阅已有提交和验证后签收实现与合成证据，不表述为本人重跑测试。签收提交28bf474643cda6c59480ea3d478749269d5cf3eb；本轮未取得新独立审查或真人签署。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "固定任务3人日，依赖U12-01/F-02/F-05；原领取Codex，历史分支codex/u12-02-step-measurement。原报告及acceptance字节保留，新生成材料不继承原签名。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1冻结输入与来源可追溯；AC2分别识别hold_1/hold_2、inhale_1/inhale_2，实际null不借目标补值；AC3原提交、独立复核和真人签收绑定，不代签外部条件。",
+        "四段为核对独立真值、确定八题、生成双条件材料、保留作答与缺失交接。身份相同不等于时序误差合格或执行正确。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "固定TASK及五目录、12项真实来源、当前说明与机器状态、活动生成器、标注计划、新五文件合成输出与旧原件归档。共享measurement.py接口及版本不改。",
+        "15合成案例、30双条件私有材料、15条件中性题面仍为八题；storm/heat/snow/fade步骤选项分别5/3/3/4项，题目正式采用与心理测量验证尚未冻结。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "实际非空需独立来源引用、未知需原因；引用文本不证明原件真实性或标注质量。断流/降级保留审计字段，题面不使用陈旧实际；下一目标不用于推断实际。",
+        "累计区间来自显示映射/注释，同片段起点累计值不借别模块。公开题面不含答案或真值，私有键是合成材料；理解题在PANAS后测之后，不给体验增加操作，也不隐去有效情绪结果。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "74专项通过，覆盖原字节、候选签收、旧五文件哈希、新旧输入/题面/键逐字节一致、两条件等值和缺失/篡改负例。生成器check复算通过，F-02/Q-02当前来源结构检查通过。",
+        "根635项回归、协议/治理/71注册/5分发包与61快照通过。旧45专项、633根回归及Carson708组等仅保留历史结果，本轮未执行真实片段或心理测量验证。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "原生成器混在运行模块且直接写旧证据目录，现已迁入execution，固定写outputs/materials。原签收五文件实际归档，新的来源路径/哈希独立，不覆盖原身份。",
+        "F-02/Q-02/E-02验证入口、测量测试导入和Q-02材料读取已改到实际新位置；成员导航中失效03-SRP绝对路径修为当前srp路径。原技术记录IN_REVIEW过程语句归档，不作为当前状态。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧说明、技术记录、生成器、状态工具及原合成证据实际归档；活动标注计划迁入outputs。运行模块保留最小当前入口，原签署报告和机器签收不改。",
+        "固定五目录分别存来源、生成与验证、实测输出、活动计划与材料、历史原件；先修Agent再生成Word。共享测量代码及全部根业务资料仍待整体归入双层。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "S-02给独立真实标签/原始记录/时钟；U-02/U-07给双条件同事件视频；Q-01/Q-02核验逐题等值、无片段/替代片段和可读性。原生未显示信息时先修订呈现与题库，不从答案反推可读。",
+        "RESPONDED为0/1；跳过、超时、技术未呈现保留null。U12-04/U12-11冻结分母和缺失分析，U12-09消费来源复算。真实标注人员、规模、阈值与活动许可尚未落实。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "历史Carson独立审查与傅钧烨签收范围保留，本轮仅作者Agent整理和软件复测。无新独立复核或真人有效性评估，不把原签名用于新生成器。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计61/71包规范化，余10，下一U12-03。原限定候选业务DONE不变；全部旧根业务目录物理迁移与运行引用修复尚未完成。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "测量源码、v2.2结构和合同、原签收/独立报告与技术记录、归档五文件、当前标注计划及F-02/Q-02/U12-01交接。合成输出不是正式参与者材料或实测数据。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "U1202-N01",
+      "status": "FIXED_EXECUTION_AND_MATERIAL_RELOCATION",
+      "description": "生成器、标注计划与旧证据实际归入Agent，新输出不覆盖旧签收",
+      "source": "agent/tasks/U12-02/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1202-N02",
+      "status": "FIXED_DOWNSTREAM_CONSUMERS",
+      "description": "F-02/Q-02/E-02与测量测试读取新入口，题面/键/输入保持字节一致",
+      "source": "agent/tasks/U12-02/evidence/verification.json"
+    },
+    {
+      "id": "U1202-N03",
+      "status": "OPEN_REAL_ANNOTATION_AND_VALIDITY",
+      "description": "真实片段、独立标签、双条件可读等值及测量有效性仍未验证",
+      "source": "agent/tasks/U12-02/outputs/current-measurement.json"
+    },
+    {
+      "id": "U1202-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享运行模块及资料尚未整体迁入双层",
+      "source": "agent/normalization.md"
+    }
+  ],
+  "next_task": "U12-03",
+  "source_links": [
+    {
+      "label": "当前步骤测量交接",
+      "path": "agent/tasks/U12-02/outputs/current-measurement.md"
+    },
+    {
+      "label": "真实范围与原签收",
+      "path": "agent/tasks/U12-02/outputs/current-measurement.json"
+    },
+    {
+      "label": "活动独立标注计划",
+      "path": "agent/tasks/U12-02/outputs/annotation-plan.md"
+    },
+    {
+      "label": "本轮软件复测",
+      "path": "agent/tasks/U12-02/evidence/verification.json"
+    },
+    {
+      "label": "实际迁移及消费者",
+      "path": "agent/tasks/U12-02/evidence/consumer-impact.md"
+    }
+  ]
+}

@@ -59,10 +59,10 @@
     "W-02",
     "W-03",
     "W-04",
-    "U12-01"
+    "U12-01",
+    "U12-02"
   ],
   "remaining_packages": [
-    "U12-02",
     "U12-03",
     "U12-04",
     "U12-05",
@@ -1607,6 +1607,34 @@
       "id": "U1201-N04",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "共享治理、工程、资料等业务目录尚未整体迁入human/agent",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-02",
+      "id": "U1202-N01",
+      "status": "FIXED_EXECUTION_AND_MATERIAL_RELOCATION",
+      "description": "生成器、标注计划与旧证据实际归入Agent，新输出不覆盖旧签收",
+      "source": "agent/tasks/U12-02/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-02",
+      "id": "U1202-N02",
+      "status": "FIXED_DOWNSTREAM_CONSUMERS",
+      "description": "F-02/Q-02/E-02与测量测试读取新入口，题面/键/输入保持字节一致",
+      "source": "agent/tasks/U12-02/evidence/verification.json"
+    },
+    {
+      "task_id": "U12-02",
+      "id": "U1202-N03",
+      "status": "OPEN_REAL_ANNOTATION_AND_VALIDITY",
+      "description": "真实片段、独立标签、双条件可读等值及测量有效性仍未验证",
+      "source": "agent/tasks/U12-02/outputs/current-measurement.json"
+    },
+    {
+      "task_id": "U12-02",
+      "id": "U1202-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享运行模块及资料尚未整体迁入双层",
       "source": "agent/normalization.md"
     }
   ]

@@ -164,7 +164,8 @@ def test_terminal_cumulative_is_not_forced_to_full_recovery():
 
 
 def test_export_determinism_and_participant_key_separation():
-    from srp_step_measurement.build_evidence import artifacts
+    import runpy
+    artifacts = runpy.run_path(str(Path(__file__).resolve().parents[3] / 'agent/tasks/U12-02/execution/build_evidence.py'))['artifacts']
     a, b = artifacts(), artifacts()
     assert a == b
     public = json.loads(a["participant_items.json"])
