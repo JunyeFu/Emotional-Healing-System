@@ -1,0 +1,17 @@
+[
+  {
+    "command": [
+      "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "--import-mode=importlib",
+      "D:\\Agent\\srp\\agent\\tasks\\U12-11\\execution\\test_freeze_handoff.py",
+      "D:\\Agent\\srp\\agent\\tasks\\G-03\\execution",
+      "D:\\Agent\\srp\\agent\\tasks\\E-03\\execution",
+      "D:\\Agent\\srp\\agent\\tasks\\A-03\\execution"
+    ],
+    "exit_code": 1,
+    "log": "evidence/handoff.txt"
+  }
+]

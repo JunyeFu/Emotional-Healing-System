@@ -68,10 +68,10 @@
     "U12-07",
     "U12-08",
     "U12-09",
-    "U12-10"
+    "U12-10",
+    "U12-11"
   ],
   "remaining_packages": [
-    "U12-11",
     "U12-12"
   ],
   "root_migration_complete": false,
@@ -1892,6 +1892,41 @@
     {
       "task_id": "U12-10",
       "id": "U1210-N05",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "旧根业务与共享模块尚未整体迁入双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-11",
+      "id": "U1211-N01",
+      "status": "FIXED_ORIGINAL_ARCHIVE_AND_CURRENT_ENTRY",
+      "description": "四旧候选实际归档，原字节/输入ID保留，旧未注册入口改活动导航",
+      "source": "agent/tasks/U12-11/archive/README.md"
+    },
+    {
+      "task_id": "U12-11",
+      "id": "U1211-N02",
+      "status": "DELIVERED_FIFTEEN_ITEM_HANDOFF_NOT_APPROVAL",
+      "description": "15项材料与G-03既有空索引对齐，不建批准台账、不冻结候选数值",
+      "source": "agent/tasks/U12-11/outputs/freeze-handoff.md"
+    },
+    {
+      "task_id": "U12-11",
+      "id": "U1211-N03",
+      "status": "FIXED_NAVIGATION_AND_RETESTED",
+      "description": "TASK映射漏outputs前缀已修，失败日志保留，G-03消费当前交接",
+      "source": "agent/tasks/U12-11/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-11",
+      "id": "U1211-N04",
+      "status": "OPEN_REAL_CAL_PARAMETERS_RESOURCES_AND_SIGNOFF",
+      "description": "真实CAL/N/界值/规则、机构和资源、独立第二人未交付；整体与活动资格冲突待裁定",
+      "source": "agent/tasks/U12-11/outputs/current-freeze.md"
+    },
+    {
+      "task_id": "U12-11",
+      "id": "U1211-N05",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "旧根业务与共享模块尚未整体迁入双层",
       "source": "agent/normalization.md"

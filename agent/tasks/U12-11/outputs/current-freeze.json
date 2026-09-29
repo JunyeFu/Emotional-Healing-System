@@ -1,0 +1,175 @@
+{
+  "task_id": "U12-11",
+  "business_status": "WAIT_DEP_EXTERNAL",
+  "claimant": null,
+  "reviewer": null,
+  "scope": "CURRENT_HANDOFF_INDEX_NOT_FREEZE_OR_APPROVAL",
+  "formal_authorization": false,
+  "dependencies": [
+    {
+      "id": "G-05",
+      "status": "WAIT_DEP_EXTERNAL"
+    },
+    {
+      "id": "E-03",
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "id": "U12-09",
+      "status": "WAIT_DEP"
+    },
+    {
+      "id": "A-03-CAL",
+      "status": "WAIT_DEP"
+    }
+  ],
+  "protocol_status": "DESIGN_CANDIDATE_NOT_PREREGISTERED",
+  "protocol_formal_collection_allowed": false,
+  "freeze_index_ref": "agent/tasks/G-03/outputs/freeze-template.json",
+  "required_freezes": [
+    {
+      "id": "panas_version_and_permission",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "eligibility_and_recruitment",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "training_budget",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "randomization_and_concealment",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "minimum_important_affect_difference",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "missingness_and_mnar",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "functional_margin_justification",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "critical_error_thresholds",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "final_power_and_n",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "stopping_rule",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "institutional_scope",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "live_e2e",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "runtime_gate_integration",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "data_retention_and_access",
+      "status": "PENDING",
+      "evidence_ref": null
+    },
+    {
+      "id": "pretreatment_baseline_and_condition_training_order",
+      "status": "PENDING",
+      "evidence_ref": null
+    }
+  ],
+  "stage1_capabilities": [
+    {
+      "capability_id": "INSTITUTION_STAGE1",
+      "activity": "G-03|B-02|E-04",
+      "required_status": "VERIFIED",
+      "evidence_owner": "真实机构负责人",
+      "evidence_ref": "",
+      "status": "PENDING_EXTERNAL"
+    },
+    {
+      "capability_id": "QUESTIONNAIRE_PERMISSION",
+      "activity": "Q-02|Q-03|G-03",
+      "required_status": "VERIFIED",
+      "evidence_owner": "论文与设计负责人",
+      "evidence_ref": "",
+      "status": "PENDING_EXTERNAL"
+    },
+    {
+      "capability_id": "RETENTION_AND_PRIVACY",
+      "activity": "G-03|G-04|W-03",
+      "required_status": "VERIFIED",
+      "evidence_owner": "数据负责人",
+      "evidence_ref": "",
+      "status": "PENDING_EXTERNAL"
+    },
+    {
+      "capability_id": "FORMAL_MACHINE",
+      "activity": "U-08|I-01|G-03",
+      "required_status": "VERIFIED",
+      "evidence_owner": "工程负责人",
+      "evidence_ref": "",
+      "status": "PENDING_EXTERNAL"
+    },
+    {
+      "capability_id": "STATION_CAPACITY_STAGE1",
+      "activity": "G-03",
+      "required_status": "VERIFIED",
+      "evidence_owner": "现场负责人",
+      "evidence_ref": "",
+      "status": "PENDING_EXTERNAL"
+    }
+  ],
+  "g05_all_capability_count": 13,
+  "formal_parameters": {
+    "training_budget_seconds": null,
+    "minimum_important_affect_difference": null,
+    "critical_module_error_thresholds": null,
+    "missingness_model_and_mnar_grid": null,
+    "randomized_n": null,
+    "recruitment_cap": null
+  },
+  "candidate_only": {
+    "functional_margin": 0.075,
+    "imputations": 100,
+    "power_target": 0.9
+  },
+  "old_anchors_not_final_power": [
+    48,
+    192,
+    240
+  ],
+  "real_calibration_status": "NOT_DELIVERED",
+  "real_technical_closeout": "NOT_GENERATED",
+  "formal_gate_proved": false,
+  "real_parameter_freeze": "NOT_DELIVERED",
+  "independent_review": "NOT_RUN",
+  "human_acceptance": "NOT_SIGNED",
+  "normalization_is_business_completion": false,
+  "root_migration_complete": false
+}
