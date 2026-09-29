@@ -1,0 +1,28 @@
+......F.                                                                 [100%]
+================================== FAILURES ===================================
+___________________ test_archives_and_both_consumers_exist ____________________
+
+    def test_archives_and_both_consumers_exist():
+        digests = {'00_第11步计划.md': 'B41E78C466BDB4A47844D9710EC102136B0BFD51F3CE80F757DFD9CD9634540C',
+                   '01_详细执行方案.md': 'A25AADCBF6FED0CC5E72A882B2316C21DDB21FB133B3E17F7E298253E5AA4338'}
+        validator = (PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py').read_text(encoding='utf-8')
+        for name, digest in digests.items():
+            assert hashlib.sha256((TASK / 'archive' / name).read_bytes()).hexdigest().upper() == digest
+            assert f'LEGACY_CLOSEOUT / "{name}"' in validator
+            path = PLAN / '12_步骤11_离线处理分析与论文写作' / name
+            text = path.read_text(encoding='utf-8')
+            assert 'agent/tasks/E-04/outputs/current-closeout.md' in text
+            for link in re.findall(r'\]\(([^)]+)\)', text):
+>               assert (path.parent / link).resolve().exists(), link
+E               AssertionError: ../../../../agent/tasks/E-04/outputs/current-closeout.md
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/E-04/outputs/current-closeout.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/E-04/outputs/current-closeout.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作') / '../../../../agent/tasks/E-04/outputs/current-closeout.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作/00_第11步计划.md').parent
+
+agent\tasks\E-04\execution\test_closeout_handoff.py:124: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/E-04/execution/test_closeout_handoff.py::test_archives_and_both_consumers_exist
+1 failed, 7 passed in 0.38s

@@ -1,8 +1,8 @@
 {
   "paths": [
     "02-技术研发/srp_step_measurement/measurement.py",
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/acceptance/U12-02.json",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/acceptance/U12-02.json",
     "02-技术研发/srp_step_measurement/U12-02_第二人审核报告_已签署.md",
     "02-技术研发/srp_step_measurement/U12-02_独立复核记录.md",
     "agent/tasks/U12-02/archive/技术验收记录.md",

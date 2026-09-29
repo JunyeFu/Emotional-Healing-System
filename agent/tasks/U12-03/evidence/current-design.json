@@ -4,8 +4,8 @@
   "input_snapshot_id": "6DE6369FB49BDA2E6F5AD2B2F7406FAFF68566B78A3D2CC1FD69657C6D9042F2",
   "historical_candidate": "9317f0b649547c2ae1d900fb39f6f486a9407baa",
   "sources": {
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json": "3e5015bba65588ff852e05b1831cb062e606f3ecb78c1f5b008fe61840d59de6",
-    "agent/tasks/R-01/outputs/current-representation.md": "7d9fdc33500c064b6535bcd5a869711f9a98adc66d6151c5f903213b2ffe3b99",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json": "3e5015bba65588ff852e05b1831cb062e606f3ecb78c1f5b008fe61840d59de6",
+    "agent/tasks/R-01/outputs/current-representation.md": "1ef5614ee2bc99c23a1ebe5edad7ee6847a642112fd05a677b4573a46ad9100c",
     "02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json": "418d707266b4347df4c4054ca0f4c007d737c129575106ff4f00c4bada6b679a",
     "agent/tasks/U12-02/outputs/current-measurement.md": "375165023e354f64a5516541fdae651575d48294a15971513a5e03f0b9bf84f5",
     "agent/tasks/U12-02/outputs/annotation-plan.md": "0a567b55f84c9e431b1bc0ae3ad4d11f02a52202135c29fb26b4b24d21d4eb5d"
@@ -19,7 +19,7 @@
     "outputs/current-training.json": "849f888f04231f8895a0362bce110a3e82b635add94742cbe197f09a40a8e380",
     "execution/validate.py": "4bc15b1536f8531704f64d31b5736822ca5644b3a6b223012c88f8e70ed5613c",
     "execution/test_contract.py": "6a94caf92f069665c2dfc80ccd945f145535701a73f4c886eff5490293361e15",
-    "execution/build_evidence.py": "190a3384538b5c14129de6d422a245ef8912b8446e332c2e064f72263cc0acfc"
+    "execution/build_evidence.py": "d96b7b44f55e96775106e28abfc1d5b8154a6de58f9ac0fcc61647910a715d8c"
   },
   "real_clips": "PENDING",
   "participant_observations": "PENDING",

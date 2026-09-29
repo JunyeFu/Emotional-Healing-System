@@ -12,7 +12,7 @@ from jsonschema import Draft202012Validator
 
 
 REPO = pathlib.Path(__file__).resolve().parents[4]
-ROOT = REPO / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
+ROOT = REPO / "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 R01 = ROOT / "20_产品与场景设计" / "R-01_四层表示方案"
 PACKAGE = R01 / "R-01_四层候选语法与完整表示方案_v0.9-candidate.md"
 ACCEPTANCE = R01 / "R-01_验收记录.md"

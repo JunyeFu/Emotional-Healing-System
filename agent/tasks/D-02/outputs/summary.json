@@ -10,29 +10,123 @@
     "method": "没有独立真机复核或第二人签署。本轮Codex只整理任务、修复软件交接并形成Word，不代填责任人或真实PASS。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["原任务约4人日，前置P-02已完成；P-HARDWARE只是角色，实际领取人为空。专用SDK、设备及目标机兼容条件尚未落实。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["交付respiBAN BLE适配器、400Hz呼吸与运动原件、配置及状态事件。AC1真机连续30分钟；AC2通道和时间戳正确；AC3断连重连且正式模式不回退Mock。", "国内技能入口为L-BLE/L-PY；厂商SDK和字节协议是实际实现前置，不能由入门教程替代。"]},
-    {"heading": "实际交付", "paragraphs": ["固定inputs、execution、outputs、evidence、archive目录；新增当前采集交接、官方来源、五项合同检查和本总结事实源。", "共享FrameClock新增带时间戳resp_samples批次，保留历史显示字段；新增两项原生批次回归，未新增无设备依据的驱动或SDK依赖。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["先核对注册表与P-02接口，再阅读厂商规格与API说明。respiBAN专用API需申请；公开Hub示例不能证明当前设备和Python版本可用。", "旧方案至少25Hz、三点均值及EDR回退已退役。原始通知先落盘，原生样本用于下游；SDK解码值不能冒充通知字节。"]},
-    {"heading": "验证与结果", "paragraphs": ["26项共享采集测试、D-01六项合同检查及D-02五项检查，共37 passed。合成400Hz批次保留40个样本，后续只返回新样本；重复tick为空且无新有效数据。", "首轮跨包同名测试模块收集冲突已用唯一文件名修复。全仓回归发现此前R-01迁移被当作范围变化，已补精确路径映射及四项正负回归；历史基线不改。未扫描BLE或采集真机。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["原共享帧只保留三点呼吸均值，导致原生样本及时间丢失；已补批次并将resp有效性绑定新样本。均值仅保留作旧显示，不作为400Hz采集证据。", "专用SDK、原始通知接口、7通道布局、目标机和30分钟证据继续开放，UP-06/M06不由软件测试关闭。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["D-02无旧独立驱动可迁移。原过期方案已归档到D-01，本包只引用，不复制同一历史文件；新增内容均按固定目录归属。", "共享采集模块暂留技术目录，后续统一迁至Agent模块并修复消费者；根目录双层迁移仍未完成。"]},
-    {"heading": "上下游交接", "paragraphs": ["P-02接收plux_respiban原始包；D-01给ECG/RR，D-02给真实呼吸与运动，S-01同步/SQI，S-02做交互状态估计。未知设备时间置null，原因另记L1。", "呼吸原生批次已保留；正式SDK及运动轴解码尚待实现，下游不可把旧显示均值、EDR或fixture视为真实输入。I-01仍须双设备800秒全链，真实准入由G-05落实。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["实际成员须领取并冻结输入；厂商回执、真实采集和独立复核发生后再申请第二人签收。状态保持WAIT_DEP_EXTERNAL，已有任务签署不扩张到本包。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计19/71包，剩余52，下一S-01。Word由Agent事实生成，并串联上游存储、双设备及下游同步关系；明确路径提交推送，任务状态不变。"]},
-    {"heading": "审阅来源", "paragraphs": ["来源包括注册表、过期设备方案、当前帧代码、P-02消费者和厂商说明；具体链接见当前交接。所有真实硬件缺口保留，不生成不存在的记录。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "原任务约4人日，前置P-02已完成；P-HARDWARE只是角色，实际领取人为空。专用SDK、设备及目标机兼容条件尚未落实。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "交付respiBAN BLE适配器、400Hz呼吸与运动原件、配置及状态事件。AC1真机连续30分钟；AC2通道和时间戳正确；AC3断连重连且正式模式不回退Mock。",
+        "国内技能入口为L-BLE/L-PY；厂商SDK和字节协议是实际实现前置，不能由入门教程替代。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "固定inputs、execution、outputs、evidence、archive目录；新增当前采集交接、官方来源、五项合同检查和本总结事实源。",
+        "共享FrameClock新增带时间戳resp_samples批次，保留历史显示字段；新增两项原生批次回归，未新增无设备依据的驱动或SDK依赖。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "先核对注册表与P-02接口，再阅读厂商规格与API说明。respiBAN专用API需申请；公开Hub示例不能证明当前设备和Python版本可用。",
+        "旧方案至少25Hz、三点均值及EDR回退已退役。原始通知先落盘，原生样本用于下游；SDK解码值不能冒充通知字节。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "26项共享采集测试、D-01六项合同检查及D-02五项检查，共37 passed。合成400Hz批次保留40个样本，后续只返回新样本；重复tick为空且无新有效数据。",
+        "首轮跨包同名测试模块收集冲突已用唯一文件名修复。全仓回归发现此前R-01迁移被当作范围变化，已补精确路径映射及四项正负回归；历史基线不改。未扫描BLE或采集真机。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "原共享帧只保留三点呼吸均值，导致原生样本及时间丢失；已补批次并将resp有效性绑定新样本。均值仅保留作旧显示，不作为400Hz采集证据。",
+        "专用SDK、原始通知接口、7通道布局、目标机和30分钟证据继续开放，UP-06/M06不由软件测试关闭。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "D-02无旧独立驱动可迁移。原过期方案已归档到D-01，本包只引用，不复制同一历史文件；新增内容均按固定目录归属。",
+        "共享采集模块暂留技术目录，后续统一迁至Agent模块并修复消费者；根目录双层迁移仍未完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "P-02接收plux_respiban原始包；D-01给ECG/RR，D-02给真实呼吸与运动，S-01同步/SQI，S-02做交互状态估计。未知设备时间置null，原因另记L1。",
+        "呼吸原生批次已保留；正式SDK及运动轴解码尚待实现，下游不可把旧显示均值、EDR或fixture视为真实输入。I-01仍须双设备800秒全链，真实准入由G-05落实。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "实际成员须领取并冻结输入；厂商回执、真实采集和独立复核发生后再申请第二人签收。状态保持WAIT_DEP_EXTERNAL，已有任务签署不扩张到本包。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计19/71包，剩余52，下一S-01。Word由Agent事实生成，并串联上游存储、双设备及下游同步关系；明确路径提交推送，任务状态不变。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "来源包括注册表、过期设备方案、当前帧代码、P-02消费者和厂商说明；具体链接见当前交接。所有真实硬件缺口保留，不生成不存在的记录。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "D02-N01", "status": "FIXED_NATIVE_BATCH", "description": "共享呼吸帧原生样本丢失已补批次与时间戳，旧均值仅作显示", "source": "02-技术研发/01-数据采集/frame_clock.py"},
-    {"id": "D02-N02", "status": "OPEN_VENDOR_AND_HARDWARE", "description": "缺respiBAN专用SDK、原始通知接口及真实30分钟记录，UP-06/M06仍开放", "source": "agent/tasks/D-02/outputs/current-acquisition.md"},
-    {"id": "D02-N03", "status": "OPEN_REAL_OWNER", "description": "P-HARDWARE尚未落实实际领取人，不代填签收", "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"},
-    {"id": "D02-N04", "status": "FIXED_GOVERNANCE_RELOCATION", "description": "全仓发现R-01迁移路径误判，补精确映射；未知路径、其他任务和验收条件变化仍拒绝", "source": "agent/normalization-relocations.json"}
+    {
+      "id": "D02-N01",
+      "status": "FIXED_NATIVE_BATCH",
+      "description": "共享呼吸帧原生样本丢失已补批次与时间戳，旧均值仅作显示",
+      "source": "02-技术研发/01-数据采集/frame_clock.py"
+    },
+    {
+      "id": "D02-N02",
+      "status": "OPEN_VENDOR_AND_HARDWARE",
+      "description": "缺respiBAN专用SDK、原始通知接口及真实30分钟记录，UP-06/M06仍开放",
+      "source": "agent/tasks/D-02/outputs/current-acquisition.md"
+    },
+    {
+      "id": "D02-N03",
+      "status": "OPEN_REAL_OWNER",
+      "description": "P-HARDWARE尚未落实实际领取人，不代填签收",
+      "source": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+    },
+    {
+      "id": "D02-N04",
+      "status": "FIXED_GOVERNANCE_RELOCATION",
+      "description": "全仓发现R-01迁移路径误判，补精确映射；未知路径、其他任务和验收条件变化仍拒绝",
+      "source": "agent/normalization-relocations.json"
+    }
   ],
   "next_task": "S-01",
   "source_links": [
-    {"label": "当前真实呼吸采集交接", "path": "agent/tasks/D-02/outputs/current-acquisition.md"},
-    {"label": "原生批次实现", "path": "02-技术研发/01-数据采集/frame_clock.py"},
-    {"label": "软件验证记录", "path": "agent/tasks/D-02/evidence/verification.json"},
-    {"label": "国内技能资料", "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"}
+    {
+      "label": "当前真实呼吸采集交接",
+      "path": "agent/tasks/D-02/outputs/current-acquisition.md"
+    },
+    {
+      "label": "原生批次实现",
+      "path": "02-技术研发/01-数据采集/frame_clock.py"
+    },
+    {
+      "label": "软件验证记录",
+      "path": "agent/tasks/D-02/evidence/verification.json"
+    },
+    {
+      "label": "国内技能资料",
+      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    }
   ]
 }

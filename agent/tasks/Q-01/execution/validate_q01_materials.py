@@ -3,10 +3,12 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+import runpy
 
 
 REPO = Path(__file__).resolve().parents[4]
-ROOT = REPO / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建'
+resolve_path = runpy.run_path(str(REPO / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
+ROOT = REPO / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建'
 MATERIALS = ROOT / "materials"
 FORBIDDEN_BLIND_TOKENS = {
     "storm",
@@ -76,7 +78,7 @@ def validate_materials() -> list[str]:
 
     repo = repository_root()
     for relative in evidence["authority_precedence"]:
-        if not (repo / relative).is_file():
+        if not resolve_path(repo, relative).is_file():
             errors.append(f"AUTHORITY_FILE_MISSING:{relative}")
 
     task_ids = [task["id"] for task in tasks["tasks"]]

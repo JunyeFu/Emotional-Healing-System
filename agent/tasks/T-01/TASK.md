@@ -25,7 +25,7 @@ Python SessionCore为流程和时钟权威，T-01只读消费UDP。v2.2使用显
 
 ## 技能与资料
 
-Python、UDP、TouchDesigner DAT/TOP与参数布局。国内教学资料消费[技能资料表的L-TD](../../../00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md)；接口查阅[Execute DAT](https://derivative.ca/UserGuide/Execute_DAT)、[Text TOP](https://derivative.ca/UserGuide/Text_TOP)及[官方中文Python socket](https://docs.python.org/zh-cn/3/library/socket.html)。版本采用项目实际基线2025.32820，不在工具缺失时自行升级。
+Python、UDP、TouchDesigner DAT/TOP与参数布局。国内教学资料消费[技能资料表的L-TD](../../governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md)；接口查阅[Execute DAT](https://derivative.ca/UserGuide/Execute_DAT)、[Text TOP](https://derivative.ca/UserGuide/Text_TOP)及[官方中文Python socket](https://docs.python.org/zh-cn/3/library/socket.html)。版本采用项目实际基线2025.32820，不在工具缺失时自行升级。
 
 ## 交接
 

@@ -2,6 +2,7 @@
   "scope": "Physical completed moves and all current task/Word source links; not Unity/TD runtime or business acceptance",
   "migrated_roots": [
     "work",
+    "00-项目管理",
     "04-成果与交付",
     "Tools",
     "assets",
@@ -11,7 +12,6 @@
     "README_run.md"
   ],
   "pending_roots": [
-    "00-项目管理",
     "01-需求与设计",
     "02-技术研发",
     "03-测试与实验",
@@ -30,7 +30,6 @@
     ".artifacts-local",
     ".pytest_cache",
     ".tools",
-    "00-项目管理",
     "01-需求与设计",
     "02-技术研发",
     "03-测试与实验",

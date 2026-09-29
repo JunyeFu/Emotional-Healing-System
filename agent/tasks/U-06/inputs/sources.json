@@ -1,6 +1,6 @@
 {
   "paths": [
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
     "agent/tasks/V-02/outputs/current-scenes.json",
     "agent/tasks/V-03/outputs/current-mapping.json",
     "agent/tasks/V-04/outputs/current-preview.json",

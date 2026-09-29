@@ -10,32 +10,136 @@
     "method": "审阅293720f40126e2892b585c78fe7908518f40d4ad设计交付及已有验证，未表述为本人重跑。签名不转移到本轮14节点候选。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["原负责人Codex Agent，本轮Codex。当前适用与历史签收分别记录，不回改原设计稿或冻结输入；规范化和合成回归不表示真实教学、全旅程或正式研究已完成。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["原包约3人日，前置F-02/R-01。AC1覆盖核心四模块、无手部操作、Python权威、两条件及证据；AC2覆盖入口至结束完整旅程；AC3主张分类可追踪，合同变更版本化。", "所需游戏场景流程、MDA反推、研究约束与旅程设计技能；国内学习资料采用L-RESEARCH/L-UNITYLEARN/L-MARKDOWN，统一链接在审阅来源。"]},
-    {"heading": "实际交付", "paragraphs": ["固定TASK与五目录；历史校验器迁入execution/validate_historical.py。当前JSON和适用说明另存outputs，消费者影响与四次实际命令保存在evidence。", "新旅程14节点在原12节点基础上增加J-03T教学与J-11M其他测量；原合同及五稿、独立复核和签署保持共享历史原件，不生成平行副本。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["中性准备、PANAS前测、分条件教学、核心、PANAS后测、理解及其他测量依次展开。原简报“两条件共享同一参与者”不再按字面执行，每人一个条件一次核心。", "教学候选180秒在核心外，不替代每模块25秒demo；正式预算仍null。首个分条件材料前需登记暴露，不能等到核心start才算；当前P-01尚未完成教学接入，不修改其状态机冒充已接通。"]},
-    {"heading": "验证与结果", "paragraphs": ["22项回归覆盖合法当前旅程和非法时序、核心操作、权限、正式预算代填、教学算入核心、延后暴露、研究门及视觉来源等变体。当前14节点校验通过。", "原v1.0与签署时v1.1权威校验通过：26约束、15开放项、12节点及10主张；V-02消费原合同通过。历史校验不叫当前研究验证，也不证明Unity运行。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["V01-N01旧旅程漏分条件教学且混合后测与理解，本轮版本化补齐，异常时序负测通过。V01-N02旧有序研究门与同一参与者措辞已在当前使用入口订正。", "V01-N03旧start暴露边界不覆盖教学，已明确首个条件材料前登记，但运行接入交U12-06/X-01/G-02/P-01。V01-N04旧视觉开放项不重开V-02至V-04已选固定镜头及提示形态。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["旧99目录校验器移走且删除原入口，无兼容转发；新旧校验目的分开。五设计稿和签署保持原位置，不为当前口径回写历史，共享业务目录最终迁移未完成。"]},
-    {"heading": "上下游交接", "paragraphs": ["F-02/R-01提供测量及表示边界，P-01掌握时钟与顺序，U-01/U-02消费v2.2步骤和生命周期；TD不成为Unity体验依赖。默认核心800秒，不包含准备、教学和量表，暂停增加墙钟时长。", "V-02/V-03既有选择保留，V-05及U-03至U-07搭建真实完整旅程与双条件；U12-03/04/11冻结教学和测量，U12-06/X-01连接暴露与追加记录。下一规范化包V-02，检查旧选择到当前视觉合同的关系。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["原真实签收覆盖原设计候选，不扩大为Unity构建、设备链或LIVE_E2E。当前旅程候选仅经Codex技术验证，新的真人审阅由团队总监安排，未填任何新的签收结论。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["明确路径提交并推送codex/task-package-normalization，不自动合并。规范化14/71包，剩余57包；下一包V-02。最终根目录双层迁移和真实下游交付尚未完成。"]},
-    {"heading": "审阅来源", "paragraphs": ["当前旅程、机器可读候选、实际验证、消费者影响、原签收和国内资料可从下列链接打开。串联Word显示当前未闭合关系，修订从Agent层回填。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "原负责人Codex Agent，本轮Codex。当前适用与历史签收分别记录，不回改原设计稿或冻结输入；规范化和合成回归不表示真实教学、全旅程或正式研究已完成。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "原包约3人日，前置F-02/R-01。AC1覆盖核心四模块、无手部操作、Python权威、两条件及证据；AC2覆盖入口至结束完整旅程；AC3主张分类可追踪，合同变更版本化。",
+        "所需游戏场景流程、MDA反推、研究约束与旅程设计技能；国内学习资料采用L-RESEARCH/L-UNITYLEARN/L-MARKDOWN，统一链接在审阅来源。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "固定TASK与五目录；历史校验器迁入execution/validate_historical.py。当前JSON和适用说明另存outputs，消费者影响与四次实际命令保存在evidence。",
+        "新旅程14节点在原12节点基础上增加J-03T教学与J-11M其他测量；原合同及五稿、独立复核和签署保持共享历史原件，不生成平行副本。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "中性准备、PANAS前测、分条件教学、核心、PANAS后测、理解及其他测量依次展开。原简报“两条件共享同一参与者”不再按字面执行，每人一个条件一次核心。",
+        "教学候选180秒在核心外，不替代每模块25秒demo；正式预算仍null。首个分条件材料前需登记暴露，不能等到核心start才算；当前P-01尚未完成教学接入，不修改其状态机冒充已接通。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "22项回归覆盖合法当前旅程和非法时序、核心操作、权限、正式预算代填、教学算入核心、延后暴露、研究门及视觉来源等变体。当前14节点校验通过。",
+        "原v1.0与签署时v1.1权威校验通过：26约束、15开放项、12节点及10主张；V-02消费原合同通过。历史校验不叫当前研究验证，也不证明Unity运行。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "V01-N01旧旅程漏分条件教学且混合后测与理解，本轮版本化补齐，异常时序负测通过。V01-N02旧有序研究门与同一参与者措辞已在当前使用入口订正。",
+        "V01-N03旧start暴露边界不覆盖教学，已明确首个条件材料前登记，但运行接入交U12-06/X-01/G-02/P-01。V01-N04旧视觉开放项不重开V-02至V-04已选固定镜头及提示形态。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧99目录校验器移走且删除原入口，无兼容转发；新旧校验目的分开。五设计稿和签署保持原位置，不为当前口径回写历史，共享业务目录最终迁移未完成。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "F-02/R-01提供测量及表示边界，P-01掌握时钟与顺序，U-01/U-02消费v2.2步骤和生命周期；TD不成为Unity体验依赖。默认核心800秒，不包含准备、教学和量表，暂停增加墙钟时长。",
+        "V-02/V-03既有选择保留，V-05及U-03至U-07搭建真实完整旅程与双条件；U12-03/04/11冻结教学和测量，U12-06/X-01连接暴露与追加记录。下一规范化包V-02，检查旧选择到当前视觉合同的关系。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原真实签收覆盖原设计候选，不扩大为Unity构建、设备链或LIVE_E2E。当前旅程候选仅经Codex技术验证，新的真人审阅由团队总监安排，未填任何新的签收结论。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "明确路径提交并推送codex/task-package-normalization，不自动合并。规范化14/71包，剩余57包；下一包V-02。最终根目录双层迁移和真实下游交付尚未完成。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前旅程、机器可读候选、实际验证、消费者影响、原签收和国内资料可从下列链接打开。串联Word显示当前未闭合关系，修订从Agent层回填。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "V01-N01", "status": "FIXED_DESIGN_CANDIDATE", "description": "当前14节点补前测后教学、后测后其他测量，22项时序与约束回归通过", "source": "agent/tasks/V-01/outputs/current-experience.json"},
-    {"id": "V01-N02", "status": "FIXED_CURRENT_USAGE", "description": "旧研究门和两条件同一参与者措辞不用于当前v1.2设计", "source": "agent/tasks/V-01/outputs/current-experience.md"},
-    {"id": "V01-N03", "status": "OPEN_DOWNSTREAM_EXPOSURE", "description": "教学首材料前暴露登记需U12-06/X-01连接G-02/P-01/P-02，设计候选不是运行证据", "source": "agent/tasks/V-01/evidence/consumer-impact.md"},
-    {"id": "V01-N04", "status": "FIXED_CURRENT_USAGE", "description": "旧开放项不重开已选镜头/双环/天气，fade复色与累计独立", "source": "agent/tasks/V-01/outputs/current-experience.md"},
-    {"id": "V01-N05", "status": "OPEN_HUMAN_REVIEW", "description": "新候选未继承历史签名，正式时序冻结及真人审阅由责任人完成", "source": "agent/tasks/V-01/TASK.md"}
+    {
+      "id": "V01-N01",
+      "status": "FIXED_DESIGN_CANDIDATE",
+      "description": "当前14节点补前测后教学、后测后其他测量，22项时序与约束回归通过",
+      "source": "agent/tasks/V-01/outputs/current-experience.json"
+    },
+    {
+      "id": "V01-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "旧研究门和两条件同一参与者措辞不用于当前v1.2设计",
+      "source": "agent/tasks/V-01/outputs/current-experience.md"
+    },
+    {
+      "id": "V01-N03",
+      "status": "OPEN_DOWNSTREAM_EXPOSURE",
+      "description": "教学首材料前暴露登记需U12-06/X-01连接G-02/P-01/P-02，设计候选不是运行证据",
+      "source": "agent/tasks/V-01/evidence/consumer-impact.md"
+    },
+    {
+      "id": "V01-N04",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "旧开放项不重开已选镜头/双环/天气，fade复色与累计独立",
+      "source": "agent/tasks/V-01/outputs/current-experience.md"
+    },
+    {
+      "id": "V01-N05",
+      "status": "OPEN_HUMAN_REVIEW",
+      "description": "新候选未继承历史签名，正式时序冻结及真人审阅由责任人完成",
+      "source": "agent/tasks/V-01/TASK.md"
+    }
   ],
   "next_task": "V-02",
   "source_links": [
-    {"label": "当前完整旅程", "path": "agent/tasks/V-01/outputs/current-experience.md"},
-    {"label": "机器可读当前候选", "path": "agent/tasks/V-01/outputs/current-experience.json"},
-    {"label": "本次验证与命令", "path": "agent/tasks/V-01/evidence/verification.json"},
-    {"label": "消费者影响", "path": "agent/tasks/V-01/evidence/consumer-impact.md"},
-    {"label": "原真实签收", "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-01_研究体验契约与完整旅程/V-01_技术验收记录_已签署.md"},
-    {"label": "国内技能与学习资料", "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"}
+    {
+      "label": "当前完整旅程",
+      "path": "agent/tasks/V-01/outputs/current-experience.md"
+    },
+    {
+      "label": "机器可读当前候选",
+      "path": "agent/tasks/V-01/outputs/current-experience.json"
+    },
+    {
+      "label": "本次验证与命令",
+      "path": "agent/tasks/V-01/evidence/verification.json"
+    },
+    {
+      "label": "消费者影响",
+      "path": "agent/tasks/V-01/evidence/consumer-impact.md"
+    },
+    {
+      "label": "原真实签收",
+      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-01_研究体验契约与完整旅程/V-01_技术验收记录_已签署.md"
+    },
+    {
+      "label": "国内技能与学习资料",
+      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    }
   ]
 }

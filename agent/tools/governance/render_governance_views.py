@@ -9,7 +9,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-PLAN = ROOT / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
+PLAN = ROOT / "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 GOV = PLAN / "24_团队任务与项目治理"
 GUIDE = (GOV / "u12_upgrade/README.md").relative_to(ROOT).as_posix()
 WAVES = [f"W{i}" for i in range(7)]
@@ -74,7 +74,7 @@ def main():
     for status in ("DONE", "READY", "IN_PROGRESS", "IN_REVIEW"):
         board += f"| {status} | {'、'.join(r['task_id'] for r in rows if r['status'] == status) or '无'} |\n"
     board += "\n## 下一硬门\n\nU12-01已由傅钧烨签收；当前READY任务可自主领取。U12-02/03/04/06交付汇入U12-09一致性复核，U12-07准备结果中立写作模板。U12-05仍等待外部条件。G-05真实资格、U12-11数值冻结、U12-06运行接线继续阻断正式研究。\n"
-    write(ROOT / "00-项目管理/看板与进度/当前阶段看板.md", board)
+    write(ROOT / "agent/governance/看板与进度/当前阶段看板.md", board)
     tree = "# 四人团队职责与任务树\n\n> " + summary + "\n\n"
     tree += "固定任务自主领取，领域归属明确；每个交付均需输入、分阶段过程、验收与证据。单一集成人负责注册表、协议和共享Unity资源，不按固定人员整块承包模块。\n\n"
     tree += "## 四个协作方向\n\n- 工程治理与Python：合同、时钟、记录、治理版本与可靠运行。\n- Unity与视听设计：固定场景、完整提示方案、公平教学、灰盒和风险切片。\n- 设备与TD：真实数据采集、质量、只读监控、受控请求与真实联调。\n- 测量统计与论文：前后量表、过程分析、独立功能护栏、盲态校准和结果中立报告。\n\n"
@@ -148,7 +148,7 @@ def main():
     destination = ROOT / "human/assets/diagrams"
     write(destination / "SRP_任务状态与门禁解释清单_v1.0.svg", '\n'.join(out))
     runpy.run_path(str(Path(__file__).with_name("render_team_task_flow.py")))["main"]()
-    write(destination / "SRP_项目任务关联与门禁流程_v1.0.svg", (ROOT / "00-项目管理/看板与进度/SRP团队任务分工与门禁_当前状态.svg").read_text(encoding="utf-8"))
+    write(destination / "SRP_项目任务关联与门禁流程_v1.0.svg", (ROOT / "agent/governance/看板与进度/SRP团队任务分工与门禁_当前状态.svg").read_text(encoding="utf-8"))
     write(ROOT / "human/assets/readme/team-task-progress.svg",
           (destination / "SRP_项目任务关联与门禁流程_v1.0.svg").read_text(encoding="utf-8"))
     print("WROTE: governance entrypoints, board, tree, brief and SVG pair")

@@ -11,7 +11,7 @@ import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 
 
@@ -141,7 +141,7 @@ def test_800_seconds_not_whole_session_and_teaching_exposure_still_missing():
 def test_current_sources_navigation_and_language():
     for relative in read(TASK / 'inputs/sources.json')['paths']:
         assert (ROOT / relative).is_file(), relative
-    old = ROOT / '00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-11/README.md'
+    old = ROOT / 'agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-11/README.md'
     assert not (old.parent / 'TASK.md').exists()
     for path in (old, TASK / 'TASK.md', TASK / 'outputs/current-freeze.md', TASK / 'outputs/freeze-handoff.md'):
         for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):

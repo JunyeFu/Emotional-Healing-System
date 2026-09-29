@@ -19,7 +19,7 @@ def current():
 
 
 def test_state_and_real_deliveries_remain_open():
-    registry = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv'
+    registry = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv'
     with registry.open(encoding='utf-8-sig', newline='') as stream:
         row = next(r for r in csv.DictReader(stream) if r['task_id'] == 'D-02')
     value = current()

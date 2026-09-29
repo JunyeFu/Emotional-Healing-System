@@ -9,7 +9,7 @@ import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-GOV = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 
 
 def read(path):
@@ -75,7 +75,7 @@ def test_two_routes_and_all_result_families_preserved():
 def test_sources_navigation_and_actual_consumers():
     for source in read(TASK / 'inputs/sources.json')['paths']:
         assert (ROOT / source).is_file(), source
-    navigation = ROOT / '00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-08/README.md'
+    navigation = ROOT / 'agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-08/README.md'
     for path in (navigation, TASK / 'TASK.md', TASK / 'outputs/current-extension.md'):
         for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
             if not link.startswith('https://'):

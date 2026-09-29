@@ -1,0 +1,27 @@
+......F..                                                                [100%]
+================================== FAILURES ===================================
+_______________ test_archive_bytes_and_both_validator_consumers _______________
+
+    def test_archive_bytes_and_both_validator_consumers():
+        original = TASK / 'archive/02_当前状态与不可跨越门禁.md'
+        assert hashlib.sha256(original.read_bytes()).hexdigest().upper() == '1E6053643994115BB477D6F53C97F25141204B7FEE372F1319181DB8466C7F01'
+        validator = (PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py').read_text(encoding='utf-8')
+        assert 'LEGACY_LOCK / "02_当前状态与不可跨越门禁.md"' in validator
+        assert 'PACKAGE / "00_总控" / "02_当前状态与不可跨越门禁.md"' in validator
+        current = PLAN / '00_总控/02_当前状态与不可跨越门禁.md'
+        text = current.read_text(encoding='utf-8')
+        assert 'protocol_authority_v1.2.json' in text and '有效预设情绪比较不因功能门失败隐去' in text
+        for link in re.findall(r'\]\(([^)]+)\)', text):
+>           assert (current.parent / link).resolve().exists(), link
+E           AssertionError: ../../../../agent/tasks/G-03/outputs/current-freeze.md
+E           assert False
+E            +  where False = exists()
+E            +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/G-03/outputs/current-freeze.md').exists
+E            +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/G-03/outputs/current-freeze.md') = resolve()
+E            +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控') / '../../../../agent/tasks/G-03/outputs/current-freeze.md').resolve
+E            +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/02_当前状态与不可跨越门禁.md').parent
+
+agent\tasks\G-03\execution\test_freeze_handoff.py:106: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/G-03/execution/test_freeze_handoff.py::test_archive_bytes_and_both_validator_consumers
+1 failed, 8 passed in 0.16s

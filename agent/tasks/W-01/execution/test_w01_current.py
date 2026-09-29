@@ -11,7 +11,8 @@ import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 CHECK = runpy.run_path(str(TASK / 'execution/validate_candidate.py'))
 
@@ -63,15 +64,13 @@ def test_raw_report_bytes_preserved_and_original_acceptance_unchanged():
     report = next((TASK / 'archive').glob('W-01_2015-2026*.md'))
     assert hashlib.sha256(report.read_bytes()).hexdigest().upper() == expected
     path = PLAN / '25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_验收记录.md'
-    delta = subprocess.run(['git', 'diff', 'HEAD', '--name-only', '--', str(path)],
-                           cwd=ROOT, capture_output=True, text=True, check=True)
-    assert not delta.stdout.strip()
+    original = git_bytes(ROOT, 'HEAD', path.relative_to(ROOT).as_posix())
+    assert path.read_bytes().replace(b'\r\n', b'\n') == original.replace(b'\r\n', b'\n')
     assert 'Codex独立AC审查' in path.read_text(encoding='utf-8-sig')
 
 
 def test_moved_entry_is_recorded_as_exact_scope_equivalence():
-    previous = subprocess.run(['git', 'show', f'6fa45af:{(GOV / "05_可领取任务包.csv").relative_to(ROOT).as_posix()}'],
-                              cwd=ROOT, capture_output=True, encoding='utf-8', check=True).stdout
+    previous = git_bytes(ROOT, '6fa45af', (GOV / '05_可领取任务包.csv').relative_to(ROOT).as_posix()).decode('utf-8-sig')
     before = next(row for row in csv.DictReader(previous.splitlines()) if row['task_id'] == 'W-01')
     current, _, rows = context()
     scope_check = runpy.run_path(str(GOV / 'u12_upgrade/validate_u12_governance.py'))['scope_field_matches']
@@ -97,13 +96,15 @@ def test_dispatch_only_refreshes_registry_reference_not_inputs():
     expected = validator['sha256'](GOV / '05_可领取任务包.csv')
     for task_id in ('A-03', 'T-02', 'U12-03', 'U12-06', 'V-05'):
         path = GOV / '当前解锁独立任务包' / task_id / 'package_manifest.json'
-        prior = subprocess.run(['git', 'show', f'6fa45af:{path.relative_to(ROOT).as_posix()}'],
-                               cwd=ROOT, capture_output=True, encoding='utf-8', check=True)
-        original = json.loads(prior.stdout)
+        original = json.loads(git_bytes(ROOT, '6fa45af', path.relative_to(ROOT).as_posix()))
         current = read(path)
         assert current.pop('registry_sha256') == expected
         original.pop('registry_sha256')
         assert current == original
-    changes = subprocess.run(['git', 'diff', '6fa45af', '--name-only', '--', str(GOV / '当前解锁独立任务包')],
-                             cwd=ROOT, capture_output=True, text=True, check=True).stdout.splitlines()
-    assert len(changes) == 5 and all(line.endswith('/package_manifest.json"') or line.endswith('/package_manifest.json') for line in changes)
+    changes = []
+    for path in (GOV / '当前解锁独立任务包').rglob('*'):
+        if path.is_file():
+            original = git_bytes(ROOT, '6fa45af', path.relative_to(ROOT).as_posix())
+            if path.read_bytes().replace(b'\r\n', b'\n') != original.replace(b'\r\n', b'\n'):
+                changes.append(path)
+    assert len(changes) == 5 and all(path.name == 'package_manifest.json' for path in changes)

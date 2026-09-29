@@ -1,0 +1,249 @@
+.FF.................F                                                    [100%]
+================================== FAILURES ===================================
+________ test_historical_sources_and_outputs_use_declared_hash_policy _________
+
+    def test_historical_sources_and_outputs_use_declared_hash_policy():
+        evidence = read(ARCHIVE / 'evidence.json')
+        assert evidence['hash_policy'] == 'UTF8_LF_TRAILING_WHITESPACE_REMOVED_FINAL_LF'
+        candidate = read(GOV / 'u12_upgrade/acceptance/U12-07.json')['candidate_commit']
+        for source in evidence['sources']:
+            original = subprocess.check_output(['git', 'show', f"{candidate}:{source['name']}"], cwd=ROOT)
+            assert hashlib.sha256(normalized(original)).hexdigest().upper() == source['sha256_declared']
+        differences = []
+        for output in evidence['outputs']:
+            raw = (ARCHIVE / output['name']).read_bytes()
+            historical_path = (GOV / 'u12_upgrade/U12-07_neutral_core_draft' / output['name']).relative_to(ROOT).as_posix()
+>           candidate_bytes = subprocess.check_output(['git', 'show', f'{candidate}:{historical_path}'], cwd=ROOT)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U12-07\execution\test_writing_handoff.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:473: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['git', 'show', '28008f5a4c9963a32488ef32b61dc6ad055562de:agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-07_neutral_core_draft/design_method.md'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'show', '28008f5a4c9963a32488ef32b61dc...>
+stdout = b'', stderr = None, retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'show', '28008f5a4c9963a32488ef32b61dc6ad055562de:agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-07_neutral_core_draft/design_method.md']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+---------------------------- Captured stderr call -----------------------------
+fatal: path 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-07_neutral_core_draft/design_method.md' does not exist in '28008f5a4c9963a32488ef32b61dc6ad055562de'
+______ test_original_signatures_and_business_registration_not_rewritten _______
+
+    def test_original_signatures_and_business_registration_not_rewritten():
+        value = read(TASK / 'outputs/current-writing.json')
+        signature = read(GOV / 'u12_upgrade/acceptance/U12-07.json')
+        assert signature['candidate_commit'] == value['historical_candidate_commit']
+        assert signature['signature_commit'] == value['historical_signature_commit']
+        for kind in ('independent_review', 'human_review'):
+            report = signature[kind]
+>           raw = (ROOT / report['report_path']).read_bytes()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U12-07\execution\test_writing_handoff.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/U12-07_neutral_core_draft/U12-07_独立复核记录.md')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\00-项目管理\\01-项目章程与规划\\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\\24_团队任务与项目治理\\u12_upgrade\\U12-07_neutral_core_draft\\U12-07_独立复核记录.md'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+_________ test_actual_consumers_sources_navigation_and_frozen_inputs __________
+
+    def test_actual_consumers_sources_navigation_and_frozen_inputs():
+        for path in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / path).is_file(), path
+        for task in ('W-01', 'W-02'):
+            filename = 'current-paper.md' if task == 'W-01' else 'current-manuscript.md'
+            text = (ROOT / f'agent/tasks/{task}/outputs/{filename}').read_text(encoding='utf-8')
+            assert 'U12-07' in text and '规格' in text and '原' in text
+        for source in read(ROOT / 'agent/tasks/A-05/inputs/sources.json')['paths']:
+            assert (ROOT / source).is_file(), source
+        for path in (GOV / 'u12_upgrade/U12-07_neutral_core_draft/README.md',
+                     ROOT / 'agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-07/README.md'):
+            for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
+                assert (path.parent / link).resolve().is_file()
+        dispatch = GOV / '当前解锁独立任务包'
+        for path in dispatch.rglob('*'):
+            if path.is_file():
+                relative = path.relative_to(ROOT).as_posix()
+>               old = subprocess.check_output(['git', 'rev-parse', f'HEAD:{relative}'], cwd=ROOT).strip()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U12-07\execution\test_writing_handoff.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:473: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['git', 'rev-parse', 'HEAD:agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/README.md'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'rev-parse', 'HEAD:agent/governance/01...>
+stdout = b'HEAD:agent/governance/01-\xe9\xa1\xb9\xe7\x9b\xae\xe7\xab\xa0\xe7\xa8\x8b\xe4\xb8\x8e\xe8\xa7\x84\xe5\x88\x92/2026-0...e5\xbd\x93\xe5\x89\x8d\xe8\xa7\xa3\xe9\x94\x81\xe7\x8b\xac\xe7\xab\x8b\xe4\xbb\xbb\xe5\x8a\xa1\xe5\x8c\x85/README.md\n'
+stderr = None, retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'rev-parse', 'HEAD:agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/README.md']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+---------------------------- Captured stderr call -----------------------------
+fatal: path 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/README.md' exists on disk, but not in 'HEAD'
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-07/execution/test_writing_handoff.py::test_historical_sources_and_outputs_use_declared_hash_policy
+FAILED agent/tasks/U12-07/execution/test_writing_handoff.py::test_original_signatures_and_business_registration_not_rewritten
+FAILED agent/tasks/U12-07/execution/test_writing_handoff.py::test_actual_consumers_sources_navigation_and_frozen_inputs
+3 failed, 18 passed in 0.56s

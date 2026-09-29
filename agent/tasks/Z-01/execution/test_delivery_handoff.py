@@ -10,7 +10,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/Z-01'
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 UNITY = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
 

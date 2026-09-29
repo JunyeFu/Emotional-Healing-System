@@ -1,0 +1,45 @@
+
+=================================== ERRORS ====================================
+________ ERROR collecting agent/tasks/R-01/execution/test_candidate.py ________
+ImportError while importing test module 'D:\Agent\srp\agent\tasks\R-01\execution\test_candidate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+agent\tasks\R-01\execution\test_candidate.py:7: in <module>
+    from validate_candidate import FIXTURES, SCHEMA, load_json
+E   ModuleNotFoundError: No module named 'validate_candidate'
+_________ ERROR collecting agent/tasks/T-01/execution/test_verify.py __________
+ImportError while importing test module 'D:\Agent\srp\agent\tasks\T-01\execution\test_verify.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+agent\tasks\T-01\execution\test_verify.py:5: in <module>
+    from verify import compare_core_files, git_artifact_policy
+E   ImportError: cannot import name 'compare_core_files' from 'verify' (D:\Agent\srp\agent\tasks\Q-01\execution\verify.py)
+_________ ERROR collecting agent/tasks/V-01/execution/test_current.py _________
+ImportError while importing test module 'D:\Agent\srp\agent\tasks\V-01\execution\test_current.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+agent\tasks\V-01\execution\test_current.py:5: in <module>
+    from validate_current import inputs, validate
+E   ModuleNotFoundError: No module named 'validate_current'
+_________ ERROR collecting agent/tasks/V-02/execution/test_current.py _________
+ImportError while importing test module 'D:\Agent\srp\agent\tasks\V-02\execution\test_current.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+agent\tasks\V-02\execution\test_current.py:6: in <module>
+    from validate_current import CURRENT, validate
+E   ModuleNotFoundError: No module named 'validate_current'
+_________ ERROR collecting agent/tasks/V-03/execution/test_current.py _________
+ImportError while importing test module 'D:\Agent\srp\agent\tasks\V-03\execution\test_current.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+agent\tasks\V-03\execution\test_current.py:3: in <module>
+    from build_current import current_mapping
+E   ModuleNotFoundError: No module named 'build_current'
+=========================== short test summary info ===========================
+ERROR agent/tasks/R-01/execution/test_candidate.py
+ERROR agent/tasks/T-01/execution/test_verify.py
+ERROR agent/tasks/V-01/execution/test_current.py
+ERROR agent/tasks/V-02/execution/test_current.py
+ERROR agent/tasks/V-03/execution/test_current.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 5 errors during collection !!!!!!!!!!!!!!!!!!!
+5 errors in 2.43s

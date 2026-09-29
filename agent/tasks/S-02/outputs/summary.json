@@ -4,34 +4,133 @@
   "review_date": "2026-09-28",
   "conclusion": "S-02仍WAIT_DEP、未领取；四结构检测、在线PF和真实双人标注尚未交付。旧评分设计已实际归档，118项软件回归与合同检查通过；A-03冻结副本保持原文，不能用旧综合分替代正式执行质量。",
   "historical_acceptance": {
-    "reviewer": "未签署", "date": "尚未发生", "commit": "",
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
     "method": "本轮Codex只做规范化、入口修正与软件检查；没有真实事件检测验收、双人标注或第二人签收，不代填PASS。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": ["依赖S-01、R-01，约5人日，岗位P-ANALYSIS。实际领取人、分支及复核人为空；S-01尚未完成，现有原型不能推进本包DONE。"]},
-    {"heading": "目标与完成标准", "paragraphs": ["交付四结构事件、周期/步骤边界、在线PF和规则配置。AC1双人标注周期F1≥0.85；AC2边界MAE≤0.50秒；AC3在线离线差达到冻结目标。后者、结构容差和覆盖门未冻结。", "技能是事件检测、状态机、盲态标注及Python测试，沿用L-DSP/L-PYTEST国内资料。五天过程由输入定义、事件识别、机会判定、重算交接和实测复核组成。"]},
-    {"heading": "实际交付", "paragraphs": ["建立固定五目录、当前事件合同与结构化总结，明确storm四步、heat/snow两步、fade三步；未知Actual保留合法空身份。", "旧评分设计归入本包archive，活动AGENTS和技术README订正；ScoringModel头注释不再把旧开发版本当作正式合同或已验证独立通路。函数行为未改，真实算法没有新交付。"]},
-    {"heading": "执行过程与关键决定", "paragraphs": ["核对任务书、F-05步骤身份、D-02原生批次、S-01质量及离线机会PF定义，再完整阅读旧评分。四维calm_index、25Hz呼吸与EDA方案不适用于当前正式链。", "归档后独立包校验发现A-03原来源缺失；登记精确迁移，生成器与校验器读取保留原文，同时仍检查冻结哈希。没有更新进行中输入身份或重生成其副本。"]},
-    {"heading": "验证与结果", "paragraphs": ["专项118 passed，包括旧信号回归、87项协议及17项当前交接检查；四天气空Actual、重复相位独立步骤、缺实例拒绝、calm_index拒绝、迁移等价和未登记路径不重定向通过。", "根pytest635 passed；71项注册表及5个分发包47份快照通过，四项哈希策略回归通过。这些结果不包含真实F1、MAE、在线离线差或SDK/设备运行。"]},
-    {"heading": "偏离与修复闭环", "paragraphs": ["旧评分作为活动设计入口的冲突已关闭，历史原文与A-03冻结引用分开；迁移兼容只允许登记的任务、状态和来源，不改变验收或放过内容漂移。", "机会完成率、可观测PF、保守PF分别保留分母；技术不可观测不改为执行不符合。四模块各25%，缺失不重新平均；PF功能护栏不隐去预设情绪结果。"]},
-    {"heading": "目录与文件整理", "paragraphs": ["评分模型设计实际从旧目录迁出；归档README说明历史用途与未核验引用。共享旧原型仍供main.py开发入口使用，继续留模块而不复制兼容代码。", "S-02固定输入、执行、证据、输出与归档齐备。A-03冻结副本没有归档说明污染；影响记录指定其负责人按既有流程处理来源变更。根目录整体迁移仍继续。"]},
-    {"heading": "上下游交接", "paragraphs": ["D-01/D-02提供原生包与时间，S-01提供同步及质量；P-01提供目标和流程，S-02独立估计Actual，不复制Target或接管顺序。P-02保存事件、机会和配置版本。", "A-01按同一真实输入独立重算，A-03/U12-04冻结正式计分与缺失；U-02/T-01只消费实际状态和降级，I-01验证真机全链。当前检测、实测标注和责任人仍缺，不能解锁下游。"]},
-    {"heading": "审阅与责任签收", "paragraphs": ["本轮规范化不改变WAIT_DEP或历史签署。实际成员领取后实施，提供双人盲态标注及差值报告，再申请独立复核和真实责任人签收；没有取得这些证据。"]},
-    {"heading": "收尾与下一包", "paragraphs": ["累计21/71包，剩余50，下一V-05。修复Agent入口及迁移消费者后生成本Word和串联审阅，明确路径提交推送；整个双层目录目标未完成。"]},
-    {"heading": "审阅来源", "paragraphs": ["依据注册表、离线机会定义、当前v1.2研究权威、F-05合同、原型源码和A-03冻结包。当前事实、历史原文与待完成事项分开，不补造真实数据。"]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "依赖S-01、R-01，约5人日，岗位P-ANALYSIS。实际领取人、分支及复核人为空；S-01尚未完成，现有原型不能推进本包DONE。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "交付四结构事件、周期/步骤边界、在线PF和规则配置。AC1双人标注周期F1≥0.85；AC2边界MAE≤0.50秒；AC3在线离线差达到冻结目标。后者、结构容差和覆盖门未冻结。",
+        "技能是事件检测、状态机、盲态标注及Python测试，沿用L-DSP/L-PYTEST国内资料。五天过程由输入定义、事件识别、机会判定、重算交接和实测复核组成。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "建立固定五目录、当前事件合同与结构化总结，明确storm四步、heat/snow两步、fade三步；未知Actual保留合法空身份。",
+        "旧评分设计归入本包archive，活动AGENTS和技术README订正；ScoringModel头注释不再把旧开发版本当作正式合同或已验证独立通路。函数行为未改，真实算法没有新交付。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "核对任务书、F-05步骤身份、D-02原生批次、S-01质量及离线机会PF定义，再完整阅读旧评分。四维calm_index、25Hz呼吸与EDA方案不适用于当前正式链。",
+        "归档后独立包校验发现A-03原来源缺失；登记精确迁移，生成器与校验器读取保留原文，同时仍检查冻结哈希。没有更新进行中输入身份或重生成其副本。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "专项118 passed，包括旧信号回归、87项协议及17项当前交接检查；四天气空Actual、重复相位独立步骤、缺实例拒绝、calm_index拒绝、迁移等价和未登记路径不重定向通过。",
+        "根pytest635 passed；71项注册表及5个分发包47份快照通过，四项哈希策略回归通过。这些结果不包含真实F1、MAE、在线离线差或SDK/设备运行。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧评分作为活动设计入口的冲突已关闭，历史原文与A-03冻结引用分开；迁移兼容只允许登记的任务、状态和来源，不改变验收或放过内容漂移。",
+        "机会完成率、可观测PF、保守PF分别保留分母；技术不可观测不改为执行不符合。四模块各25%，缺失不重新平均；PF功能护栏不隐去预设情绪结果。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "评分模型设计实际从旧目录迁出；归档README说明历史用途与未核验引用。共享旧原型仍供main.py开发入口使用，继续留模块而不复制兼容代码。",
+        "S-02固定输入、执行、证据、输出与归档齐备。A-03冻结副本没有归档说明污染；影响记录指定其负责人按既有流程处理来源变更。根目录整体迁移仍继续。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "D-01/D-02提供原生包与时间，S-01提供同步及质量；P-01提供目标和流程，S-02独立估计Actual，不复制Target或接管顺序。P-02保存事件、机会和配置版本。",
+        "A-01按同一真实输入独立重算，A-03/U12-04冻结正式计分与缺失；U-02/T-01只消费实际状态和降级，I-01验证真机全链。当前检测、实测标注和责任人仍缺，不能解锁下游。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "本轮规范化不改变WAIT_DEP或历史签署。实际成员领取后实施，提供双人盲态标注及差值报告，再申请独立复核和真实责任人签收；没有取得这些证据。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "累计21/71包，剩余50，下一V-05。修复Agent入口及迁移消费者后生成本Word和串联审阅，明确路径提交推送；整个双层目录目标未完成。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "依据注册表、离线机会定义、当前v1.2研究权威、F-05合同、原型源码和A-03冻结包。当前事实、历史原文与待完成事项分开，不补造真实数据。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "S02-N01", "status": "FIXED_ACTIVE_DESIGN_ENTRY", "description": "旧综合评分设计实际归档，活动入口改为步骤事件及机会PF，不借用旧文献主张", "source": "agent/tasks/S-02/outputs/current-events.md"},
-    {"id": "S02-N02", "status": "FIXED_FROZEN_SOURCE_RELOCATION", "description": "精确迁移保留A-03来源身份与原文，生成/校验仍检查哈希，副本未刷新", "source": "agent/normalization-relocations.json"},
-    {"id": "S02-N03", "status": "OPEN_REAL_EVENTS_AND_PF", "description": "四结构算法、真实标注和在线离线差未交付，容差与覆盖门仍待冻结", "source": "agent/tasks/S-02/outputs/current-events.json"},
-    {"id": "S02-N04", "status": "OPEN_REAL_OWNER_AND_A03_DECISION", "description": "实际领取人为空；A-03负责人须处理冻结旧评分来源影响，不代填裁定", "source": "agent/tasks/S-02/evidence/consumer-impact.md"}
+    {
+      "id": "S02-N01",
+      "status": "FIXED_ACTIVE_DESIGN_ENTRY",
+      "description": "旧综合评分设计实际归档，活动入口改为步骤事件及机会PF，不借用旧文献主张",
+      "source": "agent/tasks/S-02/outputs/current-events.md"
+    },
+    {
+      "id": "S02-N02",
+      "status": "FIXED_FROZEN_SOURCE_RELOCATION",
+      "description": "精确迁移保留A-03来源身份与原文，生成/校验仍检查哈希，副本未刷新",
+      "source": "agent/normalization-relocations.json"
+    },
+    {
+      "id": "S02-N03",
+      "status": "OPEN_REAL_EVENTS_AND_PF",
+      "description": "四结构算法、真实标注和在线离线差未交付，容差与覆盖门仍待冻结",
+      "source": "agent/tasks/S-02/outputs/current-events.json"
+    },
+    {
+      "id": "S02-N04",
+      "status": "OPEN_REAL_OWNER_AND_A03_DECISION",
+      "description": "实际领取人为空；A-03负责人须处理冻结旧评分来源影响，不代填裁定",
+      "source": "agent/tasks/S-02/evidence/consumer-impact.md"
+    }
   ],
   "next_task": "V-05",
   "source_links": [
-    {"label": "当前事件与在线PF交接", "path": "agent/tasks/S-02/outputs/current-events.md"},
-    {"label": "软件验证记录", "path": "agent/tasks/S-02/evidence/verification.json"},
-    {"label": "A-03冻结输入影响", "path": "agent/tasks/S-02/evidence/consumer-impact.md"},
-    {"label": "离线机会定义", "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/03_呼吸事件与Protocol_Fidelity.md"},
-    {"label": "国内技能资料", "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"}
+    {
+      "label": "当前事件与在线PF交接",
+      "path": "agent/tasks/S-02/outputs/current-events.md"
+    },
+    {
+      "label": "软件验证记录",
+      "path": "agent/tasks/S-02/evidence/verification.json"
+    },
+    {
+      "label": "A-03冻结输入影响",
+      "path": "agent/tasks/S-02/evidence/consumer-impact.md"
+    },
+    {
+      "label": "离线机会定义",
+      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/03_呼吸事件与Protocol_Fidelity.md"
+    },
+    {
+      "label": "国内技能资料",
+      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    }
   ]
 }

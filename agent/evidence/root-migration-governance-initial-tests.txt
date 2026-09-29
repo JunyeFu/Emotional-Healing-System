@@ -1,0 +1,223 @@
+.......................FFFF..............F....                           [100%]
+================================== FAILURES ===================================
+________________ test_self_review_rejected[Alice-Alice-Alice] _________________
+
+tmp_path = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1946/test_self_review_rejected_Alic0')
+claimant = 'Alice', independent = 'Alice', human = 'Alice'
+
+    @pytest.mark.parametrize("claimant,independent,human", [
+        ("Alice", "Alice", "Alice"), ("Alice", "Bob", "Alice"),
+        ("Alice", "Bob", "Bob"), (" Alice ", "alice", "Bob"),
+    ])
+    def test_self_review_rejected(tmp_path, claimant, independent, human):
+        validate = runpy.run_path(str(GOV / "governance_profile.py"))["validate_u12_acceptance"]
+        root = tmp_path / "repo/a/b/c/governance"
+        acceptance = root / "u12_upgrade/acceptance"
+        acceptance.mkdir(parents=True)
+        (acceptance / "U12-01.json").write_text(json.dumps({
+            "task_id": "U12-01", "candidate_commit": "invalid",
+            "independent_review": {"reviewer": independent},
+            "human_review": {"reviewer": human},
+        }), encoding="utf-8")
+>       issues = validate({"task_id": "U12-01", "status": "DONE", "claimant": claimant}, [], root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+02-�����з�\tests\test_u12_governance.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\governance\01-��Ŀ�³���滮\2026-08-05_SRP_IJHCI_ȫ��Ŀ1-12���滮��ư�_v1.0\24_�Ŷ���������Ŀ����\governance_profile.py:56: in validate_u12_acceptance
+    resolve_path = runpy.run_path(str(repo / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:286: in run_path
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fname = 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_self_review_rejected_Alic0\\agent\\tools\\resolve_frozen_source.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_self_review_rejected_Alic0\\agent\\tools\\resolve_frozen_source.py'
+
+<frozen runpy>:254: FileNotFoundError
+_________________ test_self_review_rejected[Alice-Bob-Alice] __________________
+
+tmp_path = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1946/test_self_review_rejected_Alic1')
+claimant = 'Alice', independent = 'Bob', human = 'Alice'
+
+    @pytest.mark.parametrize("claimant,independent,human", [
+        ("Alice", "Alice", "Alice"), ("Alice", "Bob", "Alice"),
+        ("Alice", "Bob", "Bob"), (" Alice ", "alice", "Bob"),
+    ])
+    def test_self_review_rejected(tmp_path, claimant, independent, human):
+        validate = runpy.run_path(str(GOV / "governance_profile.py"))["validate_u12_acceptance"]
+        root = tmp_path / "repo/a/b/c/governance"
+        acceptance = root / "u12_upgrade/acceptance"
+        acceptance.mkdir(parents=True)
+        (acceptance / "U12-01.json").write_text(json.dumps({
+            "task_id": "U12-01", "candidate_commit": "invalid",
+            "independent_review": {"reviewer": independent},
+            "human_review": {"reviewer": human},
+        }), encoding="utf-8")
+>       issues = validate({"task_id": "U12-01", "status": "DONE", "claimant": claimant}, [], root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+02-�����з�\tests\test_u12_governance.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\governance\01-��Ŀ�³���滮\2026-08-05_SRP_IJHCI_ȫ��Ŀ1-12���滮��ư�_v1.0\24_�Ŷ���������Ŀ����\governance_profile.py:56: in validate_u12_acceptance
+    resolve_path = runpy.run_path(str(repo / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:286: in run_path
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fname = 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_self_review_rejected_Alic1\\agent\\tools\\resolve_frozen_source.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_self_review_rejected_Alic1\\agent\\tools\\resolve_frozen_source.py'
+
+<frozen runpy>:254: FileNotFoundError
+__________________ test_self_review_rejected[Alice-Bob-Bob] ___________________
+
+tmp_path = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1946/test_self_review_rejected_Alic2')
+claimant = 'Alice', independent = 'Bob', human = 'Bob'
+
+    @pytest.mark.parametrize("claimant,independent,human", [
+        ("Alice", "Alice", "Alice"), ("Alice", "Bob", "Alice"),
+        ("Alice", "Bob", "Bob"), (" Alice ", "alice", "Bob"),
+    ])
+    def test_self_review_rejected(tmp_path, claimant, independent, human):
+        validate = runpy.run_path(str(GOV / "governance_profile.py"))["validate_u12_acceptance"]
+        root = tmp_path / "repo/a/b/c/governance"
+        acceptance = root / "u12_upgrade/acceptance"
+        acceptance.mkdir(parents=True)
+        (acceptance / "U12-01.json").write_text(json.dumps({
+            "task_id": "U12-01", "candidate_commit": "invalid",
+            "independent_review": {"reviewer": independent},
+            "human_review": {"reviewer": human},
+        }), encoding="utf-8")
+>       issues = validate({"task_id": "U12-01", "status": "DONE", "claimant": claimant}, [], root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+02-�����з�\tests\test_u12_governance.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\governance\01-��Ŀ�³���滮\2026-08-05_SRP_IJHCI_ȫ��Ŀ1-12���滮��ư�_v1.0\24_�Ŷ���������Ŀ����\governance_profile.py:56: in validate_u12_acceptance
+    resolve_path = runpy.run_path(str(repo / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:286: in run_path
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fname = 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_self_review_rejected_Alic2\\agent\\tools\\resolve_frozen_source.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_self_review_rejected_Alic2\\agent\\tools\\resolve_frozen_source.py'
+
+<frozen runpy>:254: FileNotFoundError
+________________ test_self_review_rejected[ Alice -alice-Bob] _________________
+
+tmp_path = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1946/test_self_review_rejected__Ali0')
+claimant = ' Alice ', independent = 'alice', human = 'Bob'
+
+    @pytest.mark.parametrize("claimant,independent,human", [
+        ("Alice", "Alice", "Alice"), ("Alice", "Bob", "Alice"),
+        ("Alice", "Bob", "Bob"), (" Alice ", "alice", "Bob"),
+    ])
+    def test_self_review_rejected(tmp_path, claimant, independent, human):
+        validate = runpy.run_path(str(GOV / "governance_profile.py"))["validate_u12_acceptance"]
+        root = tmp_path / "repo/a/b/c/governance"
+        acceptance = root / "u12_upgrade/acceptance"
+        acceptance.mkdir(parents=True)
+        (acceptance / "U12-01.json").write_text(json.dumps({
+            "task_id": "U12-01", "candidate_commit": "invalid",
+            "independent_review": {"reviewer": independent},
+            "human_review": {"reviewer": human},
+        }), encoding="utf-8")
+>       issues = validate({"task_id": "U12-01", "status": "DONE", "claimant": claimant}, [], root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+02-�����з�\tests\test_u12_governance.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\governance\01-��Ŀ�³���滮\2026-08-05_SRP_IJHCI_ȫ��Ŀ1-12���滮��ư�_v1.0\24_�Ŷ���������Ŀ����\governance_profile.py:56: in validate_u12_acceptance
+    resolve_path = runpy.run_path(str(repo / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen runpy>:286: in run_path
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fname = 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_self_review_rejected__Ali0\\agent\\tools\\resolve_frozen_source.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_self_review_rejected__Ali0\\agent\\tools\\resolve_frozen_source.py'
+
+<frozen runpy>:254: FileNotFoundError
+___________ test_external_capability_record_identity_is_recomputed ____________
+
+tmp_path = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1946/test_external_capability_recor0')
+
+    def test_external_capability_record_identity_is_recomputed(tmp_path: Path):
+        validator = load_governance_script("15_validate_audit_upgrade.py")
+        validator.PROJECT_ROOT = tmp_path.resolve()
+        validator.git_tracks = lambda _relative: True
+        receipt = tmp_path / "receipt.md"
+        receipt.write_text("signed", encoding="utf-8")
+        digest = hashlib.sha256(receipt.read_bytes()).hexdigest().upper()
+        identity = hashlib.sha256(f"receipt.md:{digest}".encode("utf-8")).hexdigest().upper()
+        record = {
+            "record_id": "cap-1",
+            "record_type": "external_capability",
+            "scope": "INSTITUTION_LEVEL_A",
+            "candidate_identity": identity,
+            "source_commit": None,
+            "input_snapshot_id": None,
+            "evidence_refs": ["receipt.md"],
+            "review": {
+                "status": "PASS",
+                "reviewer": "external-owner",
+                "role": "authority",
+                "method": "external_receipt",
+                "signed_ref": "receipt.md",
+            },
+        }
+        path = tmp_path / "record.json"
+        path.write_text(json.dumps(record), encoding="utf-8")
+>       assert validator.validate_external_capability_record(
+            "INSTITUTION_LEVEL_A", "record.json"
+        ) == []
+
+02-�����з�\tests\test_audit_upgrade_governance.py:208: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\governance\01-��Ŀ�³���滮\2026-08-05_SRP_IJHCI_ȫ��Ŀ1-12���滮��ư�_v1.0\24_�Ŷ���������Ŀ����\15_validate_audit_upgrade.py:57: in validate_external_capability_record
+    path = project_file(relative)
+           ^^^^^^^^^^^^^^^^^^^^^^
+agent\governance\01-��Ŀ�³���滮\2026-08-05_SRP_IJHCI_ȫ��Ŀ1-12���滮��ư�_v1.0\24_�Ŷ���������Ŀ����\15_validate_audit_upgrade.py:27: in project_file
+    path = resolve_project_path(PROJECT_ROOT, relative)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+agent\tools\resolve_frozen_source.py:11: in resolve_project_path
+    for entry in json.loads((project_root / 'agent/root-layout.json').read_text(encoding='utf-8'))['entries']:
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1946/test_external_capability_recor0/agent/root-layout.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fujunye\\AppData\\Local\\Temp\\pytest-of-fujunye\\pytest-1946\\test_external_capability_recor0\\agent\\root-layout.json'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+=========================== short test summary info ===========================
+FAILED 02-�����з�/tests/test_u12_governance.py::test_self_review_rejected[Alice-Alice-Alice]
+FAILED 02-�����з�/tests/test_u12_governance.py::test_self_review_rejected[Alice-Bob-Alice]
+FAILED 02-�����з�/tests/test_u12_governance.py::test_self_review_rejected[Alice-Bob-Bob]
+FAILED 02-�����з�/tests/test_u12_governance.py::test_self_review_rejected[ Alice -alice-Bob]
+FAILED 02-�����з�/tests/test_audit_upgrade_governance.py::test_external_capability_record_identity_is_recomputed
+5 failed, 41 passed in 2.22s

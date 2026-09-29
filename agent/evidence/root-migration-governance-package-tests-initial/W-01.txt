@@ -1,0 +1,222 @@
+............FFFF                                                         [100%]
+================================== FAILURES ===================================
+______ test_raw_report_bytes_preserved_and_original_acceptance_unchanged ______
+
+    def test_raw_report_bytes_preserved_and_original_acceptance_unchanged():
+        expected = read(TASK / 'inputs/sources.json')['archived_report_sha256_bytes']
+        report = next((TASK / 'archive').glob('W-01_2015-2026*.md'))
+        assert hashlib.sha256(report.read_bytes()).hexdigest().upper() == expected
+        path = PLAN / '25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_验收记录.md'
+        delta = subprocess.run(['git', 'diff', 'HEAD', '--name-only', '--', str(path)],
+                               cwd=ROOT, capture_output=True, text=True, check=True)
+>       assert not delta.stdout.strip()
+E       assert not '"agent/governance/01-\\351\\241\\271\\347\\233\\256\\347\\253\\240\\347\\250\\213\\344\\270\\216\\350\\247\\204\\345\...272\\346\\226\\207\\351\\252\\250\\346\\236\\266/W-01_\\351\\252\\214\\346\\224\\266\\350\\256\\260\\345\\275\\225.md"'
+E        +  where '"agent/governance/01-\\351\\241\\271\\347\\233\\256\\347\\253\\240\\347\\250\\213\\344\\270\\216\\350\\247\\204\\345\...272\\346\\226\\207\\351\\252\\250\\346\\236\\266/W-01_\\351\\252\\214\\346\\224\\266\\350\\256\\260\\345\\275\\225.md"' = <built-in method strip of str object at 0x000001D3C3ED0D90>()
+E        +    where <built-in method strip of str object at 0x000001D3C3ED0D90> = '"agent/governance/01-\\351\\241\\271\\347\\233\\256\\347\\253\\240\\347\\250\\213\\344\\270\\216\\350\\247\\204\\345\...2\\346\\226\\207\\351\\252\\250\\346\\236\\266/W-01_\\351\\252\\214\\346\\224\\266\\350\\256\\260\\345\\275\\225.md"\n'.strip
+E        +      where '"agent/governance/01-\\351\\241\\271\\347\\233\\256\\347\\253\\240\\347\\250\\213\\344\\270\\216\\350\\247\\204\\345\...2\\346\\226\\207\\351\\252\\250\\346\\236\\266/W-01_\\351\\252\\214\\346\\224\\266\\350\\256\\260\\345\\275\\225.md"\n' = CompletedProcess(args=['git', 'diff', 'HEAD', '--name-only', '--', 'D:\\Agent\\srp\\agent\\governance\\01-项目章程与规划\\202...\207\\351\\252\\250\\346\\236\\266/W-01_\\351\\252\\214\\346\\224\\266\\350\\256\\260\\345\\275\\225.md"\n', stderr='').stdout
+
+agent\tasks\W-01\execution\test_w01_current.py:68: AssertionError
+___________ test_moved_entry_is_recorded_as_exact_scope_equivalence ___________
+
+    def test_moved_entry_is_recorded_as_exact_scope_equivalence():
+>       previous = subprocess.run(['git', 'show', f'6fa45af:{(GOV / "05_可领取任务包.csv").relative_to(ROOT).as_posix()}'],
+                                  cwd=ROOT, capture_output=True, encoding='utf-8', check=True).stdout
+
+agent\tasks\W-01\execution\test_w01_current.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'show', '6fa45af:agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'encoding': 'utf-8', 'stderr': -1, 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'show', '6fa45af:agent/governance/01-项...>
+stdout = ''
+stderr = "fatal: path 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv' exists on disk, but not in '6fa45af'\n"
+retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'show', '6fa45af:agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+____________________ test_active_links_and_sources_resolve ____________________
+
+    def test_active_links_and_sources_resolve():
+        for path in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / path).exists(), path
+        nav = PLAN / '25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md'
+        for path in (nav, TASK / 'outputs/current-paper.md'):
+            for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
+                if link == '../evidence/verification.json':
+                    continue  # The runner writes this artifact after these tests finish.
+>               assert (path.parent / link).resolve().exists(), link
+E               AssertionError: ../../../../../agent/tasks/W-01/outputs/current-paper.md
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/W-01/outputs/current-paper.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/W-01/outputs/current-paper.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架') / '../../../../../agent/tasks/W-01/outputs/current-paper.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/W-01_最近工作与论文骨架/W-01_2015-2026最近工作击穿与单篇IJHCI论文骨架_v0.9-candidate.md').parent
+
+agent\tasks\W-01\execution\test_w01_current.py:92: AssertionError
+_________ test_dispatch_only_refreshes_registry_reference_not_inputs __________
+
+    def test_dispatch_only_refreshes_registry_reference_not_inputs():
+        validator = runpy.run_path(str(GOV / '14_validate_ready_task_packages.py'))
+        expected = validator['sha256'](GOV / '05_可领取任务包.csv')
+        for task_id in ('A-03', 'T-02', 'U12-03', 'U12-06', 'V-05'):
+            path = GOV / '当前解锁独立任务包' / task_id / 'package_manifest.json'
+>           prior = subprocess.run(['git', 'show', f'6fa45af:{path.relative_to(ROOT).as_posix()}'],
+                                   cwd=ROOT, capture_output=True, encoding='utf-8', check=True)
+
+agent\tasks\W-01\execution\test_w01_current.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'show', '6fa45af:agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/A-03/package_manifest.json'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'encoding': 'utf-8', 'stderr': -1, 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'show', '6fa45af:agent/governance/01-项...>
+stdout = ''
+stderr = "fatal: path 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/A-03/package_manifest.json' exists on disk, but not in '6fa45af'\n"
+retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'show', '6fa45af:agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/A-03/package_manifest.json']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+=========================== short test summary info ===========================
+FAILED agent/tasks/W-01/execution/test_w01_current.py::test_raw_report_bytes_preserved_and_original_acceptance_unchanged
+FAILED agent/tasks/W-01/execution/test_w01_current.py::test_moved_entry_is_recorded_as_exact_scope_equivalence
+FAILED agent/tasks/W-01/execution/test_w01_current.py::test_active_links_and_sources_resolve
+FAILED agent/tasks/W-01/execution/test_w01_current.py::test_dispatch_only_refreshes_registry_reference_not_inputs
+4 failed, 12 passed in 0.36s

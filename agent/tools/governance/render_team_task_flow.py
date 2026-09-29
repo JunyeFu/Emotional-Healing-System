@@ -12,9 +12,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[3]
-GOV = ROOT / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理"
+GOV = ROOT / "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理"
 REGISTRY = GOV / "05_可领取任务包.csv"
-OUTPUT = ROOT / "00-项目管理/看板与进度/SRP团队任务分工与门禁_当前状态.svg"
+OUTPUT = ROOT / "agent/governance/看板与进度/SRP团队任务分工与门禁_当前状态.svg"
 
 WAVES = [f"W{i}" for i in range(7)]
 PHASES = (

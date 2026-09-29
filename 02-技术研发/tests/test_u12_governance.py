@@ -9,7 +9,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
-PLAN = ROOT / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
+PLAN = ROOT / "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 GOV = PLAN / "24_团队任务与项目治理"
 
 
@@ -149,7 +149,7 @@ def test_duplicate_candidate_cannot_hide_protected_row():
 ])
 def test_self_review_rejected(tmp_path, claimant, independent, human):
     validate = runpy.run_path(str(GOV / "governance_profile.py"))["validate_u12_acceptance"]
-    root = tmp_path / "repo/a/b/c/governance"
+    root = tmp_path / "repo/agent/a/b/c/governance"
     acceptance = root / "u12_upgrade/acceptance"
     acceptance.mkdir(parents=True)
     (acceptance / "U12-01.json").write_text(json.dumps({

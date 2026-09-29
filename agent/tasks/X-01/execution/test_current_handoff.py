@@ -12,7 +12,7 @@ import pytest
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 MODULE = ROOT / '02-技术研发/08-随机化'
-GOV = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 sys.path.insert(0, str(MODULE))
 sys.path.insert(0, str(TASK / 'execution'))
 from srp_randomization import generate_list, policy_decisions, SnapshotGateEvidenceVerifier, RandomizationStore

@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import runpy
 import subprocess
 import sys
 
@@ -10,8 +11,9 @@ import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 PACKAGE = PLAN / '20_产品与场景设计/Q-01_LevelA与独立重建'
+git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
 
 
 def read(path):
@@ -59,9 +61,9 @@ def test_archive_bytes_and_signed_sources_unchanged():
     protected = [PACKAGE / name for name in ('framework_contract_v1.0.json',
                  '11_第二人审核报告_已签署.md', '02_盲态独立重建任务书.md',
                  '05_盲态材料母版与编号方案.md', '06_重建真值与评分键.md')]
-    changed = subprocess.run(['git', 'diff', '7e6deb4', '--name-only', '--', *map(str, protected)],
-                             cwd=ROOT, capture_output=True, text=True, check=True)
-    assert not changed.stdout.strip()
+    for path in protected:
+        original = git_bytes(ROOT, '7e6deb4', path.relative_to(ROOT).as_posix())
+        assert path.read_bytes().replace(b'\r\n', b'\n') == original.replace(b'\r\n', b'\n')
     assert not (PACKAGE / 'tools/summarize_q01.py').exists()
     assert not (PACKAGE / 'tools/validate_q01_materials.py').exists()
 

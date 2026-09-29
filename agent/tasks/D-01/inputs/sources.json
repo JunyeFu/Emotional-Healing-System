@@ -1,14 +1,14 @@
 {
   "paths": [
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md",
     "02-技术研发/01-数据采集/device_manager.py",
     "02-技术研发/01-数据采集/device_driver.py",
     "02-技术研发/srp_session_store/models.py",
     "02-技术研发/srp_session_store/README.md",
     "agent/tasks/D-01/archive/ble_device.py",
     "agent/tasks/D-01/archive/真实设备方案.md",
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv",
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/findings_disposition_v1.0.csv"
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/findings_disposition_v1.0.csv"
   ]
 }

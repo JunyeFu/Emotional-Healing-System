@@ -4,13 +4,15 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import runpy
 import subprocess
 
 import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PATHS = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 ARCHIVE = TASK / 'archive/signed-candidate'
 
@@ -45,7 +47,7 @@ def test_historical_sources_and_outputs_use_declared_hash_policy():
     for output in evidence['outputs']:
         raw = (ARCHIVE / output['name']).read_bytes()
         historical_path = (GOV / 'u12_upgrade/U12-07_neutral_core_draft' / output['name']).relative_to(ROOT).as_posix()
-        candidate_bytes = subprocess.check_output(['git', 'show', f'{candidate}:{historical_path}'], cwd=ROOT)
+        candidate_bytes = PATHS['git_source_bytes'](ROOT, candidate, historical_path)
         assert raw.replace(b'\r\n', b'\n') == candidate_bytes.replace(b'\r\n', b'\n')
         legacy = '\n'.join(line.rstrip() for line in raw.decode('utf-8-sig').replace('\r\n', '\n').split('\n')).encode('utf-8')
         assert hashlib.sha256(legacy).hexdigest().upper() == output['sha256']
@@ -63,11 +65,11 @@ def test_original_signatures_and_business_registration_not_rewritten():
     assert signature['signature_commit'] == value['historical_signature_commit']
     for kind in ('independent_review', 'human_review'):
         report = signature[kind]
-        raw = (ROOT / report['report_path']).read_bytes()
+        raw = PATHS['resolve_project_path'](ROOT, report['report_path']).read_bytes()
         assert hashlib.sha256(raw.replace(b'\r\n', b'\n')).hexdigest() == report['sha256_lf']
         assert report['status'] == 'PASS'
     for path in ('u12_upgrade/acceptance/U12-07.json', 'u12_upgrade/U12-07_第二人审核报告_已签署.md'):
-        old = subprocess.check_output(['git', 'show', f'HEAD:{(GOV / path).relative_to(ROOT).as_posix()}'], cwd=ROOT)
+        old = PATHS['git_source_bytes'](ROOT, 'HEAD', (GOV / path).relative_to(ROOT).as_posix())
         assert normalized(old) == normalized((GOV / path).read_bytes())
     with (GOV / '05_可领取任务包.csv').open(encoding='utf-8-sig', newline='') as stream:
         row = next(r for r in csv.DictReader(stream) if r['task_id'] == 'U12-07')
@@ -121,15 +123,14 @@ def test_actual_consumers_sources_navigation_and_frozen_inputs():
     for source in read(ROOT / 'agent/tasks/A-05/inputs/sources.json')['paths']:
         assert (ROOT / source).is_file(), source
     for path in (GOV / 'u12_upgrade/U12-07_neutral_core_draft/README.md',
-                 ROOT / '00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-07/README.md'):
+                 ROOT / 'agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-07/README.md'):
         for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
             assert (path.parent / link).resolve().is_file()
     dispatch = GOV / '当前解锁独立任务包'
     for path in dispatch.rglob('*'):
         if path.is_file():
             relative = path.relative_to(ROOT).as_posix()
-            old = subprocess.check_output(['git', 'rev-parse', f'HEAD:{relative}'], cwd=ROOT).strip()
-            actual = subprocess.check_output(['git', 'hash-object', '--path', relative, relative], cwd=ROOT).strip()
-            assert old == actual, path
+            old = PATHS['git_source_bytes'](ROOT, 'HEAD', relative)
+            assert old.replace(b'\r\n', b'\n') == path.read_bytes().replace(b'\r\n', b'\n'), path
     for path in [TASK / 'TASK.md', *(TASK / 'outputs').glob('*.md')]:
         assert not re.search('诊断|治疗|疾病|患者|医疗设备|临床', path.read_text(encoding='utf-8'))

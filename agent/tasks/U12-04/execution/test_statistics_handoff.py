@@ -12,7 +12,8 @@ from scipy import stats
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-GOV = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+resolve_path = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
+GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 ARCHIVE = TASK / 'archive/signed-candidate'
 SOURCES = json.loads((TASK / 'inputs/sources.json').read_text(encoding='utf-8'))
 OLD = json.loads((ARCHIVE / 'evidence.json').read_text(encoding='utf-8'))
@@ -44,7 +45,7 @@ def test_original_acceptance_and_activity_contract_unchanged():
     assert acceptance['candidate_commit'] == 'd701a4054a4a36030d37335efa65d67a93ed35c3'
     assert acceptance['human_review']['reviewer'] == '傅钧烨'
     for field in ('human_review', 'independent_review'):
-        report = ROOT / acceptance[field]['report_path']
+        report = resolve_path(ROOT, acceptance[field]['report_path'])
         raw = report.read_bytes().replace(b'\r\n', b'\n')
         assert hashlib.sha256(raw).hexdigest() == acceptance[field]['sha256_lf']
     assert (TASK / 'outputs/contract.json').read_bytes() == (ARCHIVE / 'contract.json').read_bytes()

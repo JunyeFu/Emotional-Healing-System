@@ -70,7 +70,7 @@ def artifacts():
                         "condition_pair_equal": True, "clip_render_review": "PENDING"})
     sources = [CONFIG_PATH, TECH / "srp_step_measurement/measurement.py", Path(__file__),
                TECH / "05-通信协议/contracts/runtime-contract-v2.2.schema.json",
-               ROOT / "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md"]
+               ROOT / "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/01_F-02_Gate2构念与测量深度研究包_v0.9-candidate.md"]
     source_hashes = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest() for p in sources}
     output = {"input_cases.json": inputs, "participant_items.json": public, "private_answer_keys.json": private,
               "verification.json": {"evidence_class": "SYNTHETIC_ONLY", "case_count": len(results),

@@ -10,9 +10,10 @@ import subprocess
 import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
+git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
 TASK = ROOT / 'agent/tasks/U12-06'
-GOV = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
-LEGACY = ROOT / '00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-06'
+GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+LEGACY = ROOT / 'agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-06'
 DISPATCH = GOV / '当前解锁独立任务包/U12-06'
 
 
@@ -36,7 +37,7 @@ def test_all_claimed_package_bytes_and_identity_unchanged():
     sources = read(TASK / 'inputs/sources.json')
     for path in DISPATCH.rglob('*'):
         if path.is_file():
-            previous = subprocess.run(['git', 'show', f"{sources['frozen_dispatch_baseline_commit']}:{path.relative_to(ROOT).as_posix()}"], cwd=ROOT, capture_output=True, check=True).stdout
+            previous = git_bytes(ROOT, sources['frozen_dispatch_baseline_commit'], path.relative_to(ROOT).as_posix())
             assert path.read_bytes() == previous or path.read_bytes().replace(b'\r\n', b'\n') == previous
     manifest = read(DISPATCH / 'package_manifest.json')
     assert manifest['input_snapshot_id'] == sources['frozen_input_snapshot_id']

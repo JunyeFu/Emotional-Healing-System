@@ -12,7 +12,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 ROOT = Path(__file__).resolve().parents[2]
-GOV = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 
 
 def read_json(path):
@@ -188,6 +188,9 @@ def main():
     if any(e['old'] == '04-成果与交付' for e in migrated):
         delivery_source = read_json(ROOT / 'agent/evidence/root-migration-delivery-source.json')
         chain.add_paragraph(delivery_source['human_review'])
+    if any(e['old'] == '00-项目管理' for e in migrated):
+        governance = read_json(ROOT / 'agent/evidence/root-migration-governance.json')
+        chain.add_paragraph(governance['human_review'])
     chain.save(ROOT / 'human/project-review.docx')
     progress = {'completed_packages': completed, 'remaining_packages': remaining,
                 'root_migration_complete': False, 'findings': findings}

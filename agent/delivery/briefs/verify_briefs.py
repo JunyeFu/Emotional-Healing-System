@@ -69,7 +69,7 @@ def main() -> None:
         pages, digest = verify_pdf(OUTPUT_DIR / filename, markers)
         text = ''.join(page.extract_text() for page in PdfReader(OUTPUT_DIR / filename).pages)
         normalized = re.sub(r'\s+', '', text)
-        registry = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv'
+        registry = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv'
         with registry.open(encoding='utf-8-sig', newline='') as stream:
             rows = list(csv.DictReader(stream))
         counts = Counter(row['status'] for row in rows)

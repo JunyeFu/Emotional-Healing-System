@@ -1,0 +1,8 @@
+{
+  "task_id": "G-05",
+  "package_role": "LEGACY_NAVIGATION_ONLY",
+  "authority": "../05_可领取任务包.csv",
+  "current_task": "../../../../../tasks/G-05/TASK.md",
+  "current_sources": "../../../../../tasks/G-05/inputs/sources.json",
+  "historical_package": "../../../../../tasks/G-05/archive/legacy-package"
+}

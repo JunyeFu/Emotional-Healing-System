@@ -1,9 +1,9 @@
 {
   "paths": [
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
-    "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
-    "00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/03_工具与验证/result_classifier.py",
-    "00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/01_研究与执行/02_统计分析与结果分类合同.md",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/03_工具与验证/result_classifier.py",
+    "agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/01_研究与执行/02_统计分析与结果分类合同.md",
     "agent/tasks/U12-10/archive/task-input/package_manifest.json",
     "agent/tasks/U12-10/inputs/classifier-cases.json",
     "agent/tasks/A-05/outputs/current-analysis.json",

@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import runpy
 import subprocess
 import sys
 
@@ -9,7 +10,7 @@ import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 sys.path.insert(0, str(ROOT / '02-技术研发/02-信号处理'))
 from a03_gate2_spec import GateEvidence, GateResult, evaluate_ordered_gate, score_panas
@@ -44,9 +45,11 @@ def test_frozen_dispatch_identity_and_original_candidate_are_preserved():
     sources = read_json(TASK / 'inputs/sources.json')
     assert manifest['input_snapshot_id'] == sources['frozen_input_snapshot_id']
     assert manifest['candidate_identity'] == '4071c84bc03ab9d80f7ce5997034fe27737e5d51'
-    changes = subprocess.run(['git', 'diff', 'HEAD', '--name-only', '--', str(GOV / '当前解锁独立任务包')],
-                             cwd=ROOT, capture_output=True, text=True, check=True)
-    assert not changes.stdout.strip()
+    git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
+    for path in (GOV / '当前解锁独立任务包').rglob('*'):
+        if path.is_file():
+            original = git_bytes(ROOT, 'HEAD', path.relative_to(ROOT).as_posix())
+            assert original.replace(b'\r\n', b'\n') == path.read_bytes().replace(b'\r\n', b'\n'), path
 
 
 def test_actual_formal_modes_are_not_enabled_by_fixture_receipt():

@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 REPO = Path(__file__).resolve().parents[4]
-ROOT = REPO / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建'
+ROOT = REPO / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建'
 SPEC = importlib.util.spec_from_file_location(
     "validate_q01_materials", Path(__file__).resolve().parent / "validate_q01_materials.py"
 )

@@ -12,7 +12,7 @@ from jsonschema import Draft202012Validator
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 TECH = ROOT / '02-技术研发'
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 sys.path.insert(0, str(TECH))
 sys.path.insert(0, str(TECH / '08-随机化'))

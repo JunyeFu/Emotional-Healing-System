@@ -10,7 +10,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 UPGRADE = (
     PROJECT_ROOT
-    / "00-项目管理/01-项目章程与规划"
+    / "agent/governance/01-项目章程与规划"
     / "2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
     / "24_团队任务与项目治理/audit_upgrade"
 )

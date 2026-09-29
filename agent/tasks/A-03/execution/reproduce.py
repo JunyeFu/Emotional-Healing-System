@@ -9,7 +9,7 @@ ROOT = TASK.parents[2]
 sys.path.insert(0, str(ROOT / '02-技术研发/02-信号处理'))
 from a03_gate2_spec.simulation import run_simulation
 
-HISTORY = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/A-03_SPEC'
+HISTORY = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/A-03_SPEC'
 CASES = (
     (24, 'sensitivity_point', 'synthetic_small_sample_report_v1.1.json'),
     (85, 'existing_planning_anchor', 'synthetic_planning_anchor_report_v1.1.json'),

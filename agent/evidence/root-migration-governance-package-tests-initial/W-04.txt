@@ -1,0 +1,26 @@
+...F                                                                     [100%]
+================================== FAILURES ===================================
+_________________ test_actual_archive_sources_and_navigation __________________
+
+    def test_actual_archive_sources_and_navigation():
+        archived = TASK / 'archive/03_成果交付与公开顺序.md'
+        assert hashlib.sha256(archived.read_bytes()).hexdigest().upper() == '231A0423C326F6AE554A11B5C80FA2F29896628DCC1C3F34A1F94375CBAB6474'
+        for source in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / source).is_file(), source
+        path = PLAN / '25_论文投稿与成果交付/03_成果交付与公开顺序.md'
+        text = path.read_text(encoding='utf-8')
+        assert 'agent/tasks/W-04/outputs/current-handover.md' in text
+        for link in re.findall(r'\]\(([^)]+)\)', text):
+>           assert (path.parent / link).resolve().exists(), link
+E           AssertionError: ../../../../agent/tasks/W-04/outputs/current-handover.md
+E           assert False
+E            +  where False = exists()
+E            +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/W-04/outputs/current-handover.md').exists
+E            +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/W-04/outputs/current-handover.md') = resolve()
+E            +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付') / '../../../../agent/tasks/W-04/outputs/current-handover.md').resolve
+E            +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/03_成果交付与公开顺序.md').parent
+
+agent\tasks\W-04\execution\test_handover_contract.py:56: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/W-04/execution/test_handover_contract.py::test_actual_archive_sources_and_navigation
+1 failed, 3 passed in 0.15s

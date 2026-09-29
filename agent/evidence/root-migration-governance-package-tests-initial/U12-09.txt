@@ -1,0 +1,40 @@
+....F.....                                                               [100%]
+================================== FAILURES ===================================
+_______________ test_output_matrices_rebuild_from_actual_inputs _______________
+
+    def test_output_matrices_rebuild_from_actual_inputs():
+>       artifacts = runpy.run_path(str(TASK / 'execution/inspect_consistency.py'))['artifacts']()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U12-09\execution\test_consistency_handoff.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\tasks\U12-09\execution\inspect_consistency.py:103: in artifacts
+    legacy = legacy_observations()
+             ^^^^^^^^^^^^^^^^^^^^^
+agent\tasks\U12-09\execution\inspect_consistency.py:40: in legacy_observations
+    candidates['current_worktree_not_historical'] = live.read_bytes()
+                                                    ^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/07_validate_task_packages.py')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\00-项目管理\\01-项目章程与规划\\2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0\\24_团队任务与项目治理\\07_validate_task_packages.py'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-09/execution/test_consistency_handoff.py::test_output_matrices_rebuild_from_actual_inputs
+1 failed, 9 passed in 1.02s

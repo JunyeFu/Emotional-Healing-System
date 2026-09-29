@@ -10,61 +10,134 @@
     "method": "原审阅候选9078bc19f1efa2a512e2bb4992568c869fa895b2，证据补齐提交ab25a6b8df85c1326164eb8f9f0804d6d790dc87；见证已有验证，未声明本人重跑。旧签名不转移到本轮补丁。"
   },
   "sections": [
-    {"heading": "当前结论", "paragraphs": [
-      "本轮执行Codex，原负责人Codex(Grip)/小彬。规范化进度与注册表DONE分开；本轮技术修复已验证，正式运行条件继续由下游验收。"
-    ]},
-    {"heading": "目标与完成标准", "paragraphs": [
-      "原包约3人日。AC1四层独立变化且不串扰；AC2累计锁定只在合法生命周期重置；AC3降级不伪造成功，背景不携带目标节律。",
-      "本轮补齐可访问原件、固定执行入口、修复真实偏离并生成Word。依赖F-03/F-05/V-03；Unity生命周期、程序集和测试技能通过项目国内资料与Unity中文学习平台补充。"
-    ]},
-    {"heading": "实际交付", "paragraphs": [
-      "execution包含原件导入、Unity验证、开发构建录制和逐帧像素检查；evidence保存本轮XML、录像、像素结果与独立复审。outputs只有当前合同与结构化总结。",
-      "历史127文件按Git原字节取回到archive/evidence-v1，四项证据可直接打开。共享Assets/Scripts/V03保留Unity程序集归属，开发场景固定DevTools/Scenes，EXE与缓存不入库。"
-    ]},
-    {"heading": "执行过程与关键决定", "paragraphs": [
-      "以V-03模块间重置ADR订正实现：closed_loop到lock_transition保持累计锁定；SessionId、ModuleId或ModulePosition改变才重建生命周期，背景段钩子单独执行。",
-      "允许合同合法的none/0/null步骤状态，保留有相位却缺实例的拒绝。驱动仅在Editor或Development编译；构建申请F-03开发授权并恢复原屏幕设置。",
-      "隐藏窗口屏幕截图和自动相机渲染均出现黑帧，改为显式StandardRequest渲染实际组件面板并ReadPixels取回。逐帧像素门曾真实报错，最终重录通过。"
-    ]},
-    {"heading": "验证与结果", "paragraphs": [
-      "Unity6000.4.9f1实际105项EditMode通过：U-02专项88、U-01共14、F-03共3；另3项U-01 PlayMode通过。历史98项为81+14+3，原件127文件逐字节验证通过。",
-      "新开发演示120帧、960×600、12fps，全部像素门通过。检查五阶段图清晰无残影；不可用与断连locked=True、out=0.550，显式重置locked=False、out=0。它是10秒行为演示，不是800秒全旅程。",
-      "71项注册表及5包46份冻结输入通过，任务状态未迁移。参数规范化文本哈希与原候选一致；不把CRLF字节差异当设计变更。"
-    ]},
-    {"heading": "偏离与修复闭环", "paragraphs": [
-      "U02-N01：旧段切换会错误清空Recovery锁，已按模块/会话边界修复并增加测试。U02-N02：storm/fade合法空步骤被拒绝，已对齐步骤合同，四天气用例通过。",
-      "U02-N03：DevTools缺少release排除与受控构建授权，已修复。U02-N04：旧录像标题截断、残影及本轮零截图/黑帧均已实际修复，失败记录留archive，新录像独立保存。"
-    ]},
-    {"heading": "目录与文件整理", "paragraphs": [
-      "固定inputs/execution/evidence/outputs/archive，无根层随意输出。历史证据和失败尝试标明身份；当前唯一重跑入口已写TASK。清理本轮生成的空Resources目录，撤销构建产生的preloadedAssets设置，不纳入无关工程变更。"
-    ]},
-    {"heading": "上下游交接", "paragraphs": [
-      "P-01掌握研究顺序和时间，U-01负责网络身份及陈旧帧门；本包只消费IV03TelemetrySource并投影四层，不自行推进流程。NotifyLinkDown不制造成功帧。",
-      "V-05/U-03接入固定镜头天气画面，实际呈现对应帧后调用U-01 ConfirmRendered；I-01验证真实链。旧参数候选不自动等于V-04最终美术。两条件、教学暴露、800秒和正式制品仍由各自下游完成。"
-    ]},
-    {"heading": "审阅与责任签收", "paragraphs": [
-      "Raman独立只读复审发现开发授权P2并确认修复，复算120帧像素与查看五阶段图后无开放P0-P3。本轮Unity回归由主Agent执行，不冒称独立Agent或真实审核人重新运行。"
-    ]},
-    {"heading": "收尾与下一包", "paragraphs": [
-      "明确路径提交推送codex/task-package-normalization，不自动合并。规范化11/71包，剩余60包，下一包T-01；全部包及最终根目录双层迁移仍待完成。"
-    ]},
-    {"heading": "审阅来源", "paragraphs": [
-      "本轮Word从outputs/summary.json生成，来源在inputs，执行证据在evidence，原签署留治理目录，原证据留archive。串联Word使用同一总结与未完成交接。"
-    ]}
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本轮执行Codex，原负责人Codex(Grip)/小彬。规范化进度与注册表DONE分开；本轮技术修复已验证，正式运行条件继续由下游验收。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "原包约3人日。AC1四层独立变化且不串扰；AC2累计锁定只在合法生命周期重置；AC3降级不伪造成功，背景不携带目标节律。",
+        "本轮补齐可访问原件、固定执行入口、修复真实偏离并生成Word。依赖F-03/F-05/V-03；Unity生命周期、程序集和测试技能通过项目国内资料与Unity中文学习平台补充。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "execution包含原件导入、Unity验证、开发构建录制和逐帧像素检查；evidence保存本轮XML、录像、像素结果与独立复审。outputs只有当前合同与结构化总结。",
+        "历史127文件按Git原字节取回到archive/evidence-v1，四项证据可直接打开。共享Assets/Scripts/V03保留Unity程序集归属，开发场景固定DevTools/Scenes，EXE与缓存不入库。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "以V-03模块间重置ADR订正实现：closed_loop到lock_transition保持累计锁定；SessionId、ModuleId或ModulePosition改变才重建生命周期，背景段钩子单独执行。",
+        "允许合同合法的none/0/null步骤状态，保留有相位却缺实例的拒绝。驱动仅在Editor或Development编译；构建申请F-03开发授权并恢复原屏幕设置。",
+        "隐藏窗口屏幕截图和自动相机渲染均出现黑帧，改为显式StandardRequest渲染实际组件面板并ReadPixels取回。逐帧像素门曾真实报错，最终重录通过。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "Unity6000.4.9f1实际105项EditMode通过：U-02专项88、U-01共14、F-03共3；另3项U-01 PlayMode通过。历史98项为81+14+3，原件127文件逐字节验证通过。",
+        "新开发演示120帧、960×600、12fps，全部像素门通过。检查五阶段图清晰无残影；不可用与断连locked=True、out=0.550，显式重置locked=False、out=0。它是10秒行为演示，不是800秒全旅程。",
+        "71项注册表及5包46份冻结输入通过，任务状态未迁移。参数规范化文本哈希与原候选一致；不把CRLF字节差异当设计变更。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "U02-N01：旧段切换会错误清空Recovery锁，已按模块/会话边界修复并增加测试。U02-N02：storm/fade合法空步骤被拒绝，已对齐步骤合同，四天气用例通过。",
+        "U02-N03：DevTools缺少release排除与受控构建授权，已修复。U02-N04：旧录像标题截断、残影及本轮零截图/黑帧均已实际修复，失败记录留archive，新录像独立保存。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "固定inputs/execution/evidence/outputs/archive，无根层随意输出。历史证据和失败尝试标明身份；当前唯一重跑入口已写TASK。清理本轮生成的空Resources目录，撤销构建产生的preloadedAssets设置，不纳入无关工程变更。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "P-01掌握研究顺序和时间，U-01负责网络身份及陈旧帧门；本包只消费IV03TelemetrySource并投影四层，不自行推进流程。NotifyLinkDown不制造成功帧。",
+        "V-05/U-03接入固定镜头天气画面，实际呈现对应帧后调用U-01 ConfirmRendered；I-01验证真实链。旧参数候选不自动等于V-04最终美术。两条件、教学暴露、800秒和正式制品仍由各自下游完成。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "Raman独立只读复审发现开发授权P2并确认修复，复算120帧像素与查看五阶段图后无开放P0-P3。本轮Unity回归由主Agent执行，不冒称独立Agent或真实审核人重新运行。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "明确路径提交推送codex/task-package-normalization，不自动合并。规范化11/71包，剩余60包，下一包T-01；全部包及最终根目录双层迁移仍待完成。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "本轮Word从outputs/summary.json生成，来源在inputs，执行证据在evidence，原签署留治理目录，原证据留archive。串联Word使用同一总结与未完成交接。"
+      ]
+    }
   ],
   "findings": [
-    {"id": "U02-N01", "status": "FIXED", "description": "Recovery按模块/会话边界重置，锁定换段保持；新增生命周期回归通过", "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"},
-    {"id": "U02-N02", "status": "FIXED", "description": "四天气合法空步骤与F-05对齐；非空缺实例仍拒绝", "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"},
-    {"id": "U02-N03", "status": "FIXED", "description": "开发驱动条件编译，构建取得F-03作用域授权；正式门未放宽", "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"},
-    {"id": "U02-N04", "status": "FIXED", "description": "历史原件可读取；新显式渲染演示120帧像素通过且五阶段可读，不再使用零图/黑帧成功计数", "source": "agent/tasks/U-02/evidence/runtime/demo/pixel-check.json"},
-    {"id": "U02-N05", "status": "OPEN_DOWNSTREAM_INTEGRATION_AND_PATCH_SIGNOFF", "description": "最终天气接线、实际回执、真实设备与正式运行仍待下游；本轮新补丁未追加真人签署", "source": "agent/tasks/U-02/outputs/current-adapter-contract.md"}
+    {
+      "id": "U02-N01",
+      "status": "FIXED",
+      "description": "Recovery按模块/会话边界重置，锁定换段保持；新增生命周期回归通过",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
+    },
+    {
+      "id": "U02-N02",
+      "status": "FIXED",
+      "description": "四天气合法空步骤与F-05对齐；非空缺实例仍拒绝",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
+    },
+    {
+      "id": "U02-N03",
+      "status": "FIXED",
+      "description": "开发驱动条件编译，构建取得F-03作用域授权；正式门未放宽",
+      "source": "02-技术研发/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
+    },
+    {
+      "id": "U02-N04",
+      "status": "FIXED",
+      "description": "历史原件可读取；新显式渲染演示120帧像素通过且五阶段可读，不再使用零图/黑帧成功计数",
+      "source": "agent/tasks/U-02/evidence/runtime/demo/pixel-check.json"
+    },
+    {
+      "id": "U02-N05",
+      "status": "OPEN_DOWNSTREAM_INTEGRATION_AND_PATCH_SIGNOFF",
+      "description": "最终天气接线、实际回执、真实设备与正式运行仍待下游；本轮新补丁未追加真人签署",
+      "source": "agent/tasks/U-02/outputs/current-adapter-contract.md"
+    }
   ],
   "next_task": "T-01",
   "source_links": [
-    {"label": "打开当前四层适配合同", "path": "agent/tasks/U-02/outputs/current-adapter-contract.md"},
-    {"label": "打开本轮Unity回归结果", "path": "agent/tasks/U-02/evidence/runtime/results.json"},
-    {"label": "打开本轮开发演示", "path": "agent/tasks/U-02/evidence/runtime/demo/degradation-demo.mp4"},
-    {"label": "打开独立复审", "path": "agent/tasks/U-02/evidence/independent-review.md"},
-    {"label": "打开原真实第二人签收", "path": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/task_member_outputs/U-02/第二人审核报告_已签署.md"}
+    {
+      "label": "打开当前四层适配合同",
+      "path": "agent/tasks/U-02/outputs/current-adapter-contract.md"
+    },
+    {
+      "label": "打开本轮Unity回归结果",
+      "path": "agent/tasks/U-02/evidence/runtime/results.json"
+    },
+    {
+      "label": "打开本轮开发演示",
+      "path": "agent/tasks/U-02/evidence/runtime/demo/degradation-demo.mp4"
+    },
+    {
+      "label": "打开独立复审",
+      "path": "agent/tasks/U-02/evidence/independent-review.md"
+    },
+    {
+      "label": "打开原真实第二人签收",
+      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/task_member_outputs/U-02/第二人审核报告_已签署.md"
+    }
   ]
 }

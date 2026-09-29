@@ -1,7 +1,0 @@
-{
-  "task_id": "U12-05",
-  "package_role": "LEGACY_NAVIGATION_ONLY",
-  "current_task": "../../../../../agent/tasks/U12-05/TASK.md",
-  "historical_manifest": "../../../../../agent/tasks/U12-05/archive/candidate/package_manifest.json",
-  "dispatch_allowed": false
-}

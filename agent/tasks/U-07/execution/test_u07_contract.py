@@ -2,13 +2,14 @@ import csv
 import json
 from pathlib import Path
 import re
+import runpy
 import subprocess
 
 import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-07'
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 UNITY = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
 OLD_SPEC = PLAN / '20_产品与场景设计/06_抽象双环对照规格.md'
 
@@ -133,7 +134,8 @@ def test_existing_legal_r01_examples_only_cover_storm():
 
 def test_original_specification_archived_verbatim():
     relative = OLD_SPEC.relative_to(ROOT).as_posix()
-    original = subprocess.run(['git', 'show', f'2e9498a:{relative}'], cwd=ROOT, capture_output=True, check=True).stdout
+    git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
+    original = git_bytes(ROOT, '2e9498a', relative)
     assert original == (TASK / 'archive/06_抽象双环对照规格.md').read_bytes()
     pointer = OLD_SPEC.read_text(encoding='utf-8-sig')
     assert 'U-07' in pointer and '当前四态规则' in pointer

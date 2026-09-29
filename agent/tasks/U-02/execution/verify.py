@@ -12,7 +12,7 @@ PACKAGE = Path(__file__).resolve().parents[1]
 OUTPUT = PACKAGE / 'evidence/runtime'
 UNITY = 'D:/UnityEngine/6000.4.9f1/Editor/Unity.exe'
 PROJECT = ROOT / '02-技术研发/04-Unity视觉/SRP-Weather-Visual'
-PARAMETERS = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_参数边界与锁定规则_v1.0.json'
+PARAMETERS = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-03_四层视听映射与资产来源基线/V-03_参数边界与锁定规则_v1.0.json'
 
 
 def check_xml(path, expected):

@@ -4,11 +4,13 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import runpy
 import subprocess
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+resolve_path = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 ADAPT = PLAN.parent / '2026-09-08_SRP_v1.2_当前基线适配包'
 
@@ -36,7 +38,7 @@ def legacy_observations():
             baseline = ADAPT / 'baseline' / Path(item['repository_path']).name
             if baseline.is_file():
                 candidates['adapter_baseline_bytes'] = baseline.read_bytes()
-            live = ROOT / item['repository_path']
+            live = resolve_path(ROOT, item['repository_path'])
             candidates['current_worktree_not_historical'] = live.read_bytes()
             observed = {name: digest(value) for name, value in candidates.items()}
             results.append({'upgrade': upgrade, 'reference': item['reference'],

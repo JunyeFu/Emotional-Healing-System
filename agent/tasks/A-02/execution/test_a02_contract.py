@@ -10,7 +10,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/A-02'
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 SAP = ROOT / 'agent/tasks/U12-04/outputs'
 
 

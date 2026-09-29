@@ -1,0 +1,25 @@
+.......F                                                                 [100%]
+================================== FAILURES ===================================
+________________ test_sources_current_navigation_and_language _________________
+
+    def test_sources_current_navigation_and_language():
+        for source in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / source).is_file(), source
+        for name in ['00_第10步计划.md', '01_详细执行方案.md']:
+            file = PLAN / '11_步骤10_正式研究执行' / name
+            text = file.read_text(encoding='utf-8')
+            assert 'agent/tasks/B-03/outputs/current-batch.md' in text
+            for link in re.findall(r'\]\(([^)]+)\)', text):
+>               assert (file.parent / link).resolve().exists(), link
+E               AssertionError: ../../../../agent/tasks/G-03/outputs/current-freeze.md
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/G-03/outputs/current-freeze.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/G-03/outputs/current-freeze.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/11_步骤10_正式研究执行') / '../../../../agent/tasks/G-03/outputs/current-freeze.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/11_步骤10_正式研究执行') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/11_步骤10_正式研究执行/00_第10步计划.md').parent
+
+agent\tasks\B-03\execution\test_batch_handoff.py:161: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/B-03/execution/test_batch_handoff.py::test_sources_current_navigation_and_language
+1 failed, 7 passed in 0.49s

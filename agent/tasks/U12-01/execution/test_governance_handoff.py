@@ -6,7 +6,8 @@ from pathlib import Path
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-GOV = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+resolve_path = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
+GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 
 def read(path):
     return json.loads(path.read_text(encoding='utf-8-sig'))
@@ -27,7 +28,7 @@ def test_scoped_acceptance_not_formal_authorization():
         assert (root / entry['path']).is_file()
         if entry['owner'] in ('U12-02', 'U12-04'):
             assert entry['status'] == 'SCOPED_CANDIDATE_ACCEPTED_NOT_LIVE'
-            evidence = read(ROOT / entry['acceptance_path'])
+            evidence = read(resolve_path(ROOT, entry['acceptance_path']))
             assert evidence['human_review']['reviewer'] == '傅钧烨'
             assert evidence['human_review']['status'] == 'PASS'
             assert entry['limit']

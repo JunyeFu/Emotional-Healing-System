@@ -66,7 +66,7 @@ SessionReplayer.replay_core(core_factory=None) -> ReplayReport
 - 已封存会话拒绝任何追加；同一会话只允许一个写者；
 - 中断恢复不截断旧段，只创建新段写入`PROCESS_INTERRUPTED`并封存，后续运行必须使用新`session_id`。
 
-配置见[session_store_config_v1.json](../../../../02-技术研发/srp_session_store/config/session_store_config_v1.json)，机器格式见[contracts](../../../../02-技术研发/srp_session_store/contracts/)。
+配置见[session_store_config_v1.json](../../../../02-技术研发/srp_session_store/config/session_store_config_v1.json)，机器格式见[contracts](../../../../02-技术研发/srp_session_store/contracts)。
 
 ## L0与L1
 

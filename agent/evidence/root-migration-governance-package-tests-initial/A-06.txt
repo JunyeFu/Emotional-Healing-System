@@ -1,0 +1,25 @@
+...................F                                                     [100%]
+================================== FAILURES ===================================
+___________________ test_sources_and_current_consumer_paths ___________________
+
+    def test_sources_and_current_consumer_paths():
+        for source in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / source).is_file(), source
+        for relative in ('12_步骤11_离线处理分析与论文写作/00_第11步计划.md',
+                         '12_步骤11_离线处理分析与论文写作/01_详细执行方案.md'):
+            path = PLAN / relative
+            assert 'agent/tasks/A-06/outputs/current-scope.md' in path.read_text(encoding='utf-8')
+            for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
+>               assert (path.parent / link).resolve().exists(), link
+E               AssertionError: ../../../../agent/tasks/E-04/outputs/current-closeout.md
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/E-04/outputs/current-closeout.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/E-04/outputs/current-closeout.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作') / '../../../../agent/tasks/E-04/outputs/current-closeout.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作/00_第11步计划.md').parent
+
+agent\tasks\A-06\execution\test_scope_handoff.py:138: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/A-06/execution/test_scope_handoff.py::test_sources_and_current_consumer_paths
+1 failed, 19 passed in 0.36s

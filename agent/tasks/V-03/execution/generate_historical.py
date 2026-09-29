@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[4]
 BASE = (
     ROOT
-    / "00-项目管理"
+    / "agent/governance"
     / "01-项目章程与规划"
     / "2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
     / "20_产品与场景设计"

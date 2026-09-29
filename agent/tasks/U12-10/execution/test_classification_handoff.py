@@ -13,9 +13,9 @@ import pytest
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-PLAN = ROOT / '00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
-SOURCE = ROOT / '00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/03_工具与验证/result_classifier.py'
+SOURCE = ROOT / 'agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/03_工具与验证/result_classifier.py'
 spec = importlib.util.spec_from_file_location('u1210_classifier', TASK / 'execution/result_classifier.py')
 module = importlib.util.module_from_spec(spec)
 sys.modules[spec.name] = module
@@ -138,7 +138,7 @@ def test_actual_cli_valid_invalid_json_and_missing_field(tmp_path):
 def test_sources_navigation_and_current_language():
     for relative in read(TASK / 'inputs/sources.json')['paths']:
         assert (ROOT / relative).is_file(), relative
-    old = ROOT / '00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-10/README.md'
+    old = ROOT / 'agent/governance/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/tasks/U12-10/README.md'
     assert not (old.parent / 'TASK.md').exists()
     for path in (old, TASK / 'TASK.md', TASK / 'outputs/current-classification.md'):
         for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
