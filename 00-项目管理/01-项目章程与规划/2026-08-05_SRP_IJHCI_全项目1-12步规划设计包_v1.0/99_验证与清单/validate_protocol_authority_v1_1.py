@@ -17,6 +17,7 @@ LEGACY_LOCK = PROJECT_ROOT / "agent/tasks/G-03/archive"
 LEGACY_EXECUTION = PROJECT_ROOT / "agent/tasks/B-02/archive"
 LEGACY_CLOSEOUT = PROJECT_ROOT / "agent/tasks/E-04/archive"
 LEGACY_MEASUREMENT = PROJECT_ROOT / "agent/tasks/A-05/archive"
+LEGACY_PAPER = PROJECT_ROOT / "agent/tasks/W-02/archive"
 AUTHORITY = PACKAGE / "00_总控" / "protocol_authority_v1.1.json"
 
 ACTIVE_FILES = [
@@ -57,6 +58,8 @@ ACTIVE_FILES = [
     PACKAGE / "24_团队任务与项目治理" / "05_可领取任务包.csv",
     PACKAGE / "25_论文投稿与成果交付" / "00_IJHCI论文结构.md",
     PACKAGE / "25_论文投稿与成果交付" / "01_主张证据矩阵.csv",
+    LEGACY_PAPER / "00_IJHCI论文结构.md",
+    LEGACY_PAPER / "01_主张证据矩阵.csv",
     PACKAGE / "25_论文投稿与成果交付" / "01_核心贡献_IJHCI立足性论证_v1.0.md",
     PACKAGE / "25_论文投稿与成果交付" / "02_投稿返修检查表.md",
 ]
@@ -108,7 +111,7 @@ REQUIRED_MARKERS = {
         "行为概率",
         "离线策略价值",
     ),
-    PACKAGE / "25_论文投稿与成果交付" / "00_IJHCI论文结构.md": (
+    LEGACY_PAPER / "00_IJHCI论文结构.md": (
         "部署扩展",
         "完整提示表示方案",
         "相同的`scene_native` Unity构建",

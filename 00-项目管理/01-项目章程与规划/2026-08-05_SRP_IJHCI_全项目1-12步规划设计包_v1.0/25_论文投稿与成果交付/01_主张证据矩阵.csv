@@ -1,9 +1,9 @@
 ID,主张,核心结果,证据,当前状态,失败降级
-C1,候选四层表示语法可被跨结构重建,独立设计者重建得分与盲态审查,U1/U2专家材料+未见结构或非天气场景测试,PLANNED_NOT_OBSERVED,失败时降称四场景设计模式
-C2,场景原生完整提示表示方案保持执行质量,机会分母四模块等权PF,Gate1全部随机分配分析集+完整四模块分析集,PLANNED_NOT_OBSERVED,任一未过则不作功能可替代表述
-C3,场景融合操纵成立,SCCI五条均值与项目级序数审计,Gate2组件1+Level A/B/C+项目功能差异,PLANNED_NOT_OBSERVED,SCCI仅描述且不承担价值主张
-C4,场景原生方案保持条件中性功能底线,四层理解+心智努力,Gate2组件2和3非劣模型,PLANNED_NOT_OBSERVED,任一失败则Gate2失败
-C5,形成有边界的可迁移设计知识,阶段错误+复合实例正负例+访谈,RQ2/RQ3定量定性复核,PLANNED_NOT_OBSERVED,只报告四实例案例不称通用规则
-C6,真实设备系统可独立运行并正确降级,双真机+无TD+外部延迟+重放,LIVE_E2E+故障注入+干净机复现,PLANNED_NOT_OBSERVED,Mock或原型测试只能作迁移证据
-C7,冻结部署策略产生增量价值,调整后体验后负性维度,参与者分组OPE+支持/ESS+Gate3+护栏,PLANNED_NOT_OBSERVED,冻结均匀策略并删除次贡献优效表述
-C8,研究和制品可复现,一键表图+环境锁+合成数据+许可,U7+独立干净环境复现,PLANNED_NOT_OBSERVED,不声称可复现并提供受限替代说明
+C1,两完整提示方案的调整后负性情绪比较,估计与置信区间及预设比较,agent/tasks/A-05/outputs/current-analysis.md,NOT_RUN,证据不足不等于等效或反向优势
+C2,呼吸执行质量与功能代价,机会PF及分析集与缺失,agent/tasks/A-02/outputs/current-statistics.md,NOT_RUN,功能边界不隐去有效情绪结果
+C3,操纵理解和努力的解释边界,SCCI及步骤理解与错误,agent/tasks/F-02/outputs/current-measurement.md,NOT_RUN,客观错误不以喜欢度补偿
+C4,有边界的设计知识,独立重建和负例与评分,agent/tasks/Q-01/outputs/current-level-a.md,NOT_RUN,四原团队场景不证明通用语法
+C5,真实系统和降级能力,真实设备与Unity回执及持久记录,agent/tasks/I-01/outputs/current-integration.md,NOT_RUN,合成闭环不替代真实全链
+C6,可选冻结策略的部署比较,两原生组原分配估计与独立SAP,agent/tasks/A-04/outputs/current-analysis.md,NOT_RUN,未开展不伪DONE已有活动不隐去
+C7,与相关工作的有据增量,原始全文页段和方法结果对照,agent/tasks/W-01/outputs/current-paper.md,NOT_RUN,DOI身份和历史搜索不替代完整综述
+C8,实际研究范围及可复现交接,同版范围结果图表输入代码与复跑,agent/tasks/A-06/outputs/current-scope.md,NOT_RUN,元数据路线通过不替代真实签收

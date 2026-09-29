@@ -53,6 +53,7 @@
 | 看可选阶段三研究关闭 | `agent/tasks/E-06/outputs/current-closeout.md`（全部活动、策略不变性、研究锁库与揭盲分别授权） |
 | 看可选阶段三锁定分析 | `agent/tasks/A-04/outputs/current-analysis.md`（原分配部署比较、独立SAP与真实复现缺口） |
 | 看研究范围与论文交接 | `agent/tasks/A-06/outputs/current-scope.md`（三台账、双人签收及核心/扩展路线，真实关闭未执行） |
+| 看当前单篇论文写作 | `agent/tasks/W-02/outputs/current-manuscript.md`（情绪收益、功能代价、设计边界与旧稿修订，真实主稿未交付） |
 | 看当前随机化实现与交接 | `agent/tasks/X-01/outputs/current-randomization.md`（固定完整块、实际概率见证及正式角色缺口） |
 | 看离线策略学习与评价交接 | `agent/tasks/X-02/outputs/current-policy.md`（参与者分组、前状态与后结果分离及未实现OPE） |
 | 看策略运行与安全重放交接 | `agent/tasks/X-03/outputs/current-runtime.md`（v2.2仍固定、状态接口及受限重放缺口） |

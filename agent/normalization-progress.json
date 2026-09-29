@@ -55,10 +55,10 @@
     "B-03",
     "E-06",
     "A-04",
-    "A-06"
+    "A-06",
+    "W-02"
   ],
   "remaining_packages": [
-    "W-02",
     "W-03",
     "W-04",
     "U12-01",
@@ -1510,6 +1510,27 @@
       "status": "OPEN_REAL_RESULTS_LEDGERS_AND_DUAL_SIGNATURE",
       "description": "实际分析分类、完整台账来源、具体范围关闭及双人回执未取得",
       "source": "agent/tasks/A-06/outputs/current-scope.json"
+    },
+    {
+      "task_id": "W-02",
+      "id": "W02-N01",
+      "status": "FIXED_ACTUAL_ARCHIVE_AND_CONSUMERS",
+      "description": "旧结构和矩阵实际归档，当前PANAS主比较及历史验证消费者对齐",
+      "source": "agent/tasks/W-02/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "W-02",
+      "id": "W02-N02",
+      "status": "OPEN_SIGNED_U1207_REVISION",
+      "description": "历史签署稿仍含旧RQ八题和有序门，原件不改，当前修订待完成",
+      "source": "agent/tasks/W-02/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "W-02",
+      "id": "W02-N03",
+      "status": "OPEN_REAL_PAPER_AND_RESPONSIBILITY",
+      "description": "真实范围结果主稿全文审查作者责任及相似性检查尚未落实",
+      "source": "agent/tasks/W-02/outputs/current-manuscript.json"
     }
   ]
 }

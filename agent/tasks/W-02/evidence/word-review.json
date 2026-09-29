@@ -1,0 +1,14 @@
+{
+  "task_id": "W-02",
+  "reviewer": "author Agent",
+  "independent_review": "NOT_RUN",
+  "human_acceptance": "NOT_SIGNED",
+  "summary_pages": 3,
+  "summary_inspected_pages": [1, 2, 3],
+  "chain_pages": 31,
+  "chain_inspected_changed_pages": [31],
+  "chain_unchanged_pages": "1-30 identical PNG bytes to A-06 previously inspected render",
+  "layout": "PASS",
+  "content_source": "outputs/summary.json",
+  "root_migration_complete": false
+}

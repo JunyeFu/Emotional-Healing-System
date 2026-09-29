@@ -77,3 +77,5 @@ agent/tasks/G-03/evidence/initial-handoff.txt -text whitespace=-blank-at-eol
 agent/tasks/B-02/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/E-04/archive/*.md -text whitespace=cr-at-eol
 agent/tasks/A-05/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/W-02/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/W-02/archive/*.csv -text whitespace=cr-at-eol
