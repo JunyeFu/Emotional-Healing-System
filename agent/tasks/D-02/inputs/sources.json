@@ -10,7 +10,7 @@
     "02-技术研发/01-数据采集/device_driver.py",
     "02-技术研发/srp_session_store/models.py",
     "02-技术研发/srp_session_store/archive.py",
-    "PROJECT_MODULES.md",
+    "human/project/PROJECT_MODULES.md",
     "agent/normalization-relocations.json"
   ]
 }

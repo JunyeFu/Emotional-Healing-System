@@ -98,7 +98,7 @@ def test_sources_and_active_consumers():
         assert 'agent/tasks/A-04/outputs/current-analysis.md' in path.read_text(encoding='utf-8')
         for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
             assert (path.parent / link).resolve().exists(), link
-    modules = (ROOT / 'PROJECT_MODULES.md').read_text(encoding='utf-8')
+    modules = (ROOT / 'human/project/PROJECT_MODULES.md').read_text(encoding='utf-8')
     assert '| V4 | 锁库、双分析、三重门' not in modules
     assert 'agent/tasks/A-04/outputs/current-analysis.md' in modules
     for path in (TASK / 'TASK.md', TASK / 'outputs/current-analysis.md'):

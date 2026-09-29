@@ -7,7 +7,7 @@
 
 | 我要... | 打开 |
 |---------|------|
-| 看项目模块 | `PROJECT_MODULES.md` |
+| 看项目模块 | `human/project/PROJECT_MODULES.md` |
 | 看当前执行权威 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/README.md` + `active_governance.json`（治理目录） |
 | 领取任务包 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/04_可领取树型任务包_v2.0.md` |
 | 领取当前解锁独立包 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/README.md` |
@@ -15,7 +15,8 @@
 | 规划Unity场景与实验环境 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md` |
 | 补齐任务技能 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md` |
 | 配置团队工具 | `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/11_团队工具与环境冻结基线_v1.0.md` |
-| 看项目背景 | `PROJECT_FRAMEWORK.md` 或 `00-项目管理/项目规约/SRP项目规划书_李俊扬组_v2.1.docx` |
+| 看当前项目背景 | `human/project/README.md`；旧框架原文已归档至 `agent/archive/project/` |
+| 看当前运行入口 | `agent/runtime/README.md`；旧Mock/Spout手册已归档至 `agent/archive/runtime/` |
 | 看当前任务 | `00-项目管理/看板与进度/当前阶段看板.md` |
 | 看天气设计 | `01-需求与设计/情绪天气方案/四种天气设计.md` |
 | 看四层表示方案 | `agent/tasks/R-01/outputs/current-representation.md`（当前适用与历史来源） |
@@ -87,8 +88,9 @@
 ```
 03-SRP/
 ├── AGENTS.md                    ← 本文件
-├── PROJECT_MODULES.md           当前模块职责、接口与依赖
-├── PROJECT_FRAMEWORK.md         企业框架 (322行, 完整规划)
+├── human/project/              当前项目概览与模块职责
+├── agent/runtime/              当前运行入口
+├── agent/archive/              历史框架和旧运行手册原文
 ├── README.md                    快速说明
 ├── 00-项目管理/
 │   ├── README.md                管理模块入口
@@ -197,7 +199,7 @@
 
 ### 本地目录布局约定（2026-09-17收敛）
 
-- `D:\Agent\emotional-healing-system`（原名 `03-SRP`，2026-09-19 改名）是 SRP 在 `D:\Agent` 下的唯一入口；禁止在 Agent 顶层再创建平行项目目录。
+- 当前实际唯一入口为`D:\Agent\srp`；`03-SRP`及`emotional-healing-system`只用于历史路径理解，禁止在Agent顶层创建平行项目目录。
 - 并行任务需要 worktree 时：`git worktree add _worktrees/<任务名>`，任务合并后立即 `git worktree remove` 回收，不留常驻树；`_archive/` 存放历史备份、验证环境快照与证据差异，两者均经 `.git/info/exclude` 本地排除，不入库不提交。
 - 历史审计文档中出现的旧路径（如 `D:/Agent/f03v8`、`03-SRP-f05-evidence-*`）是当时事实记录，不回改；对应差异已归档至 `_archive/worktree-evidence/`，登记快照见 `_archive/worktree-registry-20260917.txt`，提交仍可按哈希检出到 `_worktrees/` 复现。
 - 不得在仓库根运行 `git clean -x` / `git clean -fdx`：会连同清除被本地排除的 `_archive/` 与 `_worktrees/`。

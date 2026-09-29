@@ -1,6 +1,6 @@
 # 人类审阅层
 
-跨项目逐包总结使用[通用中文Word模板](templates/通用中文逐包任务总结模板.docx)，填写与Agent层回填规则见[模板说明](../agent/templates/task-review/README.md)。
+跨项目逐包总结使用[通用中文Word模板](templates/通用中文逐包任务总结模板.docx)，填写与Agent层回填规则见[模板说明](../agent/templates/task-review/README.md)。项目背景与模块关系见[当前项目概览](project/README.md)，旧框架与Mock运行手册已归档。
 
 任务领取、执行与交接统一使用[通用中文逐包任务模板 v4.0](templates/通用中文逐包任务模板_v4.0.docx)，或使用[Word正式模板](templates/通用中文逐包任务模板_v4.0.dotx)新建任务文档。四阶段覆盖任务定义、执行交付、验收复核与交接收尾，明确责任人、国内学习资料、验收证据及上下游关系；适用于科研、开发、建模、课程和投资研究，不绑定 SRP。启动前确定验收标准，Agent职责与真实负责人分开，独立复核与签收按需填写。旧版保留为历史参考。
 

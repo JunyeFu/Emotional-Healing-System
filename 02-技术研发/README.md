@@ -38,7 +38,7 @@ python -m pytest 01-数据采集/tests 02-信号处理/tests 05-通信协议/tes
 | M00-G02 | 数据治理 | 联系方式预约、manifest和Unity资产 | 跨阶段去重、隐私门、备份恢复和许可门 | `07-数据治理/` |
 | M00-U12-06 | 运行准入 | manifest、构建身份、依赖能力与外部回执 | 正式入口硬阻断与负测试 | `运行准入/U12-06_正式入口准入框架_v1.0.md` |
 
-跨项目模块关系见根目录 `PROJECT_MODULES.md`。`visualizer.py` 是 M05 输出的本地观察工具，不是正式运行闭环的必需模块。
+跨模块关系见[当前模块地图](../human/project/PROJECT_MODULES.md)。`visualizer.py` 是 M05 输出的本地观察工具，不是正式运行闭环的必需模块。
 
 Unity当前fade切片入口见[U-03交接](../agent/tasks/U-03/outputs/current-slice.md)，仍等待V-05。旧TD/Spout场景设计已原文迁入[历史归档](../agent/tasks/U-03/archive/场景设计.md)，不作为当前运行合同。
 

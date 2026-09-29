@@ -122,6 +122,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('task_id')
     parser.add_argument('--check', action='store_true')
+    parser.add_argument('--chain-only', action='store_true', help='Update chained review without rewriting the task Word')
     args = parser.parse_args()
     with (GOV / '05_可领取任务包.csv').open(encoding='utf-8-sig', newline='') as stream:
         rows = list(csv.DictReader(stream))
@@ -141,7 +142,8 @@ def main():
                 raise ValueError(f'Word content drift: {args.task_id}')
         print(f'PASS package structure and sources: {args.task_id}')
         return
-    render_summary(summary, ROOT / 'human/tasks' / args.task_id / 'summary.docx')
+    if not args.chain_only:
+        render_summary(summary, ROOT / 'human/tasks' / args.task_id / 'summary.docx')
     chain = document('SRP 任务包串联审阅')
     chain.add_paragraph('本文件由已整理包的Agent层总结串联生成。用于检查任务完成范围和下游交接；未整理包不推定已核验。')
     completed = []
@@ -165,14 +167,24 @@ def main():
     next_task = remaining[0] if remaining else '目录整体迁移'
     count = chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包；根目录双层迁移未完成。下一项{next_task}。")
     count.paragraph_format.keep_with_next = True
-    queue = chain.add_paragraph('、'.join(remaining))
-    queue.paragraph_format.keep_together = True
+    if remaining:
+        queue = chain.add_paragraph('、'.join(remaining))
+        queue.paragraph_format.keep_together = True
+    layout = read_json(ROOT / 'agent/root-layout.json')
+    migrated = [e for e in layout['entries'] if e['status'] == 'MIGRATED']
+    pending = [e for e in layout['entries'] if e['status'] != 'MIGRATED']
+    chain.add_heading('根目录物理迁移', level=1)
+    chain.add_paragraph(f"实际迁移{len(migrated)}/{len(layout['entries'])}项，尚余{len(pending)}项；整体迁移未完成。逐包整理不代替运行入口、生成器、历史原件及当前Word来源检查。")
+    for entry in migrated:
+        chain.add_paragraph(f"{entry['old']} → {entry['new']}")
+    chain.add_paragraph('旧框架及Mock/Spout手册已原样归档，当前人类概览位于human/project/README.md，运行入口位于agent/runtime/README.md。业务签署和进行中分发不因迁移而改变。')
     chain.save(ROOT / 'human/project-review.docx')
     progress = {'completed_packages': completed, 'remaining_packages': remaining,
                 'root_migration_complete': False, 'findings': findings}
     (ROOT / 'agent/normalization-progress.json').write_text(
         json.dumps(progress, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f'WROTE {args.task_id} Word and chained review; {len(remaining)} packages remain')
+    label = 'chained review only' if args.chain_only else f'{args.task_id} Word and chained review'
+    print(f'WROTE {label}; {len(remaining)} packages remain')
 
 
 if __name__ == '__main__':
