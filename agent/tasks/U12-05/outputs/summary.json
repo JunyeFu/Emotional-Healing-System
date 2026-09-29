@@ -1,0 +1,39 @@
+{
+  "task_id": "U12-05",
+  "title": "U12 05 早期静态与回放研究准入审阅",
+  "review_date": "2026-09-29",
+  "conclusion": "U12-05完成目录与当前范围整理，业务仍WAIT_DEP_EXTERNAL。四份旧候选实际归档，三个消费者连接当前入口；真实批准、角色、同意许可与第二人签收均未完成，软件通过不放行真人活动。",
+  "historical_acceptance": {
+    "reviewer": "未指定",
+    "date": "未签署",
+    "commit": null,
+    "method": "本包没有历史签收；本轮作者Agent整理与软件复测，不代签机构批准或真实第二人。"
+  },
+  "sections": [
+    {"heading": "当前结论", "paragraphs": ["固定任务约2人日，外部等待另计，依赖U12-01/G-01/G-02。注册表已包含本包，旧入口仍写候选未注册的差异已订正；未领取、未指定审核人。"]},
+    {"heading": "目标与完成标准", "paragraphs": ["AC1版本、输入和真实交付可追溯；AC2仅实际获批活动范围放行，不扩大许可，不因G-05整体未关闭阻断已批准静态活动；AC3真实回执、提交、独立复核与第二人齐备。", "过程为范围准备、取得外部回执、逐项真人复核、下游接收。当前只有整理与软件核查，不称真实准入验收完成。"]},
+    {"heading": "实际交付", "paragraphs": ["固定TASK及五目录，当前范围说明与结构化事实、输入来源、既有资格接口专项、复测入口和结果。旧TASK、FILES、manifest及输入原文实际迁入archive/candidate，原manifest仍完整对应。", "E-01/E-02/G-05新增精确当前链接，旧适配包保留导航。机构资格矩阵、活动注册状态、历史签署和其他在研输入均不改。"]},
+    {"heading": "执行过程与关键决定", "paragraphs": ["Level A静态/回放对应INSTITUTION_LEVEL_A，Level B对应INSTITUTION_LEVEL_B；逐项检查真实同意、数据及素材使用条件，不把单项机构记录自动当全部许可。", "批准对象、有效期、材料构建、角色、设备采集、退出和期限须与实际活动一致。既有external_capability接口只查结构与身份，不识别机构真实性；不另建审批API或注册表。"]},
+    {"heading": "验证与结果", "paragraphs": ["71项专项0.26秒通过，核对四原件字节、原manifest三项输入、当前注册状态与空真实结果、导航、两个活动资格及三个消费者，含合成范围匹配/拒绝跨活动、字节变动和未签署负例。", "协议、治理、71注册和5分发/61快照核查通过；根635项68.43秒通过。没有机构联系、真实活动、Unity/TD运行、新独立复核或真人签署。"]},
+    {"heading": "偏离与修复闭环", "paragraphs": ["旧候选入口的未注册说明已改为当前WAIT_DEP_EXTERNAL导航，历史版本与输入原字节归档；不为规范化把业务改为READY或DONE。", "首轮跨包pytest同名模块冲突，两个收集错误；日志保留initial-handoff.txt。专项改用importlib导入模式后通过，未改断言或项目默认测试配置。"]},
+    {"heading": "目录与文件整理", "paragraphs": ["TASK是范围与验收；inputs保存来源；execution为只读测试与复测；evidence为真实软件日志；outputs为当前事实及Word来源；archive保存四份历史原件。", "原件移走后旧包不再携带可混淆的活动输入，导航可访问精确归档；没有旧专属业务工具，不虚构清理。共享治理及根业务目录仍待整体物理迁移。"]},
+    {"heading": "上下游交接", "paragraphs": ["G-01供当前研究材料、G-02供隐私和去重规则，U12-01供当前治理。E-01按真实Level A范围执行，E-02另核真实设备与自己的许可，G-05维护其他活动资格与专机。", "U12-03/U12-06落实首次核心材料暴露起点，不能以未start释放已暴露参与者。Q-01实际15角色人选、Q-02人数冲突及研究冻结仍由对应任务落实，不在本包伪填。"]},
+    {"heading": "审阅与责任签收", "paragraphs": ["真人机构联络、研究、数据、同意/现场、素材/量表责任人与独立复核人尚未实名落实。Agent只承担本轮整理和核查，不能成为机构批准来源；负责人未领取不填写总监或代理签名。"]},
+    {"heading": "收尾与下一包", "paragraphs": ["累计64/71包规范化，余7，下一U12-06；其IN_PROGRESS及冻结输入须保持。U12-05真实准入和整个根目录双层物理迁移仍未完成。"]},
+    {"heading": "审阅来源", "paragraphs": ["活动任务注册表、十三项资格矩阵、既有外部证据核查器与Schema、G-01/G-02当前交接、Q-01/Q-02/E-01/E-02/G-05材料和2026-09-08候选原件。真实回执缺失不由计划或合成记录替代。"]}
+  ],
+  "findings": [
+    {"id": "U1205-N01", "status": "FIXED_ACTUAL_RELOCATION_AND_NAVIGATION", "description": "四候选原件实际归档，未注册旧说明订正，原manifest与输入身份保留", "source": "agent/tasks/U12-05/archive/README.md"},
+    {"id": "U1205-N02", "status": "FIXED_SCOPED_CONSUMER_HANDOFF", "description": "E-01/E-02/G-05连接当前交接，既有接口按活动范围消费，不要求无关整体DONE", "source": "agent/tasks/U12-05/evidence/consumer-impact.md"},
+    {"id": "U1205-N03", "status": "OPEN_REAL_APPROVAL_ROLES_AND_ACCEPTANCE", "description": "真实批准、同意许可、角色、范围回执与独立/第二人尚未落实，业务WAIT_DEP_EXTERNAL不改", "source": "agent/tasks/U12-05/outputs/current-admission.json"},
+    {"id": "U1205-N04", "status": "OPEN_ROOT_MIGRATION", "description": "共享治理与旧根业务目录仍未整体迁入双层", "source": "agent/normalization.md"}
+  ],
+  "next_task": "U12-06",
+  "source_links": [
+    {"label": "当前早期准入交接", "path": "agent/tasks/U12-05/outputs/current-admission.md"},
+    {"label": "当前事实与真实缺口", "path": "agent/tasks/U12-05/outputs/current-admission.json"},
+    {"label": "软件验证结果", "path": "agent/tasks/U12-05/evidence/verification.json"},
+    {"label": "归档处置", "path": "agent/tasks/U12-05/archive/README.md"},
+    {"label": "消费者与修复", "path": "agent/tasks/U12-05/evidence/consumer-impact.md"}
+  ]
+}

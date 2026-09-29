@@ -1,5 +1,7 @@
 # E-02 当前认知预试与关闭交接
 
+开始前对照[U12-05当前准入交接](../../U12-05/outputs/current-admission.md)核查设备、采集及材料范围，静态许可不自动覆盖真设备研究。
+
 ## 当前可用与缺口
 
 E-02为BLOCKED_EXTERNAL、未领取未签收；Q-02 WAIT_DEP，E-01 BLOCKED_EXTERNAL、无真实结果，U12-05 WAIT_DEP_EXTERNAL，INSTITUTION_LEVEL_B仍PENDING_EXTERNAL且没有证据引用。空表与合成计分可核查，但未招募、未执行真人访谈、未做新Unity回归，不能称AC1至AC3完成。

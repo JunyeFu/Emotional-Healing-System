@@ -62,10 +62,10 @@
     "U12-01",
     "U12-02",
     "U12-03",
-    "U12-04"
+    "U12-04",
+    "U12-05"
   ],
   "remaining_packages": [
-    "U12-05",
     "U12-06",
     "U12-07",
     "U12-08",
@@ -1698,6 +1698,34 @@
       "id": "U1204-N05",
       "status": "OPEN_ROOT_MIGRATION",
       "description": "共享模块与旧根业务目录尚未整体迁入双层",
+      "source": "agent/normalization.md"
+    },
+    {
+      "task_id": "U12-05",
+      "id": "U1205-N01",
+      "status": "FIXED_ACTUAL_RELOCATION_AND_NAVIGATION",
+      "description": "四候选原件实际归档，未注册旧说明订正，原manifest与输入身份保留",
+      "source": "agent/tasks/U12-05/archive/README.md"
+    },
+    {
+      "task_id": "U12-05",
+      "id": "U1205-N02",
+      "status": "FIXED_SCOPED_CONSUMER_HANDOFF",
+      "description": "E-01/E-02/G-05连接当前交接，既有接口按活动范围消费，不要求无关整体DONE",
+      "source": "agent/tasks/U12-05/evidence/consumer-impact.md"
+    },
+    {
+      "task_id": "U12-05",
+      "id": "U1205-N03",
+      "status": "OPEN_REAL_APPROVAL_ROLES_AND_ACCEPTANCE",
+      "description": "真实批准、同意许可、角色、范围回执与独立/第二人尚未落实，业务WAIT_DEP_EXTERNAL不改",
+      "source": "agent/tasks/U12-05/outputs/current-admission.json"
+    },
+    {
+      "task_id": "U12-05",
+      "id": "U1205-N04",
+      "status": "OPEN_ROOT_MIGRATION",
+      "description": "共享治理与旧根业务目录仍未整体迁入双层",
       "source": "agent/normalization.md"
     }
   ]

@@ -1,5 +1,7 @@
 # E-01 当前Level A执行与下游交接
 
+开始前对照[U12-05当前准入交接](../../U12-05/outputs/current-admission.md)核查实际批准内容与材料，不等待无关活动整体关闭。
+
 ## 当前事实与范围
 
 E-01为BLOCKED_EXTERNAL、未领取未签收；Q-01 DONE仅工具与材料。U12-05为WAIT_DEP_EXTERNAL，13项资格矩阵中的INSTITUTION_LEVEL_A仍PENDING_EXTERNAL、无evidence_ref。本轮没有邀请、专家评分、独立重建、批准或新独立Agent复核。
