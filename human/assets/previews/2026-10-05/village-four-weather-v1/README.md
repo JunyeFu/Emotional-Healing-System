@@ -27,6 +27,14 @@
 
 后续按新要求增加 [深蓝加粗双环版](fade-blue-rings-v2.png) 及 [两次实际提示词](fade-blue-rings-v2.md)：灰度背景保留，双环改为更宽、深蓝且更通透的外观。旧版本不覆盖。
 
+### fade 双环 v3：中间蓝与更高透明感
+
+[v3 预览](fade-blue-rings-v3.png) 保留 v2 的线宽、直径和位置，颜色以旧浅蓝 `#BDE7FA` 和加深蓝 `#477DA8` 的 RGB 中点 `#82B2D1` 为提示词目标，再小幅降低不透明度。背景仍为灰度，内环比外环更透。内置 AI 生图完成，1672×941 RGB PNG 解码通过；颜色和 alpha 数值仅为生成指导，不是像素实测或 Unity 参数冻结。
+
+```text
+Use case: precise-object-edit. Image 1 is the ONLY edit target: the grayscale village with thick darker blue double-ring outlines. Image 2 is ONLY a reference for the earlier pale blue ring color; do not copy its scenery colors, thin strokes or background. Change only the color and opacity of both outlines in Image 1. Set the ring hue to a gentle medium-light blue around #82B2D1, the RGB midpoint between the earlier pale #BDE7FA and darker #477DA8. Also make the rings a little more transparent than Image 1, reducing visual overlay opacity by another roughly 15%; background texture must remain visible through the thick outlines. Preserve outer ring slightly more visible than inner; guide alpha approximately 0.30 outer and 0.21 inner. KEEP EXACTLY the thick stroke widths, diameters, concentric center and spacing of Image 1. No thinning, no resizing, no extra glow, no fill, no new ring. The entire village background must remain grayscale, with unchanged camera framing, layout, brightness, shadows and scenery. Color belongs ONLY to the two outlines. Preserve aspect ratio and resolution. Return one image, not a collage.
+```
+
 八张均已用内置 AI 生图工具独立生成并保存为 1672×941 RGB PNG，已逐张目视检查；文件解码、四组配对和八个图片链接检查通过。所有图像仅为静态候选预览，不改变任务状态或签收范围。
 
 ### fade 空场景／统一母版
