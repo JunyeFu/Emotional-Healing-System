@@ -1,5 +1,12 @@
 # Codex Verification Log
 
+## 2026-10-05 录屏与天气设计差异
+
+- 两段源视频可读取：0.mp4 为 577 帧/30 fps（19.23 秒）、1280×784；3.mp4 为 1637 帧/30 fps（54.57 秒）、1280×656。源视频未修改、未入库。
+- 使用本机 OpenCV 解码全时段抽样，分别 20 个/19 个时间点；联系表和原分辨率帧位于 Git 忽略的 `agent/local/artifacts/scene-review-20261005/`，已目视检查。
+- 对照当前最终画面描述和 U-03 当前切片交接，形成五项最小修改建议；不新增场景运行验收、不改任务状态、不重写四层或 Unity 实现。
+- 清单内设计链接、五项改动结构及当前措辞检查通过；`git diff --check` 通过。本轮仅文档，不重复执行未改变的运行测试。
+
 ## 2026-10-05 四场景最终画面描述
 
 - 核对 V-02 当前交接、V-03 四层映射、V-04 固定镜头/事件构图/选图/机制合同，并逐张查看 storm、heat、snow LBR v1 与 fade LBR v5 选定底图。当前步骤时长与 `agent/modules/srp_session_core/config/breath_protocol_config_v2.2.json` 一致。
