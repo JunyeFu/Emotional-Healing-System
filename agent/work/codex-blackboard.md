@@ -1,5 +1,12 @@
 # Codex Blackboard
 
+## 2026-10-06 呼吸圈Unity数值版v1.1
+
+- 按用户要求，将四份人工阅读TXT改为顺畅的制作说明，以1920×1080参考Canvas的Inspector数值为主；v1.0目录与ZIP保留。
+- 使用中心锚点、父级Pos(-1.152,39.528)，直接列出UICircle的Width/Height、Thickness、Color RGBA及fade三个阶段的尺寸；明确UI单位、中心线半径与控件边长的区别。
+- 资料位于`human/deliverables/breathing-ring-design-v1.1-20261006/`及同名ZIP；参考图与四论文原样沿用，不改变研究节奏、Unity实现或任务状态。
+- 参数复算、UTF-8、原样参考文件、ZIP及十二处阅读链接检查通过；制作人员可直接按新版Inspector数值填写。
+
 ## 2026-10-06 呼吸圈人工阅读资料包
 
 - 目标：依据用户指定双环图与当前项目四结构，交付16:9数值、胸带幅度依据、频率、开源实现方向及原文；ZIP内仅放人工阅读TXT、原文PDF和参考图。

@@ -4,7 +4,9 @@
 
 ## 呼吸圈制作资料
 
-2026-10-06新增[呼吸圈设计资料ZIP](../../../../deliverables/breathing-ring-design-v1.0-20261006.zip)及[纯文本设计说明](../../../../deliverables/breathing-ring-design-v1.0-20261006/01_呼吸圈设计说明.txt)。包内包含16:9比例、四种节奏、胸带映射说明、四篇论文原文与三个开源入口。
+当前使用[呼吸圈Unity数值版v1.1 ZIP](../../../../deliverables/breathing-ring-design-v1.1-20261006.zip)及[纯文本设计说明](../../../../deliverables/breathing-ring-design-v1.1-20261006/01_呼吸圈设计说明.txt)。按1920×1080参考Canvas直接填写Inspector位置、尺寸、Thickness和Color；2K、4K画面由Canvas Scaler缩放。包内仍附四种节奏、胸带说明、四篇论文原文与三个开源入口。
+
+[上一版v1.0 ZIP](../../../../deliverables/breathing-ring-design-v1.0-20261006.zip)保留，两版外观和节奏不变，v1.1只调整表达与参数填写方式。
 
 本次指定参考图优先决定最大位置和可见线宽；RGB图无法唯一还原材质alpha，V3蓝色与透明度另列为制作取值。最小半径取最大半径80%，是界面显示比例，不是统一胸围比例。原有图片与生图提示词保留。
 

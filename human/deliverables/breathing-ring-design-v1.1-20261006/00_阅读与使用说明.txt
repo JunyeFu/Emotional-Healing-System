@@ -1,0 +1,42 @@
+SRP 呼吸圈制作资料
+版本：1.1，Unity数值版
+日期：2026年10月6日
+
+这份资料供美术、Unity开发和信号处理人员使用。双环的外观和四种呼吸节奏与上一版一致，这一版改用Unity中的参数名称和数值说明，方便直接填写。
+
+从哪里开始
+
+先打开“01_呼吸圈设计说明.txt”，按前四节设置Canvas、位置、尺寸和颜色。再打开“03_Unity制作与交接说明.txt”，完成两圈的运动和数据连接。
+
+所有尺寸都以1920×1080的参考Canvas为准。2K、4K等16:9画面交给Canvas Scaler缩放，Inspector中的数值保持不变。
+
+常用参数
+
+整组位置：Pos X=-1.152，Pos Y=39.528，锚点在父级Canvas中心。
+外圈Width、Height：最小663.746，最大828.252。
+内圈Width、Height：最小503.118，最大627.750。
+外圈Thickness：5.724。
+内圈Thickness：4.590。
+共同颜色：#82B2D1，RGB=(130,178,209)。
+外圈Color的alpha：0.30。
+内圈Color的alpha：0.21。
+
+以上Width和Height适用于文中介绍的UICircle组件；其他绘圆组件请按照设计说明中的中心线半径换算。
+
+外圈表示目标呼吸，内圈表示实际呼吸。两圈同心，但各自接收独立的步骤和进度。双环只用于抽象控件式提示，场景原生提示不叠加双环。
+
+文件内容
+
+01_呼吸圈设计说明.txt：Unity参数、画面效果、四种节奏和比例依据。
+02_文献与开源代码说明.txt：四篇论文的阅读重点、设备资料和三个开源项目。
+03_Unity制作与交接说明.txt：从静态双环到呼吸运动的制作步骤。
+reference/storm-ring-reference.png：指定的最大外圈位置参考图。
+papers：四篇英文论文原文。
+
+本机目录：
+D:\Agent\srp\human\deliverables\breathing-ring-design-v1.1-20261006
+
+GitHub目录：
+https://github.com/JunyeFu/Emotional-Healing-System/tree/codex/four-weather-visual-final/human/deliverables/breathing-ring-design-v1.1-20261006
+
+原文来源及许可见第二份TXT。论文用于团队科研和教学交流，其中署有非商业、禁止改编许可的原文应保持原样，不随商业产品分发。
