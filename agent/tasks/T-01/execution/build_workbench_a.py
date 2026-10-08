@@ -187,9 +187,8 @@ def _build():
     model.text = (BASE / 'workbench_view.py').read_text(encoding='utf-8')
     content = panel(shell, 'Content', 16, 16, '=parent().width - 32', '=parent().height - 32', 'canvas')
     header = panel(content, 'Header', height=48, background='canvas')
-    text(header, 'title', 'SRP 实验工作台', width=280, size=24)
-    state = text(header, 'state', '等待遥测', 'status', x=288,
-                 width='=parent().width - 488', align='center', size=18)
+    state = text(header, 'state', '等待遥测', 'status',
+                 width='=parent().width - 200', align='center', size=18)
     state.store('status_key', 'stream')
     tools = panel(header, 'Tools', '=parent().width - 192', 4, 192, 40, 'canvas')
     for i, (icon, label) in enumerate((('download', '导出'), ('camera', '截图'), ('bookmark', '人工标记'), ('circle-x', '中止请求'))):
