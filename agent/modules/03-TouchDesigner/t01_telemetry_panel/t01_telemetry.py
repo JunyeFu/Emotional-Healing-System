@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import math
 from dataclasses import dataclass
 import json
 from pathlib import Path
@@ -105,6 +106,9 @@ class T01TelemetryAdapter:
             validated = validate_message("telemetry_frame", payload)
         except SessionCoreError as error:
             return self._reject(error.code)
+        for value in validated['signal_quality'].values():
+            if value is not None and (type(value) not in (int, float) or not math.isfinite(value) or not 0 <= value <= 1):
+                return self._reject('INVALID_SIGNAL_QUALITY')
         if (
             validated["schema_version"] == "2.1"
             and str(validated["runtime_mode"]).startswith("formal_")

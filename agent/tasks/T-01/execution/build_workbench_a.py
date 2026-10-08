@@ -176,7 +176,7 @@ def pair(parent, name, label, field, x, top, width, height=40, label_width=104, 
     return cell
 
 
-def _build():
+def _build(save_candidate=True):
     root = op(ROOT)
     shell = root.create(containerCOMP, 'WorkbenchA')
     setp(shell, w=1280, h=720, align='none', crop='on', sizefromwindow=True)
@@ -325,9 +325,10 @@ def _build():
     if errors:
         raise RuntimeError(errors)
     RUNTIME_DIR.mkdir(parents=True, exist_ok=True)
-    if not project.save(str(RUNTIME_DIR / CANDIDATE)):
-        raise RuntimeError('Candidate save failed')
-    print('WORKBENCH_A_READABLE_V2_SAVED', RUNTIME_DIR / CANDIDATE)
+    if save_candidate:
+        if not project.save(str(RUNTIME_DIR / CANDIDATE)):
+            raise RuntimeError('Candidate save failed')
+        print('WORKBENCH_A_READABLE_V2_SAVED', RUNTIME_DIR / CANDIDATE)
     return shell
 
 

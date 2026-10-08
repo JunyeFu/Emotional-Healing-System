@@ -107,7 +107,18 @@ def test_overview_waiting_and_disconnect_keep_missing_and_history():
     assert adapter.ingest_datagram(json.dumps(frame()), 0).accepted
     disconnected = view_model(adapter.read_snapshot(2_000_000_000))
     assert '末帧历史值' in disconnected['overview_values']['status']
-    assert disconnected['overview_values']['target_step_id'] == frame()['target_step_id']
+    assert disconnected['details']['telemetry.target_step_id'] == frame()['target_step_id']
+    assert disconnected['overview_values']['resp_state'].startswith('末帧：')
+    assert disconnected['overview_values']['resp_sqi'].startswith('历史 ')
+
+
+@pytest.mark.parametrize('value', ['bad', 1.4, -.2, True, float('nan')])
+def test_invalid_sqi_is_rejected_without_crashing_view(value):
+    data = frame()
+    data['signal_quality']['resp'] = value
+    adapter = T01TelemetryAdapter()
+    assert not adapter.ingest_datagram(json.dumps(data), 0).accepted
+    assert view_model(adapter.read_snapshot(0))['values']['resp_sqi'] == MISSING
 
 
 def test_readable_palette_text_contrast():

@@ -1,0 +1,407 @@
+{
+  "screenshot": "03-devices-1600.png",
+  "layout_size": [
+    1600.0,
+    900.0
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "page": "overview",
+  "native_mouse_click": true,
+  "wheel_requested": false,
+  "scroll_before": null,
+  "scroll_after": 0.0,
+  "errors": "",
+  "panels": {
+    "Header": [
+      0.0,
+      836.0,
+      1568.0,
+      32.0
+    ],
+    "Tabs": [
+      0.0,
+      792.0,
+      1568.0,
+      36.0
+    ],
+    "Context": [
+      0.0,
+      708.0,
+      1568.0,
+      76.0
+    ],
+    "Pages": [
+      0.0,
+      40.0,
+      1568.0,
+      660.0
+    ],
+    "Footer": [
+      0.0,
+      0.0,
+      1568.0,
+      32.0
+    ]
+  },
+  "overview_bands": {
+    "devices": [
+      0.0,
+      228.0,
+      1568.0,
+      432.0
+    ],
+    "main": [
+      0.0,
+      80.0,
+      1568.0,
+      140.0
+    ],
+    "counters": [
+      0.0,
+      28.0,
+      1568.0,
+      44.0
+    ],
+    "events": [
+      0.0,
+      0.0,
+      1568.0,
+      24.0
+    ]
+  },
+  "overview_scrollbar": "off",
+  "fields": {
+    "actual_phase": {
+      "text": "吸气",
+      "size": [
+        291.0,
+        22.0
+      ],
+      "font_size": 16.0
+    },
+    "target_phase": {
+      "text": "吸气",
+      "size": [
+        291.0,
+        22.0
+      ],
+      "font_size": 16.0
+    },
+    "actual_step_id": {
+      "text": "第一次吸气",
+      "size": [
+        291.0,
+        22.0
+      ],
+      "font_size": 16.0
+    },
+    "target_step_id": {
+      "text": "第一次吸气",
+      "size": [
+        291.0,
+        22.0
+      ],
+      "font_size": 16.0
+    },
+    "actual_progress": {
+      "text": "35.0%",
+      "size": [
+        291.0,
+        22.0
+      ],
+      "font_size": 16.0
+    },
+    "target_progress": {
+      "text": "40.0%",
+      "size": [
+        291.0,
+        22.0
+      ],
+      "font_size": 16.0
+    },
+    "actual_cycle_index": {
+      "text": "0",
+      "size": [
+        291.0,
+        22.0
+      ],
+      "font_size": 16.0
+    },
+    "target_cycle_index": {
+      "text": "0",
+      "size": [
+        291.0,
+        22.0
+      ],
+      "font_size": 16.0
+    },
+    "actual_confidence": {
+      "text": "91.0%",
+      "size": [
+        542.0,
+        28.0
+      ],
+      "font_size": 18.0
+    },
+    "recovery_value": {
+      "text": "0.28",
+      "size": [
+        271.0,
+        28.0
+      ],
+      "font_size": 18.0
+    },
+    "recovery_locked": {
+      "text": "否",
+      "size": [
+        271.0,
+        28.0
+      ],
+      "font_size": 16.0
+    },
+    "fallback_state": {
+      "text": "正常",
+      "size": [
+        542.0,
+        28.0
+      ],
+      "font_size": 18.0
+    },
+    "fallback_reason": {
+      "text": "—",
+      "size": [
+        542.0,
+        28.0
+      ],
+      "font_size": 18.0
+    },
+    "events_state": {
+      "text": "事件通道未接入",
+      "size": [
+        1468.0,
+        24.0
+      ],
+      "font_size": 16.0
+    },
+    "heart_rate": {
+      "text": "68",
+      "size": [
+        180.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "rr_interval": {
+      "text": "882",
+      "size": [
+        196.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "ecg_rate": {
+      "text": "130 Hz",
+      "size": [
+        196.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "ecg_state": {
+      "text": "已连接",
+      "size": [
+        192.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "ecg_age": {
+      "text": "84 ms",
+      "size": [
+        180.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "ecg_sqi": {
+      "text": "88.0%",
+      "size": [
+        192.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "ecg_wave_label": {
+      "text": "ECG (μV) | HR/RR：已接入",
+      "size": [
+        468.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_wave_state": {
+      "text": "模拟波形",
+      "size": [
+        312.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_rate": {
+      "text": "400 Hz",
+      "size": [
+        314.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "resp_max": {
+      "text": "1.03",
+      "size": [
+        52.0,
+        24.0
+      ],
+      "font_size": 12.0
+    },
+    "resp_min": {
+      "text": "-1.03",
+      "size": [
+        52.0,
+        24.0
+      ],
+      "font_size": 12.0
+    },
+    "motion_state": {
+      "text": "未知",
+      "size": [
+        298.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "resp_state": {
+      "text": "已连接",
+      "size": [
+        192.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "resp_age": {
+      "text": "84 ms",
+      "size": [
+        180.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "resp_sqi": {
+      "text": "92.0%",
+      "size": [
+        192.0,
+        34.0
+      ],
+      "font_size": 18.0
+    },
+    "resp_wave_state": {
+      "text": "模拟波形",
+      "size": [
+        312.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "recording_state": {
+      "text": "未接入",
+      "size": [
+        220.0,
+        24.0
+      ],
+      "font_size": 16.0
+    },
+    "lost_frames": {
+      "text": "0",
+      "size": [
+        188.0,
+        24.0
+      ],
+      "font_size": 16.0
+    },
+    "invalid_frames": {
+      "text": "0",
+      "size": [
+        188.0,
+        24.0
+      ],
+      "font_size": 16.0
+    },
+    "accepted_frames": {
+      "text": "341",
+      "size": [
+        188.0,
+        24.0
+      ],
+      "font_size": 16.0
+    },
+    "reconnect_count": {
+      "text": "0",
+      "size": [
+        188.0,
+        24.0
+      ],
+      "font_size": 16.0
+    },
+    "duplicate_frames": {
+      "text": "0",
+      "size": [
+        188.0,
+        24.0
+      ],
+      "font_size": 16.0
+    },
+    "out_of_order_frames": {
+      "text": "0",
+      "size": [
+        188.0,
+        24.0
+      ],
+      "font_size": 16.0
+    }
+  },
+  "scope": "Native TD UI with synthetic development fixtures only",
+  "device_preview": {
+    "accepted": 682,
+    "rejected": 0,
+    "last_error": null,
+    "error_counts": {},
+    "streams": {
+      "resp": {
+        "state": "LIVE",
+        "buffered_samples": 11120
+      },
+      "ecg": {
+        "state": "LIVE",
+        "buffered_samples": 724
+      }
+    },
+    "plots": {
+      "resp": {
+        "size": [
+          640,
+          160
+        ],
+        "trace_pixels": 1520
+      },
+      "ecg": {
+        "size": [
+          640,
+          160
+        ],
+        "trace_pixels": 1526
+      }
+    }
+  }
+}

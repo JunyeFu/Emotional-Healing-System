@@ -17,11 +17,13 @@ def onFrameStart(frame):
     global _built, _handled, _pending
     try:
         if not _built:
+            _built = True
+            me.par.active = False
             scope = dict(globals(), __file__=str(_builder), __name__='td_capture')
             exec(compile(_builder.read_text(encoding='utf-8'), str(_builder), 'exec'), scope)
             scope['RUNTIME_DIR'] = Path(project.folder)
             scope['build']()
-            _built = True
+            me.par.active = True
             _root.op('WorkbenchA').par.sizefromwindow = False
             op('/perform').par.winopen.pulse()
             (_evidence / 'ready.json').write_text(json.dumps({
@@ -42,7 +44,7 @@ def onFrameStart(frame):
         if _pending and time.monotonic() >= _pending[1]:
             request, _, phase = _pending
             shell = _root.op('WorkbenchA')
-            tab = shell.op('Content/Tabs/' + request['page'])
+            tab = shell.op('Content/Tabs/' + request['page'] + '/label')
             if phase == 'press':
                 tab.interactMouse(.5, .5, left=True)
                 chain = []
@@ -84,7 +86,7 @@ def onFrameStart(frame):
             viewer.save(str(_evidence / request['filename']))
             panels = {name: shell.op('Content/' + name) for name in ('Header', 'Tabs', 'Context', 'Pages', 'Footer')}
             overview = shell.op('Content/Pages/overview')
-            bands = {name: overview.op(name) for name in ('main', 'feedback', 'counters')}
+            bands = {name: overview.op(name) for name in ('devices', 'main', 'feedback', 'counters', 'events') if overview.op(name) is not None}
             receipt = {
                 'screenshot': request['filename'], 'layout_size': [shell.width, shell.height],
                 'image_size': [viewer.width, viewer.height], 'page': shell.fetch('active_page'),
@@ -100,12 +102,24 @@ def onFrameStart(frame):
                           for n in overview.findChildren(type=textCOMP) if n.fetch('field', None)},
                 'scope': 'Native TD UI with synthetic development fixtures only',
             }
+            if hasattr(shell.op('Logic/render').module, 'preview'):
+                runtime = shell.op('Logic/render').module
+                receipt['device_preview'] = dict(accepted=runtime.preview.accepted,
+                    rejected=runtime.preview.rejected, last_error=runtime.preview.last_error,
+                    error_counts=runtime.preview.errors,
+                    streams={key: dict(state=s['state'], buffered_samples=len(s['points'])) for key, s in runtime.streams.items()})
+                receipt['device_preview']['plots'] = {}
+                for source in ('resp', 'ecg'):
+                    plot = shell.op('Logic/plot_' + source)
+                    plot.cook(force=True)
+                    arr = plot.numpyArray(delayed=False)
+                    receipt['device_preview']['plots'][source] = dict(size=[plot.width, plot.height],
+                        trace_pixels=int((arr[:, :, 0] < .6).sum()))
             (_evidence / (request['filename'] + '.json')).write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding='utf-8')
             if request.get('final'):
                 me.par.active = False
                 shell.par.sizefromwindow = True
-                me.destroy()
-                project.save(str(Path(project.folder) / 'T01_Workbench_A.readable-v2.candidate.toe'))
+                project.save(str(Path(project.folder) / request.get('candidate', 'T01_Workbench_A.readable-v2.candidate.toe')))
                 op('/perform').par.winopen.pulse()
             _pending = None
     except Exception:

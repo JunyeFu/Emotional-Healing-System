@@ -1,0 +1,34 @@
+{
+  "result": "PASS",
+  "native_cases": 14,
+  "source_preserved": true,
+  "steady_state_rejected": 0,
+  "injected_preview_rejections": 4,
+  "sample_counts": {
+    "resp": {
+      "state": "LIVE",
+      "buffered_samples": 11108
+    },
+    "ecg": {
+      "state": "LIVE",
+      "buffered_samples": 724
+    }
+  },
+  "plots": {
+    "resp": {
+      "size": [
+        640,
+        160
+      ],
+      "trace_pixels": 1521
+    },
+    "ecg": {
+      "size": [
+        640,
+        160
+      ],
+      "trace_pixels": 1687
+    }
+  },
+  "scope": "Synthetic socket stream and native TD rendering; no physical device evidence"
+}

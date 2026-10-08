@@ -87,7 +87,18 @@ def view_model(snapshot):
         overview_values[key] = OVERVIEW_LABELS.get(value, display(value))
     for source in ("resp", "ecg"):
         value = t.get(f"{source}_device_state")
-        overview_values[f"{source}_state"] = LABELS.get(value, display(value)) if t else "未知"
+        label = '设备断连' if value == 'DISCONNECTED' else LABELS.get(value, display(value))
+        overview_values[f"{source}_state"] = label if t else "未知"
+        if state == 'DISCONNECTED' and t:
+            overview_values[f"{source}_state"] = '末帧：' + ('断连' if value == 'DISCONNECTED' else label)
+            overview_values[f"{source}_sqi"] = '历史 ' + values[f"{source}_sqi"]
+        elif value in ('DISCONNECTED', 'UNUSABLE'):
+            overview_values[f"{source}_sqi"] = '不可用'
+    steps = {'inhale_1': '第一次吸气', 'inhale_2': '第二次吸气',
+             'exhale_1': '呼气', 'hold_1': '第一次保持', 'hold_2': '第二次保持'}
+    for side in ('target', 'actual'):
+        key = side + '_step_id'
+        overview_values[key] = steps.get(t.get(key), display(t.get(key)))
     for side in ("target", "actual"):
         value = t.get(f"{side}_phase")
         overview_values[f"{side}_phase"] = LABELS.get(value, display(value))
