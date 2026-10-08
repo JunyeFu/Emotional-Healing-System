@@ -13,6 +13,8 @@ LABELS = {
     "demo": "示范段", "closed_loop": "闭环段", "lock_transition": "锁定过渡段",
     "inhale": "吸气", "exhale": "呼气", "hold": "保持", "recovery": "恢复", "none": "无",
 }
+OVERVIEW_LABELS = dict(LABELS, dev_replay="开发回放", dev_mock="合成输入",
+                       formal_stage_1="阶段一正式", formal_stage_3="阶段三正式")
 COUNTERS = (
     ("accepted_frames", "有效接收"), ("lost_frames", "序号缺口"),
     ("duplicate_frames", "重复帧"), ("out_of_order_frames", "乱序帧"),
@@ -79,4 +81,17 @@ def view_model(snapshot):
     values.update({key: display(local[key]) for key, _ in COUNTERS})
     values["footer"] = f"TD 末帧年龄 {display(local.get('frame_age_ms'))} ms    帧序号 {display(t.get('frame_seq'))}"
     details = flatten({"telemetry": t, "display_only": snapshot.display_only, "meta": snapshot.meta})
-    return {"values": values, "details": details, "state": state}
+    overview_values = dict(values)
+    for key, _ in CONTEXT:
+        value = t.get(key)
+        overview_values[key] = OVERVIEW_LABELS.get(value, display(value))
+    for source in ("resp", "ecg"):
+        value = t.get(f"{source}_device_state")
+        overview_values[f"{source}_state"] = LABELS.get(value, display(value)) if t else "未知"
+    for side in ("target", "actual"):
+        value = t.get(f"{side}_phase")
+        overview_values[f"{side}_phase"] = LABELS.get(value, display(value))
+    value = t.get("fallback_state")
+    overview_values["fallback_state"] = LABELS.get(value, display(value))
+    return {"values": values, "overview_values": overview_values,
+            "details": details, "state": state}

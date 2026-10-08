@@ -80,3 +80,55 @@ def test_candidate_builder_callbacks_compile_without_running_td():
     assert 'ingest_datagram' not in runtime
     assert 'sendto' not in runtime
     assert 'save(' not in runtime
+
+
+def test_overview_uses_chinese_without_changing_legacy_values_or_details():
+    data = frame()
+    data['runtime_mode'] = 'dev_replay'
+    adapter = T01TelemetryAdapter()
+    assert adapter.ingest_datagram(json.dumps(data), 0).accepted
+    model = view_model(adapter.read_snapshot(0))
+    assert model['overview_values']['runtime_mode'] == '开发回放'
+    assert model['values']['runtime_mode'] == 'dev_replay'
+    assert model['details']['telemetry.runtime_mode'] == 'dev_replay'
+    assert model['overview_values']['cue_mode'] in ('场景原生提示', '抽象呼吸提示')
+    assert model['values']['cue_mode'].endswith('(' + data['cue_mode'] + ')')
+    assert model['overview_values']['target_phase'] == '保持'
+    assert '(' not in model['overview_values']['resp_state']
+    assert '(' not in model['overview_values']['fallback_state']
+
+
+def test_overview_waiting_and_disconnect_keep_missing_and_history():
+    adapter = T01TelemetryAdapter()
+    waiting = view_model(adapter.read_snapshot(0))['overview_values']
+    assert waiting['resp_state'] == '未知'
+    assert waiting['resp_sqi'] == MISSING
+    assert waiting['actual_confidence'] == MISSING
+    assert adapter.ingest_datagram(json.dumps(frame()), 0).accepted
+    disconnected = view_model(adapter.read_snapshot(2_000_000_000))
+    assert '末帧历史值' in disconnected['overview_values']['status']
+    assert disconnected['overview_values']['target_step_id'] == frame()['target_step_id']
+
+
+def test_readable_palette_text_contrast():
+    namespace = {}
+    source = (BASE.parents[3] / 'agent/tasks/T-01/execution/build_workbench_a.py').read_text(encoding='utf-8')
+    tree = ast.parse(source)
+    assignments = {target.id: node.value for node in tree.body if isinstance(node, ast.Assign)
+                   for target in node.targets if isinstance(target, ast.Name)}
+    palette = ast.literal_eval(assignments['PALETTE'])
+    statuses = ast.literal_eval(assignments['STATUS_COLORS'])
+
+    def luminance(code):
+        values = [int(code[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+        linear = [v / 12.92 if v <= .04045 else ((v + .055) / 1.055) ** 2.4 for v in values]
+        return sum(v * weight for v, weight in zip(linear, (.2126, .7152, .0722)))
+
+    pairs = list(statuses.values()) + [(palette['text'], palette['body']),
+        (palette['muted'], palette['canvas']), (palette['teal_text'], palette['teal']),
+        (palette['blue_text'], palette['blue'])]
+    for foreground, background in pairs:
+        low, high = sorted((luminance(foreground), luminance(background)))
+        assert (high + .05) / (low + .05) >= 4.5
+    low, high = sorted((luminance(palette['selected']), luminance(palette['canvas'])))
+    assert (high + .05) / (low + .05) >= 3

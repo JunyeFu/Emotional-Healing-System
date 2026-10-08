@@ -18,4 +18,6 @@ exec(compile(p.read_text(encoding='utf-8'), str(p), 'exec'), dict(globals(), __f
 
 只重建/project1/T01_TelemetryPanel，新TOE/TOX及host/touchdesigner证据写本包evidence/runtime。实际重开新TOE后同样执行verify_t01_touchdesigner_reopen.py；replay_t01_udp.py负责发送，不放在正式只读制品中。完整23件新运行证据齐备后才运行generate_evidence_manifest.py，不生成或修改历史清单。
 
-`build_workbench_a.py`使用同样执行方式，只允许原模块或本包runtime中的专用工程；保存独立A主题候选，不覆盖原签收制品。2026-10-08已在TD2025.32820隔离副本中建立原生控件并取得三页实际截图，见[截图记录](../evidence/workbench-a-20261008-094624/README.md)。输入为开发回放；标签点击、工具按钮和完整多尺寸布局尚未验收，不把主机回调编译测试算作UI验收。
+`build_workbench_a.py`使用同样执行方式，只允许原模块或本包runtime中的专用工程；保存独立A主题候选，不覆盖原签收制品。旧A主题初版截图见[历史记录](../evidence/workbench-a-20261008-094624/README.md)。当前可读性规范见[readable-v2设计](../design/workbench-readable-v2.md)。
+
+`py -3.14 -X utf8 agent/tasks/T-01/execution/capture_workbench.py`从ReadableBaseline源工程建立隔离副本，执行原生标签点击、明细滚轮、三个布局尺寸及开发fixture状态检查。运行前保存并关闭自己的TD工程。输出是新时间戳证据目录和`T01_Workbench_A.readable-v2.candidate.toe`；不会覆盖源工程。成功后保留本次TD窗口，发送器结束后自然显示断流历史值。实际PNG尺寸与布局尺寸分别记录，禁止放大图片替代高分辨率取证。工具栏仍禁用，不作为T-02功能验收。
