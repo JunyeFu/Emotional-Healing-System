@@ -1,0 +1,4969 @@
+{
+  "source_toe": "agent\\tasks\\T-01\\evidence\\runtime\\T01_ReadableBaseline.candidate.toe",
+  "source_preserved": true,
+  "td": {
+    "build": "2025.32820",
+    "project": "D:/Agent/srp/agent/local/artifacts/td-workbench-monitor-v4/20261008-151638"
+  },
+  "captures": [
+    {
+      "screenshot": "01-waiting.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "0",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "尚未建立录制文件",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "未接入",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "未接入",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "未接入",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "未知",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "—",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "未接入",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "未接入",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "未接入",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "未接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "未知",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "—",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "未接入",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "未接入",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "WAITING",
+        "count": 0,
+        "path": "None",
+        "elapsed": "00:00",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 0,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "WAITING",
+            "buffered_samples": 0
+          },
+          "ecg": {
+            "state": "WAITING",
+            "buffered_samples": 0
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 0,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 0,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "01-device-only.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "—",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "0",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "尚未建立录制文件",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.10 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "—",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.10 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "—",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "WAITING",
+        "count": 0,
+        "path": "None",
+        "elapsed": "00:00",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 60,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 1200
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 390
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 327,
+            "color_pixels": {
+              "resp": 327,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 327
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 1352,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 1352,
+              "rr": 0,
+              "hr": 1352,
+              "x": 0,
+              "y": 1352,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "02-devices-live.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "0",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "318",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "尚未建立录制文件",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.01 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.01 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "WAITING",
+        "count": 0,
+        "path": "None",
+        "elapsed": "00:00",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 706,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11123
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 723
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2258,
+            "color_pixels": {
+              "resp": 2258,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 2258
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2505,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 2505,
+              "rr": 0,
+              "hr": 2505,
+              "x": 0,
+              "y": 2505,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "03-motion-rr.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "0",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "356",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "尚未建立录制文件",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "RR间期 / ms",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "加速度 / m/s²   X红  Y绿  Z蓝",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "WAITING",
+        "count": 0,
+        "path": "None",
+        "elapsed": "00:00",
+        "curves": {
+          "resp": "acceleration",
+          "ecg": "rr"
+        }
+      },
+      "device_preview": {
+        "accepted": 782,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11120
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 722
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 5418,
+            "color_pixels": {
+              "resp": 2532,
+              "ecg": 2886,
+              "rr": 0,
+              "hr": 2886,
+              "x": 3409,
+              "y": 2886,
+              "z": 2532
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 956,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 0,
+              "rr": 956,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "04-gyro-hr.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "0",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "395",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "尚未建立录制文件",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.01 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "心率 / bpm",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.01 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "角速度 / rad/s   X红  Y绿  Z蓝",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "WAITING",
+        "count": 0,
+        "path": "None",
+        "elapsed": "00:00",
+        "curves": {
+          "resp": "angular_velocity",
+          "ecg": "hr"
+        }
+      },
+      "device_preview": {
+        "accepted": 860,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11128
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 726
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 5354,
+            "color_pixels": {
+              "resp": 2521,
+              "ecg": 2833,
+              "rr": 0,
+              "hr": 2833,
+              "x": 3440,
+              "y": 2833,
+              "z": 2521
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 960,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 960,
+              "rr": 0,
+              "hr": 960,
+              "x": 0,
+              "y": 960,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "05-clicked.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "0",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "433",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "尚未建立录制文件",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "CLICKED",
+        "count": 0,
+        "path": "None",
+        "elapsed": "00:00",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 936,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11133
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 726
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2247,
+            "color_pixels": {
+              "resp": 2247,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 2247
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2398,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 2398,
+              "rr": 0,
+              "hr": 2398,
+              "x": 0,
+              "y": 2398,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "06-recording.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "100",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "470",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "RECORDING",
+        "count": 100,
+        "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+        "elapsed": "00:03",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 1010,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11133
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 724
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2244,
+            "color_pixels": {
+              "resp": 2244,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 2244
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2450,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 2450,
+              "rr": 0,
+              "hr": 2450,
+              "x": 0,
+              "y": 2450,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "07-large.png",
+      "layout_size": [
+        1600.0,
+        900.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          836.0,
+          1568.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          792.0,
+          1568.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          750.0,
+          1568.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1568.0,
+          702.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1568.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          1184.0,
+          672.0
+        ],
+        "main": [
+          1192.0,
+          30.0,
+          376.0,
+          672.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1568.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "220",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            282.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            125.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            125.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "510",
+          "size": [
+            125.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            125.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            125.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            125.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+          "size": [
+            1568.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            224.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            291.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.01 秒",
+          "size": [
+            447.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            331.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            331.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            331.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            1074.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.01 秒",
+          "size": [
+            447.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            565.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            331.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            331.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            331.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            1074.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "RECORDING",
+        "count": 220,
+        "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+        "elapsed": "00:07",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 1090,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11130
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 726
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2237,
+            "color_pixels": {
+              "resp": 2237,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 2237
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2521,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 2521,
+              "rr": 0,
+              "hr": 2521,
+              "x": 0,
+              "y": 2521,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "08-large.png",
+      "layout_size": [
+        1920.0,
+        1080.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          1016.0,
+          1888.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          972.0,
+          1888.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          930.0,
+          1888.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1888.0,
+          882.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1888.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          1427.0,
+          852.0
+        ],
+        "main": [
+          1435.0,
+          30.0,
+          453.0,
+          852.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1888.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "334",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            359.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            151.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            151.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "548",
+          "size": [
+            151.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            151.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            151.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            151.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+          "size": [
+            1888.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            285.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            364.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.01 秒",
+          "size": [
+            556.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            412.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            412.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            412.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            1317.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.02 秒",
+          "size": [
+            556.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            699.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            412.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            412.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            412.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            1317.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "RECORDING",
+        "count": 334,
+        "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+        "elapsed": "00:12",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 1166,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11129
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 726
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2245,
+            "color_pixels": {
+              "resp": 2245,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 2245
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2467,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 2467,
+              "rr": 0,
+              "hr": 2467,
+              "x": 0,
+              "y": 2467,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "09-completed.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "347",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "585",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.01 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.01 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "COMPLETED",
+        "count": 347,
+        "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+        "elapsed": "00:12",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 1240,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11133
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 725
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2250,
+            "color_pixels": {
+              "resp": 2250,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 2250
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2549,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 2549,
+              "rr": 0,
+              "hr": 2549,
+              "x": 0,
+              "y": 2549,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "10-details.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "timing",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "347",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "619",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.01 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "COMPLETED",
+        "count": 347,
+        "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+        "elapsed": "00:12",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 1308,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11144
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 726
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2240,
+            "color_pixels": {
+              "resp": 2240,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 2240
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2363,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 2363,
+              "rr": 0,
+              "hr": 2363,
+              "x": 0,
+              "y": 2363,
+              "z": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "screenshot": "11-final.png",
+      "layout_size": [
+        1280.0,
+        720.0
+      ],
+      "image_size": [
+        1280,
+        720
+      ],
+      "page": "overview",
+      "native_mouse_click": true,
+      "wheel_requested": false,
+      "scroll_before": null,
+      "scroll_after": 0.0,
+      "errors": "",
+      "panels": {
+        "Header": [
+          0.0,
+          656.0,
+          1248.0,
+          32.0
+        ],
+        "Tabs": [
+          0.0,
+          612.0,
+          1248.0,
+          36.0
+        ],
+        "Context": [
+          0.0,
+          570.0,
+          1248.0,
+          38.0
+        ],
+        "Pages": [
+          0.0,
+          40.0,
+          1248.0,
+          522.0
+        ],
+        "Footer": [
+          0.0,
+          0.0,
+          1248.0,
+          32.0
+        ]
+      },
+      "overview_bands": {
+        "devices": [
+          0.0,
+          30.0,
+          940.0,
+          492.0
+        ],
+        "main": [
+          948.0,
+          30.0,
+          300.0,
+          492.0
+        ],
+        "events": [
+          0.0,
+          0.0,
+          1248.0,
+          26.0
+        ]
+      },
+      "overview_scrollbar": "off",
+      "fields": {
+        "session_id": {
+          "text": "S-20260807-0001",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_id": {
+          "text": "褪色",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "module_position": {
+          "text": "1/4",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "segment": {
+          "text": "闭环段",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "cue_mode": {
+          "text": "场景原生提示",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "target_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_step_id": {
+          "text": "第一次吸气",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "actual_confidence": {
+          "text": "91.0%",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_value": {
+          "text": "0.28",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "recovery_locked": {
+          "text": "否",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "fallback_state": {
+          "text": "正常",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_count": {
+          "text": "347",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "record_error": {
+          "text": "无",
+          "size": [
+            206.0,
+            27.0
+          ],
+          "font_size": 14.0
+        },
+        "lost_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "invalid_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "accepted_frames": {
+          "text": "655",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "reconnect_count": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "duplicate_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "out_of_order_frames": {
+          "text": "0",
+          "size": [
+            100.0,
+            20.0
+          ],
+          "font_size": 13.0
+        },
+        "record_file": {
+          "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+          "size": [
+            1248.0,
+            26.0
+          ],
+          "font_size": 12.0
+        },
+        "heart_rate": {
+          "text": "68",
+          "size": [
+            163.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "rr_interval": {
+          "text": "882",
+          "size": [
+            218.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_sqi": {
+          "text": "88.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_rate": {
+          "text": "130 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "ecg_plot_label": {
+          "text": "ECG / μV",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "ecg_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_age": {
+          "text": "0.02 秒",
+          "size": [
+            337.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "motion_state": {
+          "text": "已接入",
+          "size": [
+            431.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_state": {
+          "text": "已连接",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_sqi": {
+          "text": "92.0%",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_rate": {
+          "text": "400 Hz",
+          "size": [
+            249.0,
+            26.0
+          ],
+          "font_size": 14.0
+        },
+        "resp_plot_label": {
+          "text": "呼吸 / 相对幅度",
+          "size": [
+            830.0,
+            22.0
+          ],
+          "font_size": 13.0
+        },
+        "resp_plot_state": {
+          "text": "有数据",
+          "size": [
+            110.0,
+            22.0
+          ],
+          "font_size": 13.0
+        }
+      },
+      "scope": "Native TD UI with synthetic development fixtures only",
+      "session_capture": {
+        "state": "COMPLETED",
+        "count": 347,
+        "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\development-recordings\\0725effb-35fc-41a3-81e0-0229d29a7bc9.jsonl",
+        "elapsed": "00:12",
+        "curves": {
+          "resp": "resp",
+          "ecg": "ecg"
+        }
+      },
+      "device_preview": {
+        "accepted": 1380,
+        "rejected": 0,
+        "last_error": null,
+        "error_counts": {},
+        "streams": {
+          "resp": {
+            "state": "LIVE",
+            "buffered_samples": 11135
+          },
+          "ecg": {
+            "state": "LIVE",
+            "buffered_samples": 723
+          }
+        },
+        "plots": {
+          "resp": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2224,
+            "color_pixels": {
+              "resp": 2224,
+              "ecg": 0,
+              "rr": 0,
+              "hr": 0,
+              "x": 0,
+              "y": 0,
+              "z": 2224
+            }
+          },
+          "ecg": {
+            "size": [
+              960,
+              240
+            ],
+            "trace_pixels": 2572,
+            "color_pixels": {
+              "resp": 0,
+              "ecg": 2572,
+              "rr": 0,
+              "hr": 2572,
+              "x": 0,
+              "y": 2572,
+              "z": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "owned_process_id": 30492,
+  "candidate": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-monitor-v4\\20261008-151638\\T01_Workbench_A.monitor-v4.candidate.toe",
+  "input_source": "v2.2 synthetic development fixtures; no real devices"
+}

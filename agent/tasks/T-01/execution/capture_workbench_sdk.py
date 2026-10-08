@@ -65,6 +65,16 @@ def onFrameStart(frame):
                 _pending = (request, time.monotonic() + .3, 'capture')
                 return
             tab.interactClear()
+            for source, key in request.get('curves', {}).items():
+                curve = shell.op('Content/Pages/overview/devices/' + source + '/tabs/' + key + '/label')
+                curve.interactMouse(.5, .5, left=True)
+                curve.interactMouse(.5, .5, left=False)
+                curve.interactClear()
+                if shell.op('Logic/render').module.selected[source] != key:
+                    raise RuntimeError('Curve click failed: ' + key)
+            if request.get('curves') and phase == 'capture':
+                _pending = (request, time.monotonic() + .5, 'curves-ready')
+                return
             if shell.fetch('active_page') != request['page']:
                 diagnostic = dict(page=shell.fetch('active_page'),
                     panel_values={key: getattr(tab.panel, key).val for key in ('lselect', 'select', 'inside', 'u', 'v')},
@@ -104,6 +114,10 @@ def onFrameStart(frame):
             }
             if hasattr(shell.op('Logic/render').module, 'preview'):
                 runtime = shell.op('Logic/render').module
+                if hasattr(runtime, 'capture'):
+                    receipt['session_capture'] = dict(state=runtime.capture.state, count=runtime.capture.count,
+                        path=str(runtime.capture.path), elapsed=runtime.capture.elapsed(time.monotonic_ns()),
+                        curves=runtime.selected)
                 receipt['device_preview'] = dict(accepted=runtime.preview.accepted,
                     rejected=runtime.preview.rejected, last_error=runtime.preview.last_error,
                     error_counts=runtime.preview.errors,
@@ -115,6 +129,11 @@ def onFrameStart(frame):
                     arr = plot.numpyArray(delayed=False)
                     receipt['device_preview']['plots'][source] = dict(size=[plot.width, plot.height],
                         trace_pixels=int((arr[:, :, 0] < .6).sum()))
+                    if hasattr(runtime, 'selected'):
+                        colors = runtime.session_module.COLORS
+                        receipt['device_preview']['plots'][source]['color_pixels'] = {
+                            key: int((abs(arr[:,:,:3] - runtime.session_module.rgb(code)).max(axis=2) < .015).sum())
+                            for key, code in colors.items()}
             (_evidence / (request['filename'] + '.json')).write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding='utf-8')
             if request.get('final'):
                 me.par.active = False

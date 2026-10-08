@@ -40,6 +40,17 @@ class DevicePreview:
                 raise ValueError('PREVIEW_BATCH_SIZE')
             if any(v is not None and (type(v) not in (int, float) or not math.isfinite(v)) for v in samples):
                 raise ValueError('PREVIEW_SAMPLE')
+            for channel in ('acceleration', 'angular_velocity'):
+                axes = p.get(channel)
+                if axes is not None:
+                    if p.get(channel + '_unit') != ('m/s2' if channel == 'acceleration' else 'rad/s'):
+                        raise ValueError('PREVIEW_MOTION_UNIT')
+                    if source != 'plux_respiban' or set(axes) != {'x', 'y', 'z'}:
+                        raise ValueError('PREVIEW_MOTION_AXES')
+                    for values in axes.values():
+                        if not isinstance(values, list) or len(values) != len(samples) or any(
+                            v is not None and (type(v) not in (int, float) or not math.isfinite(v)) for v in values):
+                            raise ValueError('PREVIEW_MOTION_SAMPLES')
             if p['device_state'] not in ('CONNECTED', 'DISCONNECTED', 'UNKNOWN'):
                 raise ValueError('PREVIEW_DEVICE_STATE')
             for key in ('hr_bpm', 'rr_ms'):
@@ -110,12 +121,12 @@ def raster_waveform(stream, width, height):
     values = [v for _, v in points if v is not None]
     if not values:
         return image
-    low, high = (-1200, 1200) if stream['unit'] == 'uV' else (min(values), max(values))
+    low, high = stream.get('range', (-1200, 1200) if stream['unit'] == 'uV' else (min(values), max(values)))
     if high == low:
         low, high = low - 1, high + 1
     span = stream['window'] * 1e9
     start = stream['end_ns'] - span
-    ink = (.34, .40, .47) if stream['state'] == 'STALE' else ((.05, .40, .42) if stream['unit'] == 'relative' else (.14, .37, .55))
+    ink = (.34, .40, .47) if stream['state'] == 'STALE' else stream.get('color', (37/255, 99/255, 166/255) if stream['unit'] == 'relative' else (35/255, 122/255, 71/255))
     # Keep per-pixel extrema instead of issuing a draw for every 400 Hz sample.
     reduced = []
     bucket = []
@@ -128,7 +139,7 @@ def raster_waveform(stream, width, height):
             bucket.clear()
     for stamp, value in points:
         x = round((stamp - start) / span * (width - 1))
-        if value is None or (last_stamp is not None and stamp - last_stamp >= 500_000_000):
+        if value is None or (last_stamp is not None and stamp - last_stamp >= stream.get('gap_ns', 500_000_000)):
             flush()
             reduced.append((stamp, None))
         if value is not None:
@@ -149,7 +160,7 @@ def raster_waveform(stream, width, height):
             previous = None
             continue
         y = min(height - 1, max(0, y))
-        if previous and stamp - previous[2] < 500_000_000:
+        if previous and stamp - previous[2] < stream.get('gap_ns', 500_000_000):
             px, py, _ = previous
             steps = max(abs(x - px), abs(y - py), 1) + 1
             xx = np.rint(np.linspace(px, x, steps)).astype(int)
