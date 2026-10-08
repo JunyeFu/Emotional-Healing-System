@@ -1,0 +1,67 @@
+{
+  "chain": [
+    {
+      "path": "/project1/T01_TelemetryPanel/WorkbenchA/Content/Pages/closeout/home/label",
+      "enable": "True",
+      "display": "True",
+      "opacity": "1.0"
+    },
+    {
+      "path": "/project1/T01_TelemetryPanel/WorkbenchA/Content/Pages/closeout/home",
+      "enable": "False",
+      "display": "True",
+      "opacity": "0.4"
+    },
+    {
+      "path": "/project1/T01_TelemetryPanel/WorkbenchA/Content/Pages/closeout",
+      "enable": "True",
+      "display": "False",
+      "opacity": "1.0"
+    },
+    {
+      "path": "/project1/T01_TelemetryPanel/WorkbenchA/Content/Pages",
+      "enable": "True",
+      "display": "True",
+      "opacity": "1.0"
+    },
+    {
+      "path": "/project1/T01_TelemetryPanel/WorkbenchA/Content",
+      "enable": "True",
+      "display": "True",
+      "opacity": "1.0"
+    },
+    {
+      "path": "/project1/T01_TelemetryPanel/WorkbenchA",
+      "enable": "True",
+      "display": "True",
+      "opacity": "1.0"
+    },
+    {
+      "path": "/project1/T01_TelemetryPanel",
+      "enable": "True",
+      "display": "True",
+      "opacity": "1.0"
+    },
+    {
+      "path": "/project1",
+      "enable": "True",
+      "display": "True",
+      "opacity": "1.0"
+    },
+    {
+      "path": "/",
+      "enable": "",
+      "display": "",
+      "opacity": ""
+    }
+  ],
+  "interactions": "[['__MOUSE__', type:textCOMP path:/project1/T01_TelemetryPanel/WorkbenchA/Content/Pages/closeout/home/label, 'touch', True, '1']]",
+  "panel_values": {
+    "lselect": 1,
+    "select": 1,
+    "inside": 1,
+    "u": 0.5055555701255798,
+    "v": 0.5
+  },
+  "errors": ""
+}

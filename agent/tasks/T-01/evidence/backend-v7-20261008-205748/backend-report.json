@@ -1,0 +1,81 @@
+{
+  "scope": "Actual P01/P02; synthetic devices, Unity ACKs and questionnaires; fixed A only",
+  "runs": [
+    {
+      "session_id": "DEV-715a99415b3b42c6",
+      "archive": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-backend-v7\\20261008-205748\\p02\\sessions\\efccd10a151fd71daaa43783523858c11514b8c48427990e6ed99abb1ab92cfe",
+      "summary": {
+        "session_id": "DEV-715a99415b3b42c6",
+        "status": "COMPLETED",
+        "reason_code": "COMPLETED",
+        "completed_modules": [
+          "storm",
+          "heat",
+          "snow",
+          "fade"
+        ],
+        "session_elapsed_ns": 800000000000,
+        "paused_duration_ns": 10000000000,
+        "control_event_count": 21,
+        "session_event_count": 46,
+        "protocol_config_hash": "sha256:082df4e0e862b5ba40fb386faa5a7665bad4e4aa941f3a1274ff41adc3efa84c"
+      },
+      "integrity": {
+        "valid": true,
+        "sealed": true,
+        "recoverable": false,
+        "reason_codes": [],
+        "l0_count": 16200,
+        "l1_count": 16374,
+        "final_state_hash": "sha256:6c76f2edd5e9747959c37850f71b66d147f06182377494356bf8e70ee1c9abcb"
+      },
+      "replay": {
+        "valid": true,
+        "operation_count": 8127,
+        "expected_final_hash": "sha256:55011970b97a6c727612ee5be5c416621a29d7fff432f4654add1e4262bea3a2",
+        "actual_final_hash": "sha256:55011970b97a6c727612ee5be5c416621a29d7fff432f4654add1e4262bea3a2",
+        "mismatch_operation_ids": []
+      },
+      "formal_capable": false,
+      "unity_endpoint": "simulated",
+      "l0_encoding": "synthetic sensor-domain JSON, not vendor BLE bytes"
+    },
+    {
+      "session_id": "DEV-fd5eab1db33f4093",
+      "archive": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-backend-v7\\20261008-205748\\p02\\sessions\\f79440d1db0cce3abf817af782889cf3e48329908a6b8734d65c559a2fcafc57",
+      "summary": {
+        "session_id": "DEV-fd5eab1db33f4093",
+        "status": "ABORTED",
+        "reason_code": "OPERATOR_ABORT",
+        "completed_modules": [
+          "storm",
+          "heat"
+        ],
+        "session_elapsed_ns": 400000000000,
+        "paused_duration_ns": 0,
+        "control_event_count": 13,
+        "session_event_count": 28,
+        "protocol_config_hash": "sha256:082df4e0e862b5ba40fb386faa5a7665bad4e4aa941f3a1274ff41adc3efa84c"
+      },
+      "integrity": {
+        "valid": true,
+        "sealed": true,
+        "recoverable": false,
+        "reason_codes": [],
+        "l0_count": 8000,
+        "l1_count": 8113,
+        "final_state_hash": "sha256:d8d28190db6fac3cf6369c7008d9a6db4206b9f28a08ab46543ec2b30e1d6f52"
+      },
+      "replay": {
+        "valid": true,
+        "operation_count": 4018,
+        "expected_final_hash": "sha256:79ccee730d65af1cdaefb78e28ef55ae17b2cf826c5b033a4206b3515dbba63f",
+        "actual_final_hash": "sha256:79ccee730d65af1cdaefb78e28ef55ae17b2cf826c5b033a4206b3515dbba63f",
+        "mismatch_operation_ids": []
+      },
+      "formal_capable": false,
+      "unity_endpoint": "simulated",
+      "l0_encoding": "synthetic sensor-domain JSON, not vendor BLE bytes"
+    }
+  ]
+}

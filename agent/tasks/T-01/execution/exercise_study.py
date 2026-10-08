@@ -8,12 +8,35 @@ import uuid
 from study_simulation import Replay
 
 
-def exercise(command,pid,active,evidence,wait_for,dataset,speed=5):
-    receipts=[]; current=None
+def exercise(command,pid,active,evidence,wait_for,dataset,speed=5,backend_mode=False):
+    receipts=[]; current=None; backend=None; backend_reports=[]
     sock=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     def send(p):
         sock.sendto(json.dumps(p,ensure_ascii=False,allow_nan=False).encode(),('127.0.0.1',5005))
     def event(kind,**kwargs):
+        if backend is not None:
+            if kind in ('prepared','paused','resumed','aborted'):
+                pending=current['pending']
+                requests=command.parent/'development-workflow/operator-requests.jsonl'
+                recorded=[json.loads(line) for line in requests.read_text(encoding='utf-8').splitlines()]
+                request=next(r for r in recorded if r['request_id']==pending['request_id'])
+                assert request==pending
+                t={'prepared':0,'paused':321,'resumed':331,'aborted':401}[kind]
+                reply=backend.request(request,round(t*1e9))
+                assert reply['event']==kind,reply
+                send(reply); return
+            if kind=='started':
+                send(backend.start_from_simulated_unity(1_000_000_000)); return
+            if kind=='study_status':
+                snap=backend.advance(round((1+kwargs['elapsed_s'])*1e9))
+                assert snap.status.value in ('RUNNING','PAUSED','COMPLETED'),snap
+                assert abs(snap.session_elapsed_ns/1e9-kwargs['effective_s'])<.001
+                kwargs.update(weather=snap.module_id,segment=snap.segment)
+            if kind=='completed':
+                send(backend.completed()); return
+            if kind=='closeout_status':
+                backend_reports.append(backend.seal())
+                kwargs['sealed']=True
         p=dict(message_type='session_observation',version='1.0',source_mode='dev_mock',authority='python_session_core',
             session_id=current['current']['session_id'],event_id=str(uuid.uuid4()),event=kind)
         if current['pending']: p['request_id']=current['pending']['request_id']
@@ -35,8 +58,11 @@ def exercise(command,pid,active,evidence,wait_for,dataset,speed=5):
     take('home',stage='HOME')
     take('prepare','Content/Pages/home/new/label','PREPARE')
     sent=[]
-    for profile in ('A','B','abort'):
+    for profile in (('A','abort') if backend_mode else ('A','B','abort')):
         sid=current['current']['session_id']; replay=Replay(Path(dataset)/profile,sid)
+        if backend_mode:
+            from session_backend import DevelopmentBackend
+            backend=DevelopmentBackend(command.parent/'p02',sid,replay.meta['condition'])
         # Separate preparation clock/identity; these preview samples must not enter a record.
         for p in replay.packets(0):
             p['clock_domain_id']='synthetic:preflight'; send(p)
@@ -55,7 +81,10 @@ def exercise(command,pid,active,evidence,wait_for,dataset,speed=5):
                     i=state['index']
                     if i>=state['limit']:
                         time.sleep(.01); due=time.monotonic(); continue
-                    for p in replay.packets(i): send(p)
+                    for p in replay.packets(i):
+                        if backend is not None:
+                            backend.append_packet(p,round((1+i*.1)*1e9))
+                        send(p)
                     f=replay.frames[i]
                     event('guidance_status',ideal=f['ideal'],guide=f['guide'],actual=f['actual'])
                     event('study_status',weather=f['weather'],segment=f['segment'],quality=f['quality'],
@@ -119,4 +148,8 @@ def exercise(command,pid,active,evidence,wait_for,dataset,speed=5):
             take('home-final','Content/Pages/closeout/home/label','HOME',final=True)
     sock.close()
     (evidence/'study-inputs.json').write_text(json.dumps(dict(speed=speed,runs=sent),indent=2),encoding='utf-8')
+    if backend_mode:
+        (evidence/'backend-report.json').write_text(json.dumps(dict(
+            scope='Actual P01/P02; synthetic devices, Unity ACKs and questionnaires; fixed A only',
+            runs=backend_reports),indent=2),encoding='utf-8')
     return receipts

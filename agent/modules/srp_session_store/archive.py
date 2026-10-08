@@ -7,6 +7,7 @@ import os
 from pathlib import Path, PurePosixPath
 import re
 import sys
+import time
 from typing import Any, BinaryIO, Iterator, Mapping
 
 from .canonical import canonical_bytes, domain_hash, file_sha256
@@ -91,7 +92,16 @@ def _atomic_json(path: Path, payload: Mapping[str, Any]) -> None:
             handle.write(encoded)
             handle.flush()
             os.fsync(handle.fileno())
-        os.replace(temporary, path)
+        # Windows can briefly deny replacement while another process opens the tail.
+        # Retry only the same atomic replacement, never append the record twice.
+        for attempt in range(3):
+            try:
+                os.replace(temporary, path)
+                break
+            except PermissionError as error:
+                if getattr(error, 'winerror', None) not in (5, 32) or attempt == 2:
+                    raise
+                time.sleep(.02)
     except OSError as error:
         temporary.unlink(missing_ok=True)
         raise StoreError("STORAGE_SYNC_FAILED") from error

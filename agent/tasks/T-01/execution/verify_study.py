@@ -12,7 +12,8 @@ def verify(evidence,dataset):
     evidence=Path(evidence); dataset=Path(dataset)
     inputs=json.loads((evidence/'study-inputs.json').read_text())
     history=json.loads((evidence/'development-workflow/workflow.json').read_text())
-    assert len(history)==3
+    assert len(history)==len(inputs['runs'])
+    assert [r['profile'] for r in inputs['runs']] == (['A','abort'] if (evidence/'backend-report.json').exists() else ['A','B','abort'])
     report=[]
     for run,item in zip(inputs['runs'],history):
         assert run['session_id']==item['session_id']
@@ -25,6 +26,22 @@ def verify(evidence,dataset):
         assert all(r['payload']['session_id']==item['session_id'] for r in rows)
         packets=[r['payload'] for r in rows if r['payload'].get('message_type')=='device_preview']
         assert len(packets)==run['source_packets'],(run['profile'],len(packets),run['source_packets'])
+        if (evidence/'backend-report.json').exists():
+            import sys
+            sys.path.insert(0,str(Path(__file__).resolve().parents[3]/'modules'))
+            from srp_session_store import ReplayReader
+            backend=json.loads((evidence/'backend-report.json').read_text())
+            entry=next(r for r in backend['runs'] if r['session_id']==item['session_id'])
+            assert entry['integrity']['valid'] and entry['replay']['valid']
+            assert not entry['formal_capable']
+            archive=Path(entry['archive'])
+            reader=ReplayReader.open(archive.parent.parent,item['session_id'])
+            assert reader.verify().valid
+            assert entry['integrity']['l0_count']==len(packets)
+            for stored,displayed in zip(reader.iter_l0(),packets,strict=True):
+                assert json.loads(stored.payload)==displayed
+            assert entry['summary']['status']==item['status']
+            assert entry['summary']['session_elapsed_ns']==item['effective_ns']
         raw=np.load(dataset/run['profile']/'raw.npz')
         for source,key in (('plux_respiban','resp_relative'),('polar_h10_ecg','ecg_uV')):
             selected=[p for p in packets if p['source_id']==source]

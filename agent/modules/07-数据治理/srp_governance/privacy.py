@@ -56,6 +56,10 @@ def _normalize_decimal_digits(value: str) -> str:
 
 
 def _contact_like_value(value: str) -> bool:
+    # A complete typed digest is not a phone number embedded in free text.
+    # Forbidden field names are still checked by the caller before values.
+    if re.fullmatch(r"sha256:[0-9a-f]{64}", value):
+        return False
     value = unicodedata.normalize("NFKC", value)
     value = "".join(
         character
