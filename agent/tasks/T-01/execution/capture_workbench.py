@@ -35,7 +35,7 @@ def wait_for(path, pid, timeout=60):
     raise TimeoutError(path)
 
 
-def main(device_mode=False, monitor_mode=False):
+def main(device_mode=False, monitor_mode=False, flow_mode=False):
     global EVIDENCE, SCRATCH
     if device_mode:
         EVIDENCE = EXECUTION.parent / 'evidence' / ('devices-v3-' + RUN_ID)
@@ -44,6 +44,10 @@ def main(device_mode=False, monitor_mode=False):
         EVIDENCE = EXECUTION.parent / 'evidence' / ('monitor-v4-' + RUN_ID)
         SCRATCH = ROOT / 'agent/local/artifacts/td-workbench-monitor-v4' / RUN_ID
     candidate_name = 'T01_Workbench_A.monitor-v4.candidate.toe' if monitor_mode else 'T01_Workbench_A.devices-v3.candidate.toe' if device_mode else 'T01_Workbench_A.readable-v2.candidate.toe'
+    if flow_mode:
+        EVIDENCE = EXECUTION.parent / 'evidence' / ('flow-v5-' + RUN_ID)
+        SCRATCH = ROOT / 'agent/local/artifacts/td-workbench-flow-v5' / RUN_ID
+        candidate_name = 'T01_Workbench_A.flow-v5.candidate.toe'
     if ps('Get-Process TouchDesigner -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Id'):
         raise RuntimeError('Preserve already open TD projects; close the owned capture copy first')
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as check:
@@ -75,7 +79,7 @@ def onFrameStart(frame):
         hook = op('/project1/T01_TelemetryPanel').create(executeDAT, '_capture_runtime')
         hook.store('evidence', {str(EVIDENCE)!r})
         hook.store('command', {str(command)!r})
-        hook.store('builder', {str(EXECUTION / ('build_workbench_monitor.py' if monitor_mode else 'build_workbench_devices.py' if device_mode else 'build_workbench_a.py'))!r})
+        hook.store('builder', {str(EXECUTION / ('build_workbench_flow.py' if flow_mode else 'build_workbench_monitor.py' if monitor_mode else 'build_workbench_devices.py' if device_mode else 'build_workbench_a.py'))!r})
         hook.text = Path({str(EXECUTION / 'capture_workbench_sdk.py')!r}).read_text(encoding='utf-8')
         hook.par.framestart = True
         hook.par.active = True
@@ -133,6 +137,19 @@ def onFrameStart(frame):
         ready = wait_for(EVIDENCE / 'ready.json', pid)
         print('TD_READY', ready, flush=True)
         time.sleep(3)
+        if flow_mode:
+            from exercise_workbench_flow import exercise
+            receipts = exercise(command, pid, active, EVIDENCE, wait_for)
+            assert SOURCE.read_bytes() == source_bytes
+            candidate = SCRATCH / candidate_name
+            shutil.copyfile(candidate, EVIDENCE / candidate_name)
+            shutil.copytree(SCRATCH / 'development-workflow', EVIDENCE / 'development-workflow')
+            report = dict(source_preserved=True, td=ready, captures=receipts, owned_process_id=pid,
+                          candidate=str(candidate), input_source='Synthetic fixtures and simulated authority receipts only')
+            (EVIDENCE / 'capture-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+            success = True
+            print('EVIDENCE', EVIDENCE, flush=True)
+            return
         good = _fixture('telemetry-fade-inhale-1.json')
         degraded = deepcopy(good)
         degraded.update(fallback_state='DEGRADED', fallback_reason='RESP_SQI_LOW', resp_device_state='DEGRADED')
@@ -236,4 +253,4 @@ def onFrameStart(frame):
 
 if __name__ == '__main__':
     import sys
-    main(device_mode='--devices' in sys.argv or '--monitor' in sys.argv, monitor_mode='--monitor' in sys.argv)
+    main(device_mode=any(x in sys.argv for x in ('--devices','--monitor','--flow')), monitor_mode='--monitor' in sys.argv or '--flow' in sys.argv, flow_mode='--flow' in sys.argv)

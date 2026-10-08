@@ -44,7 +44,9 @@ def onFrameStart(frame):
         if _pending and time.monotonic() >= _pending[1]:
             request, _, phase = _pending
             shell = _root.op('WorkbenchA')
-            tab = shell.op('Content/Tabs/' + request['page'] + '/label')
+            tab = shell.op(request['click']) if request.get('workflow') and request.get('click') else None if request.get('workflow') else shell.op('Content/Tabs/' + request['page'] + '/label')
+            if tab is None and phase in ('press','release'):
+                phase = 'capture'
             if phase == 'press':
                 tab.interactMouse(.5, .5, left=True)
                 chain = []
@@ -64,7 +66,8 @@ def onFrameStart(frame):
                 tab.interactMouse(.5, .5, left=False)
                 _pending = (request, time.monotonic() + .3, 'capture')
                 return
-            tab.interactClear()
+            if tab is not None:
+                tab.interactClear()
             for source, key in request.get('curves', {}).items():
                 curve = shell.op('Content/Pages/overview/devices/' + source + '/tabs/' + key + '/label')
                 curve.interactMouse(.5, .5, left=True)
@@ -75,7 +78,7 @@ def onFrameStart(frame):
             if request.get('curves') and phase == 'capture':
                 _pending = (request, time.monotonic() + .5, 'curves-ready')
                 return
-            if shell.fetch('active_page') != request['page']:
+            if not request.get('workflow') and shell.fetch('active_page') != request['page']:
                 diagnostic = dict(page=shell.fetch('active_page'),
                     panel_values={key: getattr(tab.panel, key).val for key in ('lselect', 'select', 'inside', 'u', 'v')},
                     callback={p.name: str(p.eval()) for p in shell.op('Logic/tab_' + request['page']).pars()},
@@ -92,8 +95,10 @@ def onFrameStart(frame):
             viewer = _root.op('Output/workbench_a_view')
             if request.get('scroll') and shell.fetch('scroll_before') == shell.op('Content/Pages/timing/details').panel.scrollv.val:
                 raise RuntimeError('Native wheel did not move the detail body')
+            (_evidence / 'capture-progress.json').write_text(json.dumps(dict(file=request['filename'], step='before_viewer')),encoding='utf-8')
             viewer.cook(force=True)
             viewer.save(str(_evidence / request['filename']))
+            (_evidence / 'capture-progress.json').write_text(json.dumps(dict(file=request['filename'], step='after_viewer')),encoding='utf-8')
             panels = {name: shell.op('Content/' + name) for name in ('Header', 'Tabs', 'Context', 'Pages', 'Footer')}
             overview = shell.op('Content/Pages/overview')
             bands = {name: overview.op(name) for name in ('devices', 'main', 'feedback', 'counters', 'events') if overview.op(name) is not None}
@@ -114,6 +119,10 @@ def onFrameStart(frame):
             }
             if hasattr(shell.op('Logic/render').module, 'preview'):
                 runtime = shell.op('Logic/render').module
+                if hasattr(runtime,'workflow'):
+                    receipt['workflow'] = runtime.workflow.snapshot(time.monotonic_ns())
+                    receipt['visible_pages'] = [p.name for p in shell.op('Content/Pages').panelChildren if p.par.display.eval()]
+                    receipt['flow_fields'] = {n.fetch('flow_field'): n.par.text.eval() for n in shell.findChildren(type=textCOMP) if n.fetch('flow_field',None)}
                 if hasattr(runtime, 'capture'):
                     receipt['session_capture'] = dict(state=runtime.capture.state, count=runtime.capture.count,
                         path=str(runtime.capture.path), elapsed=runtime.capture.elapsed(time.monotonic_ns()),
@@ -124,6 +133,8 @@ def onFrameStart(frame):
                     streams={key: dict(state=s['state'], buffered_samples=len(s['points'])) for key, s in runtime.streams.items()})
                 receipt['device_preview']['plots'] = {}
                 for source in ('resp', 'ecg'):
+                    if request.get('workflow') and shell.fetch('active_page') != 'overview':
+                        continue
                     plot = shell.op('Logic/plot_' + source)
                     plot.cook(force=True)
                     arr = plot.numpyArray(delayed=False)
@@ -134,12 +145,12 @@ def onFrameStart(frame):
                         receipt['device_preview']['plots'][source]['color_pixels'] = {
                             key: int((abs(arr[:,:,:3] - runtime.session_module.rgb(code)).max(axis=2) < .015).sum())
                             for key, code in colors.items()}
-            (_evidence / (request['filename'] + '.json')).write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding='utf-8')
             if request.get('final'):
                 me.par.active = False
                 shell.par.sizefromwindow = True
                 project.save(str(Path(project.folder) / request.get('candidate', 'T01_Workbench_A.readable-v2.candidate.toe')))
                 op('/perform').par.winopen.pulse()
+            (_evidence / (request['filename'] + '.json')).write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding='utf-8')
             _pending = None
     except Exception:
         (_evidence / 'error.json').write_text(json.dumps({'error': traceback.format_exc()}, ensure_ascii=False, indent=2), encoding='utf-8')
