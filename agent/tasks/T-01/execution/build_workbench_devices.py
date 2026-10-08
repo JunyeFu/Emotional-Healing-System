@@ -82,7 +82,7 @@ def onFrameStart(frame):
         for key, field in (('hr_bpm', 'heart_rate'), ('rr_ms', 'rr_interval')):
             if source == 'ecg':
                 val = payload.get(key)
-                values[field] = prefix + str(val) if val is not None else '未接入'
+                values[field] = prefix + format(val, '.1f') if val is not None else '未接入'
         if source == 'resp':
             values['motion_state'] = prefix + {'LIVE': '已接入', 'DISCONNECTED': '断流', 'UNKNOWN': '未知'}.get(payload.get('motion_state'), '未接入')
         else:

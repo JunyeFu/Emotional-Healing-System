@@ -195,6 +195,20 @@ class Workflow:
             if self.stage not in ('RUNNING','PAUSED') or any(p.get(k) not in ('吸气','呼气','保持','未接入') for k in ('ideal','guide','actual')):
                 raise ValueError('GUIDANCE_STATUS')
             c.update({k:p[k] for k in ('ideal','guide','actual')})
+            self.append(p, now)
+        elif event == 'study_status':
+            if self.stage not in ('RUNNING','PAUSED'):
+                raise ValueError('STUDY_NOT_RUNNING')
+            if any(type(p.get(k)) not in (int,float) or not 0 <= p[k] < 86400 for k in ('effective_s','elapsed_s')):
+                raise ValueError('STUDY_TIME')
+            if p['effective_s'] > p['elapsed_s'] or p.get('weather') not in ('storm','heat','snow','fade'):
+                raise ValueError('STUDY_CONTEXT')
+            if c.get('replay_elapsed_s',0) > p['elapsed_s']:
+                raise ValueError('STUDY_CLOCK_REVERSED')
+            c.update(replay_effective_s=p['effective_s'],replay_elapsed_s=p['elapsed_s'],
+                     weather=p['weather'],segment=p.get('segment'),quality=p.get('quality'),
+                     playback_speed=p.get('playback_speed',1))
+            self.append(p,now)
         else:
             raise ValueError('UNKNOWN_SESSION_EVENT')
         if event != 'request_rejected':
@@ -210,6 +224,8 @@ class Workflow:
         c = self.current
         if not c or c['start_ns'] is None:
             return 0, 0
+        if 'replay_effective_s' in c:
+            return round(c['replay_effective_s']*1e9),round(c['replay_elapsed_s']*1e9)
         end = c['end_ns'] if c['end_ns'] is not None else now
         elapsed = max(0, end - c['start_ns'])
         pause = end - c['pause_at'] if c['pause_at'] is not None else 0

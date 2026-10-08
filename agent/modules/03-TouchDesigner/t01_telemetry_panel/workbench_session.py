@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import os
 import uuid
+import time
 
 COLORS = {'resp': '#2563A6', 'ecg': '#237A47', 'rr': '#7850A0', 'hr': '#237A47',
           'x': '#B63B3B', 'y': '#237A47', 'z': '#2563A6'}
@@ -85,6 +86,7 @@ class DevelopmentCapture:
         self.closed = set()
         self.error = None
         self.count = 0
+        self.last_sync = time.monotonic()
 
     def event(self, p, now):
         if p.get('message_type') != 'session_observation' or p.get('version') != '1.0':
@@ -128,8 +130,12 @@ class DevelopmentCapture:
     def _write(self, kind, payload, now):
         try:
             self.file.write(json.dumps(dict(kind=kind, received_ns=now, payload=payload), ensure_ascii=False, allow_nan=False) + '\n')
-            self.file.flush()
-            os.fsync(self.file.fileno())
+            # Raw preview batches share a bounded sync; lifecycle events remain durable.
+            sync_now = time.monotonic()
+            if kind != 'data' or sync_now - self.last_sync >= .1:
+                self.file.flush()
+                os.fsync(self.file.fileno())
+                self.last_sync = sync_now
             self.count += 1
         except OSError:
             self.file.close()

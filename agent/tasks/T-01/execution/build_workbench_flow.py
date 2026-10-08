@@ -15,9 +15,31 @@ capture = workflow.capture
 _monitor_frame = onFrameStart
 history_selection = None
 flow_last = None
+export_module = types.ModuleType('td_record_export')
+exec(op(ROOT + '/WorkbenchA/Logic/export_source').text, export_module.__dict__)
+export_note = ''
+
+def export_record():
+    global export_note
+    item = workflow.history[history_selection] if history_selection is not None else workflow.current
+    if not item or not item.get('path') or item['status'] not in ('COMPLETED','ABORTED'):
+        export_note = '本场结束后可导出'
+        return
+    path = (workflow.root / item['path']).resolve()
+    if not path.is_relative_to(workflow.root.resolve()):
+        export_note = '记录路径不在当前目录'
+        return
+    target = workflow.root / 'exports' / (path.stem + '.zip')
+    try:
+        if not target.exists():
+            target, summary = export_module.export_record(path)
+        export_note = 'CSV 已导出：' + target.name
+    except (OSError, ValueError) as error:
+        export_note = '导出失败：' + str(error)
+    render_flow(time.monotonic_ns())
 
 def action(name):
-    global capture, channels, streams, history_selection
+    global capture, channels, streams, history_selection, export_note
     try:
         previous = workflow.current
         workflow.action(name, time.monotonic_ns())
@@ -30,6 +52,7 @@ def action(name):
             if hasattr(builtins, 'T01_TELEMETRY_ADAPTER'):
                 del builtins.T01_TELEMETRY_ADAPTER
             history_selection = None
+            export_note = ''
     except ValueError as error:
         workflow.error = str(error)
     except OSError:
@@ -125,6 +148,8 @@ def render_flow(now):
                       unity_ready='已确认（模拟）' if c['unity_ready'] else '待回执',
                       store_ready='已确认（模拟）' if c['store_ready'] else '待回执',
                       ideal=c['ideal'], guide=c['guide'], measured=c['actual'],
+                      study_context=(c.get('weather','未接入') + ' / ' + str(c.get('segment','未接入'))),
+                      study_quality=c.get('quality','未接入'),
                       result=labels.get(c['status'], c['status']), effective=session_module.duration(eff),
                       total=session_module.duration(total), sealed='已确认（模拟）' if c['sealed'] else '待封存确认',
                       posttest='已收到（模拟）' if c['posttest'] else '待回执', record_file=c['path'] or '准备期不写入实验记录')
@@ -156,6 +181,10 @@ def render_flow(now):
     else:
         note = '同一窗口连续运行 · 每场独立记录'
     _set_text(content.op('FlowNote'), note)
+    if c and 'replay_effective_s' in c:
+        _set_text(content.op('Header/state'), '合成回放 ×' + str(c['playback_speed']) + ' · 显示源时间')
+    _set_text(pages.op('closeout/export_note'), export_note)
+    _set_text(pages.op('history/export_note'), export_note)
     table = pages.op('history/rows')
     template = shell.op('Logic/history_template')
     status = {'COMPLETED':'正常完成','ABORTED':'已中止','INTERRUPTED':'运行中断','RECORDING':'进行中','PAUSED':'已暂停','RECORDING_FAILED':'录制失败'}
@@ -203,7 +232,7 @@ def command(parent, name, label, action_name, x=0, top=0, width=180, primary=Fal
         setp(node,fontcolorr=1,fontcolorg=1,fontcolorb=1)
     callback = op(SHELL + '/Logic').create(panelexecuteDAT, 'action_' + parent.name + '_' + name)
     setp(callback, panels=node.path, panelvalue='lselect', offtoon=True)
-    expr = 'open_record()' if action_name == 'open' else 'action(' + repr(action_name) + ')'
+    expr = 'open_record()' if action_name == 'open' else 'export_record()' if action_name == 'export' else 'action(' + repr(action_name) + ')'
     callback.text = 'def onOffToOn(v):\n    op(' + repr(SHELL + '/Logic/render') + ').module.' + expr + '\n'
     return wrapper
 
@@ -215,6 +244,7 @@ def build():
     logic, content = shell.op('Logic'), shell.op('Content')
     content.op('Header/state').store('status_key',None)
     logic.create(textDAT, 'workflow_source').text = (BASE / 'experiment_workflow.py').read_text(encoding='utf-8')
+    logic.create(textDAT, 'export_source').text = (BASE / 'record_export.py').read_text(encoding='utf-8')
     shell.store('workflow_root', str(Path(project.folder) / 'development-workflow'))
     content.op('Tabs').par.display = False
     nav = panel(content, 'FlowNav', top=36, height=36, background='neutral')
@@ -238,7 +268,7 @@ def build():
     for node in list(sidebar.children):
         node.destroy()
     heading(sidebar, '会话与准备 / 运行', height=26)
-    entries=(('匿名编号','participant'),('条件（锁定）','assignment'),('前测回执','pretest'),('Unity准备','unity_ready'),('记录准备','store_ready'),('I 共同理想','ideal'),('G 实际下发','guide'),('X 实测呼吸','measured'))
+    entries=(('匿名编号','participant'),('条件（锁定）','assignment'),('前测回执','pretest'),('Unity准备','unity_ready'),('记录准备','store_ready'),('场景 / 段','study_context'),('呼吸质量','study_quality'),('I 共同理想','ideal'),('G 实际下发','guide'),('X 实测呼吸','measured'))
     for i,(label,field) in enumerate(entries):
         row=panel(sidebar,'row_'+str(i),top=26+i*34,height=34)
         text(row,'label',label,width=118,size=14,ink='muted')
@@ -258,6 +288,8 @@ def build():
         flow_text(row,'value','—',field,x=156,width='=parent().width - 156')
         line(row,'line',41)
     command(close,'open','打开记录目录','open',x='=parent().width * .15',top=314,width=180)
+    command(close,'export','导出本场 CSV','export',x='=parent().width * .15 + 192',top=314,width=180)
+    text(close,'export_note','',x='=parent().width * .15',top=356,height=24,size=12)
     command(close,'next','完成收尾并准备下一次','next',x='=parent().width * .15',top='=parent().height - 46',width=280,primary=True)
     command(close,'home','返回主页面','home',x='=parent().width * .15 + 292',top='=parent().height - 46',width=180)
     history=panel(pages,'history')
@@ -276,6 +308,8 @@ def build():
     setp(rows,pvscrollbar='on',mousewheel=True)
     text(history,'summary','',top='=parent().height - 100',height=52,size=12,wrap=True)
     command(history,'open','打开记录目录','open',top='=parent().height - 42',width=180)
+    command(history,'export','导出选中场次','export',x=192,top='=parent().height - 42',width=180)
+    text(history,'export_note','',x=384,top='=parent().height - 42',width='=parent().width - 584',height=36,size=12)
     command(history,'back','返回当前阶段','back',x='=parent().width - 190',top='=parent().height - 42',width=190,primary=True)
     render.text += '\n' + FLOW_RUNTIME
     cb=op(ROOT + '/Sources/UdpTelemetryAdapter/udp_callbacks')

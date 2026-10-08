@@ -1,0 +1,318 @@
+{
+  "screenshot": "14-A-export.png",
+  "layout_size": [
+    1280.0,
+    720.0
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "page": "closeout",
+  "native_mouse_click": true,
+  "wheel_requested": false,
+  "scroll_before": null,
+  "scroll_after": 0.0,
+  "errors": "",
+  "panels": {
+    "Header": [
+      0.0,
+      656.0,
+      1248.0,
+      32.0
+    ],
+    "Tabs": [
+      0.0,
+      0.0,
+      1248.0,
+      36.0
+    ],
+    "Context": [
+      0.0,
+      570.0,
+      1248.0,
+      38.0
+    ],
+    "Pages": [
+      0.0,
+      66.0,
+      1248.0,
+      496.0
+    ],
+    "Footer": [
+      0.0,
+      0.0,
+      1248.0,
+      32.0
+    ]
+  },
+  "overview_bands": {
+    "devices": [
+      0.0,
+      66.0,
+      940.0,
+      430.0
+    ],
+    "main": [
+      948.0,
+      66.0,
+      300.0,
+      430.0
+    ],
+    "events": [
+      0.0,
+      0.0,
+      1248.0,
+      26.0
+    ]
+  },
+  "overview_scrollbar": "off",
+  "fields": {
+    "record_file": {
+      "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-study-v6\\20261008-200605\\development-workflow\\recordings\\f58c1fd5-bd60-4d02-be9e-9c259efa7802.jsonl",
+      "size": [
+        1248.0,
+        26.0
+      ],
+      "font_size": 12.0
+    },
+    "heart_rate": {
+      "text": "历史 72.2",
+      "size": [
+        163.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "rr_interval": {
+      "text": "历史 830.8",
+      "size": [
+        218.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_age": {
+      "text": "历史 16.99 秒",
+      "size": [
+        337.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_state": {
+      "text": "历史 已连接",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_sqi": {
+      "text": "—",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_rate": {
+      "text": "历史 130 Hz",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_plot_label": {
+      "text": "ECG / μV",
+      "size": [
+        830.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "ecg_plot_state": {
+      "text": "历史 · 有数据",
+      "size": [
+        110.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "resp_age": {
+      "text": "历史 16.99 秒",
+      "size": [
+        337.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "motion_state": {
+      "text": "历史 已接入",
+      "size": [
+        431.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_state": {
+      "text": "历史 已连接",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_sqi": {
+      "text": "—",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_rate": {
+      "text": "历史 400 Hz",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_plot_label": {
+      "text": "呼吸 / 相对幅度",
+      "size": [
+        830.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "resp_plot_state": {
+      "text": "历史 · 有数据",
+      "size": [
+        110.0,
+        22.0
+      ],
+      "font_size": 13.0
+    }
+  },
+  "scope": "Native TD UI with synthetic development fixtures only",
+  "workflow": {
+    "stage": "CLOSEOUT",
+    "view": null,
+    "current": {
+      "session_id": "DEV-9b42b4cadba6481a",
+      "participant": "SIM-A",
+      "condition": "A",
+      "status": "COMPLETED",
+      "pretest": true,
+      "unity_ready": true,
+      "store_ready": true,
+      "posttest": true,
+      "sealed": true,
+      "closed": false,
+      "path": "recordings\\f58c1fd5-bd60-4d02-be9e-9c259efa7802.jsonl",
+      "effective_ns": 800000000000,
+      "elapsed_ns": 810000000000,
+      "paused_ns": 6484000000,
+      "pause_at": null,
+      "start_ns": 101223859000000,
+      "end_ns": 101400218000000,
+      "ideal": "呼气",
+      "guide": "呼气",
+      "actual": "呼气",
+      "replay_effective_s": 800,
+      "replay_elapsed_s": 810,
+      "weather": "fade",
+      "segment": "lock_transition",
+      "quality": "GOOD",
+      "playback_speed": 5
+    },
+    "history": [
+      {
+        "session_id": "DEV-9b42b4cadba6481a",
+        "participant": "SIM-A",
+        "condition": "A",
+        "status": "COMPLETED",
+        "pretest": true,
+        "unity_ready": true,
+        "store_ready": true,
+        "posttest": true,
+        "sealed": true,
+        "closed": false,
+        "path": "recordings\\f58c1fd5-bd60-4d02-be9e-9c259efa7802.jsonl",
+        "effective_ns": 800000000000,
+        "elapsed_ns": 810000000000,
+        "paused_ns": 6484000000,
+        "pause_at": null,
+        "start_ns": 101223859000000,
+        "end_ns": 101400218000000,
+        "ideal": "呼气",
+        "guide": "呼气",
+        "actual": "呼气",
+        "replay_effective_s": 800,
+        "replay_elapsed_s": 810,
+        "weather": "fade",
+        "segment": "lock_transition",
+        "quality": "GOOD",
+        "playback_speed": 5
+      }
+    ],
+    "ready": true,
+    "can_close": true,
+    "pending": null,
+    "error": null,
+    "effective_ns": 800000000000,
+    "elapsed_ns": 810000000000,
+    "record_count": 32405
+  },
+  "visible_pages": [
+    "closeout"
+  ],
+  "flow_fields": {
+    "flow_session": "DEV-9b42b4cadba6481a",
+    "result": "正常完成",
+    "effective": "13:20",
+    "total": "13:30",
+    "sealed": "已确认（模拟）",
+    "posttest": "已收到（模拟）",
+    "participant": "SIM-A",
+    "assignment": "A",
+    "pretest": "已收到（模拟）",
+    "unity_ready": "已确认（模拟）",
+    "store_ready": "已确认（模拟）",
+    "study_context": "fade / lock_transition",
+    "study_quality": "GOOD",
+    "ideal": "呼气",
+    "guide": "呼气",
+    "measured": "呼气"
+  },
+  "session_capture": {
+    "state": "COMPLETED",
+    "count": 32405,
+    "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-study-v6\\20261008-200605\\development-workflow\\recordings\\f58c1fd5-bd60-4d02-be9e-9c259efa7802.jsonl",
+    "elapsed": "02:56",
+    "curves": {
+      "resp": "resp",
+      "ecg": "ecg"
+    }
+  },
+  "device_preview": {
+    "accepted": 16202,
+    "rejected": 0,
+    "last_error": null,
+    "error_counts": {},
+    "streams": {
+      "resp": {
+        "state": "STALE",
+        "buffered_samples": 12001
+      },
+      "ecg": {
+        "state": "STALE",
+        "buffered_samples": 781
+      }
+    },
+    "plots": {}
+  }
+}

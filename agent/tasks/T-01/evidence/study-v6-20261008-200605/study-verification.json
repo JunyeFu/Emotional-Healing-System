@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "profile": "A",
+      "session_id": "DEV-9b42b4cadba6481a",
+      "effective_s": 800,
+      "elapsed_s": 810,
+      "sample_counts": {
+        "plux_respiban": 324000,
+        "polar_h10_ecg": 105300
+      },
+      "source_to_td_sample_equality": true,
+      "export_missing_samples": 2000,
+      "unity_frames": 8100,
+      "I_G_different_frames": 0,
+      "estimates": "Python; TD only displays and exports",
+      "mean_hr_bpm": 72.1101565773662,
+      "rr_rmssd_ms": 23.765821045879093
+    },
+    {
+      "profile": "B",
+      "session_id": "DEV-50f596be67fe44ac",
+      "effective_s": 800,
+      "elapsed_s": 810,
+      "sample_counts": {
+        "plux_respiban": 324000,
+        "polar_h10_ecg": 105300
+      },
+      "source_to_td_sample_equality": true,
+      "export_missing_samples": 2000,
+      "unity_frames": 8100,
+      "I_G_different_frames": 4558,
+      "estimates": "Python; TD only displays and exports",
+      "mean_hr_bpm": 72.09035636491092,
+      "rr_rmssd_ms": 21.722056529918547
+    },
+    {
+      "profile": "abort",
+      "session_id": "DEV-8f1cf08a97cf436b",
+      "effective_s": 400,
+      "elapsed_s": 400,
+      "sample_counts": {
+        "plux_respiban": 160000,
+        "polar_h10_ecg": 52000
+      },
+      "source_to_td_sample_equality": true,
+      "export_missing_samples": 0,
+      "unity_frames": 4000,
+      "I_G_different_frames": 0,
+      "estimates": "Python; TD only displays and exports",
+      "mean_hr_bpm": 72.13068006978665,
+      "rr_rmssd_ms": 25.881024647514028
+    }
+  ],
+  "native_checks": 44,
+  "playback_speed": 5,
+  "boundaries": [
+    "synthetic samples not vendor BLE bytes",
+    "simulated Unity peer not Unity rendering",
+    "accelerated replay not real-time performance evidence",
+    "800s candidate not research freeze"
+  ]
+}

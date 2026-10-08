@@ -1,0 +1,379 @@
+{
+  "screenshot": "31-abort-submit.png",
+  "layout_size": [
+    1280.0,
+    720.0
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "page": "overview",
+  "native_mouse_click": true,
+  "wheel_requested": false,
+  "scroll_before": null,
+  "scroll_after": 0.0,
+  "errors": "",
+  "panels": {
+    "Header": [
+      0.0,
+      656.0,
+      1248.0,
+      32.0
+    ],
+    "Tabs": [
+      0.0,
+      0.0,
+      1248.0,
+      36.0
+    ],
+    "Context": [
+      0.0,
+      570.0,
+      1248.0,
+      38.0
+    ],
+    "Pages": [
+      0.0,
+      66.0,
+      1248.0,
+      496.0
+    ],
+    "Footer": [
+      0.0,
+      0.0,
+      1248.0,
+      32.0
+    ]
+  },
+  "overview_bands": {
+    "devices": [
+      0.0,
+      66.0,
+      940.0,
+      430.0
+    ],
+    "main": [
+      948.0,
+      66.0,
+      300.0,
+      430.0
+    ],
+    "events": [
+      0.0,
+      0.0,
+      1248.0,
+      26.0
+    ]
+  },
+  "overview_scrollbar": "off",
+  "fields": {
+    "record_file": {
+      "text": "尚未建立录制文件",
+      "size": [
+        1248.0,
+        26.0
+      ],
+      "font_size": 12.0
+    },
+    "heart_rate": {
+      "text": "未接入",
+      "size": [
+        163.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "rr_interval": {
+      "text": "未接入",
+      "size": [
+        218.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_age": {
+      "text": "历史 5.05 秒",
+      "size": [
+        337.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_state": {
+      "text": "历史 已连接",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_sqi": {
+      "text": "—",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_rate": {
+      "text": "历史 130 Hz",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_plot_label": {
+      "text": "ECG / μV",
+      "size": [
+        830.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "ecg_plot_state": {
+      "text": "历史 · 有数据",
+      "size": [
+        110.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "resp_age": {
+      "text": "历史 5.05 秒",
+      "size": [
+        337.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "motion_state": {
+      "text": "历史 已接入",
+      "size": [
+        431.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_state": {
+      "text": "历史 已连接",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_sqi": {
+      "text": "—",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_rate": {
+      "text": "历史 400 Hz",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_plot_label": {
+      "text": "呼吸 / 相对幅度",
+      "size": [
+        830.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "resp_plot_state": {
+      "text": "历史 · 有数据",
+      "size": [
+        110.0,
+        22.0
+      ],
+      "font_size": 13.0
+    }
+  },
+  "scope": "Native TD UI with synthetic development fixtures only",
+  "workflow": {
+    "stage": "PREPARE",
+    "view": null,
+    "current": {
+      "session_id": "DEV-8f1cf08a97cf436b",
+      "participant": "SIM-abort",
+      "condition": "A",
+      "status": "PREPARING",
+      "pretest": true,
+      "unity_ready": true,
+      "store_ready": true,
+      "posttest": false,
+      "sealed": false,
+      "closed": false,
+      "path": null,
+      "effective_ns": 0,
+      "elapsed_ns": 0,
+      "paused_ns": 0,
+      "pause_at": null,
+      "start_ns": null,
+      "end_ns": null,
+      "ideal": "未接入",
+      "guide": "未接入",
+      "actual": "未接入"
+    },
+    "history": [
+      {
+        "session_id": "DEV-9b42b4cadba6481a",
+        "participant": "SIM-A",
+        "condition": "A",
+        "status": "COMPLETED",
+        "pretest": true,
+        "unity_ready": true,
+        "store_ready": true,
+        "posttest": true,
+        "sealed": true,
+        "closed": true,
+        "path": "recordings\\f58c1fd5-bd60-4d02-be9e-9c259efa7802.jsonl",
+        "effective_ns": 800000000000,
+        "elapsed_ns": 810000000000,
+        "paused_ns": 6484000000,
+        "pause_at": null,
+        "start_ns": 101223859000000,
+        "end_ns": 101400218000000,
+        "ideal": "呼气",
+        "guide": "呼气",
+        "actual": "呼气",
+        "replay_effective_s": 800,
+        "replay_elapsed_s": 810,
+        "weather": "fade",
+        "segment": "lock_transition",
+        "quality": "GOOD",
+        "playback_speed": 5
+      },
+      {
+        "session_id": "DEV-50f596be67fe44ac",
+        "participant": "SIM-B",
+        "condition": "B",
+        "status": "COMPLETED",
+        "pretest": true,
+        "unity_ready": true,
+        "store_ready": true,
+        "posttest": true,
+        "sealed": true,
+        "closed": true,
+        "path": "recordings\\35c91bed-534b-4129-a704-3253edcbf132.jsonl",
+        "effective_ns": 800000000000,
+        "elapsed_ns": 810000000000,
+        "paused_ns": 6437000000,
+        "pause_at": null,
+        "start_ns": 101428859000000,
+        "end_ns": 101605546000000,
+        "ideal": "呼气",
+        "guide": "吸气",
+        "actual": "呼气",
+        "replay_effective_s": 800,
+        "replay_elapsed_s": 810,
+        "weather": "fade",
+        "segment": "lock_transition",
+        "quality": "GOOD",
+        "playback_speed": 5
+      }
+    ],
+    "ready": true,
+    "can_close": false,
+    "pending": {
+      "request_id": "59790d91-9b27-4989-af92-4914a854e842",
+      "session_id": "DEV-8f1cf08a97cf436b",
+      "action": "prepare",
+      "source_mode": "dev_mock",
+      "requested_ns": 101630843000000
+    },
+    "error": null,
+    "effective_ns": 0,
+    "elapsed_ns": 0,
+    "record_count": 0
+  },
+  "visible_pages": [
+    "overview"
+  ],
+  "flow_fields": {
+    "flow_session": "DEV-8f1cf08a97cf436b",
+    "result": "PREPARING",
+    "effective": "00:00",
+    "total": "00:00",
+    "sealed": "待封存确认",
+    "posttest": "待回执",
+    "participant": "SIM-abort",
+    "assignment": "A",
+    "pretest": "已收到（模拟）",
+    "unity_ready": "已确认（模拟）",
+    "store_ready": "已确认（模拟）",
+    "study_context": "未接入 / 未接入",
+    "study_quality": "未接入",
+    "ideal": "未接入",
+    "guide": "未接入",
+    "measured": "未接入"
+  },
+  "session_capture": {
+    "state": "WAITING",
+    "count": 0,
+    "path": "None",
+    "elapsed": "00:00",
+    "curves": {
+      "resp": "resp",
+      "ecg": "ecg"
+    }
+  },
+  "device_preview": {
+    "accepted": 32406,
+    "rejected": 0,
+    "last_error": null,
+    "error_counts": {},
+    "streams": {
+      "resp": {
+        "state": "STALE",
+        "buffered_samples": 40
+      },
+      "ecg": {
+        "state": "STALE",
+        "buffered_samples": 13
+      }
+    },
+    "plots": {
+      "resp": {
+        "size": [
+          960,
+          240
+        ],
+        "trace_pixels": 644,
+        "color_pixels": {
+          "resp": 0,
+          "ecg": 0,
+          "rr": 0,
+          "hr": 0,
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "ecg": {
+        "size": [
+          960,
+          240
+        ],
+        "trace_pixels": 124,
+        "color_pixels": {
+          "resp": 0,
+          "ecg": 0,
+          "rr": 0,
+          "hr": 0,
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    }
+  }
+}
