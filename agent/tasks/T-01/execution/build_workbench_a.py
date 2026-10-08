@@ -94,7 +94,7 @@ def row(parent, name, cells, height=44):
 def button(parent, name, label, enabled=False):
     node = parent.create(buttonCOMP, name)
     setp(node, label=label, enable=enabled, hmode="fill", vmode="fill",
-         fontsize=18, font="Microsoft YaHei", alignorder=len(parent.children))
+         fontsize=18, alignorder=len(parent.children))
     color(node, (.93, .96, .96) if enabled else (.96, .96, .96))
     return node
 
@@ -122,7 +122,7 @@ def _build():
     tabs = panel(shell, "Tabs", 40, horizontal=True)
     for name, label in (("overview", "总览"), ("timing", "链路与时钟"), ("audit", "事件与审计")):
         b = button(tabs, name, label, True)
-        callback = logic.create(panelExecuteDAT, "tab_" + name)
+        callback = logic.create(panelexecuteDAT, "tab_" + name)
         setp(callback, panels=b.path, panelvalue="select", offtoon=True)
         callback.text = "def onOffToOn(panelValue):\n    root = op(" + repr(SHELL) + ")\n    for page in root.op('Pages').children:\n        page.par.display = page.name == " + repr(name) + "\n    return\n"
     context = panel(shell, "Context", 112)
@@ -166,7 +166,12 @@ def _build():
     row(shell, "RequestState", [("请求与审计通道未接入", None), ("导出与截图待实现", None)], 34)
     row(shell, "Footer", [("—", "footer"), ("UDP 127.0.0.1:5005 · 显示上限 20 Hz", None)], 34)
     execute = logic.create(executeDAT, "render")
-    execute.text = RUNTIME
+    execute.text = (
+        "import sys\n"
+        f"sys.path.insert(0, {str(BASE.parent.parent)!r})\n"
+        f"sys.path.insert(0, {str(BASE)!r})\n"
+        + RUNTIME
+    )
     setp(execute, active=False, framestart=True)
     viewer = root.op('Output').create(opviewerTOP, 'workbench_a_view')
     viewer.par.opviewer = shell.path

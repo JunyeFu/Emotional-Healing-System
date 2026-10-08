@@ -1,0 +1,10 @@
+{
+  "screenshot": "02-overview-replay.png",
+  "width": 1280,
+  "height": 720,
+  "page": "overview",
+  "errors": "",
+  "build": "2025.32820",
+  "scope": "Native TD WorkbenchA render; development fixtures only",
+  "nodes": 344
+}

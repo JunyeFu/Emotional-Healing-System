@@ -1,5 +1,9 @@
 # Codex Verification Log
 
+## 2026-10-08 TD A主题实际截图验证
+
+专项57 passed；四张可读PNG与原生错误回执已检查，启动瞬间空白图不计通过；1280布局与长标签问题仍保留。详见[验证记录](2026-10-08_TD工作台实际截图.md)。
+
 ## 2026-10-06 呼吸圈Unity数值版v1.1验证
 
 - 核对Unity官方Rect Transform、Canvas Scaler文档与UICircle固定源码：中心锚点Pos(-1.152,39.528)、Height缩放和Thickness向内绘制的表达一致。

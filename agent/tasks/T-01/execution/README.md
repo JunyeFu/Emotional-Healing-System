@@ -18,4 +18,4 @@ exec(compile(p.read_text(encoding='utf-8'), str(p), 'exec'), dict(globals(), __f
 
 只重建/project1/T01_TelemetryPanel，新TOE/TOX及host/touchdesigner证据写本包evidence/runtime。实际重开新TOE后同样执行verify_t01_touchdesigner_reopen.py；replay_t01_udp.py负责发送，不放在正式只读制品中。完整23件新运行证据齐备后才运行generate_evidence_manifest.py，不生成或修改历史清单。
 
-`build_workbench_a.py`使用同样执行方式，只允许原模块或本包runtime中的专用工程；保存独立A主题候选，不覆盖原签收制品。它尚未通过本轮TD原生控件验证，不把主机回调编译测试算作UI验收。
+`build_workbench_a.py`使用同样执行方式，只允许原模块或本包runtime中的专用工程；保存独立A主题候选，不覆盖原签收制品。2026-10-08已在TD2025.32820隔离副本中建立原生控件并取得三页实际截图，见[截图记录](../evidence/workbench-a-20261008-094624/README.md)。输入为开发回放；标签点击、工具按钮和完整多尺寸布局尚未验收，不把主机回调编译测试算作UI验收。

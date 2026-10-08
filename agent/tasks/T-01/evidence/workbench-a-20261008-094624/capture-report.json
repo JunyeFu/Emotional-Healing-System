@@ -1,0 +1,61 @@
+{
+  "source_toe": "agent\\tasks\\T-01\\evidence\\runtime\\T01_ReadableBaseline.candidate.toe",
+  "source_preserved": true,
+  "builder": "agent\\tasks\\T-01\\execution\\build_workbench_a.py",
+  "td_build": "2025.32820",
+  "captures": [
+    {
+      "screenshot": "01-overview-waiting.png",
+      "width": 1280,
+      "height": 720,
+      "page": "overview",
+      "errors": "",
+      "build": "2025.32820",
+      "scope": "Native TD WorkbenchA render; development fixtures only",
+      "nodes": 276
+    },
+    {
+      "screenshot": "02-overview-replay.png",
+      "width": 1280,
+      "height": 720,
+      "page": "overview",
+      "errors": "",
+      "build": "2025.32820",
+      "scope": "Native TD WorkbenchA render; development fixtures only",
+      "nodes": 344
+    },
+    {
+      "screenshot": "03-link-and-clock.png",
+      "width": 1280,
+      "height": 720,
+      "page": "timing",
+      "errors": "",
+      "build": "2025.32820",
+      "scope": "Native TD WorkbenchA render; development fixtures only",
+      "nodes": 344
+    },
+    {
+      "screenshot": "04-events-and-audit.png",
+      "width": 1280,
+      "height": 720,
+      "page": "audit",
+      "errors": "",
+      "build": "2025.32820",
+      "scope": "Native TD WorkbenchA render; development fixtures only",
+      "nodes": 344
+    },
+    {
+      "screenshot": "05-overview-1280.png",
+      "width": 1280,
+      "height": 720,
+      "page": "overview",
+      "errors": "",
+      "build": "2025.32820",
+      "scope": "Native TD WorkbenchA render; development fixtures only",
+      "nodes": 344
+    }
+  ],
+  "input_source": "v2.2 development fixtures; no real device input",
+  "owned_process_id": 30200,
+  "candidate": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-capture-20261008\\20261008-094624\\T01_Workbench_A.render-ready.toe"
+}
