@@ -3,17 +3,17 @@
   "pages": [
     {
       "page": "home",
-      "editable_cells": 39,
+      "editable_cells": 38,
       "export_size": [
         1280,
-        720
+        721
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {}
     },
     {
       "page": "prepare",
-      "editable_cells": 106,
+      "editable_cells": 105,
       "export_size": [
         1280,
         721
@@ -26,7 +26,7 @@
     },
     {
       "page": "waiting",
-      "editable_cells": 97,
+      "editable_cells": 96,
       "export_size": [
         1280,
         721
@@ -39,7 +39,7 @@
     },
     {
       "page": "running",
-      "editable_cells": 107,
+      "editable_cells": 105,
       "export_size": [
         1281,
         720
@@ -52,7 +52,7 @@
     },
     {
       "page": "paused",
-      "editable_cells": 107,
+      "editable_cells": 106,
       "export_size": [
         1281,
         720
@@ -65,57 +65,57 @@
     },
     {
       "page": "closeout",
-      "editable_cells": 47,
+      "editable_cells": 46,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {}
     },
     {
       "page": "history",
-      "editable_cells": 64,
+      "editable_cells": 63,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {}
     },
     {
       "page": "details",
-      "editable_cells": 62,
+      "editable_cells": 61,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {}
     },
     {
       "page": "closed",
-      "editable_cells": 47,
+      "editable_cells": 46,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {}
     },
     {
       "page": "unselected",
-      "editable_cells": 63,
+      "editable_cells": 62,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {}
     },
     {
       "page": "fault",
-      "editable_cells": 109,
+      "editable_cells": 108,
       "export_size": [
         1281,
         720
@@ -128,7 +128,7 @@
     },
     {
       "page": "abort",
-      "editable_cells": 114,
+      "editable_cells": 112,
       "export_size": [
         1281,
         720

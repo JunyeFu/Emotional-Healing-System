@@ -36,6 +36,8 @@ def check():
             assert x>=0 and y>=0 and x+w<=1280.01 and y+h<=720.01,(p.get('id'),c.get('id'))
         values=[c.get('value','') for c in cells]
         assert not any('固定量程' in value for value in values)
+        assert not any(label in value for value in values
+                       for label in ('设计示例', 'fade步骤'))
         if p.get('id') in ('closeout','closed'):
             assert '13:20' in values and '13:34' in values
         if p.get('id')=='unselected':

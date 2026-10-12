@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="TD workbench design" pages="12">
   <diagram id="home" name="01 主页">
-    <mxGraphModel dx="822" dy="1473" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1149" dy="1519" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -9,9 +9,6 @@
         </mxCell>
         <mxCell id="home-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="home-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="home-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -134,9 +131,6 @@
         </mxCell>
         <mxCell id="prepare-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="prepare-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="prepare-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -1034,9 +1028,6 @@
         <mxCell id="waiting-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
-        <mxCell id="waiting-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
-        </mxCell>
         <mxCell id="waiting-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
         </mxCell>
@@ -1905,9 +1896,6 @@
         </mxCell>
         <mxCell id="running-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="running-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="running-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -2782,9 +2770,6 @@
         <mxCell id="running-107" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计置信度 0.88" vertex="1">
           <mxGeometry height="28" width="348" x="896" y="566" as="geometry" />
         </mxCell>
-        <mxCell id="running-108" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="fade步骤：主吸 / 补吸 / 长呼" vertex="1">
-          <mxGeometry height="28" width="348" x="896" y="606" as="geometry" />
-        </mxCell>
         <mxCell id="running-109" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="最近记录写入：0.1秒前 · 当前无待处理问题" vertex="1">
           <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
@@ -2807,9 +2792,6 @@
         </mxCell>
         <mxCell id="paused-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="paused-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="paused-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -3700,7 +3682,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="closeout" name="06 收尾待办">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3709,9 +3691,6 @@
         </mxCell>
         <mxCell id="closeout-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="closeout-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="closeout-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -3849,7 +3828,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="history" name="07 历史选中记录">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3858,9 +3837,6 @@
         </mxCell>
         <mxCell id="history-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="history-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="history-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -4049,7 +4025,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="details" name="08 分组明细">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4058,9 +4034,6 @@
         </mxCell>
         <mxCell id="details-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="details-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="details-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -4243,7 +4216,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="closed" name="09 收尾完成">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4252,9 +4225,6 @@
         </mxCell>
         <mxCell id="closed-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="closed-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="closed-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -4392,7 +4362,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="unselected" name="10 历史未选择">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4401,9 +4371,6 @@
         </mxCell>
         <mxCell id="unselected-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="unselected-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="unselected-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -4598,9 +4565,6 @@
         </mxCell>
         <mxCell id="fault-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
-        </mxCell>
-        <mxCell id="fault-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="fault-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -5486,9 +5450,6 @@
         <mxCell id="abort-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
-        <mxCell id="abort-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
-        </mxCell>
         <mxCell id="abort-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
         </mxCell>
@@ -6361,9 +6322,6 @@
         </mxCell>
         <mxCell id="abort-107" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计置信度 0.88" vertex="1">
           <mxGeometry height="28" width="348" x="896" y="566" as="geometry" />
-        </mxCell>
-        <mxCell id="abort-108" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="fade步骤：主吸 / 补吸 / 长呼" vertex="1">
-          <mxGeometry height="28" width="348" x="896" y="606" as="geometry" />
         </mxCell>
         <mxCell id="abort-109" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="最近记录写入：0.1秒前 · 当前无待处理问题" vertex="1">
           <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
