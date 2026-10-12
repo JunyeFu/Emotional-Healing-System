@@ -37,7 +37,7 @@ def check():
         values=[c.get('value','') for c in cells]
         assert not any('固定量程' in value for value in values)
         assert not any(label in value for value in values
-                       for label in ('设计示例', 'fade步骤'))
+                       for label in ('设计示例', 'fade步骤', '开发演练'))
         if p.get('id') in ('closeout','closed'):
             assert '13:20' in values and '13:34' in values
         if p.get('id')=='unselected':

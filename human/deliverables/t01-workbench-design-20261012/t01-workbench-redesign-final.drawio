@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net" agent="TD workbench design" pages="12">
   <diagram id="home" name="01 主页">
     <mxGraphModel dx="1149" dy="1519" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
@@ -21,9 +22,6 @@
         </mxCell>
         <mxCell id="home-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="home-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="home-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
@@ -143,9 +141,6 @@
         </mxCell>
         <mxCell id="prepare-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="prepare-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="prepare-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
@@ -1040,9 +1035,6 @@
         <mxCell id="waiting-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
-        <mxCell id="waiting-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
-        </mxCell>
         <mxCell id="waiting-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
@@ -1887,7 +1879,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="running" name="04 实验运行">
-    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1447" dy="1912" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1908,9 +1900,6 @@
         </mxCell>
         <mxCell id="running-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="running-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="running-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
@@ -2804,9 +2793,6 @@
         </mxCell>
         <mxCell id="paused-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="paused-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="paused-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
@@ -3704,9 +3690,6 @@
         <mxCell id="closeout-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
-        <mxCell id="closeout-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
-        </mxCell>
         <mxCell id="closeout-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
@@ -3849,9 +3832,6 @@
         </mxCell>
         <mxCell id="history-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="history-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="history-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
@@ -4047,9 +4027,6 @@
         <mxCell id="details-7" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="3" width="80" x="474" y="45" as="geometry" />
         </mxCell>
-        <mxCell id="details-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
-        </mxCell>
         <mxCell id="details-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
@@ -4238,9 +4215,6 @@
         <mxCell id="closed-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
-        <mxCell id="closed-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
-        </mxCell>
         <mxCell id="closed-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
@@ -4383,9 +4357,6 @@
         </mxCell>
         <mxCell id="unselected-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="unselected-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="unselected-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
@@ -4577,9 +4548,6 @@
         </mxCell>
         <mxCell id="fault-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="fault-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="fault-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
@@ -5461,9 +5429,6 @@
         </mxCell>
         <mxCell id="abort-7" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="明细" vertex="1">
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="abort-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="abort-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />

@@ -3,7 +3,7 @@
   "pages": [
     {
       "page": "home",
-      "editable_cells": 38,
+      "editable_cells": 37,
       "export_size": [
         1280,
         721
@@ -13,7 +13,7 @@
     },
     {
       "page": "prepare",
-      "editable_cells": 105,
+      "editable_cells": 104,
       "export_size": [
         1280,
         721
@@ -26,7 +26,7 @@
     },
     {
       "page": "waiting",
-      "editable_cells": 96,
+      "editable_cells": 95,
       "export_size": [
         1280,
         721
@@ -39,6 +39,19 @@
     },
     {
       "page": "running",
+      "editable_cells": 104,
+      "export_size": [
+        1280,
+        720
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {
+        "resp": 606,
+        "ecg": 2055
+      }
+    },
+    {
+      "page": "paused",
       "editable_cells": 105,
       "export_size": [
         1281,
@@ -51,21 +64,8 @@
       }
     },
     {
-      "page": "paused",
-      "editable_cells": 106,
-      "export_size": [
-        1281,
-        720
-      ],
-      "embedded_pages": 1,
-      "plot_ink_pixels": {
-        "resp": 606,
-        "ecg": 2071
-      }
-    },
-    {
       "page": "closeout",
-      "editable_cells": 46,
+      "editable_cells": 45,
       "export_size": [
         1281,
         720
@@ -75,36 +75,6 @@
     },
     {
       "page": "history",
-      "editable_cells": 63,
-      "export_size": [
-        1281,
-        720
-      ],
-      "embedded_pages": 1,
-      "plot_ink_pixels": {}
-    },
-    {
-      "page": "details",
-      "editable_cells": 61,
-      "export_size": [
-        1281,
-        720
-      ],
-      "embedded_pages": 1,
-      "plot_ink_pixels": {}
-    },
-    {
-      "page": "closed",
-      "editable_cells": 46,
-      "export_size": [
-        1281,
-        720
-      ],
-      "embedded_pages": 1,
-      "plot_ink_pixels": {}
-    },
-    {
-      "page": "unselected",
       "editable_cells": 62,
       "export_size": [
         1281,
@@ -114,8 +84,38 @@
       "plot_ink_pixels": {}
     },
     {
+      "page": "details",
+      "editable_cells": 60,
+      "export_size": [
+        1281,
+        720
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
+      "page": "closed",
+      "editable_cells": 45,
+      "export_size": [
+        1281,
+        720
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
+      "page": "unselected",
+      "editable_cells": 61,
+      "export_size": [
+        1281,
+        720
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
       "page": "fault",
-      "editable_cells": 108,
+      "editable_cells": 107,
       "export_size": [
         1281,
         720
@@ -128,7 +128,7 @@
     },
     {
       "page": "abort",
-      "editable_cells": 112,
+      "editable_cells": 111,
       "export_size": [
         1281,
         720
