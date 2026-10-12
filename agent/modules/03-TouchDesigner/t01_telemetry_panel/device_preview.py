@@ -111,9 +111,9 @@ def raster_waveform(stream, width, height):
     """Draw timestamped samples; absent samples and time gaps break the trace."""
     import numpy as np  # TouchDesigner ships numpy; host tests need it only for plots.
     image = np.ones((height, width, 4), dtype=np.float32)
-    for x in range(0, width, max(1, width // 6)):
+    for x in np.rint(np.linspace(0, width-1, 7)).astype(int):
         image[:, x, :3] = (.87, .90, .93)
-    for y in range(0, height, max(1, height // 4)):
+    for y in np.rint(np.linspace(0, height-1, 5)).astype(int):
         image[y, :, :3] = (.87, .90, .93)
     points = stream['points']
     if not points:
@@ -134,7 +134,7 @@ def raster_waveform(stream, width, height):
     last_stamp = None
     def flush():
         if bucket:
-            ends = {min(bucket, key=lambda p: p[1]), max(bucket, key=lambda p: p[1])}
+            ends = {bucket[0],bucket[-1],min(bucket, key=lambda p: p[1]), max(bucket, key=lambda p: p[1])}
             reduced.extend(sorted(ends))
             bucket.clear()
     for stamp, value in points:
@@ -165,8 +165,9 @@ def raster_waveform(stream, width, height):
             steps = max(abs(x - px), abs(y - py), 1) + 1
             xx = np.rint(np.linspace(px, x, steps)).astype(int)
             yy = np.rint(np.linspace(py, y, steps)).astype(int)
-            image[yy, xx, :3] = ink
+            for offset in range(stream.get('line_width', 1)):
+                image[np.clip(yy+offset,0,height-1), xx, :3] = ink
         else:
-            image[y, x, :3] = ink
+            image[y:min(height,y+stream.get('line_width', 1)), x, :3] = ink
         previous = x, y, stamp
     return image

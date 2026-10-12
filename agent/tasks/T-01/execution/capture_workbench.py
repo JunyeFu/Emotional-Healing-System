@@ -35,7 +35,7 @@ def wait_for(path, pid, timeout=60):
     raise TimeoutError(path)
 
 
-def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None, study_speed=5, backend_mode=False):
+def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None, study_speed=5, backend_mode=False, continuity_mode=False):
     if not 0 < study_speed <= 10:
         raise ValueError('Replay speed must be in (0, 10]')
     global EVIDENCE, SCRATCH
@@ -58,6 +58,10 @@ def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None
             raise ValueError('--backend requires --study')
         EVIDENCE = EXECUTION.parent / 'evidence' / ('backend-v7-' + RUN_ID)
         SCRATCH = ROOT / 'agent/local/artifacts/td-workbench-backend-v7' / RUN_ID
+    if continuity_mode:
+        EVIDENCE = EXECUTION.parent / 'evidence' / ('continuity-v8-' + RUN_ID)
+        SCRATCH = ROOT / 'agent/local/artifacts/td-workbench-continuity-v8' / RUN_ID
+        candidate_name = 'T01_Workbench_A.continuity-v8.candidate.toe'
     if ps('Get-Process TouchDesigner -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Id'):
         raise RuntimeError('Preserve already open TD projects; close the owned capture copy first')
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as check:
@@ -148,7 +152,10 @@ def onFrameStart(frame):
         print('TD_READY', ready, flush=True)
         time.sleep(3)
         if flow_mode:
-            if study_path:
+            if continuity_mode:
+                from exercise_continuity import exercise
+                receipts = exercise(command,pid,active,EVIDENCE,wait_for)
+            elif study_path:
                 from exercise_study import exercise
                 receipts = exercise(command,pid,active,EVIDENCE,wait_for,study_path,speed=study_speed,backend_mode=backend_mode)
             else:
@@ -157,9 +164,10 @@ def onFrameStart(frame):
             assert SOURCE.read_bytes() == source_bytes
             candidate = SCRATCH / candidate_name
             shutil.copyfile(candidate, EVIDENCE / candidate_name)
-            shutil.copytree(SCRATCH / 'development-workflow', EVIDENCE / 'development-workflow')
+            if not continuity_mode:
+                shutil.copytree(SCRATCH / 'development-workflow', EVIDENCE / 'development-workflow')
             report = dict(source_preserved=True, td=ready, captures=receipts, owned_process_id=pid,
-                          candidate=str(candidate), input_source=('Actual P01/P02; synthetic devices and Unity endpoint' if backend_mode else 'Synthetic fixtures and simulated authority receipts only'))
+                          candidate=str(candidate), input_source=('Known mathematical calibration signals; development preflight only' if continuity_mode else 'Actual P01/P02; synthetic devices and Unity endpoint' if backend_mode else 'Synthetic fixtures and simulated authority receipts only'))
             (EVIDENCE / 'capture-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
             success = True
             print('EVIDENCE', EVIDENCE, flush=True)
@@ -269,7 +277,8 @@ if __name__ == '__main__':
     import sys
     study = sys.argv[sys.argv.index('--study')+1] if '--study' in sys.argv else None
     speed = float(sys.argv[sys.argv.index('--speed')+1]) if '--speed' in sys.argv else 5
-    main(device_mode=bool(study) or any(x in sys.argv for x in ('--devices','--monitor','--flow')),
-         monitor_mode=bool(study) or '--monitor' in sys.argv or '--flow' in sys.argv,
-         flow_mode=bool(study) or '--flow' in sys.argv,study_path=study,study_speed=speed,
-         backend_mode='--backend' in sys.argv)
+    continuity='--continuity' in sys.argv
+    main(device_mode=continuity or bool(study) or any(x in sys.argv for x in ('--devices','--monitor','--flow')),
+         monitor_mode=continuity or bool(study) or '--monitor' in sys.argv or '--flow' in sys.argv,
+         flow_mode=continuity or bool(study) or '--flow' in sys.argv,study_path=study,study_speed=speed,
+         backend_mode='--backend' in sys.argv,continuity_mode=continuity)

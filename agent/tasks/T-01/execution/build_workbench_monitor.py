@@ -54,6 +54,13 @@ def plot(source, width, height):
     series = channels.series(selected[source], stream)
     if not series:
         return raster_waveform(dict(points=()), width, height)
+    if selected[source] in ('acceleration','angular_velocity'):
+        import numpy as np
+        result = np.ones((height,width,4),dtype=np.float32)
+        for i,item in enumerate(series):
+            lower,upper=round(height*(2-i)/3),round(height*(3-i)/3)
+            result[lower:upper] = raster_waveform(item,width,upper-lower)
+        return result
     result = raster_waveform(series[0], width, height)
     for item in series[1:]:
         image = raster_waveform(item, width, height)
@@ -80,16 +87,27 @@ def onFrameStart(frame):
         series = channels.series(key, stream)
         actual = [v for item in series for _, v in item['points'] if v is not None]
         label = session_module.LABELS[key] + ' / ' + session_module.UNITS[key]
-        if key in ('acceleration', 'angular_velocity'):
-            label += '   X红  Y绿  Z蓝'
-        values[source + '_plot_label'] = label
-        values[source + '_plot_state'] = ('历史 · ' if stream.get('state') == 'STALE' else '') + ('有数据' if actual else '未接入')
         window = 6 if key == 'ecg' else 30
+        label += ' · ' + str(window) + '秒'
+        if key in ('acceleration', 'angular_velocity'):
+            label += ' · 独立量程'
+        values[source + '_plot_label'] = label
+        values[source + '_plot_state'] = ('历史 · ' if stream.get('state') == 'STALE' else '') + ('有缺口' if actual and any(s.get('has_gaps') for s in series) else '有数据' if actual else '未接入')
         device = shell.op('Content/Pages/overview/devices/' + source)
         device.op('axis_left').par.text = '−00:' + str(window).zfill(2)
-        low, high = (-1200, 1200) if key == 'ecg' else (min(actual), max(actual)) if actual else (None, None)
-        if low is not None and high == low:
-            low, high = low - 1, high + 1
+        device.op('axis').par.text = '−00:' + str(window//2).zfill(2)
+        motion = key in ('acceleration','angular_velocity')
+        low,high = series[0]['range'] if series and 'range' in series[0] else (None,None)
+        for name in ('ymax','ymin'):
+            device.op(name).par.display = not motion
+        for i in range(3):
+            axis_node = device.op('motion_axis_' + str(i))
+            axis_node.par.display = motion
+            if motion and i < len(series):
+                item = series[i]
+                bounds = item.get('range')
+                axis_node.par.text = item['axis'].upper() + (' ' + format(bounds[1],'.2f') + '\\n' + format(bounds[0],'.2f') if bounds else ' —')
+                axis_node.par.fontcolorr,axis_node.par.fontcolorg,axis_node.par.fontcolorb = item['color']
         device.op('ymax').par.text = str(round(high, 2)) if high is not None else '—'
         device.op('ymin').par.text = str(round(low, 2)) if low is not None else '—'
         shell.op('Logic/plot_' + source).cook(force=True)
@@ -128,20 +146,25 @@ def build():
     )):
         device = panel(devices, source, top='=(parent().height + 8) * ' + str(i / 2), height='=(parent().height - 8) / 2', border=True)
         heading(device, title, height=26)
-        for j, (label, field) in enumerate((('连接', source + '_state'), ('SQI', source + '_sqi'), ('采样率', source + '_rate'))):
-            cell = pair(device, 'status_' + str(j), label, field, '=parent().width * ' + str(j/3), 26, '=parent().width / 3', 26, 64)
+        device.op('heading/label').par.w = 308
+        device.op('heading/label').par.fontsize = 16
+        for j, (label, field) in enumerate((('连接', source + '_state'), ('SQI', source + '_sqi'), ('原始采样', source + '_rate'))):
+            cell = pair(device, 'status_' + str(j), label, field, '=parent().width * ' + str(j/3), 26, '=parent().width / 3', 26, 90)
             cell.op('value').par.fontsize = 14
-        text(device, 'plot_label', '', source + '_plot_label', top=52, height=22, width='=parent().width - 110', size=13)
-        text(device, 'plot_state', '', source + '_plot_state', top=52, height=22, x='=parent().width - 110', width=110, align='right', size=13)
-        graph = panel(device, 'wave', 52, 76, '=parent().width - 64', '=parent().height - 150')
+        text(device, 'plot_label', '', source + '_plot_label', x=308, height=26, width='=parent().width - 418', size=13)
+        text(device, 'plot_state', '', source + '_plot_state', height=26, x='=parent().width - 110', width=110, align='right', size=13)
+        graph = panel(device, 'wave', 80, 56, '=parent().width - 92', '=parent().height - 130')
         setp(graph, top=shell.op('Logic/plot_' + source).path, topfill='stretch')
         cb = shell.op('Logic').create(textDAT, 'monitor_plot_' + source + '_callbacks')
-        cb.text = 'def onCook(scriptOp):\n    runtime = op(' + repr(render.path) + ').module\n    scriptOp.copyNumpyArray(runtime.plot(' + repr(source) + ', 960, 240))\n'
+        cb.text = 'def onCook(scriptOp):\n    runtime = op(' + repr(render.path) + ').module\n    graph = op(' + repr(graph.path) + ')\n    scriptOp.copyNumpyArray(runtime.plot(' + repr(source) + ', max(2, round(graph.width)), max(3, round(graph.height))))\n'
         shell.op('Logic/plot_' + source).par.callbacks = cb.path
-        text(device, 'ymax', '—', top=74, width=52, height=20, align='right', size=12)
-        text(device, 'ymin', '—', top='=parent().height - 94', width=52, height=20, align='right', size=12)
-        text(device, 'axis_left', '', x=40, top='=parent().height - 74', width=88, height=22, size=12)
-        text(device, 'axis', '相对当前时间（分:秒）', top='=parent().height - 74', height=22, align='center', size=12)
+        text(device, 'ymax', '—', top=54, width=80, height=20, align='right', size=12)
+        text(device, 'ymin', '—', top='=parent().height - 94', width=80, height=20, align='right', size=12)
+        for j in range(3):
+            text(device,'motion_axis_'+str(j),'',top='=56 + (parent().height - 130) * '+str(j/3),
+                 width=80,height='=(parent().height - 130) / 3',align='right',size=11,wrap=True).par.display=False
+        text(device, 'axis_left', '', x=68, top='=parent().height - 74', width=88, height=22, size=12)
+        text(device, 'axis', '', x=80,width='=parent().width - 92',top='=parent().height - 74',height=22,align='center',size=12)
         text(device, 'axis_right', '00:00', x='=parent().width - 76', top='=parent().height - 74', width=76, height=22, align='right', size=12)
         tabs = panel(device, 'tabs', top='=parent().height - 52', height=26)
         for j, key in enumerate(keys):

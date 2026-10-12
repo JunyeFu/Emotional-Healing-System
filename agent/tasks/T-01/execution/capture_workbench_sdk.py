@@ -33,6 +33,7 @@ def onFrameStart(frame):
         if commands:
             request = json.loads(commands[-1].read_text(encoding='utf-8'))
             if request['id'] != _handled:
+                (_evidence / 'capture-progress.json').write_text(json.dumps(dict(file=request['filename'],step='command_received')))
                 _handled = request['id']
                 shell = _root.op('WorkbenchA')
                 shell.par.w, shell.par.h = request['width'], request['height']
@@ -43,6 +44,7 @@ def onFrameStart(frame):
                 _pending = (request, time.monotonic() + 2, 'press')
         if _pending and time.monotonic() >= _pending[1]:
             request, _, phase = _pending
+            (_evidence / 'capture-progress.json').write_text(json.dumps(dict(file=request['filename'],step=phase)))
             shell = _root.op('WorkbenchA')
             tab = shell.op(request['click']) if request.get('workflow') and request.get('click') else None if request.get('workflow') else shell.op('Content/Tabs/' + request['page'] + '/label')
             if tab is None and phase in ('press','release'):
@@ -145,6 +147,27 @@ def onFrameStart(frame):
                         receipt['device_preview']['plots'][source]['color_pixels'] = {
                             key: int((abs(arr[:,:,:3] - runtime.session_module.rgb(code)).max(axis=2) < .015).sum())
                             for key, code in colors.items()}
+                    if request.get('continuity'):
+                        import numpy as np
+                        key=runtime.selected[source]
+                        series=runtime.channels.series(key,runtime.streams[source])
+                        device=shell.op('Content/Pages/overview/devices/'+source)
+                        plot.save(str(_evidence/(Path(request['filename']).stem+'-'+source+'-plot.png')))
+                        detail=[]
+                        for i,item in enumerate(series):
+                            pixels=arr[round(arr.shape[0]*(2-i)/3):round(arr.shape[0]*(3-i)/3)] if len(series)==3 else arr
+                            mask=abs(pixels[:,:,:3]-np.asarray(item['color'])).max(axis=2)<.015
+                            valid=[(t,v) for t,v in item['points'] if v is not None]
+                            detail.append(dict(axis=item.get('axis','value'),unit=item['unit'],window=item['window'],
+                                range=item.get('range'),points=len(item['points']),null_count=sum(v is None for _,v in item['points']),
+                                has_gaps=item['has_gaps'],end_ns=item['end_ns'],last_value=valid[-1][1] if valid else None,
+                                trace_columns=float(mask.any(axis=0).mean()),trace_pixels=int(mask.sum())))
+                        receipt.setdefault('continuity',{})[source]=dict(key=key,series=detail,
+                            payload=runtime.streams[source]['payload'],
+                            axis_text={n:device.op(n).par.text.eval() for n in ('axis_left','axis','axis_right','ymax','ymin')},
+                            motion_labels=[device.op('motion_axis_'+str(i)).par.text.eval() for i in range(3)],
+                            displayed_size=[device.op('wave').width,device.op('wave').height],
+                            plot_size=[plot.width,plot.height])
             if request.get('final'):
                 me.par.active = False
                 shell.par.sizefromwindow = True

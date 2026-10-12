@@ -29,6 +29,7 @@ class Channels:
     def __init__(self):
         self.epochs = {}
         self.data = {}
+        self.last_end = {}
 
     def append(self, p):
         source = p['source_id']
@@ -38,7 +39,10 @@ class Channels:
             for key in keys:
                 self.data[key] = {}
             self.epochs[source] = epoch
+            self.last_end.pop(source, None)
         end = p['last_sample_monotonic_ns']
+        first = end - round((len(p.get('samples', [None])) - 1) * 1e9 / p['sample_rate_hz'])
+        gap = source in self.last_end and first - self.last_end[source] > 1.5e9 / p['sample_rate_hz']
         for key in keys:
             values = p.get(key) if source == 'plux_respiban' else {'value': [p.get('hr_bpm' if key == 'hr' else 'rr_ms')]}
             # Missing packets break curves instead of extending the last observation.
@@ -46,25 +50,36 @@ class Channels:
                 values = {axis: [None] for axis in ('x', 'y', 'z')}
             for axis, samples in values.items():
                 q = self.data[key].setdefault(axis, deque(maxlen=120001))
+                if gap:
+                    q.append((first, None))
                 for i, value in enumerate(samples):
                     q.append((end - round((len(samples)-1-i) * 1e9 / p['sample_rate_hz']), value))
                 while q and q[0][0] < end - 30_000_000_000:
                     q.popleft()
+        self.last_end[source] = end
 
     def series(self, key, stream):
         if not stream.get('payload'):
             return []
         if key in ('resp', 'ecg'):
-            return [dict(stream, color=rgb(COLORS[key]))]
-        result = []
-        for axis, points in self.data.get(key, {}).items():
-            result.append(dict(stream, points=tuple(points), window=30, unit=UNITS[key],
+            result = [dict(stream, color=rgb(COLORS[key]))]
+        else:
+            result = []
+            for axis, points in self.data.get(key, {}).items():
+                result.append(dict(stream, axis=axis, points=tuple(points), window=30, unit=UNITS[key],
                                color=rgb(COLORS.get(axis, COLORS.get(key, '#2563A6'))),
                                gap_ns=2_000_000_000 if key in ('hr', 'rr') else 500_000_000))
-        values = [v for s in result for _, v in s['points'] if v is not None]
-        if values:
-            for s in result:
-                s['range'] = (min(values), max(values))
+        for s in result:
+            cutoff = s['end_ns'] - s['window'] * 1e9
+            s['points'] = tuple((t,v) for t,v in s['points'] if cutoff <= t <= s['end_ns'])
+            values = [v for _,v in s['points'] if v is not None]
+            s['has_gaps'] = any(v is None for _,v in s['points']) or any(
+                b[0]-a[0]>=s.get('gap_ns',500_000_000) for a,b in zip(s['points'],s['points'][1:]))
+            if values:
+                low,high = min(values),max(values)
+                margin = .1 * (high-low) if high != low else 1
+                s['range'] = (-1200,1200) if key == 'ecg' else (low-margin,high+margin)
+            s['line_width'] = 2
         return result
 
 
