@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="TD workbench design" pages="12">
   <diagram id="home" name="01 主页">
-    <mxGraphModel dx="1127" dy="1079" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="822" dy="1473" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -8,10 +8,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="home-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="home-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="home-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -26,10 +26,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="home-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="home-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="home-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -47,19 +47,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="home-15" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="home-16" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="—" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="home-17" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="home-18" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="home-19" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="home-20" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="系统就绪情况" vertex="1">
           <mxGeometry height="36" width="740" x="36" y="174" as="geometry" />
@@ -113,19 +113,19 @@
           <mxGeometry height="34" width="920" x="36" y="572" as="geometry" />
         </mxCell>
         <mxCell id="home-37" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="未开始新的参与者体验。" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="home-38" parent="1" style="rounded=1;arcSize=4;fillColor=#235E8D;strokeColor=#235E8D;fontColor=#FFFFFF;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="准备下一位" vertex="1">
-          <mxGeometry height="40" width="168" x="1092" y="670" as="geometry" />
+          <mxGeometry height="40" width="168" x="1076" y="670" as="geometry" />
         </mxCell>
         <mxCell id="home-39" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="查看实验记录" vertex="1">
-          <mxGeometry height="40" width="168" x="912" y="670" as="geometry" />
+          <mxGeometry height="40" width="168" x="896" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="prepare" name="02 准备与曲线预览">
-    <mxGraphModel dx="1127" dy="1079" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="822" dy="1473" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -133,10 +133,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="prepare-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="prepare-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="prepare-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -151,10 +151,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="prepare-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="prepare-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="prepare-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -190,19 +190,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="prepare-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="prepare-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="00:00" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="prepare-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="prepare-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="prepare-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="prepare-26" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="156" as="geometry" />
@@ -217,7 +217,7 @@
           <mxGeometry height="24" width="180" x="208" y="163" as="geometry" />
         </mxCell>
         <mxCell id="prepare-30" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="163" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="163" as="geometry" />
         </mxCell>
         <mxCell id="prepare-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
@@ -226,7 +226,7 @@
           <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="prepare-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="199" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
         </mxCell>
         <mxCell id="prepare-34" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="233" as="geometry" />
@@ -358,7 +358,7 @@
           <mxGeometry height="20" width="205" x="418" y="367" as="geometry" />
         </mxCell>
         <mxCell id="prepare-54" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="信号质量 92%" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="367" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="367" as="geometry" />
         </mxCell>
         <mxCell id="prepare-55" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="406" as="geometry" />
@@ -373,7 +373,7 @@
           <mxGeometry height="24" width="180" x="208" y="413" as="geometry" />
         </mxCell>
         <mxCell id="prepare-59" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="413" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="413" as="geometry" />
         </mxCell>
         <mxCell id="prepare-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
@@ -382,7 +382,7 @@
           <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="prepare-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="449" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
         </mxCell>
         <mxCell id="prepare-63" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="483" as="geometry" />
@@ -949,88 +949,88 @@
           <mxGeometry height="20" width="205" x="418" y="617" as="geometry" />
         </mxCell>
         <mxCell id="prepare-83" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="HR 68 bpm   RR 882 ms" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="617" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="617" as="geometry" />
         </mxCell>
         <mxCell id="prepare-84" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="484" width="1" x="875" y="156" as="geometry" />
+          <mxGeometry height="484" width="1" x="880" y="156" as="geometry" />
         </mxCell>
         <mxCell id="prepare-85" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="准备清单" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="156" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="156" as="geometry" />
         </mxCell>
         <mxCell id="prepare-86" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="192" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="192" as="geometry" />
         </mxCell>
         <mxCell id="prepare-87" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="分配信息" vertex="1">
-          <mxGeometry height="28" width="162" x="888" y="208" as="geometry" />
+          <mxGeometry height="28" width="154" x="896" y="208" as="geometry" />
         </mxCell>
         <mxCell id="prepare-88" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="P017 / B" vertex="1">
-          <mxGeometry height="28" width="190" x="1048" y="208" as="geometry" />
+          <mxGeometry height="28" width="196" x="1048" y="208" as="geometry" />
         </mxCell>
         <mxCell id="prepare-89" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="243" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="243" as="geometry" />
         </mxCell>
         <mxCell id="prepare-90" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="前测" vertex="1">
-          <mxGeometry height="28" width="162" x="888" y="253" as="geometry" />
+          <mxGeometry height="28" width="154" x="896" y="253" as="geometry" />
         </mxCell>
         <mxCell id="prepare-91" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已收到" vertex="1">
-          <mxGeometry height="28" width="190" x="1048" y="253" as="geometry" />
+          <mxGeometry height="28" width="196" x="1048" y="253" as="geometry" />
         </mxCell>
         <mxCell id="prepare-92" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="288" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="288" as="geometry" />
         </mxCell>
         <mxCell id="prepare-93" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="Python编排" vertex="1">
-          <mxGeometry height="28" width="162" x="888" y="298" as="geometry" />
+          <mxGeometry height="28" width="154" x="896" y="298" as="geometry" />
         </mxCell>
         <mxCell id="prepare-94" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已就绪" vertex="1">
-          <mxGeometry height="28" width="190" x="1048" y="298" as="geometry" />
+          <mxGeometry height="28" width="196" x="1048" y="298" as="geometry" />
         </mxCell>
         <mxCell id="prepare-95" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="333" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="333" as="geometry" />
         </mxCell>
         <mxCell id="prepare-96" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="Unity" vertex="1">
-          <mxGeometry height="28" width="162" x="888" y="343" as="geometry" />
+          <mxGeometry height="28" width="154" x="896" y="343" as="geometry" />
         </mxCell>
         <mxCell id="prepare-97" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#895300;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="等待就绪" vertex="1">
-          <mxGeometry height="28" width="190" x="1048" y="343" as="geometry" />
+          <mxGeometry height="28" width="196" x="1048" y="343" as="geometry" />
         </mxCell>
         <mxCell id="prepare-98" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="378" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="378" as="geometry" />
         </mxCell>
         <mxCell id="prepare-99" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="记录准备" vertex="1">
-          <mxGeometry height="28" width="162" x="888" y="388" as="geometry" />
+          <mxGeometry height="28" width="154" x="896" y="388" as="geometry" />
         </mxCell>
         <mxCell id="prepare-100" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已确认" vertex="1">
-          <mxGeometry height="28" width="190" x="1048" y="388" as="geometry" />
+          <mxGeometry height="28" width="196" x="1048" y="388" as="geometry" />
         </mxCell>
         <mxCell id="prepare-101" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="423" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="423" as="geometry" />
         </mxCell>
         <mxCell id="prepare-102" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 心电" vertex="1">
-          <mxGeometry height="28" width="162" x="888" y="433" as="geometry" />
+          <mxGeometry height="28" width="154" x="896" y="433" as="geometry" />
         </mxCell>
         <mxCell id="prepare-103" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="信号可用" vertex="1">
-          <mxGeometry height="28" width="190" x="1048" y="433" as="geometry" />
+          <mxGeometry height="28" width="196" x="1048" y="433" as="geometry" />
         </mxCell>
         <mxCell id="prepare-104" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="468" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="468" as="geometry" />
         </mxCell>
         <mxCell id="prepare-105" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#895300;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="尚缺：Unity就绪确认" vertex="1">
-          <mxGeometry height="36" width="350" x="888" y="502" as="geometry" />
+          <mxGeometry height="36" width="342" x="896" y="502" as="geometry" />
         </mxCell>
         <mxCell id="prepare-prepare-confirm" parent="1" style="rounded=1;arcSize=4;fillColor=#E9EDF2;strokeColor=#CCD5DF;fontColor=#56616F;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="确认准备" vertex="1">
-          <mxGeometry height="40" width="356" x="888" y="552" as="geometry" />
+          <mxGeometry height="40" width="348" x="896" y="552" as="geometry" />
         </mxCell>
         <mxCell id="prepare-107" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设备曲线为准备预览，不计入实验记录。" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="prepare-108" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="取消准备" vertex="1">
-          <mxGeometry height="40" width="140" x="1120" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="1104" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="waiting" name="03 等待Unity开始">
-    <mxGraphModel dx="1127" dy="1079" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="822" dy="1473" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1038,10 +1038,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="waiting-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="waiting-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="waiting-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -1056,10 +1056,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="waiting-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="waiting-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="waiting-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -1095,19 +1095,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="waiting-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="waiting-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="00:42" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="waiting-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="waiting-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="waiting-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="waiting-26" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="156" as="geometry" />
@@ -1122,7 +1122,7 @@
           <mxGeometry height="24" width="180" x="208" y="163" as="geometry" />
         </mxCell>
         <mxCell id="waiting-30" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="163" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="163" as="geometry" />
         </mxCell>
         <mxCell id="waiting-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
@@ -1131,7 +1131,7 @@
           <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="waiting-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="199" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
         </mxCell>
         <mxCell id="waiting-34" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="233" as="geometry" />
@@ -1263,7 +1263,7 @@
           <mxGeometry height="20" width="205" x="418" y="367" as="geometry" />
         </mxCell>
         <mxCell id="waiting-54" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="信号质量 92%" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="367" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="367" as="geometry" />
         </mxCell>
         <mxCell id="waiting-55" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="406" as="geometry" />
@@ -1278,7 +1278,7 @@
           <mxGeometry height="24" width="180" x="208" y="413" as="geometry" />
         </mxCell>
         <mxCell id="waiting-59" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="413" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="413" as="geometry" />
         </mxCell>
         <mxCell id="waiting-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
@@ -1287,7 +1287,7 @@
           <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="waiting-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="449" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
         </mxCell>
         <mxCell id="waiting-63" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="483" as="geometry" />
@@ -1854,61 +1854,61 @@
           <mxGeometry height="20" width="205" x="418" y="617" as="geometry" />
         </mxCell>
         <mxCell id="waiting-83" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="HR 68 bpm   RR 882 ms" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="617" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="617" as="geometry" />
         </mxCell>
         <mxCell id="waiting-84" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="484" width="1" x="875" y="156" as="geometry" />
+          <mxGeometry height="484" width="1" x="880" y="156" as="geometry" />
         </mxCell>
         <mxCell id="waiting-85" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="开始状态" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="156" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="156" as="geometry" />
         </mxCell>
         <mxCell id="waiting-86" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="192" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="192" as="geometry" />
         </mxCell>
         <mxCell id="waiting-87" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="1  准备确认" vertex="1">
-          <mxGeometry height="30" width="240" x="888" y="214" as="geometry" />
+          <mxGeometry height="30" width="232" x="896" y="214" as="geometry" />
         </mxCell>
         <mxCell id="waiting-88" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#176B42;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="已完成" vertex="1">
-          <mxGeometry height="28" width="340" x="888" y="248" as="geometry" />
+          <mxGeometry height="28" width="332" x="896" y="248" as="geometry" />
         </mxCell>
         <mxCell id="waiting-89" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="283" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="283" as="geometry" />
         </mxCell>
         <mxCell id="waiting-90" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="2  Unity开始" vertex="1">
-          <mxGeometry height="30" width="240" x="888" y="292" as="geometry" />
+          <mxGeometry height="30" width="232" x="896" y="292" as="geometry" />
         </mxCell>
         <mxCell id="waiting-91" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="尚未收到" vertex="1">
-          <mxGeometry height="28" width="340" x="888" y="326" as="geometry" />
+          <mxGeometry height="28" width="332" x="896" y="326" as="geometry" />
         </mxCell>
         <mxCell id="waiting-92" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="361" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="361" as="geometry" />
         </mxCell>
         <mxCell id="waiting-93" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="3  Python启动" vertex="1">
-          <mxGeometry height="30" width="240" x="888" y="370" as="geometry" />
+          <mxGeometry height="30" width="232" x="896" y="370" as="geometry" />
         </mxCell>
         <mxCell id="waiting-94" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="等待确认" vertex="1">
-          <mxGeometry height="28" width="340" x="888" y="404" as="geometry" />
+          <mxGeometry height="28" width="332" x="896" y="404" as="geometry" />
         </mxCell>
         <mxCell id="waiting-95" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="439" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="439" as="geometry" />
         </mxCell>
         <mxCell id="waiting-96" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=21;fontColor=#235E8D;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="正在等待Unity开始" vertex="1">
-          <mxGeometry height="42" width="350" x="888" y="488" as="geometry" />
+          <mxGeometry height="42" width="342" x="896" y="488" as="geometry" />
         </mxCell>
         <mxCell id="waiting-97" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="实验记录尚未开始" vertex="1">
-          <mxGeometry height="32" width="350" x="888" y="535" as="geometry" />
+          <mxGeometry height="32" width="342" x="896" y="535" as="geometry" />
         </mxCell>
         <mxCell id="waiting-98" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设备预览：持续接收 · 已记录实验数据：0条" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="waiting-99" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="取消准备" vertex="1">
-          <mxGeometry height="40" width="140" x="1120" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="1104" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="running" name="04 实验运行">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1916,10 +1916,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="running-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="running-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="running-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -1934,10 +1934,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="running-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="running-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="running-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -1973,19 +1973,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="running-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="running-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="05:24" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="running-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="running-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="running-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="running-26" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="156" as="geometry" />
@@ -2000,7 +2000,7 @@
           <mxGeometry height="24" width="180" x="208" y="163" as="geometry" />
         </mxCell>
         <mxCell id="running-30" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="163" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="163" as="geometry" />
         </mxCell>
         <mxCell id="running-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
@@ -2009,7 +2009,7 @@
           <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="running-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="199" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
         </mxCell>
         <mxCell id="running-34" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="233" as="geometry" />
@@ -2141,7 +2141,7 @@
           <mxGeometry height="20" width="205" x="418" y="367" as="geometry" />
         </mxCell>
         <mxCell id="running-54" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="信号质量 92%" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="367" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="367" as="geometry" />
         </mxCell>
         <mxCell id="running-55" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="406" as="geometry" />
@@ -2156,7 +2156,7 @@
           <mxGeometry height="24" width="180" x="208" y="413" as="geometry" />
         </mxCell>
         <mxCell id="running-59" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="413" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="413" as="geometry" />
         </mxCell>
         <mxCell id="running-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
@@ -2165,7 +2165,7 @@
           <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="running-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="449" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
         </mxCell>
         <mxCell id="running-63" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="483" as="geometry" />
@@ -2732,91 +2732,91 @@
           <mxGeometry height="20" width="205" x="418" y="617" as="geometry" />
         </mxCell>
         <mxCell id="running-83" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="HR 68 bpm   RR 882 ms" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="617" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="617" as="geometry" />
         </mxCell>
         <mxCell id="running-84" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="484" width="1" x="875" y="156" as="geometry" />
+          <mxGeometry height="484" width="1" x="880" y="156" as="geometry" />
         </mxCell>
         <mxCell id="running-85" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="当前流程" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="156" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="156" as="geometry" />
         </mxCell>
         <mxCell id="running-86" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="192" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="192" as="geometry" />
         </mxCell>
         <mxCell id="running-87" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="天气 / 位置" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="207" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="207" as="geometry" />
         </mxCell>
         <mxCell id="running-88" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="fade · 2 / 4" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="207" as="geometry" />
         </mxCell>
         <mxCell id="running-89" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="流程段" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="251" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="251" as="geometry" />
         </mxCell>
         <mxCell id="running-90" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="闭环段" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="251" as="geometry" />
         </mxCell>
         <mxCell id="running-91" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="当前步骤" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="295" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="295" as="geometry" />
         </mxCell>
         <mxCell id="running-92" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 · 6秒" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="295" as="geometry" />
         </mxCell>
         <mxCell id="running-93" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="引导与呼吸" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="338" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="338" as="geometry" />
         </mxCell>
         <mxCell id="running-94" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="374" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="374" as="geometry" />
         </mxCell>
         <mxCell id="running-95" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="基准节律 I" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="386" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="386" as="geometry" />
         </mxCell>
         <mxCell id="running-96" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 3.6 / 6秒" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="386" as="geometry" />
         </mxCell>
         <mxCell id="running-97" parent="1" style="rounded=0;arcSize=0;fillColor=#E9EDF2;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="356" x="888" y="419" as="geometry" />
+          <mxGeometry height="4" width="348" x="896" y="419" as="geometry" />
         </mxCell>
         <mxCell id="running-98" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="213.6" x="888" y="419" as="geometry" />
+          <mxGeometry height="4" width="205.6" x="896" y="419" as="geometry" />
         </mxCell>
         <mxCell id="running-99" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="当前引导 G" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="443" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="443" as="geometry" />
         </mxCell>
         <mxCell id="running-100" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 3.4 / 6秒" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="443" as="geometry" />
         </mxCell>
         <mxCell id="running-101" parent="1" style="rounded=0;arcSize=0;fillColor=#E9EDF2;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="356" x="888" y="476" as="geometry" />
+          <mxGeometry height="4" width="348" x="896" y="476" as="geometry" />
         </mxCell>
         <mxCell id="running-102" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="199.36" x="888" y="476" as="geometry" />
+          <mxGeometry height="4" width="191.36" x="896" y="476" as="geometry" />
         </mxCell>
         <mxCell id="running-103" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计 X" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="500" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="500" as="geometry" />
         </mxCell>
         <mxCell id="running-104" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="呼气" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="500" as="geometry" />
         </mxCell>
         <mxCell id="running-107" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计置信度 0.88" vertex="1">
-          <mxGeometry height="28" width="356" x="888" y="566" as="geometry" />
+          <mxGeometry height="28" width="348" x="896" y="566" as="geometry" />
         </mxCell>
         <mxCell id="running-108" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="fade步骤：主吸 / 补吸 / 长呼" vertex="1">
-          <mxGeometry height="28" width="356" x="888" y="606" as="geometry" />
+          <mxGeometry height="28" width="348" x="896" y="606" as="geometry" />
         </mxCell>
         <mxCell id="running-109" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="最近记录写入：0.1秒前 · 当前无待处理问题" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="running-110" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="暂停体验" vertex="1">
-          <mxGeometry height="40" width="140" x="1120" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="1104" y="670" as="geometry" />
         </mxCell>
         <mxCell id="running-111" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#A82A32;fontColor=#A82A32;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="中止本场" vertex="1">
-          <mxGeometry height="40" width="128" x="980" y="670" as="geometry" />
+          <mxGeometry height="40" width="128" x="964" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="paused" name="05 暂停保持记录">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2824,10 +2824,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="paused-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="paused-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="paused-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -2842,10 +2842,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="paused-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="paused-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="paused-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -2881,19 +2881,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="paused-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="paused-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="05:24" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="paused-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="paused-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="paused-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="paused-26" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="156" as="geometry" />
@@ -2908,7 +2908,7 @@
           <mxGeometry height="24" width="180" x="208" y="163" as="geometry" />
         </mxCell>
         <mxCell id="paused-30" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="163" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="163" as="geometry" />
         </mxCell>
         <mxCell id="paused-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
@@ -2917,7 +2917,7 @@
           <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="paused-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="199" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
         </mxCell>
         <mxCell id="paused-34" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="233" as="geometry" />
@@ -3049,7 +3049,7 @@
           <mxGeometry height="20" width="205" x="418" y="367" as="geometry" />
         </mxCell>
         <mxCell id="paused-54" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="信号质量 92%" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="367" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="367" as="geometry" />
         </mxCell>
         <mxCell id="paused-55" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="406" as="geometry" />
@@ -3064,7 +3064,7 @@
           <mxGeometry height="24" width="180" x="208" y="413" as="geometry" />
         </mxCell>
         <mxCell id="paused-59" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="413" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="413" as="geometry" />
         </mxCell>
         <mxCell id="paused-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
@@ -3073,7 +3073,7 @@
           <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="paused-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="449" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
         </mxCell>
         <mxCell id="paused-63" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="483" as="geometry" />
@@ -3640,91 +3640,91 @@
           <mxGeometry height="20" width="205" x="418" y="617" as="geometry" />
         </mxCell>
         <mxCell id="paused-83" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="HR 68 bpm   RR 882 ms" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="617" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="617" as="geometry" />
         </mxCell>
         <mxCell id="paused-84" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="484" width="1" x="875" y="156" as="geometry" />
+          <mxGeometry height="484" width="1" x="880" y="156" as="geometry" />
         </mxCell>
         <mxCell id="paused-85" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="当前流程" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="156" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="156" as="geometry" />
         </mxCell>
         <mxCell id="paused-86" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="192" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="192" as="geometry" />
         </mxCell>
         <mxCell id="paused-87" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="天气 / 位置" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="207" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="207" as="geometry" />
         </mxCell>
         <mxCell id="paused-88" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="fade · 2 / 4" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="207" as="geometry" />
         </mxCell>
         <mxCell id="paused-89" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="流程段" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="251" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="251" as="geometry" />
         </mxCell>
         <mxCell id="paused-90" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="闭环段" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="251" as="geometry" />
         </mxCell>
         <mxCell id="paused-91" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="当前步骤" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="295" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="295" as="geometry" />
         </mxCell>
         <mxCell id="paused-92" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 · 6秒" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="295" as="geometry" />
         </mxCell>
         <mxCell id="paused-93" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="引导与呼吸" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="338" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="338" as="geometry" />
         </mxCell>
         <mxCell id="paused-94" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="374" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="374" as="geometry" />
         </mxCell>
         <mxCell id="paused-95" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="基准节律 I" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="386" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="386" as="geometry" />
         </mxCell>
         <mxCell id="paused-96" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 3.6 / 6秒" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="386" as="geometry" />
         </mxCell>
         <mxCell id="paused-97" parent="1" style="rounded=0;arcSize=0;fillColor=#E9EDF2;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="356" x="888" y="419" as="geometry" />
+          <mxGeometry height="4" width="348" x="896" y="419" as="geometry" />
         </mxCell>
         <mxCell id="paused-98" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="213.6" x="888" y="419" as="geometry" />
+          <mxGeometry height="4" width="205.6" x="896" y="419" as="geometry" />
         </mxCell>
         <mxCell id="paused-99" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="当前引导 G" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="443" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="443" as="geometry" />
         </mxCell>
         <mxCell id="paused-100" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 3.4 / 6秒" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="443" as="geometry" />
         </mxCell>
         <mxCell id="paused-101" parent="1" style="rounded=0;arcSize=0;fillColor=#E9EDF2;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="356" x="888" y="476" as="geometry" />
+          <mxGeometry height="4" width="348" x="896" y="476" as="geometry" />
         </mxCell>
         <mxCell id="paused-102" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="199.36" x="888" y="476" as="geometry" />
+          <mxGeometry height="4" width="191.36" x="896" y="476" as="geometry" />
         </mxCell>
         <mxCell id="paused-103" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计 X" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="500" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="500" as="geometry" />
         </mxCell>
         <mxCell id="paused-104" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="呼气" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="500" as="geometry" />
         </mxCell>
         <mxCell id="paused-107" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计置信度 0.88" vertex="1">
-          <mxGeometry height="28" width="356" x="888" y="566" as="geometry" />
+          <mxGeometry height="28" width="348" x="896" y="566" as="geometry" />
         </mxCell>
         <mxCell id="paused-108" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#895300;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="有效计时冻结；数据仍在记录" vertex="1">
-          <mxGeometry height="30" width="356" x="888" y="606" as="geometry" />
+          <mxGeometry height="30" width="348" x="896" y="606" as="geometry" />
         </mxCell>
         <mxCell id="paused-109" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="已暂停 · 等待你的下一步操作。" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="paused-110" parent="1" style="rounded=1;arcSize=4;fillColor=#235E8D;strokeColor=#235E8D;fontColor=#FFFFFF;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="恢复体验" vertex="1">
-          <mxGeometry height="40" width="140" x="1120" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="1104" y="670" as="geometry" />
         </mxCell>
         <mxCell id="paused-111" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#A82A32;fontColor=#A82A32;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="中止本场" vertex="1">
-          <mxGeometry height="40" width="128" x="980" y="670" as="geometry" />
+          <mxGeometry height="40" width="128" x="964" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="closeout" name="06 收尾待办">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3732,10 +3732,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="closeout-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="closeout-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="closeout-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -3750,10 +3750,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="closeout-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="closeout-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="closeout-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -3789,19 +3789,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="closeout-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="closeout-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="13:34" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="closeout-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="closeout-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="closeout-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="closeout-26" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="P017 · 正常结束" vertex="1">
           <mxGeometry height="36" width="610" x="36" y="174" as="geometry" />
@@ -3861,19 +3861,19 @@
           <mxGeometry height="40" width="172" x="220" y="603" as="geometry" />
         </mxCell>
         <mxCell id="closeout-45" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="结束原因：流程正常完成 · 数据导出：未导出" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="closeout-46" parent="1" style="rounded=1;arcSize=4;fillColor=#E9EDF2;strokeColor=#CCD5DF;fontColor=#56616F;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="准备下一位" vertex="1">
-          <mxGeometry height="40" width="168" x="1092" y="670" as="geometry" />
+          <mxGeometry height="40" width="168" x="1076" y="670" as="geometry" />
         </mxCell>
         <mxCell id="closeout-47" parent="1" style="rounded=1;arcSize=4;fillColor=#E9EDF2;strokeColor=#CCD5DF;fontColor=#56616F;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="返回主页" vertex="1">
-          <mxGeometry height="40" width="140" x="940" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="924" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="history" name="07 历史选中记录">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3881,10 +3881,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="history-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="history-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="history-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -3899,10 +3899,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="history-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="history-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="history-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -3920,19 +3920,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="history-15" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="history-16" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="—" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="history-17" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="history-18" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="history-19" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="history-20" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="范围：2026-10-12 · 共3场" vertex="1">
           <mxGeometry height="32" width="788" x="36" y="163" as="geometry" />
@@ -4061,19 +4061,19 @@
           <mxGeometry height="30" width="650" x="508" y="568" as="geometry" />
         </mxCell>
         <mxCell id="history-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="选中：P015 · 记录已封存 · 已导出" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="history-63" parent="1" style="rounded=1;arcSize=4;fillColor=#235E8D;strokeColor=#235E8D;fontColor=#FFFFFF;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="导出选中场次" vertex="1">
-          <mxGeometry height="40" width="180" x="1080" y="670" as="geometry" />
+          <mxGeometry height="40" width="180" x="1064" y="670" as="geometry" />
         </mxCell>
         <mxCell id="history-64" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="返回实验" vertex="1">
-          <mxGeometry height="40" width="140" x="928" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="912" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="details" name="08 分组明细">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4081,10 +4081,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="details-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="details-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="details-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -4099,10 +4099,10 @@
           <mxGeometry height="3" width="80" x="474" y="45" as="geometry" />
         </mxCell>
         <mxCell id="details-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="details-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="details-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -4138,19 +4138,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="details-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="details-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="05:24" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="details-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="details-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="details-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="details-26" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=19;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="P017 · 当前运行快照" vertex="1">
           <mxGeometry height="32" width="1180" x="36" y="164" as="geometry" />
@@ -4258,16 +4258,16 @@
           <mxGeometry height="40" width="188" x="274" y="594" as="geometry" />
         </mxCell>
         <mxCell id="details-61" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="最后同步：14:35:24 · 当前运行快照" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="details-62" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="返回运行" vertex="1">
-          <mxGeometry height="40" width="140" x="1120" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="1104" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="closed" name="09 收尾完成">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4275,10 +4275,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="closed-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="closed-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="closed-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -4293,10 +4293,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="closed-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="closed-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="closed-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -4332,19 +4332,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="closed-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="closed-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="13:34" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="closed-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="closed-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="closed-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="closed-26" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="P017 · 正常结束" vertex="1">
           <mxGeometry height="36" width="610" x="36" y="174" as="geometry" />
@@ -4404,19 +4404,19 @@
           <mxGeometry height="40" width="172" x="220" y="603" as="geometry" />
         </mxCell>
         <mxCell id="closed-45" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="结束原因：流程正常完成 · 数据导出：未导出" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="closed-46" parent="1" style="rounded=1;arcSize=4;fillColor=#235E8D;strokeColor=#235E8D;fontColor=#FFFFFF;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="准备下一位" vertex="1">
-          <mxGeometry height="40" width="168" x="1092" y="670" as="geometry" />
+          <mxGeometry height="40" width="168" x="1076" y="670" as="geometry" />
         </mxCell>
         <mxCell id="closed-47" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="返回主页" vertex="1">
-          <mxGeometry height="40" width="140" x="940" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="924" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="unselected" name="10 历史未选择">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4424,10 +4424,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="unselected-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="unselected-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="unselected-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -4442,10 +4442,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="unselected-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="unselected-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="unselected-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -4463,19 +4463,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="unselected-15" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="unselected-16" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="—" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="unselected-17" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="unselected-18" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="unselected-19" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="unselected-20" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="范围：2026-10-12 · 共3场" vertex="1">
           <mxGeometry height="32" width="788" x="36" y="163" as="geometry" />
@@ -4601,19 +4601,19 @@
           <mxGeometry height="30" width="650" x="508" y="568" as="geometry" />
         </mxCell>
         <mxCell id="unselected-61" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="未选择场次 · 导出不可用" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="unselected-62" parent="1" style="rounded=1;arcSize=4;fillColor=#E9EDF2;strokeColor=#CCD5DF;fontColor=#56616F;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="导出选中场次" vertex="1">
-          <mxGeometry height="40" width="180" x="1080" y="670" as="geometry" />
+          <mxGeometry height="40" width="180" x="1064" y="670" as="geometry" />
         </mxCell>
         <mxCell id="unselected-63" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="返回实验" vertex="1">
-          <mxGeometry height="40" width="140" x="928" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="912" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="fault" name="11 断流与记录故障">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4621,10 +4621,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="fault-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="fault-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="fault-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -4639,10 +4639,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="fault-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="fault-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="fault-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -4678,19 +4678,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="fault-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="fault-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="05:24" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="fault-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="fault-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="fault-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="fault-26" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="156" as="geometry" />
@@ -4705,7 +4705,7 @@
           <mxGeometry height="24" width="180" x="208" y="163" as="geometry" />
         </mxCell>
         <mxCell id="fault-30" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#A82A32;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="连接未知 · 当前断流" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="163" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="163" as="geometry" />
         </mxCell>
         <mxCell id="fault-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
@@ -4714,7 +4714,7 @@
           <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="fault-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="199" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
         </mxCell>
         <mxCell id="fault-34" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="233" as="geometry" />
@@ -4834,7 +4834,7 @@
           <mxGeometry height="20" width="205" x="418" y="367" as="geometry" />
         </mxCell>
         <mxCell id="fault-57" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="信号质量 未知" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="367" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="367" as="geometry" />
         </mxCell>
         <mxCell id="fault-58" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="406" as="geometry" />
@@ -4849,7 +4849,7 @@
           <mxGeometry height="24" width="180" x="208" y="413" as="geometry" />
         </mxCell>
         <mxCell id="fault-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="413" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="413" as="geometry" />
         </mxCell>
         <mxCell id="fault-63" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
@@ -4858,7 +4858,7 @@
           <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="fault-65" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="449" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
         </mxCell>
         <mxCell id="fault-66" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="483" as="geometry" />
@@ -5425,88 +5425,88 @@
           <mxGeometry height="20" width="205" x="418" y="617" as="geometry" />
         </mxCell>
         <mxCell id="fault-86" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="HR 68 bpm   RR 882 ms" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="617" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="617" as="geometry" />
         </mxCell>
         <mxCell id="fault-87" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="484" width="1" x="875" y="156" as="geometry" />
+          <mxGeometry height="484" width="1" x="880" y="156" as="geometry" />
         </mxCell>
         <mxCell id="fault-88" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="最后流程" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="156" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="156" as="geometry" />
         </mxCell>
         <mxCell id="fault-89" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="192" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="192" as="geometry" />
         </mxCell>
         <mxCell id="fault-90" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="天气 / 位置" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="207" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="207" as="geometry" />
         </mxCell>
         <mxCell id="fault-91" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="fade · 2 / 4" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="207" as="geometry" />
         </mxCell>
         <mxCell id="fault-92" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="流程段" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="251" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="251" as="geometry" />
         </mxCell>
         <mxCell id="fault-93" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="闭环段" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="251" as="geometry" />
         </mxCell>
         <mxCell id="fault-94" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="当前步骤" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="295" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="295" as="geometry" />
         </mxCell>
         <mxCell id="fault-95" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 · 6秒" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="295" as="geometry" />
         </mxCell>
         <mxCell id="fault-96" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="引导与呼吸" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="338" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="338" as="geometry" />
         </mxCell>
         <mxCell id="fault-97" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="374" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="374" as="geometry" />
         </mxCell>
         <mxCell id="fault-98" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="基准节律 I" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="386" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="386" as="geometry" />
         </mxCell>
         <mxCell id="fault-99" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气（末次）" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="386" as="geometry" />
         </mxCell>
         <mxCell id="fault-100" parent="1" style="rounded=0;arcSize=0;fillColor=#E9EDF2;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="356" x="888" y="419" as="geometry" />
+          <mxGeometry height="4" width="348" x="896" y="419" as="geometry" />
         </mxCell>
         <mxCell id="fault-101" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="213.6" x="888" y="419" as="geometry" />
+          <mxGeometry height="4" width="205.6" x="896" y="419" as="geometry" />
         </mxCell>
         <mxCell id="fault-102" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="当前引导 G" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="443" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="443" as="geometry" />
         </mxCell>
         <mxCell id="fault-103" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气（末次）" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="443" as="geometry" />
         </mxCell>
         <mxCell id="fault-104" parent="1" style="rounded=0;arcSize=0;fillColor=#E9EDF2;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="356" x="888" y="476" as="geometry" />
+          <mxGeometry height="4" width="348" x="896" y="476" as="geometry" />
         </mxCell>
         <mxCell id="fault-105" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="199.36" x="888" y="476" as="geometry" />
+          <mxGeometry height="4" width="191.36" x="896" y="476" as="geometry" />
         </mxCell>
         <mxCell id="fault-106" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计 X" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="500" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="500" as="geometry" />
         </mxCell>
         <mxCell id="fault-107" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="不可判定" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="500" as="geometry" />
         </mxCell>
         <mxCell id="fault-109" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#A82A32;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="估计不可用 · 等待有效呼吸输入" vertex="1">
-          <mxGeometry height="28" width="356" x="888" y="566" as="geometry" />
+          <mxGeometry height="28" width="348" x="896" y="566" as="geometry" />
         </mxCell>
         <mxCell id="fault-110" parent="1" style="rounded=0;arcSize=0;fillColor=#FBEAEC;strokeColor=none;fontColor=#A82A32;fontSize=14;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="写入失败 · 正常控制已停止" vertex="1">
-          <mxGeometry height="35" width="356" x="888" y="603" as="geometry" />
+          <mxGeometry height="35" width="348" x="896" y="603" as="geometry" />
         </mxCell>
         <mxCell id="fault-111" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸距今9.9秒；冻结末次波形，不补线、不填零。" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="fault-112" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="查看记录错误" vertex="1">
-          <mxGeometry height="40" width="168" x="1092" y="670" as="geometry" />
+          <mxGeometry height="40" width="168" x="1076" y="670" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="abort" name="12 中止确认">
-    <mxGraphModel dx="1327" dy="1271" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5514,10 +5514,10 @@
           <mxGeometry height="720" width="1280" as="geometry" />
         </mxCell>
         <mxCell id="abort-2" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="48" width="1280" as="geometry" />
+          <mxGeometry height="48" width="1240" x="20" as="geometry" />
         </mxCell>
         <mxCell id="abort-3" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="设计示例 · 合成数据" vertex="1">
-          <mxGeometry height="28" width="190" x="24" y="10" as="geometry" />
+          <mxGeometry height="28" width="190" x="36" y="10" as="geometry" />
         </mxCell>
         <mxCell id="abort-4" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#235E8D;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" value="实验" vertex="1">
           <mxGeometry height="28" width="80" x="244" y="10" as="geometry" />
@@ -5532,10 +5532,10 @@
           <mxGeometry height="28" width="80" x="474" y="10" as="geometry" />
         </mxCell>
         <mxCell id="abort-8" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="开发演练" vertex="1">
-          <mxGeometry height="28" width="160" x="1094" y="10" as="geometry" />
+          <mxGeometry height="28" width="160" x="1084" y="10" as="geometry" />
         </mxCell>
         <mxCell id="abort-9" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="48" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="48" as="geometry" />
         </mxCell>
         <mxCell id="abort-10" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="76" width="1240" x="20" y="64" as="geometry" />
@@ -5571,19 +5571,19 @@
           <mxGeometry height="28" width="112" x="950" y="98" as="geometry" />
         </mxCell>
         <mxCell id="abort-21" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="总历时" vertex="1">
-          <mxGeometry height="24" width="112" x="1120" y="72" as="geometry" />
+          <mxGeometry height="24" width="112" x="1132" y="72" as="geometry" />
         </mxCell>
         <mxCell id="abort-22" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="05:24" vertex="1">
-          <mxGeometry height="28" width="112" x="1120" y="98" as="geometry" />
+          <mxGeometry height="28" width="112" x="1132" y="98" as="geometry" />
         </mxCell>
         <mxCell id="abort-23" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="2" width="1240" x="20" y="138" as="geometry" />
         </mxCell>
         <mxCell id="abort-24" parent="1" style="rounded=0;arcSize=0;fillColor=#FFFFFF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="60" width="1280" y="660" as="geometry" />
+          <mxGeometry height="60" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="abort-25" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="1280" y="660" as="geometry" />
+          <mxGeometry height="1" width="1240" x="20" y="660" as="geometry" />
         </mxCell>
         <mxCell id="abort-26" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="156" as="geometry" />
@@ -5598,7 +5598,7 @@
           <mxGeometry height="24" width="180" x="208" y="163" as="geometry" />
         </mxCell>
         <mxCell id="abort-30" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="163" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="163" as="geometry" />
         </mxCell>
         <mxCell id="abort-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
@@ -5607,7 +5607,7 @@
           <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="abort-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="199" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
         </mxCell>
         <mxCell id="abort-34" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="233" as="geometry" />
@@ -5739,7 +5739,7 @@
           <mxGeometry height="20" width="205" x="418" y="367" as="geometry" />
         </mxCell>
         <mxCell id="abort-54" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="信号质量 92%" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="367" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="367" as="geometry" />
         </mxCell>
         <mxCell id="abort-55" parent="1" style="rounded=1;arcSize=3;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="234" width="840" x="20" y="406" as="geometry" />
@@ -5754,7 +5754,7 @@
           <mxGeometry height="24" width="180" x="208" y="413" as="geometry" />
         </mxCell>
         <mxCell id="abort-59" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#176B42;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="已连接 · 信号可用" vertex="1">
-          <mxGeometry height="24" width="270" x="570" y="413" as="geometry" />
+          <mxGeometry height="24" width="274" x="570" y="413" as="geometry" />
         </mxCell>
         <mxCell id="abort-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
@@ -5763,7 +5763,7 @@
           <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="abort-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
-          <mxGeometry height="26" width="114" x="726" y="449" as="geometry" />
+          <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
         </mxCell>
         <mxCell id="abort-63" parent="1" style="rounded=0;arcSize=0;fillColor=#E1E7ED;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="1" width="756" x="82" y="483" as="geometry" />
@@ -6330,85 +6330,85 @@
           <mxGeometry height="20" width="205" x="418" y="617" as="geometry" />
         </mxCell>
         <mxCell id="abort-83" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="HR 68 bpm   RR 882 ms" vertex="1">
-          <mxGeometry height="20" width="200" x="638" y="617" as="geometry" />
+          <mxGeometry height="20" width="206" x="638" y="617" as="geometry" />
         </mxCell>
         <mxCell id="abort-84" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="484" width="1" x="875" y="156" as="geometry" />
+          <mxGeometry height="484" width="1" x="880" y="156" as="geometry" />
         </mxCell>
         <mxCell id="abort-85" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="当前流程" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="156" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="156" as="geometry" />
         </mxCell>
         <mxCell id="abort-86" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="192" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="192" as="geometry" />
         </mxCell>
         <mxCell id="abort-87" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="天气 / 位置" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="207" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="207" as="geometry" />
         </mxCell>
         <mxCell id="abort-88" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="fade · 2 / 4" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="207" as="geometry" />
         </mxCell>
         <mxCell id="abort-89" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="流程段" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="251" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="251" as="geometry" />
         </mxCell>
         <mxCell id="abort-90" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="闭环段" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="251" as="geometry" />
         </mxCell>
         <mxCell id="abort-91" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="当前步骤" vertex="1">
-          <mxGeometry height="28" width="158" x="888" y="295" as="geometry" />
+          <mxGeometry height="28" width="150" x="896" y="295" as="geometry" />
         </mxCell>
         <mxCell id="abort-92" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=17;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 · 6秒" vertex="1">
           <mxGeometry height="28" width="204" x="1040" y="295" as="geometry" />
         </mxCell>
         <mxCell id="abort-93" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="引导与呼吸" vertex="1">
-          <mxGeometry height="32" width="356" x="888" y="338" as="geometry" />
+          <mxGeometry height="32" width="348" x="896" y="338" as="geometry" />
         </mxCell>
         <mxCell id="abort-94" parent="1" style="rounded=0;arcSize=0;fillColor=#CCD5DF;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="1" width="356" x="888" y="374" as="geometry" />
+          <mxGeometry height="1" width="348" x="896" y="374" as="geometry" />
         </mxCell>
         <mxCell id="abort-95" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="基准节律 I" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="386" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="386" as="geometry" />
         </mxCell>
         <mxCell id="abort-96" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 3.6 / 6秒" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="386" as="geometry" />
         </mxCell>
         <mxCell id="abort-97" parent="1" style="rounded=0;arcSize=0;fillColor=#E9EDF2;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="356" x="888" y="419" as="geometry" />
+          <mxGeometry height="4" width="348" x="896" y="419" as="geometry" />
         </mxCell>
         <mxCell id="abort-98" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="213.6" x="888" y="419" as="geometry" />
+          <mxGeometry height="4" width="205.6" x="896" y="419" as="geometry" />
         </mxCell>
         <mxCell id="abort-99" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="当前引导 G" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="443" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="443" as="geometry" />
         </mxCell>
         <mxCell id="abort-100" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="长呼气 3.4 / 6秒" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="443" as="geometry" />
         </mxCell>
         <mxCell id="abort-101" parent="1" style="rounded=0;arcSize=0;fillColor=#E9EDF2;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="356" x="888" y="476" as="geometry" />
+          <mxGeometry height="4" width="348" x="896" y="476" as="geometry" />
         </mxCell>
         <mxCell id="abort-102" parent="1" style="rounded=0;arcSize=0;fillColor=#235E8D;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
-          <mxGeometry height="4" width="199.36" x="888" y="476" as="geometry" />
+          <mxGeometry height="4" width="191.36" x="896" y="476" as="geometry" />
         </mxCell>
         <mxCell id="abort-103" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#202832;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计 X" vertex="1">
-          <mxGeometry height="26" width="145" x="888" y="500" as="geometry" />
+          <mxGeometry height="26" width="137" x="896" y="500" as="geometry" />
         </mxCell>
         <mxCell id="abort-104" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="呼气" vertex="1">
           <mxGeometry height="26" width="196" x="1048" y="500" as="geometry" />
         </mxCell>
         <mxCell id="abort-107" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="呼吸估计置信度 0.88" vertex="1">
-          <mxGeometry height="28" width="356" x="888" y="566" as="geometry" />
+          <mxGeometry height="28" width="348" x="896" y="566" as="geometry" />
         </mxCell>
         <mxCell id="abort-108" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="fade步骤：主吸 / 补吸 / 长呼" vertex="1">
-          <mxGeometry height="28" width="356" x="888" y="606" as="geometry" />
+          <mxGeometry height="28" width="348" x="896" y="606" as="geometry" />
         </mxCell>
         <mxCell id="abort-109" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="最近记录写入：0.1秒前 · 当前无待处理问题" vertex="1">
-          <mxGeometry height="30" width="720" x="28" y="674" as="geometry" />
+          <mxGeometry height="30" width="720" x="36" y="674" as="geometry" />
         </mxCell>
         <mxCell id="abort-110" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#CCD5DF;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="暂停体验" vertex="1">
-          <mxGeometry height="40" width="140" x="1120" y="670" as="geometry" />
+          <mxGeometry height="40" width="140" x="1104" y="670" as="geometry" />
         </mxCell>
         <mxCell id="abort-111" parent="1" style="rounded=1;arcSize=4;fillColor=#FFFFFF;strokeColor=#A82A32;fontColor=#A82A32;fontSize=16;fontFamily=Microsoft YaHei;align=center;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="中止本场" vertex="1">
-          <mxGeometry height="40" width="128" x="980" y="670" as="geometry" />
+          <mxGeometry height="40" width="128" x="964" y="670" as="geometry" />
         </mxCell>
         <mxCell id="abort-overlay" parent="1" style="rounded=0;arcSize=0;fillColor=#F2F5F8;strokeColor=none;fontColor=#202832;fontSize=16;fontFamily=Microsoft YaHei;align=left;verticalAlign=middle;whiteSpace=wrap;html=0;spacingLeft=12;spacingRight=12;" value="" vertex="1">
           <mxGeometry height="672" width="1280" y="48" as="geometry" />
