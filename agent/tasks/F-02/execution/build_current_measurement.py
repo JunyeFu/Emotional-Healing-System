@@ -90,11 +90,15 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
-    text = build_text()
+    # The legacy renderer above documents the former protocol scope.
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3] / 'tools'))
+    from refresh_f02_measurement import render_current
+    text = render_current()
     if args.check:
         if OUTPUT.read_text(encoding='utf-8') != text:
             raise ValueError('F-02 current usage entry is outdated; regenerate it')
-        print('PASS: F-02 usage matches adopted authority and SAP')
+        print('PASS: F-02 current handoff matches approved design task; empirical validation separate')
     else:
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT.write_text(text, encoding='utf-8')

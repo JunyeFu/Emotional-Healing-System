@@ -1,5 +1,7 @@
 # SRP 当前运行入口
 
+> 当前任务范围已迁移至[固定A对受限适应B基线](../design/design-foundation-20261008/README.md)，原注册状态与签收仅覆盖原范围；运行代码/API及真实研究冻结尚未由本轮完成。
+
 本页组织已有运行权威，不新增启动器或宣称正式系统已经就绪。当前工作目录为`D:\Agent\srp`；共享工程已迁入`agent/modules/`，其余根目录迁移进度以[root-layout.json](../root-layout.json)为准。
 
 ## Python

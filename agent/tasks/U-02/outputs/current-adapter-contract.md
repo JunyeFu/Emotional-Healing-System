@@ -1,28 +1,48 @@
-# U-02 当前四层适配与降级说明
+# U-02 当前交接：固定与原生自适应呈现适配
 
-## 范围与权威
 
-原任务DONE，真实签收仅覆盖原候选。当前补丁另行记录，不把旧签名转移。Runtime位于Assets/Scripts/V03，Target/Actual/Recovery/Fallback通过独立只读投影应用；BackgroundPass只有段换场钩子，不持有呼吸节律。
 
-P-01拥有顺序、时间与会话权威。U-01网络入口校验外部合同、会话身份和陈旧帧；V03FrameValidator负责本包投影语义，不替代完整F-05网络门。真实IV03TelemetrySource接入及渲染确认仍由下游装配。降级接口NotifyLinkDown不构造成功帧、不推进研究流程。
+- A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出
+- B数据驱动场景原生受限适应，合法边界调整G后趋向共同I
+- I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功
+- PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界
+- 理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收
+- 五人半个月100+用于后续可行性，各阶段人数分别计数
+- 原生、自适应已有先例；贡献为待验证整包权衡和有限设计知识
+- 当前任务包新要求优先，原签收/领取输入及候选身份保持原范围
 
-## 本轮契约修复
+本包处理：固定与原生自适应呈现适配。类型：REVISE_FOR_NEW_BASELINE。既有依赖：F-03、F-05、V-03；依赖的历史DONE不能证明新范围已交接。领取人 `Codex(Grip)/小彬`，复核人 `傅钧烨（团队总监，真实团队第二人复核）`，原预计3人日仅历史估算，新范围成本待承接者评估。
 
-- Recovery在同模块保持锁定，包括closed_loop到lock_transition；只有SessionId、ModuleId或ModulePosition变化才开始新累计生命周期。背景段钩子独立执行，不与累计重置混用。
-- 四天气phase=none、progress=0、cycle/step均null为合法空步骤；有相位却无实例仍拒绝。v2.2版本与缺字段检查留在网络边界，不以模块名排斥合同合法空状态。
-- DevTools驱动整体以UNITY_EDITOR或DEVELOPMENT_BUILD条件编译；非开发Player不包含StubSource。Editor构建器通过F03BuildAuthorization.Begin申请受控开发构建，退出恢复原环境与四项屏幕设置；正式门不放宽。
-- 演示通过Camera.targetTexture和RenderPipeline.StandardRequest显式渲染只读状态面板，ReadPixels读取实际离屏纹理，避免隐藏窗口屏幕截图和自动渲染的黑帧；保存成功才增加计数。主机对120帧逐一检查尺寸、像素极差和标准差，再由人工检查五阶段文字与状态；ffprobe验证编码后的120帧。
+## 交付与验收
 
-## 当前命令与证据
+- 固定与原生自适应呈现适配修订交接
+- A/B信息载体表
+- 信号不可用故事板
 
-在D:/Agent/srp执行py -3.14 agent/tasks/U-02/execution/verify.py，或verify.ps1。105项EditMode中88项为U-02专项、17项为F-03/U-01联测；另3项PlayMode为U-01。参数输入采用既有规范化UTF-8/LF哈希，不能把Windows CRLF字节差异当设计变化。
+- [ ] AC1 A关闭Actual及本人数据驱动累计、色彩、音轨和奖励
+- [ ] AC2 B分辨G提示与X响应，质量失效停止适应及成功累计
+- [ ] AC3 已有双环接口保留工程身份，不代表A必须显示双环
 
-generate_demo.ps1消费本机Unity 6000.4.9f1及agent/local/tools/ffmpeg/9.0.1。新素材在evidence/runtime/demo；开发EXE只在agent/local/artifacts。历史127文件在archive/evidence-v1保持Git提交原字节；旧视频不代表本轮补丁后的运行。
+必需证据：A/B信息载体表；信号不可用故事板；输入隔离验收清单。
 
-截图依据[Unity 6.4 RenderTexture](https://docs.unity3d.com/6000.4/Documentation/ScriptReference/RenderTexture.html)、[ReadPixels](https://docs.unity3d.com/6000.4/Documentation/ScriptReference/Texture2D.ReadPixels.html)及[URP显式渲染请求](https://docs.unity3d.com/cn/6000.0/Manual/urp/User-Render-Requests.html)，读取的是Unity实际UI渲染，不是主机重绘的替代图。
+新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。
 
-## 交接与未完成范围
+## 执行顺序与当前验证边界
 
-本包只有逻辑参数与技术演示，不是四天气最终渲染。V-04当前固定镜头及美术机制由V-05/U-03接入；旧参数候选不自动等于最终天气视觉。U-01的ConfirmRendered需要适配器实际完成对应帧；本包没有伪造该联调已完成。
+1. 核对[设计修订记录](design-revision.json)、[基石主稿](../../../design/design-foundation-20261008/01-design.pdf)及上游新范围；明确待冻结项。
+2. 完成本包专项设计/候选修订，在原权威路径工作；需修改接口或正式协议时先由对应合同与冻结任务承接，不以文档刷新替代批准。
+3. 执行与新范围对应的真实验证，保留未通过项。原execution/verify.ps1仍只核查旧实现范围，其通过不证明新控制、测量或研究完成。任务体系内容检查使用agent/tools/verify_task_design_baseline.py。
+4. 同步当前输出和证据，再生成human/tasks/U-02/summary.tex及PDF；取得真实复核后才按治理流程改变业务状态。
 
-真实设备链、完整800秒旅程、两条件体验匹配、正式构建与研究准入继续由各自下游验收。新代码由独立Agent复核后保留待补丁真人审阅，不新增或代填傅钧烨签收。
+## 输入、历史与交接
+
+inputs/sources.json列出当前设计来源；领取中原input_snapshot_id及候选身份保留，新增要求通过分发补充和影响记录交接，不静默替换领取输入。旧TASK与总结见archive/pre-design-baseline-20261008，原审核信息和实际代码证据保留原时间/范围。大型工程以项目工作目录引用，不复制缓存。
+
+本文件历史正文：[原范围记录](../archive/pre-design-baseline-20261008/current-adapter-contract.md)。历史运行与候选事实仍可查，但不得以旧同反馈要求驱动新设计。
+
+
+<!-- ODES-20261008 -->
+
+操作级设计已交付；本包具体责任见[专项交接](operational-design-handoff.md)，真实运行与复核仍待执行。
+
+NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：presentation_latency、cumulative_rule；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。

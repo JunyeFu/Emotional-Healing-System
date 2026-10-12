@@ -13,6 +13,25 @@
     "agent/modules/srp_session_store/README.md",
     "agent/validation/F-05_第二人审核报告_已签署.md",
     "agent/validation/F-05_集成签收确认_傅钧烨_2026-09-01.md",
-    "agent/validation/evidence/F-05"
-  ]
+    "agent/validation/evidence/F-05",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/design/design-foundation-20261008/05-control-spec.tex",
+    "agent/design/design-foundation-20261008/05-control-spec.pdf",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+    "agent/design/design-foundation-20261008/operational-design.json"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008"
 }

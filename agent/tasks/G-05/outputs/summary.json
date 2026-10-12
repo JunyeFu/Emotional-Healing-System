@@ -1,8 +1,8 @@
 {
   "task_id": "G-05",
-  "title": "G05 外部准入与正式机器交接审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "G-05仍WAIT_DEP_EXTERNAL、未领取未签收。五份过期包/手册原件实际归档，当前准入与专机入口订正；28项专项通过，本机六项仍失败，十三项外部资格均待真实证据。",
+  "title": "G-05 新研究用途外部准入 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "G-05注册状态WAIT_DEP_EXTERNAL仅保留原范围。当前任务更新为新研究用途外部准入；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未签收",
     "date": "无",
@@ -13,75 +13,84 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "依赖G-01/G-02，约5人日项目内工作，外部等待另计。材料/软件DONE不证明实际资格；机构、量表、保留期限、人员和两周现场仍缺。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1真实机构、M-001及角色培训签署；AC2正式专机全部适用检查和恢复通过、当前许可清零；AC3两周真实漏斗/故障/恢复和U8 PASS或NO_GO对应活动资格。",
-        "五段过程为责任范围、外部回执、专机资产、实地U8、另一人复核交接；需真实机构/数据/许可/现场责任人，TASK附国内研究方法、数据安全和Git资料。"
+        "AC1 取得适应流程、两设备数据用途与退出的真实批准",
+        "AC2 正式专机配置与已修协议一致，不以旧批文自动覆盖",
+        "AC3 无真实准入不采集，原外部阻塞保持"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "TASK与固定五目录、13项当前来源、机器/活动说明、真实缺口字段及23项新检查建立。旧第58号三文件和两专机手册逐字节实际归档，原位置改当前导航。",
-        "当前入口去除旧绝对目录、早期整体硬门与固定六行误解；软件合同、资格矩阵、旧签署、资产台账和领取快照保持。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "新研究用途外部准入修订交接",
+        "新旧用途差异",
+        "真实准入清单",
+        "ODES-20261008设计交付：区分前置活动批准与正式研究准入，旧批准不自动覆盖新用途；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "早期静态/回放按U12-05实际批准范围执行，不扩大到真机研究。六类专机配置会展开多项检查，全部适用项通过才有软件门PASS，仍需真实专机与另一人见证。",
-        "凭据创建仅获批后人工执行，本轮不调用、不写密钥/ACL/期限；APPROVED字符串不能替代机构批准。实验使用、论文展示、再分发各有用途许可。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：新研究用途外部准入"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "28项专项通过：23项新来源/归档/活动负测与5项既有环境测试。13项缺失资格分别被现有校验器拒绝，导航和五原件字节通过；治理升级校验通过。",
-        "本机只读formal_ready=false，治理根、备份根、密封证据、管理员、凭据与期限六项失败；没有正式配置或现场活动。初次脚本未建evidence，修复后结果成功保存；根/分发结果见regression.json。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "旧G-05/专机说明不再执行，原件供历史解释；Z-01当前225项/269资产阻断不能被旧三组报告覆盖。角色编号不算真实人选，G-01历史528/112不作当前N。",
-        "现有G-05整体DONE规则要求13项含可选阶段三资格，核心路线按活动准入的收尾仍需治理任务裁定。不伪造阶段三资格、不擅改全包规则。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：新旧用途差异；真实准入清单；专机配置要求"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "任务根只有TASK和五目录，历史原件不复制成当前执行版本；共享原路径导航保留消费者，原manifest明确仅历史导航。Word从Agent事实生成。",
-        "五活动包映射未引用本轮迁移材料，冻结身份未更新；共享治理代码和机构原件仍待整体迁移，规范化不重绘业务SVG。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "G-01供当前材料、G-02供治理门，U12-05供早期批准；G-05取得真人回执、正式机器、用途许可和现场吞吐，不能由Agent材料或总监单签代替。",
-        "U-08/I-01/Z-01消费真实环境/资产；G-03/G-04及U12-11按对应活动冻结，W-03审公开。核心与可选阶段三分开报告，13项全包规则与核心闭环问题保留待裁定。"
+        "原依赖：G-01、G-02；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：新旧用途差异；真实准入清单；专机配置要求"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "注册明确未领取、未指定；本轮不代填负责人、机构批准或PASS。已有G-01/G-02批准只成立于其原材料/软件范围。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态WAIT_DEP_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "注册、责任迁移、13项资格/证据合同、现有校验器、G-01/G-02/Z-01当前交接及本机只读环境报告。无新机构联系、招募、真实采集或新独立Agent/真人签署。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -109,6 +118,11 @@
       "status": "OPEN_GLOBAL_DONE_VS_OPTIONAL_STAGE3",
       "description": "现有整体DONE要求13项含阶段三，核心按活动准入的关闭规则仍须治理裁定，未伪造资格或修改门",
       "source": "agent/tasks/G-05/outputs/current-admission.md"
+    },
+    {
+      "id": "G-05-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "新研究用途外部准入；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -132,6 +146,78 @@
     {
       "label": "消费者影响",
       "path": "agent/tasks/G-05/evidence/consumer-impact.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/G-05/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "G-05仍WAIT_DEP_EXTERNAL、未领取未签收。五份过期包/手册原件实际归档，当前准入与专机入口订正；28项专项通过，本机六项仍失败，十三项外部资格均待真实证据。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
 }

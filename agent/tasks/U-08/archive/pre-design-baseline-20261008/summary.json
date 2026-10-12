@@ -1,0 +1,159 @@
+{
+  "task_id": "U-08",
+  "title": "U08 视听性能与可访问性成品现状审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "U-08注册状态仍为WAIT_DEP。集成2022四天气八呈现；预算覆盖圆芯/外围数量和运动、Storm闪电、遮挡与分辨率缩放；默认关闭测试面板。本次完成全文、成员视频截图及人类审阅文档更新；共享2022工程和新实现的运行验收仍按任务要求取得。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "本轮Codex审阅源码和实际设计，移出弃用Editor菜单并复跑共享程序集；没有新制品或目标设备验收，不代填负责人及真人签收。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包依赖G-02、U-03、U-04、U-05、U-06、U-07；成员画面更新不改变领取、复核与真实签收责任。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "交付统一视听、分辨率及必要字幕，颜色非唯一与对比度审计，低运动/静音路径、性能预算、Windows候选、无TD手册及许可报告。AC1完整独立旅程；AC2目标设备性能与运动闪烁；AC3可访问路径和许可失败关闭。",
+        "五适配器为四个原生天气加共享抽象，不是第五天气；至少八种天气/条件呈现、48条顺序/条件轨迹。800秒仅为核心，教学及测量在外。五天步骤和国内Unity、测试、Profiler资料在TASK.md。"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "任务正文、当前交接、结构化规则和来源已同步实施标准；共5张成员原视频帧通过本包索引读取。原测试、签收和历史媒体保持原范围。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "圆芯承载步骤进度；外围流动、摆动和缩放延迟仅作装饰。内圈独立输入，保持与下一步骤从当前大小接续；Fade实际缺补吸可直接呼气，目标计划不删除第二吸。",
+        "两个旧Build Scene工具全量重导入Point/32PPU素材，清空StormScene并生成旅人、防护罩、分段背景和旧Scene1Director；无BuildPlayer。确认活动类名/GUID无消费者后归档，保留历史扫描和框架原文。",
+        "默认构建列表只启用SampleScene，F-03显式Development和V03 Stub演示不替代完整制品。FormalBuildGate仍检查资产、四场景及FormalRuntimeController；最终实际控制装配、场景清单和门对齐尚待完成，不以删除或放宽门发布。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "本次文档同步已通过113项相关专项、71条注册表、5个分发包64份输入快照及当前V-02/V-03合同核查。两视频帧已查看，相关图文在Word/PDF渲染后检查；这不替代2022工程测试。",
+        "此前软件测试和原签收保持原时间与范围，新实现没有在本轮独立运行Unity。截图不用于断言接口逻辑、具体粒子参数或其他天气完整验收。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "第二段视频底部可见引用脚本缺失警告，已保留并登记；F-03/U-01/U-08/Z-01接收源场景后定位。截图更新不将该问题标记为已修复。",
+        "旧生产菜单名称与实际功能不符，已实际移出编译目录。旧视觉预算中的卷轴及三个视差带不再执行；当前消费固定镜头和局部提示，原签署不回写。研究U4可访问门不等于U-04，五适配器不等于仅验五个场景。",
+        "上游性能验收需要U-08预算，本包整体又依赖上游；当前交接采用规格先行，不改注册表依赖。目标设备、正式范围、真实双条件、低运动/静音、Profiler、构建和许可清零仍未完成，null不表示通过。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "修改权威仍为agent/tasks与共享工程；本包新增current-implementation-evidence.md，读取human/assets/previews/2026-10-08/member-storm-particle-rings中的5张共同原帧。",
+        "summary.json与summary.tex及PDF按同一内容生成。进行中/复核输入保留；V-05未领取包刷新，旧签收与历史媒体不覆盖。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "集成2022四天气八呈现；预算覆盖圆芯/外围数量和运动、Storm闪电、遮挡与分辨率缩放；默认关闭测试面板。",
+        "U-03先给fade双条件模板，U-04至U-06给三个明确天气，U-07给四结构抽象配置；当前A/B/C尚未分配。U-08先给目标设备和预算规格，再按真实结果完成整合；不会要求整体DONE才给规格。",
+        "formal_frozen会话前冻结且参与者不调参，demo_accessible仅启动前减运动/静音且不形成正式证据。两条件同背景、声音和累计，fade整屏复色随有效时间，暂停冻结视觉及音轨并从冻结位置恢复；不新增核心阶段条件特有文字。",
+        "成品交I-01/Z-01，G-02提供发布许可门、G-05取得真实外部关闭；D/S/I承担真实设备联调。实际许可、U4、Windows候选和无TD运行须分别留证，不将共享回归或开发EXE转为正式活动准入。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "U-08没有历史真人签署，实际实施和复核人员仍未落实。Agent2026年9月规范化时只负责规范化、清理及自动验证；业务WAIT_DEP保持，后续真实制品和目标设备证据由领取人提交复核签收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "本次完成本包文字、画面材料及人类审阅版本更新；任务状态和实际签收不变。下一执行门是接收成员源工程和具体参数，按2022目标完成迁移、编译及本包验收。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "用户交付说明及以其实现为标准的决定；两段视频直接抽帧；本包TASK、当前交接、统一标准与原签收/验证文件。截图区分可见外观、成员报告及需工程测试的事实。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "U08-N01",
+      "status": "FIXED_LEGACY_SCENE_BUILD_MENUS",
+      "description": "两个无引用旧场景重建菜单及meta原文归档，不再与Windows成品构建混淆，共享回归通过",
+      "source": "agent/tasks/U-08/archive/README.md"
+    },
+    {
+      "id": "U08-N02",
+      "status": "OPEN_TARGET_BUDGET_FREEZE",
+      "description": "提供上游先行规格字段和交接顺序，但真实目标设备及性能阈值尚未冻结，null不表示通过",
+      "source": "agent/tasks/U-08/outputs/current-product.json"
+    },
+    {
+      "id": "U08-N03",
+      "status": "CLARIFIED_EIGHT_CASES_AND_RESEARCH_U4",
+      "description": "五适配器须覆盖四天气双条件八呈现、48顺序条件轨迹；研究U4不等于任务U-04",
+      "source": "agent/tasks/U-08/TASK.md"
+    },
+    {
+      "id": "U08-N04",
+      "status": "OPEN_FORMAL_ASSEMBLY_ACCESSIBILITY_AND_LICENSE",
+      "description": "默认SampleScene、开发EXE及软件许可门不证明成品，实际装配/U4/性能/许可清零和负责人仍待落实",
+      "source": "agent/tasks/U-08/evidence/consumer-impact.md"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前成品与上下游交接",
+      "path": "agent/tasks/U-08/outputs/current-product.md"
+    },
+    {
+      "label": "规格字段与实际验收状态",
+      "path": "agent/tasks/U-08/outputs/current-product.json"
+    },
+    {
+      "label": "验证范围与结果",
+      "path": "agent/tasks/U-08/evidence/verification.json"
+    },
+    {
+      "label": "共享Unity测试结果",
+      "path": "agent/tasks/U-08/evidence/editmode-results.xml"
+    },
+    {
+      "label": "过程验收与国内资料",
+      "path": "agent/tasks/U-08/TASK.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/U-08/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    }
+  ],
+  "previous_conclusion_202609": "U-08仍WAIT_DEP、未领取。两个旧Build Scene菜单及meta已原文归档，40项专项和105项Unity EditMode通过；成品规格、五适配器覆盖和发布职责已整理，目标设备预算、真实可访问路径及Windows成品尚未验收。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ]
+}

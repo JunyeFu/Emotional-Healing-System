@@ -15,5 +15,8 @@
     }
   ],
   "scope": "software normalization, synthetic native batch and P-02 consumer checks only",
-  "real_device_acceptance": "NOT_RUN"
+  "real_device_acceptance": "NOT_RUN",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

@@ -1,6 +1,18 @@
+# 当前证据审阅：LaTeX / PDF
+
+2026-10-08 起，SRP 当前71包证据审阅与项目串联审阅停止维护 DOCX。使用 `agent/tools/build_task_reviews.py <任务编号>`；`ALL` 重建全部，`ALL --check` 验证全部。事实源为各包 `outputs/summary.json`，字体与分层排版由 `agent/tools/review_latex.py` 统一维护，XeLaTeX 输出 `human/tasks/<编号>/summary.tex` 与 `summary.pdf`。历史原件、领取快照不因格式迁移改变。
+
+## 当前通用模板（LaTeX v5.0）
+
+可直接复制填写：[LaTeX 源文件](../../../human/templates/通用中文逐包任务模板_v5.0.tex) · [PDF 预览](../../../human/templates/通用中文逐包任务模板_v5.0.pdf) · [使用说明](../../../human/templates/README.md)。模板采用三章十一小节，包含启动条件、验收计划、实际交付、验证、修复、真实签收与下游接收；适用于不同领域，不预填 SRP 结论或工具版本。与当前71包生成器共用 `review_latex.py` 的字体和标题排版。
+
+本目录 Word 模板生成器及下列说明仅保留历史用途，不是当前 SRP 证据审阅维护流程。
+
+---
+
 # 通用中文逐包任务总结模板
 
-## 当前通用任务入口
+## 历史通用任务入口（Word v4.0）
 
 领取、执行、验收和交接使用 `human/templates/通用中文逐包任务模板_v4.0.docx`；正式Word模板为同名 `.dotx`。生成脚本为 `build_common_template_v4.py`，依赖 python-docx 与 lxml，不依赖 SRP 业务代码。模板中的项目、领域、工具、目录与人员均为可替换字段。适用于科研、开发、建模、课程和投资研究；v4按四阶段排版，旧版保留为历史参考。
 

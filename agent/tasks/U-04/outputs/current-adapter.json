@@ -2,9 +2,16 @@
   "task_id": "U-04",
   "status": "WAIT_DEP",
   "claimant": null,
-  "depends_on": ["U-03", "V-03"],
+  "depends_on": [
+    "U-03",
+    "V-03"
+  ],
   "selected_weather": null,
-  "weather_candidates": ["storm", "heat", "snow"],
+  "weather_candidates": [
+    "storm",
+    "heat",
+    "snow"
+  ],
   "allocation_status": "MISSING_V02_EXPLICIT_A_B_C_ASSIGNMENT",
   "allocation_owner_task": "V-02",
   "template_owner_task": "U-03",
@@ -14,12 +21,26 @@
   "requires_td_or_spout": false,
   "runtime_schema_version": "2.2",
   "clock_authority": "P-01",
-  "cue_modes": ["scene_native", "abstract_pacer"],
+  "cue_modes": [
+    "scene_native",
+    "abstract_pacer"
+  ],
   "recovery_lifecycle_source": "agent/tasks/V-03/outputs/current-mapping.json",
   "budget_owner_task": "U-08",
   "performance_acceptance": "NOT_RUN",
   "actual_adapter_acceptance": "NOT_RUN",
   "abstract_four_weather_owner_task": "U-07",
-  "acceptance_evidence": ["Play录像", "Profiler报告", "截图组", "参数表", "模板漂移检查"],
-  "formal_collection_allowed": false
+  "acceptance_evidence": [
+    "Play录像",
+    "Profiler报告",
+    "截图组",
+    "参数表",
+    "模板漂移检查"
+  ],
+  "formal_collection_allowed": false,
+  "implementation_standard_source": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+  "unity_target_version": "2022.3.62f3",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/U-04/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

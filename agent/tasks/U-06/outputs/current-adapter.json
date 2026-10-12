@@ -2,10 +2,17 @@
   "task_id": "U-06",
   "status": "WAIT_DEP",
   "claimant": null,
-  "depends_on": ["U-03", "V-03"],
+  "depends_on": [
+    "U-03",
+    "V-03"
+  ],
   "weather_label": "C",
   "selected_weather": null,
-  "weather_candidates": ["storm", "heat", "snow"],
+  "weather_candidates": [
+    "storm",
+    "heat",
+    "snow"
+  ],
   "allocation_status": "MISSING_V02_EXPLICIT_A_B_C_ASSIGNMENT",
   "allocation_owner_task": "V-02",
   "template_owner_task": "U-03",
@@ -13,7 +20,10 @@
   "camera_mode": "FIXED",
   "runtime_schema_version": "2.2",
   "clock_authority": "P-01",
-  "cue_modes": ["scene_native", "abstract_pacer"],
+  "cue_modes": [
+    "scene_native",
+    "abstract_pacer"
+  ],
   "participant_core_input": false,
   "requires_td_or_spout": false,
   "mapping_source": "agent/tasks/V-03/outputs/current-mapping.json",
@@ -27,6 +37,17 @@
   "legacy_candidate_scene": "SnowScene",
   "default_build_scene": "Assets/Scenes/SampleScene.unity",
   "verified_builder_role": "F03_DEV_REPLAY_NOT_WEATHER_OR_FORMAL_BUILD",
-  "acceptance_evidence": ["Play录像", "Profiler报告", "截图组", "参数表", "模板漂移检查"],
-  "formal_collection_allowed": false
+  "acceptance_evidence": [
+    "Play录像",
+    "Profiler报告",
+    "截图组",
+    "参数表",
+    "模板漂移检查"
+  ],
+  "formal_collection_allowed": false,
+  "implementation_standard_source": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+  "unity_target_version": "2022.3.62f3",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/U-06/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

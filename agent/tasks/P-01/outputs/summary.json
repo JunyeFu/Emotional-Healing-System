@@ -1,8 +1,8 @@
 {
   "task_id": "P-01",
-  "title": "P01 会话编排与跨包消费审阅",
-  "review_date": "2026-09-28",
-  "conclusion": "P-01历史DONE及傅钧烨真实签收保持不变。本轮将golden生成器迁入Agent执行层，434项核心及消费者回归通过，四模块800秒轨迹与历史样例一致；核心前条件教学尚未接入，不作为本包已完成范围。",
+  "title": "P-01 I/G分离与受限控制的会话编排 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "P-01注册状态DONE仅保留原范围。当前任务更新为I/G分离与受限控制的会话编排；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "傅钧烨",
     "date": "2026-08-21 +08:00",
@@ -13,79 +13,84 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "当前执行Codex，注册状态不变。核心时钟、固定顺序、控制与本机传输已复测；软件回归不代表正式教学、Unity画面、真实设备或研究结果。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "原包约6人日。AC1为确定性时钟、24顺序、双提示及暂停恢复；AC2为请求幂等和相同ID控制重试；AC3为非法转换、正式门失败关闭、四模块默认800秒回放。",
-        "本轮实际迁移执行工具，不改六个公共方法、Schema、协议时长或研究冻结字段；对照已签署原件，修正当前消费说明并生成可审阅Word。"
+        "AC1 共同I固定，B在合法边界产生有限G并支持回归与退出",
+        "AC2 A输出不依赖X，两条件暴露预算相同且缓冲占用B预算",
+        "AC3 控制源、有效下发和暂停恢复可重放，旧固定时钟验收不代表适应完成"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "generate_golden_trace.py从srp_session_core实际移入agent/tasks/P-01/execution；旧文件删除，无转发副本。测试导入改用固定执行层，verify.py及verify.ps1为本轮入口。",
-        "本轮轨迹和日志位于evidence/runtime，历史golden不覆盖。TASK、inputs、outputs与archive齐备；共享核心、配置、Schema仍为原模块唯一实现，后续整体迁移再收拢。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "I/G分离与受限控制的会话编排修订交接",
+        "控制归属图",
+        "时序决策轨迹规格",
+        "ODES-20261008设计交付：承接受限放慢、错相缓冲、回归及中性模式的单一决策权与预算；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：rate_window、phase_offset_window、slowdown_limit、single_change_limit、stability_window、return_rate、buffer_single_limit；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "先读取注册AC、技术验收、真实签署和当前start暴露逻辑，再检查P-02重放消费者。旧签署记录中的候选状态属于当时事实，保留原字节。",
-        "修正README把F-05和P-02称为候选的陈述，说明步骤v2.2不等于自适应顺序。新生成器默认写本轮证据，避免运行命令覆盖旧样例。",
-        "文档工具运行时无pytest，专项改用项目Python 3.14运行，无安装或环境变更。Word继续由专用文档运行时生成。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：I/G分离与受限控制的会话编排"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "P-01 116项、P-02 84项、协议95项、G-02 139项，共434项通过。覆盖现有24顺序、双提示、状态与时钟、TCP/UDP和重放消费；不执行真实设备或真人流程。",
-        "新轨迹与历史样例逐对象一致：19控制、19ACK、12渲染回执、54会话事件、4策略决策，最终COMPLETED且有效时长800秒；新结果可打开复算。",
-        "下游T-02未领取输入新增当前README和迁移后的生成器；进行中及复核包保持冻结。注册表与分发验证结果见integration.json。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "P01-N01：散落模块的执行工具且默认覆盖旧golden，已迁入固定目录并改用新输出，434项回归和golden比较通过。P01-N02：当前入口沿用F-05/P-02候选与旧目录，已修正。",
-        "P01-N03：G-02交接的核心前教学暴露缺口已在当前README明确；prepare不登记，首次核心start才登记。教学接入需P-01/U12-11冻结时序后实现，当前仍开放，不以历史DONE或本轮测试关闭。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：控制归属图；时序决策轨迹规格；A输入隔离及B受限案例"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "TASK与五固定目录组成执行包。当前结果、历史证据与生成工具分开，历史审核报告和技术验收记录保留，过期执行路径移除。",
-        "共享实现已位于agent/modules，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变；本轮迁移工具是真实整理，不把引用清单当作共享模块已经迁移。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "F-01/F-05决定消息版本；G-02提供隐私与暴露，X-01提供分配，P-02提供耐久追加与重放。Unity维护镜像而非流程时钟，TD不自行推进研究状态。",
-        "U12-06继续阻断未冻结正式运行。条件教学位于前测之后、核心之前的候选安排须由U12-11冻结；在展示条件教学前登记，并补教学后退出、未启动核心和再次预约负测。当前不能提前展示后再依赖核心start补登记。",
-        "T-02接收当前模块说明和新golden执行入口，P-02下一轮核对完整记录与确定性重放。I-01仍承担真实全链，研究情绪比较由真实前后测和研究分析支持，不能由本包工具结果替代。"
+        "原依赖：F-01；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：控制归属图；时序决策轨迹规格；A输入隔离及B受限案例"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "历史真实签收针对03d7426对象，记录于ea132c8；原报告98项为当时证据，本轮434项另存，不改签署范围。",
-        "本轮完成工具迁移、专项复测和文档核对，没有追加独立Agent复查、真人签收或外部许可。待冻结教学和真实系统按下游责任继续办理。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "inputs/sources.json引用实现和历史签署，evidence/verification.json记录本轮测试与golden，integration.json记录治理验证。human/project-review.docx串联八包及开放交接。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -107,6 +112,11 @@
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "核心前条件教学尚未接入；P-01/U12-11冻结后登记首次暴露并补退出再预约负测，本轮未关闭",
       "source": "agent/modules/srp_session_core/README.md"
+    },
+    {
+      "id": "P-01-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "I/G分离与受限控制的会话编排；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -122,6 +132,78 @@
     {
       "label": "打开本轮测试和轨迹结果",
       "path": "agent/tasks/P-01/evidence/verification.json"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/P-01/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "P-01历史DONE及傅钧烨真实签收保持不变。本轮将golden生成器迁入Agent执行层，434项核心及消费者回归通过，四模块800秒轨迹与历史样例一致；核心前条件教学尚未接入，不作为本包已完成范围。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
 }

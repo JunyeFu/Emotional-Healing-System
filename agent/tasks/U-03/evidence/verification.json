@@ -24,5 +24,8 @@
   "scope": "current design handoff, historical selection and Python core only",
   "unity_slice_acceptance": "NOT_RUN",
   "human_formative_review": "NOT_RUN",
-  "template_freeze": "NOT_COMPLETED"
+  "template_freeze": "NOT_COMPLETED",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

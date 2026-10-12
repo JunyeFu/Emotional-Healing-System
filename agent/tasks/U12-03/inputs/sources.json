@@ -11,7 +11,28 @@
     "agent/tasks/U12-01/outputs/current-governance.md",
     "agent/tasks/U12-03/archive/candidate/evidence.json",
     "agent/tasks/U12-03/archive/candidate/U12-03_独立复核记录.md",
-    "agent/tasks/U12-03/archive/candidate/U12-03_第二人审核报告_待签署.md"
+    "agent/tasks/U12-03/archive/candidate/U12-03_第二人审核报告_待签署.md",
+    "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md",
+    "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+    "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json",
+    "agent/tasks/U12-03/outputs/current-implementation-evidence.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/design/design-foundation-20261008/05-control-spec.tex",
+    "agent/design/design-foundation-20261008/05-control-spec.pdf",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+    "agent/design/design-foundation-20261008/operational-design.json"
   ],
   "archived_bytes": {
     "技术验收记录.md": "F32A43808DBB771CCE2A736E52D5E8E14BF2EB3B704CB18914B0749565E3706D",
@@ -27,5 +48,7 @@
     "U12-03_第二人审核报告_待签署.md": "1BDFA748416BAE3E2D1069505868BFB839AF56B526EA24FE993D91E523214DEE",
     "U12-03_独立复核记录.md": "A5F8C12CAE33941B506AC597E41D0C7FB0C51F7982FD40F8AD98616311473514",
     "validate.py": "965781F31FA142133625379F1ED6BEF79D5277F8E766F8844C56D5BC464A57CF"
-  }
+  },
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008"
 }

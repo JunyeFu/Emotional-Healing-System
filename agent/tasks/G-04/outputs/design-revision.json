@@ -1,0 +1,32 @@
+{
+  "task_id": "G-04",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "可选策略扩展的独立准入",
+  "disposition": "DEFERRED_EXTENSION",
+  "deliverables": [
+    "可选策略扩展的独立准入修订交接",
+    "扩展范围",
+    "独立准入条件"
+  ],
+  "acceptance_criteria": [
+    "AC1 扩展不是A/B整包研究的必要阶段",
+    "AC2 独立样本、SAP、策略及回退有真实冻结",
+    "AC3 同构建比较且不将扩展收益补写为核心机制证据"
+  ],
+  "evidence_required": [
+    "扩展范围",
+    "独立准入条件",
+    "核心/扩展样本账本"
+  ],
+  "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "E-05",
+    "X-03",
+    "Z-01"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

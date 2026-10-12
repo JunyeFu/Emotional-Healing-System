@@ -1,0 +1,55 @@
+{
+  "scope": "MEMBER_VIDEO_FRAME_REFERENCE_NOT_INDEPENDENT_UNITY_ACCEPTANCE",
+  "frames": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-01-t12.png",
+      "source_video": "65ee14ea453160710fc1d27f948009f9_raw.mp4",
+      "timestamp_seconds": 12,
+      "observation": "Storm木屋、溪流、雨幕与地面波纹；左上开发面板可见。"
+    },
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-01-t20.png",
+      "source_video": "65ee14ea453160710fc1d27f948009f9_raw.mp4",
+      "timestamp_seconds": 20,
+      "observation": "Storm开发画面及不同位置的雨滴波纹；不据单帧量化动态效果。"
+    },
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t05.png",
+      "source_video": "d31d5f7bca1f280fe05b7653184e16e2_raw.mp4",
+      "timestamp_seconds": 5,
+      "observation": "纯粒子双环和外围散点，保存原录屏中的脚本缺失警告。"
+    },
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "source_video": "d31d5f7bca1f280fe05b7653184e16e2_raw.mp4",
+      "timestamp_seconds": 26,
+      "observation": "中央略偏上的外青色与内浅色粒子双环；左上测试面板未显示。"
+    },
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t42.png",
+      "source_video": "d31d5f7bca1f280fe05b7653184e16e2_raw.mp4",
+      "timestamp_seconds": 42,
+      "observation": "同一粒子双环的另一时刻；仅作动效外观参考，不给单帧标定呼吸步骤。"
+    }
+  ],
+  "observed_issue": {
+    "message": "The referenced script on this Behaviour (Game Object '<null>') is missing!",
+    "seen_in": "second video bottom warning bar",
+    "root_cause": "NOT_IDENTIFIED_WITHOUT_SOURCE",
+    "closeout_owners": [
+      "F-03",
+      "U-01",
+      "U-08",
+      "Z-01"
+    ],
+    "acceptance": "OPEN_PENDING_SOURCE_AND_FRESH_RUN"
+  },
+  "cannot_verify_from_frames": [
+    "Unity_version_and_compile",
+    "independent_Actual_interface",
+    "four_weather_rhythm_values",
+    "Fade_missing_second_inhale_control_path",
+    "particle_parameter_values",
+    "Profiler_and_formal_build"
+  ]
+}

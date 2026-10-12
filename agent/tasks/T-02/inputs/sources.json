@@ -16,6 +16,17 @@
     "agent/modules/srp_session_store/adapters.py",
     "agent/modules/srp_session_store/contracts/append-record-v1.schema.json",
     "agent/modules/05-通信协议/contracts/README.md",
-    "agent/tasks/T-02/inputs/legacy-relocations.json"
-  ]
+    "agent/tasks/T-02/inputs/legacy-relocations.json",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

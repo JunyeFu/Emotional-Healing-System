@@ -1,8 +1,8 @@
 {
   "task_id": "U12-11",
-  "title": "U12 11 正式研究参数与资源冻结审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "U12-11仍WAIT_DEP_EXTERNAL、未领取未签署。四原候选实际归档，15项冻结材料与当前空索引已对齐，G-03交接订正；真实盲态校准、参数、机构/资源回执和第二人仍缺，本轮不冻结N或界值，不放行正式研究。",
+  "title": "U12-11 新研究参数与资源冻结 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "U12-11注册状态WAIT_DEP_EXTERNAL仅保留原范围。当前任务更新为新研究参数与资源冻结；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未指定",
     "date": "未签署",
@@ -13,75 +13,84 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "固定任务2人日，依赖G-05/E-03/U12-09/A-03-CAL，均未DONE。15冻结全部PENDING，CAL未交付，五阶段一资格无回执；原业务状态及在研输入不改。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1冻结输入、候选与来源可追溯；AC2必需字段和真实签署齐备，最终N/界值消费已完成CAL；AC3独立复核与第二人绑定同版证据，不代签外部条件。",
-        "执行为真实来源收齐、盲态参数/资源裁定、签署交G-03预注册。现有空索引和作者软件复测不满足正式冻结验收。"
+        "AC1 共同I先验用途与舒适性、控制及计分参数有各自依据",
+        "AC2 PANAS、时长、N、随机化与缺失真实冻结",
+        "AC3 无依据数值待校准，三阶段预算与真实批准不由旧门自动覆盖"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "TASK及五目录、15项交付映射、只读现状生成器、当前参数/资格/依赖观察、复测入口与来源。四旧候选移入archive，三原件字节及snapshot保持；旧未注册入口改导航。",
-        "G-03三份交付分工接本包当前说明，沿用其既有空索引而不新增批准台账；协议、SAP、研究数值、签署和成员分发保持。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "新研究参数与资源冻结修订交接",
+        "冻结差异表",
+        "参数依据索引",
+        "ODES-20261008设计交付：按18组待定项、唯一人数账本与前置证据冻结下一版正式参数；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：buffer_total_limit、formal_sample_size；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "E-03真实盲态技术关闭后交A-03-CAL，再交U12-11数值/资源裁定，G-03取得同版预注册。技术关闭、SAP候选、研究冻结与外部回执分别交付，E-03不反向等待CAL。",
-        "48/192/240是旧锚点，0.075/100/0.9及180秒是候选；真实N按随机分配，不按完整者补格。关注差异在PANAS原量尺上独立事前论证，不能从N或最有利条件差倒推。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：新研究参数与资源冻结"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "39项专项1.00秒通过，覆盖原件、15项同源索引、六空参数、候选分离、REAL/CAL顺序、五活动资格和现有治理拒绝正式开关/N/等效/删CAL负测，复用G-03/E-03/A-03检查。根回归及协议/治理/注册/分发实际结果见verification.json。",
-        "工具只读索引，不验证真实审批或每项冻结值。正式采集仍false，CAL/技术关闭未交付，真实参数冻结、独立复核及第二人均未运行。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "首轮1 failed/38 passed，本轮TASK映射链接漏outputs/前缀，修实际导航并保留初始日志；复测不放宽断言。初始查本包Agent入口尚不存在，随后建立固定结构，不当成旧实现已交付。",
-        "G-05整体13项含阶段三与核心按活动资格的收尾冲突保留待治理裁定，不删依赖或伪造阶段三回执；候选功效网格未覆盖正式MI与联合护栏，不用它代替真实可行性。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：冻结差异表；参数依据索引；真实审批与资源账本"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "inputs只引用权威与上游，execution存现状读取和测试，evidence存失败/复测及影响，outputs存映射/交接/观察和Word源，archive存四原候选。没有旧真实实现或冻结报告可清理，不虚构归档。",
-        "沿用G-03空索引、原协议/机构来源与历史签收，过期候选入口仅留导航。共享模块和整个旧业务目录仍待根迁移。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "E-03交真实Level C技术关闭，A-03-CAL交盲态版本和证据，U12-09交真实一致性，G-05交对应批准/专机/期限/工位回执。数值裁定需真实统计与研究责任人，教学时序和首次教学暴露由U12-03/X-01/P-01/U12-06落实。",
-        "同版冻结交G-03预注册、B-02运行和A-05/U12-10分析规则；800秒仅核心，资源还需安装/QC/量表/教学/清理和实际排班。有效PANAS不因PF/SCCI失败隐去，等效默认关闭，可选扩展独立处理。"
+        "原依赖：G-05、E-03、U12-09、A-03-CAL；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：冻结差异表；参数依据索引；真实审批与资源账本"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "统计、研究、工程、数据/现场、机构和独立第二人须在实际材料中实名，目前未指定；任务路由不当作个人领取。Agent可计算整理，不能填写真实机构批准、N决定或第二人PASS。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态WAIT_DEP_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "活动注册、研究1.2 required_freezes、G-03空索引和分工、A-03里程碑及真实缺口、E-03技术关闭、G-05资格矩阵、U12-04候选功效、U12-06/U12-09接线状态和B-02/U12-10交接。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -115,6 +124,11 @@
       "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
       "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
       "source": "agent/evidence/root-migration-check.json"
+    },
+    {
+      "id": "U12-11-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "新研究参数与资源冻结；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -134,6 +148,78 @@
     {
       "label": "本轮软件验证",
       "path": "agent/tasks/U12-11/evidence/verification.json"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/U12-11/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "U12-11仍WAIT_DEP_EXTERNAL、未领取未签署。四原候选实际归档，15项冻结材料与当前空索引已对齐，G-03交接订正；真实盲态校准、参数、机构/资源回执和第二人仍缺，本轮不冻结N或界值，不放行正式研究。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
 }

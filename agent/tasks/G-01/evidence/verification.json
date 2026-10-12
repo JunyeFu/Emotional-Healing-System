@@ -78,5 +78,8 @@
       "exit_code": 0,
       "result": "PASS: dispatch packages=5; snapshots=61; tasks=A-03,T-02,U12-03,U12-06,V-05"
     }
-  ]
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

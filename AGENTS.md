@@ -5,6 +5,8 @@
 
 ## 快速入口
 
+当前任务设计采用[新基线](agent/design/design-foundation-20261008/task-baseline.json)：固定开环A与数据驱动原生受限适应B，共同I、下发G、实际X分离。71包已按当前范围修订，见[任务迁移](agent/work/2026-10-08_新基线任务包迁移.md)；注册状态和历史签收仍保留原范围，领取中输入以原快照加显式变更交接。运行API及正式协议尚未由本轮实现或冻结，实施/研究须取得新范围证据与真实批准。
+
 | 我要... | 打开 |
 |---------|------|
 | 看项目模块 | `human/project/PROJECT_MODULES.md` |
@@ -159,7 +161,7 @@
 | Polar H10 BLE | 心电采集 | ⬜ 待采购 |
 | 呼吸胸带 | 呼吸采集 | ⬜ 待选型 |
 | TouchDesigner 2025.32820 | 实时可视化 | ✅ D:\TouchDesigner\bin\TouchDesigner.exe |
-| Unity 6000.4.9f1 | 2D像素渲染 | ✅ D:\UnityEngine\6000.4.9f1\Editor\Unity.exe |
+| Unity 2022.3.62f3 | 2D像素渲染；团队目标版本，共享工程迁移待完成 | ✅ D:\UnityEngine\2022.3.62f3\Editor\Unity.exe |
 
 ## Codex Workflow
 
@@ -203,3 +205,5 @@
 - 并行任务需要工作树时，优先使用Codex管理工作树；手工本机工作目录归入`agent/local/worktrees/`。历史备份、验证环境快照与证据差异归入`agent/archive/local/`，均被Git忽略，不入库不提交。不要移动仍在使用的工作树。
 - 历史审计文档中出现的旧路径（如 `D:/Agent/f03v8`、`03-SRP-f05-evidence-*`）是当时事实记录，不回改；对应差异已迁入 `agent/archive/local/worktree-evidence/`，登记快照见 `agent/archive/local/worktree-registry-20260917.txt`，提交仍可按哈希在独立工作树复现。
 - 不得在仓库根运行 `git clean -x` / `git clean -fdx`：会连同清除被本地排除的 `_archive/` 与 `_worktrees/`。
+
+当前实施：以李民约溪边木屋与屏幕空间纯粒子双环为标准，Unity目标2022.3.62f3；[37包影响与更新范围](agent/work/2026-10-08_实施标准任务影响清单.md)。

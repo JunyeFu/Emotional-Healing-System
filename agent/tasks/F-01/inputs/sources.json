@@ -9,6 +9,17 @@
     "agent/modules/05-通信协议/contracts/port-registration-v2.1.md",
     "agent/modules/05-通信协议/MIGRATION_v1.2_to_v2.1.md",
     "agent/modules/05-通信协议/F-01_技术验收记录.md",
-    "agent/modules/05-通信协议/F-01_第二人审核报告_已签署.md"
-  ]
+    "agent/modules/05-通信协议/F-01_第二人审核报告_已签署.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

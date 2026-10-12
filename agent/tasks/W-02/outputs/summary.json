@@ -1,8 +1,8 @@
 {
   "task_id": "W-02",
-  "title": "W02 单篇论文写作与证据交接审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "W-02仍WAIT_DEP，未领取未签收。已将旧有序门结构和主张矩阵实际归档，当前写作以情绪收益、功能代价及设计边界为中心；真实范围、结果和主稿仍缺。",
+  "title": "W-02 整包收益与目标代价论文主稿 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "W-02注册状态WAIT_DEP仅保留原范围。当前任务更新为整包收益与目标代价论文主稿；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未签收",
     "date": "无",
@@ -13,76 +13,84 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "固定任务5人日，依赖W-01|A-06|U12-07，责任人与复核人仍为空。A-06真实范围、A-05观测分析和完整稿未交付，八项主张索引均NOT_RUN。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1全部数字图表与同版A-06范围一致；AC2原生不等隐藏、未显著不等效；AC3核心稿不等未开展E-06；AC4已有扩展如实披露，U12-08真实结果就绪才填效应。",
-        "四段为输入与责任对齐、同版结果中立主稿、主张与引用复核、真实签收后交W-03。没有项目外对照不能推出整个项目相对不参与的因果效果；天气和呼吸固定配对不能分别归因。"
+        "AC1 以固定A对原生自适应B为问题，保持结果前中立",
+        "AC2 披露I/G/X、期待/新奇、实际剂量及测量边界",
+        "AC3 科学贡献需真实结果，设计原则无迁移不称普适"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "TASK、15项来源、当前写作说明及机器状态、八项未观测主张索引、验证入口与消费者记录。旧结构和CSV原件实际移入archive，原位置保留当前导航及兼容列名的八行矩阵。",
-        "当前第11步、手册、成果入口、AGENTS和README同步；历史v1.1验证器读取归档原件，当前协议仍由治理选择器确定。不新增实际论文、数据或作者。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "整包收益与目标代价论文主稿修订交接",
+        "结果中立主稿",
+        "预定结果表",
+        "ODES-20261008设计交付：消费普通学习间隙定位、主分析候选及六类中立结论模板；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "正文报告实际样本与实现效度后，先情绪主比较，再功能代价、理解/努力、缺失和设计知识。有效预设PANAS结果不被PF或SCCI失败隐去，native_minus_abstract负向为原生方向、正向为抽象方向；区间跨零不是等效或反向优势。",
-        "实际教学时序、SAP和数值须冻结，旧推荐800秒及候选参数不冒充正式方法；核心体验不操作界面与前后问卷分开。独立重建及负例支持有边界规则，四个原团队场景不证明通用语法。",
-        "W-03本轮官方核对发现AI细则不允许生成式AI起草论文正文，当前写作职责改为真人起草和论证，Agent按允许用途辅助并披露。项目管理Word不作为可直接提交的论文初稿。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：整包收益与目标代价论文主稿"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "51项专项通过，覆盖实际注册与协议、方向和不屏蔽情绪、原结构字节身份、两份实际归档及历史消费者、现行八行矩阵、U12-07原签署与冲突、真实来源和导航链接。",
-        "根pytest 635项通过，耗时49.20秒；历史候选、协议、v1.2治理、71项注册及5包分发检查通过。命令和原始输出见verification.json；无实际结果、Unity/TD运行、投稿或新增独立审核。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "旧结构沿有序功能门、旧矩阵缺PANAS主比较，已实际归档并修正现行消费者；签收原件和历史验证标记保留，不将旧候选适用范围扩大。",
-        "2026-09-29 U12-07旧原稿实际归档，当前方法、11表和两向解释规格已修，W-02来源和历史测试真实改读新/旧分层。记录FIXED_CURRENT_U1207_SPECIFICATION，当前规格非论文正文，新复核与真人签收仍未完成。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：结果中立主稿；预定结果表；贡献证据及限制"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "TASK及inputs、execution、evidence、outputs、archive固定归属。当前输出与历史原件分开，共享治理及已签署U12-07留单一入口；没有对进行中输入自动刷新。",
-        "先修Agent事实与真实消费者，再生成单包及串联Word。两份旧根业务文件已物理迁入Agent归档，其余共享业务目录仍待整体迁移，不能以本包完成替代目标。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "A-05交同版锁定结果/图表，A-06交全部活动和范围回执，W-01交全文页段及文献增量，U12-07交当前写作规格而非论文第一稿，U12-10交真实分类。完整输入仍未齐，不写观测效果或宣布主稿完成。",
-        "真实主稿及主张—数字—图表—输入—代码、补充材料交W-03；实际扩展须披露，A-04两原生组策略比较不能混作提示比较。当前作者贡献、公开权限和相似性检查待真实负责人，推送不等于投稿。"
+        "原依赖：W-01、A-06、U12-07；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：结果中立主稿；预定结果表；贡献证据及限制"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "论文负责人、文献与分析协作者、数据保管者、真实第二人尚未实名。作者Agent自查不等独立Agent复核；无新真实签署，W-02状态不变。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "实际注册、v1.2协议、A-05/A-06与文献/测量交接、两份历史原件、U12-07原签署及设计/空表/主张句。未新增文献搜索、最新期刊规范或真实人员结果。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -104,6 +112,11 @@
       "status": "OPEN_REAL_PAPER_AND_RESPONSIBILITY",
       "description": "真实范围结果主稿全文审查作者责任及相似性检查尚未落实",
       "source": "agent/tasks/W-02/outputs/current-manuscript.json"
+    },
+    {
+      "id": "W-02-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "整包收益与目标代价论文主稿；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -127,6 +140,86 @@
     {
       "label": "消费者与签署稿冲突",
       "path": "agent/tasks/W-02/evidence/consumer-impact.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/W-02/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/原创性与贡献论证_当前.md",
+      "label": "当前实验设计与贡献论证"
+    },
+    {
+      "path": "agent/work/2026-10-08_任务完成时序与研究主旨.md",
+      "label": "任务完成时序与签收范围"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "W-02仍WAIT_DEP，未领取未签收。已将旧有序门结构和主张矩阵实际归档，当前写作以情绪收益、功能代价及设计边界为中心；真实范围、结果和主稿仍缺。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
 }

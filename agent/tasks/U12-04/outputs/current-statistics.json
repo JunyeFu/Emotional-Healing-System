@@ -20,5 +20,8 @@
   "observed_case_is_complete_four_module": false,
   "effect_scale": "RESIDUAL_SD_NOT_MARGINAL_COHENS_D",
   "baseline_coefficient_is_correlation": false,
-  "output_overwrite_allowed": false
+  "output_overwrite_allowed": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/U12-04/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

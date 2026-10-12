@@ -2,11 +2,33 @@
   "task_id": "A-01",
   "business_status": "WAIT_DEP",
   "owner": null,
-  "dependencies": {"P-02": "DONE_BOUNDED_STORAGE_AND_REPLAY", "S-02": "WAIT_DEP"},
+  "dependencies": {
+    "P-02": "DONE_BOUNDED_STORAGE_AND_REPLAY",
+    "S-02": "WAIT_DEP"
+  },
   "implementation": "OFFLINE_PIPELINE_NOT_DELIVERED",
-  "required_families": ["device_streams", "runtime_facts", "questionnaires", "allocations", "annotations", "configuration_build"],
-  "consumer_order": ["authorized_original_access", "validate_bundle", "ReplayReader.verify", "ReplayReader.iter_l0/iter_l1", "decode_and_sync", "detect_and_classify_opportunities", "summarize", "compare_online_offline"],
-  "namespaces": {"online": "P-02 immutable L0/L1", "derived": "offline_derived/L1/L2/L3"},
+  "required_families": [
+    "device_streams",
+    "runtime_facts",
+    "questionnaires",
+    "allocations",
+    "annotations",
+    "configuration_build"
+  ],
+  "consumer_order": [
+    "authorized_original_access",
+    "validate_bundle",
+    "ReplayReader.verify",
+    "ReplayReader.iter_l0/iter_l1",
+    "decode_and_sync",
+    "detect_and_classify_opportunities",
+    "summarize",
+    "compare_online_offline"
+  ],
+  "namespaces": {
+    "online": "P-02 immutable L0/L1",
+    "derived": "offline_derived/L1/L2/L3"
+  },
   "research_authority": "v1.2",
   "primary_emotion_independent_of_pf_gate": true,
   "restricted_ref_reads_original": false,
@@ -15,7 +37,23 @@
   "minimum_observable_opportunities": null,
   "coverage_thresholds": null,
   "online_offline_difference_limits": null,
-  "freeze_owners": ["S-01", "S-02", "Q-03", "U12-04", "U12-11"],
+  "freeze_owners": [
+    "S-01",
+    "S-02",
+    "Q-03",
+    "U12-04",
+    "U12-11"
+  ],
   "frozen_A03_input_refresh": false,
-  "not_run": ["real_device_decode", "real_signal_synchronization", "offline_event_pipeline", "L3_pipeline", "formal_data_access", "human_acceptance"]
+  "not_run": [
+    "real_device_decode",
+    "real_signal_synchronization",
+    "offline_event_pipeline",
+    "L3_pipeline",
+    "formal_data_access",
+    "human_acceptance"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/A-01/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

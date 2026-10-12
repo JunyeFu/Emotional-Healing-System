@@ -1,0 +1,31 @@
+{
+  "task_id": "A-06",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "核心贡献及阶段范围关闭",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "核心贡献及阶段范围关闭修订交接",
+    "主张证据台账",
+    "范围关闭候选"
+  ],
+  "acceptance_criteria": [
+    "AC1 主稿C1/C2/C3按真实证据定级，不预设原生胜出",
+    "AC2 近邻覆盖、无差异、信号失败、迁移失败有收缩规则",
+    "AC3 核心/扩展分账，CCF等级目标不等于完成"
+  ],
+  "evidence_required": [
+    "主张证据台账",
+    "范围关闭候选",
+    "负结果与降称矩阵"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "A-05",
+    "U12-10"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

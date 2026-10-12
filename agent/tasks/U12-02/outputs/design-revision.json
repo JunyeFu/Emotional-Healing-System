@@ -1,0 +1,32 @@
+{
+  "task_id": "U12-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "条件适配的步骤测量材料",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "条件适配的步骤测量材料修订交接",
+    "题项蓝图",
+    "状态/真值映射"
+  ],
+  "acceptance_criteria": [
+    "AC1 共同目标题等值后有限比较，A不读取不存在的Actual",
+    "AC2 旧八题/新十二题均不自动当正式主量表",
+    "AC3 真值、缺失、标注及材料效度先验，理解只解释信息读取"
+  ],
+  "evidence_required": [
+    "题项蓝图",
+    "状态/真值映射",
+    "材料验证要求"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "U12-01",
+    "F-02",
+    "F-05"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

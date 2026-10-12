@@ -1,4 +1,12 @@
 {
+  "unity_migration": {
+    "decided_on": "2026-10-08",
+    "target_version": "2022.3.62f3",
+    "target_revision": "96770f904ca7",
+    "target_path": "D:/UnityEngine/2022.3.62f3/Editor/Unity.exe",
+    "status": "PENDING_SHARED_PROJECT_MIGRATION",
+    "verified_baseline_policy": "tools.unity and unity_packages retain the last verified shared-project baseline until migration is verified"
+  },
   "baseline_id": "SRP-TEAM-TOOLS-v1.0",
   "status": "ACTIVE_FOR_TEAM_SETUP",
   "frozen_on": "2026-08-06",

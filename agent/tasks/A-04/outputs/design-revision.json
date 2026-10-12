@@ -1,0 +1,31 @@
+{
+  "task_id": "A-04",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "可选扩展独立锁定分析",
+  "disposition": "DEFERRED_EXTENSION",
+  "deliverables": [
+    "可选扩展独立锁定分析修订交接",
+    "独立分析候选",
+    "回退估计目标"
+  ],
+  "acceptance_criteria": [
+    "AC1 独立SAP与实际分配/回退估计目标",
+    "AC2 不把扩展后优化结果当首版B确认性证据",
+    "AC3 真实复现与不利方向报告齐备，否则保持延期"
+  ],
+  "evidence_required": [
+    "独立分析候选",
+    "回退估计目标",
+    "复现与缺失边界"
+  ],
+  "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "A-05",
+    "E-06"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

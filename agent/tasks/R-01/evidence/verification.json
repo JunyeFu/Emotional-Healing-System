@@ -71,5 +71,8 @@
     "valid-storm-abstract-pacer.json": [],
     "valid-storm-scene-native.json": []
   },
-  "scope": "candidate configuration and current usage, not Unity or human evidence"
+  "scope": "candidate configuration and current usage, not Unity or human evidence",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

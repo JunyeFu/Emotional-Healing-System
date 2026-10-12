@@ -1,6 +1,6 @@
 {
   "schema_id": "V03_CURRENT_USAGE_NOT_NETWORK_MESSAGE",
-  "version": "1.1-usage",
+  "version": "1.2-member-standard",
   "status": "DESIGN_HANDOFF_NOT_RENDERED_EVIDENCE",
   "row_count": 40,
   "technical_ids": [
@@ -39,8 +39,9 @@
       "target": "FORWARD_RAIN_CURTAIN_GATE",
       "actual": "NEAR_AIRFLOW_AND_RAIN_TRACE",
       "recovery": "RAIN_INTENSITY_AND_PATH_VISIBILITY",
-      "background": "STORM_PASS_NON_PERIODIC_ENVIRONMENT",
-      "audio": "AUD_STORM_AMBIENT_MASTER"
+      "background": "STREAMSIDE_CABIN_NON_PERIODIC_ENVIRONMENT",
+      "audio": "AUD_STORM_AMBIENT_MASTER",
+      "scene": "溪边木屋"
     },
     "heat": {
       "r01_module_id": "scorching",
@@ -230,7 +231,7 @@
       "design_phase_slots": [],
       "runtime_slot_binding": "NOT_APPLICABLE",
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
-      "visual_carrier": "STORM_PASS_NON_PERIODIC_ENVIRONMENT",
+      "visual_carrier": "STREAMSIDE_CABIN_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_STORM_AMBIENT_MASTER",
       "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
@@ -266,7 +267,7 @@
       ],
       "runtime_slot_binding": "F-05_V2_2_REQUIRED",
       "semantic_question": "WHAT_IS_THE_CURRENT_TARGET_STEP_AND_PROGRESS",
-      "visual_carrier": "ABSTRACT_OUTER_RING",
+      "visual_carrier": "PARTICLE_OUTER_RING_CORE",
       "audio_role": "NONE",
       "update_trigger": "VALIDATED_TELEMETRY_FRAME",
       "quality_behavior": {
@@ -282,7 +283,8 @@
         "recovery",
         "fallback"
       ],
-      "evidence_hook": "TARGET_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO"
+      "evidence_hook": "TARGET_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO",
+      "decorative_periphery": "FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH"
     },
     {
       "technical_id": "storm",
@@ -303,7 +305,7 @@
       ],
       "runtime_slot_binding": "F-05_V2_2_REQUIRED",
       "semantic_question": "WHAT_STEP_AND_PROGRESS_IS_CURRENTLY_ESTIMATED",
-      "visual_carrier": "ABSTRACT_INNER_RING",
+      "visual_carrier": "PARTICLE_INNER_RING_CORE",
       "audio_role": "NONE",
       "update_trigger": "VALIDATED_TELEMETRY_FRAME",
       "quality_behavior": {
@@ -317,7 +319,8 @@
         "error",
         "recovery"
       ],
-      "evidence_hook": "DIVERGENT_ACTUAL_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO"
+      "evidence_hook": "DIVERGENT_ACTUAL_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO",
+      "decorative_periphery": "FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH"
     },
     {
       "technical_id": "storm",
@@ -357,7 +360,7 @@
       "design_phase_slots": [],
       "runtime_slot_binding": "NOT_APPLICABLE",
       "semantic_question": "IS_ACTUAL_INFORMATION_LOW_CERTAINTY_OR_TEMPORARILY_UNAVAILABLE",
-      "visual_carrier": "ABSTRACT_INNER_RING_CERTAINTY_WRAPPER",
+      "visual_carrier": "PARTICLE_INNER_RING_CERTAINTY_WRAPPER",
       "audio_role": "NONE",
       "update_trigger": "QUALITY_OR_FALLBACK_CHANGE",
       "quality_behavior": {
@@ -382,7 +385,7 @@
       "design_phase_slots": [],
       "runtime_slot_binding": "NOT_APPLICABLE",
       "semantic_question": "WHICH_WEATHER_SPACE_IS_CURRENTLY_PRESENTED",
-      "visual_carrier": "STORM_PASS_NON_PERIODIC_ENVIRONMENT",
+      "visual_carrier": "STREAMSIDE_CABIN_NON_PERIODIC_ENVIRONMENT",
       "audio_role": "AUD_STORM_AMBIENT_MASTER",
       "update_trigger": "SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT",
       "quality_behavior": {
@@ -564,7 +567,7 @@
       ],
       "runtime_slot_binding": "F-05_V2_2_REQUIRED",
       "semantic_question": "WHAT_IS_THE_CURRENT_TARGET_STEP_AND_PROGRESS",
-      "visual_carrier": "ABSTRACT_OUTER_RING",
+      "visual_carrier": "PARTICLE_OUTER_RING_CORE",
       "audio_role": "NONE",
       "update_trigger": "VALIDATED_TELEMETRY_FRAME",
       "quality_behavior": {
@@ -580,7 +583,8 @@
         "recovery",
         "fallback"
       ],
-      "evidence_hook": "TARGET_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO"
+      "evidence_hook": "TARGET_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO",
+      "decorative_periphery": "FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH"
     },
     {
       "technical_id": "heat",
@@ -599,7 +603,7 @@
       ],
       "runtime_slot_binding": "F-05_V2_2_REQUIRED",
       "semantic_question": "WHAT_STEP_AND_PROGRESS_IS_CURRENTLY_ESTIMATED",
-      "visual_carrier": "ABSTRACT_INNER_RING",
+      "visual_carrier": "PARTICLE_INNER_RING_CORE",
       "audio_role": "NONE",
       "update_trigger": "VALIDATED_TELEMETRY_FRAME",
       "quality_behavior": {
@@ -613,7 +617,8 @@
         "error",
         "recovery"
       ],
-      "evidence_hook": "DIVERGENT_ACTUAL_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO"
+      "evidence_hook": "DIVERGENT_ACTUAL_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO",
+      "decorative_periphery": "FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH"
     },
     {
       "technical_id": "heat",
@@ -653,7 +658,7 @@
       "design_phase_slots": [],
       "runtime_slot_binding": "NOT_APPLICABLE",
       "semantic_question": "IS_ACTUAL_INFORMATION_LOW_CERTAINTY_OR_TEMPORARILY_UNAVAILABLE",
-      "visual_carrier": "ABSTRACT_INNER_RING_CERTAINTY_WRAPPER",
+      "visual_carrier": "PARTICLE_INNER_RING_CERTAINTY_WRAPPER",
       "audio_role": "NONE",
       "update_trigger": "QUALITY_OR_FALLBACK_CHANGE",
       "quality_behavior": {
@@ -860,7 +865,7 @@
       ],
       "runtime_slot_binding": "F-05_V2_2_REQUIRED",
       "semantic_question": "WHAT_IS_THE_CURRENT_TARGET_STEP_AND_PROGRESS",
-      "visual_carrier": "ABSTRACT_OUTER_RING",
+      "visual_carrier": "PARTICLE_OUTER_RING_CORE",
       "audio_role": "NONE",
       "update_trigger": "VALIDATED_TELEMETRY_FRAME",
       "quality_behavior": {
@@ -876,7 +881,8 @@
         "recovery",
         "fallback"
       ],
-      "evidence_hook": "TARGET_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO"
+      "evidence_hook": "TARGET_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO",
+      "decorative_periphery": "FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH"
     },
     {
       "technical_id": "snow",
@@ -895,7 +901,7 @@
       ],
       "runtime_slot_binding": "F-05_V2_2_REQUIRED",
       "semantic_question": "WHAT_STEP_AND_PROGRESS_IS_CURRENTLY_ESTIMATED",
-      "visual_carrier": "ABSTRACT_INNER_RING",
+      "visual_carrier": "PARTICLE_INNER_RING_CORE",
       "audio_role": "NONE",
       "update_trigger": "VALIDATED_TELEMETRY_FRAME",
       "quality_behavior": {
@@ -909,7 +915,8 @@
         "error",
         "recovery"
       ],
-      "evidence_hook": "DIVERGENT_ACTUAL_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO"
+      "evidence_hook": "DIVERGENT_ACTUAL_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO",
+      "decorative_periphery": "FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH"
     },
     {
       "technical_id": "snow",
@@ -949,7 +956,7 @@
       "design_phase_slots": [],
       "runtime_slot_binding": "NOT_APPLICABLE",
       "semantic_question": "IS_ACTUAL_INFORMATION_LOW_CERTAINTY_OR_TEMPORARILY_UNAVAILABLE",
-      "visual_carrier": "ABSTRACT_INNER_RING_CERTAINTY_WRAPPER",
+      "visual_carrier": "PARTICLE_INNER_RING_CERTAINTY_WRAPPER",
       "audio_role": "NONE",
       "update_trigger": "QUALITY_OR_FALLBACK_CHANGE",
       "quality_behavior": {
@@ -1160,7 +1167,7 @@
       ],
       "runtime_slot_binding": "F-05_V2_2_REQUIRED",
       "semantic_question": "WHAT_IS_THE_CURRENT_TARGET_STEP_AND_PROGRESS",
-      "visual_carrier": "ABSTRACT_OUTER_RING",
+      "visual_carrier": "PARTICLE_OUTER_RING_CORE",
       "audio_role": "NONE",
       "update_trigger": "VALIDATED_TELEMETRY_FRAME",
       "quality_behavior": {
@@ -1176,7 +1183,8 @@
         "recovery",
         "fallback"
       ],
-      "evidence_hook": "TARGET_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO"
+      "evidence_hook": "TARGET_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO",
+      "decorative_periphery": "FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH"
     },
     {
       "technical_id": "fade",
@@ -1196,7 +1204,7 @@
       ],
       "runtime_slot_binding": "F-05_V2_2_REQUIRED",
       "semantic_question": "WHAT_STEP_AND_PROGRESS_IS_CURRENTLY_ESTIMATED",
-      "visual_carrier": "ABSTRACT_INNER_RING",
+      "visual_carrier": "PARTICLE_INNER_RING_CORE",
       "audio_role": "NONE",
       "update_trigger": "VALIDATED_TELEMETRY_FRAME",
       "quality_behavior": {
@@ -1210,7 +1218,8 @@
         "error",
         "recovery"
       ],
-      "evidence_hook": "DIVERGENT_ACTUAL_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO"
+      "evidence_hook": "DIVERGENT_ACTUAL_FIXTURE_RENDER_RECEIPT_AND_GRAYSCALE_VIDEO",
+      "decorative_periphery": "FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH"
     },
     {
       "technical_id": "fade",
@@ -1251,7 +1260,7 @@
       "design_phase_slots": [],
       "runtime_slot_binding": "NOT_APPLICABLE",
       "semantic_question": "IS_ACTUAL_INFORMATION_LOW_CERTAINTY_OR_TEMPORARILY_UNAVAILABLE",
-      "visual_carrier": "ABSTRACT_INNER_RING_CERTAINTY_WRAPPER",
+      "visual_carrier": "PARTICLE_INNER_RING_CERTAINTY_WRAPPER",
       "audio_role": "NONE",
       "update_trigger": "QUALITY_OR_FALLBACK_CHANGE",
       "quality_behavior": {
@@ -1295,6 +1304,24 @@
       "evidence_hook": "FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW"
     }
   ],
+  "implementation_standard_source": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+  "unity_target_version": "2022.3.62f3",
+  "abstract_rendering": {
+    "form": "screen_space_particle_double_ring",
+    "position": "CENTER_SLIGHTLY_ABOVE_SCREEN_CENTER",
+    "outer_source": "target_step_and_progress",
+    "inner_source": "independent_actual_step_and_progress",
+    "inner_auto_cycles_with_target": false,
+    "core": "dense_particles_no_continuous_stroke",
+    "periphery": [
+      "flow",
+      "sway",
+      "delayed_scale_follow"
+    ],
+    "separate_core_periphery_parameters": true,
+    "decoration_delay_changes_step_truth": false,
+    "geometry_parameters": "REUSE_MEMBER_VALUES_PENDING_SOURCE_HANDOFF"
+  },
   "camera": {
     "mode": "FIXED",
     "weather_scroll": false,
@@ -1327,5 +1354,8 @@
     "same_module_locked_value_can_resume": false,
     "force_success_endpoint": false
   },
-  "formal_collection_allowed": false
+  "formal_collection_allowed": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/V-03/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

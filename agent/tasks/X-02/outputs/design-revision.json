@@ -1,0 +1,30 @@
+{
+  "task_id": "X-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "可选离线策略学习的延期边界",
+  "disposition": "DEFERRED_EXTENSION",
+  "deliverables": [
+    "可选离线策略学习的延期边界修订交接",
+    "延期范围",
+    "后续策略问题"
+  ],
+  "acceptance_criteria": [
+    "AC1 首版B为解释性受限规则，不要求策略学习才能成立",
+    "AC2 后续学习需独立问题、参与者分组和可识别行为概率",
+    "AC3 不得用在线响应者选择证明因果价值或占用核心样本"
+  ],
+  "evidence_required": [
+    "延期范围",
+    "后续策略问题",
+    "独立评价前置条件"
+  ],
+  "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "A-03"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

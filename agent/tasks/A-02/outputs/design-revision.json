@@ -1,0 +1,30 @@
+{
+  "task_id": "A-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新条件执行与缺失统计",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新条件执行与缺失统计修订交接",
+    "分析集与分母",
+    "缺失处理候选"
+  ],
+  "acceptance_criteria": [
+    "AC1 报告I达成、G跟随、控制代价和覆盖，不沿用单PF门",
+    "AC2 按分配包含适应未触发、降级、退出及未知",
+    "AC3 缺失敏感性与机会容差事前定，不以后测筛选"
+  ],
+  "evidence_required": [
+    "分析集与分母",
+    "缺失处理候选",
+    "公平计分例"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "A-01"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

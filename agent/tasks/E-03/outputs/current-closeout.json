@@ -1,12 +1,22 @@
 {
   "task_id": "E-03",
   "business_status": "BLOCKED_EXTERNAL",
-  "depends_on": ["Q-03", "E-02", "B-01"],
+  "depends_on": [
+    "Q-03",
+    "E-02",
+    "B-01"
+  ],
   "claimant": null,
   "reviewer": null,
   "real_activity": "NOT_RUN",
   "actual_batches": [],
-  "planning_anchor": {"participants": 48, "conditions": {"scene_native": 24, "abstract_pacer": 24}},
+  "planning_anchor": {
+    "participants": 48,
+    "conditions": {
+      "scene_native": 24,
+      "abstract_pacer": 24
+    }
+  },
   "observed_counts": null,
   "completion_based_refilling_forbidden": true,
   "condition_effect_used_for_calibration": false,
@@ -20,7 +30,20 @@
   "formal_randomized_n": null,
   "historical_acceptance": null,
   "required_upstream_cal_milestone": "REAL_NOT_FINAL_CAL",
-  "downstream": ["A-03-CAL", "U12-11", "G-03"],
+  "downstream": [
+    "A-03-CAL",
+    "U12-11",
+    "G-03"
+  ],
   "formal_collection_allowed": false,
-  "pending_deliveries": ["actual approved Level C batches and all QC", "named technical, annotation, statistical and review owners", "frozen metric-specific threshold and attrition rules", "actual blind measurements and independent validation", "report, configuration, build identity and true second-person acceptance"]
+  "pending_deliveries": [
+    "actual approved Level C batches and all QC",
+    "named technical, annotation, statistical and review owners",
+    "frozen metric-specific threshold and attrition rules",
+    "actual blind measurements and independent validation",
+    "report, configuration, build identity and true second-person acceptance"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/E-03/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

@@ -12,13 +12,35 @@
   "edr_primary_substitution_allowed": false,
   "nominal_sample_rate_hz": 400,
   "channels": [
-    {"name": "respiration", "count": 1, "resolution_bits": 28},
-    {"name": "accelerometer", "count": 3, "resolution_bits": 16},
-    {"name": "gyroscope", "count": 3, "resolution_bits": 16}
+    {
+      "name": "respiration",
+      "count": 1,
+      "resolution_bits": 28
+    },
+    {
+      "name": "accelerometer",
+      "count": 3,
+      "resolution_bits": 16
+    },
+    {
+      "name": "gyroscope",
+      "count": 3,
+      "resolution_bits": 16
+    }
   ],
   "raw_source_id": "plux_respiban",
   "raw_source_policy": "real",
-  "raw_packet_fields": ["source_id", "source_policy", "packet_seq", "device_time_ns", "host_received_monotonic_ns", "clock_domain_id", "sample_count", "payload", "missing_reason_code"],
+  "raw_packet_fields": [
+    "source_id",
+    "source_policy",
+    "packet_seq",
+    "device_time_ns",
+    "host_received_monotonic_ns",
+    "clock_domain_id",
+    "sample_count",
+    "payload",
+    "missing_reason_code"
+  ],
   "native_respiration_field": "resp_samples",
   "display_only_field": "respiration_raw",
   "device_time_is_host_time": false,
@@ -26,5 +48,17 @@
   "decoded_sdk_values_are_wire_bytes": false,
   "required_continuous_capture_seconds": 1800,
   "continuous_capture_evidence_seconds": null,
-  "pending_deliveries": ["vendor SDK and license", "target-machine and Python compatibility", "verified channel order and wire bytes", "real adapter", "30-minute respiration and motion capture", "disconnect and reconnect evidence", "dual-device compatibility evidence", "named owner and review"]
+  "pending_deliveries": [
+    "vendor SDK and license",
+    "target-machine and Python compatibility",
+    "verified channel order and wire bytes",
+    "real adapter",
+    "30-minute respiration and motion capture",
+    "disconnect and reconnect evidence",
+    "dual-device compatibility evidence",
+    "named owner and review"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/D-02/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

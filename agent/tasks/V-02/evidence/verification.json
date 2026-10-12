@@ -33,5 +33,8 @@
       "exit_code": 0
     }
   ],
-  "scope": "historical scene confirmation and current handoff; no rendered runtime or research result"
+  "scope": "historical scene confirmation and current handoff; no rendered runtime or research result",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

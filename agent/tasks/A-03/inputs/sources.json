@@ -10,11 +10,30 @@
     "agent/modules/02-信号处理/a03_gate2_spec",
     "agent/modules/tests/a03_spec",
     "agent/tasks/A-01/outputs/current-rebuild.md",
-    "agent/tasks/A-02/outputs/current-statistics.md"
+    "agent/tasks/A-02/outputs/current-statistics.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/design/design-foundation-20261008/05-control-spec.tex",
+    "agent/design/design-foundation-20261008/05-control-spec.pdf",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+    "agent/design/design-foundation-20261008/operational-design.json"
   ],
   "frozen_input_snapshot_id": "570E00EC295CE4ABDBB1C1EF2C19FDFB3FADD6CEF7B63BDAE2CCF0F929E64309",
   "archived_byte_hashes": {
     "README_spec_legacy.md": "B1EBEF7125AEA8F8EEFACF3ED4A36F41995F75A58602195493E54855CFB28351",
     "08_sample_size_anchors.py": "CAC9FA727386F876FF7556FC64985E5810EC3AC412DA1346DF10C0E6AC1C6055"
-  }
+  },
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008"
 }

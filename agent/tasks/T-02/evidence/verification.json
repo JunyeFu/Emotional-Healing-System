@@ -27,10 +27,16 @@
   "summary_word_pages_reviewed": 3,
   "chain_word_pages": 17,
   "chain_unchanged_pages_compared": 15,
-  "chain_changed_pages_reviewed": [16, 17],
+  "chain_changed_pages_reviewed": [
+    16,
+    17
+  ],
   "td_requests": "NOT_IMPLEMENTED",
   "td_operator_video": "NOT_RUN",
   "unity_runtime": "NOT_RUN",
   "real_device_chain": "NOT_RUN",
-  "human_acceptance": "NOT_RUN"
+  "human_acceptance": "NOT_RUN",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

@@ -1,7 +1,11 @@
 {
   "task_id": "U12-05",
   "status": "WAIT_DEP_EXTERNAL",
-  "dependencies": ["U12-01", "G-01", "G-02"],
+  "dependencies": [
+    "U12-01",
+    "G-01",
+    "G-02"
+  ],
   "claimant": null,
   "reviewer": null,
   "scope": "EARLY_ACTIVITY_SPECIFIC_EXTERNAL_RECEIPTS",
@@ -16,5 +20,8 @@
   "formal_collection_allowed": false,
   "external_capability_registry": "00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
   "new_parallel_registry": false,
-  "root_migration_complete": false
+  "root_migration_complete": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/U12-05/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

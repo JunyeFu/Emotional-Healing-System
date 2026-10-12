@@ -37,7 +37,16 @@ def test_registry_owner_and_evidence_remain_actual():
 def test_v02_form_and_control_authority():
     data = contract()
     scenes = read(ROOT / 'agent/tasks/V-02/outputs/current-scenes.json')
-    assert data['form'] == scenes['conditions']['abstract_form'] == 'centered_unfilled_double_ring'
+    assert data['form'] == scenes['conditions']['abstract_form'] == 'screen_space_particle_double_ring'
+    rendering = data['particle_rendering']
+    assert rendering['position'] == 'CENTER_SLIGHTLY_ABOVE_SCREEN_CENTER'
+    assert rendering['outer_source'] == 'target_step_and_progress'
+    assert rendering['inner_source'] == 'independent_actual_step_and_progress'
+    assert not rendering['inner_auto_cycles_with_target']
+    assert rendering['core'] == 'dense_particles_no_continuous_stroke'
+    assert rendering['separate_core_periphery_parameters']
+    assert not rendering['decoration_delay_changes_step_truth']
+    assert data['unity_target_version'] == scenes['unity_target_version'] == '2022.3.62f3'
     assert data['cue_modes'] == scenes['conditions']['modes']
     assert data['condition_phase_cues_exclusive'] == scenes['conditions']['exclusive_phase_cues']
     assert data['camera_mode'] == scenes['camera']['mode'] == 'FIXED'
@@ -64,6 +73,10 @@ def test_four_structure_steps_derive_from_v22_not_coarse_phase(weather):
 
 def test_layer_independence_and_empty_actual():
     layers = contract()['layers']
+    assert contract()['step_transition']['hold_preserves_current_size']
+    assert contract()['step_transition']['next_step_starts_from_current_size']
+    assert not contract()['step_transition']['target_profile_skips_second_inhale']
+    assert contract()['step_transition']['fade_actual_missing_second_inhale'] == 'GO_DIRECTLY_TO_EXHALE_NO_SYNTHETIC_SECOND_INHALE'
     assert layers['target']['carrier'] == 'outer_ring'
     assert layers['actual']['carrier'] == 'inner_ring'
     assert layers['actual']['source'].startswith('independent_actual_')
@@ -115,7 +128,7 @@ def test_u03_minimal_counterpart_is_not_blocked_by_u07_promotion():
     assert data['minimal_counterpart_before_promotion'] == 'U-03_FADE'
     assert data['template_acceptance'] == slice_['template_freeze'] == 'NOT_COMPLETED'
     assert 'U-07' not in slice_['depends_on']
-    assert data['actual_four_structure_configuration'] == 'NOT_IMPLEMENTED_IN_REVIEWED_INPUTS'
+    assert data['actual_four_structure_configuration'] == 'MEMBER_REPORTED_PENDING_SOURCE_HANDOFF_AND_RENDER_ACCEPTANCE'
     assert data['actual_render_acceptance'] == 'NOT_RUN' and not data['formal_collection_allowed']
 
 

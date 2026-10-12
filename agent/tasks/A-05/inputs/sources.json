@@ -19,6 +19,17 @@
     "agent/modules/02-信号处理/a03_gate2_spec/gate.py",
     "agent/tasks/U12-07/archive/signed-candidate/empty_table_spec.md",
     "agent/tasks/U12-07/outputs/table-spec.md",
-    "agent/tasks/A-05/archive/05_问卷与访谈处理.md"
-  ]
+    "agent/tasks/A-05/archive/05_问卷与访谈处理.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

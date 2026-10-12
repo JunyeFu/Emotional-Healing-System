@@ -1,0 +1,33 @@
+{
+  "task_id": "U-07",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "固定圈开环方案的可信对照",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "固定圈开环方案的可信对照修订交接",
+    "开环fixture",
+    "输入替换不变报告"
+  ],
+  "acceptance_criteria": [
+    "AC1 A只显示共同预设指导，Actual内圈与数据累计关闭",
+    "AC2 保留完整且有品质的预设场景，不故意降低体验",
+    "AC3 与B共有预算和素材，混杂报告不作单机制结论"
+  ],
+  "evidence_required": [
+    "开环fixture",
+    "输入替换不变报告",
+    "视觉混杂说明"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "F-05",
+    "U-03",
+    "R-01",
+    "V-03"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

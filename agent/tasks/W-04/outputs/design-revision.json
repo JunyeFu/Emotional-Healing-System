@@ -1,0 +1,32 @@
+{
+  "task_id": "W-04",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "科研产品实践的真实移交",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "科研产品实践的真实移交修订交接",
+    "成果清单",
+    "真实使用价值及成本"
+  ],
+  "acceptance_criteria": [
+    "AC1 同一设计支撑展示与论文，原生适应不得动画冒充",
+    "AC2 设备/维护/准备成本与实际价值证据随成品交接",
+    "AC3 标明设计、工程、研究和公开状态，不夸大受益人数"
+  ],
+  "evidence_required": [
+    "成果清单",
+    "真实使用价值及成本",
+    "接收与公开决定"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "W-03",
+    "Z-01",
+    "U12-12"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

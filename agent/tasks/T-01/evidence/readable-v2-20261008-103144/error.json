@@ -1,0 +1,3 @@
+{
+  "error": "Traceback (most recent call last):\n  File \"/project1/T01_TelemetryPanel/_capture_runtime\", line 28, in onFrameStart\nAttributeError: 'td.App' object has no attribute 'licenseType'\n"
+}

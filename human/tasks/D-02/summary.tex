@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\setCJKmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\newfontfamily\titlelatin{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\usepackage[margin=22mm]{geometry}
+\usepackage{graphicx}
+\usepackage{needspace}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyfoot[C]{SRP 任务包审阅\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\linespread{1.28}
+\emergencystretch=3em
+\raggedbottom
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}\vspace{8pt}}
+\newcommand{\reviewsection}[1]{\par\Needspace{5\baselineskip}\vspace{10pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\vspace{4pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+\begin{document}
+
+\reviewtitle{D-\allowbreak{}02 respiBAN实际呼吸可辨性 · 新基线审阅}
+审阅日期 2026-\allowbreak{}10-\allowbreak{}08    任务 D-\allowbreak{}02
+
+
+\reviewsection{一、任务定义与交付}
+\reviewsubsection{1.1 当前结论}
+D-\allowbreak{}02注册状态WAIT\_\allowbreak{}DEP\_\allowbreak{}EXTERNAL仅保留原范围。当前任务更新为respiBAN实际呼吸可辨性；处理类型REVISE\_\allowbreak{}FOR\_\allowbreak{}NEW\_\allowbreak{}BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。
+
+
+本包采用固定A与受限适应B整包基线；共享I、独立G/\allowbreak{}X及同预算。新设计、真实运行与正式许可分别成立。
+
+
+\reviewsubsection{1.2 目标与完成标准}
+AC1 真实SDK原始批次与时钟取证，不以模拟替代
+
+
+AC2 验证吸呼、停留、补吸与运动下的混淆和不可判别
+
+
+AC3 不消费G生成实际真值，不可辨事件保留未知
+
+
+\reviewsubsection{1.3 实际交付}
+本轮交付当前TASK、专项交接、design-\allowbreak{}revision.json及来源更新；不声称运行或研究已完成。
+
+
+respiBAN实际呼吸可辨性修订交接
+
+
+设备原件
+
+
+独立事件标注
+
+
+\reviewsection{二、执行与验证}
+\reviewsubsection{2.1 执行过程与关键决定}
+A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出
+
+
+B数据驱动场景原生受限适应，合法边界调整G后趋向共同I
+
+
+I共同理想/\allowbreak{}G有效下发/\allowbreak{}X独立实际分离；同预算，未知不补成功
+
+
+PANAS-\allowbreak{}NA前测校正主要候选；I达成/\allowbreak{}G跟随/\allowbreak{}成本独立，不沿用旧PF非劣界
+
+
+理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收
+
+
+本包专项：respiBAN实际呼吸可辨性
+
+
+\reviewsubsection{2.2 验证与结果}
+任务包/\allowbreak{}PDF/\allowbreak{}来源一致性由verify\_\allowbreak{}task\_\allowbreak{}design\_\allowbreak{}baseline.py和build\_\allowbreak{}task\_\allowbreak{}reviews.py -\allowbreak{}-\allowbreak{}check核查；这些静态结果仅证明当前文档一致。
+
+
+原软件测试与签收见archive/\allowbreak{}pre-\allowbreak{}design-\allowbreak{}baseline-\allowbreak{}20261008/\allowbreak{}summary.json，保持原范围，不能支持本包新增要求。
+
+
+\reviewsubsection{2.3 偏离与修复闭环}
+旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。
+
+
+真实缺口：设备原件；独立事件标注；可辨性及延迟表
+
+
+\reviewsubsection{2.4 目录与文件整理}
+旧任务、总结及被替代交接保存在archive/\allowbreak{}pre-\allowbreak{}design-\allowbreak{}baseline-\allowbreak{}20261008；当前设计用LaTeX/\allowbreak{}PDF维护，不新增DOCX。
+
+
+\reviewsection{三、审阅与交接}
+\reviewsubsection{3.1 上下游交接}
+原依赖：P-\allowbreak{}02；必须核对新范围交接，原DONE不自动证明修订完成。
+
+
+消费design-\allowbreak{}foundation-\allowbreak{}20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：设备原件；独立事件标注；可辨性及延迟表
+
+
+\reviewsubsection{3.2 审阅与责任签收}
+原签收保持下列历史信息；本轮无新增业务签收。
+
+
+新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。
+
+
+历史审核人 未签署    日期 尚未发生
+
+
+没有独立真机复核或第二人签署。本轮Codex只整理任务、修复软件交接并形成Word，不代填责任人或真实PASS。
+
+
+\reviewsubsection{3.3 收尾与下一包}
+新修订状态：NEW\_\allowbreak{}SCOPE\_\allowbreak{}NOT\_\allowbreak{}EXECUTED
+
+
+先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。
+
+
+\reviewsubsection{3.4 审阅来源}
+当前来源：task-\allowbreak{}baseline.json与基石四份LaTeX/\allowbreak{}PDF；历史来源见归档总结。
+
+
+\href{file:///D:/Agent/srp/agent/tasks/D-02/outputs/current-acquisition.md}{当前真实呼吸采集交接}
+
+
+\href{file:///D:/Agent/srp/agent/modules/01-\%E6\%95\%B0\%E6\%8D\%AE\%E9\%87\%87\%E9\%9B\%86/frame_clock.py}{原生批次实现}
+
+
+\href{file:///D:/Agent/srp/agent/tasks/D-02/evidence/verification.json}{软件验证记录}
+
+
+\href{file:///D:/Agent/srp/agent/governance/01-\%E9\%A1\%B9\%E7\%9B\%AE\%E7\%AB\%A0\%E7\%A8\%8B\%E4\%B8\%8E\%E8\%A7\%84\%E5\%88\%92/2026-08-05_SRP_IJHCI_\%E5\%85\%A8\%E9\%A1\%B9\%E7\%9B\%AE1-12\%E6\%AD\%A5\%E8\%A7\%84\%E5\%88\%92\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%8C\%85_v1.0/24_\%E5\%9B\%A2\%E9\%98\%9F\%E4\%BB\%BB\%E5\%8A\%A1\%E4\%B8\%8E\%E9\%A1\%B9\%E7\%9B\%AE\%E6\%B2\%BB\%E7\%90\%86/08_\%E4\%BB\%BB\%E5\%8A\%A1\%E6\%8A\%80\%E8\%83\%BD\%E4\%B8\%8E\%E5\%9B\%BD\%E5\%86\%85\%E5\%AD\%A6\%E4\%B9\%A0\%E8\%B5\%84\%E6\%96\%99_v1.0.md}{国内技能资料}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/task-baseline.json}{当前设计基线 task-\allowbreak{}baseline.json}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/01-design.pdf}{当前设计基线 01-\allowbreak{}design.pdf}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/02-science.pdf}{当前设计基线 02-\allowbreak{}science.pdf}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/03-decisions.pdf}{当前设计基线 03-\allowbreak{}decisions.pdf}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/04-review-audit.pdf}{当前设计基线 04-\allowbreak{}review-\allowbreak{}audit.pdf}
+
+
+\end{document}

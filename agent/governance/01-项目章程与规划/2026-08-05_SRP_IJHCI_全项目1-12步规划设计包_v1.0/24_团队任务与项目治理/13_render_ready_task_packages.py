@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
 import pathlib
 import runpy
 import shutil
@@ -95,7 +96,7 @@ def preserve_task_owned_files(
             if not old_file.is_file():
                 continue
             relative = old_file.relative_to(old_task)
-            if relative.parts[0] == "inputs" or relative.as_posix() in generated_names:
+            if relative.parts[0] in {"inputs", "design_updates"} or relative.as_posix() in generated_names:
                 continue
             destination = destination_root / relative
             destination.parent.mkdir(parents=True, exist_ok=True)
@@ -157,6 +158,16 @@ def task_markdown(
     process_profiles: dict[str, tuple[str, ...]],
     task_map: dict[str, object],
 ) -> str:
+    row = dict(row)
+    task_map = dict(task_map)
+    if row.get('design_baseline_id'):
+        for field in ('deliverables', 'acceptance_criteria', 'evidence_required', 'completion_condition'):
+            row[field] = row['current_' + field]
+        task_map.pop('acceptance_results', None)
+        task_map.pop('evidence_results', None)
+        task_map.pop('human_review_status', None)
+        task_map.pop('human_review_commit', None)
+        task_map.pop('model_review_status', None)
     dependencies = row["depends_on"].replace("|", "、") or "无"
     refs = []
     for ref_id in row["learning_refs"].split("|"):
@@ -193,6 +204,17 @@ def task_markdown(
         "## 交付物",
         "",
     ]
+    if task_map.get("execution_update_path"):
+        current_path = PROJECT_ROOT / task_map["execution_update_path"]
+        package_path = OUTPUT / row["task_id"]
+        current_link = os.path.relpath(current_path, package_path).replace("\\", "/")
+        lines[2:2] = [
+            "## 2026-10-08 当前实施补充",
+            "",
+            f"以[当前任务执行范围]({current_link})的新基线为准：固定开环A对原生受限适应B，共同I与下发G/实际X分离；Storm与粒子资产、Unity2022.3.62f3保留。",
+            "原领取inputs和候选身份保留；design_updates/是显式新增设计要求，见FILES与manifest。原签收不转移，新范围AC与证据全部待实际验证。",
+            "",
+        ]
     lines.extend(f"- {item}" for item in split_items(row["deliverables"]))
     lines.extend(["", "## 四阶段过程", ""])
     lines.extend(
@@ -204,7 +226,7 @@ def task_markdown(
         render_checklist(
             split_items(row["acceptance_criteria"], "；"),
             task_map.get("acceptance_results"),
-            row["status"] == "IN_REVIEW",
+            row["status"] == "IN_REVIEW" and not row.get("design_baseline_id"),
         )
     )
     lines.extend(["", "## 必需证据", ""])
@@ -212,7 +234,7 @@ def task_markdown(
         render_evidence_checklist(
             split_items(row["evidence_required"]),
             task_map.get("evidence_results"),
-            row["status"],
+            "READY" if row.get("design_baseline_id") else row["status"],
         )
     )
     if row["status"] == "IN_REVIEW":
@@ -229,7 +251,7 @@ def task_markdown(
         ]
         completion = [
             "- 实际改动文件：见`FILES.md`列出的项目权威路径",
-            f"- 验证命令与结果：技术候选已完成；模型复核状态`{task_map.get('model_review_status', 'PENDING')}`",
+            f"- 验证命令与结果：{'新设计范围尚未取得业务验收；原候选身份仅作历史引用' if row.get('design_baseline_id') else '技术候选已完成'}；模型复核状态`{task_map.get('model_review_status', 'PENDING')}`",
             "- 证据路径：" + "；".join(f"`{item}`" for item in evidence_paths),
             f"- commit：`{task_map.get('implementation_commit', 'PENDING_FIX_COMMIT')}`",
             f"- push目标：`origin/{row['branch']}`",
@@ -393,6 +415,22 @@ def main() -> None:
         (package_dir / "FILES.md").write_text(
             files_markdown(task_id, copied, task_map["working_paths"]), encoding="utf-8"
         )
+        design_updates = []
+        for update_index, relative in enumerate(task_map.get('design_update_files', []), start=1):
+            source = resolve_project_path(PROJECT_ROOT, relative)
+            if not source.is_relative_to(PROJECT_ROOT) or not source.is_file():
+                raise ValueError(f'invalid design update source: {relative}')
+            destination = package_dir / 'design_updates' / f'{update_index:02d}_{source.name}'
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(canonical_content(source))
+            design_updates.append({'source_path': relative,
+                                   'package_path': destination.relative_to(package_dir).as_posix(),
+                                   'sha256': sha256(source)})
+        if design_updates:
+            with (package_dir / 'FILES.md').open('a', encoding='utf-8') as handle:
+                handle.write('\n## 新设计变更补充（原领取输入保持）\n\n')
+                for update in design_updates:
+                    handle.write(f"- [{update['source_path']}]({update['package_path']})；{update['sha256']}\n")
         manifest = {
             "package_schema_version": "1.0",
             "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
@@ -405,6 +443,9 @@ def main() -> None:
             "candidate_identity": task_map.get("implementation_commit"),
             "source_files": copied,
             "working_paths": task_map["working_paths"],
+            "design_baseline_id": task_map.get("design_baseline_id"),
+            "design_updates": design_updates,
+            "current_scope_acceptance": "PENDING_NOT_INHERITED_FROM_ORIGINAL_REVIEW",
         }
         (package_dir / "package_manifest.json").write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
@@ -417,7 +458,7 @@ def main() -> None:
         "# 当前解锁独立任务包",
         "",
         "> 本目录由`13_render_ready_task_packages.py`确定性生成，包含`READY`、`IN_PROGRESS`和`IN_REVIEW`任务。只有`READY`且领取人为空的任务可以领取。",
-        "> 每个包均含任务说明、涉及文件清单、输入快照和哈希清单；状态变化后必须重新生成并校验。",
+        "> 每个包含当前任务说明、原领取输入及显式design_updates新要求；旧签收不覆盖修订，新范围验收未执行。READY允许设计承接，实施/采集须另核对新范围依赖与真实冻结。",
         "",
         "| 任务 | 状态 | 名称 | 工作量 | 入口 |",
         "|---|---|---|---:|---|",

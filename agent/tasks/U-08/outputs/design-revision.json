@@ -1,0 +1,35 @@
+{
+  "task_id": "U-08",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "产品预算、可访问与净收益",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "产品预算、可访问与净收益修订交接",
+    "用户预算",
+    "可访问需求"
+  ],
+  "acceptance_criteria": [
+    "AC1 准备、教学、练习、帮助与维护成本分别估算",
+    "AC2 原生表达可读且支持减少运动/非颜色唯一与停止",
+    "AC3 两设备研究不自动支持现实部署，成品须新条件验收"
+  ],
+  "evidence_required": [
+    "用户预算",
+    "可访问需求",
+    "部署价值及构建验收清单"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "G-02",
+    "U-03",
+    "U-04",
+    "U-05",
+    "U-06",
+    "U-07"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

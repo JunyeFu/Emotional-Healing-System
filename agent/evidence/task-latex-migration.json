@@ -1,0 +1,678 @@
+{
+  "date": "2026-10-08",
+  "scope": "71 current task evidence reviews and project chained review; historical signatures and frozen inputs retained",
+  "status": "COMPLETE_LOCAL",
+  "task_packages": 71,
+  "pdf_documents": 72,
+  "task_pages": 232,
+  "chain_pages": 40,
+  "title_font": "SimHei, synthetic bold, centered",
+  "body_font": "Microsoft YaHei",
+  "embedded_fonts": "PASS_ALL_72",
+  "hierarchy": "一、二、三 / 1.1、2.1、3.1",
+  "content_captions_and_sources": "PASS_ALL_71",
+  "pdf_body_text_and_images": "PASS_ALL_71",
+  "chain_conclusions_handoffs_findings": "PASS_ALL_71",
+  "missing_glyphs_and_page_overflow": "NONE_ALL_72",
+  "visual_sample_task_ids": [
+    "V-05",
+    "F-01",
+    "U12-02",
+    "W-03",
+    "U-02",
+    "A-03"
+  ],
+  "visual_sample_pages": 25,
+  "chain_visual_sample_pages": [
+    1,
+    20,
+    40
+  ],
+  "rendered_task_pages": "agent/local/artifacts/task-latex-20261008/pages",
+  "recovery_copies": "agent/local/artifacts/task-latex-20261008/replaced-docx",
+  "deleted_docx": [
+    "human/tasks/A-01/summary.docx",
+    "human/tasks/A-02/summary.docx",
+    "human/tasks/A-03/summary.docx",
+    "human/tasks/A-04/summary.docx",
+    "human/tasks/A-05/summary.docx",
+    "human/tasks/A-06/summary.docx",
+    "human/tasks/B-01/summary.docx",
+    "human/tasks/B-02/summary.docx",
+    "human/tasks/B-03/summary.docx",
+    "human/tasks/D-01/summary.docx",
+    "human/tasks/D-02/summary.docx",
+    "human/tasks/E-01/summary.docx",
+    "human/tasks/E-02/summary.docx",
+    "human/tasks/E-03/summary.docx",
+    "human/tasks/E-04/summary.docx",
+    "human/tasks/E-05/summary.docx",
+    "human/tasks/E-06/summary.docx",
+    "human/tasks/F-01/summary.docx",
+    "human/tasks/F-02/summary.docx",
+    "human/tasks/F-03/summary.docx",
+    "human/tasks/F-04/summary.docx",
+    "human/tasks/F-05/summary.docx",
+    "human/tasks/G-01/summary.docx",
+    "human/tasks/G-02/summary.docx",
+    "human/tasks/G-03/summary.docx",
+    "human/tasks/G-04/summary.docx",
+    "human/tasks/G-05/summary.docx",
+    "human/tasks/I-01/summary.docx",
+    "human/tasks/P-01/summary.docx",
+    "human/tasks/P-02/summary.docx",
+    "human/tasks/Q-01/summary.docx",
+    "human/tasks/Q-02/summary.docx",
+    "human/tasks/Q-03/summary.docx",
+    "human/tasks/R-01/summary.docx",
+    "human/tasks/S-01/summary.docx",
+    "human/tasks/S-02/summary.docx",
+    "human/tasks/T-01/summary.docx",
+    "human/tasks/T-02/summary.docx",
+    "human/tasks/U-01/summary.docx",
+    "human/tasks/U-02/summary.docx",
+    "human/tasks/U-03/summary.docx",
+    "human/tasks/U-04/summary.docx",
+    "human/tasks/U-05/summary.docx",
+    "human/tasks/U-06/summary.docx",
+    "human/tasks/U-07/summary.docx",
+    "human/tasks/U-08/summary.docx",
+    "human/tasks/U12-01/summary.docx",
+    "human/tasks/U12-02/summary.docx",
+    "human/tasks/U12-03/summary.docx",
+    "human/tasks/U12-04/summary.docx",
+    "human/tasks/U12-05/summary.docx",
+    "human/tasks/U12-06/summary.docx",
+    "human/tasks/U12-07/summary.docx",
+    "human/tasks/U12-08/summary.docx",
+    "human/tasks/U12-09/summary.docx",
+    "human/tasks/U12-10/summary.docx",
+    "human/tasks/U12-11/summary.docx",
+    "human/tasks/U12-12/summary.docx",
+    "human/tasks/V-01/summary.docx",
+    "human/tasks/V-02/summary.docx",
+    "human/tasks/V-03/summary.docx",
+    "human/tasks/V-04/summary.docx",
+    "human/tasks/V-05/summary.docx",
+    "human/tasks/W-01/summary.docx",
+    "human/tasks/W-02/summary.docx",
+    "human/tasks/W-03/summary.docx",
+    "human/tasks/W-04/summary.docx",
+    "human/tasks/X-01/summary.docx",
+    "human/tasks/X-02/summary.docx",
+    "human/tasks/X-03/summary.docx",
+    "human/tasks/Z-01/summary.docx",
+    "human/project-review.docx"
+  ],
+  "compiler": "installed XeLaTeX; built-in compiler unavailable due environment-directory error",
+  "packages": [
+    {
+      "task_id": "A-01",
+      "tex": "human/tasks/A-01/summary.tex",
+      "pdf": "human/tasks/A-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "A-02",
+      "tex": "human/tasks/A-02/summary.tex",
+      "pdf": "human/tasks/A-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "A-03",
+      "tex": "human/tasks/A-03/summary.tex",
+      "pdf": "human/tasks/A-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "SAMPLED_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "A-04",
+      "tex": "human/tasks/A-04/summary.tex",
+      "pdf": "human/tasks/A-04/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "A-05",
+      "tex": "human/tasks/A-05/summary.tex",
+      "pdf": "human/tasks/A-05/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "A-06",
+      "tex": "human/tasks/A-06/summary.tex",
+      "pdf": "human/tasks/A-06/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "B-01",
+      "tex": "human/tasks/B-01/summary.tex",
+      "pdf": "human/tasks/B-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "B-02",
+      "tex": "human/tasks/B-02/summary.tex",
+      "pdf": "human/tasks/B-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "B-03",
+      "tex": "human/tasks/B-03/summary.tex",
+      "pdf": "human/tasks/B-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "D-01",
+      "tex": "human/tasks/D-01/summary.tex",
+      "pdf": "human/tasks/D-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "D-02",
+      "tex": "human/tasks/D-02/summary.tex",
+      "pdf": "human/tasks/D-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "E-01",
+      "tex": "human/tasks/E-01/summary.tex",
+      "pdf": "human/tasks/E-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "E-02",
+      "tex": "human/tasks/E-02/summary.tex",
+      "pdf": "human/tasks/E-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "E-03",
+      "tex": "human/tasks/E-03/summary.tex",
+      "pdf": "human/tasks/E-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "E-04",
+      "tex": "human/tasks/E-04/summary.tex",
+      "pdf": "human/tasks/E-04/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "E-05",
+      "tex": "human/tasks/E-05/summary.tex",
+      "pdf": "human/tasks/E-05/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "E-06",
+      "tex": "human/tasks/E-06/summary.tex",
+      "pdf": "human/tasks/E-06/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "F-01",
+      "tex": "human/tasks/F-01/summary.tex",
+      "pdf": "human/tasks/F-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "SAMPLED_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "F-02",
+      "tex": "human/tasks/F-02/summary.tex",
+      "pdf": "human/tasks/F-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "F-03",
+      "tex": "human/tasks/F-03/summary.tex",
+      "pdf": "human/tasks/F-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "F-04",
+      "tex": "human/tasks/F-04/summary.tex",
+      "pdf": "human/tasks/F-04/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "F-05",
+      "tex": "human/tasks/F-05/summary.tex",
+      "pdf": "human/tasks/F-05/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "G-01",
+      "tex": "human/tasks/G-01/summary.tex",
+      "pdf": "human/tasks/G-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "G-02",
+      "tex": "human/tasks/G-02/summary.tex",
+      "pdf": "human/tasks/G-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "G-03",
+      "tex": "human/tasks/G-03/summary.tex",
+      "pdf": "human/tasks/G-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "G-04",
+      "tex": "human/tasks/G-04/summary.tex",
+      "pdf": "human/tasks/G-04/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "G-05",
+      "tex": "human/tasks/G-05/summary.tex",
+      "pdf": "human/tasks/G-05/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "I-01",
+      "tex": "human/tasks/I-01/summary.tex",
+      "pdf": "human/tasks/I-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "P-01",
+      "tex": "human/tasks/P-01/summary.tex",
+      "pdf": "human/tasks/P-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "P-02",
+      "tex": "human/tasks/P-02/summary.tex",
+      "pdf": "human/tasks/P-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "Q-01",
+      "tex": "human/tasks/Q-01/summary.tex",
+      "pdf": "human/tasks/Q-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "Q-02",
+      "tex": "human/tasks/Q-02/summary.tex",
+      "pdf": "human/tasks/Q-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "Q-03",
+      "tex": "human/tasks/Q-03/summary.tex",
+      "pdf": "human/tasks/Q-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "R-01",
+      "tex": "human/tasks/R-01/summary.tex",
+      "pdf": "human/tasks/R-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "S-01",
+      "tex": "human/tasks/S-01/summary.tex",
+      "pdf": "human/tasks/S-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "S-02",
+      "tex": "human/tasks/S-02/summary.tex",
+      "pdf": "human/tasks/S-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "T-01",
+      "tex": "human/tasks/T-01/summary.tex",
+      "pdf": "human/tasks/T-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "T-02",
+      "tex": "human/tasks/T-02/summary.tex",
+      "pdf": "human/tasks/T-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U-01",
+      "tex": "human/tasks/U-01/summary.tex",
+      "pdf": "human/tasks/U-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U-02",
+      "tex": "human/tasks/U-02/summary.tex",
+      "pdf": "human/tasks/U-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "SAMPLED_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "U-03",
+      "tex": "human/tasks/U-03/summary.tex",
+      "pdf": "human/tasks/U-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U-04",
+      "tex": "human/tasks/U-04/summary.tex",
+      "pdf": "human/tasks/U-04/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "U-05",
+      "tex": "human/tasks/U-05/summary.tex",
+      "pdf": "human/tasks/U-05/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "U-06",
+      "tex": "human/tasks/U-06/summary.tex",
+      "pdf": "human/tasks/U-06/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "U-07",
+      "tex": "human/tasks/U-07/summary.tex",
+      "pdf": "human/tasks/U-07/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "U-08",
+      "tex": "human/tasks/U-08/summary.tex",
+      "pdf": "human/tasks/U-08/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "U12-01",
+      "tex": "human/tasks/U12-01/summary.tex",
+      "pdf": "human/tasks/U12-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-02",
+      "tex": "human/tasks/U12-02/summary.tex",
+      "pdf": "human/tasks/U12-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "SAMPLED_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "U12-03",
+      "tex": "human/tasks/U12-03/summary.tex",
+      "pdf": "human/tasks/U12-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-04",
+      "tex": "human/tasks/U12-04/summary.tex",
+      "pdf": "human/tasks/U12-04/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-05",
+      "tex": "human/tasks/U12-05/summary.tex",
+      "pdf": "human/tasks/U12-05/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-06",
+      "tex": "human/tasks/U12-06/summary.tex",
+      "pdf": "human/tasks/U12-06/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-07",
+      "tex": "human/tasks/U12-07/summary.tex",
+      "pdf": "human/tasks/U12-07/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-08",
+      "tex": "human/tasks/U12-08/summary.tex",
+      "pdf": "human/tasks/U12-08/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-09",
+      "tex": "human/tasks/U12-09/summary.tex",
+      "pdf": "human/tasks/U12-09/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-10",
+      "tex": "human/tasks/U12-10/summary.tex",
+      "pdf": "human/tasks/U12-10/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-11",
+      "tex": "human/tasks/U12-11/summary.tex",
+      "pdf": "human/tasks/U12-11/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "U12-12",
+      "tex": "human/tasks/U12-12/summary.tex",
+      "pdf": "human/tasks/U12-12/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "V-01",
+      "tex": "human/tasks/V-01/summary.tex",
+      "pdf": "human/tasks/V-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "V-02",
+      "tex": "human/tasks/V-02/summary.tex",
+      "pdf": "human/tasks/V-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "V-03",
+      "tex": "human/tasks/V-03/summary.tex",
+      "pdf": "human/tasks/V-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "V-04",
+      "tex": "human/tasks/V-04/summary.tex",
+      "pdf": "human/tasks/V-04/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "V-05",
+      "tex": "human/tasks/V-05/summary.tex",
+      "pdf": "human/tasks/V-05/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "SAMPLED_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "W-01",
+      "tex": "human/tasks/W-01/summary.tex",
+      "pdf": "human/tasks/W-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "W-02",
+      "tex": "human/tasks/W-02/summary.tex",
+      "pdf": "human/tasks/W-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "W-03",
+      "tex": "human/tasks/W-03/summary.tex",
+      "pdf": "human/tasks/W-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "SAMPLED_PASS",
+      "pages_count": 4
+    },
+    {
+      "task_id": "W-04",
+      "tex": "human/tasks/W-04/summary.tex",
+      "pdf": "human/tasks/W-04/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "X-01",
+      "tex": "human/tasks/X-01/summary.tex",
+      "pdf": "human/tasks/X-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "X-02",
+      "tex": "human/tasks/X-02/summary.tex",
+      "pdf": "human/tasks/X-02/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "X-03",
+      "tex": "human/tasks/X-03/summary.tex",
+      "pdf": "human/tasks/X-03/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    },
+    {
+      "task_id": "Z-01",
+      "tex": "human/tasks/Z-01/summary.tex",
+      "pdf": "human/tasks/Z-01/summary.pdf",
+      "content_fonts_links": "PASS",
+      "visual_review": "AUTOMATED_CHECKS_PASS",
+      "pages_count": 3
+    }
+  ]
+}

@@ -2,7 +2,9 @@
   "task_id": "B-03",
   "task_kind": "TEMPLATE",
   "business_status": "BLOCKED_EXTERNAL",
-  "depends_on": ["G-04"],
+  "depends_on": [
+    "G-04"
+  ],
   "claimant": null,
   "reviewer": null,
   "real_roles": null,
@@ -14,7 +16,10 @@
   "formal_collection_allowed": false,
   "required_for_core_paper": false,
   "cue_mode_both_arms": "scene_native",
-  "arms": ["frozen_policy", "balanced_random"],
+  "arms": [
+    "frozen_policy",
+    "balanced_random"
+  ],
   "formal_randomized_n": null,
   "formal_recruitment_cap": null,
   "formal_stopping_rule": null,
@@ -41,5 +46,8 @@
   "batch_completion_authorizes_unblinding": false,
   "real_qc": "NOT_GENERATED",
   "normalization_is_business_completion": false,
-  "root_migration_complete": false
+  "root_migration_complete": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/B-03/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

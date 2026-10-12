@@ -31,5 +31,8 @@
   "manuscript_similarity_check": "NOT_RUN",
   "submission_authorized": false,
   "normalization_is_business_completion": false,
-  "root_migration_complete": false
+  "root_migration_complete": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/W-02/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

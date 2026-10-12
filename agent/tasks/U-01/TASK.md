@@ -1,37 +1,41 @@
-# U-01【Unity】可靠控制技术探针与渲染回执
+# U-01 Unity控制镜像与实际呈现回执
 
-## 责任与状态
+基线 `SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008`。注册状态 `DONE` 保留原范围；新修订需求 `ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW`。本包当前设计要求优先于下方链接的旧材料，不把历史DONE转移为新适应方案验收。
 
-- 注册表状态：DONE；原执行人Codex，分支codex/u-01-unity-control。
-- 原第二人傅钧烨，2026-09-07 +08:00签收；候选6c09f71d14bcb0288a4b83f87b177975c49bfe3d，签收提交aab416cbbcea542f6d43a3c6e0e03e48fb258445。
-- 本轮由Codex规范化执行入口和复测，不重新签收，不改变原验收范围。
+## 当前任务范围
 
-## 完成标准
+- A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出
+- B数据驱动场景原生受限适应，合法边界调整G后趋向共同I
+- I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功
+- PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界
+- 理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收
+- 五人半个月100+用于后续可行性，各阶段人数分别计数
+- 原生、自适应已有先例；贡献为待验证整包权衡和有限设计知识
+- 当前任务包新要求优先，原签收/领取输入及候选身份保持原范围
 
-原包约4人日。AC1：丢包、乱序、重复fixture及重连通过，同一控制重发保持事件ID。AC2：旧帧不覆盖，Unity本地时钟不推进模块。AC3：错误握手、断连、重连和回执拒绝按合同失败关闭。
+本包处理：Unity控制镜像与实际呈现回执。类型：REVISE_FOR_NEW_BASELINE。既有依赖：F-01、F-03、F-05、P-01；依赖的历史DONE不能证明新范围已交接。领取人 `Codex`，复核人 `傅钧烨（团队总监，独立第二人复核人）`，原预计4人日仅历史估算，新范围成本待承接者评估。
 
-本轮要求统一执行入口，生成新证据不覆盖历史原件，当前使用说明与P-01/P-02/F-05边界一致，并生成逐包与串联Word。
+## 交付与验收
 
-## 固定过程
+- Unity控制镜像与实际呈现回执修订交接
+- 控制镜像说明
+- 呈现时间证据规格
 
-1. 读取inputs/sources.json列出的注册、签署、合同、实现和历史证据。
-2. 执行execution/verify.ps1，分别跑Unity EditMode、PlayMode和证据生成；新结果进入evidence/runtime。
-3. 使用已迁移verify_u01.py校验新旧证据；核对控制、ACK、回执和镜像轨迹的实际内容。
-4. 核对P-01时钟权威、P-02回执记录与U-02渲染确认，先修正outputs/current-control-contract.md，再更新outputs/summary.json。
-5. 使用agent/tools/build_task_reviews.py生成human/tasks/U-01/summary.docx及项目串联Word，逐页检查后明确路径提交推送。
+- [ ] AC1 Unity只消费获准的下发G，不本地擅自改I或决定个体适应
+- [ ] AC2 A时钟预设与B真实控制消息分别核对
+- [ ] AC3 实际呈现、暂停中止及恢复回执与会话源可对应
 
-## 文件归属与接口
+必需证据：控制镜像说明；呈现时间证据规格；异常回执表。
 
-inputs只放来源；execution放主机验证入口；evidence放本轮结果；outputs放当前合同说明和结构化总结；archive记录历史原件及保留理由。
+新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。
 
-Unity Runtime、Editor和Tests属于共享Unity工程，按程序集目录保留，最终工程迁移时整体移动，不能把Editor脚本拆离Assets导致程序集失效。旧evidence目录中的验证脚本已迁入execution，无转发副本；五份已签收证据原件保留。
+## 执行顺序与当前验证边界
 
-运行组件为SRP.U01.U01RuntimeBridge；Python发TCP 5010控制，Unity回ACK/渲染回执并接收UDP 5006。消费v2.2显式步骤身份，禁止从进度推断步骤。渲染完成由适配器显式ConfirmRendered，不以ACK或golden回执证明实际画面。
+1. 核对[设计修订记录](outputs/design-revision.json)、[基石主稿](../../design/design-foundation-20261008/01-design.pdf)及上游新范围；明确待冻结项。
+2. 完成本包专项设计/候选修订，在原权威路径工作；需修改接口或正式协议时先由对应合同与冻结任务承接，不以文档刷新替代批准。
+3. 执行与新范围对应的真实验证，保留未通过项。原execution/verify.ps1仍只核查旧实现范围，其通过不证明新控制、测量或研究完成。任务体系内容检查使用agent/tools/verify_task_design_baseline.py。
+4. 同步当前输出和证据，再生成human/tasks/U-01/summary.tex及PDF；取得真实复核后才按治理流程改变业务状态。
 
-## 技能与学习材料
+## 输入、历史与交接
 
-C#、Unity生命周期、程序集、Edit/Play测试和TCP/UDP。中文资料统一消费项目08_任务技能与国内学习资料_v1.0.md中的L-UNITY、L-UNITYTEST；[Unity中文学习入口](https://learn.u3d.cn/)与[微软中文TcpClient文档](https://learn.microsoft.com/zh-cn/dotnet/api/system.net.sockets.tcpclient)用于实现查阅。
-
-## 交接
-
-上游F-01/F-05、F-03、P-01；P-02记录真实收到的消息。下游U-02/U-03实现实际呈现与确认，U12-11/P-01冻结并接入核心前教学，I-01验证真实设备全链。既有技术探针通过不关闭这些下游事项。
+inputs/sources.json列出当前设计来源；领取中原input_snapshot_id及候选身份保留，新增要求通过分发补充和影响记录交接，不静默替换领取输入。旧TASK与总结见archive/pre-design-baseline-20261008，原审核信息和实际代码证据保留原时间/范围。大型工程以项目工作目录引用，不复制缓存。

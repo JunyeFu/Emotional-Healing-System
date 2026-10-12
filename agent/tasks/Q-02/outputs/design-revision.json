@@ -1,0 +1,33 @@
+{
+  "task_id": "Q-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "校园需求与方案认知访谈",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "校园需求与方案认知访谈修订交接",
+    "需求访谈",
+    "条件适配题蓝图"
+  ],
+  "acceptance_criteria": [
+    "AC1 访谈真实困难、替代、可用时间和佩戴拒绝，不预设需要",
+    "AC2 检查A固定含义及B提示/响应/不可用信息",
+    "AC3 保留困惑与退出，PANAS适用与地板先审而非结果后换量表"
+  ],
+  "evidence_required": [
+    "需求访谈",
+    "条件适配题蓝图",
+    "用时及负担记录"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "U-08",
+    "Q-01",
+    "U12-02",
+    "U12-03"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

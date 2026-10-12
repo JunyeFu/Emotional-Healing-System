@@ -4,7 +4,10 @@
   "business_status": "READY",
   "claimant": null,
   "reviewer": null,
-  "depends_on": ["T-01", "P-01"],
+  "depends_on": [
+    "T-01",
+    "P-01"
+  ],
   "request_protocol_status": "NOT_IMPLEMENTED",
   "request_schema": null,
   "request_ack_schema": null,
@@ -23,15 +26,39 @@
     "td_handshake": "SUPPORTED_ROLE_ONLY",
     "td_message_result": "TD_STATE_CHANGE_NOT_AVAILABLE"
   },
-  "internal_core_actions": ["start", "pause", "abort"],
-  "intended_td_actions": ["manual_mark", "abort"],
+  "internal_core_actions": [
+    "start",
+    "pause",
+    "abort"
+  ],
+  "intended_td_actions": [
+    "manual_mark",
+    "abort"
+  ],
   "manual_mark_core_action": false,
   "manual_mark_handler": null,
   "operator_ack_is_unity_ack": false,
   "alarm_ack_changes_quality_or_session": false,
-  "required_evidence": ["request_logs", "permission_negative_tests", "td_operation_video"],
+  "required_evidence": [
+    "request_logs",
+    "permission_negative_tests",
+    "td_operation_video"
+  ],
   "required_evidence_status": "NOT_DELIVERED",
-  "core_workbench_features": ["UI13", "UI14", "UI15", "UI16"],
-  "requested_extensions_not_implemented": ["UI17", "UI18", "UI19", "UI20"],
-  "production_gate": "NOT_ESTABLISHED"
+  "core_workbench_features": [
+    "UI13",
+    "UI14",
+    "UI15",
+    "UI16"
+  ],
+  "requested_extensions_not_implemented": [
+    "UI17",
+    "UI18",
+    "UI19",
+    "UI20"
+  ],
+  "production_gate": "NOT_ESTABLISHED",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/T-02/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

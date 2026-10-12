@@ -14,6 +14,21 @@
     "agent/tasks/X-01/outputs/current-randomization.json",
     "agent/tasks/X-02/outputs/current-policy.md",
     "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Runtime/SessionMirror.cs",
-    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
-  ]
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+    "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md",
+    "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+    "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json",
+    "agent/tasks/X-03/outputs/current-implementation-evidence.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

@@ -12,6 +12,17 @@
     "agent/tasks/U12-04/outputs/current-statistics.md",
     "agent/tasks/U12-07/outputs/reporting-rules.md",
     "agent/tasks/W-02/outputs/current-manuscript.md",
-    "agent/tasks/G-03/outputs/current-freeze.md"
-  ]
+    "agent/tasks/G-03/outputs/current-freeze.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

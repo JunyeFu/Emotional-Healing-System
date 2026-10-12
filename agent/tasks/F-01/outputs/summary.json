@@ -1,8 +1,8 @@
 {
   "task_id": "F-01",
-  "title": "F01 合同与协议任务总结",
-  "review_date": "2026-09-28",
-  "conclusion": "F-01注册表为DONE，历史第二人报告已签署PASS。本轮读取核心合同、验收记录和签署对象，并完成53项合同与CSV测试及PowerShell消费者复测。当前完成范围是v2.1合同与消费者校验边界。",
+  "title": "F-01 I/G/X控制与遥测语义修订 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "F-01注册状态DONE仅保留原范围。当前任务更新为I/G/X控制与遥测语义修订；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "傅钧烨",
     "date": "2026-08-12",
@@ -13,77 +13,82 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "本轮实施人为Codex；请按历史签收范围和本轮复测检查交接，不把合同完成等同于所有消费者运行完成。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1合法fixture通过；AC2缺字段、错版本、正式Mock与重复控制失败关闭；AC3未知兼容字段校验后过滤。",
-        "本包固定v2.1线格式与校验行为，后续步骤实例由F-05的v2.2独立扩展。"
+        "AC1 区分共同理想、有效下发引导、实际呼吸和质量来源",
+        "AC2 明确A测量隔离及B控制归属，不将现有Target静默改义",
+        "AC3 列出合同版本与消费者迁移，正式数值未冻结前不启用新研究"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "本包固定manifest、控制事件、ACK、遥测、策略决策和渲染回执的v2.1线格式。JSON Schema与Python参考校验器对同一输入给出一致边界；ControlEventLedger负责跨消息幂等与序号。",
-        "交付包括runtime_contract.py、runtime-contract-v2.1.schema.json、11个fixture、兼容字段过滤、迁移说明与TCP5010和UDP5005/5006端口登记。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "I/G/X控制与遥测语义修订修订交接",
+        "语义对照表",
+        "输入隔离例"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "读取合同、Schema、验收与真实签署对象，执行合同及CSV测试与PowerShell消费者，修正合同当前入口，再生成总结。",
-        "历史记录不重写；当前合同入口状态跟随注册表，两个协议版本不混用。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：I/G/X控制与遥测语义修订"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "AC1由合法fixture与Schema及Python差分测试支持。AC2覆盖缺字段、错版本、正式Mock、未知构建、重复控制和陈旧序号。AC3验证未知兼容字段校验后被过滤。",
-        "2026年9月28日在D:/Agent/srp执行合同与CSV专项，结果53 passed；PowerShell消费者输出frame_seq=10,11。此次执行结果保存在Agent层evidence/verification.json，历史签收结论保持原范围。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "当前合同README仍将F-05 v2.2描述为候选待复核，与注册表DONE冲突。已修正入口状态说明；v2.1不可变，v2.2按独立版本与消费者适配入口使用。",
-        "历史技术验收记录中仍有当时IN_REVIEW与旧测试计数，属于历史记录，不作为当前治理状态。当前Word明确引用真实签署日期和对象，避免把历史候选结论当成当前结论。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：语义对照表；输入隔离例；合同迁移清单"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "统一执行目录包括TASK.md、inputs、execution、evidence、outputs、archive。总结只由结构化输出生成，临时渲染文件不进入交付目录。",
-        "本轮没有可安全删除的历史原件；共享实现已位于agent/modules，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "本包没有前置任务。G-02和P-01消费v2.1字段及失败关闭规则；F-05消费v2.1基线扩展步骤实例；Unity与TD依各自协议消费者任务接入。",
-        "SessionCore拥有流程、顺序和时钟权威。Unity反馈ACK及渲染回执，TD读取遥测。合同通过不代表网络服务、正式构建、真实设备和参与者活动已完成。"
+        "原依赖：无；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：语义对照表；输入隔离例；合同迁移清单"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "历史报告已由真实第二人签署PASS。实现、验证、签收范围与Unity画面、正式构建、真实设备链分别判断。",
-        "本轮属于候选接口复测与目录整理，不追加新的真人签署。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "结构化总结：agent/tasks/F-01/outputs/summary.json；验证记录：同包evidence/verification.json。",
-        "项目串联审阅：human/project-review.docx。下方链接打开协议入口与已签署报告。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -99,6 +104,11 @@
       "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
       "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
       "source": "agent/evidence/root-migration-check.json"
+    },
+    {
+      "id": "F-01-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "I/G/X控制与遥测语义修订；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -110,6 +120,27 @@
     {
       "label": "打开 F-01 已签署报告",
       "path": "agent/modules/05-通信协议/F-01_第二人审核报告_已签署.md"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
     }
-  ]
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

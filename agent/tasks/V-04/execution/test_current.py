@@ -19,7 +19,7 @@ def current():
 
 def test_current_versions_and_camera(current):
     assert current['camera'] == 'FIXED'
-    assert current['background_choices'] == {'storm': 'B', 'heat': 'C', 'snow': 'C', 'fade': 'v5'}
+    assert current['background_choices'] == {'storm': 'MEMBER_STREAMSIDE_CABIN_20261008', 'heat': 'C', 'snow': 'C', 'fade': 'v5'}
     assert not current['preview_order_is_runtime_sequence']
     assert current['assets_per_weather'] * 4 == 32
     assert not current['formal_use_allowed']

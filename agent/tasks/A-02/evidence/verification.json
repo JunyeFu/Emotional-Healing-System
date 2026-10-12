@@ -27,12 +27,37 @@
       "exit_code": 0
     }
   ],
-  "regression": {"command": "py -3.14 -m pytest -q", "exit_code": 0, "passed": 635, "seconds": 50.08},
-  "governance": {"registry_entries": 71, "dispatch_packages": 5, "snapshots": 61, "exit_codes": [0, 0], "dispatch_diff_exit_code": 0},
-  "word_qa": {"summary_pages": 3, "chain_pages": 18, "unchanged_prior_pages": 16, "inspected_changed_chain_pages": [17, 18]},
+  "regression": {
+    "command": "py -3.14 -m pytest -q",
+    "exit_code": 0,
+    "passed": 635,
+    "seconds": 50.08
+  },
+  "governance": {
+    "registry_entries": 71,
+    "dispatch_packages": 5,
+    "snapshots": 61,
+    "exit_codes": [
+      0,
+      0
+    ],
+    "dispatch_diff_exit_code": 0
+  },
+  "word_qa": {
+    "summary_pages": 3,
+    "chain_pages": 18,
+    "unchanged_prior_pages": 16,
+    "inspected_changed_chain_pages": [
+      17,
+      18
+    ]
+  },
   "scope": "current contracts, actual U12-04 synthetic missingness scenario and archival",
   "A02_analysis_pipeline": "NOT_DELIVERED",
   "real_data_analysis": "NOT_RUN",
   "formal_freeze": "NOT_RUN",
-  "human_acceptance": "NOT_RUN"
+  "human_acceptance": "NOT_RUN",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

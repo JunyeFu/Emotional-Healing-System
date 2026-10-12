@@ -6,9 +6,19 @@
   "real_activity": "NOT_RUN",
   "final_render_review": "NOT_RUN",
   "affect_comparison_gated_by_reconstruction": false,
-  "role_counts": {"expert": 8, "designer": 4, "rater": 2, "adjudicator": 1},
+  "role_counts": {
+    "expert": 8,
+    "designer": 4,
+    "rater": 2,
+    "adjudicator": 1
+  },
   "real_people_verified": false,
-  "cvi_dimensions": ["relevance", "comprehensiveness", "clarity", "construct_purity"],
+  "cvi_dimensions": [
+    "relevance",
+    "comprehensiveness",
+    "clarity",
+    "construct_purity"
+  ],
   "i_cvi_min": 0.78,
   "s_cvi_ave_min": 0.9,
   "designers_passing_both_min": 3,
@@ -28,5 +38,13 @@
   "blind_inputs_unchanged": true,
   "cli_overwrite_allowed": false,
   "execution_owner": null,
-  "execution_requires": ["U12-05", "G-05_ACTIVITY_QUALIFICATION", "E-01_OWNER_AND_ROLES", "MATERIAL_VERSION_FREEZE"]
+  "execution_requires": [
+    "U12-05",
+    "G-05_ACTIVITY_QUALIFICATION",
+    "E-01_OWNER_AND_ROLES",
+    "MATERIAL_VERSION_FREEZE"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/Q-01/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

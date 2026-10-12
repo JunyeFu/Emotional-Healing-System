@@ -1,25 +1,41 @@
-# D01 当前真实采集交接
+# D-01 当前交接：H10辅助测量及额外成本
 
-当前任务WAIT_DEP_EXTERNAL，P-02前置已完成，但真实设备、目标机兼容、实际驱动与30分钟证据未落实；岗位P-HARDWARE尚无真实领取人。当前规范化不是任务签收，也不新增第三方SDK依赖。
 
-## 通道与来源订正
 
-Polar官方H10说明支持HR/RR及130Hz ECG；官方SDK主要面向Android/iOS，不把其版本号当Windows Python驱动兼容证明。当前Windows路径仍须由D-01验证Bleak、蓝牙适配器、固件和实际发现的服务。[官方SDK说明](https://github.com/polarofficial/polar-ble-sdk/blob/master/README.md)、[H10能力](https://github.com/polarofficial/polar-ble-sdk/blob/master/documentation/products/PolarH10.md)。
+- A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出
+- B数据驱动场景原生受限适应，合法边界调整G后趋向共同I
+- I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功
+- PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界
+- 理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收
+- 五人半个月100+用于后续可行性，各阶段人数分别计数
+- 原生、自适应已有先例；贡献为待验证整包权衡和有限设计知识
+- 当前任务包新要求优先，原签收/领取输入及候选身份保持原范围
 
-ECG使用PMD服务及控制/数据特征；HR/RR是另一通道，不能将HR特征当原始ECG。官方TYPE_0解码每样本3字节有符号微伏，不能照旧int16假设写驱动；其他类型需按实际协商支持，不按猜测解码。[PMD源码](https://raw.githubusercontent.com/polarofficial/polar-ble-sdk/master/sources/Android/android-communications/library/src/main/java/com/polar/androidcommunications/api/ble/model/gatt/client/pmd/BlePMDClient.kt)、[ECG源码](https://raw.githubusercontent.com/polarofficial/polar-ble-sdk/master/sources/Android/android-communications/library/src/main/java/com/polar/androidcommunications/api/ble/model/gatt/client/pmd/model/EcgData.kt)。
+本包处理：H10辅助测量及额外成本。类型：RETAIN_WITH_SCOPE_CLARIFICATION。既有依赖：P-02；依赖的历史DONE不能证明新范围已交接。领取人 `未领取`，复核人 `未指定`，原预计4人日仅历史估算，新范围成本待承接者评估。
 
-呼吸主通道属于D-02真实呼吸带；H10派生EDR不能冒充该输入。HRV是后续对真实ECG/RR计算的结果，不是假定设备直接通知的原始HRV流。旧10Hz帧、CSV与模拟天气字段只是开发历史，当前对外遥测由P-01/F-01/F-05统一发布。
+## 交付与验收
 
-## 原始记录与时钟
+- H10辅助测量及额外成本修订交接
+- 真实通道验收
+- 用途边界
 
-每个通知在主机接收时取得单调时间并保留原始字节、逻辑来源、来源策略、每来源递增packet_seq、设备时间、时钟域和样本数，使用P-02既有RawPacket/append_raw_packet，不新增归档格式。ECG/RR通知不能先降采样后才记录原件；S-01同步、S-02交互状态估计与A-01离线分析消费原始事实及派生结果。
+- [ ] AC1 保留ECG/RR原始证据与真实采集验收
+- [ ] AC2 H10不自动推情绪或参与快速控制，新增控制须另论证
+- [ ] AC3 A数据仅评估、B使用范围明确，记录佩戴准备与缺失
 
-P-02接受的H10来源固定为polar_h10_ecg/polar_h10_rr，正式source_policy=real。已有通知且设备时间未知时，device_time_ns=null、payload仍保留字节、missing_reason_code保持null；时钟缺失原因另写L1时钟/状态记录。missing_reason_code只用于payload=null、sample_count=0的缺包记录，不能为了设备时间未知而让合法通知被存储拒绝。
+必需证据：真实通道验收；用途边界；设备准备与质量记录。
 
-设备时间与主机时间分别记录；缺设备时间使用null并说明来源缺失，不填零、不以接收时间伪装设备时间。官方说明H10重启后时间会重置，HR等通道不一定有可定义的设备样本时刻；时钟域及跨重连映射交S-01，不直接认作同步UTC。[官方时间说明](https://github.com/polarofficial/polar-ble-sdk/blob/master/documentation/TimeSystemExplained.md)。
+新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。
 
-## 真机验收和责任
+## 执行顺序与当前验证边界
 
-AC1需目标Windows机器真实连续1800秒原始记录与报告；AC2说明ECG/RR通知包数、样本数、序号与缺失、设备/主机时间语义；AC3真实断流重连、停止清理、缺失状态和无正式Mock回退。设备序列号、MAC等受限身份按G-02在仓库外配置，仓库只用逻辑source_id。P-02合成压力、通用DeviceManager测试不能证明这些验收。
+1. 核对[设计修订记录](design-revision.json)、[基石主稿](../../../design/design-foundation-20261008/01-design.pdf)及上游新范围；明确待冻结项。
+2. 完成本包专项设计/候选修订，在原权威路径工作；需修改接口或正式协议时先由对应合同与冻结任务承接，不以文档刷新替代批准。
+3. 执行与新范围对应的真实验证，保留未通过项。原execution/verify.ps1仍只核查旧实现范围，其通过不证明新控制、测量或研究完成。任务体系内容检查使用agent/tools/verify_task_design_baseline.py。
+4. 同步当前输出和证据，再生成human/tasks/D-01/summary.tex及PDF；取得真实复核后才按治理流程改变业务状态。
 
-P-HARDWARE领取人负责设备与适配；S-01负责时间与SQI，P-02负责追加记录，I-01负责双真机800秒全链，G-05负责相应活动准入。先确认设备和官方协议再转READY/领取；没有这些证据不伪造DONE。当前未实现适配器是待交付，不将本轮治理检查作为真机PASS。
+## 输入、历史与交接
+
+inputs/sources.json列出当前设计来源；领取中原input_snapshot_id及候选身份保留，新增要求通过分发补充和影响记录交接，不静默替换领取输入。旧TASK与总结见archive/pre-design-baseline-20261008，原审核信息和实际代码证据保留原时间/范围。大型工程以项目工作目录引用，不复制缓存。
+
+本文件历史正文：[原范围记录](../archive/pre-design-baseline-20261008/current-acquisition.md)。历史运行与候选事实仍可查，但不得以旧同反馈要求驱动新设计。

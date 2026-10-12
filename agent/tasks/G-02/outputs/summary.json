@@ -1,8 +1,8 @@
 {
   "task_id": "G-02",
-  "title": "G02 数据治理实现与消费边界审阅",
-  "review_date": "2026-09-28",
-  "conclusion": "G-02已签收DONE，覆盖治理实现与合成技术路径。本轮将隐私工具迁入Agent执行层，新增新目录负测试并完成139项专项及233项Python消费者回归；正式环境六项缺失、资产259条阻断仍开放。",
+  "title": "G-02 新反馈用途的数据与许可治理 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "G-02注册状态DONE仅保留原范围。当前任务更新为新反馈用途的数据与许可治理；处理类型RETAIN_WITH_SCOPE_CLARIFICATION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "傅钧烨",
     "date": "2026-08-21 +08:00；外部责任迁移2026-09-04 +08:00",
@@ -13,77 +13,82 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "当前执行Codex；本轮不追加真实签署，不更改注册状态。G-05承接实际专机、机构期限和资产许可，代码及合成通过不能代替这些资格。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1：L0至L5分级、最小权限及联系令牌/身份映射/密钥隔离；AC2：四阶段事务去重、暴露边界、并发唯一预约与授权恢复；AC3：未知许可、未登记、漂移和未跟踪资产阻止发布。",
-        "本轮要求迁移执行工具而不丢失隐私覆盖，新证据不覆盖历史原件；依据实际扫描修正当前入口，并核对新教学流程对消费者的影响。"
+        "AC1 研究佩戴数据用途与产品部署分别说明，A不得反馈本人数据",
+        "AC2 按既有去重及权限合同保持真实身份隔离，新增用途须取得真实许可",
+        "AC3 记录设备与素材许可、管理成本，不把两设备研究配置称产品必需"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "verify_repository_privacy.py已从旧治理目录实际迁入agent/tasks/G-02/execution；新增verify.py与verify.ps1统一执行。tests/conftest.py改用新工具位置，无旧路径转发副本。",
-        "新证据固定evidence/runtime，Word由outputs/summary.json生成。共享srp_governance、配置和测试仍保持原模块唯一实现，最终模块迁移另行修复消费者引用。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "新反馈用途的数据与许可治理修订交接",
+        "用途权限差异表",
+        "许可台账"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "读取原真实签收、治理修复与责任迁移，核对手机号E.164、HMAC、SQLite状态机、凭据与备份规则。迁移工具后将新G-02证据目录加入原扫描范围，补充同样不回显原值的负测试。",
-        "只读检查正式环境与资产，不生成凭据、不填写批准编号、不改变正式根目录。README转向新证据，历史138项测试及189/215扫描不改写。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：新反馈用途的数据与许可治理"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "治理专项139项通过，合成16个在用预约与16个既往暴露组合、暴露前释放、完成/退出阻断、并发与认证恢复通过；现有P-01/P-02/X-01消费者233项通过。",
-        "正式环境正确阻断六项配置，Unity扫描233项与259条阻断。仓库隐私门在候选文件暂存后检查Git跟踪集合；本轮未运行Unity、TD或真实设备。注册表71项、分发5包/44快照通过。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "G02-N01：旧脚本散落模块且README命令覆盖旧证据，已实际迁入固定execution并改用新输出。G02-N02：新目录原不受隐私扫描覆盖，已加入扫描根并通过负测试。",
-        "G02-N03：README把旧资产计数当当前结果，已修正为本轮233/259；下游表按既有DONE和G-05外部责任订正。G02-N04：P-01只在核心start登记暴露，与新版核心前教学有缺口，已明确交接，技术接入尚未完成。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：用途权限差异表；许可台账；真实批准缺口"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "TASK维护验收与责任，inputs引用实现和历史签收，execution保存工具，evidence区分本轮与历史，outputs保存总结，archive说明保留理由。旧工具文件已移除。",
-        "历史签署、验收和旧evidence保留原字节，不能用本轮计数替换；根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "G-01角色表应消费实际G-02的HMAC和隔离规则；P-01先查manifest隐私，P-02仅追加受限L0/L1，X-01仅使用公开不透明决策。Z-01受资产门约束，W-03仅按实际授权与披露范围发布。",
-        "新版分条件教学发生在核心之前，首次研究暴露登记不能仅等到核心start；P-01/U12-11须冻结边界、接入登记，并验证教学后退出仍不可重复参与。本轮只订正消费合同，233项既有测试不证明这个新流程已闭环。",
-        "G-05仍未领取，正式配置、保留期限、资产用途和现场证据由真实责任人落实。下一包P-01核对编排与暴露接口，不替代真实研究或论文比较证据。"
+        "原依赖：F-01；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：用途权限差异表；许可台账；真实批准缺口"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "原03d7426对象在ea132c8签署，2026-09-04治理修复与外部责任拆分随后转DONE。原签名、复核方式和未完成范围保持不变。",
-        "本轮属于工具迁移、Python复测与当前入口订正，未追加独立Agent审查或真人签收，未关闭正式准入。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "evidence/verification.json与runtime记录本轮治理门；integration.json记录消费者与治理校验。human/project-review.docx串联七包，以下链接打开当前源、签署与报告。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -111,6 +116,11 @@
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "P-01仅在核心start登记暴露，新版条件教学接入与退出阻断由P-01/U12-11完成，当前尚未正式闭环",
       "source": "agent/modules/07-数据治理/docs/downstream_contracts.md"
+    },
+    {
+      "id": "G-02-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "新反馈用途的数据与许可治理；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -126,6 +136,47 @@
     {
       "label": "打开本轮环境和资产结果",
       "path": "agent/tasks/G-02/evidence/verification.json"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/G-02/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "G-02已签收DONE，覆盖治理实现与合成技术路径。本轮将隐私工具迁入Agent执行层，新增新目录负测试并完成139项专项及233项Python消费者回归；正式环境六项缺失、资产259条阻断仍开放。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

@@ -27,5 +27,34 @@
     }
   ],
   "human_second_review": "NOT_ESTABLISHED_BY_READ_SOURCES",
-  "live_measurement": "NOT_PERFORMED"
+  "live_measurement": "NOT_PERFORMED",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN",
+  "measurement_design_update": {
+    "date": "2026-10-09",
+    "design_review": "APPROVED",
+    "materials": "DELIVERED",
+    "empirical_validation": "NOT_EXECUTED",
+    "formal_collection_allowed": false,
+    "sources": [
+      "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "agent/design/design-foundation-20261008/operational-design.json",
+      "agent/work/2026-10-08_科学来源补获与量表侧证.md"
+    ]
+  },
+  "measurement_design_checks": {
+    "date": "2026-10-09",
+    "scope": "DOCUMENTS_AND_GENERATORS_ONLY",
+    "results": [
+      "F-02 --check passed",
+      "71 task baseline check passed",
+      "5 dispatch local validation passed",
+      "scoped regeneration stable",
+      "current-measurement generator check passed",
+      "3-page evidence PDF compiled and visually inspected"
+    ],
+    "historical_checks_reexecuted": false,
+    "human_measurement_validation": false
+  }
 }

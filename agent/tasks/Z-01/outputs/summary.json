@@ -1,8 +1,8 @@
 {
   "task_id": "Z-01",
-  "title": "Z01 候选制品与干净重建交接审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "Z-01仍WAIT_DEP、未领取未签收。工具权威三处偏离已修复，22项专项通过；当前资产扫描225项、269个阻断，三个匹配候选、完整锁与独立干净重建未交付。",
+  "title": "Z-01 新双条件候选制品与重建 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "Z-01注册状态WAIT_DEP仅保留原范围。当前任务更新为新双条件候选制品与重建；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未签收",
     "date": "无",
@@ -13,75 +13,82 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "约5人日，依赖I-01/A-02/A-03/U-08/G-02。候选与阶段锁定、公开批准分开；核心稿不因本包而等待可选阶段三。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1另一人从干净检出重建；AC2Unity/Python/TD版本与协议配置匹配且无TD体验成立；AC3完整环境锁、SBOM、许可和实际制品字节哈希齐全。",
-        "五日依次接收上游、独立环境、三个制品、样例与清单、独立复现。需交付负责人、重建者和签收人，TASK附国内Git/文档资料。"
+        "AC1 候选必须包含可信A开环与受限B而非旧八呈现占位",
+        "AC2 重建消费真实版本、资产许可和正式研究许可",
+        "AC3 设计/回放/成品分别标识，不把PDF完备当产品完成"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "TASK与五目录、现状、消费者影响及12项新专项。工具原清单/说明逐字节归档，现权威订正定位、11项直接依赖与已固定MCP，校验器同步修复。",
-        "运行业务、包锁、资产台账、原签署及领取快照不改，没有伪造候选构建器或SBOM。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "新双条件候选制品与重建修订交接",
+        "新候选清单",
+        "干净重建路径"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "实际权威检查复现旧目录、漏依赖和要求#main三处错误；相对检出根、extras查分发包、MCP精确提交按既有工程订正，不升级软件。",
-        "F-03仅DEV-REPLAY，T-01可读性候选未新签收，默认仅SampleScene。U-08真实结构若变，正式门同步升级验收，不补空壳或用开发授权绕过。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：新双条件候选制品与重建"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "22项专项通过：12项新交接/基线负测及10项既有资产/Unity门测试；工具权威复测通过。首次测试误读依赖字段，改depends_on后复测，原输出保留。",
-        "真实资产门阻断：225项、269问题，未登记57、忽略文件194、移除11、哈希变化4、待替换3。台账未改，当前不得发布；根与治理回归见regression.json。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "原清单仅供历史解释；当前规则修复不是成员安装或正式环境通过。新许可结果不能用旧PASS覆盖。",
-        "含时间戳的两次构建不强求二进制相同，每次制品分别字节哈希，功能与输入输出复现另验；资产报告不替代跨栈完整SBOM。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：新候选清单；干净重建路径；运行验收与许可缺口"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "五目录保存来源、脚本、实测、现状与历史，Word从同一事实生成。无旧Z-01工具可迁移；F-03/T-01不重复复制，共享工程已迁入agent/modules并验证运行入口。",
-        "快照映射未引用本轮两清单，输入身份和业务状态保持；不重绘业务SVG，根目录迁移的完成依据本轮19项实际验证，不改变业务状态。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "U-08供参与者构建、I-01供真链、A-02/A-03供统计配置、A-01供离线样例、T-02供操作台；G-02真实门和G-05批准分别满足。",
-        "候选交G-03/G-04阶段锁定、W-03独立投稿复现与公开审批、W-04归档；实际版本与运行匹配不以标签相同或上游DONE代替。"
+        "原依赖：I-01、A-02、A-03、U-08、G-02；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：新候选清单；干净重建路径；运行验收与许可缺口"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "交付负责人、独立重建者和复核人未落实。不代填环境通过、候选PASS或真人名字；上游签署只在其原范围成立。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "注册表、环境清单/校验器、实际包锁与正式门、开发构建、TD候选和上游交接、本轮真实资产扫描。没有Unity/TD重跑或干净构建，没有新独立Agent或真实签收。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -103,6 +110,11 @@
       "status": "OPEN_CANDIDATE_REBUILD_AND_OWNERS",
       "description": "三个匹配候选、完整锁/SBOM、独立干净重建与责任人未交付，WAIT_DEP保持",
       "source": "agent/tasks/Z-01/outputs/current-delivery.json"
+    },
+    {
+      "id": "Z-01-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "新双条件候选制品与重建；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -126,6 +138,47 @@
     {
       "label": "当前消费者影响",
       "path": "agent/tasks/Z-01/evidence/consumer-impact.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/Z-01/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "Z-01仍WAIT_DEP、未领取未签收。工具权威三处偏离已修复，22项专项通过；当前资产扫描225项、269个阻断，三个匹配候选、完整锁与独立干净重建未交付。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

@@ -1,11 +1,9 @@
-# Agent 执行层
+# Agent执行层
 
-本层保存任务执行材料、结构化总结、验证结果和生成工具。人类入口位于 `../human/`。
+当前任务设计权威为[固定引导与原生自适应基线](design/design-foundation-20261008/task-baseline.json)，逐包范围见[71包迁移记录](work/2026-10-08_新基线任务包迁移.md)。任务正文、当前交接、inputs/sources.json、outputs/design-revision.json、summary.json及人类LaTeX/PDF同步消费新要求。
 
-统一结构：`tasks/<任务编号>/TASK.md`、`inputs/sources.json`、`execution/verify.ps1`、`evidence/verification.json`、`outputs/summary.json`、`archive/README.md`。共享生成工具在 `tools/`。
+统一目录仍为TASK.md、inputs、execution、outputs、evidence、archive；T-01已有design设备预览材料保留。旧TASK、总结与被替代交接原文位于各包archive/pre-design-baseline-20261008；旧软件测试和签收保持原范围，不证明新增适应已实现。
 
-每包按读取权威输入、整理执行目录、复测与修复、生成 Word、审阅串联关系的顺序推进。任务注册状态和规范化状态分别记录；规范化不能代替任务签收。
+当前计划从注册表current_*列生成，原status及签收范围不因更新变化。READY包刷新输入；领取中原input_snapshot_id与候选身份保持，新要求以design_updates及input_impacts显式交接。正式运行消费已获准合同和研究协议，设计包不能授权采集。
 
-71项任务包已完成逐包整理；[根目录物理迁移](root-migration.md)已完成19/19项，实际归属见[root-layout.json](root-layout.json)。共享工程、治理、历史和本机材料均已迁入双层目录。单包总结与串联Word已从当前Agent来源刷新，四项规范化要求的证据见[整体审计](evidence/normalization-completion-audit.json)。业务状态和签收范围不因整理改变。本机材料与已跟踪媒体的区别见[本机材料说明](local-materials.md)。
-
-命名固定：每包只有一个当前 `summary.json` 和一个人类 `summary.docx`。过期执行输出移入 `archive/`，写明原路径、替代文件和保留理由；没有理由的临时输出在确认无需使用后清理。已签署证据保留历史内容。
+人类证据以summary.tex和summary.pdf维护，不新增DOCX。生成工具为tools/build_task_reviews.py，专项一致性检查为tools/verify_task_design_baseline.py；独立分发生成器仍位于治理目录，默认发布校验要求来源已在Git索引，--local只检查本地内容。根目录结构迁移的历史记录见[root-migration.md](root-migration.md)，与新业务完成分别计数。

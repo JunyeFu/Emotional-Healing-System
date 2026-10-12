@@ -1,0 +1,31 @@
+{
+  "task_id": "V-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "开环与闭环的视听映射",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "开环与闭环的视听映射修订交接",
+    "新映射表",
+    "来源与累计生命周期"
+  ],
+  "acceptance_criteria": [
+    "AC1 A预设场景变化不得声称个人恢复，全部本人反馈关闭",
+    "AC2 B区分G、X与累计，背景复色不能同时冒充时间与成功",
+    "AC3 映射受质量和预算约束，装饰延迟不承担呼吸真值"
+  ],
+  "evidence_required": [
+    "新映射表",
+    "来源与累计生命周期",
+    "混杂和取消条件"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "V-02",
+    "R-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

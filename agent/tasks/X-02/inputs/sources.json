@@ -10,6 +10,17 @@
     "agent/tasks/A-03/outputs/current-statistics.md",
     "agent/tasks/X-01/outputs/current-randomization.json",
     "agent/modules/08-随机化/srp_randomization/generator.py",
-    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
-  ]
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

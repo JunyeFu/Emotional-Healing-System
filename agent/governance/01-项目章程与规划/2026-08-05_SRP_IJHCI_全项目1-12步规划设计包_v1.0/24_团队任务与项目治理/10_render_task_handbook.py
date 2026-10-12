@@ -82,13 +82,15 @@ def main() -> None:
     lines = [
         "# SRP可领取树型任务包 v2.2",
         "",
+        "新任务范围以[固定引导与原生自适应基线](../../../../design/design-foundation-20261008/README.md)及注册表current_*列为准；原列保留历史签收范围。当前资产以[2026-10-08成员实施标准](../../../../design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md)为准；[37包影响清单](../../../../work/2026-10-08_实施标准任务影响清单.md)补充各任务验收范围。旧签收不转移。",
+        "",
         "> 治理v1.2：领取状态以注册表为准；U12任务须先完成真实第二人签收，不以工程检查代替研究准入。",
         f"> 规模：{fixed_count}个固定任务包 + {template_count}个可重复批次模板。CSV登记表是状态权威；本文件由`10_render_task_handbook.py`确定性生成。",
-        "> 研究v1.2边界：比较完整提示表示方案的情绪收益、代价与设计边界；PANAS主要结果与PF功能护栏分开，SCCI仅作操纵检查；Unity仍先过V-01至V-05设计门。",
+        "> 新设计边界：A固定开环对B原生受限适应；共同I、下发G、实际X分别评价；PANAS为主要候选，旧PF界不自动沿用。原v1.2正式协议只在原范围有效，当前设计不授权采集。",
         "",
         "## 1. 领取与验收规则",
         "",
-        "1. 只领取状态为`READY`且依赖与外部门禁全部关闭的固定包；模板须先复制成唯一实例ID再领取。",
+        "1. 注册READY只允许承接当前设计修订；进入新实现/研究前还须核对上游新范围修订与合同/协议冻结，历史DONE不自动满足新增依赖。模板按获准阶段复制唯一实例。",
         "2. 每人同时只持有一个实现包。领取前运行`git status --short`并填写领取人、分支、复核人和时间。",
         "3. 每包依次完成四个过程阶段，不得用课程学习、Mock演示或文档存在代替验收。",
         "4. AC1至AC3全部通过、证据路径可访问、第二人复核、commit和push后才可标记`DONE`。",
@@ -109,6 +111,10 @@ def main() -> None:
             current_wave = row["wave"]
             lines.extend(["", f"## {current_wave}任务", ""])
 
+        row = dict(row)
+        if row.get('design_baseline_id'):
+            for field in ('deliverables', 'acceptance_criteria', 'evidence_required', 'completion_condition'):
+                row[field] = row['current_' + field]
         refs = []
         for ref_id in row["learning_refs"].split("|"):
             title, url = resources[ref_id]
@@ -121,6 +127,7 @@ def main() -> None:
                 f"### {row['task_id']} {row['title']}",
                 "",
                 f"- **归属与状态**：{row['domain']}；{kind}；`{row['status']}`；{row['effort_person_days']}人日；依赖：{dependencies}",
+                f"- **新基线修订**：{row.get('design_revision_state', '原范围')}；当前范围见agent/tasks/{row['task_id']}/TASK.md",
                 f"- **所需技能**：{row['skills']}",
                 f"- **学习资料**：{'；'.join(refs)}",
                 f"- **交付物**：{'；'.join(list_items(row['deliverables']))}",

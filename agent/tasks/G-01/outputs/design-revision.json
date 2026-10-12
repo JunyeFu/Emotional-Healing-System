@@ -1,0 +1,30 @@
+{
+  "task_id": "G-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "五人团队与后续阶段资源规划",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "五人团队与后续阶段资源规划修订交接",
+    "阶段人数账本",
+    "人员职责"
+  ],
+  "acceptance_criteria": [
+    "AC1 五人半个月只用于可行性估算，撤下528会话与15天交产品承诺",
+    "AC2 认知、技术、正式与迁移人数分账，100+不直接当正式N",
+    "AC3 依真实准备和完整会话工时估算能力，不以排列数算样本"
+  ],
+  "evidence_required": [
+    "阶段人数账本",
+    "人员职责",
+    "实际工时估算方法"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-02"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

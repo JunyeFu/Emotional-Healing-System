@@ -1,7 +1,13 @@
 {
   "task_id": "Z-01",
   "status": "WAIT_DEP",
-  "dependencies": ["I-01", "A-02", "A-03", "U-08", "G-02"],
+  "dependencies": [
+    "I-01",
+    "A-02",
+    "A-03",
+    "U-08",
+    "G-02"
+  ],
   "claimant": null,
   "reviewer": null,
   "formal_use_allowed": false,
@@ -21,6 +27,12 @@
   "known_unity_build_scope": "F03_DEV_REPLAY_NOT_PARTICIPANT_PRODUCT",
   "known_td_scope": "T01_LOCAL_RUNTIME_NOT_LIVE_E2E",
   "asset_gate_report": "agent/tasks/Z-01/evidence/asset-scan.json",
-  "stage_lock_authorities": ["G-03", "G-04"],
-  "public_release_authority": "W-03_AND_REAL_APPROVAL"
+  "stage_lock_authorities": [
+    "G-03",
+    "G-04"
+  ],
+  "public_release_authority": "W-03_AND_REAL_APPROVAL",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/Z-01/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

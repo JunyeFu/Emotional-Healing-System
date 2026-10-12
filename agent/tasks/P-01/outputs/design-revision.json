@@ -1,0 +1,30 @@
+{
+  "task_id": "P-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "I/G分离与受限控制的会话编排",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "I/G分离与受限控制的会话编排修订交接",
+    "控制归属图",
+    "时序决策轨迹规格"
+  ],
+  "acceptance_criteria": [
+    "AC1 共同I固定，B在合法边界产生有限G并支持回归与退出",
+    "AC2 A输出不依赖X，两条件暴露预算相同且缓冲占用B预算",
+    "AC3 控制源、有效下发和暂停恢复可重放，旧固定时钟验收不代表适应完成"
+  ],
+  "evidence_required": [
+    "控制归属图",
+    "时序决策轨迹规格",
+    "A输入隔离及B受限案例"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

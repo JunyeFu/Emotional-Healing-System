@@ -1,0 +1,12 @@
+{
+  "task_id": "V-05",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "status": "READY",
+  "previous_input_snapshot_id": "B80C32F092CD2446ACF1AE20DDC5D321789B9C3431AF48CEA55AFD44E06457CD",
+  "current_input_snapshot_id": "AC75FA083C30149EE07C6BE87D908B0F4725C4ACE6D87B914B9FBBB77D324688",
+  "disposition": "READY_SCOPE_REFRESHED_NEW_DESIGN_INPUTS",
+  "claim_input_replaced": false,
+  "authorization": "用户要求用新基线更新任务包体系；READY未领取，允许刷新",
+  "source_lists_changed": true,
+  "new_scope_source": "agent/tasks/V-05/outputs/design-revision.json"
+}

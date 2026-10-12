@@ -1,88 +1,65 @@
-"""Generate current human reviews from task execution summaries."""
+"""Generate current human LaTeX/PDF reviews from task execution summaries."""
 from __future__ import annotations
-
 import argparse
 import csv
 import json
 from pathlib import Path
-
-from docx import Document
-from docx.oxml import OxmlElement
-from docx.oxml.ns import qn
-from docx.shared import Inches, Pt, RGBColor
+from review_latex import Review, compile_pdf, escape, verify_review
 
 ROOT = Path(__file__).resolve().parents[2]
 GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 
-
 def read_json(path):
     return json.loads(path.read_text(encoding='utf-8-sig'))
 
-
 def document(title):
-    doc = Document()
-    section = doc.sections[0]
-    section.page_width, section.page_height = Inches(8.5), Inches(11)
-    section.top_margin = section.bottom_margin = Inches(0.7)
-    section.left_margin = section.right_margin = Inches(0.8)
-    for name in ('Normal', 'Title', 'Heading 1', 'Heading 2'):
-        style = doc.styles[name]
-        style.font.name = 'Microsoft YaHei'
-        style.font.color.rgb = RGBColor(0, 0, 0)
-        style.element.get_or_add_rPr().rFonts.set(qn('w:eastAsia'), 'Microsoft YaHei')
-    doc.styles['Normal'].font.size = Pt(10.5)
-    doc.styles['Normal'].paragraph_format.space_after = Pt(7)
-    doc.styles['Normal'].paragraph_format.line_spacing = 1.15
-    for style in doc.styles:
-        for border in list(style.element.iter(qn('w:pBdr'))):
-            border.getparent().remove(border)
-    doc.styles['Title'].font.size = Pt(21)
-    doc.styles['Heading 1'].font.size = Pt(13)
-    doc.add_paragraph(title, 'Title')
-    footer = section.footer.paragraphs[0]
-    footer.add_run('SRP 任务包审阅  ')
-    field = OxmlElement('w:fldSimple')
-    field.set(qn('w:instr'), 'PAGE')
-    footer._p.append(field)
-    return doc
-
+    return Review(title)
 
 def render_summary(summary, output):
     doc = document(summary['title'])
+    compact_sources = bool(summary.get('operational_design_candidate'))
     doc.add_paragraph(f"审阅日期 {summary['review_date']}    任务 {summary['task_id']}")
-    numbering = ('一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一')
+    groups = {0: (1, '一、任务定义与交付'), 3: (2, '二、执行与验证'),
+              7: (3, '三、审阅与交接')}
     for index, section in enumerate(summary['sections']):
-        if index in (3, 7):
-            doc.add_page_break()
-        doc.add_heading(f"{numbering[index]} {section['heading']}", level=1)
+        if index == 10 and compact_sources:
+            doc.parts.append(r'\begin{minipage}{\linewidth}')
+        if index in groups:
+            group_number, group_title = groups[index]
+            group_start = index
+            doc.add_heading(group_title, level=1)
+        doc.add_heading(f"{group_number}.{index - group_start + 1} {section['heading']}", level=2)
         if index == 0:
             doc.add_paragraph(summary['conclusion'])
         for paragraph in section['paragraphs']:
             doc.add_paragraph(paragraph)
+        for figure in summary.get('figures', []):
+            if figure['after_section'] == section['heading']:
+                doc.add_picture(ROOT / figure['path'], figure['caption'])
         if index == 8:
             acceptance = summary['historical_acceptance']
             doc.add_paragraph(f"历史审核人 {acceptance['reviewer']}    日期 {acceptance['date']}")
             if acceptance.get('commit'):
                 doc.add_paragraph(f"历史审核提交 {acceptance['commit']}")
             doc.add_paragraph(acceptance['method'])
-    for source in summary.get('source_links', []):
-        paragraph = doc.add_paragraph()
-        link = OxmlElement('w:hyperlink')
-        relationship = doc.part.relate_to(
-            (ROOT / source['path']).resolve().as_uri(),
-            'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink',
-            is_external=True,
-        )
-        link.set(qn('r:id'), relationship)
-        run = OxmlElement('w:r')
-        text = OxmlElement('w:t')
-        text.text = source['label']
-        run.append(text)
-        link.append(run)
-        paragraph._p.append(link)
-    output.parent.mkdir(parents=True, exist_ok=True)
+    if compact_sources:
+        # The operation design adds seven links; keep their heading and sources together.
+        doc.parts.append(r'\begingroup\small\setlength{\tabcolsep}{4pt}\begin{tabular}{@{}p{0.48\linewidth}p{0.48\linewidth}@{}}')
+        links = []
+        for source in summary.get('source_links', []):
+            uri = (ROOT / source['path']).resolve().as_uri().replace('%', r'\%')
+            links.append(r'\href{' + uri + '}{' + escape(source['label']) + '}')
+        for start in range(0, len(links), 2):
+            cells = links[start:start+2]
+            if len(cells) == 1:
+                cells.append('')
+            doc.parts.append(' & '.join(cells) + r'\\[4pt]')
+        doc.parts.append(r'\end{tabular}\endgroup\end{minipage}\par')
+    else:
+        for source in summary.get('source_links', []):
+            doc.add_link(ROOT / source['path'], source['label'])
     doc.save(output)
-
+    return output
 
 def check_task(task_id, registry):
     if task_id not in registry:
@@ -94,6 +71,8 @@ def check_task(task_id, registry):
         if not (package / path).is_file():
             raise ValueError(f'Missing package file: {task_id}/{path}')
     allowed_dirs = {'inputs', 'execution', 'evidence', 'outputs', 'archive'}
+    if task_id == 'T-01':
+        allowed_dirs.add('design')  # Existing device-preview design assets belong to this task.
     for entry in package.iterdir():
         if entry.name != 'TASK.md' and entry.name not in allowed_dirs:
             raise ValueError(f'Unclassified package file: {entry}')
@@ -122,37 +101,34 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('task_id')
     parser.add_argument('--check', action='store_true')
-    parser.add_argument('--chain-only', action='store_true', help='Update chained review without rewriting the task Word')
+    parser.add_argument('--chain-only', action='store_true', help='Update chained review without rewriting the task LaTeX/PDF')
     args = parser.parse_args()
     with (GOV / '05_可领取任务包.csv').open(encoding='utf-8-sig', newline='') as stream:
         rows = list(csv.DictReader(stream))
     registry = {r['task_id']: r for r in rows}
-    summary = check_task(args.task_id, registry)
+    task_ids = list(registry) if args.task_id == 'ALL' else [args.task_id]
     if args.check:
-        review = ROOT / 'human/tasks' / args.task_id / 'summary.docx'
-        if not review.is_file():
-            raise ValueError(f'Missing human summary: {args.task_id}')
-        if review.is_file():
-            text = '\n'.join(p.text for p in Document(review).paragraphs)
-            expected = [summary['conclusion']]
-            if summary['historical_acceptance'].get('commit'):
-                expected.append(summary['historical_acceptance']['commit'])
-            expected.extend(p for s in summary['sections'] for p in s['paragraphs'])
-            if any(value not in text for value in expected):
-                raise ValueError(f'Word content drift: {args.task_id}')
-        print(f'PASS package structure and sources: {args.task_id}')
+        for task_id in task_ids:
+            summary = check_task(task_id, registry)
+            verify_review(ROOT / 'human/tasks' / task_id / 'summary.tex', summary)
+        print(f'PASS package structure, LaTeX/PDF and sources: {len(task_ids)} packages')
         return
     if not args.chain_only:
-        render_summary(summary, ROOT / 'human/tasks' / args.task_id / 'summary.docx')
+        for task_id in task_ids:
+            summary = check_task(task_id, registry)
+            target = render_summary(summary, ROOT / 'human/tasks' / task_id / 'summary.tex')
+            compile_pdf(target)
     chain = document('SRP 任务包串联审阅')
     chain.add_paragraph('本文件由71包Agent层总结串联生成，检查实际交付、上下游衔接及项目偏离。规范化与任务业务状态分开；未完成的运行、研究和审批仍由原任务承担。')
+    chain.add_paragraph('2026年10月8日71包同步固定开环A与原生受限适应B任务基线；共享I、下发G、独立X及同预算。历史状态与签收保留原范围，全部新范围验收另取证；8个策略扩展不成为核心依赖。Storm及粒子帧仅为历史资产参考。')
+    chain.add_picture(ROOT / 'human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png', '成员视频2第26秒原帧，底部脚本缺失警告保留；工程测试与实际验收仍按对应任务实施。')
     completed = []
     findings = []
     for row in rows:
         path = ROOT / 'agent/tasks' / row['task_id'] / 'outputs/summary.json'
         if not path.exists():
             continue
-        item = check_task(row['task_id'], registry)
+        item = read_json(path)
         completed.append(row['task_id'])
         chain.add_heading(f"{row['task_id']} {row['domain']}", level=1)
         chain.add_paragraph(item['conclusion'])
@@ -169,20 +145,14 @@ def main():
     next_task = remaining[0] if remaining else ('业务任务按注册表推进' if complete else '当前总结刷新与整体完成审计')
     completion = '已完成并验证' if complete else '尚待整体完成审计'
     count = chain.add_paragraph(f"已整理{len(completed)}包，待整理{len(remaining)}包；根目录双层整理{completion}。下一项{next_task}。")
-    count.paragraph_format.keep_with_next = True
     if remaining:
         queue = chain.add_paragraph('、'.join(remaining))
-        queue.paragraph_format.keep_together = True
     migrated = [e for e in layout['entries'] if e['status'] == 'MIGRATED']
     pending = [e for e in layout['entries'] if e['status'] != 'MIGRATED']
     migration_heading = chain.add_heading('根目录物理迁移', level=1)
-    migration_heading.paragraph_format.page_break_before = True
-    chain.add_paragraph(f"实际迁移{len(migrated)}/{len(layout['entries'])}项，尚余{len(pending)}项；整体双层整理{completion}。逐包整理不代替运行入口、生成器、历史原件及当前Word来源检查。")
-    for offset in range(0, len(migrated), 2):
-        chain.add_paragraph('；'.join(
-            f"{entry['old']} → {entry['new']}"
-            for entry in migrated[offset:offset + 2]
-        ))
+    chain.add_paragraph(f"实际迁移{len(migrated)}/{len(layout['entries'])}项，尚余{len(pending)}项；整体双层整理{completion}。逐包整理不代替运行入口、生成器、历史原件及当前LaTeX/PDF来源检查。")
+    for entry in migrated:
+        chain.add_paragraph(f"{entry['old']} → {entry['new']}")
     chain.add_paragraph('旧框架及Mock/Spout手册已原样归档，当前人类概览位于human/project/README.md，运行入口位于agent/runtime/README.md。业务签署和进行中分发不因迁移而改变。')
     chain.add_heading('迁移批次历史记录', level=2)
     chain.add_paragraph('以下为各批完成时的原始记录，其中下一步和未完成表述保留当时语境；当前结果以上方逐包整理结果及根目录归属表为准。')
@@ -204,12 +174,13 @@ def main():
     if any(e['old'] == '.artifacts-local' for e in migrated):
         local = read_json(ROOT / 'agent/evidence/root-migration-local.json')
         chain.add_paragraph(local['human_review'])
-    chain.save(ROOT / 'human/project-review.docx')
+    chain.save(ROOT / 'human/project-review.tex')
+    compile_pdf(ROOT / 'human/project-review.tex')
     progress = {'completed_packages': completed, 'remaining_packages': remaining,
                 'root_migration_complete': complete, 'findings': findings}
     (ROOT / 'agent/normalization-progress.json').write_text(
         json.dumps(progress, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    label = 'chained review only' if args.chain_only else f'{args.task_id} Word and chained review'
+    label = 'chained review only' if args.chain_only else f'{args.task_id} LaTeX/PDF and chained review'
     print(f'WROTE {label}; {len(remaining)} packages remain')
 
 

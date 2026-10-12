@@ -1,0 +1,31 @@
+{
+  "task_id": "U12-04",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新PANAS与执行代价SAP",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新PANAS与执行代价SAP修订交接",
+    "新估计目标表",
+    "SAP/精度修订"
+  ],
+  "acceptance_criteria": [
+    "AC1 PANAS-NA前测校正主要候选的版本、地板和最小关注差明确",
+    "AC2 新I/G执行与覆盖/控制成本独立，原0.075不沿用",
+    "AC3 重估方差缺失及精度，100+分阶段计数"
+  ],
+  "evidence_required": [
+    "新估计目标表",
+    "SAP/精度修订",
+    "未定参数与校准方法"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "U12-01",
+    "F-02"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

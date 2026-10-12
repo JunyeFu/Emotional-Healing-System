@@ -49,5 +49,8 @@
   "with_stage3_scope": "INCLUDE_STAGE3",
   "closed_scope_is_recruitment_or_submission_authorization": false,
   "normalization_is_business_completion": false,
-  "root_migration_complete": false
+  "root_migration_complete": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/A-06/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

@@ -1,7 +1,11 @@
 {
   "task_id": "W-04",
   "business_status": "WAIT_DEP",
-  "depends_on": ["W-03", "Z-01", "U12-12"],
+  "depends_on": [
+    "W-03",
+    "Z-01",
+    "U12-12"
+  ],
   "claimant": null,
   "reviewer": null,
   "actual_handover_package": "NOT_DELIVERED",
@@ -18,5 +22,8 @@
   "native_is_default_winning_product": false,
   "requires_unstarted_stage3_done": false,
   "normalization_is_business_completion": false,
-  "root_migration_complete": false
+  "root_migration_complete": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/W-04/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

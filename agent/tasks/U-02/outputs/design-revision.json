@@ -1,0 +1,32 @@
+{
+  "task_id": "U-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "固定与原生自适应呈现适配",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "固定与原生自适应呈现适配修订交接",
+    "A/B信息载体表",
+    "信号不可用故事板"
+  ],
+  "acceptance_criteria": [
+    "AC1 A关闭Actual及本人数据驱动累计、色彩、音轨和奖励",
+    "AC2 B分辨G提示与X响应，质量失效停止适应及成功累计",
+    "AC3 已有双环接口保留工程身份，不代表A必须显示双环"
+  ],
+  "evidence_required": [
+    "A/B信息载体表",
+    "信号不可用故事板",
+    "输入隔离验收清单"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-03",
+    "F-05",
+    "V-03"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

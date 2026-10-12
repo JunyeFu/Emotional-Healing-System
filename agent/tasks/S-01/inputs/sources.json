@@ -11,6 +11,25 @@
     "agent/modules/02-信号处理/signal_pipeline.py",
     "agent/modules/05-通信协议/runtime_contract.py",
     "agent/modules/05-通信协议/runtime_contract_v22.py",
-    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json"
-  ]
+    "agent/modules/05-通信协议/contracts/runtime-contract-v2.2.schema.json",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/design/design-foundation-20261008/05-control-spec.tex",
+    "agent/design/design-foundation-20261008/05-control-spec.pdf",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+    "agent/design/design-foundation-20261008/operational-design.json"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008"
 }

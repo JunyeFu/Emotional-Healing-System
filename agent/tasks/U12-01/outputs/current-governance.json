@@ -23,5 +23,8 @@
     "U12-09 legacy worktree byte recovery",
     "A-03-REAL/CAL and U12-11 formal freeze",
     "G-05 actual activity qualification"
-  ]
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/U12-01/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

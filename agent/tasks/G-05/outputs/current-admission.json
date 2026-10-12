@@ -22,5 +22,8 @@
   "global_done_rule": "ALL_13_QUALIFIED_CURRENT_GOVERNANCE",
   "stage3_qualification": "PENDING_EXTERNAL_NOT_FABRICATED",
   "real_gate": null,
-  "new_acceptance": null
+  "new_acceptance": null,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/G-05/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

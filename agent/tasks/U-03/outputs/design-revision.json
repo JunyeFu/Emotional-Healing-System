@@ -1,0 +1,32 @@
+{
+  "task_id": "U-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "Fade复杂步骤原生自适应切片",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "Fade复杂步骤原生自适应切片修订交接",
+    "Fade双条件场景",
+    "异常录像"
+  ],
+  "acceptance_criteria": [
+    "AC1 A固定结构与B补吸实测响应明确区分",
+    "AC2 漏补吸保留错误，下一合法边界恢复且不强迫追补",
+    "AC3 固定预算与质量降级有效，旧模板通过不代表新适应验收"
+  ],
+  "evidence_required": [
+    "Fade双条件场景",
+    "异常录像",
+    "独立事件对应"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "U-01",
+    "U-02",
+    "V-05"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

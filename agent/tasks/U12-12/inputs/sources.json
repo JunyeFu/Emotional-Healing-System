@@ -13,6 +13,17 @@
     "agent/tasks/G-05/outputs/current-admission.json",
     "agent/tasks/U12-10/outputs/current-classification.md",
     "agent/tasks/U12-10/outputs/synthetic-classification.json",
-    "agent/tasks/U12-07/outputs/reporting-rules.md"
-  ]
+    "agent/tasks/U12-07/outputs/reporting-rules.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

@@ -64,5 +64,8 @@
   "real_analysis": "NOT_RUN",
   "real_appendix": "NOT_DELIVERED",
   "new_independent_review": "NOT_RUN",
-  "new_human_acceptance": "NOT_SIGNED"
+  "new_human_acceptance": "NOT_SIGNED",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

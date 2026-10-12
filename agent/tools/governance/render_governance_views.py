@@ -52,7 +52,7 @@ def main():
     active = "/".join(r["task_id"] for r in rows if r["status"] == "IN_PROGRESS") or "无"
     review = "/".join(r["task_id"] for r in rows if r["status"] == "IN_REVIEW") or "无"
     summary = f"治理v1.2：71项任务（68固定+3模板）；DONE={counts['DONE']}项（含18项原签收）；IN_PROGRESS={active}；IN_REVIEW={review}；A-03-SPEC为DONE；READY={ready}；真实准入与研究数值仍未冻结"
-    for name, pattern, prefix in (("README.md", r"^> SRP .*?$", "> SRP · 4人团队 · "),
+    for name, pattern, prefix in (("README.md", r"^> SRP .*?$", "> SRP · 5人团队 · "),
                                   ("AGENTS.md", r"^> (?:2026/5/20 |当前阶段：).*?$", "> 当前阶段：")):
         path = ROOT / name
         text = path.read_text(encoding="utf-8")
@@ -68,6 +68,7 @@ def main():
         write(path, text)
     board = f"# 当前阶段看板\n\n> {iso_date} | " + summary + "\n\n"
     board += f"当前设计与责任入口：[U12-01](/{(ROOT / GUIDE).as_posix()})。\n\n"
+    board += "当前任务设计采用固定开环A与原生受限适应B；71包新增范围见[新基线任务迁移](../../work/2026-10-08_新基线任务包迁移.md)，历史状态不自动覆盖新范围。\n\n"
     board += "## 研究与工程分开\n\n阶段一独立支撑核心论文；阶段二/三为条件式扩展。PANAS主要比较候选与PF功能护栏分开，SCCI只作操纵检查。原新颖性REVISE_REQUIRED和研究证据缺口不因工程迁移自动解除。\n\n"
     board += "原18项签收保留原范围；新TD界面与工程壳仍需实机证据。A-03新统计规格由U12-04提供，REAL/CAL不得沿用旧规格冒充新校准。\n\n"
     board += "## 当前任务\n\n| 状态 | 任务 |\n|---|---|\n"
@@ -75,9 +76,9 @@ def main():
         board += f"| {status} | {'、'.join(r['task_id'] for r in rows if r['status'] == status) or '无'} |\n"
     board += "\n## 下一硬门\n\nU12-01已由傅钧烨签收；当前READY任务可自主领取。U12-02/03/04/06交付汇入U12-09一致性复核，U12-07准备结果中立写作模板。U12-05仍等待外部条件。G-05真实资格、U12-11数值冻结、U12-06运行接线继续阻断正式研究。\n"
     write(ROOT / "agent/governance/看板与进度/当前阶段看板.md", board)
-    tree = "# 四人团队职责与任务树\n\n> " + summary + "\n\n"
+    tree = "# 五人团队职责与任务树\n\n> " + summary + "\n\n"
     tree += "固定任务自主领取，领域归属明确；每个交付均需输入、分阶段过程、验收与证据。单一集成人负责注册表、协议和共享Unity资源，不按固定人员整块承包模块。\n\n"
-    tree += "## 四个协作方向\n\n- 工程治理与Python：合同、时钟、记录、治理版本与可靠运行。\n- Unity与视听设计：固定场景、完整提示方案、公平教学、灰盒和风险切片。\n- 设备与TD：真实数据采集、质量、只读监控、受控请求与真实联调。\n- 测量统计与论文：前后量表、过程分析、独立功能护栏、盲态校准和结果中立报告。\n\n"
+    tree += "## 五个协作方向\n\n- 工程治理与Python：合同、时钟、记录、治理版本与可靠运行。\n- Unity与视听设计：固定场景、完整提示方案、公平教学、灰盒和风险切片。\n- 设备与TD：真实数据采集、质量、只读监控、受控请求与真实联调。\n- 测量统计：情绪与I/G执行分轴、独立真值、盲态校准和缺失分析。\n- 科学问题与论文：需求、最近工作、贡献收缩、结果中立报告及实践净收益。\n\n"
     tree += "## 正向装配\n\nU12-01 → U12-02/03/04/05/06/07 → U12-09 → 真实预试与A-03-CAL → U12-11 → G-03 → 阶段一 → A-05 → U12-10 → A-06 → W-02/W-03 → U12-12 → W-04。\n\n实际开展扩展时，A-04和U12-08额外进入A-06范围关闭；没有开展时不伪标这些任务DONE。\n\n"
     tree += "Unity主线保持 V-05 → U-03风险切片 → U-04至U-07扩展 → U-08 → I-01；设备和真实许可按各自依赖汇入。\n\n"
     tree += "[领取手册](04_可领取树型任务包_v2.0.md) | [独立任务包](当前解锁独立任务包/README.md) | [v1.2研究治理](u12_upgrade/README.md)\n"
@@ -85,7 +86,7 @@ def main():
     brief = (f'---\ntitle: "SRP 固定任务概要"\nauthor: "SRP 项目组"\ndate: "{zh_date}"\nlang: zh-CN\n---\n\n'
              '\\begin{center}\n\\textbf{摘\\quad 要}\n\\end{center}\n\n' + summary + '。阶段一核心论文独立关闭，阶段三按真实活动记录形成条件式扩展。\n\n'
              '\\textbf{关键词：} 任务分解；版本治理；交互状态估计；证据链\n\n'
-             '# 任务分解问题\n\n研究目标是比较两种完整提示方案的情绪收益、代价与设计边界。任务图含71条任务与3个独立里程碑节点；68项固定任务、3项批次模板。历史DONE只覆盖原验收范围。\n\n'
+             '# 任务分解问题\n\n研究目标是比较固定开环A与原生受限适应B的情绪收益、共同I达成与控制代价。任务图含71条任务与3个独立里程碑节点；68项固定任务、3项批次模板。历史DONE只覆盖原验收范围。\n\n'
              '# 波次与装配路径\n\n| 波次 | 固定 | 模板 |\n|---|---:|---:|\n')
     for wave in (f"W{i}" for i in range(7)):
         part = [r for r in rows if r["wave"] == wave]
@@ -94,7 +95,7 @@ def main():
     brief += f"A-03-SPEC保持原签收；U12-04为新规格，A-03-REAL消费后进入CAL。U12-11必须消费盲态校准版本，再冻结N与界值。U12-01当前为{state}，签收范围见真实第二人报告。\n\n"
     brief += "# 完整任务目录\n\n\\small\n\n| 编号 | 领域与任务 | 状态 |\n|---|---|---|\n"
     for r in rows:
-        brief += f"| {r['task_id']} | {r['title']} | {r['status']} |\n"
+        brief += f"| {r['task_id']} | {r.get('current_deliverables', r['title']).split(';')[0]} | {r['status']}（仅原范围） |\n"
     brief += "\n\\normalsize\n\n# 核心收尾与条件式扩展\n\nA-05、U12-10和A-06构成核心证据关闭；W-02消费A-06与结果中立稿。开展阶段三时附A-04、U12-08与真实台账，不允许用人工布尔值隐去已开展活动。W-04最后消费U12-12。\n\n"
     brief += "# 当前限制与下一步\n\n正式采集尚未放行；新研究数值、教学时序、量表许可与机构资格仍需冻结。运行v1.2接线归U12-06，旧程序不会因设计JSON而自动获得新门。Unity和TD新画面、真实设备与LIVE_E2E证据不能由本次治理测试替代。\n"
     write(ROOT / "agent/delivery/briefs/02_固定任务概要.md", brief)

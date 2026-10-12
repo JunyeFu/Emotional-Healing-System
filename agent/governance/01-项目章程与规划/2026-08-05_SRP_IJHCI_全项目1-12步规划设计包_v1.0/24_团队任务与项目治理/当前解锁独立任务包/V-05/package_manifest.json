@@ -3,10 +3,10 @@
   "hash_policy": "sha256_lf_no_trailing_ws_text_v1",
   "task_id": "V-05",
   "status": "READY",
-  "registry_sha256": "CF4BE0125E8A5DFFDD20BA95BF041544C769F031FF48D2AE6D340A809978498F",
-  "input_snapshot_id": "E56F4DC3EA27EB43B1A352B70962D458F39BD67145694095D025BE1364F39B0F",
-  "previous_input_snapshot_id": "835C66212B6F0997EE7E30FB21B3174E101A5349C545880A83363388CCFCC9FD",
-  "input_changed": true,
+  "registry_sha256": "B9453FCEEDA65EB4B683ADF74A140D42FD90ECC8F433F954A8966B371A0324FD",
+  "input_snapshot_id": "B6CC5EA9229CB9CD926D52B694C4259906DC448A182700FB42C49BB0378D4D02",
+  "previous_input_snapshot_id": "B6CC5EA9229CB9CD926D52B694C4259906DC448A182700FB42C49BB0378D4D02",
+  "input_changed": false,
   "candidate_identity": null,
   "source_files": [
     {
@@ -60,44 +60,140 @@
     {
       "source_path": "agent/tasks/V-05/TASK.md",
       "package_path": "inputs/09_TASK.md",
-      "sha256": "C7ACAB79A9196E434A4C74AC9305FD88E11C5CE098CB32216E21E12E3063DA8B",
-      "size_bytes": 2873
+      "sha256": "F649E4529C1DA74CBEF42E79BC835A73354F8E2EBDBADDC6BF2D4261997B1647",
+      "size_bytes": 3904
     },
     {
       "source_path": "agent/tasks/V-05/outputs/current-graybox.json",
       "package_path": "inputs/10_current-graybox.json",
-      "sha256": "9087FEE4444022E3781E540EAD82C3B6A0EF3575D1E5879E81ADD8CD4A174AB4",
-      "size_bytes": 1659
+      "sha256": "F0392D1C8FBEF6445984FC6186FEB860F83540F45B47ACA8821E02539C6E2909",
+      "size_bytes": 2876
     },
     {
       "source_path": "agent/tasks/V-05/outputs/current-graybox.md",
       "package_path": "inputs/11_current-graybox.md",
-      "sha256": "28661E84622F77821EE32EDB016BB4A0DAD6718B328A6FF1FC4511DCC43CB48F",
-      "size_bytes": 3194
+      "sha256": "C22C59C05A363CF1332A163859534A4808CAEF808FB86A45B207B00C43C71B62",
+      "size_bytes": 3384
     },
     {
       "source_path": "agent/tasks/V-01/outputs/current-experience.json",
       "package_path": "inputs/12_current-experience.json",
-      "sha256": "D39F6B19E999DC92526C470F94858467C65DC972226BE8955B12DAF51851F13F",
-      "size_bytes": 3045
+      "sha256": "B7DB1591FA534F16059237A99D60158F387405AA5844CFEE3A96403C5BAE13F9",
+      "size_bytes": 3864
     },
     {
       "source_path": "agent/tasks/V-03/outputs/current-mapping.json",
       "package_path": "inputs/13_current-mapping.json",
-      "sha256": "540D4AB76BB2BCA13FD93DC55B92C2BC90A2B93E8A713235549F38556E3A7C8A",
-      "size_bytes": 41979
+      "sha256": "9A121B6E5A94277B0DAA996B77DB834897665D04D49F6B4EB1B54C1E99BE5108",
+      "size_bytes": 43647
     },
     {
       "source_path": "agent/tasks/V-04/outputs/current-preview.json",
       "package_path": "inputs/14_current-preview.json",
-      "sha256": "C74C1824E6B08E14DA24CA28072B7170C2B514B085B5332B4BEBCD522DF25815",
-      "size_bytes": 1329
+      "sha256": "3B519B5AD1F1498F26EFBBA2E8EC527C142FEF728972A52D5606C32843622EA4",
+      "size_bytes": 2006
     },
     {
       "source_path": "agent/tasks/U-02/outputs/current-adapter-contract.md",
       "package_path": "inputs/15_current-adapter-contract.md",
       "sha256": "C49C94068F34716A8D3E00A275704AA51CEC2C45876E08088C99B16253FA8934",
       "size_bytes": 3185
+    },
+    {
+      "source_path": "agent/design/情绪天气方案/四种天气设计.md",
+      "package_path": "inputs/16_四种天气设计.md",
+      "sha256": "2F8C10F17A392953E3F479CF7E229AD4E070A0ECA649C925983DF6EDDC9A3197",
+      "size_bytes": 9393
+    },
+    {
+      "source_path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+      "package_path": "inputs/17_2026-10-08_Storm与纯粒子双环实施标准.json",
+      "sha256": "8E1B30103961480A12BDB31959B8185D88F0360A2ECF61C89E1C2D4C5A319737",
+      "size_bytes": 13006
+    },
+    {
+      "source_path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md",
+      "package_path": "inputs/18_2026-10-08_Storm与纯粒子双环实施标准.md",
+      "sha256": "AD8BE409BBEB20011315EC8D7DF18A4171B4730A0A5B5593ACA7100AFEA48D3D",
+      "size_bytes": 3782
+    },
+    {
+      "source_path": "agent/tasks/V-05/outputs/current-implementation-evidence.md",
+      "package_path": "inputs/19_current-implementation-evidence.md",
+      "sha256": "0C962AAFFFB53BC9572259760F11825A6C4FE069F230802655BF04D07D8088B3",
+      "size_bytes": 1826
+    },
+    {
+      "source_path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json",
+      "package_path": "inputs/20_frame-index.json",
+      "sha256": "BF8C0F359E7078B4C6D0D548D8E4473C07C8748FE057FD1B7F42DF7BEEA37194",
+      "size_bytes": 2268
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "package_path": "inputs/21_task-baseline.json",
+      "sha256": "DBCD6D126948011AD106C695E38DC4657E09E0395AF9EECAC4497220366623C3",
+      "size_bytes": 73895
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/00-reasoning.md",
+      "package_path": "inputs/22_00-reasoning.md",
+      "sha256": "D7E979215E1329527AE704F46E3F7A9D2C26BB8AF1DDA8886C0554428412C8C6",
+      "size_bytes": 3012
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/01-design.tex",
+      "package_path": "inputs/23_01-design.tex",
+      "sha256": "C142AB0F43D172D4054DB0FFB95A446196AD2DAFAC1A45AFA9687C1DC9176FBA",
+      "size_bytes": 30698
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "package_path": "inputs/24_01-design.pdf",
+      "sha256": "5A62ABE98872F283BA2EC47EAD324BD87B65012EC9BBE39B12772144E87F6A33",
+      "size_bytes": 419177
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/02-science.tex",
+      "package_path": "inputs/25_02-science.tex",
+      "sha256": "03AD1A02FE781406C6D15CCAC639D5A7F2497F320314507F0955DE5656B64F46",
+      "size_bytes": 24602
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "package_path": "inputs/26_02-science.pdf",
+      "sha256": "E422C0F56D5898FC1C7D16CE9D13A49B5A60672C6C7FA89DD82B9E8F09B3FD0D",
+      "size_bytes": 359537
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/03-decisions.tex",
+      "package_path": "inputs/27_03-decisions.tex",
+      "sha256": "9083235196072DABED8334EA21BCC22D206081DF786D58F796A1BCABBDE84CA8",
+      "size_bytes": 16316
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "package_path": "inputs/28_03-decisions.pdf",
+      "sha256": "4E86834D042C590A38C6F794F65C2D6A68ADFDAF849FEF2E6402D983256CD3C3",
+      "size_bytes": 299158
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/04-review-audit.tex",
+      "package_path": "inputs/29_04-review-audit.tex",
+      "sha256": "1D47E11D4C6DAB4D77B420F144DCAF272BC7F8017DB2AD51625B7754DCA8A519",
+      "size_bytes": 18964
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "package_path": "inputs/30_04-review-audit.pdf",
+      "sha256": "FD407713BD16B37B5323FE94BAAEAE4BE0FD10D040800B45E134C26180977573",
+      "size_bytes": 349818
+    },
+    {
+      "source_path": "agent/tasks/V-05/outputs/design-revision.json",
+      "package_path": "inputs/31_design-revision.json",
+      "sha256": "99F061E50E61860CF29D1ADA0004F6AF07C1D8F56EE2CB806E8E97115C9A6C9B",
+      "size_bytes": 1179
     }
   ],
   "working_paths": [
@@ -105,5 +201,104 @@
     "02-技术研发/04-Unity视觉/SRP-Weather-Visual",
     "02-技术研发/05-通信协议/contracts",
     "agent/tasks/V-05"
-  ]
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "design_updates": [
+    {
+      "source_path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "package_path": "design_updates/01_task-baseline.json",
+      "sha256": "DBCD6D126948011AD106C695E38DC4657E09E0395AF9EECAC4497220366623C3"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/00-reasoning.md",
+      "package_path": "design_updates/02_00-reasoning.md",
+      "sha256": "D7E979215E1329527AE704F46E3F7A9D2C26BB8AF1DDA8886C0554428412C8C6"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/01-design.tex",
+      "package_path": "design_updates/03_01-design.tex",
+      "sha256": "C142AB0F43D172D4054DB0FFB95A446196AD2DAFAC1A45AFA9687C1DC9176FBA"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "package_path": "design_updates/04_01-design.pdf",
+      "sha256": "5A62ABE98872F283BA2EC47EAD324BD87B65012EC9BBE39B12772144E87F6A33"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/02-science.tex",
+      "package_path": "design_updates/05_02-science.tex",
+      "sha256": "03AD1A02FE781406C6D15CCAC639D5A7F2497F320314507F0955DE5656B64F46"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "package_path": "design_updates/06_02-science.pdf",
+      "sha256": "E422C0F56D5898FC1C7D16CE9D13A49B5A60672C6C7FA89DD82B9E8F09B3FD0D"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/03-decisions.tex",
+      "package_path": "design_updates/07_03-decisions.tex",
+      "sha256": "9083235196072DABED8334EA21BCC22D206081DF786D58F796A1BCABBDE84CA8"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "package_path": "design_updates/08_03-decisions.pdf",
+      "sha256": "4E86834D042C590A38C6F794F65C2D6A68ADFDAF849FEF2E6402D983256CD3C3"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/04-review-audit.tex",
+      "package_path": "design_updates/09_04-review-audit.tex",
+      "sha256": "1D47E11D4C6DAB4D77B420F144DCAF272BC7F8017DB2AD51625B7754DCA8A519"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "package_path": "design_updates/10_04-review-audit.pdf",
+      "sha256": "FD407713BD16B37B5323FE94BAAEAE4BE0FD10D040800B45E134C26180977573"
+    },
+    {
+      "source_path": "agent/tasks/V-05/outputs/design-revision.json",
+      "package_path": "design_updates/11_design-revision.json",
+      "sha256": "99F061E50E61860CF29D1ADA0004F6AF07C1D8F56EE2CB806E8E97115C9A6C9B"
+    },
+    {
+      "source_path": "agent/tasks/V-05/TASK.md",
+      "package_path": "design_updates/12_TASK.md",
+      "sha256": "F649E4529C1DA74CBEF42E79BC835A73354F8E2EBDBADDC6BF2D4261997B1647"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "package_path": "design_updates/13_05-control-spec.tex",
+      "sha256": "5974115723E72901374370EF2BFD1FFF16D330500A2E315D5549774014021BF1"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "package_path": "design_updates/14_05-control-spec.pdf",
+      "sha256": "14C9DAAD0D2C17B7CEA0EEF282533719BC43D3AF95F0A102B440F20F3C417D05"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "package_path": "design_updates/15_06-paired-storyboards.tex",
+      "sha256": "8C6B1D0787D01813CC6FD1D2A636265C9D2F057D5D7F6B81BA37B29D9E2ECB70"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "package_path": "design_updates/16_06-paired-storyboards.pdf",
+      "sha256": "88E4C007642EFBEBDDD80FEEF3109A6DDC40CE874D62577510E80B1A8E046EB4"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "package_path": "design_updates/17_07-protocol-candidate.tex",
+      "sha256": "94A840BC078B862F409C65CB4C674C5133E69E4699F436BF568E47F79D28A441"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "package_path": "design_updates/18_07-protocol-candidate.pdf",
+      "sha256": "69219843B56BF4B9950B07ACE502F31D96B3D51D6F0F55E57952C16F4CCBDE1F"
+    },
+    {
+      "source_path": "agent/design/design-foundation-20261008/operational-design.json",
+      "package_path": "design_updates/19_operational-design.json",
+      "sha256": "81738308099D660D614C25914C27458F4FC0E82CA1F158DAE7DA635FBD28EB9D"
+    }
+  ],
+  "current_scope_acceptance": "PENDING_NOT_INHERITED_FROM_ORIGINAL_REVIEW"
 }

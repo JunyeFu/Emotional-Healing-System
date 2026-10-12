@@ -1,116 +1,48 @@
-# P-02 当前存储与重放说明
+# P-02 当前交接：理想、引导、实际及适应成本记录
 
-> 本页为规范化后的当前使用入口。原模块README作为U12-06冻结输入保留原字节；本页不改变该任务快照，也不新增正式准入。
 
-> 状态：`DONE_WITH_BOUNDED_SCOPE`。P-02已由傅钧烨完成真实第二人复核；本模块提供L0/L1不可覆盖追加、完整性校验和确定性重放，不推进会话状态，也不表示设备链或完整系统联调已经完成。
 
-F-05已签收，不增加存储层协议推断：P-02只持久化`contract_adapter.validate_message()`返回的已校验v2.1或v2.2消息，并在重放时保留版本和步骤字段原值。接口对齐见[运行合同F-05文档](../../../modules/05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
+- A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出
+- B数据驱动场景原生受限适应，合法边界调整G后趋向共同I
+- I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功
+- PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界
+- 理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收
+- 五人半个月100+用于后续可行性，各阶段人数分别计数
+- 原生、自适应已有先例；贡献为待验证整包权衡和有限设计知识
+- 当前任务包新要求优先，原签收/领取输入及候选身份保持原范围
 
-## 职责
+本包处理：理想、引导、实际及适应成本记录。类型：REVISE_FOR_NEW_BASELINE。既有依赖：F-01；依赖的历史DONE不能证明新范围已交接。领取人 `Codex`，复核人 `傅钧烨（团队总监、独立第二人复核）`，原预计4人日仅历史估算，新范围成本待承接者评估。
 
-- `SessionArchive`：排他创建会话归档，追加L0/L1，生成检查点和最终封存；
-- `DurableManifestStore`：实现P-01 `ManifestStore`接口，manifest耐久落盘后返回门回执；
-- `RecordingSessionCore`：代理纯`SessionCore`，先提交操作和输出，再把控制交给运行主机；
-- `RecordingTelemetryPublisher`：先写L1同步帧，再调用P-01 UDP发布器；
-- `ReplayReader`：验证manifest、记录链、检查点、段文件和封存哈希；
-- `SessionReplayer`：只重放完整提交的核心调用，不连接外部进程或重复执行外部门动作。
+## 交付与验收
 
-旧`05-通信协议/csv_logger.py`继续作为`LEGACY_DEV_ONLY`保留，不是P-02正式记录入口。
+- 理想、引导、实际及适应成本记录修订交接
+- 记录消费对照
+- 独立重算输入表
 
-## 公共接口
+- [ ] AC1 分别记录I、G、X、质量、决策和实际呈现时间
+- [ ] AC2 未知段与行为失败分开，记录缓冲、未回归、提前结束
+- [ ] AC3 原始两设备证据支持独立重算，不以控制器成功标记充当真值
 
-```python
-DurableManifestStore.append_manifest(manifest, config_hash) -> GateReceipt
+必需证据：记录消费对照；独立重算输入表；缺失与暴露账本。
 
-SessionArchive.append_raw_packet(packet) -> AppendReceipt
-SessionArchive.append_l1(record_type, payload, now_ns) -> AppendReceipt
-SessionArchive.checkpoint(now_ns) -> CheckpointReceipt
-SessionArchive.seal(summary, now_ns) -> SessionSeal
+新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。
 
-RecordingSessionCore.prepare/apply_operator_request/advance/
-    confirm_delivery/transport_failure/finish/snapshot
+## 执行顺序与当前验证边界
 
-ReplayReader.verify(mode="strict|recover") -> IntegrityReport
-ReplayReader.iter_l0(source_id=None)
-ReplayReader.iter_l1(record_type=None)
-SessionReplayer.replay_core(core_factory=None) -> ReplayReport
-```
+1. 核对[设计修订记录](design-revision.json)、[基石主稿](../../../design/design-foundation-20261008/01-design.pdf)及上游新范围；明确待冻结项。
+2. 完成本包专项设计/候选修订，在原权威路径工作；需修改接口或正式协议时先由对应合同与冻结任务承接，不以文档刷新替代批准。
+3. 执行与新范围对应的真实验证，保留未通过项。原execution/verify.ps1仍只核查旧实现范围，其通过不证明新控制、测量或研究完成。任务体系内容检查使用agent/tools/verify_task_design_baseline.py。
+4. 同步当前输出和证据，再生成human/tasks/P-02/summary.tex及PDF；取得真实复核后才按治理流程改变业务状态。
 
-完整科研输入通过`validate_bundle`或`load_and_validate`校验`RawEvidenceBundle v1`。设备原始流、运行事实、问卷、分配记录、人工标注及配置/构建身份六类输入缺一即失败；二进制与原始流使用`byte_sha256`，源文本文档使用`normalized_text_sha256`。受限原件可只保存仓库外引用，但仍必须提供内容哈希；`explicit_none`必须给出原因码且不得伪造哈希。
+## 输入、历史与交接
 
-`local_file`会读取实际文件校验字节；`restricted_ref`仅校验引用、类型和哈希声明，不读取受限原件。返回值`authorization=False`，不能据此授权访问或判定真实原件已复核。A-01须在实际授权环境读取原件再核对声明；仅持有束清单不足以关闭真实数据重建。束校验也不证明量表许可、真实设备来源或研究结果。
+inputs/sources.json列出当前设计来源；领取中原input_snapshot_id及候选身份保留，新增要求通过分发补充和影响记录交接，不静默替换领取输入。旧TASK与总结见archive/pre-design-baseline-20261008，原审核信息和实际代码证据保留原时间/范围。大型工程以项目工作目录引用，不复制缓存。
 
-`RecordingSessionCore`和P-01 `ControlServer`、`SessionRuntimeHost`使用同一个代理实例。代理内部仍调用纯`SessionCore`，所以流程、时钟、状态和控制序号权威没有迁移到存储层。普通调用遵循`operation_begin -> SessionCore调用 -> 组件记录 -> operation_commit`；`prepare`在P-01完成合同、语义、隐私和分配检查后，于存储门回调排他建档并耐久写入`operation_begin`，随后P-01才建立`PREPARED`状态和控制输出。
+本文件历史正文：[原范围记录](../archive/pre-design-baseline-20261008/current-store-contract.md)。历史运行与候选事实仍可查，但不得以旧同反馈要求驱动新设计。
 
-## 目录与耐久性
 
-```text
-<root>/sessions/<sha256-derived-session-key>/
-  archive.json
-  l0/segment-000001.jsonl
-  l1/segment-000001.jsonl
-  tails/l0.json
-  tails/l1.json
-  checkpoints/checkpoint-000001.json
-  seal.json
-  writer.lock
-```
+<!-- ODES-20261008 -->
 
-- 路径键由域分隔SHA-256派生，不直接使用`session_id`；
-- manifest、检查点和封存文件采用排他创建；
-- JSONL记录包含连续序号、前项哈希和当前记录哈希；
-- 每次耐久同步原子更新独立尾锚；L1必须与尾锚完全一致，L0只允许最后一次同步后的批量尾部尚未锚定；
-- `archive.json`对除`envelope_hash`外的完整归档头做域分隔哈希；未封存恢复也必须先在写锁内重新验证归档头、记录链和封存状态；
-- L1每次提交执行`flush + fsync`；L0按100毫秒或64 KiB批量同步；
-- 64 MiB自动换段，跨段保持同一序号和哈希链；
-- 已封存会话拒绝任何追加；同一会话只允许一个写者；
-- 中断恢复不截断旧段，只创建新段写入`PROCESS_INTERRUPTED`并封存，后续运行必须使用新`session_id`。
+操作级设计已交付；本包具体责任见[专项交接](operational-design-handoff.md)，真实运行与复核仍待执行。
 
-配置见[session_store_config_v1.json](../../../modules/srp_session_store/config/session_store_config_v1.json)，机器格式见[contracts](../../../modules/srp_session_store/contracts)。
-
-## L0与L1
-
-L0按设备通知包保存原始字节、来源策略、包序号、设备时间、主机接收单调时间、时钟域和样本数。缺失包必须使用`payload=None`、`sample_count=0`和大写原因码，不得补零。
-
-L1保存manifest上下文、核心调用与提交、控制、会话事件、策略决策、审计、ACK、渲染回执、同步/SQI帧、时钟同步、存储事件和最终摘要。L0/L1只接受`research_id`、`reservation_id`等不透明引用；G-02禁入字段只在错误中暴露原因码和JSON路径。
-
-## 正式环境
-
-开发使用显式临时目录：
-
-```python
-store = DurableManifestStore.development(root)
-```
-
-正式存储只能通过环境工厂创建；以下设置本身不构成准入证据：
-
-```powershell
-$env:SRP_SESSION_DATA_ROOT = 'D:\SRP-Data'
-$env:SRP_SESSION_WRITER_ACCOUNT = $env:USERNAME
-$env:SRP_SESSION_WRITER_ROLE = 'primary_operator'
-```
-
-```python
-store = DurableManifestStore.from_formal_environment(repo_root)
-```
-
-工厂要求数据根位于仓库外、当前账号匹配，并通过G-02加密、ACL和角色能力检查。直接构造`DurableManifestStore`只能得到开发能力。
-
-## 下游交接
-
-- D-01/D-02调用`append_raw_packet`，每个设备维护自己的递增`packet_seq`，不需要了解文件布局；
-- S-02/I-01通过`append_l1`或`RecordingTelemetryPublisher`提交同步帧和质量字段；
-- A-01先调用`verify()`，再使用`iter_l0/iter_l1`重建后续层；
-- P-01/U12-11后续接入核心前教学后，须把真实教学与暴露事件纳入证据束；当前核心golden不含教学，P-02不根据数据事后猜测未记录的事件；
-- `strict`要求完整封存；`recover`只用于识别并封存中断数据，不能恢复原体验进度。
-
-## 验证
-
-```powershell
-Set-Location 'D:\Agent\srp'
-py -3.14 'agent/tasks/P-02/execution/verify.py'
-```
-
-golden归档消费P-01四模块轨迹并验证19个控制、19个ACK、12个渲染回执、54个会话事件和46次核心调用。压力证据模拟800秒、32万PLUX样本、10.4万Polar样本和1.6万L1同步帧；在归档对象仍存活时按100秒采样，并同时冻结1 MiB暖机后增长上限和每100秒128 KiB趋势上限。
-
-两个生成工具已迁入[Agent执行层](../execution)，新归档与压力报告只写`agent/tasks/P-02/evidence/runtime`。历史fixtures、压力证据、技术验收和签署原件保留，不用本轮结果覆盖。当前规范化工作单见[TASK.md](../TASK.md)。
+NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：freshness、presentation_latency；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。

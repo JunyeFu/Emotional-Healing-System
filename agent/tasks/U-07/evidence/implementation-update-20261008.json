@@ -1,0 +1,12 @@
+{
+  "task_id": "U-07",
+  "scope": "TEXT_AND_VIDEO_REFERENCE_UPDATE",
+  "registration_status": "WAIT_DEP",
+  "source_frames": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json",
+  "displayed_images": [
+    "human/assets/previews/2026-10-08/member-storm-particle-rings/video-01-t12.png",
+    "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png"
+  ],
+  "observed_missing_script": "OPEN",
+  "independent_2022_runtime": "NOT_RUN"
+}

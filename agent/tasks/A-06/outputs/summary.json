@@ -1,8 +1,8 @@
 {
   "task_id": "A-06",
-  "title": "A06 实际研究范围关闭与论文交接审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "A-06仍WAIT_DEP，未领取未签收。已规范核心/扩展两路线、三台账真实来源核查、元数据与外层签署的区别及双人责任；真实结果、台账核对和范围回执仍缺。",
+  "title": "A-06 核心贡献及阶段范围关闭 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "A-06注册状态WAIT_DEP仅保留原范围。当前任务更新为核心贡献及阶段范围关闭；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未签收",
     "date": "无",
@@ -13,75 +13,84 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "固定任务4人日，依赖A-05|U12-10，未领取未签收。A-05真实分析、U12-10分类、实际三台账核对与范围回执尚缺，生产关闭实例未创建。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1阶段一锁定结果及真实NO_STAGE3回执足以进入核心稿，未开展扩展不假DONE；AC2任一阶段三活动须消费A-04/U12-08及结果、偏离、停止、回退；AC3两路线无环，缺结果/回执或隐去活动时不能关闭。",
-        "四段为锁定结果与角色、三台账完整来源核对、核心/扩展路线和独立复核、真实双人签署后论文交接。最终关闭不是开展扩展的前置许可。"
+        "AC1 主稿C1/C2/C3按真实证据定级，不预设原生胜出",
+        "AC2 近邻覆盖、无差异、信号失败、迁移失败有收缩规则",
+        "AC3 核心/扩展分账，CCF等级目标不等于完成"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "TASK和五目录、15项实际来源、当前范围说明/机器状态、NOT_RUN空审阅提纲、真实接口的合成验证入口。没有签名、正式范围回执、投稿或公开记录。",
-        "第11步两入口、治理v1.2导航和v2.0手册同步；Agent规范化说明旧44/71与下一B-01订正为当前机器进度。共享治理代码保留单一入口，没有旧A-06实例可搬移。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "核心贡献及阶段范围关闭修订交接",
+        "主张证据台账",
+        "范围关闭候选",
+        "ODES-20261008设计交付：按真实结果关闭C1/C2/C3主张，迁移未执行则不声称已迁移；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "三类台账分别为分配、暴露和B-03实例，任一部分/取消/停止活动都不能被省略。三表总行数不是唯一人数，B-03空登记不证明无活动；真实保管者须核对完整来源。",
-        "路线函数只返回A06_ROUTE_METADATA_ONLY及authorization=false；完整治理DONE分支另核对真实Git候选、已跟踪报告、字节身份及标记。当前普通治理PASS没有执行真实A-06 DONE分支。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：核心贡献及阶段范围关闭"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "62专项通过，直接使用当前v1.2路线：核心元数据路径、三类部分活动、缺A-05/U12-10或扩展分析/四结果族、台账缺失/篡改/计数错误和布尔值代替证据均核对。",
-        "合成内层ok=true时，真实外层函数仍因候选不是Git提交、签署报告不存在而拒绝，证明两个检查层不相互替代。根635项回归及协议、治理、注册、分发通过，实际命令见verification.json；不生成实际研究结论。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "发现规范化说明仍停44/71，与实际55包队列不一致，已用当前机器进度订正并注明下方逐包内容是历史，不再由旧文字决定下一包。",
-        "一般交付四阶段改为实际范围关闭四阶段，真实来源核查、双人签收和W-02其他前置明确。规范化不能关闭真实台账/结果/签署缺口。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：主张证据台账；范围关闭候选；负结果与降称矩阵"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "TASK、inputs、execution、evidence、outputs、archive固定归属。现有route_evaluator、关闭Schema及15_validate_audit_upgrade是共享实现，只引用不重复搬移；旧第11步原件在E-04。",
-        "先修Agent与消费者，再生成单包/串联Word。生产Schema要求PASS，故未签署的空提纲不冒充符合Schema的生产实例；受限原件及填妥台账留获准仓库外。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "A-05交同版锁定结果和图表，U12-10交真实分类/主张复核；数据保管者交三台账与授权。已有扩展则E-06/A-04/U12-08交全部范围、结果和偏离/停止/回退。当前未齐，不完成范围关闭。",
-        "W-02仍依赖W-01、A-06、U12-07，单一范围回执不能自动解锁所有写作条件。W-02/W-03用同版主张—结果—图表—输入—代码；W-04/U12-12后续交接，关闭不自动授权采集、投稿或公开受限数据。"
+        "原依赖：A-05、U12-10；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：主张证据台账；范围关闭候选；负结果与降称矩阵"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "研究负责人、真实第二人、数据保管者待实名。receipt只有一个reviewer字段，注册要求的双人证据需在真实报告分别落实，软件标记不能证明真人身份或权限。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "实际注册、治理选择与v1.2路线、路线函数/关闭Schema/外层签署检查、A-05/A-04/E-06/B-03实际交接和既有治理测试。未新增网页研究、真实人员或外部回执。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -109,6 +118,11 @@
       "status": "OPEN_REAL_RESULTS_LEDGERS_AND_DUAL_SIGNATURE",
       "description": "实际分析分类、完整台账来源、具体范围关闭及双人回执未取得",
       "source": "agent/tasks/A-06/outputs/current-scope.json"
+    },
+    {
+      "id": "A-06-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "核心贡献及阶段范围关闭；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -132,6 +146,58 @@
     {
       "label": "消费者修正",
       "path": "agent/tasks/A-06/evidence/consumer-impact.md"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
     }
-  ]
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
 }

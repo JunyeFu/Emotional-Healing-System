@@ -1,0 +1,31 @@
+{
+  "task_id": "E-05",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "可选学习策略的独立冻结",
+  "disposition": "DEFERRED_EXTENSION",
+  "deliverables": [
+    "可选学习策略的独立冻结修订交接",
+    "延期决定",
+    "扩展策略标准"
+  ],
+  "acceptance_criteria": [
+    "AC1 不成为首版整包研究依赖",
+    "AC2 预先确定扩展目标、策略选择和不足时保留规则方案",
+    "AC3 真实冻结与OPE证据独立，不把主研究结果反向优化后再称确认性"
+  ],
+  "evidence_required": [
+    "延期决定",
+    "扩展策略标准",
+    "真实冻结缺口"
+  ],
+  "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "A-05",
+    "X-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

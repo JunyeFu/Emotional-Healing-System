@@ -14,7 +14,17 @@
     "agent/tasks/A-06/outputs/current-scope.md",
     "agent/tasks/W-01/outputs/current-paper.md",
     "agent/tasks/W-02/outputs/current-manuscript.md",
-    "agent/tasks/W-03/outputs/current-submission.md"
+    "agent/tasks/W-03/outputs/current-submission.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
   ],
   "archive_bytes": {
     "claim_sentences.md": "0CE9C20F303432407AC1F468C8314BC1FE610CEEC4402665D38742C54C600E4F",
@@ -24,5 +34,6 @@
     "sources.md": "4B0D56B689DC18F7B8208E98411FC5720FF833C43B220759DB86570FCF42FC2D",
     "U12-07_第二人复核请求.md": "E8F9C97B2CFC219FECBDB24A8821AD355824C38AEB88DAAC860F68C6F688ED67",
     "U12-07_独立复核记录.md": "F8813E7FBA97AA8894BB9ECC0C29BA97C8BDFDA7E83D92808925328262A12BD6"
-  }
+  },
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

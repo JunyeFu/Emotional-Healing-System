@@ -13,7 +13,12 @@ def current_mapping():
     data = copy.deepcopy(json.loads((BASE / 'V-03_四层视听映射合同_v1.0.json').read_text(encoding='utf-8')))
     scenes = json.loads((REPO / 'agent/tasks/V-02/outputs/current-scenes.json').read_text(encoding='utf-8'))
     data['schema_id'] = 'V03_CURRENT_USAGE_NOT_NETWORK_MESSAGE'
-    data['version'] = '1.1-usage'
+    data['version'] = '1.2-member-standard'
+    standard_path = 'agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json'
+    standard = json.loads((REPO / standard_path).read_text(encoding='utf-8'))
+    data['implementation_standard_source'] = standard_path
+    data['unity_target_version'] = standard['unity_target']['version']
+    data['abstract_rendering'] = standard['abstract_pacer']
     data['status'] = 'DESIGN_HANDOFF_NOT_RENDERED_EVIDENCE'
     data['runtime_binding_boundary'] = {'all_four_complete_demo': 'F-05_V2_2_REQUIRED', 'unity_is_clock_authority': False}
     data['camera'] = scenes['camera']
@@ -29,8 +34,17 @@ def current_mapping():
     for profile in data['weather_profiles'].values():
         profile['runtime_binding'] = 'F-05_V2_2_REQUIRED'
     data['weather_profiles']['fade']['recovery'] = 'OUTLINE_AND_TEXTURE_ONLY'
+    data['weather_profiles']['storm']['background'] = 'STREAMSIDE_CABIN_NON_PERIODIC_ENVIRONMENT'
+    data['weather_profiles']['storm']['scene'] = standard['storm']['scene']
     for row in data['rows']:
         layer = row['layer']
+        if row['technical_id'] == 'storm' and layer == 'background':
+            row['visual_carrier'] = 'STREAMSIDE_CABIN_NON_PERIODIC_ENVIRONMENT'
+        if row['cue_mode'] == 'abstract_pacer' and layer in ('target', 'actual'):
+            row['visual_carrier'] = 'PARTICLE_OUTER_RING_CORE' if layer == 'target' else 'PARTICLE_INNER_RING_CORE'
+            row['decorative_periphery'] = 'FLOW_SWAY_DELAYED_SCALE_NOT_STEP_TRUTH'
+        if row['cue_mode'] == 'abstract_pacer' and layer == 'fallback':
+            row['visual_carrier'] = 'PARTICLE_INNER_RING_CERTAINTY_WRAPPER'
         if layer == 'background':
             row['update_trigger'] = 'SESSION_SEGMENT_AND_FIXED_CAMERA_ENVIRONMENT'
             row['evidence_hook'] = 'FIXED_CAMERA_PAUSE_AND_PERIOD_LEAKAGE_REVIEW'

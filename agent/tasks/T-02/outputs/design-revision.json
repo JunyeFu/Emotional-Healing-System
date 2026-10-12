@@ -1,0 +1,31 @@
+{
+  "task_id": "T-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "操作台消费I/G/X及研究许可",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "操作台消费I/G/X及研究许可修订交接",
+    "操作契约修订",
+    "错误与恢复流程"
+  ],
+  "acceptance_criteria": [
+    "AC1 只读监看理想、下发、实际与质量，不拥有适应控制",
+    "AC2 请求与ACK及真实许可分开，旧遥控不复用为正式授权",
+    "AC3 故障同程序处理，操作员信息不混入参与者反馈"
+  ],
+  "evidence_required": [
+    "操作契约修订",
+    "错误与恢复流程",
+    "准入证据需求"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "READY",
+  "depends_on_original": [
+    "T-01",
+    "P-01"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

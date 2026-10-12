@@ -1,0 +1,32 @@
+{
+  "task_id": "X-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新两臂随机化与阶段人数",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新两臂随机化与阶段人数修订交接",
+    "分配候选比较",
+    "资源/精度影响"
+  ],
+  "acceptance_criteria": [
+    "AC1 隐藏分配与真实角色保持，审查小块/Williams候选",
+    "AC2 48完整块与正式N分开，不按某组成功率补人",
+    "AC3 新方案分配和人数事前冻结，既有实现只是原范围"
+  ],
+  "evidence_required": [
+    "分配候选比较",
+    "资源/精度影响",
+    "冻结角色和回执"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "P-01",
+    "A-03-SPEC",
+    "G-02"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

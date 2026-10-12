@@ -1,7 +1,10 @@
 {
   "task_id": "U12-07",
   "business_status": "DONE",
-  "depends_on": ["U12-01", "W-01"],
+  "depends_on": [
+    "U12-01",
+    "W-01"
+  ],
   "historical_candidate_commit": "28008f5a4c9963a32488ef32b61dc6ad055562de",
   "historical_signature_commit": "b3438391e97205cc8caca70fb0274f6734db8013",
   "historical_reviewer": "傅钧烨",
@@ -29,5 +32,8 @@
   "new_independent_review": "NOT_RUN",
   "new_human_acceptance": "NOT_SIGNED",
   "root_migration_complete": false,
-  "normalization_is_business_completion": false
+  "normalization_is_business_completion": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/U12-07/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

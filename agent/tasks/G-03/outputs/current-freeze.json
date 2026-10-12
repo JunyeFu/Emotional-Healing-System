@@ -4,8 +4,21 @@
   "claimant": null,
   "reviewer": null,
   "historical_acceptance": null,
-  "depends_on": ["E-03", "X-01", "Z-01", "A-02", "A-03-CAL", "G-05", "U12-11"],
-  "runtime_dependency_path": ["G-03", "U12-11", "U12-09", "U12-06"],
+  "depends_on": [
+    "E-03",
+    "X-01",
+    "Z-01",
+    "A-02",
+    "A-03-CAL",
+    "G-05",
+    "U12-11"
+  ],
+  "runtime_dependency_path": [
+    "G-03",
+    "U12-11",
+    "U12-09",
+    "U12-06"
+  ],
   "protocol_status": "DESIGN_CANDIDATE_NOT_PREREGISTERED",
   "formal_collection_allowed": false,
   "required_freeze_count": 15,
@@ -16,7 +29,13 @@
   "formal_training_seconds": null,
   "equivalence_confirmatory_enabled": false,
   "panas_reporting_blocked_by_pf_or_scci": false,
-  "required_activity_capabilities": ["INSTITUTION_STAGE1", "QUESTIONNAIRE_PERMISSION", "RETENTION_AND_PRIVACY", "FORMAL_MACHINE", "STATION_CAPACITY_STAGE1"],
+  "required_activity_capabilities": [
+    "INSTITUTION_STAGE1",
+    "QUESTIONNAIRE_PERMISSION",
+    "RETENTION_AND_PRIVACY",
+    "FORMAL_MACHINE",
+    "STATION_CAPACITY_STAGE1"
+  ],
   "qualified_activity_capabilities": 0,
   "calibration_receipt": null,
   "u12_11_research_freeze": null,
@@ -29,5 +48,8 @@
   "g05_global_done_activity_scope_conflict": "OPEN_GOVERNANCE_DECISION",
   "real_responsible_people": null,
   "normalization_is_business_completion": false,
-  "root_migration_complete": false
+  "root_migration_complete": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/G-03/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

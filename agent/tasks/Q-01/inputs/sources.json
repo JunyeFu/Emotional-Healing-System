@@ -8,11 +8,34 @@
     "agent/tasks/R-01/outputs/current-representation.md",
     "agent/tasks/F-02/outputs/current-measurement.md",
     "agent/tasks/V-03/outputs/current-mapping.json",
-    "agent/tasks/V-04/outputs/current-preview.md"
+    "agent/tasks/V-04/outputs/current-preview.md",
+    "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md",
+    "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+    "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json",
+    "agent/tasks/Q-01/outputs/current-implementation-evidence.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/design/design-foundation-20261008/05-control-spec.tex",
+    "agent/design/design-foundation-20261008/05-control-spec.pdf",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+    "agent/design/design-foundation-20261008/operational-design.json"
   ],
   "archived_bytes": {
     "README_materials_legacy.md": "7C8B46260C212BFAD6A367B72D2B40E4ECBE31F1E153C80FC80A1B4ECE71895A",
     "04_课题实际构念与证据矩阵.md": "19E2895EAE07B3F709973AE3CF00A9577E696BFE024F2E44E009A5660A30CC1C",
     "07_完整执行SOP与空白报告.md": "8898227B3CE455588B04A35A4B85FFEAD0A32E4F8EBF7D3A3F07F43A76049FA9"
-  }
+  },
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008"
 }

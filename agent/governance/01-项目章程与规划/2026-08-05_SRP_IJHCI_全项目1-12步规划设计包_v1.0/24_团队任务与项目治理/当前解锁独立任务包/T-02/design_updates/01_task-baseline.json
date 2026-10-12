@@ -1,0 +1,1894 @@
+{
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "updated": "2026-10-08",
+  "purpose": "当前任务设计与验收范围；不替代真实正式协议或研究批准",
+  "shared_rules": [
+    "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+    "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+    "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+    "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+    "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+    "五人半个月100+用于后续可行性，各阶段人数分别计数",
+    "原生、自适应已有先例；贡献为待验证整包权衡和有限设计知识",
+    "当前任务包新要求优先，原签收/领取输入及候选身份保持原范围"
+  ],
+  "design_sources": [
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "tasks": {
+    "F-01": {
+      "scope": "I/G/X控制与遥测语义修订",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "I/G/X控制与遥测语义修订修订交接",
+        "语义对照表",
+        "输入隔离例"
+      ],
+      "acceptance_criteria": [
+        "AC1 区分共同理想、有效下发引导、实际呼吸和质量来源",
+        "AC2 明确A测量隔离及B控制归属，不将现有Target静默改义",
+        "AC3 列出合同版本与消费者迁移，正式数值未冻结前不启用新研究"
+      ],
+      "evidence_required": [
+        "语义对照表",
+        "输入隔离例",
+        "合同迁移清单"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "F-02": {
+      "scope": "构念、情绪与公平执行测量",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "构念、情绪与公平执行测量修订交接",
+        "构念测量蓝图",
+        "候选分析集"
+      ],
+      "acceptance_criteria": [
+        "AC1 PANAS-NA前测校正后测为主要候选并核查版本、时间指令和地板",
+        "AC2 理解题按功能适配，A不参加不存在的Actual读取排名",
+        "AC3 I达成、G跟随、努力及不适独立定义，不用SCCI代证收益"
+      ],
+      "evidence_required": [
+        "构念测量蓝图",
+        "候选分析集",
+        "量表许可与适用审查"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "F-03": {
+      "scope": "Unity资产与新双条件环境基线",
+      "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+      "deliverables": [
+        "Unity资产与新双条件环境基线修订交接",
+        "Unity版本与资产清单",
+        "条件挂接清单"
+      ],
+      "acceptance_criteria": [
+        "AC1 保留溪边木屋与纯粒子资产，目标版本2022.3.62f3",
+        "AC2 区分资产可复用与A/B新条件真实完成，不复制旧签收",
+        "AC3 列出固定与闭环呈现隔离、测试面板关闭和场景回归要求"
+      ],
+      "evidence_required": [
+        "Unity版本与资产清单",
+        "条件挂接清单",
+        "工程验收缺口"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "F-04": {
+      "scope": "双设备只读预览与显示边界",
+      "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+      "deliverables": [
+        "双设备只读预览与显示边界修订交接",
+        "两设备显示说明",
+        "模拟与真机证据区分"
+      ],
+      "acceptance_criteria": [
+        "AC1 呼吸与心电独立显示，不把连接状态当质量",
+        "AC2 设备模拟与SDK真实采集分别留证，TD不拥有适应控制",
+        "AC3 A/B都能监看记录但不将操作台画面作为参与者反馈"
+      ],
+      "evidence_required": [
+        "两设备显示说明",
+        "模拟与真机证据区分",
+        "控制归属说明"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "F-05": {
+      "scope": "I/G/X事件与受限适应步骤合同",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "I/G/X事件与受限适应步骤合同修订交接",
+        "步骤事件对照",
+        "受限动作状态图"
+      ],
+      "acceptance_criteria": [
+        "AC1 定义理想实例、下发实例、实际事件、偏差与失效的身份和时间",
+        "AC2 合法周期边界调整下一吸呼，缓冲为自然呼吸且计入预算",
+        "AC3 漏补吸、跨周期、断流及回归保留事实，不由G补造X"
+      ],
+      "evidence_required": [
+        "步骤事件对照",
+        "受限动作状态图",
+        "异常案例表"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-01",
+        "P-01",
+        "P-02"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "G-01": {
+      "scope": "五人团队与后续阶段资源规划",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "五人团队与后续阶段资源规划修订交接",
+        "阶段人数账本",
+        "人员职责"
+      ],
+      "acceptance_criteria": [
+        "AC1 五人半个月只用于可行性估算，撤下528会话与15天交产品承诺",
+        "AC2 认知、技术、正式与迁移人数分账，100+不直接当正式N",
+        "AC3 依真实准备和完整会话工时估算能力，不以排列数算样本"
+      ],
+      "evidence_required": [
+        "阶段人数账本",
+        "人员职责",
+        "实际工时估算方法"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-02"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "G-02": {
+      "scope": "新反馈用途的数据与许可治理",
+      "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+      "deliverables": [
+        "新反馈用途的数据与许可治理修订交接",
+        "用途权限差异表",
+        "许可台账"
+      ],
+      "acceptance_criteria": [
+        "AC1 研究佩戴数据用途与产品部署分别说明，A不得反馈本人数据",
+        "AC2 按既有去重及权限合同保持真实身份隔离，新增用途须取得真实许可",
+        "AC3 记录设备与素材许可、管理成本，不把两设备研究配置称产品必需"
+      ],
+      "evidence_required": [
+        "用途权限差异表",
+        "许可台账",
+        "真实批准缺口"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "P-01": {
+      "scope": "I/G分离与受限控制的会话编排",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "I/G分离与受限控制的会话编排修订交接",
+        "控制归属图",
+        "时序决策轨迹规格"
+      ],
+      "acceptance_criteria": [
+        "AC1 共同I固定，B在合法边界产生有限G并支持回归与退出",
+        "AC2 A输出不依赖X，两条件暴露预算相同且缓冲占用B预算",
+        "AC3 控制源、有效下发和暂停恢复可重放，旧固定时钟验收不代表适应完成"
+      ],
+      "evidence_required": [
+        "控制归属图",
+        "时序决策轨迹规格",
+        "A输入隔离及B受限案例"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "P-02": {
+      "scope": "理想、引导、实际及适应成本记录",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "理想、引导、实际及适应成本记录修订交接",
+        "记录消费对照",
+        "独立重算输入表"
+      ],
+      "acceptance_criteria": [
+        "AC1 分别记录I、G、X、质量、决策和实际呈现时间",
+        "AC2 未知段与行为失败分开，记录缓冲、未回归、提前结束",
+        "AC3 原始两设备证据支持独立重算，不以控制器成功标记充当真值"
+      ],
+      "evidence_required": [
+        "记录消费对照",
+        "独立重算输入表",
+        "缺失与暴露账本"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "U-01": {
+      "scope": "Unity控制镜像与实际呈现回执",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "Unity控制镜像与实际呈现回执修订交接",
+        "控制镜像说明",
+        "呈现时间证据规格"
+      ],
+      "acceptance_criteria": [
+        "AC1 Unity只消费获准的下发G，不本地擅自改I或决定个体适应",
+        "AC2 A时钟预设与B真实控制消息分别核对",
+        "AC3 实际呈现、暂停中止及恢复回执与会话源可对应"
+      ],
+      "evidence_required": [
+        "控制镜像说明",
+        "呈现时间证据规格",
+        "异常回执表"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-01",
+        "F-03",
+        "F-05",
+        "P-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "U-02": {
+      "scope": "固定与原生自适应呈现适配",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "固定与原生自适应呈现适配修订交接",
+        "A/B信息载体表",
+        "信号不可用故事板"
+      ],
+      "acceptance_criteria": [
+        "AC1 A关闭Actual及本人数据驱动累计、色彩、音轨和奖励",
+        "AC2 B分辨G提示与X响应，质量失效停止适应及成功累计",
+        "AC3 已有双环接口保留工程身份，不代表A必须显示双环"
+      ],
+      "evidence_required": [
+        "A/B信息载体表",
+        "信号不可用故事板",
+        "输入隔离验收清单"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-03",
+        "F-05",
+        "V-03"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "T-01": {
+      "scope": "双设备只读显示服务于新测量",
+      "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+      "deliverables": [
+        "双设备只读显示服务于新测量修订交接",
+        "预览用途说明",
+        "状态显示核对"
+      ],
+      "acceptance_criteria": [
+        "AC1 设备分区及波形仍服务记录与操作员核查",
+        "AC2 不把HRV、TD图形或质量灯当情绪及训练真值",
+        "AC3 显示能区分模拟、真实、失效与未知，既有验证保留原范围"
+      ],
+      "evidence_required": [
+        "预览用途说明",
+        "状态显示核对",
+        "真实SDK未验收项"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-01",
+        "F-04",
+        "F-05"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "R-01": {
+      "scope": "固定开环与原生自适应整包设计",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "固定开环与原生自适应整包设计修订交接",
+        "完整方案对照表",
+        "I/G/X表示规则"
+      ],
+      "acceptance_criteria": [
+        "AC1 明确A无本人反馈、B闭环支持且共享I，撤回纯表示前提",
+        "AC2 G、X、累计与不可用信息来源明确且可理解",
+        "AC3 固有处理差异和可控制混杂分开，两臂不独立归因机制"
+      ],
+      "evidence_required": [
+        "完整方案对照表",
+        "I/G/X表示规则",
+        "六类异常故事板"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-02"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "V-01": {
+      "scope": "同预算的完整参与者旅程",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "同预算的完整参与者旅程修订交接",
+        "旅程时序",
+        "时间预算表"
+      ],
+      "acceptance_criteria": [
+        "AC1 前测在分配教学前，情绪后测先于理解题",
+        "AC2 两条件教学预算及模块暴露相同，B等待消耗既定预算",
+        "AC3 准备成本、求助、退出及问卷时间分报，800秒等旧时长仅候选"
+      ],
+      "evidence_required": [
+        "旅程时序",
+        "时间预算表",
+        "用户成本记录要求"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-02",
+        "R-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "V-02": {
+      "scope": "Storm/Fade优先的场景设计",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "Storm/Fade优先的场景设计修订交接",
+        "两切片分镜",
+        "场景状态约束"
+      ],
+      "acceptance_criteria": [
+        "AC1 每天气仅一个核心机制，四天气为应用实例而非四独立效应",
+        "AC2 Storm普通多步与Fade漏补吸覆盖新适应和失效路径",
+        "AC3 固定机位、基础素材同源，场景状态不等于被试改善"
+      ],
+      "evidence_required": [
+        "两切片分镜",
+        "场景状态约束",
+        "四天气必要性审查"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "V-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "V-03": {
+      "scope": "开环与闭环的视听映射",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "开环与闭环的视听映射修订交接",
+        "新映射表",
+        "来源与累计生命周期"
+      ],
+      "acceptance_criteria": [
+        "AC1 A预设场景变化不得声称个人恢复，全部本人反馈关闭",
+        "AC2 B区分G、X与累计，背景复色不能同时冒充时间与成功",
+        "AC3 映射受质量和预算约束，装饰延迟不承担呼吸真值"
+      ],
+      "evidence_required": [
+        "新映射表",
+        "来源与累计生命周期",
+        "混杂和取消条件"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "V-02",
+        "R-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "V-04": {
+      "scope": "新条件配对预演与教学材料",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新条件配对预演与教学材料修订交接",
+        "配对预演规格",
+        "六异常素材索引"
+      ],
+      "acceptance_criteria": [
+        "AC1 预演实际数据驱动与预设变化的非对称差异",
+        "AC2 六类异常有完整解释且不追补强制吸气或无限停留",
+        "AC3 示意和合成预演标明身份，旧视频帧仅证明已有资产"
+      ],
+      "evidence_required": [
+        "配对预演规格",
+        "六异常素材索引",
+        "真实/合成证据说明"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "V-03"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "D-01": {
+      "scope": "H10辅助测量及额外成本",
+      "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+      "deliverables": [
+        "H10辅助测量及额外成本修订交接",
+        "真实通道验收",
+        "用途边界"
+      ],
+      "acceptance_criteria": [
+        "AC1 保留ECG/RR原始证据与真实采集验收",
+        "AC2 H10不自动推情绪或参与快速控制，新增控制须另论证",
+        "AC3 A数据仅评估、B使用范围明确，记录佩戴准备与缺失"
+      ],
+      "evidence_required": [
+        "真实通道验收",
+        "用途边界",
+        "设备准备与质量记录"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP_EXTERNAL",
+      "depends_on_original": [
+        "P-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "D-02": {
+      "scope": "respiBAN实际呼吸可辨性",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "respiBAN实际呼吸可辨性修订交接",
+        "设备原件",
+        "独立事件标注"
+      ],
+      "acceptance_criteria": [
+        "AC1 真实SDK原始批次与时钟取证，不以模拟替代",
+        "AC2 验证吸呼、停留、补吸与运动下的混淆和不可判别",
+        "AC3 不消费G生成实际真值，不可辨事件保留未知"
+      ],
+      "evidence_required": [
+        "设备原件",
+        "独立事件标注",
+        "可辨性及延迟表"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP_EXTERNAL",
+      "depends_on_original": [
+        "P-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "S-01": {
+      "scope": "真实质量与双设备同步",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "真实质量与双设备同步修订交接",
+        "同步误差",
+        "质量与恢复案例"
+      ],
+      "acceptance_criteria": [
+        "AC1 连接、信号质量及步骤可辨识分开",
+        "AC2 支持A测量缺失和B停止适应的不同消费",
+        "AC3 恢复在可靠数据及合法边界后发生，丢失段不补判成功"
+      ],
+      "evidence_required": [
+        "同步误差",
+        "质量与恢复案例",
+        "原始证据对应"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "D-01",
+        "D-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "S-02": {
+      "scope": "独立X事件与I/G公平计分",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "独立X事件与I/G公平计分修订交接",
+        "标注规格",
+        "新计分候选"
+      ],
+      "acceptance_criteria": [
+        "AC1 标注实际步骤与持续时间不读取G或分组成功标签",
+        "AC2 分开I达成、G跟随、覆盖、漏步骤及适应成本",
+        "AC3 原Target机会PF及0.075界不沿用，容差以误差与用途论证"
+      ],
+      "evidence_required": [
+        "标注规格",
+        "新计分候选",
+        "真值与模糊事件验证"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "S-01",
+        "R-01"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "V-05": {
+      "scope": "固定/受限适应全旅程灰盒",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "固定/受限适应全旅程灰盒修订交接",
+        "新灰盒录像",
+        "时序与异常报告"
+      ],
+      "acceptance_criteria": [
+        "AC1 DEV-REPLAY分别核对A输入隔离和B合法边界调整",
+        "AC2 同预算覆盖慢半步、漏补吸、低质量、恢复、模块末尾",
+        "AC3 形成性问题真实关闭，旧48组合不证明新控制与用户理解"
+      ],
+      "evidence_required": [
+        "新灰盒录像",
+        "时序与异常报告",
+        "评审问题关闭矩阵"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "READY",
+      "depends_on_original": [
+        "F-03",
+        "U-02",
+        "V-04"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U-03": {
+      "scope": "Fade复杂步骤原生自适应切片",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "Fade复杂步骤原生自适应切片修订交接",
+        "Fade双条件场景",
+        "异常录像"
+      ],
+      "acceptance_criteria": [
+        "AC1 A固定结构与B补吸实测响应明确区分",
+        "AC2 漏补吸保留错误，下一合法边界恢复且不强迫追补",
+        "AC3 固定预算与质量降级有效，旧模板通过不代表新适应验收"
+      ],
+      "evidence_required": [
+        "Fade双条件场景",
+        "异常录像",
+        "独立事件对应"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "U-01",
+        "U-02",
+        "V-05"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U-04": {
+      "scope": "剩余天气A按新条件适配",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "剩余天气A按新条件适配修订交接",
+        "天气分配记录",
+        "适配说明"
+      ],
+      "acceptance_criteria": [
+        "AC1 先确定分配天气及共同I必要性，不默认全保留",
+        "AC2 A开环、B有限G与X分离，不复制旧同反馈模板",
+        "AC3 模块预算、低质量及恢复行为与公共合同一致"
+      ],
+      "evidence_required": [
+        "天气分配记录",
+        "适配说明",
+        "真实切片验收证据"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "U-03",
+        "V-03"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U-05": {
+      "scope": "剩余天气B按新条件适配",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "剩余天气B按新条件适配修订交接",
+        "天气适配清单",
+        "新挂接说明"
+      ],
+      "acceptance_criteria": [
+        "AC1 明确天气及素材复用范围和旧工具身份",
+        "AC2 A不接本人反馈，B源于独立数据及受限决策",
+        "AC3 无额外补时，实际控制和画面响应可对应"
+      ],
+      "evidence_required": [
+        "天气适配清单",
+        "新挂接说明",
+        "真机/回放边界"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "U-03",
+        "V-03"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U-06": {
+      "scope": "剩余天气C按新条件适配",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "剩余天气C按新条件适配修订交接",
+        "天气责任表",
+        "条件响应规格"
+      ],
+      "acceptance_criteria": [
+        "AC1 先冻结分配天气与共享结构，不以旧成品宣称完成",
+        "AC2 分开预设场景和受限闭环，保留未知及停止",
+        "AC3 旧编辑器工具和候选构建不作为新运行证据"
+      ],
+      "evidence_required": [
+        "天气责任表",
+        "条件响应规格",
+        "预算与失败证据"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "U-03",
+        "V-03"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U-07": {
+      "scope": "固定圈开环方案的可信对照",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "固定圈开环方案的可信对照修订交接",
+        "开环fixture",
+        "输入替换不变报告"
+      ],
+      "acceptance_criteria": [
+        "AC1 A只显示共同预设指导，Actual内圈与数据累计关闭",
+        "AC2 保留完整且有品质的预设场景，不故意降低体验",
+        "AC3 与B共有预算和素材，混杂报告不作单机制结论"
+      ],
+      "evidence_required": [
+        "开环fixture",
+        "输入替换不变报告",
+        "视觉混杂说明"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "F-05",
+        "U-03",
+        "R-01",
+        "V-03"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U-08": {
+      "scope": "产品预算、可访问与净收益",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "产品预算、可访问与净收益修订交接",
+        "用户预算",
+        "可访问需求"
+      ],
+      "acceptance_criteria": [
+        "AC1 准备、教学、练习、帮助与维护成本分别估算",
+        "AC2 原生表达可读且支持减少运动/非颜色唯一与停止",
+        "AC3 两设备研究不自动支持现实部署，成品须新条件验收"
+      ],
+      "evidence_required": [
+        "用户预算",
+        "可访问需求",
+        "部署价值及构建验收清单"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "G-02",
+        "U-03",
+        "U-04",
+        "U-05",
+        "U-06",
+        "U-07"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "T-02": {
+      "scope": "操作台消费I/G/X及研究许可",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "操作台消费I/G/X及研究许可修订交接",
+        "操作契约修订",
+        "错误与恢复流程"
+      ],
+      "acceptance_criteria": [
+        "AC1 只读监看理想、下发、实际与质量，不拥有适应控制",
+        "AC2 请求与ACK及真实许可分开，旧遥控不复用为正式授权",
+        "AC3 故障同程序处理，操作员信息不混入参与者反馈"
+      ],
+      "evidence_required": [
+        "操作契约修订",
+        "错误与恢复流程",
+        "准入证据需求"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "READY",
+      "depends_on_original": [
+        "T-01",
+        "P-01"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "A-01": {
+      "scope": "I/G/X原始证据离线重建",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "I/G/X原始证据离线重建修订交接",
+        "重建输入表",
+        "独立算法规格"
+      ],
+      "acceptance_criteria": [
+        "AC1 独立重建理想计划、实际提示与真实呼吸",
+        "AC2 实际达成不读取在线成功标记，暴露/可观测分母可复算",
+        "AC3 分别处理后测缺失、设备未知、降级及退出"
+      ],
+      "evidence_required": [
+        "重建输入表",
+        "独立算法规格",
+        "差异与缺失报告"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "P-02",
+        "S-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "A-02": {
+      "scope": "新条件执行与缺失统计",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新条件执行与缺失统计修订交接",
+        "分析集与分母",
+        "缺失处理候选"
+      ],
+      "acceptance_criteria": [
+        "AC1 报告I达成、G跟随、控制代价和覆盖，不沿用单PF门",
+        "AC2 按分配包含适应未触发、降级、退出及未知",
+        "AC3 缺失敏感性与机会容差事前定，不以后测筛选"
+      ],
+      "evidence_required": [
+        "分析集与分母",
+        "缺失处理候选",
+        "公平计分例"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "A-01"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "A-03": {
+      "scope": "新整包比较SAP与样本精度",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新整包比较SAP与样本精度修订交接",
+        "新SAP修订差异",
+        "功效/精度情景"
+      ],
+      "acceptance_criteria": [
+        "AC1 重算PANAS-NA基线校正比较的新条件精度",
+        "AC2 I/G执行分离，功能代价界及缺失需独立依据",
+        "AC3 SPEC原签收保持，REAL/CAL与正式参数仍需真实材料"
+      ],
+      "evidence_required": [
+        "新SAP修订差异",
+        "功效/精度情景",
+        "真实校准输入要求"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "IN_PROGRESS",
+      "depends_on_original": [
+        "F-02"
+      ],
+      "revision_state": "ACTIVE_SCOPE_CHANGED_FROZEN_INPUT_PRESERVED"
+    },
+    "W-01": {
+      "scope": "原创性与最近工作全文审查",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "原创性与最近工作全文审查修订交接",
+        "全文差异矩阵",
+        "主张证据表"
+      ],
+      "acceptance_criteria": [
+        "AC1 核对八篇近邻及Stairway待补线索，不宣称首次自适应",
+        "AC2 增量围绕具体多步骤与共同目标代价，不因画风改名保留创新",
+        "AC3 标出相同问题覆盖、反证与贡献收缩，不以搜索无结果证明空白"
+      ],
+      "evidence_required": [
+        "全文差异矩阵",
+        "主张证据表",
+        "修复/降称决定"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-02",
+        "R-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "I-01": {
+      "scope": "两设备与新条件真实完整链",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "两设备与新条件真实完整链修订交接",
+        "完整会话原件",
+        "输入隔离与受限响应"
+      ],
+      "acceptance_criteria": [
+        "AC1 同输入更换时A不变，B仅在规则允许时调整",
+        "AC2 记录I/G/X、实际呈现、外部延迟和失效恢复",
+        "AC3 LIVE_E2E及同预算需真实运行，旧合同测试不替代"
+      ],
+      "evidence_required": [
+        "完整会话原件",
+        "输入隔离与受限响应",
+        "真实延迟与失败链"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP_EXTERNAL",
+      "depends_on_original": [
+        "P-01",
+        "P-02",
+        "S-02",
+        "U-08",
+        "T-02",
+        "G-02",
+        "D-01",
+        "D-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "Q-01": {
+      "scope": "构念与多步骤独立重建材料",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "构念与多步骤独立重建材料修订交接",
+        "构念审查包",
+        "独立重建任务"
+      ],
+      "acceptance_criteria": [
+        "AC1 共同I先审任务必要性而非普适最优",
+        "AC2 专家检查G/X语义和适应边界，理解题按实际功能适配",
+        "AC3 独立新实例重建支持C3，未执行只称形成性材料"
+      ],
+      "evidence_required": [
+        "构念审查包",
+        "独立重建任务",
+        "失败与迁移计分规则"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "F-02",
+        "R-01",
+        "G-01",
+        "U12-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "Q-02": {
+      "scope": "校园需求与方案认知访谈",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "校园需求与方案认知访谈修订交接",
+        "需求访谈",
+        "条件适配题蓝图"
+      ],
+      "acceptance_criteria": [
+        "AC1 访谈真实困难、替代、可用时间和佩戴拒绝，不预设需要",
+        "AC2 检查A固定含义及B提示/响应/不可用信息",
+        "AC3 保留困惑与退出，PANAS适用与地板先审而非结果后换量表"
+      ],
+      "evidence_required": [
+        "需求访谈",
+        "条件适配题蓝图",
+        "用时及负担记录"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "U-08",
+        "Q-01",
+        "U12-02",
+        "U12-03"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "Q-03": {
+      "scope": "真实技术和受限适应预试",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "真实技术和受限适应预试修订交接",
+        "真实预试方案",
+        "校准方法"
+      ],
+      "acceptance_criteria": [
+        "AC1 验证X可辨、更新边界、范围、稳定窗及回归",
+        "AC2 低质量与持续跟不上路径可用，参数不倒填正式得分",
+        "AC3 按阶段人数独立记账，48组合只是覆盖候选"
+      ],
+      "evidence_required": [
+        "真实预试方案",
+        "校准方法",
+        "阈值与未定项表"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP_EXTERNAL",
+      "depends_on_original": [
+        "I-01",
+        "Q-02",
+        "A-01",
+        "A-03-REAL"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "X-01": {
+      "scope": "新两臂随机化与阶段人数",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新两臂随机化与阶段人数修订交接",
+        "分配候选比较",
+        "资源/精度影响"
+      ],
+      "acceptance_criteria": [
+        "AC1 隐藏分配与真实角色保持，审查小块/Williams候选",
+        "AC2 48完整块与正式N分开，不按某组成功率补人",
+        "AC3 新方案分配和人数事前冻结，既有实现只是原范围"
+      ],
+      "evidence_required": [
+        "分配候选比较",
+        "资源/精度影响",
+        "冻结角色和回执"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "P-01",
+        "A-03-SPEC",
+        "G-02"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "X-02": {
+      "scope": "可选离线策略学习的延期边界",
+      "disposition": "DEFERRED_EXTENSION",
+      "deliverables": [
+        "可选离线策略学习的延期边界修订交接",
+        "延期范围",
+        "后续策略问题"
+      ],
+      "acceptance_criteria": [
+        "AC1 首版B为解释性受限规则，不要求策略学习才能成立",
+        "AC2 后续学习需独立问题、参与者分组和可识别行为概率",
+        "AC3 不得用在线响应者选择证明因果价值或占用核心样本"
+      ],
+      "evidence_required": [
+        "延期范围",
+        "后续策略问题",
+        "独立评价前置条件"
+      ],
+      "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "A-03"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "X-03": {
+      "scope": "可选策略运行与首版受限控制分工",
+      "disposition": "DEFERRED_EXTENSION",
+      "deliverables": [
+        "可选策略运行与首版受限控制分工修订交接",
+        "控制归属分工",
+        "扩展冻结要求"
+      ],
+      "acceptance_criteria": [
+        "AC1 首版适应归P-01/F-05，不把X-03旧固定实现称已适应",
+        "AC2 扩展运行必须单独冻结策略与回退，同构建比较",
+        "AC3 没有独立准入不启用学习控制或改变共同I"
+      ],
+      "evidence_required": [
+        "控制归属分工",
+        "扩展冻结要求",
+        "运行未实现项"
+      ],
+      "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "X-01",
+        "X-02",
+        "U-01"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "Z-01": {
+      "scope": "新双条件候选制品与重建",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新双条件候选制品与重建修订交接",
+        "新候选清单",
+        "干净重建路径"
+      ],
+      "acceptance_criteria": [
+        "AC1 候选必须包含可信A开环与受限B而非旧八呈现占位",
+        "AC2 重建消费真实版本、资产许可和正式研究许可",
+        "AC3 设计/回放/成品分别标识，不把PDF完备当产品完成"
+      ],
+      "evidence_required": [
+        "新候选清单",
+        "干净重建路径",
+        "运行验收与许可缺口"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "I-01",
+        "A-02",
+        "A-03",
+        "U-08",
+        "G-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "G-05": {
+      "scope": "新研究用途外部准入",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新研究用途外部准入修订交接",
+        "新旧用途差异",
+        "真实准入清单"
+      ],
+      "acceptance_criteria": [
+        "AC1 取得适应流程、两设备数据用途与退出的真实批准",
+        "AC2 正式专机配置与已修协议一致，不以旧批文自动覆盖",
+        "AC3 无真实准入不采集，原外部阻塞保持"
+      ],
+      "evidence_required": [
+        "新旧用途差异",
+        "真实准入清单",
+        "专机配置要求"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP_EXTERNAL",
+      "depends_on_original": [
+        "G-01",
+        "G-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "E-01": {
+      "scope": "Level A专家与独立重建执行",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "Level A专家与独立重建执行修订交接",
+        "真实活动原件",
+        "失败修订"
+      ],
+      "acceptance_criteria": [
+        "AC1 消费Q-01新多步骤和I/G/X材料",
+        "AC2 真实专家反馈与重建失败按预设规则记录",
+        "AC3 历史签收不充当活动结果，人数另记而不抵扣正式样本"
+      ],
+      "evidence_required": [
+        "真实活动原件",
+        "失败修订",
+        "独立重建结果"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "Q-01",
+        "U12-05"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "E-02": {
+      "scope": "Level B需求与认知活动执行",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "Level B需求与认知活动执行修订交接",
+        "访谈原件",
+        "编码分歧"
+      ],
+      "acceptance_criteria": [
+        "AC1 消费Q-02条件适配题与真实校园需求问题",
+        "AC2 个体先独立回答，记录不理解与佩戴成本",
+        "AC3 双人编码与真实修订关闭，不用不存在的A Actual题排名"
+      ],
+      "evidence_required": [
+        "访谈原件",
+        "编码分歧",
+        "可用性及修改证据"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "Q-02",
+        "E-01",
+        "U12-05"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "B-01": {
+      "scope": "Level C真实预试批次模板",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "Level C真实预试批次模板修订交接",
+        "批次原件",
+        "质量汇总"
+      ],
+      "acceptance_criteria": [
+        "AC1 每实例登记新条件、真实I/G/X及设备证据",
+        "AC2 前置参与者不重复计入正式/迁移样本",
+        "AC3 技术可辨识与舒适性是目的，不用小样本显著性放行收益"
+      ],
+      "evidence_required": [
+        "批次原件",
+        "质量汇总",
+        "校准与退出记录"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "Q-03",
+        "E-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "E-03": {
+      "scope": "新控制与测量技术关闭",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新控制与测量技术关闭修订交接",
+        "技术关闭表",
+        "参数依据"
+      ],
+      "acceptance_criteria": [
+        "AC1 汇总真实校准、可辨性、模糊事件和失败路径",
+        "AC2 控制范围与计分容差各自论证，不能一起放宽",
+        "AC3 CAL、协议及真实批准分开，不以静态48单元关闭研究"
+      ],
+      "evidence_required": [
+        "技术关闭表",
+        "参数依据",
+        "真实冻结待办"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "Q-03",
+        "E-02",
+        "B-01"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "G-03": {
+      "scope": "新两臂正式协议与预注册",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新两臂正式协议与预注册修订交接",
+        "新协议差异",
+        "预注册候选"
+      ],
+      "acceptance_criteria": [
+        "AC1 冻结整包估计目标、PANAS主分析及I/G功能结果",
+        "AC2 测量、缺失、时长、随机化和代价界有依据",
+        "AC3 正式人数与真实许可齐备后放行，旧v1.2不自动授权新条件"
+      ],
+      "evidence_required": [
+        "新协议差异",
+        "预注册候选",
+        "真实冻结完整性清单"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "E-03",
+        "X-01",
+        "Z-01",
+        "A-02",
+        "A-03-CAL",
+        "G-05",
+        "U12-11"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "B-02": {
+      "scope": "新协议正式阶段批次模板",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新协议正式阶段批次模板修订交接",
+        "批次记录",
+        "原始I/G/X"
+      ],
+      "acceptance_criteria": [
+        "AC1 只消费真实获准的新方案版本和冻结数值",
+        "AC2 按分配含降级/未适应/退出，教学及预算不变",
+        "AC3 12人批次是管理候选，48分配块不是N"
+      ],
+      "evidence_required": [
+        "批次记录",
+        "原始I/G/X",
+        "盲态QC和缺失统计"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "G-03"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "E-04": {
+      "scope": "新条件阶段一锁库与揭盲",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新条件阶段一锁库与揭盲修订交接",
+        "完整性核查",
+        "锁库回执"
+      ],
+      "acceptance_criteria": [
+        "AC1 核对所有正式实例及独立设备/后测缺失",
+        "AC2 会话封存、锁库、揭盲授权分别记录",
+        "AC3 未知不补成功、事后不按响应筛样，全部分配可追溯"
+      ],
+      "evidence_required": [
+        "完整性核查",
+        "锁库回执",
+        "揭盲真实授权"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "G-03",
+        "B-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "A-05": {
+      "scope": "新整包阶段一锁定分析",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新整包阶段一锁定分析修订交接",
+        "锁定分析表",
+        "功能及成本表"
+      ],
+      "acceptance_criteria": [
+        "AC1 按冻结PANAS-NA比较报告估计和区间",
+        "AC2 I达成/G跟随/成本与未知独立报告，旧PF门不隐去主结果",
+        "AC3 区间跨零不称等效，替代主张需真实界值与精度"
+      ],
+      "evidence_required": [
+        "锁定分析表",
+        "功能及成本表",
+        "独立重算与敏感性"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "A-02",
+        "A-03",
+        "E-04"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "E-05": {
+      "scope": "可选学习策略的独立冻结",
+      "disposition": "DEFERRED_EXTENSION",
+      "deliverables": [
+        "可选学习策略的独立冻结修订交接",
+        "延期决定",
+        "扩展策略标准"
+      ],
+      "acceptance_criteria": [
+        "AC1 不成为首版整包研究依赖",
+        "AC2 预先确定扩展目标、策略选择和不足时保留规则方案",
+        "AC3 真实冻结与OPE证据独立，不把主研究结果反向优化后再称确认性"
+      ],
+      "evidence_required": [
+        "延期决定",
+        "扩展策略标准",
+        "真实冻结缺口"
+      ],
+      "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "A-05",
+        "X-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "G-04": {
+      "scope": "可选策略扩展的独立准入",
+      "disposition": "DEFERRED_EXTENSION",
+      "deliverables": [
+        "可选策略扩展的独立准入修订交接",
+        "扩展范围",
+        "独立准入条件"
+      ],
+      "acceptance_criteria": [
+        "AC1 扩展不是A/B整包研究的必要阶段",
+        "AC2 独立样本、SAP、策略及回退有真实冻结",
+        "AC3 同构建比较且不将扩展收益补写为核心机制证据"
+      ],
+      "evidence_required": [
+        "扩展范围",
+        "独立准入条件",
+        "核心/扩展样本账本"
+      ],
+      "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "E-05",
+        "X-03",
+        "Z-01"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "B-03": {
+      "scope": "可选扩展批次模板",
+      "disposition": "DEFERRED_EXTENSION",
+      "deliverables": [
+        "可选扩展批次模板修订交接",
+        "扩展批次候选",
+        "独立参与者账本"
+      ],
+      "acceptance_criteria": [
+        "AC1 无扩展真实放行不创建实施承诺",
+        "AC2 每实例独立样本与策略/回退版本清楚",
+        "AC3 不复用核心受试者作为独立新样本，不回改共同I"
+      ],
+      "evidence_required": [
+        "扩展批次候选",
+        "独立参与者账本",
+        "版本与准入要求"
+      ],
+      "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "G-04"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "E-06": {
+      "scope": "可选扩展关闭与揭盲",
+      "disposition": "DEFERRED_EXTENSION",
+      "deliverables": [
+        "可选扩展关闭与揭盲修订交接",
+        "扩展活动清单",
+        "真实锁库与授权"
+      ],
+      "acceptance_criteria": [
+        "AC1 仅核对实际获准扩展的所有实例",
+        "AC2 策略不变、锁库和揭盲分别取证",
+        "AC3 未开展不借核心数据代签或补造"
+      ],
+      "evidence_required": [
+        "扩展活动清单",
+        "真实锁库与授权",
+        "范围关闭"
+      ],
+      "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "G-04",
+        "B-03"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "A-04": {
+      "scope": "可选扩展独立锁定分析",
+      "disposition": "DEFERRED_EXTENSION",
+      "deliverables": [
+        "可选扩展独立锁定分析修订交接",
+        "独立分析候选",
+        "回退估计目标"
+      ],
+      "acceptance_criteria": [
+        "AC1 独立SAP与实际分配/回退估计目标",
+        "AC2 不把扩展后优化结果当首版B确认性证据",
+        "AC3 真实复现与不利方向报告齐备，否则保持延期"
+      ],
+      "evidence_required": [
+        "独立分析候选",
+        "回退估计目标",
+        "复现与缺失边界"
+      ],
+      "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+      "recorded_status": "BLOCKED_EXTERNAL",
+      "depends_on_original": [
+        "A-05",
+        "E-06"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "A-06": {
+      "scope": "核心贡献及阶段范围关闭",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "核心贡献及阶段范围关闭修订交接",
+        "主张证据台账",
+        "范围关闭候选"
+      ],
+      "acceptance_criteria": [
+        "AC1 主稿C1/C2/C3按真实证据定级，不预设原生胜出",
+        "AC2 近邻覆盖、无差异、信号失败、迁移失败有收缩规则",
+        "AC3 核心/扩展分账，CCF等级目标不等于完成"
+      ],
+      "evidence_required": [
+        "主张证据台账",
+        "范围关闭候选",
+        "负结果与降称矩阵"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "A-05",
+        "U12-10"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "W-02": {
+      "scope": "整包收益与目标代价论文主稿",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "整包收益与目标代价论文主稿修订交接",
+        "结果中立主稿",
+        "预定结果表"
+      ],
+      "acceptance_criteria": [
+        "AC1 以固定A对原生自适应B为问题，保持结果前中立",
+        "AC2 披露I/G/X、期待/新奇、实际剂量及测量边界",
+        "AC3 科学贡献需真实结果，设计原则无迁移不称普适"
+      ],
+      "evidence_required": [
+        "结果中立主稿",
+        "预定结果表",
+        "贡献证据及限制"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "W-01",
+        "A-06",
+        "U12-07"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "W-03": {
+      "scope": "实际贡献的期刊匹配与提交准备",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "实际贡献的期刊匹配与提交准备修订交接",
+        "期刊匹配表",
+        "复现与声明"
+      ],
+      "acceptance_criteria": [
+        "AC1 实时核验目标期刊而不把等级当保证",
+        "AC2 作者/许可/数据政策/独立复现有真实证据",
+        "AC3 投稿仅在真实授权后，未补全文近邻与方法缺口写清"
+      ],
+      "evidence_required": [
+        "期刊匹配表",
+        "复现与声明",
+        "真实提交待办"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "W-02",
+        "Z-01",
+        "G-05"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "W-04": {
+      "scope": "科研产品实践的真实移交",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "科研产品实践的真实移交修订交接",
+        "成果清单",
+        "真实使用价值及成本"
+      ],
+      "acceptance_criteria": [
+        "AC1 同一设计支撑展示与论文，原生适应不得动画冒充",
+        "AC2 设备/维护/准备成本与实际价值证据随成品交接",
+        "AC3 标明设计、工程、研究和公开状态，不夸大受益人数"
+      ],
+      "evidence_required": [
+        "成果清单",
+        "真实使用价值及成本",
+        "接收与公开决定"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "W-03",
+        "Z-01",
+        "U12-12"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U12-01": {
+      "scope": "新任务设计权威与原执行范围治理",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新任务设计权威与原执行范围治理修订交接",
+        "权威区分",
+        "任务修订矩阵"
+      ],
+      "acceptance_criteria": [
+        "AC1 新基线作用于当前任务计划，v1.2只保留原协议范围",
+        "AC2 历史DONE/签收不覆盖适应修订，注册状态与修订需求分开",
+        "AC3 生成器、导航及分发同消费新要求，冻结输入有显式影响"
+      ],
+      "evidence_required": [
+        "权威区分",
+        "任务修订矩阵",
+        "分发输入影响"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "U12-02": {
+      "scope": "条件适配的步骤测量材料",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "条件适配的步骤测量材料修订交接",
+        "题项蓝图",
+        "状态/真值映射"
+      ],
+      "acceptance_criteria": [
+        "AC1 共同目标题等值后有限比较，A不读取不存在的Actual",
+        "AC2 旧八题/新十二题均不自动当正式主量表",
+        "AC3 真值、缺失、标注及材料效度先验，理解只解释信息读取"
+      ],
+      "evidence_required": [
+        "题项蓝图",
+        "状态/真值映射",
+        "材料验证要求"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "U12-01",
+        "F-02",
+        "F-05"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "U12-03": {
+      "scope": "固定与原生自适应公平教学",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "固定与原生自适应公平教学修订交接",
+        "两条件脚本",
+        "预算与问答"
+      ],
+      "acceptance_criteria": [
+        "AC1 等预算中性说明，A说明预设而B说明真实响应及有限等待",
+        "AC2 前测在教学前，学不会/求助记录不排除",
+        "AC3 适应可读与停止明确，不把B更高级作为教学期待"
+      ],
+      "evidence_required": [
+        "两条件脚本",
+        "预算与问答",
+        "真实理解及修订"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "IN_REVIEW",
+      "depends_on_original": [
+        "U12-01",
+        "R-01"
+      ],
+      "revision_state": "ACTIVE_SCOPE_CHANGED_FROZEN_INPUT_PRESERVED"
+    },
+    "U12-04": {
+      "scope": "新PANAS与执行代价SAP",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新PANAS与执行代价SAP修订交接",
+        "新估计目标表",
+        "SAP/精度修订"
+      ],
+      "acceptance_criteria": [
+        "AC1 PANAS-NA前测校正主要候选的版本、地板和最小关注差明确",
+        "AC2 新I/G执行与覆盖/控制成本独立，原0.075不沿用",
+        "AC3 重估方差缺失及精度，100+分阶段计数"
+      ],
+      "evidence_required": [
+        "新估计目标表",
+        "SAP/精度修订",
+        "未定参数与校准方法"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "U12-01",
+        "F-02"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "U12-05": {
+      "scope": "新材料静态及回放真实准入",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新材料静态及回放真实准入修订交接",
+        "材料准入差异",
+        "真人活动清单"
+      ],
+      "acceptance_criteria": [
+        "AC1 候选材料按A/B功能适配，不以Actual同题给A不公平判断",
+        "AC2 静态/回放活动与运行及研究许可分开",
+        "AC3 真实反馈、舒适性与异常理解未经验证不自动放行"
+      ],
+      "evidence_required": [
+        "材料准入差异",
+        "真人活动清单",
+        "真实批准缺口"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP_EXTERNAL",
+      "depends_on_original": [
+        "U12-01",
+        "G-01",
+        "G-02"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U12-06": {
+      "scope": "新方案正式入口与运行许可衔接",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新方案正式入口与运行许可衔接修订交接",
+        "候选范围变更",
+        "新准入消费清单"
+      ],
+      "acceptance_criteria": [
+        "AC1 保留原领取候选，增加新基线变更范围",
+        "AC2 正式入口消费获准I/G/X控制和新协议，不把设计文档当许可",
+        "AC3 基础保护、真实批准及适应运行分别验证"
+      ],
+      "evidence_required": [
+        "候选范围变更",
+        "新准入消费清单",
+        "真实运行缺口"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "IN_PROGRESS",
+      "depends_on_original": [
+        "U12-01",
+        "F-01",
+        "P-01",
+        "G-02"
+      ],
+      "revision_state": "ACTIVE_SCOPE_CHANGED_FROZEN_INPUT_PRESERVED"
+    },
+    "U12-07": {
+      "scope": "结果前中立写作及审稿修复",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "结果前中立写作及审稿修复修订交接",
+        "中立方法稿",
+        "空表与结论规则"
+      ],
+      "acceptance_criteria": [
+        "AC1 固定A对自适应B，主结果不随胜负替换",
+        "AC2 14项审稿攻击的设计修复和实证未闭合分别表达",
+        "AC3 共同I为任务参照、设备成本及机制边界进入方法"
+      ],
+      "evidence_required": [
+        "中立方法稿",
+        "空表与结论规则",
+        "审稿修复证据"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "DONE",
+      "depends_on_original": [
+        "U12-01",
+        "W-01"
+      ],
+      "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW"
+    },
+    "U12-08": {
+      "scope": "可选扩展独立附录",
+      "disposition": "DEFERRED_EXTENSION",
+      "deliverables": [
+        "可选扩展独立附录修订交接",
+        "独立附录范围",
+        "扩展分析需求"
+      ],
+      "acceptance_criteria": [
+        "AC1 扩展只在核心之外按独立问题和样本开展",
+        "AC2 不以学习策略补足首版受限规则的贡献",
+        "AC3 实际活动、SAP和签署不足时标延期"
+      ],
+      "evidence_required": [
+        "独立附录范围",
+        "扩展分析需求",
+        "未开展边界"
+      ],
+      "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "A-04",
+        "E-05"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U12-09": {
+      "scope": "71包新基线覆盖一致性",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "71包新基线覆盖一致性修订交接",
+        "71包影响矩阵",
+        "包/PDF一致性报告"
+      ],
+      "acceptance_criteria": [
+        "AC1 逐包核对任务、当前输出、输入、PDF和生成来源",
+        "AC2 READY新快照与领取中保留快照加变更分开",
+        "AC3 无新适应运行证据不转移历史DONE与签收"
+      ],
+      "evidence_required": [
+        "71包影响矩阵",
+        "包/PDF一致性报告",
+        "冻结输入变更记录"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "U12-02",
+        "U12-03",
+        "U12-04",
+        "U12-06"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U12-10": {
+      "scope": "整包结果分轴解释规则",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "整包结果分轴解释规则修订交接",
+        "结果分类候选",
+        "不利案例"
+      ],
+      "acceptance_criteria": [
+        "AC1 情绪差异、I达成、G跟随与成本独立分类",
+        "AC2 情绪无差异不当等效，跟G好但偏I不能称训练更好",
+        "AC3 近邻/信号/迁移失败各有降称，不事后综合成胜出"
+      ],
+      "evidence_required": [
+        "结果分类候选",
+        "不利案例",
+        "预定收缩规则"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP",
+      "depends_on_original": [
+        "A-05"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U12-11": {
+      "scope": "新研究参数与资源冻结",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "新研究参数与资源冻结修订交接",
+        "冻结差异表",
+        "参数依据索引"
+      ],
+      "acceptance_criteria": [
+        "AC1 共同I先验用途与舒适性、控制及计分参数有各自依据",
+        "AC2 PANAS、时长、N、随机化与缺失真实冻结",
+        "AC3 无依据数值待校准，三阶段预算与真实批准不由旧门自动覆盖"
+      ],
+      "evidence_required": [
+        "冻结差异表",
+        "参数依据索引",
+        "真实审批与资源账本"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP_EXTERNAL",
+      "depends_on_original": [
+        "G-05",
+        "E-03",
+        "U12-09",
+        "A-03-CAL"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    },
+    "U12-12": {
+      "scope": "成果选择与社会价值判断",
+      "disposition": "REVISE_FOR_NEW_BASELINE",
+      "deliverables": [
+        "成果选择与社会价值判断修订交接",
+        "采用/收缩/停止规则",
+        "成果用途"
+      ],
+      "acceptance_criteria": [
+        "AC1 净收益考虑无设备替代、准备/管理成本和自愿使用",
+        "AC2 当前缺真实证据不推荐部署或保证比赛/发表",
+        "AC3 公开、产品与论文分别真实授权，不虚构长期或普惠价值"
+      ],
+      "evidence_required": [
+        "采用/收缩/停止规则",
+        "成果用途",
+        "成本及公开待证项"
+      ],
+      "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+      "recorded_status": "WAIT_DEP_EXTERNAL",
+      "depends_on_original": [
+        "W-03",
+        "A-06"
+      ],
+      "revision_state": "NEW_SCOPE_NOT_EXECUTED"
+    }
+  }
+}

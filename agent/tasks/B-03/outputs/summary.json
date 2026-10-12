@@ -1,8 +1,8 @@
 {
   "task_id": "B-03",
-  "title": "B03 可选阶段三批次与上下游审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "B-03仍为未执行的TEMPLATE/BLOCKED_EXTERNAL，真实实例为零、未领取未签收。已建立两原生组批次、真实决策与全部部分活动交接；固定随机开发重放不冒充动态策略通过，G-04真实放行仍缺。",
+  "title": "B-03 可选扩展批次模板 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "B-03注册状态BLOCKED_EXTERNAL仅保留原范围。当前任务更新为可选扩展批次模板；处理类型DEFERRED_EXTENSION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未签收",
     "date": "无",
@@ -13,75 +13,82 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "可重复模板，每实例最多12人、约5人日，依赖G-04；两组都用scene_native，比较冻结部署策略与均衡随机。正式策略、批准、预注册、同构建配置与真实现场角色均缺，核心论文不等待扩展。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1同版锁定stage_3分配；AC2策略决策可真实重放、随机组按分配累计平衡；AC3每人只一次且同构建及配置正确。缺动态证据不能用固定路径代替，未放行不创建真实实例。",
-        "五段为接收独立冻结与责任、前测及新队列分配、真实运行与记录、原件QC与决策审计、复核和全部实例交接。完成状态与PANAS/技术可评估和分析集资格分开。"
+        "AC1 无扩展真实放行不创建实施承诺",
+        "AC2 每实例独立样本与策略/回退版本清楚",
+        "AC3 不复用核心受试者作为独立新样本，不回改共同I"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "建立TASK及五目录、22项现存来源、当前交接/机器状态、空批次登记和QC提纲、实际专项与治理证据；不生成正式manifest、参与者记录或真实QC结论。",
-        "两个正式研究导航及v2.0手册增加阶段三入口，Agent与人读层对齐。旧第10步两原文已实际归档B-02，本包引用而不重复复制；在研快照和历史签署不改。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "可选扩展批次模板修订交接",
+        "扩展批次候选",
+        "独立参与者账本"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "48分配块含24随机完整排列与24策略null行，批次最多12人，不强制6比6。null不是回退序列，策略实际顺序不要求24排列均匀；按分配平衡，不按完成者缺格补人。",
-        "注册仍写完整48块关闭，协议要求披露部分运行；显式保留差异，尾块/停止交G-04事前裁定。实际停止不为凑整继续，回退留原策略组，全部部分实例交E-06/A-06。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：可选扩展批次模板"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "复测144专项通过，覆盖本包、G-04、X-03及既有随机化/存储。实际24随机路径PolicyDecision校验、位置概率与区间中点见证核对；消息只有所选动作概率/状态身份，不含完整分布或实测状态原件。",
-        "实际均衡随机stage_3开发prepare后finish封存、两操作只读重放与状态哈希一致；未启动体验，不证明动态策略或800秒全链。协议、治理、注册、分发及根回归实际日志见verification.json。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "首轮143通过1失败，原因是合成finish用了不合法连字符原因码；改用既有SYNTHETIC_TEST，失败日志保留，运行合同未放宽。",
-        "完整块与停止、固定见证与真实策略采样、单批QC与锁库揭盲分开。真实动态运行/重放、同构建配置、教学暴露接线、独立批准及正式尾块规则仍缺，不以空表关闭。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：扩展批次候选；独立参与者账本；版本与准入要求"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "TASK、inputs、execution、evidence、outputs、archive各有固定用途，输出空提纲明确NOT_RUN；受限人物和填表留获批仓库外，没有旧实例可迁移，不复制历史原文。",
-        "先修Agent当前事实及导航，再生成总结与串联Word。注册状态保持、业务SVG不重复生成，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "G-04交独立放行、最终N/停止、同构建/配置和预注册；X-01交stage_3清单，X-03交真实决策前状态、完整候选概率和安全重放，D/S/P/U/I与G-02/G-05交设备、记录、去重及活动资格。现真实条件未齐，不实例化。",
-        "E-06接所有分配/暴露/退出、原件索引、盲态QC及停止；A-04按含回退部署目标分析，U12-08附录，A-06据真实分配/暴露/批次事实判范围。有部分运行不能自称NO_STAGE3；单批结束不授权揭盲。"
+        "原依赖：G-04；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：扩展批次候选；独立参与者账本；版本与准入要求"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "每实例唯一负责人、现场、清单保管/揭示、数据/QC、标注、策略审计及另一人复核均待实名。作者Agent合成检查与真实签收分开，没有姓名、日期、PASS或DONE代填。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "真实注册、协议/投稿路线/活动矩阵、G-04/X-03/X-01/B-02/P-02当前交接、实际随机化/编排/记录/重放源码及v2.2消息、六类证据合同；旧原文留已存在归档，无新网页研究或真人活动。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -109,6 +116,11 @@
       "status": "OPEN_REAL_ADMISSION_INSTANCES_AND_DYNAMIC_REPLAY",
       "description": "独立批准、策略动态运行、同构建配置、教学暴露、正式规则与真实实例/QC及实名职责仍缺",
       "source": "agent/tasks/B-03/outputs/current-batch.json"
+    },
+    {
+      "id": "B-03-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "可选扩展批次模板；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -132,6 +144,27 @@
     {
       "label": "实际验证结果",
       "path": "agent/tasks/B-03/evidence/verification.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
     }
-  ]
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

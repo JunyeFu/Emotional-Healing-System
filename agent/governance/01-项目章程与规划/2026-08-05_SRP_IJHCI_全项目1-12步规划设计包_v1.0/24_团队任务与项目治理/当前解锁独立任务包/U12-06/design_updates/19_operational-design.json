@@ -1,0 +1,1307 @@
+{
+  "candidate_id": "ODES-20261008",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "DESIGN_ONLY",
+  "formal_collection_allowed": false,
+  "runtime_api_modified": false,
+  "numeric_parameters_frozen": false,
+  "sources": [
+    "05-control-spec.tex",
+    "05-control-spec.pdf",
+    "06-paired-storyboards.tex",
+    "06-paired-storyboards.pdf",
+    "07-protocol-candidate.tex",
+    "07-protocol-candidate.pdf",
+    "operational-design.json"
+  ],
+  "rules": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10"
+  ],
+  "scenarios": [
+    "ST01",
+    "ST02",
+    "ST03",
+    "ST04",
+    "ST05",
+    "FD01",
+    "FD02",
+    "FD03",
+    "FD04",
+    "FD05",
+    "FD06",
+    "FD07"
+  ],
+  "pending_parameters": [
+    "signal_quality",
+    "freshness",
+    "phase_identifiability",
+    "rate_window",
+    "phase_offset_window",
+    "slowdown_limit",
+    "single_change_limit",
+    "absolute_step_limit",
+    "stability_window",
+    "return_rate",
+    "buffer_single_limit",
+    "buffer_total_limit",
+    "presentation_latency",
+    "scoring_tolerance",
+    "cumulative_rule",
+    "measurement_version",
+    "minimum_interesting_difference",
+    "formal_sample_size"
+  ],
+  "participants": {
+    "expert_review": 8,
+    "independent_rebuilders_subset": 2,
+    "cognitive_students": 12,
+    "need_interviews_subset": 8,
+    "technical_students_range": [
+      12,
+      20
+    ],
+    "planning_technical_students": 20,
+    "formal_if_100_students": 68,
+    "formal_if_100_people_including_experts": 60,
+    "transfer_deferred": true,
+    "numbers_are_planning_candidates": true,
+    "technical_split": {
+      "calibration": 10,
+      "heldout": 10,
+      "separation": "按独立参与者；前置不同于认知/正式；不足精度增补前置并重算资源"
+    }
+  },
+  "randomization_candidate": {
+    "conditions": [
+      "A",
+      "B"
+    ],
+    "orders": [
+      [
+        "Storm",
+        "Heat",
+        "Fade",
+        "Snow"
+      ],
+      [
+        "Heat",
+        "Snow",
+        "Storm",
+        "Fade"
+      ],
+      [
+        "Snow",
+        "Fade",
+        "Heat",
+        "Storm"
+      ],
+      [
+        "Fade",
+        "Storm",
+        "Snow",
+        "Heat"
+      ]
+    ],
+    "joint_block_sizes": [
+      8,
+      16
+    ],
+    "implemented": false
+  },
+  "consumers": {
+    "F-02": "确认共同I用途、多步骤必要性及主要量表的具体版本与适用性",
+    "F-05": "形成I/G/X步骤身份、中断语义、合法动作和R01至R10合同候选",
+    "P-01": "承接受限放慢、错相缓冲、回归及中性模式的单一决策权与预算",
+    "P-02": "分别记录计划、有效下发、实际呈现、真实事件及决定时可用输入",
+    "S-01": "区分连接、原始质量、新鲜度及关键步骤可辨性",
+    "S-02": "独立识别真实步骤/周期，区分漏补吸与补吸未知，禁止用G补X",
+    "U-02": "呈现已有效下发的G与真实X，主运动和装饰延迟分开，禁止本地擅改控制",
+    "V-01": "安排共同预算、自然缓冲占时、暂停恢复及统一主要后测时点",
+    "V-02": "消费ST01至ST05与FD01至FD07配对故事板及固定镜头载体",
+    "V-03": "区分四层来源、饱和与不可用，公共复色不充当个人表现",
+    "V-04": "按12例设计准备后续真实样片，示意不进入运行证据栏",
+    "V-05": "将共同预算及关键异常12例纳入后续灰盒验收，不继承旧固定时钟通过",
+    "U-03": "实现前先审阅Fade补吸、跨周期、断流恢复与不可辨故事板",
+    "U-07": "固定A圈与预设场景保持开环，隐藏Actual与本人数据驱动输出",
+    "U12-02": "将共同目标题、A预设误读题、B实际/质量题分开构建与验证",
+    "U12-03": "以相同中性教学预算准确解释两条件，不教到相同正确率再选择样本",
+    "U12-04": "承接NA前测校正、I/G/成本分报、完整不确定周期界和新精度候选",
+    "A-01": "在独立X重建中保留中断/缺步骤/未知/跨周期，不读取在线成功为真值",
+    "A-02": "区分信号覆盖与结果可判定覆盖，C/K/U完整分区，撤回旧机会PF沿用",
+    "A-03": "验证新评分分区、参与者级模型、缺失敏感性与基于真实前置的N",
+    "Q-01": "审阅规则和构念，并由评审子集独立重建12例的G/X与模式",
+    "Q-02": "需求访谈计入认知阶段子集，验证舒适性、教学及状态材料",
+    "Q-03": "以独立真值校准可辨性、延迟、动作域和故障恢复，不用预试显著性放行效益",
+    "X-01": "评估四条Williams顺序与隐藏8/16联合块，旧48块不自动改动",
+    "U12-06": "消费新候选并保持原领取输入，正式入口仍需真实合同与研究冻结",
+    "U12-11": "按18组待定项、唯一人数账本与前置证据冻结下一版正式参数",
+    "G-03": "在控制/量表/评分/随机化/人数均真实修订后承接正式协议冻结",
+    "W-01": "核对九项近邻；Stairway出版社全文已读，自行调速与本项目受限G调整分开，不能把单方案速率变化外推为B优于A",
+    "R-01": "审阅需求—原理—设计—证据链，条件差异及具体天气用途",
+    "U-08": "准备/佩戴/校准/重置/帮助/退出成本及实践展示证据边界",
+    "A-06": "按真实结果关闭C1/C2/C3主张，迁移未执行则不声称已迁移",
+    "W-02": "消费普通学习间隙定位、主分析候选及六类中立结论模板",
+    "G-05": "区分前置活动批准与正式研究准入，旧批准不自动覆盖新用途"
+  },
+  "parameter_specs": {
+    "signal_quality": {
+      "label": "质量可用判定",
+      "definition_and_unit": "状态/概率",
+      "evidence_and_role": "独立双标注的原始波形和运动片段；可用不等于所有步骤可辨",
+      "candidate_domain": "阈值从校准观测域枚举；没有真值不得定数",
+      "data_and_determination": "校准集包含静止、运动、松动和断流；双人盲标可用与不可用，第三人裁决。候选阈值按误用时段及错误事件代价选，保留集报告参与者级误判/漏判区间。",
+      "acceptance_rule": "仅在误用造成的边界误差与U/T不确定宽满足先验评分域时保留；任何断流不得产生实际成功或新增累计。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "S-01",
+        "S-02",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "保持中性；改传感器/算法后用新核验材料重验",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "freshness": {
+      "label": "数据新鲜度",
+      "definition_and_unit": "毫秒",
+      "evidence_and_role": "采集时间、接收时间、真实呈现时间；仅使用决策前已到达信息",
+      "candidate_domain": "由真实时钟与延迟区间推导，非固定20Hz自动保证",
+      "data_and_determination": "记录跨设备时钟误差和端到端延迟分布，校准允许数据龄。保留集注入迟到/乱序/中断，重建每次决定当时可见输入。",
+      "acceptance_rule": "数据龄上界加时钟/呈现不确定度须小于最短可辨步骤及合法边界裕量；过期不得触发个体化。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "S-01",
+        "P-02",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "撤下X响应并中性；重新同步",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "phase_identifiability": {
+      "label": "关键相位/步骤可辨性",
+      "definition_and_unit": "类别及边界误差秒",
+      "evidence_and_role": "独立原始X，不读G、组别或动画",
+      "candidate_domain": "分类器与阈值仅用前10校准；后10不调参",
+      "data_and_determination": "双盲标吸/呼/停留候选、Fade两次吸气和跨周期；裁决后按参与者保留集核验混淆、无法辨比例及边界误差。",
+      "acceptance_rule": "可辨事件误差上侧区间须处于评分可接受域；漏补吸与补吸未知必须可区分，无法识别时禁止三步控制估计。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "S-02",
+        "A-01",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "移除不可辨动作/结构并重定范围，不从G补X",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "rate_window": {
+      "label": "真实偏慢观察窗",
+      "definition_and_unit": "完整周期数",
+      "evidence_and_role": "决策前可辨X对已呈现G的持续时间",
+      "candidate_domain": "1至校准材料中可获得的完整可辨周期数",
+      "data_and_determination": "在相同原始X上构造相位平移而不改时长、真实拉长时长及混合扰动；从可用历史周期数枚举窗，冻结后核验。",
+      "acceptance_rule": "纯相位平移不得单独触发R07；真实持续偏慢的可辨动作须在剩余预算内起效，无法分辨则不调整。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "P-01",
+        "F-05",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "禁用R07；使用中性和原方案",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "phase_offset_window": {
+      "label": "稳定错相窗与容差",
+      "definition_and_unit": "周期数/秒",
+      "evidence_and_role": "存在可靠事件对应；时长相容不等于全局同相",
+      "candidate_domain": "从独立边界误差与实际错相分布确定",
+      "data_and_determination": "枚举事件对应及相位稳定窗；用纯错相、慢速、抖动和无对应材料检验R08。",
+      "acceptance_rule": "无可靠对应不重对齐；纯慢速不误作错相；重对齐收益必须超过事件与呈现时点联合误差。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "P-01",
+        "F-05",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "取消R08，保留有限放慢与中性",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "slowdown_limit": {
+      "label": "最大放慢尺度",
+      "definition_and_unit": "无量纲alpha",
+      "evidence_and_role": "共同I吸/呼统一尺度；不放大停留",
+      "candidate_domain": "0至经舒适与结构审阅接受的上界，未定值",
+      "data_and_determination": "由舒适反馈、实际可辨持续时间及共同目标用途形成候选尺度；前10核查，后10固定核验；不按NA组差选。",
+      "acceptance_rule": "所有步骤在绝对可接受时长内；停留不扩大；超界拒绝计划；目标漂移成本可独立重算。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "P-01",
+        "Q-02",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "缩小上界或禁用适应，不无限迁就",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "single_change_limit": {
+      "label": "单周期尺度增量",
+      "definition_and_unit": "alpha/周期",
+      "evidence_and_role": "下一完整周期生效",
+      "candidate_domain": "不超过slowdown_limit；候选取实际需求变化分位点",
+      "data_and_determination": "用校准窗中所需尺度变化形成有限候选增量，检查突然变化感和模式摆动；保留集固定增量。",
+      "acceptance_rule": "不在已呈现周期内改普通G；每次变化不超候选域；产生不适或反复追逐则不接受。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "P-01",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "缩小增量或撤销放慢动作",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "absolute_step_limit": {
+      "label": "单步骤绝对时长上界",
+      "definition_and_unit": "秒",
+      "evidence_and_role": "吸/补吸/呼不同上界，停留按共同I",
+      "candidate_domain": "由各结构独立用途及舒适域确定；工程秒数非证据",
+      "data_and_determination": "专家先核查步骤用途与范围，获准舒适预试记录跟不上和主动停止；分别确定各步骤可接受域。",
+      "acceptance_rule": "统一比例缩放后所有步骤均在域内；任一步越界整计划拒绝，不逐步截断破坏比例；不得强求停留。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "F-02",
+        "Q-02",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "简化结构/时长，两组共同修订I后再冻结",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "stability_window": {
+      "label": "回归稳定观察窗",
+      "definition_and_unit": "周期数",
+      "evidence_and_role": "可靠X对当前G的跟随，非I达成",
+      "candidate_domain": "从可辨周期及剩余暴露预算限制窗长",
+      "data_and_determination": "枚举过去完整周期窗，比较噪声扰动下进入/离开回归的反复次数及用户可解释性。",
+      "acceptance_rule": "不足可辨周期不回归；输入失效即时中性；抖动不导致无界反复调整。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "P-01",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "延长观察或撤下个体化",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "return_rate": {
+      "label": "回归尺度减量",
+      "definition_and_unit": "alpha/周期",
+      "evidence_and_role": "alpha_next=max(0,alpha-current_delta)",
+      "candidate_domain": "0至放慢上界内有限递减量，待校准",
+      "data_and_determination": "对冻结稳定窗枚举递减量，重建回归所需周期、再次偏慢和结束仍偏移比例。",
+      "acceptance_rule": "不得快于I；不以稳定跟上慢G声称达到I；预算内不能回归时诚实记录，不加时。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "P-01",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "减小递减量或收缩支持主张",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "buffer_single_limit": {
+      "label": "一次自然缓冲上限",
+      "definition_and_unit": "秒",
+      "evidence_and_role": "无强制停留，自然呼吸占T",
+      "candidate_domain": "由重对齐可行时间与用户可接受等待交集决定",
+      "data_and_determination": "用实际可辨相位时点及延迟分布推导重对齐机会，预试询问等待负担并记录用时。",
+      "acceptance_rule": "缓冲上限内不存在可靠开周期机会则中性；不得把缓冲画成保持/屏息；不能保证完整下一周期时收尾。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "V-01",
+        "P-01",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "取消重对齐，转中性/收尾",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "buffer_total_limit": {
+      "label": "模块累计缓冲预算",
+      "definition_and_unit": "秒及占T比例",
+      "evidence_and_role": "不得增加暴露时间或机会",
+      "candidate_domain": "0至模块T内经任务必要性允许的预算",
+      "data_and_determination": "累计自然缓冲及核心练习占时；在校准材料中核查多次触发后剩余完整周期，评估用户负担。",
+      "acceptance_rule": "总缓冲不超过事前预算；达到界限停止调整；不以减少周期机会改I评分分母。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "V-01",
+        "U12-11",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "收缩缓冲动作或改共同剂量候选",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "presentation_latency": {
+      "label": "主运动实际呈现时延",
+      "definition_and_unit": "毫秒",
+      "evidence_and_role": "采集/决定/接收/实际呈现分别记录",
+      "candidate_domain": "由真实尾部延迟与最短可辨步骤推导预算",
+      "data_and_determination": "使用共同时间参考与真实显示核查，分离主运动和装饰粒子；取各天气/条件尾部延迟及不确定度。",
+      "acceptance_rule": "时延加边界误差不得跨越待判别的关键步骤；计划或消息到达不代替实际G，回执缺失记未知。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "P-02",
+        "U-02",
+        "V-03",
+        "Q-03"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "减装饰/简载体；主状态不可可靠呈现时中性",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "scoring_tolerance": {
+      "label": "共同I时长容差",
+      "definition_and_unit": "秒",
+      "evidence_and_role": "独立测量误差e与有意义目标偏离m",
+      "candidate_domain": "[2e,m]；e与m均待真实证据，非给定秒数",
+      "data_and_determination": "先由专家/任务用途确定有意义偏离m，再双标注估计边界误差e；候选容差tau取可接受区间[2e,m]，保留材料验证，评分不得随G放宽。",
+      "acceptance_rule": "区间非空且冻结后不因组别/控制器改变；若2e>m则测量不支持该达成分类，保留连续偏差及未知界。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "A-03",
+        "U12-04",
+        "F-02"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "停止合格分类，改连续描述/修测量，不宣布非劣",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "cumulative_rule": {
+      "label": "累计练习响应",
+      "definition_and_unit": "完整周期更新/视觉增量",
+      "evidence_and_role": "仅可靠完整G跟随，不是I达成/情绪恢复",
+      "candidate_domain": "增量范围由可见性与误读验证决定，不最大化奖赏",
+      "data_and_determination": "为可辨完整周期定义资格与增量，核对缺步骤/断流/恢复/饱和；认知材料问累计含义。",
+      "acceptance_rule": "未知、缓冲、缺步骤不增成功；饱和不改变动作；误读为情绪恢复时先改标签/载体。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "V-03",
+        "U-02",
+        "U12-02",
+        "Q-02"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "移除累计层，保留实时G/X与诚实不可用",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "measurement_version": {
+      "label": "主要测量唯一版本",
+      "definition_and_unit": "版本/题项/指令",
+      "evidence_and_role": "采用PANAS-X一般NA10/PA10，NA主要候选；中文工作稿非官方、未验证，不混用18/40/60题版本",
+      "candidate_domain": "SRP-PANASX-GENERAL-ZH-DRAFT-01；20题中文内部审阅稿已交付，正式题本未冻结",
+      "data_and_determination": "英文手册已取得且非商业复制使用已确认。按07第10、11节完成独立语言审阅、回译及两轮认知核查；对应使用范围和适用性证据由F-02/U12-04/G-05核对。",
+      "acceptance_rule": "设计材料已获用户批准；正式施测仍须题本、映射、计分、时间指令、使用范围和适用证据核准，不能以AI初译代替真实验证。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "F-02",
+        "U12-04"
+      ],
+      "verification_material": "原始题本/来源逐项对应表、适用使用说明、认知访谈与修订记录；SRP状态适用性按既定认知/技术前置安排检验，不把控制参数10+10核验当作量表效度验证",
+      "failure_revision": "允许已授权的中文内部审阅工作稿；不冒称已验证、不拼接、不自动换终点；不足时修订并核验，正式测量保持未放行",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "minimum_interesting_difference": {
+      "label": "最小实际关注差",
+      "definition_and_unit": "NA原始分",
+      "evidence_and_role": "采用用途和可接受收益，非预期效应",
+      "candidate_domain": "由使用场景形成原始分差区间，当前未定",
+      "data_and_determination": "在不看组间结果前，用独立用户/专家解释量表锚定变化及准备成本；不能形成共同意义则给一段决策区间并做精度敏感性。",
+      "acceptance_rule": "关注差必须有具体版本与产品用途依据；不能由资源100人或预试显著差倒推。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "F-02",
+        "U12-04",
+        "U-08"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "定位为估计性研究，收缩确认性采用主张",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    },
+    "formal_sample_size": {
+      "label": "正式样本规模",
+      "definition_and_unit": "独立参与者数",
+      "evidence_and_role": "前置人员与正式样本不重计",
+      "candidate_domain": "资源情景正式60/68/76/100为演算输入，不是已冻结N",
+      "data_and_determination": "以关注差、前后相关、残差、地板、两臂缺失范围模拟冻结ANCOVA/插补方案；给功效与95%区间精度曲线及敏感性。",
+      "acceptance_rule": "预定主要差和功能代价精度均可辨且资源覆盖才冻结；不足增加资源或明确估计性研究。",
+      "acceptance_basis": "共同任务含义、独立测量误差、舒适与可解释性；候选规则不等于已验证阈值",
+      "owner_tasks": [
+        "A-03",
+        "U12-04",
+        "U12-11"
+      ],
+      "verification_material": "前10校准、后10固定保留核验；与认知样本及正式样本不同",
+      "failure_revision": "增加资源/缩小结论，保留真实缺失而不凑样本",
+      "design_specification": "COMPLETE",
+      "empirical_validation": "NOT_EXECUTED",
+      "final_value": null
+    }
+  },
+  "materials": {
+    "teaching": {
+      "COMMON": {
+        "0-30": "这是短时呼吸练习，舒适和自主停止优先；不要求完成所有步骤。",
+        "30-60": "说明共同结构与当前/下一提示；漏步骤不追补，停留不用强求。",
+        "120-150": "演示信号/节奏异常与自然呼吸收尾；暂停恢复从完整周期开始。",
+        "150-180": "说明停止/求助方式，允许中性提问；不把答题正确作为入组条件。"
+      },
+      "A": {
+        "60-120": "圈是预设目标提示，场景按时间变化；它们不表示你的实际呼吸或达标，圈不会自动等你。舒适跟随或自然呼吸即可。"
+      },
+      "B": {
+        "60-120": "原生目标运动给出当前引导，独立实际运动只在信号可用时响应你的呼吸；信号不可用不等于失败。系统可有限等待/放慢并尝试回归，不能保证达标。累计是可靠练习响应，不是情绪恢复。"
+      },
+      "implementation_note": "两条件60至120秒内容准确但不同；语速/示例数/操作者关注按同一预算。示意为设计教学，不声称正式180秒已可用。"
+    },
+    "comprehension_items": [
+      {
+        "id": "C01",
+        "condition": "COMMON",
+        "prompt": "画面明确给出当前吸气目标提示。这个提示能否单独证明你此刻确实在吸气？",
+        "construct": "当前目标",
+        "answer": "当前目标是吸气；不能仅凭目标提示确认自己的真实动作",
+        "truth": "G的已呈现步骤",
+        "validation": "两组相同文字任务，用各自正常载体；同构念不等于题项已经等值",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "C02",
+        "condition": "COMMON",
+        "prompt": "引导进入标明自然呼吸的收尾。这意味着需要补做未完成周期吗？",
+        "construct": "预算与停止",
+        "answer": "不需要；自然呼吸收尾，可以停止",
+        "truth": "R02和共同预算",
+        "validation": "双方都使用相同收尾说明；B不额外延时",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "C03",
+        "condition": "COMMON",
+        "prompt": "你漏过一个提示，随后已经开始呼气。现在应追补吸气吗？",
+        "construct": "自主与漏步骤",
+        "answer": "不用追补；舒适自然呼吸，按后续完整引导重新开始或停止",
+        "truth": "R01/R06及Fade规则",
+        "validation": "两组均讲解不追补，不测自己没有的信息",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "C04",
+        "condition": "COMMON",
+        "prompt": "练习不舒服或想暂停，应该怎么做？",
+        "construct": "自主停止",
+        "answer": "停止/请求暂停，自然呼吸，不必等当前周期结束",
+        "truth": "R01/R03",
+        "validation": "共同停止程序与教学一致",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "A01",
+        "condition": "A",
+        "prompt": "场景逐渐变清晰，是否说明你自己的呼吸已被确认达标？",
+        "construct": "预设误读",
+        "answer": "否；A场景按预定时间变化，不代表个人表现",
+        "truth": "A输出独立X",
+        "validation": "只在所属条件解释，不与另一条件专属题排名",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "A02",
+        "condition": "A",
+        "prompt": "如果你的呼吸比圈慢，圈会自动等你吗？",
+        "construct": "固定引导含义",
+        "answer": "不会自动等；可以舒适跟随、自然呼吸或停止",
+        "truth": "A开环",
+        "validation": "只在所属条件解释，不与另一条件专属题排名",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "A03",
+        "condition": "A",
+        "prompt": "你看到圈正常运动，能否从中判断传感器当前正常？",
+        "construct": "设备与引导区分",
+        "answer": "不能；A圈不表示设备状态",
+        "truth": "A没有Actual/质量层",
+        "validation": "只在所属条件解释，不与另一条件专属题排名",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "B01",
+        "condition": "B",
+        "prompt": "目标风纹与实际风纹方向/进度不同，能否说你已经达到共同理想？",
+        "construct": "目标与实际分离",
+        "answer": "不能；目标G与真实X不同，是否符合I需独立评价",
+        "truth": "I/G/X独立",
+        "validation": "只在所属条件解释，不与另一条件专属题排名",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "B02",
+        "condition": "B",
+        "prompt": "出现信号暂不可用，且实际风纹撤下。应该理解为呼吸失败吗？",
+        "construct": "未知",
+        "answer": "不能；当前不能可靠判断实际表现，可自然呼吸或停止",
+        "truth": "R04/U未知",
+        "validation": "只在所属条件解释，不与另一条件专属题排名",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "B03",
+        "condition": "B",
+        "prompt": "引导放慢后你更容易跟上，是否已经证明更接近共同理想？",
+        "construct": "支持与目标代价",
+        "answer": "没有；更容易跟G不证明更接近I",
+        "truth": "R07与独立I评分",
+        "validation": "只在所属条件解释，不与另一条件专属题排名",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      },
+      {
+        "id": "B04",
+        "condition": "B",
+        "prompt": "断流恢复后累计没有补涨，是否应该补做丢失步骤？",
+        "construct": "累计/恢复",
+        "answer": "不应补做；恢复不回填未知和未发生事件",
+        "truth": "R04/R05及累计规则",
+        "validation": "只在所属条件解释，不与另一条件专属题排名",
+        "scoring": "核心含义正确记1；错误含义记0；双人按答案要点编码，分歧第三人裁决",
+        "missing": "跳过/超时/未呈现分开记录，correct=null；不填0",
+        "timing": "PANAS后测之后",
+        "validation_status": "NOT_EXECUTED",
+        "material_type": "DESIGN_VIGNETTE_NOT_RUNTIME_EVIDENCE"
+      }
+    ],
+    "interview": [
+      "最近一次学习间隙，你为什么想休息？实际用了什么办法？不要先介绍SRP优点。",
+      "是否遇到固定呼吸提示难跟随？请描述具体一次；没有经历也如实记录。",
+      "你希望短时练习帮助完成什么任务？怎样才算有用？",
+      "先展示A中性示意：你认为圈与场景变化分别代表什么？",
+      "再按所属条件展示正常/异常示意：哪里需要猜测、追赶或查看？",
+      "是否愿意佩戴两设备？准备、清洁、校准与操作员帮助有哪些顾虑？",
+      "如果自然休息、音频引导也能满足需要，你会选择哪一种，为什么？",
+      "什么体验会让你暂停或拒绝？再次自愿使用需要哪些条件？"
+    ],
+    "experience_forms": [
+      {
+        "id": "EFFORT",
+        "prompt": "刚才跟随提示需要你投入多少努力？",
+        "anchors": [
+          "0 完全不费力",
+          "10 非常费力"
+        ],
+        "purpose": "执行努力",
+        "missing": "未回答保留null",
+        "status": "自编单题，未验证"
+      },
+      {
+        "id": "COMFORT",
+        "prompt": "刚才的呼吸练习对你有多舒适？",
+        "anchors": [
+          "0 完全不舒适",
+          "10 非常舒适"
+        ],
+        "purpose": "呼吸舒适",
+        "missing": "未回答保留null",
+        "status": "自编单题，未验证"
+      },
+      {
+        "id": "REUSE",
+        "prompt": "如果下次学习间隙可自主选择，你愿意再次使用这套方案吗？请说明原因。",
+        "anchors": [
+          "愿意",
+          "不愿意",
+          "不确定"
+        ],
+        "purpose": "自愿使用意向，不代替真实复用",
+        "missing": "未回答保留null",
+        "status": "自编产品问题"
+      }
+    ],
+    "primary_measurement": {
+      "candidate": "PANASX-GENERAL-PA10-NA10",
+      "primary": "NA前测校正后测",
+      "identity_status": "ENGLISH_CONFIRMED_CHINESE_REVIEW_DRAFT_READY_NOT_VALIDATED",
+      "selected_form": null,
+      "item_texts": null,
+      "priority_reference": "Watson & Clark, PANAS-X manual, copyright 1994, updated 8/99; DOI 10.17077/48vt-m4t2",
+      "comparison_reference": "邱林、郑雪、王雁飞，2008，14(3):249–254,268；原摘要明确9+9修订，不能当10+10",
+      "time_instruction": "此刻；手册印刷页3支持right now；最终中文措辞和场景适用性待核验",
+      "template_score": "NA与PA各10项1至5求和，各10至50，无反向；任一分量表缺项则该分量表缺失（项目工作规则）。不合成总分。",
+      "rights": "PhenX180501明确允许PANAS-X非商业复制使用；本项目采用原手册一般分量表。该说明不自动解决第三方中文译本及其公开条件。",
+      "source_links": [
+        "https://doi.org/10.1037/0022-3514.54.6.1063",
+        "https://doi.org/10.3321/j.issn:1000-6729.2003.01.018",
+        "https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CJFQ&dbname=CJFD2008&filename=YXNX200803009",
+        "https://www.phenxtoolkit.org/protocols/view/180501",
+        "https://doi.org/10.1111/aphw.12133",
+        "https://doi.org/10.3724/SP.J.1041.2021.00244",
+        "https://doi.org/10.1037/t03592-000",
+        "https://www.apa.org/pubs/databases/psyctests/faq",
+        "https://doi.org/10.17077/48vt-m4t2"
+      ],
+      "failure_rule": "工作译稿可内部审阅；完成翻译使用范围核对、独立语言审阅和适用性验证前不作正式主要测量，不宣称官方或已验证，不自动换主终点",
+      "working_english_form": {
+        "source": "PANAS-X-manual.pdf",
+        "source_pages": "印刷1–3 / PDF5–7",
+        "NA": [
+          "afraid",
+          "scared",
+          "nervous",
+          "jittery",
+          "irritable",
+          "hostile",
+          "guilty",
+          "ashamed",
+          "upset",
+          "distressed"
+        ],
+        "PA": [
+          "active",
+          "alert",
+          "attentive",
+          "determined",
+          "enthusiastic",
+          "excited",
+          "inspired",
+          "interested",
+          "proud",
+          "strong"
+        ],
+        "scale_min": 1,
+        "scale_max": 5,
+        "reverse_items": [],
+        "time_window": "right now",
+        "status": "ENGLISH_SCORING_KEY_ADOPTED_NOT_A_VALIDATED_CHINESE_FORM",
+        "row_order_is_administration_order": false
+      },
+      "working_chinese_form": {
+        "id": "SRP-PANASX-GENERAL-ZH-DRAFT-01",
+        "status": "AI_TRANSLATION_FOR_INTERNAL_REVIEW_NOT_VALIDATED",
+        "created": "2026-10-09",
+        "source": "PANAS-X general dimension scales, manual Table 2",
+        "translation_origin": "直接据英文一般分量表起草；不是黄丽2003或郭明珠甘怡群2010译本",
+        "instruction": "下面列出一些描述感受的词。请根据你此刻的实际感受，选择每种感受的强烈程度。没有正确或错误答案；请不要按平时的状态或你认为练习应该带来的变化作答。若不愿回答，可以留空。",
+        "anchors": {
+          "1": "几乎没有或完全没有",
+          "2": "有一点",
+          "3": "中等程度",
+          "4": "相当强烈",
+          "5": "非常强烈"
+        },
+        "items": [
+          {
+            "id": "Q01",
+            "english": "interested",
+            "zh_draft": "感兴趣的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q02",
+            "english": "distressed",
+            "zh_draft": "苦恼的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q03",
+            "english": "excited",
+            "zh_draft": "兴奋的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q04",
+            "english": "upset",
+            "zh_draft": "心烦的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q05",
+            "english": "strong",
+            "zh_draft": "强有力的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q06",
+            "english": "guilty",
+            "zh_draft": "内疚的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q07",
+            "english": "scared",
+            "zh_draft": "惊恐的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q08",
+            "english": "hostile",
+            "zh_draft": "有敌意的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q09",
+            "english": "enthusiastic",
+            "zh_draft": "热情的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q10",
+            "english": "proud",
+            "zh_draft": "自豪的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q11",
+            "english": "irritable",
+            "zh_draft": "易怒的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q12",
+            "english": "alert",
+            "zh_draft": "警觉的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q13",
+            "english": "ashamed",
+            "zh_draft": "羞愧的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q14",
+            "english": "inspired",
+            "zh_draft": "受到鼓舞的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q15",
+            "english": "nervous",
+            "zh_draft": "紧张的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q16",
+            "english": "determined",
+            "zh_draft": "坚定的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q17",
+            "english": "attentive",
+            "zh_draft": "专注的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q18",
+            "english": "jittery",
+            "zh_draft": "忐忑不安的",
+            "scale": "NA"
+          },
+          {
+            "id": "Q19",
+            "english": "active",
+            "zh_draft": "活跃的",
+            "scale": "PA"
+          },
+          {
+            "id": "Q20",
+            "english": "afraid",
+            "zh_draft": "害怕的",
+            "scale": "NA"
+          }
+        ],
+        "order_basis": "项目工作题序；两组前后测一致，后续修订须先固定",
+        "rights_scope": "英文非商业使用已有依据；中文翻译/改编及公开范围未由reproduce表述单独确认，本稿仅作内部审阅材料",
+        "formal_use_allowed": false,
+        "independent_review_completed": false,
+        "cognitive_validation_completed": false
+      },
+      "translation_review": {
+        "owners": [
+          "F-02",
+          "U12-04",
+          "Q-01",
+          "Q-02",
+          "G-05"
+        ],
+        "steps": [
+          "由具备中英语言与测量知识者独立评阅20题和指令；另一人仅看中文回译，比较构念而非字面对齐",
+          "在原8位评审内优先安排2位合适人员；若缺语言能力另计资源，不假定现有人选已满足",
+          "12名认知学生内分两轮各6名，逐题复述/举例及评分锚点排序；包含两条件，计入现有预算",
+          "所有改变构念或时间窗的误读均须修订并由后续独立学生再核查；无余量时增补资源并重算正式预算",
+          "技术前置仅查耗时、缺失、地板及分布；不以20人或alpha单独证明新译本有效；正式前由F-02/U12-04论证是否需要独立测量验证样本"
+        ],
+        "acceptance": "20题均有处理结论，重大语义分歧无未决项，最后一轮无未处理构念/时间窗误读；这是项目材料准入规则，不是通用效度阈值",
+        "failure": "中文材料或测量证据不足则暂停对应正式施测；不删题凑alpha、不按A/B收益选译词，不合并不同版本前后测",
+        "method_source": "https://www.intestcom.org/files/guideline_test_adaptation_2ed.pdf"
+      },
+      "review_execution_materials": {
+        "status": "READY_FOR_HANDOFF",
+        "source": "07-protocol-candidate.tex",
+        "section": "11",
+        "forms": [
+          "language_review_20_items_instruction_anchors",
+          "cognitive_interview_single_participant",
+          "round_decision"
+        ],
+        "cognitive_allocation": {
+          "round_1": {
+            "A": 3,
+            "B": 3
+          },
+          "round_2_new_students": {
+            "A": 3,
+            "B": 3
+          }
+        },
+        "allocation_purpose": "材料覆盖，非效益比较随机化",
+        "back_translation_input": "中文项/指令/锚点；协调人摘录，不包含英文和评分归属",
+        "actual_reviewers": null,
+        "actual_records": [],
+        "execution_started": false,
+        "next_owners": [
+          "F-02",
+          "Q-01",
+          "U12-04",
+          "Q-02",
+          "G-05"
+        ]
+      }
+    },
+    "floor_review": {
+      "population": "普通学习间隙自愿学生；不按NA筛选、不额外诱发压力",
+      "statistics": "分别报前/后最低分比例及Wilson区间、可下降空间分布、缺题/耗时/理解；盲于组间效益",
+      "decision": "先认知审查指令；技术预试用整体地板/残差不确定域模拟主要差及精度。若目标关注差在可下降空间/资源下不可辨，不把群体筛高，收缩为估计研究或正式前重新论证量表；不自动替换终点",
+      "threshold": "无普适地板百分数；以具体版本、关注差与可辨精度的先验决策为依据，当前无真人数据"
+    }
+  },
+  "scientific_matrix": [
+    {
+      "id": "L1",
+      "work": "ViBreathe",
+      "population": "24人被试内三提示；另4人办公部署",
+      "conditions_dose": "固定、响应、自适应；3分钟",
+      "location": "PDF8–11控制/方法，12–15结果",
+      "actual_finding": "自适应与固定比较已有；体验与执行不等同",
+      "supports": "支持有限调整及效益/代价问题",
+      "cannot_infer": "不能证明视觉多步骤、新颖性或本项目参数",
+      "source": "https://doi.org/10.1080/10447318.2021.1898827",
+      "review_status": "PRIOR_FULLTEXT_REVIEW_RETAINED"
+    },
+    {
+      "id": "L2",
+      "work": "Yu CHI2026",
+      "population": "48人四组",
+      "conditions_dose": "5分钟；双信号适应与自然形态",
+      "location": "PDF6–8控制/界面，10–13评价",
+      "actual_finding": "自然形态与适应已有，跟随以实际提示为参照",
+      "supports": "要求分离G跟随与I达成",
+      "cannot_infer": "不能把换载体/加I符号当新方法",
+      "source": "https://doi.org/10.1145/3772318.3790488",
+      "review_status": "PRIOR_FULLTEXT_REVIEW_RETAINED"
+    },
+    {
+      "id": "L3",
+      "work": "Gummidela2021",
+      "population": "实验一30、实验二36",
+      "conditions_dose": "节拍/反馈及有无游戏",
+      "location": "出版方HTML Experimental interventions / Experiment1,2 / Discussion",
+      "actual_finding": "使用、执行与体验并非同向",
+      "supports": "整包采用应分别报告收益与代价",
+      "cannot_infer": "两臂不能拆游戏/原生/适应效应",
+      "source": "https://doi.org/10.3389/fdgth.2021.760268",
+      "review_status": "PRIOR_FULLTEXT_REVIEW_RETAINED"
+    },
+    {
+      "id": "L4",
+      "work": "Prpa2018",
+      "population": "11人探索",
+      "conditions_dose": "6分钟；未理解者说明后再体验",
+      "location": "PDF4–6系统程序，7–10体验",
+      "actual_finding": "映射理解和控制感需要解释",
+      "supports": "中性教学与误读材料",
+      "cannot_infer": "非本项目两臂因果/情绪效果证据",
+      "source": "https://doi.org/10.1145/3196709.3196765",
+      "review_status": "PRIOR_FULLTEXT_REVIEW_RETAINED"
+    },
+    {
+      "id": "L5",
+      "work": "Chittaro2024",
+      "population": "35分配、31分析",
+      "conditions_dose": "真实与他人记录反馈",
+      "location": "PDF10–13方法结果",
+      "actual_finding": "真实性与多信号体验比较",
+      "supports": "提醒反馈真实性需独立核查",
+      "cannot_infer": "A非假反馈；不能借其归因真实闭环机制",
+      "source": "https://doi.org/10.1016/j.ijhcs.2024.103275",
+      "review_status": "PRIOR_FULLTEXT_REVIEW_RETAINED"
+    },
+    {
+      "id": "L6",
+      "work": "XuCho2023",
+      "population": "10人先导",
+      "conditions_dose": "艺术与图形反馈被试内",
+      "location": "PDF3–5方法结果",
+      "actual_finding": "情绪、放松和易用性不同向",
+      "supports": "保留情绪/喜欢/理解独立维度",
+      "cannot_infer": "预印本、小样本不证明B自适应收益",
+      "source": "https://arxiv.org/abs/2310.14343",
+      "review_status": "PRIOR_FULLTEXT_REVIEW_RETAINED"
+    },
+    {
+      "id": "L7",
+      "work": "Respireal2025",
+      "population": "前期6访谈、后期7体验",
+      "conditions_dose": "自然呼吸交互；WIP",
+      "location": "PDF2–5",
+      "actual_finding": "自然交互有注意与使用代价",
+      "supports": "校园场景仍需成本/需求验证",
+      "cannot_infer": "非固定/适应整包确认性研究",
+      "source": "https://doi.org/10.1145/3715668.3736338",
+      "review_status": "PRIOR_FULLTEXT_REVIEW_RETAINED"
+    },
+    {
+      "id": "L8",
+      "work": "Heartscape2026",
+      "population": "27人体验访谈",
+      "conditions_dose": "约10分钟抽象心率可视化",
+      "location": "PDF14–15方法，23–25讨论",
+      "actual_finding": "抽象表示也有解释价值/误读",
+      "supports": "A不能预设为劣质，B复杂度需审查",
+      "cannot_infer": "无量化前后收益证明，不提供呼吸控制真值",
+      "source": "https://doi.org/10.1080/10447318.2026.2669040",
+      "review_status": "PRIOR_FULLTEXT_REVIEW_RETAINED"
+    },
+    {
+      "id": "L9",
+      "work": "Stairway to Heaven: A Gamified VR Journey for Breath Awareness",
+      "population": "22招募，21问卷/访谈，18呼吸分析；平均30岁，非校园学生目标样本",
+      "conditions_dose": "单方案混合方法；用户自行调速，平均15.7分钟；无固定引导平行对照",
+      "location": "ACM开放HTML全文：3.1–3.3机制，4.1–4.3样本/方法，5.2–5.3结果，6.2/7边界；2026-10-08浏览器实际读取",
+      "actual_finding": "传感深度门槛驱动HUD与旅程进度；报告体验中平均呼吸速率下降，也发现校准、疲劳及注意冲突；不调节呼吸节奏",
+      "supports": "撤回首次自然反馈/游戏进展主张；校准、表现门槛与疲劳进入成本记录；与本项目B受限调节G形成明确机制差异",
+      "cannot_infer": "单方案前中后不能证明B优于A；无PANAS情绪效益对照、共同I/G独立评分或独立迁移验证；差异不等于原创性已成立",
+      "source": "https://doi.org/10.1145/3613904.3641986",
+      "review_status": "PUBLISHER_FULLTEXT_READ"
+    }
+  ],
+  "normalization": {
+    "id": "NORM-20261008",
+    "design_materials_status": "DELIVERED_WITH_MEASUREMENT_GAP",
+    "design_closed": false,
+    "empirical_validation": "NOT_EXECUTED",
+    "scope": "DESIGN_ONLY",
+    "first_context": "普通校园学习间隙的自愿短时练习；不诱发压力，不按NA筛选",
+    "open_design_gaps": [
+      {
+        "id": "M01",
+        "description": "20题中文工作稿已齐；独立语言复核、具体版本选定及中文适用证据未取得",
+        "owner": "F-02/U12-04",
+        "needed": "按translation_review完成逐词审阅、回译与认知访谈；通过后选定版本，不能把AI工作稿称为已验证中文PANAS"
+      },
+      {
+        "id": "M02",
+        "description": "英文原件非商业复制使用已确认；工作中文翻译/改编及题文公开范围仍待核对",
+        "owner": "F-02/G-05",
+        "needed": "针对实际拟采用中文材料核对翻译改编与公开范围；不重复索取已明确的英文非商业使用许可"
+      }
+    ],
+    "external_science_limit": "L9出版社全文已读，机制/方法/局限可定位；宽泛首次主张仍撤回，实质新颖性仍为候选",
+    "phase_order": [
+      "设计定稿",
+      "前置活动对应批准与材料固定",
+      "前置实现及验证",
+      "正式参数/分析/协议冻结",
+      "正式研究"
+    ],
+    "business_acceptance_changed": false,
+    "design_review": {
+      "status": "APPROVED",
+      "date": "2026-10-09",
+      "authority": "user_explicit_instruction",
+      "statement": "批准设计通过",
+      "scope": "本轮设计方案与材料，作为后续前置工作依据",
+      "outstanding": "M01/M02、真实验证、正式参数及样本量冻结、对应活动批准分别推进",
+      "empirical_validation_passed": false,
+      "authorizes_collection": false
+    }
+  },
+  "analysis_spec": {
+    "estimand": "同一规定时间预算下B减A的NA分配效应；原分配全部入目标人群",
+    "unit": "独立参与者",
+    "primary_model": "NA_post~B+centered_NA_pre+四顺序固定效应；HC3，双侧95%区间",
+    "covariates": "不加处理后变量；不按缺失结果或显著性选择协变量",
+    "item_missing": "任一NA题缺失，总分缺失；未核准题本前不施测",
+    "main_missing": "候选MICE预测均值匹配k=5，50插补、每条20迭代；仅设计工作参数须用合成及前置数据验证。条件/基线/顺序/预记录经验/记录时延作为候选预测；基线缺失也联合插补，不以均值填充",
+    "pooling": "每插补同一模型与HC3，再Rubin合并；固定seed=20261008用于设计复算，不是运行随机化seed",
+    "sensitivity": "完全案例；按组对已插补NA施加delta，范围[-MID,+MID]及±2MID、截至确切版本允许范围，报告翻转区域；MID未知时不伪填数",
+    "secondary": "独立I连续偏差与C/K/U界、G误差、控制成本、努力/舒适。估计及95%区间，不用次要p值补主要失败；若确认性次要检验另冻结Holm族",
+    "scci": "仅操纵检查；理解题仅体验后读取解释；不以题数扩N",
+    "sample_size": "MID与残差/相关/地板/缺失区间组合，模拟同一模型和缺失方案；每场景2000次为计算预算候选，报告MonteCarlo误差；给80/90%功效及区间半宽，不倒推MID；没有真实输入不产正式N",
+    "scope": "离线分析候选规格，不实现研究分析运行API"
+  },
+  "product_decision": {
+    "cost_fields": [
+      "准备",
+      "佩戴",
+      "校准",
+      "教学",
+      "体验",
+      "后测/访谈",
+      "重置/清洁",
+      "暂停",
+      "故障/帮助",
+      "拒绝/退出"
+    ],
+    "continue_r_and_d": "信号及功能可成立、用户任务存在、有可接受修改方向；不要求小样本情绪显著",
+    "practice_demo": "真实A输入隔离与B规则响应/失效证据、操作者可执行流程、成本与限制可解释；示意不能当运行演示",
+    "paper_claim": "最近工作差异、预先问题/分析、可信真值、正式结果精度和完整失效/缺失报告；不保证等级",
+    "outcomes": {
+      "B更好": "仅在测得人群/场景支持整包相对效益，独立报告I/努力/成本",
+      "B更差": "保留A并报告代价及可解释失效，不改主终点",
+      "情绪无明确差异": "区间与精度决定信息量；不称等效",
+      "仅G改善": "支持更可跟随，不能称共同I训练更有效",
+      "信号不可辨": "暂停对应闭环/功能主张，保留工程限制与可靠部分",
+      "迁移失败": "只声称已测实例经验，不声称原则通用"
+    },
+    "C3": "迁移未执行，退出首版必需论文贡献"
+  },
+  "source_recovery": {
+    "date": "2026-10-08",
+    "stairway": {
+      "doi": "10.1145/3613904.3641986",
+      "status": "PUBLISHER_FULLTEXT_READ",
+      "format": "OPEN_ACCESS_HTML",
+      "pdf_download": "NOT_OBTAINED",
+      "identity_note": "CHI2024论文；10.17760/D20471083为Nathan Miner 2022学位论文，不与CHI版本混同"
+    },
+    "panas_candidate": {
+      "source": "https://www.lib.eduhk.hk/pure-data/pub/202201871.pdf",
+      "author": "CHEUNG, Sin Yan Ziv",
+      "year": 2018,
+      "identity": "EdUHK EdD thesis: Understanding the association between insecure attachment and emotional well-being in Chinese adolescents: Perceived social support and help seeking behaviors as mediators",
+      "local_research_copy": "agent/local/artifacts/source-recovery-20261008/cheung2018.pdf",
+      "locations": "method printed41/PDF52; English printed127/PDF138; Chinese printed133–134/PDF144–145",
+      "status": "INDIRECT_BILINGUAL_FORM_OBTAINED_VISUALLY_CHECKED",
+      "time_instruction": "过去1–2周；非此刻",
+      "na_indices": [
+        2,
+        4,
+        6,
+        7,
+        8,
+        11,
+        13,
+        15,
+        18,
+        20
+      ],
+      "pa_indices": [
+        1,
+        3,
+        5,
+        9,
+        10,
+        12,
+        14,
+        16,
+        17,
+        19
+      ],
+      "mapping_scope": "仅此附录与英文题序交叉核对的候选映射，不作为已冻结原始译本",
+      "wording_issue": "同一附录第13项ashamed对应害羞，须核准语义与译本身份",
+      "permission": "馆藏页水印限定私人研究并限制进一步复制/出版；可访问不等于本项目施测/公开题文获准"
+    },
+    "permission_evidence": {
+      "source": "https://vtechworks.lib.vt.edu/bitstreams/6844cae0-de23-4429-afc9-12f4c01bc260/download",
+      "location": "Appendix O, printed62/PDF70",
+      "finding": "英文此刻版有项目特定转载许可，明确不授权进一步复制；不能转移到SRP或中文译本",
+      "status": "OTHER_PROJECT_PERMISSION_ONLY"
+    },
+    "next_owner": "F-02/U12-04核准译本、时间指令与词义；F-02/G-05取得适用说明；不自动发送联系邮件",
+    "report": "agent/work/2026-10-08_科学来源补获与量表侧证.md",
+    "document_export": {
+      "07-protocol-candidate.pdf": "PREVIOUS_DISK_EXPORT_NOT_UPDATED_EDITOR_PREVIEW_COMPILED",
+      "02-science.pdf": "REBUILT_VERIFIED",
+      "03-decisions.pdf": "REBUILT_VERIFIED",
+      "04-review-audit.pdf": "REBUILT_VERIFIED"
+    },
+    "state_use_evidence": [
+      {
+        "source": "https://doi.org/10.1111/aphw.12133",
+        "authors": "Hu et al.",
+        "year": 2018,
+        "location": "PDF7 PANAS段",
+        "local_copy": "agent/local/artifacts/source-recovery-20261008/metaphorical-state-panas.pdf",
+        "finding": "中文20题、此刻、五级评分、10题分量表求和；样本PA/NA alpha=.87/.88",
+        "boundary": "使用先例，非完整中文题文，也非SRP普通学习间隙的效度/地板证明",
+        "status": "INSTITUTION_FULLTEXT_READ"
+      },
+      {
+        "source": "https://doi.org/10.3724/SP.J.1041.2021.00244",
+        "authors": "刘宇平等",
+        "year": 2021,
+        "location": "PDF7研究2负性情绪",
+        "local_copy": "agent/local/artifacts/source-recovery-20261008/liu-yang-state-panas.pdf",
+        "finding": "中文NA10题、此时此刻、1–5评分，alpha=.82",
+        "boundary": "人群和任务与SRP不同，不外推任务效果或测量适用",
+        "status": "PUBLISHER_FULLTEXT_READ"
+      }
+    ],
+    "panas_database": {
+      "source": "https://doi.org/10.1037/t03592-000",
+      "status": "OFFICIAL_CITATION_AND_DESCRIPTION_READ",
+      "permission_field": "NOT_ACCESSED_REQUIRES_DATABASE_ACCESS",
+      "note": "正常浏览器已核准原20题身份及不同时间指令描述；无许可字段时不外推第三方转载"
+    },
+    "permission_policy": {
+      "source": "https://www.apa.org/pubs/databases/psyctests/faq",
+      "status": "OFFICIAL_SEARCH_INDEX_TEXT_READ",
+      "rule": "具体Permissions标为可研究/教学时允许相应非商业用途；公开发布题文等另核对；不是PANAS中文版本本身的许可记录"
+    },
+    "editor_compile": {
+      "file": "07-protocol-candidate.tex",
+      "status": "SUCCESS",
+      "font_fix": "系统字体族Microsoft YaHei、Microsoft YaHei Bold、SimHei；字号与版式不变",
+      "disk_pdf_exported": false
+    },
+    "additional_form_evidence": {
+      "source": "https://pdf.hanspub.org/ap20220600000_21602996.pdf",
+      "location": "PDF11 / printed2037",
+      "status": "PUBLISHER_PDF_READ_ONLINE_NOT_SAVED",
+      "finding": "完整20题及五级选项；第13项害羞；附录无时间窗；引用2003译本不证明逐字一致",
+      "rights": "文章CC BY 4.0；具体第三方量表用途仍待对应"
+    },
+    "chinese_database_candidate": {
+      "doi": "10.1037/t58959-000",
+      "authors": "Chen, Yiwei; Peng, Yisheng; Fang, Ping (2016)",
+      "evidence": "APA PsycTESTS guide p10 screenshot",
+      "status": "IDENTITY_FROM_APA_GUIDE_NOT_FORM_OR_PERMISSION",
+      "instruction": "past month",
+      "decision": "非2003译本，不自动替换"
+    },
+    "acquisition_request": {
+      "status": "DRAFT_NOT_SENT",
+      "recipient": "zhangwc@psych.ac.cn",
+      "recipient_source": "Hu et al. 2018 PDF1",
+      "document": "agent/work/2026-10-08_科学来源补获与量表侧证.md#六下一步取得材料与可发送索取函",
+      "acceptance": "具体题本、指令、映射、计分与来源对应；使用条件分别覆盖施测、改编与公开"
+    },
+    "phenx_chinese_check": {
+      "checked_on": "2026-10-09",
+      "source": "https://www.phenxtoolkit.org/protocols/view/180501",
+      "downloaded_member": "PX180501_Chinese.pdf",
+      "local_copy": "agent/local/artifacts/source-recovery-20261008/phenx180501-chinese.pdf",
+      "pages": 1,
+      "printed_page": 205,
+      "status": "CHINESE_PROTOCOL_DESCRIPTION_ONLY_NOT_ITEM_FORM",
+      "rights_finding": "PANAS-X非商业使用说明已取得；不移用于其他中文20题译本",
+      "items_obtained": false,
+      "decision": "中文下载仅协议说明；当前英文设计来源改用已取得PANAS-X一般NA10/PA10，中文M01/M02仍待核准"
+    },
+    "panas_x_manual": {
+      "retrieved": "2026-10-09",
+      "local_path": "agent/local/artifacts/source-recovery-20261008/PANAS-X-manual.pdf",
+      "bytes": 282098,
+      "pdf_pages": 28,
+      "doi": "10.17077/48vt-m4t2",
+      "language": "English",
+      "decision": "采用一般NA10/PA10；非商业使用；不增加60题负担；中文题本仍待核准"
+    }
+  }
+}

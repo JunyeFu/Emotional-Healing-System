@@ -1,8 +1,8 @@
 {
   "task_id": "U12-12",
-  "title": "U12 12 成果部署选择与公开交接审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "U12-12仍WAIT_DEP_EXTERNAL、未领取未签署。四原候选实际归档，方案选择与逐对象公开工作表、现状核查和W-04入口已对齐；真实结果、范围关闭、作者及权利人批准和最终成品尚缺。本轮没有选择获胜方案，也没有批准公开。",
+  "title": "U12-12 成果选择与社会价值判断 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "U12-12注册状态WAIT_DEP_EXTERNAL仅保留原范围。当前任务更新为成果选择与社会价值判断；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未指定",
     "date": "未签署",
@@ -13,75 +13,82 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "固定任务2人日，依赖W-03与A-06。两上游实际交付未完成，Z-01匹配制品和干净重建未交付，W-04八对象未交付；业务状态、人员及已签署范围保持。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1同版研究结果、真实范围、制品及权属来源可追溯；AC2完整审阅收益、功能代价和适用边界，由真实作者、机构与权利人确认；AC3实际决定和公开清单经独立复核及第二人签收后交W-04。",
-        "执行顺序为收齐真实证据、裁定成果方向及逐对象权限、移交打包和接收演练。当前工作表并不满足真实决定验收。"
+        "AC1 净收益考虑无设备替代、准备/管理成本和自愿使用",
+        "AC2 当前缺真实证据不推荐部署或保证比赛/发表",
+        "AC3 公开、产品与论文分别真实授权，不虚构长期或普惠价值"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "TASK及五目录、来源清单、只读现状工具、三方案八维审阅表和十二对象公开范围工作表、专项测试与验证入口。四原候选完整归档，原输入身份与字节保持。",
-        "W-04当前消费者链接更新为本包活动入口；八项成品仍使用其既有索引，不新增批准台账或虚构制品哈希。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "成果选择与社会价值判断修订交接",
+        "采用/收缩/停止规则",
+        "成果用途"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "成果方向在scene_native、abstract_pacer和retain_research_prototype之间裁定，无默认胜者；同版真实情绪收益、功能、负担、效度和维护条件分别审阅。统计方向或合成案例不能自动选择产品。",
-        "产品选择与对象公开是两类决定。研究关闭、Git推送、投稿、录用、部署及新成员接收各自记录事实；历史公开顺序不作当前授权。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：成果选择与社会价值判断"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "77项专项通过，覆盖原件身份、实际注册状态、只读事实同源、三未选选项、八未交付对象、十五合成案例不自动部署、十二对象待决定和实际导航。完整软件及治理结果见verification.json。",
-        "本轮不连接真实设备、Unity或TD，不取得实际许可，不产生论文结果。工具、静态检查或Python回归通过均不批准公开或部署。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "TASK两处工作表链接遗漏outputs前缀已修正，所有本包活动文档链接检查通过。旧候选尚未注册的表述保留在原件中，旧位置只保留当前导航。",
-        "真实结果、A-06范围关闭、作者同意、逐对象权属批准、匹配成品、接收者及真实签署仍未完成；缺口归原任务处理，不由整理推定通过。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：采用/收缩/停止规则；成果用途；成本及公开待证项"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "inputs存权威来源，execution存只读核查和测试，evidence存实际日志及消费者影响，outputs存当前说明、空工作表和Word源，archive保留原四文件。没有旧真实部署程序可清理。",
-        "原输入snapshot与签署不改，进行中及复核中的分发包不刷新。根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "A-06交真实范围和全部实际活动，A-05/U12-10交真实比较，W-03交同版主稿、作者与公开权限，Z-01交匹配成品和独立干净重建；权利人和机构确认素材、SDK、量表及数据的实际许可。",
-        "U12-12交同版选择理由、未选原因、逐对象范围与批准给W-04，W-04实际打包、接收演练及维护。Unity完整体验独立于TD；V-04预演不替代最终旅程或真实链。有效预设情绪结果不因功能失败隐去，等效默认不开启。"
+        "原依赖：W-03、A-06；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：采用/收缩/停止规则；成果用途；成本及公开待证项"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "当前负责人、独立复核者与真实签收人均未指定。Agent可整理、分析软件候选和核对来源，不能代填作者同意、机构权属决定或PASS。签收须限定到实际审阅的同版对象和范围。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态WAIT_DEP_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "活动注册、四原候选、A-06实际范围、W-03投稿权限、Z-01制品状态、W-04八对象及接收缺口、U12-10十五合成案例、当前两个工作表及本轮软件验证。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -115,6 +122,11 @@
       "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
       "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
       "source": "agent/evidence/root-migration-check.json"
+    },
+    {
+      "id": "U12-12-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "成果选择与社会价值判断；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -138,6 +150,27 @@
     {
       "label": "本轮软件验证",
       "path": "agent/tasks/U12-12/evidence/verification.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
     }
-  ]
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

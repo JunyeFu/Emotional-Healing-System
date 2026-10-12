@@ -1,0 +1,246 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\setCJKmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\newfontfamily\titlelatin{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\usepackage[margin=22mm]{geometry}
+\usepackage{graphicx}
+\usepackage{needspace}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyfoot[C]{SRP 固定引导与原生自适应\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\linespread{1.28}
+\emergencystretch=3em
+\raggedbottom
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}\vspace{8pt}}
+\newcommand{\reviewsection}[1]{\par\Needspace{9\baselineskip}\vspace{10pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\vspace{4pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+
+
+\begin{document}
+
+\reviewtitle{SRP原创性、社会价值与审稿攻击论证}
+
+2026-\allowbreak{}10-\allowbreak{}08｜设计阶段评估｜结论：可继续修复设计，尚不能确认学术新颖性、真实增益或CCF B以上发表能力。
+
+\reviewsection{一、判断及证据范围}
+
+研究核心保持A固定圈与预设场景，对比B数据驱动原生自适应完整方案。两组共同理想I，B可受限调整下发引导G，独立测量实际X。允许调整不是贡献成立的证据；当前任务是判断这项研究值不值得做、能否形成新增知识，以及必须修复什么。
+
+
+结论分三层：逻辑与设计缺陷能够在本轮修复，修订已同步主稿；信号可辨性、用户需求、效果和可用成本只能通过后续真实验证解决；若新查新证实核心增量已被覆盖，或实际成本超出收益，不能靠文字修复原创性或社会价值，应缩小主张或停止该产品路线。
+
+
+本轮以当前LaTeX主稿及八篇近邻附录为依据，并重新核查ViBreathe与Yu CHI2026本地全文。出版社/\allowbreak{}机构远程全文访问失败时使用已保存原文，不把失败当作无先例。Stairway to Heaven现已补获ACM开放HTML全文，机制、样本、测量及局限均可定位；更新差异见科学附录6.9。未做系统综述，不给原创性百分数或录用概率。
+
+
+\href{https://news.northeastern.edu/2024/09/02/meditation-game-stairway-to-heaven/}{Stairway to Heaven：机构项目报道；论文全文另见科学附录6.9}
+
+\reviewsection{二、原创性到底剩在哪里}
+
+\reviewsubsection{2.1 已有先例与候选差异}
+
+ViBreathe已覆盖固定、响应、自适应引导及理想节奏方向；Yu等CHI2026已覆盖自适应心肺反馈与自然视觉界面；Gummidela已覆盖指导/\allowbreak{}反馈和游戏组合。由此删除首次自适应、首次自然反馈、首次固定对闭环的主张。换画风、改设备、增加天气不独立构成学术创新。
+
+
+\href{https://research.chalmers.se/publication/523202/file/523202_Fulltext.pdf}{ViBreathe 原文}
+
+\href{https://pi.cs.tsinghua.edu.cn/wp-content/uploads/2026/04/3772318.3790488.pdf}{Yu等 CHI2026 原文}
+
+\href{https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2021.760268/full}{Gummidela等原文}
+
+候选区别是：在包含停留、补吸和跨周期状态的原生场景中，受限支持如何兼顾当下可跟随性与共同练习目标；并检验这种折中是否改变情绪收益、执行与努力。差异成立需要最近工作逐项对照和真实失败案例，不是仅把连续慢呼吸改成四天气。若多步骤没有用户需要，就不能为新颖性制造复杂任务。
+
+
+\reviewsubsection{2.2 可反驳的新增知识主张}
+
+拟议主张：在明确的校园短时任务中，B相对A的情绪与执行效应可能分离；相对下发G的跟随改善可能伴随相对共同I的达成下降。研究给出这种分离的量级、条件和设计后果。该主张当前未获数据支持，I/\allowbreak{}G/\allowbreak{}X本身只是必要测量划分，不宣称新理论。
+
+
+反例：若绝大多数人无需适应，比较主要反映呈现与反馈；若G与I几乎总相同，无法据此讨论目标漂移；若已有研究已揭示相同问题，SRP应说明复现在哪个实质情境有价值。随机化后的适应者/\allowbreak{}未适应者比较存在选择差异，不能据此证明等待机制有效。
+
+
+\reviewsection{三、贡献度与证据责任}
+
+\reviewsubsection{3.1 C1：可复现的设计制品}
+
+当前可交付为明确的整包条件、受限动作规则、异常呈现与独立测量设计；尚无真实完整闭环验证。新增度为待证明，工程完成不等于方法创新。需要真实输入改变B且不改变A的证据、用户能理解的映射、与近邻相比必须解决的具体多步骤问题。若规则无新意，作为可靠实现和后续实验材料。
+
+
+\reviewsubsection{3.2 C2：收益与代价的实证比较}
+
+这是最有希望成为论文主体的贡献，但目前没有观察结果。需要随机双条件、可信情绪测量、独立呼吸真值、同预算与完整缺失报告。保留一个情绪主终点；执行和负担按预设问题独立解释，不用事后综合分数宣布整体胜出。精度足够的无差异或负结果也可提供边界知识，但不能保证发表价值。
+
+
+\reviewsubsection{3.3 C3：有限设计原则}
+
+需要成功与失败轨迹、用户解释，以及预先保留的新实例或独立设计者应用。应用者不能只照抄原场景，评价规则在见结果前定；重建成功说明可应用，不自动证明新场景情绪有效。迁移阶段推迟则论文只声称所测实例经验，不让尚未做的C3补足贡献度。
+
+
+\reviewsubsection{3.4 当前贡献判断}
+
+已有可审阅的研究设计与原创实现方向；科学贡献仍是候选，不能凭三项标题视为贡献充足。推荐保留两臂整包研究，优先做扎实C2，并以C1保证可解释性；C3按资源独立承接。CCF B及以上是目标，当前不足以判断达到该标准，不能承诺半个月补齐证据。
+
+
+\reviewsection{四、社会价值：从需要到净收益}
+
+\reviewsubsection{4.1 首个服务情境与替代办法}
+
+拟议首个情境为校园安静空间中的自愿短时练习：学生希望在学习间隙得到容易理解、可以停止的呼吸支持。是否存在频繁且未被满足的需求仍待访谈；不把校园人群整体当作需要干预的人。WHO强调支持性学校环境及情绪技能的重要性，但该宏观背景不能证明大学生需求、两设备必要性或SRP有效，也不把青少年统计外推大学样本。
+
+
+\href{https://www.who.int/news-room/fact-sheets/detail/adolescent-mental-health}{WHO学校环境与情绪技能背景（2025）}
+
+现实替代包括无设备固定引导、普通呼吸音频、短时安静休息。A在研究中佩戴设备是为了控制测量条件，实际部署A可以不佩戴；两臂实验因此只回答同佩戴条件下的增量，不回答买设备或建设服务点是否划算。选择校园固定练习点作为首个产品候选，是便于管理设备的设计假设，不能称用户已经接受。
+
+
+\reviewsubsection{4.2 可检验的价值链}
+
+价值链：存在真实使用需要→能在有限空闲时间完成准备和理解→可信反馈让练习更可跟随或体验更好→收益足以抵偿佩戴、校准、求助及管理成本→愿意再次自主选择。每一箭头分别取证，单次喜欢画面不能跨越整条链。
+
+
+需求验证询问最近一次实际困难、已用替代、可用时间及不愿佩戴的原因；保留拒绝者反馈。可用性记录准备到完成总时间、帮助次数、退出原因、设备有效时间和不适。后续自然使用记录再次自主选择及完成情况；意愿问卷只能说明意愿。展示或比赛叙事不能把招募人数当受益人数。
+
+
+成本按参与者时间、管理者人时、实际设备/\allowbreak{}维护成本分别报告，不编造金额；H10目前主要服务研究过程观察，保留指定两设备完成研究，不因此宣称两设备都是产品必需。若未来要移除或替换设备，应另作产品决策及验证，本轮不擅自改变硬件约束。
+
+
+\reviewsubsection{4.3 社会价值的失败与修复}
+
+若收益相近而B耗时和负担更高，应优先推荐简单方案；若只有部分学生愿意使用，可定位自愿体验点，不称普惠；若准备成本超过短时使用预算，调整场所/\allowbreak{}流程后再验证，不能只压缩教学。视觉信息提供可理解替代和自主停止，不假设所有人都喜欢雨、闪电或同一节奏。跨学校普及、长期改善及社会成本节省目前都没有证据。
+
+
+\reviewsection{五、审稿人攻击与逐项修复判定}
+
+\reviewsubsection{5.1 R01 你只是重复已有自适应系统}
+
+成立的高风险。已删除宽泛首次主张，列明三项直接先例，收缩到多步骤及共同目标代价。验收证据：W-\allowbreak{}01补齐最近工作全文逐项差异；若被覆盖，收缩为复现。结论：表述已修，实质新颖性未证。
+
+
+\reviewsubsection{5.2 R02 多因素一起变，根本不知道谁有效}
+
+对单机制主张成立，对整包采用问题不构成致命缺陷。主稿2.3/\allowbreak{}5.1明确整包分配效应；不事后用回归分离表示、真实反馈和适应。若要独立机制需新增消融/\allowbreak{}因子研究及样本。结论：研究问题层已修。
+
+
+\reviewsubsection{5.3 R03 理想节奏凭什么是理想}
+
+当前秒数来自工程候选，不能称普适最优。新增主稿3.5：I是操作化练习参照；先论证必要性与舒适，适当修订共同I必须在正式比较前同时生效，不能只改B或见结果后改。结论：含义已修，具体目标仍待验证。
+
+
+\reviewsubsection{5.4 R04 算法把靶子移近，当然分数高}
+
+主稿5.3分开X对I、X对G及控制代价，固定预算并单列覆盖。验收需要独立真实标注且评分不消费控制器成功标签。结论：评价设计已修，指标效度未证。
+
+
+\reviewsubsection{5.5 R05 一条呼吸胸带凭什么分清补吸和停留}
+
+存在可辨识风险；平坦波形不能自动等同指定停留。S-\allowbreak{}01/\allowbreak{}S-\allowbreak{}02/\allowbreak{}D-\allowbreak{}02需按真实标注报告混淆、延迟、不可判别及运动情况；独立人工标注仍可能共同误读，须有足够参照证据。不能辨认则保留未知并重设结构范围，不能用G补真值。结论：可条件修复，设备数据未证。
+
+
+\reviewsubsection{5.6 R06 画面更炫或期待更高，不是方案真有效}
+
+主稿新增5.5：中性说明不宣称新方案更好，匹配教学预算和制作质量，记录处理前经验与预期；体验后预期作为过程描述，不作主模型校正。新奇与期待仍可能属于整包效应，单次研究不能证明持续作用。结论：设计减偏已修，机制分离不在两臂能力内。
+
+
+\reviewsubsection{5.7 R07 你的情绪量表有地板，100人也回答不了}
+
+主稿5.2/\allowbreak{}7.1要求前置测量分布、最小关注差与新模型精度。正常学生短时状态变化是否适用须先验证，不临时增加诱发流程以制造差异。招募100+总资源不等于100完整正式样本。结论：分析候选已修，效度及足够N未定。
+
+
+\reviewsubsection{5.8 R08 B只是练得更少、更慢，所以更舒服}
+
+同一暴露预算；控制缓冲、实际练习时间与完整步骤覆盖分别报告，作为真实整包代价。主分析不校正处理后剂量，不能宣称剂量相等或生理机制更强。结论：解释及报告已修。
+
+
+\reviewsubsection{5.9 R09 只留下信号好和跟得上的人}
+
+按分配保留降级、未触发及退出；技术缺失、后测缺失分别记录，盲态规则与缺失敏感性事前冻结。不得按事后适应响应筛选主要样本。结论：分析设计已修，需执行核验。
+
+
+\reviewsubsection{5.10 R10 显著就值得部署，无显著就是一样好}
+
+主稿新增5.6：统计差异、实际关注差、目标代价与运行成本分开；没有预定代价界及精度不声称非劣或可替代。区间跨零不等于等效。结论：决策逻辑已修，实际阈值待确定。
+
+
+\reviewsubsection{5.11 R11 两条胸带的成本与隐私负担被藏起来了}
+
+同设备研究不回答无设备替代的现实净收益。本稿第四节及主稿1.3明确该边界，后续收集准备/\allowbreak{}人时成本与自愿使用，数据只按真实授权用途使用，不强制与学生评价挂钩。结论：社会价值论证已修，部署价值待证。
+
+
+\reviewsubsection{5.12 R12 四天气与多步骤是为了凑创新}
+
+四天气是应用实例，不各自宣称独立效应；共同I先接受任务必要性检查，Storm/\allowbreak{}Fade作为设计切片不等于四实例已证明。删减结构必须根据目标与可辨识事实，不能以效果差就删。结论：范围规则已修，必要性未证。
+
+
+\reviewsubsection{5.13 R13 所谓设计原则只是作者总结}
+
+C3需独立实例、明确材料、独立应用和失败记录；未做只报告实例观察。可迁移性不由第二名作者照稿重画证明。结论：证据要求已修，迁移未证。
+
+
+\reviewsubsection{5.14 R14 即使有负结果，你也会换主张宣称成功}
+
+在结果前锁定PANAS候选主终点、独立功能结果族与结论规则；主要问题不因结果不利而替换。负结果要以区间、实现可信度和测量质量判断信息量，不能自动包装成论文贡献。结论：中立规则已修，需预注册与完整报告。
+
+
+\reviewsection{六、修复方案、顺序与退出条件}
+
+\reviewsubsection{6.1 本轮已经完成的修复}
+
+主稿新增1.3社会价值与研究佩戴边界、3.5共同I的依据边界、5.5预期/\allowbreak{}新奇/\allowbreak{}剂量解释、5.6采用决策规则；当前实验和贡献论证、一体化规范、任务影响同步链接。本稿完成原创性、贡献、社会价值和14项审稿攻击的显式判断。上述是设计层闭合，不替代真实证据。
+
+
+\reviewsubsection{6.2 可以推进的实证修复}
+
+第一优先：W-\allowbreak{}01/\allowbreak{}R-\allowbreak{}01/\allowbreak{}F-\allowbreak{}02核实具体新增问题与用户任务；Q-\allowbreak{}01/\allowbreak{}Q-\allowbreak{}02/\allowbreak{}U12-\allowbreak{}02检查结构理解及测量材料。第二优先：D-\allowbreak{}02/\allowbreak{}S-\allowbreak{}01/\allowbreak{}S-\allowbreak{}02/\allowbreak{}F-\allowbreak{}05/\allowbreak{}U-\allowbreak{}02确认真实X与受限动作能否成立，记录模糊及失败，不以动画验收代替。第三优先：U12-\allowbreak{}04/\allowbreak{}A-\allowbreak{}03/\allowbreak{}X-\allowbreak{}01/\allowbreak{}U12-\allowbreak{}11/\allowbreak{}G-\allowbreak{}03按真实可行性冻结终点、容差、规模和协议，再由实施任务推进。上述只列消费者，不改变领取或状态。
+
+
+五人可分别承接问题/\allowbreak{}文献、测量/\allowbreak{}统计、设备/\allowbreak{}真值、控制/\allowbreak{}场景、流程/\allowbreak{}用户验证；互相复核关键问题不等于增加团队人数。半个月可用于集中完成前置可行性判断，具体工时先以实际设备准备和一次完整会话估算；不能承诺100+研究和独立迁移都在该期限完成。
+
+
+\reviewsubsection{6.3 不能靠写作完成的修复}
+
+核心增量被覆盖：停止首次/\allowbreak{}新方法主张，评估有价值复现；X不可识别：暂停受影响闭环与研究主张，修测量或重审任务；I缺乏必要性：修共同目标后再冻结，不把工程秒数当规范；收益不足以抵偿成本：不推荐部署B；范围和样本不能提供有用精度：保留可行性研究身份或增加资源，不补造效应。每一种都允许诚实完成研究判断，但不保证得到预期的高等级论文。
+
+
+\reviewsubsection{6.4 是否能够完成修复：最终判断}
+
+能修复为一个逻辑一致、可被推翻、可实施检验的设计，且本轮已完成所发现的论证层修订。能否修复为具有足够原创贡献和真实社会价值的成果，目前是有条件可行，关键取决于需求、新增问题、真实可辨性及相对净收益。尚无证据判定必须放弃项目，也没有证据判定CCF B以上已经稳妥。推荐继续前置验证；失败按上述条件缩小或停止相应主张。
+
+
+\href{01-design.pdf}{设计主稿：修复后的实验与产品逻辑}
+
+\href{02-science.pdf}{科学附录：八项近邻证据}
+
+\href{03-decisions.pdf}{决策影响：52个后续消费者}
+
+% NORMALIZATION-20261008
+\newpage\reviewsection{七、规范化后的可反驳主张}
+\reviewsubsection{7.1 C1、C2、C3如何收缩}
+C1 可审阅的具体制品与受限规则，需要真实A隔离、B响应及异常链证明；若规则无新增，只称可靠实现。C2 可信整包收益/\allowbreak{}目标代价是主要候选贡献，需正式预定比较、独立X、完整缺失与精度；普通学习间隙低NA可能使效益不可辨。C3 可迁移规则需要独立新实例与设计者验证，未做前退出首版必需贡献。
+
+\reviewsubsection{7.2 六种结果的中立出口}
+B更好：仅在测得人群/\allowbreak{}场景支持整包相对效益，独立报告I/\allowbreak{}努力/\allowbreak{}成本。
+
+B更差：保留A并报告代价及可解释失效，不改主终点。
+
+情绪无明确差异：区间与精度决定信息量；不称等效。
+
+仅G改善：支持更可跟随，不能称共同I训练更有效。
+
+信号不可辨：暂停对应闭环/\allowbreak{}功能主张，保留工程限制与可靠部分。
+
+迁移失败：只声称已测实例经验，不声称原则通用。
+
+\reviewsubsection{7.3 当前验收判断}
+论证、参数确定与材料框架已补齐；具体PANAS20中文题本与使用条件仍缺，不宣称设计规范全面闭合。Stairway出版社全文已读，明确其自行调速、无固定引导平行对照及非PANAS测量；侧面中文题本仍不等于本项目已核准施测材料。真实需求、可辨性、舒适、净收益和新颖性依旧不能由设计文字取得。
+
+
+\end{document}

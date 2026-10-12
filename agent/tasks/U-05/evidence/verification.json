@@ -43,5 +43,8 @@
   "shared_editmode_passed": 105,
   "weather_adapter_acceptance": "NOT_RUN",
   "human_review": "NOT_RUN",
-  "unity_diagnostic_log": ".artifacts-local/task-normalization/U-05/editmode-unity.log"
+  "unity_diagnostic_log": ".artifacts-local/task-normalization/U-05/editmode-unity.log",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

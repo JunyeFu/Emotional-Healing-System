@@ -1,116 +1,87 @@
 # 人类审阅层
 
-跨项目逐包总结使用[通用中文Word模板](templates/通用中文逐包任务总结模板.docx)，填写与Agent层回填规则见[模板说明](../agent/templates/task-review/README.md)。项目背景与模块关系见[当前项目概览](project/README.md)，旧框架与Mock运行手册已归档。
+当前71包证据审阅及[项目串联审阅](project-review.pdf)统一维护为 LaTeX + PDF，不再维护对应 DOCX。每包同目录提供 `summary.tex` 与 `summary.pdf`，正文、成员视频截图、图注及历史签收记录沿用执行层事实。项目背景见[当前项目概览](project/README.md)。
 
-当前71包均有总结Word，根目录19项已实际归入人类层与Agent层；[项目串联审阅](project-review.docx)汇总当前交接、已修复偏离和仍未完成的业务事项。71份总结共213页，串联文档41页，变更页面已完成可读性检查；[规范化整体审计](../agent/evidence/normalization-completion-audit.json)提供对应证据。下表保留逐包推进记录，业务状态以任务注册表为准。
+标题采用居中加粗黑体，正文采用微软雅黑；字体嵌入 PDF。各包按“一、任务定义与交付”“二、执行与验证”“三、审阅与交接”及“1.1、2.1、3.1”分层。迁移验证见[本次记录](../agent/evidence/task-latex-migration.json)。
 
-任务领取、执行与交接统一使用[通用中文逐包任务模板 v4.0](templates/通用中文逐包任务模板_v4.0.docx)，或使用[Word正式模板](templates/通用中文逐包任务模板_v4.0.dotx)新建任务文档。四阶段覆盖任务定义、执行交付、验收复核与交接收尾，明确责任人、国内学习资料、验收证据及上下游关系；适用于科研、开发、建模、课程和投资研究，不绑定 SRP。启动前确定验收标准，Agent职责与真实负责人分开，独立复核与签收按需填写。旧版保留为历史参考。
+事实先维护 `agent/tasks/<编号>/outputs/summary.json`，再运行 `python agent/tools/build_task_reviews.py <编号>` 生成该包及串联审阅；`ALL` 重建全部，`ALL --check` 检查全部。排版维护 `agent/tools/review_latex.py`；使用 XeLaTeX，字体来自本机 `C:/Windows/Fonts/`。串联源文件见[project-review.tex](project-review.tex)。
 
-从 [项目串联审阅](project-review.docx) 阅读总体偏离和交接关系，再打开各包 Word。Word 由 `agent/tasks/<编号>/outputs/summary.json` 生成，修订从执行层开始，再重新生成 Word。
+当前可复用模板：[LaTeX v5.0](templates/通用中文逐包任务模板_v5.0.tex) · [PDF预览](templates/通用中文逐包任务模板_v5.0.pdf) · [填写与编译说明](templates/README.md)。
 
-| 顺序 | 任务包 | 人类总结 | 当前规范化结果 |
+旧[通用任务模板](templates/通用中文逐包任务模板_v4.0.docx)、历史签署原件及输入快照保留为历史参考，当前证据审阅不再以 Word 为入口。任务业务状态以注册表为准。
+
+当前71包已按新基线刷新，详见[迁移记录](../agent/work/2026-10-08_新基线任务包迁移.md)。本表当前审阅描述任务修订及真实缺口；历史状态/签收不自动覆盖新增范围。
+
+| 顺序 | 任务包 | 当前审阅 | 新范围处理 |
 |---|---|---|---|
-| 1 | F-01 合同与协议 | [总结](tasks/F-01/summary.docx) | 已补齐执行层与本轮复测，Word已完成页面审阅 |
-| 2 | F-02 构念与测量 | [总结](tasks/F-02/summary.docx) | 当前适用入口已与v1.2对齐；模型候选审查与真实签收分开 |
-| 3 | F-03 Unity工程基线 | [总结](tasks/F-03/summary.docx) | 执行工具已迁入Agent层，完整Unity复测通过；正式资产门仍阻断 |
-| 4 | F-04 TD只读操作台 | [总结](tasks/F-04/summary.docx) | 执行脚本与新旧制品隔离；主机38项回归及历史制品身份通过，当前未重跑TD |
-| 5 | F-05 步骤合同与迁移 | [总结](tasks/F-05/summary.docx) | 执行工具迁入Agent层，287项回归及新旧证据封存通过；当前指南与真实签收对齐 |
-| 6 | G-01 研究治理材料 | [总结](tasks/G-01/summary.docx) | 当前稿与v1.2对齐，历史签署保留；外部资格、实际人员和现场产能仍待落实 |
-| 7 | G-02 数据治理实现 | [总结](tasks/G-02/summary.docx) | 隐私工具迁入Agent层，139项专项和233项消费者通过；正式配置与资产门仍阻断 |
-| 8 | P-01 会话编排 | [总结](tasks/P-01/summary.docx) | golden工具迁入Agent层，434项回归及800秒轨迹比较通过；核心前教学暴露接入仍待冻结 |
-| 9 | P-02 追加记录与重放 | [总结](tasks/P-02/summary.docx) | 两个工具迁入Agent层，467项回归及6项golden复测通过，800秒合成负载通过；真实原件读取不由束清单授权 |
-| 10 | U-01 Unity可靠控制 | [总结](tasks/U-01/summary.docx) | 校验脚本迁入Agent层，14项EditMode和3项PlayMode实跑通过；新旧轨迹一致，实际呈现仍待下游 |
-| 11 | U-02 四层适配与降级 | [总结](tasks/U-02/summary.docx) | 原证据127份可读；修复累计锁定、合法空步骤与开发演示链；105项EditMode及3项PlayMode通过，新120帧演示像素通过，独立复审无开放P0-P3；补丁真人签署待安排 |
-| 12 | T-01 只读遥测面板 | [总结](tasks/T-01/summary.docx) | 执行工具迁入Agent；57项专项及验证器回归、23件证据及实际TD五阶段通过；独立可读性候选修复文字裁切，A主题及新候选真人签收仍待完成 |
-
-| 13 | R-01 四层表示方案 | [总结](tasks/R-01/summary.docx) | 校验器实际迁入Agent并补足Schema执行，13项回归通过；当前适用与v1.2/有效视觉对齐，真人双签及四结构配置仍待下游 |
-
-| 14 | V-01 研究体验与完整旅程 | [总结](tasks/V-01/summary.docx) | 校验器迁入Agent；22项回归及新旧旅程/V-02检查通过，当前14节点候选补教学与后测顺序；教学暴露接入及新签收仍待下游 |
-
-| 15 | V-02 四天气场景设计确认 | [总结](tasks/V-02/summary.docx) | 历史校验器迁入Agent；26项回归和新旧交接检查通过，当前入口对齐固定镜头、独立素材与fade有效时间复色；运行及许可交下游 |
-
-| 16 | V-03 四层视听与资产基线 | [总结](tasks/V-03/summary.docx) | 三工具与资产测试迁入Agent；64项回归通过，修复历史依赖混用和生成器覆盖，当前40行对齐v2.2与有效视觉；素材许可仍待下游 |
-
-| 17 | V-04 分镜与完整时长预演 | [总结](tasks/V-04/summary.docx) | 37工具实际迁入Agent归档；八项媒体门、七项回归和当前交接通过；旧800秒不含新教学/测量旅程，完整灰盒交V-05 |
-
-| 18 | D-01 真实ECG与RR采集 | [总结](tasks/D-01/summary.docx) | 旧骨架与两份方案已归档，30项软件检查通过；真实驱动、30分钟记录与实际领取人仍待落实，不变更WAIT_DEP_EXTERNAL |
-
-| 19 | D-02 真实呼吸与运动采集 | [总结](tasks/D-02/summary.docx) | 原生呼吸批次修复，37项软件测试通过；专用SDK、真机与30分钟证据仍待完成，状态保持WAIT_DEP_EXTERNAL |
-
-| 20 | S-01 双设备同步与SQI | [总结](tasks/S-01/summary.docx) | 修复启动前已连接和连接即good，125项软件检查通过；真实同步、SQI算法与配置仍未完成，保持WAIT_DEP |
-
-| 21 | S-02 呼吸事件周期与在线PF | [总结](tasks/S-02/summary.docx) | 旧评分设计实际归档，118项软件检查通过；A-03冻结来源迁移不改输入身份，真实算法、标注和PF仍待交付 |
-
-| 22 | V-05 四模块全旅程灰盒 | [总结](tasks/V-05/summary.docx) | 七份当前输入补齐，119项专项和48主机组合通过；Unity灰盒、完整录像、真人评审与领取人仍缺，保持READY |
-
-| 23 | U-03 最高风险天气纵向切片 | [总结](tasks/U-03/summary.docx) | 旧场景设计实际归档，修复当前背景卷轴字段；180项专项通过，fade真实切片及模板仍未验收，保持WAIT_DEP |
-
-| 24 | U-04 剩余天气A适配器 | [总结](tasks/U-04/summary.docx) | 明确A/B/C未绑定，不默认storm；旧框架及Editor工具原文归档，34项设计与105项Unity回归通过，新天气仍WAIT_DEP |
-
-| 25 | U-05 剩余天气B适配器 | [总结](tasks/U-05/summary.docx) | 不默认heat；旧Heat/Snow无脚本绑定，两个旧修改菜单及meta归档，38项专项及105项Unity回归通过；预算规格与真实天气仍待落实 |
-
-| 26 | U-06 剩余天气C适配器 | [总结](tasks/U-06/summary.docx) | 不默认snow；三项旧Final/Fix工具及meta归档，40项专项及105项Unity回归通过；开发构建不替代最终天气制品，真实验收仍待落实 |
-
-| 27 | U-07 抽象完整表示方案 | [总结](tasks/U-07/summary.docx) | 旧双环规格原文归档，41项专项通过；四结构及匹配入口订正，真实双环、混杂及负责人仍缺，保持WAIT_DEP |
-
-| 28 | U-08 视听性能与可访问成品 | [总结](tasks/U-08/summary.docx) | 两个旧Build Scene菜单及meta归档，40项专项及105项Unity回归通过；预算字段和八呈现范围对齐，真实制品仍待验收，保持WAIT_DEP |
-
-| 29 | T-02 人工标记中止请求与告警 | [总结](tasks/T-02/summary.docx) | 15份旧TD引导/遥控原件归档，276项专项通过；真实TD请求仍禁用，请求ACK/mark/告警历史/操作录像及负责人仍缺，保持READY |
-
-| 30 | A-01 离线重建与证据消费 | [总结](tasks/A-01/summary.docx) | 旧QC/PF原文归档，研究入口订正；98项专项通过，冻结输入不改；实际流水线、差报告、授权及责任人仍缺，保持WAIT_DEP |
-
-| 31 | A-02 机会PF护栏与缺失统计 | [总结](tasks/A-02/summary.docx) | 旧统计计划归档，29项专项通过；合成前测代填不等于MI，两分析集及敏感性流水线未交付，保持WAIT_DEP |
-
-| 32 | A-03 测量计分与合成可行性 | [总结](tasks/A-03/summary.docx) | 旧入口与锚点实际归档，CLI禁止覆盖，当前SAP签收已交接；REAL/CAL仍缺，保持IN_PROGRESS |
-
-| 33 | W-01 最近工作与中立论文骨架 | [总结](tasks/W-01/summary.docx) | 旧骨架原文归档，验证器迁入Agent；16项专项通过，当前PANAS/A-06路线订正，文献与真实双审仍缺 |
-
-| 34 | I-01 双真机完整链与外部延迟 | [总结](tasks/I-01/summary.docx) | 同一记录代理、无TD、四时间点与外部显示测量交接明确；216项主机测试通过，真实链/阈值/责任人仍缺，保持WAIT_DEP_EXTERNAL |
-
-| 35 | Q-01 构念审查与独立重建 | [总结](tasks/Q-01/summary.docx) | 两工具两测试迁入Agent，三旧说明归档；21项及3子测试通过，CLI禁止覆盖；真人活动与当前修订签收仍待完成 |
-
-| 36 | Q-02 认知访谈与可访问预试 | [总结](tasks/Q-02/summary.docx) | 固定结构、逐题提纲与空表完成；53项专项通过，人数/角色/真实片段与活动仍待完成，保持WAIT_DEP |
-
-| 37 | Q-03 技术预试与盲态冻结 | [总结](tasks/Q-03/summary.docx) | 两旧方案归档、85项专项通过；48单元非运行预览，真实工具/资料/签署仍缺，保持WAIT_DEP_EXTERNAL |
-
-| 38 | X-01 随机化与分配隐藏 | [总结](tasks/X-01/summary.docx) | 两工具迁入Agent、合成复现拒绝覆盖；41项专项通过，原软件DONE不扩大为正式清单、实名权限或实时策略完成 |
-
-| 39 | X-02 策略学习与离线评价 | [总结](tasks/X-02/summary.docx) | 两旧方案归档，42项专项通过；当前交接和概率边界明确，模型/OPE/ESS、真实资料与冻结仍缺，保持WAIT_DEP |
-
-| 40 | X-03 策略运行与安全重放 | [总结](tasks/X-03/summary.docx) | v2.2仍拒绝冻结策略，44项专项通过；活动说明订正，动态接口/只读/同构建/真链仍缺，保持WAIT_DEP |
-
-| 41 | Z-01 候选制品与干净重建 | [总结](tasks/Z-01/summary.docx) | 工具权威三处偏离修复、22项专项通过；真实资产269阻断，完整候选/锁/SBOM和独立重建仍缺，保持WAIT_DEP |
-
-| 42 | G-05 外部准入与正式机器 | [总结](tasks/G-05/summary.docx) | 五旧文件实际归档，28项专项通过；13项资格与本机六项仍未过，真实机构/许可/U8和全包规则差异待关闭，状态不变 |
-| 43 | E-01 Level A真实执行 | [总结](tasks/E-01/summary.docx) | 三旧说明实际归档并修复G-01消费者，38项合成检查通过；真实批准、15人、材料冻结、评分和签署仍待落实 |
-| 44 | E-02 Level B执行与关闭 | [总结](tasks/E-02/summary.docx) | 两旧方案实际归档，70项专项通过；单条件/单次体验与时序明确，人数、批准、角色、真实记录及构建关闭仍未完成 |
-| 45 | B-01 Level C批次模板 | [总结](tasks/B-01/summary.docx) | 空登记及QC骨架、实际Level C接口对齐；模板仍BLOCKED_EXTERNAL，分配工具、人员、批准与真实批次仍缺 |
-| 46 | E-03 Level C技术关闭 | [总结](tasks/E-03/summary.docx) | 补齐B-01活动范围并保留冻结输入；130专项通过，真实报告/配置/CAL和签署未生成，状态不变 |
-| 47 | G-03 阶段一预注册与研究冻结 | [总结](tasks/G-03/summary.docx) | 旧当前门禁实际归档，15项冻结/真实预注册/运行接线分开；传递依赖已有，状态仍BLOCKED_EXTERNAL |
-| 48 | B-02 阶段一正式批次模板 | [总结](tasks/B-02/summary.docx) | 两旧方案实际归档，135专项及根635通过；批次与分配块、完成与分析集分开，正式实例/批准/角色仍缺 |
-| 49 | E-04 阶段一锁库与揭盲授权 | [总结](tasks/E-04/summary.docx) | 两旧第11步方案实际归档，156专项及根635通过；封存/原件核查/锁库/授权分开，真实锁库及签署仍缺 |
-| 50 | A-05 阶段一锁定分析 | [总结](tasks/A-05/summary.docx) | 旧问卷实际归档，70专项及根635通过；候选SAP差异登记，真实锁定分析和签收仍缺 |
-| 51 | E-05 可选策略冻结 | [总结](tasks/E-05/summary.docx) | 两次冻结时点与U12-08真实职责纠偏，X-02/X-03执行和Word同步；真实模型/OPE及签署仍缺 |
-| 52 | G-04 可选阶段三独立冻结 | [总结](tasks/G-04/summary.docx) | 两原生组策略比较、独立准入与同构建交接明确；真实运行、批准和预注册仍缺 |
-| 53 | B-03 阶段三批次模板 | [总结](tasks/B-03/summary.docx) | 48分配块与12人批次、部分运行和真实决策交接明确；真实实例及动态重放仍缺 |
-| 54 | E-06 阶段三研究关闭 | [总结](tasks/E-06/summary.docx) | 全部活动、策略全组件、盲态与分别授权对齐；真实锁库/揭盲尚未执行 |
-| 55 | A-04 阶段三锁定分析 | [总结](tasks/A-04/summary.docx) | 原分配部署比较与独立统计参数明确，旧三重门消费者订正；真实分析与独立复现仍缺 |
-| 56 | A-06 实际研究范围关闭 | [总结](tasks/A-06/summary.docx) | 三台账与部分活动、元数据/外层签署和双人责任明确；真实范围回执仍缺 |
-| 57 | W-02 单篇论文写作 | [总结](tasks/W-02/summary.docx) | 旧结构和矩阵实际归档，51专项及635根回归通过；旧签署稿修订、真实主稿及责任仍待落实 |
-| 58 | W-03 投稿与独立复现 | [总结](tasks/W-03/summary.docx) | 三旧材料实际归档，一般政策与期刊403分开；31专项通过，真实主稿权限和干净复现仍缺 |
-| 59 | W-04 成果与团队移交 | [总结](tasks/W-04/summary.docx) | 旧成果方案实际归档，八对象与新成员演练明确；最终成品权属及接收仍未落实 |
-| 60 | U12-01 主线治理与消费者迁移 | [总结](tasks/U12-01/summary.docx) | 旧三文件实际归档，限定候选状态修正；冻结原件/当前消费者区分，原签收与真实缺口保留 |
-| 61 | U12-02 步骤实例测量 | [总结](tasks/U12-02/summary.docx) | 生成器与材料实际归入Agent；新旧题面/键/输入一致，真实标注及测量有效性仍待验证 |
-| 62 | U12-03 两方案公平教学 | [总结](tasks/U12-03/summary.docx) | 原候选与冻结输入保留，活动材料及五消费者迁移；真实理解、正式预算时序和第二人仍待完成 |
-| 63 | U12-04 PANAS统计规格 | [总结](tasks/U12-04/summary.docx) | 原12文件归档，活动SAP/拟合/零效应参数订正，六消费者修复；真实分析及N冻结仍待完成 |
-| 64 | U12-05 早期活动真实准入 | [总结](tasks/U12-05/summary.docx) | 四候选原件实际归档，活动范围与三消费者连接；真实批准、角色及签收仍待完成 |
-| 65 | U12-06 正式入口研究准入 | [总结](tasks/U12-06/summary.docx) | 五旧原文实际归档，领取快照不改；基础保护与六研究接线缺口分开，实施及签收仍待完成 |
-
-| 66 | U12-07 中立方法与结果解释 | [总结](tasks/U12-07/summary.docx) | 六旧原文和四候选实际归档，当前PANAS/11表/双向规则及两消费者已修；新复核、主稿和冻结仍待完成 |
-| 67 | U12-08 可选阶段三独立附录 | [总结](tasks/U12-08/summary.docx) | 四原候选归档，四结果族与实际活动交接明确，两冻结误述订正；真实附录、独立复现及签收仍缺 |
-| 68 | U12-09 升级覆盖与一致性复核 | [总结](tasks/U12-09/summary.docx) | 四原候选归档，15消费者/24 DONE影响及六旧字节有限核查；真实接线、冻结和签收仍缺 |
-| 69 | U12-10 阶段一结果分类 | [总结](tasks/U12-10/summary.docx) | 四候选归档，复用分轴分类并修CLI启动，15合成案例及A-05交接；正式结果和签收仍缺 |
-| 70 | U12-11 正式参数与资源冻结 | [总结](tasks/U12-11/summary.docx) | 四候选归档，15项材料/空索引及G-03交接对齐；CAL、真实数值与批准签收仍缺 |
-| 71 | U12-12 部署选择与公开交接 | [总结](tasks/U12-12/summary.docx) | 四候选归档，三方案与十二对象交接对齐；真实决定、公开权限、成品与签收仍缺 |
-
-71项均已完成逐包整理，旧根目录整体物理迁移尚未完成。任务业务状态仍以原注册表为准，整理完成不等于业务DONE。
+| 1 | F-01 I/G/X控制与遥测语义修订 | [PDF](tasks/F-01/summary.pdf) · [LaTeX](tasks/F-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 2 | F-02 构念、情绪与公平执行测量 | [PDF](tasks/F-02/summary.pdf) · [LaTeX](tasks/F-02/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 3 | F-03 Unity资产与新双条件环境基线 | [PDF](tasks/F-03/summary.pdf) · [LaTeX](tasks/F-03/summary.tex) | 保留功能、澄清用途；原DONE只保留原范围 |
+| 4 | F-04 双设备只读预览与显示边界 | [PDF](tasks/F-04/summary.pdf) · [LaTeX](tasks/F-04/summary.tex) | 保留功能、澄清用途；原DONE只保留原范围 |
+| 5 | F-05 I/G/X事件与受限适应步骤合同 | [PDF](tasks/F-05/summary.pdf) · [LaTeX](tasks/F-05/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 6 | G-01 五人团队与后续阶段资源规划 | [PDF](tasks/G-01/summary.pdf) · [LaTeX](tasks/G-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 7 | G-02 新反馈用途的数据与许可治理 | [PDF](tasks/G-02/summary.pdf) · [LaTeX](tasks/G-02/summary.tex) | 保留功能、澄清用途；原DONE只保留原范围 |
+| 8 | P-01 I/G分离与受限控制的会话编排 | [PDF](tasks/P-01/summary.pdf) · [LaTeX](tasks/P-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 9 | P-02 理想、引导、实际及适应成本记录 | [PDF](tasks/P-02/summary.pdf) · [LaTeX](tasks/P-02/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 10 | U-01 Unity控制镜像与实际呈现回执 | [PDF](tasks/U-01/summary.pdf) · [LaTeX](tasks/U-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 11 | U-02 固定与原生自适应呈现适配 | [PDF](tasks/U-02/summary.pdf) · [LaTeX](tasks/U-02/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 12 | T-01 双设备只读显示服务于新测量 | [PDF](tasks/T-01/summary.pdf) · [LaTeX](tasks/T-01/summary.tex) | 保留功能、澄清用途；原DONE只保留原范围 |
+| 13 | R-01 固定开环与原生自适应整包设计 | [PDF](tasks/R-01/summary.pdf) · [LaTeX](tasks/R-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 14 | V-01 同预算的完整参与者旅程 | [PDF](tasks/V-01/summary.pdf) · [LaTeX](tasks/V-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 15 | V-02 Storm/Fade优先的场景设计 | [PDF](tasks/V-02/summary.pdf) · [LaTeX](tasks/V-02/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 16 | V-03 开环与闭环的视听映射 | [PDF](tasks/V-03/summary.pdf) · [LaTeX](tasks/V-03/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 17 | V-04 新条件配对预演与教学材料 | [PDF](tasks/V-04/summary.pdf) · [LaTeX](tasks/V-04/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 18 | D-01 H10辅助测量及额外成本 | [PDF](tasks/D-01/summary.pdf) · [LaTeX](tasks/D-01/summary.tex) | 保留功能、澄清用途；原WAIT_DEP_EXTERNAL只保留原范围 |
+| 19 | D-02 respiBAN实际呼吸可辨性 | [PDF](tasks/D-02/summary.pdf) · [LaTeX](tasks/D-02/summary.tex) | 修订待实证；原WAIT_DEP_EXTERNAL只保留原范围 |
+| 20 | S-01 真实质量与双设备同步 | [PDF](tasks/S-01/summary.pdf) · [LaTeX](tasks/S-01/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 21 | S-02 独立X事件与I/G公平计分 | [PDF](tasks/S-02/summary.pdf) · [LaTeX](tasks/S-02/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 22 | V-05 固定/受限适应全旅程灰盒 | [PDF](tasks/V-05/summary.pdf) · [LaTeX](tasks/V-05/summary.tex) | 修订待实证；原READY只保留原范围 |
+| 23 | U-03 Fade复杂步骤原生自适应切片 | [PDF](tasks/U-03/summary.pdf) · [LaTeX](tasks/U-03/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 24 | U-04 剩余天气A按新条件适配 | [PDF](tasks/U-04/summary.pdf) · [LaTeX](tasks/U-04/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 25 | U-05 剩余天气B按新条件适配 | [PDF](tasks/U-05/summary.pdf) · [LaTeX](tasks/U-05/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 26 | U-06 剩余天气C按新条件适配 | [PDF](tasks/U-06/summary.pdf) · [LaTeX](tasks/U-06/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 27 | U-07 固定圈开环方案的可信对照 | [PDF](tasks/U-07/summary.pdf) · [LaTeX](tasks/U-07/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 28 | U-08 产品预算、可访问与净收益 | [PDF](tasks/U-08/summary.pdf) · [LaTeX](tasks/U-08/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 29 | T-02 操作台消费I/G/X及研究许可 | [PDF](tasks/T-02/summary.pdf) · [LaTeX](tasks/T-02/summary.tex) | 修订待实证；原READY只保留原范围 |
+| 30 | A-01 I/G/X原始证据离线重建 | [PDF](tasks/A-01/summary.pdf) · [LaTeX](tasks/A-01/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 31 | A-02 新条件执行与缺失统计 | [PDF](tasks/A-02/summary.pdf) · [LaTeX](tasks/A-02/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 32 | A-03 新整包比较SAP与样本精度 | [PDF](tasks/A-03/summary.pdf) · [LaTeX](tasks/A-03/summary.tex) | 修订待实证；原IN_PROGRESS只保留原范围 |
+| 33 | W-01 原创性与最近工作全文审查 | [PDF](tasks/W-01/summary.pdf) · [LaTeX](tasks/W-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 34 | I-01 两设备与新条件真实完整链 | [PDF](tasks/I-01/summary.pdf) · [LaTeX](tasks/I-01/summary.tex) | 修订待实证；原WAIT_DEP_EXTERNAL只保留原范围 |
+| 35 | Q-01 构念与多步骤独立重建材料 | [PDF](tasks/Q-01/summary.pdf) · [LaTeX](tasks/Q-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 36 | Q-02 校园需求与方案认知访谈 | [PDF](tasks/Q-02/summary.pdf) · [LaTeX](tasks/Q-02/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 37 | Q-03 真实技术和受限适应预试 | [PDF](tasks/Q-03/summary.pdf) · [LaTeX](tasks/Q-03/summary.tex) | 修订待实证；原WAIT_DEP_EXTERNAL只保留原范围 |
+| 38 | X-01 新两臂随机化与阶段人数 | [PDF](tasks/X-01/summary.pdf) · [LaTeX](tasks/X-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 39 | X-02 可选离线策略学习的延期边界 | [PDF](tasks/X-02/summary.pdf) · [LaTeX](tasks/X-02/summary.tex) | 可选扩展延期；原WAIT_DEP只保留原范围 |
+| 40 | X-03 可选策略运行与首版受限控制分工 | [PDF](tasks/X-03/summary.pdf) · [LaTeX](tasks/X-03/summary.tex) | 可选扩展延期；原WAIT_DEP只保留原范围 |
+| 41 | Z-01 新双条件候选制品与重建 | [PDF](tasks/Z-01/summary.pdf) · [LaTeX](tasks/Z-01/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 42 | G-05 新研究用途外部准入 | [PDF](tasks/G-05/summary.pdf) · [LaTeX](tasks/G-05/summary.tex) | 修订待实证；原WAIT_DEP_EXTERNAL只保留原范围 |
+| 43 | E-01 Level A专家与独立重建执行 | [PDF](tasks/E-01/summary.pdf) · [LaTeX](tasks/E-01/summary.tex) | 修订待实证；原BLOCKED_EXTERNAL只保留原范围 |
+| 44 | E-02 Level B需求与认知活动执行 | [PDF](tasks/E-02/summary.pdf) · [LaTeX](tasks/E-02/summary.tex) | 修订待实证；原BLOCKED_EXTERNAL只保留原范围 |
+| 45 | B-01 Level C真实预试批次模板 | [PDF](tasks/B-01/summary.pdf) · [LaTeX](tasks/B-01/summary.tex) | 修订待实证；原BLOCKED_EXTERNAL只保留原范围 |
+| 46 | E-03 新控制与测量技术关闭 | [PDF](tasks/E-03/summary.pdf) · [LaTeX](tasks/E-03/summary.tex) | 修订待实证；原BLOCKED_EXTERNAL只保留原范围 |
+| 47 | G-03 新两臂正式协议与预注册 | [PDF](tasks/G-03/summary.pdf) · [LaTeX](tasks/G-03/summary.tex) | 修订待实证；原BLOCKED_EXTERNAL只保留原范围 |
+| 48 | B-02 新协议正式阶段批次模板 | [PDF](tasks/B-02/summary.pdf) · [LaTeX](tasks/B-02/summary.tex) | 修订待实证；原BLOCKED_EXTERNAL只保留原范围 |
+| 49 | E-04 新条件阶段一锁库与揭盲 | [PDF](tasks/E-04/summary.pdf) · [LaTeX](tasks/E-04/summary.tex) | 修订待实证；原BLOCKED_EXTERNAL只保留原范围 |
+| 50 | A-05 新整包阶段一锁定分析 | [PDF](tasks/A-05/summary.pdf) · [LaTeX](tasks/A-05/summary.tex) | 修订待实证；原BLOCKED_EXTERNAL只保留原范围 |
+| 51 | E-05 可选学习策略的独立冻结 | [PDF](tasks/E-05/summary.pdf) · [LaTeX](tasks/E-05/summary.tex) | 可选扩展延期；原BLOCKED_EXTERNAL只保留原范围 |
+| 52 | G-04 可选策略扩展的独立准入 | [PDF](tasks/G-04/summary.pdf) · [LaTeX](tasks/G-04/summary.tex) | 可选扩展延期；原BLOCKED_EXTERNAL只保留原范围 |
+| 53 | B-03 可选扩展批次模板 | [PDF](tasks/B-03/summary.pdf) · [LaTeX](tasks/B-03/summary.tex) | 可选扩展延期；原BLOCKED_EXTERNAL只保留原范围 |
+| 54 | E-06 可选扩展关闭与揭盲 | [PDF](tasks/E-06/summary.pdf) · [LaTeX](tasks/E-06/summary.tex) | 可选扩展延期；原BLOCKED_EXTERNAL只保留原范围 |
+| 55 | A-04 可选扩展独立锁定分析 | [PDF](tasks/A-04/summary.pdf) · [LaTeX](tasks/A-04/summary.tex) | 可选扩展延期；原BLOCKED_EXTERNAL只保留原范围 |
+| 56 | A-06 核心贡献及阶段范围关闭 | [PDF](tasks/A-06/summary.pdf) · [LaTeX](tasks/A-06/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 57 | W-02 整包收益与目标代价论文主稿 | [PDF](tasks/W-02/summary.pdf) · [LaTeX](tasks/W-02/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 58 | W-03 实际贡献的期刊匹配与提交准备 | [PDF](tasks/W-03/summary.pdf) · [LaTeX](tasks/W-03/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 59 | W-04 科研产品实践的真实移交 | [PDF](tasks/W-04/summary.pdf) · [LaTeX](tasks/W-04/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 60 | U12-01 新任务设计权威与原执行范围治理 | [PDF](tasks/U12-01/summary.pdf) · [LaTeX](tasks/U12-01/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 61 | U12-02 条件适配的步骤测量材料 | [PDF](tasks/U12-02/summary.pdf) · [LaTeX](tasks/U12-02/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 62 | U12-03 固定与原生自适应公平教学 | [PDF](tasks/U12-03/summary.pdf) · [LaTeX](tasks/U12-03/summary.tex) | 修订待实证；原IN_REVIEW只保留原范围 |
+| 63 | U12-04 新PANAS与执行代价SAP | [PDF](tasks/U12-04/summary.pdf) · [LaTeX](tasks/U12-04/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 64 | U12-05 新材料静态及回放真实准入 | [PDF](tasks/U12-05/summary.pdf) · [LaTeX](tasks/U12-05/summary.tex) | 修订待实证；原WAIT_DEP_EXTERNAL只保留原范围 |
+| 65 | U12-06 新方案正式入口与运行许可衔接 | [PDF](tasks/U12-06/summary.pdf) · [LaTeX](tasks/U12-06/summary.tex) | 修订待实证；原IN_PROGRESS只保留原范围 |
+| 66 | U12-07 结果前中立写作及审稿修复 | [PDF](tasks/U12-07/summary.pdf) · [LaTeX](tasks/U12-07/summary.tex) | 修订待实证；原DONE只保留原范围 |
+| 67 | U12-08 可选扩展独立附录 | [PDF](tasks/U12-08/summary.pdf) · [LaTeX](tasks/U12-08/summary.tex) | 可选扩展延期；原WAIT_DEP只保留原范围 |
+| 68 | U12-09 71包新基线覆盖一致性 | [PDF](tasks/U12-09/summary.pdf) · [LaTeX](tasks/U12-09/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 69 | U12-10 整包结果分轴解释规则 | [PDF](tasks/U12-10/summary.pdf) · [LaTeX](tasks/U12-10/summary.tex) | 修订待实证；原WAIT_DEP只保留原范围 |
+| 70 | U12-11 新研究参数与资源冻结 | [PDF](tasks/U12-11/summary.pdf) · [LaTeX](tasks/U12-11/summary.tex) | 修订待实证；原WAIT_DEP_EXTERNAL只保留原范围 |
+| 71 | U12-12 成果选择与社会价值判断 | [PDF](tasks/U12-12/summary.pdf) · [LaTeX](tasks/U12-12/summary.tex) | 修订待实证；原WAIT_DEP_EXTERNAL只保留原范围 |

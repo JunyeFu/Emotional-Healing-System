@@ -9,6 +9,39 @@
     "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/99_验证与清单/validate_f02_package.py",
     "agent/modules/srp_step_measurement/README.md",
     "agent/tasks/U12-02/execution/build_evidence.py",
-    "agent/modules/tests/step_measurement"
-  ]
+    "agent/modules/tests/step_measurement",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/design/design-foundation-20261008/05-control-spec.tex",
+    "agent/design/design-foundation-20261008/05-control-spec.pdf",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+    "agent/design/design-foundation-20261008/operational-design.json",
+    "agent/work/2026-10-08_科学来源补获与量表侧证.md"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "measurement_design_update": {
+    "date": "2026-10-09",
+    "design_review": "APPROVED",
+    "materials": "DELIVERED",
+    "empirical_validation": "NOT_EXECUTED",
+    "formal_collection_allowed": false,
+    "sources": [
+      "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "agent/design/design-foundation-20261008/operational-design.json",
+      "agent/work/2026-10-08_科学来源补获与量表侧证.md"
+    ]
+  },
+  "historical_pdf_note": "07磁盘PDF早于本次测量更新；当前内容读取.tex或编辑器预览。"
 }

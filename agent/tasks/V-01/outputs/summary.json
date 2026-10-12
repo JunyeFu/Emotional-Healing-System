@@ -1,8 +1,8 @@
 {
   "task_id": "V-01",
-  "title": "V01 研究体验契约与完整旅程审阅",
-  "review_date": "2026-09-28",
-  "conclusion": "V-01历史DONE和傅钧烨原签收保留。旧校验器迁入Agent，当前旅程另存版本化候选，补入前测后教学及后测后其他测量，订正教学暴露、旧研究门及两条件参与者措辞。22项回归、历史12节点和当前14节点校验及V-02消费通过；新候选未代签，教学运行接入仍开放。",
+  "title": "V-01 同预算的完整参与者旅程 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "V-01注册状态DONE仅保留原范围。当前任务更新为同预算的完整参与者旅程；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "傅钧烨（团队总监、真实第二人）",
     "date": "2026-08-18 +08:00",
@@ -13,74 +13,84 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "原负责人Codex Agent，本轮Codex。当前适用与历史签收分别记录，不回改原设计稿或冻结输入；规范化和合成回归不表示真实教学、全旅程或正式研究已完成。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "原包约3人日，前置F-02/R-01。AC1覆盖核心四模块、无手部操作、Python权威、两条件及证据；AC2覆盖入口至结束完整旅程；AC3主张分类可追踪，合同变更版本化。",
-        "所需游戏场景流程、MDA反推、研究约束与旅程设计技能；国内学习资料采用L-RESEARCH/L-UNITYLEARN/L-MARKDOWN，统一链接在审阅来源。"
+        "AC1 前测在分配教学前，情绪后测先于理解题",
+        "AC2 两条件教学预算及模块暴露相同，B等待消耗既定预算",
+        "AC3 准备成本、求助、退出及问卷时间分报，800秒等旧时长仅候选"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "固定TASK与五目录；历史校验器迁入execution/validate_historical.py。当前JSON和适用说明另存outputs，消费者影响与四次实际命令保存在evidence。",
-        "新旅程14节点在原12节点基础上增加J-03T教学与J-11M其他测量；原合同及五稿、独立复核和签署保持共享历史原件，不生成平行副本。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "同预算的完整参与者旅程修订交接",
+        "旅程时序",
+        "时间预算表",
+        "ODES-20261008设计交付：安排共同预算、自然缓冲占时、暂停恢复及统一主要后测时点；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：buffer_single_limit、buffer_total_limit；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "中性准备、PANAS前测、分条件教学、核心、PANAS后测、理解及其他测量依次展开。原简报“两条件共享同一参与者”不再按字面执行，每人一个条件一次核心。",
-        "教学候选180秒在核心外，不替代每模块25秒demo；正式预算仍null。首个分条件材料前需登记暴露，不能等到核心start才算；当前P-01尚未完成教学接入，不修改其状态机冒充已接通。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：同预算的完整参与者旅程"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "22项回归覆盖合法当前旅程和非法时序、核心操作、权限、正式预算代填、教学算入核心、延后暴露、研究门及视觉来源等变体。当前14节点校验通过。",
-        "原v1.0与签署时v1.1权威校验通过：26约束、15开放项、12节点及10主张；V-02消费原合同通过。历史校验不叫当前研究验证，也不证明Unity运行。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "V01-N01旧旅程漏分条件教学且混合后测与理解，本轮版本化补齐，异常时序负测通过。V01-N02旧有序研究门与同一参与者措辞已在当前使用入口订正。",
-        "V01-N03旧start暴露边界不覆盖教学，已明确首个条件材料前登记，但运行接入交U12-06/X-01/G-02/P-01。V01-N04旧视觉开放项不重开V-02至V-04已选固定镜头及提示形态。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：旅程时序；时间预算表；用户成本记录要求"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "旧99目录校验器移走且删除原入口，无兼容转发；新旧校验目的分开。五设计稿和签署保持原位置，不为当前口径回写历史，共享业务目录最终迁移未完成。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "F-02/R-01提供测量及表示边界，P-01掌握时钟与顺序，U-01/U-02消费v2.2步骤和生命周期；TD不成为Unity体验依赖。默认核心800秒，不包含准备、教学和量表，暂停增加墙钟时长。",
-        "V-02/V-03既有选择保留，V-05及U-03至U-07搭建真实完整旅程与双条件；U12-03/04/11冻结教学和测量，U12-06/X-01连接暴露与追加记录。下一规范化包V-02，检查旧选择到当前视觉合同的关系。"
+        "原依赖：F-02、R-01；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：旅程时序；时间预算表；用户成本记录要求"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "原真实签收覆盖原设计候选，不扩大为Unity构建、设备链或LIVE_E2E。当前旅程候选仅经Codex技术验证，新的真人审阅由团队总监安排，未填任何新的签收结论。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态DONE，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "当前旅程、机器可读候选、实际验证、消费者影响、原签收和国内资料可从下列链接打开。串联Word显示当前未闭合关系，修订从Agent层回填。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -114,6 +124,11 @@
       "status": "OPEN_HUMAN_REVIEW",
       "description": "新候选未继承历史签名，正式时序冻结及真人审阅由责任人完成",
       "source": "agent/tasks/V-01/TASK.md"
+    },
+    {
+      "id": "V-01-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "同预算的完整参与者旅程；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -141,6 +156,58 @@
     {
       "label": "国内技能与学习资料",
       "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
     }
-  ]
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
 }

@@ -7,7 +7,7 @@ from pathlib import Path
 import re
 from urllib.parse import unquote, urlsplit
 
-from docx import Document
+from review_latex import verify_review
 
 from build_task_reviews import check_task
 
@@ -31,25 +31,8 @@ def check_markdown(path):
     return count
 
 
-def check_word(task_id, summary):
-    path = ROOT / f'human/tasks/{task_id}/summary.docx'
-    doc = Document(path)
-    text = '\n'.join(p.text for p in doc.paragraphs)
-    expected = [summary['conclusion']]
-    expected.extend(p for s in summary['sections'] for p in s['paragraphs'])
-    if any(p not in text for p in expected):
-        raise ValueError(f'Word content does not match Agent source: {task_id}')
-    count = 0
-    for rel in doc.part.rels.values():
-        if not rel.is_external or not rel.target_ref.startswith('file:'):
-            continue
-        value = unquote(urlsplit(rel.target_ref).path)
-        if re.match(r'^/[A-Za-z]:/', value):
-            value = value[1:]
-        if not Path(value).exists():
-            raise ValueError(f'Missing Word source: {task_id} -> {value}')
-        count += 1
-    return count
+def check_review(task_id, summary):
+    return verify_review(ROOT / f'human/tasks/{task_id}/summary.tex', summary)
 
 
 def main():
@@ -72,10 +55,10 @@ def main():
         migrated.append(entry['old'])
     with (GOV / '05_可领取任务包.csv').open(encoding='utf-8-sig', newline='') as stream:
         registry = {row['task_id']: row for row in csv.DictReader(stream)}
-    word_links = 0
+    review_links = 0
     for task_id in registry:
         summary = check_task(task_id, registry)
-        word_links += check_word(task_id, summary)
+        review_links += check_review(task_id, summary)
     current_paths = ['human/project/README.md', 'human/project/PROJECT_MODULES.md',
                      'agent/runtime/README.md', 'agent/archive/project/README.md',
                      'agent/archive/runtime/README.md', 'README.md', 'human/README.md',
@@ -90,14 +73,14 @@ def main():
     unexpected = sorted(p.name for p in ROOT.iterdir() if p.name not in layout['root_entries_retained'])
     if args.require_complete and (pending or unexpected or not layout['root_migration_complete']):
         raise ValueError(f'Overall migration incomplete: pending={pending}, root={unexpected}')
-    result = {'scope': 'Physical completed moves and all current task/Word source links; not Unity/TD runtime or business acceptance',
+    result = {'scope': 'Physical completed moves and all current task/LaTeX/PDF source links; not Unity/TD runtime or business acceptance',
               'migrated_roots': migrated, 'pending_roots': pending,
-              'task_packages_checked': len(registry), 'word_source_links_checked': word_links,
+              'task_packages_checked': len(registry), 'review_source_links_checked': review_links,
               'current_markdown_links_checked': markdown_links,
               'root_entries_still_to_classify': unexpected,
               'root_migration_complete': layout['root_migration_complete']}
     (ROOT / 'agent/evidence/root-migration-check.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f'PASS {len(migrated)} physical moves, {len(registry)} packages and {word_links} Word source links; {len(pending)} root moves pending')
+    print(f'PASS {len(migrated)} physical moves, {len(registry)} packages and {review_links} LaTeX/PDF source links; {len(pending)} root moves pending')
 
 
 if __name__ == '__main__':

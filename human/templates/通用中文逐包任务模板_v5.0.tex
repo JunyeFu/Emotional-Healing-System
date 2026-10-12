@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\setCJKmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\newfontfamily\titlelatin{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\usepackage[margin=22mm]{geometry}
+\usepackage{graphicx}
+\usepackage{needspace}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyfoot[C]{任务执行与审阅\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\linespread{1.28}
+\emergencystretch=3em
+\raggedbottom
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}\vspace{8pt}}
+\newcommand{\reviewsection}[1]{\par\Needspace{9\baselineskip}\vspace{10pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\vspace{4pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+\begin{document}
+
+\reviewtitle{【项目名称】任务执行与审阅}
+任务编号：【填写】    版本：【填写】    更新日期：【填写】
+
+
+适用领域：【科研 /\allowbreak{} 编程开发 /\allowbreak{} 数学建模 /\allowbreak{} 设计 /\allowbreak{} 课程 /\allowbreak{} 投资研究，按实际选择】
+
+
+使用方式：复制本文件并填写占位项，使用 XeLaTeX 编译成 PDF。启动、执行和收尾维护同一份文件；事实与证据先更新项目执行权威，再同步本报告。删除不适用项，不为套模板增加工作。
+
+
+\reviewsection{一、任务定义与交付}
+\reviewsubsection{1.1 当前结论与启动条件}
+状态：【沿用项目既有状态】；本次请求：【填写】；当前结论：【已完成什么、仍缺什么】。
+
+
+责任人：【真实负责人】；Agent职责：【实施 /\allowbreak{} 协助 /\allowbreak{} 复核】；独立复核人：【仅任务要求时填写】。
+
+
+上游输入与版本：【文件、版本、接收日期】；领取快照或批准条件：【按项目要求填写】；当前任务在主线中的作用：【填写】。
+
+
+\reviewsubsection{1.2 目标、验收与执行计划}
+目标与范围：【问题、预期行为、交付范围及明确排除项】。
+
+
+验收项：【编号、可观察结果、对应证据与验收人】。启动前明确标准，收尾时对同一项回填实际结果。
+
+
+执行步骤：【按顺序填写动作、产出与必要检查】；实际工具与版本：【填写】；预计工作量：【填写】。
+
+
+必需技能与学习资料：【填写已核实的直达链接；需要国内资料时优先国内来源】。
+
+
+\reviewsubsection{1.3 实际交付}
+实际交付：【文件位置、版本、用途及可复用对象】；未交付项：【如有则填写】。
+
+
+按适用领域补充关键内容：科研填写假设与最小证据；开发填写行为与接口；建模填写基线与验证；投资研究填写假设、基准及实质风险。
+
+
+\reviewsection{二、执行与验证}
+\reviewsubsection{2.1 执行过程与关键决定}
+实际执行：【已完成的步骤、采用方案及必要取舍】。
+
+
+与计划的差异：【实际变化、原因及影响】。
+
+
+\reviewsubsection{2.2 验证与结果}
+逐项验收：【验收编号、实际结果、证据路径、执行日期及执行者】。
+
+
+软件检查、工程运行、独立复核、真人签收、研究活动和发布结果分别按事实记录；未执行的项目不得写为通过。
+
+
+证据截图：【删除本占位段后使用下方插图示例，图注写明来源、日期与能证明的结果】。
+
+
+\reviewsubsection{2.3 偏离与修复闭环}
+已观测问题：【具体问题、影响、修复文件及复验结果】；无问题则简写无。
+
+
+反向检查：【是否偏离任务目标或上游契约；只记录任务成功所必需的核对】。
+
+
+\reviewsubsection{2.4 目录与文件整理}
+修改权威：【项目真实执行路径】；交付文件：【填写】；临时文件处置：【删除或本地归档】。
+
+
+旧版本处置：【明确替代、删除或历史保留】；历史签署及来源原件按项目要求保留，不扩大原签收范围。
+
+
+\reviewsection{三、审阅与交接}
+\reviewsubsection{3.1 上下游交接}
+上游消费：【已接收内容与版本】；下游交付：【接收任务、制品、版本及使用条件】。
+
+
+下游接收确认：【接收人、日期、结果；未确认则明确写待确认】。
+
+
+\reviewsubsection{3.2 审阅与责任签收}
+实施自查：【执行者、日期、结果】；独立复核：【按任务要求填写对象、方法及结果】。
+
+
+真实负责人或审核人签收：【姓名、日期、签收对象与范围；没有实际签收则写未签收】。
+
+
+历史签收：【如有，单独注明原版本、日期与范围；不得当成本次新签收】。
+
+
+\reviewsubsection{3.3 收尾与下一包}
+完成情况：【按原验收项给出已完成、未完成及证据】；实质剩余问题：【如有则填写】。
+
+
+下一步：【下一任务、接收条件及真实负责人】；发布或移交状态：【按实际填写】。
+
+
+\reviewsubsection{3.4 审阅来源}
+事实源、合同、执行记录与证据：【填写真实文件或链接】。
+
+
+本模板不预填项目结论、工具版本、签名或验证结果。正文与图注应能区分实测结果、候选方案及历史记录。
+
+
+% 插图示例：取消下一行的百分号并替换真实路径与图注；文件路径使用正斜杠。
+% \begin{center}\includegraphics[width=0.85\linewidth]{证据图片.png}\par 证据图注：来源、日期、证明范围。\end{center}
+\end{document}

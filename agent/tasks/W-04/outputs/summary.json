@@ -1,8 +1,8 @@
 {
   "task_id": "W-04",
-  "title": "W04 成果归档与团队移交审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "W-04仍WAIT_DEP，未领取未签收。已将旧成果/公开方案实际归档，明确八项交付、真实部署与公开决定和新成员演练；最终制品、权属材料及接收证据仍缺。",
+  "title": "W-04 科研产品实践的真实移交 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "W-04注册状态WAIT_DEP仅保留原范围。当前任务更新为科研产品实践的真实移交；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未签收",
     "date": "无",
@@ -13,75 +13,82 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "固定任务5人日，依赖W-03|Z-01|U12-12，负责人和第二人未实名。没有实际最终移交包、新成员演练、部署选择或真实接收者。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1三个软件及媒体与论文采用的范围/配置/构建一致；AC2公开遵守W-03决定和真实许可；AC3新成员按说明实际干净重建并运行候选。外部录用或授权不作为可保证结果。",
-        "四段为真实输入与接收人对齐、完整八对象整理、新成员演练及遗漏修复、精确对象复核后批准渠道移交。U12-12决定部署原生/抽象/研究原型，不预定原生获胜。"
+        "AC1 同一设计支撑展示与论文，原生适应不得动画冒充",
+        "AC2 设备/维护/准备成本与实际价值证据随成品交接",
+        "AC3 标明设计、工程、研究和公开状态，不夸大受益人数"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "TASK及五目录、九项真实来源、当前移交说明与机器状态、八项待交付索引、验证入口及消费者差异。旧公开顺序原文实际移入archive，原位置提供当前入口。",
-        "手册、成果、AGENTS和README同步。八项实际文件、字节哈希及接收人均空，不把索引生成视为成品存在；无实际软件打包、录像、权属办理或对外发布。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "科研产品实践的真实移交修订交接",
+        "成果清单",
+        "真实使用价值及成本"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "Unity完整目录、Python运行环境与锁、TD匹配工程各有真实版本和启动方式；三方不同提交可组成同一发布组合，但必须实际接口对应，完整体验不依赖TD。",
-        "旧800秒合成核心预演和审查分辨率不冒充完整新旅程、真实交互状态估计或LIVE_E2E。海报与答辩用同版锁定数字和主张，权属/专利材料由真人审阅，不填造申请或授权。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：科研产品实践的真实移交"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "15专项通过，核对当前注册/空角色、八对象空证据及实际来源、真实演练/部署/公开仍缺、预演不扩大、原方案字节身份和有效当前导航；跨W-02/W-03交接复测同时通过。",
-        "根635项回归、协议、治理、71项注册及5个分发包/61快照通过，命令与原始输出见verification.json。本轮没有运行Unity/TD、真实分析复现、新成员演练或独立Agent验收。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "旧公开顺序未区分已批准事实与历史项目方案，已原文归档并改为消费W-03和U12-12实际决定；现行预演、媒体和完整产品范围分开。",
-        "现有项目简报、素材与签收原件不是最终发布包，未交付项继续明确；不以成品整理倒推部署决定或以已有Git媒体证明公开许可。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：成果清单；真实使用价值及成本；接收与公开决定"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "TASK及inputs、execution、evidence、outputs、archive固定归属。旧根业务方案实际迁入Agent，当前位置保留消费者；代码/媒体原件不重复复制，受限数据和凭据不进入公开包。",
-        "先修Agent交接和范围，再生成单包及串联Word。归档版本、当前对象和受限保管渠道分别注明；保留/删除依真实批准，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "W-03交精确稿版与公开/受限决定，Z-01交匹配候选、锁及许可，U12-12交基于A-06实际结果的部署选择。输入仍缺，不能完成最终交付或默认选获胜产品。",
-        "接收者实际重建/运行，区分合成、获准真实分析、设备和画面各自范围，留下命令/结果/缺口与维护责任。独立复现已有真实日志可引用，但不能代替新成员实际演练；核心不要求未开展阶段三假DONE。"
+        "原依赖：W-03、Z-01、U12-12；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：成果清单；真实使用价值及成本；接收与公开决定"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "交付负责人、接收人、维护者、权属/数据责任人和真实第二人待实名。无新签署、无独立接收，不把作者Agent自查填成团队移交PASS。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "实际注册、W-03/Z-01/V-04/W-02/G-05/A-06交接、原成果公开方案及当前验证。未新增外部权属检索或法律判断，没有真实人员接收和发布回执。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -103,6 +110,11 @@
       "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
       "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
       "source": "agent/evidence/root-migration-check.json"
+    },
+    {
+      "id": "W-04-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "科研产品实践的真实移交；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -126,6 +138,47 @@
     {
       "label": "消费者与剩余缺口",
       "path": "agent/tasks/W-04/evidence/consumer-impact.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/W-04/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "W-04仍WAIT_DEP，未领取未签收。已将旧成果/公开方案实际归档，明确八项交付、真实部署与公开决定和新成员演练；最终制品、权属材料及接收证据仍缺。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

@@ -1,5 +1,5 @@
 {
-  "scope": "Physical completed moves and all current task/Word source links; not Unity/TD runtime or business acceptance",
+  "scope": "Physical completed moves and all current task/LaTeX/PDF source links; not Unity/TD runtime or business acceptance",
   "migrated_roots": [
     "work",
     "00-项目管理",
@@ -23,8 +23,8 @@
   ],
   "pending_roots": [],
   "task_packages_checked": 71,
-  "word_source_links_checked": 330,
-  "current_markdown_links_checked": 209,
+  "review_source_links_checked": 441,
+  "current_markdown_links_checked": 285,
   "root_entries_still_to_classify": [],
   "root_migration_complete": true
 }

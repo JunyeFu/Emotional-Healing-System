@@ -141,6 +141,13 @@
       "preserve_ready_dispatch": true,
       "impact_path": "agent/evidence/normalization-summary-impact.md",
       "reason": "Preserve received input while current normalization progress text is refreshed."
+    },
+    {
+      "task_id": "U12-03",
+      "old_project_path": "01-需求与设计/情绪天气方案/四种天气设计.md",
+      "new_project_path": "agent/tasks/U12-03/archive/inputs-20261008/四种天气设计.md",
+      "impact_path": "agent/tasks/U12-03/evidence/2026-10-08-implementation-impact.md",
+      "reason": "Preserve existing claimed snapshot; weather-design drift is recorded for the member implementation update, without transferring review acceptance."
     }
   ]
 }

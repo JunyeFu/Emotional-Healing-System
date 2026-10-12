@@ -20,15 +20,37 @@
       "exit_code": 0
     }
   ],
-  "regression": {"command": "py -3.14 -m pytest -q", "exit_code": 0, "passed": 635, "seconds": 50.75},
-  "governance": {"registry_entries": 71, "dispatch_packages": 5, "snapshots": 61, "exit_codes": [0, 0]},
+  "regression": {
+    "command": "py -3.14 -m pytest -q",
+    "exit_code": 0,
+    "passed": 635,
+    "seconds": 50.75
+  },
+  "governance": {
+    "registry_entries": 71,
+    "dispatch_packages": 5,
+    "snapshots": 61,
+    "exit_codes": [
+      0,
+      0
+    ]
+  },
   "resolved_initial_failures": [
-    {"evidence": "initial-hash-policy-failure.txt", "disposition": "Test mixed byte hash with frozen canonical text hash; corrected to existing renderer sha256, retest passed"},
-    {"evidence": "initial-manifest-key-failure.txt", "disposition": "Test used files instead of actual source_files; corrected and retested"}
+    {
+      "evidence": "initial-hash-policy-failure.txt",
+      "disposition": "Test mixed byte hash with frozen canonical text hash; corrected to existing renderer sha256, retest passed"
+    },
+    {
+      "evidence": "initial-manifest-key-failure.txt",
+      "disposition": "Test used files instead of actual source_files; corrected and retested"
+    }
   ],
   "scope": "existing P-02 interfaces, synthetic input identities, read-only core replay and archival",
   "offline_pipeline": "NOT_DELIVERED",
   "real_device_chain": "NOT_RUN",
   "formal_data_access": "NOT_RUN",
-  "human_acceptance": "NOT_RUN"
+  "human_acceptance": "NOT_RUN",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
 }

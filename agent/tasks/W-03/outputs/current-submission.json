@@ -1,7 +1,11 @@
 {
   "task_id": "W-03",
   "business_status": "WAIT_DEP",
-  "depends_on": ["W-02", "Z-01", "G-05"],
+  "depends_on": [
+    "W-02",
+    "Z-01",
+    "G-05"
+  ],
   "claimant": null,
   "reviewer": null,
   "actual_submission_package": "NOT_DELIVERED",
@@ -24,5 +28,8 @@
   "requires_unstarted_stage3_done": false,
   "g05_route_conflict": "OPEN_ACTIVITY_VS_WHOLE_TASK_ADMISSION",
   "normalization_is_business_completion": false,
-  "root_migration_complete": false
+  "root_migration_complete": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/W-03/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

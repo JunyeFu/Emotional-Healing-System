@@ -1,0 +1,28 @@
+{
+  "task_id": "F-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "Unity资产与新双条件环境基线",
+  "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+  "deliverables": [
+    "Unity资产与新双条件环境基线修订交接",
+    "Unity版本与资产清单",
+    "条件挂接清单"
+  ],
+  "acceptance_criteria": [
+    "AC1 保留溪边木屋与纯粒子资产，目标版本2022.3.62f3",
+    "AC2 区分资产可复用与A/B新条件真实完成，不复制旧签收",
+    "AC3 列出固定与闭环呈现隔离、测试面板关闭和场景回归要求"
+  ],
+  "evidence_required": [
+    "Unity版本与资产清单",
+    "条件挂接清单",
+    "工程验收缺口"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

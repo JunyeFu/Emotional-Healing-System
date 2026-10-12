@@ -1,0 +1,204 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec,xeCJK,geometry,needspace,tikz,xcolor,fancyhdr,etoolbox}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\setmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\setCJKmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\newfontfamily\titlelatin{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\geometry{margin=22mm}\pagestyle{fancy}\fancyhf{}\fancyfoot[C]{SRP 配对故事板 设计示意\quad\thepage}\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{7pt}\linespread{1.2}\emergencystretch=3em\raggedbottom
+\definecolor{guide}{HTML}{276E91}\definecolor{actual}{HTML}{A45518}
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}}
+\newcommand{\reviewsection}[1]{\par\Needspace{5\baselineskip}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+\newif\ifactualvalid
+\newif\ifaguideactive
+\newif\ifbguideactive
+\newcommand{\storyframe}[6]{%
+\actualvalidtrue\aguideactivetrue\bguideactivetrue
+\ifstrequal{#4}{当前提示撤下}{\bguideactivefalse}{}
+\ifstrequal{#4}{自然呼吸说明}{\bguideactivefalse}{}
+\ifstrequal{#4}{中性自然呼吸}{\bguideactivefalse}{}
+\ifstrequal{#4}{撤下练习要求}{\bguideactivefalse}{}
+\ifstrequal{#4}{维持中性}{\bguideactivefalse}{}
+\ifstrequal{#4}{转中性/不可辨说明}{\bguideactivefalse}{}
+\ifstrequal{#4}{撤下当前要求}{\bguideactivefalse}{}
+\ifstrequal{#4}{相同恢复说明}{\bguideactivefalse}{}
+\ifstrequal{#4}{恢复须可辨窗}{\bguideactivefalse}{}
+\ifstrequal{#4}{新完整周期或中性}{\bguideactivefalse}{}
+\ifstrequal{#4}{按预算结束}{\bguideactivefalse}{}
+\ifstrequal{#4}{不启动新周期}{\bguideactivefalse}{}
+\ifstrequal{#4}{收尾/停止}{\bguideactivefalse}{}
+\ifstrequal{#5}{信号暂不可用}{\actualvalidfalse}{}
+\ifstrequal{#5}{可辨事件或未知}{\actualvalidfalse}{}
+\ifstrequal{#5}{尚不足可用窗}{\actualvalidfalse}{}
+\ifstrequal{#5}{补吸未知}{\actualvalidfalse}{}
+\ifstrequal{#5}{结构仍不可用}{\actualvalidfalse}{}
+\ifstrequal{#5}{完整三步仍未知}{\actualvalidfalse}{}
+\ifstrequal{#5}{练习反馈暂停}{\actualvalidfalse}{}
+\ifstrequal{#5}{质量恢复待确认}{\actualvalidfalse}{}
+\ifstrequal{#5}{当前X隐藏}{\actualvalidfalse}{}
+\ifstrequal{#5}{记录结束状态}{\actualvalidfalse}{}
+\ifstrequal{#5}{未回归保留}{\actualvalidfalse}{}
+\ifstrequal{#2}{撤下当前要求}{\aguideactivefalse}{}
+\ifstrequal{#2}{按预算结束}{\aguideactivefalse}{}
+\ifstrequal{#2}{共同收尾/停止}{\aguideactivefalse}{}
+\ifstrequal{#2}{不启动新周期}{\aguideactivefalse}{}
+\par\textbf{#1}\par\vspace{2pt}
+\begin{tikzpicture}[font=\small]
+\draw[fill=gray!4,draw=gray!60] (0,0) rectangle (7.7,1.55);
+\draw[fill=gray!4,draw=gray!60] (8.1,0) rectangle (15.8,1.55);
+\draw[gray!35] (0.2,.25)--(1.2,.9)--(2.0,.35)--(2.5,.65)--(3.0,.25);
+\draw[gray!35] (8.3,.25)--(9.3,.9)--(10.1,.35)--(10.6,.65)--(11.1,.25);
+\ifaguideactive
+\draw[guide,line width=1.4pt] (1.15,.91) circle (.34);
+\node[guide,align=center,font=\scriptsize] at (1.15,.91) {固定\\圈};
+\else
+\draw[gray,dashed] (1.15,.91) circle (.34);
+\node[gray,font=\scriptsize] at (1.15,.91) {撤下};
+\fi
+\node[align=left,anchor=west,text width=5.7cm] at (1.85,.85) {A\quad #2\\#3};
+\ifbguideactive
+\draw[guide,line width=1.4pt,->] (8.5,1.15) to[bend left=15] (10.1,1.15);
+\node[guide,font=\scriptsize] at (9.3,1.35) {场景引导G};
+\else
+\draw[guide,dashed] (8.5,1.02) rectangle (10.1,1.16);
+\node[guide,font=\scriptsize] at (9.3,1.35) {自然/中性说明};
+\fi
+\ifactualvalid
+\draw[actual,line width=1.1pt] (8.5,.65) to[bend right=18] (9.2,.65) to[bend left=18] (10.1,.65);
+\node[actual,font=\scriptsize] at (9.3,.4) {独立响应X};
+\else
+\draw[gray,dashed] (8.5,.62) rectangle (10.1,.8);
+\node[gray,font=\scriptsize] at (9.3,.4) {无当前X反馈};
+\fi
+\node[align=left,anchor=west,text width=5.1cm] at (10.5,.85) {B\quad #4\\实际：#5\\#6};
+\end{tikzpicture}\par\vspace{4pt}}
+\begin{document}
+\reviewtitle{Storm与Fade配对故事板}
+ODES-20261008；固定开环A与数据驱动原生受限适应B。以下12例是操作设计的配对状态图，不是Unity运行截图、传感器录像或真实效果证据。
+
+\reviewsection{一、图例与使用方法}
+每例用三个共同阶段并排呈现A/B。蓝色标实际下发G，棕色标可用X响应；灰色占位表示无当前实际反馈，具体是不可用、暂停或结束须读旁边文字，不能混称信号故障。颜色仅辅助，文字、位置和运动身份必须可区分。符号不编码真实振幅、秒数或具体美术参数。A栏没有Actual层；设备只在研究记录中观测X，不能让A参与者看到个人反馈。
+
+Storm画面来源为溪边木屋：A圈居中略偏上，B中景风门/雨幕引导与近景叶/风纹实际响应分开；共同闪电、雨滴波纹不表示表现。Fade来源为既有河湾底图：A固定圈，B主潮/补潮/长回流为G，独立近景流纹为X。共同全屏褪色/复色只表示模块时间，B累计只改变局部远岸纹理。
+
+\reviewsubsection{1.1 配对原则}
+共同I、初始画面、预算与基础音轨；有意不同的是固定UI对比原生数据闭环。三帧不是要求两组产生相同轨迹。人工暂停与结束遵循共同程序，质量故障对A仅影响测量，对B会中断个体化。目标实际不一致时不能用目标替实际。
+
+\reviewsubsection{1.2 索引}
+Storm：ST01稳定、ST02错相等待、ST03偏慢与回归、ST04停留中质量失效、ST05饱和与末尾。Fade：FD01正常三步、FD02漏补吸、FD03跨周期、FD04断流恢复、FD05暂停恢复、FD06回归失败、FD07补吸不可辨。规则编号见05控制规格；计分边界见07实验候选。
+
+\newpage\reviewsection{二、Storm普通步骤}
+\reviewsubsection{2.1 ST01 稳定跟随}
+前提：X可用且稳定，无偏移。共同I沿工程候选吸—停—呼—停；R09/R10保持I。无需为了证明B自适应而不断改变提示。
+\storyframe{阶段1：进入吸气}{固定吸气}{场景按预定时间变化}{风门示吸气}{可辨吸气}{模式：理想跟随}
+\storyframe{阶段2：转入呼气}{固定呼气}{无个人成功标记}{风门示呼气}{可辨呼气}{实际叶/风纹独立响应}
+\storyframe{阶段3：完整周期结束}{开始下个预设周期}{本人输入不改变画面}{保持共同I}{完整结构可辨}{符合冻结规则才更新局部累计}
+\textbf{记录与计分：}G两组均等于I；X由独立波形标注。是否达I、是否跟G分别计算。B累计是练习响应，不等于情绪改善。
+
+\newpage\reviewsubsection{2.2 ST02 相位落后，时长仍相容}
+前提：被试慢半步，但实际完整步骤持续时间仍与当前G相容；不能将恒定错相误当速率越来越慢。R08只在G完整周期边界尝试有界自然缓冲。
+\storyframe{阶段1：目标已呼，实际仍停留}{固定呼气}{预设环境继续}{风门示呼气}{实际仍处前一步}{不在当前停留中追加等待}
+\storyframe{阶段2：引导周期结束}{下一预设吸气}{时序不读取X}{自然呼吸说明}{可靠自然呼吸}{缓冲占T，无成功累计}
+\storyframe{阶段3：对齐条件满足或耗尽}{继续预设周期}{无Actual}{新完整周期或中性}{可辨事件或未知}{未满足条件则不继续等待}
+\textbf{记录与计分：}记录缓冲起止、相位条件证据和呈现时点。共同I按实际完整周期结构/时长评价，不能因整体移相永久记错；缓冲成本单报。不能增加模块时间。
+
+\newpage\reviewsubsection{2.3 ST03 速率确实偏慢，逐步回归}
+前提：Q良好，历史窗确认实际吸/呼持续偏慢，而非单次抖动。R07在下一完整周期放慢吸/呼；停留不延长，尺度与变化均有上限。
+\storyframe{阶段1：连续可辨偏慢}{继续共同I}{正常预设背景}{保持已下发周期}{吸/呼偏慢}{先确认状态，不修改当前步骤}
+\storyframe{阶段2：合法周期边界}{下个预设周期}{节奏仍为I}{下个周期有界放慢}{实际可辨}{原生运动跟随有效G}
+\storyframe{阶段3：稳定窗满足}{继续共同I}{个人数据仍隔离}{下一周期有限回归}{稳定跟随G}{回归不快于I，不保证成功}
+\textbf{记录与计分：}保留放慢/回归轨迹、最大尺度和偏移占时。X跟G提高但X相对I偏差增加时，报告目标放宽代价；不能由G跟随称理想训练更有效。
+
+\newpage\reviewsubsection{2.4 ST04 停留中质量失效}
+前提：当前G处于停留，运动干扰使Q不可用。R04是即时撤下要求的中断，不是将停留延长至信号恢复。
+\storyframe{阶段1：发生干扰}{固定停留提示}{A没有Actual反馈}{当前提示撤下}{信号暂不可用}{允许自然呼吸，记录G中断}
+\storyframe{阶段2：持续不可用}{按预设转入呼气}{测量未知另记}{中性自然呼吸}{当前X隐藏}{不增长累计，不判成功/失败}
+\storyframe{阶段3：可用窗满足}{继续预设方案}{人工处理遵共同程序}{合法边界新周期}{仅新事件可用}{不跳接/补播丢失实际}
+\textbf{记录与计分：}A故障仅影响观测；B降级属于B整包，不排除参与者。故障区间记未知，不能归行为失败。用户明确不适时两组都按R01立即停止。
+
+\newpage\reviewsubsection{2.5 ST05 局部累计饱和且模块将结束}
+前提：局部纹理反馈达到呈现上限，剩余预算不足下个完整周期。饱和只影响视觉增量；R02控制收尾，不为“再变好”加时。
+\storyframe{阶段1：反馈达到饱和}{预设环境变化}{不代表个人达标}{引导照常}{X正常响应}{累计无进一步视觉增量}
+\storyframe{阶段2：余时不足完整周期}{不启动新周期}{预定收尾自然呼吸}{不启动新周期}{保留已发生事件}{不赶做、不更改容差}
+\storyframe{阶段3：共同预算到达}{按预算结束}{相同基础收尾}{按预算结束}{记录结束状态}{未回归/少完成如实保留}
+\textbf{记录与计分：}保存原始事件，饱和不压掉记录。末尾已知未完成和未知分别统计；两组使用共同T，不按B完成次数重新定义成功分母。
+
+\newpage\reviewsection{三、Fade复杂步骤}
+\reviewsubsection{3.1 FD01 主吸、补吸、长呼可辨}
+前提：三步均可辨，G为共同候选2.5--1.5--6，未适应。Fade补吸从当前状态继续，不清零重吸；全屏复色只读时间。
+\storyframe{阶段1：主吸}{圈示主吸}{共同时间褪色/复色}{主潮聚拢}{实际主吸流纹}{目标与实际空间分离}
+\storyframe{阶段2：补吸}{圈从当前大小继续}{不清零}{短补潮汇入}{真实补吸可辨}{才出现第二股实际补流}
+\storyframe{阶段3：长呼}{圈示长呼}{时间层独立继续}{连续长回流}{真实呼气可辨}{可靠完整周期才累计}
+\textbf{记录与计分：}主吸/补吸/呼气身份独立，不能仅按总周期时长判三步成功。目标潮与实际补流不是同一动画实例。
+
+\newpage\reviewsubsection{3.2 FD02 漏补吸而直接呼气}
+前提：可靠X显示主吸后直接呼气，缺补吸已可确认。保持已下发G事实；不插入追补吸气，不用目标第二潮峰补实际。
+\storyframe{阶段1：计划转补吸}{圈示预设补吸}{共同教学：不必追补}{计划补潮}{X已进入呼气}{当次说明：不必追补}
+\storyframe{阶段2：计划转长呼}{圈按时示长呼}{没有个人错误标记}{长回流按有效G}{实际持续呼气}{没有第二股实际补流}
+\storyframe{阶段3：当前周期结束}{下一预设周期}{不因X改节奏}{下周期再按规则决定}{保留漏步骤事实}{不把当前周期改写为三步完整}
+\textbf{记录与计分：}缺补吸是已知结构缺口，非技术未知；不计完整I达成，也不自动计完整G成功。下一周期是否放慢仍需可辨窗，不凭一次缺口无界调整。
+
+\newpage\reviewsubsection{3.3 FD03 实际周期跨过引导周期}
+前提：G已开始下一周期，X仍在上一实际呼气。当前周期不按X改步骤；跨周期关系保留，不将晚事件复制进两个周期。
+\storyframe{阶段1：G开始下个主吸}{圈按预设吸气}{本人数据不改变输出}{主潮示新周期}{上一实际呼气}{当前不重置真实流纹}
+\storyframe{阶段2：收到晚到/跨周期事件}{圈继续预设}{设备事实另记}{保持有效G}{按采集时间归属}{消息到达不等于事件发生}
+\storyframe{阶段3：下一合法决策边界}{继续预设I}{无数据驱动等待}{按速率或错相规则}{完整周期独立识别}{不能仅因错相盲目放慢}
+\textbf{记录与计分：}X周期可与G无一一对应关系；按原始时间和独立起止标注。I允许完整周期起点平移，但不扭曲时长/次序；G跟随与I达成分别报告。
+
+\newpage\reviewsubsection{3.4 FD04 断流、恢复及禁止补播}
+前提：补吸阶段连接/数据流丢失，之后恢复。A正常开环；B R04/R05中性等待质量恢复，不凭第一帧宣告可用。
+\storyframe{阶段1：断流}{圈继续预设补吸}{时间层照常}{撤下练习要求}{信号暂不可用}{补流撤下，累计不增长}
+\storyframe{阶段2：连接恢复首帧}{圈继续固定}{不读恢复帧改输出}{维持中性}{尚不足可用窗}{连通不等于步骤可辨}
+\storyframe{阶段3：新可用窗与边界}{预设新周期}{历史缺失仍未知}{新的完整主吸}{只显示新真实事件}{不补播断流时补吸}
+\textbf{记录与计分：}丢失段不填成功，不填漏补吸错误；反应延迟和恢复窗分别记录。B降级者保留B分配；恢复不擦掉故障史。
+
+\newpage\reviewsubsection{3.5 FD05 人工暂停与恢复}
+前提：任一条件主动暂停。R03共同程序即时撤下练习要求；“冻结画面”不能被理解为要保持最后一步。
+\storyframe{阶段1：暂停请求}{撤下当前要求}{允许自然呼吸}{撤下当前要求}{练习反馈暂停}{当前周期标中断}
+\storyframe{阶段2：用户选择恢复}{共同固定恢复说明}{不读X决定A恢复时间}{相同恢复说明}{质量恢复待确认}{过渡占T，暂停单报墙钟}
+\storyframe{阶段3：过渡结束}{新完整预设周期}{不强制补齐旧步骤}{新周期或中性}{只用新可靠事件}{B仍受Q与边界限制}
+\textbf{记录与计分：}暂停、缓冲和中性是不同模式。暂停不计T，恢复过渡计T；中断保留，不将它计为完整结构，也不把中断叫数据丢失。
+
+\newpage\reviewsubsection{3.6 FD06 已到调整界限，仍不能回归}
+前提：B多次有界放慢后，稳定/回归条件仍不成立或缓冲预算耗尽。不能把I继续移走，也不能要求用户无限尝试。
+\storyframe{阶段1：达到放慢上限}{圈保持预设I}{共同允许自然呼吸}{保持当前有界周期}{实际仍可辨偏慢}{记上限触发，不扩大尺度}
+\storyframe{阶段2：周期边界仍未稳定}{继续固定或主动停止}{按共同用户选择}{中性自然呼吸}{保留可靠事实}{不继续个人成功累计}
+\storyframe{阶段3：预算结束或用户停止}{共同收尾/停止}{不强求完成量}{收尾/停止}{未回归保留}{不能排除来制造成功样本}
+\textbf{记录与计分：}记录未回归、漂移积分、缓冲占时及实际练习量。G跟随高不能替代I达成；B更舒适而I更差可以成为真实权衡结果。
+
+\newpage\reviewsubsection{3.7 FD07 波形有效，但补吸无法辨别}
+前提：连接正常、波形存在，两个吸气事件是否独立仍无法可靠区分。质量含步骤可辨性，不能把连通当完整三步可用。
+\storyframe{阶段1：疑似补吸波形}{圈示预设补吸}{无Actual读取}{转中性/不可辨说明}{补吸未知}{不画“已确认第二补流”}
+\storyframe{阶段2：呼气可辨}{圈按预设长呼}{研究记录可用部分}{中性自然呼吸}{结构仍不可用}{可辨呼气仅保留研究记录}
+\storyframe{阶段3：下一周期/范围审查}{预设方案按预算}{测量缺口报告}{恢复须可辨窗}{完整三步仍未知}{技术门未过需缩小正式范围}
+\textbf{记录与计分：}已知呼气与未知补吸同时存在；技术覆盖和结构可判定覆盖分报。不把未知叫缺补吸错误。长期不可辨时不能声称已完成Fade三步闭环。
+
+\newpage\reviewsection{四、从示意到真实证据}
+\reviewsubsection{4.1 逐例检查方法}
+先由评审只看规则与图例解释三帧，再由不参与设计者重建每例G、X与模式事实，记录理解错误并修订；不能让设计者自行读懂就称材料有效。实现后要用同一例的真实输入、有效下发、呈现时间及录像核对。当前示意图不进入真实运行证据栏。
+
+\reviewsubsection{4.2 对三份设计的共同约束}
+ST02/ST03检验错相与速率分开；ST04/FD04/FD07检验未知不能补成功；FD02/FD03检验实际身份不能被G覆盖；ST05/FD06检验共同预算及回归失败；FD05检验共同暂停。每例都允许原生更差、无情绪差异或真值不可辨的结果，不能用图示预告原生获胜。
+
+故事板由V-02/V-03/V-04、U-02/U-03/U-07及U12-02/U12-03消费，实际工程、测量验证、正式研究与复核分别由对应任务承接。没有新业务DONE或真人签收。
+
+% NORMALIZATION-20261008
+\newpage\reviewsection{五、四天气规则覆盖与核验记录}
+\reviewsubsection{5.1 Storm}
+ST01—ST05；普通停留、错相、偏慢、质量中断、饱和/\allowbreak{}收尾。A固定圈/\allowbreak{}预设变化；B仅在已可辨输入和合法边界改变G。结束、暂停、不适及质量撤下的优先级一致。
+
+\reviewsubsection{5.2 Fade}
+FD01—FD07；补吸缺失/\allowbreak{}不可辨、跨周期、恢复、暂停及回归失败。A固定圈/\allowbreak{}预设变化；B仅在已可辨输入和合法边界改变G。结束、暂停、不适及质量撤下的优先级一致。
+
+\reviewsubsection{5.3 Heat}
+普通吸/\allowbreak{}长呼使用ST01/\allowbreak{}ST02/\allowbreak{}ST03/\allowbreak{}ST04/\allowbreak{}ST05同一规则，删停留特有描述，不增加补吸；按4—6候选重新核对步骤时点。A固定圈/\allowbreak{}预设变化；B仅在已可辨输入和合法边界改变G。结束、暂停、不适及质量撤下的优先级一致。
+
+\reviewsubsection{5.4 Snow}
+普通等长吸呼使用ST01/\allowbreak{}ST02/\allowbreak{}ST03/\allowbreak{}ST04/\allowbreak{}ST05同一规则，不把静态载体当未知；按5—5候选核对状态可见性。A固定圈/\allowbreak{}预设变化；B仅在已可辨输入和合法边界改变G。结束、暂停、不适及质量撤下的优先级一致。
+
+每例真实核验记录：原始输入/\allowbreak{}时间、决策时可用窗、I/\allowbreak{}G/\allowbreak{}X身份、命中规则、实际呈现、剩余T、C/\allowbreak{}K/\allowbreak{}U及停止/\allowbreak{}恢复。独立标注者不得从图或G复制真实步骤。教学检查题使用设计示意，不能把它们称为自然练习在线理解测量。
+
+
+\end{document}

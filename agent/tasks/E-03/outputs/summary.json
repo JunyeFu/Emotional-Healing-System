@@ -1,8 +1,8 @@
 {
   "task_id": "E-03",
-  "title": "E03 Level C技术关闭与冻结交接审阅",
-  "review_date": "2026-09-29",
-  "conclusion": "E-03保持BLOCKED_EXTERNAL、未领取未签收。真实批次汇总、技术报告/配置、校准和研究冻结分开；补齐Level C活动矩阵的B-01采集范围，许可仍待回执，不推定已放行。",
+  "title": "E-03 新控制与测量技术关闭 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "E-03注册状态BLOCKED_EXTERNAL仅保留原范围。当前任务更新为新控制与测量技术关闭；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未签收",
     "date": "无",
@@ -13,75 +13,82 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "约5人日，依赖Q-03/E-02/B-01。实际工具、真人关闭和批次尚未交付，E-03没有真实报告、冻结配置或签名；空提纲不作48人预试证据。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "AC1全部真实批次QC与实际覆盖/退出有据可查；AC2技术门具备指标、单位、结构/分母、阈值来源和实测判断，缺失不判通过；AC3真实报告/配置/构建身份一致且由另一人审核。",
-        "五段为接收范围、原件人数、盲态汇总、技术关闭候选及下游签收；TASK明确真实责任角色和继承中文教程，当前待实名。"
+        "AC1 汇总真实校准、可辨性、模糊事件和失败路径",
+        "AC2 控制范围与计分容差各自论证，不能一起放宽",
+        "AC3 CAL、协议及真实批准分开，不以静态48单元关闭研究"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "TASK与五目录、18项来源、当前关闭说明和缺口JSON、未执行报告提纲及软件核查建立。修订步骤9两导航和手册通用步骤，区分Q-03工具、B-01执行、E-03关闭。",
-        "资格矩阵INSTITUTION_LEVEL_C由仅E-03补为B-01/E-03，原状态和空回执保留；记录U12-03/U12-06影响，不替换冻结manifest或输入声明。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "新控制与测量技术关闭修订交接",
+        "技术关闭表",
+        "参数依据"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "48/各24仍技术锚点，按分配平衡，实际完成和技术有效样本另报；退出不足由真实负责人裁定，不定向补人或删除失败批次。",
-        "S-02周期F1 0.85/边界MAE0.50秒工程AC保留；旧逐事件F1 0.90/0.80及其他门不自动冻结。指标层级与单位不能互换，未评估和明确NO_GO分别记录。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：新控制与测量技术关闭"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "130项专项通过，覆盖实际活动范围、冻结输入身份、空提纲、CAL依赖方向、当前指标边界、B-01/Q-03/G-05及既有存储合成；完整结果见verification.json。",
-        "历史协议兼容、注册71项、分发5包61快照与根回归635项通过；软件检查不证明真人、外部延迟、真实QC、配置冻结或机构批准。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "修复真实采集B-01未在Level C资格行显式列出的遗漏；只补待批准范围，不把文档修改声称为运行门已拦截。冻结输入保留，影响记录待任务负责人审阅。",
-        "明确技术关闭、CAL和研究冻结三份交付，防止反向等待；算法调参后同批表现不伪装独立验证。Actual不抄Target，未知null，软件回执不冒充外部显示。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：技术关闭表；参数依据；真实冻结待办"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "旧13/19已在历史材料，13标SUPERSEDED，19保留UNASSESSED及旧人数口径；旧步骤9原件由Q-03/archive和历史验证器消费，本包不复制原文或伪造归档。当前导航与报告提纲在Agent层。",
-        "受限原件及填表留获批仓库外，Word从执行事实生成；业务状态未变，根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "Q-03供盲态工具，E-02供真实修订关闭，B-01供全部实例/六类原件/QC，I/S供独立事件及外部时钟显示；许可按B-01/E-03实际活动范围，不凭材料存在放行。",
-        "E-03交盲态技术关闭和精确候选给A-03-CAL，CAL在REAL与E-03之后，U12-11/G-03再做研究冻结。最终N/界值不由本轮填写；主要情绪比较独立报告，可选阶段三不是核心论文前置。"
+        "原依赖：Q-03、E-02、B-01；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：技术关闭表；参数依据；真实冻结待办"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "关闭负责人、数据/工具/事件/标注及第三裁定、校准、研究冻结和另一人复核未实名。签收仅能绑定实际报告、配置与版本；当前全部真实结果/签名为空。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态BLOCKED_EXTERNAL，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "实际注册、资格矩阵与影响记录、当前Level C/批次、A-03里程碑、S-02指标、I-01与P-02合同及软件结果。本轮没有新外部搜索、真人活动、Unity/TD运行或新签署。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -103,6 +110,11 @@
       "status": "OPEN_REAL_EVIDENCE_AND_APPROVAL",
       "description": "真实全部批次、实名人员、盲态门定义/独立验证、技术配置及签署未完成",
       "source": "agent/tasks/E-03/outputs/current-closeout.json"
+    },
+    {
+      "id": "E-03-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "新控制与测量技术关闭；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -126,6 +138,47 @@
     {
       "label": "软件核查与回归",
       "path": "agent/tasks/E-03/evidence/verification.json"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/E-03/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "E-03保持BLOCKED_EXTERNAL、未领取未签收。真实批次汇总、技术报告/配置、校准和研究冻结分开；补齐Level C活动矩阵的B-01采集范围，许可仍待回执，不推定已放行。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

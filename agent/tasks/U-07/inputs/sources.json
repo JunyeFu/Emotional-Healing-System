@@ -14,6 +14,29 @@
     "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/PromptDisplay.cs",
     "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/WeatherController.cs",
     "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/R-01_四层表示方案/R-01_四层候选语法与完整表示方案_v0.9-candidate.md",
-    "agent/tasks/U-07/archive/06_抽象双环对照规格.md"
-  ]
+    "agent/tasks/U-07/archive/06_抽象双环对照规格.md",
+    "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md",
+    "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+    "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json",
+    "agent/tasks/U-07/outputs/current-implementation-evidence.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/design/design-foundation-20261008/05-control-spec.tex",
+    "agent/design/design-foundation-20261008/05-control-spec.pdf",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+    "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+    "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+    "agent/design/design-foundation-20261008/operational-design.json"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008"
 }

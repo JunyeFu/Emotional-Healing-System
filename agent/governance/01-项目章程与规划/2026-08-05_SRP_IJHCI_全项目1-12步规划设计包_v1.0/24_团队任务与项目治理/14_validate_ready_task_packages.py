@@ -45,7 +45,10 @@ def main() -> int:
         "--require-index", action="store_true",
         help="also require every generated package file to be present in the Git index",
     )
+    parser.add_argument('--local', action='store_true', help='Verify workspace contents before staging; does not authorize publication')
     args = parser.parse_args()
+    if args.local and args.require_index:
+        parser.error('--local and --require-index cannot be combined')
     errors: list[str] = []
     with REGISTRY.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
@@ -92,7 +95,7 @@ def main() -> int:
         ):
             if marker not in task_text:
                 errors.append(f"{task_id}: TASK.md missing {marker!r}")
-        for criterion in row["acceptance_criteria"].split("；"):
+        for criterion in (row.get("current_acceptance_criteria") or row["acceptance_criteria"]).split("；"):
             if criterion.strip() and criterion.strip() not in task_text:
                 errors.append(f"{task_id}: missing acceptance criterion {criterion!r}")
 
@@ -134,9 +137,24 @@ def main() -> int:
                 if candidate.returncode != 0:
                     errors.append(f"{task_id}: candidate commit does not exist")
 
+        if manifest.get('design_baseline_id') != row.get('design_baseline_id'):
+            errors.append(f'{task_id}: design baseline mismatch')
+        updates = manifest.get('design_updates', [])
+        if [item['source_path'] for item in updates] != mapped[task_id].get('design_update_files', []):
+            errors.append(f'{task_id}: design update mapping mismatch')
+        for item in updates:
+            source = resolve_project_path(PROJECT_ROOT, item['source_path'])
+            snapshot = package_dir / item['package_path']
+            if not source.is_file() or not snapshot.is_file():
+                errors.append(f'{task_id}: missing design update {item["source_path"]}')
+            elif sha256(source) != item['sha256'] or sha256(snapshot) != item['sha256']:
+                errors.append(f'{task_id}: design update drift {item["source_path"]}')
+            if item['source_path'] not in files_text or item['package_path'] not in files_text:
+                errors.append(f'{task_id}: FILES omits design update')
         expected_package_files = {
             "TASK.md", "FILES.md", "package_manifest.json",
             *(item["package_path"] for item in manifest.get("source_files", [])),
+            *(item["package_path"] for item in updates),
         }
         physical_package_files = {
             path.relative_to(package_dir).as_posix()
@@ -178,7 +196,7 @@ def main() -> int:
                 capture_output=True,
                 check=False,
             )
-            if tracked.returncode != 0:
+            if tracked.returncode != 0 and not args.local:
                 errors.append(f"{task_id}: source is not tracked {item['source_path']}")
             if package_dir not in snapshot.parents or not snapshot.is_file():
                 errors.append(f"{task_id}: invalid snapshot {item['package_path']}")
@@ -211,7 +229,7 @@ def main() -> int:
             print(f"ERROR: {error}")
         return 1
     print(
-        f"PASS: dispatch packages={len(package_rows)}; snapshots={total_snapshots}; "
+        f"{'PASS_LOCAL (publication not checked)' if args.local else 'PASS'}: dispatch packages={len(package_rows)}; snapshots={total_snapshots}; "
         f"tasks={','.join(sorted(package_rows))}"
     )
     return 0

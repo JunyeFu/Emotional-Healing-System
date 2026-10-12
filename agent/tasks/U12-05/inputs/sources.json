@@ -13,7 +13,17 @@
     "agent/tasks/Q-01/outputs/current-level-a.md",
     "agent/tasks/Q-02/outputs/current-level-b.md",
     "agent/tasks/U12-03/outputs/current-training.md",
-    "agent/tasks/U12-05/archive/candidate/inputs/task_input.json"
+    "agent/tasks/U12-05/archive/candidate/inputs/task_input.json",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
   ],
   "historical_input_snapshot_id": "bfbb580ce2c6d0685698eeb98a23fb6668a1ef20cc8f2389720d814fbcc7190d",
   "archived_bytes": {
@@ -21,5 +31,6 @@
     "FILES.md": "100AD31A68BC6E055CB590184063AA102FE84FE185A9FF9089EBB6200520E520",
     "package_manifest.json": "7D3ABCF6CEF4DEF7770EA1E0B6CB095761297904E56FBEC87A25A52466C7B3AC",
     "inputs/task_input.json": "BFBB580CE2C6D0685698EEB98A23FB6668A1EF20CC8F2389720D814FBCC7190D"
-  }
+  },
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

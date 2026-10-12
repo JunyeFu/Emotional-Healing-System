@@ -1,0 +1,30 @@
+{
+  "task_id": "V-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "Storm/Fade优先的场景设计",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "Storm/Fade优先的场景设计修订交接",
+    "两切片分镜",
+    "场景状态约束"
+  ],
+  "acceptance_criteria": [
+    "AC1 每天气仅一个核心机制，四天气为应用实例而非四独立效应",
+    "AC2 Storm普通多步与Fade漏补吸覆盖新适应和失效路径",
+    "AC3 固定机位、基础素材同源，场景状态不等于被试改善"
+  ],
+  "evidence_required": [
+    "两切片分镜",
+    "场景状态约束",
+    "四天气必要性审查"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "V-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

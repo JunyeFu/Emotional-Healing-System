@@ -1,0 +1,134 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{Microsoft YaHei}[BoldFont=Microsoft YaHei Bold]
+\setCJKmainfont{Microsoft YaHei}[BoldFont=Microsoft YaHei Bold]
+\newfontfamily\titlelatin{SimHei}[AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{SimHei}[AutoFakeBold=2]
+\usepackage[margin=22mm]{geometry}
+\usepackage{graphicx}
+\usepackage{needspace}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyfoot[C]{SRP 任务包审阅\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\linespread{1.28}
+\emergencystretch=3em
+\raggedbottom
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}\vspace{8pt}}
+\newcommand{\reviewsection}[1]{\par\Needspace{5\baselineskip}\vspace{10pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\vspace{4pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+\begin{document}
+
+\reviewtitle{F-\allowbreak{}02 构念与测量设计更新审阅}
+审阅日期 2026-\allowbreak{}10-\allowbreak{}09    任务 F-\allowbreak{}02
+
+
+\reviewsection{一、任务定义与交付}
+\reviewsubsection{1.1 当前结论}
+F-\allowbreak{}02原注册状态DONE及历史签收保留。2026-\allowbreak{}10-\allowbreak{}09用户批准本轮设计通过；当前设计与材料更新已交付。中文独立复核、适用性验证和正式测量冻结仍待执行，不以历史DONE或设计批准代替真实研究准入。
+
+
+原DONE、本轮设计批准、真实验证分别记录；当前方案为固定A与受限适应B整包比较，I/\allowbreak{}G/\allowbreak{}X分离。
+
+
+\reviewsubsection{1.2 目标与完成标准}
+AC1 PANAS-\allowbreak{}NA前测校正后测为主要候选并核查版本、时间指令和地板
+
+
+AC2 理解题按功能适配，A不参加不存在的Actual读取排名
+
+
+AC3 I达成、G跟随、努力及不适独立定义，不用SCCI代证收益
+
+
+\reviewsubsection{1.3 实际交付}
+英文PANAS-\allowbreak{}X原手册已取得（版权1994、updated 8/\allowbreak{}99，DOI 10.17077/\allowbreak{}48vt-\allowbreak{}m4t2）；PhenX180501明确允许非商业复制使用。
+
+
+采用一般NA10/\allowbreak{}PA10，共20题；此刻时间窗口，NA前测校正后测为主要候选，PA为次要候选。各分量1至5求和10至50，无反向，不合成20题总分；任一分量缺题则该分量缺失为项目工作规则。
+
+
+中文SRP-\allowbreak{}PANASX-\allowbreak{}GENERAL-\allowbreak{}ZH-\allowbreak{}DRAFT-\allowbreak{}01及指导语、锚点、计分键已交付；允许内部审阅，不是官方或已验证译本。原不自译要求已由用户授权工作初译取代。
+
+
+07第10、11节已提供逐题复核、独立回译输入要求、主持稿、单人记录及轮次决定表。两轮各A3/\allowbreak{}B3，累计12名不同认知学生；优先原8评审内安排2名合适语言审阅者。人选尚未落实。
+
+
+M01现为独立语言审阅、中文版本选定及适用性证据；M02为中文翻译/\allowbreak{}改编与公开范围核对。英文非商业复制许可不再列为待取得。20名技术前置不能独自证明新译本有效。
+
+
+\reviewsection{二、执行与验证}
+\reviewsubsection{2.1 执行过程与关键决定}
+理解题共同部分经等值核验后比较，A预设误读题与B目标/\allowbreak{}实际/\allowbreak{}不可用题分开解释。
+
+
+I达成、G跟随、控制成本、努力及舒适独立；SCCI仅操纵检查。
+
+
+主要候选分析单位为参与者；原分配纳入目标人群，后测NA以前测和顺序校正，缺失按07候选规格处理。真实X未知不由G插补。
+
+
+\reviewsubsection{2.2 验证与结果}
+英文原件题项与20题工作稿NA/\allowbreak{}PA映射已有静态核对；材料和生成结果检查仅证明文档一致。
+
+
+中文回译、认知访谈、地板分布及适用性验证未执行；正式参数与N未冻结。
+
+
+\reviewsubsection{2.3 偏离与修复闭环}
+已删除当前生成来源中的不自译旧规则，并落实中文工作稿的真实身份。
+
+
+构念测量蓝图和候选分析规格已交付；剩余的是具体中文材料复核与实证适用性，不再把整份设计材料列为尚未交付。
+
+
+\reviewsubsection{2.4 目录与文件整理}
+旧任务、总结及被替代交接保存在archive/\allowbreak{}pre-\allowbreak{}design-\allowbreak{}baseline-\allowbreak{}20261008；当前设计用LaTeX/\allowbreak{}PDF维护，不新增DOCX。
+
+
+\reviewsection{三、审阅与交接}
+\reviewsubsection{3.1 上下游交接}
+F-\allowbreak{}02负责构念与版本决定；Q-\allowbreak{}01承接语言审阅人选，Q-\allowbreak{}02承接认知访谈，U12-\allowbreak{}04核对评分及统计规格，G-\allowbreak{}05核对对应活动批准及使用范围；下一动作是落实审阅人员和中文摘录，尚不招募正式研究。
+
+
+原AC1至AC3保留为新范围完整验收条件，未勾选不表示设计稿未交付；真实部分须相应证据。设计通过已单独记录，不重复要求批准同一设计。
+
+
+07当前有效内容以.tex及编辑器预览为准；磁盘07 PDF未另行导出，不作为此次测量更新依据。F-\allowbreak{}02自己的证据PDF从本总结重新生成。
+
+
+\reviewsubsection{3.2 审阅与责任签收}
+用户于2026-\allowbreak{}10-\allowbreak{}09明确批准设计通过，适用于本轮设计方案和材料。历史候选审查原件及其签署边界保留，用户设计批准不冒充语言专家或真实第二人测量审阅。
+
+
+历史审核人 Codex独立AC审查    日期 2026-\allowbreak{}08-\allowbreak{}06
+
+
+历史结论为PASS\_\allowbreak{}FOR\_\allowbreak{}CANDIDATE\_\allowbreak{}PACKAGE，仅候选材料审查；原记录未登记固定审核提交，明确要求另行安排真实第二人签收。本轮不代签。
+
+
+\reviewsubsection{3.3 收尾与下一包}
+F-\allowbreak{}02本轮文档与设计更新完成；按上述责任分工承接前置复核，取得真实证据后再冻结中文测量。业务状态保持DONE，不重新领取旧任务。
+
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{3.4 审阅来源}
+当前来源为07源稿第3、7、10、11节、operational-\allowbreak{}design.json及来源补获记录；原英文手册仅作非商业研究材料保存。
+
+
+\begingroup\small\setlength{\tabcolsep}{4pt}\begin{tabular}{@{}p{0.48\linewidth}p{0.48\linewidth}@{}}
+\href{file:///D:/Agent/srp/agent/tasks/F-02/outputs/current-measurement.md}{打开 F-\allowbreak{}02 当前适用说明} & \href{file:///D:/Agent/srp/agent/governance/01-\%E9\%A1\%B9\%E7\%9B\%AE\%E7\%AB\%A0\%E7\%A8\%8B\%E4\%B8\%8E\%E8\%A7\%84\%E5\%88\%92/2026-08-05_SRP_IJHCI_\%E5\%85\%A8\%E9\%A1\%B9\%E7\%9B\%AE1-12\%E6\%AD\%A5\%E8\%A7\%84\%E5\%88\%92\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%8C\%85_v1.0/03_\%E6\%AD\%A5\%E9\%AA\%A402_\%E6\%9E\%84\%E5\%BF\%B5\%E6\%AF\%94\%E8\%BE\%83\%E6\%9D\%A1\%E4\%BB\%B6\%E4\%B8\%8E\%E6\%B5\%8B\%E9\%87\%8F/02_F-02_\%E9\%AA\%8C\%E6\%94\%B6\%E8\%AE\%B0\%E5\%BD\%95.md}{打开 F-\allowbreak{}02 历史候选审查记录}\\[4pt]
+\href{file:///D:/Agent/srp/agent/governance/01-\%E9\%A1\%B9\%E7\%9B\%AE\%E7\%AB\%A0\%E7\%A8\%8B\%E4\%B8\%8E\%E8\%A7\%84\%E5\%88\%92/2026-08-05_SRP_IJHCI_\%E5\%85\%A8\%E9\%A1\%B9\%E7\%9B\%AE1-12\%E6\%AD\%A5\%E8\%A7\%84\%E5\%88\%92\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%8C\%85_v1.0/00_\%E6\%80\%BB\%E6\%8E\%A7/protocol_authority_v1.2.json}{打开当前 v1.2 研究合同} & \href{file:///D:/Agent/srp/agent/design/\%E7\%A0\%94\%E7\%A9\%B6\%E4\%B8\%BB\%E6\%97\%A8\%E4\%B8\%8E\%E5\%AE\%9E\%E9\%AA\%8C\%E8\%AE\%BE\%E8\%AE\%A1\%E8\%AE\%BA\%E8\%AF\%81_\%E5\%BD\%93\%E5\%89\%8D.md}{当前实验设计与贡献论证}\\[4pt]
+\href{file:///D:/Agent/srp/agent/work/2026-10-08_\%E4\%BB\%BB\%E5\%8A\%A1\%E5\%AE\%8C\%E6\%88\%90\%E6\%97\%B6\%E5\%BA\%8F\%E4\%B8\%8E\%E7\%A0\%94\%E7\%A9\%B6\%E4\%B8\%BB\%E6\%97\%A8.md}{任务完成时序与签收范围} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/task-baseline.json}{当前设计基线 task-\allowbreak{}baseline.json}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/01-design.pdf}{当前设计基线 01-\allowbreak{}design.pdf} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/02-science.pdf}{当前设计基线 02-\allowbreak{}science.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/03-decisions.pdf}{当前设计基线 03-\allowbreak{}decisions.pdf} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/04-review-audit.pdf}{当前设计基线 04-\allowbreak{}review-\allowbreak{}audit.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/05-control-spec.tex}{操作设计 05-\allowbreak{}control-\allowbreak{}spec.tex} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/05-control-spec.pdf}{操作设计 05-\allowbreak{}control-\allowbreak{}spec.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/06-paired-storyboards.tex}{操作设计 06-\allowbreak{}paired-\allowbreak{}storyboards.tex} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/06-paired-storyboards.pdf}{操作设计 06-\allowbreak{}paired-\allowbreak{}storyboards.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/07-protocol-candidate.tex}{操作设计 07-\allowbreak{}protocol-\allowbreak{}candidate.tex} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/operational-design.json}{操作设计 operational-\allowbreak{}design.json}\\[4pt]
+\href{file:///D:/Agent/srp/agent/work/2026-10-08_\%E7\%A7\%91\%E5\%AD\%A6\%E6\%9D\%A5\%E6\%BA\%90\%E8\%A1\%A5\%E8\%8E\%B7\%E4\%B8\%8E\%E9\%87\%8F\%E8\%A1\%A8\%E4\%BE\%A7\%E8\%AF\%81.md}{当前测量来源 2026-\allowbreak{}10-\allowbreak{}08\_\allowbreak{}科学来源补获与量表侧证.md} & \\[4pt]
+\end{tabular}\endgroup\end{minipage}\par
+\end{document}

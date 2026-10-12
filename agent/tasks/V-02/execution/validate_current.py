@@ -9,13 +9,13 @@ CURRENT = Path(__file__).resolve().parents[1] / 'outputs/current-scenes.json'
 EXPECTED = {
     'authority': {'sequence': 'python_manifest', 'session_clock': 'python', 'touchdesigner': 'optional_read_only', 'participant_core_input': False},
     'camera': {'mode': 'FIXED', 'weather_scroll': False, 'parallax': False, 'pause_freezes_motion': True},
-    'conditions': {'modes': ['scene_native', 'abstract_pacer'], 'exclusive_phase_cues': True, 'same_target_events': True, 'same_algorithms': True, 'same_audio': True, 'same_timing': True, 'same_background': True, 'same_cumulative_function': True, 'formal_input': 'each_participant_real_input', 'formative_input': 'same_source', 'abstract_form': 'centered_unfilled_double_ring', 'native_requires_hidden': False},
+    'conditions': {'modes': ['scene_native', 'abstract_pacer'], 'exclusive_phase_cues': True, 'same_target_events': True, 'same_algorithms': True, 'same_audio': True, 'same_timing': True, 'same_background': True, 'same_cumulative_function': True, 'formal_input': 'each_participant_real_input', 'formative_input': 'same_source', 'abstract_form': 'screen_space_particle_double_ring', 'native_requires_hidden': False},
     'assets': {'background': 'complete_fixed_image', 'effects': 'ai_independent_rgba_assets', 'reconstruction_required': False, 'release_requires_license': True},
     'fade': {'color_scope': 'whole_screen_both_conditions', 'color_source': 'module_effective_time', 'initial_color': 'fully_desaturated', 'restoration_fraction': 0.95, 'water_cue_source': 'target_step_or_actual_estimate', 'recovery_role': 'independent_contour_and_texture', 'pause_freezes_color': True},
     'research': {'native_win_required': False, 'report_prespecified_affect_if_function_guard_fails': True},
 }
 MODULES = {
-    'storm': ('风雨隘口', '雨幕风门', 'box_3_3_3_3'),
+    'storm': ('溪边木屋', '雨幕风门', 'box_3_3_3_3'),
     'heat': ('热浪盐原', '冷流风道', 'long_exhale_4_6'),
     'snow': ('雪雾松林', '粉雪升沉', 'equal_inhale_exhale_5_5'),
     'fade': ('彩色湿地（原灰霾湿地概念）', '色潮回流', 'double_inhale_long_exhale'),
@@ -36,6 +36,12 @@ def validate(data):
     }.items():
         if data.get(key) != value:
             errors.append(key)
+    standard_path = REPO / 'agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json'
+    standard = json.loads(standard_path.read_text(encoding='utf-8'))
+    if data.get('abstract_rendering') != standard['abstract_pacer']:
+        errors.append('abstract_rendering')
+    if data.get('unity_target_version') != standard['unity_target']['version']:
+        errors.append('unity_target_version')
     modules = data.get('modules', [])
     indexed = {m['id']: m for m in modules}
     if len(modules) != 4 or set(indexed) != set(MODULES):

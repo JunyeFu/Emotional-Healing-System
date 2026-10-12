@@ -1,0 +1,28 @@
+{
+  "task_id": "F-04",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "双设备只读预览与显示边界",
+  "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+  "deliverables": [
+    "双设备只读预览与显示边界修订交接",
+    "两设备显示说明",
+    "模拟与真机证据区分"
+  ],
+  "acceptance_criteria": [
+    "AC1 呼吸与心电独立显示，不把连接状态当质量",
+    "AC2 设备模拟与SDK真实采集分别留证，TD不拥有适应控制",
+    "AC3 A/B都能监看记录但不将操作台画面作为参与者反馈"
+  ],
+  "evidence_required": [
+    "两设备显示说明",
+    "模拟与真机证据区分",
+    "控制归属说明"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

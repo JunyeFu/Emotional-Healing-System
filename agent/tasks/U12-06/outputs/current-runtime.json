@@ -3,7 +3,12 @@
   "status": "IN_PROGRESS",
   "claimant": "傅钧烨",
   "implementation_branch": "codex/u12-06-formal-gate",
-  "dependencies": ["U12-01", "F-01", "P-01", "G-02"],
+  "dependencies": [
+    "U12-01",
+    "F-01",
+    "P-01",
+    "G-02"
+  ],
   "study_protocol_version": "1.2",
   "runtime_contract_version": "2.2",
   "transport_config_version": "1.1",
@@ -16,5 +21,8 @@
   "formal_collection_allowed": false,
   "normalization_changes_shared_implementation": false,
   "frozen_snapshot_preserved": true,
-  "root_migration_complete": false
+  "root_migration_complete": false,
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "current_design_revision": "agent/tasks/U12-06/outputs/design-revision.json",
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
 }

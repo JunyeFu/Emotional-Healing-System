@@ -1,0 +1,30 @@
+{
+  "task_id": "B-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新协议正式阶段批次模板",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新协议正式阶段批次模板修订交接",
+    "批次记录",
+    "原始I/G/X"
+  ],
+  "acceptance_criteria": [
+    "AC1 只消费真实获准的新方案版本和冻结数值",
+    "AC2 按分配含降级/未适应/退出，教学及预算不变",
+    "AC3 12人批次是管理候选，48分配块不是N"
+  ],
+  "evidence_required": [
+    "批次记录",
+    "原始I/G/X",
+    "盲态QC和缺失统计"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "G-03"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

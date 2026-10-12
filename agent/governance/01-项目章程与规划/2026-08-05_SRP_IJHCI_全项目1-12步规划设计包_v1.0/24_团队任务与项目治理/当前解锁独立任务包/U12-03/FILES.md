@@ -25,3 +25,25 @@
 - 文本快照统一为LF并移除行尾空白；二进制快照保持原始字节。
 - 快照保留原文内容，其内部相对链接可能仍指向原目录；需要追踪链接时从上表打开项目权威文件。
 - 大型工程、缓存、构建结果和个人配置不复制进任务包。
+
+## 新设计变更补充（原领取输入保持）
+
+- [agent/design/design-foundation-20261008/task-baseline.json](design_updates/01_task-baseline.json)；DBCD6D126948011AD106C695E38DC4657E09E0395AF9EECAC4497220366623C3
+- [agent/design/design-foundation-20261008/00-reasoning.md](design_updates/02_00-reasoning.md)；D7E979215E1329527AE704F46E3F7A9D2C26BB8AF1DDA8886C0554428412C8C6
+- [agent/design/design-foundation-20261008/01-design.tex](design_updates/03_01-design.tex)；C142AB0F43D172D4054DB0FFB95A446196AD2DAFAC1A45AFA9687C1DC9176FBA
+- [agent/design/design-foundation-20261008/01-design.pdf](design_updates/04_01-design.pdf)；5A62ABE98872F283BA2EC47EAD324BD87B65012EC9BBE39B12772144E87F6A33
+- [agent/design/design-foundation-20261008/02-science.tex](design_updates/05_02-science.tex)；03AD1A02FE781406C6D15CCAC639D5A7F2497F320314507F0955DE5656B64F46
+- [agent/design/design-foundation-20261008/02-science.pdf](design_updates/06_02-science.pdf)；E422C0F56D5898FC1C7D16CE9D13A49B5A60672C6C7FA89DD82B9E8F09B3FD0D
+- [agent/design/design-foundation-20261008/03-decisions.tex](design_updates/07_03-decisions.tex)；9083235196072DABED8334EA21BCC22D206081DF786D58F796A1BCABBDE84CA8
+- [agent/design/design-foundation-20261008/03-decisions.pdf](design_updates/08_03-decisions.pdf)；4E86834D042C590A38C6F794F65C2D6A68ADFDAF849FEF2E6402D983256CD3C3
+- [agent/design/design-foundation-20261008/04-review-audit.tex](design_updates/09_04-review-audit.tex)；1D47E11D4C6DAB4D77B420F144DCAF272BC7F8017DB2AD51625B7754DCA8A519
+- [agent/design/design-foundation-20261008/04-review-audit.pdf](design_updates/10_04-review-audit.pdf)；FD407713BD16B37B5323FE94BAAEAE4BE0FD10D040800B45E134C26180977573
+- [agent/tasks/U12-03/outputs/design-revision.json](design_updates/11_design-revision.json)；B6248ACABCB356567A77E16BB8D196A66928F6318EEADE2811AD6136B3703EB4
+- [agent/tasks/U12-03/TASK.md](design_updates/12_TASK.md)；8FDC74BF4482C487E4040B871CC0708115D8E873375BF3B09E0DA1494F4A9445
+- [agent/design/design-foundation-20261008/05-control-spec.tex](design_updates/13_05-control-spec.tex)；5974115723E72901374370EF2BFD1FFF16D330500A2E315D5549774014021BF1
+- [agent/design/design-foundation-20261008/05-control-spec.pdf](design_updates/14_05-control-spec.pdf)；14C9DAAD0D2C17B7CEA0EEF282533719BC43D3AF95F0A102B440F20F3C417D05
+- [agent/design/design-foundation-20261008/06-paired-storyboards.tex](design_updates/15_06-paired-storyboards.tex)；8C6B1D0787D01813CC6FD1D2A636265C9D2F057D5D7F6B81BA37B29D9E2ECB70
+- [agent/design/design-foundation-20261008/06-paired-storyboards.pdf](design_updates/16_06-paired-storyboards.pdf)；88E4C007642EFBEBDDD80FEEF3109A6DDC40CE874D62577510E80B1A8E046EB4
+- [agent/design/design-foundation-20261008/07-protocol-candidate.tex](design_updates/17_07-protocol-candidate.tex)；94A840BC078B862F409C65CB4C674C5133E69E4699F436BF568E47F79D28A441
+- [agent/design/design-foundation-20261008/07-protocol-candidate.pdf](design_updates/18_07-protocol-candidate.pdf)；69219843B56BF4B9950B07ACE502F31D96B3D51D6F0F55E57952C16F4CCBDE1F
+- [agent/design/design-foundation-20261008/operational-design.json](design_updates/19_operational-design.json)；81738308099D660D614C25914C27458F4FC0E82CA1F158DAE7DA635FBD28EB9D

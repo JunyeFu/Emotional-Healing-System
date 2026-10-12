@@ -1,0 +1,161 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\setCJKmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\newfontfamily\titlelatin{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\usepackage[margin=22mm]{geometry}
+\usepackage{graphicx}
+\usepackage{needspace}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyfoot[C]{SRP 固定引导与原生自适应\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\linespread{1.28}
+\emergencystretch=3em
+\raggedbottom
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}\vspace{8pt}}
+\newcommand{\reviewsection}[1]{\par\Needspace{9\baselineskip}\vspace{10pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\vspace{4pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+\begin{document}
+
+\reviewtitle{SRP项目基石 · 决策与任务影响}
+设计候选 SRP-\allowbreak{}FIXED-\allowbreak{}VS-\allowbreak{}ADAPTIVE-\allowbreak{}NATIVE-\allowbreak{}20261008｜撤回纯表示比较候选｜本轮不改运行协议与领取快照。
+
+
+\reviewsection{一、项目沿革与本轮裁定}
+项目起点是可穿戴数据、呼吸练习与天气场景的交互方案。现有工程形成溪边木屋Storm、粒子双环和独立Actual接口；工程实现事实与整项研究贡献分别成立。上一轮基石将问题转成两种同源信息表示、以关键状态阅读错误率为主要候选，偏离了用户希望比较固定与数据驱动完整方案的核心。
+
+
+本轮用户明确三点：只有原生组依据实际数据调节；共同理想目标节奏与固定组一致；允许根据场景/\allowbreak{}被试状态受限调整实际引导时序，然后回到理想节奏。该澄清是本次设计重构的依据，不是从现有代码或文献推断用户意图。
+
+
+本包覆盖上一版SRP-\allowbreak{}INTERACTION-\allowbreak{}DESIGN-\allowbreak{}20261008候选，原三份制品与导航在本地agent/\allowbreak{}local/\allowbreak{}artifacts/\allowbreak{}design-\allowbreak{}foundation-\allowbreak{}20261008/\allowbreak{}before-\allowbreak{}fixed-\allowbreak{}adaptive-\allowbreak{}correction保存，可恢复但不作为活动设计。正式v1.2研究权威与历史签收不因本包变更；新条件不得自动套用旧冻结。
+
+
+\reviewsection{二、先想清楚的五项决定}
+K1 选择两臂完整方案问题。保留固定圈加有品质的预设场景作为A；B同时引入原生形式、真实反馈与受限适应。它回答实际采用问题。全因子能拆分机制但增加条件/\allowbreak{}样本；纯表示比较已不符合当前目标。
+
+
+K2 分离I/\allowbreak{}G/\allowbreak{}X。共同理想目标I不随被试被改写；实际下发G可受限调整；实际呼吸X独立测量。场景状态规定合法动作与反馈范围，被试状态先采用可靠可读的呼吸及质量信息，不假设设备直接估计情绪。
+
+
+K3 公平评价共同目标。跟上G是过程，接近I才支持共同练习达成；B不能靠放宽要求、更少机会或额外时间提高分数。旧固定Target机会PF须重审，质量不可观测不改记为行为错误。
+
+
+K4 恢复用途对应的主要效益候选。推荐前测校正PANAS-\allowbreak{}NA后测，执行、负担与舒适分轴；量表适用及精度在正式前确认。取消跨组Actual读取主终点，A没有该信息，不能以同题排名制造B优势。
+
+
+K5 收缩创新表述。八篇近邻已覆盖自适应、自然反馈和固定/\allowbreak{}反馈比较；候选增量为多步骤原生闭环的具体设计，以及支持、目标偏移、情绪和负担的可信权衡。未获得结果之前称设计候选，不称已证新颖或优效。
+
+
+\reviewsection{三、逐项决定与后续消费者}
+\reviewsubsection{3.1 保留项}
+D01 保留校园短时练习、两指定设备、Unity 2022.3.62f3及现有天气资产；价值与准备成本待验证。消费者：F-\allowbreak{}02、F-\allowbreak{}03、D-\allowbreak{}01、D-\allowbreak{}02、U-\allowbreak{}08、W-\allowbreak{}04。
+
+
+D02 保留参与者间两臂、共同理想结构、基础素材/\allowbreak{}镜头/\allowbreak{}环境音、等预算教学与固定体验预算；情绪后测先于检查题。消费者：V-\allowbreak{}01、V-\allowbreak{}02、U12-\allowbreak{}03、X-\allowbreak{}01、Q-\allowbreak{}02、U12-\allowbreak{}11、G-\allowbreak{}03。
+
+
+\reviewsubsection{3.2 必须修改的设计}
+D03 A仅固定指导与预设场景，数据用于测量；关闭Actual内圈及本人数据影响的累计/\allowbreak{}颜色/\allowbreak{}音轨/\allowbreak{}奖励。消费者：R-\allowbreak{}01、V-\allowbreak{}03、U-\allowbreak{}02、U-\allowbreak{}07、V-\allowbreak{}04、V-\allowbreak{}05。已有双环接口保留工程身份，不把目标复制为实际。
+
+
+D04 B采用数据驱动原生自适应，合法周期边界有限调整实际引导，再回归I；输入失效停止适应，达到界限则休息/\allowbreak{}固定指导/\allowbreak{}停止。消费者：P-\allowbreak{}01、S-\allowbreak{}01、S-\allowbreak{}02、U-\allowbreak{}02、U-\allowbreak{}03、U-\allowbreak{}04、U-\allowbreak{}05、U-\allowbreak{}06、V-\allowbreak{}03、I-\allowbreak{}01、U12-\allowbreak{}06。仅修改美术或本地节拍不等于完成此任务。
+
+
+D05 I/\allowbreak{}G/\allowbreak{}X语义及事实分别消费；既有Target不能静默变成两个含义。消费者：P-\allowbreak{}01、P-\allowbreak{}02、F-\allowbreak{}05、U-\allowbreak{}02、S-\allowbreak{}02、A-\allowbreak{}01、A-\allowbreak{}03、I-\allowbreak{}01。后续明确输入、控制归属、决策时间、有效下发、实际呈现与独立重算；本轮不修改字段。
+
+
+D06 重新定义对I的达成与对G的跟随、技术覆盖和适应代价；固定预算不补时、不按B少做后的机会重定成功分母。消费者：A-\allowbreak{}01、A-\allowbreak{}02、A-\allowbreak{}03、A-\allowbreak{}05、S-\allowbreak{}02、U12-\allowbreak{}04、U12-\allowbreak{}10。旧PF非劣界和判定不能自动移植。
+
+
+D07 以PANAS-\allowbreak{}NA作为主要候选重新论证条件、地板、方差、缺失与N；功能和负担独立报告。消费者：F-\allowbreak{}02、U12-\allowbreak{}04、U12-\allowbreak{}07、U12-\allowbreak{}11、A-\allowbreak{}02、A-\allowbreak{}03、A-\allowbreak{}05、W-\allowbreak{}02、G-\allowbreak{}03。不是直接恢复旧条件或沿用旧功效结论。
+
+
+D08 理解题改为适配方案的形成性检查；共同目标题可在等值后比较，Actual/\allowbreak{}累计/\allowbreak{}质量题只检查对应功能，不作跨组主要排名。消费者：U12-\allowbreak{}02、Q-\allowbreak{}01、Q-\allowbreak{}02、E-\allowbreak{}01、E-\allowbreak{}02、U12-\allowbreak{}03、U12-\allowbreak{}05、U12-\allowbreak{}07。
+
+
+D09 Storm/\allowbreak{}Fade先检验多步语义及受限适应，其他天气按必要性与资源审查。消费者：V-\allowbreak{}02、V-\allowbreak{}03、V-\allowbreak{}04、V-\allowbreak{}05、U-\allowbreak{}03、U-\allowbreak{}04、U-\allowbreak{}05、U-\allowbreak{}06、U-\allowbreak{}07、Q-\allowbreak{}03、B-\allowbreak{}01、E-\allowbreak{}03。四天气不是四个独立效应研究。
+
+
+D10 实验批次与资源按新条件重估；前置、正式和可选迁移人数分账；半个月只作后续可行性。消费者：Q-\allowbreak{}01、Q-\allowbreak{}02、Q-\allowbreak{}03、B-\allowbreak{}01、B-\allowbreak{}02、E-\allowbreak{}01、E-\allowbreak{}02、E-\allowbreak{}03、E-\allowbreak{}04、X-\allowbreak{}01、U12-\allowbreak{}11、A-\allowbreak{}06、W-\allowbreak{}04。48块不是N，正式完成不能由表格排列保证。
+
+
+D11 原创性与贡献以八篇近邻重写，机制因果与整包效果分开；验证后才提出有限原则。消费者：W-\allowbreak{}01、W-\allowbreak{}02、W-\allowbreak{}03、A-\allowbreak{}06、U12-\allowbreak{}07、U12-\allowbreak{}09、U12-\allowbreak{}10。投稿等级目标不代替增量证据。
+
+
+\reviewsubsection{3.3 撤回与待实证确认}
+D12 撤回“两组同反馈/\allowbreak{}同Actual/\allowbreak{}同累计，只有载体不同”的设计前提，撤回12题关键状态错误率主终点及其N=236/\allowbreak{}479演算用途。历史文字不继续驱动新设计；旧合同保留原范围，另做正式修订。消费者主要为R-\allowbreak{}01、U12-\allowbreak{}02、U12-\allowbreak{}04、V-\allowbreak{}03、W-\allowbreak{}01。
+
+
+D13 撤回“首次自适应呼吸、首次自然生理反馈”之类宽泛创新；待确认多步骤与理想参照增量。撤回保证原生获胜、HRV代表情绪、背景变好等于用户成功的解释。消费者：W-\allowbreak{}01、W-\allowbreak{}02、R-\allowbreak{}01、V-\allowbreak{}03、A-\allowbreak{}06。
+
+
+D14 待校准适应范围/\allowbreak{}变化速率/\allowbreak{}观察窗/\allowbreak{}回归条件/\allowbreak{}缓冲预算，独立事件识别、量表地板、舒适性、最小关注差、N及使用成本。消费者：S-\allowbreak{}02、Q-\allowbreak{}02、Q-\allowbreak{}03、U12-\allowbreak{}04、U12-\allowbreak{}11、F-\allowbreak{}02、U-\allowbreak{}08。没有依据的数值保持未冻结，确认方法见科学附录。
+
+
+\reviewsubsection{3.4 关键变化总表}
+\small\begin{longtable}{|p{.18\linewidth}|p{.32\linewidth}|p{.36\linewidth}|}
+\hline 项目 & 已撤回的设计候选 & 本轮决定 \\ \hline\endhead
+比较对象 & 同数据、同反馈的两种表示 & 固定开环A与原生闭环自适应B \\ \hline
+共同参照 & 一个固定Target & 共同I、实际下发G、独立X \\ \hline
+主要候选 & 跨组Actual状态判别错误率 & 前测校正PANAS-\allowbreak{}NA；其他分轴 \\ \hline
+功能评价 & 同一Target机会PF & 分别评价I达成、G跟随及控制代价 \\ \hline
+固定组内圈 & 独立Actual反馈 & 关闭，不得伪装实际 \\ \hline
+样本依据 & 12题相关模型及其演算 & 新条件PANAS精度、功能代价及缺失 \\ \hline
+科学贡献 & 四层信息的正确读取 & 多步原生闭环整包的效益与目标代价 \\ \hline
+\end{longtable}\normalsize
+
+\reviewsection{四、为什么旧代码与签收不能自动证明新设计完成}
+\reviewsubsection{4.1 已有可复用基础}
+Storm画面、粒子圈芯、独立Actual接口、呼吸设备通道、记录与显示工程可以复用。已有“实际不跟目标自动循环”的实现有助于X真实性，但未实现I/\allowbreak{}G分离和受限控制器。原Task DONE/\allowbreak{}签署只覆盖当时范围，不改写成自适应系统已验收。
+
+
+\reviewsubsection{4.2 协议与运行需要另行迁移}
+设计定稿→对应前置活动批准与材料固定→前置实现及验证→正式参数、分析与协议冻结→正式研究。前置活动有自己的材料/\allowbreak{}程序固定，不等于正式参数先于预试冻结。U12-\allowbreak{}06及其准入只消费真实有效版本，不把新设计文档当运行许可。
+
+
+本轮不写运行代码、不改Schema、不调整业务状态或历史验收。操作设计通过5个当前分发包的显式补充与影响记录接入；3个已领取主快照及候选保留，2个READY按新来源刷新。不能无声替换已领取输入或把设计文档当运行许可。
+
+
+\reviewsubsection{4.3 本轮活动文件}
+主稿、科学附录、决策与审稿论证为基础，新增控制规格、配对故事板、实验候选，合计七份LaTeX/\allowbreak{}PDF；实验/贡献/一体化论证与导航共同消费。天气制作入口提示资产与新设计范围，原运行合同与签署保持身份。上一版制品可恢复，旧工作日志按日期保留。
+
+
+\reviewsection{五、设计阶段验收}
+研究对象在主稿第二章明确，I/\allowbreak{}G/\allowbreak{}X与适应边界在第三章，非对称异常故事板在第四章；研究问题、主候选与公平计分在第二/\allowbreak{}五章；新近邻及贡献收缩在科学附录；样本与资源在第七章。方案能够解释B更优、更差、仅放宽目标、输入失效或迁移失败。
+
+
+当前设计完成标准为逻辑一致、可证伪、有真实近邻依据、下游知道如何实施与验证。可靠Actual、有效自适应、真实效益和新颖性成立都尚待证据；不会因排版或生成PDF而成立。下一阶段从受影响消费者承接必要事实，不再通过扩大叙事替代真实问题。
+
+
+\reviewsubsection{5.1 审稿攻击后的补充修订}
+新增原创性、贡献度、社会价值与14项攻击论证（04-\allowbreak{}review-\allowbreak{}audit.pdf）。主稿1.3/\allowbreak{}3.5/\allowbreak{}5.5/\allowbreak{}5.6分别补齐现实设备成本、共同I依据、期待与实际剂量、采用决策。沿用现有52消费者：W-\allowbreak{}01/\allowbreak{}R-\allowbreak{}01/\allowbreak{}F-\allowbreak{}02承接问题与新颖性，Q-\allowbreak{}01/\allowbreak{}Q-\allowbreak{}02承接需求及理解，S-\allowbreak{}01/\allowbreak{}S-\allowbreak{}02承接真值，U12-\allowbreak{}04/\allowbreak{}A-\allowbreak{}03/\allowbreak{}U12-\allowbreak{}11承接分析与边界；本轮不新增状态变化。论证层已修复，真实效度与收益不能写作替代。
+\reviewsection{六、本轮操作级设计决定}
+OD1 选择10条优先级的简单受限规则：普通调整只在完整周期边界，停止/不适/信号失效可即时撤下要求；停留不延长，Fade不追补，H10无首版控制权限。依据05规格，由F-05/P-01/P-02及状态/呈现任务承接，具体数值待校准。
+
+OD2 用Storm五例与Fade七例配对状态图检验正常、错相、偏慢、漏补吸、跨周期、失效/恢复、暂停、饱和/末尾、回归失败及步骤不可辨。06是设计示意，不称真实截图或效果证据。
+
+OD3 分离技术信号覆盖与完整结果可判定覆盖，按C/K/U完整时间分区报告I达成界；短断流不能把整个不确定周期当已知失败。07给出反例，独立评分与真值须由A-01/A-02/A-03验证。
+
+OD4 唯一人数候选默认12认知+20技术学生；访谈8与独立重建2各计入所属子集。100学生时正式余68；含8专家的100总人数时余60。四条Williams顺序与隐藏8/16联合块是随机化候选，旧48实现未改。候选精度不当正式功效，参与者不得重复算N。
+
+OD5 七份LaTeX/PDF共同维护；operational-design.json映射33个直接消费者。三项操作设计交付完成，真实校准/运行/协议与复核仍待执行。已领取输入通过显式补充和影响记录接入，不更新原业务状态与签收。
+
+% NORMALIZATION-20261008
+\newpage\reviewsection{七、规范化收口与未关闭项}
+\reviewsubsection{7.1 已交付的设计材料}
+N01 固定普通学习间隙，不诱发压力、不按NA高低筛样。N02 18项定义/\allowbreak{}域/\allowbreak{}方法/\allowbreak{}接受规则/\allowbreak{}责任/\allowbreak{}失败分支完整，但真实值均未冻结。N03 11道理解题及教学/\allowbreak{}访谈可审阅；旧八题不继承正式量表身份。N04 参数前10校准、后10保留核验，扩前置则重算唯一人数。N05 正式冻结在前置验证之后。
+
+\reviewsubsection{7.2 不伪关闭的材料缺口}
+M01已取得侧面中英20题题本与NA题序，但原始题本/词义/来源对应未核准；此刻已有中文使用先例，SRP适用性由前置验证取得；M02对应版本使用/公开条件未确认。因此normalization.design\_\allowbreak{}closed=false；材料交付不改变业务状态或历史签收。L9出版社全文已读：自行调速不同于本项目受限G调整，单方案结果不证明本项目B优于A。
+
+
+\end{document}

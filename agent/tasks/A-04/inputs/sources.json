@@ -15,6 +15,17 @@
     "agent/tasks/U12-04/execution/power_simulation.py",
     "agent/modules/02-信号处理/a03_gate2_spec/__init__.py",
     "agent/tasks/E-04/archive/01_详细执行方案.md",
-    "agent/tasks/A-02/archive/06_统计模型与图表计划.md"
-  ]
+    "agent/tasks/A-02/archive/06_统计模型与图表计划.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

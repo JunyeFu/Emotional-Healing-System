@@ -1,36 +1,41 @@
-# U-01 当前可靠控制使用说明
+# U-01 当前交接：Unity控制镜像与实际呈现回执
 
-## 状态与范围
 
-U-01注册表为DONE，傅钧烨于2026-09-07签收候选6c09f71d14bcb0288a4b83f87b177975c49bfe3d。历史报告写IN_REVIEW是审阅对象原状态，非当前待签收。当前实现提供可靠控制探针，不代表完整参与者制品。
 
-## 权威与消费
+- A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出
+- B数据驱动场景原生受限适应，合法边界调整G后趋向共同I
+- I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功
+- PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界
+- 理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收
+- 五人半个月100+用于后续可行性，各阶段人数分别计数
+- 原生、自适应已有先例；贡献为待验证整包权衡和有限设计知识
+- 当前任务包新要求优先，原签收/领取输入及候选身份保持原范围
 
-- P-01唯一负责会话、顺序与单调时间；Unity帧、ACK和本地Stopwatch不推进研究流程。
-- SessionMirror消费prepare/start/pause/abort/end/module/segment，只维护只读镜像。start兼作恢复；不新增resume命令。
-- U01RuntimeBridge默认v2.2、TCP 127.0.0.1:5010、UDP 127.0.0.1:5006；v2.1仅dev_replay。F-05已签收，步骤实例直接读取合同字段，不从phase或progress推断。
-- ACK说明控制已应用或拒绝，不说明画面已呈现。适配器完成对应帧后显式调用ConfirmRendered(event_id, frame_seq)，生成的回执才进入发送路径。
-- ConfirmRendered返回true表示确认已生成；发送失败仍由LastFailure表示。已确认回执保存事件身份并在重连或同ID重发时再次发送，Python幂等消费，P-02保存实际输入消息。
-- TD缺席不改变此组件，但最终脱离TD制品仍须由构建/装配任务验证。
+本包处理：Unity控制镜像与实际呈现回执。类型：REVISE_FOR_NEW_BASELINE。既有依赖：F-01、F-03、F-05、P-01；依赖的历史DONE不能证明新范围已交接。领取人 `Codex`，复核人 `傅钧烨（团队总监，独立第二人复核人）`，原预计4人日仅历史估算，新范围成本待承接者评估。
 
-## 当前执行
+## 交付与验收
 
-在D:/Agent/srp运行：
+- Unity控制镜像与实际呈现回执修订交接
+- 控制镜像说明
+- 呈现时间证据规格
 
-```powershell
-py -3.14 agent/tasks/U-01/execution/verify.py
-```
+- [ ] AC1 Unity只消费获准的下发G，不本地擅自改I或决定个体适应
+- [ ] AC2 A时钟预设与B真实控制消息分别核对
+- [ ] AC3 实际呈现、暂停中止及恢复回执与会话源可对应
 
-或execution/verify.ps1。主机验证器verify_u01.py已从历史evidence迁出，默认校验本包evidence/runtime；--evidence-dir可只读检查历史证据。
+必需证据：控制镜像说明；呈现时间证据规格；异常回执表。
 
-verify.py使用D:/UnityEngine/6000.4.9f1/Editor/Unity.exe，顺序运行14项EditMode、3项PlayMode、SRP.U01.Editor.U01EvidenceBuilder.Generate和新旧证据校验。Unity工程不能同时被另一个Editor进程占用。新结果不写历史签收目录。
+新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。
 
-Editor生成器必须位于Assets/U01/Editor以保持程序集关系；根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。
+## 执行顺序与当前验证边界
 
-## 上下游交接
+1. 核对[设计修订记录](design-revision.json)、[基石主稿](../../../design/design-foundation-20261008/01-design.pdf)及上游新范围；明确待冻结项。
+2. 完成本包专项设计/候选修订，在原权威路径工作；需修改接口或正式协议时先由对应合同与冻结任务承接，不以文档刷新替代批准。
+3. 执行与新范围对应的真实验证，保留未通过项。原execution/verify.ps1仍只核查旧实现范围，其通过不证明新控制、测量或研究完成。任务体系内容检查使用agent/tools/verify_task_design_baseline.py。
+4. 同步当前输出和证据，再生成human/tasks/U-01/summary.tex及PDF；取得真实复核后才按治理流程改变业务状态。
 
-19控制、19ACK、12回执是明确标记的contract_golden_fixture，由编辑器调用镜像和显式确认构造。它们验证合同消费，不是完整场景真实呈现的录像或真实设备回执。
+## 输入、历史与交接
 
-U-02/U-03负责接入四层渲染与呈现确认；I-01验证真实全链，正式构建另验资产与准入。P-02不根据golden推测实际已呈现。核心前分条件教学尚待U12-11冻结和P-01暴露登记接入；本组件不创造教学事件或扩大正式门资格。
+inputs/sources.json列出当前设计来源；领取中原input_snapshot_id及候选身份保留，新增要求通过分发补充和影响记录交接，不静默替换领取输入。旧TASK与总结见archive/pre-design-baseline-20261008，原审核信息和实际代码证据保留原时间/范围。大型工程以项目工作目录引用，不复制缓存。
 
-当前使用说明与历史记录分开，保留真实签署、原XML和JSON。规范化不改变注册状态，也不追加真人签收。
+本文件历史正文：[原范围记录](../archive/pre-design-baseline-20261008/current-control-contract.md)。历史运行与候选事实仍可查，但不得以旧同反馈要求驱动新设计。

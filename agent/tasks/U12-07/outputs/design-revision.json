@@ -1,0 +1,31 @@
+{
+  "task_id": "U12-07",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "结果前中立写作及审稿修复",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "结果前中立写作及审稿修复修订交接",
+    "中立方法稿",
+    "空表与结论规则"
+  ],
+  "acceptance_criteria": [
+    "AC1 固定A对自适应B，主结果不随胜负替换",
+    "AC2 14项审稿攻击的设计修复和实证未闭合分别表达",
+    "AC3 共同I为任务参照、设备成本及机制边界进入方法"
+  ],
+  "evidence_required": [
+    "中立方法稿",
+    "空表与结论规则",
+    "审稿修复证据"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "U12-01",
+    "W-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

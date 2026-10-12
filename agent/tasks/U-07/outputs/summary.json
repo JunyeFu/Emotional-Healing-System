@@ -1,8 +1,8 @@
 {
   "task_id": "U-07",
-  "title": "U07 抽象完整表示方案现状审阅",
-  "review_date": "2026-09-28",
-  "conclusion": "U-07仍WAIT_DEP、未领取，U-03公共模板未验收。旧抽象规格原文归档，当前四结构、四态降级及两条件匹配入口已订正；41项专项通过，不构成真实双环、四天气或混杂实测验收。",
+  "title": "U-07 固定圈开环方案的可信对照 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "U-07注册状态WAIT_DEP仅保留原范围。当前任务更新为固定圈开环方案的可信对照；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
   "historical_acceptance": {
     "reviewer": "未签署",
     "date": "尚未发生",
@@ -13,76 +13,84 @@
     {
       "heading": "当前结论",
       "paragraphs": [
-        "依赖F-05、U-03、R-01、V-03，约4人日，P-DEV。实际领取人、分支和复核人为空；没有以Agent整理代领或提前解锁U-08。"
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
       ]
     },
     {
       "heading": "目标与完成标准",
       "paragraphs": [
-        "交付抽象SceneAdapter、四结构配置、完整方案fixture、条件差异遥测及六类视觉混杂报告。AC1形式和步骤边界正确；AC2四层功能与奖励时点匹配；AC3必须匹配项通过、六类差异完整记录。",
-        "必需Play录像、完整表示方案矩阵、差异遥测、混杂审计、截图和测试报告。四天按输入、模板实现、同源联调和验收交接推进；Unity、UI动画及信息量匹配的国内资料在TASK.md。"
+        "AC1 A只显示共同预设指导，Actual内圈与数据累计关闭",
+        "AC2 保留完整且有品质的预设场景，不故意降低体验",
+        "AC3 与B共有预算和素材，混杂报告不作单机制结论"
       ]
     },
     {
       "heading": "实际交付",
       "paragraphs": [
-        "建立TASK和五目录、当前结构化规则、实施交接、来源、专项复测和消费影响。四个技术ID均对齐v2.2：storm 3/3/3/3、heat 4/6、snow 5/5、fade 2.5/1.5/6。",
-        "旧双环规格实际原文移入archive，原位置成为当前导航；泛化低质量淡出不再作为执行规则。没有复制storm为四天气配置，没有制作替代性的主机渲染证据。"
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "固定圈开环方案的可信对照修订交接",
+        "开环fixture",
+        "输入替换不变报告",
+        "ODES-20261008设计交付：固定A圈与预设场景保持开环，隐藏Actual与本人数据驱动输出；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。"
       ]
     },
     {
       "heading": "执行过程与关键决定",
       "paragraphs": [
-        "外环目标、内环独立实际，居中空心双环；步骤和周期身份不可被粗phase替代，双吸两步不能合并。实际空步骤隐藏，累计同模块锁定保持；具体半径、线宽和第二吸发现性仍由U-03实跑定参。",
-        "GOOD无额外标记，DEGRADED降低确定性，UNUSABLE/DISCONNECTED静态断续实际轮廓；无合法实际不生成成功。Fallback只作用实际载体，同帧置信与状态上限组合。旧PromptDisplay仍被WeatherController调用，保留旧原型但不当抽象渲染。"
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：固定圈开环方案的可信对照"
       ]
     },
     {
       "heading": "验证与结果",
       "paragraphs": [
-        "41项专项通过，含15项U-07规则、归档和消费检查及26项V-02检查；V-03当前40行及56直接包、R-01原候选Schema与正负fixture校验通过。首次相对导航少一层，修复源文件后重跑通过，保留初次失败记录。",
-        "根pytest635项通过，71项注册表及5个分发包54快照通过，READY仍T-02/V-05，业务和冻结输入不改。本轮不改Unity源码，不重复运行共享105项EditMode；它们是U-06既有证据，不转为本包真实渲染验收。"
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
       ]
     },
     {
       "heading": "偏离与修复闭环",
       "paragraphs": [
-        "旧低质量淡出规格与当前四态不一致，已从活动设计入口移开，保留原字节和历史R-01链接；当前规则增加空步骤和实例身份说明，不覆盖原签署。导航错误经专项实际发现、修正和复测，不只在Word里改结论。",
-        "四结构真实Unity配置、同源视频、层级掩膜、差异遥测、六类实测及真实负责人仍缺。10%、2度及显示规格仅为历史工程候选，不擅自升级为正式范围或用绿色软件检查填满业务验收。"
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：开环fixture；输入替换不变报告；视觉混杂说明"
       ]
     },
     {
       "heading": "目录与文件整理",
       "paragraphs": [
-        "TASK、inputs、execution、evidence、outputs、archive职责固定。原规格与2e9498a字节比较一致，限定-text保留原换行；历史候选和签署原件不改。原导航仍可打开，领取中的副本与input_snapshot_id不更新。",
-        "共享Unity工程、旧PromptDisplay和现有逻辑投影留在模块，不复制缓存；本轮只归档有证据冲突的原规格。根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变。"
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
       ]
     },
     {
       "heading": "上下游交接",
       "paragraphs": [
-        "U-03先做fade最小完整双条件并冻结模板，U-07复用后推广四结构，不形成反向等待。U-04至U-06负责其余天气，A/B/C未分配不能由本包代定。F-05提供合同，R-01提供完整方案比较边界，V-02/V-03提供形式及映射。",
-        "两条件匹配目标事实、算法、累计、降级、时长、背景、声音、奖励、教学测量、显示、负担及事件真值。形成性同源，正式参与者各自真实输入。抽象关闭原生周期载体，fade整屏复色随有效时间且不表示成绩；六类处理差异完整报告，不要求像素同一。",
-        "U-08消费真实配置与集成输入；Q-01/Q-02及U12-02消费同源片段和真值，论文任务按实际收益、代价和边界报告，不保证原生获胜、不单独归因天气或呼吸法。"
+        "原依赖：F-05、U-03、R-01、V-03；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：开环fixture；输入替换不变报告；视觉混杂说明"
       ]
     },
     {
       "heading": "审阅与责任签收",
       "paragraphs": [
-        "无U-07历史签署，实施、复核人员尚未登记。本轮Agent职责仅为规范化、资料订正与自动检查；业务WAIT_DEP不变。真实Play、混杂证据及任务要求的签收由实际领取人申请。"
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
       ]
     },
     {
       "heading": "收尾与下一包",
       "paragraphs": [
-        "规范化71/71包、根目录迁移19/19项完成；每包Word由Agent源生成。",
-        "业务状态WAIT_DEP，原签收与未交付项不变；后续按注册表和实际依赖推进。"
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
       ]
     },
     {
       "heading": "审阅来源",
       "paragraphs": [
-        "读取任务注册表、F-05配置、U-02实际源码、U-03切片、R-01当前适用与原候选、V-02/V-03/V-04以及旧PromptDisplay调用。区分历史规格、当前交接、软件投影和实际呈现。"
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
       ]
     }
   ],
@@ -110,6 +118,11 @@
       "status": "OPEN_TEMPLATE_OWNER_AND_FORMAL_LIMITS",
       "description": "U-03模板、实际负责人和正式视觉范围未冻结，U-03最小对照不反向等待U-07推广",
       "source": "agent/tasks/U-07/TASK.md"
+    },
+    {
+      "id": "U-07-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "固定圈开环方案的可信对照；新业务证据未由文档刷新取得。"
     }
   ],
   "next_task": "按业务注册表及实际依赖推进",
@@ -133,6 +146,78 @@
     {
       "label": "任务步骤验收与国内资料",
       "path": "agent/tasks/U-07/TASK.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/U-07/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
     }
-  ]
+  ],
+  "previous_conclusion_202609": "U-07仍WAIT_DEP、未领取，U-03公共模板未验收。旧抽象规格原文归档，当前四结构、四态降级及两条件匹配入口已订正；41项专项通过，不构成真实双环、四天气或混杂实测验收。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
 }

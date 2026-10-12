@@ -1,0 +1,32 @@
+{
+  "task_id": "A-05",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新整包阶段一锁定分析",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新整包阶段一锁定分析修订交接",
+    "锁定分析表",
+    "功能及成本表"
+  ],
+  "acceptance_criteria": [
+    "AC1 按冻结PANAS-NA比较报告估计和区间",
+    "AC2 I达成/G跟随/成本与未知独立报告，旧PF门不隐去主结果",
+    "AC3 区间跨零不称等效，替代主张需真实界值与精度"
+  ],
+  "evidence_required": [
+    "锁定分析表",
+    "功能及成本表",
+    "独立重算与敏感性"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "A-02",
+    "A-03",
+    "E-04"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}
