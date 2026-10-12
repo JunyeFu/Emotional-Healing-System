@@ -8,7 +8,11 @@ def verify(root):
     root=Path(root)
     report=json.loads((root/'capture-report.json').read_text(encoding='utf-8'))
     cases=report['captures']
-    assert len(cases)==35
+    audit=report.get('capture_port')==5015
+    assert len(cases)==(37 if audit else 35)
+    if audit:
+        assert sum('audit-device-details' in c['screenshot'] for c in cases)==1
+        assert sum('audit-back-to-monitor' in c['screenshot'] for c in cases)==1
     assert all(not c['errors'] and len(c['visible_pages'])==1 for c in cases)
     final=cases[-1]['workflow']
     assert final['stage']=='HOME' and final['current'] is None
@@ -48,7 +52,7 @@ def verify(root):
     assert first['device_preview']['plots']['ecg']['color_pixels']['rr']>10
     assert report['source_preserved']
     assert (root/'T01_Workbench_A.flow-v5.candidate.toe').is_file()
-    return dict(native_cases=35, consecutive_sessions=3, normal=2, aborted=1,
+    return dict(native_cases=len(cases), consecutive_sessions=3, normal=2, aborted=1,
                 record_counts=counts, independent_files=True, preflight_rows=0,
                 one_visible_page=True, pause_freezes_effective_time=True,
                 scope='Development fixtures and simulated authority receipts, not formal experiment acceptance')

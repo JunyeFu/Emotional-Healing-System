@@ -36,7 +36,7 @@ def exercise(command, pid, active, evidence, wait_for):
             payload['request_id']=current['pending']['request_id']
         payload.update(extra)
         with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as sock:
-            sock.sendto(json.dumps(payload,ensure_ascii=False).encode(),('127.0.0.1',5005))
+            sock.sendto(json.dumps(payload,ensure_ascii=False).encode(),('127.0.0.1',active.get('port',5005)))
         time.sleep(.25)
 
     def assign(index):
@@ -58,6 +58,9 @@ def exercise(command, pid, active, evidence, wait_for):
         send('started',unity_start_confirmed=True)
         send('guidance_status',ideal='呼气',guide='呼气',actual='吸气')
         take(f'{i}-running',stage='RUNNING',curves={'resp':'resp','ecg':'ecg'})
+        if i==1 and active.get('port')==5015:
+            take('audit-device-details','Content/FlowNav/details/label','RUNNING')
+            take('audit-back-to-monitor','Content/FlowNav/back/label','RUNNING')
         if i==1:
             take('pause-request','Content/Pages/overview/flow_controls/pause/label','RUNNING')
             send('paused')

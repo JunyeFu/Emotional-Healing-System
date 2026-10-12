@@ -35,7 +35,7 @@ def wait_for(path, pid, timeout=60):
     raise TimeoutError(path)
 
 
-def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None, study_speed=5, backend_mode=False, continuity_mode=False):
+def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None, study_speed=5, backend_mode=False, continuity_mode=False, audit_mode=False):
     if not 0 < study_speed <= 10:
         raise ValueError('Replay speed must be in (0, 10]')
     global EVIDENCE, SCRATCH
@@ -62,10 +62,16 @@ def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None
         EVIDENCE = EXECUTION.parent / 'evidence' / ('continuity-v8-' + RUN_ID)
         SCRATCH = ROOT / 'agent/local/artifacts/td-workbench-continuity-v8' / RUN_ID
         candidate_name = 'T01_Workbench_A.continuity-v8.candidate.toe'
-    if ps('Get-Process TouchDesigner -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Id'):
+    capture_port = 5015 if audit_mode else 5005
+    if audit_mode:
+        if not flow_mode or study_path or continuity_mode:
+            raise ValueError('Audit capture uses only the simulated phase flow')
+        EVIDENCE = EXECUTION.parent / 'evidence' / ('audit-' + RUN_ID)
+        SCRATCH = ROOT / 'agent/local/artifacts/td-workbench-audit' / RUN_ID
+    if not audit_mode and ps('Get-Process TouchDesigner -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Id'):
         raise RuntimeError('Preserve already open TD projects; close the owned capture copy first')
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as check:
-        check.bind(('127.0.0.1', 5005))
+        check.bind(('127.0.0.1', capture_port))
     source_bytes = SOURCE.read_bytes()
     EVIDENCE.mkdir()
     SCRATCH.mkdir(parents=True)
@@ -75,6 +81,14 @@ def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None
     directory = Path(str(toe) + '.dir')
     if not directory.exists():
         raise RuntimeError(expanded.stderr.decode(errors='replace'))
+    if audit_mode:
+        port_file = directory / 'project1/T01_TelemetryPanel/Sources/UdpTelemetryAdapter/udp_in.parm'
+        lines = port_file.read_text(encoding='utf-8').splitlines()
+        port_lines = [i for i,line in enumerate(lines) if line.split()[:1] == ['port']]
+        if len(port_lines) != 1:
+            raise RuntimeError('Audit UDP parameter not found')
+        lines[port_lines[0]] = 'port 0 ' + str(capture_port)
+        port_file.write_text('\n'.join(lines)+'\n',encoding='utf-8')
     node = directory / 'project1/T01_TelemetryPanel/Runtime/render_execute.text'
     raw = node.read_bytes()
     assert raw[:2] == b'2\n' and struct.unpack('>I', raw[23:27])[0] == len(raw[27:])
@@ -105,7 +119,7 @@ def onFrameStart(frame):
     if not toe.exists() or toe.stat().st_size == len(source_bytes):
         raise RuntimeError(collapsed.stderr.decode(errors='replace'))
     pid = int(ps(f"(Start-Process -FilePath '{TD_BIN / 'TouchDesigner.exe'}' -ArgumentList '\"{toe}\"' -WindowStyle Hidden -PassThru).Id"))
-    active = {'frame': None, 'preview': True, 'missing': False, 'device_state': 'CONNECTED', 'inject': False, 'telemetry': True}
+    active = {'frame': None, 'preview': True, 'missing': False, 'device_state': 'CONNECTED', 'inject': False, 'telemetry': True, 'port':capture_port}
     stop = threading.Event()
 
     def send_frames():
@@ -120,7 +134,7 @@ def onFrameStart(frame):
                 frame.update(frame_seq=seq, runtime_mode='dev_replay', clock_domain_id='python:td-readable-v2',
                              source_monotonic_ns=now-2_000_000, received_monotonic_ns=now-1_000_000, sent_monotonic_ns=now)
                 if active['telemetry']:
-                    sock.sendto(json.dumps(frame, ensure_ascii=False).encode('utf-8'), ('127.0.0.1', 5005))
+                    sock.sendto(json.dumps(frame, ensure_ascii=False).encode('utf-8'), ('127.0.0.1', capture_port))
                 if device_mode and active['preview']:
                     from simulate_device_preview import batch
                     for source in ('plux_respiban', 'polar_h10_ecg'):
@@ -133,15 +147,15 @@ def onFrameStart(frame):
                                 data[channel + '_unit'] = 'm/s2' if channel == 'acceleration' else 'rad/s'
                                 data[channel] = {axis: [math.sin((seq * 40 + j) / (300 + k*100)) * (.2 if channel == 'angular_velocity' else 1) for j in range(40)] for k, axis in enumerate(('x','y','z'))}
                         raw = json.dumps(data).encode('utf-8')
-                        sock.sendto(raw, ('127.0.0.1', 5005))
+                        sock.sendto(raw, ('127.0.0.1', capture_port))
                         if active['inject']:
-                            sock.sendto(raw, ('127.0.0.1', 5005))  # Duplicate batch.
+                            sock.sendto(raw, ('127.0.0.1', capture_port))  # Duplicate batch.
                             data['samples'][0] = 'invalid'
-                            sock.sendto(json.dumps(data).encode('utf-8'), ('127.0.0.1', 5005))
+                            sock.sendto(json.dumps(data).encode('utf-8'), ('127.0.0.1', capture_port))
                     if active['inject']:
                         bad = deepcopy(frame)
                         bad['signal_quality']['resp'] = 'invalid'
-                        sock.sendto(json.dumps(bad).encode('utf-8'), ('127.0.0.1', 5005))
+                        sock.sendto(json.dumps(bad).encode('utf-8'), ('127.0.0.1', capture_port))
                         active['inject'] = False
 
     sender = threading.Thread(target=send_frames)
@@ -167,9 +181,12 @@ def onFrameStart(frame):
             if not continuity_mode:
                 shutil.copytree(SCRATCH / 'development-workflow', EVIDENCE / 'development-workflow')
             report = dict(source_preserved=True, td=ready, captures=receipts, owned_process_id=pid,
-                          candidate=str(candidate), input_source=('Known mathematical calibration signals; development preflight only' if continuity_mode else 'Actual P01/P02; synthetic devices and Unity endpoint' if backend_mode else 'Synthetic fixtures and simulated authority receipts only'))
+                          candidate=str(candidate), capture_port=capture_port,
+                          input_source=('Known mathematical calibration signals; development preflight only' if continuity_mode else 'Actual P01/P02; synthetic devices and Unity endpoint' if backend_mode else 'Synthetic fixtures and simulated authority receipts only'))
             (EVIDENCE / 'capture-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
             success = True
+            if audit_mode:
+                ps(f'Stop-Process -Id {pid} -ErrorAction SilentlyContinue')
             print('EVIDENCE', EVIDENCE, flush=True)
             return
         good = _fixture('telemetry-fade-inhale-1.json')
@@ -278,7 +295,8 @@ if __name__ == '__main__':
     study = sys.argv[sys.argv.index('--study')+1] if '--study' in sys.argv else None
     speed = float(sys.argv[sys.argv.index('--speed')+1]) if '--speed' in sys.argv else 5
     continuity='--continuity' in sys.argv
-    main(device_mode=continuity or bool(study) or any(x in sys.argv for x in ('--devices','--monitor','--flow')),
-         monitor_mode=continuity or bool(study) or '--monitor' in sys.argv or '--flow' in sys.argv,
-         flow_mode=continuity or bool(study) or '--flow' in sys.argv,study_path=study,study_speed=speed,
-         backend_mode='--backend' in sys.argv,continuity_mode=continuity)
+    audit='--audit' in sys.argv
+    main(device_mode=audit or continuity or bool(study) or any(x in sys.argv for x in ('--devices','--monitor','--flow')),
+         monitor_mode=audit or continuity or bool(study) or '--monitor' in sys.argv or '--flow' in sys.argv,
+         flow_mode=audit or continuity or bool(study) or '--flow' in sys.argv,study_path=study,study_speed=speed,
+         backend_mode='--backend' in sys.argv,continuity_mode=continuity,audit_mode=audit)
