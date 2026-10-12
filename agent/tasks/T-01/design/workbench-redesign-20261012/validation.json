@@ -13,10 +13,10 @@
     },
     {
       "page": "prepare",
-      "editable_cells": 108,
+      "editable_cells": 106,
       "export_size": [
         1280,
-        720
+        721
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {
@@ -26,10 +26,10 @@
     },
     {
       "page": "waiting",
-      "editable_cells": 99,
+      "editable_cells": 97,
       "export_size": [
         1280,
-        720
+        721
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {
@@ -39,10 +39,10 @@
     },
     {
       "page": "running",
-      "editable_cells": 109,
+      "editable_cells": 107,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {
@@ -52,10 +52,10 @@
     },
     {
       "page": "paused",
-      "editable_cells": 109,
+      "editable_cells": 107,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {
@@ -115,10 +115,10 @@
     },
     {
       "page": "fault",
-      "editable_cells": 111,
+      "editable_cells": 109,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {
@@ -128,10 +128,10 @@
     },
     {
       "page": "abort",
-      "editable_cells": 116,
+      "editable_cells": 114,
       "export_size": [
         1281,
-        721
+        720
       ],
       "embedded_pages": 1,
       "plot_ink_pixels": {}

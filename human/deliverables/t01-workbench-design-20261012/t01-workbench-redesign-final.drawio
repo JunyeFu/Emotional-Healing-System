@@ -125,7 +125,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="prepare" name="02 准备与曲线预览">
-    <mxGraphModel dx="822" dy="1473" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1149" dy="1519" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -221,9 +221,6 @@
         </mxCell>
         <mxCell id="prepare-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
-        </mxCell>
-        <mxCell id="prepare-32" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="0.00 — 1.00 · 示例固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="prepare-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
@@ -377,9 +374,6 @@
         </mxCell>
         <mxCell id="prepare-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="prepare-61" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="−500 — 1500 · 固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="prepare-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
@@ -1030,7 +1024,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="waiting" name="03 等待Unity开始">
-    <mxGraphModel dx="822" dy="1473" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1149" dy="1519" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1126,9 +1120,6 @@
         </mxCell>
         <mxCell id="waiting-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
-        </mxCell>
-        <mxCell id="waiting-32" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="0.00 — 1.00 · 示例固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="waiting-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
@@ -1282,9 +1273,6 @@
         </mxCell>
         <mxCell id="waiting-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="waiting-61" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="−500 — 1500 · 固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="waiting-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
@@ -1908,7 +1896,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="running" name="04 实验运行">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2004,9 +1992,6 @@
         </mxCell>
         <mxCell id="running-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
-        </mxCell>
-        <mxCell id="running-32" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="0.00 — 1.00 · 示例固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="running-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
@@ -2160,9 +2145,6 @@
         </mxCell>
         <mxCell id="running-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="running-61" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="−500 — 1500 · 固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="running-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
@@ -2816,7 +2798,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="paused" name="05 暂停保持记录">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2912,9 +2894,6 @@
         </mxCell>
         <mxCell id="paused-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
-        </mxCell>
-        <mxCell id="paused-32" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="0.00 — 1.00 · 示例固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="paused-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
@@ -3068,9 +3047,6 @@
         </mxCell>
         <mxCell id="paused-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="paused-61" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="−500 — 1500 · 固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="paused-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
@@ -4613,7 +4589,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="fault" name="11 断流与记录故障">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4709,9 +4685,6 @@
         </mxCell>
         <mxCell id="fault-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
-        </mxCell>
-        <mxCell id="fault-32" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="0.00 — 1.00 · 示例固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="fault-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
@@ -4853,9 +4826,6 @@
         </mxCell>
         <mxCell id="fault-63" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="fault-64" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="−500 — 1500 · 固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="fault-65" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />
@@ -5506,7 +5476,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="abort" name="12 中止确认">
-    <mxGraphModel dx="968" dy="1734" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
+    <mxGraphModel dx="1353" dy="1789" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" background="#F2F5F8" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -5602,9 +5572,6 @@
         </mxCell>
         <mxCell id="abort-31" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="呼吸 / 相对幅度" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="199" as="geometry" />
-        </mxCell>
-        <mxCell id="abort-32" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="0.00 — 1.00 · 示例固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="199" as="geometry" />
         </mxCell>
         <mxCell id="abort-33" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="30秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="199" as="geometry" />
@@ -5758,9 +5725,6 @@
         </mxCell>
         <mxCell id="abort-60" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#202832;fontStyle=1;align=left;verticalAlign=middle;spacing=0;" value="心电 / μV" vertex="1">
           <mxGeometry height="26" width="226" x="36" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="abort-61" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=left;verticalAlign=middle;spacing=0;" value="−500 — 1500 · 固定量程" vertex="1">
-          <mxGeometry height="26" width="360" x="272" y="449" as="geometry" />
         </mxCell>
         <mxCell id="abort-62" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=hidden;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#56616F;fontStyle=0;align=right;verticalAlign=middle;spacing=0;" value="6秒窗口" vertex="1">
           <mxGeometry height="26" width="118" x="726" y="449" as="geometry" />

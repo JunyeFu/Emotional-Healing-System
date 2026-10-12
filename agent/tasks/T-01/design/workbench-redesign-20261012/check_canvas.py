@@ -35,6 +35,7 @@ def check():
             x,y,w,h=(float(g.get(v,'0')) for v in ('x','y','width','height'))
             assert x>=0 and y>=0 and x+w<=1280.01 and y+h<=720.01,(p.get('id'),c.get('id'))
         values=[c.get('value','') for c in cells]
+        assert not any('固定量程' in value for value in values)
         if p.get('id') in ('closeout','closed'):
             assert '13:20' in values and '13:34' in values
         if p.get('id')=='unselected':
@@ -47,7 +48,7 @@ def check():
             overlay=next(c for c in cells if c.get('id')=='abort-overlay')
             assert float(overlay.find('mxGeometry').get('height'))==672
         image=Image.open(OUT/(stem+'.drawio.png'))
-        assert image.size in ((1280,720),(1281,721))
+        assert image.width in (1280,1281) and image.height in (720,721)
         embedded=ET.fromstring(urllib.parse.unquote(image.info['mxfile']))
         assert len(embedded)==1 and embedded[0].get('id')==p.get('id')
         counts={}
