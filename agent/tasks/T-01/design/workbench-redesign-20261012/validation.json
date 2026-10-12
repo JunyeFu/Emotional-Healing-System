@@ -1,0 +1,141 @@
+{
+  "result": "PASS",
+  "pages": [
+    {
+      "page": "home",
+      "editable_cells": 39,
+      "export_size": [
+        1280,
+        720
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
+      "page": "prepare",
+      "editable_cells": 108,
+      "export_size": [
+        1280,
+        720
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {
+        "resp": 606,
+        "ecg": 2100
+      }
+    },
+    {
+      "page": "waiting",
+      "editable_cells": 99,
+      "export_size": [
+        1280,
+        720
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {
+        "resp": 606,
+        "ecg": 2100
+      }
+    },
+    {
+      "page": "running",
+      "editable_cells": 109,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {
+        "resp": 606,
+        "ecg": 2071
+      }
+    },
+    {
+      "page": "paused",
+      "editable_cells": 109,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {
+        "resp": 606,
+        "ecg": 2071
+      }
+    },
+    {
+      "page": "closeout",
+      "editable_cells": 47,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
+      "page": "history",
+      "editable_cells": 64,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
+      "page": "details",
+      "editable_cells": 62,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
+      "page": "closed",
+      "editable_cells": 47,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
+      "page": "unselected",
+      "editable_cells": 63,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    },
+    {
+      "page": "fault",
+      "editable_cells": 111,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {
+        "resp": 606,
+        "ecg": 2071
+      }
+    },
+    {
+      "page": "abort",
+      "editable_cells": 116,
+      "export_size": [
+        1281,
+        721
+      ],
+      "embedded_pages": 1,
+      "plot_ink_pixels": {}
+    }
+  ],
+  "scope": "Editable design and native exports only; not TD runtime validation"
+}
