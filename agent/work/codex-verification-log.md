@@ -2725,3 +2725,5 @@ Python使用本机`py -3.14`（pytest9.0.3），默认`python`环境未安装pyt
 - 14_validate_ready_task_packages.py --local：5包88快照PASS_LOCAL，不等同远程分发发布检查。
 - 既有完整回归仍以本轮此前的c27ca0d6对照为准，无新增失败；没有重开Unity/TD或执行真人研究。
 - 首次访问3分钟/开发30分钟是目标，未冒充真人走查数据。TD未提交改版保留；GitHub发布与回读在后续记录。
+
+远程验收：完整源码f2fefece8e55c10c93c737a8b69bbeaa37a65be9；main首发cc98dad9d2ee46a1843d27e43dc677e70f78751d。Git push成功，fetch main成功；浏览器看到main仅agent/human及展示根入口，旧目录位于明确历史区。首页Storm图naturalWidth=2558，开发上手页面实际打开，链接固定完整版本。仓库description与6topics写入成功并可见。临时TLS EOF未放行验收，以后续成功fetch和公开浏览器为准。原生Unity/TD与真实研究不在本次验收内。

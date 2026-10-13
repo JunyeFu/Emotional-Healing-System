@@ -39,7 +39,37 @@ def main():
     selected = set(PAGES + ASSETS)
     with tempfile.TemporaryDirectory() as tmp:
         env = dict(os.environ, GIT_INDEX_FILE=str(Path(tmp) / 'index'))
-        git('read-tree', base, env=env)
+        git('read-tree', '--empty', env=env)
+        # Preserve the old default branch under one explicit historical location.
+        legacy = 'agent/archive/default-branch-legacy/'
+        entries = git('ls-tree', '-rz', base).split(b'\0')
+        already_archived = any(b'\t' + legacy.encode('utf-8') in entry for entry in entries)
+        archived = []
+        for entry in entries:
+            if not entry:
+                continue
+            metadata, name_bytes = entry.split(b'\t', 1)
+            mode, kind, oid = metadata.decode().split()
+            name = name_bytes.decode('utf-8')
+            if already_archived:
+                if name.startswith(legacy):
+                    archived.append(f'{mode} {oid}\t{name}'.encode('utf-8'))
+                continue
+            if name in selected:
+                continue
+            archived.append(f'{mode} {oid}\t{legacy}{name}'.encode('utf-8'))
+        git('update-index', '-z', '--index-info',
+            data=b'\0'.join(archived) + b'\0', env=env)
+        generated = {
+            'agent/README.md': f'# Agent source navigation\n\nCurrent implementation: [full normalized project]({REPO}/tree/{source}/agent).\n\nThe default branch is the project showcase. Its previous implementation is preserved under [default-branch-legacy](archive/default-branch-legacy/README.md), not an active runtime entry.\n',
+            'agent/archive/default-branch-legacy/README.md': f'# Archived default-branch implementation\n\nOriginal default-branch revision: [{base[:8]}]({REPO}/tree/{base}). Files are preserved unchanged under this directory; relative runtime paths belong to that original revision. Use the original revision to reproduce it.\n\nCurrent normalized implementation: [{source[:8]}]({REPO}/tree/{source}). This archive does not merge newer implementation into main.\n',
+            '.gitattributes': '*.png filter=lfs diff=lfs merge=lfs -text\n*.pdf filter=lfs diff=lfs merge=lfs -text\n*.toe filter=lfs diff=lfs merge=lfs -text\n*.zip filter=lfs diff=lfs merge=lfs -text\n',
+        }
+        if already_archived:
+            generated.pop(legacy + 'README.md')
+        for name, body in generated.items():
+            oid = git('hash-object', '-w', '--stdin', data=body.encode('utf-8')).decode().strip()
+            git('update-index', '--add', '--cacheinfo', f'100644,{oid},{name}', env=env)
         for name in PAGES + ASSETS:
             data = git('show', f'{source}:{name}')
             if name.endswith('.md'):
