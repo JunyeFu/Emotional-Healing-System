@@ -2731,3 +2731,5 @@ Python使用本机`py -3.14`（pytest9.0.3），默认`python`环境未安装pyt
 ## 2026-10-13 完整main合并前验证
 
 用户授权完整项目合入main，不再只发布展示入口。verify_project_navigation.py：12入口/286链接/71任务索引PASS；SessionCore/Store定向测试201 passed in 7.54s；build_task_reviews.py ALL --check：71包PASS；git diff --check无差异格式错误。旧本地main是远程main祖先，可快进更新；未提交TD文件不暂存。最终合并须让main提交树与本地已提交完整项目树相同，并保留双父历史，以远程回读为完成依据。
+
+完整main发布验收：合并3c6fe18c7d67c26241581c2da624650e12831f97，双父a1b67f67/ca65a642；git diff ca65a642 3c6fe18c无差异。独立干净工作树执行verify_project_navigation.py PASS（12页286链接71索引），SessionCore/Store 201 passed in 7.74s，git status干净。原子推送成功，fetch确认origin/main到3c6fe18c，本地main已同步并切换，TD两份改动及原有未跟踪候选保留。公开浏览器打开main开发指南，clone --branch main，SessionCore链接在同一main下。原生编辑器/设备全链未执行。

@@ -269,4 +269,6 @@ python -m pytest agent/modules/tests/session_store/test_recording_replay.py -q
 
 ### 完整main合并修订
 
-上述首发为历史发布方式，已由本次明确合并授权替代。main将采用完整规范化项目树，不保留展示版重复归档副本；原展示版和2214项原字节保留在a1b67f67及其父提交的Git历史中。克隆与开发统一从main进入；旧展示发布工具归档到agent/archive/tools/，当前完整发布工具为agent/tools/publish_project_main.py。业务状态不变，本地未提交TD候选不公开。
+上述首发为历史发布方式，已由本次明确合并授权替代。main已通过3c6fe18c双父合并采用完整规范化项目树，不保留展示版重复归档副本；原展示版和2214项原字节保留在a1b67f67及其父提交的Git历史中。克隆与开发统一从main进入；旧展示发布工具归档到agent/archive/tools/，当前完整发布工具为agent/tools/publish_project_main.py。业务状态不变，本地未提交TD候选不公开。
+
+干净合并工作树检查：12入口页面、286本地链接、71任务索引通过；SessionCore/Store为201 passed in 7.74s。公开浏览器实际打开main开发指南，克隆命令为main，SessionCore链接指向main/agent/modules/srp_session_core/README.md。远程main与本地主分支已同步；本次不声称原生Unity/TD全链已验收。
