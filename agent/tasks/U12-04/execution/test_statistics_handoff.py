@@ -13,7 +13,7 @@ from scipy import stats
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
 resolve_path = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_project_path']
-GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+GOV = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 ARCHIVE = TASK / 'archive/signed-candidate'
 SOURCES = json.loads((TASK / 'inputs/sources.json').read_text(encoding='utf-8'))
 OLD = json.loads((ARCHIVE / 'evidence.json').read_text(encoding='utf-8'))

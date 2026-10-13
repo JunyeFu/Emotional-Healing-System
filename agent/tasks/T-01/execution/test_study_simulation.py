@@ -8,7 +8,7 @@ import pytest
 
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE))
-BASE=HERE.parents[2]/'modules/03-TouchDesigner/t01_telemetry_panel'
+BASE=HERE.parents[2]/'modules/touchdesigner/t01_telemetry_panel'
 sys.path.insert(0,str(BASE))
 from study_simulation import Replay, step, ideal
 from record_export import export_record

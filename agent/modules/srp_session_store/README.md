@@ -2,7 +2,7 @@
 
 > 状态：`DONE_WITH_BOUNDED_SCOPE`。P-02已由傅钧烨完成真实第二人复核；本模块提供L0/L1不可覆盖追加、完整性校验和确定性重放，不推进会话状态，也不表示设备链或完整系统联调已经完成。
 
-F-05候选不增加存储层协议推断：P-02只持久化`contract_adapter.validate_message()`返回的已校验v2.1或v2.2消息，并在重放时保留版本和步骤字段原值。接口对齐见[运行合同F-05文档](../05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
+F-05候选不增加存储层协议推断：P-02只持久化`contract_adapter.validate_message()`返回的已校验v2.1或v2.2消息，并在重放时保留版本和步骤字段原值。接口对齐见[运行合同F-05文档](../communication/contracts/F-05_v2.2接口对齐基线.md)。
 
 ## 职责
 
@@ -13,7 +13,7 @@ F-05候选不增加存储层协议推断：P-02只持久化`contract_adapter.val
 - `ReplayReader`：验证manifest、记录链、检查点、段文件和封存哈希；
 - `SessionReplayer`：只重放完整提交的核心调用，不连接外部进程或重复执行外部门动作。
 
-旧`05-通信协议/csv_logger.py`继续作为`LEGACY_DEV_ONLY`保留，不是P-02正式记录入口。
+旧`communication/csv_logger.py`继续作为`LEGACY_DEV_ONLY`保留，不是P-02正式记录入口。
 
 ## 公共接口
 

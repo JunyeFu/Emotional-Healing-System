@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[4]
-DESIGN = REPO / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+DESIGN = REPO / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 V04 = DESIGN / '20_产品与场景设计/V-04_完整分镜与真实时长声音预演'
 CURRENT = Path(__file__).resolve().parents[1] / 'outputs/current-scenes.json'
 EXPECTED = {
@@ -36,7 +36,7 @@ def validate(data):
     }.items():
         if data.get(key) != value:
             errors.append(key)
-    standard_path = REPO / 'agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json'
+    standard_path = REPO / 'agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.json'
     standard = json.loads(standard_path.read_text(encoding='utf-8'))
     if data.get('abstract_rendering') != standard['abstract_pacer']:
         errors.append('abstract_rendering')

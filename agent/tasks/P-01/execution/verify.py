@@ -30,8 +30,8 @@ def main():
     run('session-consumers', ['-m', 'pytest', '-q',
                             ROOT / 'agent/modules/tests/session_core',
                             ROOT / 'agent/modules/tests/session_store',
-                            ROOT / 'agent/modules/05-通信协议/tests',
-                            ROOT / 'agent/modules/07-数据治理/tests'])
+                            ROOT / 'agent/modules/communication/tests',
+                            ROOT / 'agent/modules/data-governance/tests'])
     run('golden-generator', [TASK / 'execution/generate_golden_trace.py'])
     original = ROOT / 'agent/modules/srp_session_core/fixtures/golden/four-module-trace-v1.json'
     trace = json.loads((OUT / 'four-module-trace-v1.json').read_text(encoding='utf-8'))

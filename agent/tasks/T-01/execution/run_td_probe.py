@@ -14,7 +14,7 @@ from replay_t01_udp import (_send_frames, anomaly_frames, fixture_frames,
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-MODULE = ROOT / 'agent/modules/03-TouchDesigner/t01_telemetry_panel'
+MODULE = ROOT / 'agent/modules/touchdesigner/t01_telemetry_panel'
 EVIDENCE = TASK / 'evidence/runtime'
 TD_BIN = Path('D:/TouchDesigner/bin')
 

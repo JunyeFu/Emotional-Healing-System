@@ -7,7 +7,7 @@ import shutil
 import sys
 
 
-ROOT = Path(__file__).resolve().parents[2] / "08-随机化"
+ROOT = Path(__file__).resolve().parents[2] / "randomization"
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT.parents[2] / "agent/tasks/X-01/execution"))

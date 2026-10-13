@@ -11,7 +11,7 @@ import sys
 
 TASK_DIR = Path(__file__).resolve().parents[1]
 REPO_ROOT = TASK_DIR.parents[2]
-BASE_DIR = REPO_ROOT / "agent/modules/03-TouchDesigner/t01_telemetry_panel"
+BASE_DIR = REPO_ROOT / "agent/modules/touchdesigner/t01_telemetry_panel"
 sys.path.insert(0, str(BASE_DIR))
 sys.path.insert(0, str(REPO_ROOT / "agent/modules"))
 

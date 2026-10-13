@@ -10,7 +10,7 @@ from srp_session_core import SessionCoreError
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CONTRACTS = ROOT / "05-通信协议" / "contracts"
+CONTRACTS = ROOT / "communication" / "contracts"
 
 
 def _read(path: Path) -> dict:

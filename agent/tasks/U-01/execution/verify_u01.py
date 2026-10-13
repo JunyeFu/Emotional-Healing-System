@@ -52,8 +52,8 @@ def require(condition: bool, message: str) -> None:
 
 
 def load_contract_modules() -> tuple[object, object]:
-    protocol_dir = REPO / "agent/modules" / "05-通信协议"
-    package_name = "05-通信协议"
+    protocol_dir = REPO / "agent/modules" / "communication"
+    package_name = "communication"
     package = types.ModuleType(package_name)
     package.__path__ = [str(protocol_dir)]
     sys.modules[package_name] = package

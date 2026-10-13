@@ -147,6 +147,7 @@
     "pytest.ini",
     "AGENTS.md",
     "README.md",
+    "CONTRIBUTING.md",
     "human",
     "agent"
   ],

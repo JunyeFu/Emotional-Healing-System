@@ -29,7 +29,7 @@ def main():
 
     run('storage-consumers', ['-m', 'pytest', '-q', MODULE_ROOT / 'tests/session_store',
                             MODULE_ROOT / 'tests/session_core', MODULE_ROOT / 'tests/randomization',
-                            MODULE_ROOT / '05-通信协议/tests', MODULE_ROOT / '07-数据治理/tests'])
+                            MODULE_ROOT / 'communication/tests', MODULE_ROOT / 'data-governance/tests'])
     run('golden-archive', [TASK / 'execution/generate_golden_archive.py'])
     run('synthetic-stress', [TASK / 'execution/generate_stress_report.py'])
     old = MODULE_ROOT / 'srp_session_store/fixtures/golden/session-archive-v1/evidence.json'

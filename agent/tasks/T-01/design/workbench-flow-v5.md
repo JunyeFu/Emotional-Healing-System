@@ -21,7 +21,7 @@ I/G/X分别消费独立显示字段。现有v2.2目标字段不自动当作I或G
 真实Unity请求、正式SessionCore、P-02、问卷服务和活动准入桥尚未接入本界面。
 主页面及每场页持续显示模拟模式。真实source_mode消息被拒绝，不自动改成模拟数据运行。
 
-工作流模块：agent/modules/03-TouchDesigner/t01_telemetry_panel/experiment_workflow.py。
+工作流模块：agent/modules/touchdesigner/t01_telemetry_panel/experiment_workflow.py。
 原生构建器：agent/tasks/T-01/execution/build_workbench_flow.py。
 
 开发数据放在当前TOE所在目录的development-workflow：

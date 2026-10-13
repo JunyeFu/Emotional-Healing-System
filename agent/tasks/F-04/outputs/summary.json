@@ -109,13 +109,13 @@
       "id": "F04-N03",
       "status": "FIXED",
       "description": "已签收静态基线与壳内未启用能力不再表述为项目任务未完成",
-      "source": "agent/modules/03-TouchDesigner/f04_readonly_console/README.md"
+      "source": "agent/modules/touchdesigner/f04_readonly_console/README.md"
     },
     {
       "id": "F04-N04",
       "status": "OPEN_DOWNSTREAM_VISUAL_REVIEW",
       "description": "历史呼吸页说明覆盖曲线，需在T-01检查当前布局；本轮主机门不关闭画面可读性问题",
-      "source": "agent/modules/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
+      "source": "agent/modules/touchdesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
     },
     {
       "id": "F-04-DESIGN-BASELINE",
@@ -131,7 +131,7 @@
     },
     {
       "label": "打开 F-04 历史已签署复审",
-      "path": "agent/modules/03-TouchDesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md"
+      "path": "agent/modules/touchdesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md"
     },
     {
       "label": "打开本轮主机验证记录",

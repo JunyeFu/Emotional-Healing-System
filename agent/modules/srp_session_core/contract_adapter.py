@@ -6,8 +6,8 @@ from typing import Any, Mapping
 from .errors import SessionCoreError
 
 
-_contract_v21 = import_module("05-通信协议.runtime_contract")
-_contract_v22 = import_module("05-通信协议.runtime_contract_v22")
+_contract_v21 = import_module("communication.runtime_contract")
+_contract_v22 = import_module("communication.runtime_contract_v22")
 
 SCHEMA_VERSION: str = _contract_v21.SCHEMA_VERSION
 SUPPORTED_SCHEMA_VERSIONS = frozenset(

@@ -68,7 +68,7 @@ def _lint_p02_keys(value: Any, path: str = "$") -> None:
 
 
 def _load_linter():
-    module_root = Path(__file__).resolve().parents[1] / "07-数据治理"
+    module_root = Path(__file__).resolve().parents[1] / "data-governance"
     module_path = str(module_root)
     if module_path not in sys.path:
         sys.path.insert(0, module_path)

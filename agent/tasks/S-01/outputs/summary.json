@@ -99,7 +99,7 @@
       "id": "S01-N01",
       "status": "FIXED_LINK_QUALITY_CONFUSION",
       "description": "启动前已连接和连接即good已修复，质量保持unknown",
-      "source": "agent/modules/01-数据采集/device_manager.py"
+      "source": "agent/modules/acquisition/device_manager.py"
     },
     {
       "id": "S01-N02",
@@ -111,7 +111,7 @@
       "id": "S01-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "实际领取人为空；阈值和精度需前测冻结，不代填验收",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "id": "S-01-DESIGN-BASELINE",
@@ -127,7 +127,7 @@
     },
     {
       "label": "连接状态修复",
-      "path": "agent/modules/01-数据采集/device_manager.py"
+      "path": "agent/modules/acquisition/device_manager.py"
     },
     {
       "label": "软件验证记录",
@@ -135,7 +135,7 @@
     },
     {
       "label": "国内技能资料",
-      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
     },
     {
       "path": "agent/design/design-foundation-20261008/task-baseline.json",

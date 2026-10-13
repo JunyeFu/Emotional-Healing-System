@@ -14,7 +14,7 @@ from resolve_frozen_source import resolve_project_path
 
 TASK = Path(__file__).resolve().parents[1]
 REPO = TASK.parents[2]
-SOURCE = REPO / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-04_完整分镜与真实时长声音预演'
+SOURCE = REPO / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/V-04_完整分镜与真实时长声音预演'
 ARCHIVE = TASK / 'archive/tools'
 RUNTIME = TASK / 'evidence/runtime'
 CHECKS = (

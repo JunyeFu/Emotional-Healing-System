@@ -392,7 +392,7 @@ def test_v22_telemetry_identity_is_preserved_and_replay_is_deterministic(
     core.apply_operator_request(OperatorRequest("REQ-V22-START", "start"), 2)
     fixture_path = (
         Path(__file__).resolve().parents[2]
-        / "05-通信协议"
+        / "communication"
         / "contracts"
         / "fixtures-v2.2"
         / "valid"

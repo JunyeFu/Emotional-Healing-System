@@ -9,8 +9,8 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-05'
-UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
-GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+UNITY = ROOT / 'agent/modules/unity/SRP-Weather-Visual'
+GOV = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 
 
 def read(path):
@@ -87,7 +87,7 @@ def test_legacy_scene_has_no_current_bridge_or_four_layer_adapter(name):
 
 @pytest.mark.parametrize('name', ['CleanAndRebuildScenes', 'CleanupWeatherDuplicates'])
 def test_archived_tool_bytes_and_no_activity_or_consumers(name):
-    original = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
+    original = f'agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
     assert not (ROOT / original).exists() and not (ROOT / (original + '.meta')).exists()
     archived = TASK / f'archive/{name}.cs'
     assert '[MenuItem(' in archived.read_text(encoding='utf-8-sig')

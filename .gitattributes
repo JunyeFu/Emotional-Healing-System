@@ -1,5 +1,5 @@
-agent/modules/05-通信协议/contracts/fixtures/** text eol=lf
-agent/modules/05-通信协议/contracts/fixture_hashes.sha256 text eol=lf
+agent/modules/communication/contracts/fixtures/** text eol=lf
+agent/modules/communication/contracts/fixture_hashes.sha256 text eol=lf
 agent/modules/srp_session_store/fixtures/golden/** text eol=lf
 agent/tasks/P-02/evidence/runtime/session-archive-v1/** text eol=lf
 agent/validation/evidence/F-05/** text eol=lf
@@ -17,10 +17,10 @@ agent/tasks/U-02/archive/*-run/*.log -text whitespace=-blank-at-eol,-blank-at-eo
 agent/tasks/T-01/evidence/**/*.json text eol=lf
 agent/tasks/T-01/evidence/runtime/*.toe -text
 agent/tasks/T-01/evidence/runtime/touchdesigner/screenshots/*.png -text
-agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.asset text eol=lf
-agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.json text eol=lf
-agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.meta text eol=lf
-agent/modules/04-Unity视觉/SRP-Weather-Visual/**/*.unity text eol=lf
+agent/modules/unity/SRP-Weather-Visual/**/*.asset text eol=lf
+agent/modules/unity/SRP-Weather-Visual/**/*.json text eol=lf
+agent/modules/unity/SRP-Weather-Visual/**/*.meta text eol=lf
+agent/modules/unity/SRP-Weather-Visual/**/*.unity text eol=lf
 agent/local/artifacts/V-04/H3/independent-asset-kit/*-individual-candidate-v1/*.png filter=lfs diff=lfs merge=lfs -text
 agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png filter=lfs diff=lfs merge=lfs -text
 agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png filter=lfs diff=lfs merge=lfs -text

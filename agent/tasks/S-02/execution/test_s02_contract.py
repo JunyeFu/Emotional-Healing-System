@@ -9,9 +9,9 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/S-02'
-PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 sys.path.insert(0, str(ROOT / 'agent/modules'))
-v22 = import_module('05-通信协议.runtime_contract_v22')
+v22 = import_module('communication.runtime_contract_v22')
 
 
 def current():
@@ -19,7 +19,7 @@ def current():
 
 
 def fixture(module):
-    path = ROOT / 'agent/modules/05-通信协议/contracts/fixtures-v2.2/valid/telemetry-actual-unavailable.json'
+    path = ROOT / 'agent/modules/communication/contracts/fixtures-v2.2/valid/telemetry-actual-unavailable.json'
     frame = json.loads(path.read_text(encoding='utf-8'))
     frame['module_id'] = module
     frame['target_step_id'] = 'exhale_1'
@@ -87,7 +87,7 @@ def test_retired_score_not_accepted_as_formal_telemetry():
 
 
 def test_archive_and_frozen_input_are_kept_separate():
-    assert not (ROOT / 'agent/modules/02-信号处理/评分模型设计.md').exists()
+    assert not (ROOT / 'agent/modules/signal-processing/评分模型设计.md').exists()
     assert (TASK / 'archive/评分模型设计.md').is_file()
     frozen = PLAN / '24_团队任务与项目治理/当前解锁独立任务包/A-03/inputs/06_评分模型设计.md'
     assert frozen.is_file()
@@ -99,7 +99,7 @@ def test_archive_and_frozen_input_are_kept_separate():
 def test_frozen_source_relocation_preserves_content_and_identity(status):
     resolver = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_source']
     validator = runpy.run_path(str(PLAN / '24_团队任务与项目治理/14_validate_ready_task_packages.py'))
-    old = 'agent/modules/02-信号处理/评分模型设计.md'
+    old = 'agent/modules/signal-processing/评分模型设计.md'
     resolved = resolver(ROOT, 'A-03', status, old)
     assert resolved == TASK / 'archive/评分模型设计.md'
     renderer = runpy.run_path(str(PLAN / '24_团队任务与项目治理/13_render_ready_task_packages.py'))
@@ -112,9 +112,9 @@ def test_frozen_source_relocation_preserves_content_and_identity(status):
 
 
 @pytest.mark.parametrize('task,status,source', [
-    ('S-02', 'IN_PROGRESS', 'agent/modules/02-信号处理/评分模型设计.md'),
-    ('A-03', 'READY', 'agent/modules/02-信号处理/评分模型设计.md'),
-    ('A-03', 'IN_PROGRESS', 'agent/modules/02-信号处理/unknown.md'),
+    ('S-02', 'IN_PROGRESS', 'agent/modules/signal-processing/评分模型设计.md'),
+    ('A-03', 'READY', 'agent/modules/signal-processing/评分模型设计.md'),
+    ('A-03', 'IN_PROGRESS', 'agent/modules/signal-processing/unknown.md'),
     ('A-03', 'IN_PROGRESS', '../outside.md'),
 ])
 def test_unregistered_or_non_frozen_source_is_not_redirected(task, status, source):

@@ -12,12 +12,12 @@ ROOT = Path(__file__).resolve().parents[4]
 PACKAGE = (
     ROOT
     / "agent/governance"
-    / "01-项目章程与规划"
+    / "planning"
     / "2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
 )
 GENERATOR_PATH = Path(__file__).with_name('generate_historical.py')
 VALIDATOR_PATH = Path(__file__).with_name('validate_historical.py')
-UNITY_PROJECT = ROOT / "agent/modules" / "04-Unity视觉" / "SRP-Weather-Visual"
+UNITY_PROJECT = ROOT / "agent/modules" / "unity" / "SRP-Weather-Visual"
 
 
 def authorities() -> tuple[dict[str, str], set[str]]:

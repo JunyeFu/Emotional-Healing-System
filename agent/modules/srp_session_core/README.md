@@ -2,7 +2,7 @@
 
 > 状态：`DONE_WITH_BOUNDED_SCOPE`。P-01已由傅钧烨完成真实第二人复核；该状态只覆盖本模块合同、编排和本机传输，不代表Unity、TouchDesigner、真实设备或`LIVE_E2E`已经完成。
 
-F-05已签收，保持本页公共方法不变；`contract_adapter.validate_message()`按消息版本分派合同，Manifest会话版本驱动控制、握手和遥测版本。正式会话要求v2.2与已加载的呼吸配置hash一致；接口对齐见[运行合同F-05文档](../05-通信协议/contracts/F-05_v2.2接口对齐基线.md)。
+F-05已签收，保持本页公共方法不变；`contract_adapter.validate_message()`按消息版本分派合同，Manifest会话版本驱动控制、握手和遥测版本。正式会话要求v2.2与已加载的呼吸配置hash一致；接口对齐见[运行合同F-05文档](../communication/contracts/F-05_v2.2接口对齐基线.md)。
 
 ## 职责
 
@@ -32,7 +32,7 @@ snapshot() -> SessionSnapshot
 
 研究v1.2候选时序把分条件教学置于PANAS前测之后、核心之前。当前`SessionCore`只编排核心体验：`prepare`不登记暴露，第一次`start`才调用暴露门，因此本模块本身不能保证教学后的退出阻断。不能在登记之前展示条件教学，也不能把本轮核心回归当成教学流程通过。
 
-P-01与U12-11后续须按冻结时序接入“首次条件教学之前登记”，保留G-02预约与暴露状态；验证教学后退出、核心未启动、再次预约均阻断。U12-06的正式准入仍须消费真实冻结与资格，本轮不增加未冻结的教学操作或改变六个公共方法。当前缺口见[数据治理消费合同](../07-数据治理/docs/downstream_contracts.md)。
+P-01与U12-11后续须按冻结时序接入“首次条件教学之前登记”，保留G-02预约与暴露状态；验证教学后退出、核心未启动、再次预约均阻断。U12-06的正式准入仍须消费真实冻结与资格，本轮不增加未冻结的教学操作或改变六个公共方法。当前缺口见[数据治理消费合同](../data-governance/docs/downstream_contracts.md)。
 
 ## 本机传输
 
@@ -55,6 +55,6 @@ Set-Location 'D:\Agent\srp'
 py -3.14 'agent/tasks/P-01/execution/verify.py'
 ```
 
-生成器已迁入[Agent执行层](../../tasks/P-01/execution/generate_golden_trace.py)，只写本轮`agent/tasks/P-01/evidence/runtime`，不覆盖上述历史golden。相同manifest、分配和时钟产生相同控制、会话事件和`trace_hash`。P-02已签收，其不可覆盖落盘与确定性重放仍在`../srp_session_store/`；该签收不代表正式运行装配或真实设备全链已完成。
+生成器已迁入[Agent执行层](../../../agent/tasks/P-01/execution/generate_golden_trace.py)，只写本轮`agent/tasks/P-01/evidence/runtime`，不覆盖上述历史golden。相同manifest、分配和时钟产生相同控制、会话事件和`trace_hash`。P-02已签收，其不可覆盖落盘与确定性重放仍在`../srp_session_store/`；该签收不代表正式运行装配或真实设备全链已完成。
 
-本轮规范化入口见[任务工作单](../../tasks/P-01/TASK.md)，历史技术验收记录和真实第二人签署保留原字节及当时状态；当前证据从Agent执行层读取。
+本轮规范化入口见[任务工作单](../../../agent/tasks/P-01/TASK.md)，历史技术验收记录和真实第二人签署保留原字节及当时状态；当前证据从Agent执行层读取。

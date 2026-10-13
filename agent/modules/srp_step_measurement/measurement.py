@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "srp_session_core/config/breath_protocol_config_v2.2.json"
 CONFIG = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
 STEPS = {m: tuple(s["step_id"] for s in v["steps"]) for m, v in CONFIG["modules"].items()}
-PHASES = import_module("05-通信协议.runtime_contract_v22").STEP_PHASES
+PHASES = import_module("communication.runtime_contract_v22").STEP_PHASES
 VERSION = "u12-02-candidate-1"
 UNKNOWN = "UNKNOWN"
 

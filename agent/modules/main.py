@@ -89,7 +89,7 @@ def run_pipeline(args: argparse.Namespace):
     mock_label = "Real Device" if args.real else "Mock"
 
     # ── Startup header ────────────────────────────────────────────────────
-    dim_spec = _import("02-信号处理.dimension_spec")
+    dim_spec = _import("signal-processing.dimension_spec")
     presets = dim_spec.WEATHER_DIMENSION_PRESETS.get(
         args.weather, dim_spec.WEATHER_DIMENSION_PRESETS["storm"]
     )
@@ -109,7 +109,7 @@ def run_pipeline(args: argparse.Namespace):
 
     if args.real:
         # ── Real Device Mode ──
-        _01_path = os.path.join(_root, "01-数据采集")
+        _01_path = os.path.join(_root, "acquisition")
         if _01_path not in sys.path:
             sys.path.insert(0, _01_path)
         from device_manager import DeviceManager
@@ -143,22 +143,22 @@ def run_pipeline(args: argparse.Namespace):
 
     else:
         # ── Mock Mode ──
-        mock_data = _import("01-数据采集.mock_data")
+        mock_data = _import("acquisition.mock_data")
         cfg = mock_data.MockConfig.for_weather(args.weather)
         frame_generator = mock_data.generate_frames(duration=args.duration, cfg=cfg)
 
     # ── Phase 2: Signal Processing ────────────────────────────────────────
-    signal_pipeline_mod = _import("02-信号处理.signal_pipeline")
-    scoring_model_mod = _import("02-信号处理.scoring_model")
+    signal_pipeline_mod = _import("signal-processing.signal_pipeline")
+    scoring_model_mod = _import("signal-processing.scoring_model")
     pipeline = signal_pipeline_mod.SignalPipeline()
     scorer = scoring_model_mod.ScoringModel(
         cfg=scoring_model_mod.ScoringConfig.for_weather(args.weather)
     )
 
     # ── Phase 3: Outputs ──────────────────────────────────────────────────
-    udp_sender_mod = _import("05-通信协议.udp_sender")
-    osc_sender_mod = _import("05-通信协议.osc_sender")
-    csv_logger_mod = _import("05-通信协议.csv_logger")
+    udp_sender_mod = _import("communication.udp_sender")
+    osc_sender_mod = _import("communication.osc_sender")
+    csv_logger_mod = _import("communication.csv_logger")
     udp_sender = udp_sender_mod.UDPSender() if not args.no_udp else None
     osc_sender = osc_sender_mod.OSCSender() if not args.no_osc else None
     csv_log = csv_logger_mod.CSVLogger(prefix=f"sim_{args.weather}")
@@ -347,7 +347,7 @@ def _log_compact(elapsed: float, frame_idx: int, score, targets: dict):
 
 def _log_detailed(elapsed: float, frame_idx: int, score, targets: dict, log):
     """Detailed 4-dimension table, printed every DETAIL_INTERVAL frames."""
-    dim_spec_mod = _import("02-信号处理.dimension_spec")
+    dim_spec_mod = _import("signal-processing.dimension_spec")
 
     raw_vals = {
         "breath_sync": score.rr,

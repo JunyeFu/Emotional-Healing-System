@@ -10,7 +10,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/G-05'
-GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+GOV = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 LEGACY = GOV / '第58号任务包_G-05_外部准入闭环'
 CAPABILITIES = ('INSTITUTION_LEVEL_A', 'INSTITUTION_LEVEL_B', 'INSTITUTION_LEVEL_C',
                 'INSTITUTION_STAGE1', 'INSTITUTION_STAGE3', 'QUESTIONNAIRE_PERMISSION',
@@ -64,7 +64,7 @@ def test_registry_and_null_real_results():
 
 
 def test_current_navigation_links_resolve():
-    docs = ROOT / 'agent/modules/07-数据治理/docs'
+    docs = ROOT / 'agent/modules/data-governance/docs'
     for path in (LEGACY / 'TASK.md', LEGACY / 'FILES.md', docs / 'formal_machine_setup.md', docs / 'formal_environment_closure_runbook.md'):
         for target in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8-sig')):
             assert (path.parent / target).resolve().exists(), (path, target)

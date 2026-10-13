@@ -9,8 +9,8 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-08'
-UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
-PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+UNITY = ROOT / 'agent/modules/unity/SRP-Weather-Visual'
+PLAN = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 
 
 def read(path):
@@ -104,7 +104,7 @@ def test_audio_candidate_and_pause_semantics():
 
 @pytest.mark.parametrize('name', ['BuildScene1', 'BuildScene2D'])
 def test_legacy_menu_archived_verbatim_and_no_active_consumers(name):
-    relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
+    relative = f'agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
     assert not (ROOT / relative).exists() and not (ROOT / (relative + '.meta')).exists()
     for suffix in ['', '.meta']:
         before = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '742da55', relative + suffix)
@@ -125,7 +125,7 @@ def test_legacy_menu_archived_verbatim_and_no_active_consumers(name):
 
 
 def test_existing_storm_scene_bytes_preserved():
-    relative = 'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/StormScene.unity'
+    relative = 'agent/modules/unity/SRP-Weather-Visual/Assets/Scenes/StormScene.unity'
     before = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '742da55', relative)
     assert before == (ROOT / relative).read_bytes()
 
@@ -148,7 +148,12 @@ def test_formal_gate_and_asset_blocking_are_retained():
     assert data['current_gate_required_component'] == 'FormalRuntimeController' and 'FormalRuntimeController' in source
     assert data['current_gate_alignment'] == 'PENDING_FINAL_RUNTIME_ASSEMBLY_NOT_BYPASSED'
     original = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '742da55', (UNITY / 'Assets/Scripts/Editor/FormalBuildGate.cs').relative_to(ROOT).as_posix())
-    relocated = source.replace('Directory.GetParent(Directory.GetParent(technicalRoot)?.FullName ?? "")?.FullName', 'Directory.GetParent(technicalRoot)?.FullName').replace('"agent", "modules", "07-数据治理"', '"02-技术研发", "07-数据治理"')
+    layout = read(ROOT / 'agent/repository-layout.json')
+    old_module = next(Path(move['old']).name for move in layout['moves']
+                      if move['new'] == 'agent/modules/data-governance')
+    relocated = source.replace('Directory.GetParent(Directory.GetParent(technicalRoot)?.FullName ?? "")?.FullName', 'Directory.GetParent(technicalRoot)?.FullName')
+    relocated = relocated.replace('"agent", "modules", "data-governance"',
+                                  '"02-技术研发", "' + old_module + '"')
     assert original.decode('utf-8-sig').replace('\r\n', '\n') == relocated
 
 

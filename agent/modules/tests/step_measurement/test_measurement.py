@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def frame():
-    path = ROOT / "05-通信协议/contracts/consumer-fixtures/v2.2/unity/phase-instance-stream.jsonl"
+    path = ROOT / "communication/contracts/consumer-fixtures/v2.2/unity/phase-instance-stream.jsonl"
     return json.loads(path.read_text(encoding="utf-8").splitlines()[0])
 
 

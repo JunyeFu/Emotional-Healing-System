@@ -420,10 +420,10 @@ class DirectPipeline(threading.Thread):
             sys.path.insert(0, _root)
         import importlib
 
-        mock_data = importlib.import_module("01-数据采集.mock_data")
-        sig_mod = importlib.import_module("02-信号处理.signal_pipeline")
-        score_mod = importlib.import_module("02-信号处理.scoring_model")
-        udp_mod = importlib.import_module("05-通信协议.udp_sender")
+        mock_data = importlib.import_module("acquisition.mock_data")
+        sig_mod = importlib.import_module("signal-processing.signal_pipeline")
+        score_mod = importlib.import_module("signal-processing.scoring_model")
+        udp_mod = importlib.import_module("communication.udp_sender")
 
         cfg = mock_data.MockConfig.for_weather(self.weather)
         generator = mock_data.generate_frames(duration=0, cfg=cfg)  # infinite

@@ -21,9 +21,9 @@ def save(path, value):
 def main():
     helper = runpy.run_path(str(ROOT / 'agent/tools/migrate_support_roots.py'))
     # Only these thin wrappers are current navigation, not signed design sources.
-    wrappers = ('07-数据治理/docs/formal_machine_setup.md',
-                '07-数据治理/docs/formal_environment_closure_runbook.md',
-                '03-TouchDesigner/TD原型规划.md', '03-TouchDesigner/step-3-breath-animation.md')
+    wrappers = ('data-governance/docs/formal_machine_setup.md',
+                'data-governance/docs/formal_environment_closure_runbook.md',
+                'touchdesigner/TD原型规划.md', 'touchdesigner/step-3-breath-animation.md')
     for relative in wrappers:
         old = ROOT / '02-技术研发' / relative
         current = ROOT / 'agent/modules' / relative

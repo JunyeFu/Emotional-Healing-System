@@ -10,7 +10,7 @@ from verify_summary_refresh import verify_refreshed_word
 
 ROOT = Path(__file__).resolve().parents[2]
 EVIDENCE = ROOT / 'agent/evidence'
-PLAN = 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/'
+PLAN = 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/'
 GOV = PLAN + '24_团队任务与项目治理/'
 MANUAL = {
     GOV + name for name in (

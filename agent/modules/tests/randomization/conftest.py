@@ -5,7 +5,7 @@ import sys
 
 
 TECH_ROOT = Path(__file__).resolve().parents[2]
-RANDOMIZATION_ROOT = TECH_ROOT / "08-随机化"
+RANDOMIZATION_ROOT = TECH_ROOT / "randomization"
 
 for path in (TECH_ROOT, RANDOMIZATION_ROOT):
     if str(path) not in sys.path:

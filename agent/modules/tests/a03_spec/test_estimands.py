@@ -8,7 +8,7 @@ ROOT = Path(__file__).parents[4]
 ESTIMANDS = (
     ROOT
     / "agent/governance"
-    / "01-项目章程与规划"
+    / "planning"
     / "2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0"
     / "22_离线处理与科研分析"
     / "A-03_SPEC"

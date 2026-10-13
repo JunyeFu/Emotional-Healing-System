@@ -8,7 +8,7 @@ import jsonschema
 import pytest
 
 
-PACKAGE = Path(__file__).parents[4] / "agent/modules" / "02-信号处理" / "a03_gate2_spec"
+PACKAGE = Path(__file__).parents[4] / "agent/modules" / "signal-processing" / "a03_gate2_spec"
 
 
 def _documents():

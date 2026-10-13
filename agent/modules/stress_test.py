@@ -58,14 +58,14 @@ class SegmentStats:
 
 def run_stress_test(full: bool = False):
     """Run 60-second 4-weather stress test and print 4-dimension report."""
-    mock_data = importlib.import_module("01-数据采集.mock_data")
-    signal_pipeline_mod = importlib.import_module("02-信号处理.signal_pipeline")
-    scoring_model_mod = importlib.import_module("02-信号处理.scoring_model")
-    dim_spec = importlib.import_module("02-信号处理.dimension_spec")
+    mock_data = importlib.import_module("acquisition.mock_data")
+    signal_pipeline_mod = importlib.import_module("signal-processing.signal_pipeline")
+    scoring_model_mod = importlib.import_module("signal-processing.scoring_model")
+    dim_spec = importlib.import_module("signal-processing.dimension_spec")
 
     if full:
-        udp_sender_mod = importlib.import_module("05-通信协议.udp_sender")
-        csv_logger_mod = importlib.import_module("05-通信协议.csv_logger")
+        udp_sender_mod = importlib.import_module("communication.udp_sender")
+        csv_logger_mod = importlib.import_module("communication.csv_logger")
 
     segment_stats: dict[str, SegmentStats] = {w: SegmentStats(weather_type=w) for w in WEATHER_CYCLE}
     total_frames = 0

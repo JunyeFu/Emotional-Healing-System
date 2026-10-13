@@ -6,8 +6,8 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-03'
-PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
-UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
+PLAN = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+UNITY = ROOT / 'agent/modules/unity/SRP-Weather-Visual'
 
 
 def read(path):
@@ -78,7 +78,7 @@ def test_actual_interface_not_claimed_color_renderer():
 
 
 def test_legacy_design_is_archived_not_current_entry():
-    assert not (ROOT / 'agent/modules/04-Unity视觉/场景设计.md').exists()
+    assert not (ROOT / 'agent/modules/unity/场景设计.md').exists()
     archived = (TASK / 'archive/场景设计.md').read_text(encoding='utf-8-sig')
     assert 'Spout' in archived and 'calm_index' in archived
-    assert '04-Unity视觉/场景设计.md' not in (ROOT / 'AGENTS.md').read_text(encoding='utf-8-sig')
+    assert 'unity/场景设计.md' not in (ROOT / 'AGENTS.md').read_text(encoding='utf-8-sig')

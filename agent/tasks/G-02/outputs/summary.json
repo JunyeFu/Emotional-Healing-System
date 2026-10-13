@@ -109,13 +109,13 @@
       "id": "G02-N03",
       "status": "FIXED",
       "description": "当前资产计数与本轮233/259对齐，DONE与外部责任分开",
-      "source": "agent/modules/07-数据治理/README.md"
+      "source": "agent/modules/data-governance/README.md"
     },
     {
       "id": "G02-N04",
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "P-01仅在核心start登记暴露，新版条件教学接入与退出阻断由P-01/U12-11完成，当前尚未正式闭环",
-      "source": "agent/modules/07-数据治理/docs/downstream_contracts.md"
+      "source": "agent/modules/data-governance/docs/downstream_contracts.md"
     },
     {
       "id": "G-02-DESIGN-BASELINE",
@@ -131,7 +131,7 @@
     },
     {
       "label": "打开原真实第二人签收",
-      "path": "agent/modules/07-数据治理/G-02_第二人审核报告_已签署.md"
+      "path": "agent/modules/data-governance/G-02_第二人审核报告_已签署.md"
     },
     {
       "label": "打开本轮环境和资产结果",
@@ -143,7 +143,7 @@
     },
     {
       "label": "统一实施标准",
-      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
     },
     {
       "label": "成员原视频帧索引",

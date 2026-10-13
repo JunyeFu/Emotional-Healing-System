@@ -97,7 +97,7 @@
       "id": "E03-N01",
       "status": "FIXED_LEVEL_C_ACTIVITY_SCOPE",
       "description": "Level C资格行补齐B-01实际采集，仍PENDING_EXTERNAL；在研输入冻结未刷新并留影响记录",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
     },
     {
       "id": "E03-N02",
@@ -133,7 +133,7 @@
     },
     {
       "label": "活动范围与冻结输入影响",
-      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
     },
     {
       "label": "软件核查与回归",
@@ -145,7 +145,7 @@
     },
     {
       "label": "统一实施标准",
-      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
     },
     {
       "label": "成员原视频帧索引",

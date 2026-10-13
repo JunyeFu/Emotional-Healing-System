@@ -4,7 +4,7 @@ import sys
 
 ROOT = '/project1/T01_TelemetryPanel'
 TASK_DIR = Path(__file__).resolve().parents[1]
-BASE = TASK_DIR.parents[2] / 'agent/modules/03-TouchDesigner/t01_telemetry_panel'
+BASE = TASK_DIR.parents[2] / 'agent/modules/touchdesigner/t01_telemetry_panel'
 RUNTIME_DIR = TASK_DIR / 'evidence/runtime'
 ASSETS = TASK_DIR / 'design/workbench-icons'
 SHELL = ROOT + '/WorkbenchA'

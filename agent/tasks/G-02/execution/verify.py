@@ -7,8 +7,8 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[4]
-MODULE = ROOT / 'agent/modules/07-数据治理'
-UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
+MODULE = ROOT / 'agent/modules/data-governance'
+UNITY = ROOT / 'agent/modules/unity/SRP-Weather-Visual'
 TASK = ROOT / 'agent/tasks/G-02'
 OUT = TASK / 'evidence/runtime'
 

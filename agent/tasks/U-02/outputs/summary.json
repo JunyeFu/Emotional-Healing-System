@@ -99,19 +99,19 @@
       "id": "U02-N01",
       "status": "FIXED",
       "description": "Recovery按模块/会话边界重置，锁定换段保持；新增生命周期回归通过",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
     },
     {
       "id": "U02-N02",
       "status": "FIXED",
       "description": "四天气合法空步骤与F-05对齐；非空缺实例仍拒绝",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
     },
     {
       "id": "U02-N03",
       "status": "FIXED",
       "description": "开发驱动条件编译，构建取得F-03作用域授权；正式门未放宽",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
     },
     {
       "id": "U02-N04",
@@ -151,7 +151,7 @@
     },
     {
       "label": "打开原真实第二人签收",
-      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/task_member_outputs/U-02/第二人审核报告_已签署.md"
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/task_member_outputs/U-02/第二人审核报告_已签署.md"
     },
     {
       "label": "本包新版画面及核查边界",
@@ -159,7 +159,7 @@
     },
     {
       "label": "统一实施标准",
-      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
     },
     {
       "label": "成员原视频帧索引",

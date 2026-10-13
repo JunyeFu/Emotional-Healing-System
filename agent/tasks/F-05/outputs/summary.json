@@ -105,13 +105,13 @@
       "id": "F05-N02",
       "status": "FIXED",
       "description": "当前接口基线和迁移指南已按真实签收修正DONE及下游范围",
-      "source": "agent/modules/05-通信协议/contracts/F-05_v2.2接口对齐基线.md"
+      "source": "agent/modules/communication/contracts/F-05_v2.2接口对齐基线.md"
     },
     {
       "id": "F05-N03",
       "status": "FIXED",
       "description": "合同入口兼容规则明确限定v2.1，不再误读为全版本拒绝v2.2",
-      "source": "agent/modules/05-通信协议/contracts/README.md"
+      "source": "agent/modules/communication/contracts/README.md"
     },
     {
       "id": "F-05-DESIGN-BASELINE",

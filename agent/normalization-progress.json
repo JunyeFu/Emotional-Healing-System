@@ -80,7 +80,7 @@
       "id": "F01-N01",
       "status": "FIXED",
       "description": "合同入口F-05状态与注册表不一致",
-      "source": "agent/modules/05-通信协议/contracts/README.md"
+      "source": "agent/modules/communication/contracts/README.md"
     },
     {
       "task_id": "F-01",
@@ -114,13 +114,13 @@
       "id": "F02-N03",
       "status": "OPEN_HUMAN_REVIEW",
       "description": "历史验收仅模型候选审查，所读来源未取得F-02真实第二人签署；责任由团队总监安排",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
     },
     {
       "task_id": "F-02",
       "id": "F-02-DESIGN-BASELINE",
-      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
-      "description": "构念、情绪与公平执行测量；新业务证据未由文档刷新取得。"
+      "status": "DESIGN_APPROVED_EMPIRICAL_PENDING",
+      "description": "F-02原注册状态DONE及历史签收保留。2026-10-09用户批准本轮设计通过；当前设计与材料更新已交付。中文独立复核、适用性验证和正式测量冻结仍待执行，不以历史DONE或设计批准代替真实研究准入。"
     },
     {
       "task_id": "F-03",
@@ -134,14 +134,14 @@
       "id": "F03-N02",
       "status": "FIXED",
       "description": "现行Unity协调入口F-03 READY与签收DONE矛盾已修正",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md"
     },
     {
       "task_id": "F-03",
       "id": "F03-N03",
       "status": "FIXED",
       "description": "未授权构建已被拦截但探针输出意外完成，已改为按实际结果报告并完整复测",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs"
     },
     {
       "task_id": "F-03",
@@ -175,14 +175,14 @@
       "id": "F04-N03",
       "status": "FIXED",
       "description": "已签收静态基线与壳内未启用能力不再表述为项目任务未完成",
-      "source": "agent/modules/03-TouchDesigner/f04_readonly_console/README.md"
+      "source": "agent/modules/touchdesigner/f04_readonly_console/README.md"
     },
     {
       "task_id": "F-04",
       "id": "F04-N04",
       "status": "OPEN_DOWNSTREAM_VISUAL_REVIEW",
       "description": "历史呼吸页说明覆盖曲线，需在T-01检查当前布局；本轮主机门不关闭画面可读性问题",
-      "source": "agent/modules/03-TouchDesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
+      "source": "agent/modules/touchdesigner/f04_readonly_console/evidence/touchdesigner/screenshots/03_respiration_waveform.png"
     },
     {
       "task_id": "F-04",
@@ -202,14 +202,14 @@
       "id": "F05-N02",
       "status": "FIXED",
       "description": "当前接口基线和迁移指南已按真实签收修正DONE及下游范围",
-      "source": "agent/modules/05-通信协议/contracts/F-05_v2.2接口对齐基线.md"
+      "source": "agent/modules/communication/contracts/F-05_v2.2接口对齐基线.md"
     },
     {
       "task_id": "F-05",
       "id": "F05-N03",
       "status": "FIXED",
       "description": "合同入口兼容规则明确限定v2.1，不再误读为全版本拒绝v2.2",
-      "source": "agent/modules/05-通信协议/contracts/README.md"
+      "source": "agent/modules/communication/contracts/README.md"
     },
     {
       "task_id": "F-05",
@@ -222,7 +222,7 @@
       "id": "G01-N01",
       "status": "FIXED",
       "description": "步骤五入口已按真实签收DONE与G-05责任范围订正",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/00_第5步计划.md"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/00_第5步计划.md"
     },
     {
       "task_id": "G-01",
@@ -243,7 +243,7 @@
       "id": "G01-N04",
       "status": "OPEN_EXTERNAL_OWNER_AND_EVIDENCE",
       "description": "G-05未领取，真实角色、机构许可与现场占用/值班能力尚无回执，由团队总监安排真实负责人",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "task_id": "G-01",
@@ -270,14 +270,14 @@
       "id": "G02-N03",
       "status": "FIXED",
       "description": "当前资产计数与本轮233/259对齐，DONE与外部责任分开",
-      "source": "agent/modules/07-数据治理/README.md"
+      "source": "agent/modules/data-governance/README.md"
     },
     {
       "task_id": "G-02",
       "id": "G02-N04",
       "status": "OPEN_DOWNSTREAM_TEACHING_EXPOSURE",
       "description": "P-01仅在核心start登记暴露，新版条件教学接入与退出阻断由P-01/U12-11完成，当前尚未正式闭环",
-      "source": "agent/modules/07-数据治理/docs/downstream_contracts.md"
+      "source": "agent/modules/data-governance/docs/downstream_contracts.md"
     },
     {
       "task_id": "G-02",
@@ -351,7 +351,7 @@
       "id": "U01-N01",
       "status": "FIXED",
       "description": "Editor证据写入本包runtime，不再覆盖历史签收目录",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs"
     },
     {
       "task_id": "U-01",
@@ -385,21 +385,21 @@
       "id": "U02-N01",
       "status": "FIXED",
       "description": "Recovery按模块/会话边界重置，锁定换段保持；新增生命周期回归通过",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/V03/V03SceneAdapter.cs"
     },
     {
       "task_id": "U-02",
       "id": "U02-N02",
       "status": "FIXED",
       "description": "四天气合法空步骤与F-05对齐；非空缺实例仍拒绝",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/V03/V03FrameDto.cs"
     },
     {
       "task_id": "U-02",
       "id": "U02-N03",
       "status": "FIXED",
       "description": "开发驱动条件编译，构建取得F-03作用域授权；正式门未放宽",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/V03/DevTools/Editor/V03DemoBuild.cs"
     },
     {
       "task_id": "U-02",
@@ -658,14 +658,14 @@
       "id": "D01-N02",
       "status": "OPEN_REAL_HARDWARE",
       "description": "缺实际驱动、Windows兼容与30分钟真机记录，不能关闭UP-06/M06",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
     },
     {
       "task_id": "D-01",
       "id": "D01-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "岗位P-HARDWARE未落实实际领取人，领取与输入冻结须由治理流程完成",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "task_id": "D-01",
@@ -678,7 +678,7 @@
       "id": "D02-N01",
       "status": "FIXED_NATIVE_BATCH",
       "description": "共享呼吸帧原生样本丢失已补批次与时间戳，旧均值仅作显示",
-      "source": "agent/modules/01-数据采集/frame_clock.py"
+      "source": "agent/modules/acquisition/frame_clock.py"
     },
     {
       "task_id": "D-02",
@@ -692,7 +692,7 @@
       "id": "D02-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "P-HARDWARE尚未落实实际领取人，不代填签收",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "task_id": "D-02",
@@ -712,7 +712,7 @@
       "id": "S01-N01",
       "status": "FIXED_LINK_QUALITY_CONFUSION",
       "description": "启动前已连接和连接即good已修复，质量保持unknown",
-      "source": "agent/modules/01-数据采集/device_manager.py"
+      "source": "agent/modules/acquisition/device_manager.py"
     },
     {
       "task_id": "S-01",
@@ -726,7 +726,7 @@
       "id": "S01-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "实际领取人为空；阈值和精度需前测冻结，不代填验收",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "task_id": "S-01",
@@ -1519,7 +1519,7 @@
       "id": "E03-N01",
       "status": "FIXED_LEVEL_C_ACTIVITY_SCOPE",
       "description": "Level C资格行补齐B-01实际采集，仍PENDING_EXTERNAL；在研输入冻结未刷新并留影响记录",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/input_impacts/E03_LevelC_activity_scope.json"
     },
     {
       "task_id": "E-03",

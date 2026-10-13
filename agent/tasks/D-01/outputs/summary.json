@@ -103,13 +103,13 @@
       "id": "D01-N02",
       "status": "OPEN_REAL_HARDWARE",
       "description": "缺实际驱动、Windows兼容与30分钟真机记录，不能关闭UP-06/M06",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/upgrade_subdeliveries_v1.0.csv"
     },
     {
       "id": "D01-N03",
       "status": "OPEN_REAL_OWNER",
       "description": "岗位P-HARDWARE未落实实际领取人，领取与输入冻结须由治理流程完成",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "id": "D-01-DESIGN-BASELINE",
@@ -133,7 +133,7 @@
     },
     {
       "label": "国内技能资料",
-      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
     },
     {
       "path": "agent/design/design-foundation-20261008/task-baseline.json",

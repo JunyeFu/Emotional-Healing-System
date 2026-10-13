@@ -4,5 +4,5 @@ import sys
 from pathlib import Path
 
 
-PACKAGE_PARENT = Path(__file__).resolve().parents[2] / "02-信号处理"
+PACKAGE_PARENT = Path(__file__).resolve().parents[2] / "signal-processing"
 sys.path.insert(0, str(PACKAGE_PARENT))

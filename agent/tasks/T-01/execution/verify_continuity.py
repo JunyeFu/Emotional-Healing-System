@@ -6,7 +6,7 @@ import sys
 import numpy as np
 from PIL import Image
 
-sys.path.insert(0,str(Path(__file__).resolve().parents[3]/'modules/03-TouchDesigner/t01_telemetry_panel'))
+sys.path.insert(0,str(Path(__file__).resolve().parents[3]/'modules/touchdesigner/t01_telemetry_panel'))
 from workbench_session import COLORS,rgb,UNITS
 from curve_continuity import packets
 

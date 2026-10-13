@@ -9,7 +9,7 @@ import jsonschema
 from srp_randomization import generate_list
 
 
-ROOT = Path(__file__).resolve().parents[2] / "08-随机化"
+ROOT = Path(__file__).resolve().parents[2] / "randomization"
 
 
 def test_generated_lists_match_machine_schema() -> None:

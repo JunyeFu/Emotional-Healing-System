@@ -106,7 +106,7 @@ class G02PrivacyGate:
 
 def load_g02_privacy_gate(repo_root: Path | None = None) -> G02PrivacyGate:
     root = repo_root or Path(__file__).resolve().parents[3]
-    module_root = root / "agent/modules" / "07-数据治理"
+    module_root = root / "agent/modules" / "data-governance"
     if not module_root.is_dir():
         raise SessionCoreError("G02_PRIVACY_GATE_UNAVAILABLE", str(module_root))
     module_path = str(module_root)

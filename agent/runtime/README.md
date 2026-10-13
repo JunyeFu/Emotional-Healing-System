@@ -1,5 +1,7 @@
 # SRP 当前运行入口
 
+新成员先完成[开发上手](../../human/developers/README.md)的无硬件验证。Unity工程在 `agent/modules/unity/SRP-Weather-Visual/`，TD工程在 `agent/modules/touchdesigner/`；原生版本和候选状态见开发指南，不以旧模拟链作为正式启动器。
+
 > 当前任务范围已迁移至[固定A对受限适应B基线](../design/design-foundation-20261008/README.md)，原注册状态与签收仅覆盖原范围；运行代码/API及真实研究冻结尚未由本轮完成。
 
 本页组织已有运行权威，不新增启动器或宣称正式系统已经就绪。当前工作目录为`D:\Agent\srp`；共享工程已迁入`agent/modules/`，其余根目录迁移进度以[root-layout.json](../root-layout.json)为准。

@@ -19,10 +19,10 @@ DANGEROUS_SUFFIXES = {
     ".sqlite3",
 }
 ARTIFACT_ROOTS = (
-    PurePosixPath("agent/modules/07-数据治理/evidence"),
+    PurePosixPath("agent/modules/data-governance/evidence"),
     PurePosixPath("agent/tasks/G-02/evidence"),
     PurePosixPath(
-        "agent/modules/04-Unity视觉/SRP-Weather-Visual/Governance"
+        "agent/modules/unity/SRP-Weather-Visual/Governance"
     ),
 )
 TEXT_SUFFIXES = {".json", ".log", ".md", ".txt"}

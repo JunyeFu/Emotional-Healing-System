@@ -14,7 +14,7 @@ def current_mapping():
     scenes = json.loads((REPO / 'agent/tasks/V-02/outputs/current-scenes.json').read_text(encoding='utf-8'))
     data['schema_id'] = 'V03_CURRENT_USAGE_NOT_NETWORK_MESSAGE'
     data['version'] = '1.2-member-standard'
-    standard_path = 'agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json'
+    standard_path = 'agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.json'
     standard = json.loads((REPO / standard_path).read_text(encoding='utf-8'))
     data['implementation_standard_source'] = standard_path
     data['unity_target_version'] = standard['unity_target']['version']

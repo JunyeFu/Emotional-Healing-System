@@ -178,7 +178,7 @@
 ## 2026-09-17 SRP目录体系收敛（Agent顶层唯一入口）
 
 - 审计确认25个登记worktree中，D盘22个全部干净或仅含evidence/Unity设置差异；5个codex任务分支（f-03/f-04/f-05×2/t-01）0提交领先于main，两个.codex detached树（b7d12db/6760743）可达main。
-- 13个脏worktree的差异内容（evidence证据+Unity设置churn，共135文件）先归档至`_archive/worktree-evidence/<原目录名>/`再移除；SRP-backups与03-SRP-f03-validation整体迁入`_archive/`；重组前完整登记快照存`_archive/worktree-registry-20260917.txt`。
+- 13个脏worktree的差异内容（evidence证据+Unity设置churn，共135文件）先归档至`agent/archive/local/worktree-evidence/<原目录名>/`再移除；SRP-backups与03-SRP-f03-validation整体迁入`agent/archive/local/`；重组前完整登记快照存`agent/archive/local/worktree-registry-20260917.txt`。
 - 移除22个D盘worktree（03-SRP-f03-worktree因Windows长路径分两步清除）；codex.exe运行中，两个.codex树按约定不动。回收约28.5GB。
 - 验证：20个detached证据提交`git cat-file -t`全部返回commit；28个codex分支保留；`git status --short`与重组前一致；`D:\Agent`顶层SRP相关仅剩`03-SRP/`；`_archive`合计1.6GB。
 - 回滚方式：worktree按登记快照`git worktree add <路径> <提交或分支>`重建；归档仅移动未删除。
@@ -207,7 +207,7 @@
 ## 2026-09-08 A主题功能盘点与v3首页
 
 - 读取T-01/T-02实际边界与字段；P-01传输仍返回TD_STATE_CHANGE_NOT_AVAILABLE，P-02归档读取不等于现成TD导出服务。
-- T-01专项回归：`py -3.14 -m pytest -q 02-技术研发/03-TouchDesigner/t01_telemetry_panel/tests`，17 passed。
+- T-01专项回归：`py -3.14 -m pytest -q agent/modules/touchdesigner/t01_telemetry_panel/tests`，17 passed。
 - v3本地引用全部存在，功能表20项；新增设计与提示词措辞扫描无匹配（rg退出码1）；`git diff --check`通过。PNG字节SHA-256为`EEAD9A1606CA7BBE6E68AF68A680F763DEEE53F544CF06F7FAAD26172311CF51`。
 - 内置image_gen以A图为参考生成v3首页，保存workbench-v3-aligned.png；可见各区域无明显遮挡，生成文字最终由原生组件按规格重排，不作为字段字形精确验收。
 - 本轮是静态功能和设计交付；未运行新的TD界面、请求或导出验收。不改变任务状态和既有签收。
@@ -250,7 +250,7 @@
 | Field | Notes |
 |---|---|
 | Expected Observation | The project has one navigable summary that separates repository reality from target design, consolidates confirmed product and research decisions, labels pending proposals, and identifies the exact gates before team task-package decomposition. |
-| Actual Result | Added `00-项目管理/看板与进度/2026-08-04_项目情况与顶层设计汇总.md`, linked it from M00, added U41 to the Grill record, and updated the blackboard. The summary covers product boundaries, four modules, runtime timeline, two contribution objects, three-stage evidence, data processing, result-to-claim limits, publication narrative, output portfolio, responsibility directions, current gaps, and pending decisions. Full Python regression passed: `42 passed in 8.21s`. |
+| Actual Result | Added `agent/governance/boards/2026-08-04_项目情况与顶层设计汇总.md`, linked it from M00, added U41 to the Grill record, and updated the blackboard. The summary covers product boundaries, four modules, runtime timeline, two contribution objects, three-stage evidence, data processing, result-to-claim limits, publication narrative, output portfolio, responsibility directions, current gaps, and pending decisions. Full Python regression passed: `42 passed in 8.21s`. |
 | Deviation / Surprise | The historical stage board still says delivery and archival work, while the confirmed research direction is in top-level redesign. The summary records this divergence but does not silently rewrite the historical board. One draft line said four complete orders and was corrected to 24 before staging. |
 | Verification Command | Targeted `rg` checks for all required sections and status labels; restricted-term scan; Markdown relative-link check; `git diff --check`; full Python test command; final staged-file and Git status checks. |
 | Residual Risk | The causal claim scope, abstract-pacer baseline, primary process endpoint, noninferiority margin, revised model hierarchy, sample size, policy specification, target architecture, and implementation task packages remain unconfirmed. |
@@ -312,7 +312,7 @@
 | Expected Observation | The Grill record keeps balanced coverage of all 24 sequences and the 14-degree-of-freedom structured model for secondary analysis and policy learning, while moving the unique confirmatory question to a small set of theory-defined contrasts and invalidating the prior 480-valid-session figure as the current requirement. |
 | Actual Result | Added U35 and updated the blackboard. The decision preserves all sequence and device data, demotes the 14-degree-of-freedom model from the primary test, and requires sample size to be recalculated after theory contrasts are frozen. Current module evidence was checked and found unresolved standardization and passive-experience conflicts. |
 | Deviation / Surprise | The current weather design pairs Storm with 4-2-6 and Heat with 1:2 long exhalation, but Snow still includes micro-action and Fade uses autonomous breathing. The Unity scene document also retains the superseded TD-Spout dependency. Theory contrasts cannot be defensibly defined until these module contracts are redesigned. |
-| Verification Command | Read-only inspection of `01-需求与设计/情绪天气方案/四种天气设计.md` and `02-技术研发/04-Unity视觉/场景设计.md`; targeted `rg` checks for U35, preserved 24-sequence coverage, demoted 14-degree-of-freedom model, prior sample-size boundary, module conflicts, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Verification Command | Read-only inspection of `agent/design/weather/四种天气设计.md` and `agent/modules/unity/场景设计.md`; targeted `rg` checks for U35, preserved 24-sequence coverage, demoted 14-degree-of-freedom model, prior sample-size boundary, module conflicts, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
 | Residual Risk | The four breathing protocols, module theory dimensions, passive presentation rules, low-degree-of-freedom contrasts, revised test hierarchy, and revised sample size remain unconfirmed. The current Unity architecture document remains stale. |
 
 ### 2026-08-04 Confirm Effect Grid And Recruitment Allowance
@@ -430,7 +430,7 @@
 | Field | Notes |
 |---|---|
 | Expected Observation | The project contains a dated, navigable record of the continuous Grill discussion, clearly separating original user inputs, confirmed decisions, superseded ideas, evidence-based rationale, pending recommendations, open questions, and the next interview gate. |
-| Actual Result | Added `00-项目管理/看板与进度/2026-08-04_Grill访谈原始总结与决策演化.md`; linked it from the M00 README; updated the project-local blackboard. The record preserves the evolution from module boundaries through Unity/TD separation, passive four-scene flow, overall outcome evidence, and the proposed 4×4 scene-breathing match design. |
+| Actual Result | Added `agent/governance/boards/2026-08-04_Grill访谈原始总结与决策演化.md`; linked it from the M00 README; updated the project-local blackboard. The record preserves the evolution from module boundaries through Unity/TD separation, passive four-scene flow, overall outcome evidence, and the proposed 4×4 scene-breathing match design. |
 | Deviation / Surprise | The current module map still describes TD Spout as a Unity input, while the later confirmed target makes Unity independent of TD. This discrepancy is recorded for a future architecture update after the research mainline is confirmed, not changed in this preservation task. |
 | Verification Command | Targeted `rg` checks for required decisions, decision-state labels, restricted terms, and the M00 navigation link; Markdown relative-link check; `git diff --check`; final `git status --short`. |
 | Residual Risk | Assistant replies before the latest turn are preserved as decision summaries rather than a byte-for-byte transcript. The proposed 4×4 design, scene-level verbal ratings, comparison condition, and four standardized breathing conditions remain unconfirmed. |
@@ -442,7 +442,7 @@
 | Expected Observation | The D-drive repository has one authoritative module map, stable entry pages for each top-level module group, no active references to the old C-drive path or user-deleted evidence files, and unchanged Python behavior. |
 | Actual Result | Added `PROJECT_MODULES.md` with M00-M10 responsibilities, interfaces, dependencies, placement rules, and validation entry points. Added entry pages for project management, experience design, verification evidence, and delivery. Updated root, development, runbook, board, and workflow navigation. Python tests passed: 42 passed. |
 | Deviation / Surprise | The worktree also contained a user modification to `CLAUDE.md`, an untracked `SRP/` asset directory, and a root docx duplicate. The duplicate docx hash matches the copy under project management; all of these pre-existing changes were preserved and excluded from this task. |
-| Verification Command | `py -3.14 -m pytest '02-技术研发/01-数据采集/tests' '02-技术研发/02-信号处理/tests' '02-技术研发/05-通信协议/tests' '02-技术研发/tests' -q`; targeted `rg` scans for old paths, deleted entries, and restricted terms; relative Markdown link check; `git diff --check`. |
+| Verification Command | `py -3.14 -m pytest 'agent/modules/acquisition/tests' 'agent/modules/signal-processing/tests' 'agent/modules/communication/tests' 'agent/modules/tests' -q`; targeted `rg` scans for old paths, deleted entries, and restricted terms; relative Markdown link check; `git diff --check`. |
 | Residual Risk | TD, Spout, and Unity Play Mode were not launched in this documentation-only task. User-deleted verification materials remain absent, so module M08 records structure and evidence requirements but not a completed full-system verification. |
 
 ### 2026-07-01 Project File and Document Cleanup
@@ -452,17 +452,17 @@
 | Expected Observation | Outdated entry docs are updated, ignored temporary artifacts are removed, authoritative protocol references point to `UDP字段冻结_v1.2.md`, and Python tests still pass. |
 | Actual Result | Updated AGENTS, CLAUDE, README, current board, development plan, UDP docs, TD bridge comment, cleanup record, data README, and blackboard. Removed caches, old zip backups, mock CSV, duplicate reference zip, and garbled Unity/MCP runtime mirror. Python 3.14.4 tests passed: 42 passed. |
 | Deviation / Surprise | The previous `.hermes-venv` interpreter no longer exists; `py -3.14` is the current valid Python entry. |
-| Verification Command | `py -3.14 -m pytest '02-技术研发/01-数据采集/tests' '02-技术研发/02-信号处理/tests' '02-技术研发/05-通信协议/tests' '02-技术研发/tests' -q`; `rg` consistency scans; `git diff --check`; targeted `Test-Path` checks for removed artifacts. |
-| Residual Risk | Unity generated cache directories remain intentionally preserved to avoid slow reimport; stage 6/7 evidence materials still need to be populated under `04-成果与交付/`. |
+| Verification Command | `py -3.14 -m pytest 'agent/modules/acquisition/tests' 'agent/modules/signal-processing/tests' 'agent/modules/communication/tests' 'agent/modules/tests' -q`; `rg` consistency scans; `git diff --check`; targeted `Test-Path` checks for removed artifacts. |
+| Residual Risk | Unity generated cache directories remain intentionally preserved to avoid slow reimport; stage 6/7 evidence materials still need to be populated under `agent/delivery/`. |
 
 ### 2026-06-24 Enable SAPIEN-Lite Workflow
 
 | Field | Notes |
 |---|---|
-| Expected Observation | `AGENTS.md` contains an appended `Codex Workflow` section; `work/` contains blackboard, verification log, and evaluation harness templates. |
+| Expected Observation | `AGENTS.md` contains an appended `Codex Workflow` section; `agent/work/` contains blackboard, verification log, and evaluation harness templates. |
 | Actual Result | All three workflow files exist; `AGENTS.md` contains `Codex Workflow`; templates contain the required blackboard, verification, and 30-task harness sections. |
-| Deviation / Surprise | `git diff --stat` only showed tracked files before staging; untracked `work/` files are expected to appear in `git status`. |
-| Verification Command | `Test-Path work/codex-blackboard.md`; `Test-Path work/codex-verification-log.md`; `Test-Path work/codex-evaluation-harness.md`; `rg -n "Codex Workflow|Current Task Goal|Expected Observation|30-Task Log|High-Risk Action Intercepted" AGENTS.md work` |
+| Deviation / Surprise | `git diff --stat` only showed tracked files before staging; untracked `agent/work/` files are expected to appear in `git status`. |
+| Verification Command | `Test-Path agent/work/codex-blackboard.md`; `Test-Path agent/work/codex-verification-log.md`; `Test-Path agent/work/codex-evaluation-harness.md`; `rg -n "Codex Workflow|Current Task Goal|Expected Observation|30-Task Log|High-Risk Action Intercepted" AGENTS.md work` |
 | Residual Risk | Workflow quality depends on future tasks consistently updating the blackboard and verification log. |
 
 ### 2026-08-05 Import And Reassess IJHCI Planning Package
@@ -470,7 +470,7 @@
 | Field | Notes |
 |---|---|
 | Expected Observation | The imported package is preserved as a candidate planning baseline, its original source is hash-auditable, confirmed user decisions are separated from package-generated freezes, and the next mainline decision is explicit. |
-| Actual Result | Copied 137 source files into `00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0` without deleting Downloads. Added import provenance, original SHA-256 inventory, a synchronous reading ledger, and a clean reassessment summary. Corrected the Unity build eligibility values and a routing-validator boundary phrase. |
+| Actual Result | Copied 137 source files into `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0` without deleting Downloads. Added import provenance, original SHA-256 inventory, a synchronous reading ledger, and a clean reassessment summary. Corrected the Unity build eligibility values and a routing-validator boundary phrase. |
 | Verification Command | Source/destination relative-path and SHA-256 comparison; `py -3.14 2026-08-05_SRP_IJHCI_power_sensitivity.py --output-dir C:\tmp\srp-power-recheck --repetitions 3000`; `py -3.14 tools\validate_ethics_pack.py`; `py -3.14 tools\validate_routing_pack.py`; restricted Chinese/English terminology scan; project pytest and Git checks at task close. |
 | Deviation / Surprise | U41 proves the imported claim/comparator/power freezes were not user-confirmed. The fourth-step validator cannot currently import `jsonschema`, and the package does not declare that dependency. |
 | Residual Risk | The recommended split-paper mainline, abstract comparator, gated outcomes, crossover design, SCCI role, non-inferiority margin, and 104-person recruitment plan remain proposals until the user confirms them and later external gates pass. |
@@ -713,7 +713,7 @@
 | Expected Observation | F-02 has a repository-owned candidate package satisfying AC1-AC3, unusable external references are excluded, status transitions are dependency-safe, and no Level or Gate result is overstated. |
 | Actual Result | Added the F-02 package, AC record and专项 validator; marked F-02 `DONE`; unlocked only G-01 and R-01; regenerated the task handbook; synchronized project entry points and the current board. |
 | Verified Evidence | F-02 validator `PASS` with 12 required item IDs; task validator `PASS` with 51 entries, 48 fixed, three templates, `DONE=F-02`, five READY tasks and W-04 terminal; protocol firewall `PASS`; `py_compile` passed; scoped Python regression `42 passed in 7.86s`; 18 local Markdown links resolved; restricted terminology absent from nine changed project documents. |
-| Deviation / Surprise | Unfiltered root `pytest` collected vendored TouchDesigner OpenAPI tests and stopped because their separate `connexion` dependency is absent. The established project scope passed after excluding `02-技术研发/03-TouchDesigner/mcp_td_v147`; this dependency was not installed because F-02 does not own vendored TD test infrastructure. |
+| Deviation / Surprise | Unfiltered root `pytest` collected vendored TouchDesigner OpenAPI tests and stopped because their separate `connexion` dependency is absent. The established project scope passed after excluding `agent/modules/touchdesigner/mcp_td_v147`; this dependency was not installed because F-02 does not own vendored TD test infrastructure. |
 | Residual Risk | Team second-person sign-off, Level A/B evidence, equivalent condition fixtures, numeric margins, U1/U5 and Gate 2 remain open. |
 
 ### 2026-08-06 Complete R-01 Candidate Representation Package
@@ -814,7 +814,7 @@
 | Verified Evidence | Exact staged-snapshot pytest `100 passed`; fast simulation regression covered 600 frames and all four weather segments; paced 15-second mock run produced 51 valid CSV rows after warmup; registry PASS with READY=F-03/F-04/G-01 and IN_REVIEW=F-01; strict indexed dispatch-package validation passed with 4 packages/74 snapshots; protocol, F-02, R-01 and W-01 validators PASS; 20/20 legacy Markdown files marked. |
 | Deviation / Surprise | The first clean staged snapshot exposed CRLF/LF hash drift for `.sha256`, `.ps1` and numbered `.gitattributes` snapshots that the primary worktree did not reveal. Renderer and validator now share the expanded text policy, with a two-script regression test; the subsequent clean staged snapshot passed. |
 | Expected Red Gates | Unity batch validation exits with `FORMAL_SCENES_MISSING`; reference provenance validator exits `REFERENCE_PROVENANCE_BLOCKED`. These are enforced blockers, not completed capabilities. |
-| Evidence Paths | `work/unity-formal-build-gate.log`; `02-技术研发/05-通信协议/F-01_技术验收记录.md`; generated dispatch manifests; this log. |
+| Evidence Paths | `agent/work/unity-formal-build-gate.log`; `agent/modules/communication/F-01_技术验收记录.md`; generated dispatch manifests; this log. |
 | Residual Risk | No formal Unity runtime, real device adapter, TD fixture replay, LIVE_E2E, external approval, participant evidence or publication-ready reference ledger exists. |
 
 ### 2026-08-08 Unity Source And Art Archive
@@ -822,7 +822,7 @@
 | Field | Notes |
 |---|---|
 | Expected Observation | The archive contains the reopenable Unity source project and both in-project and external art sources, while excluding generated caches and editor recovery residue. |
-| Actual Result | Created `04-成果与交付/Unity源文件与美术素材/SRP_Unity源文件与美术素材_20260808_142728.zip` with 536 entries and a size of 108.28 MiB. |
+| Actual Result | Created `agent/delivery/Unity源文件与美术素材/SRP_Unity源文件与美术素材_20260808_142728.zip` with 536 entries and a size of 108.28 MiB. |
 | Verified Evidence | ZIP reopened successfully; 40 C# files, 190 PNG files and 10 Unity scenes were enumerated; required `Packages/manifest.json`, `packages-lock.json` and `ProjectSettings/ProjectVersion.txt` were present; duplicate names and excluded cache entries were both zero. |
 | SHA-256 | `7792498EE0EF99E7DFA679C238628BF6F96151AB5BFB20926B5B256FBE2DF618` |
 | Exclusions | `Library`, `Temp`, `Logs`, `obj`, `UserSettings` and `Assets/_Recovery`. |
@@ -846,7 +846,7 @@
 | Actual Result | Recorded 傅钧烨 as team director and independent second reviewer using witnessed results and file review; created acceptance commit `58c9e41871214351a0fe96a413dfbc34d482ed4a`; migrated F-01, G-02, P-01 and P-02; regenerated the handbook, six packages and the fixed-task PDF; added the G-02 implementation plan. |
 | Verified Evidence | Contract suite `49 passed in 1.50s`; root regression `100 passed in 13.82s`; PowerShell consumer PASS; registry PASS with 51 entries and READY=F-03/F-04/G-01/G-02/P-01/P-02; indexed package PASS with 6 packages and 77 snapshots; protocol authority PASS; all three PDF structure checks PASS. |
 | PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages, SHA-256 `E23243D839DF47BFBC94688B961DD12FA60C12ABE1EA97991E5AD0978B21561E`; eight rendered pages were visually inspected with no clipping, overlap or unreadable content. |
-| Scope Guard | Existing four tracked deletions and the pre-existing untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` were excluded from staging. Historical records were not rewritten. |
+| Scope Guard | Existing four tracked deletions and the pre-existing untracked `SRP/`, root docx, `agent/local/tmp/` and `agent/work/unity-formal-build-gate.log` were excluded from staging. Historical records were not rewritten. |
 | Residual Risk | F-01 does not establish downstream implementation or a full-system run. G-02 remains `READY`; dedicated-machine credentials, encrypted storage, retention approval, access controls, asset evidence and recovery rehearsal are not yet present. |
 
 ### 2026-08-13 P-01 SessionCore Candidate And Review Transition
@@ -858,7 +858,7 @@
 | Verified Evidence | P-01 suite `82 passed`; root regression `289 passed`; protocol authority passed; independent model rereview returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`; registry passed with READY=F-03/F-04/G-01/P-02 and IN_REVIEW=G-02/P-01; strict indexed package validation passed with 6 packages and 156 snapshots. |
 | Independent Review | Three transport defects were fixed: fatal abort delivery/disconnect, semantic ACK propagation and local-clock telemetry throttling. Conservative exposure before start and permanent duplicate-request rejection were retained as intended. No P0-P2 remains in the model review. |
 | PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages, SHA-256 `2C1DCF288B9E2EFD86C92719CB95225D90575A87C79B29FFE8C432214D408BB4`; all pages were rendered at 120 DPI and visually checked with no clipping, overlap or unreadable content. |
-| Scope Guard | The four pre-existing tracked deletions and pre-existing untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` remain excluded. |
+| Scope Guard | The four pre-existing tracked deletions and pre-existing untracked `SRP/`, root docx, `agent/local/tmp/` and `agent/work/unity-formal-build-gate.log` remain excluded. |
 | Residual Risk | Abort delivery is best effort if the connection is already lost. Human second review, P-02, X-01, Unity/TD consumers, real devices and `LIVE_E2E` remain open. |
 
 ### 2026-08-16 P-02 Durable Session Store Candidate And Review Transition
@@ -871,7 +871,7 @@
 | Stress Evidence | 800 seconds; PLUX 320000 samples; Polar 104000 samples; L1 16000 frames; integrity valid; eight post-warmup memory samples; no end-of-run growth over warmup. |
 | Independent Review | Four rounds closed formal-capability bypass, privacy synonyms/path echo, seal cross-binding, abort preservation, prepare ordering, dual-device stress, and replay side-effect findings. No P0-P2 remains in the final model review. |
 | PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages and passed the brief verifier; all pages were rendered at 100 DPI and visually checked without clipping, overlap or unreadable text; SHA-256 `E220011680C7D5AA25F2EB87ED7F21C01D79C9C2EF94F59C2622157A05E0E5DF`. |
-| Scope Guard | The four pre-existing tracked deletions and untracked `SRP/`, root docx, `tmp/` and `work/unity-formal-build-gate.log` remain excluded. |
+| Scope Guard | The four pre-existing tracked deletions and untracked `SRP/`, root docx, `agent/local/tmp/` and `agent/work/unity-formal-build-gate.log` remain excluded. |
 | Residual Risk | Human second review, formal-machine checks, device adapters, Unity/TD consumers, X-01, A-01 and `LIVE_E2E` remain open. Hash chains detect integrity drift but are not digital signatures against a privileged malicious writer. |
 
 ### 2026-08-16 IN_REVIEW Independent Agent Audit
@@ -881,7 +881,7 @@
 | Expected Observation | Three isolated read-only reviews bind findings to the fixed G-02, P-01 and P-02 implementation commits without changing task state or signing human reports. |
 | Actual Result | All three reviews returned `REVIEW_FINDINGS_OPEN`; total findings are 0 P0, 4 P1, 4 P2 and 2 P3. |
 | Verified Evidence | G-02 `107 passed`; P-01 `82 passed`; P-02 `42 passed`; cross-module `288 passed`; root `331 passed`; protocol, registry, package and diff checks passed. Fresh counterexamples still reproduced integrity and delivery gaps. |
-| Report | `03-测试与实验/IN_REVIEW_Agent独立审核报告_2026-08-16.md` |
+| Report | `agent/validation/IN_REVIEW_Agent独立审核报告_2026-08-16.md` |
 | State Guard | G-02, P-01 and P-02 remain `IN_REVIEW`. No pending human second-review report was edited or signed. |
 | Residual Risk | Open P1 findings invalidate current model-review closure; code repair, regression tests and a fresh independent Agent pass are required before human signoff. |
 
@@ -906,7 +906,7 @@
 | Regression | 默认`python`为3.14.5且缺少pytest，未执行测试；改用`py -3.14`和pytest 9.0.3完成根回归，结果`404 passed in 28.14s`。 |
 | Protocol And Text | 协议权威v1.1验证通过；新增行不合规措辞扫描和`git diff --check`作为提交前门。 |
 | PDF QA | `02_固定任务概要.pdf`为8页，SHA-256 `1C3453527C839C29177E093E546AE4C1895A97207115B3CA50EC28AE27E5D606`；8页均以110 DPI渲染并逐页检查，无截断、重叠、空白或乱码。 |
-| Scope Guard | 保留4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`，不纳入提交。 |
+| Scope Guard | 保留4个既有删除项和既有未跟踪`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`，不纳入提交。 |
 | Residual Risk | 本轮未运行Unity Editor、Unity测试或构建。P-01/P-02/G-02真实团队第二人签收、资产替换、正式环境、设备和`LIVE_E2E`仍开放。 |
 
 ### 2026-08-18 Unity场景设计流程订正与任务包落盘
@@ -920,7 +920,7 @@
 | Text And Diff Gates | 新规划与V-01包禁用表述扫描通过；暂存新增行扫描通过；`git diff --cached --check`通过。 |
 | PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `54483B4EF13BEE3F485EB411B4567CFBBFAC5128CD00D3919DEFE73C1D35D4CB`；全部页面已渲染检查，孤立表头修复后无裁切、重叠或乱码。 |
 | Deviation | 图表首次误用默认Python并因缺少`matplotlib`失败；改用既有`D:\MathModelingTools\envs\cumcm\python.exe`后成功，未安装依赖。 |
-| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除。 |
 | Residual Risk | 本轮未执行Unity Editor、Unity测试或构建；V-01至V-05、F-03及后续U任务仍需领取、实现、验收、第二人复核和各自提交推送。 |
 
 ### 2026-08-18 V-01 研究体验契约与完整旅程
@@ -937,7 +937,7 @@
 | Text And Diff Gates | V-01制品未出现限制表述；当前权威文件不存在V-01仍为READY的陈述；`git diff --cached --check`通过。 |
 | PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `2E314D87D72AF274228DF0F67C47D81DA7B39E4D9C0EFEE87270377DEA426585`；9页联系表及第4、8页重点复查无裁切、重叠或状态冲突。 |
 | State Guard | V-01只转为`IN_REVIEW`；真实团队第二人栏保持`PENDING`，V-02继续`WAIT_DEP`。 |
-| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除。 |
 | Residual Risk | 静态设计契约不能替代Unity独立构建、跨端权限测试、真实设备链和`LIVE_E2E`证据；这些由后续任务关闭。 |
 
 ### 2026-08-18 V-01签收闭环与V-02解锁
@@ -951,7 +951,7 @@
 | Regression | `py -3.14 -m pytest -q`通过：`404 passed in 18.75s`。 |
 | PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `36F393B287D01F42B4D875BDF39FF1DFB4DBFFF882B7131A339EDC4302D23041`；全部页面以110 DPI渲染并逐页检查，无裁切、重叠、空白或乱码。 |
 | Text And Diff Gates | 当前权威文件中不存在V-01仍待签收或V-02仍为`WAIT_DEP`的陈述；新写状态文字未引入限制表述。 |
-| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除。 |
 | Residual Risk | V-02只解锁并进入决策核对，尚未形成候选概念、动态原型或Unity运行证据；G-02、P-01、P-02真实团队第二人复核仍开放。 |
 
 ### 2026-08-20 V-02场景确认收口
@@ -963,7 +963,7 @@
 | Consistency | `CONTEXT.md`和决策日志均显示场景方案已确认，节点15移出范围，节点16由既有四场景决定完成汇总，节点17转交后续工程任务。 |
 | Text Gate | 新增和更新的活跃文档未发现限制表述；六个涉及文件未发现行尾空白。 |
 | Scope Guard | 未修改任务注册表状态，未声称V-02已治理签收、Unity已实现、正式构建已完成或真实数据链已通过。 |
-| Git Guard | 既有4个删除项及`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续保留且未暂存。 |
+| Git Guard | 既有4个删除项及`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续保留且未暂存。 |
 
 ### 2026-08-20 V-02候选验收与职责闭环
 
@@ -976,7 +976,7 @@
 | Regression | 默认`python`缺少pytest；按既有冻结环境改用`py -3.14 -m pytest -q`，结果`404 passed in 18.35s`，未安装依赖。 |
 | Agent Review | Agent `01a01ee9-bec5-73d2-a590-3aedcddf3a6a`首轮发现3个P1、2个P2、1个P3；修复后无P1/P2，再关闭2个P3后返回`PASS_NO_OPEN_P1_P3`。 |
 | Diff Gate | `git diff --check`通过，仅报告既有Git行尾转换提示。 |
-| Scope Guard | 4个既有删除项及`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除；未形成Unity运行或正式数据证据。 |
+| Scope Guard | 4个既有删除项及`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除；未形成Unity运行或正式数据证据。 |
 | Candidate Commit | V-02固定候选提交为`3ebbdeedfd3c16688ae406d34c18e4f319f2afac`；治理提交只迁移状态和重生成派生制品。 |
 | Governance State | V-02迁移为`IN_REVIEW`，V-03保持`WAIT_DEP`；当前`READY`集合为F-03、F-04、G-01。 |
 | Human Gate | 真实团队第二人结论保持待填写；模型独立复审不能替代真实签收。 |
@@ -1003,7 +1003,7 @@
 
 | Field | Notes |
 |---|---|
-| Acceptance Baseline | `03-测试与实验/G-01_验收记录_2026-08-21.md`：对`origin/main`根目录8个文件的验收结论为不通过（流程违规、G-01-01缺失、时长口径矛盾、40预约vs100会话矛盾、责任人占位、术语命中5处、格式残留）。 |
+| Acceptance Baseline | `agent/validation/G-01_验收记录_2026-08-21.md`：对`origin/main`根目录8个文件的验收结论为不通过（流程违规、G-01-01缺失、时长口径矛盾、40预约vs100会话矛盾、责任人占位、术语命中5处、格式残留）。 |
 | Branch And Claim | 新分支`codex/g-01-research-governance`基于`codex/v-02-concept-design`（含最新治理状态；`origin/main`注册表落后于该分支，故不从main建支）；8个文件从`origin/main`取回并`git mv`至规划包`06_步骤05_伦理与预试材料/`，补齐`.md`扩展名。注册表G-01：`READY`→`IN_PROGRESS`（claimant=Codex、branch、reviewer=傅钧烨）→返工后`IN_REVIEW`。 |
 | Rework Content | 新增`G-01-01_单次参与材料.md`（v1.1流程权威+材料清单D-01~D-11）；G-01-02/03时长对齐v1.1基准（PANAS 2~3、猜测2~3、问卷≤5、补充知情同意与清理环节）、Polar H10表述修正为胸带式；G-01-04责任人落实R-007、M-001中文版来源给候选并标注待核验、新增许可证据索引E-001~E-008；G-01-06修正"完全相同模块"表述、修复Mermaid围栏、移除AI残留说明段；G-01-07/08演练窗口统一为D1~D14（执行期7天）、计划产能140次、U8通过线112次、预约目标165人（112÷0.85÷0.80≈164.7），补偿成本改可重建公式；G-01-09移除孤立围栏；新增`G-01-10_双人审查记录.md`（第一审查PASS候选级，第二人复核开放）。 |
 | Terminology Gate | 禁用词扫描（诊断/治疗/疾病/患者/医疗设备/临床）对`06_步骤05_伦理与预试材料/G-01-*.md`全目录0命中；原"心脑血管疾病/心理治疗/医疗诊断证明"已改写，安全筛查语义保留。 |
@@ -1011,7 +1011,7 @@
 | Package Validation | `13_render_ready_task_packages.py`重生成；`14_validate_ready_task_packages.py`通过：7包、190个输入快照。 |
 | Regression | `py -3.14 -m pytest -q`通过：`404 passed in 17.71s`。 |
 | Diff Gate | 行尾空白已清理；`git diff --check --cached`通过，仅有既有LF→CRLF转换提示。 |
-| Scope Guard | 4个既有删除项、`SRP/`、根docx、`tmp/`、`work/unity-formal-build-gate.log`继续排除在提交外。 |
+| Scope Guard | 4个既有删除项、`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除在提交外。 |
 | Final Boundary | G-01转`IN_REVIEW`不等于DONE：AC3真实演练未执行、U8未判定、M-001许可`PENDING`、伦理路径与真实团队第二人复核保持开放；正式阶段继续阻断。 |
 
 ### 2026-08-21 G-01独立Agent复审两轮闭环
@@ -1022,7 +1022,7 @@
 | Fix Commit | `3299149` fix(g01)：B1~B8全部修复；禁用词复扫0命中、围栏配平、`git diff --check`通过；已推送。 |
 | Independent Review R2 | 同一Agent闭环验证：B1~B8全部确认关闭，G-01-06§2与G-01-01§2逐项一致；增量发现G01-N1（P3，版本留痕缺失）及附观察（G-01-01上限合计62→58分钟）。 |
 | N1 Closure | G-01-01/02/03/06/07/08/09补版本记录行（含发现编号），G-01-10新增第5节修订记录；G-01-01"约62分钟"核正为"约58分钟"。 |
-| Audit Report | `03-测试与实验/G-01_Agent独立审核报告_2026-08-21.md`：总结论`MODEL_REVIEW_FINDINGS_CLOSED / HUMAN_SECOND_REVIEW_PENDING`。 |
+| Audit Report | `agent/validation/G-01_Agent独立审核报告_2026-08-21.md`：总结论`MODEL_REVIEW_FINDINGS_CLOSED / HUMAN_SECOND_REVIEW_PENDING`。 |
 | Kanban | 看板G-01行同步独立复审关闭信息；注册表状态不变（IN_REVIEW）。 |
 | PR State | PR #1（c010482）已由用户合并进main（2f8e6ae），远端分支被自动删除；修复提交推送后重建同名远端分支，需新PR携带复审修复与留痕。 |
 | Final Boundary | 模型复审关闭只解除模型复审阻断；第二人签署、M-001许可、伦理路径、U8演练保持开放，G-01不转DONE。 |
@@ -1044,7 +1044,7 @@
 |---|---|
 | G-01-11 | `08_步骤07_伦理提交与LevelA/G-01-11_伦理提交执行检查清单.md`：v1.0清单（SUPERSEDED）执行版，A~F六组逐项映射G-01交付物/责任角色/状态（✅/⬜/🔒），E.1汇总6款待冻结字段；机构路径确认前不得对外提交。 |
 | G-01-12 | `06_步骤05_伦理与预试材料/G-01-12_U8演练逐日执行脚本与记录表.md`：D1~D14逐日脚本、会话执行卡（对齐G-01-01§2八阶段）、故障模拟排期（满足G-01-08§5最少次数：P-ACT×2/T-BRE×1/T-UNI×1/F-MIS×2）、日终汇总表与U8结论步骤；关键数字140/112/165与产能模型一致。 |
-| G-02 Runbook | `02-技术研发/07-数据治理/docs/formal_environment_closure_runbook.md`：6项失败检查（GOVERNANCE_ROOT/BACKUP_ROOT/SEALED_KEY_EVIDENCE/DATA_ADMIN_ACCOUNT/DEDUP_CREDENTIAL/RETENTION_APPROVAL）逐项操作+验收+责任角色，总体验收以`G02_FORMAL_ENV_PASS`+备份恢复演练为准；密钥与联系方式全程不落盘。 |
+| G-02 Runbook | `agent/modules/data-governance/docs/formal_environment_closure_runbook.md`：6项失败检查（GOVERNANCE_ROOT/BACKUP_ROOT/SEALED_KEY_EVIDENCE/DATA_ADMIN_ACCOUNT/DEDUP_CREDENTIAL/RETENTION_APPROVAL）逐项操作+验收+责任角色，总体验收以`G02_FORMAL_ENV_PASS`+备份恢复演练为准；密钥与联系方式全程不落盘。 |
 | Gates | 禁用词扫描3个新文件0命中；注册表与任务包状态未变（READY=F-03/F-04/F-05/V-03，IN_REVIEW=G-01/G-02）；预备制品不关闭任何外部门。 |
 
 ### 2026-08-23 V-03前期规划
@@ -1190,9 +1190,9 @@
 
 | Field | Result |
 |---|---|
-| F-04 Tests | `py -3.14 -m pytest 02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py -q`：`15 passed`。 |
-| Contract Tests | `py -3.14 -m pytest 02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py -q`：`49 passed`。 |
-| P-01/P-02 Regression | `py -3.14 -m pytest 02-技术研发/tests/session_core 02-技术研发/tests/session_store -q`：`166 passed`。 |
+| F-04 Tests | `py -3.14 -m pytest agent/modules/touchdesigner/f04_readonly_console/tests/test_f04_console.py -q`：`15 passed`。 |
+| Contract Tests | `py -3.14 -m pytest agent/modules/communication/tests/contract/test_runtime_contract.py -q`：`49 passed`。 |
+| P-01/P-02 Regression | `py -3.14 -m pytest agent/modules/tests/session_core agent/modules/tests/session_store -q`：`166 passed`。 |
 | Governance Gates | 注册表校验`PASS`；独立包`PASS`：5个派发包、132份快照；`git diff --cached --check`通过。 |
 | AC2 | 关闭TouchDesigner后，9981与5005均无监听；F-04不依赖TD进程完成主机合同测试。 |
 | Candidate State | 保持`IN_REVIEW`；自动化与Codex运行验证不替代傅钧烨的独立人工签收。 |
@@ -1276,7 +1276,7 @@
 
 | Field | Result |
 |---|---|
-| Cleanup Scope | 当前Git差异包含42个已跟踪删除、8个修改和6个新增；移除V-04旧节点/ADR/H2候选链及迁移时已保留的3个旧实验文件删除项。重复docx、无引用`SRP/`素材、`tmp/`、旧候选媒体和生成日志未进入Git。 |
+| Cleanup Scope | 当前Git差异包含42个已跟踪删除、8个修改和6个新增；移除V-04旧节点/ADR/H2候选链及迁移时已保留的3个旧实验文件删除项。重复docx、无引用`SRP/`素材、`agent/local/tmp/`、旧候选媒体和生成日志未进入Git。 |
 | H2 Render | `candidate-v8`生成300个共享帧、两条1920x1080参与者视频、一条3840x1200并列视频、一条48 kHz/24-bit双声道PCM声音和一张关键帧图；媒体位于Git忽略目录。 |
 | H2 Metrics | 首帧scene/abstract平均色度均为`0.0`；4秒为`4.909/4.180`；9.5秒为`12.766/10.907`；提示掩膜外最大原始像素差为`0`。 |
 | V-04 Gates | 工具门、H1校验和H2校验均`PASS`；H2仍为`PENDING_HUMAN_CONFIRMATION`，自动验证不代替团队总监结论。 |
@@ -1463,7 +1463,7 @@
 |---|---|
 | Camera authority | 四天气均为`FIXED`；相机、背景和世界视差位移为零。 |
 | Preview groups | A/B/C三组均已生成，每组包含`storm/heat/snow/fade`四格。 |
-| Local artifacts | 三张PNG保存于`.artifacts-local/V-04/H3/fixed-background-previews/v1/`，尺寸与SHA-256写入候选清单。 |
+| Local artifacts | 三张PNG保存于`agent/local/artifacts/V-04/H3/fixed-background-previews/v1/`，尺寸与SHA-256写入候选清单。 |
 | Historical H3 | 既有H3合并验证器`PASS`；该结果只证明历史证据仍完整。 |
 | Governance | 协议权威、57项任务注册表与5个独立包/132份快照均`PASS`；`F-03`快照已同步当前产品总规格。 |
 | Project regression | 冻结Python 3.14.4执行根回归：`412 passed in 25.28s`。 |
@@ -1498,8 +1498,8 @@
 | Registry authority | `PASS`：57项；F-01=`DONE`、F-04=`IN_REVIEW`、F-05=`READY`、T-01=`WAIT_DEP`；当前可领取集合仅为F-03和F-05。 |
 | Independent packages | `PASS`：5包、132份快照，任务为F-03、F-04、F-05、G-01、G-02；T-01不在映射或分发目录中。 |
 | Protocol authority | `PASS`：v1.1权威与当前执行文件一致。 |
-| F-01 contract tests | `py -3.14 -m pytest 02-技术研发/05-通信协议/tests/contract/test_runtime_contract.py -q`：`49 passed in 0.81s`。 |
-| F-04 tests | `py -3.14 -m pytest 02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py -q`：`15 passed in 0.06s`。 |
+| F-01 contract tests | `py -3.14 -m pytest agent/modules/communication/tests/contract/test_runtime_contract.py -q`：`49 passed in 0.81s`。 |
+| F-04 tests | `py -3.14 -m pytest agent/modules/touchdesigner/f04_readonly_console/tests/test_f04_console.py -q`：`15 passed in 0.06s`。 |
 | Interface state | 当前仅有v2.1 Schema/fixture；未发现F-05要求的v2.2 Schema、步骤实例fixture和消费者迁移。F-04 UDP 5005节点仍为禁用占位。 |
 | Port state | 全局端口注册表确认UDP 5005归属`03-SRP`；`netstat -ano -p udp`未发现5005监听。 |
 | Runtime deviation | PATH默认Python 3.14.5缺少pytest；按既有冻结入口改用`py -3.14`完成测试，未安装依赖。`Get-NetUDPEndpoint`查询挂起后已中止，改用只读`netstat`完成检查。 |
@@ -1512,7 +1512,7 @@
 |---|---|
 | Source binding | 最终实现来自`codex/f-04-readonly-console`；复审候选=`6a5d0c8`，签收提交=`43a63a1`，独立任务=`01a04c71-9894-73c3-aea1-30cb0d0280c0`。 |
 | Deliverable closure | 模块化图形化只读操作台、10页/5场景、TOE/TOX、14张截图、重开报告、首轮整改记录、技术验收记录与二轮签收报告已归位。 |
-| F-04 tests | `py -3.14 -m pytest 02-技术研发/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py -q`：`21 passed in 0.17s`。 |
+| F-04 tests | `py -3.14 -m pytest agent/modules/touchdesigner/f04_readonly_console/tests/test_f04_console.py -q`：`21 passed in 0.17s`。 |
 | Related regression | F-01合同`49 passed in 0.94s`；P-01/P-02相关`166 passed in 8.50s`；根回归`412 passed in 21.19s`。 |
 | Artifact hashes | TOE=`CBC982BE379C2A1D9A0BE7FC26508B1467A8CFCD920E51FBE4193E18AE74B9EA`；TOX=`1DEC705338AF14F623177BE60975B860FA3D86851D5EF7A7C6DF95BC04DE7F76`，与签收报告一致。 |
 | Governance | 协议权威`PASS`；任务注册表57项`PASS`，F-04=`DONE`、READY=`F-03,F-05`、IN_REVIEW=`G-01,G-02`；独立包4包/106份快照`PASS`。 |
@@ -1526,7 +1526,7 @@
 | Dependency gate | `PASS`：F-01、P-01、P-02均为`DONE`，F-05领取前为`READY`且领取字段为空。 |
 | Package integrity before claim | `PASS`：4个分发包、106份快照，F-05含17份输入快照且无哈希漂移。 |
 | Contract baseline | `PASS`：正式合同仍为不可变v2.1；当前未发现v2.2 Schema、显式周期/步骤实例字段、storm双停/fade双吸运行fixture或消费者迁移。 |
-| F-01 contract tests | 在`02-技术研发/05-通信协议`内执行`py -3.14 -m pytest tests/contract -q`：`49 passed in 0.76s`。 |
+| F-01 contract tests | 在`agent/modules/communication`内执行`py -3.14 -m pytest tests/contract -q`：`49 passed in 0.76s`。 |
 | P-01/P-02 tests | 在`02-技术研发`内执行`py -3.14 -m pytest tests/session_core tests/session_store -q`：`166 passed in 4.70s`。 |
 | Command deviation | 首次把中文父目录作为pytest参数时发生Windows参数乱码且未收集测试；改为在模块目录内使用ASCII相对路径后通过，未安装或修改依赖。 |
 | Claim state | `PASS`：F-05=`IN_PROGRESS`，claimant=`Codex Agent（F-05独立对话）`，branch=`codex/f-05-phase-instance-v2-2`；项目状态枚举以`IN_PROGRESS`表示DOING。 |
@@ -1571,7 +1571,7 @@
 | Interface Inventory | UDP 5005只读消费、20Hz节流、SQI/时钟/序号/延迟/断流显示；正式模式使用v2.2帧内cycle/step身份。 |
 | Governance | 注册表验证`PASS`；`READY=U-01/U-02`，`IN_REVIEW=G-01/G-02`。 |
 | Packages | 独立包验证`PASS`；4包、111份快照，集合=`G-01,G-02,U-01,U-02`。 |
-| Focused Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q 02-技术研发/tests/test_task_package_hash_policy.py`，结果`3 passed`，未安装依赖。 |
+| Focused Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q agent/modules/tests/test_task_package_hash_policy.py`，结果`3 passed`，未安装依赖。 |
 | Evidence Boundary | 只完成领取与盘点，不声明TD实现、网络联调、正式构建或`LIVE_E2E`。 |
 
 ### 2026-09-01 T-01 implementation candidate
@@ -1698,7 +1698,7 @@
 | Full Regression | 首次误用数学建模Python导致缺少NeuroKit2，未进入测试；改用冻结Python 3.14.4并完成修订后为`498 passed in 17.45s`。 |
 | PDF | 三份PDF验证通过；仅提交更新后的固定任务概要，9页，SHA-256 `F5A30A74A9CF02543B87675185F127485BEF143C2F78D3FD375CC5D6974B007B`。 |
 | Diagrams | 两张SVG可渲染；PNG为2400×5878和2400×2640，人工检查A-06节点、条件边、59项计数和图文无明显遮挡。 |
-| Independent Review | 独立Agent `01a07285-391c-75d1-b8bb-c244d445e84b`对候选`be5335e8632c33bbe6f35af0d869a0bcddbe6b60`返回`PASS_NO_OPEN_P0_P3`；报告位于`03-测试与实验/IJHCI审计升级批次0-1_独立Agent复审报告_2026-09-06.md`，不替代真实第二人签收。 |
+| Independent Review | 独立Agent `01a07285-391c-75d1-b8bb-c244d445e84b`对候选`be5335e8632c33bbe6f35af0d869a0bcddbe6b60`返回`PASS_NO_OPEN_P0_P3`；报告位于`agent/validation/IJHCI审计升级批次0-1_独立Agent复审报告_2026-09-06.md`，不替代真实第二人签收。 |
 
 ### 2026-09-06 IJHCI审计升级效果复审修复
 
@@ -1723,7 +1723,7 @@
 
 | Check | Result |
 |---|---|
-| Focused Tests | `py -3.14 -m pytest -q 02-技术研发/tests/a03_spec`：`14 passed`（最终复跑待提交前记录）。 |
+| Focused Tests | `py -3.14 -m pytest -q agent/modules/tests/a03_spec`：`14 passed`（最终复跑待提交前记录）。 |
 | Spec Schema | `gate2_spec_v1.0.json`通过Draft 2020-12 schema校验。 |
 | Small Sensitivity Point | 固定种子、1000次、每条件24；目标场景联合通过概率0.287/0.290，`SYNTHETIC_SENSITIVITY_POINT_NO_GO`。 |
 | Existing Upper Planning Anchor | 固定种子、1000次、每条件85；目标场景联合通过概率0.934/0.942，`SYNTHETIC_UPPER_CAP_FEASIBLE`。 |
@@ -1745,7 +1745,7 @@
 | Shared Replication | 每次复制只生成一份数据供两个分析集消费，新增调用计数回归；共同通过概率单独记录。 |
 | Missingness | SCCI、理解、努力与阶段错误均覆盖四类作答状态；各结果独立筛选，差异性缺失具有条件差异。 |
 | Schema And Estimands | Gate2 Schema关闭未知字段并约束全部核心结构；新增Gate1至3 JSON估计目标表及畸形输入负测，CSV待显式强制暂存。 |
-| Focused Tests | `py -3.14 -m pytest 02-技术研发/tests/a03_spec -q`：`31 passed in 25.81s`。 |
+| Focused Tests | `py -3.14 -m pytest agent/modules/tests/a03_spec -q`：`31 passed in 25.81s`。 |
 | Synthetic Recalculation | 1000次固定种子；24/组共同通过`0.072`，85/组`0.646`，96/组`0.721`，三点均为合成`NO_GO`；操纵为空场景均为`0.000`。 |
 | Evidence Boundary | 85为既有规划锚点，96为均衡完整结果目标；总招募上限240未模拟为完整结果，正式界限与正式样本量仍为空。 |
 | Deterministic Replay | 三份报告以相同参数重跑后SHA-256不变：24/组`4C5E3E1D4E3AF8F36CD25ABA6E2C3CE55B1686AAC94EFB907194BB3948C15AF1`；85/组`49238F78BA948EE0AB378E42BD0BFA721F841A59BBBF2EE96659E4DDFEA50988`；96/组`A7F7ED723B945D087D9BB4C800649E4A29D41C99755B6DA1F00139A422A308F9`。 |
@@ -1774,7 +1774,7 @@
 |---|---|
 | Implementation | 最终实现提交`f59c1824a934813797560fdd31e4b981cfd19f96`；审核对象绑定提交`edd57b7d1416865023f821208122347182a44237`。 |
 | Independent Review | 六轮只读复审后，Agent `01a076ff-e560-7ad1-9e4f-7639097dce08`返回`PASS_NO_OPEN_P0_P3`；独立Agent自身未能运行pytest，主工作区单独提供动态验证。 |
-| Focused Tests | `py -3.14 -m pytest -p no:cacheprovider 02-技术研发/tests/randomization -q`：`33 passed`。 |
+| Focused Tests | `py -3.14 -m pytest -p no:cacheprovider agent/modules/tests/randomization -q`：`33 passed`。 |
 | X-01 Verifier | `X01_VERIFY_PASS lists=2 records=384 stage1=192 stage3=192`。 |
 | Full Regression | 治理迁移前为`564 passed in 45.55s`；治理迁移后为`564 passed in 45.15s`。 |
 | Registry | `PASS`：59项、56固定任务、3模板；`IN_REVIEW=X-01`，`READY=T-02/U-01/U-02`。 |
@@ -1886,7 +1886,7 @@
 - 证据范围为教学合同与合成一致性；真实片段、配音测时、参与者理解、正式预算/时序仍待后续任务完成。原未跟踪TD文件与tmp保留，不纳入提交。
 # 2026-09-08 首页进度图同步验证
 
-- Tools/Governance/test_readme_progress.py：3 passed，覆盖首次插入、状态替换、重复生成及无章节README。
+- agent/tools/governance/Governance/test_readme_progress.py：3 passed，覆盖首次插入、状态替换、重复生成及无章节README。
 - 首页SVG XML可解析，与权威团队任务SVG字节哈希一致；任务状态未改变，不重复生成研究证据。
 
 # 2026-09-08 GitHub README验证
@@ -1919,11 +1919,11 @@
 - `render_governance_views.py`通过，三张持久SVG和README内嵌SVG均由当前注册表生成；图中日期为2026-09-21。
 - 注册表校验、独立包校验、审计升级校验、治理v1.2校验和legacy协议校验待提交前运行。
 - PDF重建成功：221278 bytes，中文`pdftotext`提取正常，包含DONE=21和U12-03 IN_REVIEW。
-- 原有未跟踪 `02-技术研发/03-TouchDesigner/t01_telemetry_panel/Backup/`、`T01_TelemetryPanel.3.toe`及`tmp/`未暂存。
+- 原有未跟踪 `agent/modules/touchdesigner/t01_telemetry_panel/Backup/`、`T01_TelemetryPanel.3.toe`及`agent/local/tmp/`未暂存。
 # 2026-09-21 U-02复核准备
 
 - 注册表、独立包、审计升级、治理v1.2校验通过；7个独立包、63个输入快照。
-- Unity EditMode实跑：98/98 Passed，0 failed，0 skipped；结果与日志留在未跟踪`tmp/`，未提交用户临时目录。
+- Unity EditMode实跑：98/98 Passed，0 failed，0 skipped；结果与日志留在未跟踪`agent/local/tmp/`，未提交用户临时目录。
 - 三张持久SVG、README/AGENTS、看板、任务树和固定概要已由当前注册表重生成；状态为U-02/U12-03 IN_REVIEW。
 - 外部证据目录`D:\Coze\SRP\evidence`原路径不存在；本轮改从远端`codex/u-02-grip`提交`ab25a6b8df85c1326164eb8f9f0804d6d790dc87`读取四项U-02证据。
 
@@ -1943,7 +1943,7 @@
 - `07_validate_task_packages.py`通过：71项注册任务，DONE=21，READY=T-02/U12-06/U12-07/V-05，IN_REVIEW=U12-03。
 - `14_validate_ready_task_packages.py`通过：7个分发包、56个输入快照。
 - Q-01映射补入领取基线`f42ebc372af7a45034dab85f79d60c9be648e75f`，仅用于候选身份追溯，不表示任务已完成。
-- 已保留TouchDesigner备份目录、`T01_TelemetryPanel.3.toe`和`tmp/`未跟踪内容，未纳入任务提交。
+- 已保留TouchDesigner备份目录、`T01_TelemetryPanel.3.toe`和`agent/local/tmp/`未跟踪内容，未纳入任务提交。
 
 # 2026-09-21 Q-01框架设计验证
 - `tests/test_summarize_q01.py`：6/6通过，覆盖完整通过、专家项阈值失败、重建不稳定降称、评分分歧和人员不完整。
@@ -2002,7 +2002,7 @@
 
 - 工作区 D:/Agent/srp，原03-SRP入口不存在；开始git status为空。
 - 合同与CSV专项：53 passed in 1.34s；非Python消费者：PASS，frame_seq=10,11。
-- 从agent/tasks/F-01/outputs/summary.json生成human/tasks/F-01/summary.docx及human/project-review.docx；渲染至本地.artifacts-local/task-normalization并逐页检查。
+- 从agent/tasks/F-01/outputs/summary.json生成human/tasks/F-01/summary.docx及human/project-review.docx；渲染至本地agent/local/artifacts/task-normalization并逐页检查。
 - 规范化整体目标仍在执行，剩余70包与根目录业务内容迁移未完成。
 
 ## 2026-09-28 F-02双层规范化
@@ -2014,7 +2014,7 @@
 
 ## 2026-09-28 F-03双层规范化
 
-- 原Tools/F03脚本、测试及模块实际迁入agent/tasks/F-03/execution，锁迁入inputs；新运行写evidence/runtime，历史签署与原证据不改。
+- 原agent/tools/governance/F03脚本、测试及模块实际迁入agent/tasks/F-03/execution，锁迁入inputs；新运行写evidence/runtime，历史签署与原证据不改。
 - 首轮完整复测通过，但发现探针在预期拦截后误写“意外完成”；修改F03Build.cs后绑定c5ec6f5重新完整运行，输出F03_ALL_PASS。
 - 本轮Pester6/6、EditMode98/98、PlayMode4/4、两次DEV-REPLAY各343文件，产物重算通过，Player截图已检查；正式门同次资产233项、259条阻断。
 - 修正当前Unity协调文档F-03 READY为既有DONE；新测试和新代码不冒充新的真实第二人签署。原始机器日志保留原字节，不做去空白重写。
@@ -2491,7 +2491,7 @@
 
 ## 2026-09-29 根目录工具与交付迁移验证
 
-- 治理渲染器5 passed in 0.04s，根635 passed in 47.46s；治理、71注册、5分发61快照通过。旧Tools/assets/output根入口已不存在。
+- 治理渲染器5 passed in 0.04s，根635 passed in 47.46s；治理、71注册、5分发61快照通过。旧agent/tools/governance/human/assets/output根入口已不存在。
 - 当前六页PDF逐页检查，A4、正文、任务编号、DONE=24及READY/IN_PROGRESS/IN_REVIEW集合校验通过；旧材料明确归档，不声称实证结果。
 - 串联Word迁移映射改为成组段落，消除孤立第40页；39页末页已查。71包Agent正文和330 Word来源链接通过；根迁移7/19，整体未完成。
 
@@ -2701,3 +2701,27 @@ PhenX中文PDF已解析并目视核查；07内置编译success；71任务/549链
 
 画布对齐验证：核对十二页公共分隔线、六页曲线框和同类页面列表横线；明细右标题横线由253.51对齐至255。更新08-details.drawio.png，视觉复看通过；check_canvas.py十二页PASS，936个可编辑元素，已删除小字无残留。
 用户授权完整推送。全部当前项目改动纳入工作分支提交；本地原件、环境与设备数据按既有忽略规则保留。71包LaTeX/PDF及来源检查、设计基线检查、5分发本地检查通过，治理首页图已刷新。SSH ProxyCommand在PowerShell失败，改用GitHub CLI凭据助手经HTTPS，未修改全局配置。默认main仅同步首页/进度图/版本导航，不合并实现。
+
+## 2026-10-13 仓库目录改造任务书
+
+核查本地项目、模块、运行与任务审阅入口，读取GitHub仓库元信息及默认main首页，形成[改造任务书](../../human/project/repository-restructure-taskbook-20261013.md)。文档包含目标树、文件处理边界、W1至W5及后续实施验收；11个本地引用均存在。项目概览新增任务书链接，相关已跟踪文档的`git diff --check`通过。仅编制方案，未移动工程、改变业务状态、运行候选测试或发布GitHub；T-01既有未提交文件不在本轮修改范围。
+
+## 2026-10-13 全仓目录规范化验证
+
+`normalize_repository_layout.py --check`：6812个登记文件全部存在，16个旧目录已实际归位，无目标冲突。当前Markdown910个本地引用可解析。`07_validate_task_packages.py`：71项状态与原签收保持；`14_validate_ready_task_packages.py --local`：5包88份输入快照通过。`verify_task_design_baseline.py`：71计划、5分发范围、3冻结领取及552链接通过；`verify_root_migration.py --require-complete`：19项既有根迁移、71包和1037来源通过。
+
+Python使用本机`py -3.14`（pytest9.0.3），默认`python`环境未安装pytest。模块、采集、信号、通信、TD主机层和数据治理回归：715通过，2失败；将两失败用HEAD原版`task_markdown`执行后同样失败，相关函数字节码与常量相同，属既有签收文案测试。71包LaTeX/PDF重建及`ALL --check`通过。07候选PDF曾用于检查当前源稿编译，随后恢复原分发字节；当前源稿与旧PDF的科学修订差异仍按原README声明，目录任务不改设计更新身份。实际Unity/TD编辑器运行不由本次路径检查替代。
+
+逐包pytest须分进程运行以隔离同名执行模块：60包838项通过、32项失败。以Codex管理工作树中的c27ca0d6独立重跑剩余失败包，对照结果无新增失败。修复本轮动态导入、旧Unity编号glob、历史Git查询路径及两个迁移后的字节比较；不改业务语义以通过旧测试。实际输出和逐项对照位于`agent/local/artifacts/repository-layout-20261013/`，核验工作树已请求归档。旧失败包括已变化的任务文案、历史输入假设及未刷新的汇总。最终保留原签收与输入身份，当前文档差异检查通过。
+
+## 2026-10-13 仓库展示与开发入口验收
+
+- verify_project_navigation.py：12入口页面、286本地链接、71任务审阅、首页不超过150行，PASS。
+- py -3.14 -m pytest agent/modules/tests/session_core agent/modules/tests/session_store -q：201 passed in 15.44s。
+- normalize_repository_layout.py --check：6812原始登记文件、16实际目录迁移，无丢失/冲突。
+- build_task_reviews.py ALL --check：71包结构、LaTeX/PDF与来源PASS；生成检查未覆盖新导航。
+- verify_root_migration.py --require-complete：19根迁移、71包、1037审阅来源链接PASS；CONTRIBUTING登记为合法根入口。
+- verify_task_design_baseline.py：71当前计划、原状态/签收、5分发、3冻结范围、552当前链接PASS。
+- 14_validate_ready_task_packages.py --local：5包88快照PASS_LOCAL，不等同远程分发发布检查。
+- 既有完整回归仍以本轮此前的c27ca0d6对照为准，无新增失败；没有重开Unity/TD或执行真人研究。
+- 首次访问3分钟/开发30分钟是目标，未冒充真人走查数据。TD未提交改版保留；GitHub发布与回读在后续记录。

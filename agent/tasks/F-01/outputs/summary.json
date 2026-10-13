@@ -97,7 +97,7 @@
       "id": "F01-N01",
       "status": "FIXED",
       "description": "合同入口F-05状态与注册表不一致",
-      "source": "agent/modules/05-通信协议/contracts/README.md"
+      "source": "agent/modules/communication/contracts/README.md"
     },
     {
       "id": "F01-N02",
@@ -115,11 +115,11 @@
   "source_links": [
     {
       "label": "打开合同与协议当前入口",
-      "path": "agent/modules/05-通信协议/contracts/README.md"
+      "path": "agent/modules/communication/contracts/README.md"
     },
     {
       "label": "打开 F-01 已签署报告",
-      "path": "agent/modules/05-通信协议/F-01_第二人审核报告_已签署.md"
+      "path": "agent/modules/communication/F-01_第二人审核报告_已签署.md"
     },
     {
       "path": "agent/design/design-foundation-20261008/task-baseline.json",

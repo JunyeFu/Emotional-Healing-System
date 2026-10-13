@@ -7,8 +7,8 @@ import sys
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
-G02 = ROOT / 'agent/modules/07-数据治理'
+GOV = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+G02 = ROOT / 'agent/modules/data-governance'
 
 
 def main():

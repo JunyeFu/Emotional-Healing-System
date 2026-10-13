@@ -23,7 +23,7 @@ _FORMAL_CAPABILITY_TOKEN = object()
 
 
 def _governance_root() -> Path:
-    root = Path(__file__).resolve().parents[1] / "07-数据治理"
+    root = Path(__file__).resolve().parents[1] / "data-governance"
     if str(root) not in sys.path:
         sys.path.insert(0, str(root))
     return root

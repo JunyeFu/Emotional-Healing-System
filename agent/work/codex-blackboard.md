@@ -53,7 +53,7 @@
 
 - 目标：以用户发送的 Storm 与旧村庄录屏为基准，提出少量修改，不重做场景或改签署范围。
 - 已查看：0.mp4 全时段每秒取帧、3.mp4 全时段每三秒取帧及原分辨率画面；Storm 雨/涟漪可复用，旧村庄存在 XR 控件、移动机位和圆形黑边。
-- 交付：`agent/design/情绪天气方案/已实现场景最小对齐清单_2026-10-05.md`；五项改动，优先固定观看、补选定背景、补四步风门，再完成双条件和视觉收敛。
+- 交付：`agent/design/weather/已实现场景最小对齐清单_2026-10-05.md`；五项改动，优先固定观看、补选定背景、补四步风门，再完成双条件和视觉收敛。
 - 不改变任务状态与正式合同；不依据录屏推断脚本、真实接线或其余三个天气的完成度。下一步由场景执行者按清单提交同机位双条件片段。
 
 ## 2026-10-05 四场景最终画面描述
@@ -181,9 +181,9 @@
 
 ## 2026-09-17 SRP目录收敛为单入口
 
-- 用户要求D:\Agent下SRP只保留一个入口。22个D盘worktree（约28.5GB）已移除；差异证据135文件归档`_archive/worktree-evidence/`；SRP-backups与f03-validation验证环境迁入`_archive/`；完整登记快照存`_archive/worktree-registry-20260917.txt`。
+- 用户要求D:\Agent下SRP只保留一个入口。22个D盘worktree（约28.5GB）已移除；差异证据135文件归档`agent/archive/local/worktree-evidence/`；SRP-backups与f03-validation验证环境迁入`agent/archive/local/`；完整登记快照存`agent/archive/local/worktree-registry-20260917.txt`。
 - 分支与提交零丢失：5个任务分支已全部并入main，20个detached证据提交仍可按哈希检出复现。两个.codex树因codex.exe运行中且不在Agent目录，未动。
-- 新目录约定已写入AGENTS.md：并行worktree用`git worktree add _worktrees/<任务名>`、任务合并后即删；`_archive/`与`_worktrees/`经`.git/info/exclude`本地排除；不得在仓库根运行`git clean -x`类命令。
+- 新目录约定已写入AGENTS.md：并行worktree用`git worktree add agent/local/worktrees/<任务名>`、任务合并后即删；`agent/archive/local/`与`agent/local/worktrees/`经`.git/info/exclude`本地排除；不得在仓库根运行`git clean -x`类命令。
 
 ## 2026-09-08 A主题原生重建候选
 
@@ -212,7 +212,7 @@
 ## 2026-09-08 T-01工作台生图重设计
 
 - 已读取T-01任务范围、构建脚本、适配器与旧截图；确认旧整页文本存在右侧裁切与底部溢出。
-- 使用内置image_gen两轮生成浅色分区设计，保存至`02-技术研发/03-TouchDesigner/t01_telemetry_panel/design/`，包含图片、提示词与实施验收规格。
+- 使用内置image_gen两轮生成浅色分区设计，保存至`agent/modules/touchdesigner/t01_telemetry_panel/design/`，包含图片、提示词与实施验收规格。
 - TD自动化接口9981连接被拒绝；新toe/tox尚未重建。下一步是连接TD后按规格实现原生分区显示，并验证多状态和长文本。任务状态未迁移。
 
 > Purpose: lightweight project-local working memory for the current task. Keep this file factual, brief, and easy to reset.
@@ -232,12 +232,12 @@
 - 保留 SRP 术语边界，避免新增禁用表达。
 - 不导出内部隐式推理；以“观察—判断—影响”记录可审计依据。
 - 完成后验证文件存在、入口引用有效、术语扫描和 `git diff --check` 通过。
-- 仅在`D:\Agent\03-SRP`操作；保留四个既有删除项、`SRP/`、根目录docx、`tmp/`和本地Unity日志，不纳入G-02提交。
+- 仅在`D:\Agent\03-SRP`操作；保留四个既有删除项、`SRP/`、根目录docx、`agent/local/tmp/`和本地Unity日志，不纳入G-02提交。
 - G-02不得在专机环境、保留期限、Unity资产和真实团队第二人复核关闭前标记为`DONE`。
 
 ## Known Evidence
 
-- 2026-08-21 G-01：对`origin/main`根目录8个文件的验收不通过（记录于`03-测试与实验/G-01_验收记录_2026-08-21.md`）；随后按流程领取，基于`codex/v-02-concept-design`建`codex/g-01-research-governance`（`origin/main`注册表落后，不作基底）。
+- 2026-08-21 G-01：对`origin/main`根目录8个文件的验收不通过（记录于`agent/validation/G-01_验收记录_2026-08-21.md`）；随后按流程领取，基于`codex/v-02-concept-design`建`codex/g-01-research-governance`（`origin/main`注册表落后，不作基底）。
 - G-01返工：8文件归位`06_步骤05_伦理与预试材料/`，补齐G-01-01与G-01-10；v1.1时长口径统一（PANAS 2~3、猜测2~3、问卷≤5、知情同意5~8、清理5~8）；演练口径统一（窗口14天/执行7天、产能140、U8线112、预约165）；责任人角色化（R-007）；术语0命中；`07`/`14`校验通过，pytest 404 passed。
 - G-01边界：AC3真实演练未执行、U8未判定、M-001许可`PENDING`、第二人复核开放；转`IN_REVIEW`不扩大为DONE或正式阶段放行。
 
@@ -293,7 +293,7 @@
 - 第一阶段24顺序均衡随机、第二阶段策略学习与冻结、第三阶段冻结策略对均衡随机的独立比较共同构成证据链，不再与核心贡献并列。
 - 固定天气—呼吸配对仍只能识别复合模块及其顺序；没有合理基准时不能声称场景原生提示更优，没有独立策略比较时不能声称自适应编排更优。
 - 下一道门是冻结核心贡献一的唯一主要经验主张及其最小比较基准；低自由度顺序对比、检验层级和样本量随后围绕该主张重新定义。
-- 新增 `00-项目管理/看板与进度/2026-08-04_项目情况与顶层设计汇总.md`，作为当前仓库情况、目标产品、论文贡献、实验数据链、论文叙事、成果组合、职责方向和未决门的集中入口。
+- 新增 `agent/governance/boards/2026-08-04_项目情况与顶层设计汇总.md`，作为当前仓库情况、目标产品、论文贡献、实验数据链、论文叙事、成果组合、职责方向和未决门的集中入口。
 - 汇总明确旧阶段7看板和旧 TD Spout 呼吸圈链路属于 `As-Is` 证据，不代表 `To-Be` 目标已经实现；理想顶层设计不以当前实现缺口为上限。
 - 当时抽象节律提示基准、`protocol_fidelity`、非劣界值和完整项目第三比较条件均为建议；后续用户已确认抽象基准与 `protocol_fidelity`，其余项目仍未确认。
 - 下一道 Grill 门修正为先冻结因果主张范围，再确定最小比较基准；只有此后才能冻结主要设备结果和样本量。
@@ -480,9 +480,9 @@
 
 ### Output
 
-- `output/pdf/01_项目目标介绍与可行性论证.pdf`
-- `output/pdf/02_固定任务概要.pdf`
-- `output/pdf/03_项目设计简述与实验流程.pdf`
+- `human/deliverables/pdf/01_项目目标介绍与可行性论证.pdf`
+- `human/deliverables/pdf/02_固定任务概要.pdf`
+- `human/deliverables/pdf/03_项目设计简述与实验流程.pdf`
 
 ### Boundary
 
@@ -745,7 +745,7 @@ Complete the F-01 technical scope across the project architecture without implem
 
 ### Next Hard Gate
 
-A non-implementing team member must execute the review checklist in `02-技术研发/05-通信协议/F-01_技术验收记录.md`, record findings and sign the interface before F-01 may become `DONE` and unlock downstream tasks.
+A non-implementing team member must execute the review checklist in `agent/modules/communication/F-01_技术验收记录.md`, record findings and sign the interface before F-01 may become `DONE` and unlock downstream tasks.
 
 ### Boundary
 
@@ -804,7 +804,7 @@ Provide a self-contained report that lets a real non-implementing team member re
 
 ### Evidence And Decision
 
-- Added `02-技术研发/05-通信协议/F-01_第二人审核报告_待签署.md` with fixed scope, authority links, repeatable commands, AC checklists, findings table and blank identity/conclusion fields.
+- Added `agent/modules/communication/F-01_第二人审核报告_待签署.md` with fixed scope, authority links, repeatable commands, AC checklists, findings table and blank identity/conclusion fields.
 - Fresh verification produced 49 contract passes, 100 project passes, a passing PowerShell consumer, and passing registry, package and protocol validators.
 - F-01 remains `IN_REVIEW`; the report explicitly separates F-01 approval from the broader 112-file implementation commit and from downstream runtime claims.
 
@@ -909,7 +909,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - Three independent Agents reviewed G-02 `befbdb698ef5cbeb6061315a4c912abdde4e6b08`, P-01 `8063afc7053a79a0d27fe8fc94159dbc5fc9a9e0` and P-02 `3d740e99118d6a76993156f26bdf673144429025`.
 - All three returned `REVIEW_FINDINGS_OPEN`: 0 P0, 4 P1, 4 P2 and 2 P3 findings.
 - New counterexamples cover credential overwrite, embedded contact leakage, unconfirmed completion, premature ACK, receipt mismatch, envelope mutation, seal/recovery races and invalid memory-trend evidence.
-- The detailed evidence is recorded in `03-测试与实验/IN_REVIEW_Agent独立审核报告_2026-08-16.md`.
+- The detailed evidence is recorded in `agent/validation/IN_REVIEW_Agent独立审核报告_2026-08-16.md`.
 - G-02, P-01 and P-02 remain `IN_REVIEW`; pending human second-review reports were not edited or signed.
 
 ### Next Queue
@@ -1262,7 +1262,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 节点22已确认：V-04制作四条225秒非循环天气母带和一条65秒无缝循环长廊母带，统一为48 kHz、24-bit、立体声WAV，首选`-22 LUFS-I`且真实峰值不高于`-3 dBTP`。
 - 基础声音由Python/NumPy固定种子和非周期包络生成，FFmpeg负责滤波、响度、拼接与淡化；声音不响应目标、实际、累计、质量状态或呼吸周期，两条件共享完全相同的声音配置与PCM。
 - `fade`声音并入H2确认，全部声音并入H3确认，不新增人工停点；全部声音保持`TEMP_REFERENCE_ONLY`和`formal_use_allowed=false`，当前尚未生成实际母带。
-- 节点23已确认：大型工作制品位于被Git忽略的`.artifacts-local/V-04/<candidate_id>/`，普通Git只保存分镜源、轨迹、脚本、清单、缩略图和报告；本轮不配置Git LFS。
+- 节点23已确认：大型工作制品位于被Git忽略的`agent/local/artifacts/V-04/<candidate_id>/`，普通Git只保存分镜源、轨迹、脚本、清单、缩略图和报告；本轮不配置Git LFS。
 - H3通过后按单附件目标小于1.5 GiB、硬上限2 GiB确定性分包，并上传到绑定候选提交的GitHub `PRERELEASE`；预发布不标记Latest且明确六项设计预演证据边界。
 - 独立复核和第二人审核同时绑定候选提交SHA和候选清单SHA；进入复核后的附件不得覆盖，任何变化必须创建新候选身份和新预发布。当前尚未创建Release、标签或附件。
 - 节点24已确认：设计树关闭后先提交设计基线且V-04保持READY；实际制作开始才迁移IN_PROGRESS，H3和候选上传完成后迁移IN_REVIEW，真实第二人签收提交后才迁移DONE。
@@ -1353,7 +1353,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 
 - 用户授权删除冗余文件和废弃设计、提交并推送整个当前项目分支、创建PR。
 - V-04当前树删除旧节点18-25、旧设计基线、25份旧ADR、candidate-v1至v7配置/清单/关键帧与本地媒体；Git历史继续保留审计来源。
-- 删除根目录重复规划书、无引用的旧`SRP/`三维与TD素材、`tmp/`、生成日志；保留H1证据、candidate-v8、源全景和G-02引用的工具许可证据。
+- 删除根目录重复规划书、无引用的旧`SRP/`三维与TD素材、`agent/local/tmp/`、生成日志；保留H1证据、candidate-v8、源全景和G-02引用的工具许可证据。
 - candidate-v8已生成：两条件整幅画面从完全褪色连续恢复，9.5秒达到原生颜色；提示区外最大像素差为0。H2机器门`PASS`，团队总监人工门仍为`PENDING_HUMAN_CONFIRMATION`。
 - 当前权威收敛到V-04 v1.1配置、清单、评审说明、实施状态和科研便捷裁定；旧实验数据README的唯一悬空引用已改指P-02会话存储数据字典与Schema。
 - 下一队列：最终暂存审计、提交、推送`codex/v-04-animatic`并向`main`创建PR。
@@ -1468,7 +1468,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 
 - 目标：将`storm`、`heat`、`snow`与已固定的`fade`统一改为固定场景，并提供多组高精度3D游戏环境风格预览。
 - 决策：四天气相机、背景与世界视差位移均为零；只保留低幅、非周期、可重放的局部天气运动。
-- 制品：生成A/B/C三组四联预览并落入`.artifacts-local/V-04/H3/fixed-background-previews/v1/`；Git保存修订合同、提示词和候选清单。
+- 制品：生成A/B/C三组四联预览并落入`agent/local/artifacts/V-04/H3/fixed-background-previews/v1/`；Git保存修订合同、提示词和候选清单。
 - 联动：参与者产品总规格变化已同步刷新`F-03`独立包快照；任务状态不变，5个分发包与132份快照重新通过一致性门。
 - 历史边界：旧H3合并机器门与独立复审结果保留，但滚动镜头方向已被替换，不再进入原团队总监确认。
 - 当前硬门：`H3_FIXED_BACKGROUND_PREVIEW_SELECTION`；团队总监逐天气选择A/B/C后再生成四张独立16:9背景。
@@ -1476,7 +1476,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 ### 2026-08-31 V-04 R2大景深独立背景预览
 
 - 目标：让每个固定画面同时具备近景材质、中景机制空间和远景尺度，并让地形或水系直接承接后续画面事件。
-- 制品：生成R2三组共12张独立`16:9`预览，保存于`.artifacts-local/V-04/H3/fixed-background-previews/r2/`；Git保存大景深事件构图合同、提示词、候选清单、验证记录和校验器。
+- 制品：生成R2三组共12张独立`16:9`预览，保存于`agent/local/artifacts/V-04/H3/fixed-background-previews/r2/`；Git保存大景深事件构图合同、提示词、候选清单、验证记录和校验器。
 - 设计：近景承接实际响应；中景分别为风雨鞍部、连续盐槽、林间垂直空地和支流汇入的主水道；远景承接能见度、热霭、雪雾或整屏颜色与纹理的累计变化。
 - 筛查：A-storm的垂直水幕接近瀑布、A-snow的左侧大树干压缩近场区，均保留为反例但标为不推荐。推荐方向为`storm=B, heat=C, snow=C, fade=C`，未代替团队总监选择。
 - 验证：R2校验器、V-04工具链、历史H3合并机器门、协议权威、57项任务注册表和5包/132份独立任务包均为`PASS`；冻结Python 3.14.4根回归为`412 passed in 124.25s`。
@@ -1512,7 +1512,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 ### 2026-09-01 F-05领取与接口基线盘点
 
 - 领取结论：F-05三项前置F-01、P-01、P-02均为`DONE`；注册表由`READY`转为`IN_PROGRESS`，领取人登记为`Codex Agent（F-05独立对话）`，目标分支登记为`codex/f-05-phase-instance-v2-2`。
-- 输入完整性：领取前独立包含17份受`sha256_lf_no_trailing_ws_text_v1`约束的输入快照，包校验`PASS`；工作面限定为`02-技术研发/05-通信协议`、`02-技术研发/srp_session_core`和`02-技术研发/srp_session_store`。
+- 输入完整性：领取前独立包含17份受`sha256_lf_no_trailing_ws_text_v1`约束的输入快照，包校验`PASS`；工作面限定为`agent/modules/communication`、`agent/modules/srp_session_core`和`agent/modules/srp_session_store`。
 - 接口现状：正式机器合同仍只有不可变`runtime-contract-v2.1.schema.json`；`schema_version=2.1`，遥测提供`target_phase/target_progress`与`actual_phase/actual_progress`，尚无周期、步骤和步骤实例身份。Python保持唯一状态权威，Unity与TD保持只消费边界。
 - 实现基线：F-01合同测试`49 passed`；P-01/P-02测试`166 passed`。未发现v2.2 Schema、storm双停/fade双吸运行fixture或正式消费者迁移实现，符合F-05起点。
 - 下游边界：F-05完成与第二人签收前，U-01、U-02、T-01和U-07继续受阻；不得从相位名称或进度猜测步骤实例。
@@ -1535,7 +1535,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 - 傅钧烨以团队总监身份明确签收`codex/f-05-integration@646bc47a2f68ddddf31bdcc60e9feb5927658c85`。
 - 独立Agent只读复核结论为`PASS_WITH_NOTES`：无P0/P1、无实现漂移、无签收失效；专项与全项目复跑结果保持通过。
 - 唯一P2为合同入口及部分READY包快照仍含“候选/待第二人复核”旧状态文案；该问题不阻断签收，后续按非实质治理修正处理。
-- 新增`03-测试与实验/F-05_集成签收确认_傅钧烨_2026-09-01.md`；不改动F-05原签署树。
+- 新增`agent/validation/F-05_集成签收确认_傅钧烨_2026-09-01.md`；不改动F-05原签署树。
 
 ### 2026-09-01 T-01领取与接口盘点
 
@@ -1560,7 +1560,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 
 ### 2026-09-02 T-01第二人签收与治理收口
 
-- 傅钧烨以团队总监、独立第二人复核人身份明确签收精确候选`8790cd3ae4db3543c038efc21deec635605cb06f`；签收证据单独固化于`03-测试与实验/T-01_第二人审核报告_已签署.md`。
+- 傅钧烨以团队总监、独立第二人复核人身份明确签收精确候选`8790cd3ae4db3543c038efc21deec635605cb06f`；签收证据单独固化于`agent/validation/T-01_第二人审核报告_已签署.md`。
 - T-01由`IN_REVIEW`转为`DONE`；其实现目录继续固定于签收候选，任何代码、合同适配、fixture或`.toe/.tox`实质变化都会使独立复核与签收失效。
 - T-01与P-01依赖均已关闭，T-02由`WAIT_DEP`转为`READY`；最终分发集合目标为`G-01,G-02,T-02,U-01,U-02`。
 - 收口验证必须保持T-01专项、F-04/F-05/P-01/P-02回归、F-05验证器、任务治理校验、全量pytest、F-04签署树和T-01候选实现树不漂移。
@@ -1679,7 +1679,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 
 ## 2026-09-08 v1.2当前基线适配包
 
-- 用户要求归档最终升级来源并完成当前基线适配；已复制原ZIP和独立Markdown到`00-项目管理/01-项目章程与规划/2026-09-08_SRP_v1.2_当前基线适配包/sources/`，下载原件保留。
+- 用户要求归档最终升级来源并完成当前基线适配；已复制原ZIP和独立Markdown到`agent/governance/planning/2026-09-08_SRP_v1.2_当前基线适配包/sources/`，下载原件保留。
 - 基线`de4ebcbfea209674127c833dd9e69ad703a6634b`；50个来源内容文件哈希核验通过。候选由当前59条扩为71条，新增U12-01至U12-12，避免覆盖已有UP编号。
 - 保留A-06核心关闭职责、A-04扩展职责、18项DONE和A-03原领取范围；提供12个不可领取的候选包。活动注册表、协议、分发快照均未改动。
 - 验证：适配15项、根pytest565项、活动协议及注册表通过；既有独立包验证发现T-02的README/toe哈希漂移，相对本轮基线无改动，不静默刷新。
@@ -1728,7 +1728,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 # 2026-09-08 README内嵌团队进度图
 
 - 按用户要求内嵌团队任务SVG；任何任务状态变化都同步README、团队SVG和main首页展示，规则写入AGENTS。
-- render_governance_views生成README受控区块和assets/readme/team-task-progress.svg；默认首页仅发布展示文件与来源说明，不顺带合并实现。
+- render_governance_views生成README受控区块和human/assets/readme/team-task-progress.svg；默认首页仅发布展示文件与来源说明，不顺带合并实现。
 
 # 2026-09-08 GitHub首页更新
 
@@ -1838,7 +1838,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 
 ## 2026-09-28 F-05双层规范化
 
-- Tools/F05两个工具已实际迁入agent/tasks/F-05/execution；新运行固定evidence/runtime，原签署封存只读。
+- agent/tools/governance/F05两个工具已实际迁入agent/tasks/F-05/execution；新运行固定evidence/runtime，原签署封存只读。
 - 当前接口基线/迁移指南按傅钧烨2026-09-01真实签收改为DONE；兼容规则标题限定v2.1，未改Schema、fixture或步骤时长。
 - 从干净2def28b源完整复跑：合同87、P-01 116、P-02 84，共287项通过；v2.1不可变、v2.2重建及22哈希/5帧样例通过。
 - README变更触发T-02未领取快照漂移，已重生成该包并校验；四个进行中或复核包输入未改变。
@@ -2259,7 +2259,7 @@ Run separate read-only Agent reviews against the fixed G-02, P-01 and P-02 imple
 
 ## 2026-09-29 根目录工具与人类交付迁移
 
-- Tools/Governance、首页SVG和PDF输出实际移入agent/tools/governance、human/assets和human/deliverables；空退役工具目录归档，不删除成员材料。
+- agent/tools/governance/Governance、首页SVG和PDF输出实际移入agent/tools/governance、human/assets和human/deliverables；空退役工具目录归档，不删除成员材料。
 - 三份旧PDF和一份重复副本原样归档；退役目标/流程源文档与插图生成器归档。当前任务概要按数学建模规范重建为六页，DONE=24和活动任务集合与注册表一致。
 - 治理工具5项、根635项、治理/注册/5分发61快照和71包330 Word链接通过。串联Word孤页修复为39页；PDF六页及Word末页已检查。
 - 根迁移7/19，余12；业务状态、真实签收和成员冻结输入不改，未执行Unity/TD或真实设备运行。
@@ -2465,3 +2465,15 @@ diagrams.net十二页画布已逐页审查并定点修订，最终源文件与�
 
 画布对齐收尾：十二页公共导航、页头、页脚及六页曲线框坐标一致；明细页左右标题横线统一为 y=255。源文件与明细原生PNG同步，十二页校验PASS；未改业务内容或TD运行实现。
 用户授权完整推送。全部当前项目改动纳入工作分支提交；本地原件、环境与设备数据按既有忽略规则保留。71包LaTeX/PDF及来源检查、设计基线检查、5分发本地检查通过，治理首页图已刷新。SSH ProxyCommand在PowerShell失败，改用GitHub CLI凭据助手经HTTPS，未修改全局配置。默认main仅同步首页/进度图/版本导航，不合并实现。
+
+## 2026-10-13 仓库展示与开发目录改造任务书
+
+目标：形成便于对外认识项目、对内继续开发的目录改造任务书，不实施迁移。已核查本地首页、模块/运行入口、依赖与Git规则，以及GitHub默认main首页；发现入口信息堆积、Unity/TD模块编号冲突、旧模拟启动前置及展示/开发版本分离。方案采用保留human/agent骨架、重构导航和有限归位，五步实施及验收见[任务书](../../human/project/repository-restructure-taskbook-20261013.md)。当前仅新增任务书和概览链接；既有T-01未提交改动、业务状态、冻结输入和工程路径不变。下一步：审阅方案并批准执行清单；尚未领取、迁移或发布。
+
+## 2026-10-13 全仓目录与命名统一
+
+用户将范围扩大为本地全仓位置和命名规范化。已迁移16个业务目录、1745个登记文件；6812个文件逐项登记位置和归属，545个当前消费者更新，910个当前文档链接可解析。规范见[目录说明](../../human/project/repository-layout.md)，逐文件表见[迁移清单](../repository-layout.json)。保留任务编号、可导入包名、原生工程内部身份、历史签收及冻结输入；来源解析支持两轮路径迁移。71项注册表与5包88份分发输入校验通过，71包审阅PDF及串联审阅重生成；旧源码入口Unity/TD编号已修正。模块回归715通过、2个原有失败；60包独立回归838通过、32个原有失败，对照c27ca0d6无新增失败。原有问题未扩大为本轮业务修订。TD既有候选继续保留。本轮目标为本地目录落地，GitHub发布另按选定完整版本同步。
+
+## 2026-10-13 目录、GitHub与展示实施
+
+用户授权完整落地任务书W1-W5。本地16目录迁移保留，首页重排为项目/成果/开发/任务四路径；新增协作与开发指南、对外介绍，71包表移到human/tasks/README.md。生成器不覆盖新导航，未改业务状态。实际共享Unity版本6000.4.9f1与目标2022.3.62f3的差异已公开标注。201项定向开发测试、286入口链接、71审阅、19根迁移与16业务目录检查、5包88快照通过；上轮对照回归无新增失败。发布范围为规范化完整工作分支与main展示层，不纳入原有TD改版。远程提交及回读结果将在验证日志补记。

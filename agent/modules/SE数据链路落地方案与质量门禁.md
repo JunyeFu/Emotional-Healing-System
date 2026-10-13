@@ -61,7 +61,7 @@ CSVLogger → experiment logs
 | 任务 | 操作 | 验收 |
 |---|---|---|
 | Python 版本 | 建立 Python 3.14 `.venv` | `python --version` 输出 3.14.x |
-| 依赖安装 | `pip install -r 02-技术研发/requirements.txt` | 无安装失败 |
+| 依赖安装 | `pip install -r agent/modules/requirements.txt` | 无安装失败 |
 | 测试工具 | `pip install pytest` | `python -m pytest --version` 可用 |
 | 锁定依赖 | `pip freeze > requirements-lock.txt` | 锁文件入库或归档 |
 
@@ -83,7 +83,7 @@ Mock 是本项目的默认验收输入。真实设备未稳定前，不阻塞闭
 
 | 任务 | 文件 | 验收 |
 |---|---|---|
-| 四天气 mock | `01-数据采集/mock_data.py` | storm/heat/snow/fade 均可生成 |
+| 四天气 mock | `acquisition/mock_data.py` | storm/heat/snow/fade 均可生成 |
 | 10Hz 节奏 | `main.py` | 60 秒约 600 帧 |
 | 相位输出 | `breath.phase` | inhale/hold/exhale 连续变化 |
 | 强度输出 | `weather.intensity` | 与 `calm_index` 反向变化 |
@@ -135,7 +135,7 @@ python main.py --weather storm --duration 60
 唯一真相来源：
 
 ```text
-02-技术研发/05-通信协议/UDP字段冻结_v1.2.md
+agent/modules/communication/UDP字段冻结_v1.2.md
 ```
 
 发送端必须保证：
@@ -232,9 +232,9 @@ Unity 验收时你要确认：
 
 | 检查项 | 类型 | 通过标准 |
 |---|---|---|
-| 数据采集测试 | Blocker | `01-数据采集/tests` 通过 |
-| 信号处理测试 | Blocker | `02-信号处理/tests` 通过 |
-| 通信测试 | Blocker | `05-通信协议/tests` 通过 |
+| 数据采集测试 | Blocker | `acquisition/tests` 通过 |
+| 信号处理测试 | Blocker | `signal-processing/tests` 通过 |
+| 通信测试 | Blocker | `communication/tests` 通过 |
 | 压测测试 | Advisory | `tests/test_stress_test.py` 通过 |
 
 最低新增测试建议：
@@ -293,7 +293,7 @@ python --version
 
 ```powershell
 cd 02-技术研发
-python -m pytest 01-数据采集\tests 02-信号处理\tests 05-通信协议\tests tests -q
+python -m pytest acquisition\tests signal-processing\tests communication\tests tests -q
 ```
 
 ### 每次联调前
@@ -332,11 +332,11 @@ python main.py --weather storm --duration 60
 | 交付物 | 路径 | 完成标准 |
 |---|---|---|
 | 运行手册 | `README_run.md` | 新人按步骤能跑 mock 闭环 |
-| 字段冻结表 | `02-技术研发/05-通信协议/UDP字段冻结_v1.2.md` | Python/TD/Unity/CSV 一致 |
+| 字段冻结表 | `agent/modules/communication/UDP字段冻结_v1.2.md` | Python/TD/Unity/CSV 一致 |
 | SE 方案 | 本文件 | 覆盖采集、处理、传输、门禁 |
-| 测试结果 | `00-项目管理/03-进度跟踪/开发进度打卡表.md` 或日志目录 | 有日期、命令、结果 |
-| CSV 样例 | `03-测试与实验/实验数据/` | 可读、列完整 |
-| 压测记录 | `03-测试与实验/04-测试报告/` | 60 秒结果可复核 |
+| 测试结果 | `agent/governance/progress/开发进度打卡表.md` 或日志目录 | 有日期、命令、结果 |
+| CSV 样例 | `agent/validation/实验数据/` | 可读、列完整 |
+| 压测记录 | `agent/validation/04-测试报告/` | 60 秒结果可复核 |
 
 ## 10. 当前最高优先级
 

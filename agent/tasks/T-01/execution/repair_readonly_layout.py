@@ -8,7 +8,7 @@ import time
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-MODULE = ROOT / 'agent/modules/03-TouchDesigner/t01_telemetry_panel'
+MODULE = ROOT / 'agent/modules/touchdesigner/t01_telemetry_panel'
 RUNTIME = TASK / 'evidence/runtime'
 TD_BIN = Path('D:/TouchDesigner/bin')
 

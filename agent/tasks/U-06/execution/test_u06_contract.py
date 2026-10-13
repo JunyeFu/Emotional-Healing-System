@@ -9,8 +9,8 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[4]
 TASK = ROOT / 'agent/tasks/U-06'
-UNITY = ROOT / 'agent/modules/04-Unity视觉/SRP-Weather-Visual'
-GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+UNITY = ROOT / 'agent/modules/unity/SRP-Weather-Visual'
+GOV = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 
 
 def read(path):
@@ -78,7 +78,7 @@ def test_fixed_camera_and_control_authority():
 
 @pytest.mark.parametrize('name', ['HeatScene', 'SnowScene'])
 def test_legacy_scene_unmodified_and_not_current_adapter(name):
-    relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/{name}.unity'
+    relative = f'agent/modules/unity/SRP-Weather-Visual/Assets/Scenes/{name}.unity'
     before = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '38d2fb1', relative)
     assert before == (ROOT / relative).read_bytes()
     scene = (ROOT / relative).read_text(encoding='utf-8-sig')
@@ -88,7 +88,7 @@ def test_legacy_scene_unmodified_and_not_current_adapter(name):
 
 @pytest.mark.parametrize('name', ['FinalBuild', 'FinalRebuild', 'ComprehensiveFix'])
 def test_obsolete_menu_is_archived_verbatim_without_consumers(name):
-    relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
+    relative = f'agent/modules/unity/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
     assert not (ROOT / relative).exists() and not (ROOT / (relative + '.meta')).exists()
     for suffix in ['', '.meta']:
         before = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes'](ROOT, '38d2fb1', relative + suffix)

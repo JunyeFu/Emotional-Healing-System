@@ -106,7 +106,7 @@
       "id": "F02-N03",
       "status": "OPEN_HUMAN_REVIEW",
       "description": "历史验收仅模型候选审查，所读来源未取得F-02真实第二人签署；责任由团队总监安排",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
     },
     {
       "id": "F-02-DESIGN-BASELINE",
@@ -122,11 +122,11 @@
     },
     {
       "label": "打开 F-02 历史候选审查记录",
-      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
     },
     {
       "label": "打开当前 v1.2 研究合同",
-      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json"
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json"
     },
     {
       "path": "agent/design/研究主旨与实验设计论证_当前.md",

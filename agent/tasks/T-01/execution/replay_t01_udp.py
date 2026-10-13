@@ -25,7 +25,7 @@ from srp_session_core import (  # noqa: E402
 from srp_session_core.transport import TelemetryPublisher  # noqa: E402
 
 
-FIXTURE_DIR = TECH_ROOT / "05-通信协议" / "contracts" / "fixtures-v2.2" / "valid"
+FIXTURE_DIR = TECH_ROOT / "communication" / "contracts" / "fixtures-v2.2" / "valid"
 TARGET = ("127.0.0.1", 5005)
 SESSION_ID = "S-20260901-0001"
 CLOCK_DOMAIN = "python:t01-panel-evidence"

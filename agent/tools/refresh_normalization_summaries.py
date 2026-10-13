@@ -10,7 +10,7 @@ import subprocess
 from resolve_frozen_source import resolve_project_path, resolve_source
 
 ROOT = Path(__file__).resolve().parents[2]
-GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+GOV = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 REPORT = ROOT / 'agent/evidence/normalization-summary-refresh.json'
 CURRENT = '根目录19/19项已迁入human/agent，当前读取和运行入口已验证，业务签收不变'
 SHARED = {

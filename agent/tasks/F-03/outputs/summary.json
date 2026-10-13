@@ -103,13 +103,13 @@
       "id": "F03-N02",
       "status": "FIXED",
       "description": "现行Unity协调入口F-03 READY与签收DONE矛盾已修正",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md"
     },
     {
       "id": "F03-N03",
       "status": "FIXED",
       "description": "未授权构建已被拦截但探针输出意外完成，已改为按实际结果报告并完整复测",
-      "source": "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs"
+      "source": "agent/modules/unity/SRP-Weather-Visual/Assets/F03/Editor/F03Build.cs"
     },
     {
       "id": "F03-N04",
@@ -143,7 +143,7 @@
     },
     {
       "label": "统一实施标准",
-      "path": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.md"
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
     },
     {
       "label": "成员原视频帧索引",

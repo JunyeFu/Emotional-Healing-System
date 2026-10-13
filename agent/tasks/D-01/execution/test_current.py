@@ -18,7 +18,7 @@ def current():
 
 
 def test_state_and_owner_not_invented():
-    registry = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv'
+    registry = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv'
     with registry.open(encoding='utf-8-sig', newline='') as stream:
         row = next(r for r in csv.DictReader(stream) if r['task_id'] == 'D-01')
     contract = current()
@@ -42,7 +42,7 @@ def test_channels_and_raw_storage():
 def test_archive_and_hardware_obligations():
     for name in ('ble_device.py', '设备方案.md', '真实设备方案.md'):
         assert (TASK / 'archive' / name).is_file()
-        assert not (ROOT / 'agent/modules/01-数据采集' / name).exists()
+        assert not (ROOT / 'agent/modules/acquisition' / name).exists()
     contract = current()
     assert contract['required_continuous_capture_seconds'] == 1800
     assert not contract['device_time_is_host_time']

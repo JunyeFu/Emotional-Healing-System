@@ -48,7 +48,7 @@ def test_gate_passes_only_when_every_component_passes():
 
 
 def test_freeze_reason_fixture_covers_missing_and_candidate_cases():
-    fixture = Path(__file__).resolve().parents[2] / "02-信号处理" / "a03_gate2_spec" / "fixtures" / "scoring_edge_cases_v1.0.json"
+    fixture = Path(__file__).resolve().parents[2] / "signal-processing" / "a03_gate2_spec" / "fixtures" / "scoring_edge_cases_v1.0.json"
     cases = json.loads(fixture.read_text(encoding="utf-8"))["freeze_cases"]
     observed = [
         evaluate_ordered_gate(

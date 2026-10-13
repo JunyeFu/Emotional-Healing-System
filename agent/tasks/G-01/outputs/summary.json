@@ -97,7 +97,7 @@
       "id": "G01-N01",
       "status": "FIXED",
       "description": "步骤五入口已按真实签收DONE与G-05责任范围订正",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/00_第5步计划.md"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/00_第5步计划.md"
     },
     {
       "id": "G01-N02",
@@ -115,7 +115,7 @@
       "id": "G01-N04",
       "status": "OPEN_EXTERNAL_OWNER_AND_EVIDENCE",
       "description": "G-05未领取，真实角色、机构许可与现场占用/值班能力尚无回执，由团队总监安排真实负责人",
-      "source": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
     },
     {
       "id": "G-01-DESIGN-BASELINE",
@@ -131,11 +131,11 @@
     },
     {
       "label": "打开历史双人审查",
-      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/G-01-10_双人审查记录.md"
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料/G-01-10_双人审查记录.md"
     },
     {
       "label": "打开当前外部活动资格",
-      "path": "agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv"
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv"
     },
     {
       "path": "agent/design/design-foundation-20261008/task-baseline.json",

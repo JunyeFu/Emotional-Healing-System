@@ -150,7 +150,7 @@
     "测试报告"
   ],
   "formal_collection_allowed": false,
-  "implementation_standard_source": "agent/design/情绪天气方案/2026-10-08_Storm与纯粒子双环实施标准.json",
+  "implementation_standard_source": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.json",
   "unity_target_version": "2022.3.62f3",
   "particle_rendering": {
     "form": "screen_space_particle_double_ring",

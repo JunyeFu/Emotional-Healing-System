@@ -5,7 +5,7 @@ import runpy
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-GOV = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
+GOV = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理'
 
 def read(path):
     return json.loads(path.read_text(encoding='utf-8-sig'))
@@ -46,7 +46,14 @@ def test_runtime_measurement_and_sources_exist():
     old = read(TASK / 'archive/signed-candidate/verification.json')
     expected = old['source_text_sha256_lf']['02-技术研发/srp_step_measurement/measurement.py']
     actual = ROOT / 'agent/modules/srp_step_measurement/measurement.py'
-    assert hashlib.sha256(actual.read_bytes().replace(b'\r\n', b'\n')).hexdigest() == expected
+    layout = read(ROOT / 'agent/repository-layout.json')
+    old_module = next(Path(move['old']).name for move in layout['moves']
+                      if move['new'] == 'agent/modules/communication')
+    # Compare signed logic after reversing only the registered import-directory rename.
+    content = actual.read_bytes().replace(b'\r\n', b'\n')
+    content = content.replace(b'"communication.runtime_contract_v22"',
+                              ('"' + old_module + '.runtime_contract_v22"').encode('utf-8'))
+    assert hashlib.sha256(content).hexdigest() == expected
     for path in read(TASK / 'inputs/sources.json')['paths']:
         assert (ROOT / path).is_file()
     plan = (TASK / 'outputs/annotation-plan.md').read_text(encoding='utf-8')

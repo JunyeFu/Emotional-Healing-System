@@ -10,17 +10,17 @@
 | 我要... | 打开 |
 |---------|------|
 | 看项目模块 | `human/project/PROJECT_MODULES.md` |
-| 看当前执行权威 | `agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/README.md` + `active_governance.json`（治理目录） |
-| 领取任务包 | `agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/04_可领取树型任务包_v2.0.md` |
-| 领取当前解锁独立包 | `agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/README.md` |
-| 看审计升级与论文路线 | `agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/README.md` |
-| 规划Unity场景与实验环境 | `agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md` |
-| 补齐任务技能 | `agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md` |
-| 配置团队工具 | `agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/11_团队工具与环境冻结基线_v1.0.md` |
+| 看当前执行权威 | `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/README.md` + `active_governance.json`（治理目录） |
+| 领取任务包 | `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/04_可领取树型任务包_v2.0.md` |
+| 领取当前解锁独立包 | `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/当前解锁独立任务包/README.md` |
+| 看审计升级与论文路线 | `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/README.md` |
+| 规划Unity场景与实验环境 | `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/F-03_Unity场景设计与渐进制品任务协调计划_v2.0.md` |
+| 补齐任务技能 | `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md` |
+| 配置团队工具 | `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/11_团队工具与环境冻结基线_v1.0.md` |
 | 看当前项目背景 | `human/project/README.md`；旧框架原文已归档至 `agent/archive/project/` |
 | 看当前运行入口 | `agent/runtime/README.md`；旧Mock/Spout手册已归档至 `agent/archive/runtime/` |
-| 看当前任务 | `agent/governance/看板与进度/当前阶段看板.md` |
-| 看天气设计 | `agent/design/情绪天气方案/四种天气设计.md` |
+| 看当前任务 | `agent/governance/boards/当前阶段看板.md` |
+| 看天气设计 | `agent/design/weather/四种天气设计.md` |
 | 看四层表示方案 | `agent/tasks/R-01/outputs/current-representation.md`（当前适用与历史来源） |
 | 看完整参与者旅程 | `agent/tasks/V-01/outputs/current-experience.md`（当前时序候选与运行交接） |
 | 看当前四天气交接 | `agent/tasks/V-02/outputs/current-scenes.md`（固定镜头、独立素材与fade职责） |
@@ -80,7 +80,7 @@
 | 看真实呼吸与运动采集 | `agent/tasks/D-02/outputs/current-acquisition.md`（专用SDK前置、400Hz原生批次与待完成验收） |
 | 看双设备同步与SQI | `agent/tasks/S-01/outputs/current-quality.md`（连接与质量区分、时钟字段与未完成取证） |
 | 看呼吸事件与在线PF | `agent/tasks/S-02/outputs/current-events.md`（步骤身份、机会指标与未完成验收） |
-| 看通信协议 | `agent/modules/05-通信协议/contracts/README.md` |
+| 看通信协议 | `agent/modules/communication/contracts/README.md` |
 | 看会话编排 | `agent/modules/srp_session_core/README.md` |
 | 看验证与证据 | `agent/validation/README.md` |
 | 查文献 | `agent/references/`（历史库处于身份与来源复核隔离状态；论文证据以W-01为入口） |
@@ -96,17 +96,17 @@
 ├── README.md                    快速说明
 ├── agent/governance/
 │   ├── README.md                管理模块入口
-│   ├── 项目规约/SRP项目规划书_李俊扬组_v2.1.docx  当前规划文档
-│   └── 看板与进度/当前阶段看板.md  任务跟踪 + 阶段状态
+│   ├── charter/SRP项目规划书_李俊扬组_v2.1.docx  当前规划文档
+│   └── boards/当前阶段看板.md  任务跟踪 + 阶段状态
 ├── agent/design/
 │   ├── README.md                设计模块入口
-│   └── 情绪天气方案/四种天气设计.md 4种天气→呼吸策略→视觉要素
+│   └── weather/四种天气设计.md 4种天气→呼吸策略→视觉要素
 ├── agent/modules/
-│   ├── 01-数据采集/README.md        Polar H10 + 呼吸胸带；当前D-01交接见Agent层
-│   ├── 02-信号处理/README.md        旧开发原型与当前S-02交接分开
-│   ├── 03-TouchDesigner/TD原型规划.md 历史原型；正式目标为只读操作台
-│   ├── 04-Unity视觉/SRP-Weather-Visual/ 共享Unity工程；当前切片交接见Agent层
-│   └── 05-通信协议/contracts/README.md v2.1合同与20Hz遥测入口
+│   ├── acquisition/README.md        Polar H10 + 呼吸胸带；当前D-01交接见Agent层
+│   ├── signal-processing/README.md        旧开发原型与当前S-02交接分开
+│   ├── touchdesigner/TD原型规划.md 历史原型；正式目标为只读操作台
+│   ├── unity/SRP-Weather-Visual/ 共享Unity工程；当前切片交接见Agent层
+│   └── communication/contracts/README.md v2.1合同与20Hz遥测入口
 ├── agent/validation/
 │   └── README.md                验证与证据模块入口
 ├── agent/delivery/
@@ -204,6 +204,6 @@
 - 当前实际唯一入口为`D:\Agent\srp`；`03-SRP`及`emotional-healing-system`只用于历史路径理解，禁止在Agent顶层创建平行项目目录。
 - 并行任务需要工作树时，优先使用Codex管理工作树；手工本机工作目录归入`agent/local/worktrees/`。历史备份、验证环境快照与证据差异归入`agent/archive/local/`，均被Git忽略，不入库不提交。不要移动仍在使用的工作树。
 - 历史审计文档中出现的旧路径（如 `D:/Agent/f03v8`、`03-SRP-f05-evidence-*`）是当时事实记录，不回改；对应差异已迁入 `agent/archive/local/worktree-evidence/`，登记快照见 `agent/archive/local/worktree-registry-20260917.txt`，提交仍可按哈希在独立工作树复现。
-- 不得在仓库根运行 `git clean -x` / `git clean -fdx`：会连同清除被本地排除的 `_archive/` 与 `_worktrees/`。
+- 不得在仓库根运行 `git clean -x` / `git clean -fdx`：会连同清除被本地排除的 `agent/archive/local/` 与 `agent/local/worktrees/`。
 
 当前实施：以李民约溪边木屋与屏幕空间纯粒子双环为标准，Unity目标2022.3.62f3；[37包影响与更新范围](agent/work/2026-10-08_实施标准任务影响清单.md)。

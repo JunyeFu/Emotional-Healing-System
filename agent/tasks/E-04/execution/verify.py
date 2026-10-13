@@ -7,7 +7,7 @@ import sys
 
 TASK = Path(__file__).resolve().parents[1]
 ROOT = TASK.parents[2]
-PLAN = ROOT / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
+PLAN = ROOT / 'agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0'
 GOV = PLAN / '24_团队任务与项目治理'
 
 
@@ -18,7 +18,7 @@ def main():
         ('handoff', ['-m', 'pytest', '-q', TASK / 'execution/test_closeout_handoff.py',
                      ROOT / 'agent/tasks/B-02/execution/test_batch_handoff.py',
                      ROOT / 'agent/modules/tests/randomization', ROOT / 'agent/modules/tests/session_store',
-                     ROOT / 'agent/modules/07-数据治理/tests/test_registry.py']),
+                     ROOT / 'agent/modules/data-governance/tests/test_registry.py']),
         ('legacy-protocol', [PLAN / '99_验证与清单/validate_protocol_authority_v1_1.py']),
         ('governance', [GOV / 'u12_upgrade/validate_u12_governance.py']),
         ('registry', [GOV / '07_validate_task_packages.py']),
