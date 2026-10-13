@@ -205,7 +205,7 @@ python -m pytest agent/modules/tests/session_store/test_recording_replay.py -q
 
 **输入**：W2至W4成果及明确批准用于展示的项目版本。
 
-**执行**：按第六节进行本地及GitHub走查。执行阶段获准发布后，提交明确文件清单；默认 `main` 只同步首页、进度图及必要导航，未批准的实现不合并。新增主要入口必须随展示提交存在，或明确链接已发布的完整版本。
+**执行**：按第六节进行本地及GitHub走查。2026-10-13用户进一步明确授权完整项目合入main：默认分支须包含规范化目录、源码、合同与开发入口，不再仅发布展示导航；未经批准的TD候选仍不纳入合并。
 
 **交付**：可访问的默认首页、完整项目版本入口、一份简短走查结果；填写实际执行分支/提交和未解决事项。
 
@@ -266,3 +266,7 @@ python -m pytest agent/modules/tests/session_store/test_recording_replay.py -q
 任务审阅生成器原本不写human/README.md，无需为移动导航表改写其行为；71包生成检查通过，新入口未被覆盖。3分钟/30分钟仍是使用者走查目标，本轮取得的是路径检查与本机开发命令验证，不虚构新人测试。
 
 首发完整目录提交f2fefece，默认首页提交cc98dad9。main旧默认分支实现归入agent/archive/default-branch-legacy/，原字节及原版本入口保留；main不合并当前运行实现。首页连接固定完整源码版本，仓库说明与6个主题标签已同步；最终收尾版本见GitHub默认首页的版本链接。
+
+### 完整main合并修订
+
+上述首发为历史发布方式，已由本次明确合并授权替代。main将采用完整规范化项目树，不保留展示版重复归档副本；原展示版和2214项原字节保留在a1b67f67及其父提交的Git历史中。克隆与开发统一从main进入；旧展示发布工具归档到agent/archive/tools/，当前完整发布工具为agent/tools/publish_project_main.py。业务状态不变，本地未提交TD候选不公开。

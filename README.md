@@ -60,4 +60,4 @@ CONTRIBUTING.md  协作入口
 
 [目录与命名规范](human/project/repository-layout.md) · [目录改造任务书](human/project/repository-restructure-taskbook-20261013.md) · [协作指南](CONTRIBUTING.md)
 
-本地唯一入口为 `D:\Agent\srp`。GitHub默认首页展示项目；完整实现版本见[工作分支](https://github.com/JunyeFu/Emotional-Healing-System/tree/codex/td-workbench-readability)。正式参数、设备联调与参与者研究仍需各自验收，不提供“一键正式实验”承诺。
+本地唯一入口为 `D:\Agent\srp`。GitHub默认分支[main](https://github.com/JunyeFu/Emotional-Healing-System/tree/main)包含完整规范化目录、源码、合同和开发入口，与本地已提交版本一致。正式参数、设备联调与参与者研究仍需各自验收，不提供“一键正式实验”承诺。

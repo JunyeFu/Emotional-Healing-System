@@ -5,7 +5,7 @@
 ## 取得源码
 
 ```powershell
-git clone --branch codex/td-workbench-readability https://github.com/JunyeFu/Emotional-Healing-System.git srp
+git clone --branch main https://github.com/JunyeFu/Emotional-Healing-System.git srp
 Set-Location srp
 git lfs install --local
 git lfs pull

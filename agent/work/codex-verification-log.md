@@ -2727,3 +2727,7 @@ Python使用本机`py -3.14`（pytest9.0.3），默认`python`环境未安装pyt
 - 首次访问3分钟/开发30分钟是目标，未冒充真人走查数据。TD未提交改版保留；GitHub发布与回读在后续记录。
 
 远程验收：完整源码f2fefece8e55c10c93c737a8b69bbeaa37a65be9；main首发cc98dad9d2ee46a1843d27e43dc677e70f78751d。Git push成功，fetch main成功；浏览器看到main仅agent/human及展示根入口，旧目录位于明确历史区。首页Storm图naturalWidth=2558，开发上手页面实际打开，链接固定完整版本。仓库description与6topics写入成功并可见。临时TLS EOF未放行验收，以后续成功fetch和公开浏览器为准。原生Unity/TD与真实研究不在本次验收内。
+
+## 2026-10-13 完整main合并前验证
+
+用户授权完整项目合入main，不再只发布展示入口。verify_project_navigation.py：12入口/286链接/71任务索引PASS；SessionCore/Store定向测试201 passed in 7.54s；build_task_reviews.py ALL --check：71包PASS；git diff --check无差异格式错误。旧本地main是远程main祖先，可快进更新；未提交TD文件不暂存。最终合并须让main提交树与本地已提交完整项目树相同，并保留双父历史，以远程回读为完成依据。
