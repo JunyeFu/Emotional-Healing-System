@@ -1,6 +1,6 @@
 # SRP · 多模态呼吸交互与情绪调节教育
 
-完整规范化项目版本：[f2fefece](https://github.com/JunyeFu/Emotional-Healing-System/tree/f2fefece8e55c10c93c737a8b69bbeaa37a65be9)，2026-10-13发布。main同步展示与开发导航，运行实现保留在工作分支。
+完整规范化项目版本：[d2245d4d](https://github.com/JunyeFu/Emotional-Healing-System/tree/d2245d4dee7916f898be2ff872a2062b6617ee92)，2026-10-13发布。main同步展示与开发导航，运行实现保留在工作分支。
 
 把呼吸练习融入天气场景，用视听反馈连接身体节奏与交互体验。面向普通学习间隙的自愿练习者，也面向研究、设计与开发协作者。
 
@@ -18,14 +18,14 @@
 | 看已有成果与演示 | [成果目录](human/deliverables/README.md) · [对外介绍](human/project/project-introduction.md) |
 | 运行验证、继续开发 | [开发上手](human/developers/README.md) · [模块地图](human/project/PROJECT_MODULES.md) |
 | 领取任务或审阅交付 | [任务导航](human/tasks/README.md) |
-| 维护权威材料与生成工具 | [Agent执行层](https://github.com/JunyeFu/Emotional-Healing-System/blob/f2fefece8e55c10c93c737a8b69bbeaa37a65be9/agent/README.md) |
+| 维护权威材料与生成工具 | [Agent执行层](https://github.com/JunyeFu/Emotional-Healing-System/blob/d2245d4dee7916f898be2ff872a2062b6617ee92/agent/README.md) |
 
 ## 两种完整体验方案
 
 - **A：固定引导。** 呼吸引导圈和预设场景变化共同呈现练习节奏。
 - **B：场景原生受限适应。** 根据实际呼吸与场景状态调整实际引导，再趋向共同理想目标。
 
-两组共享理想目标I；实际引导G与实际呼吸X独立记录。研究关注情绪收益、执行表现与调整成本，不把视觉效果或软件测试当作参与者效果。[设计地基](https://github.com/JunyeFu/Emotional-Healing-System/blob/f2fefece8e55c10c93c737a8b69bbeaa37a65be9/agent/design/design-foundation-20261008/README.md) · [实验设计论证](https://github.com/JunyeFu/Emotional-Healing-System/blob/f2fefece8e55c10c93c737a8b69bbeaa37a65be9/agent/design/研究主旨与实验设计论证_当前.md)
+两组共享理想目标I；实际引导G与实际呼吸X独立记录。研究关注情绪收益、执行表现与调整成本，不把视觉效果或软件测试当作参与者效果。[设计地基](https://github.com/JunyeFu/Emotional-Healing-System/blob/d2245d4dee7916f898be2ff872a2062b6617ee92/agent/design/design-foundation-20261008/README.md) · [实验设计论证](https://github.com/JunyeFu/Emotional-Healing-System/blob/d2245d4dee7916f898be2ff872a2062b6617ee92/agent/design/研究主旨与实验设计论证_当前.md)
 
 ## 系统如何协作
 
@@ -35,7 +35,7 @@
 原始记录、问卷与回执 → 离线重建与分析 → 图表和论文材料
 ```
 
-Python掌握流程与时钟；Unity独立完成画面，TD不直接控制研究流程。[运行入口](https://github.com/JunyeFu/Emotional-Healing-System/blob/f2fefece8e55c10c93c737a8b69bbeaa37a65be9/agent/runtime/README.md)区分可验证的底座与尚未接通的正式链。
+Python掌握流程与时钟；Unity独立完成画面，TD不直接控制研究流程。[运行入口](https://github.com/JunyeFu/Emotional-Healing-System/blob/d2245d4dee7916f898be2ff872a2062b6617ee92/agent/runtime/README.md)区分可验证的底座与尚未接通的正式链。
 
 ## 团队进展
 
