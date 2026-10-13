@@ -1,0 +1,33 @@
+{
+  "task_id": "Q-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "构念与多步骤独立重建材料",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "构念与多步骤独立重建材料修订交接",
+    "构念审查包",
+    "独立重建任务"
+  ],
+  "acceptance_criteria": [
+    "AC1 共同I先审任务必要性而非普适最优",
+    "AC2 专家检查G/X语义和适应边界，理解题按实际功能适配",
+    "AC3 独立新实例重建支持C3，未执行只称形成性材料"
+  ],
+  "evidence_required": [
+    "构念审查包",
+    "独立重建任务",
+    "失败与迁移计分规则"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-02",
+    "R-01",
+    "G-01",
+    "U12-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

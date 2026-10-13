@@ -1,0 +1,6 @@
+{
+  "date": "2026-09-29",
+  "summary": {"path": "human/tasks/Z-01/summary.docx", "pages": 3, "visually_checked_pages": [1, 2, 3], "result": "PASS"},
+  "project_review": {"path": "human/project-review.docx", "pages": 23, "unchanged_png_pages_compared_with_X_03": "1-21", "visually_checked_changed_pages": [22, 23], "result": "PASS"},
+  "scope": "Document layout only; not independent acceptance or candidate rebuild"
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "G-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新反馈用途的数据与许可治理",
+  "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+  "deliverables": [
+    "新反馈用途的数据与许可治理修订交接",
+    "用途权限差异表",
+    "许可台账"
+  ],
+  "acceptance_criteria": [
+    "AC1 研究佩戴数据用途与产品部署分别说明，A不得反馈本人数据",
+    "AC2 按既有去重及权限合同保持真实身份隔离，新增用途须取得真实许可",
+    "AC3 记录设备与素材许可、管理成本，不把两设备研究配置称产品必需"
+  ],
+  "evidence_required": [
+    "用途权限差异表",
+    "许可台账",
+    "真实批准缺口"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

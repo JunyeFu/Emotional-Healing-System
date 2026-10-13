@@ -1,0 +1,190 @@
+{
+  "task_id": "U-04",
+  "title": "U-04 剩余天气A按新条件适配 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "U-04注册状态WAIT_DEP仅保留原范围。当前任务更新为剩余天气A按新条件适配；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "本轮Codex审阅源文件、清理无引用旧Editor工具并运行共享程序集回归；未实施或签收U-04新天气，不代填真实负责人。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 先确定分配天气及共同I必要性，不默认全保留",
+        "AC2 A开环、B有限G与X分离，不复制旧同反馈模板",
+        "AC3 模块预算、低质量及恢复行为与公共合同一致"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "剩余天气A按新条件适配修订交接",
+        "天气分配记录",
+        "适配说明"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：剩余天气A按新条件适配"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：天气分配记录；适配说明；真实切片验收证据"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：U-03、V-03；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：天气分配记录；适配说明；真实切片验收证据"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "U04-N01",
+      "status": "OPEN_WEATHER_A_B_C_ALLOCATION",
+      "description": "V-02未明确剩余天气A/B/C绑定，U-04保持selected_weather=null，不默认storm",
+      "source": "agent/tasks/U-04/outputs/current-adapter.json"
+    },
+    {
+      "id": "U04-N02",
+      "status": "FIXED_LEGACY_FRAMEWORK_AND_TOOLS",
+      "description": "旧框架及两个无引用Editor生成器和meta原文归档，保留当前工程入口，105项Unity回归通过",
+      "source": "agent/tasks/U-04/archive/README.md"
+    },
+    {
+      "id": "U04-N03",
+      "status": "VERIFIED_SHARED_ASSEMBLY_NOT_ADAPTER",
+      "description": "34项设计与105项EditMode通过，旧StormScene不含当前桥/适配脚本引用，不等于新天气验收",
+      "source": "agent/tasks/U-04/evidence/verification.json"
+    },
+    {
+      "id": "U04-N04",
+      "status": "OPEN_TEMPLATE_PERFORMANCE_AND_OWNER",
+      "description": "U-03模板、真实负责人、Play和Profiler以及U-08预算仍待取得，WAIT_DEP不改变",
+      "source": "agent/tasks/U-04/TASK.md"
+    },
+    {
+      "id": "U-04-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "剩余天气A按新条件适配；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前天气A适配交接",
+      "path": "agent/tasks/U-04/outputs/current-adapter.md"
+    },
+    {
+      "label": "实际验证记录",
+      "path": "agent/tasks/U-04/evidence/verification.json"
+    },
+    {
+      "label": "Unity EditMode结果",
+      "path": "agent/tasks/U-04/evidence/editmode-results.xml"
+    },
+    {
+      "label": "归档及消费者影响",
+      "path": "agent/tasks/U-04/evidence/consumer-impact.md"
+    },
+    {
+      "label": "步骤验收与国内资料",
+      "path": "agent/tasks/U-04/TASK.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/U-04/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "previous_conclusion_202609": "U-04仍WAIT_DEP、未领取；剩余天气A没有明确技术ID分配，不能默认storm。旧Unity框架与两个Editor生成工具已原文归档，34项设计检查及105项Unity EditMode通过；真实天气适配器和性能未验收。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

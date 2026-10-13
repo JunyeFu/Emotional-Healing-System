@@ -1,0 +1,31 @@
+{
+  "task_id": "A-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "I/G/X原始证据离线重建",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "I/G/X原始证据离线重建修订交接",
+    "重建输入表",
+    "独立算法规格"
+  ],
+  "acceptance_criteria": [
+    "AC1 独立重建理想计划、实际提示与真实呼吸",
+    "AC2 实际达成不读取在线成功标记，暴露/可观测分母可复算",
+    "AC3 分别处理后测缺失、设备未知、降级及退出"
+  ],
+  "evidence_required": [
+    "重建输入表",
+    "独立算法规格",
+    "差异与缺失报告"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "P-02",
+    "S-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

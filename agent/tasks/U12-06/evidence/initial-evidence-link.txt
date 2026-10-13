@@ -1,0 +1,25 @@
+.........F.............................................................. [ 29%]
+........................................................................ [ 58%]
+........................................................................ [ 87%]
+..............................                                           [100%]
+================================== FAILURES ===================================
+___________________ test_sources_and_navigation_are_actual ____________________
+
+    def test_sources_and_navigation_are_actual():
+        for source in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / source).is_file(), source
+        for path in (LEGACY / 'TASK.md', LEGACY / 'FILES.md', GOV / 'content_reviews/U12-06_内容核验记录.md'):
+            for target in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8-sig')):
+>               assert (path.parent / target).resolve().exists(), (path, target)
+E               AssertionError: (WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/content_reviews/U12-06_内容核验记录.md'), '../../../../../agent/tasks/U12-06/evidence/verification.json')
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/tasks/U12-06/evidence/verification.json').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/tasks/U12-06/evidence/verification.json') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/content_reviews') / '../../../../../agent/tasks/U12-06/evidence/verification.json').resolve
+E                +          where WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/content_reviews') = WindowsPath('D:/Agent/srp/00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/content_reviews/U12-06_内容核验记录.md').parent
+
+agent\tasks\U12-06\execution\test_runtime_handoff.py:69: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-06/execution/test_runtime_handoff.py::test_sources_and_navigation_are_actual
+1 failed, 245 passed in 6.73s

@@ -1,0 +1,21 @@
+.F...........                                                            [100%]
+================================== FAILURES ===================================
+_____________________ test_current_navigation_links_exist _____________________
+
+    def test_current_navigation_links_exist():
+        for name in ('02_QC与分析集规则.md', '03_呼吸事件与Protocol_Fidelity.md'):
+            source = PLAN / '22_离线处理与科研分析' / name
+            for target in re.findall(r'\]\(([^)]+)\)', source.read_text(encoding='utf-8')):
+>               assert (source.parent / target).resolve().is_file(), target
+E               AssertionError: ../../../../agent/tasks/A-01/outputs/current-rebuild.md
+E               assert False
+E                +  where False = is_file()
+E                +    where is_file = WindowsPath('D:/Agent/srp/agent/agent/tasks/A-01/outputs/current-rebuild.md').is_file
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/A-01/outputs/current-rebuild.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析') / '../../../../agent/tasks/A-01/outputs/current-rebuild.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/22_离线处理与科研分析/02_QC与分析集规则.md').parent
+
+agent\tasks\A-01\execution\test_a01_contract.py:32: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/A-01/execution/test_a01_contract.py::test_current_navigation_links_exist
+1 failed, 12 passed in 0.36s

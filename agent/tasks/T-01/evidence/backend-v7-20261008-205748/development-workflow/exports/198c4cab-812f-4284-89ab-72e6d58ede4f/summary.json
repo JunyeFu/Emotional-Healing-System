@@ -1,0 +1,10 @@
+{
+  "source_mode": "dev_mock",
+  "session_id": "DEV-fd5eab1db33f4093",
+  "sample_counts": {
+    "plux_respiban": 160000,
+    "polar_h10_ecg": 52000
+  },
+  "missing_values": "empty CSV cell, never zero-filled",
+  "original": "198c4cab-812f-4284-89ab-72e6d58ede4f.jsonl"
+}

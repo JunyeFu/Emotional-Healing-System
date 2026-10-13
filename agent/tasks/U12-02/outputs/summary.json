@@ -1,0 +1,223 @@
+{
+  "task_id": "U12-02",
+  "title": "U12-02 条件适配的步骤测量材料 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "U12-02注册状态DONE仅保留原范围。当前任务更新为条件适配的步骤测量材料；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-08 +08:00",
+    "commit": "ba495b54e6939c2bb1c4a07592400f82c0292864",
+    "method": "原独立Carson复核PASS，傅钧烨审阅已有提交和验证后签收实现与合成证据，不表述为本人重跑测试。签收提交28bf474643cda6c59480ea3d478749269d5cf3eb；本轮未取得新独立审查或真人签署。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 共同目标题等值后有限比较，A不读取不存在的Actual",
+        "AC2 旧八题/新十二题均不自动当正式主量表",
+        "AC3 真值、缺失、标注及材料效度先验，理解只解释信息读取"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "条件适配的步骤测量材料修订交接",
+        "题项蓝图",
+        "状态/真值映射",
+        "ODES-20261008设计交付：将共同目标题、A预设误读题、B实际/质量题分开构建与验证；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：cumulative_rule；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：条件适配的步骤测量材料"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：题项蓝图；状态/真值映射；材料验证要求"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：U12-01、F-02、F-05；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：题项蓝图；状态/真值映射；材料验证要求"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "U1202-N01",
+      "status": "FIXED_EXECUTION_AND_MATERIAL_RELOCATION",
+      "description": "生成器、标注计划与旧证据实际归入Agent，新输出不覆盖旧签收",
+      "source": "agent/tasks/U12-02/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1202-N02",
+      "status": "FIXED_DOWNSTREAM_CONSUMERS",
+      "description": "F-02/Q-02/E-02与测量测试读取新入口，题面/键/输入保持字节一致",
+      "source": "agent/tasks/U12-02/evidence/verification.json"
+    },
+    {
+      "id": "U1202-N03",
+      "status": "OPEN_REAL_ANNOTATION_AND_VALIDITY",
+      "description": "真实片段、独立标签、双条件可读等值及测量有效性仍未验证",
+      "source": "agent/tasks/U12-02/outputs/current-measurement.json"
+    },
+    {
+      "id": "U1202-N04",
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
+    },
+    {
+      "id": "U12-02-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "条件适配的步骤测量材料；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前步骤测量交接",
+      "path": "agent/tasks/U12-02/outputs/current-measurement.md"
+    },
+    {
+      "label": "真实范围与原签收",
+      "path": "agent/tasks/U12-02/outputs/current-measurement.json"
+    },
+    {
+      "label": "活动独立标注计划",
+      "path": "agent/tasks/U12-02/outputs/annotation-plan.md"
+    },
+    {
+      "label": "本轮软件复测",
+      "path": "agent/tasks/U12-02/evidence/verification.json"
+    },
+    {
+      "label": "实际迁移及消费者",
+      "path": "agent/tasks/U12-02/evidence/consumer-impact.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/U12-02/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
+    }
+  ],
+  "previous_conclusion_202609": "U12-02保持原限定候选签收DONE。生成器、标注计划与合成材料已实际归入Agent层，F-02/Q-02/E-02消费者已修复；运行测量接口不改，真实片段、独立标注与测量有效性仍未完成。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "command": [
+      "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "--import-mode=importlib",
+      "D:\\Agent\\srp\\agent\\tasks\\U12-07\\execution\\test_writing_handoff.py",
+      "D:\\Agent\\srp\\agent\\tasks\\W-01\\execution",
+      "D:\\Agent\\srp\\agent\\tasks\\W-02\\execution",
+      "D:\\Agent\\srp\\agent\\tasks\\U12-04\\execution\\test_statistics_handoff.py"
+    ],
+    "exit_code": 1,
+    "log": "evidence/handoff.txt"
+  }
+]

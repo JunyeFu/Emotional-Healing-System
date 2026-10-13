@@ -1,0 +1,170 @@
+{
+  "task_id": "E-06",
+  "title": "E-06 可选扩展关闭与揭盲 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "E-06注册状态BLOCKED_EXTERNAL仅保留原范围。当前任务更新为可选扩展关闭与揭盲；处理类型DEFERRED_EXTENSION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有E-06真人签署。本轮为作者Agent合成接口核查与规范化，没有新增独立Agent审核、真实锁库或揭盲许可。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 仅核对实际获准扩展的所有实例",
+        "AC2 策略不变、锁库和揭盲分别取证",
+        "AC3 未开展不借核心数据代签或补造"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "可选扩展关闭与揭盲修订交接",
+        "扩展活动清单",
+        "真实锁库与授权"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：可选扩展关闭与揭盲"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：扩展活动清单；真实锁库与授权；范围关闭"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：G-04、B-03；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：扩展活动清单；真实锁库与授权；范围关闭"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "E06-N01",
+      "status": "CLARIFIED_FULL_BLOCK_NO_GO_AND_ACTUAL_SCOPE",
+      "description": "完整块计划与尾块/停止分开，NO_GO不能隐去已启动活动；正式裁定仍待G-04",
+      "source": "agent/tasks/E-06/outputs/current-closeout.md"
+    },
+    {
+      "id": "E06-N02",
+      "status": "FIXED_BALANCE_POLICY_AND_BLINDING_HANDOFF",
+      "description": "分配汇总不证明策略/分析资格，全组件与实际加载另审，两原生组不自动盲态，当前入口和手册同步",
+      "source": "agent/tasks/E-06/evidence/consumer-impact.md"
+    },
+    {
+      "id": "E06-N03",
+      "status": "FIXED_LOCK_VS_UNBLIND_AUTHORITY_HANDOFF",
+      "description": "会话封存/原件核查/研究锁库/揭盲授权分开，具体对象与真实角色签署不由软件PASS代替",
+      "source": "agent/tasks/E-06/outputs/lock-review-template.json"
+    },
+    {
+      "id": "E06-N04",
+      "status": "OPEN_REAL_BATCHES_POLICY_LOCK_AND_AUTHORIZATION",
+      "description": "全部真实实例/QC、策略动态证据、盲态重建/SAP及真实锁库签署/揭盲仍缺",
+      "source": "agent/tasks/E-06/outputs/current-closeout.json"
+    },
+    {
+      "id": "E-06-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "可选扩展关闭与揭盲；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "阶段三研究关闭交接",
+      "path": "agent/tasks/E-06/outputs/current-closeout.md"
+    },
+    {
+      "label": "实际锁库与运行缺口",
+      "path": "agent/tasks/E-06/outputs/current-closeout.json"
+    },
+    {
+      "label": "未执行锁库审阅提纲",
+      "path": "agent/tasks/E-06/outputs/lock-review-template.json"
+    },
+    {
+      "label": "消费者与流程修正",
+      "path": "agent/tasks/E-06/evidence/consumer-impact.md"
+    },
+    {
+      "label": "实际验证记录",
+      "path": "agent/tasks/E-06/evidence/verification.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

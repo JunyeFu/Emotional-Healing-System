@@ -1,0 +1,33 @@
+{
+  "task_id": "U-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "Unity控制镜像与实际呈现回执",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "Unity控制镜像与实际呈现回执修订交接",
+    "控制镜像说明",
+    "呈现时间证据规格"
+  ],
+  "acceptance_criteria": [
+    "AC1 Unity只消费获准的下发G，不本地擅自改I或决定个体适应",
+    "AC2 A时钟预设与B真实控制消息分别核对",
+    "AC3 实际呈现、暂停中止及恢复回执与会话源可对应"
+  ],
+  "evidence_required": [
+    "控制镜像说明",
+    "呈现时间证据规格",
+    "异常回执表"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-01",
+    "F-03",
+    "F-05",
+    "P-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

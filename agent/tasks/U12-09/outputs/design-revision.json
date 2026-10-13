@@ -1,0 +1,33 @@
+{
+  "task_id": "U12-09",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "71包新基线覆盖一致性",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "71包新基线覆盖一致性修订交接",
+    "71包影响矩阵",
+    "包/PDF一致性报告"
+  ],
+  "acceptance_criteria": [
+    "AC1 逐包核对任务、当前输出、输入、PDF和生成来源",
+    "AC2 READY新快照与领取中保留快照加变更分开",
+    "AC3 无新适应运行证据不转移历史DONE与签收"
+  ],
+  "evidence_required": [
+    "71包影响矩阵",
+    "包/PDF一致性报告",
+    "冻结输入变更记录"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "U12-02",
+    "U12-03",
+    "U12-04",
+    "U12-06"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

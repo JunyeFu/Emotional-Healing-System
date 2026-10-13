@@ -1,0 +1,32 @@
+{
+  "task_id": "U12-05",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新材料静态及回放真实准入",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新材料静态及回放真实准入修订交接",
+    "材料准入差异",
+    "真人活动清单"
+  ],
+  "acceptance_criteria": [
+    "AC1 候选材料按A/B功能适配，不以Actual同题给A不公平判断",
+    "AC2 静态/回放活动与运行及研究许可分开",
+    "AC3 真实反馈、舒适性与异常理解未经验证不自动放行"
+  ],
+  "evidence_required": [
+    "材料准入差异",
+    "真人活动清单",
+    "真实批准缺口"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP_EXTERNAL",
+  "depends_on_original": [
+    "U12-01",
+    "G-01",
+    "G-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

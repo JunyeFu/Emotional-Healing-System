@@ -1,0 +1,30 @@
+{
+  "task_id": "D-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "respiBAN实际呼吸可辨性",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "respiBAN实际呼吸可辨性修订交接",
+    "设备原件",
+    "独立事件标注"
+  ],
+  "acceptance_criteria": [
+    "AC1 真实SDK原始批次与时钟取证，不以模拟替代",
+    "AC2 验证吸呼、停留、补吸与运动下的混淆和不可判别",
+    "AC3 不消费G生成实际真值，不可辨事件保留未知"
+  ],
+  "evidence_required": [
+    "设备原件",
+    "独立事件标注",
+    "可辨性及延迟表"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP_EXTERNAL",
+  "depends_on_original": [
+    "P-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

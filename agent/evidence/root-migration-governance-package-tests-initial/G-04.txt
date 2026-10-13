@@ -1,0 +1,17 @@
+........F                                                                [100%]
+================================== FAILURES ===================================
+_______________ test_real_sources_current_consumers_and_wording _______________
+
+    def test_real_sources_current_consumers_and_wording():
+        for source in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / source).is_file(), source
+        for file in [PLAN / '23_后续可解释序列编排研究/00_后续研究总设计.md', PLAN / '23_后续可解释序列编排研究/01_数据与方法储备.md', PLAN / '00_总控/02_当前状态与不可跨越门禁.md', GOV / '04_可领取树型任务包_v2.0.md']:
+>           assert 'agent/tasks/G-04/outputs/current-extension.md' in file.read_text(encoding='utf-8')
+E           AssertionError: assert 'agent/tasks/G-04/outputs/current-extension.md' in '# SRP可领取树型任务包 v2.2\n\n> 治理v1.2：领取状态以注册表为准；U12任务须先完成真实第二人签收，不以工程检查代替研究准入。\n> 规模：68个固定任务包 + 3个可重复批次模板。CSV登记表是状态权威；本文件由`...确认\n  - AC3证据与提交绑定，经独立复核及真实第二人签收，不代签外部条件\n- **证据**：输入与交付哈希；专项验证或外部回执；独立复核记录\n- **完成条件**：新制品验收对象明确；不覆盖历史DONE；研究证据单独判断\n'
+E            +  where '# SRP可领取树型任务包 v2.2\n\n> 治理v1.2：领取状态以注册表为准；U12任务须先完成真实第二人签收，不以工程检查代替研究准入。\n> 规模：68个固定任务包 + 3个可重复批次模板。CSV登记表是状态权威；本文件由`...确认\n  - AC3证据与提交绑定，经独立复核及真实第二人签收，不代签外部条件\n- **证据**：输入与交付哈希；专项验证或外部回执；独立复核记录\n- **完成条件**：新制品验收对象明确；不覆盖历史DONE；研究证据单独判断\n' = read_text(encoding='utf-8')
+E            +    where read_text = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/04_可领取树型任务包_v2.0.md').read_text
+
+agent\tasks\G-04\execution\test_extension_handoff.py:153: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/G-04/execution/test_extension_handoff.py::test_real_sources_current_consumers_and_wording
+1 failed, 8 passed in 0.26s

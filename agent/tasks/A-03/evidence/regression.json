@@ -1,0 +1,12 @@
+{
+  "task_id": "A-03",
+  "date": "2026-09-29",
+  "checks": [
+    {"command": "py -3.14 -m pytest -q", "exit_code": 0, "passed": 635, "seconds": 62.76},
+    {"command": "py -3.14 <governance>/07_validate_task_packages.py", "exit_code": 0, "registry_entries": 71},
+    {"command": "py -3.14 <governance>/14_validate_ready_task_packages.py", "exit_code": 0, "packages": 5, "snapshots": 61},
+    {"command": "git diff --check", "exit_code": 0},
+    {"command": "rg project prohibited wording in agent/tasks/A-03", "exit_code": 1, "matches": 0}
+  ],
+  "scope": "Python and governance checks; not real scoring, calibration, Unity, TD or research execution"
+}

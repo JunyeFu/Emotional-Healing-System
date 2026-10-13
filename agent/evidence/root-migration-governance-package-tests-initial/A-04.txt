@@ -1,0 +1,26 @@
+........F                                                                [100%]
+================================== FAILURES ===================================
+______________________ test_sources_and_active_consumers ______________________
+
+    def test_sources_and_active_consumers():
+        for path in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / path).is_file(), path
+        for relative in ('12_步骤11_离线处理分析与论文写作/00_第11步计划.md',
+                         '12_步骤11_离线处理分析与论文写作/01_详细执行方案.md',
+                         '22_离线处理与科研分析/06_统计模型与图表计划.md'):
+            path = PLAN / relative
+            assert 'agent/tasks/A-04/outputs/current-analysis.md' in path.read_text(encoding='utf-8')
+            for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
+>               assert (path.parent / link).resolve().exists(), link
+E               AssertionError: ../../../../agent/tasks/E-04/outputs/current-closeout.md
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/E-04/outputs/current-closeout.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/E-04/outputs/current-closeout.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作') / '../../../../agent/tasks/E-04/outputs/current-closeout.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/12_步骤11_离线处理分析与论文写作/00_第11步计划.md').parent
+
+agent\tasks\A-04\execution\test_extension_analysis.py:100: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/A-04/execution/test_extension_analysis.py::test_sources_and_active_consumers
+1 failed, 8 passed in 0.76s

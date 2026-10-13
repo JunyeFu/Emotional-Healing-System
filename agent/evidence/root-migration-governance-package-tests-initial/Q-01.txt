@@ -1,0 +1,57 @@
+..FF...............F.                                                 [100%]
+================================== FAILURES ===================================
+_____________________ test_sources_and_active_navigation ______________________
+
+    def test_sources_and_active_navigation():
+        for path in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / path).exists(), path
+        for path in (PACKAGE / 'README.md', PACKAGE / '04_课题实际构念与证据矩阵.md',
+                     PACKAGE / '07_完整执行SOP与空白报告.md', TASK / 'outputs/current-level-a.md'):
+            for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
+>               assert (path.parent / link).resolve().exists(), link
+E               AssertionError: ../../../../../agent/tasks/Q-01/outputs/current-level-a.md
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/Q-01/outputs/current-level-a.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/Q-01/outputs/current-level-a.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建') / '../../../../../agent/tasks/Q-01/outputs/current-level-a.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建/04_课题实际构念与证据矩阵.md').parent
+
+agent\tasks\Q-01\execution\test_current_handoff.py:53: AssertionError
+_______________ test_archive_bytes_and_signed_sources_unchanged _______________
+
+    def test_archive_bytes_and_signed_sources_unchanged():
+        for name, expected in read(TASK / 'inputs/sources.json')['archived_bytes'].items():
+            assert hashlib.sha256((TASK / 'archive' / name).read_bytes()).hexdigest().upper() == expected
+        protected = [PACKAGE / name for name in ('framework_contract_v1.0.json',
+                     '11_第二人审核报告_已签署.md', '02_盲态独立重建任务书.md',
+                     '05_盲态材料母版与编号方案.md', '06_重建真值与评分键.md')]
+        changed = subprocess.run(['git', 'diff', '7e6deb4', '--name-only', '--', *map(str, protected)],
+                                 cwd=ROOT, capture_output=True, text=True, check=True)
+>       assert not changed.stdout.strip()
+E       assert not '"agent/governance/01-\\351\\241\\271\\347\\233\\256\\347\\253\\240\\347\\250\\213\\344\\270\\216\\350\\247\\204\\345\...1/Q-01_LevelA\\344\\270\\216\\347\\213\\254\\347\\253\\213\\351\\207\\215\\345\\273\\272/framework_contract_v1.0.json"'
+E        +  where '"agent/governance/01-\\351\\241\\271\\347\\233\\256\\347\\253\\240\\347\\250\\213\\344\\270\\216\\350\\247\\204\\345\...1/Q-01_LevelA\\344\\270\\216\\347\\213\\254\\347\\253\\213\\351\\207\\215\\345\\273\\272/framework_contract_v1.0.json"' = <built-in method strip of str object at 0x0000019B1D4E3700>()
+E        +    where <built-in method strip of str object at 0x0000019B1D4E3700> = '"agent/governance/01-\\351\\241\\271\\347\\233\\256\\347\\253\\240\\347\\250\\213\\344\\270\\216\\350\\247\\204\\345\...Q-01_LevelA\\344\\270\\216\\347\\213\\254\\347\\253\\213\\351\\207\\215\\345\\273\\272/framework_contract_v1.0.json"\n'.strip
+E        +      where '"agent/governance/01-\\351\\241\\271\\347\\233\\256\\347\\253\\240\\347\\250\\213\\344\\270\\216\\350\\247\\204\\345\...Q-01_LevelA\\344\\270\\216\\347\\213\\254\\347\\253\\213\\351\\207\\215\\345\\273\\272/framework_contract_v1.0.json"\n' = CompletedProcess(args=['git', 'diff', '7e6deb4', '--name-only', '--', 'D:\\Agent\\srp\\agent\\governance\\01-项目章程与规划\\...\344\\270\\216\\347\\213\\254\\347\\253\\213\\351\\207\\215\\345\\273\\272/framework_contract_v1.0.json"\n', stderr='').stdout
+
+agent\tasks\Q-01\execution\test_current_handoff.py:64: AssertionError
+_______ Q01MaterialValidationTests.test_material_package_is_consistent ________
+
+self = <test_validate_q01_materials.Q01MaterialValidationTests testMethod=test_material_package_is_consistent>
+
+    def test_material_package_is_consistent(self) -> None:
+>       self.assertEqual(MODULE.validate_materials(), [])
+E       AssertionError: Lists differ: ['AUTHORITY_FILE_MISSING:00-项目管理/01-项目章程与规[726 chars].md'] != []
+E       
+E       First list contains 6 additional elements.
+E       First extra element 0:
+E       'AUTHORITY_FILE_MISSING:00-项目管理/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json'
+E       
+E       Diff is 796 characters long. Set self.maxDiff to None to see it.
+
+agent\tasks\Q-01\execution\test_validate_q01_materials.py:20: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/Q-01/execution/test_current_handoff.py::test_sources_and_active_navigation
+FAILED agent/tasks/Q-01/execution/test_current_handoff.py::test_archive_bytes_and_signed_sources_unchanged
+FAILED agent/tasks/Q-01/execution/test_validate_q01_materials.py::Q01MaterialValidationTests::test_material_package_is_consistent
+3 failed, 18 passed, 3 subtests passed in 0.37s

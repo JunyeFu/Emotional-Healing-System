@@ -1,0 +1,1 @@
+PASS: V-04 snow-candidate-v2 machine gate; 10s 5-5 dual-condition media, mirrored powder motion, equal phase intensity, divergent actual, shared fixed camera, environment and audio verified; human review pending

@@ -1,0 +1,18 @@
+....F                                                                    [100%]
+================================== FAILURES ===================================
+__________ test_frozen_and_current_consumer_resolution_are_separate ___________
+
+    def test_frozen_and_current_consumer_resolution_are_separate():
+        resolve = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['resolve_source']
+        relative = (GOV / 'u12_upgrade/consumers.json').relative_to(ROOT).as_posix()
+        assert resolve(ROOT, 'U12-03', 'IN_REVIEW', relative) == TASK / 'archive/consumers.json'
+        assert resolve(ROOT, 'U12-06', 'IN_PROGRESS', relative) == TASK / 'archive/consumers.json'
+        assert resolve(ROOT, 'U12-01', 'DONE', relative) == ROOT / relative
+>       assert resolve(ROOT, 'U12-06', 'READY', relative) == ROOT / relative
+E       AssertionError: assert WindowsPath('D:/Agent/srp/agent/tasks/U12-01/archive/consumers.json') == (WindowsPath('D:/Agent/srp') / 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/consumers.json')
+E        +  where WindowsPath('D:/Agent/srp/agent/tasks/U12-01/archive/consumers.json') = <function resolve_source at 0x000001D275F1D640>(WindowsPath('D:/Agent/srp'), 'U12-06', 'READY', 'agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/u12_upgrade/consumers.json')
+
+agent\tasks\U12-01\execution\test_governance_handoff.py:68: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-01/execution/test_governance_handoff.py::test_frozen_and_current_consumer_resolution_are_separate
+1 failed, 4 passed in 0.16s

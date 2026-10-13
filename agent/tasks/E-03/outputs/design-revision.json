@@ -1,0 +1,32 @@
+{
+  "task_id": "E-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新控制与测量技术关闭",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新控制与测量技术关闭修订交接",
+    "技术关闭表",
+    "参数依据"
+  ],
+  "acceptance_criteria": [
+    "AC1 汇总真实校准、可辨性、模糊事件和失败路径",
+    "AC2 控制范围与计分容差各自论证，不能一起放宽",
+    "AC3 CAL、协议及真实批准分开，不以静态48单元关闭研究"
+  ],
+  "evidence_required": [
+    "技术关闭表",
+    "参数依据",
+    "真实冻结待办"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "Q-03",
+    "E-02",
+    "B-01"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

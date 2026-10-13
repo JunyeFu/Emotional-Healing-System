@@ -1,0 +1,40 @@
+{
+  "task_id": "F-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "构念、情绪与公平执行测量",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "构念、情绪与公平执行测量修订交接",
+    "构念测量蓝图",
+    "候选分析集"
+  ],
+  "acceptance_criteria": [
+    "AC1 PANAS-NA前测校正后测为主要候选并核查版本、时间指令和地板",
+    "AC2 理解题按功能适配，A不参加不存在的Actual读取排名",
+    "AC3 I达成、G跟随、努力及不适独立定义，不用SCCI代证收益"
+  ],
+  "evidence_required": [
+    "构念测量蓝图",
+    "候选分析集",
+    "量表许可与适用审查"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json",
+  "measurement_design_update": {
+    "date": "2026-10-09",
+    "design_review": "APPROVED",
+    "materials": "DELIVERED",
+    "empirical_validation": "NOT_EXECUTED",
+    "formal_collection_allowed": false,
+    "sources": [
+      "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "agent/design/design-foundation-20261008/operational-design.json",
+      "agent/work/2026-10-08_科学来源补获与量表侧证.md"
+    ]
+  }
+}

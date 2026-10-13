@@ -1,0 +1,32 @@
+{
+  "task_id": "V-05",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "固定/受限适应全旅程灰盒",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "固定/受限适应全旅程灰盒修订交接",
+    "新灰盒录像",
+    "时序与异常报告"
+  ],
+  "acceptance_criteria": [
+    "AC1 DEV-REPLAY分别核对A输入隔离和B合法边界调整",
+    "AC2 同预算覆盖慢半步、漏补吸、低质量、恢复、模块末尾",
+    "AC3 形成性问题真实关闭，旧48组合不证明新控制与用户理解"
+  ],
+  "evidence_required": [
+    "新灰盒录像",
+    "时序与异常报告",
+    "评审问题关闭矩阵"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "READY",
+  "depends_on_original": [
+    "F-03",
+    "U-02",
+    "V-04"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

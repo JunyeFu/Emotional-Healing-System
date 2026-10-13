@@ -1,0 +1,25 @@
+........F.                                                               [100%]
+================================== FAILURES ===================================
+__________________ test_navigation_and_source_paths_are_real __________________
+
+    def test_navigation_and_source_paths_are_real():
+        for path in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / path).is_file(), path
+        for name in ('00_后续研究总设计.md', '01_数据与方法储备.md'):
+            path = PLAN / '23_后续可解释序列编排研究' / name
+            text = path.read_text(encoding='utf-8')
+            assert 'agent/tasks/E-05/outputs/current-freeze.md' in text
+            for link in re.findall(r'\]\(([^)]+)\)', text):
+>               assert (path.parent / link).resolve().is_file(), link
+E               AssertionError: ../../../../agent/tasks/X-02/outputs/current-policy.md
+E               assert False
+E                +  where False = is_file()
+E                +    where is_file = WindowsPath('D:/Agent/srp/agent/agent/tasks/X-02/outputs/current-policy.md').is_file
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/X-02/outputs/current-policy.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/23_后续可解释序列编排研究') / '../../../../agent/tasks/X-02/outputs/current-policy.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/23_后续可解释序列编排研究') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/23_后续可解释序列编排研究/00_后续研究总设计.md').parent
+
+agent\tasks\E-05\execution\test_freeze_handoff.py:124: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/E-05/execution/test_freeze_handoff.py::test_navigation_and_source_paths_are_real
+1 failed, 9 passed in 0.34s

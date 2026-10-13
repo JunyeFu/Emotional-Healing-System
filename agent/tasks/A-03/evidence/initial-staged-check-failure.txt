@@ -1,0 +1,6 @@
+Command: git diff --cached --check
+Initial exit code: 2
+Observed: archive/README_spec_legacy.md lines 1-27 reported trailing whitespace.
+Cause: preserved source has CRLF bytes and -text disables normalization; Git checked CR as whitespace.
+Disposition: scope whitespace=cr-at-eol to the two byte-preserved archive files only.
+No archive bytes were changed and no global whitespace check was disabled.

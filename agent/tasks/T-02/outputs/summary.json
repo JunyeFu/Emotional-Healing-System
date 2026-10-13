@@ -1,0 +1,170 @@
+{
+  "task_id": "T-02",
+  "title": "T-02 操作台消费I/G/X及研究许可 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "T-02注册状态READY仅保留原范围。当前任务更新为操作台消费I/G/X及研究许可；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "Codex本轮审阅实际源码、清理旧文件并运行Python与本机TCP核验；没有TD操作或新真人签署，不代填负责人。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 只读监看理想、下发、实际与质量，不拥有适应控制",
+        "AC2 请求与ACK及真实许可分开，旧遥控不复用为正式授权",
+        "AC3 故障同程序处理，操作员信息不混入参与者反馈"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "操作台消费I/G/X及研究许可修订交接",
+        "操作契约修订",
+        "错误与恢复流程"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：操作台消费I/G/X及研究许可"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：操作契约修订；错误与恢复流程；准入证据需求"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：T-01、P-01；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：操作契约修订；错误与恢复流程；准入证据需求"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "T02-N01",
+      "status": "FIXED_LEGACY_AUTHORING_ARCHIVE",
+      "description": "15份旧TD引导、任意脚本遥控及原型工程实际原文归档，当前导航修正，不再混作操作员请求",
+      "source": "agent/tasks/T-02/archive/README.md"
+    },
+    {
+      "id": "T02-N02",
+      "status": "OPEN_TD_REQUEST_AND_DURABLE_MARK",
+      "description": "真实TCP TD请求仍统一拒绝，内部manual_mark不支持；请求handler/ACK/耐久标记及正向权限验收仍缺",
+      "source": "agent/tasks/T-02/outputs/current-operator-contract.json"
+    },
+    {
+      "id": "T02-N03",
+      "status": "CLARIFIED_ACK_AND_ALARM_AUTHORITY",
+      "description": "请求ACK不等于UnityACK，发送不等于执行；告警确认不改变质量、阈值或会话",
+      "source": "agent/tasks/T-02/outputs/current-operator-contract.md"
+    },
+    {
+      "id": "T02-N04",
+      "status": "OPEN_UI_EVIDENCE_AND_OWNER",
+      "description": "告警历史、实际A主题操作、日志/录像及真实负责人未交付；导出截图扩展另验，不扩大本包基础验收",
+      "source": "agent/tasks/T-02/TASK.md"
+    },
+    {
+      "id": "T-02-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "操作台消费I/G/X及研究许可；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前操作员请求和告警交接",
+      "path": "agent/tasks/T-02/outputs/current-operator-contract.md"
+    },
+    {
+      "label": "实际接口状态与未实现项",
+      "path": "agent/tasks/T-02/outputs/current-operator-contract.json"
+    },
+    {
+      "label": "现状复测和运行边界",
+      "path": "agent/tasks/T-02/evidence/verification.json"
+    },
+    {
+      "label": "原件归档与保留理由",
+      "path": "agent/tasks/T-02/archive/README.md"
+    },
+    {
+      "label": "实施过程验收和国内资料",
+      "path": "agent/tasks/T-02/TASK.md"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

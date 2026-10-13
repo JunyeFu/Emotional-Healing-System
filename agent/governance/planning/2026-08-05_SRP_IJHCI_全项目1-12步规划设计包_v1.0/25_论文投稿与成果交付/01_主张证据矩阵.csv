@@ -1,0 +1,9 @@
+ID,主张,核心结果,证据,当前状态,失败降级
+C1,两完整提示方案的调整后负性情绪比较,估计与置信区间及预设比较,agent/tasks/A-05/outputs/current-analysis.md,NOT_RUN,证据不足不等于等效或反向优势
+C2,呼吸执行质量与功能代价,机会PF及分析集与缺失,agent/tasks/A-02/outputs/current-statistics.md,NOT_RUN,功能边界不隐去有效情绪结果
+C3,操纵理解和努力的解释边界,SCCI及步骤理解与错误,agent/tasks/F-02/outputs/current-measurement.md,NOT_RUN,客观错误不以喜欢度补偿
+C4,有边界的设计知识,独立重建和负例与评分,agent/tasks/Q-01/outputs/current-level-a.md,NOT_RUN,四原团队场景不证明通用语法
+C5,真实系统和降级能力,真实设备与Unity回执及持久记录,agent/tasks/I-01/outputs/current-integration.md,NOT_RUN,合成闭环不替代真实全链
+C6,可选冻结策略的部署比较,两原生组原分配估计与独立SAP,agent/tasks/A-04/outputs/current-analysis.md,NOT_RUN,未开展不伪DONE已有活动不隐去
+C7,与相关工作的有据增量,原始全文页段和方法结果对照,agent/tasks/W-01/outputs/current-paper.md,NOT_RUN,DOI身份和历史搜索不替代完整综述
+C8,实际研究范围及可复现交接,同版范围结果图表输入代码与复跑,agent/tasks/A-06/outputs/current-scope.md,NOT_RUN,元数据路线通过不替代真实签收

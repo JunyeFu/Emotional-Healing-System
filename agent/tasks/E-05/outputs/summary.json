@@ -1,0 +1,170 @@
+{
+  "task_id": "E-05",
+  "title": "E-05 可选学习策略的独立冻结 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "E-05注册状态BLOCKED_EXTERNAL仅保留原范围。当前任务更新为可选学习策略的独立冻结；处理类型DEFERRED_EXTENSION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有E-05真实签署。本轮为作者Agent规范化与合成接口核查，未安排新独立Agent审核或真人签名。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 不成为首版整包研究依赖",
+        "AC2 预先确定扩展目标、策略选择和不足时保留规则方案",
+        "AC3 真实冻结与OPE证据独立，不把主研究结果反向优化后再称确认性"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "可选学习策略的独立冻结修订交接",
+        "延期决定",
+        "扩展策略标准"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：可选学习策略的独立冻结"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：延期决定；扩展策略标准；真实冻结缺口"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：A-05、X-02；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：延期决定；扩展策略标准；真实冻结缺口"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "E05-N01",
+      "status": "FIXED_PRECRITERIA_VS_FINAL_FREEZE_HANDOFF",
+      "description": "揭盲前选择标准与后分析最终模型冻结分开，无事前凭证不补日期或有利门槛",
+      "source": "agent/tasks/E-05/outputs/current-freeze.md"
+    },
+    {
+      "id": "E05-N02",
+      "status": "FIXED_U12_08_CONSUMERS_AND_WORD",
+      "description": "U12-08实际为扩展分析附录，修正X-02/X-03当前执行和Word，避免循环职责",
+      "source": "agent/tasks/E-05/evidence/consumer-impact.md"
+    },
+    {
+      "id": "E05-N03",
+      "status": "OPEN_REAL_MODEL_OPE_APPROVAL_AND_SIGNATURE",
+      "description": "真实训练、支持报告、正式方法/阈值、事前批准及最终模型签署尚缺，不解除活动门",
+      "source": "agent/tasks/E-05/outputs/current-freeze.json"
+    },
+    {
+      "id": "E05-N04",
+      "status": "FIXED_POWERSHELL_ROOT_ENTRYPOINT",
+      "description": "静态审查发现初稿根路径少一层，按现有方式修正并从仓库外实调复测",
+      "source": "agent/tasks/E-05/evidence/entrypoint-fix.md"
+    },
+    {
+      "id": "E-05-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "可选学习策略的独立冻结；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前策略冻结交接",
+      "path": "agent/tasks/E-05/outputs/current-freeze.md"
+    },
+    {
+      "label": "真实冻结与实现缺口",
+      "path": "agent/tasks/E-05/outputs/current-freeze.json"
+    },
+    {
+      "label": "未执行审阅提纲",
+      "path": "agent/tasks/E-05/outputs/policy-review-template.json"
+    },
+    {
+      "label": "上下游消费者纠偏",
+      "path": "agent/tasks/E-05/evidence/consumer-impact.md"
+    },
+    {
+      "label": "专项和回归证据",
+      "path": "agent/tasks/E-05/evidence/verification.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

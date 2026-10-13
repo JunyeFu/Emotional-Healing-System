@@ -1,0 +1,21 @@
+
+=================================== ERRORS ====================================
+____ ERROR collecting agent/tasks/G-05/execution/test_admission_handoff.py ____
+import file mismatch:
+imported module 'test_admission_handoff' has this __file__ attribute:
+  D:\Agent\srp\agent\tasks\U12-05\execution\test_admission_handoff.py
+which is not the same as the test file we want to collect:
+  D:\Agent\srp\agent\tasks\G-05\execution\test_admission_handoff.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____ ERROR collecting agent/tasks/E-02/execution/test_execution_handoff.py ____
+import file mismatch:
+imported module 'test_execution_handoff' has this __file__ attribute:
+  D:\Agent\srp\agent\tasks\E-01\execution\test_execution_handoff.py
+which is not the same as the test file we want to collect:
+  D:\Agent\srp\agent\tasks\E-02\execution\test_execution_handoff.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+=========================== short test summary info ===========================
+ERROR agent/tasks/G-05/execution/test_admission_handoff.py
+ERROR agent/tasks/E-02/execution/test_execution_handoff.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!
+2 errors in 0.30s

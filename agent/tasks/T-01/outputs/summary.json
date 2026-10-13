@@ -1,0 +1,186 @@
+{
+  "task_id": "T-01",
+  "title": "T-01 双设备只读显示服务于新测量 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "T-01注册状态DONE仅保留原范围。当前任务更新为双设备只读显示服务于新测量；处理类型RETAIN_WITH_SCOPE_CLARIFICATION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-09-02 +08:00",
+    "commit": "c3b84ba36a63c3b19f7fa35db37ff6aebe106dd3",
+    "method": "真实第二人签收8790cd3ae4db3543c038efc21deec635605cb06f的本机只读基线；本轮整理及新视觉候选不转移该签名。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 设备分区及波形仍服务记录与操作员核查",
+        "AC2 不把HRV、TD图形或质量灯当情绪及训练真值",
+        "AC3 显示能区分模拟、真实、失效与未知，既有验证保留原范围"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "双设备只读显示服务于新测量修订交接",
+        "预览用途说明",
+        "状态显示核对"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：双设备只读显示服务于新测量"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：预览用途说明；状态显示核对；真实SDK未验收项"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：F-01、F-04、F-05；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：预览用途说明；状态显示核对；真实SDK未验收项"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "T01-N01",
+      "status": "FIXED",
+      "description": "五个执行工具迁入Agent层，新结果不覆盖历史；过期清理工具归档",
+      "source": "agent/tasks/T-01/execution/README.md"
+    },
+    {
+      "id": "T01-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "当前TOE身份与旧清理候选不同，49项内部功能一致、13项编辑器布局变化，实际TD探针通过",
+      "source": "agent/tasks/T-01/evidence/cleanup_comparison.json"
+    },
+    {
+      "id": "T01-N03",
+      "status": "FIXED_CANDIDATE",
+      "description": "旧Text TOP裁切已在独立可读候选修复并实跑，未覆盖历史制品",
+      "source": "agent/tasks/T-01/evidence/runtime/layout_repair.json"
+    },
+    {
+      "id": "T01-N04",
+      "status": "OPEN_DOWNSTREAM_NATIVE_UI",
+      "description": "A主题原生控件、导航和尺寸验收继续交T-02，不由本次旧界面修复代替",
+      "source": "agent/tasks/T-01/outputs/current-td-contract.md"
+    },
+    {
+      "id": "T01-N05",
+      "status": "OPEN_HUMAN_REVIEW",
+      "description": "可读性修复候选待真人对当前范围签收，历史签名不转移",
+      "source": "agent/tasks/T-01/outputs/current-td-contract.md"
+    },
+    {
+      "id": "T01-N06",
+      "status": "FIXED_AND_INDEPENDENTLY_VERIFIED",
+      "description": "独立复核两项验证器漏检及旧链接已修复，9项回归覆盖原复现；独立57项通过，复审无新P0-P3",
+      "source": "agent/tasks/T-01/evidence/independent-review.md"
+    },
+    {
+      "id": "T-01-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "双设备只读显示服务于新测量；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前TD使用与交接",
+      "path": "agent/tasks/T-01/outputs/current-td-contract.md"
+    },
+    {
+      "label": "本轮验证",
+      "path": "agent/tasks/T-01/evidence/verification.json"
+    },
+    {
+      "label": "实际TD探针",
+      "path": "agent/tasks/T-01/evidence/runtime/probe_report.json"
+    },
+    {
+      "label": "原第二人签收",
+      "path": "agent/validation/T-01_第二人审核报告_已签署.md"
+    },
+    {
+      "label": "本轮独立复审",
+      "path": "agent/tasks/T-01/evidence/independent-review.md"
+    },
+    {
+      "label": "国内任务技能与学习资料",
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

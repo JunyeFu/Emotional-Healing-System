@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-29",
+  "physical_moves": ["04-成果与交付 to agent/delivery", "PDF简报 to agent/delivery/briefs", "项目流程图 to human/assets/diagrams", "Unity源文件与美术素材 to agent/archive/delivery/unity-snapshot"],
+  "scope": "Delivery source relocation and current consumer repair, not release acceptance",
+  "original_diagrams_and_local_zip_preserved": true,
+  "current_pdf_output": "human/deliverables/pdf",
+  "generators_repaired": ["agent/tools/governance/render_governance_views.py", "agent/delivery/briefs/build_briefs.ps1", "agent/delivery/briefs/verify_briefs.py"],
+  "observed_failure_and_fix": "Windows PowerShell skipped a Chinese source-name equality filter and only checked an old PDF; replaced with ASCII 02_*.md plus exactly-one-source check. Actual Pandoc/XeLaTeX rebuild then passed.",
+  "rebuilt_pdf_sha256": "69029DBA050B3E4106829820161D10AF5FB6D013CAA26C343CD0DD236C9A081D",
+  "pdf_visual_check": "All six new rendered pages are byte-identical to the six inspected pages from the preceding delivery migration",
+  "word_visual_check": "40-page chained review; changed pages 39 and 40 inspected; pages 1-38 identical to inspected baseline. Migration has a dedicated final section.",
+  "diagram_preservation_check": "All four current SVG/PNG files equal their pre-move Git blobs",
+  "targeted_tests": "6 passed in 0.04s",
+  "root_regression": "635 passed in 48.81s",
+  "root_link_check": "8 moves, all 71 task sources and 330 Word source links passed; 11 moves pending",
+  "human_review": "成果构建源码已实际迁入agent/delivery/briefs，两张团队SVG/PNG进入human/assets/diagrams。旧Unity压缩包仅保留为本机历史来源；当前构建和图生成器已改为双层目标。",
+  "business_status_or_frozen_dispatch_changed": false,
+  "root_migration_complete": false
+}

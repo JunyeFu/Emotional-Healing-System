@@ -1,0 +1,13 @@
+{
+  "task_id": "A-03",
+  "command": "py -3.14 agent/tasks/A-03/execution/reproduce.py",
+  "exit_code": 0,
+  "comparison_path": "agent/tasks/A-03/evidence/runtime/reproduction-5qu9x0np/comparison.json",
+  "seed": 20260906,
+  "replications_per_scenario": 1000,
+  "per_condition": [24, 85, 96],
+  "all_three_json_match_original": true,
+  "evidence_class": "SYNTHETIC_ONLY",
+  "historical_report_changes": false,
+  "word_review": {"summary_pages": 3, "chain_pages": 18, "unchanged_previously_reviewed_chain_pages": "1-17", "visually_inspected_chain_pages": [18], "result": "PASS_NO_CLIPPING_OR_OVERFLOW"}
+}

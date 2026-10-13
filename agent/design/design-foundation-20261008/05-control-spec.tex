@@ -1,0 +1,314 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec,xeCJK,geometry,needspace,longtable,array,amsmath,tikz,fancyhdr}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\setmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\setCJKmainfont{msyh.ttc}[Path=C:/Windows/Fonts/,FontIndex=0,BoldFont=msyhbd.ttc]
+\newfontfamily\titlelatin{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{simhei.ttf}[Path=C:/Windows/Fonts/,AutoFakeBold=2]
+\geometry{margin=22mm}
+\pagestyle{fancy}\fancyhf{}\fancyfoot[C]{SRP 受限自适应设计\quad\thepage}\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{7pt}\setlength{\tabcolsep}{4pt}\linespread{1.22}\emergencystretch=3em\raggedbottom
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}}
+\newcommand{\reviewsection}[1]{\par\Needspace{6\baselineskip}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{document}
+\reviewtitle{SRP受限自适应操作设计}
+设计候选 ODES-20261008；继承固定A与原生受限适应B基线。本稿交付规则、状态、记录与校准责任，尚不构成运行合同、参数冻结或真实验收。共同理想I、有效下发G、独立实际X始终分开。
+
+\reviewsection{一、设计决定与输入}
+\reviewsubsection{1.1 两个条件的执行边界}
+A始终以预定时间线和环境种子呈现固定引导圈及场景。本人的实时或历史呼吸、心率、质量、表现评分不能改变圈、环境、音轨、奖励或正常模块进度。两组共有的人工停止、暂停和恢复流程可以影响时间线，但A不根据X自动调整。
+
+B用真实呼吸和场景状态支持有限的等待与放慢，再尝试回到I。首版不快于I、不改变步骤次序、不增加强制补吸、不延长停留步骤。心率和HRV只作辅助研究观察；本轮不给它们控制权限。只有规则在过去与当前可用数据上成立时才调整，不能读取未来结果。
+
+\reviewsubsection{1.2 输入的意义及使用权限}
+\begin{longtable}{L{24mm}L{69mm}L{61mm}}
+输入 & 明确定义 & 对决策的用途\\\hline
+I & 共同步骤模板、候选时长、模块暴露预算 & 定义参照；正式前共同冻结，不能因B表现改写\\
+X & 呼吸相位、可辨步骤、完整周期及采集时间 & 只在质量足够、事件已发生时提供B状态；独立评分另做\\
+Q & 数据新鲜度、运动干扰、信号质量、步骤可辨性 & 任一关键条件不可用时停止个体化；连通不等于可用\\
+G & 已实际下发及呈现的步骤、起止时间与周期身份 & 检查跟随；计划但未呈现的提示不能充当G\\
+场景Z & 天气、当前周期、过渡、反馈饱和、剩余预算 & 限制合法动作、反馈强度与收尾；不推断被试情绪\\
+用户/操作员 & 明确停止、不适、暂停与恢复请求 & 最高优先级；两组按相同公开程序处理\\
+历史窗 & 最近可用周期及决策时点前已知的偏差 & 区分相位错开与真正节奏偏慢，避免追逐瞬时抖动\\
+\end{longtable}
+
+\reviewsection{二、事件身份与控制归属}
+\reviewsubsection{2.1 I、G、X的设计记录}
+I记录模块、模板版本、步骤身份与理想持续时间；不要求缓冲后仍与全局理想时钟同相。G记录周期与步骤实例、决策时点、有效开始/结束、是否中断，以及实际呈现回执。X记录原始采集时间、可辨事件及质量，不由G填补。缺步骤、未知、被中断、未开始是不同事实。
+
+一次调整还需要：决策时已知的输入窗口、触发规则、调整前后尺度、模式、预算剩余、是否已有效下发与呈现。系统接收时间和呈现时间分别保留，不能把消息到达当作用户看到。跨周期映射允许“X无可匹配G”与“G无可辨X”，不强行一一对应。
+
+上述是设计记录要求，由F-05/P-02形成下一版合同；不是对现有字段改名。本轮不修改API或消息结构。
+
+\reviewsubsection{2.2 单一决策权}
+会话控制器由P-01承接，只由它提交G的下一周期计划。状态估计由S-01/S-02提供事实及质量；Unity由U-02呈现并报告实际呈现，不能自行追随X改时钟；TD只读预览及申请操作，不拥有适应控制权。离线评分由A-01/A-03独立重算，不消费在线成功标志作为真值。
+
+\reviewsection{三、状态、优先级与合法转移}
+\reviewsubsection{3.1 六种有效模式}
+\begin{longtable}{L{31mm}L{69mm}L{54mm}}
+模式 & 用户收到的引导 & 进入与离开\\\hline
+理想跟随 & G采用I，B实际响应可用时正常显示 & 正常开始；出现确认偏差才考虑调整\\
+受限放慢 & 下一完整周期按有界尺度放慢吸/呼 & 不改变当前步骤；稳定后逐步回归\\
+回归 & 下一周期减小偏移，尝试接近I & 符合回归窗；再度偏慢可退回，仍受总预算限制\\
+自然缓冲 & 明示“自然呼吸，无需追赶”，无停留指令 & 只在完整G周期边界进入；占用模块预算\\
+中性引导 & 不依据无效X调节；无实际成功/累计增益 & 输入不可用或调整耗尽；恢复需可用窗及合法边界\\
+暂停/结束 & 停止练习提示，明确允许自然呼吸或退出 & 共同人工程序或暴露预算结束\\
+\end{longtable}
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={draw,rounded corners,align=center,text width=31mm,minimum height=9mm,font=\small},>=stealth]
+\node (i) at (0,0) {理想跟随};\node (e) at (5,0) {受限放慢};\node (r) at (10,0) {回归};
+\node (b) at (0,-2) {自然缓冲};\node (n) at (5,-2) {中性引导};\node (s) at (10,-2) {暂停/结束};
+\draw[->] (i)--(e);\draw[->] (e)--(r);\draw[->] (r) to[bend right=23] (i);
+\draw[->] (i)--(b);\draw[->] (b)--(n);\draw[->] (n)--(e);
+\draw[->] (e)--(n);\draw[->] (r)--(s);\draw[->] (n)--(s);
+\end{tikzpicture}
+\end{center}
+箭头只展示主要路径；下表定义完整优先级。中断与恢复均记录事实，不保证所有用户最终回归I。
+
+\reviewsubsection{3.2 按顺序只提交一个有效决定}
+\begin{longtable}{L{18mm}L{55mm}L{81mm}}
+规则 & 前提 & 决定及记录\\\hline
+R01 & 明确停止或不适请求 & 立即撤下练习要求，记录中断；不等周期结束，不强求补做\\
+R02 & 暴露预算耗尽/不可容纳完整下一周期 & 不启动新周期，进入收尾自然呼吸；不赶做、不加时\\
+R03 & 共同人工暂停 & 当前G标中断，允许自然呼吸；暂停不计有效暴露，单报墙钟时间\\
+R04 & Q不可用，包括关键步骤无法辨别 & 撤下实际响应及成功含义，停止个体化；中断当前要求转中性自然呼吸\\
+R05 & 中性后可用窗未满足或尚非合法边界 & 保持中性，不凭第一帧恢复；满足后用有界新周期进入，不跳接旧实际\\
+R06 & 正常周期未结束 & 保持已下发G，只更新可靠X响应；禁止在停留中无限等待\\
+R07 & 偏差持续且速率确实偏慢 & 在下个完整周期有限放慢；达到总界限则转中性，不不断迁就\\
+R08 & 稳定相位错开、持续时间仍相容 & 在周期边界使用一次有界自然缓冲，尝试重新对齐；不是盲目继续放慢\\
+R09 & G稳定跟随且可用观察窗满足 & 有偏移则有限回归；无偏移保持I，不能快于I\\
+R10 & 未满足上述普通适应条件 & 保持原模式/有界计划，不因小抖动或画面尚未变好而改变节奏\\
+\end{longtable}
+
+R07与R08的分类窗、阈值和质量条件均待校准。停止、预算、暂停和质量中断属于中断路径；它们可即时撤下要求。普通等待、放慢与回归只在合法周期边界改变G，两者不混用。
+
+\reviewsection{四、等待、放慢与回归怎么做}
+\reviewsubsection{4.1 共用尺度保留结构}
+对可调整的吸气/呼气，候选下一周期时长为
+\[d^{G}_{c,j}=(1+\alpha_c)d^{I}_{j},\qquad 0\leq\alpha_c\leq\alpha_{\max}.\]
+停留步骤不放大；Fade主吸与补吸采用同一尺度以保持二者比例，长呼同样受约束。各步骤还须满足经校准的绝对舒适上限，超出时不执行该计划。Storm的3--3--3--3与Fade的2.5--1.5--6只是既有工程候选，不是普适最优。
+
+R07的速率偏慢触发先比较已完成、可辨且身份可支持的X与有效G；不能只凭同名事件的时间偏移。触发成立后，工作候选取历史窗中各可调整步骤的实际/I时长比中位数，再取最慢步骤的需求尺度：
+\[a_{req}=\max\!\left(0,\max_{j\in J}\operatorname{median}_{c\in W}\left(\frac{d^X_{c,j}}{d^I_j}\right)-1\right),\]
+\[\alpha_{next}=\min\!\left(\alpha_{max},\alpha_{current}+\min\bigl(\delta_{up},\max(0,a_{req}-\alpha_{current})\bigr)\right).\]
+J只含可调整吸/呼步骤，W只含决策前完整可辨周期。只要该模板必要步骤没有足够可辨周期，就不提交此估计。统一尺度保留结构，但可能过度放慢其他步骤；这种代价由独立I偏差与控制成本检验，不预设该规则最优。绝对时长上限不满足时拒绝计划并转中性，不分别截断步骤破坏比例。
+
+R09在稳定窗满足时使用$\alpha_{next}=\max(0,\alpha_{current}-\delta_{return})$，下一周期才生效；稳定跟随较慢G是尝试回归的前提，不是接近I的证明。相位重对齐若不能建立可靠的事件对应，就不触发R08。窗口、阈值及增减量都待校准，不把公式当新算法或已证明控制性能。
+
+数学式定义设计关系，不提供未经依据的默认数值。若Fade补吸不能可靠识别，该周期不能用于估计完整三步尺度，不以长呼或第二波动画猜补吸。
+
+\reviewsubsection{4.2 有界自然呼吸缓冲}
+自然缓冲没有吸后/呼后停留要求，不显示“保持直到系统满意”。它只在完成G周期后开始，场景明示自然呼吸，X可靠时可保留中性实际响应，但不增加练习成功累计。满足冻结的自然相位条件及呈现延迟要求时，B可以开始下个完整周期；超出单次或总缓冲预算、信号失效或模块将结束时，转中性或收尾。
+
+相位条件由真实事件可辨性校准，不假定传感器能及时识别呼气结束。若该条件无法可靠实现，取消相位重对齐动作，保留有限放慢与中性路径并修订研究范围。任何路径均不补给额外时间。
+
+\reviewsubsection{4.3 暂停与恢复}
+两组共同人工暂停时，设备是否继续记录遵守已有授权，但用户无需保持最后姿势或步骤。当前周期中断后不在恢复时强制补齐。两组使用同一预定恢复说明和固定过渡时段，再进入完整周期；该过渡占有效暴露预算。A恢复不检查X来决定时序；B仍受Q及普通适应规则限制。暂停时长单报，不因自适应缓冲而冒充暂停。
+
+\reviewsection{五、场景状态与诚实反馈}
+\reviewsubsection{5.1 两种场景的四层职责}
+Storm：基础雨幕、闪电、水面/地面波纹沿公共非表现时间线；A固定圈承载G且不显示Actual。B中景雨幕风门承载G，近景叶/风纹承载可辨X，局部植被清晰度承载累计练习响应。闪电不作为达标奖励。
+
+Fade：基础褪色/复色只承载公共时间；A固定圈承载三步G。B主潮、补潮、长回流承载G；独立近景流纹承载X，实际补流只有真实事件可辨时出现。局部远岸纹理承载累计响应，全屏颜色不能同时表示时间与个人表现。目标与实际靠空间、轮廓和运动区分，颜色只是辅助。
+
+\reviewsubsection{5.2 饱和、未知与缺步骤}
+累计练习响应若依据在线G跟随，只能称练习响应，不能称共同I达成或情绪恢复。只在可靠、完整且满足冻结规则的周期更新；缓冲、未知和缺步骤不补成功。累计载体饱和时仅停止进一步视觉增量，保留底层事件记录；不得放宽动作阈值、加大反馈或延长模块来继续“变好”。
+
+断流时撤下当前X运动并明确“信号暂不可用”，既有累计只保留历史含义且不继续增长。恢复不回填丢失段、不补播未发生的补吸。连续响应延迟和装饰粒子延迟分别标定；装饰不能覆盖用于判断步骤的主运动。
+
+漏补吸：X直接进入呼气时，实际层忠实走呼气，不绘制第二股实际补流；G保留已经下发的计划事实，不插入追补步骤。中性教学和B当次说明明确“不必追补”；当前周期缺口保留，下一完整周期才按规则调整。
+
+\reviewsection{六、参数怎么确定及失败后怎么收缩}
+\begin{longtable}{L{34mm}L{73mm}L{47mm}}
+参数组 & 确定证据与方法 & 当前状态/责任\\\hline
+质量与新鲜度 & 独立真实标注，覆盖运动、断流和步骤歧义；给出误判、漏判、延迟 & 待校准；S-01/S-02/Q-03\\
+速率/相位窗 & 在不同误差幅度与真值条件下区分相位和速率；不由G自动标签当真值 & 待校准；P-01/F-05\\
+尺度上限/单次变化 & 依据可辨性、舒适性与结构必要性确定可接受域；不能以正式得分最大化选值 & 待校准；Q-02/Q-03\\
+稳定窗/回归速率 & 检查响应是否反复摆动、能否解释以及回归成本 & 待校准；P-01/Q-03\\
+单次/总缓冲预算 & 同时计真实对齐可行性、占时与用户负担；剩余T不能保证时转中性 & 待校准；V-01/U12-11\\
+步骤容差 & 独立测量误差与有意义任务偏离共同论证；评分器不追随控制器放宽 & 待校准；A-03/U12-04\\
+响应/累计增量 & 区分主运动与装饰延迟，验证饱和与未知含义 & 待校准；V-03/U-02\\
+\end{longtable}
+
+每组参数交付来源、候选域、使用样本、接受条件及最终结果。接受条件在相应前置验证前制定，不从正式组间效益倒推。未找到可接受域就取消动作或简化结构；未冻结不进入正式执行。
+
+\newpage
+\reviewsection{七、设计验收与消费者}
+\reviewsubsection{7.1 必须逐例解释的行为}
+配对故事板ST01--ST05与FD01--FD07覆盖稳定、错相、偏慢、不可用、饱和与结束、漏补吸、跨周期、恢复、暂停、回归失败及步骤不可辨。每例列规则、A/B呈现、有效G、X事实和计分边界。它们是设计演绎，不是Unity录像或真实用户结果。
+
+后续实现验收必须验证：同一时间线更换本人输入时A画面不变；B仅在规则成立且合法边界产生对应变化；断流不能继续成功累计；相同原始X不因控制计划不同而改变独立I评分。真实呈现时间、原始信号和人工核查由各包取得，本稿不能替代。
+
+\reviewsubsection{7.2 交接范围}
+F-05承接步骤/中断身份，P-01承接模式与优先级，P-02承接实际记录，S-01/S-02承接可辨性，U-02/V-03承接四层反馈，V-01承接预算和共同暂停，A-01/A-03承接独立评价，Q-02/Q-03与U12-11承接校准及冻结。历史DONE和既有Target验收只保留原范围。本稿完成设计交接，真实复核、运行与研究资格仍待各任务执行。
+
+% NORMALIZATION-20261008
+\newpage\reviewsection{八、十八项可执行校准规格}
+参数确定使用前10名独立技术参与者，后10名保持固定核验；人数是资源规划不是效度阈值。认知12人与正式人员不同，专家8中含2位独立重建。任何增加前置均重新计算正式可用资源。本轮不采集，不给参数默认实值。
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.1 质量可用判定}
+标识：signal\_\allowbreak{}quality；单位/\allowbreak{}含义：状态/\allowbreak{}概率。用途/\allowbreak{}依据：独立双标注的原始波形和运动片段；可用不等于所有步骤可辨。责任：S-\allowbreak{}01/\allowbreak{}S-\allowbreak{}02/\allowbreak{}Q-\allowbreak{}03。候选域：阈值从校准观测域枚举；没有真值不得定数。
+
+确定与核验：校准集包含静止、运动、松动和断流；双人盲标可用与不可用，第三人裁决。候选阈值按误用时段及错误事件代价选，保留集报告参与者级误判/\allowbreak{}漏判区间。
+
+接受：仅在误用造成的边界误差与U/\allowbreak{}T不确定宽满足先验评分域时保留；任何断流不得产生实际成功或新增累计。 失败修订：保持中性；改传感器/\allowbreak{}算法后用新核验材料重验。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.2 数据新鲜度}
+标识：freshness；单位/\allowbreak{}含义：毫秒。用途/\allowbreak{}依据：采集时间、接收时间、真实呈现时间；仅使用决策前已到达信息。责任：S-\allowbreak{}01/\allowbreak{}P-\allowbreak{}02/\allowbreak{}Q-\allowbreak{}03。候选域：由真实时钟与延迟区间推导，非固定20Hz自动保证。
+
+确定与核验：记录跨设备时钟误差和端到端延迟分布，校准允许数据龄。保留集注入迟到/\allowbreak{}乱序/\allowbreak{}中断，重建每次决定当时可见输入。
+
+接受：数据龄上界加时钟/\allowbreak{}呈现不确定度须小于最短可辨步骤及合法边界裕量；过期不得触发个体化。 失败修订：撤下X响应并中性；重新同步。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.3 关键相位/步骤可辨性}
+标识：phase\_\allowbreak{}identifiability；单位/\allowbreak{}含义：类别及边界误差秒。用途/\allowbreak{}依据：独立原始X，不读G、组别或动画。责任：S-\allowbreak{}02/\allowbreak{}A-\allowbreak{}01/\allowbreak{}Q-\allowbreak{}03。候选域：分类器与阈值仅用前10校准；后10不调参。
+
+确定与核验：双盲标吸/\allowbreak{}呼/\allowbreak{}停留候选、Fade两次吸气和跨周期；裁决后按参与者保留集核验混淆、无法辨比例及边界误差。
+
+接受：可辨事件误差上侧区间须处于评分可接受域；漏补吸与补吸未知必须可区分，无法识别时禁止三步控制估计。 失败修订：移除不可辨动作/\allowbreak{}结构并重定范围，不从G补X。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.4 真实偏慢观察窗}
+标识：rate\_\allowbreak{}window；单位/\allowbreak{}含义：完整周期数。用途/\allowbreak{}依据：决策前可辨X对已呈现G的持续时间。责任：P-\allowbreak{}01/\allowbreak{}F-\allowbreak{}05/\allowbreak{}Q-\allowbreak{}03。候选域：1至校准材料中可获得的完整可辨周期数。
+
+确定与核验：在相同原始X上构造相位平移而不改时长、真实拉长时长及混合扰动；从可用历史周期数枚举窗，冻结后核验。
+
+接受：纯相位平移不得单独触发R07；真实持续偏慢的可辨动作须在剩余预算内起效，无法分辨则不调整。 失败修订：禁用R07；使用中性和原方案。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.5 稳定错相窗与容差}
+标识：phase\_\allowbreak{}offset\_\allowbreak{}window；单位/\allowbreak{}含义：周期数/\allowbreak{}秒。用途/\allowbreak{}依据：存在可靠事件对应；时长相容不等于全局同相。责任：P-\allowbreak{}01/\allowbreak{}F-\allowbreak{}05/\allowbreak{}Q-\allowbreak{}03。候选域：从独立边界误差与实际错相分布确定。
+
+确定与核验：枚举事件对应及相位稳定窗；用纯错相、慢速、抖动和无对应材料检验R08。
+
+接受：无可靠对应不重对齐；纯慢速不误作错相；重对齐收益必须超过事件与呈现时点联合误差。 失败修订：取消R08，保留有限放慢与中性。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.6 最大放慢尺度}
+标识：slowdown\_\allowbreak{}limit；单位/\allowbreak{}含义：无量纲alpha。用途/\allowbreak{}依据：共同I吸/\allowbreak{}呼统一尺度；不放大停留。责任：P-\allowbreak{}01/\allowbreak{}Q-\allowbreak{}02/\allowbreak{}Q-\allowbreak{}03。候选域：0至经舒适与结构审阅接受的上界，未定值。
+
+确定与核验：由舒适反馈、实际可辨持续时间及共同目标用途形成候选尺度；前10核查，后10固定核验；不按NA组差选。
+
+接受：所有步骤在绝对可接受时长内；停留不扩大；超界拒绝计划；目标漂移成本可独立重算。 失败修订：缩小上界或禁用适应，不无限迁就。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.7 单周期尺度增量}
+标识：single\_\allowbreak{}change\_\allowbreak{}limit；单位/\allowbreak{}含义：alpha/\allowbreak{}周期。用途/\allowbreak{}依据：下一完整周期生效。责任：P-\allowbreak{}01/\allowbreak{}Q-\allowbreak{}03。候选域：不超过slowdown\_\allowbreak{}limit；候选取实际需求变化分位点。
+
+确定与核验：用校准窗中所需尺度变化形成有限候选增量，检查突然变化感和模式摆动；保留集固定增量。
+
+接受：不在已呈现周期内改普通G；每次变化不超候选域；产生不适或反复追逐则不接受。 失败修订：缩小增量或撤销放慢动作。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.8 单步骤绝对时长上界}
+标识：absolute\_\allowbreak{}step\_\allowbreak{}limit；单位/\allowbreak{}含义：秒。用途/\allowbreak{}依据：吸/\allowbreak{}补吸/\allowbreak{}呼不同上界，停留按共同I。责任：F-\allowbreak{}02/\allowbreak{}Q-\allowbreak{}02/\allowbreak{}Q-\allowbreak{}03。候选域：由各结构独立用途及舒适域确定；工程秒数非证据。
+
+确定与核验：专家先核查步骤用途与范围，获准舒适预试记录跟不上和主动停止；分别确定各步骤可接受域。
+
+接受：统一比例缩放后所有步骤均在域内；任一步越界整计划拒绝，不逐步截断破坏比例；不得强求停留。 失败修订：简化结构/\allowbreak{}时长，两组共同修订I后再冻结。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.9 回归稳定观察窗}
+标识：stability\_\allowbreak{}window；单位/\allowbreak{}含义：周期数。用途/\allowbreak{}依据：可靠X对当前G的跟随，非I达成。责任：P-\allowbreak{}01/\allowbreak{}Q-\allowbreak{}03。候选域：从可辨周期及剩余暴露预算限制窗长。
+
+确定与核验：枚举过去完整周期窗，比较噪声扰动下进入/\allowbreak{}离开回归的反复次数及用户可解释性。
+
+接受：不足可辨周期不回归；输入失效即时中性；抖动不导致无界反复调整。 失败修订：延长观察或撤下个体化。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.10 回归尺度减量}
+标识：return\_\allowbreak{}rate；单位/\allowbreak{}含义：alpha/\allowbreak{}周期。用途/\allowbreak{}依据：alpha\_\allowbreak{}next=max(0,alpha-\allowbreak{}current\_\allowbreak{}delta)。责任：P-\allowbreak{}01/\allowbreak{}Q-\allowbreak{}03。候选域：0至放慢上界内有限递减量，待校准。
+
+确定与核验：对冻结稳定窗枚举递减量，重建回归所需周期、再次偏慢和结束仍偏移比例。
+
+接受：不得快于I；不以稳定跟上慢G声称达到I；预算内不能回归时诚实记录，不加时。 失败修订：减小递减量或收缩支持主张。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.11 一次自然缓冲上限}
+标识：buffer\_\allowbreak{}single\_\allowbreak{}limit；单位/\allowbreak{}含义：秒。用途/\allowbreak{}依据：无强制停留，自然呼吸占T。责任：V-\allowbreak{}01/\allowbreak{}P-\allowbreak{}01/\allowbreak{}Q-\allowbreak{}03。候选域：由重对齐可行时间与用户可接受等待交集决定。
+
+确定与核验：用实际可辨相位时点及延迟分布推导重对齐机会，预试询问等待负担并记录用时。
+
+接受：缓冲上限内不存在可靠开周期机会则中性；不得把缓冲画成保持/\allowbreak{}屏息；不能保证完整下一周期时收尾。 失败修订：取消重对齐，转中性/\allowbreak{}收尾。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.12 模块累计缓冲预算}
+标识：buffer\_\allowbreak{}total\_\allowbreak{}limit；单位/\allowbreak{}含义：秒及占T比例。用途/\allowbreak{}依据：不得增加暴露时间或机会。责任：V-\allowbreak{}01/\allowbreak{}U12-\allowbreak{}11/\allowbreak{}Q-\allowbreak{}03。候选域：0至模块T内经任务必要性允许的预算。
+
+确定与核验：累计自然缓冲及核心练习占时；在校准材料中核查多次触发后剩余完整周期，评估用户负担。
+
+接受：总缓冲不超过事前预算；达到界限停止调整；不以减少周期机会改I评分分母。 失败修订：收缩缓冲动作或改共同剂量候选。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.13 主运动实际呈现时延}
+标识：presentation\_\allowbreak{}latency；单位/\allowbreak{}含义：毫秒。用途/\allowbreak{}依据：采集/\allowbreak{}决定/\allowbreak{}接收/\allowbreak{}实际呈现分别记录。责任：P-\allowbreak{}02/\allowbreak{}U-\allowbreak{}02/\allowbreak{}V-\allowbreak{}03/\allowbreak{}Q-\allowbreak{}03。候选域：由真实尾部延迟与最短可辨步骤推导预算。
+
+确定与核验：使用共同时间参考与真实显示核查，分离主运动和装饰粒子；取各天气/\allowbreak{}条件尾部延迟及不确定度。
+
+接受：时延加边界误差不得跨越待判别的关键步骤；计划或消息到达不代替实际G，回执缺失记未知。 失败修订：减装饰/\allowbreak{}简载体；主状态不可可靠呈现时中性。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.14 共同I时长容差}
+标识：scoring\_\allowbreak{}tolerance；单位/\allowbreak{}含义：秒。用途/\allowbreak{}依据：独立测量误差e与有意义目标偏离m。责任：A-\allowbreak{}03/\allowbreak{}U12-\allowbreak{}04/\allowbreak{}F-\allowbreak{}02。候选域：[2e,m]；e与m均待真实证据，非给定秒数。
+
+确定与核验：先由专家/\allowbreak{}任务用途确定有意义偏离m，再双标注估计边界误差e；候选容差tau取可接受区间[2e,m]，保留材料验证，评分不得随G放宽。
+
+接受：区间非空且冻结后不因组别/\allowbreak{}控制器改变；若2e>m则测量不支持该达成分类，保留连续偏差及未知界。 失败修订：停止合格分类，改连续描述/\allowbreak{}修测量，不宣布非劣。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.15 累计练习响应}
+标识：cumulative\_\allowbreak{}rule；单位/\allowbreak{}含义：完整周期更新/\allowbreak{}视觉增量。用途/\allowbreak{}依据：仅可靠完整G跟随，不是I达成/\allowbreak{}情绪恢复。责任：V-\allowbreak{}03/\allowbreak{}U-\allowbreak{}02/\allowbreak{}U12-\allowbreak{}02/\allowbreak{}Q-\allowbreak{}02。候选域：增量范围由可见性与误读验证决定，不最大化奖赏。
+
+确定与核验：为可辨完整周期定义资格与增量，核对缺步骤/\allowbreak{}断流/\allowbreak{}恢复/\allowbreak{}饱和；认知材料问累计含义。
+
+接受：未知、缓冲、缺步骤不增成功；饱和不改变动作；误读为情绪恢复时先改标签/\allowbreak{}载体。 失败修订：移除累计层，保留实时G/\allowbreak{}X与诚实不可用。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.16 主要测量唯一版本}
+标识：measurement\_\allowbreak{}version；单位/\allowbreak{}含义：版本/\allowbreak{}题项/\allowbreak{}指令。用途/\allowbreak{}依据：中文20题PANAS候选与18题修订/\allowbreak{}PANAS-\allowbreak{}X分开。责任：F-\allowbreak{}02/\allowbreak{}U12-\allowbreak{}04。候选域：HYJ2003作为优先核验线索，未选定可施测题本。
+
+确定与核验：获取具体20题译本、原文及可适用使用条件，逐项核对NA映射与当前状态指令；保存来源并在认知阶段核查理解。
+
+接受：题本、映射、计分、状态指令、使用条件全部确认才可使用；本轮未取得唯一题本，保持未关闭。 失败修订：不自译、不拼接、不自动换终点；禁止对应正式测量。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.17 最小实际关注差}
+标识：minimum\_\allowbreak{}interesting\_\allowbreak{}difference；单位/\allowbreak{}含义：NA原始分。用途/\allowbreak{}依据：采用用途和可接受收益，非预期效应。责任：F-\allowbreak{}02/\allowbreak{}U12-\allowbreak{}04/\allowbreak{}U-\allowbreak{}08。候选域：由使用场景形成原始分差区间，当前未定。
+
+确定与核验：在不看组间结果前，用独立用户/\allowbreak{}专家解释量表锚定变化及准备成本；不能形成共同意义则给一段决策区间并做精度敏感性。
+
+接受：关注差必须有具体版本与产品用途依据；不能由资源100人或预试显著差倒推。 失败修订：定位为估计性研究，收缩确认性采用主张。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{8.18 正式样本规模}
+标识：formal\_\allowbreak{}sample\_\allowbreak{}size；单位/\allowbreak{}含义：独立参与者数。用途/\allowbreak{}依据：前置人员与正式样本不重计。责任：A-\allowbreak{}03/\allowbreak{}U12-\allowbreak{}04/\allowbreak{}U12-\allowbreak{}11。候选域：资源情景正式60/\allowbreak{}68/\allowbreak{}76/\allowbreak{}100为演算输入，不是已冻结N。
+
+确定与核验：以关注差、前后相关、残差、地板、两臂缺失范围模拟冻结ANCOVA/\allowbreak{}插补方案；给功效与95\%区间精度曲线及敏感性。
+
+接受：预定主要差和功能代价精度均可辨且资源覆盖才冻结；不足增加资源或明确估计性研究。 失败修订：增加资源/\allowbreak{}缩小结论，保留真实缺失而不凑样本。真实值未冻结，真实验证未执行。
+\end{minipage}\par
+
+\end{document}

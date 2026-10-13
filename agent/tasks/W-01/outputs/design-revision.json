@@ -1,0 +1,31 @@
+{
+  "task_id": "W-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "原创性与最近工作全文审查",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "原创性与最近工作全文审查修订交接",
+    "全文差异矩阵",
+    "主张证据表"
+  ],
+  "acceptance_criteria": [
+    "AC1 核对八篇近邻及Stairway待补线索，不宣称首次自适应",
+    "AC2 增量围绕具体多步骤与共同目标代价，不因画风改名保留创新",
+    "AC3 标出相同问题覆盖、反证与贡献收缩，不以搜索无结果证明空白"
+  ],
+  "evidence_required": [
+    "全文差异矩阵",
+    "主张证据表",
+    "修复/降称决定"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-02",
+    "R-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

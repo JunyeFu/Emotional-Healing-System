@@ -1,0 +1,30 @@
+{
+  "task_id": "U12-10",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "整包结果分轴解释规则",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "整包结果分轴解释规则修订交接",
+    "结果分类候选",
+    "不利案例"
+  ],
+  "acceptance_criteria": [
+    "AC1 情绪差异、I达成、G跟随与成本独立分类",
+    "AC2 情绪无差异不当等效，跟G好但偏I不能称训练更好",
+    "AC3 近邻/信号/迁移失败各有降称，不事后综合成胜出"
+  ],
+  "evidence_required": [
+    "结果分类候选",
+    "不利案例",
+    "预定收缩规则"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "A-05"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

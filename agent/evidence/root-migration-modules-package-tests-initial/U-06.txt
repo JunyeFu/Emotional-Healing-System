@@ -1,0 +1,597 @@
+..FFF.FFFFF...                                                           [100%]
+================================== FAILURES ===================================
+______ test_remaining_weather_step_identity_is_v22[storm-seconds0-ids0] _______
+
+weather = 'storm', seconds = [3, 3, 3, 3]
+ids = ['inhale_1', 'hold_1', 'exhale_1', 'hold_2']
+
+    @pytest.mark.parametrize('weather,seconds,ids', [
+        ('storm', [3, 3, 3, 3], ['inhale_1', 'hold_1', 'exhale_1', 'hold_2']),
+        ('heat', [4, 6], ['inhale_1', 'exhale_1']),
+        ('snow', [5, 5], ['inhale_1', 'exhale_1']),
+    ])
+    def test_remaining_weather_step_identity_is_v22(weather, seconds, ids):
+        data = contract()
+>       config = read(ROOT / data['breathing_source'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-06\execution\test_u06_contract.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\tasks\U-06\execution\test_u06_contract.py:16: in read
+    return json.loads(path.read_text(encoding='utf-8-sig'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\srp_session_core\\config\\breath_protocol_config_v2.2.json'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+_______ test_remaining_weather_step_identity_is_v22[heat-seconds1-ids1] _______
+
+weather = 'heat', seconds = [4, 6], ids = ['inhale_1', 'exhale_1']
+
+    @pytest.mark.parametrize('weather,seconds,ids', [
+        ('storm', [3, 3, 3, 3], ['inhale_1', 'hold_1', 'exhale_1', 'hold_2']),
+        ('heat', [4, 6], ['inhale_1', 'exhale_1']),
+        ('snow', [5, 5], ['inhale_1', 'exhale_1']),
+    ])
+    def test_remaining_weather_step_identity_is_v22(weather, seconds, ids):
+        data = contract()
+>       config = read(ROOT / data['breathing_source'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-06\execution\test_u06_contract.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\tasks\U-06\execution\test_u06_contract.py:16: in read
+    return json.loads(path.read_text(encoding='utf-8-sig'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\srp_session_core\\config\\breath_protocol_config_v2.2.json'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+_______ test_remaining_weather_step_identity_is_v22[snow-seconds2-ids2] _______
+
+weather = 'snow', seconds = [5, 5], ids = ['inhale_1', 'exhale_1']
+
+    @pytest.mark.parametrize('weather,seconds,ids', [
+        ('storm', [3, 3, 3, 3], ['inhale_1', 'hold_1', 'exhale_1', 'hold_2']),
+        ('heat', [4, 6], ['inhale_1', 'exhale_1']),
+        ('snow', [5, 5], ['inhale_1', 'exhale_1']),
+    ])
+    def test_remaining_weather_step_identity_is_v22(weather, seconds, ids):
+        data = contract()
+>       config = read(ROOT / data['breathing_source'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-06\execution\test_u06_contract.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+agent\tasks\U-06\execution\test_u06_contract.py:16: in read
+    return json.loads(path.read_text(encoding='utf-8-sig'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/02-技术研发/srp_session_core/config/breath_protocol_config_v2.2.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Agent\\srp\\02-技术研发\\srp_session_core\\config\\breath_protocol_config_v2.2.json'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: FileNotFoundError
+_______ test_legacy_scene_unmodified_and_not_current_adapter[HeatScene] _______
+
+name = 'HeatScene'
+
+    @pytest.mark.parametrize('name', ['HeatScene', 'SnowScene'])
+    def test_legacy_scene_unmodified_and_not_current_adapter(name):
+        relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/{name}.unity'
+>       result = subprocess.run(['git', 'show', f'38d2fb1:{relative}'], cwd=ROOT, capture_output=True, check=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-06\execution\test_u06_contract.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/HeatScene.unity'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'stderr': -1, 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'show', '38d2fb1:agent/modules/04-Unit...>
+stdout = b''
+stderr = b"fatal: path 'agent/modules/04-Unity\xe8\xa7\x86\xe8\xa7\x89/SRP-Weather-Visual/Assets/Scenes/HeatScene.unity' exists on disk, but not in '38d2fb1'\n"
+retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/HeatScene.unity']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+_______ test_legacy_scene_unmodified_and_not_current_adapter[SnowScene] _______
+
+name = 'SnowScene'
+
+    @pytest.mark.parametrize('name', ['HeatScene', 'SnowScene'])
+    def test_legacy_scene_unmodified_and_not_current_adapter(name):
+        relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/{name}.unity'
+>       result = subprocess.run(['git', 'show', f'38d2fb1:{relative}'], cwd=ROOT, capture_output=True, check=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-06\execution\test_u06_contract.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/SnowScene.unity'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'stderr': -1, 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'show', '38d2fb1:agent/modules/04-Unit...>
+stdout = b''
+stderr = b"fatal: path 'agent/modules/04-Unity\xe8\xa7\x86\xe8\xa7\x89/SRP-Weather-Visual/Assets/Scenes/SnowScene.unity' exists on disk, but not in '38d2fb1'\n"
+retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scenes/SnowScene.unity']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+____ test_obsolete_menu_is_archived_verbatim_without_consumers[FinalBuild] ____
+
+name = 'FinalBuild'
+
+    @pytest.mark.parametrize('name', ['FinalBuild', 'FinalRebuild', 'ComprehensiveFix'])
+    def test_obsolete_menu_is_archived_verbatim_without_consumers(name):
+        relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
+        assert not (ROOT / relative).exists() and not (ROOT / (relative + '.meta')).exists()
+        for suffix in ['', '.meta']:
+>           result = subprocess.run(['git', 'show', f'38d2fb1:{relative}{suffix}'], cwd=ROOT, capture_output=True, check=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-06\execution\test_u06_contract.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FinalBuild.cs'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'stderr': -1, 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'show', '38d2fb1:agent/modules/04-Unit...>
+stdout = b''
+stderr = b"fatal: path 'agent/modules/04-Unity\xe8\xa7\x86\xe8\xa7\x89/SRP-Weather-Visual/Assets/Scripts/Editor/FinalBuild.cs' does not exist in '38d2fb1'\n"
+retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FinalBuild.cs']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+___ test_obsolete_menu_is_archived_verbatim_without_consumers[FinalRebuild] ___
+
+name = 'FinalRebuild'
+
+    @pytest.mark.parametrize('name', ['FinalBuild', 'FinalRebuild', 'ComprehensiveFix'])
+    def test_obsolete_menu_is_archived_verbatim_without_consumers(name):
+        relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
+        assert not (ROOT / relative).exists() and not (ROOT / (relative + '.meta')).exists()
+        for suffix in ['', '.meta']:
+>           result = subprocess.run(['git', 'show', f'38d2fb1:{relative}{suffix}'], cwd=ROOT, capture_output=True, check=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-06\execution\test_u06_contract.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FinalRebuild.cs'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'stderr': -1, 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'show', '38d2fb1:agent/modules/04-Unit...>
+stdout = b''
+stderr = b"fatal: path 'agent/modules/04-Unity\xe8\xa7\x86\xe8\xa7\x89/SRP-Weather-Visual/Assets/Scripts/Editor/FinalRebuild.cs' does not exist in '38d2fb1'\n"
+retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FinalRebuild.cs']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+_ test_obsolete_menu_is_archived_verbatim_without_consumers[ComprehensiveFix] _
+
+name = 'ComprehensiveFix'
+
+    @pytest.mark.parametrize('name', ['FinalBuild', 'FinalRebuild', 'ComprehensiveFix'])
+    def test_obsolete_menu_is_archived_verbatim_without_consumers(name):
+        relative = f'agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/{name}.cs'
+        assert not (ROOT / relative).exists() and not (ROOT / (relative + '.meta')).exists()
+        for suffix in ['', '.meta']:
+>           result = subprocess.run(['git', 'show', f'38d2fb1:{relative}{suffix}'], cwd=ROOT, capture_output=True, check=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\U-06\execution\test_u06_contract.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/ComprehensiveFix.cs'],)
+kwargs = {'cwd': WindowsPath('D:/Agent/srp'), 'stderr': -1, 'stdout': -1}
+process = <Popen: returncode: 128 args: ['git', 'show', '38d2fb1:agent/modules/04-Unit...>
+stdout = b''
+stderr = b"fatal: path 'agent/modules/04-Unity\xe8\xa7\x86\xe8\xa7\x89/SRP-Weather-Visual/Assets/Scripts/Editor/ComprehensiveFix.cs' does not exist in '38d2fb1'\n"
+retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'show', '38d2fb1:agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/ComprehensiveFix.cs']' returned non-zero exit status 128.
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py:578: CalledProcessError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U-06/execution/test_u06_contract.py::test_remaining_weather_step_identity_is_v22[storm-seconds0-ids0]
+FAILED agent/tasks/U-06/execution/test_u06_contract.py::test_remaining_weather_step_identity_is_v22[heat-seconds1-ids1]
+FAILED agent/tasks/U-06/execution/test_u06_contract.py::test_remaining_weather_step_identity_is_v22[snow-seconds2-ids2]
+FAILED agent/tasks/U-06/execution/test_u06_contract.py::test_legacy_scene_unmodified_and_not_current_adapter[HeatScene]
+FAILED agent/tasks/U-06/execution/test_u06_contract.py::test_legacy_scene_unmodified_and_not_current_adapter[SnowScene]
+FAILED agent/tasks/U-06/execution/test_u06_contract.py::test_obsolete_menu_is_archived_verbatim_without_consumers[FinalBuild]
+FAILED agent/tasks/U-06/execution/test_u06_contract.py::test_obsolete_menu_is_archived_verbatim_without_consumers[FinalRebuild]
+FAILED agent/tasks/U-06/execution/test_u06_contract.py::test_obsolete_menu_is_archived_verbatim_without_consumers[ComprehensiveFix]
+8 failed, 6 passed in 0.56s

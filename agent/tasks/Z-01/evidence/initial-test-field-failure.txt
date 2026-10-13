@@ -1,0 +1,17 @@
+........F.............                                                   [100%]
+================================== FAILURES ===================================
+__________________ test_registry_and_open_delivery_identity ___________________
+
+    def test_registry_and_open_delivery_identity():
+        with (GOV / '05_可领取任务包.csv').open(encoding='utf-8-sig', newline='') as stream:
+            row = next(row for row in csv.DictReader(stream) if row['task_id'] == 'Z-01')
+        current = read(TASK / 'outputs/current-delivery.json')
+        assert row['status'] == current['status'] == 'WAIT_DEP'
+>       assert row['dependencies'].split('|') == current['dependencies']
+               ^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'dependencies'
+
+agent\tasks\Z-01\execution\test_delivery_handoff.py:87: KeyError
+=========================== short test summary info ===========================
+FAILED agent/tasks/Z-01/execution/test_delivery_handoff.py::test_registry_and_open_delivery_identity
+1 failed, 21 passed in 7.20s

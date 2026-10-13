@@ -1,0 +1,536 @@
+{
+  "baseline_commit": "dc436562203fcd29a3355748ac25b6c8026f1fdb",
+  "scope": "Current normalization facts only; business conclusions and historical acceptance unchanged",
+  "summaries": [
+    {
+      "task_id": "F-01",
+      "path": "agent/tasks/F-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "F-02",
+      "path": "agent/tasks/F-02/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "F-03",
+      "path": "agent/tasks/F-03/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "F-04",
+      "path": "agent/tasks/F-04/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "F-05",
+      "path": "agent/tasks/F-05/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "G-01",
+      "path": "agent/tasks/G-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "G-02",
+      "path": "agent/tasks/G-02/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "P-01",
+      "path": "agent/tasks/P-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "P-02",
+      "path": "agent/tasks/P-02/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U-01",
+      "path": "agent/tasks/U-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U-02",
+      "path": "agent/tasks/U-02/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "T-01",
+      "path": "agent/tasks/T-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "R-01",
+      "path": "agent/tasks/R-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "V-01",
+      "path": "agent/tasks/V-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "V-02",
+      "path": "agent/tasks/V-02/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "V-03",
+      "path": "agent/tasks/V-03/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "V-04",
+      "path": "agent/tasks/V-04/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "D-01",
+      "path": "agent/tasks/D-01/outputs/summary.json",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "D-02",
+      "path": "agent/tasks/D-02/outputs/summary.json",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "S-01",
+      "path": "agent/tasks/S-01/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "S-02",
+      "path": "agent/tasks/S-02/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "V-05",
+      "path": "agent/tasks/V-05/outputs/summary.json",
+      "business_status": "READY",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U-03",
+      "path": "agent/tasks/U-03/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U-04",
+      "path": "agent/tasks/U-04/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U-05",
+      "path": "agent/tasks/U-05/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U-06",
+      "path": "agent/tasks/U-06/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U-07",
+      "path": "agent/tasks/U-07/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U-08",
+      "path": "agent/tasks/U-08/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "T-02",
+      "path": "agent/tasks/T-02/outputs/summary.json",
+      "business_status": "READY",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "A-01",
+      "path": "agent/tasks/A-01/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "A-02",
+      "path": "agent/tasks/A-02/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "A-03",
+      "path": "agent/tasks/A-03/outputs/summary.json",
+      "business_status": "IN_PROGRESS",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "W-01",
+      "path": "agent/tasks/W-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "I-01",
+      "path": "agent/tasks/I-01/outputs/summary.json",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "Q-01",
+      "path": "agent/tasks/Q-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "Q-02",
+      "path": "agent/tasks/Q-02/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "Q-03",
+      "path": "agent/tasks/Q-03/outputs/summary.json",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "X-01",
+      "path": "agent/tasks/X-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "X-02",
+      "path": "agent/tasks/X-02/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "X-03",
+      "path": "agent/tasks/X-03/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "Z-01",
+      "path": "agent/tasks/Z-01/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "G-05",
+      "path": "agent/tasks/G-05/outputs/summary.json",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "E-01",
+      "path": "agent/tasks/E-01/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "E-02",
+      "path": "agent/tasks/E-02/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "B-01",
+      "path": "agent/tasks/B-01/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "E-03",
+      "path": "agent/tasks/E-03/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "G-03",
+      "path": "agent/tasks/G-03/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "B-02",
+      "path": "agent/tasks/B-02/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "E-04",
+      "path": "agent/tasks/E-04/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "A-05",
+      "path": "agent/tasks/A-05/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "E-05",
+      "path": "agent/tasks/E-05/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "G-04",
+      "path": "agent/tasks/G-04/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "B-03",
+      "path": "agent/tasks/B-03/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "E-06",
+      "path": "agent/tasks/E-06/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "A-04",
+      "path": "agent/tasks/A-04/outputs/summary.json",
+      "business_status": "BLOCKED_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "A-06",
+      "path": "agent/tasks/A-06/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "W-02",
+      "path": "agent/tasks/W-02/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "W-03",
+      "path": "agent/tasks/W-03/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "W-04",
+      "path": "agent/tasks/W-04/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-01",
+      "path": "agent/tasks/U12-01/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-02",
+      "path": "agent/tasks/U12-02/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-03",
+      "path": "agent/tasks/U12-03/outputs/summary.json",
+      "business_status": "IN_REVIEW",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-04",
+      "path": "agent/tasks/U12-04/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-05",
+      "path": "agent/tasks/U12-05/outputs/summary.json",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-06",
+      "path": "agent/tasks/U12-06/outputs/summary.json",
+      "business_status": "IN_PROGRESS",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-07",
+      "path": "agent/tasks/U12-07/outputs/summary.json",
+      "business_status": "DONE",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-08",
+      "path": "agent/tasks/U12-08/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-09",
+      "path": "agent/tasks/U12-09/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-10",
+      "path": "agent/tasks/U12-10/outputs/summary.json",
+      "business_status": "WAIT_DEP",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-11",
+      "path": "agent/tasks/U12-11/outputs/summary.json",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "historical_acceptance_preserved": true
+    },
+    {
+      "task_id": "U12-12",
+      "path": "agent/tasks/U12-12/outputs/summary.json",
+      "business_status": "WAIT_DEP_EXTERNAL",
+      "historical_acceptance_preserved": true
+    }
+  ],
+  "current_documents": [
+    "agent/tasks/A-03/TASK.md",
+    "agent/tasks/A-04/outputs/current-analysis.md",
+    "agent/tasks/A-05/outputs/current-analysis.md",
+    "agent/tasks/A-06/outputs/current-scope.md",
+    "agent/tasks/B-01/outputs/current-batch.md",
+    "agent/tasks/B-03/outputs/current-batch.md",
+    "agent/tasks/E-02/outputs/current-execution.md",
+    "agent/tasks/E-04/outputs/current-closeout.md",
+    "agent/tasks/E-05/outputs/current-freeze.md",
+    "agent/tasks/E-06/outputs/current-closeout.md",
+    "agent/tasks/F-02/TASK.md",
+    "agent/tasks/F-04/TASK.md",
+    "agent/tasks/G-01/TASK.md",
+    "agent/tasks/G-03/outputs/current-freeze.md",
+    "agent/tasks/G-04/outputs/current-extension.md",
+    "agent/tasks/Q-01/TASK.md",
+    "agent/tasks/T-02/TASK.md",
+    "agent/tasks/U-01/outputs/current-control-contract.md",
+    "agent/tasks/U12-01/TASK.md",
+    "agent/tasks/U12-01/outputs/current-governance.md",
+    "agent/tasks/U12-02/outputs/current-measurement.md",
+    "agent/tasks/U12-10/outputs/current-classification.md",
+    "agent/tasks/U12-11/outputs/current-freeze.md",
+    "agent/tasks/U12-12/outputs/current-decision.md",
+    "agent/tasks/W-02/outputs/current-manuscript.md",
+    "agent/tasks/W-04/outputs/current-handover.md"
+  ],
+  "migration_findings_closed": [
+    {
+      "task_id": "F-01",
+      "id": "F01-N02"
+    },
+    {
+      "task_id": "W-04",
+      "id": "W04-N03"
+    },
+    {
+      "task_id": "U12-01",
+      "id": "U1201-N04"
+    },
+    {
+      "task_id": "U12-02",
+      "id": "U1202-N04"
+    },
+    {
+      "task_id": "U12-03",
+      "id": "U1203-N04"
+    },
+    {
+      "task_id": "U12-04",
+      "id": "U1204-N05"
+    },
+    {
+      "task_id": "U12-05",
+      "id": "U1205-N04"
+    },
+    {
+      "task_id": "U12-06",
+      "id": "U1206-N05"
+    },
+    {
+      "task_id": "U12-07",
+      "id": "U1207-N04"
+    },
+    {
+      "task_id": "U12-08",
+      "id": "U1208-N04"
+    },
+    {
+      "task_id": "U12-09",
+      "id": "U1209-N05"
+    },
+    {
+      "task_id": "U12-10",
+      "id": "U1210-N05"
+    },
+    {
+      "task_id": "U12-11",
+      "id": "U1211-N05"
+    },
+    {
+      "task_id": "U12-12",
+      "id": "U1212-N05"
+    }
+  ],
+  "dispatch_bindings_preserved": [
+    {
+      "task_id": "T-02",
+      "old_project_path": "agent/tasks/T-01/outputs/current-td-contract.md",
+      "new_project_path": "agent/archive/normalization-summary-inputs/T-02/agent/tasks/T-01/outputs/current-td-contract.md",
+      "preserve_ready_dispatch": true,
+      "impact_path": "agent/evidence/normalization-summary-impact.md",
+      "reason": "Preserve received input while current normalization progress text is refreshed."
+    },
+    {
+      "task_id": "T-02",
+      "old_project_path": "agent/tasks/T-02/TASK.md",
+      "new_project_path": "agent/archive/normalization-summary-inputs/T-02/agent/tasks/T-02/TASK.md",
+      "preserve_ready_dispatch": true,
+      "impact_path": "agent/evidence/normalization-summary-impact.md",
+      "reason": "Preserve received input while current normalization progress text is refreshed."
+    }
+  ]
+}

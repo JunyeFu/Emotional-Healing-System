@@ -1,0 +1,12 @@
+{
+  "task_id": "A-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "status": "IN_PROGRESS",
+  "previous_input_snapshot_id": "570E00EC295CE4ABDBB1C1EF2C19FDFB3FADD6CEF7B63BDAE2CCF0F929E64309",
+  "retained_input_snapshot_id": "570E00EC295CE4ABDBB1C1EF2C19FDFB3FADD6CEF7B63BDAE2CCF0F929E64309",
+  "candidate_identity": "4071c84bc03ab9d80f7ce5997034fe27737e5d51",
+  "disposition": "ADDITIVE_DESIGN_UPDATE_ORIGINAL_CLAIM_INPUT_RETAINED",
+  "changed_sources_frozen": [],
+  "new_scope_source": "agent/tasks/A-03/outputs/design-revision.json",
+  "authorization": "用户要求用新基线更新任务包体系；不自动转移原签收"
+}

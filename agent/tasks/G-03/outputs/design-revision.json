@@ -1,0 +1,36 @@
+{
+  "task_id": "G-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新两臂正式协议与预注册",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新两臂正式协议与预注册修订交接",
+    "新协议差异",
+    "预注册候选"
+  ],
+  "acceptance_criteria": [
+    "AC1 冻结整包估计目标、PANAS主分析及I/G功能结果",
+    "AC2 测量、缺失、时长、随机化和代价界有依据",
+    "AC3 正式人数与真实许可齐备后放行，旧v1.2不自动授权新条件"
+  ],
+  "evidence_required": [
+    "新协议差异",
+    "预注册候选",
+    "真实冻结完整性清单"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "E-03",
+    "X-01",
+    "Z-01",
+    "A-02",
+    "A-03-CAL",
+    "G-05",
+    "U12-11"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

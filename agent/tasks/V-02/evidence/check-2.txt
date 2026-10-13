@@ -1,0 +1,1 @@
+PASS: current V-02 handoff; 4 fixed scenes; independent assets; fade time/step/recovery separated; V-01 14 nodes

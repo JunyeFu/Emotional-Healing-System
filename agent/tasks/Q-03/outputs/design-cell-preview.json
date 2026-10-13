@@ -1,0 +1,536 @@
+{
+  "scope": "DESIGN_CELLS_ONLY_NOT_ALLOCATION_OR_MANIFEST",
+  "formal_capable": false,
+  "randomized": false,
+  "participants_observed": 0,
+  "cells": [
+    {
+      "design_cell": 1,
+      "capacity_batch": 1,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "storm",
+        "heat",
+        "snow",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 2,
+      "capacity_batch": 1,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "storm",
+        "heat",
+        "snow",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 3,
+      "capacity_batch": 1,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "storm",
+        "heat",
+        "fade",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 4,
+      "capacity_batch": 1,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "storm",
+        "heat",
+        "fade",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 5,
+      "capacity_batch": 1,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "storm",
+        "snow",
+        "heat",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 6,
+      "capacity_batch": 1,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "storm",
+        "snow",
+        "heat",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 7,
+      "capacity_batch": 1,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "storm",
+        "snow",
+        "fade",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 8,
+      "capacity_batch": 1,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "storm",
+        "snow",
+        "fade",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 9,
+      "capacity_batch": 1,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "storm",
+        "fade",
+        "heat",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 10,
+      "capacity_batch": 1,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "storm",
+        "fade",
+        "heat",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 11,
+      "capacity_batch": 1,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "storm",
+        "fade",
+        "snow",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 12,
+      "capacity_batch": 1,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "storm",
+        "fade",
+        "snow",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 13,
+      "capacity_batch": 2,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "heat",
+        "storm",
+        "snow",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 14,
+      "capacity_batch": 2,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "heat",
+        "storm",
+        "snow",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 15,
+      "capacity_batch": 2,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "heat",
+        "storm",
+        "fade",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 16,
+      "capacity_batch": 2,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "heat",
+        "storm",
+        "fade",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 17,
+      "capacity_batch": 2,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "heat",
+        "snow",
+        "storm",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 18,
+      "capacity_batch": 2,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "heat",
+        "snow",
+        "storm",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 19,
+      "capacity_batch": 2,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "heat",
+        "snow",
+        "fade",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 20,
+      "capacity_batch": 2,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "heat",
+        "snow",
+        "fade",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 21,
+      "capacity_batch": 2,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "heat",
+        "fade",
+        "storm",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 22,
+      "capacity_batch": 2,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "heat",
+        "fade",
+        "storm",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 23,
+      "capacity_batch": 2,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "heat",
+        "fade",
+        "snow",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 24,
+      "capacity_batch": 2,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "heat",
+        "fade",
+        "snow",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 25,
+      "capacity_batch": 3,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "snow",
+        "storm",
+        "heat",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 26,
+      "capacity_batch": 3,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "snow",
+        "storm",
+        "heat",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 27,
+      "capacity_batch": 3,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "snow",
+        "storm",
+        "fade",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 28,
+      "capacity_batch": 3,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "snow",
+        "storm",
+        "fade",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 29,
+      "capacity_batch": 3,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "snow",
+        "heat",
+        "storm",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 30,
+      "capacity_batch": 3,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "snow",
+        "heat",
+        "storm",
+        "fade"
+      ]
+    },
+    {
+      "design_cell": 31,
+      "capacity_batch": 3,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "snow",
+        "heat",
+        "fade",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 32,
+      "capacity_batch": 3,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "snow",
+        "heat",
+        "fade",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 33,
+      "capacity_batch": 3,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "snow",
+        "fade",
+        "storm",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 34,
+      "capacity_batch": 3,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "snow",
+        "fade",
+        "storm",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 35,
+      "capacity_batch": 3,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "snow",
+        "fade",
+        "heat",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 36,
+      "capacity_batch": 3,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "snow",
+        "fade",
+        "heat",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 37,
+      "capacity_batch": 4,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "fade",
+        "storm",
+        "heat",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 38,
+      "capacity_batch": 4,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "fade",
+        "storm",
+        "heat",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 39,
+      "capacity_batch": 4,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "fade",
+        "storm",
+        "snow",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 40,
+      "capacity_batch": 4,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "fade",
+        "storm",
+        "snow",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 41,
+      "capacity_batch": 4,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "fade",
+        "heat",
+        "storm",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 42,
+      "capacity_batch": 4,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "fade",
+        "heat",
+        "storm",
+        "snow"
+      ]
+    },
+    {
+      "design_cell": 43,
+      "capacity_batch": 4,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "fade",
+        "heat",
+        "snow",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 44,
+      "capacity_batch": 4,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "fade",
+        "heat",
+        "snow",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 45,
+      "capacity_batch": 4,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "fade",
+        "snow",
+        "storm",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 46,
+      "capacity_batch": 4,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "fade",
+        "snow",
+        "storm",
+        "heat"
+      ]
+    },
+    {
+      "design_cell": 47,
+      "capacity_batch": 4,
+      "condition": "scene_native",
+      "weather_sequence": [
+        "fade",
+        "snow",
+        "heat",
+        "storm"
+      ]
+    },
+    {
+      "design_cell": 48,
+      "capacity_batch": 4,
+      "condition": "abstract_pacer",
+      "weather_sequence": [
+        "fade",
+        "snow",
+        "heat",
+        "storm"
+      ]
+    }
+  ]
+}

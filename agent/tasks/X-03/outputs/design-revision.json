@@ -1,0 +1,32 @@
+{
+  "task_id": "X-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "可选策略运行与首版受限控制分工",
+  "disposition": "DEFERRED_EXTENSION",
+  "deliverables": [
+    "可选策略运行与首版受限控制分工修订交接",
+    "控制归属分工",
+    "扩展冻结要求"
+  ],
+  "acceptance_criteria": [
+    "AC1 首版适应归P-01/F-05，不把X-03旧固定实现称已适应",
+    "AC2 扩展运行必须单独冻结策略与回退，同构建比较",
+    "AC3 没有独立准入不启用学习控制或改变共同I"
+  ],
+  "evidence_required": [
+    "控制归属分工",
+    "扩展冻结要求",
+    "运行未实现项"
+  ],
+  "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "X-01",
+    "X-02",
+    "U-01"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

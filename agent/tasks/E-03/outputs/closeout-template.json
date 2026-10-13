@@ -1,0 +1,21 @@
+{
+  "scope": "BLANK_CLOSEOUT_OUTLINE_NOT_GATE_OR_FROZEN_CONFIG",
+  "status": "NOT_RUN",
+  "batch_index_ref": null,
+  "activity_receipt_ref": null,
+  "counts": {"assigned": null, "exposed": null, "completed": null, "stopped_after_exposure": null, "cancelled_before_exposure": null, "pending": null},
+  "condition_and_weather_coverage_ref": null,
+  "all_batches_qc": {"status": "NOT_EVALUATED", "report_ref": null},
+  "metrics": [],
+  "metric_record_fields": ["metric", "definition", "unit", "structure_step_quality_scope", "denominator", "threshold", "threshold_source", "threshold_version", "observed_value", "missing_reason", "decision", "evidence_ref"],
+  "annotation_and_disagreement_ref": null,
+  "clock_and_external_latency_ref": null,
+  "scci_applicability_ref": null,
+  "deviation_and_stop_ref": null,
+  "technical_configuration_ref": null,
+  "algorithm_rule_measurement_build_identity_ref": null,
+  "calibration_receipt_ref": null,
+  "research_freeze_ref": null,
+  "formal_randomized_n": null,
+  "review": {"person": null, "role": null, "date": null, "method": null, "object_ref": null, "conclusion": null}
+}

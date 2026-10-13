@@ -1,0 +1,31 @@
+{
+  "task_id": "E-06",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "可选扩展关闭与揭盲",
+  "disposition": "DEFERRED_EXTENSION",
+  "deliverables": [
+    "可选扩展关闭与揭盲修订交接",
+    "扩展活动清单",
+    "真实锁库与授权"
+  ],
+  "acceptance_criteria": [
+    "AC1 仅核对实际获准扩展的所有实例",
+    "AC2 策略不变、锁库和揭盲分别取证",
+    "AC3 未开展不借核心数据代签或补造"
+  ],
+  "evidence_required": [
+    "扩展活动清单",
+    "真实锁库与授权",
+    "范围关闭"
+  ],
+  "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "G-04",
+    "B-03"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

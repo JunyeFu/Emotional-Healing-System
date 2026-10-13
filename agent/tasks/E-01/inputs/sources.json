@@ -1,0 +1,36 @@
+{
+  "task_id": "E-01",
+  "paths": [
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建/framework_contract_v1.0.json",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/Q-01_LevelA与独立重建/templates",
+    "agent/tasks/Q-01/outputs/current-level-a.md",
+    "agent/tasks/Q-01/execution/summarize_q01.py",
+    "agent/tasks/G-01/outputs/current-governance.md",
+    "agent/tasks/G-05/outputs/current-admission.md",
+    "agent/tasks/F-02/outputs/current-measurement.md",
+    "agent/tasks/R-01/outputs/current-representation.md",
+    "agent/tasks/Q-02/outputs/current-level-b.md",
+    "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md",
+    "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.json",
+    "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json",
+    "agent/tasks/E-01/outputs/current-implementation-evidence.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "archived_bytes": {
+    "00_第7步计划.md": "49782FD2180407CF4B94526352910FFA82D4EFB2504B5768624E1FBA5470A960",
+    "01_详细执行方案.md": "6A21532DF27855157441CA1114091C5479BDA0DDAF556CF96ABB55BAF2ABC14D",
+    "G-01-11_伦理提交执行检查清单.md": "B8B9A72DA4BB9451DF99DE3CE1DF99BED6958538F2126B28503F01826AE28449"
+  },
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

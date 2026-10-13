@@ -1,0 +1,31 @@
+{
+  "task_id": "V-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "同预算的完整参与者旅程",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "同预算的完整参与者旅程修订交接",
+    "旅程时序",
+    "时间预算表"
+  ],
+  "acceptance_criteria": [
+    "AC1 前测在分配教学前，情绪后测先于理解题",
+    "AC2 两条件教学预算及模块暴露相同，B等待消耗既定预算",
+    "AC3 准备成本、求助、退出及问卷时间分报，800秒等旧时长仅候选"
+  ],
+  "evidence_required": [
+    "旅程时序",
+    "时间预算表",
+    "用户成本记录要求"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-02",
+    "R-01"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

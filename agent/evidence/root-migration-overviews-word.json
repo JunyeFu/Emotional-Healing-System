@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-29",
+  "document": "human/project-review.docx",
+  "pages": 39,
+  "changed_pages_inspected": [39],
+  "unchanged_pages": "1-38 byte-identical PNGs to U12-12 reviewed rendering",
+  "layout": "No observed clipping, overlap or missing glyphs",
+  "root_progress_visible": "4 of 19 physical migrations; 15 remain; overall not complete",
+  "existing_task_word_documents_rewritten": false,
+  "all_task_word_content_and_file_links_checked": true,
+  "task_count": 71,
+  "word_source_links": 330,
+  "new_independent_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_SIGNED"
+}

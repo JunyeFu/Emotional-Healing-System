@@ -1,0 +1,10 @@
+{
+  "task_id": "P-01",
+  "review_date": "2026-09-28",
+  "checks": [
+    {"command": "07_validate_task_packages.py", "exit_code": 0, "result": "71 entries; 68 fixed and 3 templates; task statuses unchanged"},
+    {"command": "14_validate_ready_task_packages.py after explicit staging", "exit_code": 0, "result": "5 dispatch packages, 46 snapshots; only unclaimed T-02 adds two current source snapshots"},
+    {"command": "git diff --exit-code historical P-01 signature, acceptance, golden and A-03/U12-03/U12-06 packages", "exit_code": 0, "result": "No historical or frozen input changes; signed bytes preserved"},
+    {"command": "render_docx.py and visual review", "exit_code": 0, "result": "P-01 summary 3 pages and chained review 5 pages inspected; no clipped text or missing sections"}
+  ]
+}

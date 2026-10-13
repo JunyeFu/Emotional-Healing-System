@@ -1,0 +1,28 @@
+{
+  "paths": [
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "agent/governance/planning/2026-09-08_SRP_v1.2_当前基线适配包/sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/03_工具与验证/result_classifier.py",
+    "agent/governance/planning/2026-09-08_SRP_v1.2_当前基线适配包/sources/unpacked/SRP_Final_Upgrade_v1.2_2026-09-08/01_研究与执行/02_统计分析与结果分类合同.md",
+    "agent/tasks/U12-10/archive/task-input/package_manifest.json",
+    "agent/tasks/U12-10/inputs/classifier-cases.json",
+    "agent/tasks/A-05/outputs/current-analysis.json",
+    "agent/tasks/A-05/outputs/analysis-report-template.json",
+    "agent/tasks/A-06/outputs/current-scope.md",
+    "agent/tasks/U12-04/outputs/current-statistics.md",
+    "agent/tasks/U12-07/outputs/reporting-rules.md",
+    "agent/tasks/W-02/outputs/current-manuscript.md",
+    "agent/tasks/G-03/outputs/current-freeze.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

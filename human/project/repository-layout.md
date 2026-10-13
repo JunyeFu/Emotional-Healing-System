@@ -1,6 +1,6 @@
 # 仓库目录与命名规范
 
-2026-10-13统一本地项目自有目录。逐文件位置及改动记录见[目录清单](https://github.com/JunyeFu/Emotional-Healing-System/blob/d2245d4dee7916f898be2ff872a2062b6617ee92/agent/repository-layout.json)。本轮范围覆盖已跟踪文件、未跟踪开发文件及随其所在目录移动的本地工程文件。
+2026-10-13统一本地项目自有目录。逐文件位置及改动记录见[目录清单](../../agent/repository-layout.json)。本轮范围覆盖已跟踪文件、未跟踪开发文件及随其所在目录移动的本地工程文件。
 
 ## 文件归属
 
@@ -44,4 +44,4 @@
 
 6812个登记文件位置核对通过，16个业务目录迁移涉及1745个文件，545个当前消费者更新。910个当前Markdown链接、71包审阅文档及来源、5包88份冻结输入均通过对应检查。模块回归715通过、2个原有失败；60包执行测试838通过、32个原有失败，与迁移前c27ca0d6对照无新增失败。
 
-任务编号、原生工程内部身份及原件按上述规则保留；真实Unity/TD编辑器启动尚未在本轮复验。详细结果见[验证记录](https://github.com/JunyeFu/Emotional-Healing-System/blob/d2245d4dee7916f898be2ff872a2062b6617ee92/agent/work/codex-verification-log.md)。
+任务编号、原生工程内部身份及原件按上述规则保留；真实Unity/TD编辑器启动尚未在本轮复验。详细结果见[验证记录](../../agent/work/codex-verification-log.md)。

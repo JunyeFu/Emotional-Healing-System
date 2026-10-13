@@ -1,0 +1,27 @@
+{
+  "task_id": "F-04",
+  "source_policy": "reference_shared_module_preserve_signed_artifacts",
+  "paths": [
+    "agent/modules/touchdesigner/f04_readonly_console/f04_console.py",
+    "agent/modules/touchdesigner/f04_readonly_console/f04_node_plan.py",
+    "agent/modules/touchdesigner/f04_readonly_console/fixtures/f04-static-display-fixture-v1.json",
+    "agent/modules/touchdesigner/f04_readonly_console/F04_ReadonlyConsole.toe",
+    "agent/modules/touchdesigner/f04_readonly_console/F04_ReadonlyConsole.tox",
+    "agent/modules/touchdesigner/f04_readonly_console/F-04_独立团队总监二轮复审签收报告_已签署.md",
+    "agent/modules/touchdesigner/f04_readonly_console/evidence/touchdesigner/reopen_report.json",
+    "agent/modules/touchdesigner/t01_telemetry_panel/README.md",
+    "agent/modules/communication/contracts/README.md",
+    "agent/tasks/F-04/execution/README.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

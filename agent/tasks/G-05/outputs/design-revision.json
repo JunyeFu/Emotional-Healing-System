@@ -1,0 +1,31 @@
+{
+  "task_id": "G-05",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新研究用途外部准入",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新研究用途外部准入修订交接",
+    "新旧用途差异",
+    "真实准入清单"
+  ],
+  "acceptance_criteria": [
+    "AC1 取得适应流程、两设备数据用途与退出的真实批准",
+    "AC2 正式专机配置与已修协议一致，不以旧批文自动覆盖",
+    "AC3 无真实准入不采集，原外部阻塞保持"
+  ],
+  "evidence_required": [
+    "新旧用途差异",
+    "真实准入清单",
+    "专机配置要求"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP_EXTERNAL",
+  "depends_on_original": [
+    "G-01",
+    "G-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

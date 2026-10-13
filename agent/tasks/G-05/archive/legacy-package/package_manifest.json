@@ -1,0 +1,14 @@
+{
+  "package_id": "SRP-TASK-058-G-05-v1.0",
+  "task_id": "G-05",
+  "ordinal": 58,
+  "status": "WAIT_DEP_EXTERNAL",
+  "wave": "W3",
+  "domain": "外部准入",
+  "depends_on": ["G-01", "G-02"],
+  "gates": ["E-01", "G-03", "W-03"],
+  "authority": "../05_可领取任务包.csv",
+  "task_file": "TASK.md",
+  "files_file": "FILES.md",
+  "evidence_policy": "real_external_receipts_and_formal_machine_evidence_required"
+}

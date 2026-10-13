@@ -1,0 +1,1 @@
+PASS: W-01 historical candidate package and current W-02 dependency route; search_rows=13; core_sources=15; claims=6; bib_entries=15; novelty=REVISE_REQUIRED; W-02=WAIT_DEP

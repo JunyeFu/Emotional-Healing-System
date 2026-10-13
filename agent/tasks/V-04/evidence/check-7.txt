@@ -1,0 +1,1 @@
+PASS: H3 fixed combined review candidate; 4 clips; 32 assets; 68.0s; evidence boundary retained

@@ -1,0 +1,151 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{Microsoft YaHei}[BoldFont=Microsoft YaHei Bold]
+\setCJKmainfont{Microsoft YaHei}[BoldFont=Microsoft YaHei Bold]
+\newfontfamily\titlelatin{SimHei}[AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{SimHei}[AutoFakeBold=2]
+\usepackage[margin=22mm]{geometry}
+\usepackage{graphicx}
+\usepackage{needspace}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyfoot[C]{SRP 任务包审阅\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\linespread{1.28}
+\emergencystretch=3em
+\raggedbottom
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}\vspace{8pt}}
+\newcommand{\reviewsection}[1]{\par\Needspace{5\baselineskip}\vspace{10pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\vspace{4pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+\begin{document}
+
+\reviewtitle{F-\allowbreak{}05 I/\allowbreak{}G/\allowbreak{}X事件与受限适应步骤合同 · 新基线审阅}
+审阅日期 2026-\allowbreak{}10-\allowbreak{}08    任务 F-\allowbreak{}05
+
+
+\reviewsection{一、任务定义与交付}
+\reviewsubsection{1.1 当前结论}
+F-\allowbreak{}05注册状态DONE仅保留原范围。当前任务更新为I/\allowbreak{}G/\allowbreak{}X事件与受限适应步骤合同；处理类型REVISE\_\allowbreak{}FOR\_\allowbreak{}NEW\_\allowbreak{}BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。
+
+
+本包采用固定A与受限适应B整包基线；共享I、独立G/\allowbreak{}X及同预算。新设计、真实运行与正式许可分别成立。
+
+
+\reviewsubsection{1.2 目标与完成标准}
+AC1 定义理想实例、下发实例、实际事件、偏差与失效的身份和时间
+
+
+AC2 合法周期边界调整下一吸呼，缓冲为自然呼吸且计入预算
+
+
+AC3 漏补吸、跨周期、断流及回归保留事实，不由G补造X
+
+
+\reviewsubsection{1.3 实际交付}
+本轮交付当前TASK、专项交接、design-\allowbreak{}revision.json及来源更新；不声称运行或研究已完成。
+
+
+I/\allowbreak{}G/\allowbreak{}X事件与受限适应步骤合同修订交接
+
+
+步骤事件对照
+
+
+受限动作状态图
+
+
+ODES-\allowbreak{}20261008设计交付：形成I/\allowbreak{}G/\allowbreak{}X步骤身份、中断语义、合法动作和R01至R10合同候选；设计文件和示意已交付，真实执行及独立复核仍待完成。
+
+
+NORM-\allowbreak{}20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/\allowbreak{}保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/\allowbreak{}映射/\allowbreak{}指令与M02使用条件仍未关闭。本包承接参数规格：rate\_\allowbreak{}window、phase\_\allowbreak{}offset\_\allowbreak{}window；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。
+
+
+\reviewsection{二、执行与验证}
+\reviewsubsection{2.1 执行过程与关键决定}
+A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出
+
+
+B数据驱动场景原生受限适应，合法边界调整G后趋向共同I
+
+
+I共同理想/\allowbreak{}G有效下发/\allowbreak{}X独立实际分离；同预算，未知不补成功
+
+
+PANAS-\allowbreak{}NA前测校正主要候选；I达成/\allowbreak{}G跟随/\allowbreak{}成本独立，不沿用旧PF非劣界
+
+
+理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收
+
+
+本包专项：I/\allowbreak{}G/\allowbreak{}X事件与受限适应步骤合同
+
+
+\reviewsubsection{2.2 验证与结果}
+任务包/\allowbreak{}PDF/\allowbreak{}来源一致性由verify\_\allowbreak{}task\_\allowbreak{}design\_\allowbreak{}baseline.py和build\_\allowbreak{}task\_\allowbreak{}reviews.py -\allowbreak{}-\allowbreak{}check核查；这些静态结果仅证明当前文档一致。
+
+
+原软件测试与签收见archive/\allowbreak{}pre-\allowbreak{}design-\allowbreak{}baseline-\allowbreak{}20261008/\allowbreak{}summary.json，保持原范围，不能支持本包新增要求。
+
+
+\reviewsubsection{2.3 偏离与修复闭环}
+旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。
+
+
+真实缺口：步骤事件对照；受限动作状态图；异常案例表
+
+
+\reviewsubsection{2.4 目录与文件整理}
+旧任务、总结及被替代交接保存在archive/\allowbreak{}pre-\allowbreak{}design-\allowbreak{}baseline-\allowbreak{}20261008；当前设计用LaTeX/\allowbreak{}PDF维护，不新增DOCX。
+
+
+\reviewsection{三、审阅与交接}
+\reviewsubsection{3.1 上下游交接}
+原依赖：F-\allowbreak{}01、P-\allowbreak{}01、P-\allowbreak{}02；必须核对新范围交接，原DONE不自动证明修订完成。
+
+
+消费design-\allowbreak{}foundation-\allowbreak{}20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：步骤事件对照；受限动作状态图；异常案例表
+
+
+\reviewsubsection{3.2 审阅与责任签收}
+原签收保持下列历史信息；本轮无新增业务签收。
+
+
+新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。
+
+
+历史审核人 傅钧烨    日期 2026-\allowbreak{}09-\allowbreak{}01 +08:00
+
+
+历史审核提交 158767e8\allowbreak{}2128b332\allowbreak{}5b58560a\allowbreak{}ab05824a\allowbreak{}951c633b
+
+
+真实团队总监签收合同与Python迁移基线，随后签收646bc47集成结果；不表示本人重跑或运行消费者已全部完成。
+
+
+\reviewsubsection{3.3 收尾与下一包}
+新修订状态：ORIGINAL\_\allowbreak{}DONE\_\allowbreak{}NEW\_\allowbreak{}SCOPE\_\allowbreak{}REQUIRES\_\allowbreak{}REVIEW
+
+
+先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。
+
+
+\begin{minipage}{\linewidth}
+\reviewsubsection{3.4 审阅来源}
+当前来源：task-\allowbreak{}baseline.json与基石四份LaTeX/\allowbreak{}PDF；历史来源见归档总结。
+
+
+\begingroup\small\setlength{\tabcolsep}{4pt}\begin{tabular}{@{}p{0.48\linewidth}p{0.48\linewidth}@{}}
+\href{file:///D:/Agent/srp/agent/tasks/F-05/execution/README.md}{打开 F-\allowbreak{}05 当前执行入口} & \href{file:///D:/Agent/srp/agent/validation/F-05_\%E7\%AC\%AC\%E4\%BA\%8C\%E4\%BA\%BA\%E5\%AE\%A1\%E6\%A0\%B8\%E6\%8A\%A5\%E5\%91\%8A_\%E5\%B7\%B2\%E7\%AD\%BE\%E7\%BD\%B2.md}{打开 F-\allowbreak{}05 真实第二人签收}\\[4pt]
+\href{file:///D:/Agent/srp/agent/tasks/F-05/evidence/runtime/evidence_manifest.json}{打开本轮八项证据封存} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/task-baseline.json}{当前设计基线 task-\allowbreak{}baseline.json}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/01-design.pdf}{当前设计基线 01-\allowbreak{}design.pdf} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/02-science.pdf}{当前设计基线 02-\allowbreak{}science.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/03-decisions.pdf}{当前设计基线 03-\allowbreak{}decisions.pdf} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/04-review-audit.pdf}{当前设计基线 04-\allowbreak{}review-\allowbreak{}audit.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/05-control-spec.tex}{操作设计 05-\allowbreak{}control-\allowbreak{}spec.tex} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/05-control-spec.pdf}{操作设计 05-\allowbreak{}control-\allowbreak{}spec.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/06-paired-storyboards.tex}{操作设计 06-\allowbreak{}paired-\allowbreak{}storyboards.tex} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/06-paired-storyboards.pdf}{操作设计 06-\allowbreak{}paired-\allowbreak{}storyboards.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/07-protocol-candidate.tex}{操作设计 07-\allowbreak{}protocol-\allowbreak{}candidate.tex} & \href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/07-protocol-candidate.pdf}{操作设计 07-\allowbreak{}protocol-\allowbreak{}candidate.pdf}\\[4pt]
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/operational-design.json}{操作设计 operational-\allowbreak{}design.json} & \\[4pt]
+\end{tabular}\endgroup\end{minipage}\par
+\end{document}

@@ -1,0 +1,32 @@
+{
+  "task_id": "W-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "整包收益与目标代价论文主稿",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "整包收益与目标代价论文主稿修订交接",
+    "结果中立主稿",
+    "预定结果表"
+  ],
+  "acceptance_criteria": [
+    "AC1 以固定A对原生自适应B为问题，保持结果前中立",
+    "AC2 披露I/G/X、期待/新奇、实际剂量及测量边界",
+    "AC3 科学贡献需真实结果，设计原则无迁移不称普适"
+  ],
+  "evidence_required": [
+    "结果中立主稿",
+    "预定结果表",
+    "贡献证据及限制"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "W-01",
+    "A-06",
+    "U12-07"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

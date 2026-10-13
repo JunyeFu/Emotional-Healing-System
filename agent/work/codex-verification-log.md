@@ -1,0 +1,2733 @@
+# Codex Verification Log
+
+## 2026-10-08 TD六类曲线与录制前检查
+
+专项测试、真实TD点击与曲线颜色像素检查、录制前后边界核查见[本轮验证](2026-10-08_T01_六类曲线与录制前检查.md)。输入均为合成数据，Unity开始由开发消息模拟。
+
+## 2026-10-08 TD A主题可读性v2验证
+
+60 passed；原生三标签、明细滚轮、等待/接收/降级/不可用/断流/长ID及三个布局尺寸检查通过。13张实际截图均1280×720，无原生脚本错误，未将启动空白图计入。详见[验证记录](2026-10-08_TD工作台可读性更新.md)。
+
+## 2026-10-08 TD A主题实际截图验证
+
+专项57 passed；四张可读PNG与原生错误回执已检查，启动瞬间空白图不计通过；1280布局与长标签问题仍保留。详见[验证记录](2026-10-08_TD工作台实际截图.md)。
+
+## 2026-10-06 呼吸圈Unity数值版v1.1验证
+
+- 核对Unity官方Rect Transform、Canvas Scaler文档与UICircle固定源码：中心锚点Pos(-1.152,39.528)、Height缩放和Thickness向内绘制的表达一致。
+- 数值复算通过：外圈663.746—828.252、内圈503.118—627.750为UICircle控件边长；半径比80%、fade主吸终点795.351及实际主吸半径299.1168与v1.0一致。1080p/1440p/2160p缩放后圆心占比一致，Inspector取值无需重算。
+- 四TXT通过UTF-8、措辞和内部引用检查；四PDF及参考PNG与v1.0逐字节相同，旧版未修改。
+- v1.1 ZIP重开、完整性与九文件一致检查通过，大小5,823,393字节；预览README十二处文件链接可达。
+- 只改人工阅读资料，不更改运行代码或任务状态；未运行Unity，不把参数复算表述为实机渲染验收。
+
+## 2026-10-06 呼吸圈TXT与ZIP验证
+
+- 四份UTF-8人工阅读TXT通过禁用措辞、内部文件引用和执行材料排除检查；ZIP仅含四TXT、四原文PDF及一参考PNG，共九文件，未包含聊天截图或工作日志。
+- 指定PNG为1672×941 RGB，与用户源图逐字节一致；NumPy圆拟合外圈约358.34像素、内圈271.46像素，剖面线宽约5/4像素。四种分辨率参数、80%半径比、最小外圈与最大内圈间距复算通过。
+- 四论文封面与题目匹配，共55页；Zaccaro原文PDF解析产生重复MediaBox警告，但全部页数及文本可读取，原文未重写。原文许可和来源附于TXT；PLUX资料只链接，不分发。
+- UICircle固定源码核对厚度向内、中心pivot及2r+线宽的矩形边长公式；GitHub许可与三个实现入口已核对。本轮不安装依赖或导入Unity组件。
+- 量图首次尝试发现内置环境无SciPy，改用现有NumPy；首次ZIP检查因把版本号当扩展名，误查`breathing-ring-design-v1.zip`而失败，修正检查路径后通过；均未改写交付原件。
+- ZIP重开、内部完整性及九文件与源文件一致检查通过；大小5,826,277字节。V3 README十一处文件链接可达。
+- 仓库通用`*.zip`规则使首次暂存不含压缩包；本轮仅显式跟踪已核查的交付ZIP，不放宽其他压缩文件的忽略规则。
+- 仅资料交付，不修改任务状态、研究数值或运行代码，不扩大为Unity、真实设备或参与者验收。
+
+## 2026-10-05 V3 九图统一验证
+
+- 四张天气图逐张查看内置 AI 编辑输出：保留雨幕、热霭、飘雪与 fade 中段，双环加粗、外清内淡，无填充或标识；首张偏细 storm 未采用。
+- 九张 PNG 解码通过，均为 1672×941；README 九个图片链接与文件集合一致。四张空场景和全褪色 V3 副本与来源字节相同。
+- 首次检查使用默认 Python 时缺少 Pillow，未安装依赖，改用 Codex 内置 Python 后通过。最终提示词已记录，生成指导值不作为精确像素或运行参数。
+- 未修改运行实现或任务状态，本轮无需产品回归及治理图更新。
+
+## 2026-10-05 村庄融合八图
+
+- 双环 v3：内置 AI 生图编辑；已目视检查中间蓝、更透、空心与原几何，1672×941 RGB PNG 解码通过。颜色/不透明度指导值未写入正式 Unity 参数。
+- 深蓝双环修订：内置生图先加粗/变色，再针对描边偏实调整透明感；已查看输出，1672×941 RGB PNG 解码通过。双环蓝色、背景灰度，旧图保留；不把生成指令的2倍/30%当作像素实测。
+- fade 补充图：内置生图新增全幅灰度外观，已目视检查，1672×941 RGB PNG 解码通过。RGB 通道最大差 11、平均差 0.885（8 位），不声称 AI 图逐像素零饱和度；Unity 参数仍沿用原合同。首次 Pillow verify 在载入像素后调用，已改为打开后直接 verify 并通过。
+- 先在预览 README 写入八份实际提示词；内置生图工具分别生成八张单图，保留原视频和既有双环预览。
+- 逐张目视检查村庄主要建筑、河岸和道路布局，以及四天气的地表/大气差异、空场景无控件、天气版浅蓝空心双环；fade 是低饱和复色中段，而非起始帧或完整动画。
+- 八张文件均为 1672×941 RGB PNG，解码检查通过；四组配对完整，八个本地图片链接可达。未进行 Unity、真实设备或参与者验收，未更改任务状态。
+
+## 2026-10-05 Storm 双环生图
+
+- v2 线宽调整：已目视检查两环加粗、无填充，外环比内环更清晰；1603×981 RGB PNG 解码通过，保留 v1，未改运行实现。
+- 已查看视频原帧和生成画面：居中浅蓝空心双环，外环更清晰、内环更淡，背景仍可见；源视频未修改。
+- 生成输出为 1603×981 RGB PNG，Pillow 解码检查通过；图片为合成外观预览，未声称独立 alpha 素材或精确像素不透明度。
+- 图片和实际提示词已保存项目；任务状态及运行实现未改变。
+
+## 2026-10-05 录屏与天气设计差异
+
+- 两段源视频可读取：0.mp4 为 577 帧/30 fps（19.23 秒）、1280×784；3.mp4 为 1637 帧/30 fps（54.57 秒）、1280×656。源视频未修改、未入库。
+- 使用本机 OpenCV 解码全时段抽样，分别 20 个/19 个时间点；联系表和原分辨率帧位于 Git 忽略的 `agent/local/artifacts/scene-review-20261005/`，已目视检查。
+- 对照当前最终画面描述和 U-03 当前切片交接，形成五项最小修改建议；不新增场景运行验收、不改任务状态、不重写四层或 Unity 实现。
+- 清单内设计链接、五项改动结构及当前措辞检查通过；`git diff --check` 通过。本轮仅文档，不重复执行未改变的运行测试。
+
+## 2026-10-05 四场景最终画面描述
+
+- 核对 V-02 当前交接、V-03 四层映射、V-04 固定镜头/事件构图/选图/机制合同，并逐张查看 storm、heat、snow LBR v1 与 fade LBR v5 选定底图。当前步骤时长与 `agent/modules/srp_session_core/config/breath_protocol_config_v2.2.json` 一致。
+- `py -3.14 agent/tasks/V-02/execution/validate_current.py`：PASS；`py -3.14 -m pytest -q agent/tasks/V-02/execution/test_current.py`：26 passed in 0.07s。此次专项验证检查既有场景规则，不构成新增运行验收。
+- 四个更新入口中的 15 个本地 Markdown 链接存在；历史原稿文本与修改前 HEAD 一致；当前设计措辞检查无命中。固定画面、四种核心机制、fade 时间复色与步骤水潮分开表述。
+- 未变更任务状态、冻结输入、签署、配置或 Unity 实现；不重新生成业务进度图。完整呈现继续由 V-05、U-03 至 U-08 消费。
+
+## 2026-09-29 Q-03规范化验证
+
+- `py -3.14 agent/tasks/Q-03/execution/verify.py`：48设计单元预览检查PASS；85 passed in 1.45s（本包7项及既有随机化/步骤测量78项）；历史v1.1协议检查PASS，读归档原件且未放宽规则。
+- 根pytest635 passed in 50.68s；71项注册、5分发包61快照通过。两旧文件字节哈希核对通过，原位置为当前导航，历史90报告保留未改，冻结输入和签署不更新。
+- Word3页逐页检查；串联21页前19页与Q-02 PNG字节一致，20/21页已看图。builder --check通过，本包当前文件措辞扫描无命中，历史原文不回写。
+- X-01对level_c返回STAGE_UNSUPPORTED，不拿stage_1改标签。规划预览不是实际manifest/隐藏分配；真实工具、Level B关闭、A-03-REAL、校准和签署仍缺。规范化37/71、下一X-01，业务WAIT_DEP_EXTERNAL保持，根目录迁移未完成。
+
+## 2026-09-29 Q-02规范化验证
+
+- `py -3.14 agent/tasks/Q-02/execution/verify.py`：53 passed in 0.16s，含8项新交接检查和45项既有步骤测量；生成器PASS deterministic synthetic materials and byte hashes。空表无真人行、私有答案不进参与者题面；无实际访谈或渲染证据。
+- 根pytest635 passed in 50.50s；注册表71项、分发5包61快照通过。原F-02、U12-02题库、U12-03复核输入、注册和签署均未改，未重新生成分发或业务SVG。
+- 提交范围检查发现全局*.csv忽略了两空模板，增加两个精确路径例外后纳入；全局数据CSV规则不变，模板无真人行已由专项测试检查。
+- Word3页逐页检查；串联21页前19页与Q-01 PNG字节一致，20/21页已检查。builder --check与diff检查通过；本包不合规措辞扫描无命中。
+- 当前人数来源冲突、真实责任人、实际四结构双条件片段、活动许可及Unity回归仍未完成；Q-02保持WAIT_DEP，无新独立Agent/真人签收。规范化36/71，下一Q-03，根目录双层迁移未完成。
+
+## 2026-09-29 Q-01规范化验证
+
+- `py -3.14 agent/tasks/Q-01/execution/verify.py`：21 passed、3 subtests passed（0.29秒），材料Q01_MATERIALS_VALID。原11项汇总、5项材料及5项新核验分别覆盖CVI/分歧/降称、匿名材料、原字节/导航/当前降级和空表CLI/不可覆盖。
+- 根pytest635 passed in 50.24s；注册表71项、独立分发5包61快照通过。签署、合同、盲态任务和评分键相对7e6deb4未改；原工具路径移除，新工具共享原材料，输入格式和裁定不变。
+- Word3页已逐页看图；串联20页前18页与I-01 PNG字节一致，19/20页已检查。结构、来源和正文一致；实际原件归档字节校验通过，不把原合同待签署文字改写成新签名。
+- 没有新真人或独立Agent审核、Level A活动、最终Unity复核及机构批准。规范化35/71、下一Q-02，当前修订未签收；业务DONE限定旧工具材料，SVG和冻结输入不变，根目录双层迁移继续。
+
+## 2026-09-29 I-01规范化验证
+
+- `py -3.14 agent/tasks/I-01/execution/verify.py`：216 passed in 4.84s，含本包15项交接负例及既有主机201项。首轮保存目录失败留说明，修正后完整重跑，不引用未保存的首轮结果。
+- 根pytest635 passed in 50.21s；注册表71项及分发5包61快照通过，未改变注册状态或快照，未运行设备、Unity、TD、外部测量或多小时压力。
+- Word3页全页检查，串联19页前18页与W-01图像相同，第19页检查未见溢出；结构、来源和正文检查通过。当前入口加入根README、AGENTS及测试模块导航。
+- 累计34/71，下一Q-01；真实负责人、装配、阈值与LIVE_E2E仍缺，I-01保持WAIT_DEP_EXTERNAL，不生成业务SVG，根目录双层迁移未完成。
+
+## 2026-09-29 W-01规范化验证
+
+- 16项专项及历史候选、当前论文路线和升级治理检查通过；原骨架逐字节保留，历史验收不改。当前PANAS、非门控报告、SCCI、等效默认关闭、正式N未冻结及W-02实际依赖均有负测。
+- 根pytest635通过（50.59秒），注册表71项、独立分发5包61快照通过。首轮产物链接与旧注册表指纹失败均保留；静态输入和执行产物分开，五包只更新注册表引用，不刷新冻结输入。
+- 提交前将分发差异检查固定到迁移前6fa45af，不依赖变化后的HEAD；复测用于确认提交后可重跑。Word3页及串联18/19页已看图，链前17页与A-03图像相同，无可见溢出。
+- 未重新联网检索、全文审查、真人签收或正式研究；原候选DONE不变，不更新业务SVG。33/71规范化，下一I-01，整体迁移未完成。
+
+## 2026-09-29 A-03规范化复测
+
+- `py -3.14 agent/tasks/A-03/execution/verify.py`：39项通过，含原SPEC31项与本包8项；候选SAP及历史协议通过。
+- `py -3.14 agent/tasks/A-03/execution/reproduce.py`：独立新目录复现24/85/96，各情景1000次；三份JSON与原报告相同，共同通过概率0.072/0.646/0.721。结果见本包evidence/reproduction.json。
+- 根pytest635通过（62.76秒）；注册表71项、分发5包61快照通过；无快照/原报告/签署/里程碑改动，措辞扫描无命中，diff检查通过。
+- 单包Word3页检查；串联18页，前17页图像字节与已审版本一致，第18页检查，未见裁切或溢出。32/71规范化，REAL/CAL未交付，不推定正式统计或研究完成。
+- 暂存检查首次把保留的README原CRLF判为行尾空白；只对两个原文字节归档设whitespace=cr-at-eol，未修改原件或放宽全局规则。失败原因存本包evidence/initial-staged-check-failure.txt，修正后复查。
+
+## 2026-09-29 A-02规范化验证
+
+- 旧06统计计划原始字节实际归档，迁移前后SHA-256均817984B06CC9D53B48EF7482F58E9A01330F446A57E596F800B51FD9C22EDB72，当前导航全部可访问；v1.1验证只改读取位置并通过。
+- 专项29 passed in 0.74s：11项本包现状/归档/实际合成工具边界和18项U12-04合同测试；候选SAP校验通过。固定种子正/反/零效应重复一致；实际捕获拟合输入证实前测代填，不是MI、MNAR或完整四模块资格。
+- 根pytest635 passed in 50.08s，注册表71项及5包61快照通过，分发与HEAD无差异。U12-04签署、A-03冻结规格和本包WAIT_DEP不改；没有实际数据、插补流水线或正式研究冻结。
+- 单包Word3页逐页检查；串联18页前16页与已检查A-01图像字节相同，17/18页检查无裁切。结构和内容来源检查通过，规范化31/71，下一A-03；整体根迁移未完成。
+
+## 2026-09-29 A-01规范化验证
+
+- 迁移两份历史QC/PF原件，原始字节SHA-256分别0B1DB080…DA69A8C、4EEC1084…46FC038，核验相同；新导航链接均存在。
+- 首轮97通过1失败：错误比较原始字节与冻结规范化文本哈希；次轮97通过1失败：错误引用manifest.files。改用既有renderer.sha256与source_files后98 passed in 4.64s；两次失败记录保留。原冻结总设计与HEAD无差异。
+- 历史v1.1验证通过；新路径负例能正确报告缺标记。读取P-02合成golden两次均46调用、19控制、12回执，未开网络且全部原件字节不变；并非事件或量表重建。
+- 根pytest635 passed in 50.75s；注册表71项、独立包5包61快照通过。无业务状态、快照、签署或真实负责人变更，任务图不需重绘。
+- 单包Word3页逐页检查，串联17页前15页与已审阅T-02版本字节相同，16/17页检查无裁切。规范化30/71，下一A-02；真实离线流水线与根迁移仍未完成。
+
+## 2026-09-29 T-02规范化验证
+
+- 确认旧工具没有活动Python/JSON/PowerShell消费者；15份原文与工程原字节实际迁入Agent归档，迁移前字节/SHA-256逐项通过，当前导航修正，不执行旧任意脚本遥控。
+- 专项276 passed in 5.40s：27项本包归档/接口现状/本机TCP/耐久abort重放，249项已有P-01/P-02和T-01/F-04回归；根pytest635 passed in 50.65s。
+- 注册表71项通过；独立包首次因新来源未暂存拒绝，明确暂存三份权威来源后5包61快照通过。三个冻结包及V-05与HEAD diff --exit-code为0，业务状态、签署与责任人不改。
+- 当前TD请求仍统一拒绝，manual_mark不是核心动作；未启动TD/Unity、未取得请求操作录像或真实设备证据。规范化不是T-02完成；导出/截图扩展另验。
+- 单包Word3页全部检查，串联17页前15页与已审阅U-08页面字节相同，16/17页重新检查无裁切；内容与来源检查通过。累计29/71，下一A-01；根目录双层迁移未完成。
+
+## 2026-09-28 V-03规范化验证
+
+- 旧validate_v03_deliverables.py实跑失败于asset_registry比对，原因是历史78项含57直接包而当前56包已移除Spout。未改原签署台账。
+- 历史验证读取f09f0d5候选的manifest/许可原件；Git LF还原当时Windows CRLF后与原两项字节哈希一致。Draft 2020-12实际执行，准备及40行/78项历史复算通过。
+- py -3.14 agent/tasks/V-03/execution/verify.py：历史准备/交付、当前映射、V-02消费及64项pytest通过。当前56包登记和v2.2字段检查不表示正式许可。
+- 本轮新增生成脚本首次缺输出目录，补正目录创建并订正校验Schema键后重跑通过；生成器不写签署原件的回归通过。
+- 07_validate_task_packages.py：71项通过；14_validate_ready_task_packages.py：5包47快照通过；build_task_reviews.py V-03 --check通过。
+- 原V-03目录与分发快照git diff为空，措辞及差异检查通过。Word3页逐页检查；串联第9页检查，前8页与V-02已查页像素一致，无截断或遮挡。
+- 规范化16/71，下一V-04，剩余55包及最终根目录迁移继续。未新增真人签收、Unity运行或参与者结果。
+
+## 2026-09-28 V-02规范化验证
+
+- py -3.14 agent/tasks/V-02/execution/verify.py：历史场景、当前V-04来源与V-01旅程检查通过，26项pytest通过。首次测试收集因新文件的函数声明缺失失败，补正后完整重跑通过。
+- 07_validate_task_packages.py：71项通过；14_validate_ready_task_packages.py：5包47快照通过。
+- build_task_reviews.py V-02 --check通过；原V-02目录及当前分发快照git diff为空，未转移历史签名。
+- Word3页逐页检查，串联8/9页检查；前7页与V-01最终已查页像素一致。无截断或遮挡；当前设计不等于Unity运行。
+- 规范化15/71，剩余56包；下一V-03。当前旧卷轴、拆层及累计复色误用在Agent入口修正后回填Word，根目录整体迁移尚未完成。
+
+## 2026-09-28 V-01规范化验证
+
+- py -3.14 agent/tasks/V-01/execution/verify.py：历史v1.0/v1.1、当前14节点、22项pytest和V-02消费者均通过。
+- 07_validate_task_packages.py：71项通过；14_validate_ready_task_packages.py：5包47快照通过。
+- 原设计、签署和分发包git diff为空；Word结构及来源检查通过，措辞检查无命中。
+- 本包3页逐页检查，串联7/8页检查，前6页与上一轮已查页像素一致；无文字遮挡或内容截断。
+- 当前适用候选不是教学运行证据，不改P-01 Schema，不代签；规范化14/71，下一包V-02，根目录最终迁移仍未完成。
+
+## 2026-09-28 R-01规范化验证
+
+- py -3.14 agent/tasks/R-01/execution/verify.py：候选完整性、实际Schema、13项pytest及当前v1.2三项角色检查通过。
+- 历史R-01候选/Schema/fixture/验收与U12-03冻结快照git diff为空；不新增真人签收。
+- 注册表71项通过；因唯一执行路径迁移导致registry hash变化，生成器刷新5包元数据，47份快照校验通过，未更新进行中输入。
+- Word本包3页、串联8页，所有变化页面视觉检查通过；串联前6页与已查版本像素一致；修正待整理队列跨页拆开的问题。
+- 当前13/71包，下一包V-01；四天气合法配置与真人材料证据待下游，根目录迁移仍未完成。
+
+## 2026-09-19 入口改名前置加固（03-SRP → emotional-healing-system）
+
+- 6处硬编码路径改为动态识别：validate_team_tool_baseline.py workspace断言改为比对PROJECT_ROOT；render_governance_views.py看板链接、13_render_ready_task_packages.py包内链接改为PROJECT_ROOT.as_posix()拼接；build_adaptation.py说明文本改为"仓库根目录"；clean_default_demo.ps1 Scratch默认参数改为$PSScriptRoot相对推导；build_briefs.ps1跨项目builder路径改为AGENT_ROOT环境变量可覆盖。
+- team_tool_baseline_v1.0.json的workspace字段随改名同步更新；改名后`git worktree repair`修复各worktree链接。
+- 预期：改名后校验脚本、治理视图渲染、任务包生成、PDF简报构建均不依赖旧绝对路径。
+
+## 2026-09-17 SRP目录体系收敛（Agent顶层唯一入口）
+
+- 审计确认25个登记worktree中，D盘22个全部干净或仅含evidence/Unity设置差异；5个codex任务分支（f-03/f-04/f-05×2/t-01）0提交领先于main，两个.codex detached树（b7d12db/6760743）可达main。
+- 13个脏worktree的差异内容（evidence证据+Unity设置churn，共135文件）先归档至`agent/archive/local/worktree-evidence/<原目录名>/`再移除；SRP-backups与03-SRP-f03-validation整体迁入`agent/archive/local/`；重组前完整登记快照存`agent/archive/local/worktree-registry-20260917.txt`。
+- 移除22个D盘worktree（03-SRP-f03-worktree因Windows长路径分两步清除）；codex.exe运行中，两个.codex树按约定不动。回收约28.5GB。
+- 验证：20个detached证据提交`git cat-file -t`全部返回commit；28个codex分支保留；`git status --short`与重组前一致；`D:\Agent`顶层SRP相关仅剩`03-SRP/`；`_archive`合计1.6GB。
+- 回滚方式：worktree按登记快照`git worktree add <路径> <提交或分支>`重建；归档仅移动未删除。
+
+## 2026-09-08 A主题原生构建主机验证
+
+- T-01专项测试含新增显示模型测试共27 passed；包含缺值、置信度、原始身份、历史值、错误及长字段。
+- 官方Text COMP、Layout、Panel Execute与OP Viewer TOP文档用于核对参数和显示入口；回调脚本通过Python语法检查。
+- MCP仍返回ECONNREFUSED；未生成新运行制品、未完成截图和交互验收。候选脚本只在TD成功执行后另存候选，不覆盖已签收主工程。
+
+## 2026-09-08 用户完成TD窗口清理并保存
+
+- 用户执行当前窗口清理后确认保存；重新展开磁盘主工程，`/project1`直接子节点仅剩`T01_TelemetryPanel`，六个默认演示根节点已不存在。
+- `project1.parm`显示源为`./T01_TelemetryPanel/Output/display_out`，检查返回`SAVED_PROJECT_CLEANUP_PASS`。
+- 用户保存后TOE SHA-256：`3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED`。此记录接续此前离线候选哈希，不改写历史报告。
+- 新增Backup目录、T01_TelemetryPanel.3.toe与tmp保留且不纳入提交。仅证明保存后的工程结构与绑定正确，不扩大为新版A界面运行验收。
+
+## 2026-09-08 TD工程壳离线清理
+
+- toeexpand/toecollapse回读验证：默认演示条目0，T-01展开文件49/49字节一致；project1显示源已指向T-01。
+- 新TOE SHA-256：46D96C1E6886691C01064CAD82817AC900EAAD850BFB1652E0CF8BBE13151603；旧哈希与删除条目见design/default-demo-cleanup-report.json。
+- 首轮TOC CRLF导致打包错误，改为LF后通过回读；失败副本没有覆盖源工程。
+- MCP接口ECONNREFUSED；未操作当前窗口、未完成运行重开验收。旧证据保持原制品身份。
+- T-01专项测试17 passed；git diff --check通过。构建脚本同步设置显示绑定，需随下次TD重建验证。
+
+## 2026-09-08 A主题功能盘点与v3首页
+
+- 读取T-01/T-02实际边界与字段；P-01传输仍返回TD_STATE_CHANGE_NOT_AVAILABLE，P-02归档读取不等于现成TD导出服务。
+- T-01专项回归：`py -3.14 -m pytest -q agent/modules/touchdesigner/t01_telemetry_panel/tests`，17 passed。
+- v3本地引用全部存在，功能表20项；新增设计与提示词措辞扫描无匹配（rg退出码1）；`git diff --check`通过。PNG字节SHA-256为`EEAD9A1606CA7BBE6E68AF68A680F763DEEE53F544CF06F7FAAD26172311CF51`。
+- 内置image_gen以A图为参考生成v3首页，保存workbench-v3-aligned.png；可见各区域无明显遮挡，生成文字最终由原生组件按规格重排，不作为字段字形精确验收。
+- 本轮是静态功能和设计交付；未运行新的TD界面、请求或导出验收。不改变任务状态和既有签收。
+
+## 2026-09-08 T-01工作台设计预览
+
+- 直接查看生成图：会话、设备质量、目标实际对照、时钟、链路统计和降级状态分区完整，无可见文字遮挡或裁切；仅证明当前等待状态设计预览。
+- 图片SHA-256：`7A7EC54FD7246F51F795489CC3210CB7895E09D1CD7201BC472DD40D54E1DF70`。
+- 原生运行验证未执行：TD自动化接口127.0.0.1:9981返回ECONNREFUSED。原签署运行证据未替换。
+
+> Use this template to record evidence for local project tasks. Add newest entries at the top.
+
+## Template
+
+### YYYY-MM-DD Task Name
+
+| Field | Notes |
+|---|---|
+| Expected Observation | What should be true after the command, edit, test, screenshot, or inspection? |
+| Actual Result | What actually happened? Include concise output or artifact paths. |
+| Deviation / Surprise | What differed from expectation? If none, write `None`. |
+| Verification Command | Command, test, screenshot path, or file check used. |
+| Residual Risk | What remains uncertain or unverified? |
+
+## Entries
+
+### 2026-08-12 G-02 Data Governance Technical Candidate
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The frozen G-02 design is implemented with isolated stores, fail-closed deduplication, authenticated recovery, repository privacy checks and a Unity asset-license gate; synthetic evidence passes while unavailable formal-machine and asset controls remain visibly blocked; task state moves to `IN_REVIEW`, not `DONE`. |
+| Actual Result | Implementation commit `befbdb698ef5cbeb6061315a4c912abdde4e6b08` added the governance module and Unity gate. G-02 reports 107专项 tests passing, a passing synthetic rehearsal and zero repository privacy violations. The current asset scan covers 179 items and blocks on three license groups; the formal environment check blocks on six missing controls. The registry now has READY=F-03/F-04/G-01/P-01/P-02 and IN_REVIEW=G-02. |
+| Deviation / Surprise | The first regenerated PDF still listed G-02 among six READY packages on page 7. The Markdown source was corrected, the PDF rebuilt and pages 7-8 re-rendered; the final document shows five READY packages and G-02 separately as `IN_REVIEW`. No formal credential was provisioned and no external gate was closed. |
+| Verification Command | G-02 pytest `107 passed`; root pytest `207 passed in 15.91s`; F-01 contract pytest `49 passed in 0.89s`; `compileall`; protocol-authority validator PASS; registry validator PASS for 51 entries; independent-package validator PASS for 6 packages and 127 snapshots; repository privacy PASS with 0 violations; expected fail-closed asset/environment exits both 2; `git diff --check`; added-line terminology and sensitive-extension scans. |
+| PDF QA | `02_固定任务概要.pdf` has 8 A4 pages and SHA-256 `17D2B4F07E0213CCD3C84437027ADA6A89336A82DDACF7A401FB1A447FED4381`. All pages were rendered at 120 DPI and visually checked; the corrected pages have no clipping, overlap, unreadable text or status conflict. |
+| Residual Risk | G-02 cannot become `DONE` until a dedicated account and separated encrypted roots exist, the Credential Manager target and sealed recovery evidence are configured, retention receives institutional approval, all three Unity asset groups are cleared or excluded, and a real independent team member signs the second-review report. Formal contact collection, formal sessions and Unity release remain blocked. |
+
+### 2026-08-04 Project Status And Top-Level Design Summary
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The project has one navigable summary that separates repository reality from target design, consolidates confirmed product and research decisions, labels pending proposals, and identifies the exact gates before team task-package decomposition. |
+| Actual Result | Added `agent/governance/boards/2026-08-04_项目情况与顶层设计汇总.md`, linked it from M00, added U41 to the Grill record, and updated the blackboard. The summary covers product boundaries, four modules, runtime timeline, two contribution objects, three-stage evidence, data processing, result-to-claim limits, publication narrative, output portfolio, responsibility directions, current gaps, and pending decisions. Full Python regression passed: `42 passed in 8.21s`. |
+| Deviation / Surprise | The historical stage board still says delivery and archival work, while the confirmed research direction is in top-level redesign. The summary records this divergence but does not silently rewrite the historical board. One draft line said four complete orders and was corrected to 24 before staging. |
+| Verification Command | Targeted `rg` checks for all required sections and status labels; restricted-term scan; Markdown relative-link check; `git diff --check`; full Python test command; final staged-file and Git status checks. |
+| Residual Risk | The causal claim scope, abstract-pacer baseline, primary process endpoint, noninferiority margin, revised model hierarchy, sample size, policy specification, target architecture, and implementation task packages remain unconfirmed. |
+
+### 2026-08-04 Reframe Core Paper Contributions
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record identifies scene-native breathing guidance and explainable closed-loop sequence orchestration as the two contribution objects, demotes causal sequence evaluation and adaptive optimization to an evidence chain, and preserves the fixed-pair identification boundary. |
+| Actual Result | Added U40 and updated the blackboard. Defined a reusable five-stage scene-native mapping grammar, minimum formal and replay requirements for the orchestration method, the three-stage evidence chain, superseded title language, and the next gate on the primary empirical claim and minimum comparison baseline. |
+| Deviation / Surprise | The prior framing treated rigorous evaluation and adaptive functionality as contributions in themselves. U40 explicitly corrects that category error without discarding the already confirmed balanced exploration, process analysis, policy learning, or independent confirmation design. |
+| Verification Command | Targeted `rg` checks for U40, both contribution objects, the mapping grammar, orchestration requirements, evidence-chain roles, fixed-pair and comparison boundaries, the superseded title, and the new next gate; restricted-term scan over changed lines; `git diff --check`; final `git status --short`. |
+| Residual Risk | The unique empirical claim for scene-native guidance, its minimum comparison baseline, formal policy representation, low-degree-of-freedom contrast, revised hierarchy, sample size, and study outcomes remain unconfirmed. |
+
+### 2026-08-04 Confirm Uniform 120-Second Module Timeline
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record fixes an identical 120-second timeline for all modules, separates demonstration, primary closed-loop analysis, and locked transition phases, and prevents scripted completion from contaminating the real-data window. |
+| Actual Result | Added U39 and updated the blackboard. Fixed 0-15 seconds as native demonstration, 15-105 seconds as the unique primary real-device closed-loop window, and 105-120 seconds as a locked-state automatic transition. Recorded an eight-minute four-module experience, continued raw logging outside the primary window, fallback marking, scale timing, and minimum cross-product stage fields. |
+| Deviation / Surprise | None. Different protocols will produce different numbers of completed breath cycles inside the same 90-second window; this remains a measurable protocol feature rather than a reason to vary module duration. |
+| Verification Command | Targeted `rg` checks for U39, confirmed status, all phase boundaries, 480-second total, unique analysis window, locked-state semantics, no forced complete recovery, fallback marking, scale timing, and the next gate; restricted-term scan over changed lines; `git diff --check`; final `git status --short`. |
+| Residual Risk | Native animation details, fallback weather behavior, final data-contract names, data-quality thresholds, the low-degree-of-freedom theory contrast, revised test hierarchy, and revised sample size remain unconfirmed. |
+
+### 2026-08-04 Remove Common Participant Breathing Circle
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record removes the common participant-facing breathing circle and assigns guidance, feedback, onboarding, and degraded behavior to each weather's native visual mechanism while preserving TD as an operator-only monitor. |
+| Actual Result | Added U38 and updated the blackboard. Removed the common circle, dual-circle HUD, and TD Spout breathing texture from the target participant experience; assigned native visual carriers to all four modules; required native onboarding and degraded cues; and marked the current Unity circle dependency as a superseded implementation baseline. |
+| Deviation / Surprise | The user input used “溢出” in a context where “移除” is the coherent operation. The record states this interpretation explicitly. No formal Unity design or implementation file was changed during the ongoing mainline interview. |
+| Verification Command | Targeted `rg` checks for U38, confirmed status, removed circle variants, all four native carriers, onboarding, degraded behavior, TD operator boundary, superseded Unity baseline, and the next gate; restricted-term scan over changed lines; `git diff --check`; final `git status --short`. |
+| Residual Risk | Exact native phase animations, module timeline, degraded weather-progress policy, pretest thresholds, theory contrasts, revised test hierarchy, and revised sample size remain unconfirmed. |
+
+### 2026-08-04 Confirm Weather Breathing Module Baseline
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record promotes the four weather-breathing mappings from pending candidates to the confirmed research-design baseline without falsely marking untested runtime parameters as validated. |
+| Actual Result | Added U37 and updated the blackboard. Confirmed Storm with 3-3-3-3 box breathing, Heat with 4-6 extended exhalation, Snow with 5-5 equal slow breathing, and Fade with cyclic sighing; retained passive participation, fixed-pair interpretation limits, pretest gates, versioned parameter changes, and the unresolved 90-120-second timeline. |
+| Deviation / Surprise | None. The user's confirmation resolves the mapping decision, while comfort, device detectability, exact participant-facing instructions, and the unique runtime duration remain separate evidence gates. |
+| Verification Command | Targeted `rg` checks for U37, confirmed status, all four mappings, superseded legacy designs, passive participation, fixed-pair interpretation limits, pretest gates, and the next decision; restricted-term scan over changed lines; `git diff --check`; final `git status --short`. |
+| Residual Risk | The native scene cue versus common breathing-circle decision, exact 120-second timeline, pretest thresholds, low-degree-of-freedom theory contrast, revised test hierarchy, and revised sample size remain unconfirmed. |
+
+### 2026-08-04 Reconsider Weather Breathing Protocols From Evidence
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record first reflects the existing weather recovery mechanisms, then distinguishes supported breathing-protocol structures from project-specific weather mappings, proposes four measurable passive modules, and keeps the proposal unconfirmed. |
+| Actual Result | Added U36 after reading the Unity visual handoff, scene design, seven-day plan, Unity framework, quality gates, and current weather controller evidence. Recorded a pending baseline of Storm with 3-3-3-3 box breathing, Heat with 4-6 extended exhalation, Snow with 5-5 equal slow breathing, and Fade with cyclic sighing. Updated the blackboard with evidence boundaries, visual-process integration, and comfort and device-detectability gates. |
+| Deviation / Surprise | The evidence is strongest for slow pacing near six breaths per minute, while the independent advantage of longer exhalation remains inconsistent. Cyclic-sighing evidence uses five minutes per day for 28 days, so it does not validate a 120-second module. The weather pairings are design hypotheses rather than established natural correspondences. |
+| Verification Command | Read-only project inspection; online primary-study and review checks; targeted `rg` checks for U36, all four weather mechanisms, all four candidate protocols, pending status, dose limits, and role boundaries; restricted-term scan over changed lines; URL reachability spot-check; `git diff --check`; final `git status --short`. |
+| Residual Risk | Exact protocol parameters, the native in-scene guidance design, 120-second internal timeline, comfort rules, process-feature thresholds, theory contrasts, and revised sample size remain unconfirmed. |
+
+### 2026-08-04 Reduce Confirmatory Sequence Complexity
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record keeps balanced coverage of all 24 sequences and the 14-degree-of-freedom structured model for secondary analysis and policy learning, while moving the unique confirmatory question to a small set of theory-defined contrasts and invalidating the prior 480-valid-session figure as the current requirement. |
+| Actual Result | Added U35 and updated the blackboard. The decision preserves all sequence and device data, demotes the 14-degree-of-freedom model from the primary test, and requires sample size to be recalculated after theory contrasts are frozen. Current module evidence was checked and found unresolved standardization and passive-experience conflicts. |
+| Deviation / Surprise | The current weather design pairs Storm with 4-2-6 and Heat with 1:2 long exhalation, but Snow still includes micro-action and Fade uses autonomous breathing. The Unity scene document also retains the superseded TD-Spout dependency. Theory contrasts cannot be defensibly defined until these module contracts are redesigned. |
+| Verification Command | Read-only inspection of `agent/design/weather/四种天气设计.md` and `agent/modules/unity/场景设计.md`; targeted `rg` checks for U35, preserved 24-sequence coverage, demoted 14-degree-of-freedom model, prior sample-size boundary, module conflicts, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The four breathing protocols, module theory dimensions, passive presentation rules, low-degree-of-freedom contrasts, revised test hierarchy, and revised sample size remain unconfirmed. The current Unity architecture document remains stale. |
+
+### 2026-08-04 Confirm Effect Grid And Recruitment Allowance
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record fixes incremental `f2` scenarios at 0.02, 0.05, and 0.10, uses 0.05 for primary planning, reserves 15% for unusable sessions, and reports a reproducible preliminary sample-size approximation without presenting it as the final Monte Carlo result. |
+| Actual Result | Added U34 and updated the blackboard. A noncentral-F calculation for 14 added sequence degrees of freedom, 15 full-model predictors, alpha 0.05, and 90% power produced valid/recruitment targets of 1176/1384, 480/565, and 264/311 for `f2` 0.02, 0.05, and 0.10 respectively. The main planning scenario exposes a large-scale recruitment requirement. |
+| Deviation / Surprise | The confirmed 14-degree-of-freedom model requires about 480 valid sessions even at `f2=0.05`. This is far beyond the legacy 8-12 participant plan and creates a hard choice between recruitment capacity and confirmatory-model complexity. |
+| Verification Command | `py -3.14 -c` noncentral-F power calculation using `scipy.stats.f` and `scipy.stats.ncf`; targeted `rg` checks for U34, the `f2` formula and scenarios, 15% allowance, all sample targets, approximation boundary, and the updated feasibility gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The approximation assumes independent homoscedastic linear-model sessions and does not replace the planned Monte Carlo simulation. Recruitment capacity, final model complexity, nuisance ranges, full-rank implementation, and final sample size remain unconfirmed. |
+
+### 2026-08-04 Confirm Simulation-Based Power Standard
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record sets 90% target power for the global test, requires Monte Carlo simulation over the balanced 24-sequence full-rank design, limits pilot use to nuisance parameters, rounds valid samples to a multiple of 24, and distinguishes valid from recruited sample size. |
+| Actual Result | Added U33 and updated the blackboard. A read-only rank calculation over all 24 permutations found 9 position degrees of freedom, 5 transition degrees of freedom incremental to position, and 14 total structured-sequence degrees of freedom for `MPT` versus `M0`; the record requires final simulation to use verified full-rank coding. |
+| Deviation / Surprise | The visible 16 position and 12 directed-transition indicators do not contribute 21 independent sequence terms after permutation constraints. The actual structured model adds 14 degrees of freedom, so heuristic parameter counting would misstate power requirements. |
+| Verification Command | `py -3.14 -c` rank calculation over all 24 permutations; targeted `rg` checks for U33, 90% power, Monte Carlo simulation, pilot restrictions, multiples of 24, unusable-session allowance, and 9/5/14 degrees of freedom; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Full-rank contrast implementation, minimum-effect scale and grid, nuisance-parameter ranges, unusable-session allowance, simulation code, random seeds, convergence criteria, and final sample size remain unconfirmed. |
+
+### 2026-08-04 Confirm Hierarchical Sequence Testing
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record defines one global primary comparison of the baseline-adjusted position-plus-transition model against the baseline-only model, gates family and coefficient interpretation, applies Holm correction, and preserves 24-sequence estimates outside the primary significance family. |
+| Actual Result | Added U32, defined `M0`, `MP`, and `MPT`, froze the global `MPT` versus `M0` test at two-sided alpha 0.05, gated Holm-adjusted position and transition family tests and coefficient interpretation, and required non-gated results to remain exploratory. Updated the blackboard and moved the next gate to power-design standards. |
+| Deviation / Surprise | Multiplicity and interpretation hierarchy are now fixed, but model-matrix rank, estimator behavior, and power assumptions still cannot be evaluated until the exact feature coding and simulation inputs are defined. |
+| Verification Command | Targeted `rg` checks for U32, `M0`/`MP`/`MPT`, the unique global test, alpha 0.05, Holm-gated family and coefficient tests, 24-sequence status, exploration boundary, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Full-rank feature coding, estimator choice, residual assumptions, robust inference, minimum effect, baseline correlation, target power, attrition allowance, and sample size remain unconfirmed. |
+
+### 2026-08-04 Confirm Structured Sequence Analysis Hierarchy
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record makes module-position and directed-transition effects the primary structured analysis, retains adjusted estimates and ranking stability for all 24 complete sequences as secondary analysis, and reserves adaptive-policy value for independent confirmation. |
+| Actual Result | Added U31, froze the four-level evidence hierarchy, prohibited naive winner claims from raw sequence means, retained all 24 sequence reports with uncertainty, and moved the next gate to one joint primary hypothesis and coefficient-testing hierarchy. Updated the blackboard accordingly. |
+| Deviation / Surprise | Sequence representation is now prioritized, but the position and transition terms still form a correlated multi-parameter family. A joint hypothesis and multiplicity plan are required before power analysis. |
+| Verification Command | Targeted `rg` checks for U31, primary position and transition analysis, all 24 adjusted sequence estimates, ranking stability, strategy learning, independent confirmation, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Feature coding, model rank, joint hypothesis, coefficient hierarchy, multiplicity method, regularization, ranking stability method, power inputs, and sample size remain unconfirmed. |
+
+### 2026-08-04 Confirm Primary Sequence Estimand
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record defines `delta_NA = NA_pre - NA_post` with positive values indicating reduction, uses baseline-adjusted post-session negative affect for primary sequence inference, and distinguishes randomized order effects from unadjusted whole-experience change. |
+| Actual Result | Added U30, froze the score direction and `NA_post ~ NA_pre + prespecified randomized-sequence features` model, assigned raw change to description and sensitivity analysis, and recorded the causal-interpretation boundary. Updated the blackboard and moved the next gate to sequence representation. |
+| Deviation / Surprise | The primary affect outcome is now operationally defined, but the sequence term is still a placeholder. Sample size cannot be calculated until the 24-level sequence, position, and transition terms are prioritized. |
+| Verification Command | Targeted `rg` checks for U30, the score equation and direction, baseline-adjusted model, descriptive-versus-primary roles, causal boundary, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Sequence representation, covariate set, model family, missing-item rule, residual assumptions, multiplicity control, power inputs, and sample size remain unconfirmed. |
+
+### 2026-08-04 Adopt Chinese 20-Item PANAS
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record adopts a validated Chinese 20-item PANAS with an immediate-state timeframe, assigns the 10-item negative-affect subscale as the unique primary scale outcome, and preserves source, version, scoring, and permission checks as implementation gates. |
+| Actual Result | Added U29, froze identical pre/post “right now” administration, kept positive affect and SAM dimensions secondary, excluded device data from PANAS scoring, and moved the next decision gate to the primary estimand and score direction. Updated the blackboard accordingly. |
+| Deviation / Surprise | The methodological instrument choice is confirmed, but the exact Chinese item source and permission have not yet been verified. The record therefore distinguishes adoption from implementation readiness. |
+| Verification Command | Targeted `rg` checks for U29, 20 items, immediate-state timeframe, 10-item negative-affect primary status, secondary outcomes, implementation gates, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Exact Chinese wording, source and permission, score range, missing-item rule, change direction, primary estimand, and sensitivity assumptions remain unconfirmed. |
+
+### 2026-08-04 Confirm Primary Scale Construct
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record identifies state negative-affect change as the unique primary scale construct, keeps SAM dimensions and positive affect secondary, and leaves the exact standardized instrument and score formula for the next decision gate. |
+| Actual Result | Added U28, separated the primary construct from SAM valence/arousal/control dimensions and device-process evidence, and updated the blackboard so instrument version, items, response timeframe, direction, and change-score formula remain explicitly unfrozen. |
+| Deviation / Surprise | Existing project gates mention SAM, but the redesigned main outcome is narrower and requires a direct state negative-affect score. SAM remains potentially useful as a secondary dimensional measure. |
+| Verification Command | Targeted `rg` checks for U28, the unique primary construct, secondary SAM dimensions, unfrozen instrument details, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | Instrument choice, Chinese version provenance and permission, item wording, administration timeframe, score direction, change-score formula, and sensitivity assumptions remain unconfirmed. |
+
+### 2026-08-04 Confirm Separate Outcome And Process Models
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record assigns pre/post scale change to session-level sequence analysis and real-device records to segment-level composite-module process analysis, connects them without creating a synthetic total score, and does not claim an independently identified breathing-method effect. |
+| Actual Result | Added U27, froze the outcome/process model boundary, required repeated-measures controls for segment analysis, retained device features as adaptive-policy inputs and explanatory evidence, and moved the next gate to selecting the exact standardized scale score. Updated the blackboard accordingly. |
+| Deviation / Surprise | Existing project material mentions SAM, but the redesigned study has not established that SAM provides the intended unique short-term negative-emotion score. The instrument remains deliberately unfrozen. |
+| Verification Command | Targeted `rg` checks for U27, both model levels, the no-synthetic-score rule, fixed-pair identification boundary, and the updated next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The exact scale, primary subscale, score direction, process feature family, missing-data rules, sample size, and statistical models remain unconfirmed. |
+
+### 2026-08-04 Confirm Three-Stage Sequence Evidence Chain
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record distinguishes balanced random exploration, strategy learning, and independent confirmation; the first stage assigns all 24 complete sequences independently of real-time device data, while later adaptive selection remains separately testable. |
+| Actual Result | Added U26, recorded pre-scale stratification with `1/24` sequence allocation, limited first-stage real-time device use to data capture and within-scene feedback, required policy freezing before independent confirmation, and retained balanced random assignment as the minimum comparison benchmark. Updated the blackboard to make the revised phase boundary current. |
+| Deviation / Surprise | U24-U25 previously described state-constrained micro-random selection during exploration. U26 supersedes that first-stage mechanism but preserves adaptive selection for the independent confirmation stage. |
+| Verification Command | Targeted `rg` checks for U26, `1/24`, all three phases, the supersession statement, policy freezing, and the next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The unique primary outcome, sample size, exact pre-scale strata, stage-three comparison conditions, policy form, and formal analysis model remain unconfirmed. |
+
+### 2026-08-04 Confirm Micro-Randomized Adaptive Sequence Core
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record marks adaptive sequence generation and constrained random exploration as confirmed, explains why naive realized-sequence averages are biased, and leaves only the primary outcome definition as the next mainline gate. |
+| Actual Result | Added U24-U25, froze the main paper direction as causal evaluation and explainable adaptive optimization of weather-breathing sequences, recorded nonzero random choice probabilities and required decision logs, and defined discovery, policy learning, and independent confirmation phases. Updated the blackboard to identify the primary outcome as the next gate. |
+| Deviation / Surprise | The user wants both personalized real-time sequencing and estimates for all 24 complete sequences. Supporting both requires constrained exploration and propensity logging; a deterministic policy alone cannot identify all sequence effects. |
+| Verification Command | Targeted `rg` checks for U24-U25, confirmed status, nonzero random probabilities, three research phases, working title, and next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The primary outcome, module pairings, randomization probabilities, quality constraints, sample simulation, and final comparison arms remain unconfirmed. |
+
+### 2026-08-04 Confirm Ideal Output Portfolio
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The Grill record preserves all discussion after U16 and marks the user-confirmed ideal output portfolio as the current baseline without treating external acceptance or grants as guaranteed. |
+| Actual Result | Appended U17-U23, covering fixed weather-breathing pairs, 24 sequence clarification, publication-quality assessment, three low-increment paper routes, real-device-only formal data, the distinction between ideal redesign and current evidence, and the confirmed output portfolio. Updated the blackboard so the next gate is selecting one primary paper contribution. |
+| Deviation / Surprise | The later fixed-pair sequence direction supersedes the earlier independent 4×4 scene-breathing proposal. The main paper contribution remains unresolved among live-versus-replay, fixed sequence modeling, and explainable adaptive sequencing. |
+| Verification Command | Targeted `rg` checks for U17-U23, confirmed output categories, superseded 4×4 status, real-device boundary, and the next gate; restricted-term scan; `git diff --check`; final `git status --short`. |
+| Residual Risk | The portfolio is a target baseline. Journal acceptance, showcase acceptance, software registration completion, and patent grant depend on external review and cannot be guaranteed. |
+
+### 2026-08-04 Grill Interview Context Preservation
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The project contains a dated, navigable record of the continuous Grill discussion, clearly separating original user inputs, confirmed decisions, superseded ideas, evidence-based rationale, pending recommendations, open questions, and the next interview gate. |
+| Actual Result | Added `agent/governance/boards/2026-08-04_Grill访谈原始总结与决策演化.md`; linked it from the M00 README; updated the project-local blackboard. The record preserves the evolution from module boundaries through Unity/TD separation, passive four-scene flow, overall outcome evidence, and the proposed 4×4 scene-breathing match design. |
+| Deviation / Surprise | The current module map still describes TD Spout as a Unity input, while the later confirmed target makes Unity independent of TD. This discrepancy is recorded for a future architecture update after the research mainline is confirmed, not changed in this preservation task. |
+| Verification Command | Targeted `rg` checks for required decisions, decision-state labels, restricted terms, and the M00 navigation link; Markdown relative-link check; `git diff --check`; final `git status --short`. |
+| Residual Risk | Assistant replies before the latest turn are preserved as decision summaries rather than a byte-for-byte transcript. The proposed 4×4 design, scene-level verbal ratings, comparison condition, and four standardized breathing conditions remain unconfirmed. |
+
+### 2026-08-04 Project Module Reorganization
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The D-drive repository has one authoritative module map, stable entry pages for each top-level module group, no active references to the old C-drive path or user-deleted evidence files, and unchanged Python behavior. |
+| Actual Result | Added `PROJECT_MODULES.md` with M00-M10 responsibilities, interfaces, dependencies, placement rules, and validation entry points. Added entry pages for project management, experience design, verification evidence, and delivery. Updated root, development, runbook, board, and workflow navigation. Python tests passed: 42 passed. |
+| Deviation / Surprise | The worktree also contained a user modification to `CLAUDE.md`, an untracked `SRP/` asset directory, and a root docx duplicate. The duplicate docx hash matches the copy under project management; all of these pre-existing changes were preserved and excluded from this task. |
+| Verification Command | `py -3.14 -m pytest 'agent/modules/acquisition/tests' 'agent/modules/signal-processing/tests' 'agent/modules/communication/tests' 'agent/modules/tests' -q`; targeted `rg` scans for old paths, deleted entries, and restricted terms; relative Markdown link check; `git diff --check`. |
+| Residual Risk | TD, Spout, and Unity Play Mode were not launched in this documentation-only task. User-deleted verification materials remain absent, so module M08 records structure and evidence requirements but not a completed full-system verification. |
+
+### 2026-07-01 Project File and Document Cleanup
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Outdated entry docs are updated, ignored temporary artifacts are removed, authoritative protocol references point to `UDP字段冻结_v1.2.md`, and Python tests still pass. |
+| Actual Result | Updated AGENTS, CLAUDE, README, current board, development plan, UDP docs, TD bridge comment, cleanup record, data README, and blackboard. Removed caches, old zip backups, mock CSV, duplicate reference zip, and garbled Unity/MCP runtime mirror. Python 3.14.4 tests passed: 42 passed. |
+| Deviation / Surprise | The previous `.hermes-venv` interpreter no longer exists; `py -3.14` is the current valid Python entry. |
+| Verification Command | `py -3.14 -m pytest 'agent/modules/acquisition/tests' 'agent/modules/signal-processing/tests' 'agent/modules/communication/tests' 'agent/modules/tests' -q`; `rg` consistency scans; `git diff --check`; targeted `Test-Path` checks for removed artifacts. |
+| Residual Risk | Unity generated cache directories remain intentionally preserved to avoid slow reimport; stage 6/7 evidence materials still need to be populated under `agent/delivery/`. |
+
+### 2026-06-24 Enable SAPIEN-Lite Workflow
+
+| Field | Notes |
+|---|---|
+| Expected Observation | `AGENTS.md` contains an appended `Codex Workflow` section; `agent/work/` contains blackboard, verification log, and evaluation harness templates. |
+| Actual Result | All three workflow files exist; `AGENTS.md` contains `Codex Workflow`; templates contain the required blackboard, verification, and 30-task harness sections. |
+| Deviation / Surprise | `git diff --stat` only showed tracked files before staging; untracked `agent/work/` files are expected to appear in `git status`. |
+| Verification Command | `Test-Path agent/work/codex-blackboard.md`; `Test-Path agent/work/codex-verification-log.md`; `Test-Path agent/work/codex-evaluation-harness.md`; `rg -n "Codex Workflow|Current Task Goal|Expected Observation|30-Task Log|High-Risk Action Intercepted" AGENTS.md work` |
+| Residual Risk | Workflow quality depends on future tasks consistently updating the blackboard and verification log. |
+
+### 2026-08-05 Import And Reassess IJHCI Planning Package
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The imported package is preserved as a candidate planning baseline, its original source is hash-auditable, confirmed user decisions are separated from package-generated freezes, and the next mainline decision is explicit. |
+| Actual Result | Copied 137 source files into `agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0` without deleting Downloads. Added import provenance, original SHA-256 inventory, a synchronous reading ledger, and a clean reassessment summary. Corrected the Unity build eligibility values and a routing-validator boundary phrase. |
+| Verification Command | Source/destination relative-path and SHA-256 comparison; `py -3.14 2026-08-05_SRP_IJHCI_power_sensitivity.py --output-dir C:\tmp\srp-power-recheck --repetitions 3000`; `py -3.14 tools\validate_ethics_pack.py`; `py -3.14 tools\validate_routing_pack.py`; restricted Chinese/English terminology scan; project pytest and Git checks at task close. |
+| Deviation / Surprise | U41 proves the imported claim/comparator/power freezes were not user-confirmed. The fourth-step validator cannot currently import `jsonschema`, and the package does not declare that dependency. |
+| Residual Risk | The recommended split-paper mainline, abstract comparator, gated outcomes, crossover design, SCCI role, non-inferiority margin, and 104-person recruitment plan remain proposals until the user confirms them and later external gates pass. |
+
+### 2026-08-05 Merge Two Contributions Into One IJHCI Paper
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The reassessment records one IJHCI paper with two explicitly ranked contributions, supersedes the split-paper recommendation, and exposes one new confirmation gate before task decomposition. |
+| Actual Result | Recorded the user's one-paper decision. Recommended scene-native breathing prompts as the primary confirmatory contribution and explainable sequence orchestration as a secondary explanatory contribution based on balanced order, position, predecessor, transition, and interaction-state-estimation analyses. |
+| Verification Command | Targeted `git diff`; restricted-term scan over the two reassessment documents and project blackboard; `git diff --check`; final `git status --short`. |
+| Deviation / Surprise | The user's message used `IJHCL`; project history and package naming consistently use `IJHCI`, so the record retains `IJHCI` pending any explicit venue change. |
+| Residual Risk | The primary-secondary ranking, comparator, outcome gates, crossover design, and sample size remain unconfirmed. The single-paper design cannot claim a globally best sequence or a learned policy without stronger independent evidence. |
+
+### 2026-08-05 Confirm IJHCI Contribution Hierarchy
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The recommended contribution hierarchy is promoted to a user-confirmed baseline, the closed gate is retained audibly, and exactly one next decision is exposed. |
+| Actual Result | Confirmed scene-native breathing prompts as the primary contribution and explainable sequence orchestration as the secondary contribution in one IJHCI paper. Advanced the next gate to whether `abstract_pacer` remains the required comparator. |
+| Verification Command | Targeted confirmation-state search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Comparator, outcome gates, crossover design, and sample size remain unconfirmed. Team task decomposition remains intentionally blocked by the research-design gate. |
+
+### 2026-08-05 Confirm Abstract Pacer Weather Behavior
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The comparator keeps an equivalent closed-loop weather response while removing weather-based respiratory-phase encoding, so the main comparison changes only the guidance carrier. |
+| Actual Result | Confirmed `abstract_pacer` as the comparator. The abstract circle carries target rhythm and real-time phase feedback; weather keeps matched macro response but cannot encode respiratory phase. Other experience and data factors remain matched. |
+| Verification Command | Targeted comparator-boundary search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | The two-visit crossover, outcome gates, and sample size remain unconfirmed. Macro-response equivalence still needs a measurable implementation contract before development. |
+
+### 2026-08-05 Reject Repeat Participation And Crossover
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The crossover proposal is explicitly rejected because the first exposure can alter the second-visit baseline; paired-power numbers are invalidated and not silently reused. |
+| Actual Result | Froze a one-formal-session-per-participant constraint. Marked the two-visit crossover, 88 effective pairs, 104 participants, and 208 visits as inapplicable. Proposed a 1:1 parallel-group design with 24-order balance inside each condition as the next gate. |
+| Verification Command | Targeted stale-design search; restricted-term scan; `git diff --check`; project Python tests; final `git status --short`. |
+| Deviation / Surprise | The imported power script only supports the rejected paired design, so it cannot be reused to size the proposed parallel groups. |
+| Residual Risk | Parallel-group allocation, adjusted outcome model, minimum effect of interest, order-balance granularity, attrition reserve, and total sample size remain unconfirmed. |
+
+### 2026-08-05 Audit Stage-Specific Weather Order Requirements
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Original confirmed stage rules, later package rewrites, and current one-paper constraints are separated before selecting an allocation design. |
+| Actual Result | Recovered the confirmed three-stage chain: 24-order balanced exploration independent of live state; offline strategy learning and freeze without new allocation; independent new-participant comparison of frozen policy against the 24-order balanced baseline. Identified the later four-sequence Williams plan as dependent on the now-rejected split-paper premise. |
+| Verification Command | Package-wide targeted search; contextual reads of the original Grill record, top-level design summary, construct freeze, lifecycle overview, and sequence research files; restricted-term scan; `git diff --check`; project Python tests. |
+| Deviation / Surprise | The package contains two incompatible order plans because it preserves both the original three-stage contribution design and a later feasibility rewrite that removed sequence orchestration from the first paper. |
+| Residual Risk | The recommended mapping of the abstract comparator into stage one and the frozen-policy comparison into stage three is not yet user-confirmed. Sample-size multiples are allocation constraints, not powered sample-size results. |
+
+### 2026-08-05 Confirm Three-Stage One-Paper Design
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The stage mapping is promoted from recommendation to user-confirmed authority without turning allocation multiples into sample-size claims. |
+| Actual Result | Confirmed stage one as the abstract-pacer comparison plus balanced 24-order exploration, stage two as offline strategy learning and freeze from scene-native data, and stage three as an independent new-participant comparison of the frozen scene-native policy against the scene-native balanced-random baseline. |
+| Verification Command | Targeted decision-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | Initial approval checks were interrupted twice by the approval-service connection before a later authorized read-only status check succeeded. |
+| Residual Risk | Stage-one outcome gates, effect thresholds, measurement instruments, power assumptions, and all stage-specific sample sizes remain unconfirmed. |
+
+### 2026-08-05 Confirm Ordered Stage-One Outcome Gates
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The ordered two-gate claim becomes user-confirmed while candidate cycle tolerances, non-inferiority margin, semantic-congruence instrument, paired power, and obsolete sample size remain unfrozen. |
+| Actual Result | Confirmed Gate 1 as non-inferior respiratory execution quality and Gate 2 as superior scene-prompt semantic congruence, with Gate 2 confirmatory only after Gate 1 passes. |
+| Verification Command | Targeted gate-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | Existing Gate 1 power tables assume the rejected paired design and cannot size the confirmed parallel stage-one design. |
+| Residual Risk | The primary device outcome definition, module-specific cycle tolerances, non-inferiority margin, Gate 2 instrument, power assumptions, and sample size remain unconfirmed. |
+
+### 2026-08-05 Confirm Flexible Module Duration Ranges
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The 120-second module is superseded by an evidence-informed target with narrow planning ranges, while formal exposure remains fixed within a study stage. |
+| Actual Result | Confirmed targets of 25 seconds demo, 150 seconds closed loop, and 25 seconds transition, with allowed design ranges of 24-30, 140-160, and 20-30 seconds. Formal builds must freeze exact values and match both comparator conditions. |
+| Verification Command | Targeted active-duration search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | The former 120-second baseline appeared in multiple current blackboard bullets and required explicit supersession rather than an appended note alone. |
+| Residual Risk | The final fixed values still depend on technical pretesting. Stage-level frequency-domain HRV interpretation may require a longer window and is not justified by the duration decision alone. |
+
+### 2026-08-06 Confirm Protocol Fidelity As Gate-One Outcome
+
+| Field | Notes |
+|---|---|
+| Expected Observation | `protocol_fidelity` is promoted to the sole primary device-derived Gate 1 outcome while thresholds, missingness, aggregation, margin, and sample size remain explicitly unfrozen. |
+| Actual Result | Confirmed the proportion of evaluable cycles meeting preregistered module-specific structure and timing tolerance within the frozen closed-loop window. Validly recorded nonconforming cycles remain failures rather than exclusions. |
+| Verification Command | Targeted decision-state and stale-status search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | Historical blackboard entries still described the outcome as unconfirmed and required explicit temporal qualification. |
+| Residual Risk | Module-specific tolerance, technical non-evaluability rules, four-module aggregation, non-inferiority margin, parallel-group power, and stage-one sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Equal-Weight Four-Module Aggregation
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Each fixed weather-breathing module contributes equally to the participant-level Gate 1 outcome, independent of its number of cycles. |
+| Actual Result | Confirmed per-module `protocol_fidelity` followed by an equal-weight mean, with each module contributing 25%. Direct pooling of all cycles is prohibited; module-specific results are prespecified secondary analyses. |
+| Verification Command | Targeted aggregation-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Handling of a non-evaluable module, analysis sets, missing-data sensitivity, module-specific tolerance, non-inferiority margin, parallel-group power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Complete Four-Module Outcome Requirement
+
+| Field | Notes |
+|---|---|
+| Expected Observation | A participant-level equal-weight Gate 1 result is never reconstructed from a different subset of modules when one module is non-evaluable. |
+| Actual Result | Confirmed that any non-evaluable module makes the participant-level four-module Gate 1 result missing. Remaining modules cannot be re-averaged as a substitute; analysis-set and sensitivity handling must be preregistered. |
+| Verification Command | Targeted completeness-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Technical non-evaluability criteria, missing-data models, analysis-set algorithms, module-specific tolerance, non-inferiority margin, power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Blinded Technical Non-Evaluability Boundary
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Non-evaluability is limited to preregistered technical failures and cannot absorb validly recorded execution failures or depend on condition and later outcomes. |
+| Actual Result | Confirmed technical-only reasons, blinded determination, frozen rules and versions, and auditable reason codes. Updated the active offline formula from pooled cycles to the confirmed equal-weight complete-four-module outcome. |
+| Verification Command | Targeted non-evaluability and formula search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | The active offline design still used the older pooled-cycle formula and required direct reconciliation with the confirmed aggregation decision. |
+| Residual Risk | Signal-coverage threshold, module-specific minimum analyzable cycles, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Dual Module-Evaluability Gates
+
+| Field | Notes |
+|---|---|
+| Expected Observation | A module is evaluable only when both synchronized valid-signal coverage and module-specific analyzable-cycle count meet thresholds frozen before formal data collection. |
+| Actual Result | Confirmed the two-gate structure and its propagation to the complete-four-module outcome. Numeric thresholds remain technical-pretest outputs and cannot be relaxed after formal data are available. |
+| Verification Command | Targeted evaluability-gate search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Numeric coverage and cycle-count thresholds, cycle-conformance tolerances, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Confirm Structure-First Module-Specific Cycle Rules
+
+| Field | Notes |
+|---|---|
+| Expected Observation | A recorded cycle must first satisfy its module's required event structure and then its module-specific timing tolerances; candidate global percentages remain pretest inputs only. |
+| Actual Result | Confirmed structure-first, module-specific cycle conformance. The 25% phase-error and 20% total-cycle-error values remain technical-pretest starting points rather than formal thresholds. |
+| Verification Command | Targeted cycle-rule search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | None. |
+| Residual Risk | Numeric structure and timing tolerances, event-detection validation, missing-data models, non-inferiority margin, power, and sample size remain unconfirmed. |
+
+### 2026-08-06 Select 7.5-Point Non-Inferiority Margin
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The delegated margin decision freezes one confirmatory absolute-difference threshold, preserves stricter sensitivity analysis, and prevents the historical 10-point candidate from being treated as current. |
+| Actual Result | Set `Delta_NI=0.075` for `scene_native - abstract_pacer`; Gate 1 requires the lower bound of a two-sided 95% confidence interval to exceed `-0.075`. Reserved 0.05 for strict sensitivity and 0.10 for descriptive worst-case display only. |
+| Verification Command | Targeted decision-state and supersession search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | Historical execution materials contain a frozen 10-point candidate. They remain preserved as historical evidence and are explicitly superseded in current control documents. |
+| Residual Risk | Analysis-set algorithms, conservative missing-data handling, numeric module thresholds, parallel-group power, and stage-one sample size remain unconfirmed. |
+
+### 2026-08-06 Require Concordant Gate-One Analysis Sets
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Gate 1 cannot pass by selecting the more favorable result from the full analysis set or the complete-four-module set. |
+| Actual Result | Froze the full analysis set as primary and the technically evaluable complete-four-module set as supportive. Both lower 95% confidence bounds must exceed `-0.075`; otherwise Gate 1 fails and Gate 2 becomes exploratory. Point-estimate disagreement triggers a prespecified bias audit without changing the success rule after results are known. |
+| Verification Command | Targeted analysis-set and gate-state search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | The complete-four-module set must not be mislabeled as a conventional per-protocol set because valid nonconforming cycles remain failures and only blinded technical evaluability defines inclusion. |
+| Residual Risk | The full-analysis-set imputation model, adverse-shift grid, tipping-point rule, numeric module thresholds, parallel-group power, and stage-one sample size remain unconfirmed. |
+
+### 2026-08-06 Close Internal Research And Statistical Gates
+
+| Field | Notes |
+|---|---|
+| Expected Observation | One implementation authority resolves the remaining internal research decisions without presenting external approvals or technical-pretest outputs as complete. |
+| Actual Result | Added a single-paper three-gate hierarchy, bounded multiple imputation with adverse-shift sensitivity, SCCI fitness gates, stage-one and stage-three planning anchors, a frozen interpretable stochastic policy, and technical-pretest output rules. Superseded crossover, PPS, 120-second, minus-0.10, and separate-paper semantics in active analysis documents. |
+| Verification Command | Run `08_sample_size_anchors.py`; targeted current-state and stale-conflict search; restricted-term scan; `git diff --check`; project Python tests; staged-scope audit; final `git status --short`. |
+| Deviation / Surprise | The active lifecycle, product, QC, model, sequence, and module-map entries contained mutually incompatible historical designs. A precedence document was required before safe task dispatch. |
+| Residual Risk | Engineering interfaces and task packages still need synchronization. External approvals, device availability, PANAS rights, and Level A/B/C evidence remain open and cannot be closed by repository edits. |
+
+### 2026-08-06 Freeze Target Modules And Dispatch Task Tree
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Four people can independently claim non-overlapping first-wave packages while every downstream package has explicit dependencies, 1-5 day scope, acceptance evidence, and external-gate semantics. |
+| Actual Result | Replaced the legacy Spout-centered module map with the Python-authoritative, Unity-independent, TD-read-only target. Added the v2 runtime contract, 37 task packages, a CSV registry, interface acceptance matrix, and dependency validator. Exactly F-01 through F-04 are READY. Updated README, AGENTS, product timing, lifecycle, and the current board. |
+| Verification Command | Task-registry validation with cycle detection; sample-anchor reconstruction; entry-link existence checks; target-state search; restricted-term scan; `git diff --check`; 42 project Python tests; staged-scope audit; final local/remote SHA check. |
+| Deviation / Surprise | The root README and current board still presented the 10Hz UDP/Spout prototype and stage-7 archival work as current. They required explicit migration-only labeling before dispatch. |
+| Residual Risk | The existing code and Unity/TD artifacts remain legacy implementation until claimed packages replace them. Hardware, approvals, PANAS rights, Level A/B/C, and formal research evidence remain external gates. |
+
+### 2026-08-06 Upgrade Task Packages With Bidirectional Coverage
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Every claimable task has an explicit domain title, four-stage process, objective acceptance criteria, required evidence, implementer skills, domestic Chinese learning links, and a downstream path into the complete project. |
+| Actual Result | Audited the original 37 packages from both directions and found missing lifecycle work plus oversized participant-run packages. Replaced the active registry with 48 fixed packages and three repeatable batch templates. Added deterministic handbook rendering, a learning-resource catalog, a reverse-coverage matrix, final-paper/delivery tasks, governance and preregistration tasks, locked-analysis tasks, Unity product consistency, and batch closeout semantics. |
+| Verification Command | Run `10_render_task_handbook.py`; run upgraded `07_validate_task_packages.py`; verify 51 entries, 48 fixed, three templates, four READY, no cycle, valid domain/process/learning/acceptance/evidence fields, and reachability to W-04; check learning URLs; run restricted-term scan, Markdown-link check, Python tests, `git diff --check`, staged-scope audit, and final local/remote SHA check. |
+| Deviation / Surprise | The original task tree covered engineering startup well but compressed Level C and formal stages into impossible single five-day packages and did not create tasks for locked analysis, the manuscript, submission, or project handoff. |
+| Residual Risk | Learning portals may change and must be rechecked at claim time. All hardware, approval, Level, preregistration, lock, analysis-result, submission, and external-recognition gates remain open until their real evidence exists. |
+
+### 2026-08-06 Generate Math-Modeling PDF Briefs
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Three self-contained A4 PDF briefs follow the math-modeling paper structure, faithfully summarize the current frozen design, and remain reproducible from project-owned sources. |
+| Actual Result | Generated project-goal and feasibility (5 pages, SHA-256 `A1BD6D17...F0DBE0C1`), fixed-task overview (8 pages, `72BAF1F0...FA2E24D8`), and project-design and experiment-flow (7 pages, `41876993...C8A43FB2`) PDFs. Added deterministic figure generation, a Windows PowerShell 5 compatible one-command build, artifact verification, and delivery navigation. The scoped Python regression completed with `42 passed in 2.59s`. |
+| Verification Command | Run `build_briefs.ps1`; run `verify_briefs.py`; render every page with Poppler and inspect contact sheets; scan sources and extracted text for restricted terminology; run project Python tests; run `git diff --check`; audit staged scope. |
+| Deviation / Surprise | The initial first brief left references alone on a sixth page, and two task-wave headings were weakly placed. Source pagination was adjusted before final verification. |
+| Residual Risk | The briefs describe the frozen target design, not completed hardware, Level, formal-stage, statistical-result, submission, or external-recognition evidence. |
+
+### 2026-08-06 Audit IJHCI Contribution Viability
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The contribution argument distinguishes journal scope from novelty, separates primary and secondary claims, compares the design with closest HCI work, and produces falsifiable submission gates. |
+| Actual Result | Rated the current design `CONDITIONAL_GO` at 73/100 design maturity. Preserved scene-native representation as the primary contribution, demoted sequence orchestration to a conditional secondary contribution, unified both through two interaction timescales, and identified seven non-compensating contribution gates. |
+| Verification Command | Cross-check against IJHCI official scope and relevant IJHCI/HCI papers; restricted-term scan; Markdown-link syntax check; `git diff --check`; scoped project Python regression; staged-scope audit; local and remote SHA comparison. |
+| Deviation / Surprise | The existing core claim was already stronger than a simple project-effect narrative, but the paper outline still referenced an obsolete two-day design and did not state the primary-secondary hierarchy. |
+| Residual Risk | Novelty remains conditional on actual cross-structure design grammar, comparator equivalence, SCCI fitness, Gate 1-3 results, transferable design principles, and independent policy evidence. |
+
+### 2026-08-06 Upgrade IJHCI Topic Across Project Authorities
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The upgrade strengthens one paper across theory, interaction design, comparator validity, measurement, statistics, adaptive orchestration, engineering, accessibility, openness and delivery without adding participant arms or breaking task ownership. |
+| Actual Result | Added an authoritative ten-dimension upgrade addendum and U1-U8 non-compensating gates; updated the paper structure, project-paper map, risk/evidence authorities and 2026-2028 plan; strengthened 16 existing task packages without increasing the 48 fixed tasks and three templates; preserved exactly F-01 through F-04 as READY. The feasibility gate now budgets up to 528 participant sessions, about 352 single-station hours, and uses February 2028 as the conservative submission baseline unless verified parallel capacity supports an earlier date. |
+| Verification Command | Task registry validator passed with 51 entries, 48 fixed tasks, three templates, four READY tasks and W-04 as terminal; 42 scoped Python tests passed; all 18 changed Markdown files resolved local links; terminology and superseded-design scans passed; `py_compile` and `git diff --check` passed. PDF verification passed at 5/8/7 pages with SHA-256 `85125E4F...31BDA`, `65B09F89...32373`, `C9F87242...E741`; all 20 pages kept extracted text within page bounds. Finish with staged-scope audit and local/remote SHA comparison. |
+| Deviation / Surprise | The project-paper integration table still contained the obsolete 8-minute experience, FAS/PPS terminology and separate future-paper framing for sequence orchestration; these were synchronized with the active baseline. |
+| Residual Risk | Documentation and task ACs do not close U1-U8, Level A/B/C or Gate 1-3. The 528-session capacity, additional measures, thresholds and public materials remain candidates until assigned tasks and external gates close them. |
+
+### 2026-08-06 Independent IJHCI Reviewer Attack And v1.1 Upgrade
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Independent attacks expose non-compensating paper, method and implementation weaknesses; every sustained objection maps to an executable authority, task acceptance condition or explicit downgrade rule. |
+| Actual Result | Three isolated read-only model reviewer roles converged on `REJECT_AND_RESUBMIT_DESIGN`. Added the v1.1 adjudication and JSON authority; demoted SCCI to manipulation check; made Gate 2 joint; changed PF to expected opportunities; froze participant-grouped OPE/ESS/support; required the same Stage 3 Unity build; fixed questionnaire timing, randomization custody, repeat-participation deduplication and 484-616 station-hour capacity; upgraded control, experiment, product, runtime, analysis, task, paper and PDF files. The exercise is explicitly not external human peer review. |
+| Verification Command | `py -3.14 -m py_compile` on five changed Python authorities; task validator; protocol v1.1 validator; `py -3.14 -m pytest ... -q`; PDF one-command build and `verify_briefs.py`; 21-page visual rendering; PDF glyph-bounds check; restricted-term scan; changed-Markdown local-link check; stale-authority scan; `git diff --check`; staged-scope and local/remote SHA checks. |
+| Verified Evidence | Task registry `PASS` with 51 entries, 48 fixed, three templates, F-01 through F-04 `READY` and W-04 terminal. Protocol firewall `PASS`. Python regression `42 passed in 3.09s`. PDF verification `PASS` at 6/8/7 pages with SHA-256 prefixes `9EBF0394`, `181ABEB`, `B17F8C11`; all 21 pages and 12,333 glyphs stayed within bounds and visual inspection found no blank, cropped or overlapping page. Restricted terms were absent from 52 changed text files at that checkpoint; 18 local links resolved across 40 changed Markdown files. |
+| Deviation / Surprise | Two earlier control drafts still carried old thresholds and active-looking status labels; both were preserved but marked `SUPERSEDED_FOR_EXECUTION`. The previous 352-hour estimate excluded setup and turnover, so the current capacity anchor is 484-616 station-hours. |
+| Residual Risk | No real-device LIVE_E2E, external display latency, Level A/B/C, Monte Carlo sample-size result, two-week throughput, formal participant data, Gate 1-3 result, external review or publication outcome exists yet. |
+
+### 2026-08-06 Complete F-02 Candidate Measurement Package
+
+| Field | Notes |
+|---|---|
+| Expected Observation | F-02 has a repository-owned candidate package satisfying AC1-AC3, unusable external references are excluded, status transitions are dependency-safe, and no Level or Gate result is overstated. |
+| Actual Result | Added the F-02 package, AC record and专项 validator; marked F-02 `DONE`; unlocked only G-01 and R-01; regenerated the task handbook; synchronized project entry points and the current board. |
+| Verified Evidence | F-02 validator `PASS` with 12 required item IDs; task validator `PASS` with 51 entries, 48 fixed, three templates, `DONE=F-02`, five READY tasks and W-04 terminal; protocol firewall `PASS`; `py_compile` passed; scoped Python regression `42 passed in 7.86s`; 18 local Markdown links resolved; restricted terminology absent from nine changed project documents. |
+| Deviation / Surprise | Unfiltered root `pytest` collected vendored TouchDesigner OpenAPI tests and stopped because their separate `connexion` dependency is absent. The established project scope passed after excluding `agent/modules/touchdesigner/mcp_td_v147`; this dependency was not installed because F-02 does not own vendored TD test infrastructure. |
+| Residual Risk | Team second-person sign-off, Level A/B evidence, equivalent condition fixtures, numeric margins, U1/U5 and Gate 2 remain open. |
+
+### 2026-08-06 Complete R-01 Candidate Representation Package
+
+| Field | Notes |
+|---|---|
+| Expected Observation | R-01 contains a complete four-layer grammar, complete-condition comparison, measurable confound budget, neutral instructions, executable Schema assets and dependency-safe task transition. |
+| Actual Result | Imported and sanitized the full Deep Research package; added local authorities and provenance; corrected storm to `3-3-3-3`; extracted the Schema, two valid fixtures, four directed negatives and a comprehension-truth fixture; added acceptance and validation authorities; marked R-01 `DONE` and W-01 `READY`. |
+| Verified Evidence | DOI identities checked through Crossref records; seven source JSON blocks parsed; Draft 2020-12 metaschema passed; both condition fixtures passed; four negative fixtures were rejected; R-01, F-02, task-registry and protocol validators passed; task state is `DONE=F-02,R-01` and `READY=F-01,F-03,F-04,G-01,W-01`; 36 local Markdown links resolved; restricted terminology and internal citations were absent; scoped Python regression `42 passed in 19.11s`. |
+| Deviation / Surprise | The source called the storm target structure unspecified although current project authorities freeze `3-3-3-3`. The F-02 validator also assumed R-01 could never advance beyond READY; it was corrected to accept unblocked downstream states. |
+| Residual Risk | Fading-stage numeric timing, degraded cumulative behavior, recovery debounce, real-render confounds, Unity execution, team sign-off, reconstruction, Level evidence and Gate results remain open. |
+
+### 2026-08-06 Remove Root CLAUDE.md
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The explicitly requested root file is absent, no active local link breaks, and unrelated worktree changes remain untouched. |
+| Actual Result | Deleted root `CLAUDE.md`; retained historical mentions and kept `AGENTS.md` as the current project instruction authority. |
+| Verification Command | Confirm `Test-Path CLAUDE.md` is false; search repository references; run `git diff --check`; audit staged scope; compare local and remote SHA after push. |
+| Residual Risk | None within the requested deletion; historical documents still mention that the file existed at their recorded time. |
+
+### 2026-08-06 Complete W-01 Closest-Work Candidate Package
+
+| Field | Notes |
+|---|---|
+| Expected Observation | W-01 provides reproducible candidate search strategies, a seven-axis closest-work matrix, claim-specific refutations, a one-paper contribution hierarchy, a traceable citation library and explicit limits on novelty claims. |
+| Actual Result | Imported and sanitized the full external package; extracted structured CSV and BibTeX assets; added a DOI identity audit, acceptance record and dedicated validator; marked W-01 `DONE` while preserving `REVISE_REQUIRED`; kept W-02 at `WAIT_DEP` because A-04 is incomplete. |
+| Verified Evidence | W-01 validator passed with 13 search rows, 15 core sources, six claims and 15 BibTeX entries; F-02 and R-01 validators passed; registry validator passed with 51 entries, `DONE=F-02,R-01,W-01` and `READY=F-01,F-03,F-04,G-01`; protocol firewall passed; Python compilation passed; 35 local Markdown links resolved; restricted terminology was absent from W-01 deliverables and status documents; scoped regression completed with `42 passed in 9.58s`; `git diff --check` passed. |
+| Deviation / Surprise | The source contained 52 unusable internal citation markers, a future 2026-12-31 evidence cutoff, a mismatched time zone and two correctable bibliography issues. The first terminology scan also matched the project rule file and validator definitions themselves, so the delivery scan was narrowed to content-bearing documents while the W-01 validator retained direct enforcement. |
+| Residual Risk | Native database exports, complete deduplication, two-person screening, high-threat full-text coding, independent reconstruction, Level evidence, Gate results and observed project effects remain open. |
+
+### 2026-08-06 Freeze Four-Person Team Tool Baseline
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Every team member has a precise common tool set, each role adds only the tools it owns, repository locks agree with the declared versions, and local gaps are reported rather than hidden. |
+| Actual Result | Added the human-readable baseline, machine JSON, Python direct-dependency pins and a role-aware validator; linked the baseline from project entry points and synchronized the four-person priority note. |
+| Verified Evidence | Authority validator passed for all role profiles, nine Python pins, Unity 6000.4.9f1 revision and selected Unity package locks. All five local profiles matched their required versions except the expected missing Zotero 9.0.6. Task registry and protocol validators passed; 20 local Markdown links resolved; restricted terminology was absent from baseline deliverables; scoped regression completed with `42 passed in 9.61s`; `git diff --check` passed. |
+| Deviation / Surprise | VS Code is exposed through a Windows command shim, so the first validator implementation could not execute it directly from Python; the check now runs through `cmd.exe`. The project had no exact Python dependency snapshot, and the Unity MCP source still names `#main` despite a resolved commit in the package lock. |
+| Residual Risk | Zotero is not installed on the coordinator machine; other member machines remain unaudited; Python transitive dependencies are not fully locked; Unity MCP source drift and optional TD MCP service setup remain open. |
+
+### 2026-08-06 Correct Team Tool Baseline Scope
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Unity, TouchDesigner and the frozen Python data-processing stack are common requirements for all four members, while role labels change ownership only and cannot remove environment checks. |
+| Actual Result | Moved all three tool groups into the machine-readable common set, rewrote the human baseline around shared installation, removed all role-specific required-tool additions and made every local role mode run the same Unity, TouchDesigner and Python package checks. |
+| Verified Evidence | Authority mode passed. All five local role labels checked Unity `6000.4.9f1`, TouchDesigner `2025.32820` and all nine Python pins, and each returned only the known Zotero `9.0.6` gap. Task registry and protocol authority validators passed; three local Markdown links resolved; restricted terminology was absent from added lines; scoped regression completed with `42 passed in 2.40s`; `git diff --check` passed. |
+| Verification Command | Compile and run `validate_team_tool_baseline.py` in authority mode and for all five role labels; confirm every role reports only the known Zotero 9.0.6 gap on the coordinator machine; run task/protocol validators, Markdown-link and restricted-term checks, scoped Python regression and `git diff --check`. |
+| Residual Risk | The other three machines remain unaudited; installed tools do not replace task-specific capability evidence; Python transitive dependencies and Unity MCP source drift remain open. |
+
+### 2026-08-06 Narrow Zotero Installation Scope
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Zotero 9.0.6 is required locally only for design and paper evidence governance; Unity and Python/data roles pass without it, while shared-library access remains mandatory for everyone. |
+| Actual Result | Removed Zotero from the common executable set, assigned it to design and experiment/TD/governance role additions, added a machine-readable manual access requirement and made local validation conditional on those two roles. |
+| Verified Evidence | Authority validation passed. `common`, `unity` and `python_data` passed with the complete shared technical stack and no local Zotero requirement; `design` and `experiment_td_governance` each reported Zotero as their only local gap. Task registry and protocol authority validators passed; three local Markdown links resolved; restricted terminology was absent from added lines; scoped regression completed with `42 passed in 2.44s`. |
+| Verification Command | Run authority validation; confirm `common`, `unity` and `python_data` pass on the coordinator machine, while `design` and `experiment_td_governance` report only the known Zotero gap; run project validators, regression, link and terminology checks, and `git diff --check`. |
+| Residual Risk | Shared-library permissions cannot be validated without member accounts and must be evidenced separately; the other three machines remain unaudited. |
+
+### 2026-08-07 F-01 Runtime Contract Technical Closure
+
+| Field | Notes |
+|---|---|
+| Expected Observation | v2.1 legal fixtures pass; missing fields, wrong versions, formal Mock and duplicate controls fail closed; unknown compatible fields are ignored; existing Python behavior remains green; task package hashes remain deterministic. |
+| Actual Result | Added strict runtime validation, combined JSON Schema, 11 fixtures and hashes, migration and port evidence. Registered TCP 5010 after a `NO_LISTENER` precheck. Kept v1.2 as a development-only compatibility path. |
+| Verified Evidence | Contract suite `16 passed`; scoped project regression `58 passed`; READY package validator passed with 4 packages and 68 snapshots; registry validator passed with 51 entries; protocol authority v1.1 validator passed; F-02/R-01/W-01 validators remained green; `py_compile` and `git diff --check` passed. |
+| Deviation / Surprise | Initial contract test collection lacked the established `02-技术研发` import path and was fixed. The first protocol validator command used an obsolete filename; discovery found `validate_protocol_authority_v1_1.py`. The READY validator correctly rejected new outputs until they were explicitly staged as tracked files. |
+| Residual Risk | Mandatory second-person interface review is open, so F-01 is not `DONE` and downstream tasks remain blocked. TCP 5010 is reserved but no service or LIVE_E2E exists. |
+
+### 2026-08-06 Generate Individually Dispatchable READY Task Packages
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Every current READY task has a separate package with a task brief, file authority, necessary inputs, acceptance and evidence fields; future READY changes cannot pass validation without regenerating the package set. |
+| Actual Result | Added a four-task file mapping, deterministic renderer, dedicated validator, main-validator enforcement and project habit. Generated F-01, F-03, F-04 and G-01 directories with 48 input snapshots and 61 total package files. Text snapshots and hashes normalize line endings to LF and remove trailing whitespace, while binary snapshots retain raw-byte hashing. Added a narrow Git-ignore exception for package CSV snapshots and validator enforcement against ignored package files. |
+| Verified Evidence | Dedicated validation passed with `READY packages=4; snapshots=48`; all 48 snapshot sources are Git-tracked; main registry validation passed with 51 entries and the expected READY set; two consecutive renders produced identical hashes for all 61 files; 116 local links in dispatch control documents resolved; restricted terminology was absent from the generated package tree; protocol authority validation passed; scoped regression completed with `42 passed in 3.79s`. |
+| Verification Command | Run `13_render_ready_task_packages.py`, `14_validate_ready_task_packages.py` and `07_validate_task_packages.py`; compare recursive file hashes across two renders; validate links in package README/TASK/FILES documents; run restricted-term scan, scoped project regression and `git diff --check`. |
+| Residual Risk | Snapshot-internal relative links may expect their original directories, so implementation must use the authority links in `FILES.md`; task work itself remains unstarted until a claimant records ownership. |
+
+### 2026-08-07 F-01 Independent Review Remediation
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Schema and the standard-library reference runtime have the same stateless accept/reject boundary; stateful control rejection is auditable; fixture evidence survives Git EOL handling; independent review has no unresolved P0-P2 finding. |
+| Actual Result | Fixed all findings across four isolated review rounds, added actual Draft 2020-12 and cross-boundary tests, normalized fixture hashes, added a PowerShell consumer and regenerated deterministic READY packages. Final model review returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`. |
+| Verified Evidence | Contract suite `42 passed`; scoped project regression `84 passed`; PowerShell non-Python consumer passed; fixture Git blob hashes `11/11`; READY package validator passed with 4 packages and 71 snapshots; registry, protocol authority, F-02, R-01 and W-01 validators passed; deterministic rerender passed. |
+| Deviation / Surprise | Independent review found three successive layers of counterexamples before passing: initial semantic drift and missing audit evidence, then source/probability/fallback rules, then arbitrary-precision integer overflow. The final package-only drift was removed by regenerating after the last source edit. |
+| Residual Risk | F-01 is still `READY` until a real non-implementing team member reviews and signs the exact pushed commit. No downstream runtime or full-system evidence is implied. |
+
+### 2026-08-08 Project-Wide Defect Remediation
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Native ECG timing is preserved; missing data does not produce scores; current ScoreFrame fields round-trip through CSV; invalid contract state fails closed; root tests are green; legacy materials cannot be mistaken for active inputs. |
+| Actual Result | Implemented native ECG batches, explicit missingness, non-emitting warmup/invalid windows, CSV fail-closed schema, trend/clock/error/shutdown fixes, contract invariants, TD development-control gate, Unity formal-build blocker, lifecycle/status cleanup and evidence-entry quarantine. |
+| Verified Evidence | Exact staged-snapshot pytest `100 passed`; fast simulation regression covered 600 frames and all four weather segments; paced 15-second mock run produced 51 valid CSV rows after warmup; registry PASS with READY=F-03/F-04/G-01 and IN_REVIEW=F-01; strict indexed dispatch-package validation passed with 4 packages/74 snapshots; protocol, F-02, R-01 and W-01 validators PASS; 20/20 legacy Markdown files marked. |
+| Deviation / Surprise | The first clean staged snapshot exposed CRLF/LF hash drift for `.sha256`, `.ps1` and numbered `.gitattributes` snapshots that the primary worktree did not reveal. Renderer and validator now share the expanded text policy, with a two-script regression test; the subsequent clean staged snapshot passed. |
+| Expected Red Gates | Unity batch validation exits with `FORMAL_SCENES_MISSING`; reference provenance validator exits `REFERENCE_PROVENANCE_BLOCKED`. These are enforced blockers, not completed capabilities. |
+| Evidence Paths | `agent/work/unity-formal-build-gate.log`; `agent/modules/communication/F-01_技术验收记录.md`; generated dispatch manifests; this log. |
+| Residual Risk | No formal Unity runtime, real device adapter, TD fixture replay, LIVE_E2E, external approval, participant evidence or publication-ready reference ledger exists. |
+
+### 2026-08-08 Unity Source And Art Archive
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The archive contains the reopenable Unity source project and both in-project and external art sources, while excluding generated caches and editor recovery residue. |
+| Actual Result | Created `agent/delivery/Unity源文件与美术素材/SRP_Unity源文件与美术素材_20260808_142728.zip` with 536 entries and a size of 108.28 MiB. |
+| Verified Evidence | ZIP reopened successfully; 40 C# files, 190 PNG files and 10 Unity scenes were enumerated; required `Packages/manifest.json`, `packages-lock.json` and `ProjectSettings/ProjectVersion.txt` were present; duplicate names and excluded cache entries were both zero. |
+| SHA-256 | `7792498EE0EF99E7DFA679C238628BF6F96151AB5BFB20926B5B256FBE2DF618` |
+| Exclusions | `Library`, `Temp`, `Logs`, `obj`, `UserSettings` and `Assets/_Recovery`. |
+| Residual Risk | This is a source snapshot of the current working tree, not a formal runtime build or LIVE_E2E acceptance artifact. |
+
+### 2026-08-11 F-01 Human Second-Review Report Draft
+
+| Field | Notes |
+|---|---|
+| Expected Observation | A reviewer can bind the audit to one implementation SHA, inspect F-01-only differences, reproduce all current checks, record findings and sign without inheriting a model-generated conclusion. |
+| Actual Result | Added a待签署 report with authority links, scope exclusions, exact commands, AC1-AC3 checks, findings fields, three mutually exclusive conclusions and a post-signature governance sequence. |
+| Verified Evidence | Contract suite `49 passed`; root regression `100 passed`; PowerShell consumer returned `PASS_NON_PYTHON_CONSUMER`; task registry, dispatch-package and protocol authority validators passed. |
+| Boundary | The report is not a signature. F-01 remains `IN_REVIEW`; no Unity, TouchDesigner, real-device or full-system completion is claimed. |
+| Next Hard Gate | A real non-implementing team member fills and signs the report against `6c27c94a53c3eaa57d77b12a74626eb7442bfc0e`. |
+
+### 2026-08-12 F-01 Signoff Closure And G-02 Dispatch Planning
+
+| Field | Notes |
+|---|---|
+| Expected Observation | The named second-person acceptance is bound to a commit; F-01 is the only task changing to `DONE`; only direct dependents with no other unmet prerequisites become `READY`; every READY task has an indexed independent package; G-02 has a decision-complete plan but no completion claim. |
+| Actual Result | Recorded 傅钧烨 as team director and independent second reviewer using witnessed results and file review; created acceptance commit `58c9e41871214351a0fe96a413dfbc34d482ed4a`; migrated F-01, G-02, P-01 and P-02; regenerated the handbook, six packages and the fixed-task PDF; added the G-02 implementation plan. |
+| Verified Evidence | Contract suite `49 passed in 1.50s`; root regression `100 passed in 13.82s`; PowerShell consumer PASS; registry PASS with 51 entries and READY=F-03/F-04/G-01/G-02/P-01/P-02; indexed package PASS with 6 packages and 77 snapshots; protocol authority PASS; all three PDF structure checks PASS. |
+| PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages, SHA-256 `E23243D839DF47BFBC94688B961DD12FA60C12ABE1EA97991E5AD0978B21561E`; eight rendered pages were visually inspected with no clipping, overlap or unreadable content. |
+| Scope Guard | Existing four tracked deletions and the pre-existing untracked `SRP/`, root docx, `agent/local/tmp/` and `agent/work/unity-formal-build-gate.log` were excluded from staging. Historical records were not rewritten. |
+| Residual Risk | F-01 does not establish downstream implementation or a full-system run. G-02 remains `READY`; dedicated-machine credentials, encrypted storage, retention approval, access controls, asset evidence and recovery rehearsal are not yet present. |
+
+### 2026-08-13 P-01 SessionCore Candidate And Review Transition
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Fixed v2.1 ordering, deterministic timing, formal fail-closed gates, reliable loopback controls and validated 20 Hz telemetry work without moving authority into Unity or TouchDesigner. |
+| Actual Result | Added pure `SessionCore`, fixed sequence provider, formal adapter gates, TCP 5010 JSON Lines service, UDP 5005/5006 publisher, machine schemas, protocol configuration and a deterministic four-module golden trace. Implementation commit: `8063afc7053a79a0d27fe8fc94159dbc5fc9a9e0`. |
+| Verified Evidence | P-01 suite `82 passed`; root regression `289 passed`; protocol authority passed; independent model rereview returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`; registry passed with READY=F-03/F-04/G-01/P-02 and IN_REVIEW=G-02/P-01; strict indexed package validation passed with 6 packages and 156 snapshots. |
+| Independent Review | Three transport defects were fixed: fatal abort delivery/disconnect, semantic ACK propagation and local-clock telemetry throttling. Conservative exposure before start and permanent duplicate-request rejection were retained as intended. No P0-P2 remains in the model review. |
+| PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages, SHA-256 `2C1DCF288B9E2EFD86C92719CB95225D90575A87C79B29FFE8C432214D408BB4`; all pages were rendered at 120 DPI and visually checked with no clipping, overlap or unreadable content. |
+| Scope Guard | The four pre-existing tracked deletions and pre-existing untracked `SRP/`, root docx, `agent/local/tmp/` and `agent/work/unity-formal-build-gate.log` remain excluded. |
+| Residual Risk | Abort delivery is best effort if the connection is already lost. Human second review, P-02, X-01, Unity/TD consumers, real devices and `LIVE_E2E` remain open. |
+
+### 2026-08-16 P-02 Durable Session Store Candidate And Review Transition
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Manifest and L0/L1 are append-only; interrupted bytes remain unchanged; integrity drift is detected; complete P-01 operations replay deterministically without external side effects. |
+| Actual Result | Added `srp_session_store`, three machine schemas, formal/development storage gates, P-01 and telemetry adapters, recovery, golden archive, stress generator and a pending human second-review report. Implementation commit: `3d740e99118d6a76993156f26bdf673144429025`. |
+| Verified Evidence | P-02 suite `42 passed`; P-02/P-01/F-01/G-02 regression `288 passed`; root regression `331 passed`; protocol authority passed; independent model review returned `PASS_FOR_MODEL_INDEPENDENT_REVIEW`; registry passed with READY=F-03/F-04/G-01 and IN_REVIEW=G-02/P-01/P-02; dispatch package validation passed with 6 packages and 182 snapshots. |
+| Stress Evidence | 800 seconds; PLUX 320000 samples; Polar 104000 samples; L1 16000 frames; integrity valid; eight post-warmup memory samples; no end-of-run growth over warmup. |
+| Independent Review | Four rounds closed formal-capability bypass, privacy synonyms/path echo, seal cross-binding, abort preservation, prepare ordering, dual-device stress, and replay side-effect findings. No P0-P2 remains in the final model review. |
+| PDF QA | `02_固定任务概要.pdf` contains 8 A4 pages and passed the brief verifier; all pages were rendered at 100 DPI and visually checked without clipping, overlap or unreadable text; SHA-256 `E220011680C7D5AA25F2EB87ED7F21C01D79C9C2EF94F59C2622157A05E0E5DF`. |
+| Scope Guard | The four pre-existing tracked deletions and untracked `SRP/`, root docx, `agent/local/tmp/` and `agent/work/unity-formal-build-gate.log` remain excluded. |
+| Residual Risk | Human second review, formal-machine checks, device adapters, Unity/TD consumers, X-01, A-01 and `LIVE_E2E` remain open. Hash chains detect integrity drift but are not digital signatures against a privileged malicious writer. |
+
+### 2026-08-16 IN_REVIEW Independent Agent Audit
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Three isolated read-only reviews bind findings to the fixed G-02, P-01 and P-02 implementation commits without changing task state or signing human reports. |
+| Actual Result | All three reviews returned `REVIEW_FINDINGS_OPEN`; total findings are 0 P0, 4 P1, 4 P2 and 2 P3. |
+| Verified Evidence | G-02 `107 passed`; P-01 `82 passed`; P-02 `42 passed`; cross-module `288 passed`; root `331 passed`; protocol, registry, package and diff checks passed. Fresh counterexamples still reproduced integrity and delivery gaps. |
+| Report | `agent/validation/IN_REVIEW_Agent独立审核报告_2026-08-16.md` |
+| State Guard | G-02, P-01 and P-02 remain `IN_REVIEW`. No pending human second-review report was edited or signed. |
+| Residual Risk | Open P1 findings invalidate current model-review closure; code repair, regression tests and a fresh independent Agent pass are required before human signoff. |
+
+### 2026-08-16 P1-P2-P3快速修复与复审
+
+| Field | Notes |
+|---|---|
+| Fixed Commit | `03d7426219121e49554e405db9dd521b8ab1d819` |
+| Targeted Tests | P-01 `98 passed`; P-02 `68 passed`; G-02 `138 passed` |
+| Agent Review | P-01、P-02与G-02均返回`PASS_FOR_MODEL_INDEPENDENT_REVIEW`；G-02最终Agent为`01a00914-d4c5-7fc1-8966-a400aaccba66` |
+| Asset Gate | 179项清单；194个ignored发布文件与3个许可替换项；`release_allowed=false` |
+| State Guard | G-02、P-01、P-02保持`IN_REVIEW`；待签署报告未代填结论 |
+| Final Regression | 全仓`404 passed`；注册表、协议权威、6个独立包与182个快照校验通过 |
+
+### 2026-08-17 Unity实验环境渐进搭建与任务协调
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Unity任务从可复现环境开始，经可靠通信和四层接口汇合到一个完整风暴纵向切片，再扩展其他场景；未完成资产和上游签收门继续失败关闭。 |
+| Actual Result | 新增E0至E5权威计划；F-03扩展为环境基线与会话运行壳；U-01补充P-01依赖；U-03先行；U-04至U-07改为在U-03后并行；I-01补充P-02依赖。READY和IN_REVIEW集合未改变。 |
+| Registry And Packages | `07_validate_task_packages.py`通过：51项、48固定包、3模板、READY=F-03/F-04/G-01、IN_REVIEW=G-02/P-01/P-02；`14_validate_ready_task_packages.py`通过：6包、183快照。 |
+| Regression | 默认`python`为3.14.5且缺少pytest，未执行测试；改用`py -3.14`和pytest 9.0.3完成根回归，结果`404 passed in 28.14s`。 |
+| Protocol And Text | 协议权威v1.1验证通过；新增行不合规措辞扫描和`git diff --check`作为提交前门。 |
+| PDF QA | `02_固定任务概要.pdf`为8页，SHA-256 `1C3453527C839C29177E093E546AE4C1895A97207115B3CA50EC28AE27E5D606`；8页均以110 DPI渲染并逐页检查，无截断、重叠、空白或乱码。 |
+| Scope Guard | 保留4个既有删除项和既有未跟踪`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`，不纳入提交。 |
+| Residual Risk | 本轮未运行Unity Editor、Unity测试或构建。P-01/P-02/G-02真实团队第二人签收、资产替换、正式环境、设备和`LIVE_E2E`仍开放。 |
+
+### 2026-08-18 Unity场景设计流程订正与任务包落盘
+
+| Field | Notes |
+|---|---|
+| Expected Observation | Unity任务从研究体验契约和完整旅程开始，经概念原型、四层映射、分镜声音预演和全旅程灰盒后，再选择最高风险天气做纵向切片；技术基线不替代场景设计。 |
+| Actual Result | 新增V-01至V-05，收缩F-03并重定U-01至U-07职责；注册表扩展为53个固定任务和3个模板；当前READY为F-03、F-04、G-01、V-01。 |
+| Registry And Packages | `07_validate_task_packages.py`通过：56项、53固定任务、3模板；`14_validate_ready_task_packages.py`通过：7包、186快照；两次重生成文件哈希一致。 |
+| Regression | `py -3.14 -m pytest -q`通过：`404 passed in 22.62s`；协议权威v1.1一致。 |
+| Text And Diff Gates | 新规划与V-01包禁用表述扫描通过；暂存新增行扫描通过；`git diff --cached --check`通过。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `54483B4EF13BEE3F485EB411B4567CFBBFAC5128CD00D3919DEFE73C1D35D4CB`；全部页面已渲染检查，孤立表头修复后无裁切、重叠或乱码。 |
+| Deviation | 图表首次误用默认Python并因缺少`matplotlib`失败；改用既有`D:\MathModelingTools\envs\cumcm\python.exe`后成功，未安装依赖。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除。 |
+| Residual Risk | 本轮未执行Unity Editor、Unity测试或构建；V-01至V-05、F-03及后续U任务仍需领取、实现、验收、第二人复核和各自提交推送。 |
+
+### 2026-08-18 V-01 研究体验契约与完整旅程
+
+| Field | Notes |
+|---|---|
+| Expected Observation | 第一设计步只冻结研究体验、完整旅程、系统权威和证据边界；具体天气表现保持开放，V-02在第二人签收前不解锁。 |
+| Implementation | 初始提交`285422314a2f091dad781b26981c2acb2e42fe10`；独立复核修复提交`293720f40126e2892b585c78fe7908518f40d4ad`。 |
+| Contract Validation | `validate_v01_experience_contract.py`通过：与`protocol_authority_v1.1.json`一致，26个冻结/版本化约束、15个开放项、12个旅程节点和10条结构化主张。 |
+| Negative Gates | TouchDesigner越权、条件单位漂移、场景原生包缺模块、C-001状态越界四类变异均被拒绝。 |
+| Agent Review | Agent `01a012e3-ebfb-7fc0-8747-7d492e8aa612`首轮返回3个P2和1个P3；修复后二轮返回`PASS_NO_OPEN_P1_P3`。 |
+| Regression | `py -3.14 -m pytest -q`通过：`404 passed in 17.63s`；协议权威验证通过。 |
+| Registry And Packages | 56项注册表通过：53固定任务、3模板、READY=F-03/F-04/G-01、IN_REVIEW=G-02/P-01/P-02/V-01；7个分发包、196个快照通过。 |
+| Text And Diff Gates | V-01制品未出现限制表述；当前权威文件不存在V-01仍为READY的陈述；`git diff --cached --check`通过。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `2E314D87D72AF274228DF0F67C47D81DA7B39E4D9C0EFEE87270377DEA426585`；9页联系表及第4、8页重点复查无裁切、重叠或状态冲突。 |
+| State Guard | V-01只转为`IN_REVIEW`；真实团队第二人栏保持`PENDING`，V-02继续`WAIT_DEP`。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除。 |
+| Residual Risk | 静态设计契约不能替代Unity独立构建、跨端权限测试、真实设备链和`LIVE_E2E`证据；这些由后续任务关闭。 |
+
+### 2026-08-18 V-01签收闭环与V-02解锁
+
+| Field | Notes |
+|---|---|
+| Expected Observation | 真实团队第二人签收证据与治理迁移分成两个提交；V-01转为`DONE`后才允许V-02转为`READY`，且不扩大为Unity运行完成。 |
+| Human Signoff | 傅钧烨以团队总监和真实团队第二人复核身份对`293720f40126e2892b585c78fe7908518f40d4ad`给出`PASS`；签收提交为`339b94fb0a5e4527032cf59a835d6691419c8a76`，复核方式明确为审阅文件并见证已有验证结果，不表述为本人重新运行。 |
+| Registry And Packages | `07_validate_task_packages.py`通过：56项、53固定任务、3模板、DONE含V-01、READY=F-03/F-04/G-01/V-02、IN_REVIEW=G-02/P-01/P-02；`14_validate_ready_task_packages.py`通过：7包、196快照。 |
+| Contract Validation | 协议权威v1.1一致；V-01契约校验通过：26个冻结/版本化约束、15个开放项、12个旅程节点、10条结构化主张。 |
+| Regression | `py -3.14 -m pytest -q`通过：`404 passed in 18.75s`。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256 `36F393B287D01F42B4D875BDF39FF1DFB4DBFFF882B7131A339EDC4302D23041`；全部页面以110 DPI渲染并逐页检查，无裁切、重叠、空白或乱码。 |
+| Text And Diff Gates | 当前权威文件中不存在V-01仍待签收或V-02仍为`WAIT_DEP`的陈述；新写状态文字未引入限制表述。 |
+| Scope Guard | 4个既有删除项和既有未跟踪`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除。 |
+| Residual Risk | V-02只解锁并进入决策核对，尚未形成候选概念、动态原型或Unity运行证据；G-02、P-01、P-02真实团队第二人复核仍开放。 |
+
+### 2026-08-20 V-02场景确认收口
+
+| Field | Notes |
+|---|---|
+| Expected Observation | 四场景及共同呈现规则形成单一移交基线；节点15评审人数、问题、问卷和阈值退出V-02，不再继续节点15B。 |
+| Documentation | 新增`ADR-026_V-02收口于场景确认.md`和`V-02_四场景确认与移交基线.md`；节点15A相关文件标记为`SUPERSEDED`。 |
+| Consistency | `CONTEXT.md`和决策日志均显示场景方案已确认，节点15移出范围，节点16由既有四场景决定完成汇总，节点17转交后续工程任务。 |
+| Text Gate | 新增和更新的活跃文档未发现限制表述；六个涉及文件未发现行尾空白。 |
+| Scope Guard | 未修改任务注册表状态，未声称V-02已治理签收、Unity已实现、正式构建已完成或真实数据链已通过。 |
+| Git Guard | 既有4个删除项及`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续保留且未暂存。 |
+
+### 2026-08-20 V-02候选验收与职责闭环
+
+| Field | Notes |
+|---|---|
+| Expected Observation | V-02场景基线与V-01、R-01及总控一致；F-05、V-03、U-03和U-08职责无重叠或依赖缺口；真实第二人签收前不解锁V-03。 |
+| Contract Validation | `validate_v02_scene_baseline.py`通过：4个技术ID、两种提示模式、四层来源、TD只读、资产门、`storm/fade` v2.2门及F-05消费者依赖一致。 |
+| Registry Validation | `07_validate_task_packages.py`通过：57项、54固定任务、3模板、READY=F-03/F-04/G-01/V-02、IN_REVIEW=G-02/P-01/P-02，依赖图无环且终点为W-04。 |
+| Protocol Validation | `validate_protocol_authority_v1_1.py`通过。 |
+| Regression | 默认`python`缺少pytest；按既有冻结环境改用`py -3.14 -m pytest -q`，结果`404 passed in 18.35s`，未安装依赖。 |
+| Agent Review | Agent `01a01ee9-bec5-73d2-a590-3aedcddf3a6a`首轮发现3个P1、2个P2、1个P3；修复后无P1/P2，再关闭2个P3后返回`PASS_NO_OPEN_P1_P3`。 |
+| Diff Gate | `git diff --check`通过，仅报告既有Git行尾转换提示。 |
+| Scope Guard | 4个既有删除项及`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除；未形成Unity运行或正式数据证据。 |
+| Candidate Commit | V-02固定候选提交为`3ebbdeedfd3c16688ae406d34c18e4f319f2afac`；治理提交只迁移状态和重生成派生制品。 |
+| Governance State | V-02迁移为`IN_REVIEW`，V-03保持`WAIT_DEP`；当前`READY`集合为F-03、F-04、G-01。 |
+| Human Gate | 真实团队第二人结论保持待填写；模型独立复审不能替代真实签收。 |
+| Final Registry And Packages | `07_validate_task_packages.py`通过：57项、54个固定任务、3个模板，`READY=F-03/F-04/G-01`，`IN_REVIEW=G-02/P-01/P-02/V-02`；`14_validate_ready_task_packages.py`通过：7包、210个输入快照。 |
+| Final Regression | `py -3.14 -m pytest -q`通过：`404 passed in 18.67s`；V-02基线和协议权威校验均通过。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256为`BD61195164E87827F84E803F392297C1F027EC2ED604D89702B076B634035A10`；110 DPI逐页渲染检查未见裁切、重叠、空白页或乱码。 |
+| Text Gate | 活跃V-02制品未发现限制表述；当前权威状态未把V-02或V-03误列为可领取。 |
+
+### 2026-08-21 V-02签收与V-03解锁
+
+| Field | Notes |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、真实团队第二人复核身份，对`3ebbdeedfd3c16688ae406d34c18e4f319f2afac`给出`PASS`；日期`2026-08-21 +08:00`；无未关闭P0-P3问题。 |
+| Signoff Commit | `c04a7be5017164ce8bdfa4ee7f0270c75bb37368`；签收记录随后写回该SHA并重命名为`V-02_技术验收记录_已签署.md`。 |
+| State Migration | V-02=`DONE`；V-03=`READY`；当前`READY=F-03/F-04/G-01/V-03`；G-02/P-01/P-02继续`IN_REVIEW`。 |
+| Package Regeneration | V-02复核包移除，V-03独立包新增；注册表与独立任务包映射同步更新。 |
+| Scope Guard | V-02签收不扩大为Unity运行、正式构建、真实设备链或`LIVE_E2E`完成；既有4个删除项和未跟踪用户资产继续排除。 |
+| Final Validation | V-02基线、协议权威、任务注册表和独立任务包均通过；注册表为57项、54个固定任务、`DONE=F-01/F-02/R-01/V-01/V-02/W-01`、`READY=F-03/F-04/G-01/V-03`、`IN_REVIEW=G-02/P-01/P-02`；分发包7个、输入快照190个。 |
+| Final Regression | `py -3.14 -m pytest -q`通过：`404 passed in 17.42s`；`git diff --check`通过，仅有既有换行转换提示。 |
+| PDF QA | `02_固定任务概要.pdf`为9页，SHA-256为`33E2AB301FFD7CE845CA337E59D9006413CDBC07B65F208658587E954D9FA122`；项目PDF验证器通过。 |
+| Final Boundary | V-03仅完成解锁和独立任务包生成；未形成四层映射实现、Unity运行、正式构建、真实设备链或`LIVE_E2E`证据。 |
+
+### 2026-08-21 G-01领取返工与IN_REVIEW迁移
+
+| Field | Notes |
+|---|---|
+| Acceptance Baseline | `agent/validation/G-01_验收记录_2026-08-21.md`：对`origin/main`根目录8个文件的验收结论为不通过（流程违规、G-01-01缺失、时长口径矛盾、40预约vs100会话矛盾、责任人占位、术语命中5处、格式残留）。 |
+| Branch And Claim | 新分支`codex/g-01-research-governance`基于`codex/v-02-concept-design`（含最新治理状态；`origin/main`注册表落后于该分支，故不从main建支）；8个文件从`origin/main`取回并`git mv`至规划包`06_步骤05_伦理与预试材料/`，补齐`.md`扩展名。注册表G-01：`READY`→`IN_PROGRESS`（claimant=Codex、branch、reviewer=傅钧烨）→返工后`IN_REVIEW`。 |
+| Rework Content | 新增`G-01-01_单次参与材料.md`（v1.1流程权威+材料清单D-01~D-11）；G-01-02/03时长对齐v1.1基准（PANAS 2~3、猜测2~3、问卷≤5、补充知情同意与清理环节）、Polar H10表述修正为胸带式；G-01-04责任人落实R-007、M-001中文版来源给候选并标注待核验、新增许可证据索引E-001~E-008；G-01-06修正"完全相同模块"表述、修复Mermaid围栏、移除AI残留说明段；G-01-07/08演练窗口统一为D1~D14（执行期7天）、计划产能140次、U8通过线112次、预约目标165人（112÷0.85÷0.80≈164.7），补偿成本改可重建公式；G-01-09移除孤立围栏；新增`G-01-10_双人审查记录.md`（第一审查PASS候选级，第二人复核开放）。 |
+| Terminology Gate | 禁用词扫描（诊断/治疗/疾病/患者/医疗设备/临床）对`06_步骤05_伦理与预试材料/G-01-*.md`全目录0命中；原"心脑血管疾病/心理治疗/医疗诊断证明"已改写，安全筛查语义保留。 |
+| Registry Validation | `07_validate_task_packages.py`通过：57项、54固定、3模板，`DONE=F-01/F-02/R-01/V-01/V-02/W-01`、`READY=F-03/F-04/V-03`、`IN_REVIEW=G-01/G-02/P-01/P-02`。 |
+| Package Validation | `13_render_ready_task_packages.py`重生成；`14_validate_ready_task_packages.py`通过：7包、190个输入快照。 |
+| Regression | `py -3.14 -m pytest -q`通过：`404 passed in 17.71s`。 |
+| Diff Gate | 行尾空白已清理；`git diff --check --cached`通过，仅有既有LF→CRLF转换提示。 |
+| Scope Guard | 4个既有删除项、`SRP/`、根docx、`agent/local/tmp/`、`agent/work/unity-formal-build-gate.log`继续排除在提交外。 |
+| Final Boundary | G-01转`IN_REVIEW`不等于DONE：AC3真实演练未执行、U8未判定、M-001许可`PENDING`、伦理路径与真实团队第二人复核保持开放；正式阶段继续阻断。 |
+
+### 2026-08-21 G-01独立Agent复审两轮闭环
+
+| Field | Notes |
+|---|---|
+| Independent Review R1 | Agent `agent-0`（explore只读）首轮结论`REVIEW_FINDINGS_OPEN`：P1×1（G-01-06流程基准缺阶段0/7）、P2×4（G-01-09门控表语义越界读法、12_20/11_17悬空引用、G-01-08旧文件名、G-01-10扫描声明自相矛盾）、P3×3（列表渲染/日期伪影、D-11来源、包生命周期表述）。产能数字（528/140/112/165）逐步核算通过，权威一致性通过。 |
+| Fix Commit | `3299149` fix(g01)：B1~B8全部修复；禁用词复扫0命中、围栏配平、`git diff --check`通过；已推送。 |
+| Independent Review R2 | 同一Agent闭环验证：B1~B8全部确认关闭，G-01-06§2与G-01-01§2逐项一致；增量发现G01-N1（P3，版本留痕缺失）及附观察（G-01-01上限合计62→58分钟）。 |
+| N1 Closure | G-01-01/02/03/06/07/08/09补版本记录行（含发现编号），G-01-10新增第5节修订记录；G-01-01"约62分钟"核正为"约58分钟"。 |
+| Audit Report | `agent/validation/G-01_Agent独立审核报告_2026-08-21.md`：总结论`MODEL_REVIEW_FINDINGS_CLOSED / HUMAN_SECOND_REVIEW_PENDING`。 |
+| Kanban | 看板G-01行同步独立复审关闭信息；注册表状态不变（IN_REVIEW）。 |
+| PR State | PR #1（c010482）已由用户合并进main（2f8e6ae），远端分支被自动删除；修复提交推送后重建同名远端分支，需新PR携带复审修复与留痕。 |
+| Final Boundary | 模型复审关闭只解除模型复审阻断；第二人签署、M-001许可、伦理路径、U8演练保持开放，G-01不转DONE。 |
+
+### 2026-08-21 四项IN_REVIEW第二人签收与P-01/P-02转DONE
+
+| Field | Notes |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、独立第二人复核人身份，对G-01（候选级）、G-02、P-01、P-02签收`PASS`；复核方式为见证已有验证结果并审阅文件，由本人在项目对话中明确授权落盘；日期`2026-08-21 +08:00`。 |
+| Signoff Commit | `ea132c8f26db76d1a1f97daebea5e97258d969c4`；三份审核报告SHA回写并重命名为`已签署`，G-01-10第3节签收栏完成。 |
+| State Migration | P-01、P-02转`DONE`；F-05随之解锁为`READY`（新增17个源文件映射，全部验证存在）；G-01（AC3演练/U8/M-001许可/伦理开放）、G-02（专机6项缺失/保留期限/197项资产门开放）签收PASS但保持`IN_REVIEW`。 |
+| Package Regeneration | P-01/P-02包移出分发，F-05包新增，G-02映射内待签署引用修正为已签署；`07`通过：`DONE=F-01/F-02/P-01/P-02/R-01/V-01/V-02/W-01`、`READY=F-03/F-04/F-05/V-03`、`IN_REVIEW=G-01/G-02`；`14`通过：6包130快照。 |
+| Entry Sync | 看板、AGENTS.md、README.md（已签署链接）同步。 |
+| Final Boundary | P-01/P-02的DONE不扩大为Unity、TD、真实设备或`LIVE_E2E`完成；G-01/G-02的外部门继续阻断正式阶段。 |
+
+### 2026-08-21 G-01/G-02外部门关闭预备制品
+
+| Field | Notes |
+|---|---|
+| G-01-11 | `08_步骤07_伦理提交与LevelA/G-01-11_伦理提交执行检查清单.md`：v1.0清单（SUPERSEDED）执行版，A~F六组逐项映射G-01交付物/责任角色/状态（✅/⬜/🔒），E.1汇总6款待冻结字段；机构路径确认前不得对外提交。 |
+| G-01-12 | `06_步骤05_伦理与预试材料/G-01-12_U8演练逐日执行脚本与记录表.md`：D1~D14逐日脚本、会话执行卡（对齐G-01-01§2八阶段）、故障模拟排期（满足G-01-08§5最少次数：P-ACT×2/T-BRE×1/T-UNI×1/F-MIS×2）、日终汇总表与U8结论步骤；关键数字140/112/165与产能模型一致。 |
+| G-02 Runbook | `agent/modules/data-governance/docs/formal_environment_closure_runbook.md`：6项失败检查（GOVERNANCE_ROOT/BACKUP_ROOT/SEALED_KEY_EVIDENCE/DATA_ADMIN_ACCOUNT/DEDUP_CREDENTIAL/RETENTION_APPROVAL）逐项操作+验收+责任角色，总体验收以`G02_FORMAL_ENV_PASS`+备份恢复演练为准；密钥与联系方式全程不落盘。 |
+| Gates | 禁用词扫描3个新文件0命中；注册表与任务包状态未变（READY=F-03/F-04/F-05/V-03，IN_REVIEW=G-01/G-02）；预备制品不关闭任何外部门。 |
+
+### 2026-08-23 V-03前期规划
+
+| Field | Result |
+|---|---|
+| Branch and claim | `codex/v-03-visual-mapping`; V-03 claimant=`Codex`; status=`IN_PROGRESS` |
+| Planning validator | `PASS`; 6 deliverable templates; 7 risk dimensions; detailed fill=`TBD`; F-05 partial block active |
+| Scope | Planning and upstream/downstream alignment only; no Unity edit or weather-level fill |
+| Evidence | `20_产品与场景设计/V-03_四层视听映射与资产来源基线/` |
+| Registry validator | `PASS`; 57 entries; V-03=`IN_PROGRESS`; READY=`F-03/F-04/F-05`; IN_REVIEW=`G-01/G-02` |
+| Independent packages | `PASS`; 5 packages; 115 snapshots; V-03 removed from dispatch after claim |
+| Protocol authority | `PASS`; v1.1 active files consistent |
+| Root pytest | `404 passed in 43.01s` |
+| Diff check | `PASS`; line-ending warnings only |
+### 2026-08-23 V-03详细制品与独立复核闭环
+
+| 项目 | 结果 |
+|---|---|
+| Grill决策 | 13项公共语义、降级、累计、声音、卷轴、分段资产与安全区决策已逐项确认并落盘 |
+| 详细制品 | 六项Markdown制品、40行映射JSON、参数JSON、设计Schema和双人风险评分JSON齐全 |
+| 风险选择 | 评分者A=`22/14/22/27`，独立评分者B=`26/15/25/26`；差异裁定后冻结`fade`为U-03设计交接对象 |
+| 独立Agent | `01a02f22-00cd-7822-9aa3-bcd7adfc94b3`最终复审`PASS`；首轮及后续P1/P2全部关闭，无未关闭P0-P2；不替代现实团队第二人签收 |
+| V-03校验 | 默认`python`标准库检查PASS；`py -3.14` Draft 2020-12实际验证PASS；规划基线PASS |
+| Root pytest | 默认`python`缺少pytest；按既有冻结入口使用`py -3.14 -m pytest -q`，结果`404 passed in 18.24s`，未安装依赖 |
+| 交叉校验 | 协议权威PASS；注册表PASS（V-03仍`IN_PROGRESS`，READY=`F-03/F-04/F-05`）；独立分发包PASS（5包/115快照） |
+| 文本与Git | V-03范围限制词0命中；`git diff --check`无空白错误，仅既有LF/CRLF提示 |
+| 非主张 | 未操作Unity Editor，未形成运行画面、正式构建、资产许可、真实输入链、联合运行或研究结果证据 |
+
+### 2026-08-23 V-03候选固定与IN_REVIEW治理迁移
+
+| Field | Result |
+|---|---|
+| Candidate Commits | 详细制品提交`6fbf742`；清理两份Markdown文件末尾空行后，固定第二人审核对象为`06951accd12f24f60de74f9bbf719f2edb7a9a87`。 |
+| State Migration | V-03从`IN_PROGRESS`迁移为`IN_REVIEW`，复核状态为“待真实团队第二人复核”；READY集合保持`F-03/F-04/F-05`，V-04、V-05、U-03未提前解锁。 |
+| Review Package | 新增V-03独立复核包和待签署技术验收记录；分发校验`PASS`，共6包、138份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-03`。 |
+| V-03 Validation | 默认`python`制品校验`PASS`（标准库路径）；`py -3.14`制品校验`PASS`并实际启用Draft 2020-12；规划基线校验`PASS`。 |
+| Regression | `py -3.14 -m pytest -q`结果`404 passed in 20.59s`；协议权威v1.1校验`PASS`。 |
+| Registry | 任务注册表`PASS`：57项，固定54项、模板3项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02/V-03`。 |
+| Scope Boundary | 独立Agent最终`PASS`不替代真实团队第二人签收；`fade`仅作为U-03设计交接对象，不构成Unity运行、正式构建、资产许可、真实输入链、联合运行或研究结果证据。 |
+
+### 2026-08-24 V-03资产登记与校验覆盖修复
+
+| Field | Result |
+|---|---|
+| Independent Finding | Beauvoir对旧候选复查返回`CHANGES_REQUIRED`：AC3资产类别/责任字段不完整（P1），专项校验未覆盖该要求（P2）。 |
+| Candidate Fix | `6df88d8596181542359311910748b123a1c1fdf0`新增7类78项机器台账：21项设计资产/插件与manifest全部57个直接包，每项14字段且`formal_use_allowed=false`。 |
+| Test Closure | Hypatia首次复审确认原P1/P2实现关闭并新增测试覆盖P2；`f09f0d5f1f35c98ea447eb3545c18fbb3fb36925`补齐额外字段、重复ID、未知G-02组和提前formal-use四类负向测试。 |
+| Final Independent Review | Hypatia对`f09f0d5`最终只读复审`PASS`：IA2-P1-01、IA2-P2-01和新增P2全部关闭，无新P0-P2；模型复审不替代真实团队第二人签收。 |
+| V-03 Validators | 默认`python`制品校验`PASS`；`py -3.14`制品校验`PASS`并启用Draft 2020-12；结果为`assets=78`、`direct_packages=57`、`mapping_rows=40`；规划基线`PASS`。 |
+| Regression | V-03资产专项`8 passed`；最终根回归`412 passed in 16.66s`；协议权威v1.1`PASS`。 |
+| Governance | 注册表`PASS`：`READY=F-03/F-04/F-05`、`IN_REVIEW=G-01/G-02/V-03`；独立包`PASS`：6包、141份快照。 |
+| Boundary | 资产登记不等于许可放行；未形成Unity运行、正式构建、F-05绑定、真实输入链、联合运行或研究结果证据。 |
+
+### 2026-08-24 V-03真实团队第二人签收与V-04解锁
+
+| Field | Result |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、真实团队第二人复核身份审阅最终候选`f09f0d5f1f35c98ea447eb3545c18fbb3fb36925`、独立Agent复核记录和已有验证结果，结论`PASS`；无未关闭P0-P3；签收内容提交`e6d642e1eacb659edd965439bad6e6f643519c0e`。未表述为审核人本人重新运行验证。 |
+| State Migration | V-03从`IN_REVIEW`转为`DONE`，V-04从`WAIT_DEP`转为`READY`；当前`READY=F-03/F-04/F-05/V-04`，`IN_REVIEW=G-01/G-02`。 |
+| V-03 Validators | 默认`python`制品校验`PASS`；`py -3.14`制品校验`PASS`并启用Draft 2020-12；规划基线`PASS`且治理状态为`signed_done_no_runtime_evidence`；资产专项`8 passed`。 |
+| Registry And Packages | 注册表校验`PASS`：57项、54固定、3模板；独立包校验`PASS`：6包、135份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-04`；V-03复核包已移除，V-04领取包已生成。 |
+| Regression And Protocol | 根回归`412 passed in 36.18s`；协议权威v1.1校验`PASS`。 |
+| PDF Brief | 固定任务概要PDF重建后验证`PASS`，9页，SHA-256=`77E8CED1AED077EDE4AB0FF6B15BBEE258767AF42A2065DD53F3491DC48A5142`；120 DPI逐页渲染检查未见裁切、重叠或不可读文本。 |
+| Static Checks | 当前权威文件中无V-03仍为`IN_REVIEW`、待签收或候选待签收陈述；新增行禁用词检查0命中；最终暂存差异检查在提交前执行。 |
+| Boundary | 签收只关闭V-03设计任务；不扩大为Unity运行、正式构建、资产许可放行、F-05运行字段绑定、真实输入链、联合运行或研究结果已经完成。 |
+
+### 2026-08-24 V-04设计树关闭与执行基线冻结
+
+| Field | Result |
+|---|---|
+| Design Confirmation | 团队总监逐项确认节点1-25，并确认节点26关闭本轮设计决策树；新增聚合执行基线及ADR-0025，V-04继续保持`READY`。 |
+| Design Inventory | `PASS`：25条ADR、8份节点18-25详细文档、1份聚合执行基线齐全；聚合基线纳入V-04独立任务包。 |
+| Effort Governance | V-04从4人日调整为6人日；任务注册表、任务手册、团队任务树、覆盖审计、看板、固定任务概要及独立任务包已同步。 |
+| Registry | `PASS`：57项、54固定、3模板；`READY=F-03/F-04/F-05/V-04`，`IN_REVIEW=G-01/G-02`。 |
+| Independent Packages | 初次校验按索引门预期拒绝未暂存的新基线；显式暂存权威源并重新生成后`PASS`：6包、145份快照，任务为`F-03/F-04/F-05/G-01/G-02/V-04`。 |
+| Protocol And Regression | 协议权威v1.1校验`PASS`；`py -3.14 -m pytest -q`结果`412 passed in 19.21s`。 |
+| Static Checks | V-04目录不合规措辞扫描0命中；设计清单检查`PASS`；提交前继续执行暂存差异与范围检查。 |
+| PDF Brief | 固定任务概要PDF验证`PASS`，9页，SHA-256=`9871EDFDEE86CB7CD9405E700AADF5A49D61EBF3CF91D006A95D0A81B04BD7C2`；110 DPI逐页渲染及第4/8页重点检查未见裁切、重叠或不可读文本。 |
+| Evidence Boundary | 本轮只冻结设计与任务治理；未安装验签FFmpeg，未生成临时视觉资产、声音母带、Animatic或GitHub预发布，也未形成Unity运行、正式构建、真实输入链或研究结果证据。 |
+
+### 2026-08-24 V-04认领、工具门与H1候选验证
+
+| Field | Result |
+|---|---|
+| State Migration | V-04=`IN_PROGRESS`，claimant=`Codex`，branch=`codex/v-04-animatic`；`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02`。 |
+| Toolchain | `validate_v04_toolchain.py`结果`PASS`：Python/Pillow/NumPy精确版本、FFmpeg 9.0.1归档与可执行文件哈希、构建参数、1920x1080 H.264/AAC烟雾媒体和G-02开发工具许可登记均一致。 |
+| H1 Candidate Gate | `validate_v04_h1.py`结果`PASS`：10张1672x941 RGB源图和5张1920x650评审图哈希、尺寸、版本及状态精确；全部禁止正式使用；H1仍待团队总监选择，H2继续阻断。 |
+| Registry And Packages | 注册表校验`PASS`：57项、54固定、3模板；独立包校验`PASS`：5包、116份快照，任务为`F-03/F-04/F-05/G-01/G-02`；V-04认领包已移除。 |
+| Protocol And Regression | 协议权威v1.1校验`PASS`；根回归`412 passed in 18.97s`。 |
+| PDF Brief | 固定任务概要验证`PASS`，9页，SHA-256=`D3962052874DDBCF8DF3E003FCBCC4CB92EF56D2F518FD3AE919EE1F611358BA`；逐页渲染后修复第3页旧READY陈述，复查第3、8、9页无裁切、重叠、乱码或状态冲突。 |
+| Static Checks | 本轮V-04候选文档与G-02工具台账禁用词0命中；`.tools`与`.artifacts-local`无Git跟踪文件；最终暂存范围和`git diff --cached --check`在提交前执行。 |
+| Evidence Boundary | 本轮关闭工具探测和H1候选准备，不代替团队总监H1选择；未形成长卷轴、拆层资产、声音母带、H2样片、完整Animatic、GitHub预发布、Unity运行、正式构建、真实输入链或研究结果证据。 |
+
+### 2026-08-25 V-04 H1人工确认PASS
+
+| Field | Result |
+|---|---|
+| Human Decision | 傅钧烨以团队总监H1人工确认身份选择`storm-A/heat-A/snow-B/fade-B/corridor-A`并明确`H1=PASS`，时间`2026-08-25T09:00:03+08:00`。 |
+| Immutable Inputs | 选择记录绑定审核提交`2ca410de64c7213de9505b623ad2e80a5d33ef09`、候选清单SHA-256 `646020168FF9298D23B797B93BD2AE3132993DA602A20584E4C9B481C5C50FBC`和评审清单SHA-256 `D4095494F37DAE9937255DF80DBE9E7BFDF8CE9FDBA8CA9ABA0D2BD4569886E9`。 |
+| Selection Record | `V-04_H1选择记录_v1.0.json` SHA-256=`C481645A453E30B4A9BDC6821883B9F648B73D2F8EE2E9FACF06987BA42074AD`；5张入选图和5张未入选图集合完整且无重复。 |
+| H1 Validator | `validate_v04_h1.py`结果`PASS`：10张源图、5张评审图、五项人工选择、审核提交和输入清单哈希一致；所有资产继续禁止正式使用；H2样片为`READY`。 |
+| Governance | 协议权威v1.1校验`PASS`；注册表`PASS`：57项、`READY=F-03/F-04/F-05`、`IN_REVIEW=G-01/G-02`；独立包`PASS`：5包、116份快照。 |
+| Regression | 根回归`412 passed in 20.71s`。 |
+| Gate Boundary | V-04继续`IN_PROGRESS`；H2十秒`fade`双条件样片已解锁，批量长卷轴及后续仍由H2阻断；H1不构成正式资产、完整Animatic、Unity运行、正式构建或真实输入链证据。 |
+
+### 2026-08-25 V-04 H2十秒样片候选
+
+| Field | Result |
+|---|---|
+| Candidate | `candidate-v2`；10秒、30 fps、300帧；场景原生与抽象提示参与者视图各1920x1080，并列评审视图3840x1200。 |
+| Condition Parity | 两条件共享环境帧、设计预演轨迹、天气、卷动和声音；提示掩膜外最大原始像素差为0。 |
+| Audio Gate | `candidate-v1`为`-22.16 LUFS-I/-2.98 dBTP`，按门槛拒绝；`candidate-v2`为`-22.24 LUFS-I/-3.49 dBTP`，48 kHz、24-bit、双声道PCM，通过。 |
+| H2 Validator | `validate_v04_h2.py`结果`PASS`：3条视频、1条PCM声音和1张关键帧图的尺寸、帧率、时长、哈希、提示差异与Git忽略边界一致。 |
+| Project Regression | 协议权威v1.1校验`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02`）；独立任务包`PASS`（5包、116份快照）；根回归`412 passed in 26.67s`。 |
+| Visual Probe | 抽取0.25、3.50和8.00秒并列帧目检，覆盖`INHALE_1/INHALE_2/EXHALE_1`；FFmpeg黑帧及持续1秒以上冻结探测无命中。 |
+| Static Checks | 新增H2路径不合规措辞扫描0命中；媒体与本地工具均未被Git跟踪；FFprobe清单只保留稳定文件名；`git diff --check`通过。 |
+| Human Gate | `PENDING_HUMAN_CONFIRMATION`；等待团队总监提交`continuity/speed/cue/weather/audio/H2`六项结论。 |
+| Boundary | 候选只验证局部连续性、双条件可比性、预演速度和临时声音；不覆盖200秒接缝、完整Animatic、Unity运行、正式构建或真实输入链。 |
+
+### 2026-08-27 F-04领取
+
+| Field | Result |
+|---|---|
+| Isolation | 从提交`78078db560ab83e30c385fbaf20ea50807b5e8b9`创建独立工作树`D:/Agent/03-SRP-f04-worktree`与分支`codex/f-04-readonly-console`；创建前目标目录及同名分支均不存在。 |
+| State Migration | F-04由`READY`迁移为`IN_PROGRESS`，claimant=`Codex Agent（F-04独立对话）`，reviewer=`傅钧烨（团队总监，独立第二人复核人）`。 |
+| User Authority | 用户明确要求实施F-04质量提升计划并授权候选技术验证后提交、推送该分支；不合并main、不部署，第二人签收前不得转`DONE`。 |
+| Scope Boundary | 仅实现F-04 W0只读壳和本地静态演示；UDP 5005与人工请求均为禁用占位，不抢做T-01、T-02或F-05。 |
+
+### 2026-08-27 F-04候选构建与重开验证
+
+| Field | Result |
+|---|---|
+| Host Tests | F-04主机侧测试`15 passed`；Python 3.14语法检查通过。 |
+| TD Build | TouchDesigner `2025.32820` Textport执行构建器返回`F04_BUILD_COMPLETE 10 pages 30 nodes`。 |
+| TD Reopen | 重新加载`F04_ReadonlyConsole.toe`成功；TD实际自动打开同内容备份名`.1.toe`，两文件哈希一致，已删除重复备份，仅保留正式`.toe`。 |
+| TD Errors | `node_errors.json`中`operator_errors=""`、`script_errors=""`、`pass=true`；节点清单30个。 |
+| Evidence | 10张页面截图、fixture、`.toe/.tox`、主机清单、节点权限、节点错误和运行清单均已生成；fixture、`.toe`、`.tox` SHA-256已记录。 |
+| Network Boundary | 9981与5005无监听；UDP 5005节点为禁用占位，人工标记/中止无回调；无网络输出。 |
+| Human Gate | F-04迁移为`IN_REVIEW`；等待傅钧烨独立打开`.toe`、切换10页、检查权限并签署PASS/FAIL。 |
+
+### 2026-08-27 F-04提交前收尾门禁
+
+| Field | Result |
+|---|---|
+| F-04 Tests | `py -3.14 -m pytest agent/modules/touchdesigner/f04_readonly_console/tests/test_f04_console.py -q`：`15 passed`。 |
+| Contract Tests | `py -3.14 -m pytest agent/modules/communication/tests/contract/test_runtime_contract.py -q`：`49 passed`。 |
+| P-01/P-02 Regression | `py -3.14 -m pytest agent/modules/tests/session_core agent/modules/tests/session_store -q`：`166 passed`。 |
+| Governance Gates | 注册表校验`PASS`；独立包`PASS`：5个派发包、132份快照；`git diff --cached --check`通过。 |
+| AC2 | 关闭TouchDesigner后，9981与5005均无监听；F-04不依赖TD进程完成主机合同测试。 |
+| Candidate State | 保持`IN_REVIEW`；自动化与Codex运行验证不替代傅钧烨的独立人工签收。 |
+### 2026-08-26 V-04 H2原生fade表达返工
+
+| Field | Result |
+|---|---|
+| Human Finding | 团队总监指出`candidate-v2`的场景原生框未体现可辨认的fade变化，裁定`cue=REVISE`；旧候选停止签收。 |
+| Contract Alignment | V-03要求中远景色潮执行主流展开、不回零补流和长距离下降回流，近景色丝独立；共享累计环境继续慢变且两条件一致。 |
+| Internal Rejections | `candidate-v3`第一吸气覆盖不足；`candidate-v4`补吸阶段覆盖和色彩增益不足；二者均被新增机器门拒绝，未交人工复审。 |
+| Candidate | `candidate-v5`，10秒、30 fps、300帧；原生目标改为无矩形边界的局部色潮与色彩恢复，近景实际色丝、抽象双环、共享背景、卷动和声音保持既定职责。 |
+| Visibility Gate | 1.00、3.50、8.00秒目标区变化覆盖=`22.06%/25.38%/29.15%`，平均色彩增益=`6.764/2.075/8.638`，均通过`>=18%`与`>=2.0`门槛。 |
+| H2 Validator | `validate_v04_h2.py`结果`PASS`；提示掩膜外最大原始像素差0；声音`-22.24 LUFS-I/-3.49 dBTP`；黑帧和持续1秒以上冻结检测无命中。 |
+| Project Regression | 协议权威v1.1校验`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-04/F-05`，`IN_REVIEW=G-01/G-02`）；独立任务包`PASS`（5包、116份快照）；根回归`412 passed in 25.55s`；`git diff --check`通过。 |
+| Human Gate | `candidate-v5`等待团队总监重新提交六项结论；自动通过不代替H2人工确认。 |
+| Boundary | 返工只形成设计预演候选，不证明200秒模块、完整Animatic、Unity运行、正式构建或真实输入链完成。 |
+
+### 2026-08-27 V-04 H2颜色丰富度语义订正
+
+| Field | Result |
+|---|---|
+| Human Finding | 团队总监指出`candidate-v5`是青、红、蓝滤镜切换，不是画面颜色丰富度下降和回升；该候选停止评审。 |
+| Authority Check | 早期褪色设计和V-03累计层支持轮廓、纹理与基础色彩完整度变化；V-03目标层仍记载色潮，已通过V-04 ADR记录待版本化同步，不改写历史签收文件。 |
+| Internal Rejection | `candidate-v6`已移除阶段性色相，但目标区变化过弱，被更新后的机器门拒绝，未交人工复审。 |
+| Candidate | `candidate-v7`；原画自身在首吸与补吸阶段去饱和并降低纹理丰富度，长呼阶段连续恢复；没有阶段性彩色覆盖层。 |
+| Richness Gate | 1.00、3.50、8.00秒目标区变化覆盖=`21.96%/72.31%/34.43%`，平均颜色丰富度损失=`1.087/5.373/1.485`；补吸显著深于首吸，长呼回落到补吸峰值的27.6%。 |
+| H2 Validator | `validate_v04_h2.py`结果`PASS`；3条视频、1条PCM声音、1张关键帧图的尺寸、时长、哈希与Git忽略边界一致；提示掩膜外最大原始像素差0。 |
+| Project Regression | V-04工具链和H1校验`PASS`；FFmpeg黑帧及持续1秒以上冻结探测无命中；协议权威、任务注册表和独立任务包校验`PASS`；根回归`412 passed in 28.08s`。 |
+| Human Gate | `candidate-v7`为`PENDING_HUMAN_CONFIRMATION`；自动通过不代替团队总监H2结论。 |
+| Boundary | 当前只形成10秒设计预演，不证明200秒模块、完整Animatic、Unity运行、正式构建或真实输入链完成。 |
+
+### 2026-08-27 V-04 fade合同冲突网页端研究提示词
+
+| Field | Result |
+|---|---|
+| User Requirements | 已逐字保持三项设计方向：两条件从整屏完全褪色开始、重定双吸长呼中的颜色丰富度变化且终点完全恢复、两条件共享整屏褪色并重建合同。 |
+| Conflict Coverage | 提示词覆盖产品总规格、参与者旅程、V-02 fade/双环/视觉预算、V-03映射与参数边界、V-04 ADR和H2候选之间的冲突。 |
+| Research Request | 要求网页端比较三类架构、联网引用权威来源、输出职责合同、完整时间线、归一化映射、两条件像素边界、版本迁移和验收测试。 |
+| Evidence Boundary | 本轮只生成纯文本研究提示词；未裁定新合同，未修改已签收V-03文件，未重新生成H2样片。 |
+
+### 2026-08-27 F-04 附件验收
+
+| Field | Result |
+|---|---|
+| Input | `D:/Wecheat/xwechat_files/wxid_xhivgw8tj7kt22_8232/msg/file/2026-08/SRP-F04.zip`; SHA-256=`6C21308742B0026BAA297501085BAA5C0A0603CD662F69B84685ADEB8840C38B`。 |
+| Package Check | ZIP可读取；包含F-04交付、fixture、工具和TouchDesigner施工图，但同时夹带未声明的`F-01/`目录，包级范围不洁。未发现截图、录屏、`.toe/.toa`、节点检查或TD运行日志。 |
+| Static Fixture | `f04_validate_fixture.py`通过：11条记录、四模块、四类告警、乱序、降级及dropout/recovered覆盖。 |
+| Python Syntax | `py_compile`通过：fixture validator、sender、TD施工图脚本。 |
+| Readonly Boundary | manifest中的五项边界声明均为`false`；静态代码仅创建UDP输入、表、回调、容器和展示面板，未发现Unity/Spout输出、随机化、阈值编辑或设备驱动调用。 |
+| Runtime Evidence | 未在TouchDesigner内执行施工图、未发送UDP并观察页面更新；因此AC1/AC3仅有脚本/fixture级证据，不能升级为TD页面验收。 |
+| Human Gate | 未提供第二人操作复核/签收；F-04任务完成条件未满足。 |
+| Decision | `NO-GO / RETURN_FOR_EVIDENCE`：静态候选可审阅，F-04不可签收为完成。 |
+| Next Gate | 在真实TouchDesigner中生成并保存`.toe`或可追溯页面产物，回放fixture并提交页面截图、节点权限检查和运行日志；清除包内F-01串包；完成第二人复核。 |
+
+### 2026-08-27 F-04 前期设计与运行合同深度核对
+
+| Field | Result |
+|---|---|
+| Authority Health | 协议权威校验`PASS`；任务注册表`PASS`（F-04=`READY`）；独立任务包`PASS`；F-01合同测试`49 passed`；非Python消费者`PASS`。当前对照基线有效。 |
+| Acceptance Drift | 项目F-04 AC2是“关闭TD不影响其他制品”，AC3是“无Spout输出、随机化或阈值编辑入口”；附件改写为AC2只读边界、AC3异常状态展示，遗漏原AC2并自行改变验收编号和语义。 |
+| Contract Compatibility | 正式TelemetryFrame有29个顶层字段；附件首帧28个字段中仅`session_id`与正式合同同名，缺28个正式字段并新增27个demo字段。F-01参考校验器以`MISSING_FIELD: schema_version,message_type`拒绝附件。 |
+| Port and Module Drift | 项目权威和全局端口注册表固定TD遥测为UDP 5005；附件硬编码未登记的9054。正式天气标识为`storm/heat/snow/fade`；附件硬编码`storm/scorching/blizzard/fading`。 |
+| Page Coverage | 10类权威页面中，设备连接、目标/实际相位2类完整；会话/版本、ECG/RR质量、周期结果、延迟/时钟偏差、降级5类部分实现；原始/滤波呼吸、日志写入、中止/人工标记3类缺失。AC1“全部页面”不成立。 |
+| Static Quality | fixture自检与Python编译通过；无监听时sender可发送11条UDP记录并正常退出。施工图静态保持只读，但未校验正式schema/version，解析任意JSON后以默认值继续显示。 |
+| Evidence Quality | 无F-04专用`.toe/.toa`、截图、节点权限导出、TD控制台日志、fixture回放录像、固定提交/哈希清单或第二人复核；项目权威工作目录中也没有附件F-04文件。 |
+| Package Hygiene | ZIP夹带未声明`F-01/`目录，且F-04交付没有包级manifest绑定文件与哈希。附件称“等待F-01正式合同”，但F-01已于2026-08-12签收为DONE，说明前期状态读取过期。 |
+| Quality Decision | `REWORK_REQUIRED`。STATIC仅为部分可读原型；CONTRACT=`FAIL`；INTEGRATION/TD_RUNTIME=`NOT_OBSERVED`；HUMAN_ACCEPTANCE=`NOT_OBSERVED`。F-04保持`READY`，不得进入第二人签收。 |
+| Required Repair Order | 先恢复原AC语义并改用v2.1字段、5005和正式天气标识；补齐10类页面骨架；强化schema/version失败关闭；生成TD运行制品与证据；清理并重打交付包；最后第二人操作复核。 |
+
+### 2026-08-28 V-04科研便捷实施重裁
+
+| Field | Result |
+|---|---|
+| Authority | `CONTEXT.md`已指向`V-04_科研便捷实施裁定_v1.1.md`；冲突时v1.1优先。 |
+| H2 Identity | `V-04_H2样片配置_v1.1.json`可解析，`candidate_id=candidate-v8`且`status=DESIGN_READY_PENDING_RENDER`。 |
+| Consistency | 实施状态、评审说明、配置和v1.1裁定均将candidate-v7标为停止评审，并指向candidate-v8。 |
+| Format | 相关已跟踪文件`git diff --check`通过；仅出现仓库既有LF转CRLF提示。 |
+| Evidence Level | 仅完成设计裁定和静态一致性检查；candidate-v8尚未渲染，未形成Unity运行或正式构建证据。 |
+
+### 2026-08-28 项目清理与V-04 candidate-v8
+
+| Field | Result |
+|---|---|
+| Cleanup Scope | 当前Git差异包含42个已跟踪删除、8个修改和6个新增；移除V-04旧节点/ADR/H2候选链及迁移时已保留的3个旧实验文件删除项。重复docx、无引用`SRP/`素材、`agent/local/tmp/`、旧候选媒体和生成日志未进入Git。 |
+| H2 Render | `candidate-v8`生成300个共享帧、两条1920x1080参与者视频、一条3840x1200并列视频、一条48 kHz/24-bit双声道PCM声音和一张关键帧图；媒体位于Git忽略目录。 |
+| H2 Metrics | 首帧scene/abstract平均色度均为`0.0`；4秒为`4.909/4.180`；9.5秒为`12.766/10.907`；提示掩膜外最大原始像素差为`0`。 |
+| V-04 Gates | 工具门、H1校验和H2校验均`PASS`；H2仍为`PENDING_HUMAN_CONFIRMATION`，自动验证不代替团队总监结论。 |
+| Governance | 协议权威v1.1、任务注册表和独立任务包校验通过；任务注册表57项，READY=`F-03/F-04/F-05`；独立包5个、116份快照。 |
+| Regression | 首次经`py`启动器运行已输出`412 passed`但启动器未退出；随后使用冻结解释器直接重跑，`412 passed in 28.87s`且退出码为0。 |
+| Static Checks | Python语法、v1.1 JSON解析、废弃路径引用、当前改动文档措辞和Git差异检查通过；发现并修复1处旧实验数据README悬空引用。 |
+| Rebase Verification | 变基到最新`origin/main`后，`core.autocrlf=true`使新配置工作区字节转为CRLF；候选清单已同步到实际配置SHA-256 `E55FBF958A064A7ED8043D689AC5FC9C8CE47D9085D9DA2FF8A5EA79E58550E8`，不改变样片内容或设计参数。 |
+| Evidence Boundary | 当前只证明设计预演、合同一致性和Python回归；不扩大为Unity运行、正式构建、真实设备链、H2人工确认或V-04完成。 |
+
+### 2026-08-29 V-04 candidate-v9色潮回流设计合同
+
+| Field | Result |
+|---|---|
+| Design Authority | 新增`V-04_H2_candidate-v9_色潮回流设计合同_v1.0.md`；冻结整屏复色、目标色潮、实际水面色迹和累计环境四条独立通道，并将当前硬门设为`H2_V9_PENDING_RENDER`。 |
+| Historical Candidate | candidate-v8的3条视频、PCM24声音、关键帧、首末帧颜色和提示区外差异继续由`validate_v04_h2.py`验证`PASS`；该结果仅为历史机器证据，人工设计结论为`REVISE`。 |
+| V-04 Validators | 锁定Python 3.14.4环境下工具链验证`PASS`；H1验证`PASS`；candidate-v8历史媒体验证`PASS`。默认Python 3.14.5缺少Pillow，未用于冻结工具链判定。 |
+| Governance | 协议权威v1.1验证`PASS`；任务注册表验证`PASS`（57项，`READY=F-03/F-05`，`IN_REVIEW=F-04/G-01/G-02`）；独立任务包验证`PASS`（5包、132份快照）。 |
+| Regression | 锁定Python 3.14.4执行根回归：`412 passed in 21.53s`。 |
+| Static Checks | 当前入口只把v1.1评审说明列为历史证据；新增行不含项目禁用表述；`git diff --check`通过。 |
+| Evidence Boundary | 本轮只证明设计合同、状态迁移和既有回归一致；candidate-v9尚未渲染，不构成Unity运行、正式构建、真实设备链、H2人工通过或V-04完成。 |
+
+### 2026-08-29 V-04 candidate-v9渲染与机器门
+
+| Field | Result |
+|---|---|
+| Render | 300组共享帧；两条1920x1080参与者视频、一条3840x1200并列视频、48 kHz/24-bit双声道PCM声音、彩色/灰度关键帧与v1.2清单生成完成。 |
+| Internal Revision | 第一轮实际层连续线条未过独立自然性预审，移入Git忽略目录`rejected/candidate-v9-r1`；修正版采用水面断续反光并重新生成当前candidate-v9。 |
+| Machine Gate | `validate_v04_h2_v9.py`为`PASS`；目标/实际越出水面alpha=`0/0`，补吸保留率=`0.995748`，新增面积=`13642 px`，长呼路径=`551.659 px`，终点残留=`0`，提示掩膜外最大差=`0`。 |
+| Media Checks | 场景原生和抽象提示视频的黑帧及持续1秒冻结检测无命中；声音=`-22.24 LUFS-I/-3.49 dBTP`。 |
+| Project Regression | V-04工具链、H1、candidate-v8历史证据、candidate-v9、协议权威、57项任务注册表和5个独立任务包验证均`PASS`；根回归`412 passed in 21.13s`。 |
+| Human Gate | 独立视觉预审为`READY_FOR_TEAM_DIRECTOR_REVIEW`；团队总监九项结论仍为`PENDING_HUMAN_CONFIRMATION`。 |
+| Evidence Boundary | 当前只证明10秒设计预演候选和机器合同；不构成Unity运行、正式构建、真实设备链、H2人工通过或V-04完成。 |
+
+### 2026-08-29 V-04 candidate-v10固定镜头与背景重建
+
+| Field | Result |
+|---|---|
+| Human Revision | 团队总监将candidate-v9人工总门裁定为`REVISE`：fade取消横向滚动，旧底图恢复后仍偏灰暗压抑；v9机器门`PASS`继续作为历史证据。 |
+| Design Authority | 新增科研便捷实施裁定v1.2和candidate-v10合同；fade两条件共享固定相机与固定背景，完全褪色继续由运行时整屏颜色包络产生。 |
+| Prompt and Candidate | 新提示词与首张背景候选`fade-v10-fixed-color-r1`已生成；`1942x809`、`2484075 bytes`、SHA-256=`2a02eae7b2cea3f9584ab9854321ee28cbc65764337d92f99c59dbe9784b9372`，本地候选不进入Git且`formal_use_allowed=false`。 |
+| Image Observation | 旧图/新图平均明度=`0.3909/0.6021`，平均HSV饱和度=`0.1194/0.2508`，高于0.20饱和度像素占比=`7.31%/50.00%`，低于0.20明度暗部占比=`16.48%/3.62%`。 |
+| Historical V-04 Gates | 工具链、H1、candidate-v8和candidate-v9历史验证器均`PASS`；旧候选验证不替代当前v10背景门。 |
+| Governance | 协议权威v1.1、57项任务注册表和5个独立任务包验证均`PASS`；当前`READY=F-03/F-05`。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 26.38s`。 |
+| Static Checks | 背景清单JSON、候选文件哈希/尺寸、当前权威无旧v9待确认门、增量措辞和`git diff --check`均通过。 |
+| Current Gate | `H2_V10_BACKGROUND_PENDING_HUMAN_SELECTION`；团队总监确认背景后才允许重建candidate-v10双条件样片。 |
+| Evidence Boundary | 本轮只完成固定镜头裁定、原生背景生成和静态检查；不构成candidate-v10完整样片、H2通过、Unity运行、正式构建或真实设备链证据。 |
+
+### 2026-08-29 V-04 candidate-v10背景签收与机器门
+
+| Field | Result |
+|---|---|
+| Background Human Gate | 团队总监傅钧烨明确给出`background_v10=PASS`；选择记录覆盖`fade-v10-fixed-color-r1`固定镜头原生全彩背景，不扩大为H2通过。 |
+| Reproducibility | 新建v1.3配置、独立`render_h2_v10.py`和`validate_v04_h2_v10.py`；v8/v9历史渲染链及其清单未改写。 |
+| Preflight Revision | 首次完整宽度适配产生上下模糊填充带，正式渲染前改为固定16:9中心覆盖裁切；相机位移保持0，中央主水道和左侧支流可见。 |
+| Render | candidate-v10生成300帧、两条1920x1080参与者视频、一条3840x1200并列视频、48 kHz/24-bit双声道PCM声音及彩色/灰度关键帧。 |
+| Color and Conditions | 首帧两条件平均色度均为0；9.5秒平均色度为`30.038/30.116`并保持至终点；提示掩膜外最大原始像素差为0。 |
+| Water and Phase Geometry | 目标/实际越出水面alpha=`0/0`；补吸保留率=`0.996336`、面积比=`1.524776`；长呼路径=`582.673 px`、下游质心=`191.688 px`、终点残留=0。 |
+| Media Health | 两条参与者视频黑帧命中0、解码帧各300、最大连续完全重复帧均为1；固定镜头不使用会误判低幅环境运动的通用冻结阈值。 |
+| Audio | `-22.24 LUFS-I/-3.49 dBTP`，处于配置允许范围。 |
+| V-04 and Governance | 工具链、H1、v8、v9、v10、协议权威、57项任务注册表和5个独立任务包验证均`PASS`。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 39.26s`。 |
+| Current Gate | `H2_V10_PENDING_HUMAN_CONFIRMATION`；等待团队总监按v1.4评审说明给出九项结论。 |
+| Evidence Boundary | 当前证明背景人工选择、10秒设计样片和机器合同；不构成H2人工通过、V-04完成、Unity运行、正式构建或真实设备链证据。 |
+
+### 2026-08-29 V-04 candidate-v10 H2人工确认PASS
+
+| Field | Result |
+|---|---|
+| Human Decision | 团队总监傅钧烨明确回复“确认fade通过”；按v1.4规则记录九项人工评审均为`PASS`，H2关闭。 |
+| Evidence Binding | 审核提交=`49a8b596a67544c512cd0a5198c09da1947ecc18`；配置SHA-256=`55bac5e65bbd9f20972500c915ba13b651e03b7eee9354f0c9803ac9e23d121a`；清单SHA-256=`3b4eaa11e27316d94f00ed4f930764ed989624211ab881eb112a6003ff95faca`；并列视频SHA-256=`98bb122ed2e41e3e54ea0bcd8a884d1b3d095ec955199c67e0ddc3ebab213e0e`。 |
+| State | V-04保持`IN_PROGRESS`；当前硬门迁移为`H3_INPUT_PREVIEWS_READY`。 |
+| Next Inputs | storm、heat、snow各10–15秒核心机制样片及山雾长廊短样片；全部通过机器检查后装配不超过2分钟的H3评审视频。 |
+| Review Record Check | 结构化记录JSON可解析；九个指定键均为`PASS`；配置、清单和并列视频三个SHA-256均与实际文件一致。 |
+| V-04 Regression | 工具链、H1、candidate-v8历史证据、candidate-v9历史证据和candidate-v10机器门验证均为`PASS`。 |
+| Governance | 协议权威验证`PASS`；任务注册表为57项，当前`READY=F-03/F-05`；独立任务包为5包、132份快照。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 20.07s`。 |
+| Static Checks | 当前权威不存在旧H2待确认陈述；新增行不合规措辞0命中；`git diff --check`无空白错误。 |
+| Evidence Boundary | H2只签收candidate-v10 fade双条件10秒设计样片；不表示V-04完成、其余样片完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-29 V-04 storm核心机制样片
+
+| Field | Result |
+|---|---|
+| Contract | 12秒、30 fps、`INHALE/HOLD_1/EXHALE/HOLD_2`各3秒；场景原生雨幕风门与近场实际、抽象双环、共享环境及无阶段声音冻结。 |
+| Revisions | r1/r2因条件掩膜外溢被拒绝；r3连续轮廓偏抽象；r4出现安全区硬裁切矩形；全部隔离在Git忽略的本地拒绝目录。 |
+| Final Render | 两条1920×1080参与者视频、一条3840×1200并列视频、48 kHz/24-bit双声道WAV、彩色与灰度关键帧生成完成。 |
+| Machine Gate | `PASS`：360帧、区外像素差0、风门半宽展开110像素、两次停留几何漂移0、3秒与9秒目标/实际保持错位、卷动460像素。 |
+| Media And Audio | 黑帧0、无持续1秒完全重复帧；声音=`-21.96 LUFS-I/-8.5 dBTP`。 |
+| Visual Precheck | `PASS`：当前版本无连续拱线、可见矩形裁切或过长实际轨迹；彩色、灰度关键帧及2.9秒全分辨率场景原生帧已检查。 |
+| V-04 Regression | 工具链、H1、candidate-v8/v9/v10历史机器证据及storm专项验证均为`PASS`。 |
+| Governance | 协议权威、57项任务注册表和5个独立任务包验证均为`PASS`；当前`READY=F-03/F-05`。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 23.52s`。 |
+| State | storm输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为heat。 |
+| Evidence Boundary | 当前只形成storm设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-30 V-04 storm样片人工确认PASS
+
+| Field | Result |
+|---|---|
+| Human Decision | 团队总监傅钧烨明确回复“确认storm样片通过”；`storm-candidate-v1`人工结论为`PASS`。 |
+| Evidence Binding | 审核提交=`65a80939893bf6a8fd9ed73e4721981297341ddd`；候选清单SHA-256=`42a06151f75c000e0c18d6ce5ebcf819133db0dc02dc185ae8e052af10114591`；并列视频SHA-256=`73e1fa977419351a6fb1ea19b75ecbafbbef2928f0b6eb9fc06c75312c105c2c`。 |
+| Human Results | 目标四阶段、两次停留、实际与目标差异、抽象双环、条件环境一致和storm输入均为`PASS`。 |
+| Verification | storm专项机器门和协议权威均`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-05`）；独立任务包`PASS`（5包、132份快照）；根回归`412 passed in 32.92s`。 |
+| Runtime Selection | PATH Python 3.14.5缺少Pillow，工作区绑定图像运行时缺少pytest；按工具链锁直接使用Python 3.14.4、pytest 9.0.3和Pillow 12.2.0完成验证，未安装依赖。 |
+| Static Checks | 人工评审JSON可解析，候选清单与并列视频哈希一致；新增文件限制用语0命中；`git diff --check`通过。 |
+| State | storm输入=`HUMAN_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为heat。 |
+| Evidence Boundary | 本结论只签收storm单项设计样片；其余H3输入、H3合并视频、V-04总体验收、Unity运行、正式构建、资产许可放行和真实设备链仍未完成。 |
+
+### 2026-08-30 V-04 heat核心机制样片
+
+| Field | Result |
+|---|---|
+| Contract | 10秒、30 fps、4秒吸气和6秒呼气；场景原生冷流风道与近场实际、抽象双环、共享环境及无阶段天气/声音冻结。 |
+| Revision | 首轮预检的规则虚线网格、端点圆斑和偏弱暖色分离已修复；拒绝预检只保留在Git忽略目录。 |
+| Final Render | 两条1920×1080参与者视频、一条3840×1200并列视频、48 kHz/24-bit双声道WAV、彩色与灰度关键帧生成完成。 |
+| Machine Gate | `PASS`：300帧、区外像素差0、吸气路径`369.34 px`、呼气路径`575.83 px`、路径比`1.559`、呼气向前移动`440 px`，4秒切换点目标/实际保持错位。 |
+| Media And Audio | 10秒CFR媒体和双声道声音结构通过；声音=`-22.02 LUFS-I/-4.42 dBTP`。 |
+| Visual Precheck | `PASS`：彩色/灰度关键帧及3.9、4.3、8.0、9.9秒并列帧已检查；规则网格和端点圆斑不再出现。 |
+| V-04 Regression | 工具链、H1、candidate-v8/v9/v10历史机器证据、storm专项及heat专项验证均为`PASS`；H1/H2校验器阶段尾注按历史证据解释，当前状态以v1.8及既有人工记录为准。 |
+| Governance | 协议权威验证`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-05`）；独立任务包`PASS`（5包、132份快照）。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 636.11s`；本次D盘文件I/O明显慢于历史基线。 |
+| Evidence Binding | heat机器验收JSON可解析；候选清单与并列视频SHA-256均与实际文件一致；下一输入为`snow`。 |
+| State | heat输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，下一输入为snow。 |
+| Evidence Boundary | 当前只形成heat设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-30 V-04 snow核心机制样片
+
+| Field | Result |
+|---|---|
+| Contract | 10秒、30 fps、5秒吸气和5秒呼气；场景原生中景/近景粉雪、抽象双环、共享环境及无阶段天气/声音冻结。 |
+| Revisions | 首轮提示过弱、第二轮规则十字星点、第三轮同心阴影气泡感依次退回；最终采用带偏移明暗边缘的不规则短絮。 |
+| Final Render | 两条1920×1080参与者视频、一条3840×1200并列视频、48 kHz/24-bit双声道WAV、彩色与灰度关键帧生成完成。 |
+| Machine Gate | `PASS`：300帧、区外像素差0、目标/实际垂直行程`300/210 px`、镜像误差低于`4e-13 px`、两阶段目标粒子数均为72且最大透明度均为175，5秒切换点目标/实际处于不同阶段。 |
+| Media And Audio | 10秒CFR媒体无黑帧或持续1秒完全重复帧；声音=`-22.10 LUFS-I/-3.49 dBTP`。 |
+| Visual Precheck | `PASS`：彩色/灰度关键帧及0.0、4.9、5.4、9.9秒并列帧已检查；提示在灰度画面可辨且不再出现规则星点或同心气泡。 |
+| V-04 Regression | 工具链、H1、candidate-v8/v9/v10历史机器证据、storm、heat及snow专项验证均为`PASS`；H1/H2校验器阶段尾注按历史证据解释，当前状态以v1.9及既有人工记录为准。 |
+| Governance | 协议权威验证`PASS`；任务注册表`PASS`（57项，`READY=F-03/F-05`）；独立任务包`PASS`（5包、132份快照）。 |
+| Project Regression | 冻结Python 3.14.4执行根回归：`412 passed in 23.20s`。 |
+| Evidence Binding | snow机器验收JSON可解析；候选清单与并列视频SHA-256均与实际文件一致；下一输入为`corridor`。 |
+| State | snow输入=`MACHINE_PASS_READY_FOR_H3_ASSEMBLY`；V-04保持`IN_PROGRESS`，只剩山雾长廊输入。 |
+| Evidence Boundary | 当前只形成snow设计样片；不表示H3合并评审、V-04完成、Unity运行、正式构建、资产许可放行或真实设备链完成。 |
+
+### 2026-08-30 V-04 corridor-candidate-v1
+
+- `render_h3_corridor.py --preflight`：`PASS`，检查0.0、3.6、6.0、8.4和12.0秒代表帧。
+- 首轮专项验证：`FAIL`，临时母带为`-32.3 LUFS-I`；修正可听频段后声音预检为`-22.31 LUFS-I/-13.21 dBTP`。
+- `validate_v04_h3_corridor.py`：`PASS`，12秒、30 fps、360帧、30/40/30阶段、两条件视频同哈希、最大像素差0、无提示层、无下一基线提前泄露、媒体健康和共享声音通过。
+- 彩色与灰度关键帧人工视觉预检：`PASS`，无字界碑、中性遮挡和下一场景中性入口清晰。
+- V-04工具链、H1、candidate-v8/v9/v10、storm、heat、snow和corridor共九个验证器：全部`PASS`。
+- 协议权威、任务注册表与独立任务包：全部`PASS`；任务注册表57项，`READY=F-03/F-05`；独立包5个、132份快照。
+- 根Python回归：`412 passed in 38.74s`。
+- 当前证据关闭`H3_INPUT_PREVIEWS_READY`；H3合并评审、六节点Unity交接分镜和V-04总体验收仍未完成。
+
+### 2026-08-30 V-04 H3 combined review candidate-v1
+
+| Field | Result |
+|---|---|
+| Render | 62.000秒、30 fps、1860帧、3840×1200、H.264/AAC 48 kHz立体声；视频SHA-256=`c97757f74f6bbcd3d4aae899365213b55f3e7f07cc2a02ef0cd52e97b9a3bff8`。 |
+| Source Gates | storm/fade人工记录及heat/snow/corridor机器记录逐字段断言，并分别绑定输入视频SHA-256；`PASS`。 |
+| Contract | 四天气24节点、F-01回执与边界、F-05全天气演示周期门、Python权威、条件公平、共享转场和临时资产边界均`PASS`。 |
+| Output Safety | 本地视频目录、两张评审图、候选清单和机器记录均使用精确输出白名单；`PASS`。 |
+| Visual Inspection | 4×6图无裁切或重叠；图首和24个单元均标明只作风格参考、不是运行节点捕获；两张评审图`PASS`。 |
+| Independent Review | 首轮`REVISE_REQUIRED`；P1至P3修复后快速复审`PASS`，未关闭P1-P3为0。 |
+| V-04 Validators | 工具链、H1、candidate-v8/v9/v10、storm、heat、snow、corridor、H3合并共十个验证器全部`PASS`。 |
+| Governance | 协议权威`PASS`；任务注册表57项，`READY=F-03/F-05`；独立任务包5个、132份快照。 |
+| Project Regression | 冻结Python 3.14.4：`412 passed in 40.14s`。 |
+| State | V-04保持`IN_PROGRESS`；当前硬门=`H3_PENDING_TEAM_DIRECTOR_CONFIRMATION`。 |
+| Evidence Boundary | 当前只关闭H3候选机器门和独立复审；不表示Unity运行、Windows制品、资产许可放行、真实设备链或研究结果完成。 |
+
+### 2026-08-31 团队任务关联与门禁图
+
+| Check | Result |
+|---|---|
+| SVG XML | 两张SVG均可解析。 |
+| Registry binding | 绑定F-03 DONE治理分支注册表SHA-256 `A792580438B3E4BE81B0B7B86693DFCB30BF9009969DCFF723A01FFB80D380C4`。 |
+| Status counts | 57项任务计数与注册表逐状态一致；F-03/F-04/F-05/V-04分别为DONE/IN_REVIEW/READY/IN_PROGRESS。 |
+| PNG render | 流程图`2400×5878`，状态清单`2400×2640`；人工查看无画布截断。 |
+| Terminology scan | 新制品受限用语扫描0命中。 |
+
+### 2026-08-31 V-04固定镜头背景预览
+
+| Check | Result |
+|---|---|
+| Camera authority | 四天气均为`FIXED`；相机、背景和世界视差位移为零。 |
+| Preview groups | A/B/C三组均已生成，每组包含`storm/heat/snow/fade`四格。 |
+| Local artifacts | 三张PNG保存于`agent/local/artifacts/V-04/H3/fixed-background-previews/v1/`，尺寸与SHA-256写入候选清单。 |
+| Historical H3 | 既有H3合并验证器`PASS`；该结果只证明历史证据仍完整。 |
+| Governance | 协议权威、57项任务注册表与5个独立包/132份快照均`PASS`；`F-03`快照已同步当前产品总规格。 |
+| Project regression | 冻结Python 3.14.4执行根回归：`412 passed in 25.28s`。 |
+| Static checks | 新增行受限措辞0命中；候选JSON、图像尺寸/哈希及`git diff --check`通过。 |
+| Evidence boundary | 三组均为`TEMP_REFERENCE_ONLY`，当前只用于团队总监选择美术方向。 |
+
+### 2026-08-31 V-04 R2大景深独立背景预览
+
+| Check | Result |
+|---|---|
+| Candidate coverage | `PASS`：A/B/C三组、四天气各一张，共12张独立`16:9`PNG。 |
+| Manifest integrity | `validate_v04_h3_r2_previews.py`=`PASS`；12项尺寸和SHA-256与清单一致，固定相机与零背景位移断言通过。 |
+| Event affordance review | `PASS_FOR_HUMAN_SELECTION`：近景/中景/远景职责完整；A-storm与A-snow标记为不推荐，避免固定背景占据核心机制语义或遮挡近场。 |
+| Existing project gates | V-04工具链、历史H3合并机器门、协议权威、任务注册表和独立任务包均=`PASS`。 |
+| Project regression | 冻结Python 3.14.4：`412 passed in 124.25s`。 |
+| Static checks | 新增行受限措辞0命中；候选JSON解析和`git diff --check`通过。 |
+| Evidence boundary | R2图像均为`TEMP_REFERENCE_ONLY`，不代表分层背景、Unity运行、Windows制品、资产许可放行或真实输入链已经形成。 |
+
+### 2026-08-31 V-04 R2背景方向选择
+
+| Check | Result |
+|---|---|
+| Team director selection | `PASS`：`storm=B, heat=C, snow=C, fade=C`。 |
+| Candidate binding | `PASS`：`R2-B-storm`、`R2-C-heat`、`R2-C-snow`、`R2-C-fade`与选择记录逐项一致。 |
+| Gate migration | `PASS`：当前硬门从`H3_FIXED_BACKGROUND_PREVIEW_SELECTION`迁移为`H3_LAYERABLE_BACKGROUND_REBUILD`。 |
+| Evidence boundary | 选择只冻结背景重建方向；R2图像仍为`TEMP_REFERENCE_ONLY`。 |
+
+### 2026-09-01 T-01领取前盘点
+
+| Check | Result |
+|---|---|
+| Registry authority | `PASS`：57项；F-01=`DONE`、F-04=`IN_REVIEW`、F-05=`READY`、T-01=`WAIT_DEP`；当前可领取集合仅为F-03和F-05。 |
+| Independent packages | `PASS`：5包、132份快照，任务为F-03、F-04、F-05、G-01、G-02；T-01不在映射或分发目录中。 |
+| Protocol authority | `PASS`：v1.1权威与当前执行文件一致。 |
+| F-01 contract tests | `py -3.14 -m pytest agent/modules/communication/tests/contract/test_runtime_contract.py -q`：`49 passed in 0.81s`。 |
+| F-04 tests | `py -3.14 -m pytest agent/modules/touchdesigner/f04_readonly_console/tests/test_f04_console.py -q`：`15 passed in 0.06s`。 |
+| Interface state | 当前仅有v2.1 Schema/fixture；未发现F-05要求的v2.2 Schema、步骤实例fixture和消费者迁移。F-04 UDP 5005节点仍为禁用占位。 |
+| Port state | 全局端口注册表确认UDP 5005归属`03-SRP`；`netstat -ano -p udp`未发现5005监听。 |
+| Runtime deviation | PATH默认Python 3.14.5缺少pytest；按既有冻结入口改用`py -3.14`完成测试，未安装依赖。`Get-NetUDPEndpoint`查询挂起后已中止，改用只读`netstat`完成检查。 |
+| Claim decision | `NOT_CLAIMED`：T-01不满足“READY且未领取”，保持`WAIT_DEP`，未写入领取人或分支。 |
+| Scope boundary | 保留当前`codex/v-04-animatic`工作树及既有V-04改动；本次只追加盘点与验证记录。 |
+
+### 2026-09-01 F-04专用分支收口
+
+| Check | Result |
+|---|---|
+| Source binding | 最终实现来自`codex/f-04-readonly-console`；复审候选=`6a5d0c8`，签收提交=`43a63a1`，独立任务=`01a04c71-9894-73c3-aea1-30cb0d0280c0`。 |
+| Deliverable closure | 模块化图形化只读操作台、10页/5场景、TOE/TOX、14张截图、重开报告、首轮整改记录、技术验收记录与二轮签收报告已归位。 |
+| F-04 tests | `py -3.14 -m pytest agent/modules/touchdesigner/f04_readonly_console/tests/test_f04_console.py -q`：`21 passed in 0.17s`。 |
+| Related regression | F-01合同`49 passed in 0.94s`；P-01/P-02相关`166 passed in 8.50s`；根回归`412 passed in 21.19s`。 |
+| Artifact hashes | TOE=`CBC982BE379C2A1D9A0BE7FC26508B1467A8CFCD920E51FBE4193E18AE74B9EA`；TOX=`1DEC705338AF14F623177BE60975B860FA3D86851D5EF7A7C6DF95BC04DE7F76`，与签收报告一致。 |
+| Governance | 协议权威`PASS`；任务注册表57项`PASS`，F-04=`DONE`、READY=`F-03,F-05`、IN_REVIEW=`G-01,G-02`；独立包4包/106份快照`PASS`。 |
+| T-01 effect | 保持`WAIT_DEP`和未领取；F-04门已关闭，剩余直接门为F-05。 |
+| Scope boundary | 未触碰当前V-04未跟踪制品；未实现T-01、T-02、真实输入链或`LIVE_E2E`。 |
+
+### 2026-09-01 F-05领取与接口基线盘点
+
+| Check | Result |
+|---|---|
+| Dependency gate | `PASS`：F-01、P-01、P-02均为`DONE`，F-05领取前为`READY`且领取字段为空。 |
+| Package integrity before claim | `PASS`：4个分发包、106份快照，F-05含17份输入快照且无哈希漂移。 |
+| Contract baseline | `PASS`：正式合同仍为不可变v2.1；当前未发现v2.2 Schema、显式周期/步骤实例字段、storm双停/fade双吸运行fixture或消费者迁移。 |
+| F-01 contract tests | 在`agent/modules/communication`内执行`py -3.14 -m pytest tests/contract -q`：`49 passed in 0.76s`。 |
+| P-01/P-02 tests | 在`02-技术研发`内执行`py -3.14 -m pytest tests/session_core tests/session_store -q`：`166 passed in 4.70s`。 |
+| Command deviation | 首次把中文父目录作为pytest参数时发生Windows参数乱码且未收集测试；改为在模块目录内使用ASCII相对路径后通过，未安装或修改依赖。 |
+| Claim state | `PASS`：F-05=`IN_PROGRESS`，claimant=`Codex Agent（F-05独立对话）`，branch=`codex/f-05-phase-instance-v2-2`；项目状态枚举以`IN_PROGRESS`表示DOING。 |
+| Governance after claim | `PASS`：57项注册表；READY=`F-03`，IN_REVIEW=`G-01,G-02`；独立包3包/89份快照，任务为F-03、G-01、G-02。 |
+| Downstream boundary | U-01、U-02、T-01和U-07仍等待F-05完成及第二人签收；本次未实现v2.2或放行任何消费者。 |
+| Worktree boundary | 保留当前`codex/v-04-animatic`工作树与并行V-04制品；未切换到F-05目标分支，未提交或推送。 |
+
+### 2026-09-01 F-05 integration closure
+
+| Check | Result |
+|---|---|
+| Isolation | `D:\Agent\03-SRP-f05-integration`；原V-04脏工作区未写入。 |
+| Signed History | F-03 `c358a35`、F-04 `43a63a1`、F-05 `dc83d9d`均为当前HEAD祖先；无rebase或squash。 |
+| Owned Tree Identity | F-03、F-04、F-05专属实现与证据路径相对各自签署提交均为零差异。 |
+| F-05 Contract | `87 passed in 2.32s`。 |
+| F-05 Session Core | `115 passed in 0.70s`。 |
+| F-05 Session Store | `70 passed in 5.29s`。 |
+| F-05 Verifier | `PASS`；`v21_unchanged=true`、`schema_rebuild=true`、22个fixture哈希、5帧消费者流。 |
+| Integration Regression | 首轮`469 passed / 1 failed`，定位为`IN_REVIEW`第二人签收默认勾选；最小修复后`470 passed in 29.37s`。 |
+| Governance | 57项注册表通过；`DONE=F-03/F-04/F-05`，`READY=T-01/U-01/U-02`，`IN_REVIEW=G-01/G-02`。 |
+| Packages | `PASS`；5包、128份快照，集合=`G-01,G-02,T-01,U-01,U-02`。 |
+| Evidence Boundary | 不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。 |
+
+### 2026-09-01 F-05 independent review and director sign-off
+
+| Check | Result |
+|---|---|
+| Independent Review | `PASS_WITH_NOTES`；无P0/P1、无实现漂移、无签收失效。 |
+| Independent Rerun | 合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`；全项目`470 passed`。 |
+| Governance And Packages | 任务注册表与独立任务包校验均`PASS`；5包、128份快照。 |
+| Director Sign-off | 傅钧烨确认签收`codex/f-05-integration@646bc47a2f68ddddf31bdcc60e9feb5927658c85`，结论`PASS / DONE`。 |
+| Open Note | P2旧状态文案不阻断签收，留作非实质治理修正；本次未修改F-05原签署树。 |
+| Evidence Boundary | 不声明Unity/TD实时联调、正式构建、真实设备链、资产许可或`LIVE_E2E`完成。 |
+
+### 2026-09-01 T-01 claim and interface inventory
+
+| Check | Result |
+|---|---|
+| Base And Isolation | `codex/t-01-telemetry-panel@00b575b`；独立工作树`D:\Agent\03-SRP-t01-worktree`；原V-04脏工作区未写入。 |
+| Claim Gate | 领取前T-01=`READY`、领取字段为空；F-01/F-04/F-05均`DONE`。 |
+| Claim Result | T-01=`IN_PROGRESS`；claimant=`Codex Agent（T-01独立工作树）`；branch=`codex/t-01-telemetry-panel`。 |
+| Interface Inventory | UDP 5005只读消费、20Hz节流、SQI/时钟/序号/延迟/断流显示；正式模式使用v2.2帧内cycle/step身份。 |
+| Governance | 注册表验证`PASS`；`READY=U-01/U-02`，`IN_REVIEW=G-01/G-02`。 |
+| Packages | 独立包验证`PASS`；4包、111份快照，集合=`G-01,G-02,U-01,U-02`。 |
+| Focused Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q agent/modules/tests/test_task_package_hash_policy.py`，结果`3 passed`，未安装依赖。 |
+| Evidence Boundary | 只完成领取与盘点，不声明TD实现、网络联调、正式构建或`LIVE_E2E`。 |
+
+### 2026-09-01 T-01 implementation candidate
+
+| Check | Result |
+|---|---|
+| Candidate | 原候选`9d6c9e0`因5项证据换行漂移独立复核`FAIL`；修复候选`8790cd3`已推送并保持`IN_REVIEW`。 |
+| T-01 Host Tests | `17 passed in 0.06s`。 |
+| TD Reopen | TouchDesigner `2025.32820`；`PASS`；22节点；UDP `127.0.0.1:5005`；1280×720；零节点/脚本错误。 |
+| UDP Runtime | 真实`SessionCore + TelemetryPublisher`为`LIVE`；异常证据`lost=2, duplicate=1, out_of_order=1`；超过2秒为`DISCONNECTED`；新clock domain恢复`LIVE`且重连累计。 |
+| Runtime Permissions | 无UDP/TCP输出、Spout、文件输出或T-02回调；Python权威未改变。 |
+| F-04 Regression | `21 passed`；签署目录相对`43a63a1`零差异。 |
+| F-05 Regression | 合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`；`verify_f05_v22.py=PASS`。 |
+| Full Regression | 洁净进程`470 passed in 17.42s`。 |
+| Artifact Identity | TOE=`38ECA7FA...57E44`；TOX=`F0614B20...AB8AE`；录像=`580DB8EE...1DD5A`；23项证据SHA-256已固定。 |
+| Evidence Boundary | 本地TD只读v2.2消费与异常恢复基线；不声明真实设备链、Unity联合运行、T-02、外部延迟、正式构建、科学有效性或`LIVE_E2E`。 |
+
+### 2026-09-01 T-01 first independent review failure and replacement candidate
+
+| Check | Result |
+|---|---|
+| Independent Review | `9d6c9e0`=`FAIL/P1`；运行与TD实机门均通过，但洁净checkout中23项证据有5项SHA/bytes不匹配。 |
+| Root Cause | Windows `core.autocrlf=true`将4项host JSON和1项ffconcat从Git LF展开为CRLF；候选未固定这些证据的字节策略。 |
+| Fix | 新增目录级`.gitattributes`，仅对`evidence/host/*.json`和`evidence/touchdesigner/video/*.ffconcat`禁用换行转换；TD原生状态JSON保持CRLF。 |
+| Replacement Candidate | `8790cd3`；全新`D:\Agent\03-SRP-t01-hashcheck2` detached checkout验证`T01_MANIFEST_PASS count=23`，工作树洁净。 |
+| Review Gate | 原复核不得复用；必须对`8790cd3`重新执行完整独立复核，傅钧烨签收仍未发生。 |
+
+### 2026-09-01 T-01 replacement candidate independent review
+
+| Check | Result |
+|---|---|
+| Candidate | `8790cd3ae4db3543c038efc21deec635605cb06f`。 |
+| Independent Verdict | `PASS`；P0/P1/P2/P3均无候选缺陷；未执行傅钧烨签收。 |
+| Evidence Integrity | 全新detached审计树；23项原始bytes/SHA-256，`BAD=0`。 |
+| Tests | T-01 `17`；F-04 `21`；合同`87`；Core`115`；Store`70`；全项目`470`；F-05验证`PASS`。 |
+| TD Reproduction | TOE与TOX均从关闭状态打开；22节点、零错误、1280×720、UDP loopback 5005、无禁止输出、无权威写回。 |
+| Runtime Reproduction | 真实发布器`LIVE`；lost/duplicate/out-of-order均复现；>2秒`DISCONNECTED`；恢复`LIVE`且reconnect累计。 |
+| Cleanup | TD与发送器关闭；UDP 5005释放；审计树洁净。 |
+| Next Gate | 傅钧烨对精确候选完成真实第二人签收；此前T-01=`IN_REVIEW`、T-02=`WAIT_DEP`。 |
+
+### 2026-09-02 T-01 exact-candidate signoff
+
+| Check | Result |
+|---|---|
+| Signed Candidate | `8790cd3ae4db3543c038efc21deec635605cb06f`。 |
+| Signatory | 傅钧烨（团队总监、独立第二人复核人）明确确认`PASS / DONE`。 |
+| Independent Review | 候选已由独立Agent在洁净detached工作树完整复核为`PASS`，P0-P3均无。 |
+| State Transition | T-01 `IN_REVIEW -> DONE`；T-02 `WAIT_DEP -> READY`。 |
+| Invalidation Rule | 候选代码、合同适配、fixture或`.toe/.tox`发生实质变化时，复核与签收立即失效。 |
+| Boundary | 不覆盖真实设备、Unity联合运行、T-02请求实现、正式构建、科学有效性或`LIVE_E2E`。 |
+
+### 2026-09-02 T-01 closure verification
+
+| Check | Result |
+|---|---|
+| Governance | 57项注册表通过；T-01=`DONE`；T-02、U-01、U-02=`READY`；G-01、G-02=`IN_REVIEW`。 |
+| Dispatch Packages | `G-01,G-02,T-02,U-01,U-02`；5个独立包、122份快照通过。 |
+| Focused Tests | T-01 `17 passed`；F-04 `21 passed`；合同`87 passed`；Session Core `115 passed`；Session Store `70 passed`。 |
+| F-05 Verification | `PASS`；v2.1未漂移、schema可重建、22个fixture哈希、5帧消费者流。 |
+| Full Regression | 默认`python`缺少pytest；使用既有冻结入口`py -3.14 -m pytest -q`，结果`470 passed in 20.69s`，未安装依赖。 |
+| Signed Trees | `8790cd3`为HEAD祖先；T-01实现树相对候选零差异；F-04目录相对`43a63a1`零差异。 |
+| Evidence And Port | T-01证据清单23项bytes/SHA-256全部匹配；UDP 5005无监听。 |
+| Diff Gate | `git diff --check`无空白错误；仅报告仓库既有Windows换行转换提示。 |
+
+### 2026-09-03 complete project integration
+
+| Check | Result |
+|---|---|
+| Registry | `PASS`；57项，`DONE=14`、`IN_REVIEW=2`、`READY=3`，无`IN_PROGRESS`。 |
+| Dispatch Packages | `PASS`；`G-01,G-02,T-02,U-01,U-02`，5个包与122份快照一致。 |
+| Protocol Authority | `PASS`；`protocol_authority_v1.1` 与当前执行文件一致。 |
+| Repository Privacy | `G02_REPOSITORY_PRIVACY_PASS violations=0`。 |
+| Full Regression | `py -3.14 -m pytest -q` 结果`470 passed in 28.20s`。 |
+| Diff Gate | `git diff --check` 通过；合并冲突标记为零。 |
+
+### 2026-09-04 G-01/G-02 Agent repair verification
+
+| Check | Result |
+|---|---|
+| Initial command correction | 两个旧验证脚本名不存在；改用仓库实际入口`07_validate_task_packages.py`与`14_validate_ready_task_packages.py`，不把命令错误记为验证失败。 |
+| Regression repair | 首次全量为`469 passed, 1 failed`；修复未签收兼容措辞并新增已签收外部门测试后，专项`4 passed`。 |
+| Full Regression | `py -3.14 -m pytest -q`最终`471 passed in 111.23s`。 |
+| Registry | `PASS`；57项，`DONE=14`、`IN_REVIEW=G-01,G-02`、`READY=T-02,U-01,U-02`。 |
+| Dispatch Packages | `PASS`；5个包、133份快照，集合为`G-01,G-02,T-02,U-01,U-02`。 |
+| Protocol Authority | `PASS`；v1.1与当前执行文件一致。 |
+| G-02 Current Evidence | 专项测试`138 passed`；合成演练通过；仓库隐私`0`违规；正式环境6项缺失、资产189项及215个失败关闭项继续阻断。 |
+| Diff And Wording | `git diff --check`通过；新增行未出现项目禁用表述。 |
+
+### 2026-09-04 G-01/G-02 repair signoff and SVG refresh
+
+| Check | Result |
+|---|---|
+| Signoff Scope | 傅钧烨签收精确提交`9f0a15b364aa70f5f15433cb03a3335ba85fa888`；G-01/G-02状态继续为`IN_REVIEW`。 |
+| SVG Structure | 两张SVG均可由Python XML解析，根元素与`viewBox`有效，快照日期和签收提交已写入。 |
+| Browser Preview | Edge headless成功渲染两张临时预览；标题、状态条和外部门说明可见，临时文件未纳入仓库。 |
+| Dispatch Packages | `PASS`；5个包、135份快照，新增签收报告同时进入G-01与G-02包。 |
+
+### 2026-09-04 G-01/G-02 DONE与第58项G-05责任迁移
+
+| Check | Result |
+|---|---|
+| Registry | `PASS`：58项、55固定任务、3模板、依赖图无环且全部到达W-04；`DONE=16`、`IN_REVIEW=0`、`READY=T-02/U-01/U-02`、`WAIT_DEP_EXTERNAL=5`。 |
+| Dispatch Packages | `PASS`：G-01/G-02复核包移出当前分发集合；3个包、44份快照，集合为T-02、U-01、U-02。 |
+| Dependency Gate | G-05依赖G-01/G-02；E-01、G-03、W-03显式依赖G-05；候选工程任务不被新增外部门提前阻断。 |
+| Regression | 根pytest `471 passed in 20.41s`；协议权威、任务注册表、独立任务包和`git diff --check`通过。 |
+| PDF | `02_固定任务概要.pdf`为9页，SHA-256 `74D322A9A08D754E895BF5BF4C54DD1D5F3874CB20129E7F586B87D63D820086`；9页渲染检查无裁切、重叠、空白或乱码。 |
+| Diagram | 三张SVG均通过XML解析；主依赖图含58个任务、129条依赖和唯一G-05节点；两张交付PNG按2400×5878与2400×2640重新渲染。 |
+| Boundary | G-01/G-02的`DONE`只覆盖已签收方案、实现和候选证据；G-05外部证据仍为`WAIT_DEP_EXTERNAL`。 |
+| Focused Regression | 任务包治理测试`4 passed`。 |
+| Full Regression | `py -3.14 -m pytest -q`结果`471 passed in 32.34s`。 |
+
+### 2026-09-06 IJHCI审计升级批次0-1
+
+| Check | Result |
+|---|---|
+| Source Intake | 归档包149213字节，SHA-256 `AFDBEA2EDF867650D9A6FF3A63901A73B199D701F90AE29E59511BE53ECBF545`，57项清单校验记录为PASS。 |
+| Registry | `PASS`：59项、56固定任务、3模板、`DONE=16`、`READY=T-02/U-01/U-02`；A-06与W-02条件路线通过。 |
+| Dispatch Packages | `PASS`：3个包、44份快照；均有`input_snapshot_id`，生命周期漂移和成员文件保留具备负测。 |
+| Audit Contracts | `PASS`：24项处置、两条关闭路线、A-03三里程碑、13项G-05活动能力均与权威一致。 |
+| Raw Evidence Bundle | 六类输入、篡改、缺件、非波形身份变化、规范化文本换行与受限原件缺哈希均通过专项测试。 |
+| Focused Tests | 初轮为`18 passed`；独立复审修复后扩充为`27 passed`，覆盖条件环、成员输出归档、本机文件验证、artifact枚举字段及非对象根节点的结构化失败和阶段三台账隔离。 |
+| Protocol | F-05 v2.2验证`PASS`：v2.1未漂移、schema重建、22项fixture哈希与5帧消费者流通过。 |
+| Upgrade Evidence | UP-01至UP-12的证据引用生成可重算字节哈希清单；缺件、路径漂移或哈希漂移均使升级校验失败。 |
+| Full Regression | 首次误用数学建模Python导致缺少NeuroKit2，未进入测试；改用冻结Python 3.14.4并完成修订后为`498 passed in 17.45s`。 |
+| PDF | 三份PDF验证通过；仅提交更新后的固定任务概要，9页，SHA-256 `F5A30A74A9CF02543B87675185F127485BEF143C2F78D3FD375CC5D6974B007B`。 |
+| Diagrams | 两张SVG可渲染；PNG为2400×5878和2400×2640，人工检查A-06节点、条件边、59项计数和图文无明显遮挡。 |
+| Independent Review | 独立Agent `01a07285-391c-75d1-b8bb-c244d445e84b`对候选`be5335e8632c33bbe6f35af0d869a0bcddbe6b60`返回`PASS_NO_OPEN_P0_P3`；报告位于`agent/validation/IJHCI审计升级批次0-1_独立Agent复审报告_2026-09-06.md`，不替代真实第二人签收。 |
+
+### 2026-09-06 IJHCI审计升级效果复审修复
+
+| Check | Result |
+|---|---|
+| Independent Effect Finding | 独立Agent发现A-03里程碑完成图存在真实循环，并发现W1计数错误；修复前结论为`EFFECT_REVISE_REQUIRED`。 |
+| Registry And Milestones | `PASS`：59项、56固定任务、3模板；`READY=A-03,T-02,U-01,U-02`；任务与三个A-03里程碑的联合完成图无环。 |
+| Cycle Regression | 治理专项`14 passed`，新增旧环路构造用例，确认验证器能够拒绝跨任务与里程碑的完成循环。 |
+| Dispatch Packages | `PASS`：4个独立包、50份冻结输入快照；A-03包包含里程碑合同和统计输入。 |
+| Audit Contracts | `PASS`：A-03的X-01、Q-03、G-03消费者分别固定为SPEC、REAL、CAL；升级证据哈希已重算。 |
+| Protocol And PDF | 协议权威验证通过；三份PDF可打开，更新后的固定任务概要为9页，SHA-256 `54076267B33B6E3D0FDDA9A743A7857AFE8B238ABC7797BFE90860D014DA6F7E`。 |
+| Full Regression | 首次误用PDF构建环境，因缺少NeuroKit2在收集阶段退出；改用项目冻结入口`py -3.14 -m pytest -q`后为`499 passed in 17.95s`，未安装依赖。 |
+| Diagrams | 两张PNG为2400×5878和2400×2640；人工检查59项、`READY=4`、`WAIT_DEP=21`及A-03节点可见，无明显遮挡。 |
+| Wording And Diff | 新增行未出现项目禁用表述；`git diff --check`通过，仅有既有Windows换行提示。 |
+| Candidate Effect Review | 候选`c31c25c`的依赖修复有效，但固定任务概要第177行和生成PDF仍遗漏A-03，独立Agent返回`EFFECT_REVISE_REQUIRED`、P2一项；未提前签收。 |
+| PDF P2 Repair | 补入A-03后，首版四条项目符号导致第10页过稀并被验证器拒绝；改为紧凑四包段落后恢复9页，SHA-256为`62D46C0FFB2EC5259CA4DC04012C1D498F803E68D93419951CA6256DBBD0791D`。 |
+| Final Effect Review | 独立Agent对候选`3f6576d8de9f27ae9dc1127bae287dfb452531a7`返回`EFFECT_PASS_NO_OPEN_P0_P3`；确认四包PDF、A-03修复、4个独立包与50份快照，未发现新P0-P3。 |
+| Human Signoff | 傅钧烨依据独立效果复审和已有验证证据，以团队总监、真实团队第二人复核身份签收；未表述为本人重新运行测试，且不关闭研究设计与外部门。 |
+| Signoff Commit | 签收内容首个落盘提交为`a55dffd2c8613685f0446f5999987bd492d62c4a`，已写回签署报告。 |
+
+### 2026-09-06 A-03-SPEC候选验证
+
+| Check | Result |
+|---|---|
+| Focused Tests | `py -3.14 -m pytest -q agent/modules/tests/a03_spec`：`14 passed`（最终复跑待提交前记录）。 |
+| Spec Schema | `gate2_spec_v1.0.json`通过Draft 2020-12 schema校验。 |
+| Small Sensitivity Point | 固定种子、1000次、每条件24；目标场景联合通过概率0.287/0.290，`SYNTHETIC_SENSITIVITY_POINT_NO_GO`。 |
+| Existing Upper Planning Anchor | 固定种子、1000次、每条件85；目标场景联合通过概率0.934/0.942，`SYNTHETIC_UPPER_CAP_FEASIBLE`。 |
+| Evidence Boundary | 两份报告均为`SYNTHETIC_ONLY`，正式界限、缺失规则和样本量为空；不替代A-03-REAL或A-03-CAL。 |
+| Deterministic Replay | 相同种子与参数双跑生成相同SHA-256：`7D71CB917DFC2D5963886732EC2DDCB606FEE1FBA2896C0D128FA196C0CDBC35`。 |
+| Governance And Protocol | 任务注册表、4个独立包、审计升级合同及协议权威校验均为`PASS`。 |
+| Repository Privacy | 首次调用遗漏必需`--repo-root`，脚本未执行扫描；纠正为`--repo-root .`后`G02_REPOSITORY_PRIVACY_PASS violations=0`。 |
+| Full Regression | `py -3.14 -m pytest -q`：`514 passed in 36.36s`。 |
+| Wording And Diff | A-03新增文件未出现项目禁用表述；`git diff --check`通过，仅有Windows换行提示。 |
+| Generated Reports | 小规模点SHA-256 `A678350D5D74A77D66C5F14FE36B4A1EBF3E79E107FBADD772F68D916FEA243D`；规划上限SHA-256 `7C40DB6465D8293BEB8AEC8CE06618D4EE462D49C252F77A1FAC67FD232E865E`。 |
+| Final Review-State Regression | A-03-SPEC转`IN_REVIEW`并重建独立包后，根pytest为`514 passed in 29.06s`；禁用表述与`git diff --check`通过。 |
+
+### 2026-09-06 A-03-SPEC首轮复审修复候选
+
+| Check | Result |
+|---|---|
+| Independent Review | Agent `01a0764a-f68c-7a12-82fc-09916525705d`对`8c7c4fcc7881d1cc710972b7e9fe29af89be03d9`返回`A03_SPEC_REVIEW_REVISE_REQUIRED`，共2项P1、3项P2。 |
+| Formal Gate Boundary | 形式Gate2固定返回`A03_CAL_NOT_DONE`；形式PANAS计分固定拒绝；合成执行要求精确字段和64位配置哈希的fixture回执。 |
+| Shared Replication | 每次复制只生成一份数据供两个分析集消费，新增调用计数回归；共同通过概率单独记录。 |
+| Missingness | SCCI、理解、努力与阶段错误均覆盖四类作答状态；各结果独立筛选，差异性缺失具有条件差异。 |
+| Schema And Estimands | Gate2 Schema关闭未知字段并约束全部核心结构；新增Gate1至3 JSON估计目标表及畸形输入负测，CSV待显式强制暂存。 |
+| Focused Tests | `py -3.14 -m pytest agent/modules/tests/a03_spec -q`：`31 passed in 25.81s`。 |
+| Synthetic Recalculation | 1000次固定种子；24/组共同通过`0.072`，85/组`0.646`，96/组`0.721`，三点均为合成`NO_GO`；操纵为空场景均为`0.000`。 |
+| Evidence Boundary | 85为既有规划锚点，96为均衡完整结果目标；总招募上限240未模拟为完整结果，正式界限与正式样本量仍为空。 |
+| Deterministic Replay | 三份报告以相同参数重跑后SHA-256不变：24/组`4C5E3E1D4E3AF8F36CD25ABA6E2C3CE55B1686AAC94EFB907194BB3948C15AF1`；85/组`49238F78BA948EE0AB378E42BD0BFA721F841A59BBBF2EE96659E4DDFEA50988`；96/组`A7F7ED723B945D087D9BB4C800649E4A29D41C99755B6DA1F00139A422A308F9`。 |
+| Full Regression | `py -3.14 -m pytest -q`：`531 passed in 43.10s`。 |
+| Governance And Protocol | 任务注册表、4个独立包、审计升级合同与协议权威均为`PASS`；仓库隐私扫描为`G02_REPOSITORY_PRIVACY_PASS violations=0`。 |
+| Independent Repair Review | 新Agent `01a07669-16c2-7152-a9de-2df1fb79a8e9`复审`4071c84bc03ab9d80f7ce5997034fe27737e5d51`及治理提交`e78c6e93e967cd907fb193b4f390383a72c71083`，返回`A03_SPEC_REVIEW_PASS_NO_OPEN_P0_P3`；附加69种Schema `null`变异、9个未知字段层级和每条件10,000次缺失分布核验。 |
+
+### 2026-09-06 A-03-SPEC真实第二人签收
+
+| Check | Result |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、独立第二人复核人身份签收精确候选`4071c84bc03ab9d80f7ce5997034fe27737e5d51`；结论`PASS`，无未关闭P0-P3。 |
+| Signoff Commit | 首次签署提交为`1f5f81b3d34ef9c90ddc30f9ec507ef28048525f`。 |
+| Scope | 仅关闭A-03-SPEC；A-03整体、A-03-REAL、A-03-CAL、三个合成`NO_GO`、外部准入和研究执行门不变。 |
+| Full Regression | `py -3.14 -m pytest -q`：`531 passed in 43.73s`。 |
+| Registry | `PASS`：59项、56固定任务、3模板；固定任务`DONE=16`，`READY=T-02/U-01/U-02/X-01`，A-03保持`IN_PROGRESS`。 |
+| Dispatch Packages | `PASS`：5个可分发包、60份冻结输入快照；任务为`A-03/T-02/U-01/U-02/X-01`。 |
+| Audit And Protocol | 审计升级批次0-1合同与协议权威v1.1均为`PASS`。 |
+| Privacy And Wording | 仓库隐私扫描`violations=0`；新增行未出现项目禁用表述。 |
+| PDF | 三份PDF可打开；本次更新的固定任务概要为9页，SHA-256 `BA3F58D966BE93AAF70934A18C58E353350A35F8A5D05B6AFD3E0A2D7530B766`。 |
+| Diff | `git diff --check`通过，仅有既有Windows换行提示。 |
+
+### 2026-09-06 X-01候选实施与复审
+
+| Check | Result |
+|---|---|
+| Implementation | 最终实现提交`f59c1824a934813797560fdd31e4b981cfd19f96`；审核对象绑定提交`edd57b7d1416865023f821208122347182a44237`。 |
+| Independent Review | 六轮只读复审后，Agent `01a076ff-e560-7ad1-9e4f-7639097dce08`返回`PASS_NO_OPEN_P0_P3`；独立Agent自身未能运行pytest，主工作区单独提供动态验证。 |
+| Focused Tests | `py -3.14 -m pytest -p no:cacheprovider agent/modules/tests/randomization -q`：`33 passed`。 |
+| X-01 Verifier | `X01_VERIFY_PASS lists=2 records=384 stage1=192 stage3=192`。 |
+| Full Regression | 治理迁移前为`564 passed in 45.55s`；治理迁移后为`564 passed in 45.15s`。 |
+| Registry | `PASS`：59项、56固定任务、3模板；`IN_REVIEW=X-01`，`READY=T-02/U-01/U-02`。 |
+| Dispatch Packages | `PASS`：5个包、60份冻结输入快照；`A-03/T-02/U-01/U-02/X-01`，X-01快照未漂移。 |
+| Audit And Protocol | 审计升级批次0-1合同与协议权威v1.1均为`PASS`。 |
+| Privacy And Wording | 仓库隐私扫描`violations=0`；新增行禁用表述扫描通过。 |
+| PDF | 固定任务概要9页，SHA-256 `3B5A6E899587BA3A05CFA68E697F0D78BD5F5A7B2CE82814A6727B89E798CCEA`；逐页渲染检查无明显裁切、重叠、空白或乱码。 |
+| Diagrams | 两张SVG通过结构检查并重渲染为2400×5878与2400×2640 PNG；人工检查`REVIEW 1 / READY 3`及X-01节点无明显遮挡。 |
+| Boundary | 自动和独立Agent通过不替代真实第二人签收；正式分层与清单、G-05、真实会话、Unity链路和X-03继续开放。 |
+### 2026-09-06 X-01团队总监签收与状态关闭
+
+| 检查 | 结果 |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、独立第二人复核人身份对精确实现提交`f59c1824a934813797560fdd31e4b981cfd19f96`签收`PASS`；签收提交`cad3e90c166f97037e12f44a4015aed37891c8b2`。 |
+| Scope Boundary | 仅关闭X-01既有实现与证据范围；正式分层、正式清单、G-05、真实运行和X-03仍开放。 |
+| Governance Target | X-01迁移为`DONE`；固定任务`DONE=17`、`IN_REVIEW=0`、`READY=T-02/U-01/U-02`；无新增解锁。 |
+| Registry And Packages | `PASS`：59项、56固定任务、3模板；4个分发包、50份冻结输入快照，任务为`A-03/T-02/U-01/U-02`。 |
+| X-01 Regression | 权威校验器`X01_VERIFY_PASS`；专项`33 passed`；根Python回归`564 passed in 46.50s`。 |
+| Audit Protocol Privacy | 审计升级、协议权威与仓库隐私扫描均通过；隐私扫描`violations=0`。 |
+| PDF And Diagrams | 固定任务概要9页，SHA-256 `64D1893866714E9F9D082AAD318C6640E3437801630A52795BAC05A76EC78CC7`；3张SVG结构通过，两张交付PNG尺寸为2400×5878和2400×2640并经人工查看无明显遮挡。 |
+
+### 2026-09-07 U-01候选实施与独立复核
+
+| 检查 | 结果 |
+|---|---|
+| Candidate | 最终候选`6c09f71d14bcb0288a4b83f87b177975c49bfe3d`。 |
+| Unity EditMode | `14/14 passed`；覆盖可靠控制、代际隔离、严格UTF-8、含LF帧上限、镜像和回执身份。 |
+| Unity PlayMode | `3/3 passed`；覆盖显式画面确认、Unity帧不推进会话与组件重启镜像保持。 |
+| U-01 Evidence | `U01_EVIDENCE_VERIFIED editmode=14 playmode=3 controls=19 acks=19 receipts=12 network=3`。 |
+| Python Regression | `565 passed in 43.43s`；包含同实例回执幂等与跨实例独立确认。 |
+| Independent Review | Agent `01a077dd-38a5-7e91-aa07-e417d0aa5565`多轮只读复审后对最终候选返回`PASS_NO_OPEN_P0_P3`。 |
+| Registry And Packages | 注册表59项通过：`READY=T-02,U-02`、`IN_REVIEW=U-01`；独立分发包4个、冻结快照50份通过。 |
+| Protocol Audit Privacy | 协议权威、审计升级和仓库隐私扫描通过；隐私扫描`violations=0`。 |
+| PDF And Diagrams | 固定任务概要9页，SHA-256 `674B00C6D1C21BB5B026340F4725BF397DC34BD2B95CD26A1E88AEDBC466D491`；两张交付PNG为2400×5878与2400×2640，SVG结构及人工查看通过。 |
+| State Boundary | U-01迁移为`IN_REVIEW`；独立Agent不替代真实第二人签收，不表示正式Unity构建、最终画面或真实设备链完成。 |
+
+### 2026-09-07 U-01团队总监签收与状态关闭
+
+| 检查 | 结果 |
+|---|---|
+| Human Signoff | 傅钧烨以团队总监、独立第二人复核人身份对最终候选`6c09f71d14bcb0288a4b83f87b177975c49bfe3d`签收`PASS`；首次签署提交`aab416cbbcea542f6d43a3c6e0e03e48fb258445`。 |
+| Scope Boundary | 只关闭U-01技术探针与证据范围；U-02、正式Unity构建、最终画面、TouchDesigner联调、真实设备链、`LIVE_E2E`和研究结论仍开放。 |
+| Governance | `PASS`：59项、56固定任务、3模板；`DONE=18`、`IN_PROGRESS=A-03`、`IN_REVIEW=0`、`READY=T-02/U-02`。 |
+| Packages | `PASS`：独立分发包3个，冻结输入快照32份，任务为`A-03/T-02/U-02`。 |
+| U-01 Evidence | `U01_EVIDENCE_VERIFIED editmode=14 playmode=3 controls=19 acks=19 receipts=12 network=3`。 |
+| Python Regression | `565 passed in 48.98s`。 |
+| Protocol Audit Privacy | 协议权威、审计升级与仓库隐私扫描通过；隐私扫描`violations=0`。 |
+| PDF | 固定任务概要9页，SHA-256 `A83B057CB2D0FF6FAE5986E396E4D1756E45DA88E64D3A067DAB3E128B8D0C12`。 |
+| Diagrams | 三张SVG通过XML结构检查；两张交付PNG重渲染为2400×5878与2400×2640，并经人工查看无明显遮挡或状态冲突。 |
+
+## 2026-09-08 v1.2当前基线适配
+
+| 检查 | 结果 |
+|---|---|
+| 来源归档 | 原ZIP与Markdown复制保留，解压50个内容文件SHA-256全部匹配。 |
+| 适配候选 | 15项离线测试通过；71条候选任务、12个独立候选包、两条路线无环；活动权威11个输入保持不变。 |
+| 根回归 | `py -3.14 -m pytest -q`：565 passed in 68.03s。 |
+| 活动注册表与协议 | PASS：59条，18项DONE，READY=T-02/U-02；协议v1.1一致。 |
+| 既有独立包 | FAIL：T-02的README.md和T01_TelemetryPanel.toe输入哈希漂移。相关文件及包相对de4ebcb的git diff为空，属基线既有问题，未刷新冻结输入。 |
+| 用语检查 | 新候选和任务文档无禁用词命中；原始来源及基线历史保留原文。 |
+| 证据边界 | 外包48项/14项测试未重跑；未应用迁移器，未签收新任务，未执行真实系统或研究活动。 |
+
+## 2026-09-08 升级前收尾验证
+
+- T-02输入漂移：两项变化已解释、备份、更新；2项收尾测试通过，A-03和U-02包身份未变。
+- 适配测试18通过；独立Agent三项P2复审PASS，独立只读执行5项相关测试。对象对应修复提交703ca504bd3c5da0b61327be5c74909f999e5d2e，记录见适配包evidence/独立复核与修复闭环.md。
+- TD主机专项27 passed；根pytest565 passed in 66.50s；注册表59条、18项DONE，READY=T-02/U-02。
+- 独立任务包验证PASS：3包、32个快照；活动协议v1.1一致，git diff --cached --check通过；候选文档措辞检查无命中。
+- 本轮只有候选修复与READY输入治理，不执行外部迁移器、不启动正式活动、不签收新的运行或研究结果。
+## 2026-09-08 U12-01治理迁移验证
+
+- 状态迁移复验：实现候选`47c81744884ae380e047cafb722aeb332c8cda29`，U12-01为IN_REVIEW；相关回归42 passed，07/14/15/U12/旧协议校验通过。最终PDF6页已重建并核对IN_REVIEW及任务编号，图文状态一致。
+
+- 根pytest：588 passed in 45.83s；U12专项23 passed。
+- 注册表71条、18项DONE、READY=T-02/U-02；独立分发4包39快照，历史A-03输入保持。
+- 07、14、15、U12专项及历史协议兼容校验通过；旧证据Git身份固定，6处工作区字节身份仍未验证。
+- 独立Agent Pascal定向复核关闭已发现的签收、候选保护和证据绑定路径，范围内无未关闭P1/P2，不代签真实第二人。
+- 两张SVG/PNG已生成并检查；固定任务概要由数学建模流水线生成，6页文字与排版检查通过。最终状态迁移后重建同一组文件。
+- 新增文件用语检查无命中；保留原TD未跟踪资产和tmp，正式采集、统计数值及运行接线不由本轮放行。
+## 2026-09-08 U12-01签收状态验证
+
+- 签收提交8d75f1a97e91d9d6588d4cccf4492ab73e716826记录傅钧烨PASS；DONE绑定实现47c81744884ae380e047cafb722aeb332c8cda29及两类复核报告哈希。
+- 根pytest：588 passed in 52.20s。07/14/15/U12治理验证均通过；19项DONE，8项READY，9个分发包77份输入快照。
+- 全量依赖检查识别Q-01同步解锁，已纳入映射；U12-01退出当前分发目录，原输入可从Git签收前提交恢复。A-03冻结身份检查通过。
+- 两张SVG/PNG、6页固定任务概要PDF已重建并核对DONE=19和READY集合，PDF采用原数学建模流水线。无Unity/TD实机或真实研究新增验证。
+## 2026-09-08 U12-02步骤实例测量
+
+- 最终候选ba495b54e6939c2bb1c4a07592400f82c0292864；独立Carson复审PASS，未发现新增P1/P2/P3。状态IN_REVIEW，不代填真实第二人签收。
+- 状态迁移后相关回归87 passed；07/14校验通过，9包77快照不变。合成证据check通过；SVG/PNG及6页PDF同步IN_REVIEW，PDF文字与排版检查通过。
+
+- 先失败测试再实现；独立首轮发现选项泄漏、材料完整性与编号语义三项问题，已修复并补回归。
+- 专项45项通过；完整根pytest633 passed in 50.44s。题库15个合成案例、30份双条件材料，生成器check复算一致。
+- 合同、治理及9个独立包验证通过；领取候选身份补齐，A-03/U12-02冻结输入未改。新模块措辞检查无命中。
+- 真实片段、独立标注、问卷形式有效性仍待外部与下游任务；本轮不作为正式准入或研究效果证据。
+## 2026-09-08 U12-02签收验证
+
+- 傅钧烨签收提交28bf474643cda6c59480ea3d478749269d5cf3eb；实现候选ba495b54e6939c2bb1c4a07592400f82c0292864。机器签收清单绑定两份报告哈希，U12-02转DONE。
+- 根pytest633 passed in 58.35s；07/14/15/U12与历史协议兼容校验通过，合成材料check复算通过。
+- 20项DONE、7项READY，无新解锁；当前分发8包70快照，A-03输入未改。U12-02成员交付入口保留至task_member_outputs/U12-02，旧快照可从Git恢复。
+- 两张SVG/PNG与6页任务概要PDF已同步，PDF核对DONE=20并检查排版；过期待签署链接检查无命中。
+- 本次签收不扩大真实片段、独立标注或测量有效性；原TD未跟踪文件与tmp保持原样。
+# 2026-09-08 U12-03公平教学候选
+
+- 候选：9317f0b649547c2ae1d900fb39f6f486a9407baa；独立Pauli只读复核PASS。
+- 专项：test_contract.py 22 passed；validate.py、build_evidence.py --check通过。
+- 根pytest：633 passed in 52.22s。
+- 注册表71项、DONE20、IN_REVIEW=U12-03、READY6；独立包8项/70快照。治理v1.2、审计升级及v1.1兼容校验通过。
+- 两SVG/PNG与概要Markdown/PDF同步；PDF6页，状态文本检查与首页视觉检查通过。
+- 证据范围为教学合同与合成一致性；真实片段、配音测时、参与者理解、正式预算/时序仍待后续任务完成。原未跟踪TD文件与tmp保留，不纳入提交。
+# 2026-09-08 首页进度图同步验证
+
+- agent/tools/governance/Governance/test_readme_progress.py：3 passed，覆盖首次插入、状态替换、重复生成及无章节README。
+- 首页SVG XML可解析，与权威团队任务SVG字节哈希一致；任务状态未改变，不重复生成研究证据。
+
+# 2026-09-08 GitHub README验证
+
+- 14个GitHub版本化文件链接通过git cat-file核对目标提交内文件存在。
+- git diff --check通过；README受限措辞扫描无匹配（rg返回1）。
+- 状态引用73ffbf5：20 DONE、U12-03 IN_REVIEW、6 READY。633/22测试数为该候选已有证据，本轮仅文档更新，不重新宣称运行产品测试。
+- 发布范围：README与工作流日志，不更新任务注册表或合并升级代码。
+# 2026-09-08 首页SVG发布验证
+
+- 升级生成器3项专项通过；首页SVG与任务图哈希一致、XML可解析、README相对路径存在。
+- 任务状态未改动，展示20 DONE、A-03 IN_PROGRESS、U12-03 IN_REVIEW、6 READY。
+# 2026-09-08 合并收尾验证
+
+- 合并工作树根pytest：633 passed in 55.75s；教学与README专项：25 passed。
+- 71项注册表、8个独立包/70快照、审计升级与v1.2治理均PASS。
+- README 14个链接存在；内嵌SVG XML可解析，字节哈希与任务图一致；冲突标记扫描无匹配；git diff --check通过。
+- 历史6处工作区字节身份仍按既有范围待追溯；本次未运行真实设备、Unity或TD验收。
+
+## 2026-09-08 Huang Bin U-01 delivery intake
+
+- Goal: verify remote delivery identity and eligibility for U-01 closure / U-02 claim.
+- Evidence: fetched origin/codex/u-01-reliable-control at d5be86b86ca028c7decf10adf50923911458e007; inspected 9be3b0c runtime/test diff and delivery log. Branch contains 18 commits beyond main and 38 changed files relative to merge base 145f7b2.
+- Finding: live registry already marks U-01 DONE on codex/u-01-unity-control; signed acceptance binds 6c09f71d, not this candidate. U-02 is READY and unclaimed with F-03/F-05/V-03 prerequisites.
+- Evidence gap: new branch log reports EditMode 85/85 and PlayMode 9/9, but references another machine's XML/review paths; no new XML is committed in its branch delta. No independent Unity run performed in this intake.
+- Decision: intake only; do not transfer existing signoff to d5be86b or change registry. Next: reconcile the two implementations and obtain candidate-bound test evidence before candidate acceptance. U-02 must use current task inputs and freeze its claim snapshot.
+- Risk: reported PAT exposure requires owner-side revocation; no secret read, printed, revoked, or generated in this intake. Existing untracked TD/tmp assets preserved.
+# 2026-09-21 持久SVG与控制文档验证
+
+- `render_governance_views.py`通过，三张持久SVG和README内嵌SVG均由当前注册表生成；图中日期为2026-09-21。
+- 注册表校验、独立包校验、审计升级校验、治理v1.2校验和legacy协议校验待提交前运行。
+- PDF重建成功：221278 bytes，中文`pdftotext`提取正常，包含DONE=21和U12-03 IN_REVIEW。
+- 原有未跟踪 `agent/modules/touchdesigner/t01_telemetry_panel/Backup/`、`T01_TelemetryPanel.3.toe`及`agent/local/tmp/`未暂存。
+# 2026-09-21 U-02复核准备
+
+- 注册表、独立包、审计升级、治理v1.2校验通过；7个独立包、63个输入快照。
+- Unity EditMode实跑：98/98 Passed，0 failed，0 skipped；结果与日志留在未跟踪`agent/local/tmp/`，未提交用户临时目录。
+- 三张持久SVG、README/AGENTS、看板、任务树和固定概要已由当前注册表重生成；状态为U-02/U12-03 IN_REVIEW。
+- 外部证据目录`D:\Coze\SRP\evidence`原路径不存在；本轮改从远端`codex/u-02-grip`提交`ab25a6b8df85c1326164eb8f9f0804d6d790dc87`读取四项U-02证据。
+
+# 2026-09-21 U-02任务包验收
+- 远端证据：98/98 XML、参数快照、24项层级隔离报告、120帧降级演示及帧序列均可读取。
+- 参数快照权威输入SHA-256：`8B7D2335CADBFDBE30E0A4364B644610CDC1BF13EB3DA5651740635E4E90D937`，与U-02任务包输入一致。
+- 本机Unity 6000.4.9f1 EditMode全量复验：98/98 Passed，0 failed，0 skipped，退出码0。
+- 结论：技术验收通过，状态继续为`IN_REVIEW`；证据分支尚未合并到`main`，不代替真实第二人签收。
+
+# 2026-09-21 U-02真实第二人签收
+- 傅钧烨以团队总监、真实团队第二人复核身份签收U-02，结论`PASS`，日期`2026-09-21 +08:00`。
+- U-02由`IN_REVIEW`迁移为`DONE`；依赖重算后V-05由`WAIT_DEP`迁移为`READY`。
+- U-02任务包移出当前可领取集合，V-05任务包加入当前可领取集合；注册表、包映射、看板、README、三张SVG和固定任务概要已重生成。
+
+# 2026-09-21 Q-01领取校验
+- `13_render_ready_task_packages.py`通过，当前分发集合为A-03、Q-01、T-02、U12-03、U12-06、U12-07、V-05。
+- `07_validate_task_packages.py`通过：71项注册任务，DONE=21，READY=T-02/U12-06/U12-07/V-05，IN_REVIEW=U12-03。
+- `14_validate_ready_task_packages.py`通过：7个分发包、56个输入快照。
+- Q-01映射补入领取基线`f42ebc372af7a45034dab85f79d60c9be648e75f`，仅用于候选身份追溯，不表示任务已完成。
+- 已保留TouchDesigner备份目录、`T01_TelemetryPanel.3.toe`和`agent/local/tmp/`未跟踪内容，未纳入任务提交。
+
+# 2026-09-21 Q-01框架设计验证
+- `tests/test_summarize_q01.py`：6/6通过，覆盖完整通过、专家项阈值失败、重建不稳定降称、评分分歧和人员不完整。
+- `py_compile`通过；两个JSON文件通过标准库解析。
+- 注册表校验和独立任务包校验通过，Q-01冻结输入未发生漂移。
+- Q-01目录不含项目禁用措辞；真实专家、独立设计者和盲态评分活动尚未执行，状态保持`IN_PROGRESS`。
+
+# 2026-09-21 Q-01完整材料验证
+- `tools/validate_q01_materials.py`通过：6份当前权威文件可访问，10个专家项与合同一致，2项任务覆盖质量状态，4名设计者顺序平衡，盲态身份泄露为0。
+- `tests/test_validate_q01_materials.py` 4/4通过；`tests/test_summarize_q01.py` 6/6通过；`git diff --check`通过。
+- 输入不可用节点均满足Response为空、Trend冻结；未生成或代填真实人员、CVI、重建得分和裁定。
+- 固定提交复核发现并修正两项P1：忽略的CSV未入Git、fade共享复色与Cumulative混写。修正后需从Git树重跑同组验证。
+- 修正后复验：Q-01专项10/10通过；根pytest `633 passed`；71项注册表、7个分发包、审计治理v1.2和U12治理均通过。
+- `git ls-tree`确认四份机器材料均已进入Git；复核后无未关闭P0-P2，Q-01继续`IN_PROGRESS`，未触发治理视图重绘。
+
+# 2026-09-21 实验与写作阶段SVG分区验证
+- 两张独立SVG均含`phase-preparation`、`phase-experiment`、`phase-writing`及两道门的稳定元素ID；4项专项测试通过。
+- Edge无界面渲染两张完整PNG并人工检查：三色矩形连续、门线处于W4/W5与W5/W6边界、标签未被任务卡遮挡。
+- 重复生成哈希不变；71项注册表、7个分发包和`git diff --check`通过。任务状态未改变，保留TD与tmp未跟踪内容。
+
+# 2026-09-21 Q-01独立Agent复核结果
+- 独立Agent：Jason `01a0c2d7-acc0-7951-957b-fb42e22ef5fc`；候选：`0c75f84ea0d4d50be71f5575a0ea553d675f7862`；结论：`REVISE`。
+- Agent实跑Q-01测试6/6与4/4通过、材料校验器返回有效，但通过反例证明现有检查未覆盖4项P1，因此不接受原本的材料完成结论。
+- 当前权威状态改为`INDEPENDENT_REVIEW_REVISE_REQUIRED`；未变更注册表状态，未生成团队第二人签收。
+
+## 2026-09-21 Q-01修复与独立复审
+
+- `py -3.14 -m pytest <Q-01>/tests -q`：16 passed，3 subtests passed。
+- `py -3.14 <Q-01>/tools/validate_q01_materials.py`：`Q01_MATERIALS_VALID`。
+- 空白模板完整CLI：`INCOMPLETE`。
+- 独立Agent第三轮复审：`PASS`，无未关闭P0-P2。
+
+## 2026-09-21 Q-01第二人签收
+
+- 傅钧烨以团队总监、真实团队第二人复核身份签收`PASS`，日期`2026-09-21 +08:00`；Q-01由`IN_PROGRESS`迁移为`DONE`。
+- Q-01专项测试16/16通过，材料校验返回`Q01_MATERIALS_VALID`；71项注册表和6个当前独立任务包校验通过。
+- 三张持久SVG、README、AGENTS、当前阶段看板、团队任务树和固定任务概要Markdown已按同一注册表重绘；`git diff --check`通过。
+- 签收仅关闭Q-01工具与材料交付；真人Level A活动仍归E-01，Q-02与E-01未因本次签收提前解锁。
+
+## 2026-09-21 U12-07完成状态同步
+
+- 核对U12-07交付三件套、独立Agent `PASS`、傅钧烨第二人`PASS`及AC3验收记录，注册表状态确认为`DONE`。
+- 修正两份复核报告中重复拼接的候选提交号，并同步验收记录的LF规范化哈希。
+- U12治理、71项注册表、5个当前独立任务包及两项治理图测试通过；三张持久SVG、README、AGENTS、看板、任务树和固定任务概要已重绘。
+- 当前READY为`V-05/T-02/U12-06`；本完成状态不扩展为真实数据、正式样本量、真实界值或研究冻结。
+
+## 2026-09-21 任务包内容核验补齐
+
+- 对当前活动包 A-03、T-02、U12-06、V-05 逐项对照 TASK.md、FILES.md、输入快照和权威交付目录，补充 `24_团队任务与项目治理/content_reviews/` 四份任务包级内容核验记录。
+- 结论：A-03 为 `PARTIAL_PASS_WITH_BLOCKER`（A-03-SPEC 内容已核验，A-03-REAL/A-03-CAL 未完成）；T-02 为 `NOT_REVIEWABLE_MISSING_DELIVERABLES`；U12-06 为 `NOT_REVIEWABLE_TASK_OUTPUT_MISSING`；V-05 为 `NOT_REVIEWABLE_TASK_OUTPUT_MISSING`。
+- 明确边界：上游输入包、既有代码测试、V-03/V-04 或 T-01/F-04 历史签收不能代替本任务内容复核；未代替真实第二人签收。
+- 验证：逐项文件检查完成；新增记录仅为审计文档，无产品代码变更。
+# 2026-09-28 F-01双层规范化
+
+- 通用中文逐包Word模板三页已生成并逐页渲染检查；包含结论、交付、验证修复、文件整理、上下游、真实签收和下一包。模板源与说明位于agent/templates/task-review/，人类版本位于human/templates/。
+
+- 工作区 D:/Agent/srp，原03-SRP入口不存在；开始git status为空。
+- 合同与CSV专项：53 passed in 1.34s；非Python消费者：PASS，frame_seq=10,11。
+- 从agent/tasks/F-01/outputs/summary.json生成human/tasks/F-01/summary.docx及human/project-review.docx；渲染至本地agent/local/artifacts/task-normalization并逐页检查。
+- 规范化整体目标仍在执行，剩余70包与根目录业务内容迁移未完成。
+
+## 2026-09-28 F-02双层规范化
+
+- 历史候选结构校验PASS；当前使用规则与v1.2及U12-04关键字段一致；U12-02合成材料复算PASS；步骤测量45 passed in 0.16s。
+- 修复当前入口对旧联合门、粗相位题及常识累计题的采用方式；历史原件及冻结快照不改写，真实第二人签署不代填。
+- F-01与F-02总结按十一项中文模板重建，各3页；项目串联审阅2页，已逐页检查。DOCX正文与结构化总结一致性检查通过。
+- 已整理2包，剩余69包，下一包F-03；最终根目录双层迁移仍未完成。
+
+## 2026-09-28 F-03双层规范化
+
+- 原agent/tools/governance/F03脚本、测试及模块实际迁入agent/tasks/F-03/execution，锁迁入inputs；新运行写evidence/runtime，历史签署与原证据不改。
+- 首轮完整复测通过，但发现探针在预期拦截后误写“意外完成”；修改F03Build.cs后绑定c5ec6f5重新完整运行，输出F03_ALL_PASS。
+- 本轮Pester6/6、EditMode98/98、PlayMode4/4、两次DEV-REPLAY各343文件，产物重算通过，Player截图已检查；正式门同次资产233项、259条阻断。
+- 修正当前Unity协调文档F-03 READY为既有DONE；新测试和新代码不冒充新的真实第二人签署。原始机器日志保留原字节，不做去空白重写。
+- F-03总结3页、项目串联审阅2页均已渲染逐页检查；总结由Agent结构化内容生成。旧空目录清理命令被执行策略阻止，未绕过，最终根目录收拢仍待处理。
+
+## 2026-09-28 F-04双层规范化
+
+- 当前入口：py -3.14 agent/tasks/F-04/execution/verify_host.py；F-04/T-01测试38 passed，主机10页50组合清单生成，原签署TOE/TOX身份和历史重开13项检查一致。
+- Windows PowerShell默认执行策略拒绝verify.ps1，未改变策略；改用同一Python验证器完成。当前未运行TD，新候选构建与画面不声称通过。
+- 两份执行脚本迁入Agent层，测试扫描范围随迁移调整；移除node_plan覆写旧证据的直接执行入口。
+- 任务结构与Word内容检查PASS；注册表71项、活动包5个/44快照PASS。状态与三张任务图不变。
+- F-04总结和串联审阅各3页逐页检查无截断；历史截图说明遮挡曲线列为OPEN_DOWNSTREAM_VISUAL_REVIEW，不以机器门关闭。
+- diff检查发现node_plan尾空行，已修复；整体双层迁移仍在逐包推进，下一包F-05。
+
+## 2026-09-28 F-05双层规范化
+
+- 初始工具迁移测试4项通过；源提交2def28b后干净运行新verify.ps1，合同87/P-01 116/P-02 84通过，当前八项封存校验及历史工作树/Git封存复算通过。
+- F-05专项：v2.1不可变、Schema重建、fixture_hash_count=22、consumer_frame_count=5、PASS。本轮只运行Python，不声明真实运行消费者或设备通过。
+- 当前指南修正不改原签署；新证据目录与原八项封存分开。当前所测源未在运行后修改。
+- 注册表71项PASS；第一次分发校验发现T-02合同README快照漂移，重生成后5活动包/44快照PASS；只有T-02三个生成文件变化。
+- F-05任务Word与串联Word按Agent层生成，各3页逐页核对；任务结构、来源与Word内容检查PASS。注册状态及任务SVG不变。
+
+## 2026-09-28 G-01双层规范化
+
+- py -3.14 agent/tasks/G-01/execution/verify.py：14项核验通过，其中11项内容/来源检查、U12-03合同22项测试、注册表71项和分发5包/44快照检查。
+- 历史12材料与已签署治理报告git diff HEAD为空；源目录仍保留历史身份，当前使用稿在Agent层。
+- 外部资格13项PENDING_EXTERNAL且无证据引用；正式采集false、教学正式预算null，候选时序仍待冻结。
+- 资源复算为5/7理论日槽位、140/112历史演练情景与165预约，非观测结果；未虚构实际值班人数。
+- build_task_reviews.py G-01 --check：结构、来源与Word文本一致PASS；本包3页和串联4页全部渲染检查，无截断。
+- 注册状态与SVG不变，无新签收或真实设备/参与者活动。整体迁移未完成，下一包G-02。
+
+## 2026-09-28 G-02双层规范化
+
+- 当前verify.py：治理139 passed，含Agent证据目录隐私负测试；32合成跨阶段组合、释放/退出/并发与备份恢复PASS。
+- 正式环境退出2，六项配置缺失；资产门退出2，233项、259阻断，按失败关闭报告，不生成正式能力结论。
+- P-01/P-02/X-01 Python消费者233 passed；注册表71项与分发5包/44快照PASS，冻结输入未改。
+- 仓库隐私工具仅检查Git跟踪集合；候选暂存后再执行发布前隐私检查。历史签收、验收与旧证据未修改。
+- 本包Word3页、串联Word4页全部渲染审阅无截断；任务结构、来源和Word文本一致性检查通过。
+- 新教学暴露接入尚未完成，记录OPEN_DOWNSTREAM_TEACHING_EXPOSURE；下一包P-01，不代填真实准入或签收。
+
+## 2026-09-28 P-01双层规范化
+
+- 项目Python 3.14运行verify.py：434 passed in 20.14s；文档专用Python无pytest，未新增依赖。
+- 新golden与历史fixture一致，19控制/19ACK/12回执/54事件/4决策，COMPLETED及800秒；历史文件未修改。
+- 注册表71项通过；T-02新增README与迁移工具两个输入，暂存后分发5包/46快照通过，冻结输入无变化。
+- TASK结构、来源与Word文本一致性检查通过；本包3页及串联5页逐页审阅，全部内容可读。
+- 当前教学暴露接入仍开放；规范化8/71包，下一包P-02，整体根目录双层迁移未完成。
+
+## 2026-09-28 P-02双层规范化
+
+- verify.py相关回归467 passed in 18.14s；新归档封存、状态、重放与19文件索引和历史一致。
+- 800秒合成负载：integrity_valid/memory_stable=true；暖机后增长0字节，8点趋势-55211.119字节/100秒，峰值55164329字节。并非真实设备持续采集。
+- LF属性与新目录逐文件哈希/重放负担仅针对已有字节合同；golden专项6 passed in 2.20s。
+- U12-06源README漂移已用保留原件、发布Agent当前说明消除；分发5包/46快照、注册表71项通过，历史和冻结输入未改变。
+- 最终P-02 Word3页与串联Word5页逐页检查无孤立段落、截断；结构与Word来源一致性检查通过。
+- 当前真实原件读取及教学记录交接保留开放，规范化9/71包，下一包U-01；整体目标继续有效。
+
+## 2026-09-28 U-01双层规范化
+
+- 项目Python 3.14调用Unity 6000.4.9f1：14项EditMode、3项PlayMode实际通过，证据生成执行成功。
+- 迁移校验器验证新旧证据通过；19控制、19ACK、12回执、网络3项，三份JSON语义相同。golden范围为contract_golden_fixture。
+- 已观测三份空stdout日志，修改执行入口直接引用Unity实写日志并清理空文件；修改后完整入口复跑通过。
+- 注册表71项、分发5包/46快照通过；历史三报告及五份XML/JSON的git diff --exit-code通过。
+- 初次Word生成发现错误的v2.2目录来源，已改为真实Schema和fixtures路径；生成与--check通过。本包3页、串联6页逐页可读，当前包措辞检查无命中。
+- 规范化10/71包，下一包U-02；真实渲染集成、教学登记与正式全链仍开放，不由本轮探针验证关闭。
+- Unity原始日志自带行尾空格，按已有F-03/F-05规则增加本包日志原字节属性，不改写日志内容；重新暂存后git diff --cached --check通过。
+
+## 2026-09-28 U-02双层规范化
+
+- verify.py实际运行Unity6000.4.9f1：EditMode105/105、PlayMode3/3；历史XML98项及127文件逐字节验证通过，参数规范化文本SHA-256一致。
+- 受控开发构建成功；隐藏窗口ScreenCapture及自动离屏相机曾保存黑帧，像素门实际拒绝frame_0000.png。改用StandardRequest显式渲染后120帧非空，ffprobe读取120帧960x600/12fps。
+- 主Agent与Raman独立查看0/24/48/72/96五阶段图，无残影和明显裁切；独立Agent重算全部像素门，最小标准差38.853，复审无开放P0-P3。
+- 07_validate_task_packages.py验证71项；14_validate_ready_task_packages.py验证5包46快照。状态未迁移，历史签署及进行中快照未改。
+- build_task_reviews.py U-02及--check通过。本包Word3页、串联Word6页逐页检查；当前TASK/outputs/复审报告不合规措辞检查无命中。
+- 本轮生成的空Resources目录与meta已清理；构建写入的preloadedAssets已恢复原值，未改正式Player配置。失败尝试归档，新证据不覆盖历史原件。
+
+## 2026-09-28 T-01双层规范化
+
+- verify.py执行48项T-01/F-04测试通过，23件原证据按字节清单核对；Git文本换行与LFS物化口径区分，历史签署及证据git diff --exit-code通过。
+- 当前TOE展开49项内部文件，13项.n仅tile、v、current选择标识变化；功能代码与参数一致，无默认演示条目，project1显示绑定正确。
+- run_td_probe.py实际隐藏启动TD2025.32820隔离副本，22节点/12门通过；SessionCore/TelemetryPublisher发布及五阶段UDP通过，丢包2、重复1、乱序1、断流超过2秒、恢复统计保留。
+- 旧截图实测裁切，repair_readonly_layout.py另存B03DC568开头候选；run_td_probe.py --readable复测8项行为通过，五张1280x720截图逐张检查，完整状态与SQI不遮挡。
+- 早期Git文本字节口径和DAT序列化长度校验失败已修正；没有用失败尝试生成PASS。没有触碰原TOE/TOX或用户TD进程。
+- 注册表71项通过；T-02新增来源先显式暂存，再通过分发5包47快照校验。其他领取/复核输入未变。Word生成及--check通过，本包3页、串联7页逐页检查，TASK/outputs措辞无命中。
+- 独立复核实际复现新增核心文件漏检与LFS指针无身份校验；补compare_core_files和git_artifact_policy，9项测试覆盖合法字节/换行/LFS、错误OID/size、核心新增/删除/功能/编辑器布局，含原48项共57 passed。旧A构建器及清理工具两处链接均修正。
+- Carver独立复审57 passed（48+9），首轮2P2/1P3全部关闭，报告保留两轮记录；实际核对原23件、49项展开内容、probe身份及五张截图与状态。复审未启动TD，不代填真人签名。
+
+## 2026-09-28 V-04规范化验证
+
+- py -3.14 agent/tasks/V-04/execution/verify.py通过：H1、H2 v11、storm/heat/snow v2、corridor、固定合并v2、完整800秒预演八项门；LFS真实字节与原工具身份通过。
+- 首轮H1/H2忽略规则失败和v2包装入口失败真实记录后修复，不以首次失败宣布通过；七项测试含3项LFS负测及路径/报告隔离。V-03当前40行/56包检查通过。
+- 原设计JSON在所有检查前后哈希相同；新深度像素结果仅写agent/tasks/V-04/evidence/runtime。已有傅钧烨签署及媒体未修改，未启动Unity或真实设备。
+- 注册表71项、分发5包47快照通过；build_task_reviews生成与--check通过，git diff --check通过。
+- Word3页、串联10页已渲染并看新增页；最终订正下一包为注册表D-01后重渲染，Word前2页及串联全部10页PNG不变，Word第3页重新检查。累计17/71，根目录迁移未完成。
+
+## 2026-09-28 D-01规范化验证
+
+- 当前交接复核Polar官方协议及P-02 RawPacket消费者；ECG/RR两个合法来源在device_time_ns未知但有原始字节时通过，错误缺包原因被拒绝。
+- 24项共享测试加6项当前测试，共30 passed；仅构成软件与交接验证，未进行BLE扫描、真实采集或30分钟设备验收。
+- 注册表71项与独立分发5包47份快照通过；本包Word3页及串联Word10页完成渲染，逐页检查本包及串联新增页。
+- 旧三个文件归档迁移，历史状态及签署未改变；累计18/71，下一包D-02。
+
+## 2026-09-28 D-02规范化验证
+
+- 专项验证37 passed：共享采集26项、D-01合同6项、D-02合同5项。合成400Hz批次40个样本与时间戳完整，增量读取、重复tick和断连空批次符合约定；P-02消费有包/缺包及非法原因检查通过。
+- 首轮全仓628 passed、1 failed，定位R-01在11a7971迁移证据路径后与旧基线逐字比较失败，不是本轮签署变更。限定任务和证据路径的迁移映射修复，四项测试拒绝未知路径、其他任务及验收条件变化；治理专项27 passed，最终根pytest633 passed in 49.36s。
+- 注册表71项、分发5包47快照、本包Word结构及事实检查通过；用语检查无命中。Word3页逐页看图，串联11页前9页PNG与D-01已检查版本相同，新增10/11页无截断重叠。
+- 没有BLE扫描、SDK安装、真机采集或新签署；本包仍WAIT_DEP_EXTERNAL，累计19/71，下一S-01。
+
+## 2026-09-28 S-01规范化验证
+
+- 首次连接质量生命周期测试1 failed，复现流启动前_connected为True。修复赋值顺序及质量unknown；两项回归覆盖成功启动、质量未知与启动失败不连接。
+- 本包专项125 passed in 3.00s：28采集、87协议、10当前合同检查。四降级状态、未知时钟有限数要求、非GOOD原因及未实施真实同步/SQI的现状检查通过。
+- 根pytest635 passed in 48.40s；任务注册表71项、独立分发5包47快照与Word结构/事实一致检查通过，新增正文用语检查无命中。
+- Word3页全部看图；串联11页前9页PNG与D-02已检查版本相同，第10/11页无截断重叠。未进行真实校准、设备采集、Unity/TD运行或新签署；累计20/71，下一S-02。
+
+## 2026-09-28 通用中文逐包任务模板 v3.0
+
+- 按用户跨项目任务习惯更新通用模板，输出可编辑DOCX及正式DOTX，不绑定SRP编号、工具版本或人员。
+- 11节覆盖目标、验收、实际交付、过程、验证、修复、整理、上下游、按需复核签收及下一包；唯一责任人、国内学习资料链接和最小重跑说明明确。
+- 首次渲染发现交付表孤页，调整分页与列宽后最终4页全部看图，无孤表、截断或重叠。OOXML检查通过：11节、DOTX模板内容类型正确、DOCX与DOTX正文一致；git diff --check通过。
+- 仅模板及入口说明改动，未改任务状态、研究合同、签署或产品运行代码；未重新运行产品测试。
+
+## 2026-09-28 S-02规范化验证
+
+- 旧评分文档完整阅读后归档，活动入口改当前事件/PF；共享评分函数未变，仅修正文档头的版本和独立通路主张。真实四结构检测、在线PF和双人标注没有实施。
+- 初次独立包校验失败，复现A-03旧来源路径缺失；登记精确迁移，保留原文及冻结身份，生成器/校验器读取归档但仍核对内容哈希。未知来源、其他任务、非冻结状态和越界来源不重定向。
+- 专项118 passed；根pytest635 passed in 65.12s，四项哈希策略测试通过；注册表71项及5个分发包47快照通过，Word结构/事实检查通过，新增活动用语无命中，git diff --check通过。
+- 本包Word3页逐页检查；最终串联11页前10页与已检查S-01版本逐字节PNG一致，第11页重新看图。修复原末尾一句说明孤页；三页总结中仅更新的第2页重新检查，其余PNG一致。
+- S-02仍WAIT_DEP、未领取，无新签署或真实设备验收；累计21/71，下一V-05，根目录整体双层迁移仍未完成。
+
+## 2026-09-28 通用任务Word模板v4
+
+- 按当前请求交付跨项目模板，四阶段覆盖定义、执行、验收和交接，责任人、学习链接、过程出口与验收证据均有填写位置；独立复核、真人签收和发布按任务要求填写。
+- DOCX最终4页逐页查看，无空白页、表格截断或重叠；DOCX/DOTX压缩包完整、正文一致，DOTX主内容类型正确。生成脚本与当前模板入口已同步。
+- 未改业务代码、任务状态或签收；原有V-05工作区内容保持未提交。本轮只验证文档，未跑产品回归。
+
+## 2026-09-28 V-05规范化验证
+
+- Python v2.2核心24顺序×双条件各四模块、12段、19控制、19合成ACK及800秒通过，两条件段时轴一致；Unity回执、完整旅程运行与真人评审NOT_RUN。
+- 首次新增过程字段检查失败：CSV实际列为process_profile而非owner_slot；错误报告又暴露Windows子进程非UTF-8输出。字段及显式编码修复，专项119 passed in 0.48s。
+- 根pytest635 passed in 49.66s；注册表71项和独立包5包54快照通过。其他冻结包无改动，A-03/U12-03/U12-06输入身份逐项比较未变。
+- Word3页及串联12页完成页面检查；串联前10页与S-02已检查版本PNG字节一致，11、12页重新检查。结构、来源及Word内容检查通过。
+- READY不变，无新增签署或Unity验收；本轮目录和输入修复先落Agent，再生成Word。累计22/71，下一U-03，根目录迁移仍未完成。
+
+## 2026-09-28 U-03规范化验证
+
+- 完整读取旧场景设计，原文实际归档；Git识别100%重命名。当前V-03生成器八条背景行订正为固定镜头更新与取证入口，READY V-05映射快照同步，历史合同及签署不改。
+- 首次验证遗漏evidence目录创建，写入失败；修复后180 passed in 0.64s，含U-03来源/风险/配置/当前入口8项、当前映射56项及SessionCore116项。V-03当前校验通过：40行、v2.2、56直接包。
+- 根pytest635 passed in 48.21s；注册表71项及独立分发5包54快照通过。其他冻结包无diff，领取/签署状态不变。
+- Word结构、来源及内容检查通过；单包3页逐页审阅，串联13页前11页与V-05已审阅版本PNG字节一致，第12/13页重新检查，无截断重叠。
+- 仅有BackgroundPass说明变更，无Unity天气运行或真人形成性验收。本包仍WAIT_DEP，累计23/71，下一U-04；整体根目录双层迁移尚未完成。
+
+## 2026-09-28 U-04规范化验证
+
+- 静态来源确认V-02没有A/B/C分配，剩余storm/heat/snow；StormScene引用旧WeatherController且含Traveler/Shield/WeatherDirector，不含U-01桥与V03适配脚本GUID。当前入口保留未分配事实。
+- 两个旧Editor类名及GUID无其他C#或场景/Prefab/asset引用，连同meta和旧框架原文归档，迁移时五份文件Git识别100%相同；共享运行对象保留。
+- 专项34 passed in 0.09s，V-03当前校验通过；Unity6000.4.9f1 EditMode实际105/105通过，证据写U-04而不覆盖原签收。根pytest635 passed in 53.90s。
+- 71项注册表及5个分发包54快照通过，READY仍T-02/V-05，冻结包无改动。结构、来源及Word正文检查通过；新增活动文件措辞与git diff检查在发布前执行。
+- 单包Word3页逐页查看，串联13页前12页与U-03已审阅PNG字节一致，第13页重新检查，无截断重叠。当前没有U-04实际适配器、Play、Profiler、预算签收或真人签署；累计24/71，下一U-05。
+- 首次暂存diff检查仅在Unity原始日志发现生成的行尾空格。按该单一文件设置-text与关闭blank-at-eol检查，保留原始字节；源码仍执行原检查，不改写日志或放宽其他文件。
+
+## 2026-09-28 通用中文逐包任务模板验证
+
+- 使用bundled Python重新生成v4 DOCX与DOTX；DOCX四页完成逐页视觉检查，无文字遮挡、表格裁切或孤立空页。
+- OOXML检查模板内容类型、两种格式正文一致、11个章节齐全及关键跨项目字段；执行git diff --check。此次仅模板交付，不重跑无关产品测试，不改变任务状态或SVG。
+
+## 2026-09-28 U-05规范化验证
+
+- 迁移前确认CleanAndRebuildScenes/CleanupWeatherDuplicates及两个meta GUID没有活动C#/unity/prefab/asset消费者。专项与16fa5ad原字节逐文件比较一致，原场景未改，旧资产报告不回写。
+- 本包12项与V-02 26项合计38 passed in 0.27s；V-03 40行映射和56直接包检查通过。Unity6000.4.9f1实际EditMode105/105通过，XML入本包，运行日志留.artifacts-local。
+- 根pytest635 passed in 49.89s，71项注册表及5包54快照通过。其他冻结包无改动，READY仍T-02/V-05；U-05预算规格及真实负责人未落实，不把共享编译回归扩大为天气验收。
+- Word单包3页、串联14页完成页面检查；串联前12页与已审阅U-04 PNG字节一致，第13/14页重新检查。活动措辞检查发现日志描述包含禁用字样，替换后重新生成Word；历史原文不改。结构、来源、正文与git diff检查用于本包发布。
+- 累计25/71，下一U-06。未执行新天气Play、Profiler、真人签收或正式活动，不更新任务状态和SVG，整体根目录迁移未完成。
+- 暂存时Git提示归档换行转换，仅对四份原件设置-text，专项补检查text属性；不放宽其他文件或改原文。补跑38项验证，Unity运行源码未再次改变，不重复跑EditMode。
+
+## 2026-09-28 U-06规范化验证
+
+- 确认FinalBuild/FinalRebuild/ComprehensiveFix类名和meta GUID无活动C#/unity/prefab/asset引用，Git跟踪代码中无旧executeMethod调用。六份原件与38d2fb1字节比较一致，-text仅用于这些原件；Heat/Snow场景字节未变。
+- 本包14项与V-02 26项合计40 passed in 0.67s；V-03当前40行映射、56直接包检查通过。Unity6000.4.9f1实际EditMode105/105通过，XML入包，运行日志留.artifacts-local。
+- 根pytest635 passed in 51.26s，注册表71项及独立分发5包54快照通过。其他冻结包无改动，READY仍T-02/V-05；本包实际天气、性能和人员未落实，不改变WAIT_DEP。
+- Word单包3页、串联15页完成检查，前13页与已审阅U-05 PNG字节一致，14/15页重新检查。内容复核区分两个StormScene工具的Scene1Director，订正Agent源后重新生成单包；链中交接结论不变。结构、来源、正文及活动措辞检查用于发布。
+- 没有执行新构建；默认列表与F-03显式DEV-REPLAY仅为源码证据，不能替代U-08成品。累计26/71，下一U-07，根目录双层迁移未完成；状态和SVG不变。
+
+## 2026-09-28 U-07规范化验证
+
+- 原06_抽象双环对照规格.md实际迁入archive并与2e9498a原字节比较一致，限定-text保留原件。初次新导航相对路径错误，专项复现；源文件修正后41 passed in 0.10s，初次失败记录在本包evidence/initial-link-failure.txt。
+- 专项含15项U-07及26项V-02；V-03当前40行映射、56直接包和R-01原候选Schema/正负fixture验证通过。PromptDisplay仍被WeatherController调用，未删除有消费者脚本；本轮没有四结构真实渲染或六类实测验收。
+- 根pytest635 passed in 51.60s；注册表71项、独立分发5包54快照通过。任务状态及领取冻结输入未变，不更新SVG；真实模板和负责人仍待落实。
+- 单包Word3页全页检查；串联15页，前13页与已审阅U-06 PNG字节相同，14/15页检查无溢出。构建器--check核对来源、结构与正文；当前措辞及git diff --check通过。累计27/71，下一U-08，根目录收拢未完成。
+
+## 2026-09-29 U-08规范化验证
+
+- 迁移前精确核对BuildScene1/BuildScene2D类名及两个meta GUID，仅定义与历史扫描/框架原件有引用，无活动执行消费者；四份原件与742da55原字节一致，限定-text。StormScene未改；正式发布门保留。
+- 初次专项对FormalBuildGate误按原字节比较Git LF与工作区CRLF，修正为既有源码换行规则比较；不改运行源、不改变归档原文的逐字节要求。初次失败记录保留，复测40 passed in 0.53s，其中14项U-08、26项V-02。
+- V-03当前40行及56直接包检查通过，Unity6000.4.9f1实际EditMode105/105通过，XML入包、日志留.artifacts-local。根pytest635 passed in 49.75s，注册表71项及独立分发5包54快照通过。
+- Word3页全页检查，串联16页前14页与已审阅U-07 PNG字节一致，15/16页重新检查；审阅跨日更新为2026-09-29，日期不构成真人签收。结构、来源、正文及活动措辞用于发布，状态与冻结输入不改。
+- 累计28/71，下一T-02。目标设备预算、实际双条件、可访问配置、Profiler和Windows制品未验收；本轮没有新构建或正式活动。根目录双层迁移继续，SVG不因规范化进度而改变业务状态。
+- 提交差异检查发现pytest原始失败输出含行尾空格，精确设置该证据文件-text及whitespace=-blank-at-eol，保留原输出，不放宽源码或其他文件检查；补验整轮提交差异通过。
+
+## 2026-09-29 X-01规范化验证
+
+- 初次40通过1失败，UTF-8子进程被默认GBK解码；显式编码和环境变量修复测试，原失败输出留evidence/initial-encoding-failure.txt，不改业务拒绝行为。复测41 passed in 4.80s。
+- 原验证器PASS，两份合成清单384条；实际CLI重建六产物内容与原证据一致，再次运行同目录拒绝且字节不变。原README原字节与历史签署/业务/Schema无修改检查通过。
+- 根pytest635 passed in 49.90s；71项注册、5包61快照校验通过。真实活动、正式清单、Unity/TD和新的独立Agent/真人复核未执行。
+- Word3页全页、串联22页21/22检查无溢出，前20页与已检查Q-03图字节一致。Agent来源、正文和结构由构建器检查，业务状态/领取输入不改。累计38/71、下一X-02，整体迁移未完成。
+- 暂存检查检出原始失败输出的空白行尾，精确对该原始证据设置-text及whitespace=-blank-at-eol以保留输出字节；源码和其他文件规则不变，随后重新检查。
+
+## 2026-09-29 X-02规范化验证
+
+- 两旧方案原SHA-256逐字节核对通过，旧入口相对链接和历史v1.1消费者通过；当前注册仍WAIT_DEP、依赖A-03、负责人空。无历史X-02模型签收。
+- 42 passed in 1.33s，其中9项交接/归档/实际路线及概率/Schema、33项既有随机化。真实24个native排列及条件概率乘积1/24检查通过，不等于实现OPE或ESS。
+- 根pytest635 passed in 50.49s；71项注册、5包61快照通过。真实训练、策略冻结、模型卡、Unity/TD、新独立Agent与真人签署未执行。
+- 单包Word3页全页检查，串联22页前20页与已检查X-01图字节相同，21/22页重新检查；内容和来源由构建器核对。累计39/71、下一X-03，业务状态不变、整体迁移未完成。
+- 当前措辞检查命中统计语境的禁用词，改为模型核查，从Agent源重建Word并复看受影响页；历史原文保留，不以历史原件扩大当前措辞。
+
+## 2026-09-29 X-03规范化验证
+
+- 初次43通过1失败，MANIFEST_NOT_STORED源于测试未给核心绑定代理所用耐久存储；修复测试绑定，原失败输出逐字节保留，不改运行代码。复测44 passed in 1.19s。
+- 实测v2.2冻结策略仍拒绝、完整四天气仍必需、固定Provider忽略状态快照、安全重放先拒绝自定义核心工厂；既有正式门与重放回归通过。这些结果不证明动态策略、只读模型或同构建验收完成。
+- 根pytest635 passed in 49.46s；71项注册、5包61快照通过。Unity/TD、真实阶段三、独立Agent及新真人签署未执行。
+- 单包Word3页全页检查，串联22页前21页与X-02已检查PNG相同，第22页重新检查通过。累计40/71、下一Z-01；业务状态及冻结输入保持，整体迁移未完成。
+
+## 2026-09-29 Z-01规范化验证
+
+- 真实环境权威初测三项失败，订正相对检出根、11项既有直接依赖与manifest/lock精确MCP提交，extras元数据查询使用分发包名；原两文件SHA-256及字节归档复测通过。历史中枢机安装观测改为明确历史，不推定本机安装通过。
+- 新专项初次21 passed/1 failed，测试误读dependencies而实际CSV为depends_on；修复测试，原输出保留。复测22 passed in 7.00s，其中12项新交接/负测、10项既有资产/Unity门测试，工具权威复测PASS。
+- 真实资产门退出2：225项、269阻断，ASSET_UNREGISTERED=57、IGNORED_RELEASE_FILE=194、ASSET_REMOVED=11、HASH_CHANGED=4、LICENSE_REPLACE=3；这是当前失败关闭，不是候选发布通过。未更新台账、未删除本机忽略文件来消除问题。
+- 根pytest635 passed in 50.10s；71项注册与5包61快照通过。三匹配候选、独立干净重建、Unity/TD、真实设备链与新独立Agent/真人签收未执行。
+- Word3页全页与串联23页22/23检查通过，前21页与X-03已检查PNG字节一致；构建器检查Agent来源及Word内容。累计41/71、下一G-05，业务状态不变、整体迁移未完成。
+
+## 2026-09-29 G-05规范化验证
+
+- 五原件迁移前后SHA-256相同，专项复验原字节及原位置导航；固定-task五目录与13来源检查通过，映射/领取manifest未引用迁移文件，不覆盖快照。
+- 初次脚本执行pytest后保存失败，evidence尚未创建；修复入口初始化，失败为工具转录摘要，非原日志。复测28 passed in 0.11s（23新+5环境），13项缺失资格分别返回EVIDENCE_RECORD_MISSING。
+- 现有升级治理1.2 PASS，保留其6份历史worktree字节未核验说明，不扩大为新验收。本机只读门退出2、formal_ready=false，治理根/备份根/密封证据/管理员/凭据/期限六项未过；无正式配置或两周U8执行。
+- 根pytest635 passed in 50.34s，注册71项、分发5包61快照通过。活动措辞与Word来源检查通过，未运行Unity/TD或新独立Agent/真人签署。
+- Word3页全页及串联23页第23页已检查，前22页与Z-01已审PNG字节相同。累计42/71，下一E-01，13项全包规则含可选阶段三差异待裁定，业务状态不变，整体迁移未完成。
+
+## 2026-09-29 通用中文逐包Word模板修订
+
+- 沿用通用v4，补本次审阅请求、主线反向检查、实际工具版本和下游接收确认；没有修改任务状态或规范化进度。
+- DOCX和DOTX正文一致、模板内容类型正确，11节及必需字段检查通过。初次检查误用Path.with_suffix截掉版本号，改为追加扩展名后通过，生成文件没有此问题。
+- 首次渲染领域说明溢出为单独第五页，压缩后四页；第1页与已审图字节一致，第2至4页重新逐页查看，无截断或重叠。git diff --check通过；本轮不涉及运行代码，不重复产品回归。
+
+## 2026-09-29 E-01规范化验证
+
+- 三份第7步原件实际迁入archive，迁移前后字节相同；四维6/8失败与7/8通过、关键blocker、转移降称、来源/导航和归档检查通过，共38 passed与3 subtests passed in 0.28s。Q-01材料有效，原合同/盲态母版/评分键不变。
+- G-01第11份材料消费者改读归档原件并核对原始字节，原位置仅当前导航；G-01复验15项通过，报告日期更新为本次实测日期。71项注册、5包61快照通过，根pytest635 passed in 49.75s。
+- 真实活动仍未执行，U12-05与相应资格待回执，人员、材料解释冻结、来源束与签署未完成；没有外部联络、新独立Agent或真人签署。
+- 单包Word3页逐页及串联24页23/24检查通过，前22页与G-05已审PNG字节相同；结构与Agent来源检查通过。累计43/71、下一E-02，业务状态不变、整体迁移未完成。
+
+## 2026-09-29 E-02规范化验证
+
+- 两旧第8步文件实际迁入archive，迁移前后字节一致，当前导航可解析；Q-02两空CSV和教学/测量权威保持，活动消费者未发现引用旧方案的脚本/快照，不刷新冻结输入。
+- 初测69通过1失败，文字断言“不填零”与正文“不能填零”不同，修正测试后70 passed in 0.27s；保留完整初次输出，初次结果引用改为实际保存的initial-check-1.txt，不用当前成功输出替代失败。
+- 既有合成题库及字节校验通过；71项注册、5包61快照通过，根pytest635 passed in 50.02s。未做真人招募/访谈、Unity或TD运行、新独立Agent或真人签署。
+- 单包Word3页全部及串联24页第24页视觉检查通过，前23页与E-01已审PNG字节相同；结构/Agent来源和当前措辞检查通过。累计44/71、下一B-01，人数与真实关闭仍未冻结，业务状态及整体迁移未完成状态保持。
+
+## 2026-09-29 B-01规范化验证
+
+- TASK与五目录、15项权威输入、当前批次说明、空登记和NOT_RUN的QC骨架建立。实际测试P-01可消费Level C固定顺序并拒绝PolicyDecision；Q-03测试验证X-01仍拒绝Level C分配，规划48单元不作真人批次。
+- 初测214通过2失败，为CSV实际kind列与测试task_kind、正文文字不匹配；修正测试后216 passed in 4.93s，原输出/清单/处置保留。QC六类名称对齐RawEvidenceBundle真实枚举，未生成正式manifest、实例或签收。
+- 注册71项、分发5包61快照通过；根pytest635 passed in 49.55s。分配/暴露/完成/停止/取消分开，标注未完成QC待补，退出不足不定向补人；实际许可、角色、真机链和冻结仍缺。
+- 单包Word3页及串联25页第24/25页已视觉检查，前23页与E-02已审PNG字节相同；结构/来源检查通过。累计45/71、剩余26、下一E-03，业务状态不变，根目录整体迁移未完成。
+
+## 2026-09-29 E-03规范化验证
+
+- 建立TASK、五目录、18项来源、技术关闭说明与未执行报告提纲；修正步骤9两导航和手册过程，技术关闭、A-03-CAL及U12-11/G-03冻结分开，既有周期/边界AC不与旧步骤事件指标互换。
+- 修复INSTITUTION_LEVEL_C仅列E-03、未显式列B-01实际采集的遗漏；仍13项PENDING_EXTERNAL、回执为空。在研U12-03/U12-06输入身份及声明保持，新增影响记录待负责人审阅，不把文档修复当运行拦截或机构批准。
+- 130 passed in 4.55s，历史协议兼容通过，注册71项、分发5包61快照通过，根pytest635 passed in 49.32s。没有真人/真机/外部延迟、真实配置或独立签收。
+- 原件核对后明确13SOP的SUPERSEDED和19JSON的UNASSESSED分别保留，不泛称原件均有废止标记。单包Word3页及串联25页第25页检查，前24页与B-01已审PNG字节相同；结构/来源检查通过。累计46/71、剩余25、下一G-03，业务状态不变，根目录整体迁移继续。
+
+## 2026-09-29 G-03规范化验证
+
+- 建立TASK、五目录、20项实际来源、当前冻结说明/缺口及与v1.2一致的15项PENDING索引。旧总控当前门禁实际移动，字节SHA256为1E6053643994115BB477D6F53C97F25141204B7FEE372F1319181DB8466C7F01；历史验证器同时消费原件和新导航。
+- 初测32通过1失败，为新来源引用不存在的P-01说明文件；替换为现有srp_session_core/README.md，原输出与命令保留。33 passed in 0.09s；历史协议、v1.2治理、71项注册及5包61快照通过，根pytest635 passed in 50.27s。
+- 现有正式适配器缺失会拒绝，合成formal_capable回执可到PREPARED，只是控制测试；不声称真实15项冻结、六入口迁移、教学暴露、预注册或实际活动已完成。没有Unity/TD、设备或真人运行、新独立复核及真人签署。
+- 单包Word3页全部、串联26页第25/26页视觉检查通过，前24页与E-03已审PNG字节相同；结构/真实来源及当前措辞检查通过。累计47/71、剩余24、下一B-02，业务状态不变，整体目录迁移仍未完成。
+
+## 2026-09-29 B-02规范化验证
+
+- 建立TASK与五目录、18项来源、批次说明和缺口、空CSV及NOT_RUN的QC提纲。两旧第10步方案实际归档，字节SHA256分别A3E80D0380397993FB8652AB2A7FB3C9057AB303B1E64E282B2D2F912F062860和4E84807D9CC53F8A5484C688FB4AE650B509BAAFD089FA9033454126140E9518，旧协议校验保留原件和新导航消费。
+- 135 passed in 5.81s；历史协议、v1.2治理、71项注册及5包61快照通过；根pytest635 passed in 51.89s。验证的是合成分配、存储和交接，不含实际Unity/TD、设备、参与者或独立签署。
+- 12人批次不要求每批6比6，固定48分配块与PARTIAL_BLOCK行为按实际源码记录，最终不完整块、人数及正式教学时序待冻结；操作COMPLETE不替代问卷完整和四模块分析资格，单批结束不授权锁库揭盲。
+- 单包Word3页和串联26页第26页视觉检查通过，前25页与G-03已审PNG字节相同；结构与来源检查通过。累计48/71、剩余23、下一E-04；业务状态不变，真实批准/角色/批次/QC仍缺，整体双层迁移未完成。
+
+## 2026-09-29 E-04规范化验证
+
+- 第11步两旧方案移入E-04/archive，原字节SHA256分别B41E78C466BDB4A47844D9710EC102136B0BFD51F3CE80F757DFD9CD9634540C和A25AADCBF6FED0CC5E72A882B2316C21DDB21FB133B3E17F7E298253E5AA4338；历史校验消费原件与新导航，当前手册从采集演练改为全部批次关闭流程。
+- 156 passed in 6.59s，实际合成12分配/8操作完成/4中止验证PARTIAL_BLOCK和审计有效，不证明真实平衡、逐顺序覆盖、分析资格或锁库。历史协议、v1.2治理、71注册、5包61快照通过；根pytest635 passed in 49.82s。
+- 当前空提纲计数/签名/锁库身份均null、授权false；六类原件与字节/规范化哈希分别核对，受限声明不是访问批准，MANIFEST的cue_mode需实际盲态工作副本和职责处理。无设备、Unity/TD、参与者、新独立复核或真人签署。
+- Word3页全部和串联27页第26/27页视觉检查通过，前25页与B-02已审PNG字节相同；结构与来源检查通过。累计49/71、剩余22、下一A-05，真实冻结/数据/关闭仍缺，根目录双层迁移未完成。
+
+## 2026-09-29 A-05规范化验证
+
+- 旧问卷原件实际归档，字节SHA256为58BDB7DCDD1708F164FA233C258689AD5E18F67C299195E8F48F4B57BC501CE7；现入口对齐PANAS主比较及待冻结时序，历史校验继续读原件。
+- 70 passed in 28.29s，覆盖交接、候选HC3方向、BH数值和A-03规格；根635 passed in 49.57s。候选SAP、历史协议、v1.2治理、71注册、5包61快照通过。
+- 候选OBSERVED_CASE不检查四模块，48是总块而非每臂，原签收及在研输入不改；正式MI/MNAR/FDR、锁库授权、结果分类器和真实分析仍缺，不代填结果和签署。
+- 单包3页全检，串联27页末页检查，前26页与E-04已审图字节相同；结构来源检查通过。50/71，剩余21，下一E-05；未运行Unity/TD/设备和真实活动，整体根目录双层迁移继续。
+
+## 2026-09-29 E-05规范化验证
+
+- 61 passed in 1.58s，覆盖E-05当前合同、X-02/X-03及真实随机化接口。合成24原生排列及逐位置候选/行为概率合法，目标概率仍null，不能当完整目标分布或OPE结果。
+- 根635 passed in 49.57s；历史协议、v1.2治理、71注册、5包61快照通过。未训练模型、未作真实OPE或策略冻结，无设备、Unity/TD、独立Agent或真人签署。
+- U12-08为下游分析附录，修正X-02/X-03六份当前输入与两份Word；选择标准事前冻结和最终模型签署分开，均匀回退不授权阶段三。旧扩展原件已X-02归档，本包不复制；历史签署/在研快照不改。
+- E-05 Word3页全检；X-02/X-03仅第3页变化且检查，1/2页字节一致；串联28页变动22/27/28检查，其他页与A-05相同。三包结构与来源检查通过；51/71、剩20、下一G-04，整体根目录双层迁移未完成。
+- 提交前静态发现PowerShell初稿根路径少一层，修复后从D:/Agent实际调用绝对verify.ps1：61 passed in 1.51s、根635 passed in 49.61s及全部治理检查通过。修复说明回填Agent总结，重生Word第2页和串联第28页再次视觉检查通过。
+## 2026-09-29 G-04规范化验证
+
+- 从仓库外D:\Agent实际调用G-04 execution/verify.ps1：61 passed in 1.53s；根回归635 passed in 51.14s。
+- 旧协议兼容、v1.2治理、71项注册表、5分发包/61快照全部PASS。当前formal collection仍blocked。
+- 专项覆盖阶段三48行真实分配接口、两原生组策略比较、回退估计目标、真实v2.2拒绝及默认正式门、直接活动矩阵与候选不构成批准。未运行真实阶段三、Unity、TD或独立签收。
+- 单包3页、串联28页渲染检查通过，前27页与E-05已查页相同；Word来源结构另由build_task_reviews.py --check验证。规范化52/71、下一B-03，根目录迁移未完成。
+
+## 2026-09-29 B-03规范化验证
+
+- 仓库外D:\Agent调用verify.ps1，首轮143 passed/1 failed：合成finish原因码含连字符不符合P-01，保留initial-handoff.txt和initial-checks.json。修fixture为SYNTHETIC_TEST，不改运行合同。
+- 复测144 passed in 5.99s，根635 passed in 50.15s；历史协议、v1.2治理、71项注册、5分发包/61快照全部PASS。
+- 实际stage_3 48行清单和24随机路径消息验证，开发prepare/finish两操作封存及只读重放状态一致；未启动体验，不代表动态策略或真实800秒系统通过。真实实例为零，业务仍BLOCKED_EXTERNAL。
+- 单包3页全查，串联29页变化28/29页查，前27页与G-04已查图相同；Word结构/来源和diff检查用于收尾。规范化53/71、下一E-06，根目录迁移未完成。
+
+## 2026-09-29 E-06规范化验证
+
+- 从D:\Agent实调E-06 execution/verify.ps1，143 passed in 6.32s；根635 passed in 46.48s；协议兼容、治理、71项注册、5包/61快照分发全部PASS。
+- 真实X-01开发接口的12/48分配行、8/36完成与4/12中止分别验证PARTIAL_BLOCK/BALANCED_BY_ASSIGNMENT，审计链有效但formal_capable=false。不能证明真实顺序/策略/分析资格或研究授权。
+- 单包3页全查，串联29页变化末页查，前28页与B-03已查图相同；Word结构和来源由生成器--check另验。业务仍BLOCKED_EXTERNAL、真实锁库/揭盲未执行。
+- 规范化54/71、下一A-04；真实角色及研究冻结未代签，整体根目录物理迁移未完成。
+
+## 2026-09-29 A-04双层规范化验证
+
+- 从D:\Agent实调绝对verify.ps1，36 passed in 1.24s；根635 passed in 47.25s。协议兼容/治理/71项注册/5包61快照分发PASS。
+- 真实既有HC3 helper合成负/零/正方向及BH阈值验证；只测数值接口，不产生正式独立SAP/FDR家族或研究结果。
+- 首轮收集冲突原输出initial-handoff.txt；第二轮35通过1源路径失败，原输出覆盖事实与修复在repair-notes.md，最后复测通过。
+- Word单包3页全查；串联30页29/30已查，1-28同E-06，结构及完整正文由生成器--check核对。实际研究仍未运行，独立复现及真人签署无。
+- 规范化55/71，余16，下一A-06；根目录双层物理迁移未完成。
+
+## 2026-09-29 A-06双层规范化验证
+
+- 从D:\Agent实调绝对execution/verify.ps1，62 passed in 2.05s；根635 passed in 49.74s。协议兼容/治理/71项注册/5包61快照分发PASS。
+- 本包测试采用真实v1.2路线及临时合成三台账；任一活动阻止NO_STAGE3，缺结果族/依赖/台账或字节/计数漂移拒绝，内层元数据与真实外层签署检查分开。
+- 未创建生产a06_route_closure_v1.json，未取得实际台账完整来源、结果分类或双人范围回执；不把合成metadata PASS作为真人授权。
+- Word单包3页全查，串联31页30/31变化已查、前29页同A-04；分析/分类归属订正后单包第1页再查、2/3不变，最终串联PNG全同已查版。
+- 规范化56/71、余15、下一W-02；业务WAIT_DEP与根迁移false保留，Word完整正文/来源由生成器--check核对。
+
+## 2026-09-29 W-02双层规范化验证
+
+- execution/verify.ps1：51专项通过，原结构字节身份、历史消费者、当前8项NOT_RUN矩阵、协议方向与非门控情绪、U12-07签署和真实来源均核对。
+- 历史候选、协议、v1.2治理、71项注册、5个分发包及61快照通过；根pytest 635 passed in 49.20s。未运行真实论文分析、Unity/TD、独立Agent或真人签收。
+- Word单包3页全部检查，串联31页第31页变更检查，前30页PNG与A-06渲染一致；当前Agent层生成Word，不从Word反写虚假事实。
+- 规范化57/71、余14、下一W-03；业务WAIT_DEP与根迁移false保留，完整正文及来源通过生成器--check核对。
+
+## 2026-09-29 W-03双层规范化验证
+
+- execution/verify.ps1：31专项通过，实际注册和空角色、三归档原件字节身份、历史消费者、政策已读/期刊403/当日未核实、当前来源和导航均检查。
+- 协议、v1.2治理、71注册、5分发及61快照通过；根635 passed in 48.98s。无独立成员重建、真实结果复现、Unity/TD或投稿。
+- 首次补丁因总结单行格式不匹配未应用；核对工作区后更正，旧文件移入archive未丢失。当前官方核对摘要非原网页完整快照。
+- W-03 Word3页全查，W-02修订第2页查且1/3页同前；串联32页变化31/32查，前30页与上一轮一致。两包生成器--check通过。
+- 当前58/71、余13、下一W-04；状态及历史签收未变，根目录完整物理迁移未完成。
+
+## 2026-09-29 W-04双层规范化验证
+
+- execution/verify.ps1：15专项通过，当前注册及空角色、八对象未交付索引、真实来源、原方案字节身份、公开与部署的实际决定及W-02/W-03交接均检查。
+- 协议、v1.2治理、71注册、5分发及61快照通过；根635 passed in 49.35s。没有真实新成员演练、软件最终交付、Unity/TD运行或独立Agent签收。
+- 单包Word3页全部检查，串联32页第32页变化检查、前31页PNG与W-03一致；生成器--check通过。
+- 当前59/71、余12、下一U12-01。整理完成不等于业务完成，根目录完整物理迁移未完成。
+
+## 2026-09-29 U12-01双层规范化验证
+
+- 首轮40专项通过，但分发验证发现U12-03/U12-06旧清单hash drift；初次检查退出码保留initial-checks.json。归档原件映射和解析优先级修复后41专项通过。
+- 旧三文件实际字节身份、原签收JSON未变、15消费者、六入口缺口、六旧字节追溯及当前/冻结双路径均检查。未改在研快照、候选身份及原业务状态。
+- 协议、v1.2治理、71注册、5分发包及61快照通过；根635 passed in 63.10s。未运行Unity/TD、真实研究、外部备份恢复或独立Agent新验收。
+- Word3页全查；串联33页32/33变更检查，前31页与W-04PNG相同；生成器--check通过。规范化60/71、余11、下一U12-02，根迁移false。
+
+## 2026-09-29 U12-02双层规范化验证
+
+- execution/verify.ps1：74专项通过，原签收与四归档文件字节身份、标注计划、旧五文件清单、新旧三项材料逐字节一致、测量模块不改及Q-02/E-02交接均检查。
+- 新生成器--check通过；协议、治理、71注册和5分发/61快照通过；根635 passed in 59.86s。无Unity/TD运行、真实片段、标签或心理测量评估。
+- F-02完整verify.ps1通过，45原测量专项通过；F-02/Q-02当前来源结构及U12-02生成器--check通过。已迁移入口的现行消费者无旧生成器/材料路径命中。
+- 单包Word3页全查，串联33页第33页变化检查、前32页PNG同U12-01；当前61/71、余10、下一U12-03。业务限定DONE、原签名及根迁移false保留。
+
+## 2026-09-29 U12-03双层规范化验证
+
+- execution/verify.py：83专项通过，覆盖原22合同、13文件字节、原9交付与6来源身份、活动四材料一致、冻结候选与输入、Q-02/E-02实际交接。V-01 14节点实际入口通过。
+- 活动生成器check、协议、治理、71注册及5分发/61快照通过；根635 passed in 57.29s。无真实教学、语音/片段、观察、Unity或TD运行。
+- G-01完整当前验证入口15项检查通过，结果记consumer-entry.json；迁移后来源结构与实际入口一致。
+- Word3页全查，串联34页检查33/34、前32页PNG同U12-02；结构来源与内容回查通过。规范化62/71，真实签署仍NOT_SIGNED，根迁移false不改。
+
+## 2026-09-29 U12-04双层规范化验证
+
+- 首轮4 failed、134 passed，均为下游旧路径或迁移后输出/执行目录混用；修复真实入口后138 passed in 33.64s。首轮仅保存观测摘要initial-failure.md，不声称保留完整原始失败日志。
+- 原18合同、13归档字节、8核心输出身份、已存在README身份差异、7历史来源、签署身份、实际自由度、零效应CLI及不覆盖输出、20格1000次合成重算和消费者交接通过。
+- 当前证据与F-02生成检查、协议、治理、71注册、5分发/61快照通过；根635 passed in 48.72s。无Unity/TD、真实设备或参与者运行，正式MI/联合功效未交付。
+- 单包Word3页全查；A-02/A-05变更2/3页、串联34页变更27/34页检查，其余页与前次已检查渲染一致，版面PASS。规范化63/71；新独立审核与真人签收未完成，根迁移false。
+
+## 2026-09-29 U12-05双层规范化验证
+
+- 首轮跨包pytest默认导入发生两个同名模块收集错误，原日志initial-handoff.txt及退出码保留；使用importlib导入模式复测71 passed in 0.26s，测试断言与项目默认pytest配置不改。
+- 四归档字节、旧manifest三项输入身份、当前状态/真实结果为空、活动资格与三个消费者入口、合成范围匹配/跨范围拒绝/字节变化/未签署负例通过；合成记录未写真实矩阵。
+- 协议、治理、71注册及5分发/61快照通过，根635 passed in 68.43s。未取得机构回执、未真人执行或Unity/TD运行，作者复测不替代独立/第二人。
+- Word3页全查；串联35页第34/35页检查，前33页PNG与U12-04相同；内容来源与结构--check通过。规范化64/71、根迁移false，业务状态及冻结在研输入不改。
+
+## 2026-09-29 U12-06双层规范化验证
+
+- 前三轮均1 failed/245 passed，为本轮误写文件名、导航层级与首次汇总循环链接；第四轮246通过后分发要求迁移原件受Git跟踪，暂存精确原件后复测。四日志和处置保留，未放宽断言或分发规则。
+- 最终246 passed in 7.93s，五原件字节、原manifest、领取包全文件与候选/输入ID、精确解析和六PENDING核对；现有P-01/P-02/X-01软件行为复测。默认formal拒绝与fixture PREPARED如实记录，不发TCP/UDP或真实暴露。
+- 协议、治理、71注册和5分发/61快照通过，根635 passed in 52.31s。未运行Unity/TD、真实设备或真人研究，没有新实现候选验收、独立复核或真人签收。
+- Word3页全查；串联35页第35页检查、前34页PNG同U12-05；结构/来源/内容--check通过。规范化65/71，成员IN_PROGRESS与冻结输入保留，根迁移false。
+
+## 2026-09-29 U12-07双层规范化验证
+
+- initial-handoff 2 failed/83 passed，second-handoff 1 failed/84 passed；修二进制比较工具，查两原输出哈希未按声明补末尾LF，严格记录已存在的算法描述差异，不覆盖原件或签名。
+- 六输入声明身份、四输出实际历史身份、七原件搬迁字节、四候选manifest及输入ID、原签收对象/人/日期和冻结分发Git对象通过；19解释规则与11空表均无观测数据。
+- 串联生成首次缺A-05旧空表，修其实际索引并补专项，最终95 passed in 14.00s；根635 passed in 47.64s，协议/治理、71注册及5分发61快照通过。无真实数据、主稿、Unity/TD或新独立/真人验收。
+- Word单包3页全查；W-01/W-02变化2/3页查，首页与原PNG一致；串联36页18/19/31/35/36变化已查，其余同U12-06。四包结构/来源/内容--check通过，66/71、根迁移false。
+
+## 2026-09-29 U12-08双层规范化验证
+
+- 首次动态移动被工具策略拒绝且未执行；核对绝对路径后固定LiteralPath移动四原件，不涉及真实研究资料或成员产出。
+- handoff 54 passed in 2.22s，覆盖当前注册/来源/归档身份、三活动来源、四结果族及核心/扩展路线；复用A-04、A-06、E-05、E-06当前真实职责和部分活动负测。路线元数据ok不授权真人研究。
+- 根635 passed in 48.08s；协议、治理、71注册及5分发61快照通过。无真实分析/附录、独立复核或真人签收。
+- Word3页全部检查，串联36页末页已查，其余35页同U12-07已检图；结构/来源/内容--check通过。67/71、余4、下一U12-09，根迁移false。
+
+## 2026-09-29 U12-09双层规范化验证
+
+- 149 passed in 8.70s：原件字节和输入身份、15消费者/24 DONE索引重建、历史签收范围、五正式空字段与三个版本职责、测量/教学/统计/运行上游软件回归通过。
+- 六引用四源的历史Git身份吻合，限定可访问来源的原声明字节匹配为0；冻结binding验证通过，原声明未改写，实际运行研究门仍未证明接线。
+- 根635 passed in 50.16s，协议、治理、71注册及5分发61快照通过；作者软件验证不代独立或真实签收，没有Unity/TD/设备或真人研究运行。
+- Word3页全查，串联37页36/37变化已查，前35页同U12-08；内容来源与目录结构--check通过。68/71，根迁移false，业务状态和成员冻结输入保持。
+
+## 2026-09-29 U12-10双层规范化验证
+
+- 初始1 failed/91 passed in 8.39s，外部CLI在Python3.14帮助校验时报badly formed help string；initial-handoff及initial-checks保留。两处帮助文字修复，Evidence/_number/classify语法树与原版相同，原副本字节一致。
+- 最终92 passed in 8.47s，15正反/小差异/触边/护栏/效度/敏感性合成案例、20非法输入、help/输入CLI、合成报告重建、原候选身份和A-05/A-06/U12-07交接通过。空正式报告与阈值保持，不赋予合成delta正式身份。
+- 根635 passed in 50.01s；协议、治理、71注册及5分发61快照通过。未运行真人分析、设备、Unity或TD，无独立复核/真人签收；业务WAIT_DEP不改。
+- Word单包3页全部检查，串联38页37/38变化已查，前36页同U12-09；结构、来源、内容--check通过，69/71、根迁移false。
+
+## 2026-09-29 U12-11双层规范化验证
+
+- 初始1 failed/38 passed in 1.20s，TASK相对链接缺outputs前缀；initial-handoff和initial-checks保留，修实际导航，不放宽检查。初始Agent入口尚不存在，随后建立，不作为旧实现缺陷或旧实现已交付的证据。
+- 最终39 passed in 1.00s：三原输入字节、原manifest、15同源PENDING、六空正式参数、候选分离、REAL/CAL顺序、五阶段一资格/13全局资格、800秒核心与教学暴露缺口；既有治理拒绝正式开关/N/等效/删CAL负测通过。
+- 根635 passed in 50.99s，协议、治理、71注册及5分发61快照通过。没有真实参数冻结、审批、机构或第二人签收，没有Unity/TD/设备或真人活动；静态索引不批准研究。
+- 单包Word3页全查，串联38页第38页变化已查，前37页同U12-10；结构/来源/内容--check通过。70/71、根迁移false，业务WAIT_DEP_EXTERNAL及冻结在研输入不改。
+
+## 2026-09-29 U12-12双层规范化验证
+
+- 77 passed in 0.61s：原manifest及三原件字节、注册依赖、只读观察同源、三方案无默认决定、八未交付对象、十五合成案例不自动部署、十二对象待决定及活动链接通过。
+- 根635 passed in 51.55s；协议、治理、71注册、5分发61快照通过。真实研究、Unity/TD/设备、公开批准、独立复核及真人签署均未执行。
+- Word3页全查，串联39页38/39已查、1至37与前轮PNG逐字节一致；结构/来源/内容检查通过。71/71逐包完成，根目录物理迁移false，不改业务状态或冻结成员输入。
+
+## 2026-09-29 设计验证与参考来源迁移验证
+
+- 三个根目录实际迁入agent/design、agent/validation和agent/references；297个已跟踪原件中295个字节不变，两份当前导航修改。5份Word只改5个来源链接，正文和其他内部文件未改。
+- 60个有Python测试入口的包分别复测全部通过；根635 passed in 48.15s。治理与71注册、5分发61快照、G-01当前使用15检查、F-05历史Git封存及4合同负测试通过。
+- 初次复测发现按字面判断导航而不读取真实链接、UTF-8子进程输出与终端编码不一致，以及未移动链接的尾斜杠格式化触发冻结输入差异。分别修正读取、指定子进程UTF-8并恢复原链接；分发原件不重生成，初次包测试记录保留。
+- 文献隔离校验仍拒绝：库存106条、实际101PDF，来源字段与重复身份待复核。保留原检查，不把目录迁移作为文献资格；没有新建论文或正式研究证据。
+- 71包和330 Word来源通过。串联40页第40页更新12/19事实，已视觉检查；1至39与上一版已查渲染逐字节一致。根迁移尚余7项，未执行Unity/TD和真实设备。
+
+## 2026-09-29 治理目录迁移验证
+
+- 治理目录813个已跟踪原件实际迁入agent/governance；750个字节未改，其余为明确登记的当前消费者修正。签署、五分发61快照、外部来源未改。
+- 首轮包测试发现相对导航层级、旧提交路径与当前路径混用、历史报告读取及当前证据索引漂移；修正读取与导航，保留初次失败记录，不降低原件内容一致性要求。
+- 60个有Python测试入口的包分别在独立进程复测全部通过；根635 passed in 48.55s。治理v1.2、71注册、5分发61快照与协议兼容检查通过。
+- 71包正文同源和330 Word来源链接通过；15份Word只改24个来源链接，正文与其余内部文件未改。根迁移9/19，余10，整体未完成；未执行Unity/TD或真实设备。
+- 串联Word40页；第1至39页与上一版已查渲染逐字节一致，第40页更新9/19迁移及本轮复测事实，已视觉检查，无表格或文字溢出。
+
+## 2026-09-29 成果源码迁移验证
+
+- 移动前解析源/目标绝对路径，全部限定仓库内且目标不存在；两SVG两PNG与HEAD旧路径字节相同，旧成果根目录不存在，旧本机ZIP没有纳入提交。
+- 首次PowerShell构建仅验证旧PDF，中文名称筛选未找到源；改ASCII 02_*.md并要求唯一源码，实跑显示Pandoc/XeLaTeX重建，六页A4、章节、禁用词、71编号、状态计数/集合通过。
+- 治理工具6 passed in 0.04s；当前新PDF六PNG与上一轮已查页面逐字节一致。串联40页39/40已查，1至38与前轮已查渲染一致。
+- 根迁移8/19及全部71包、330 Word来源通过；研究准入、业务签收和冻结输入未改。
+- 本次根回归635 passed in 48.81s，日志root-migration-delivery-source-regression.txt；当前导航199链接通过。
+
+## 2026-09-29 根目录工具与交付迁移验证
+
+- 治理渲染器5 passed in 0.04s，根635 passed in 47.46s；治理、71注册、5分发61快照通过。旧agent/tools/governance/human/assets/output根入口已不存在。
+- 当前六页PDF逐页检查，A4、正文、任务编号、DONE=24及READY/IN_PROGRESS/IN_REVIEW集合校验通过；旧材料明确归档，不声称实证结果。
+- 串联Word迁移映射改为成组段落，消除孤立第40页；39页末页已查。71包Agent正文和330 Word来源链接通过；根迁移7/19，整体未完成。
+
+## 2026-09-29 根目录概览迁移验证
+
+- 三原文Move-Item前后字节一致；旧框架与旧运行手册保留原SHA-256，当前模块地图仅改路径、T-01实际范围及可用仓库目录。无签署或冻结分发内容改写。
+- 14 passed in 0.59s，根635 passed in 53.36s；活动治理、71注册、5分发61快照通过。71固定包结构和来源、330 Word链接与正文同源、25当前导航链接通过。
+- 串联Word39页，新增4/19根迁移事实只改变第39页，已检查；第1至38页与原已审阅渲染逐字节一致。单包Word不变，实际研究、Unity/TD运行、独立复核及真人签收没有执行。
+
+## 2026-09-29 本机材料迁移验证
+
+- 六目录Move-Item前核对绝对路径、目标不存在、无相关运行进程；迁移前后私有文件数量/字节总量一致，48件已跟踪媒体实际SHA-256与LFS OID一致。Git忽略新本机路径，未发布其余材料。
+- V-04八媒体门及800秒音频/静默样片深度检查通过，8项当前测试通过，接受的源JSON字节未改。根Python635 passed in 46.68s；60专项包全部通过，原始输出见root-migration-local-package-tests/。
+- 实际TD2025.32820隔离重开12项、UDP丢包/重复/乱序/断流/恢复8项通过，证据在root-migration-local-td/，未使用真实设备或执行正式研究。
+- 治理原件813、支持原件297、共享原件889按原保留规则核对通过。71注册、5分发61快照、活动治理、协议权威和71包330 Word来源链接通过，19/19根目录物理迁移无未归属项。
+- V-05分发首次报U-02说明漂移；原快照另存并绑定后通过--require-index。串联Word41页，1至38渲染字节一致，39至41已目视检查；当前单包旧进度待刷新，整体完成标记仍false。
+
+## 2026-10-08 Storm成员进展与Unity目标版本
+
+- 两附件文件存在；ffprobe读取H.264/AAC、24.3333秒和53.266633秒及画面尺寸成功。未逐帧验收。
+- 本机2022编辑器产品版本为2022.3.62f3_96770f904ca7；共享ProjectVersion仍6000.4.9f1。
+- 目标JSON解析、两当前记录链接和AGENTS版本入口检查通过；原已验证团队工具基线校验通过。该PASS不验证2022迁移。
+- git diff --check通过；成员报告的脚本编译和逻辑检查未在本轮独立复跑；任务状态未变。
+
+## 2026-10-08 成员实施标准任务影响更新
+
+- 37包范围核对，71份TASK/当前说明与新标准链接通过；34包不改任务要求。统一标准保留Python时钟、独立Actual、Fade目标第二吸与两条件比较。
+- V-02场景专项26、U-07合同15、V-04及首页进度13、U-03/04/05/06/08及V-05专项59，共113项通过。多目录首次importlib收集因既有validate_current本地导入失败，按项目原入口分别执行后通过；未修改导入实现。
+- V-02当前场景、V-03当前40行映射与56直接依赖校验通过；注册表71项、分发5包64快照通过。U12-03/U12-06领取输入ID实查未变。
+- V-05未领取包已刷新；U12-03收到的旧天气设计快照保存在archive/inputs-20261008，注册到已有来源解析器并登记影响；原签收/候选不转移。
+- git diff --check通过，最终git status已检查。未提交/推送，未运行Unity或取得成员源工程，2022迁移和真实粒子呈现验收仍待实施。
+
+## 2026-10-08 37包全文与证据图完整更新收尾
+
+- 已完成37包TASK/当前说明/结构化审阅/来源、37份Word和37份PDF；总审阅Word/PDF及固定任务概要同步。5张成员原帧保留完整警告和视频时间来源。
+- 逐页查看147页任务审阅、45页总审阅和6页概要，共198页，版面检查通过；71包结构/来源/Word正文一致性通过，37包历史签收字段和注册状态保持。
+- 相关专项113项通过；最终独立分发5包66快照校验通过。原U12-03/U12-06领取ID保持，V-05新ID见完成记录。
+- 视频2引用脚本缺失问题已登记；源码交接、共享工程2022迁移和真实运行验收仍待对应任务实施，不把文图更新写成运行完成。未提交或推送。
+- 完成清单：2026-10-08_实施标准完整更新完成记录.md。
+
+## 2026-10-08 全部任务包证据Word格式统一
+
+- 目标与范围：当前71包 human/tasks/<编号>/summary.docx；标题和各级章节为加粗黑体并居中，正文为微软雅黑。
+- 分层：一、任务定义与交付；二、执行与验证；三、审阅与交接；各章用1.1/2.1/3.1二级编号，保留原11项内容并使用Word标题样式。生成器已同步。
+- 验证：71份字体、居中与层级检查通过，正文、图片数量和链接目标保留；71份PDF同步生成，逐页查看249页，未见截断、重叠或孤立标题。
+- 证据：agent/local/artifacts/task-word-format-20261008/format-checks.json、render-results.json及sheets.json；历史签署原件、领取输入与业务状态保持。
+- 收尾：本地格式更新完成，未提交或推送；后续重生成沿用同一格式。
+
+## 2026-10-08 当前证据审阅迁移 LaTeX / PDF
+
+- 范围：71包当前总结及项目串联审阅，72份LaTeX/PDF；已删除被替代的72份DOCX，不再维护对应Word。历史签署、领取快照及业务状态保留。
+- 修复：此前Word样式检查未能保证阅读端实际字体一致；现用XeLaTeX直接绑定黑体与微软雅黑文件并嵌入PDF，标题居中加粗，按一、二、三及1.1/2.1/3.1组织；修复长路径与提交标识的行内溢出。
+- 验证：71包232页、串联40页；全部字体嵌入、源文字/图注/PDF正文/图片/来源链接检查通过，未见缺字或溢出；6包22页及串联3页实际观感抽查通过。根目录检查通过19项迁移、71包及441来源链接。
+- 证据：agent/evidence/task-latex-migration.json；页面和删除前恢复副本位于agent/local/artifacts/task-latex-20261008/。内置编译器因环境目录报错不可用，已用本机XeLaTeX完成实际PDF导出。
+- 维护：事实先更新summary.json，build_task_reviews.py生成tex/pdf；旧Word刷新和审计工具归档至agent/archive/tools/word-review/。导航与当前验证器同步，未提交或推送；后续只维护LaTeX/PDF。
+
+## 2026-10-08 独立通用LaTeX模板补齐
+
+- 核对发现：71包统一排版已落地生成器，但独立可复制的通用LaTeX模板此前未交付。
+- 已新增 human/templates/通用中文逐包任务模板_v5.0.tex、同名PDF及README；三章十一小节包含启动、计划、交付、验证、修复、签收与下游接收，未预填SRP结果。
+- 验证：本机XeLaTeX两遍编译成功，3页实际排版查看通过；字体嵌入、三章十一节及缺字/溢出检查通过，修复初版章节标题孤立于页末。3处导航链接检查通过。内置编译器仍因环境目录报错不可用。
+- 已同步human与Agent模板入口，旧Word标为历史用途；本地完成，未提交或推送。
+
+
+## 2026-10-08 按完成时序更新研究主旨与设计论证
+
+- 目标：依据71包注册表及原签收日期确认主旨，更新实验设计、原创性和贡献论证；验收日期不冒充独立完成时间。24项DONE与47项未完成分开，任务状态不变。
+- 交付：完成时序表、当前实验设计论证、当前原创性与贡献论证；旧v1.1贡献稿标记历史适用范围，保留原文。同步F-02、W-01、W-02、U12-04、U12-07及其LaTeX/PDF，串联审阅更新至41页。
+- 证据：31项定向合同测试通过；W-01候选验证通过；5包PDF正文、图片、来源和字体嵌入检查通过，无缺字或溢出；13处当前导航检查通过，5包页面实际抽查通过。核对4项最近工作的一手元数据或摘要，未声称完成全文双审。
+- 边界：比较完整提示方案的情绪收益、功能代价及设计边界；不恢复旧有序结果门，不预定原生获胜。最终样本量、真实研究证据和当前修订签收仍待原任务交付；历史签署及领取快照保留。
+- 记录：详见agent/work/2026-10-08_过期设计更新与输入影响.md。串联生成仅消费JSON，不因其他任务新增design目录而阻断；独立任务严格校验保留。本轮本地完成，未提交或推送。
+
+
+## 2026-10-08 全项目设计攻击与一体化规范
+
+- 用户目标与资源：校园学生短时情绪调节/呼吸练习，5人、15天、Polar H10与PLUX respiBAN BLE、受试者100+、暂无赛事目标、期刊高于CCF C。资源为用户说明，设备到货/数量、SDK、确切人数和活动许可未取得实证。
+- 已交付：agent/design/全项目设计攻击与改进方案_2026-10-08.md（15项攻击、原始依据、关闭证据、既有任务承接、近似功效/吞吐、5人15天安排、比赛与期刊路线）；agent/design/项目质量与一体化交付规范.md（六阶段要求、产品/研究/贡献/实践验收）。AGENTS、设计入口、项目概览及两份当前论证已连接，要求后续执行消费。
+- 核查：读取当前研究权威、SAP/功效候选、表示/体验/教学、设备/信号、Level A/B/C和全链/成品交接；查询一手科学方法与2026 CCF目录、IJHCI范围、赛事官网。IJHCI B已满足等级目标；2026计算机设计大赛已结束，未承诺当前可报名。四项近邻仍需全文审查，未声称完成系统综述。
+- 验证：7份入口/设计文档69个本地链接均有效；15项编号完整；近似功效表以Python statistics.NormalDist独立计算，100人90%功效对应残差标准化差约0.648，仅量级演算；git diff --check通过，已检查git status。无代码实现改动，不重复运行无关合同测试。
+- 当前结论：15天优先交产品与获准的形成性/技术证据；正式研究须满足真实前置与样本计划。Level B/C和正式样本资源冲突、真机SDK/Actual/原生配对及量表可测性列为优先关闭项。原研究协议、任务状态、领取快照和签收未由本轮变更。
+- 下一步：团队实名承接5个岗位；D1–D2核实设备/SDK/源码/场地权限和分阶段人数；D3–D5真实Storm/Fade两条件闭环，D8按证据裁定后续活动容量。角色仅建议，未代领任务；未对外联系、采集、报名、投稿、提交或推送。
+
+
+## 2026-10-08 设计地基重构（设计限定）
+
+- 目标/范围：实施用户批准方案，科学主轴转为交互表示知识；本轮仅设计，不开发/招募/采集/报名/投稿。5人、半个月、100+改为未来可行性约束；现行v1.2 PANAS执行权威保留。
+- 交付：agent/design/design-foundation-20261008内设计主稿、科学依据附录、决策影响三份LaTeX及PDF，共16页；附录四篇指定近邻定向全文对照与参数/反证矩阵；45个现有任务消费者导航。
+- 设计覆盖：三RQ/三贡献；四层配对与六异常故事板；旧八题→三领域候选12决策及累计探索题；评分/缺失/统计/新精度方法；分阶段人数账本；四种不利情景及收缩。没有经验最优数值或支持性结果被补造。
+- 验证：三PDF编译两遍；内容锚点、SimHei/MicrosoftYaHei嵌入、缺字/溢出检查通过；201本地链接有效。新量级演算核实N=236/479、半宽0.093/0.132（假设情景）；四Williams顺序位置和相邻转移均衡。一次检查所用旧表述锚点与决策原文不符，修正检查锚点后通过，不改正文。
+- 衔接：AGENTS、根/设计/人类项目导航、实验及贡献论证入口、一体化规范已同步；旧攻击报告标明15天要求被替代，历史正文不回改。未改API、运行代码、任务状态、历史签收、领取输入；既有脏树保留，本轮无提交或推送。
+- 下一步：由决策表中的科学/测量→协议/样本/随机化→真实链/材料→获准预试和研究消费者依次承接；当前不代领或改包。四篇全文对照不等于系统查新，附录列紧密线索给W-01继续核验。
+- 排版终检：16页缩略图逐页检查完成；科学矩阵新增后重编译并重检5页，无裁切、缺字或溢出。标题居中加粗黑体、正文微软雅黑；设计来源和结论边界保留。
+
+## 2026-10-08 T-01 双设备原生验证
+
+81项T-01/F-04及验证器专项通过；14种TD2025.32820原生场景与接口核查通过。正常批次拒收0，注入重复/非法批次拒收4，非法SQI遥测拒收1。真实SDK/采集未验证，任务状态不变。命令、候选和通过证据见[本轮记录](2026-10-08_T01_双设备预览验证.md)；共享日志其他改动不纳入本轮提交。
+
+
+## 2026-10-08 固定引导与原生自适应基石订正
+
+- 用户确认：仅原生组实际数据驱动；共同理想节奏；允许结合场景/被试状态受限调整实际引导，再回到共同理想。完成先行推理与三份LaTeX主稿、科学附录、决策影响，撤回纯表示比较和错误率主终点候选。
+- 设计：I理想/G下发引导/X实际分离；A开环，B受限适应；同时间预算、独立测量、共同I达成与G跟随/调整成本分报；PANAS负性情绪保留为主终点候选，参数仍待实证校准。
+- 证据：八项定向全文近邻，七篇PDF与一篇出版社全文HTML；ViBreathe、Yu CHI2026和Gummidela已覆盖广义适应/自然反馈/游戏比较，原创贡献收缩至待验证的整包权衡与有限规则，不宣称系统查新或创新已成立。
+- 验证：三PDF两遍XeLaTeX编译，最终8/5/4共17页；嵌入SimHei与MicrosoftYaHei，数学使用嵌入数学字体；无缺字/Overfull。逐页联系图检查并修复章标题孤立与尾页少量溢出分页。68条设计包及论证入口本地链接有效，52个消费者任务路径存在；新PANAS精度量级核算通过（N58/74/100的90%功效标准化差约0.851/0.754/0.648）；git diff --check通过。
+- 衔接与风险：同步AGENTS、根/设计/人类项目导航、实验论证、贡献论证、一体化规范；四天气旧正文明确为待迁移资产/运行基线。保留其他脏树与历史，旧稿在agent/local/artifacts/design-foundation-20261008/before-fixed-adaptive-correction可恢复。本轮未改运行API、代码、任务状态、签收或领取快照，未提交/推送。
+- 下一步：52个消费者按决策表修订表示/控制/测量/正式协议，完成真实可辨性与舒适性校准后才实施研究；当前只交付设计，不代表闭环已运行或科研贡献已证实。
+
+
+## 2026-10-08 原创性、社会价值与审稿攻击论证完成
+
+- 目标：完成原创性、贡献度、社会价值、审稿人攻击论证，并判断能否修复；只在设计阶段推进，不将实证未完成伪写为已修复。
+- 交付：design-foundation-20261008/04-review-audit.tex及6页PDF；包含近邻重合/候选增量、C1-C3证据责任、替代方案与设备净成本、14项攻击的修复与验收、消费者顺序及退出条件。当前主稿已加入1.3/3.5/5.5/5.6四项实质修订：设备成本外推边界、共同I的任务参照性质、期待与剂量、采用决策规则。
+- 证据检查：读取当前主稿/附录、重新核查本地ViBreathe/Yu CHI2026原文；补WHO学校环境背景。Stairway仅核实机构报道、全文未获，明确为未关闭近邻线索，不以搜索或摘要认定新颖性。完整发表能力及社会净收益仍待真实证据；此不妨碍完成本次论证与可修复性判断。
+- 验收逐项：原创性见审稿稿第二节，贡献见第三节，社会价值见第四节，14项攻击见第五节，可修复性及停止条件见第六节；PDF内容检查确认14编号均存在，四项修复已进入主稿。主稿9页、决策4页、审稿稿6页两遍XeLaTeX编译，SimHei/MicrosoftYaHei嵌入，无缺字/Overfull，渲染逐页检查通过；73条包与论证导航本地链接有效。根导航、包导航、实验/贡献/一体化规范和决策影响已同步。
+- 结论：论证层可以修复且本轮已完成修订；实质新颖性、真实可辨识性、相对收益与部署价值属有条件可行，不能保证CCF B以上。后续消费者按现有52任务映射承接，不改任务状态、API或领取快照，不提交/推送；现有其他修改保留。
+
+
+## 2026-10-08 新基线71包最终验证
+
+- `agent/tools/build_task_reviews.py ALL --check`：PASS，71包结构、LaTeX/PDF、来源及字体；250页，串联39页、固定任务概要4页。
+
+- `agent/tools/verify_task_design_baseline.py`：PASS，71当前计划、原状态与签收、5分发范围、3冻结领取及485条当前文档链接；213项新验收独立待执行。
+
+- 当前治理目录`14_validate_ready_task_packages.py --local`：PASS_LOCAL，5包88份主输入及60份设计补充。默认严格发布校验保持Git索引要求，本轮未暂存/提交/推送，不能称发布完成。
+
+- `agent/tools/test_task_design_baseline.py`：3项回归通过，覆盖活动快照冻结、READY刷新、新范围不继承历史验收。PDF标题修改没有改变受测行为。
+
+- 排版：71首页、F-01/R-01/V-05/A-03/U12-03/W-02多页检查；P-02/X-03/U12-01/U12-06标题修正重编译和渲染复核。黑体/微软雅黑嵌入，无缺字/Overfull。联系图位于`agent/local/artifacts/task-baseline-20261008/render/`。
+
+- `git -c core.safecrlf=false diff --check`：PASS；收尾Git状态1018修改/未跟踪路径、465未跟踪、0暂存，保留已有修改。备份在`agent/local/artifacts/task-baseline-20261008/before/`，各包原范围保存在archive。
+
+- TD连续实验：92项主机测试、35项原生检查、3场独立开发记录通过；详情见[验证记录](2026-10-08_TD连续实验工作流.md)。
+
+## 2026-10-08 操作设计最终验证
+
+- `verify_operational_design.py`：PASS；10规则、12配对情境/36阶段、26页新PDF、27消费者/189交接链接；独立核算精度、Williams位置及12相邻组合、唯一人数预算、C/K/U计分反例，原注册表及3活动领取身份保留。
+- `build_task_reviews.py ALL --check`及`verify_task_design_baseline.py`：PASS；71包结构、来源、LaTeX/PDF和字体，原状态/历史签收、5分发范围、537条当前文档链接。新增操作交接不继承历史业务验收；27份消费者PDF完成重编译，来源区孤立尾页已修复。
+- `14_validate_ready_task_packages.py --local`：PASS_LOCAL；5包88主输入及95设计补充，最后05分页修订后重新生成并校验；3已领取包快照/候选保持，2 READY按新来源刷新。严格发布所需Git索引状态未声明通过，未执行发布。
+- PDF与来源：三份新PDF两遍本机XeLaTeX，SimHei/MicrosoftYaHei与数学字体嵌入，无缺字/Overfull；26页及更新核心末页渲染复核，修复灰色不可用状态仍绘实际信号、重复章节、来源孤行。190导航/报告链接通过；PANAS中文版本/许可仍待确认，原文部分获取失败已在候选稿明示。内置Tectonic/fontconfig的msyh解析失败不影响本机PDF导出。
+- 改动边界：未变运行API/消息/随机化实现/正式协议/业务任务状态，原领取与人类签收保持；保留现有修改，不新增DOCX。`git -c core.safecrlf=false diff --check`通过；当前分支codex/td-workbench-readability，1056修改/未跟踪路径（503未跟踪），0暂存。新设计的真实可辨性、舒适性、数值域及正式样本量仍待执行消费者验证。
+
+- TD合成全过程：97主机测试、44原生检查、三场独立记录及1,070,600采样位置逐值核对通过；20,200状态帧、CSV导出与缺失核对通过。见[验证记录](2026-10-08_TD全过程生理模拟与导出.md)。
+
+## 2026-10-08 设计规范化最终校验
+
+- 七份LaTeX/PDF共66页、33消费者PDF及人类总审阅链重编译；SimHei/MicrosoftYaHei字体嵌入，无Overfull/Missing character。新增与修订页、代表性消费者尾页目视检查通过。
+- 71包结构字体/来源、71设计基线原状态签收/549链接、33专项交接231链接均PASS；重复sync再生成33消费者源文件字节不变。
+- 18参数/11题/9来源验证PASS_DESIGN_ONLY；独立A隔离、B受限、断流累计、I/G独立、C/K/U整周期未知、提前结束与跨模块时间权重演算通过。数值均为合成演算，不是冻结参数/真实实验结果。
+- 分发本地校验PASS_LOCAL：5包88主输入、95设计补充；3领取身份保持，2 READY刷新，新影响记录完成。业务CSV全文及历史签收保持。
+- design_closed=false，M01/M02仍开放；Stairway身份已核准而全文未获，贡献差异降称。未改运行API/消息/正式协议/随机化实现，未招募/采集/外部提交，未暂存/提交/推送。详细记录见[本轮交付](2026-10-08_设计规范化材料与未关闭项.md)。
+
+- TD 实际 P-01/P-02 开发接线及存储故障修复：专项与原生验证结果见[验证记录](2026-10-08_TD真实Python后端开发联调.md)。包含扩展检查中两项治理文字测试失败，未声明整仓回归通过。
+
+## 2026-10-08 来源补获与侧证核对
+
+- 直接证据：ACM Stairway开放HTML正文3.1–3.3/4.1–4.3/5.2–5.3/6.2/7实际读取；出版社PDF下载未取得。EdUHK原件下载成功，英文PDF138、中文PDF144–145渲染目视核对；2003期刊身份/摘要核准。侧证不代替具体译本状态适用或使用条件。
+- 02-science（9页）/03-decisions（5页）/04-review-audit（7页）及W-01重新编译；日志无Overfull/Missing character，科学附录第7/8页目视核对，标题/正文及链接正常。
+- compile_latex_document(07)失败，原因是内置Tectonic无法加载C:/Windows/Fonts/msyh.ttc，去除FontIndex后仍失败。源稿保留；未开新编辑器、未另导出07 PDF。verify_design_normalization.py在07源/PDF时序检查正确失败，未移除或放宽该断言。
+- verify_task_design_baseline.py PASS：71计划/原状态签收/5分发/3冻结领取/549链接；build_task_reviews.py ALL --check PASS：71；14_validate_ready_task_packages.py --local PASS：5包88主输入，设计补充已刷新。范围无运行/API/正式协议/招募/外部提交变化。
+- git status --short共1085项（包括此前既有改动）；无暂存、提交或推送。现有脏树保留。
+
+## 2026-10-08 内置预览与状态测量续作验证
+
+- 字体根因修复：文件路径加载失败改为系统字体族名称；07原位源稿内置编译SUCCESS，补入状态依据后再次SUCCESS；字体仍为微软雅黑/加粗黑体。通用模板review_latex.py同改，W-01生成与compile_pdf/verify_review通过。
+- 直接证据：Hu2018机构PDF7、刘宇平等2021出版社PDF7；APA doi:10.1037/t03592-000正常浏览器题录及描述读取。具体许可字段在当前公开视图未提供，未把第三方转载当权利证明。材料指标与selected_form/item_texts未冻结。
+- verify_task_design_baseline.py PASS：71任务/549链接/5分发/3冻结领取；14_validate_ready_task_packages.py --local PASS：5包88主输入，当前设计补充已刷新。02/03编译无Overfull/Missing character，科学附录p8已目视。07内置编译成功不等于磁盘PDF已导出；旧PDF未另生成，完整同步验收仍保留未通过状态。
+- 无暂存/提交/推送，无任务状态与运行API改动；当前分支codex/td-workbench-readability，保留既有脏树。
+
+### 2026-10-08 PANAS补获与索取材料
+07内置编译success；出版社PDF在线全文可读，本地下载403，不宣称本地取得。APA指南p10中文记录身份已核对。分发生成器完成；首轮输出遇GBK编码错误，后续以UTF-8读取验证器结果。保持当前编辑器，07磁盘PDF仍为旧导出，不宣称全套PDF同步通过。git status检查完成，保留既有修改，无提交推送。
+
+### 2026-10-09 PhenX中文实物核查
+PhenX中文PDF已解析并目视核查；07内置编译success；71任务/549链接/3领取快照及5分发包本地检查通过。07磁盘PDF未另行导出，不能宣称全套PDF同步。git status检查保留全部既有修改，无提交推送。
+
+## 2026-10-09 PANAS-X非商业原件采用
+下载原始手册282098字节/28页，核对正文1–3页；07源稿及设计索引采用NA10/PA10，保留NA主候选与此刻指令。内置LaTeX编译成功；5分发包刷新、本地包校验和71任务设计基线校验通过（549链接/3冻结领取）。未改业务状态、运行或正式协议；未单独导出07磁盘PDF。中文题本核准及前置验证仍待完成。git status已检查，既有改动保留，无提交。
+
+## 2026-10-09 中文PANAS-X审阅材料推进
+目标：从英文原件推进中文材料；完成07第十节20题AI初译、指令、锚点、评分及独立审阅/认知流程，索引和导航同步。20唯一题项及NA/PA各10映射检查通过，正式字段为空、研究未放行；内置LaTeX编译成功，5分发包刷新和本地检查、71包设计检查通过。下一步需具备语言/测量能力的真人独立复核，中文翻译适配使用范围及适用性验证；未导出独立PDF，无状态修改、提交或外发。
+
+## 2026-10-09 用户批准设计
+直接指令：批准设计通过。已在07源稿、设计索引和导航登记设计审阅APPROVED；保留测量缺口和真实验证记录，不改业务任务状态、历史签收、正式协议与采集权限。后续按既定前置流程推进。
+验证：07内置编译成功；分发包刷新、本地包校验及71包设计校验通过；git status已检查，无提交。
+
+## 2026-10-09 设计通过后的前置审阅交接
+07第十一节补齐逐题语言空表、回译隔离输入要求、认知主持稿、单人记录与轮次决定；索引与导航同步。12认知学生两轮各A3/B3，不新增人数；材料READY_FOR_HANDOFF，实际审阅者和记录为空，未开展活动。内置编译、本地分发包、71任务设计检查通过；下一步F-02/Q-01落实真人语言审阅与对应活动材料，当前不自动开展招募或正式采集。
+
+## 2026-10-09 F-02完整更新
+已更新F-02任务正文、当前测量、专项交接、总结、修订及来源/证据记录；纠正measurement_version旧不自译规则。同步器支持限定任务并应用F-02当前测量更新，旧build_current_measurement入口消费当前TASK，重复生成内容稳定。F-02三页LaTeX/PDF已重新生成并目视检查；包结构/PDF检查、71基线检查、5分发包检查通过。原DONE、历史签收和正式协议保持；真人测量验证未执行。本次未编辑或另行导出打开的07文档，未提交。
+
+## 2026-10-12 TD 六曲线验证
+相关测试 94 项通过；84 秒模拟流、14 张原生页面截图、38 项像素和参数核对通过；原始采样率/单位/时间窗/数值正确，空值与缺包处不插值连线，准备期录制为零。实际整页导出 1280×720，大尺寸原生输出未通过；一次 TD 停滞保留为未关闭运行限制。见[完整记录](2026-10-12_TD六曲线连续性与参数核对.md)。
+
+## 2026-10-12 TD 细节审查
+37次原生点击与三场记录校验通过，核心8步主图已逐张检查。已有场景遥测未显示、历史视图对象混淆及按钮外观/许可不一致为当前发现；视觉改版未实施。原PID22144保持，审查5015已释放，见[报告与范围](2026-10-12_TD细节审查.md)。
+
+## 2026-10-12 TD矢量设计复看
+十二页在绘图软件中逐页查看并局部修订，最终PNG分别保留当前页可编辑副本，文字、波形、计时、禁用态、对象和中止层已复看。工具检查与实际导出尺寸见[设计工作记录](2026-10-12_TD矢量页面设计.md)及关联验证文件；不代替TD运行验收。
+
+小字反馈：六页移除重复量程说明，运行页原生导出复看；十二页源文件及PNG使用check_canvas.py检查，保留单位与轴标。详见上述设计工作记录。
+
+追加小字反馈验证：check_canvas.py十二页PASS，源文件无“设计示例”及“fade步骤”标签，共948个可编辑元素；运行页原生PNG复看通过。设计范围不扩大为TD运行验证。
+
+全画布小字同步验证：十二页开发演练标签已清除，check_canvas.py十二页PASS，共936个可编辑元素，原生PNG全部更新；运行页视觉复看通过。
+
+## 2026-10-12 GitHub完整项目发布
+
+画布对齐验证：核对十二页公共分隔线、六页曲线框和同类页面列表横线；明细右标题横线由253.51对齐至255。更新08-details.drawio.png，视觉复看通过；check_canvas.py十二页PASS，936个可编辑元素，已删除小字无残留。
+用户授权完整推送。全部当前项目改动纳入工作分支提交；本地原件、环境与设备数据按既有忽略规则保留。71包LaTeX/PDF及来源检查、设计基线检查、5分发本地检查通过，治理首页图已刷新。SSH ProxyCommand在PowerShell失败，改用GitHub CLI凭据助手经HTTPS，未修改全局配置。默认main仅同步首页/进度图/版本导航，不合并实现。
+
+## 2026-10-13 仓库目录改造任务书
+
+核查本地项目、模块、运行与任务审阅入口，读取GitHub仓库元信息及默认main首页，形成[改造任务书](../../human/project/repository-restructure-taskbook-20261013.md)。文档包含目标树、文件处理边界、W1至W5及后续实施验收；11个本地引用均存在。项目概览新增任务书链接，相关已跟踪文档的`git diff --check`通过。仅编制方案，未移动工程、改变业务状态、运行候选测试或发布GitHub；T-01既有未提交文件不在本轮修改范围。
+
+## 2026-10-13 全仓目录规范化验证
+
+`normalize_repository_layout.py --check`：6812个登记文件全部存在，16个旧目录已实际归位，无目标冲突。当前Markdown910个本地引用可解析。`07_validate_task_packages.py`：71项状态与原签收保持；`14_validate_ready_task_packages.py --local`：5包88份输入快照通过。`verify_task_design_baseline.py`：71计划、5分发范围、3冻结领取及552链接通过；`verify_root_migration.py --require-complete`：19项既有根迁移、71包和1037来源通过。
+
+Python使用本机`py -3.14`（pytest9.0.3），默认`python`环境未安装pytest。模块、采集、信号、通信、TD主机层和数据治理回归：715通过，2失败；将两失败用HEAD原版`task_markdown`执行后同样失败，相关函数字节码与常量相同，属既有签收文案测试。71包LaTeX/PDF重建及`ALL --check`通过。07候选PDF曾用于检查当前源稿编译，随后恢复原分发字节；当前源稿与旧PDF的科学修订差异仍按原README声明，目录任务不改设计更新身份。实际Unity/TD编辑器运行不由本次路径检查替代。
+
+逐包pytest须分进程运行以隔离同名执行模块：60包838项通过、32项失败。以Codex管理工作树中的c27ca0d6独立重跑剩余失败包，对照结果无新增失败。修复本轮动态导入、旧Unity编号glob、历史Git查询路径及两个迁移后的字节比较；不改业务语义以通过旧测试。实际输出和逐项对照位于`agent/local/artifacts/repository-layout-20261013/`，核验工作树已请求归档。旧失败包括已变化的任务文案、历史输入假设及未刷新的汇总。最终保留原签收与输入身份，当前文档差异检查通过。
+
+## 2026-10-13 仓库展示与开发入口验收
+
+- verify_project_navigation.py：12入口页面、286本地链接、71任务审阅、首页不超过150行，PASS。
+- py -3.14 -m pytest agent/modules/tests/session_core agent/modules/tests/session_store -q：201 passed in 15.44s。
+- normalize_repository_layout.py --check：6812原始登记文件、16实际目录迁移，无丢失/冲突。
+- build_task_reviews.py ALL --check：71包结构、LaTeX/PDF与来源PASS；生成检查未覆盖新导航。
+- verify_root_migration.py --require-complete：19根迁移、71包、1037审阅来源链接PASS；CONTRIBUTING登记为合法根入口。
+- verify_task_design_baseline.py：71当前计划、原状态/签收、5分发、3冻结范围、552当前链接PASS。
+- 14_validate_ready_task_packages.py --local：5包88快照PASS_LOCAL，不等同远程分发发布检查。
+- 既有完整回归仍以本轮此前的c27ca0d6对照为准，无新增失败；没有重开Unity/TD或执行真人研究。
+- 首次访问3分钟/开发30分钟是目标，未冒充真人走查数据。TD未提交改版保留；GitHub发布与回读在后续记录。
+
+远程验收：完整源码f2fefece8e55c10c93c737a8b69bbeaa37a65be9；main首发cc98dad9d2ee46a1843d27e43dc677e70f78751d。Git push成功，fetch main成功；浏览器看到main仅agent/human及展示根入口，旧目录位于明确历史区。首页Storm图naturalWidth=2558，开发上手页面实际打开，链接固定完整版本。仓库description与6topics写入成功并可见。临时TLS EOF未放行验收，以后续成功fetch和公开浏览器为准。原生Unity/TD与真实研究不在本次验收内。
+
+## 2026-10-13 完整main合并前验证
+
+用户授权完整项目合入main，不再只发布展示入口。verify_project_navigation.py：12入口/286链接/71任务索引PASS；SessionCore/Store定向测试201 passed in 7.54s；build_task_reviews.py ALL --check：71包PASS；git diff --check无差异格式错误。旧本地main是远程main祖先，可快进更新；未提交TD文件不暂存。最终合并须让main提交树与本地已提交完整项目树相同，并保留双父历史，以远程回读为完成依据。

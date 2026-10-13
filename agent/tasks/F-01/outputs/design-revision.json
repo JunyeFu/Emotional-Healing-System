@@ -1,0 +1,28 @@
+{
+  "task_id": "F-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "I/G/X控制与遥测语义修订",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "I/G/X控制与遥测语义修订修订交接",
+    "语义对照表",
+    "输入隔离例"
+  ],
+  "acceptance_criteria": [
+    "AC1 区分共同理想、有效下发引导、实际呼吸和质量来源",
+    "AC2 明确A测量隔离及B控制归属，不将现有Target静默改义",
+    "AC3 列出合同版本与消费者迁移，正式数值未冻结前不启用新研究"
+  ],
+  "evidence_required": [
+    "语义对照表",
+    "输入隔离例",
+    "合同迁移清单"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

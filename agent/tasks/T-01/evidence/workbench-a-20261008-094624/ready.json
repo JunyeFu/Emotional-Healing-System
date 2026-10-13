@@ -1,0 +1,25 @@
+{
+  "build": "2025.32820",
+  "project": "D:/Agent/srp/agent/local/artifacts/td-workbench-capture-20261008/20261008-094624",
+  "viewer_parameters": [
+    "pageindex",
+    "opviewer",
+    "allowpanel",
+    "preservealpha",
+    "outputresolution",
+    "resolutionw",
+    "resolutionh",
+    "resmult",
+    "outputaspect",
+    "aspect1",
+    "aspect2",
+    "inputfiltertype",
+    "fillmode",
+    "filtertype",
+    "npasses",
+    "chanmask",
+    "format",
+    "parmcolorspace",
+    "parmreferencewhite"
+  ]
+}

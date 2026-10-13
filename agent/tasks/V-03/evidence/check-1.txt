@@ -1,0 +1,1 @@
+PASS: V-03 preparation baseline; deliverable_templates=6; risk_dimensions=7; governance=signed_done_no_runtime_evidence; F05_runtime_binding=deferred

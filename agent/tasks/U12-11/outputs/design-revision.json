@@ -1,0 +1,33 @@
+{
+  "task_id": "U12-11",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新研究参数与资源冻结",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新研究参数与资源冻结修订交接",
+    "冻结差异表",
+    "参数依据索引"
+  ],
+  "acceptance_criteria": [
+    "AC1 共同I先验用途与舒适性、控制及计分参数有各自依据",
+    "AC2 PANAS、时长、N、随机化与缺失真实冻结",
+    "AC3 无依据数值待校准，三阶段预算与真实批准不由旧门自动覆盖"
+  ],
+  "evidence_required": [
+    "冻结差异表",
+    "参数依据索引",
+    "真实审批与资源账本"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP_EXTERNAL",
+  "depends_on_original": [
+    "G-05",
+    "E-03",
+    "U12-09",
+    "A-03-CAL"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

@@ -1,0 +1,10 @@
+{
+  "task_id": "I-01",
+  "date": "2026-09-29",
+  "checks": [
+    {"command": "py -3.14 -m pytest -q", "exit_code": 0, "passed": 635, "seconds": 50.21},
+    {"command": "py -3.14 <governance>/07_validate_task_packages.py", "exit_code": 0, "registry_entries": 71},
+    {"command": "py -3.14 <governance>/14_validate_ready_task_packages.py", "exit_code": 0, "packages": 5, "snapshots": 61}
+  ],
+  "scope": "Python and governance only; no real device, Unity, TD, external display, stress or LIVE_E2E acceptance"
+}

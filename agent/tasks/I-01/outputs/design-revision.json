@@ -1,0 +1,37 @@
+{
+  "task_id": "I-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "两设备与新条件真实完整链",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "两设备与新条件真实完整链修订交接",
+    "完整会话原件",
+    "输入隔离与受限响应"
+  ],
+  "acceptance_criteria": [
+    "AC1 同输入更换时A不变，B仅在规则允许时调整",
+    "AC2 记录I/G/X、实际呈现、外部延迟和失效恢复",
+    "AC3 LIVE_E2E及同预算需真实运行，旧合同测试不替代"
+  ],
+  "evidence_required": [
+    "完整会话原件",
+    "输入隔离与受限响应",
+    "真实延迟与失败链"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP_EXTERNAL",
+  "depends_on_original": [
+    "P-01",
+    "P-02",
+    "S-02",
+    "U-08",
+    "T-02",
+    "G-02",
+    "D-01",
+    "D-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

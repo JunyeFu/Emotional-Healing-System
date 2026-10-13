@@ -1,0 +1,33 @@
+{
+  "task_id": "Q-02",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "D:\\Agent\\srp\\agent\\tasks\\Q-02\\execution\\test_level_b_handoff.py",
+        "D:\\Agent\\srp\\02-技术研发\\tests\\step_measurement"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "D:\\Agent\\srp\\02-技术研发\\srp_step_measurement\\build_evidence.py",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "current handoff, blank templates and existing synthetic item generation only",
+  "real_activity": "NOT_RUN",
+  "unity": "NOT_RUN",
+  "td": "NOT_RUN",
+  "new_independent_review": "NOT_RUN",
+  "new_human_acceptance": "NOT_RUN",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
+}

@@ -1,0 +1,1490 @@
+{
+  "baseline_commit": "f5abe807b3d0ca9f9edcc4dd180cbf2d7a6da24e",
+  "files": [
+    {
+      "old": "01-需求与设计/README.md",
+      "new": "agent/design/README.md",
+      "sha256": "40a4c30ef5fcd230061f0938f2563c0f78bd4c4b6afe6769c7c793e8273cfc82"
+    },
+    {
+      "old": "01-需求与设计/创新点研究与文献支撑.md",
+      "new": "agent/design/创新点研究与文献支撑.md",
+      "sha256": "4c0e35ffc167e2393a8b3b4ccf405babe6a650893c77f2cd5e907f63ee87b199"
+    },
+    {
+      "old": "01-需求与设计/情绪天气方案/四种天气设计.md",
+      "new": "agent/design/情绪天气方案/四种天气设计.md",
+      "sha256": "24152bd597ea16121d88295578132fe20622a6984aac13dd44f9063845a95f04"
+    },
+    {
+      "old": "03-测试与实验/A-03-SPEC_独立Agent修复复审报告_2026-09-06.md",
+      "new": "agent/validation/A-03-SPEC_独立Agent修复复审报告_2026-09-06.md",
+      "sha256": "cffeaf701f9c152c51336029cb7429c225bf9837c2c9454bab334a07ef47a315"
+    },
+    {
+      "old": "03-测试与实验/A-03-SPEC_独立Agent首轮复审报告_2026-09-06.md",
+      "new": "agent/validation/A-03-SPEC_独立Agent首轮复审报告_2026-09-06.md",
+      "sha256": "136d8d99de2c16595d2b520247e7739197879661c4051f2971076b8b61edb5a3"
+    },
+    {
+      "old": "03-测试与实验/A-03-SPEC_第二人审核报告_已签署.md",
+      "new": "agent/validation/A-03-SPEC_第二人审核报告_已签署.md",
+      "sha256": "3baecb7749faa4ff023affd1936f0d4236a76c5a7214fd2b54dc77b14321da8e"
+    },
+    {
+      "old": "03-测试与实验/F-03_技术验收记录_已签署.md",
+      "new": "agent/validation/F-03_技术验收记录_已签署.md",
+      "sha256": "5c564fdf96628651f8f480e72135d3e814b1e519fcd90f99db2d7f3d09cd5743"
+    },
+    {
+      "old": "03-测试与实验/F-03_独立Agent审核与修复记录_2026-08-30.md",
+      "new": "agent/validation/F-03_独立Agent审核与修复记录_2026-08-30.md",
+      "sha256": "e32ad2054d164fd1754fcdbea3694ba9afd155b9c837fb4ea99e2033898eca87"
+    },
+    {
+      "old": "03-测试与实验/F-05_独立Agent审核与修复记录_2026-08-31.md",
+      "new": "agent/validation/F-05_独立Agent审核与修复记录_2026-08-31.md",
+      "sha256": "befb7da10c311ef624bda8df5c2d4e6ae3550d5f30a4d1908d21d30fdb06de98"
+    },
+    {
+      "old": "03-测试与实验/F-05_第二人审核报告_已签署.md",
+      "new": "agent/validation/F-05_第二人审核报告_已签署.md",
+      "sha256": "6371b9d3f878c5941d6d1becad4cb7caaf00dfed00b769ae174155cc88cd1720"
+    },
+    {
+      "old": "03-测试与实验/F-05_集成签收确认_傅钧烨_2026-09-01.md",
+      "new": "agent/validation/F-05_集成签收确认_傅钧烨_2026-09-01.md",
+      "sha256": "fbec7d0ddd77bde00a312997226274daca0b6c46afd435e3e5d01e3466dc5230"
+    },
+    {
+      "old": "03-测试与实验/G-01_Agent独立审核报告_2026-08-21.md",
+      "new": "agent/validation/G-01_Agent独立审核报告_2026-08-21.md",
+      "sha256": "cc3c30074819f7a7ed8412083f345a5ca5200947c3495647b0c72d78d6509569"
+    },
+    {
+      "old": "03-测试与实验/G-01_G-02_治理修复团队总监签收报告_已签署.md",
+      "new": "agent/validation/G-01_G-02_治理修复团队总监签收报告_已签署.md",
+      "sha256": "6605242c83c87173b1545be84f7b1755faef6976b85eabf4930a73cdf3ca4a4a"
+    },
+    {
+      "old": "03-测试与实验/G-01_验收记录_2026-08-21.md",
+      "new": "agent/validation/G-01_验收记录_2026-08-21.md",
+      "sha256": "3e9a93ae8db573df6d7f4f72ad1f75f0ab59cd54f348acdac196193f54d4546f"
+    },
+    {
+      "old": "03-测试与实验/IJHCI审计升级批次0-1_独立Agent复审报告_2026-09-06.md",
+      "new": "agent/validation/IJHCI审计升级批次0-1_独立Agent复审报告_2026-09-06.md",
+      "sha256": "bb679434d018283e50bbf8c9c798c27a5a0eb13e978ba5734e3d4a628defeb15"
+    },
+    {
+      "old": "03-测试与实验/IJHCI审计升级批次0-1_独立Agent效果复审报告_2026-09-06.md",
+      "new": "agent/validation/IJHCI审计升级批次0-1_独立Agent效果复审报告_2026-09-06.md",
+      "sha256": "f1a62a1810b5e8044068b53e187a12d8ceb07054d9a1774b4ac0be28fc8ccd4e"
+    },
+    {
+      "old": "03-测试与实验/IJHCI审计升级批次0-1_第二人审核报告_已签署.md",
+      "new": "agent/validation/IJHCI审计升级批次0-1_第二人审核报告_已签署.md",
+      "sha256": "6c1b8962e835c1a270cb866b806fafcb0d1bfbf556a52e21204b417f4646ef46"
+    },
+    {
+      "old": "03-测试与实验/IN_REVIEW_Agent独立审核报告_2026-08-16.md",
+      "new": "agent/validation/IN_REVIEW_Agent独立审核报告_2026-08-16.md",
+      "sha256": "a8650e69fe934d0d9a62444b0629372cf4c8eb3327f861c41a332746cdf4d62a"
+    },
+    {
+      "old": "03-测试与实验/README.md",
+      "new": "agent/validation/README.md",
+      "sha256": "01dc62d835785f9339eb647592b57bb9badc7fb2e5336e946e1c0a34e5ce79e5"
+    },
+    {
+      "old": "03-测试与实验/T-01_独立Agent审核报告_2026-09-02.md",
+      "new": "agent/validation/T-01_独立Agent审核报告_2026-09-02.md",
+      "sha256": "639e6423b3c6d54279f8093678f0ec6dea208e0fe87a0d1c67ef2dea4e81a010"
+    },
+    {
+      "old": "03-测试与实验/T-01_第二人审核报告_已签署.md",
+      "new": "agent/validation/T-01_第二人审核报告_已签署.md",
+      "sha256": "4cb05a85d74d4b631ba413e7150747d8c291e96f61dbaf6bccd185781ebd6860"
+    },
+    {
+      "old": "03-测试与实验/U-01_技术验收记录.md",
+      "new": "agent/validation/U-01_技术验收记录.md",
+      "sha256": "380c754c9214a235321aacddf107154957efe9e8e8c0f615af50f0bdafc63cdd"
+    },
+    {
+      "old": "03-测试与实验/U-01_独立Agent复核记录.md",
+      "new": "agent/validation/U-01_独立Agent复核记录.md",
+      "sha256": "685ba337a3f8ca5b43219b770a9bffe8b4b92047baecd98eb7616548d64ac8e2"
+    },
+    {
+      "old": "03-测试与实验/U-01_第二人审核报告_已签署.md",
+      "new": "agent/validation/U-01_第二人审核报告_已签署.md",
+      "sha256": "f32e12966b8f8a564a4d2cbf89baba5f8c548d3cbb27f6a0ef622c6d205bbef0"
+    },
+    {
+      "old": "03-测试与实验/X-01_独立Agent复审报告_2026-09-06.md",
+      "new": "agent/validation/X-01_独立Agent复审报告_2026-09-06.md",
+      "sha256": "04ec475ea3a2e9d1931d8a325048309b0ce2c085a4010e0b00c8a1959aef8a71"
+    },
+    {
+      "old": "03-测试与实验/X-01_第二人审核报告_已签署.md",
+      "new": "agent/validation/X-01_第二人审核报告_已签署.md",
+      "sha256": "9fb581bb1e0a75a6fc4a93356e4f5e5a770e60dc426937072a5aa1f7ef520151"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/asset_blocking_report.json",
+      "new": "agent/validation/evidence/F-03/asset_blocking_report.json",
+      "sha256": "abe5c8a51c898ae9b9306aecc95eb9680cc88f91c7f79fd1481a7e1c47afc046"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/build_artifact_receipt.json",
+      "new": "agent/validation/evidence/F-03/build_artifact_receipt.json",
+      "sha256": "8652aa27606f1909fb7c43dd8c1d954b57fb57f5419b9db5508c0e9a093cd535"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/dev-replay-player.png",
+      "new": "agent/validation/evidence/F-03/dev-replay-player.png",
+      "sha256": "4e8eb3972f4e1f139e0de9a57a7fe4b7123841e7284b3f5451609b3ea5b22b09"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/editmode-results.xml",
+      "new": "agent/validation/evidence/F-03/editmode-results.xml",
+      "sha256": "cf2507d4419eaad9b3a505c2439b91db44df4d888b5bba79bfc96fe15ff365d6"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/editmode.log",
+      "new": "agent/validation/evidence/F-03/editmode.log",
+      "sha256": "2c98daa2daa6b205122529611de7f72985851016a4aeb072cea841c5f77f95f5"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/environment_report.json",
+      "new": "agent/validation/evidence/F-03/environment_report.json",
+      "sha256": "feef4eabd4e352119258282b5dc361ef7563e68bb01f2060968adb4e7f3fb96a"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/evidence_hashes.sha256",
+      "new": "agent/validation/evidence/F-03/evidence_hashes.sha256",
+      "sha256": "a24fe55bff43bdf30ae9ace252b2651a7b55640482b4a2c5c68655c94db772ca"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/evidence_manifest.json",
+      "new": "agent/validation/evidence/F-03/evidence_manifest.json",
+      "sha256": "c8c937cad00e7ec9e4bb1b735e825a36b61093fe7b0b013a0b42835a0b7d4fd6"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/f01-contract-negative.log",
+      "new": "agent/validation/evidence/F-03/f01-contract-negative.log",
+      "sha256": "7a1724fef79481b12da9598de8fa0646403ac701f8e02ebc1d46a3ec42b8ed69"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/formal-gate-negative.log",
+      "new": "agent/validation/evidence/F-03/formal-gate-negative.log",
+      "sha256": "424debb4180a19b55fe83de5620a22fdc07eb751bfeaa10e4099e4ddaa96cced"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/formal_negative_report.json",
+      "new": "agent/validation/evidence/F-03/formal_negative_report.json",
+      "sha256": "6e7232a3eb0e902042f21a9f3aa0f1670e69ae2921116d88eb77099f758b1adf"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/player.log",
+      "new": "agent/validation/evidence/F-03/player.log",
+      "sha256": "afa4ff752bc9549239ce48b440cce6191a280a004461d6e0d73db86fde3d9590"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/player_smoke_report.json",
+      "new": "agent/validation/evidence/F-03/player_smoke_report.json",
+      "sha256": "9a15150ce3f5056ac1b5f428c1b73475bbeaa57003febcbb78091364d8b12fe6"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/playmode-results.xml",
+      "new": "agent/validation/evidence/F-03/playmode-results.xml",
+      "sha256": "da05fb9b1d13ed8f721e963158a26e99ab7dcd572e2287d0c3b3452a8af9f4f1"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/playmode.log",
+      "new": "agent/validation/evidence/F-03/playmode.log",
+      "sha256": "9f2f1183e2e0ea6797f11f4cd644679f7724f7956231c63c55f644543ead93b3"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/repeat_build_report.json",
+      "new": "agent/validation/evidence/F-03/repeat_build_report.json",
+      "sha256": "a107bee2855fbad5f65a77ff3d250271111baeec0bc1a94b8a87a43ad0cef056"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/run-1-build-manifest.json",
+      "new": "agent/validation/evidence/F-03/run-1-build-manifest.json",
+      "sha256": "12b4fa2143f8a41ea323686b51581727c29745c303566350637c6af6c535e2a9"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/run-1-build.log",
+      "new": "agent/validation/evidence/F-03/run-1-build.log",
+      "sha256": "c259f46371efa48779cda7048c59ee7f9fe6ad2b07e4fc159a71d215cfcdb864"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/run-2-build-manifest.json",
+      "new": "agent/validation/evidence/F-03/run-2-build-manifest.json",
+      "sha256": "2bd5e9bc60eda798fcfeb61f390f29de8bd8d297953d092b17ecb746e8b8f31a"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/run-2-build.log",
+      "new": "agent/validation/evidence/F-03/run-2-build.log",
+      "sha256": "04bd8eb82ca43d6a5c096f7fad7853b3a288c30371ac531bdbbe66e29e5795f0"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/run_identity_report.json",
+      "new": "agent/validation/evidence/F-03/run_identity_report.json",
+      "sha256": "051133d09583f67aa92058cb6c2fcf3db85744c1ada9216c1de7ff3afa9421e2"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/runtime_dependency_scan.json",
+      "new": "agent/validation/evidence/F-03/runtime_dependency_scan.json",
+      "sha256": "ed12ef17669af4b93f2bfcff49e4a18f4ca56ad6be7c5c00689249a944825063"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-03/unauthorized-development-negative.log",
+      "new": "agent/validation/evidence/F-03/unauthorized-development-negative.log",
+      "sha256": "4fed01200ac26b5e7bbceee38d59a85be3f8e3b5c8c4f500a15dcc963833cbd1"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-05/contract-tests.log",
+      "new": "agent/validation/evidence/F-05/contract-tests.log",
+      "sha256": "0778d88c9a7151704dd8ecd835efca9291298745c4712b1c2c641d55cb8875bf"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-05/evidence_hashes.sha256",
+      "new": "agent/validation/evidence/F-05/evidence_hashes.sha256",
+      "sha256": "bcebf6d3f4611e2284c68091cc573be4b7dd09357cbd3ea9a10a16120ce4219d"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-05/evidence_manifest.json",
+      "new": "agent/validation/evidence/F-05/evidence_manifest.json",
+      "sha256": "5f0c9beb1a577a587b7428ebf4d2639d1a942e55714112a8b10d3a1eed3a6e95"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-05/f05-contract-verifier.log",
+      "new": "agent/validation/evidence/F-05/f05-contract-verifier.log",
+      "sha256": "9955c4bf83234815fb944de7d9b3c46dea6506dc9fe8ca0a756dd7121b77445a"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-05/f05-verification.json",
+      "new": "agent/validation/evidence/F-05/f05-verification.json",
+      "sha256": "9955c4bf83234815fb944de7d9b3c46dea6506dc9fe8ca0a756dd7121b77445a"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-05/git-diff-check.log",
+      "new": "agent/validation/evidence/F-05/git-diff-check.log",
+      "sha256": "f58391ba7991825458306c81c388c6c65e23a4d6fd130683d69110bcb07d6ac0"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-05/p01-tests.log",
+      "new": "agent/validation/evidence/F-05/p01-tests.log",
+      "sha256": "606af8b28a58e205300588b1f78dfb9e8031d54f3406cda3749777a8216ff934"
+    },
+    {
+      "old": "03-测试与实验/evidence/F-05/p02-tests.log",
+      "new": "agent/validation/evidence/F-05/p02-tests.log",
+      "sha256": "b778045ef7a9debce1ac4cc3481f51f1b80328836087e3c26c2b0b707ede014d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-01/ack-render-receipt-sequence.json",
+      "new": "agent/validation/evidence/U-01/ack-render-receipt-sequence.json",
+      "sha256": "e3dd653e131162176b83cef4c9b25f8791b0437f76a2a112205498d4feeb6824"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-01/editmode-results.xml",
+      "new": "agent/validation/evidence/U-01/editmode-results.xml",
+      "sha256": "7dcdf3bd7155ba6f28efc955249925ae93571e81cd23c3ac8d904d82a5bba03b"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-01/network-fault-log.json",
+      "new": "agent/validation/evidence/U-01/network-fault-log.json",
+      "sha256": "e66f96820817f3a9c56835fdb26f32f5ea2df9548eed86673338280189004e08"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-01/playmode-results.xml",
+      "new": "agent/validation/evidence/U-01/playmode-results.xml",
+      "sha256": "0b32b58145ea21277543ba70a842dd565d7a52d96993233cd96a72e56a7bfbdd"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-01/state-mirror-trace.json",
+      "new": "agent/validation/evidence/U-01/state-mirror-trace.json",
+      "sha256": "00a4f748df6289775a2753619541176a55e898a84e0f45c3b600d28c23926f98"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/00_README.md",
+      "new": "agent/validation/evidence/U-02-grip/00_README.md",
+      "sha256": "b25fe8e3fed3ff027294a6b2c53d32bd586ae863839624f4313b459c7e169c2e"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/01_editmode_results.xml",
+      "new": "agent/validation/evidence/U-02-grip/01_editmode_results.xml",
+      "sha256": "cc56b9d91d42bf4989f0c07d8ecbf2c77d8112bcd0e13c44c2d21c896b5c8d4a"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/02_parameter_snapshot.md",
+      "new": "agent/validation/evidence/U-02-grip/02_parameter_snapshot.md",
+      "sha256": "60b2155f2a8590b40bd87fa53df2e5fe2a7eb9663af545560f679eea1660bd46"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/03_layer_isolation_report.md",
+      "new": "agent/validation/evidence/U-02-grip/03_layer_isolation_report.md",
+      "sha256": "34a74e747f45c48b111e9f430907a3d52794c273057bbc6f701ae49448165298"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/README.md",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/README.md",
+      "sha256": "943ba3cfc9db0b18a076c90b5629eab2b86b6d0f0265acbddcb5803ff76c53de"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/V03_degradation_demo.mp4",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/V03_degradation_demo.mp4",
+      "sha256": "f534e4fbcc61b6480aa0b01dc26b336358ccf88eb531d3512036aac97fc3279d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0000.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0000.png",
+      "sha256": "c4bc2f24e5e46e08c8d61282ed4cba912a70eea12df1d78b8403c4f80821f635"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0001.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0001.png",
+      "sha256": "895497a1378ecf2c4c41b5cc61c824d8b023cb0408e0d16fe24b43230511f0d7"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0002.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0002.png",
+      "sha256": "29b55bdefbd0e440914a5a48627a43448ffc5892bfbba815d8e6aac391d057e6"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0003.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0003.png",
+      "sha256": "52b741bd3d49d694b048993c0fc34b9b639aebddf0bbfbecec8ccbdb37ed4dd9"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0004.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0004.png",
+      "sha256": "eacdec1e4e77f61f4bb27ade79dcba86f6591d9e2aae51ef9ebb158ef9e3e4f6"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0005.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0005.png",
+      "sha256": "b0c6172efb710ba8c98878e00c9a6153dab63157d16718c9d440db89271ca30c"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0006.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0006.png",
+      "sha256": "59d05f03fcab57a2c24d70154fce8301a9ab5a0dcf0c2bc319f4afc5fe6a5baf"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0007.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0007.png",
+      "sha256": "15e749f170e8f5f21787c1f48663299324955766fc6d5f3b9e4d1ee85c3821ee"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0008.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0008.png",
+      "sha256": "77a020a5c107f9e47f3e55c44bce7c1fc75c0cb9e60cd7e5830c80f57129f992"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0009.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0009.png",
+      "sha256": "83f03f9fb8d9c1603cb59ab85641c46b704ad1360a0d7ac91fee3d422eff828d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0010.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0010.png",
+      "sha256": "a5959cb19cc8fcc725413cb45844ad40c13c879659d6b31d5164559c1706b2eb"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0011.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0011.png",
+      "sha256": "84c0ed43174fa15c022c6d305ebd86a521992341e9bd99403db60191c1b5d0d8"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0012.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0012.png",
+      "sha256": "f385f4ed654509ab80a93009d23206f94cee4581c1863d197146b282cda7d63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0013.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0013.png",
+      "sha256": "89bdc8154b9d3c4484441dee070a8351ee0276d2acdd2b962277dbb957de17ef"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0014.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0014.png",
+      "sha256": "49f293030a9747909b161873df7f2c63a6a2c52617de8df85b7492daafa7849c"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0015.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0015.png",
+      "sha256": "66448e9e84972a2c171b0ef41f26772f5dece4148c24b321e86b908edc902b26"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0016.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0016.png",
+      "sha256": "e2e4dfa67712b20a7bbb2eb8db08b014f8fb22859f01657631115b16eed29a00"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0017.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0017.png",
+      "sha256": "339a2d9c2d0e7260b81c6e1c301af8c842de5b977aa0ae5a7ecae1ce77be6d37"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0018.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0018.png",
+      "sha256": "01badf623cf92accd3d71cc1666f243b45c937768a7609adb3828ec387d126a1"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0019.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0019.png",
+      "sha256": "aa07ce6424a561b09016c8aa7cdbec5ef75e5a036eeb2629cfce33466b0cb280"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0020.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0020.png",
+      "sha256": "f0def571144bcfda5c3b05c0577be50940574e0addf48d7470d62d116261798c"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0021.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0021.png",
+      "sha256": "314a9110d26d5c7a853a755c80b0eb59d8ef7d095bede4a77f1311c7a4a9a943"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0022.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0022.png",
+      "sha256": "4dc180401f11b9683c59fda4933097591b9daca9ed49be0a2e1ead8761d36407"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0023.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0023.png",
+      "sha256": "1e00a29a6fde0dfc5c3f0cc1c4f883d8e87f41de57f86e58bbea8b1b7ed2e009"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0024.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0024.png",
+      "sha256": "88e8a81cb5bd55881365ea1ef78c92828b719fcce2bdcb65a11a0b9d3bc44a6b"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0025.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0025.png",
+      "sha256": "efbb61ca83dc0ad7d70d84b5c70f7a36e064165d26bbf8baf6b306212f7d3564"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0026.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0026.png",
+      "sha256": "5ee70bc655513c7acd62d510a481c2df4d330e170c8f3b5fe564cb83567c9e62"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0027.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0027.png",
+      "sha256": "c90479942aa9f0f0ea1b92642da9a1befc999272a1133a1348e751af1f19fe58"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0028.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0028.png",
+      "sha256": "22a5ccdd8fa5c5c4c8e19872c718a309ff6d6aca03e652975517725487f0eed0"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0029.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0029.png",
+      "sha256": "bb948ae7a8f2685128a5674201fa7d696e3025d71b080291aef9b7147d4215d9"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0030.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0030.png",
+      "sha256": "7245cf2d2543fd026059a29ae6f6a8bd426e7cd56b2e731978d11e431e43058a"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0031.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0031.png",
+      "sha256": "1b7e98eda1417a755f84e814e87e1c936b6ba3595b41e876fa2241fdfc07379a"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0032.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0032.png",
+      "sha256": "3ad27717420d7447664539f574e6dd22d2960af4ca917996400233cf3da1affb"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0033.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0033.png",
+      "sha256": "65efc7da3747221bb49336696313bce0b8f6acdaaea69d7c46ab53ab9264b39a"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0034.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0034.png",
+      "sha256": "6dd895e773bf44be3ff9b8298114b7eb5f3551396d1d1ec167ba76fb596b30d8"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0035.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0035.png",
+      "sha256": "8c40cddda68d0252195375bc28813449225d1076f067cd9a9a289366676da36b"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0036.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0036.png",
+      "sha256": "1fecb8b64d8899292bd93e4297f98f661e892711ac2b747ce42c258186bb4922"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0037.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0037.png",
+      "sha256": "7f118b46e59d67931632c8c6c994419a1aabffb3244464485179b302029ec735"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0038.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0038.png",
+      "sha256": "e73a22332faaa190a9215621597a75df1533b2fb205efeca7e516c6b4f6276a1"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0039.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0039.png",
+      "sha256": "303a05204caf0da6287b68d06531dfdea2ec706471f9254c63906a0c128d208a"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0040.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0040.png",
+      "sha256": "ebd84c641e7002e7607b29c2771aca0abb8e62f8a10fb2ee2622fc087ed0ab9c"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0041.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0041.png",
+      "sha256": "a2acb78027b30c650963497de207e02d20d210c4ad044d1d94e3b7c6721f5adb"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0042.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0042.png",
+      "sha256": "8de6ecb476bd0a5c69cef4ac17156ef5a99424d3c7c2a624f088101ccc7ea2c0"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0043.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0043.png",
+      "sha256": "23dc71d74480242211a27cc7868c61be02c7bbb6ab835593631dbdaf4f2f9827"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0044.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0044.png",
+      "sha256": "0a631a94974b201dee6e210a39a558b18d1152c12742d5e8e921d4e862037ab0"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0045.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0045.png",
+      "sha256": "6b4c5178246a548f6a29403460e42aa287e97448dba591e95cd3e248b7197d33"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0046.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0046.png",
+      "sha256": "047d4e1ed2c171be55014c3e86746ef053651f70896db2a53903c1a4ff244563"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0047.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0047.png",
+      "sha256": "616353e1d0644f19644457702a269bab54fee7f7ac8d1a20447f32768d4a3e76"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0048.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0048.png",
+      "sha256": "1a0a376ec64fdc5e07ee3905cc35e26ca8268f5a24a45167db0b4c6d6b25956f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0049.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0049.png",
+      "sha256": "332e62eefa39a9843ba570108f640413e3ddb7d6e98accf8e14d5e597deb7c84"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0050.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0050.png",
+      "sha256": "9aea1e608bf1b9e6fea7a35715a1f9e0e18422abbb34c535e9b35f69339f4ab8"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0051.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0051.png",
+      "sha256": "3da9b7fe2cbddc040bf72baed68240679b448f1f94d1a84f720739b63598dc90"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0052.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0052.png",
+      "sha256": "4d1f27e721b22197f193f012ccd1df6b70bf897acc0131b78cde9214c591ccde"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0053.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0053.png",
+      "sha256": "08de06ccc43115c5d1db71d55a826e8db83e83d11eabcadd3464e512c39202fa"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0054.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0054.png",
+      "sha256": "54c073019cb578e7b9ae7ede02523abeb976f63e3f754253e68faf3c2f110efa"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0055.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0055.png",
+      "sha256": "cfbaca48d47c11d1d68e9d21050125d4960922187081607031121067aa9455bf"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0056.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0056.png",
+      "sha256": "db9c5da5cfc914c55b5bcb7ecf0e876e31e39e5f766bf946980c52af36b68dc3"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0057.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0057.png",
+      "sha256": "c98b2bf3360cdf91ea6626d0982bf4b7bd84e42a286b5ab2b600b461e25fcbd8"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0058.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0058.png",
+      "sha256": "b78d56356d854aadffffdd0a2baaf1c345712f7c76a5e32a9d2f8adde5252758"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0059.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0059.png",
+      "sha256": "f3b019c32f5c092524bf95947d925783ecc186f7049c275e9cd0206312914761"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0060.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0060.png",
+      "sha256": "7868090324613040a9b6d9cdedbef67d1a360d5188c189b49470e811133c1eda"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0061.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0061.png",
+      "sha256": "4acc1869e6fbf3b6290dfcd3c20fdedd6707df88476b790cf5fb2906c680c3cc"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0062.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0062.png",
+      "sha256": "10dc664831051a5a9c14ed3db21903cb4ab299b3b456ffb697a3da2b16ba9a20"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0063.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0063.png",
+      "sha256": "23fb2ebe1119a927c8bdda8c8ad2075bcd6c0567afda03ee663bd3523a93a8c0"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0064.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0064.png",
+      "sha256": "f820aa2eab6cc9c932eeb6884a2d28d4c0ec0015b9970f94e3f23121730c21ac"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0065.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0065.png",
+      "sha256": "407c37af8ba166134967eed22ecd85ce144570ba588e2dbfaa4d23218a868b36"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0066.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0066.png",
+      "sha256": "53fb9073e043b2d190d22c112bff5448bd218cb2df1392c824368b91028592b2"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0067.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0067.png",
+      "sha256": "95c8db42815f0317a71f2d2071d05601d4c21bbfe96faa81308a8e124ce6071e"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0068.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0068.png",
+      "sha256": "d3923928072e7081ca651605a90504392924672ff7854e0ad3804887dd07872a"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0069.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0069.png",
+      "sha256": "139c2e3c07524cef7af1740365e68b67c084e98bee34a02afcb4e73aa2fc758d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0070.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0070.png",
+      "sha256": "2c396d6e6a0be7ec695cafeacfb78b0b19096f8a83c5bd1b855f60418a8005e3"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0071.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0071.png",
+      "sha256": "e84e41c4477bd7528a6cd9297f610439cd089b24001579f207d600d3bba42de8"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0072.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0072.png",
+      "sha256": "428aa2f30f1d9aee6bad2b87d993ec938895fd25357378c62e10ba244a4742b2"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0073.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0073.png",
+      "sha256": "f83d97ade8fdc4d2ea3f045c483aa517a28f9f3ab1cb61f36935b9651cd4eb59"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0074.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0074.png",
+      "sha256": "bf346f21f999392ad7fee0a8a6f31e32dabf3adb01dd8bf9ef8a581f5480b72a"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0075.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0075.png",
+      "sha256": "b33782b4506a9e52f4884d08c186b5cc4d1814dac1b1daddd54314aa2cde5471"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0076.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0076.png",
+      "sha256": "b8a9178824c2829448582743539719769bbf079b91d1c613258c4c03cd27b824"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0077.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0077.png",
+      "sha256": "25209da821b368f4d18921a896b37257c9353ac9498fabb88df5bf0f696efb3b"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0078.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0078.png",
+      "sha256": "b8c743d95b645199c4370a10dc91294866e1c2123d815be515474a5c87e6cd72"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0079.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0079.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0080.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0080.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0081.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0081.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0082.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0082.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0083.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0083.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0084.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0084.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0085.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0085.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0086.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0086.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0087.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0087.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0088.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0088.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0089.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0089.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0090.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0090.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0091.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0091.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0092.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0092.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0093.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0093.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0094.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0094.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0095.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0095.png",
+      "sha256": "cd86eac0b9cb49336a1d89231eded7792ff71c8951afb088b3fecbaa8a5aa95d"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0096.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0096.png",
+      "sha256": "475750b0d4632f1e077492e3826943b324fa2c628587623854b7ab729d323590"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0097.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0097.png",
+      "sha256": "4104c51ecdf6ac4dc18c500e833e38eb7670561babae0e16338fd003ad898494"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0098.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0098.png",
+      "sha256": "066aaf3b40dbe19a6138ad394242527b111419ee6cfee4ec3348bd4239c9f1a7"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0099.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0099.png",
+      "sha256": "82a2f4e9c6bd0a68293f305a72ec33ce4aa0f5b0ad62080675074e65d2428125"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0100.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0100.png",
+      "sha256": "fed9118d2aba65c06a0b576ba6c0b7001adeaa65192c290ac8616892995cc294"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0101.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0101.png",
+      "sha256": "3fa96a4cb348d26846087546e7d18b005515f2201680b076e481edef243b0ea0"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0102.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0102.png",
+      "sha256": "db9ce3b52c6cf8ff468adffc952190218e1f918522ae50d566bc0f8a215914ab"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0103.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0103.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0104.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0104.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0105.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0105.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0106.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0106.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0107.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0107.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0108.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0108.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0109.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0109.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0110.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0110.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0111.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0111.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0112.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0112.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0113.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0113.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0114.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0114.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0115.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0115.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0116.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0116.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0117.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0117.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0118.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0118.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "03-测试与实验/evidence/U-02-grip/04_degradation_demo/frames/frame_0119.png",
+      "new": "agent/validation/evidence/U-02-grip/04_degradation_demo/frames/frame_0119.png",
+      "sha256": "e70e0c96567615c621f733a225ad02ba27900234d871f6054a18b0a6daabb63f"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/A review on EEG-based multimodal learning for emotion .pdf",
+      "new": "agent/references/01-research-proposal/A review on EEG-based multimodal learning for emotion .pdf",
+      "sha256": "d4566902ad551fa918efe93c89d916b20390673a2b8e00e053b5f67b67008fcd"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/A review on EEG-based multimodal learning for emotion recognition.pdf",
+      "new": "agent/references/01-research-proposal/A review on EEG-based multimodal learning for emotion recognition.pdf",
+      "sha256": "8d78258df772c3f9e1a5ddd02c3b478d36f73536738f0d839b38a07af5cd408d"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/Affective Brain-Computer Music Interface in Emotion Regulation and Neurofeedback A Research Protocol.pdf",
+      "new": "agent/references/01-research-proposal/Affective Brain-Computer Music Interface in Emotion Regulation and Neurofeedback A Research Protocol.pdf",
+      "sha256": "41a1db438794b283add8c0c185b1df26ccf2eb7800a779c58d5fe5ebfe8ae489"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/Anger and emotion regulation strategies a meta-analysis.pdf",
+      "new": "agent/references/01-research-proposal/Anger and emotion regulation strategies a meta-analysis.pdf",
+      "sha256": "b49ecdd01b8621e47ff2f858602bd2cb3e9ab159a5fe32a13f7e2d532c1a48cf"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/Gaming Your Mental Health A Narrative Review on Mitigating Symptoms of Depression and Anxiety Using Commercial Video Gam.pdf",
+      "new": "agent/references/01-research-proposal/Gaming Your Mental Health A Narrative Review on Mitigating Symptoms of Depression and Anxiety Using Commercial Video Gam.pdf",
+      "sha256": "b18f0f6f2806cc432ce631220d748a6d7117922d52a38a9e41c29767b2f21bb3"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/JMIR_meta-analysis.pdf",
+      "new": "agent/references/01-research-proposal/JMIR_meta-analysis.pdf",
+      "sha256": "0df4b981890c5b8397d633408debb1f9c8c0ef3f0b6d8b6fc36026fbd4fa06c6"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/META-ANALYSIS OF ACUTE EXERCISE EFFECTS ON STATE ANXIETY AN UPDATE OF RANDOMIZED CONTROLLED TRIALS OVER THE PAST 25 YEAR.pdf",
+      "new": "agent/references/01-research-proposal/META-ANALYSIS OF ACUTE EXERCISE EFFECTS ON STATE ANXIETY AN UPDATE OF RANDOMIZED CONTROLLED TRIALS OVER THE PAST 25 YEAR.pdf",
+      "sha256": "149f0d661fbdd9e131c9c4d497ee46ae9ebf03d74a14dad8aff216fea57c67df"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/Protocol for a randomized controlled dismantling study of an internet-based inte.pdf",
+      "new": "agent/references/01-research-proposal/Protocol for a randomized controlled dismantling study of an internet-based inte.pdf",
+      "sha256": "7f43679d4bb14fe5f67a793f547c795dc2d150d461463dac007fa0706f862cc9"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/Serious Games, Gamification, and Serious Mental Illness A Scoping Review.pdf",
+      "new": "agent/references/01-research-proposal/Serious Games, Gamification, and Serious Mental Illness A Scoping Review.pdf",
+      "sha256": "c33387e747b8d3c798d7b34e187e19811cdbfc922aa32296937074f9dcd844b2"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/Yoga for anxiety A systematic review and meta-analysis of randomized controlled trials.pdf",
+      "new": "agent/references/01-research-proposal/Yoga for anxiety A systematic review and meta-analysis of randomized controlled trials.pdf",
+      "sha256": "80026b9911c43c619b65ea7a052406c34c8618fb57c32553d26c02aae66636fb"
+    },
+    {
+      "old": "srp参考文献/01-research-proposal/goessl2017.pdf",
+      "new": "agent/references/01-research-proposal/goessl2017.pdf",
+      "sha256": "ff3fb8f637024fa58d773fecfce819fab378e318e7d98b21ace66aa1c0947e05"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Advances in fMRI Real-Time Neurofeedback.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Advances in fMRI Real-Time Neurofeedback.pdf",
+      "sha256": "fddd3b2864bc685bd2390cbfe2a5fead56d7263509b52d8a4785b198415c246b"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/An EEG channel selection method for motor imagery based brain–computer interface and neurofeedback using Granger causali.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/An EEG channel selection method for motor imagery based brain–computer interface and neurofeedback using Granger causali.pdf",
+      "sha256": "1cec0e5b85e9a626ded4c3c8490950b607aa2d50e9c48030604d3bbbba1b930e"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Analysis of Heart Rate variability (HRV) in Frequency Domain and Recurrence Quantification Analys....pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Analysis of Heart Rate variability (HRV) in Frequency Domain and Recurrence Quantification Analys....pdf",
+      "sha256": "3a7bbf6bedf133f229fccaf24c9d6b376ada70b74d6bbf81f1bc9720b1f064d0"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Analysis of Heart Rate variability (HRV) in Frequency Domain and Recurrence Quantification Analysis during the Treatment.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Analysis of Heart Rate variability (HRV) in Frequency Domain and Recurrence Quantification Analysis during the Treatment.pdf",
+      "sha256": "f7346634ecbc10fa7d41142f8fa107bff6719a25962bc45985e6e47e65ca2e02"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Analysis of Heart Rate variability (HRV) in Frequency Domain and Recurrence Quantification_E2019.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Analysis of Heart Rate variability (HRV) in Frequency Domain and Recurrence Quantification_E2019.pdf",
+      "sha256": "260d148ff0fd725465efd42897e5109bb1f6e68434f7e0c16c6a0b9cc99e7dee"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Art and Psychological Well-Being Linking the Brain to the Aesthetic Emotion.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Art and Psychological Well-Being Linking the Brain to the Aesthetic Emotion.pdf",
+      "sha256": "9089e9664a531af91ecf1537f3056425b13e1040b73881390bd00ea5304875f9"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Comparing Effectiveness of HRV-Biofeedback and Mindfulness for Workplace Stress Reduction A Rando....pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Comparing Effectiveness of HRV-Biofeedback and Mindfulness for Workplace Stress Reduction A Rando....pdf",
+      "sha256": "088c2faa2e1402f6a7a3b33c4028f354534c63c4dad2e8d9f2143615c8382254"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Dynamic functional connectivity estimation for neurofeedback emotion regulation paradigm with simultaneous EEG-fMRI anal.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Dynamic functional connectivity estimation for neurofeedback emotion regulation paradigm with simultaneous EEG-fMRI anal.pdf",
+      "sha256": "aa4e3a53ca80ed5a7ec1481a14c6ca26cc6ad05528070cd7110f0f70e34367bc"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/EEG-Based Emotion Recognition Using Deep Learning Model for Workers Safet.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/EEG-Based Emotion Recognition Using Deep Learning Model for Workers Safet.pdf",
+      "sha256": "0fbc9f3c64fb75050049ce97e9b4f3b27f9e141e14a06efbc82ba548e660d435"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Effect-of-diaphragmatic-breathing-training-with-visual-biofeedback-on-respiratory-function.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Effect-of-diaphragmatic-breathing-training-with-visual-biofeedback-on-respiratory-function.pdf",
+      "sha256": "b42a9f932276d621e3d29350490a469a6a6abba662bb42a4f229016b7a1651be"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Ferencova_2022_pupil_autonomic_window.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Ferencova_2022_pupil_autonomic_window.pdf",
+      "sha256": "12cf15f753d84084643be6f32cf2cc8c4f85d50112de0f267cf92ea8a5ab9981"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Global Data-Driven Analysis of Brain Connectivity During Emotion Regulation by Electroencephalography Neurofeedback.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Global Data-Driven Analysis of Brain Connectivity During Emotion Regulation by Electroencephalography Neurofeedback.pdf",
+      "sha256": "ae5144b97b8fe9e8af26707807d994c1e5f3c49b94714eb391b60c57916d61ea"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Neural modulation enhancement using connectivity-based EEG .pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Neural modulation enhancement using connectivity-based EEG .pdf",
+      "sha256": "34052568a264697906ff0d7a1dd40f474e1091694e5fd61523f00b4fd0b5ab80"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Probing fMRI brain connectivity and activity changes during emotion regulation by EEG neurofeedback.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Probing fMRI brain connectivity and activity changes during emotion regulation by EEG neurofeedback.pdf",
+      "sha256": "e504eee2cd3206853981f7b4e1aca9ee8b4f48ecb4ee4c47619001fa1bbb44be"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Success--but-not-failure-feedback-guides-learning-during-neurof_2019_NeuroIm.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Success--but-not-failure-feedback-guides-learning-during-neurof_2019_NeuroIm.pdf",
+      "sha256": "2849b896e69bf4623f23c7d827e8724d8eff25bdf6a321a8c925ea3163310dfe"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/Toward-a-comprehensive-understanding-of-the-neural-mechanisms-o_2019_NeuroIm.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/Toward-a-comprehensive-understanding-of-the-neural-mechanisms-o_2019_NeuroIm.pdf",
+      "sha256": "9ee4009b37f0bdd20ed71ebbccae30397b85f8126178105ef948f118e55a01eb"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/blum2020.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/blum2020.pdf",
+      "sha256": "f095e3246a2f95a6ae824d078963dc7e2c39116494ceb650734ac45488b089c9"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/lehrer2013.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/lehrer2013.pdf",
+      "sha256": "ae3516b4788d86c413e82faf2dcce161d37fe2131aec8e4eeb5f8d2de50cac23"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/mccraty2022.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/mccraty2022.pdf",
+      "sha256": "189283be41eef43b13d010ce06a4345b5aa623284e32c9542aaae6fed5886a70"
+    },
+    {
+      "old": "srp参考文献/02-biosignal-hrv-eeg/s41598-026-46105-9.pdf",
+      "new": "agent/references/02-biosignal-hrv-eeg/s41598-026-46105-9.pdf",
+      "sha256": "3e0be469f2c032d440b63985d5c46ff9474312982f32e44b20adcf4a43cbe30a"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/1-s2.0-S2451958826000266-main.pdf",
+      "new": "agent/references/04-gamification-emotion/1-s2.0-S2451958826000266-main.pdf",
+      "sha256": "57b08b73857d90c29bdccca6e6388034316c5fc0eb97ff4d130f2832a614a2c1"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/A biophilic mind-set for a restorative built environment.pdf",
+      "new": "agent/references/04-gamification-emotion/A biophilic mind-set for a restorative built environment.pdf",
+      "sha256": "ac3a39aa24b819aca2e6fd8e9a6123db424c317066765f22436af8fcbaa8de26"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Acceptability, satisfaction and perceived efficacy of Space from Depression an internet-delivered....pdf",
+      "new": "agent/references/04-gamification-emotion/Acceptability, satisfaction and perceived efficacy of Space from Depression an internet-delivered....pdf",
+      "sha256": "ef5e753295776445f15a8d42497ef30121ce2f6b9aa6857ff84a9a0887d28e75"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Attachment orientations and emotion regulation new insights from the study of interpersonal emotion regulation strategie.pdf",
+      "new": "agent/references/04-gamification-emotion/Attachment orientations and emotion regulation new insights from the study of interpersonal emotion regulation strategie.pdf",
+      "sha256": "76c086f0a877eae47571cce72e6c57cc0b8ea790f181682d70b4646ab2618735"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Awareness, Prevention, Detection, and Therapy Applications for Depression and Anxiety in Serious Games for Children and .pdf",
+      "new": "agent/references/04-gamification-emotion/Awareness, Prevention, Detection, and Therapy Applications for Depression and Anxiety in Serious Games for Children and .pdf",
+      "sha256": "b3397e1c80d1208e4e06727b5ba8e8616f7b2eba1079c731f2538ea9db57dbb9"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Bandura 1977.pdf",
+      "new": "agent/references/04-gamification-emotion/Bandura 1977.pdf",
+      "sha256": "847602f9f5dee02aa87b62ed81c7f1dec3bec5d4ff2afa5027ddbf28ee463c56"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Can a Brief Interaction With Online, Digital Art Improve Wellbeing A Comparative Study of the Impact of Online Art and C.pdf",
+      "new": "agent/references/04-gamification-emotion/Can a Brief Interaction With Online, Digital Art Improve Wellbeing A Comparative Study of the Impact of Online Art and C.pdf",
+      "sha256": "8836da6aa326617aa3fd41546fcf8450e4f67018e30364455610f55abec816cd"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Challenges-in-Participant-Engagement-and-Retention-Using-Mobile-Health-Apps-Literature-Review.pdf",
+      "new": "agent/references/04-gamification-emotion/Challenges-in-Participant-Engagement-and-Retention-Using-Mobile-Health-Apps-Literature-Review.pdf",
+      "sha256": "0a3a67706f46a7fb0e9bcf840b4faa6dcec763054a23140f352a58da1165e9d5"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/ChangesinColourAppearanceofaLargeDisplay_CRA_2009_SYChoi.pdf",
+      "new": "agent/references/04-gamification-emotion/ChangesinColourAppearanceofaLargeDisplay_CRA_2009_SYChoi.pdf",
+      "sha256": "40077423830c3360f1b40d1b1ba7d9d652bf7883c2d311603c2cf920e24f2096"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Development of a Mobile Phone App to Support Self-Monitoring of Emotional Well-Being A Mental Health Digital Innovation.pdf",
+      "new": "agent/references/04-gamification-emotion/Development of a Mobile Phone App to Support Self-Monitoring of Emotional Well-Being A Mental Health Digital Innovation.pdf",
+      "sha256": "5a624e96e1775f5609e249104617dca467d484683f512c9a9680c9c2ba347a5d"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Early Depth Engagement in Art Perception visual dynamics and aesthetic experience.pdf",
+      "new": "agent/references/04-gamification-emotion/Early Depth Engagement in Art Perception visual dynamics and aesthetic experience.pdf",
+      "sha256": "ebb1d0951a6e10f4e2033f4b26c09737c25387a62c3473ebfde8ae5070ed3604"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Efficacy of the Tuned In music emotion regulation program in international university students.pdf",
+      "new": "agent/references/04-gamification-emotion/Efficacy of the Tuned In music emotion regulation program in international university students.pdf",
+      "sha256": "b37c65462c0ad759731dd7a3d77493c101481007e39e3dfa05f834887bfcde4a"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Emotion Regulation Strategies and Stress in Irish .pdf",
+      "new": "agent/references/04-gamification-emotion/Emotion Regulation Strategies and Stress in Irish .pdf",
+      "sha256": "eed4a1d8a20d1bedc0e961ea9ee16b3eeb51f5bfc5f713f8455f25e4c126ed56"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Emotion, Embodiment, and Aesthetic Appraisal .pdf",
+      "new": "agent/references/04-gamification-emotion/Emotion, Embodiment, and Aesthetic Appraisal .pdf",
+      "sha256": "70d01644ac99aa767deebf63302733fedb9f64cc549cc7823c33ae6c8919676a"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Engagement With Gamification Elements in a Smoking Cessation App and Short-term Smoking Abstinence Quantitative Assessme.pdf",
+      "new": "agent/references/04-gamification-emotion/Engagement With Gamification Elements in a Smoking Cessation App and Short-term Smoking Abstinence Quantitative Assessme.pdf",
+      "sha256": "0d764c4dff32a8cbea4454c4531042772530ca1d4af7476509c332e943d5e063"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Enhancing Presence, Immersion, and Interaction in Multisensory Experiences Through Touch and Haptic Feedback.pdf",
+      "new": "agent/references/04-gamification-emotion/Enhancing Presence, Immersion, and Interaction in Multisensory Experiences Through Touch and Haptic Feedback.pdf",
+      "sha256": "66814a6cea43d973f34d42f5c9c2c33cacde77da6c7c216d070f1b085c0cf3a7"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Evaluating the Therapeutic Alliance With a Free-Text CBT Conversational Agent (Wysa) A Mixed-Methods Study.pdf",
+      "new": "agent/references/04-gamification-emotion/Evaluating the Therapeutic Alliance With a Free-Text CBT Conversational Agent (Wysa) A Mixed-Methods Study.pdf",
+      "sha256": "3f655094a801bc2948eec9d0e32d3e398084a50e4b14e818907b9e251840c33a"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Evaluating the Therapeutic Alliance With a Free-Text CBT Conversational Agent (Wysa) A Mixed-Methods_Sinha_.pdf",
+      "new": "agent/references/04-gamification-emotion/Evaluating the Therapeutic Alliance With a Free-Text CBT Conversational Agent (Wysa) A Mixed-Methods_Sinha_.pdf",
+      "sha256": "3f655094a801bc2948eec9d0e32d3e398084a50e4b14e818907b9e251840c33a"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Explaining the Efficacy of an Internet-Based Behavioral Activation Intervention .pdf",
+      "new": "agent/references/04-gamification-emotion/Explaining the Efficacy of an Internet-Based Behavioral Activation Intervention .pdf",
+      "sha256": "f255d297bc012c4fb2309a101303e99f9c95a6aa39509f9b775a163583938630"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Form and color visual perception in green exercise Positive effects on .pdf",
+      "new": "agent/references/04-gamification-emotion/Form and color visual perception in green exercise Positive effects on .pdf",
+      "sha256": "39504fa03f38d81673f98ce3aa5e0ff550a27cd2a39dd6072e08ef943b06faee"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Implementing Internet-Delivered Cognitive Behavioral Therapy.pdf",
+      "new": "agent/references/04-gamification-emotion/Implementing Internet-Delivered Cognitive Behavioral Therapy.pdf",
+      "sha256": "b854bbd2cc57cd1369e180fb486a21ba3575dbeb77cfc12a23ff24dc4a563463"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Integrating Mindfulness Into The Extended Process Model Of Emotion Regulation .pdf",
+      "new": "agent/references/04-gamification-emotion/Integrating Mindfulness Into The Extended Process Model Of Emotion Regulation .pdf",
+      "sha256": "164895b2c99da7e0d5f7897ef170b264fdacedb7a3b88e150fef74d3fd3d80c7"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Internet-Based Behavioral Activation for Depression Systematic.pdf",
+      "new": "agent/references/04-gamification-emotion/Internet-Based Behavioral Activation for Depression Systematic.pdf",
+      "sha256": "0df4b981890c5b8397d633408debb1f9c8c0ef3f0b6d8b6fc36026fbd4fa06c6"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Internet-Delivered Cognitive Behavioral Therapy (ICBT) A Case Study of an Early Adulthood Patient Diagnosed with Costoch.pdf",
+      "new": "agent/references/04-gamification-emotion/Internet-Delivered Cognitive Behavioral Therapy (ICBT) A Case Study of an Early Adulthood Patient Diagnosed with Costoch.pdf",
+      "sha256": "48c22a3dac46f8a4ffbdf756769ff847a4e796768c2eb2f5e2b8f099ac058ffe"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Language adaptations of mental health interventions User interaction comparisons with an AI-enabled conversational agent.pdf",
+      "new": "agent/references/04-gamification-emotion/Language adaptations of mental health interventions User interaction comparisons with an AI-enabled conversational agent.pdf",
+      "sha256": "413ff369627119497aa27e9eb20c59defb5802a321afbdd7e40d2edc5709cb42"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Mnemonic emotion regulation a three-process model.pdf",
+      "new": "agent/references/04-gamification-emotion/Mnemonic emotion regulation a three-process model.pdf",
+      "sha256": "fd07858ea4b0bb41d98bb3439861f49864a95bb5e2d8dce892843a6373d871be"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Mood Moderates the Effect of Aesthetic Appeal on Performance..pdf",
+      "new": "agent/references/04-gamification-emotion/Mood Moderates the Effect of Aesthetic Appeal on Performance..pdf",
+      "sha256": "be450cca6cc90d0ed91daffc54afb9c1e543d96bf5c0e6196ca82863a622b08a"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Mood moderates the effect of aesthetic appeal on performance.pdf",
+      "new": "agent/references/04-gamification-emotion/Mood moderates the effect of aesthetic appeal on performance.pdf",
+      "sha256": "3797c4071dcdf8fce65c305f2e18852df63634971a203d70ea1c557cff41b4c3"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Nonverbal_behavior_of_interviewers_influences_the_.pdf",
+      "new": "agent/references/04-gamification-emotion/Nonverbal_behavior_of_interviewers_influences_the_.pdf",
+      "sha256": "3da5dd9910ee736fce0f3c46c8862b285eac091bf7a4c23d45be1793c94a0996"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Patterns Among 754 Gamification Cases Content Analysis for Gamification Development.pdf",
+      "new": "agent/references/04-gamification-emotion/Patterns Among 754 Gamification Cases Content Analysis for Gamification Development.pdf",
+      "sha256": "5e5cedb9b6bb6c765b38631d686a1bf883ab6563f6657c4c5dcb56a25e8622a4"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Relative-left-frontal-activity-in-reappraisal-and-sup_2016_International-Jou.pdf",
+      "new": "agent/references/04-gamification-emotion/Relative-left-frontal-activity-in-reappraisal-and-sup_2016_International-Jou.pdf",
+      "sha256": "03be71673d017130dfe247ea71c3445ca8ee7d680a5705e87855215b0c267f53"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Research on Visual Expression of Color Collocation in Art Education Based on Art Psychology.pdf",
+      "new": "agent/references/04-gamification-emotion/Research on Visual Expression of Color Collocation in Art Education Based on Art Psychology.pdf",
+      "sha256": "a80fbaf922265ccfa988c75af9f24f43a6207394b7fe9f10ba0fdc68ba43824c"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Serious Games and Gamification for Mental Health Current Status and Promising Directions.pdf",
+      "new": "agent/references/04-gamification-emotion/Serious Games and Gamification for Mental Health Current Status and Promising Directions.pdf",
+      "sha256": "5bd2ab76857e52a053c583dba92f98f239aae981daaca4e99b5fade95bd49317"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Strategies for regulating achievement emotions Conceptualization and.pdf",
+      "new": "agent/references/04-gamification-emotion/Strategies for regulating achievement emotions Conceptualization and.pdf",
+      "sha256": "75210c87560a4abf15db5597615f2ec18e09df76eb183c6e64a7a5b2952ac887"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Studying Children's Intrapersonal Emotion Regulation Strategies from the Process Model of Emotion Regulation.pdf",
+      "new": "agent/references/04-gamification-emotion/Studying Children's Intrapersonal Emotion Regulation Strategies from the Process Model of Emotion Regulation.pdf",
+      "sha256": "3a9d3937b49a45a41c9d8f80cf7c28096a10a7f1f0654359c9c073104d387376"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Subspace-Map_Interactive_Visual_Analysis_for_Subspace_Data_with_a_Map_Metaphor.pdf",
+      "new": "agent/references/04-gamification-emotion/Subspace-Map_Interactive_Visual_Analysis_for_Subspace_Data_with_a_Map_Metaphor.pdf",
+      "sha256": "bf2f93ca2f6f7af56f36959f3964e1af9b44a8a653eb0bfabfdca8133a7b43ce"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Suppression and expression as distinct emotion-regulation processes in daily interactions _Cameron2017.pdf",
+      "new": "agent/references/04-gamification-emotion/Suppression and expression as distinct emotion-regulation processes in daily interactions _Cameron2017.pdf",
+      "sha256": "4f22a608657049ce7038adf2dd88d04b0d0ba206e205218f97440786640d2798"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/The impact of two computer-aided emotion regulation strategies on risky driving .pdf",
+      "new": "agent/references/04-gamification-emotion/The impact of two computer-aided emotion regulation strategies on risky driving .pdf",
+      "sha256": "a49a5ac75ca31250ff8cb47a9270c91130da2ccc2d4a409d977d331901133df3"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Thefivefacto modelofpersonality and emotion regulation Ametaanalysis.pdf",
+      "new": "agent/references/04-gamification-emotion/Thefivefacto modelofpersonality and emotion regulation Ametaanalysis.pdf",
+      "sha256": "4f22a608657049ce7038adf2dd88d04b0d0ba206e205218f97440786640d2798"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/User perceptions and experiences of an AI-driven conversational agent for mental health support.pdf",
+      "new": "agent/references/04-gamification-emotion/User perceptions and experiences of an AI-driven conversational agent for mental health support.pdf",
+      "sha256": "f2da31ee7f62cb6ca75fdbce02833715ab6bb69b1bcdafc957525ce4894dcfd3"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/Using Mobile Health Gamification to Facilitate Cognitive Behavioral Therapy Skills Practice in Child Anxiety Treatment O.pdf",
+      "new": "agent/references/04-gamification-emotion/Using Mobile Health Gamification to Facilitate Cognitive Behavioral Therapy Skills Practice in Child Anxiety Treatment O.pdf",
+      "sha256": "151b760442164aa7187f5c82057778ce760129dde4ea6ce815f55bc5358c92cd"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/jacobson2001.pdf",
+      "new": "agent/references/04-gamification-emotion/jacobson2001.pdf",
+      "sha256": "9d3a7a4b35587cce6458614d789d333db1982d61d0e1cfcdc9c1a6e78d5a37cc"
+    },
+    {
+      "old": "srp参考文献/04-gamification-emotion/lehrer2022.pdf",
+      "new": "agent/references/04-gamification-emotion/lehrer2022.pdf",
+      "sha256": "b19c28bf9ab60a55b842e4849796bf5fad72fdf8be7df5f50533d265921c07f3"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/Cancer patients’ acceptance of .pdf",
+      "new": "agent/references/05-clinical-reference/Cancer patients’ acceptance of .pdf",
+      "sha256": "a7d96d1f2911be86b4422856fcdb19fbb7d3a0c8d4efcff2f0c2836305b06649"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/College Student Binge Eating Attachment, Psychological.pdf",
+      "new": "agent/references/05-clinical-reference/College Student Binge Eating Attachment, Psychological.pdf",
+      "sha256": "0bf8bc818de6bf96e8a562b1875cfadbe98c12cca9955750c0907df14be09f7f"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/Exploring user characteristics, motives, and expectations and the therapeutic alliance in the mental health conversational AI Clare® a baseline study.pdf",
+      "new": "agent/references/05-clinical-reference/Exploring user characteristics, motives, and expectations and the therapeutic alliance in the mental health conversational AI Clare® a baseline study.pdf",
+      "sha256": "b584845807447e6bdae0462766170be8f4f394bf6a53d0580941ce1002db76bf"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/G4H-2017-0058-ver9-Dekker_4P 1..7.pdf",
+      "new": "agent/references/05-clinical-reference/G4H-2017-0058-ver9-Dekker_4P 1..7.pdf",
+      "sha256": "1bcb0da224a948444c23ded186ddb1e74b691dd7fb0033fde8e313e9c5ba81a2"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/Intergenerational effects of maternal childhood maltreatment on .pdf",
+      "new": "agent/references/05-clinical-reference/Intergenerational effects of maternal childhood maltreatment on .pdf",
+      "sha256": "11818387bf07ff42d6a74070de801421ca61e32a9f813873299e3a7db93b10d7"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/Lifestyle interventions as adjuvant treatments for depression An umbrella .pdf",
+      "new": "agent/references/05-clinical-reference/Lifestyle interventions as adjuvant treatments for depression An umbrella .pdf",
+      "sha256": "d78edabb368546cbf7e4016d7bb86bcb1dd43f59848e396bca7ea22245cbaf82"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/Prevalenceofdepressionandanxietyincollegestudents.pdf",
+      "new": "agent/references/05-clinical-reference/Prevalenceofdepressionandanxietyincollegestudents.pdf",
+      "sha256": "3f8f1f1c6ef6d0acc36763304e962c1578c684dc5f75e816f728f012817be724"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/Teachers’ academic motivation and student .pdf",
+      "new": "agent/references/05-clinical-reference/Teachers’ academic motivation and student .pdf",
+      "sha256": "7eb3e8f20a798ae46c8b005fc5c60900ab84af4c6ba1f278ab4914f38fa95e34"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/Trauma‐focused guided self‐help interventions for posttraumatic stress disorder A meta‐analysis of randomized controlled.pdf",
+      "new": "agent/references/05-clinical-reference/Trauma‐focused guided self‐help interventions for posttraumatic stress disorder A meta‐analysis of randomized controlled.pdf",
+      "sha256": "b17a061751bc3edad92424d34c7902949da14c3a00c00da8b3ba837ea44c9e11"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/cpn-23-4-628.pdf",
+      "new": "agent/references/05-clinical-reference/cpn-23-4-628.pdf",
+      "sha256": "6f9e3fa33e88a94ba05b28abee49ece0cc4ae83ca35525e0ae97603cc3a4815c"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/healthcare-10-01224-v2.pdf",
+      "new": "agent/references/05-clinical-reference/healthcare-10-01224-v2.pdf",
+      "sha256": "6cb8627d707b302c6abcc2d16b77c7a4362a5fb9667015578f16beccba130b27"
+    },
+    {
+      "old": "srp参考文献/05-clinical-reference/stamped5193.pdf",
+      "new": "agent/references/05-clinical-reference/stamped5193.pdf",
+      "sha256": "c7e5e6e06dd4bb7099667ed00d04f4f87407b38af152385db6221f90e2c556df"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Balaji_et_al_2025_HRV_Biofeedback_Global_Coherence_Frequencies.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Balaji_et_al_2025_HRV_Biofeedback_Global_Coherence_Frequencies.pdf",
+      "sha256": "c7708c5dac6f62fd86200b99475a48696691840bfe1197d19e38d223a0b56060"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/EDA_TMS_Clinical_Review_2023_Psychiatry_Res.pdf",
+      "new": "agent/references/06-scoring-model-evidence/EDA_TMS_Clinical_Review_2023_Psychiatry_Res.pdf",
+      "sha256": "898223c1c9d7effd1fa989d2540f8b2f8be38cfce7c3821c917ee374a889ddd7"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/From_Lung_to_Brain_Respiration_Neural_Mental_Activity_2023.docx",
+      "new": "agent/references/06-scoring-model-evidence/From_Lung_to_Brain_Respiration_Neural_Mental_Activity_2023.docx",
+      "sha256": "1d6d75a93ac680235bb741e63114c9bf0389a5e7fc4253c37a650842adc3aefd"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Gitler_et_al_2025_Vagal_Neuromodulation_HRV_Biofeedback_SSP_Review.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Gitler_et_al_2025_Vagal_Neuromodulation_HRV_Biofeedback_SSP_Review.pdf",
+      "sha256": "c13dfeec508e4598b904855bbd64dffa29caa5bb7c66a2d9028521dc353a551a"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Jerath_Beveridge_2020_Respiratory_Rhythm_Autonomic_Modulation_Emotions.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Jerath_Beveridge_2020_Respiratory_Rhythm_Autonomic_Modulation_Emotions.pdf",
+      "sha256": "c3c3dd58b5b4078e5625d5b24f6929e2104c6dc4357649d6d4cb05338cec5682"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Nagai_et_al_2019_GSR_Biofeedback_Epilepsy_MetaAnalysis.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Nagai_et_al_2019_GSR_Biofeedback_Epilepsy_MetaAnalysis.pdf",
+      "sha256": "496857cb953a25c8e42a7a966dcf2c5eec5e1e579e54b13500fa74ff448b7a85"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Penzlin_et_al_2017_HRV_Biofeedback_Alcohol_Abstinence_RCT.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Penzlin_et_al_2017_HRV_Biofeedback_Alcohol_Abstinence_RCT.pdf",
+      "sha256": "8a8223350a74aca27dcdf925829e8a9a83dbde5c58e63c0afac6706d7783d54e"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Pinna_Edwards_2020_Interoception_Vagal_Tone_Emotion_Regulation.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Pinna_Edwards_2020_Interoception_Vagal_Tone_Emotion_Regulation.pdf",
+      "sha256": "6ab8d3fcd37afe2a512dd01dbf67bdca06f0445f43491e8fb662cde859a5a807"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Pranayama_Components_HRV_2021_J_Psychosom_Res.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Pranayama_Components_HRV_2021_J_Psychosom_Res.pdf",
+      "sha256": "ba0bdd24db4f3d6dc6ceb2fcdda1ad7bbb9d4124f9788c0a82cee87ff0fe3ab4"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/README.md",
+      "new": "agent/references/06-scoring-model-evidence/README.md",
+      "sha256": "782029f344edf0c5c150142de96fada4157401724e09b84af931de35b495df41"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Sarchiapone_et_al_2020_EDA_Depersonalization_Systematic_Review.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Sarchiapone_et_al_2020_EDA_Depersonalization_Systematic_Review.pdf",
+      "sha256": "ee3d188e5731611c465b7acaecb38e7bf39b4b3414b07952947eebaac1fd768a"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Schneider_et_al_2025_Positive_Affect_HRV_Systematic_Review.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Schneider_et_al_2025_Positive_Affect_HRV_Systematic_Review.pdf",
+      "sha256": "49db1d921877ab710759f607e7f1ea4ef940cb060b40503fb6c23602f1325aad"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Slow_Breathing_HRV_MetaAnalysis_2022.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Slow_Breathing_HRV_MetaAnalysis_2022.pdf",
+      "sha256": "d6603e1cf7abd63c4c5a1e89b2fef15bfa5340968eb9dc96cbbdd6ac4ffe30f3"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Tharion_et_al_2012_Deep_Breathing_Exercise_HRV_RCT.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Tharion_et_al_2012_Deep_Breathing_Exercise_HRV_RCT.pdf",
+      "sha256": "4e9e4cb12c9f1d4dfd537b8037302ef0b990f11f5931143b0e1cc69686a30742"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Tupitsa_et_al_2023_HRV_Amygdala_fMRI_Emotion_Regulation.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Tupitsa_et_al_2023_HRV_Amygdala_fMRI_Emotion_Regulation.pdf",
+      "sha256": "5348e7c620a3d3f6e29119b1f981671a7169288271fbd9f85d3203cbbd423031"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Van_Dixhoorn_1998_Cardiorespiratory_Breathing_Relaxation.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Van_Dixhoorn_1998_Cardiorespiratory_Breathing_Relaxation.pdf",
+      "sha256": "3406f8de0add70b82d71c9813c51524e22fcbf08e83a4123c1edefa465b40f14"
+    },
+    {
+      "old": "srp参考文献/06-scoring-model-evidence/Wareing_et_al_2024_HRV_Biofeedback_Interoception_Systematic_Review.pdf",
+      "new": "agent/references/06-scoring-model-evidence/Wareing_et_al_2024_HRV_Biofeedback_Interoception_Systematic_Review.pdf",
+      "sha256": "770778b940970b0282a12a42c175b5a2e9008a47d33fd4ff7c2d3b3fc258c962"
+    },
+    {
+      "old": "srp参考文献/README.md",
+      "new": "agent/references/README.md",
+      "sha256": "cd9e989cb9224b1faf0bf63afafea0713f3c7cbe6c415bd691cb4fb1be86383b"
+    },
+    {
+      "old": "srp参考文献/missing_downloads.txt",
+      "new": "agent/references/missing_downloads.txt",
+      "sha256": "00021a6c6097c4c7c221c4cee09b2204be9561613c467bb928360ba0198125cc"
+    },
+    {
+      "old": "srp参考文献/pdf_inventory.json",
+      "new": "agent/references/pdf_inventory.json",
+      "sha256": "ec2425f05795e7efddfc9a1c6ada2af75ff227dc94f8b280b9cdfdd1f9183a2c"
+    },
+    {
+      "old": "srp参考文献/search_results.json",
+      "new": "agent/references/search_results.json",
+      "sha256": "dd2419585c7a13d5782c11cb2fbbe4c8fb1fba9476f1623d0248e205824c4360"
+    },
+    {
+      "old": "srp参考文献/validate_reference_provenance.py",
+      "new": "agent/references/validate_reference_provenance.py",
+      "sha256": "0842415d0eae35e63faef06c9234d8db9da742a583b2e200952facc31cc7324f"
+    },
+    {
+      "old": "srp参考文献/引用文献.md",
+      "new": "agent/references/引用文献.md",
+      "sha256": "950e00577595fd99d11a5b2ea5f310675ba88564c1c899b522d5abadc9513255"
+    }
+  ]
+}

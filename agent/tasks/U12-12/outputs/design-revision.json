@@ -1,0 +1,31 @@
+{
+  "task_id": "U12-12",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "成果选择与社会价值判断",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "成果选择与社会价值判断修订交接",
+    "采用/收缩/停止规则",
+    "成果用途"
+  ],
+  "acceptance_criteria": [
+    "AC1 净收益考虑无设备替代、准备/管理成本和自愿使用",
+    "AC2 当前缺真实证据不推荐部署或保证比赛/发表",
+    "AC3 公开、产品与论文分别真实授权，不虚构长期或普惠价值"
+  ],
+  "evidence_required": [
+    "采用/收缩/停止规则",
+    "成果用途",
+    "成本及公开待证项"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP_EXTERNAL",
+  "depends_on_original": [
+    "W-03",
+    "A-06"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

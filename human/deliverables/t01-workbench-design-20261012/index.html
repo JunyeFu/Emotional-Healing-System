@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TD 工作台逐页设计</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f5f8;color:#202832;font-family:"Microsoft YaHei",sans-serif;letter-spacing:0}header{background:#fff;border-bottom:1px solid #ccd5df;padding:20px 24px}h1{font-size:22px;margin:0 0 8px}p{margin:0;font-size:14px;color:#56616f}a{color:#235e8d}nav{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}main{max-width:1328px;margin:auto;padding:0 24px}section{padding:28px 0;border-bottom:1px solid #ccd5df}h2{font-size:18px;margin:0 0 12px}img{display:block;width:100%;height:auto;border:1px solid #ccd5df}section p{margin-top:10px;line-height:1.7}footer{padding:24px;text-align:center;font-size:14px;color:#56616f}@media(max-width:600px){main{padding:0 12px}header{padding:16px 12px}section{padding:20px 0}}
+</style>
+<header><h1>TD 工作台逐页设计</h1><p>十二页设计稿 · diagrams.net原生矢量绘制 · 合成示例，非TD运行截图</p><nav><a href="t01-workbench-redesign-final.drawio">可编辑总画布</a><a href="README.md">阅读说明</a><a href="#running">运行页</a><a href="#history">历史页</a><a href="#fault">故障页</a></nav></header>
+<main>
+<section><h2>01 主页</h2><a href="01-home.drawio.png"><img src="01-home.drawio.png" alt="系统就绪和实验准备入口"></a><p>以真实就绪摘要与未收尾任务为中心，弱化重复标题。</p></section>
+<section><h2>02 实验准备</h2><a href="02-prepare.drawio.png"><img src="02-prepare.drawio.png" alt="双设备预览与准备清单"></a><p>准备清单集中显示，缺项与禁用按钮直接对应；曲线仅为准备预览。</p></section>
+<section><h2>03 等待Unity开始</h2><a href="03-waiting.drawio.png"><img src="03-waiting.drawio.png" alt="等待Unity开始且尚未记录"></a><p>准备完成、Unity开始、Python启动是不同事实，不提前宣称记录开始。</p></section>
+<section id="running"><h2>04 实验运行</h2><a href="04-running.drawio.png"><img src="04-running.drawio.png" alt="运行中的记录状态、两设备和引导对照"></a><p>上方确定阶段、对象与计时，左侧观察信号，右侧核查流程和引导，下方执行操作。</p></section>
+<section><h2>05 暂停保持记录</h2><a href="05-paused.drawio.png"><img src="05-paused.drawio.png" alt="暂停体验但持续记录"></a><p>有效用时与总历时相邻，暂停不暗示数据采集停止。</p></section>
+<section><h2>06 收尾待办</h2><a href="06-closeout.drawio.png"><img src="06-closeout.drawio.png" alt="体验结束后的封存和后测待办"></a><p>体验结束不等于收尾完成，封存与后测分别确认。</p></section>
+<section id="history"><h2>07 历史选中记录</h2><a href="07-history.drawio.png"><img src="07-history.drawio.png" alt="明确选中对象的历史记录"></a><p>所选行、摘要和导出对象一致，不沿用当前运行场次的编号与计时。</p></section>
+<section><h2>08 分组明细</h2><a href="08-details.drawio.png"><img src="08-details.drawio.png" alt="设备、质量、记录与链路分组明细"></a><p>设备事实先于协议与纳秒时钟，原始字段仍可展开。</p></section>
+<section><h2>09 收尾完成</h2><a href="09-closed.drawio.png"><img src="09-closed.drawio.png" alt="可开始下一位的收尾完成状态"></a><p>满足封存与后测条件后，启用下一位入口；导出状态独立显示。</p></section>
+<section><h2>10 历史未选择</h2><a href="10-unselected.drawio.png"><img src="10-unselected.drawio.png" alt="未选择历史记录时禁用导出"></a><p>无选中对象时不回退到当前场次。</p></section>
+<section id="fault"><h2>11 断流与记录故障</h2><a href="11-fault.drawio.png"><img src="11-fault.drawio.png" alt="末次波形、缺失区间与记录异常"></a><p>示例缺失区间为30秒窗口的33%，即9.9秒；信号质量未知，X不可判定。</p></section>
+<section><h2>12 中止确认</h2><a href="12-abort.drawio.png"><img src="12-abort.drawio.png" alt="明确对象和后果的中止确认"></a><p>仅为结束本场这一有后果的动作确认，不给普通切换增加确认。</p></section>
+</main><footer>页面已逐张审查并局部修订；当前交付不改写TD工程。</footer>
+</html>

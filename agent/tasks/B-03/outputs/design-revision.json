@@ -1,0 +1,30 @@
+{
+  "task_id": "B-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "可选扩展批次模板",
+  "disposition": "DEFERRED_EXTENSION",
+  "deliverables": [
+    "可选扩展批次模板修订交接",
+    "扩展批次候选",
+    "独立参与者账本"
+  ],
+  "acceptance_criteria": [
+    "AC1 无扩展真实放行不创建实施承诺",
+    "AC2 每实例独立样本与策略/回退版本清楚",
+    "AC3 不复用核心受试者作为独立新样本，不回改共同I"
+  ],
+  "evidence_required": [
+    "扩展批次候选",
+    "独立参与者账本",
+    "版本与准入要求"
+  ],
+  "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "G-04"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

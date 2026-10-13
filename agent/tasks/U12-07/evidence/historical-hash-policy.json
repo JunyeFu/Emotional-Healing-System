@@ -1,0 +1,11 @@
+{
+  "task_id": "U12-07",
+  "status": "PREEXISTING_HASH_POLICY_DESCRIPTION_MISMATCH_PRESERVED",
+  "declared_policy": "UTF8_LF_TRAILING_WHITESPACE_REMOVED_FINAL_LF",
+  "outputs_without_final_lf": ["design_method.md", "sources.md"],
+  "observed_policy": "output hashes match LF and per-line trailing whitespace removal without appending absent final LF",
+  "all_six_input_hashes_match_declared_policy": true,
+  "all_four_output_hashes_match_observed_policy": true,
+  "original_candidate_text_unchanged_after_acceptance": true,
+  "original_evidence_and_signatures_modified": false
+}

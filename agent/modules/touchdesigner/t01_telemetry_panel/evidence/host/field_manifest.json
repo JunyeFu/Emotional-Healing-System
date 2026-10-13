@@ -1,0 +1,44 @@
+{
+  "contract_fields": [
+    "schema_version",
+    "session_id",
+    "runtime_mode",
+    "frame_seq",
+    "resp_device_state",
+    "ecg_device_state",
+    "signal_quality.resp",
+    "signal_quality.ecg",
+    "target_cycle_index",
+    "target_step_id",
+    "target_phase",
+    "target_progress",
+    "actual_cycle_index",
+    "actual_step_id",
+    "actual_phase",
+    "actual_progress",
+    "source_monotonic_ns",
+    "received_monotonic_ns",
+    "sent_monotonic_ns",
+    "clock_offset_ns",
+    "clock_drift_ppm",
+    "sync_uncertainty_ns",
+    "fallback_state",
+    "fallback_reason"
+  ],
+  "display_only_fields": [
+    "stream_state",
+    "frame_age_ms",
+    "accepted_interval_ms",
+    "lost_frames",
+    "duplicate_frames",
+    "out_of_order_frames",
+    "invalid_frames",
+    "reconnect_count",
+    "last_error"
+  ],
+  "field_manifest_schema_version": "t01-fields-v1",
+  "forbidden_inference": [
+    "target_step_id_from_phase",
+    "actual_step_id_from_history"
+  ]
+}

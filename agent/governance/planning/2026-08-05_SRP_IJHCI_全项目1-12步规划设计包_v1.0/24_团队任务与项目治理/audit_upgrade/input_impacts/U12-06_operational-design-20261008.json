@@ -1,0 +1,13 @@
+{
+  "task_id": "U12-06",
+  "candidate_id": "ODES-20261008",
+  "scope": "DESIGN_SUPPLEMENT_NOT_BUSINESS_ACCEPTANCE",
+  "original_status": "IN_PROGRESS",
+  "previous_input_snapshot_id": "3D3852D6A8F68C093B6963F03D1A7524BAD429C56D20D34B458AA6610C29F95B",
+  "current_input_snapshot_id": "3D3852D6A8F68C093B6963F03D1A7524BAD429C56D20D34B458AA6610C29F95B",
+  "active_claim_frozen": true,
+  "candidate_identity": "d601d25dc2be112177e8c20481b17d6f2fe3b1fd",
+  "supplement_count": 19,
+  "input_snapshot_preserved": true,
+  "formal_collection_allowed": false
+}

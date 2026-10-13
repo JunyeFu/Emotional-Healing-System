@@ -1,0 +1,7 @@
+# 实际消费者与整理范围
+
+旧README、consumers.json和record_u12_01_signoff.py已实际归档，字节身份见current-governance.json。首次README移动与archive/README.md重名而失败；核对后从本轮开始时的干净HEAD恢复原件，改名original-README.md并实际移动，哈希与移动前一致，没有丢失原件。
+
+活动consumers.json保留原共享位置并修正两个已签收候选的滞后状态。validate_u12_governance.py、G-03专项和独立包映射真实消费此路径，故不创建重复活动副本。首次分发验证复现U12-03/U12-06冻结输入的hash drift；现有normalization-relocations登记其归档原件路径，resolve_frozen_source对在研包优先读取明确登记的原件，即使原位置已有新版本。未登记和READY/DONE读取现行文件，进行中和复核中的快照字节及ID不刷新。旧一次性签收脚本无当前消费者，归档而非提供再次签收入口。
+
+签署报告、acceptance、adoption_record、旧绑定均不改。当前消费者和Word属于新整理，不能继承原签收。共享治理工具仍有测试消费，整体根目录迁移时修复模块和相对路径。业务DONE、24项总数及所有未完成状态不变；不触发业务进度SVG生成。

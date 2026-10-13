@@ -1,0 +1,195 @@
+{
+  "task_id": "P-02",
+  "title": "P-02 理想、引导、实际及适应成本记录",
+  "review_date": "2026-10-08",
+  "conclusion": "P-02注册状态DONE仅保留原范围。当前任务更新为理想、引导、实际及适应成本记录；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "傅钧烨",
+    "date": "2026-08-21 +08:00",
+    "commit": "ea132c8f26db76d1a1f97daebea5e97258d969c4",
+    "method": "见证已有验证并审阅03d7426219121e49554e405db9dd521b8ab1d819，未声明亲自重跑。本轮不追加真人签署。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 分别记录I、G、X、质量、决策和实际呈现时间",
+        "AC2 未知段与行为失败分开，记录缓冲、未回归、提前结束",
+        "AC3 原始两设备证据支持独立重算，不以控制器成功标记充当真值"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "理想、引导、实际及适应成本记录修订交接",
+        "记录消费对照",
+        "独立重算输入表",
+        "ODES-20261008设计交付：分别记录计划、有效下发、实际呈现、真实事件及决定时可用输入；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：freshness、presentation_latency；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：理想、引导、实际及适应成本记录"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：记录消费对照；独立重算输入表；缺失与暴露账本"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：F-01；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：记录消费对照；独立重算输入表；缺失与暴露账本"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "P02-N01",
+      "status": "FIXED",
+      "description": "两个生成器实际迁入固定execution，新归档与压力不覆盖历史证据",
+      "source": "agent/tasks/P-02/execution/verify.py"
+    },
+    {
+      "id": "P02-N02",
+      "status": "FIXED",
+      "description": "新归档目录LF规则及实际字节哈希与重放验证通过",
+      "source": "agent/modules/tests/session_store/test_golden_archive.py"
+    },
+    {
+      "id": "P02-N03",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "Agent当前入口使用新目录及F-05已签收状态，明确束不授权、不读取受限原件；U12-06冻结README保留",
+      "source": "agent/tasks/P-02/outputs/current-store-contract.md"
+    },
+    {
+      "id": "P02-N04",
+      "status": "OPEN_DOWNSTREAM_REAL_EVIDENCE",
+      "description": "A-01须获授权读取实际六类原件；核心前教学需冻结后交接真实记录，本轮合成归档不能关闭这些事项",
+      "source": "agent/tasks/P-02/outputs/current-store-contract.md"
+    },
+    {
+      "id": "P-02-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "理想、引导、实际及适应成本记录；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "打开 P-02 当前合同说明",
+      "path": "agent/tasks/P-02/outputs/current-store-contract.md"
+    },
+    {
+      "label": "打开原真实第二人签收",
+      "path": "agent/modules/srp_session_store/P-02_第二人审核报告_已签署.md"
+    },
+    {
+      "label": "打开本轮归档及压力结果",
+      "path": "agent/tasks/P-02/evidence/verification.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
+}

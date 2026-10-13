@@ -1,0 +1,1 @@
+PASS: V-04 H2 candidate-v11 machine gate; fixed camera, media, color envelope, water clipping, three-step geometry, actual-step fidelity, grayscale cues and condition parity verified; nine-item team-director review pending

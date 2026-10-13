@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-29",
+  "scope": "Physical governance migration and current consumer repair, not business acceptance",
+  "from": "00-项目管理",
+  "to": "agent/governance",
+  "tracked_originals": 813,
+  "human_review": "治理权威已实际迁入agent/governance。813个原文件中750个字节未变，其余为当前读取器或导航修正；历史签署、五个分发包与外部来源原件未改。60个有测试入口的任务包全部通过，根回归635项通过；71包、330个Word来源链接和5分发61快照校验通过。15份Word仅修正24个来源链接，正文和其余内部文件未改。业务状态与正式研究资格不变。",
+  "verification": {
+    "root_pytest": "635 passed in 48.55s",
+    "task_packages_with_tests": 60,
+    "failed_task_packages": 0,
+    "tracked_originals_unchanged": 750,
+    "word_documents_link_only": 15,
+    "word_hyperlinks_relocated": 24,
+    "chained_word_pages": 40,
+    "chained_word_unchanged_rendered_pages": "1-39",
+    "chained_word_changed_page_visually_checked": 40,
+    "authority_registry_dispatch_checks": "PASS",
+    "unity_td_real_devices": "NOT_RUN"
+  },
+  "root_migration_complete": false
+}

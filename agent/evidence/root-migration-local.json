@@ -1,0 +1,379 @@
+{
+  "scope": "Physical local-directory moves; original tracked media bytes and private aggregate inventory",
+  "baseline_commit": "3898f18154b2902e013f9a1fc48b795c2ec30d77",
+  "directories": [
+    {
+      "old": "_archive",
+      "new": "agent/archive/local",
+      "files": 30782,
+      "bytes": 1617261177
+    },
+    {
+      "old": "_worktrees",
+      "new": "agent/local/worktrees",
+      "files": 0,
+      "bytes": 0
+    },
+    {
+      "old": "tmp",
+      "new": "agent/local/tmp",
+      "files": 22294,
+      "bytes": 922406523
+    },
+    {
+      "old": ".tools",
+      "new": "agent/local/tools",
+      "files": 46,
+      "bytes": 432775642
+    },
+    {
+      "old": ".artifacts-local",
+      "new": "agent/local/artifacts",
+      "files": 4420,
+      "bytes": 2579695769
+    },
+    {
+      "old": ".pytest_cache",
+      "new": "agent/local/pytest-cache",
+      "files": 5,
+      "bytes": 11836
+    }
+  ],
+  "tracked_originals": [
+    {
+      "old": ".artifacts-local/V-04/H2/candidate-v11/fade-H2-v11-ambient.wav",
+      "new": "agent/local/artifacts/V-04/H2/candidate-v11/fade-H2-v11-ambient.wav",
+      "sha256": "a1348b9523a04498f6e86dba4c25d07c943b2ef22d9bf59d0471ae2907f7fbf2",
+      "bytes": 2880102
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4",
+      "new": "agent/local/artifacts/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4",
+      "sha256": "c7d16299fc0ef66ccd7e1a05611b001a5b34636433c485d6f7b2f3a792321855",
+      "bytes": 14047268
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png",
+      "new": "agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png",
+      "sha256": "9cc6689d560862bc9110bcb4b16dde7dce1395b9c8d6362acf29b2e5d3f23e53",
+      "bytes": 2485021
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png",
+      "new": "agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png",
+      "sha256": "679a6c3d9a8f98c08616af8f88a5f0511eddb058c079c6d9011df549d879b7d4",
+      "bytes": 2564820
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-snow.png",
+      "new": "agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-snow.png",
+      "sha256": "85830276219c092f1cfea5d3817cf3c7f6c40e38a004e97ea560e3899c1d965d",
+      "bytes": 2703597
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/fixed-combined-review-candidate-v2/V-04-H3-fixed-combined-review-candidate-v2.mp4",
+      "new": "agent/local/artifacts/V-04/H3/fixed-combined-review-candidate-v2/V-04-H3-fixed-combined-review-candidate-v2.mp4",
+      "sha256": "5431e358462067055c04354fdcbd6a8fec8ed0cc969604154c61d1fb3271d17c",
+      "bytes": 37384745
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/fixed-combined-review-candidate-v2/fade-fixed-paired-review.mp4",
+      "new": "agent/local/artifacts/V-04/H3/fixed-combined-review-candidate-v2/fade-fixed-paired-review.mp4",
+      "sha256": "bfdabe1a32a16d05e67552a6838be0cd4d33bf16122483e91bd73eb8239f4c67",
+      "bytes": 7801696
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/fixed-combined-review-candidate-v2/heat-fixed-paired-review.mp4",
+      "new": "agent/local/artifacts/V-04/H3/fixed-combined-review-candidate-v2/heat-fixed-paired-review.mp4",
+      "sha256": "c7ae2aa3ea9765e28dee3bead525fa65f30900d3148fee85ab6ab6288e6168ca",
+      "bytes": 4915306
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/fixed-combined-review-candidate-v2/snow-fixed-paired-review.mp4",
+      "new": "agent/local/artifacts/V-04/H3/fixed-combined-review-candidate-v2/snow-fixed-paired-review.mp4",
+      "sha256": "668a87e06022c7d5a999c65416f0ad4678f6fa3ed9270817bea517f7428aab45",
+      "bytes": 5935148
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/fixed-combined-review-candidate-v2/storm-fixed-paired-review.mp4",
+      "new": "agent/local/artifacts/V-04/H3/fixed-combined-review-candidate-v2/storm-fixed-paired-review.mp4",
+      "sha256": "b616ecdf3ad1c2fbcc8f4e77a1912c067fcec3448bfdc7223f74593d2d9489ce",
+      "bytes": 5216714
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/heat-candidate-v2/heat-H3-v2-ambient.wav",
+      "new": "agent/local/artifacts/V-04/H3/heat-candidate-v2/heat-H3-v2-ambient.wav",
+      "sha256": "ea7501c5a57cfd333886e0899bd5942b73452b27b8c4eb27b013a67a43ee830b",
+      "bytes": 2880102
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__actual_reflection_trace.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__actual_reflection_trace.png",
+      "sha256": "b42bb6fb56f496266384128203930da72d55e0248df68c7e7101a08f5327294e",
+      "bytes": 1021945
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__color_bloom_patch.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__color_bloom_patch.png",
+      "sha256": "897e630e14177d12843fe2f411bd0164d18aff90f8081fb98b64ff0a26d2cb87",
+      "bytes": 2074144
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__color_tide_ribbon.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__color_tide_ribbon.png",
+      "sha256": "40485fa2f6ffb132f7aaf71f481a26c763cb0177892a08d7713087f4aca9c362",
+      "bytes": 693675
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__riverbank_grass_cluster.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__riverbank_grass_cluster.png",
+      "sha256": "82de2d6add4fabdada099d06b4acc49007a4e1d7ee4962b079d99949763d0e5d",
+      "bytes": 2469570
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__soft_reflection_patch.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__soft_reflection_patch.png",
+      "sha256": "e8d0244cb5cbeb421dc88854e34fc1e5c68ea878383996ba9eb1943f2dafb1cb",
+      "bytes": 2187306
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__tributary_glint.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__tributary_glint.png",
+      "sha256": "9ded381409921f68737109c69825b6770778d15bc23d1a257919ba7d305dd26a",
+      "bytes": 628980
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__water_ripple_patch.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__water_ripple_patch.png",
+      "sha256": "219a52556d5984d21b7a822f2332291c2023177796ec3ffcde58e3b7c01816f1",
+      "bytes": 2476804
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__wet_pebble_cluster.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/fade-individual-candidate-v1/fade__wet_pebble_cluster.png",
+      "sha256": "e555bf452f686a86707782bcf29b232969a88b69d481f51254560c1afc814054",
+      "bytes": 2468938
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__cool_air_channel.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__cool_air_channel.png",
+      "sha256": "14c1141361d204ada606cd6b9c44d4015467373133e9dafd4a97112022648f30",
+      "bytes": 793263
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__cool_air_streaks_near.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__cool_air_streaks_near.png",
+      "sha256": "11c75abfb281a21f711d062f1b862fcc4144ab3a4b658dde61e736109089bbaf",
+      "bytes": 852529
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__cooling_particles.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__cooling_particles.png",
+      "sha256": "e366fc71fa7e717ead809c1bc34588d9677dfa6fd1b632f826c35b34e1861cee",
+      "bytes": 780841
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__desert_rock_cluster.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__desert_rock_cluster.png",
+      "sha256": "6cbb9001be643d3787b9a89b4b21f1d934ef5b54305ad82cbd4c9ba1f8ed6425",
+      "bytes": 2523759
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__dust_wisp.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__dust_wisp.png",
+      "sha256": "c8543a40dbf5003fa516b0b46ad7a033258203c7d98f6a6cec1d7f98bd630318",
+      "bytes": 645822
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__heat_haze_patch.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__heat_haze_patch.png",
+      "sha256": "4a5fc87ea32eba90a37b93e1b647b76d4c52ac6058635339acd7f147d6ab2770",
+      "bytes": 1205638
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__salt_crust_cluster.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__salt_crust_cluster.png",
+      "sha256": "57ccc00b096e15e1bc329ea0e9c50c18549ec4fc4fb77d85f6053d4ee79a6965",
+      "bytes": 2197300
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__shallow_channel_glint.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/heat-individual-candidate-v1/heat__shallow_channel_glint.png",
+      "sha256": "093629c963f773d3b8ead42edc2ec606e5b44e62e560d954a3dec99149664e60",
+      "bytes": 387945
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__drifting_snow_ribbon.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__drifting_snow_ribbon.png",
+      "sha256": "b800aef87c66aea4fe1652c4264be4fc2270982d8e028a0ecf8a007ea4ac50b9",
+      "bytes": 1082146
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__falling_powder_cluster.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__falling_powder_cluster.png",
+      "sha256": "d19adf1092880481ac820d823a340f62f4c34e47c3256f328341f34ad0c413aa",
+      "bytes": 1606122
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__powder_lift_column.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__powder_lift_column.png",
+      "sha256": "54e50b31daa9680582ef603b99921ed2c90d0e62b568ad00fe186349ccc115d0",
+      "bytes": 1854878
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__powder_response_near.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__powder_response_near.png",
+      "sha256": "7bbf08eb6d541dc37defb7be5d6300d5a70257f228c10f89ef6d868d02f6be8a",
+      "bytes": 1351034
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__settling_powder_cluster.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__settling_powder_cluster.png",
+      "sha256": "95e6cff4df1d8bf962619e8f6ad6778ee3b7f865619170f421797bce0bcad76a",
+      "bytes": 1381824
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__snow_mist_patch.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__snow_mist_patch.png",
+      "sha256": "a4eb995248d9e5e1e3af774fa679a4ca05e8e8ab3e3216ff63e3446b5ccf0c5b",
+      "bytes": 937860
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__snow_rock_cluster.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__snow_rock_cluster.png",
+      "sha256": "1f5b8c2a584355fe3589ba29def0f4458c7ca267e3f0fdb1819720fb4288a64c",
+      "bytes": 2544676
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__snowy_pine_branch.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/snow-individual-candidate-v1/snow__snowy_pine_branch.png",
+      "sha256": "0c6f7bb68b2e024d5506c108dafe0fedb3cd198e76c16bf9b7710d3dc44ee26f",
+      "bytes": 2560957
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__airflow_streaks_near.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__airflow_streaks_near.png",
+      "sha256": "3e3be5647d5b77d446fc730be816c2d6bb84e450fb4ea17bbbf72bc599c3299b",
+      "bytes": 1517755
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__rain_curtain_soft.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__rain_curtain_soft.png",
+      "sha256": "67d80efe022692c59bf42a118ef86439e29d8e2d744c077cdb48796edf302abd",
+      "bytes": 2890849
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__rain_gate_wide.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__rain_gate_wide.png",
+      "sha256": "9b9f846090eb8049b946c03e8a8300e3689bfd4522cd48828c7a4d5dfaf08cdf",
+      "bytes": 2505791
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__rain_splash_ripples.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__rain_splash_ripples.png",
+      "sha256": "805aa28f57a79ac090b6c383e816b25d599890e056f4dbb6e37e0a6e7764ba31",
+      "bytes": 2250968
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__runoff_stream.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__runoff_stream.png",
+      "sha256": "9b4c7715ce16d65135f8a229af33aa302cccbad765f70d06ae9a5662a8488bf3",
+      "bytes": 2538044
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__valley_mist_patch.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__valley_mist_patch.png",
+      "sha256": "8e68245f890cbb21082ee9932466f0995d6a2b29735ac402951d4ccfa21faaac",
+      "bytes": 1166946
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__wet_rock_cluster.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__wet_rock_cluster.png",
+      "sha256": "e47535019d0beddffac6afc0aa91e993736937b6a0a2d5e50003923791434f21",
+      "bytes": 2834200
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__wind_bent_grass.png",
+      "new": "agent/local/artifacts/V-04/H3/independent-asset-kit/storm-individual-candidate-v1/storm__wind_bent_grass.png",
+      "sha256": "9f3aa03a1635d24f31c434001c878d790fb84fda3a1b6fb930289325517e05c6",
+      "bytes": 2382232
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/layerable-background-rebuild/v5/base/V-04-H3-LBR-v5-fade-base.png",
+      "new": "agent/local/artifacts/V-04/H3/layerable-background-rebuild/v5/base/V-04-H3-LBR-v5-fade-base.png",
+      "sha256": "cb06c979c65268e531e5892d115788e22cae22af7d25c6c3d162b0df81c53c9b",
+      "bytes": 3461070
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/snow-candidate-v2/snow-H3-v2-ambient.wav",
+      "new": "agent/local/artifacts/V-04/H3/snow-candidate-v2/snow-H3-v2-ambient.wav",
+      "sha256": "73480deaa11ae9274614d22aaddc67433a336705bae2be12f80830f964e59ec8",
+      "bytes": 2880102
+    },
+    {
+      "old": ".artifacts-local/V-04/H3/storm-candidate-v2/storm-H3-v2-ambient.wav",
+      "new": "agent/local/artifacts/V-04/H3/storm-candidate-v2/storm-H3-v2-ambient.wav",
+      "sha256": "0851ee827c8a63f2cc9c6cf30f7f96b5509b45e1d9247e23e167b08e747f3080",
+      "bytes": 3456102
+    },
+    {
+      "old": ".artifacts-local/V-04/full-duration-animatic-candidate-v1/V-04-full-duration-animatic-audio-v1.mp4",
+      "new": "agent/local/artifacts/V-04/full-duration-animatic-candidate-v1/V-04-full-duration-animatic-audio-v1.mp4",
+      "sha256": "469ac0b3f4e3e2215b7291ead2c6d1740f673c1fb022c98ffe127d30ff564c79",
+      "bytes": 56975616
+    },
+    {
+      "old": ".artifacts-local/V-04/full-duration-animatic-candidate-v1/V-04-full-duration-animatic-silent-v1.mp4",
+      "new": "agent/local/artifacts/V-04/full-duration-animatic-candidate-v1/V-04-full-duration-animatic-silent-v1.mp4",
+      "sha256": "19599754374971dc0e45a2637a003be1e797c411f51895ef65cdfe3fbeacbd00",
+      "bytes": 43663129
+    }
+  ],
+  "verified": true,
+  "current_consumers_repaired": [
+    "agent/tasks/T-01/execution/verify.py",
+    "agent/tasks/T-01/execution/run_td_probe.py",
+    "agent/tasks/T-01/execution/repair_readonly_layout.py",
+    "agent/tasks/U-02/execution/generate_demo.ps1",
+    "agent/tasks/U-02/TASK.md",
+    "agent/tasks/U-02/outputs/current-adapter-contract.md",
+    "agent/tasks/U-05/execution/verify.py",
+    "agent/tasks/U-06/execution/verify.py",
+    "agent/tasks/U-08/execution/verify.py"
+  ],
+  "human_review": "六类本机目录已实际迁入Agent层，48件已跟踪样片逐字节保留；本机历史、工具、缓存和其他QA材料仍不发布。历史媒体配置通过当前读取入口解析新位置，不改原件或业务签收。V-04八项媒体门及800秒深度解码通过，根Python635项、60包专项通过；TD隔离重开12项和UDP恢复8项通过，五分发包61快照保持。根目录19/19已实际迁移，当前单包历史进度表述待从Agent源刷新；整体目标暂不标完成。",
+  "dispatch_bindings_preserved": [
+    {
+      "task_id": "V-05",
+      "old_project_path": "agent/tasks/U-02/outputs/current-adapter-contract.md",
+      "new_project_path": "agent/archive/root-migration/local-inputs/V-05/agent/tasks/U-02/outputs/current-adapter-contract.md",
+      "preserve_ready_dispatch": true,
+      "impact_path": "agent/evidence/root-migration-local-impact.md",
+      "reason": "Keep received input bytes while current local-tool paths are relocated."
+    }
+  ],
+  "verification": {
+    "root_pytest_observed": "635 passed in 46.68s",
+    "task_packages_with_tests": 60,
+    "failed_task_packages": 0,
+    "word_source_links": 330,
+    "task_packages_checked": 71,
+    "physical_root_moves": 19,
+    "v04_historical_media_gates": 8,
+    "v04_current_tests": 8,
+    "source_json_bytes_preserved": true,
+    "td_reopen_checks": 12,
+    "td_udp_checks": 8,
+    "dispatch_packages": 5,
+    "frozen_snapshots": 61,
+    "chained_word_pages": 41,
+    "chained_word_unchanged_rendered_pages": "1-38",
+    "chained_word_changed_pages_visually_checked": [39, 40, 41],
+    "real_devices_or_formal_admission": "NOT_RUN"
+  },
+  "remaining_goal_work": [
+    "Refresh historical progress statements in current Agent task summaries and current task documents",
+    "Regenerate affected task Word summaries and inspect changed rendered pages",
+    "Requirement-by-requirement goal completion audit"
+  ]
+}

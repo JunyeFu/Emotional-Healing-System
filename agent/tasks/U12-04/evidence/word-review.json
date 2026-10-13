@@ -1,0 +1,14 @@
+{
+  "task_id": "U12-04",
+  "reviewer": "AUTHOR_AGENT",
+  "layout_result": "PASS",
+  "task_summary": {"pages": 3, "inspected_pages": [1, 2, 3]},
+  "linked_summaries": {
+    "A-02": {"pages": 3, "inspected_pages": [2, 3], "page_1": "BYTE_IDENTICAL_TO_PREVIOUS_REVIEW"},
+    "A-05": {"pages": 3, "inspected_pages": [2, 3], "page_1": "BYTE_IDENTICAL_TO_PREVIOUS_REVIEW"}
+  },
+  "project_review": {"pages": 34, "inspected_changed_pages": [27, 34], "other_pages": "BYTE_IDENTICAL_TO_U12-03_REVIEW"},
+  "independent_review": "NOT_RUN",
+  "human_signature": "NOT_SIGNED",
+  "root_migration_complete": false
+}

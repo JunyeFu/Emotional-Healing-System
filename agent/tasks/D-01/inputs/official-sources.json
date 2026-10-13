@@ -1,0 +1,31 @@
+{
+  "checked_on": "2026-09-28",
+  "sources": [
+    {
+      "label": "官方SDK支持平台",
+      "url": "https://github.com/polarofficial/polar-ble-sdk/blob/master/README.md",
+      "support": "Android/iOS；Windows BLE路径须实测"
+    },
+    {
+      "label": "H10能力",
+      "url": "https://github.com/polarofficial/polar-ble-sdk/blob/master/documentation/products/PolarH10.md",
+      "support": "130Hz ECG，HR/RR另列"
+    },
+    {
+      "label": "PMD服务源码",
+      "url": "https://raw.githubusercontent.com/polarofficial/polar-ble-sdk/master/sources/Android/android-communications/library/src/main/java/com/polar/androidcommunications/api/ble/model/gatt/client/pmd/BlePMDClient.kt",
+      "support": "服务80、控制81、数据82；设置查询与启动"
+    },
+    {
+      "label": "ECG解码源码",
+      "url": "https://raw.githubusercontent.com/polarofficial/polar-ble-sdk/master/sources/Android/android-communications/library/src/main/java/com/polar/androidcommunications/api/ble/model/gatt/client/pmd/model/EcgData.kt",
+      "support": "TYPE_0每样本3字节有符号微伏；不同类型按协议"
+    },
+    {
+      "label": "时间语义",
+      "url": "https://github.com/polarofficial/polar-ble-sdk/blob/master/documentation/TimeSystemExplained.md",
+      "support": "设备与主机时钟不同，重启重置；HR时刻不保证定义"
+    }
+  ],
+  "scope": "official documentation and source only; hardware not validated"
+}

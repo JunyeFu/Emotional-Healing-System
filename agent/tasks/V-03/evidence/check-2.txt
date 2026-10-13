@@ -1,0 +1,1 @@
+PASS: V-03 deliverables; docs=6; mapping_rows=40; parameters=machine-checked; assets=78; direct_packages=57; dual_risk_scoring=resolved; u03=fade; draft202012_validation=active

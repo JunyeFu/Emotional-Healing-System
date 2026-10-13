@@ -1,0 +1,415 @@
+{
+  "passed": true,
+  "native_captures": 14,
+  "checks": 38,
+  "recorded_experiment_rows": 0,
+  "scope": "six curve and label checks; native 1280x720 page and actual plot rasters",
+  "page_export_sizes": [
+    [
+      1280,
+      720
+    ]
+  ],
+  "large_page_native_export_verified": false,
+  "inputs": {
+    "session_id": "DEV-fd1df24ad579480d",
+    "origin_ns": 107845513298700,
+    "packet_count": 1640,
+    "duration_s": 84.0,
+    "intervals": [
+      {
+        "kind": "missing",
+        "begin": 571,
+        "end": 591
+      },
+      {
+        "kind": "dropped",
+        "begin": 685,
+        "end": 705
+      }
+    ],
+    "source": "known mathematical calibration signals; dev_mock"
+  },
+  "curves": [
+    {
+      "screenshot": "02-continuous-0.png",
+      "curve": "resp",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9988207547169812,
+      "unit": "relative",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "02-continuous-0.png",
+      "curve": "ecg",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9952830188679245,
+      "unit": "uV",
+      "window_s": 6,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "03-continuous-1.png",
+      "curve": "acceleration",
+      "axis": "x",
+      "native_trace_column_fraction": 0.9988207547169812,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "03-continuous-1.png",
+      "curve": "acceleration",
+      "axis": "y",
+      "native_trace_column_fraction": 0.9988207547169812,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "03-continuous-1.png",
+      "curve": "acceleration",
+      "axis": "z",
+      "native_trace_column_fraction": 0.9988207547169812,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "03-continuous-1.png",
+      "curve": "rr",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9964622641509434,
+      "unit": "ms",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "04-continuous-2.png",
+      "curve": "angular_velocity",
+      "axis": "x",
+      "native_trace_column_fraction": 0.9988207547169812,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "04-continuous-2.png",
+      "curve": "angular_velocity",
+      "axis": "y",
+      "native_trace_column_fraction": 0.9988207547169812,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "04-continuous-2.png",
+      "curve": "angular_velocity",
+      "axis": "z",
+      "native_trace_column_fraction": 0.9988207547169812,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "04-continuous-2.png",
+      "curve": "hr",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9964622641509434,
+      "unit": "bpm",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "05-continuous-1600.png",
+      "curve": "acceleration",
+      "axis": "x",
+      "native_trace_column_fraction": 0.9990842490842491,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "05-continuous-1600.png",
+      "curve": "acceleration",
+      "axis": "y",
+      "native_trace_column_fraction": 0.9990842490842491,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "05-continuous-1600.png",
+      "curve": "acceleration",
+      "axis": "z",
+      "native_trace_column_fraction": 0.9990842490842491,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "05-continuous-1600.png",
+      "curve": "rr",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9963369963369964,
+      "unit": "ms",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "06-continuous-1920.png",
+      "curve": "resp",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9992509363295881,
+      "unit": "relative",
+      "window_s": 30,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "06-continuous-1920.png",
+      "curve": "ecg",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9947565543071161,
+      "unit": "uV",
+      "window_s": 6,
+      "has_gaps": false,
+      "labels_match": true
+    },
+    {
+      "screenshot": "07-missing-0.png",
+      "curve": "resp",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9339622641509434,
+      "unit": "relative",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "07-missing-0.png",
+      "curve": "ecg",
+      "axis": "value",
+      "native_trace_column_fraction": 0.6662735849056604,
+      "unit": "uV",
+      "window_s": 6,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "08-missing-1.png",
+      "curve": "acceleration",
+      "axis": "x",
+      "native_trace_column_fraction": 0.9339622641509434,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "08-missing-1.png",
+      "curve": "acceleration",
+      "axis": "y",
+      "native_trace_column_fraction": 0.9339622641509434,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "08-missing-1.png",
+      "curve": "acceleration",
+      "axis": "z",
+      "native_trace_column_fraction": 0.9339622641509434,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "08-missing-1.png",
+      "curve": "rr",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9280660377358491,
+      "unit": "ms",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "09-missing-2.png",
+      "curve": "angular_velocity",
+      "axis": "x",
+      "native_trace_column_fraction": 0.9339622641509434,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "09-missing-2.png",
+      "curve": "angular_velocity",
+      "axis": "y",
+      "native_trace_column_fraction": 0.9339622641509434,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "09-missing-2.png",
+      "curve": "angular_velocity",
+      "axis": "z",
+      "native_trace_column_fraction": 0.9339622641509434,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "09-missing-2.png",
+      "curve": "hr",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9280660377358491,
+      "unit": "bpm",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "10-dropped-0.png",
+      "curve": "resp",
+      "axis": "value",
+      "native_trace_column_fraction": 0.8702830188679245,
+      "unit": "relative",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "10-dropped-0.png",
+      "curve": "ecg",
+      "axis": "value",
+      "native_trace_column_fraction": 0.6650943396226415,
+      "unit": "uV",
+      "window_s": 6,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "11-dropped-1.png",
+      "curve": "acceleration",
+      "axis": "x",
+      "native_trace_column_fraction": 0.8667452830188679,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "11-dropped-1.png",
+      "curve": "acceleration",
+      "axis": "y",
+      "native_trace_column_fraction": 0.8667452830188679,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "11-dropped-1.png",
+      "curve": "acceleration",
+      "axis": "z",
+      "native_trace_column_fraction": 0.8667452830188679,
+      "unit": "m/s²",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "11-dropped-1.png",
+      "curve": "rr",
+      "axis": "value",
+      "native_trace_column_fraction": 0.8596698113207547,
+      "unit": "ms",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "12-dropped-2.png",
+      "curve": "angular_velocity",
+      "axis": "x",
+      "native_trace_column_fraction": 0.8679245283018868,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "12-dropped-2.png",
+      "curve": "angular_velocity",
+      "axis": "y",
+      "native_trace_column_fraction": 0.8679245283018868,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "12-dropped-2.png",
+      "curve": "angular_velocity",
+      "axis": "z",
+      "native_trace_column_fraction": 0.8679245283018868,
+      "unit": "rad/s",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "12-dropped-2.png",
+      "curve": "hr",
+      "axis": "value",
+      "native_trace_column_fraction": 0.8596698113207547,
+      "unit": "bpm",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "13-recovered.png",
+      "curve": "resp",
+      "axis": "value",
+      "native_trace_column_fraction": 0.8691037735849056,
+      "unit": "relative",
+      "window_s": 30,
+      "has_gaps": true,
+      "labels_match": true
+    },
+    {
+      "screenshot": "13-recovered.png",
+      "curve": "ecg",
+      "axis": "value",
+      "native_trace_column_fraction": 0.9988207547169812,
+      "unit": "uV",
+      "window_s": 6,
+      "has_gaps": false,
+      "labels_match": true
+    }
+  ]
+}

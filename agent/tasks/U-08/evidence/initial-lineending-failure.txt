@@ -1,0 +1,23 @@
+...........F............................                                 [100%]
+================================== FAILURES ===================================
+______________ test_formal_gate_and_asset_blocking_are_retained _______________
+
+    def test_formal_gate_and_asset_blocking_are_retained():
+        data = contract()['build']
+        source = (UNITY / 'Assets/Scripts/Editor/FormalBuildGate.cs').read_text(encoding='utf-8-sig')
+        assert data['formal_gate_retained'] and 'ValidateAssetGovernance();' in source
+        assert 'UNCONTROLLED_DEVELOPMENT_BUILD' in source and 'FORMAL_SCENES_MISSING' in source
+        assert data['current_gate_required_component'] == 'FormalRuntimeController' and 'FormalRuntimeController' in source
+        assert data['current_gate_alignment'] == 'PENDING_FINAL_RUNTIME_ASSEMBLY_NOT_BYPASSED'
+        original = subprocess.run(['git', 'show', '742da55:' + (UNITY / 'Assets/Scripts/Editor/FormalBuildGate.cs').relative_to(ROOT).as_posix()],
+                                  cwd=ROOT, capture_output=True, check=True)
+>       assert original.stdout == (UNITY / 'Assets/Scripts/Editor/FormalBuildGate.cs').read_bytes()
+E       AssertionError: assert b'using Syste...;\n    }\n}\n' == b'using Syste...   }\r\n}\r\n'
+E         
+E         At index 13 diff: b'\n' != b'\r'
+E         Use -v to get more diff
+
+agent\tasks\U-08\execution\test_u08_contract.py:151: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U-08/execution/test_u08_contract.py::test_formal_gate_and_asset_blocking_are_retained
+1 failed, 39 passed in 0.68s

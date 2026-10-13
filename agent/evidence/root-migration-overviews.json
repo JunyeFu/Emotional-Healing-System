@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-29",
+  "operation": "Native PowerShell Move-Item with verified repository targets and byte comparison",
+  "moved": ["PROJECT_FRAMEWORK.md", "PROJECT_MODULES.md", "README_run.md"],
+  "historical_originals_unchanged": ["agent/archive/project/PROJECT_FRAMEWORK.md", "agent/archive/runtime/README_run.md"],
+  "current_module_map_changes": ["Relative task links repaired", "work path repaired", "actual repository path corrected", "T-01 implemented read-only console distinguished from legacy guide"],
+  "consumers_repaired": ["AGENTS.md", "human/README.md", "02-技术研发/README.md", "agent/tasks/D-02/inputs/sources.json", "agent/tasks/A-04/execution/test_extension_analysis.py", "00_总控/08_文件导航.md"],
+  "frozen_dispatch_or_signed_evidence_rewritten": false,
+  "business_status_changed": false,
+  "root_migration_complete": false
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "E-04",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新条件阶段一锁库与揭盲",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新条件阶段一锁库与揭盲修订交接",
+    "完整性核查",
+    "锁库回执"
+  ],
+  "acceptance_criteria": [
+    "AC1 核对所有正式实例及独立设备/后测缺失",
+    "AC2 会话封存、锁库、揭盲授权分别记录",
+    "AC3 未知不补成功、事后不按响应筛样，全部分配可追溯"
+  ],
+  "evidence_required": [
+    "完整性核查",
+    "锁库回执",
+    "揭盲真实授权"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "G-03",
+    "B-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

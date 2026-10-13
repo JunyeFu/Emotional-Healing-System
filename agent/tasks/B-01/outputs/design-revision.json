@@ -1,0 +1,31 @@
+{
+  "task_id": "B-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "Level C真实预试批次模板",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "Level C真实预试批次模板修订交接",
+    "批次原件",
+    "质量汇总"
+  ],
+  "acceptance_criteria": [
+    "AC1 每实例登记新条件、真实I/G/X及设备证据",
+    "AC2 前置参与者不重复计入正式/迁移样本",
+    "AC3 技术可辨识与舒适性是目的，不用小样本显著性放行收益"
+  ],
+  "evidence_required": [
+    "批次原件",
+    "质量汇总",
+    "校准与退出记录"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "BLOCKED_EXTERNAL",
+  "depends_on_original": [
+    "Q-03",
+    "E-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

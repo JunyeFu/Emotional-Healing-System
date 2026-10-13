@@ -1,0 +1,31 @@
+{
+  "task_id": "S-02",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "独立X事件与I/G公平计分",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "独立X事件与I/G公平计分修订交接",
+    "标注规格",
+    "新计分候选"
+  ],
+  "acceptance_criteria": [
+    "AC1 标注实际步骤与持续时间不读取G或分组成功标签",
+    "AC2 分开I达成、G跟随、覆盖、漏步骤及适应成本",
+    "AC3 原Target机会PF及0.075界不沿用，容差以误差与用途论证"
+  ],
+  "evidence_required": [
+    "标注规格",
+    "新计分候选",
+    "真值与模糊事件验证"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "S-01",
+    "R-01"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

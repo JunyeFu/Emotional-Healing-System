@@ -1,0 +1,12 @@
+{
+  "task_id": "P-02",
+  "review_date": "2026-09-28",
+  "checks": [
+    {"command": "pytest test_golden_archive.py after LF and normalized archive test changes", "exit_code": 0, "result": "6 passed in 2.20s; real files, hashes and replay at new path"},
+    {"command": "07_validate_task_packages.py", "exit_code": 0, "result": "71 entries, 68 fixed and 3 templates; statuses unchanged"},
+    {"command": "14_validate_ready_task_packages.py with edited legacy README", "exit_code": 1, "result": "U12-06 source README hash drift", "disposition": "Resolved by preserving original frozen README bytes and publishing current guidance under Agent outputs; no validator weakening or snapshot refresh"},
+    {"command": "14_validate_ready_task_packages.py after preserving frozen source", "exit_code": 0, "result": "5 packages and 46 snapshots; all active inputs preserved"},
+    {"command": "git diff --exit-code original P-02 README, signature, acceptance, fixtures, stress and U12-06 package", "exit_code": 0, "result": "Historical and frozen inputs unchanged"},
+    {"command": "render_docx.py and page inspection", "exit_code": 0, "result": "Final P-02 Word 3 pages; chained review 5 pages; all pages inspected after removing orphaned paragraphs and links"}
+  ]
+}

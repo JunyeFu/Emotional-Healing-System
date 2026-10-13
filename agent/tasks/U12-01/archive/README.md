@@ -1,0 +1,7 @@
+# 归档范围
+
+original-README.md与consumers.json是本轮整理前的实际原件；record_u12_01_signoff.py为已完成的2026-09-08一次性签收工具。均物理迁入本目录，不作为当前执行入口。
+
+原签署报告、acceptance/U12-01.json、adoption_record.json和历史证据绑定保持原位置与原身份。原签收仅覆盖47c81744884ae380e047cafb722aeb332c8cda29的治理实现，不覆盖本轮整理。
+
+旧签收工具不得对当前注册表重新执行；当时的相邻路径只适用于原提交，历史复现使用该提交。apply_governance.py、freeze_legacy_evidence.py及validate_u12_governance.py仍有现行验证消费者，暂保留共享治理归属，整体迁移时修复其真实路径。

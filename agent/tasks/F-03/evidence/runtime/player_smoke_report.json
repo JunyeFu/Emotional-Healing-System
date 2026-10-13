@@ -1,0 +1,17 @@
+{
+  "schema_version": "f03-player-smoke-report-v1",
+  "result": "PASS",
+  "player_exit_code": 0,
+  "launch_mode": "manifest-verified ASCII staging copy",
+  "source_build_manifest_sha256": "5e1b5de75d187b7d85cdcd1bcdd79150d3c8d51add80c324a993b79cb33492f1",
+  "screenshot_sha256": "e5b643766d6ecdaf8653d9683efe57e255fd23d8b3693b0c96354b9606b680fd",
+  "before": {
+    "udp": [],
+    "tcp": []
+  },
+  "after": {
+    "udp": [],
+    "tcp": []
+  },
+  "f03_added_listeners": false
+}

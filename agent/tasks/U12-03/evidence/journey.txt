@@ -1,0 +1,1 @@
+PASS current V-01 design: 14 journey nodes; pre/training/core/post order; 800s; authority and exposure boundary

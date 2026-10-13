@@ -1,0 +1,38 @@
+......F.....................................                             [100%]
+================================== FAILURES ===================================
+____ test_actual_p02_replay_refuses_custom_policy_core_without_calling_it _____
+
+tmp_path = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1863/test_actual_p02_replay_refuses0')
+
+    def test_actual_p02_replay_refuses_custom_policy_core_without_calling_it(tmp_path):
+        manifest_factory, assignment_factory = factories()
+        manifest = manifest_factory(schema_version='2.2')
+        store = DurableManifestStore.development(tmp_path)
+        recorder = RecordingSessionCore(SessionCore(), store)
+        recorder.prepare(manifest, assignment_factory(manifest), 0)
+>       summary = recorder.finish('SYNTHETIC_TEST', 1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\X-03\execution\test_runtime_handoff.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+02-技术研发\srp_session_store\adapters.py:230: in finish
+    return self._invoke(
+02-技术研发\srp_session_store\adapters.py:248: in _invoke
+    operation_id = self._begin(method, arguments, now_ns)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+02-技术研发\srp_session_store\adapters.py:282: in _begin
+    archive = self._archive()
+              ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <srp_session_store.adapters.RecordingSessionCore object at 0x0000013ECD16DBE0>
+
+    def _archive(self) -> SessionArchive:
+        if self.manifest_store.archive is None:
+>           raise StoreError("MANIFEST_NOT_STORED")
+E           srp_session_store.errors.StoreError: MANIFEST_NOT_STORED
+
+02-技术研发\srp_session_store\adapters.py:344: StoreError
+=========================== short test summary info ===========================
+FAILED agent/tasks/X-03/execution/test_runtime_handoff.py::test_actual_p02_replay_refuses_custom_policy_core_without_calling_it
+1 failed, 43 passed in 1.25s

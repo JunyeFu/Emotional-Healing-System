@@ -1,0 +1,1 @@
+PASS: V-01 contract aligned to protocol v1.1; 26 frozen/versioned constraints; 15 open decisions; 12 journey nodes; 10 structured claims

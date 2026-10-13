@@ -1,0 +1,186 @@
+{
+  "task_id": "I-01",
+  "title": "I-01 两设备与新条件真实完整链 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "I-01注册状态WAIT_DEP_EXTERNAL仅保留原范围。当前任务更新为两设备与新条件真实完整链；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "Codex核对注册表、当前上游说明、真实接口fixture与主机测试；未启动Unity/TD或设备，未取得外部测量与真人签收。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 同输入更换时A不变，B仅在规则允许时调整",
+        "AC2 记录I/G/X、实际呈现、外部延迟和失效恢复",
+        "AC3 LIVE_E2E及同预算需真实运行，旧合同测试不替代"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "两设备与新条件真实完整链修订交接",
+        "完整会话原件",
+        "输入隔离与受限响应"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：两设备与新条件真实完整链"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：完整会话原件；输入隔离与受限响应；真实延迟与失败链"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：P-01、P-02、S-02、U-08、T-02、G-02、D-01、D-02；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：完整会话原件；输入隔离与受限响应；真实延迟与失败链"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "I01-N01",
+      "status": "CLARIFIED_RECORDING_AND_OPTIONAL_TD",
+      "description": "同一记录代理装配、L1先存后发及无TD独立体验交接明确，不删除T-02原依赖",
+      "source": "agent/tasks/I-01/outputs/current-integration.md"
+    },
+    {
+      "id": "I01-N02",
+      "status": "CLARIFIED_EXTERNAL_DISPLAY_MEASUREMENT",
+      "description": "软件渲染回执不等于屏幕外部时间，跨时钟映射与冻结阈值仍待实测",
+      "source": "agent/tasks/I-01/outputs/current-integration.json"
+    },
+    {
+      "id": "I01-N03",
+      "status": "OPEN_REAL_CHAIN_AND_OWNER",
+      "description": "真实双设备、最终八呈现、完整装配、多小时压力、外部延迟和真实负责人仍缺，保持WAIT_DEP_EXTERNAL",
+      "source": "agent/tasks/I-01/TASK.md"
+    },
+    {
+      "id": "I01-N04",
+      "status": "OPEN_TEACHING_EXPOSURE_INTEGRATION",
+      "description": "核心start登记不能覆盖教学后退出，需P-01/U12-11完成首次条件教学前登记",
+      "source": "agent/modules/srp_session_core/README.md"
+    },
+    {
+      "id": "I-01-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "两设备与新条件真实完整链；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前完整链与外部测量交接",
+      "path": "agent/tasks/I-01/outputs/current-integration.md"
+    },
+    {
+      "label": "当前状态和未冻结目标",
+      "path": "agent/tasks/I-01/outputs/current-integration.json"
+    },
+    {
+      "label": "本轮主机核验",
+      "path": "agent/tasks/I-01/evidence/verification.json"
+    },
+    {
+      "label": "实施过程及验收工作单",
+      "path": "agent/tasks/I-01/TASK.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/I-01/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "previous_conclusion_202609": "I-01仍WAIT_DEP_EXTERNAL、未领取。固定五目录和真实验收交接已建立，216项交接/主机回归通过；真实双设备、八种呈现、装配、外部延迟、多小时压力及干净机器证据未交付，不构成LIVE_E2E或业务签收。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

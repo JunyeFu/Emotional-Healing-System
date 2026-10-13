@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "display_output_present": true,
+    "no_forbidden_output_nodes": true,
+    "no_network_send_callbacks": true,
+    "no_node_errors": true,
+    "python_authority_unchanged": true,
+    "render_tick_present": true,
+    "root_present": true,
+    "touchdesigner_build_2025_32820": true,
+    "udp_5005_active": true,
+    "udp_callbacks_present": true,
+    "udp_input_present": true,
+    "udp_loopback_only": true
+  },
+  "evidence_boundary": "LOCAL_TD_RUNTIME_NOT_LIVE_E2E",
+  "forbidden_callback_tokens": [],
+  "forbidden_nodes": [],
+  "node_count": 22,
+  "operator_errors": "",
+  "pass": true,
+  "report_schema_version": "t01-td-reopen-report-v1",
+  "root": "/project1/T01_TelemetryPanel",
+  "script_errors": "",
+  "touchdesigner_build": "2025.32820",
+  "touchdesigner_version": "099"
+}

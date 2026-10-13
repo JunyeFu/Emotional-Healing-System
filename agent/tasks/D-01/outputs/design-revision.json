@@ -1,0 +1,30 @@
+{
+  "task_id": "D-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "H10辅助测量及额外成本",
+  "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+  "deliverables": [
+    "H10辅助测量及额外成本修订交接",
+    "真实通道验收",
+    "用途边界"
+  ],
+  "acceptance_criteria": [
+    "AC1 保留ECG/RR原始证据与真实采集验收",
+    "AC2 H10不自动推情绪或参与快速控制，新增控制须另论证",
+    "AC3 A数据仅评估、B使用范围明确，记录佩戴准备与缺失"
+  ],
+  "evidence_required": [
+    "真实通道验收",
+    "用途边界",
+    "设备准备与质量记录"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "WAIT_DEP_EXTERNAL",
+  "depends_on_original": [
+    "P-02"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

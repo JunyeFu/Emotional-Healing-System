@@ -1,0 +1,361 @@
+{
+  "screenshot": "18-2-running.png",
+  "layout_size": [
+    1280.0,
+    720.0
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "page": "overview",
+  "native_mouse_click": true,
+  "wheel_requested": false,
+  "scroll_before": null,
+  "scroll_after": 0.0,
+  "errors": "",
+  "panels": {
+    "Header": [
+      0.0,
+      656.0,
+      1248.0,
+      32.0
+    ],
+    "Tabs": [
+      0.0,
+      0.0,
+      1248.0,
+      36.0
+    ],
+    "Context": [
+      0.0,
+      570.0,
+      1248.0,
+      38.0
+    ],
+    "Pages": [
+      0.0,
+      66.0,
+      1248.0,
+      496.0
+    ],
+    "Footer": [
+      0.0,
+      0.0,
+      1248.0,
+      32.0
+    ]
+  },
+  "overview_bands": {
+    "devices": [
+      0.0,
+      66.0,
+      940.0,
+      430.0
+    ],
+    "main": [
+      948.0,
+      66.0,
+      300.0,
+      430.0
+    ],
+    "events": [
+      0.0,
+      0.0,
+      1248.0,
+      26.0
+    ]
+  },
+  "overview_scrollbar": "off",
+  "fields": {
+    "record_file": {
+      "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-audit\\20261012-150832\\development-workflow\\recordings\\a562b030-27cd-442f-89fa-d4597c14e05e.jsonl",
+      "size": [
+        1248.0,
+        26.0
+      ],
+      "font_size": 12.0
+    },
+    "heart_rate": {
+      "text": "68.0",
+      "size": [
+        163.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "rr_interval": {
+      "text": "882.0",
+      "size": [
+        218.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_age": {
+      "text": "0.01 秒",
+      "size": [
+        337.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_state": {
+      "text": "已连接",
+      "size": [
+        223.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_sqi": {
+      "text": "88.0%",
+      "size": [
+        223.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_rate": {
+      "text": "130 Hz",
+      "size": [
+        223.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_plot_label": {
+      "text": "ECG / μV · 6秒",
+      "size": [
+        522.0,
+        26.0
+      ],
+      "font_size": 13.0
+    },
+    "ecg_plot_state": {
+      "text": "有数据",
+      "size": [
+        110.0,
+        26.0
+      ],
+      "font_size": 13.0
+    },
+    "resp_age": {
+      "text": "0.01 秒",
+      "size": [
+        337.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "motion_state": {
+      "text": "已接入",
+      "size": [
+        431.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_state": {
+      "text": "已连接",
+      "size": [
+        223.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_sqi": {
+      "text": "92.0%",
+      "size": [
+        223.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_rate": {
+      "text": "400 Hz",
+      "size": [
+        223.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_plot_label": {
+      "text": "呼吸 / 相对幅度 · 30秒",
+      "size": [
+        522.0,
+        26.0
+      ],
+      "font_size": 13.0
+    },
+    "resp_plot_state": {
+      "text": "有数据",
+      "size": [
+        110.0,
+        26.0
+      ],
+      "font_size": 13.0
+    }
+  },
+  "scope": "Native TD UI with synthetic development fixtures only",
+  "workflow": {
+    "stage": "RUNNING",
+    "view": null,
+    "current": {
+      "session_id": "DEV-2813c57a1feb4da3",
+      "participant": "DEMO-002",
+      "condition": "A",
+      "status": "RECORDING",
+      "pretest": true,
+      "unity_ready": true,
+      "store_ready": true,
+      "posttest": false,
+      "sealed": false,
+      "closed": false,
+      "path": "recordings\\a562b030-27cd-442f-89fa-d4597c14e05e.jsonl",
+      "effective_ns": 0,
+      "elapsed_ns": 0,
+      "paused_ns": 0,
+      "pause_at": null,
+      "start_ns": 109568656000000,
+      "end_ns": null,
+      "ideal": "呼气",
+      "guide": "呼气",
+      "actual": "吸气"
+    },
+    "history": [
+      {
+        "session_id": "DEV-8a6b05fb0d7f4c4c",
+        "participant": "DEMO-001",
+        "condition": "A",
+        "status": "COMPLETED",
+        "pretest": true,
+        "unity_ready": true,
+        "store_ready": true,
+        "posttest": true,
+        "sealed": true,
+        "closed": true,
+        "path": "recordings\\7b4c9f9c-1cdd-498d-a8a5-79ff35495845.jsonl",
+        "effective_ns": 9204000000,
+        "elapsed_ns": 17641000000,
+        "paused_ns": 8437000000,
+        "pause_at": null,
+        "start_ns": 109530109000000,
+        "end_ns": 109547750000000,
+        "ideal": "呼气",
+        "guide": "呼气",
+        "actual": "吸气"
+      },
+      {
+        "session_id": "DEV-2813c57a1feb4da3",
+        "participant": "DEMO-002",
+        "condition": "A",
+        "status": "RECORDING",
+        "pretest": true,
+        "unity_ready": true,
+        "store_ready": true,
+        "posttest": false,
+        "sealed": false,
+        "closed": false,
+        "path": "recordings\\a562b030-27cd-442f-89fa-d4597c14e05e.jsonl",
+        "effective_ns": 0,
+        "elapsed_ns": 0,
+        "paused_ns": 0,
+        "pause_at": null,
+        "start_ns": 109568656000000,
+        "end_ns": null,
+        "ideal": "呼气",
+        "guide": "呼气",
+        "actual": "吸气"
+      }
+    ],
+    "ready": true,
+    "can_close": false,
+    "pending": null,
+    "error": null,
+    "effective_ns": 3219000000,
+    "elapsed_ns": 3219000000,
+    "record_count": 89
+  },
+  "visible_pages": [
+    "overview"
+  ],
+  "flow_fields": {
+    "flow_session": "DEV-2813c57a1feb4da3",
+    "result": "RECORDING",
+    "effective": "00:03",
+    "total": "00:03",
+    "sealed": "待封存确认",
+    "posttest": "待回执",
+    "participant": "DEMO-002",
+    "assignment": "A",
+    "pretest": "已收到（模拟）",
+    "unity_ready": "已确认（模拟）",
+    "store_ready": "已确认（模拟）",
+    "study_context": "未接入 / 未接入",
+    "study_quality": "未接入",
+    "ideal": "呼气",
+    "guide": "呼气",
+    "measured": "吸气"
+  },
+  "session_capture": {
+    "state": "RECORDING",
+    "count": 89,
+    "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-audit\\20261012-150832\\development-workflow\\recordings\\a562b030-27cd-442f-89fa-d4597c14e05e.jsonl",
+    "elapsed": "00:03",
+    "curves": {
+      "resp": "resp",
+      "ecg": "ecg"
+    }
+  },
+  "device_preview": {
+    "accepted": 882,
+    "rejected": 0,
+    "last_error": null,
+    "error_counts": {},
+    "streams": {
+      "resp": {
+        "state": "LIVE",
+        "buffered_samples": 4720
+      },
+      "ecg": {
+        "state": "LIVE",
+        "buffered_samples": 730
+      }
+    },
+    "plots": {
+      "resp": {
+        "size": [
+          848,
+          81
+        ],
+        "trace_pixels": 888,
+        "color_pixels": {
+          "resp": 888,
+          "ecg": 0,
+          "rr": 0,
+          "hr": 0,
+          "x": 0,
+          "y": 0,
+          "z": 888
+        }
+      },
+      "ecg": {
+        "size": [
+          848,
+          81
+        ],
+        "trace_pixels": 2143,
+        "color_pixels": {
+          "resp": 0,
+          "ecg": 2143,
+          "rr": 0,
+          "hr": 2143,
+          "x": 0,
+          "y": 2143,
+          "z": 0
+        }
+      }
+    }
+  }
+}

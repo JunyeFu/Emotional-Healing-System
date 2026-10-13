@@ -1,0 +1,22 @@
+........F...                                                             [100%]
+================================== FAILURES ===================================
+_____________ test_registration_and_consumer_gaps_remain_current ______________
+
+    def test_registration_and_consumer_gaps_remain_current():
+        with (GOV / '05_可领取任务包.csv').open(encoding='utf-8-sig', newline='') as stream:
+            row = next(row for row in csv.DictReader(stream) if row['task_id'] == 'U12-06')
+        assert row['status'] == 'IN_PROGRESS' and row['claimant'] == '傅钧烨'
+        assert row['branch'] == 'codex/u12-06-formal-gate'
+        consumers = [item for item in read(GOV / 'u12_upgrade/consumers.json')['entries'] if item['owner'] == 'U12-06']
+        assert len(consumers) == 6
+        assert all(item['status'] == 'PENDING_RUNTIME_MIGRATION' for item in consumers)
+        for item in consumers:
+>           assert (ROOT / item['path']).is_file()
+E           AssertionError: assert False
+E            +  where False = is_file()
+E            +    where is_file = (WindowsPath('D:/Agent/srp') / '02-技术研发/srp_session_core/core.py').is_file
+
+agent\tasks\U12-06\execution\test_runtime_handoff.py:62: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-06/execution/test_runtime_handoff.py::test_registration_and_consumer_gaps_remain_current
+1 failed, 11 passed in 1.48s

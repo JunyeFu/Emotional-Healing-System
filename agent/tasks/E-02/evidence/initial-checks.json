@@ -1,0 +1,15 @@
+[
+  {
+    "command": [
+      "C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "D:\\Agent\\srp\\agent\\tasks\\E-02\\execution\\test_execution_handoff.py",
+      "D:\\Agent\\srp\\agent\\tasks\\Q-02\\execution\\test_level_b_handoff.py",
+      "D:\\Agent\\srp\\02-技术研发\\tests\\step_measurement"
+    ],
+    "exit_code": 1,
+    "log": "evidence/initial-check-1.txt"
+  }
+]

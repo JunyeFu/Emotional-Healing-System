@@ -1,0 +1,31 @@
+{
+  "files": [
+    "agent/modules/03-TouchDesigner/TD原型规划.md",
+    "agent/modules/03-TouchDesigner/f04_readonly_console/tests/test_f04_console.py",
+    "agent/modules/03-TouchDesigner/step-3-breath-animation.md",
+    "agent/modules/03-TouchDesigner/t01_telemetry_panel/tests/test_t01_telemetry.py",
+    "agent/modules/03-TouchDesigner/t01_telemetry_panel/tests/test_workbench_view.py",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/Scripts/Editor/FormalBuildGate.cs",
+    "agent/modules/04-Unity视觉/SRP-Weather-Visual/Assets/U01/Editor/U01EvidenceBuilder.cs",
+    "agent/modules/05-通信协议/contracts/verify_f05_v22.py",
+    "agent/modules/05-通信协议/csv_logger.py",
+    "agent/modules/05-通信协议/tests/contract/test_f05_evidence.py",
+    "agent/modules/07-数据治理/docs/formal_environment_closure_runbook.md",
+    "agent/modules/07-数据治理/docs/formal_machine_setup.md",
+    "agent/modules/07-数据治理/tests/conftest.py",
+    "agent/modules/07-数据治理/tests/test_privacy.py",
+    "agent/modules/07-数据治理/tests/test_unity_gate.py",
+    "agent/modules/srp_session_core/gates.py",
+    "agent/modules/tests/a03_spec/test_estimands.py",
+    "agent/modules/tests/a03_spec/test_schema.py",
+    "agent/modules/tests/randomization/test_verifier.py",
+    "agent/modules/tests/session_core/conftest.py",
+    "agent/modules/tests/session_store/conftest.py",
+    "agent/modules/tests/session_store/test_golden_archive.py",
+    "agent/modules/tests/session_store/test_recording_replay.py",
+    "agent/modules/tests/step_measurement/test_measurement.py",
+    "agent/modules/tests/test_audit_upgrade_governance.py",
+    "agent/modules/tests/test_task_package_hash_policy.py",
+    "agent/modules/tests/test_u12_governance.py"
+  ]
+}

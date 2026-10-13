@@ -1,4 +1,121 @@
-*.png filter=lfs diff=lfs merge=lfs -text
-*.pdf filter=lfs diff=lfs merge=lfs -text
-*.toe filter=lfs diff=lfs merge=lfs -text
-*.zip filter=lfs diff=lfs merge=lfs -text
+agent/modules/communication/contracts/fixtures/** text eol=lf
+agent/modules/communication/contracts/fixture_hashes.sha256 text eol=lf
+agent/modules/srp_session_store/fixtures/golden/** text eol=lf
+agent/tasks/P-02/evidence/runtime/session-archive-v1/** text eol=lf
+agent/validation/evidence/F-05/** text eol=lf
+agent/tasks/F-03/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/F-03/evidence/runtime/asset_blocking_report.json -text
+agent/tasks/F-04/evidence/host/*.json text eol=lf
+agent/tasks/F-05/evidence/runtime/*.json text eol=lf
+agent/tasks/F-05/evidence/runtime/*.sha256 text eol=lf
+agent/tasks/F-05/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/U-01/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/U-02/evidence/runtime/**/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/U-02/evidence/runtime/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/U-02/archive/evidence-v1/** -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/U-02/archive/*-run/*.log -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+agent/tasks/T-01/evidence/**/*.json text eol=lf
+agent/tasks/T-01/evidence/runtime/*.toe -text
+agent/tasks/T-01/evidence/runtime/touchdesigner/screenshots/*.png -text
+agent/modules/unity/SRP-Weather-Visual/**/*.asset text eol=lf
+agent/modules/unity/SRP-Weather-Visual/**/*.json text eol=lf
+agent/modules/unity/SRP-Weather-Visual/**/*.meta text eol=lf
+agent/modules/unity/SRP-Weather-Visual/**/*.unity text eol=lf
+agent/local/artifacts/V-04/H3/independent-asset-kit/*-individual-candidate-v1/*.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-B-storm.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-heat.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/fixed-background-previews/r2/V-04-H3-R2-C-snow.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/layerable-background-rebuild/v5/base/V-04-H3-LBR-v5-fade-base.png filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/storm-candidate-v2/storm-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/heat-candidate-v2/heat-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/snow-candidate-v2/snow-H3-v2-ambient.wav filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H2/candidate-v11/fade-H2-v11-ambient.wav filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/corridor-candidate-v1/corridor-H3-paired-review.mp4 filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/H3/fixed-combined-review-candidate-v2/*.mp4 filter=lfs diff=lfs merge=lfs -text
+agent/local/artifacts/V-04/full-duration-animatic-candidate-v1/*.mp4 filter=lfs diff=lfs merge=lfs -text
+agent/tasks/U-04/evidence/editmode-unity.log -text whitespace=-blank-at-eol
+agent/tasks/U-05/archive/CleanAndRebuildScenes.cs -text
+agent/tasks/U-05/archive/CleanAndRebuildScenes.cs.meta -text
+agent/tasks/U-05/archive/CleanupWeatherDuplicates.cs -text
+agent/tasks/U-05/archive/CleanupWeatherDuplicates.cs.meta -text
+agent/tasks/U-06/archive/FinalBuild.cs -text
+agent/tasks/U-06/archive/FinalBuild.cs.meta -text
+agent/tasks/U-06/archive/FinalRebuild.cs -text
+agent/tasks/U-06/archive/FinalRebuild.cs.meta -text
+agent/tasks/U-06/archive/ComprehensiveFix.cs -text
+agent/tasks/U-06/archive/ComprehensiveFix.cs.meta -text
+agent/tasks/U-07/archive/06_抽象双环对照规格.md -text
+agent/tasks/U-08/archive/BuildScene1.cs -text
+agent/tasks/U-08/archive/BuildScene1.cs.meta -text
+agent/tasks/U-08/archive/BuildScene2D.cs -text
+agent/tasks/U-08/archive/BuildScene2D.cs.meta -text
+agent/tasks/U-08/evidence/initial-lineending-failure.txt -text whitespace=-blank-at-eol
+agent/tasks/T-02/archive/legacy-td-authoring/** -text whitespace=-blank-at-eol,-blank-at-eof
+agent/tasks/A-01/archive/*.md -text
+agent/tasks/A-01/evidence/initial-hash-policy-failure.txt -text whitespace=-blank-at-eol
+agent/tasks/A-02/archive/06_统计模型与图表计划.md -text
+agent/tasks/A-03/archive/README_spec_legacy.md -text whitespace=cr-at-eol
+agent/tasks/A-03/archive/08_sample_size_anchors.py -text whitespace=cr-at-eol
+agent/tasks/W-01/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/Q-01/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/Q-03/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/X-01/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/X-02/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/X-03/evidence/initial-store-binding-failure.txt -text whitespace=-blank-at-eol
+agent/tasks/X-01/evidence/initial-encoding-failure.txt -text whitespace=-blank-at-eol
+agent/tasks/Z-01/archive/team-tool-baseline-before-z01.json -text whitespace=cr-at-eol
+agent/tasks/Z-01/archive/team-tools-before-z01.md -text whitespace=cr-at-eol
+agent/tasks/Z-01/evidence/initial-test-field-failure.txt -text whitespace=-blank-at-eol
+agent/tasks/G-05/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/G-05/archive/legacy-package/* -text whitespace=cr-at-eol
+agent/tasks/E-01/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/E-02/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/E-02/evidence/initial-check-1.txt -text whitespace=-blank-at-eol
+agent/tasks/B-01/evidence/initial-handoff.txt -text whitespace=-blank-at-eol
+agent/tasks/G-03/archive/02_当前状态与不可跨越门禁.md -text whitespace=cr-at-eol
+agent/tasks/G-03/evidence/initial-handoff.txt -text whitespace=-blank-at-eol
+agent/tasks/B-02/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/E-04/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/A-05/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/W-02/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/W-02/archive/*.csv -text whitespace=cr-at-eol
+agent/tasks/W-03/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/W-04/archive/*.md -text whitespace=cr-at-eol
+agent/tasks/U12-01/archive/original-README.md -text whitespace=cr-at-eol
+agent/tasks/U12-01/archive/consumers.json -text whitespace=cr-at-eol
+agent/tasks/U12-01/archive/record_u12_01_signoff.py -text whitespace=cr-at-eol
+agent/tasks/U12-02/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-02/outputs/materials/*.json text eol=lf
+agent/tasks/U12-02/outputs/annotation-plan.md -text whitespace=cr-at-eol
+agent/tasks/U12-03/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-03/outputs/contract.json -text whitespace=cr-at-eol
+agent/tasks/U12-03/outputs/teaching.md -text whitespace=cr-at-eol
+agent/tasks/U12-03/outputs/formative.md -text whitespace=cr-at-eol
+agent/tasks/U12-03/outputs/observation.template.json -text whitespace=cr-at-eol
+agent/tasks/U12-04/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-04/outputs/contract.json -text whitespace=cr-at-eol
+agent/tasks/U12-04/outputs/power/*.json text eol=lf
+agent/tasks/U12-05/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-06/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-07/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-07/evidence/initial-handoff.txt -text whitespace=-blank-at-eol
+agent/tasks/U12-07/evidence/second-handoff.txt -text whitespace=-blank-at-eol
+agent/tasks/U12-08/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-09/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-10/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-11/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-12/archive/** -text whitespace=cr-at-eol
+agent/tasks/U12-10/execution/result_classifier.py -text whitespace=cr-at-eol
+agent/evidence/root-migration-governance-initial-tests.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-governance-package-tests-initial/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-support-package-tests-initial/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-modules-package-tests-initial/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-modules-package-tests/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-local-package-tests/*.txt -text whitespace=-blank-at-eol
+agent/evidence/root-migration-modules-unity-*.log -text whitespace=-blank-at-eol
+agent/archive/root-migration/modules-inputs/** -text whitespace=cr-at-eol
+agent/archive/root-migration/local-inputs/** -text whitespace=cr-at-eol
+agent/archive/normalization-summary-inputs/** -text whitespace=cr-at-eol
+agent/evidence/root-migration-summary-package-tests/*.txt -text whitespace=-blank-at-eol
+agent/governance/**/tasks/U12-05/package_manifest.json -text whitespace=cr-at-eol
+agent/governance/**/tasks/U12-06/package_manifest.json -text whitespace=cr-at-eol

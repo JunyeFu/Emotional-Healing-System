@@ -1,0 +1,161 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{Microsoft YaHei}[BoldFont=Microsoft YaHei Bold]
+\setCJKmainfont{Microsoft YaHei}[BoldFont=Microsoft YaHei Bold]
+\newfontfamily\titlelatin{SimHei}[AutoFakeBold=2]
+\newCJKfontfamily\titlecjk{SimHei}[AutoFakeBold=2]
+\usepackage[margin=22mm]{geometry}
+\usepackage{graphicx}
+\usepackage{needspace}
+\usepackage[unicode,hidelinks,breaklinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyfoot[C]{SRP 任务包审阅\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\linespread{1.28}
+\emergencystretch=3em
+\raggedbottom
+\newcommand{\reviewtitle}[1]{\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{21}{28}\selectfont #1}\end{center}\vspace{8pt}}
+\newcommand{\reviewsection}[1]{\par\Needspace{5\baselineskip}\vspace{10pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{14}{20}\selectfont #1}\end{center}}
+\newcommand{\reviewsubsection}[1]{\par\Needspace{4\baselineskip}\vspace{4pt}\begin{center}{\titlelatin\titlecjk\bfseries\fontsize{12}{18}\selectfont #1}\end{center}}
+\begin{document}
+
+\reviewtitle{E-\allowbreak{}06 可选扩展关闭与揭盲 · 新基线审阅}
+审阅日期 2026-\allowbreak{}10-\allowbreak{}08    任务 E-\allowbreak{}06
+
+
+\reviewsection{一、任务定义与交付}
+\reviewsubsection{1.1 当前结论}
+E-\allowbreak{}06注册状态BLOCKED\_\allowbreak{}EXTERNAL仅保留原范围。当前任务更新为可选扩展关闭与揭盲；处理类型DEFERRED\_\allowbreak{}EXTENSION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。
+
+
+本包采用固定A与受限适应B整包基线；共享I、独立G/\allowbreak{}X及同预算。新设计、真实运行与正式许可分别成立。
+
+
+\reviewsubsection{1.2 目标与完成标准}
+AC1 仅核对实际获准扩展的所有实例
+
+
+AC2 策略不变、锁库和揭盲分别取证
+
+
+AC3 未开展不借核心数据代签或补造
+
+
+\reviewsubsection{1.3 实际交付}
+本轮交付当前TASK、专项交接、design-\allowbreak{}revision.json及来源更新；不声称运行或研究已完成。
+
+
+可选扩展关闭与揭盲修订交接
+
+
+扩展活动清单
+
+
+真实锁库与授权
+
+
+\reviewsection{二、执行与验证}
+\reviewsubsection{2.1 执行过程与关键决定}
+A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出
+
+
+B数据驱动场景原生受限适应，合法边界调整G后趋向共同I
+
+
+I共同理想/\allowbreak{}G有效下发/\allowbreak{}X独立实际分离；同预算，未知不补成功
+
+
+PANAS-\allowbreak{}NA前测校正主要候选；I达成/\allowbreak{}G跟随/\allowbreak{}成本独立，不沿用旧PF非劣界
+
+
+理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收
+
+
+本包专项：可选扩展关闭与揭盲
+
+
+\reviewsubsection{2.2 验证与结果}
+任务包/\allowbreak{}PDF/\allowbreak{}来源一致性由verify\_\allowbreak{}task\_\allowbreak{}design\_\allowbreak{}baseline.py和build\_\allowbreak{}task\_\allowbreak{}reviews.py -\allowbreak{}-\allowbreak{}check核查；这些静态结果仅证明当前文档一致。
+
+
+原软件测试与签收见archive/\allowbreak{}pre-\allowbreak{}design-\allowbreak{}baseline-\allowbreak{}20261008/\allowbreak{}summary.json，保持原范围，不能支持本包新增要求。
+
+
+\reviewsubsection{2.3 偏离与修复闭环}
+旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。
+
+
+真实缺口：扩展活动清单；真实锁库与授权；范围关闭
+
+
+\reviewsubsection{2.4 目录与文件整理}
+旧任务、总结及被替代交接保存在archive/\allowbreak{}pre-\allowbreak{}design-\allowbreak{}baseline-\allowbreak{}20261008；当前设计用LaTeX/\allowbreak{}PDF维护，不新增DOCX。
+
+
+\reviewsection{三、审阅与交接}
+\reviewsubsection{3.1 上下游交接}
+原依赖：G-\allowbreak{}04、B-\allowbreak{}03；必须核对新范围交接，原DONE不自动证明修订完成。
+
+
+消费design-\allowbreak{}foundation-\allowbreak{}20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：扩展活动清单；真实锁库与授权；范围关闭
+
+
+\reviewsubsection{3.2 审阅与责任签收}
+原签收保持下列历史信息；本轮无新增业务签收。
+
+
+核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。
+
+
+历史审核人 未签收    日期 无
+
+
+没有E-\allowbreak{}06真人签署。本轮为作者Agent合成接口核查与规范化，没有新增独立Agent审核、真实锁库或揭盲许可。
+
+
+\reviewsubsection{3.3 收尾与下一包}
+新修订状态：NEW\_\allowbreak{}SCOPE\_\allowbreak{}NOT\_\allowbreak{}EXECUTED
+
+
+先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。
+
+
+\reviewsubsection{3.4 审阅来源}
+当前来源：task-\allowbreak{}baseline.json与基石四份LaTeX/\allowbreak{}PDF；历史来源见归档总结。
+
+
+\href{file:///D:/Agent/srp/agent/tasks/E-06/outputs/current-closeout.md}{阶段三研究关闭交接}
+
+
+\href{file:///D:/Agent/srp/agent/tasks/E-06/outputs/current-closeout.json}{实际锁库与运行缺口}
+
+
+\href{file:///D:/Agent/srp/agent/tasks/E-06/outputs/lock-review-template.json}{未执行锁库审阅提纲}
+
+
+\href{file:///D:/Agent/srp/agent/tasks/E-06/evidence/consumer-impact.md}{消费者与流程修正}
+
+
+\href{file:///D:/Agent/srp/agent/tasks/E-06/evidence/verification.json}{实际验证记录}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/task-baseline.json}{当前设计基线 task-\allowbreak{}baseline.json}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/01-design.pdf}{当前设计基线 01-\allowbreak{}design.pdf}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/02-science.pdf}{当前设计基线 02-\allowbreak{}science.pdf}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/03-decisions.pdf}{当前设计基线 03-\allowbreak{}decisions.pdf}
+
+
+\href{file:///D:/Agent/srp/agent/design/design-foundation-20261008/04-review-audit.pdf}{当前设计基线 04-\allowbreak{}review-\allowbreak{}audit.pdf}
+
+
+\end{document}

@@ -1,0 +1,1 @@
+PASS: 48 design cells; not randomized allocation, session manifests or real evidence

@@ -1,0 +1,142 @@
+{
+  "contract_id": "U12-04-PANAS-SAP-candidate-v1.0",
+  "status": "CANDIDATE_NOT_RESEARCH_FROZEN",
+  "formal_collection_allowed": false,
+  "evidence_class": "DESIGN_AND_SYNTHETIC_ONLY",
+  "task": "PANAS 主结果 SAP 与新功效规格",
+  "authority": "00_总控/protocol_authority_v1.2.json",
+  "baseline_commit": "de4ebcbfea209674127c833dd9e69ad703a6634b",
+  "primary": {
+    "stage": "stage_1",
+    "outcome": "panas_negative_affect_post_adjusted_for_pre",
+    "unit": "participant",
+    "contrast": "native_minus_abstract",
+    "native_code": 1,
+    "abstract_code": 0,
+    "lower_is_better": true,
+    "candidate_model": "NA_post ~ cue_mode + centered_NA_pre + randomization_strata",
+    "candidate_variance": "HC3",
+    "test": "two_sided",
+    "alpha": 0.05,
+    "ci_level": 0.95,
+    "post_treatment_covariates_in_primary_model": false,
+    "pretreatment_baseline_required": true,
+    "report_even_if_functional_guard_fails": true,
+    "minimum_important_affect_difference": null
+  },
+  "functional_guard": {
+    "outcome": "opportunity_based_participant_protocol_fidelity",
+    "difference": "native_minus_abstract",
+    "noninferiority_margin_candidate": 0.075,
+    "margin_status": "INHERITED_REQUIRES_JUSTIFICATION",
+    "analysis_sets": ["all_randomized", "complete_four_module"],
+    "both_must_pass_for_native_substitution_claim": true
+  },
+  "manipulation_check": {
+    "instrument": "SCCI",
+    "role": "manipulation_only",
+    "blocks_prespecified_outcome_reporting": false,
+    "failure_alone_invalidates_randomized_comparison": false
+  },
+  "equivalence": {
+    "confirmatory_enabled": false,
+    "margin": null,
+    "enable_only_before_formal_outcome_access": true,
+    "not_significant_is_not_equivalent": true
+  },
+  "secondary": {
+    "families": "freeze_before_study",
+    "candidate_fdr": true
+  },
+  "missingness": {
+    "affect_and_sensor_separated": true,
+    "sensor_failure_does_not_drop_valid_panas": true,
+    "candidate_imputations": 100,
+    "model_and_mnar_grid": null,
+    "status": "SAP_FREEZE_REQUIRED"
+  },
+  "sample_planning": {
+    "level_c_anchor": 48,
+    "stage_1_old_complete_target": 192,
+    "stage_1_old_recruitment_cap": 240,
+    "formal_randomized_n": null,
+    "formal_recruitment_cap": null,
+    "main_power_target_candidate": 0.9,
+    "old_anchors_are_not_final_power": true,
+    "equivalence_power_not_claimed": true
+  },
+  "sequence": {
+    "stage_1_balanced_sequences_per_arm": 24,
+    "allocation_block_size_candidate": 48,
+    "balance_unit": "assigned_not_complete",
+    "completion_based_refilling_forbidden": true,
+    "outcome_based_optional_stopping_forbidden": true
+  },
+  "formal_runtime": {
+    "python_is_authority": true,
+    "unity_independent_of_td": true,
+    "spout_forbidden": true,
+    "mock_forbidden": true,
+    "telemetry_hz": 20,
+    "runtime_contract_version": "2.2",
+    "live_e2e_required": true
+  },
+  "claim_boundaries": {
+    "whole_project_causal_effect": false,
+    "independent_weather_effect": false,
+    "independent_breathing_structure_effect": false,
+    "single_visual_mechanism_effect": false,
+    "long_term_effect": false,
+    "short_vs_long_interaction": false,
+    "diagnosis_or_treatment_efficacy": false
+  },
+  "power_simulation": {
+    "seed": 20260906,
+    "replications": 1000,
+    "analysis_sets": ["PRIMARY_CONSERVATIVE", "OBSERVED_CASE"],
+    "n_grid": [48, 96, 144, 192, 240],
+    "effect_grid": [0.2, 0.3, 0.4, 0.5],
+    "margin_candidate": 0.075,
+    "target_power": 0.9,
+    "alpha": 0.05,
+    "test": "two_sided",
+    "variance": "HC3",
+    "n_frozen": false,
+    "effect_frozen": false
+  },
+  "required_freezes": [
+    "panas_version_and_permission",
+    "eligibility_and_recruitment",
+    "training_budget",
+    "randomization_and_concealment",
+    "minimum_important_affect_difference",
+    "missingness_and_mnar",
+    "functional_margin_justification",
+    "critical_error_thresholds",
+    "final_power_and_n",
+    "stopping_rule",
+    "institutional_scope",
+    "live_e2e",
+    "runtime_gate_integration",
+    "data_retention_and_access",
+    "pretreatment_baseline_and_condition_training_order"
+  ],
+  "unfrozen_justification": {
+    "minimum_important_affect_difference": "真实冻结前不设定单点最小重要差值，避免功效计算以假想效应为前提",
+    "missingness_and_mnar": "SAP_FREEZE_REQUIRED：缺失机制与 MNAR 网格须在正式数据可用前冻结",
+    "functional_margin_justification": "0.075 为继承候选值，正式界值须经真实数据与机构材料论证",
+    "final_power_and_n": "本 SAP 输出 N×效应 功效网格，不冻结单点 N；正式 N 由真实冻结决定",
+    "formal_randomized_n": "真实随机化 N 未冻结，旧锚点（192/240）不构成最终声明"
+  },
+  "conditions": {
+    "native_code": 1,
+    "abstract_code": 0,
+    "sequence_per_arm": 24,
+    "block_size_candidate": 48,
+    "core_experience_recommended_seconds": 800,
+    "module_count": 4,
+    "demo_seconds": 25
+  },
+  "evidence_status": "DESIGN_AND_SYNTHETIC_ONLY",
+  "research_freeze_required": true
+}

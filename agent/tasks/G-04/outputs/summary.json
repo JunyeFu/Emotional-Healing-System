@@ -1,0 +1,170 @@
+{
+  "task_id": "G-04",
+  "title": "G-04 可选策略扩展的独立准入 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "G-04注册状态BLOCKED_EXTERNAL仅保留原范围。当前任务更新为可选策略扩展的独立准入；处理类型DEFERRED_EXTENSION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有G-04真实签署；本轮作者Agent核查，不代替独立复核、真人签收或正式放行。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 扩展不是A/B整包研究的必要阶段",
+        "AC2 独立样本、SAP、策略及回退有真实冻结",
+        "AC3 同构建比较且不将扩展收益补写为核心机制证据"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "可选策略扩展的独立准入修订交接",
+        "扩展范围",
+        "独立准入条件"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：可选策略扩展的独立准入"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：扩展范围；独立准入条件；核心/扩展样本账本"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：E-05、X-03、Z-01；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：扩展范围；独立准入条件；核心/扩展样本账本"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "G04-N01",
+      "status": "FIXED_POLICY_CONTRAST_HANDOFF",
+      "description": "两scene_native组必须比较策略分配，阶段一cue_mode模板不是扩展模型；候选未冒充正式冻结",
+      "source": "agent/tasks/G-04/outputs/current-extension.md"
+    },
+    {
+      "id": "G04-N02",
+      "status": "FIXED_RESULT_GATE_AND_ADMISSION_HANDOFF",
+      "description": "Gate3结果判据、采集前资格、共享配置与同构建分开，修正三个入口和手册",
+      "source": "agent/tasks/G-04/evidence/consumer-impact.md"
+    },
+    {
+      "id": "G04-N03",
+      "status": "OPEN_DYNAMIC_DEPLOYMENT_AND_BUILD",
+      "description": "48行分配已可生成但v2.2仍拒绝动态策略，同构建/共享配置没有真实验证",
+      "source": "agent/tasks/G-04/outputs/current-extension.json"
+    },
+    {
+      "id": "G04-N04",
+      "status": "OPEN_REAL_FREEZE_AND_ACTIVITY_SCOPE",
+      "description": "正式N/方法/预注册、三项直接许可、共享量表专机阶段三范围及真实责任人仍缺",
+      "source": "agent/tasks/G-04/outputs/preregistration-review-template.json"
+    },
+    {
+      "id": "G-04-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "可选策略扩展的独立准入；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前独立阶段三交接",
+      "path": "agent/tasks/G-04/outputs/current-extension.md"
+    },
+    {
+      "label": "实际冻结与运行缺口",
+      "path": "agent/tasks/G-04/outputs/current-extension.json"
+    },
+    {
+      "label": "未批准预注册审阅提纲",
+      "path": "agent/tasks/G-04/outputs/preregistration-review-template.json"
+    },
+    {
+      "label": "消费者修正范围",
+      "path": "agent/tasks/G-04/evidence/consumer-impact.md"
+    },
+    {
+      "label": "实际验证结果",
+      "path": "agent/tasks/G-04/evidence/verification.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

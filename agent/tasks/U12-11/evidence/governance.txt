@@ -1,0 +1,1 @@
+PASS: governance v1.2; 71 tasks; signed history preserved; formal collection blocked

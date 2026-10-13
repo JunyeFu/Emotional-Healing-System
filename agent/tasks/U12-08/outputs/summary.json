@@ -1,0 +1,166 @@
+{
+  "task_id": "U12-08",
+  "title": "U12-08 可选扩展独立附录 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "U12-08注册状态WAIT_DEP仅保留原范围。当前任务更新为可选扩展独立附录；处理类型DEFERRED_EXTENSION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未指定",
+    "date": "未签署",
+    "commit": null,
+    "method": "无历史真实验收或签收；本轮为作者Agent整理及软件复测，独立复核与真实第二人尚未执行。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 扩展只在核心之外按独立问题和样本开展",
+        "AC2 不以学习策略补足首版受限规则的贡献",
+        "AC3 实际活动、SAP和签署不足时标延期"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "可选扩展独立附录修订交接",
+        "独立附录范围",
+        "扩展分析需求"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：可选扩展独立附录"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：独立附录范围；扩展分析需求；未开展边界"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：A-04、E-05；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：独立附录范围；扩展分析需求；未开展边界"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "U1208-N01",
+      "status": "FIXED_ACTUAL_RELOCATION_AND_CURRENT_STATUS",
+      "description": "四原候选实际归档，旧未注册入口订正；原字节、manifest与输入ID保持",
+      "source": "agent/tasks/U12-08/archive/README.md"
+    },
+    {
+      "id": "U1208-N02",
+      "status": "FIXED_CURRENT_RESPONSIBILITIES_AND_CONSUMERS",
+      "description": "独立附录非策略冻结，两影响记录订正，A-04/A-06连接当前附录",
+      "source": "agent/tasks/U12-08/evidence/consumer-impact.md"
+    },
+    {
+      "id": "U1208-N03",
+      "status": "OPEN_REAL_INPUTS_APPENDIX_AND_SIGNOFF",
+      "description": "真实SAP/锁库/结果/全部活动/附录/独立复现与真人责任签收仍缺，WAIT_DEP保持",
+      "source": "agent/tasks/U12-08/outputs/current-extension.json"
+    },
+    {
+      "id": "U1208-N04",
+      "status": "FIXED_PHYSICAL_ROOT_MIGRATION_AND_RUNTIME_CHECKS",
+      "description": "19项根目录已实际迁入双层，当前运行消费者及Word来源经验证；业务状态不变",
+      "source": "agent/evidence/root-migration-check.json"
+    },
+    {
+      "id": "U12-08-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "可选扩展独立附录；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前扩展附录交接",
+      "path": "agent/tasks/U12-08/outputs/current-extension.md"
+    },
+    {
+      "label": "附录真实填充规格",
+      "path": "agent/tasks/U12-08/outputs/appendix-spec.md"
+    },
+    {
+      "label": "本轮软件验证",
+      "path": "agent/tasks/U12-08/evidence/verification.json"
+    },
+    {
+      "label": "迁移与消费者影响",
+      "path": "agent/tasks/U12-08/evidence/consumer-impact.md"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

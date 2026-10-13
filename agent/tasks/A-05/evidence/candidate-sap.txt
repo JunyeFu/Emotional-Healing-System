@@ -1,0 +1,1 @@
+PASS: U12-04 contract aligned with protocol_authority_v1.2.json

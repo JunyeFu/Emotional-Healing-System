@@ -1,0 +1,29 @@
+{
+  "task_id": "G-01",
+  "source_policy": "historical_materials_preserved_current_usage_v12",
+  "paths": [
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/06_步骤05_伦理与预试材料",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA/G-01-11_伦理提交执行检查清单.md",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/G-01_G-02_DONE与第58号G-05责任迁移决策_已批准.md",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/audit_upgrade/external_capability_matrix_v1.0.csv",
+    "agent/tasks/U12-03/outputs/contract.json",
+    "agent/validation/G-01_G-02_治理修复团队总监签收报告_已签署.md",
+    "agent/validation/G-01_Agent独立审核报告_2026-08-21.md",
+    "agent/tasks/F-02/outputs/current-measurement.md",
+    "agent/modules/data-governance/README.md",
+    "agent/modules/srp_session_store/README.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

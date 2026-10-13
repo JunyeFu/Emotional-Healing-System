@@ -1,0 +1,5 @@
+# 初次记录代理装配失败
+
+初次43通过1失败。测试将DurableManifestStore交给记录代理，却未将同一存储交给SessionCore.dependencies，导致prepare使用内存存储，后续finish正确返回MANIFEST_NOT_STORED。
+
+按P-02既有装配方式把同一个存储绑定核心依赖后复测；不改业务、记录门或重放安全拒绝。初次原输出保留，消费者要求也明确同一耐久记录路径，不能各自建立独立存储。

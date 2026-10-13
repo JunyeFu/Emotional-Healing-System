@@ -1,0 +1,347 @@
+{
+  "screenshot": "43-home-final.png",
+  "layout_size": [
+    1280.0,
+    720.0
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "page": "home",
+  "native_mouse_click": true,
+  "wheel_requested": false,
+  "scroll_before": null,
+  "scroll_after": 0.0,
+  "errors": "",
+  "panels": {
+    "Header": [
+      0.0,
+      656.0,
+      1248.0,
+      32.0
+    ],
+    "Tabs": [
+      0.0,
+      0.0,
+      1248.0,
+      36.0
+    ],
+    "Context": [
+      0.0,
+      570.0,
+      1248.0,
+      38.0
+    ],
+    "Pages": [
+      0.0,
+      66.0,
+      1248.0,
+      496.0
+    ],
+    "Footer": [
+      0.0,
+      0.0,
+      1248.0,
+      32.0
+    ]
+  },
+  "overview_bands": {
+    "devices": [
+      0.0,
+      66.0,
+      940.0,
+      430.0
+    ],
+    "main": [
+      948.0,
+      66.0,
+      300.0,
+      430.0
+    ],
+    "events": [
+      0.0,
+      0.0,
+      1248.0,
+      26.0
+    ]
+  },
+  "overview_scrollbar": "off",
+  "fields": {
+    "record_file": {
+      "text": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-study-v6\\20261008-200605\\development-workflow\\recordings\\4f47f8ac-6697-4454-ade3-74b277bf9b5a.jsonl",
+      "size": [
+        1248.0,
+        26.0
+      ],
+      "font_size": 12.0
+    },
+    "heart_rate": {
+      "text": "未接入",
+      "size": [
+        163.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "rr_interval": {
+      "text": "未接入",
+      "size": [
+        218.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_age": {
+      "text": "未接入",
+      "size": [
+        337.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_state": {
+      "text": "未知",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_sqi": {
+      "text": "—",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_rate": {
+      "text": "未接入",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "ecg_plot_label": {
+      "text": "心率 / bpm",
+      "size": [
+        830.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "ecg_plot_state": {
+      "text": "未接入",
+      "size": [
+        110.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "resp_age": {
+      "text": "未接入",
+      "size": [
+        337.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "motion_state": {
+      "text": "未接入",
+      "size": [
+        431.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_state": {
+      "text": "未知",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_sqi": {
+      "text": "—",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_rate": {
+      "text": "未接入",
+      "size": [
+        249.0,
+        26.0
+      ],
+      "font_size": 14.0
+    },
+    "resp_plot_label": {
+      "text": "角速度 / rad/s   X红  Y绿  Z蓝",
+      "size": [
+        830.0,
+        22.0
+      ],
+      "font_size": 13.0
+    },
+    "resp_plot_state": {
+      "text": "未接入",
+      "size": [
+        110.0,
+        22.0
+      ],
+      "font_size": 13.0
+    }
+  },
+  "scope": "Native TD UI with synthetic development fixtures only",
+  "workflow": {
+    "stage": "HOME",
+    "view": null,
+    "current": null,
+    "history": [
+      {
+        "session_id": "DEV-9b42b4cadba6481a",
+        "participant": "SIM-A",
+        "condition": "A",
+        "status": "COMPLETED",
+        "pretest": true,
+        "unity_ready": true,
+        "store_ready": true,
+        "posttest": true,
+        "sealed": true,
+        "closed": true,
+        "path": "recordings\\f58c1fd5-bd60-4d02-be9e-9c259efa7802.jsonl",
+        "effective_ns": 800000000000,
+        "elapsed_ns": 810000000000,
+        "paused_ns": 6484000000,
+        "pause_at": null,
+        "start_ns": 101223859000000,
+        "end_ns": 101400218000000,
+        "ideal": "呼气",
+        "guide": "呼气",
+        "actual": "呼气",
+        "replay_effective_s": 800,
+        "replay_elapsed_s": 810,
+        "weather": "fade",
+        "segment": "lock_transition",
+        "quality": "GOOD",
+        "playback_speed": 5
+      },
+      {
+        "session_id": "DEV-50f596be67fe44ac",
+        "participant": "SIM-B",
+        "condition": "B",
+        "status": "COMPLETED",
+        "pretest": true,
+        "unity_ready": true,
+        "store_ready": true,
+        "posttest": true,
+        "sealed": true,
+        "closed": true,
+        "path": "recordings\\35c91bed-534b-4129-a704-3253edcbf132.jsonl",
+        "effective_ns": 800000000000,
+        "elapsed_ns": 810000000000,
+        "paused_ns": 6437000000,
+        "pause_at": null,
+        "start_ns": 101428859000000,
+        "end_ns": 101605546000000,
+        "ideal": "呼气",
+        "guide": "吸气",
+        "actual": "呼气",
+        "replay_effective_s": 800,
+        "replay_elapsed_s": 810,
+        "weather": "fade",
+        "segment": "lock_transition",
+        "quality": "GOOD",
+        "playback_speed": 5
+      },
+      {
+        "session_id": "DEV-8f1cf08a97cf436b",
+        "participant": "SIM-abort",
+        "condition": "A",
+        "status": "ABORTED",
+        "pretest": true,
+        "unity_ready": true,
+        "store_ready": true,
+        "posttest": true,
+        "sealed": true,
+        "closed": true,
+        "path": "recordings\\4f47f8ac-6697-4454-ade3-74b277bf9b5a.jsonl",
+        "effective_ns": 400000000000,
+        "elapsed_ns": 400000000000,
+        "paused_ns": 0,
+        "pause_at": null,
+        "start_ns": 101634250000000,
+        "end_ns": 101721750000000,
+        "ideal": "呼气",
+        "guide": "呼气",
+        "actual": "呼气",
+        "replay_effective_s": 400,
+        "replay_elapsed_s": 400,
+        "weather": "heat",
+        "segment": "lock_transition",
+        "quality": "GOOD",
+        "playback_speed": 5
+      }
+    ],
+    "ready": false,
+    "can_close": false,
+    "pending": null,
+    "error": null,
+    "effective_ns": 0,
+    "elapsed_ns": 0,
+    "record_count": 16003
+  },
+  "visible_pages": [
+    "home"
+  ],
+  "flow_fields": {
+    "flow_session": "DEV-8f1cf08a97cf436b",
+    "result": "已中止",
+    "effective": "06:40",
+    "total": "06:40",
+    "sealed": "已确认（模拟）",
+    "posttest": "已收到（模拟）",
+    "participant": "SIM-abort",
+    "assignment": "A",
+    "pretest": "已收到（模拟）",
+    "unity_ready": "已确认（模拟）",
+    "store_ready": "已确认（模拟）",
+    "study_context": "heat / lock_transition",
+    "study_quality": "GOOD",
+    "ideal": "呼气",
+    "guide": "呼气",
+    "measured": "呼气"
+  },
+  "session_capture": {
+    "state": "ABORTED",
+    "count": 16003,
+    "path": "D:\\Agent\\srp\\agent\\local\\artifacts\\td-workbench-study-v6\\20261008-200605\\development-workflow\\recordings\\4f47f8ac-6697-4454-ade3-74b277bf9b5a.jsonl",
+    "elapsed": "01:27",
+    "curves": {
+      "resp": "angular_velocity",
+      "ecg": "hr"
+    }
+  },
+  "device_preview": {
+    "accepted": 40406,
+    "rejected": 0,
+    "last_error": null,
+    "error_counts": {},
+    "streams": {
+      "resp": {
+        "state": "WAITING",
+        "buffered_samples": 0
+      },
+      "ecg": {
+        "state": "WAITING",
+        "buffered_samples": 0
+      }
+    },
+    "plots": {}
+  }
+}

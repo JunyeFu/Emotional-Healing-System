@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-29",
+  "source": "work",
+  "target": "agent/work",
+  "operation": "Native PowerShell Move-Item after checking both resolved targets remain inside repository",
+  "files": [
+    {"name": "codex-blackboard.md", "sha256": "7A93A513BD94F7C69B35E083A0A802503C2FB18FB7B6F2735E1CA59C54F50F63"},
+    {"name": "codex-evaluation-harness.md", "sha256": "0AF1C569E97DD31541EAD1F92644FCDC5235CAFCC81D4ECBED371F09F8ECD813"},
+    {"name": "codex-verification-log.md", "sha256": "B20FF43C3B5BB7CE4A2C80AAE6DF3FEEB1A1F13519C9FC57814ECB788089CDEC"}
+  ],
+  "post_move_bytes_match": true,
+  "current_consumers_repaired": ["AGENTS.md", "agent/README.md"],
+  "historical_references_preserved": "Signed records and old log references retain their historical paths; root-layout.json documents the actual relocation",
+  "running_unity_td_processes_at_check": [],
+  "root_migration_complete": false
+}

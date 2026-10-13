@@ -1,0 +1,34 @@
+{
+  "task_id": "U-01",
+  "scope": "Unity control probe; synthetic golden, not formal build or live device chain",
+  "checks": [
+    {
+      "name": "editmode",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/editmode-unity.log"
+    },
+    {
+      "name": "playmode",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/playmode-unity.log"
+    },
+    {
+      "name": "generate",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/generate-unity.log"
+    },
+    {
+      "name": "verify-current",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/verify-current.log"
+    },
+    {
+      "name": "verify-historical",
+      "exit_code": 0,
+      "log": "agent/tasks/U-01/evidence/runtime/verify-historical.log"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "new_scope_verification": "DOCUMENT_CONSISTENCY_ONLY_BUSINESS_EVIDENCE_PENDING",
+  "historical_checks_scope": "ORIGINAL_IMPLEMENTATION_NOT_NEW_ADAPTIVE_DESIGN"
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "repository-organization-not-business-task",
+  "input_snapshot_id": "repository-restructure-20261013",
+  "inputs": ["inputs/taskbook.md"],
+  "source_authority": "human/project/repository-restructure-taskbook-20261013.md",
+  "deliverables": ["README.md", "human/developers/README.md", "human/tasks/README.md", "human/deliverables/README.md", "agent/repository-layout.json"],
+  "business_task_status_changed": false
+}

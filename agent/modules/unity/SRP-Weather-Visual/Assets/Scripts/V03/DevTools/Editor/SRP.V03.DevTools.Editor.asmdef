@@ -1,0 +1,19 @@
+{
+    "name": "SRP.V03.DevTools.Editor",
+    "rootNamespace": "SRP.V03.DevTools",
+    "references": [
+        "SRP.V03",
+        "SRP.F03.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,265 @@
+{
+  "screenshot": "04-overview-1920.png",
+  "layout_size": [
+    1920.0,
+    1080.0
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "page": "overview",
+  "native_mouse_click": true,
+  "wheel_requested": false,
+  "scroll_before": null,
+  "scroll_after": 0.0,
+  "errors": "",
+  "panels": {
+    "Header": [
+      0.0,
+      1000.0,
+      1888.0,
+      48.0
+    ],
+    "Tabs": [
+      0.0,
+      956.0,
+      1888.0,
+      36.0
+    ],
+    "Context": [
+      0.0,
+      832.0,
+      1888.0,
+      116.0
+    ],
+    "Pages": [
+      0.0,
+      40.0,
+      1888.0,
+      784.0
+    ],
+    "Footer": [
+      0.0,
+      0.0,
+      1888.0,
+      32.0
+    ]
+  },
+  "overview_bands": {
+    "main": [
+      0.0,
+      544.0,
+      1888.0,
+      240.0
+    ],
+    "feedback": [
+      0.0,
+      424.0,
+      1888.0,
+      112.0
+    ],
+    "counters": [
+      0.0,
+      336.0,
+      1888.0,
+      80.0
+    ]
+  },
+  "overview_scrollbar": "off",
+  "fields": {
+    "actual_phase": {
+      "text": "吸气",
+      "size": [
+        376.0,
+        44.0
+      ],
+      "font_size": 18.0
+    },
+    "target_phase": {
+      "text": "吸气",
+      "size": [
+        376.0,
+        44.0
+      ],
+      "font_size": 18.0
+    },
+    "actual_step_id": {
+      "text": "inhale_1",
+      "size": [
+        376.0,
+        44.0
+      ],
+      "font_size": 18.0
+    },
+    "target_step_id": {
+      "text": "inhale_1",
+      "size": [
+        376.0,
+        44.0
+      ],
+      "font_size": 18.0
+    },
+    "actual_progress": {
+      "text": "35.0%",
+      "size": [
+        376.0,
+        44.0
+      ],
+      "font_size": 18.0
+    },
+    "target_progress": {
+      "text": "40.0%",
+      "size": [
+        376.0,
+        44.0
+      ],
+      "font_size": 18.0
+    },
+    "actual_cycle_index": {
+      "text": "0",
+      "size": [
+        376.0,
+        44.0
+      ],
+      "font_size": 18.0
+    },
+    "target_cycle_index": {
+      "text": "0",
+      "size": [
+        376.0,
+        44.0
+      ],
+      "font_size": 18.0
+    },
+    "ecg_sqi": {
+      "text": "88.0%",
+      "size": [
+        353.0,
+        30.0
+      ],
+      "font_size": 18.0
+    },
+    "ecg_state": {
+      "text": "已连接",
+      "size": [
+        263.0,
+        72.0
+      ],
+      "font_size": 16.0
+    },
+    "resp_sqi": {
+      "text": "92.0%",
+      "size": [
+        353.0,
+        30.0
+      ],
+      "font_size": 18.0
+    },
+    "resp_state": {
+      "text": "已连接",
+      "size": [
+        263.0,
+        72.0
+      ],
+      "font_size": 16.0
+    },
+    "lost_frames": {
+      "text": "0",
+      "size": [
+        315.0,
+        30.0
+      ],
+      "font_size": 18.0
+    },
+    "invalid_frames": {
+      "text": "0",
+      "size": [
+        315.0,
+        30.0
+      ],
+      "font_size": 18.0
+    },
+    "accepted_frames": {
+      "text": "80",
+      "size": [
+        315.0,
+        30.0
+      ],
+      "font_size": 18.0
+    },
+    "reconnect_count": {
+      "text": "0",
+      "size": [
+        315.0,
+        30.0
+      ],
+      "font_size": 18.0
+    },
+    "duplicate_frames": {
+      "text": "0",
+      "size": [
+        315.0,
+        30.0
+      ],
+      "font_size": 18.0
+    },
+    "out_of_order_frames": {
+      "text": "0",
+      "size": [
+        315.0,
+        30.0
+      ],
+      "font_size": 18.0
+    },
+    "last_error": {
+      "text": "—",
+      "size": [
+        501.0,
+        40.0
+      ],
+      "font_size": 18.0
+    },
+    "recovery_locked": {
+      "text": "否",
+      "size": [
+        501.0,
+        40.0
+      ],
+      "font_size": 18.0
+    },
+    "fallback_reason": {
+      "text": "—",
+      "size": [
+        501.0,
+        40.0
+      ],
+      "font_size": 18.0
+    },
+    "fallback_state": {
+      "text": "正常",
+      "size": [
+        501.0,
+        40.0
+      ],
+      "font_size": 18.0
+    },
+    "recovery_value": {
+      "text": "0.28",
+      "size": [
+        501.0,
+        40.0
+      ],
+      "font_size": 18.0
+    },
+    "actual_confidence": {
+      "text": "91.0%",
+      "size": [
+        501.0,
+        40.0
+      ],
+      "font_size": 18.0
+    }
+  },
+  "scope": "Native TD UI with synthetic development fixtures only"
+}

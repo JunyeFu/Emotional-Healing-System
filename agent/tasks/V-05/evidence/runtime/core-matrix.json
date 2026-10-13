@@ -1,0 +1,4044 @@
+{
+  "task_id": "V-05",
+  "scope": "HOST_CORE_ONLY_NOT_UNITY",
+  "cases": [
+    {
+      "weather_sequence": [
+        "storm",
+        "heat",
+        "snow",
+        "fade"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "heat",
+        "snow",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "heat",
+        "snow",
+        "fade"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "heat",
+        "snow",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "heat",
+        "fade",
+        "snow"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "heat",
+        "fade",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "heat",
+        "fade",
+        "snow"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "heat",
+        "fade",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "snow",
+        "heat",
+        "fade"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "snow",
+        "heat",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "snow",
+        "heat",
+        "fade"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "snow",
+        "heat",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "snow",
+        "fade",
+        "heat"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "snow",
+        "fade",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "snow",
+        "fade",
+        "heat"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "snow",
+        "fade",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "fade",
+        "heat",
+        "snow"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "fade",
+        "heat",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "fade",
+        "heat",
+        "snow"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "fade",
+        "heat",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "fade",
+        "snow",
+        "heat"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "fade",
+        "snow",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "storm",
+        "fade",
+        "snow",
+        "heat"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "storm",
+        "fade",
+        "snow",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "storm",
+        "snow",
+        "fade"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "storm",
+        "snow",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "storm",
+        "snow",
+        "fade"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "storm",
+        "snow",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "storm",
+        "fade",
+        "snow"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "storm",
+        "fade",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "storm",
+        "fade",
+        "snow"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "storm",
+        "fade",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "snow",
+        "storm",
+        "fade"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "snow",
+        "storm",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "snow",
+        "storm",
+        "fade"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "snow",
+        "storm",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "snow",
+        "fade",
+        "storm"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "snow",
+        "fade",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "snow",
+        "fade",
+        "storm"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "snow",
+        "fade",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "fade",
+        "storm",
+        "snow"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "fade",
+        "storm",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "fade",
+        "storm",
+        "snow"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "fade",
+        "storm",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "fade",
+        "snow",
+        "storm"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "fade",
+        "snow",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "heat",
+        "fade",
+        "snow",
+        "storm"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "heat",
+        "fade",
+        "snow",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "storm",
+        "heat",
+        "fade"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "storm",
+        "heat",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "storm",
+        "heat",
+        "fade"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "storm",
+        "heat",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "storm",
+        "fade",
+        "heat"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "storm",
+        "fade",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "storm",
+        "fade",
+        "heat"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "storm",
+        "fade",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "heat",
+        "storm",
+        "fade"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "heat",
+        "storm",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "heat",
+        "storm",
+        "fade"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "heat",
+        "storm",
+        "fade"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "heat",
+        "fade",
+        "storm"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "heat",
+        "fade",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "heat",
+        "fade",
+        "storm"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "heat",
+        "fade",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "fade",
+        "storm",
+        "heat"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "fade",
+        "storm",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "fade",
+        "storm",
+        "heat"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "fade",
+        "storm",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "fade",
+        "heat",
+        "storm"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "fade",
+        "heat",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "snow",
+        "fade",
+        "heat",
+        "storm"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "snow",
+        "fade",
+        "heat",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "storm",
+        "heat",
+        "snow"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "storm",
+        "heat",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "storm",
+        "heat",
+        "snow"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "storm",
+        "heat",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "storm",
+        "snow",
+        "heat"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "storm",
+        "snow",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "storm",
+        "snow",
+        "heat"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "storm",
+        "snow",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "heat",
+        "storm",
+        "snow"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "heat",
+        "storm",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "heat",
+        "storm",
+        "snow"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "heat",
+        "storm",
+        "snow"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "heat",
+        "snow",
+        "storm"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "heat",
+        "snow",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "heat",
+        "snow",
+        "storm"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "heat",
+        "snow",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "snow",
+        "storm",
+        "heat"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "snow",
+        "storm",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "snow",
+        "storm",
+        "heat"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "snow",
+        "storm",
+        "heat"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "snow",
+        "heat",
+        "storm"
+      ],
+      "cue_mode": "scene_native",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "snow",
+        "heat",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    },
+    {
+      "weather_sequence": [
+        "fade",
+        "snow",
+        "heat",
+        "storm"
+      ],
+      "cue_mode": "abstract_pacer",
+      "schema_version": "2.2",
+      "runtime_mode": "dev_replay",
+      "source_policy": "replay",
+      "completed_modules": [
+        "fade",
+        "snow",
+        "heat",
+        "storm"
+      ],
+      "status": "COMPLETED",
+      "core_elapsed_ns": 800000000000,
+      "control_events": 19,
+      "synthetic_acks": 19,
+      "segment_trace": [
+        {
+          "module_id": "fade",
+          "segment": "demo",
+          "at_ns": 0
+        },
+        {
+          "module_id": "fade",
+          "segment": "closed_loop",
+          "at_ns": 25000000000
+        },
+        {
+          "module_id": "fade",
+          "segment": "lock_transition",
+          "at_ns": 175000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "demo",
+          "at_ns": 200000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "closed_loop",
+          "at_ns": 225000000000
+        },
+        {
+          "module_id": "snow",
+          "segment": "lock_transition",
+          "at_ns": 375000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "demo",
+          "at_ns": 400000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "closed_loop",
+          "at_ns": 425000000000
+        },
+        {
+          "module_id": "heat",
+          "segment": "lock_transition",
+          "at_ns": 575000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "demo",
+          "at_ns": 600000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "closed_loop",
+          "at_ns": 625000000000
+        },
+        {
+          "module_id": "storm",
+          "segment": "lock_transition",
+          "at_ns": 775000000000
+        }
+      ]
+    }
+  ],
+  "case_count": 48,
+  "sequence_count": 24,
+  "acks": "SYNTHETIC_HOST_FIXTURE",
+  "unity_render_receipts": "NOT_RUN",
+  "external_journey_runtime": "NOT_RUN",
+  "human_formative_review": "NOT_RUN"
+}

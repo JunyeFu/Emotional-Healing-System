@@ -1,0 +1,43 @@
+.......F                                                                 [100%]
+================================== FAILURES ===================================
+_____ test_original_reports_signatures_schema_and_business_code_unchanged _____
+
+    def test_original_reports_signatures_schema_and_business_code_unchanged():
+        helpers = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))
+        git_bytes = helpers['git_source_bytes']
+        for part in ('fixtures', 'evidence', 'contracts', 'config', 'srp_randomization', 'X-01_技术验收记录.md'):
+            relative = (MODULE / part).relative_to(ROOT).as_posix()
+            original = helpers['historical_project_path'](ROOT, relative)
+            files = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', '43d1a4b', '--', original], cwd=ROOT).decode('utf-8').splitlines()
+            assert files, original
+            for name in files:
+                path = helpers['resolve_project_path'](ROOT, name)
+>               assert path.read_bytes().replace(b'\r\n', b'\n') == git_bytes(ROOT, '43d1a4b', name).replace(b'\r\n', b'\n'), name
+                       ^^^^^^^^^^^^^^^^^
+
+agent\tasks\X-01\execution\test_current_handoff.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Agent/srp/"02-/346/212/200/346/234/257/347/240/224/345/217/221/08-/351/232/217/346/234/272/345/214/226/fixtures/synthetic/duplicate_audit_fixture_v1.json"')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [Errno 22] Invalid argument: 'D:\\Agent\\srp\\"02-\\346\\212\\200\\346\\234\\257\\347\\240\\224\\345\\217\\221\\08-\\351\\232\\217\\346\\234\\272\\345\\214\\226\\fixtures\\synthetic\\duplicate_audit_fixture_v1.json"'
+
+C:\Users\fujunye\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py:771: OSError
+=========================== short test summary info ===========================
+FAILED agent/tasks/X-01/execution/test_current_handoff.py::test_original_reports_signatures_schema_and_business_code_unchanged
+1 failed, 7 passed in 7.63s

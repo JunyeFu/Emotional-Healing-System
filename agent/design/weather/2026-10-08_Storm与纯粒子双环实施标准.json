@@ -1,0 +1,325 @@
+{
+  "standard_id": "SRP-STORM-PARTICLE-RINGS-20261008",
+  "decided_on": "2026-10-08",
+  "authority": "USER_ADOPTED_MEMBER_IMPLEMENTATION",
+  "member": "李民约",
+  "implementation_evidence": "MEMBER_REPORTED_SOURCE_NOT_YET_RECEIVED",
+  "unity_target": {
+    "version": "2022.3.62f3",
+    "revision": "96770f904ca7",
+    "shared_project_migration": "PENDING"
+  },
+  "storm": {
+    "scene": "溪边木屋",
+    "environment_effects": [
+      "rain_curtain",
+      "lightning",
+      "water_rain_ripples",
+      "ground_rain_ripples"
+    ],
+    "target_steps": [
+      "inhale_1",
+      "hold_1",
+      "exhale_1",
+      "hold_2"
+    ],
+    "target_seconds": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "environment_effects_are_not_automatically_breath_cues": true
+  },
+  "abstract_pacer": {
+    "form": "screen_space_particle_double_ring",
+    "position": "CENTER_SLIGHTLY_ABOVE_SCREEN_CENTER",
+    "outer_source": "target_step_and_progress",
+    "inner_source": "independent_actual_step_and_progress",
+    "inner_auto_cycles_with_target": false,
+    "core": "dense_particles_no_continuous_stroke",
+    "periphery": [
+      "flow",
+      "sway",
+      "delayed_scale_follow"
+    ],
+    "separate_core_periphery_parameters": true,
+    "decoration_delay_changes_step_truth": false,
+    "geometry_parameters": "REUSE_MEMBER_VALUES_PENDING_SOURCE_HANDOFF"
+  },
+  "step_transition": {
+    "hold_preserves_current_size": true,
+    "next_step_starts_from_current_size": true,
+    "fade_actual_missing_second_inhale": "GO_DIRECTLY_TO_EXHALE_NO_SYNTHETIC_SECOND_INHALE",
+    "target_profile_skips_second_inhale": false
+  },
+  "rhythm_profiles": {
+    "storm": "3_3_3_3_CONFIRMED_BY_USER",
+    "heat": "MEMBER_IMPLEMENTED_VALUES_PENDING_COMPARISON_WITH_P01",
+    "snow": "MEMBER_IMPLEMENTED_VALUES_PENDING_COMPARISON_WITH_P01",
+    "fade": "MEMBER_IMPLEMENTED_VALUES_PENDING_COMPARISON_WITH_P01"
+  },
+  "runtime": {
+    "local_preset_mode": "DEV_ONLY",
+    "formal_clock": "P-01_PYTHON",
+    "step_identity": "F-05_V2.2",
+    "saved_scene_test_panel": "OFF",
+    "conditional_test_panel": "DEVELOPMENT_ONLY"
+  },
+  "conditions": {
+    "scene_native_and_abstract_pacer_retained": true,
+    "both_conditions_use_same_storm_cabin_background": true,
+    "phase_cues_exclusive": true,
+    "particle_rings_used_in_scene_native": false
+  },
+  "preserved_contracts": [
+    "independent_actual_and_quality_fallback",
+    "recovery_lifecycle",
+    "fade_time_driven_fullscreen_color",
+    "participant_admission_and_formal_freeze"
+  ],
+  "missing_handoff": [
+    "Unity_source_and_scene_Prefab",
+    "exact_center_radius_scale_easing_values",
+    "core_and_periphery_particle_parameters",
+    "heat_snow_fade_actual_rhythm_values",
+    "2022_package_manifest_and_lock"
+  ],
+  "affected_tasks": [
+    {
+      "task_id": "F-03",
+      "category": "视觉与交互",
+      "status": "DONE",
+      "change": "以Unity 2022.3.62f3重建工程恢复、包锁和Edit/Play/Windows开发构建入口；旧Unity6测试只保留历史证明。"
+    },
+    {
+      "task_id": "U-01",
+      "category": "视觉与交互",
+      "status": "DONE",
+      "change": "在2022版本验证控制桥与实际粒子渲染后ConfirmRendered；步骤切换、暂停恢复不重置合法环半径。"
+    },
+    {
+      "task_id": "U-02",
+      "category": "视觉与交互",
+      "status": "DONE",
+      "change": "将Target/Actual投影接到外目标环/内实际环；内圈独立步骤进度输入，保留质量降级和累计生命周期。"
+    },
+    {
+      "task_id": "R-01",
+      "category": "视觉与交互",
+      "status": "DONE",
+      "change": "完整表示方案改为溪边木屋Storm与纯粒子抽象提示；分开圆芯信息和外围装饰性延迟，更新视觉混杂描述。"
+    },
+    {
+      "task_id": "V-02",
+      "category": "视觉与交互",
+      "status": "DONE",
+      "change": "Storm场景改为溪边木屋，采用雨幕、闪电、水面和地面雨滴波纹；抽象形式改为中央略偏上的屏幕空间粒子双环。"
+    },
+    {
+      "task_id": "V-03",
+      "category": "视觉与交互",
+      "status": "DONE",
+      "change": "更新Storm背景与抽象Target/Actual载体映射；圆芯承载步骤进度、外围延迟仅装饰，素材台账按实际成员资产补齐。"
+    },
+    {
+      "task_id": "V-04",
+      "category": "视觉与交互",
+      "status": "DONE",
+      "change": "旧Storm=B底图和连续线双环样片转为历史参考；新分镜与交接采用木屋及粒子双环，不重写已签收媒体。"
+    },
+    {
+      "task_id": "V-05",
+      "category": "视觉与交互",
+      "status": "READY",
+      "change": "灰盒接收成员Storm和粒子双环，2022运行全旅程；区分本地预设与Python时钟、独立Actual接线，保存场景测试面板关闭。"
+    },
+    {
+      "task_id": "U-03",
+      "category": "视觉与交互",
+      "status": "WAIT_DEP",
+      "change": "Fade公共模板沿用成员双环接口和粒子结构；补吸从当前大小继续，未识别补吸可直接呼气；验证暂停及四态降级。"
+    },
+    {
+      "task_id": "U-04",
+      "category": "视觉与交互",
+      "status": "WAIT_DEP",
+      "change": "剩余天气复用成员粒子双环和独立Actual接口；若分配Storm则接收木屋现有实现，不重建旧隘口。天气A绑定仍待分配。"
+    },
+    {
+      "task_id": "U-05",
+      "category": "视觉与交互",
+      "status": "WAIT_DEP",
+      "change": "剩余天气复用成员粒子双环和独立Actual接口；按实际天气接入节奏配置、2022场景与Profiler。天气B绑定仍待分配。"
+    },
+    {
+      "task_id": "U-06",
+      "category": "视觉与交互",
+      "status": "WAIT_DEP",
+      "change": "剩余天气复用成员粒子双环和独立Actual接口；按实际天气接入节奏配置、2022场景与构建。天气C绑定仍待分配。"
+    },
+    {
+      "task_id": "U-07",
+      "category": "视觉与交互",
+      "status": "WAIT_DEP",
+      "change": "采用屏幕空间纯粒子双环，密集粒子圆芯、外围流动摆动与延迟跟随；两部分参数独立，外环目标内环实际。"
+    },
+    {
+      "task_id": "U-08",
+      "category": "视觉与交互",
+      "status": "WAIT_DEP",
+      "change": "集成2022四天气八呈现；预算覆盖圆芯/外围数量和运动、Storm闪电、遮挡与分辨率缩放；默认关闭测试面板。"
+    },
+    {
+      "task_id": "G-02",
+      "category": "运行集成",
+      "status": "DONE",
+      "change": "登记成员木屋、雨幕、闪电、波纹、粒子材质/纹理及2022实际依赖的来源与许可，保留旧台账原件。"
+    },
+    {
+      "task_id": "P-01",
+      "category": "运行集成",
+      "status": "DONE",
+      "change": "本地预设仅作开发演示；正式目标仍由Python时钟与v2.2步骤驱动，Actual接口独立，不修改现有研究节奏数值。"
+    },
+    {
+      "task_id": "I-01",
+      "category": "运行集成",
+      "status": "WAIT_DEP_EXTERNAL",
+      "change": "在2022木屋/粒子场景接入双设备实际呼吸输入，核对目标与实际分离、步骤切换和实际渲染回执及外部延迟。"
+    },
+    {
+      "task_id": "Z-01",
+      "category": "运行集成",
+      "status": "WAIT_DEP",
+      "change": "候选干净检出以2022.3.62f3及迁移后的实际包锁重建；成员源码/场景/参数缺失不能用现有Unity6缓存补齐。"
+    },
+    {
+      "task_id": "U12-06",
+      "category": "运行集成",
+      "status": "IN_PROGRESS",
+      "change": "正式入口接入2022呈现；预设模式与正式Python/Actual输入分开，教学暴露及准入门保留。记录对原领取快照的影响。"
+    },
+    {
+      "task_id": "X-03",
+      "category": "运行集成",
+      "status": "WAIT_DEP",
+      "change": "安全重放及未来策略运行复用2022粒子适配器；目标步骤与独立Actual保持分离，装饰延迟不改变决策/事件时间。"
+    },
+    {
+      "task_id": "Q-01",
+      "category": "评审与教学",
+      "status": "DONE",
+      "change": "新增木屋与粒子双环材料候选及独立重建说明；明确外目标内实际、圆芯真值和装饰延迟，旧签收材料不转签。"
+    },
+    {
+      "task_id": "Q-02",
+      "category": "评审与教学",
+      "status": "WAIT_DEP",
+      "change": "认知访谈与可访问预试改用木屋/粒子材料，观察两次停顿、双吸、缺补吸、外围运动与中央略偏上布局的理解。"
+    },
+    {
+      "task_id": "Q-03",
+      "category": "评审与教学",
+      "status": "WAIT_DEP_EXTERNAL",
+      "change": "2022实际呈现纳入技术预试，计量步骤边界、圆芯响应、外围装饰延迟及质量缺失，不把装饰延迟当生理延迟。"
+    },
+    {
+      "task_id": "E-01",
+      "category": "评审与教学",
+      "status": "BLOCKED_EXTERNAL",
+      "change": "Level A真实执行消费新版木屋/粒子材料候选；按实际专家观察修订，旧图片评价不能代替新呈现评价。"
+    },
+    {
+      "task_id": "E-02",
+      "category": "评审与教学",
+      "status": "BLOCKED_EXTERNAL",
+      "change": "Level B执行用新版粒子提示，独立回答/双人编码需覆盖目标实际区分、停留和Fade缺补吸路径。"
+    },
+    {
+      "task_id": "B-01",
+      "category": "评审与教学",
+      "status": "BLOCKED_EXTERNAL",
+      "change": "Level C批次记录2022构建与粒子参数版本；核对Actual独立输入、暂停续接及Storm闪电/粒子帧时间。"
+    },
+    {
+      "task_id": "E-03",
+      "category": "评审与教学",
+      "status": "BLOCKED_EXTERNAL",
+      "change": "技术关闭消费2022实际批次及参数，而不是Unity6历史测试；圆芯响应和装饰延迟分别关闭问题再交CAL。"
+    },
+    {
+      "task_id": "U12-02",
+      "category": "评审与教学",
+      "status": "DONE",
+      "change": "步骤实例题目/真值新增新版素材候选；Storm四步与Fade实际可跳补吸，答案依据真实step_id而非外围滞后粒子。"
+    },
+    {
+      "task_id": "U12-03",
+      "category": "评审与教学",
+      "status": "IN_REVIEW",
+      "change": "等预算中性教学改用新版木屋/粒子材料候选，说明外目标内实际和装饰动效；原IN_REVIEW输入和候选签署保留。"
+    },
+    {
+      "task_id": "U12-11",
+      "category": "冻结与一致性",
+      "status": "WAIT_DEP_EXTERNAL",
+      "change": "冻结实际2022构建、环圆心半径缩放缓动、圆芯/外围数量及延迟、四天气节奏与显示预算；缺失数值不代填。"
+    },
+    {
+      "task_id": "G-03",
+      "category": "冻结与一致性",
+      "status": "BLOCKED_EXTERNAL",
+      "change": "阶段一冻结消费新版表示与真实2022构建参数；研究比较/样本/SAP不因成员工程实现自动修改或放行。"
+    },
+    {
+      "task_id": "G-05",
+      "category": "冻结与一致性",
+      "status": "WAIT_DEP_EXTERNAL",
+      "change": "正式专机及配置材料改为2022目标与实际粒子场景；机器可用与正式准入分开，真实外部批准仍按原职责。"
+    },
+    {
+      "task_id": "U12-09",
+      "category": "冻结与一致性",
+      "status": "WAIT_DEP",
+      "change": "覆盖本次37包、READY输入刷新及进行中/复核中影响；核对木屋、粒子形式、2022目标一致且原签收不转移。"
+    },
+    {
+      "task_id": "W-01",
+      "category": "论文与移交",
+      "status": "DONE",
+      "change": "论文骨架中的实现说明消费新版木屋和粒子提示；现阶段按成员报告写实现候选，效果与因果结论等待真实结果。"
+    },
+    {
+      "task_id": "W-02",
+      "category": "论文与移交",
+      "status": "WAIT_DEP",
+      "change": "主稿方法/图示改用实际新版构建：纯粒子完整表示、圆芯与装饰延迟分离；不把表示差异仅归因于天气。"
+    },
+    {
+      "task_id": "W-03",
+      "category": "论文与移交",
+      "status": "WAIT_DEP",
+      "change": "投稿复现包采用真实2022构建、依赖与粒子配置，图片/视频来源许可纳入公开范围决定；旧签收不作新运行证据。"
+    },
+    {
+      "task_id": "W-04",
+      "category": "论文与移交",
+      "status": "WAIT_DEP",
+      "change": "成员交接包含2022源工程、Storm场景/Prefab、内圈接口、四天气配置、圆芯/外围参数及面板开关。"
+    }
+  ],
+  "observed_video_issue": {
+    "message": "The referenced script on this Behaviour (Game Object '<null>') is missing!",
+    "seen_in": "second video bottom warning bar",
+    "root_cause": "NOT_IDENTIFIED_WITHOUT_SOURCE",
+    "closeout_owners": [
+      "F-03",
+      "U-01",
+      "U-08",
+      "Z-01"
+    ],
+    "acceptance": "OPEN_PENDING_SOURCE_AND_FRESH_RUN"
+  },
+  "reference_frames_source": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+}

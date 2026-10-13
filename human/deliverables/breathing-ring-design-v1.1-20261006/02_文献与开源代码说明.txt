@@ -1,0 +1,107 @@
+呼吸圈的文献与开源代码
+整理日期：2026年10月6日
+
+一、胸围变化与胸带信号
+
+文献1
+Woo, S.-D., Kim, T.-H., & Lim, J.-Y. (2016).
+The effects of breathing with mainly inspiration or expiration on pulmonary function and chest expansion.
+Journal of Physical Therapy Science, 28(3), 927–931.
+DOI：10.1589/jpts.28.927
+原文网页：https://pmc.ncbi.nlm.nih.gov/articles/PMC4842467/
+出版方PDF：https://www.jstage.jst.go.jp/article/jpts/28/3/28_jpts-2015-914/_pdf
+本包原文：papers/Woo_2016_Chest_Expansion.pdf，5页。
+许可：CC BY-NC-ND，原文保持不变，用于非商业交流。
+
+阅读方法部分的平坐测量和表2中的CSI、CSE。研究有20名成年男性，两组练习前的吸气与呼气胸围均值分别为90.6/83.7厘米、94.9/88.7厘米。用呼气均值除以吸气均值，得到0.9238和0.9347。
+
+这些数值来自用力呼吸任务，可帮助理解胸廓变化的量级。它们是组均值之比，不代表每个人在舒适呼吸时都会有相同幅度。本项目把圆的最小半径设为最大半径的80%，是为了放大可见变化，不是将这个胸围比例直接搬到屏幕上。
+
+设备资料
+PLUX. respiBAN BLE Datasheet，2024年5月21日版。
+官方全文：https://support.pluxbiosignals.com/wp-content/uploads/2024/05/respiBAN_BLE_Datasheet.pdf
+
+重点阅读第9页的相对电感变化，以及第11—14页的吸呼、深浅呼吸和停留示例。本项目使用的是respiBAN BLE感应式呼吸带。
+
+资料给出的未加载标称电感约为2—5微亨，一次呼吸周期中的电感变化约为标称量的1%—3%。吸气时信号通常上升，呼气时下降，停留时较稳定但仍可能漂移。这里的百分比描述电感变化，不是胸围增长，也不能用原始读数的最大值和最小值直接推算圆的半径。
+
+实际显示需要参考同一个人的舒适呼吸范围。信号处理人员据此识别步骤和进度，Unity再将步骤进度画成内圈。设备资料在此提供官方链接，不另行分发全文。
+
+二、呼吸频率与结构
+
+文献2
+Zaccaro, A., et al. (2018).
+How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing.
+Frontiers in Human Neuroscience, 12, 353.
+DOI：10.3389/fnhum.2018.00353
+原文网页：https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00353/full
+本包原文：papers/Zaccaro_2018_Slow_Breathing.pdf，16页。
+许可：CC BY 4.0。
+
+综述纳入15项研究，把每分钟少于10次的呼吸作为慢呼吸范围，讨论HRV、呼吸性心率变化与主观心理状态。项目中的每分钟5—6个完整循环属于这一范围；具体情绪结果仍由本项目的量表和真实记录回答。
+
+文献3
+Lehrer, P. M., & Gevirtz, R. (2014).
+Heart rate variability biofeedback: how and why does it work?
+Frontiers in Psychology, 5, 756.
+DOI：10.3389/fpsyg.2014.00756
+原文网页：https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2014.00756/full
+本包原文：papers/Lehrer_Gevirtz_2014_HRV_Biofeedback.pdf，9页。
+许可：CC BY。
+
+文章解释约0.1Hz、每分钟6次呼吸与心率波动的关系，并指出共振频率存在个体差异。这为heat和snow使用10秒完整周期提供了研究起点，但不能把HRV增加直接当作负性情绪下降。
+
+文献4
+Balban, M. Y., et al. (2023).
+Brief structured respiration practices enhance mood and reduce physiological arousal.
+Cell Reports Medicine, 4(1), 100895.
+DOI：10.1016/j.xcrm.2022.100895
+原文网页：https://pmc.ncbi.nlm.nih.gov/articles/PMC9873947/
+出版方网页：https://www.sciencedirect.com/science/article/pii/S2666379122004748
+本包原文：papers/Balban_2023_Structured_Breathing.pdf，25页，含主文及补充材料。
+公开转载来源：
+https://globalwellnessinstitute.org/wp-content/uploads/2023/03/Cell-Reports-Medicine-Jan-2023-Issue-Breathwork_BreatheInitiative.pdf
+许可：CC BY-NC-ND 4.0，原文保持不变，用于非商业交流。
+
+研究比较一个月中每天5分钟的三类呼吸练习与正念练习，包含双吸长呼和等时吸停呼停，并记录情绪与生理结果。它支持fade采用“一次主吸、一次较小补吸、一次长呼”的结构，也为分别收集量表和真实生理记录提供了参考。
+
+四篇论文为慢呼吸和呼吸结构提供依据，并未验证本项目的圆心、蓝色、alpha、线宽、80%半径比或fade的80/20行程。这些参数属于界面制作设计。
+
+三、适合阅读的开源项目
+
+1. Unity空心圆：Unity UI Extensions
+
+仓库：https://github.com/Unity-UI-Extensions/com.unity.uiextensions
+查阅版本：release分支，d47f838ba918bbb9b26f242bd944940a711f525f。
+UICircle源码：
+https://github.com/Unity-UI-Extensions/com.unity.uiextensions/blob/d47f838ba918bbb9b26f242bd944940a711f525f/Runtime/Scripts/Primitives/UICircle.cs
+组件说明：https://unity-ui-extensions.github.io/Controls/UICircle.html
+BSD-3-Clause许可：
+https://github.com/Unity-UI-Extensions/com.unity.uiextensions/blob/d47f838ba918bbb9b26f242bd944940a711f525f/LICENSE.md
+
+用于绘制两个空心圆，支持厚度、颜色和alpha。呼吸步骤来自项目数据，不由这个组件识别。采用源码时保留版权和许可，并一并处理UIPrimitiveBase等基础类型；无需导入无关示例。
+
+2. 呼吸波形处理：NeuroKit2
+
+仓库：https://github.com/neuropsychology/NeuroKit
+MIT许可：https://github.com/neuropsychology/NeuroKit/blob/master/LICENSE
+呼吸处理说明：https://neuropsychology.github.io/NeuroKit/functions/rsp.html
+相位源码：https://neuropsychology.github.io/NeuroKit/_modules/neurokit2/rsp/rsp_phase.html
+
+可从rsp_clean、rsp_peaks、rsp_amplitude、rsp_phase、rsp_rate开始阅读，了解清理波形、寻找峰谷和计算相位的方法。项目现有基线为0.2.13，这份资料不要求更新。
+
+一般的吸呼相位不足以区分storm的两次停留和fade的两次吸气；全段离线相位计算也不能直接当作无延迟的在线估计。它适合离线分析和算法参考，实际步骤识别还要结合本项目规则。
+
+3. 呼吸节拍器：exhale
+
+仓库：https://github.com/peterklingelhofer/exhale
+MIT许可：https://github.com/peterklingelhofer/exhale/blob/main/LICENSE
+代码入口：rust/crates/exhale-core、rust/crates/exhale-render。
+
+可参考它如何安排吸气、停留、呼气、停留，以及如何把定时和绘制分开。它不是Unity组件，也不读取本项目胸带，适合借鉴思路，不必移植整套桌面程序。
+
+四、本项目的使用方式
+
+Unity用空心圆组件完成显示；外圈接目标步骤，内圈接真实信号处理得到的实际步骤。NeuroKit2主要供波形处理和离线分析参考，exhale主要供周期安排参考。
+
+颜色、位置和尺寸按设计文件填写。呼吸圈的视觉设计与研究结果分开：画面负责提示，短时负性情绪变化由前后量表和真实记录分析。

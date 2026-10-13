@@ -1,0 +1,28 @@
+....F                                                                    [100%]
+================================== FAILURES ===================================
+______________________ test_sources_navigation_and_terms ______________________
+
+    def test_sources_navigation_and_terms():
+        for source in read(TASK / 'inputs/sources.json')['paths']:
+            assert (ROOT / source).is_file(), source
+        for relative in ('25_论文投稿与成果交付/02_投稿返修检查表.md',
+                         '13_步骤12_投稿返修发表与归档/00_第12步计划.md',
+                         '13_步骤12_投稿返修发表与归档/01_详细执行方案.md'):
+            path = PLAN / relative
+            text = path.read_text(encoding='utf-8')
+            assert 'agent/tasks/W-03/outputs/current-submission.md' in text
+            for link in re.findall(r'\]\(([^)]+)\)', text):
+                if not link.startswith('https://'):
+>                   assert (path.parent / link).resolve().exists(), link
+E                   AssertionError: ../../../../agent/tasks/W-03/outputs/current-submission.md
+E                   assert False
+E                    +  where False = exists()
+E                    +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/W-03/outputs/current-submission.md').exists
+E                    +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/W-03/outputs/current-submission.md') = resolve()
+E                    +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付') / '../../../../agent/tasks/W-03/outputs/current-submission.md').resolve
+E                    +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/25_论文投稿与成果交付/02_投稿返修检查表.md').parent
+
+agent\tasks\W-03\execution\test_submission_handoff.py:72: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/W-03/execution/test_submission_handoff.py::test_sources_navigation_and_terms
+1 failed, 4 passed in 0.15s

@@ -1,0 +1,33 @@
+{
+  "task_id": "U-01",
+  "paths": [
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md",
+    "agent/validation/U-01_技术验收记录.md",
+    "agent/validation/U-01_独立Agent复核记录.md",
+    "agent/validation/U-01_第二人审核报告_已签署.md",
+    "agent/validation/evidence/U-01",
+    "agent/modules/unity/SRP-Weather-Visual/Assets/U01",
+    "agent/modules/communication/contracts/runtime-contract-v2.2.schema.json",
+    "agent/modules/communication/contracts/fixtures-v2.2",
+    "agent/modules/srp_session_core/fixtures/golden/four-module-trace-v1.json",
+    "agent/tasks/P-01/outputs/summary.json",
+    "agent/tasks/P-02/outputs/current-store-contract.md",
+    "agent/tasks/F-05/outputs/summary.json",
+    "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md",
+    "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.json",
+    "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json",
+    "agent/tasks/U-01/outputs/current-implementation-evidence.md",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

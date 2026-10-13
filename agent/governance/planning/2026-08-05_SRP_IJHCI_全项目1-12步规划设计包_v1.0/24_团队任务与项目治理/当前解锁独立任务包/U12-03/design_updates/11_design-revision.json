@@ -1,0 +1,31 @@
+{
+  "task_id": "U12-03",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "固定与原生自适应公平教学",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "固定与原生自适应公平教学修订交接",
+    "两条件脚本",
+    "预算与问答"
+  ],
+  "acceptance_criteria": [
+    "AC1 等预算中性说明，A说明预设而B说明真实响应及有限等待",
+    "AC2 前测在教学前，学不会/求助记录不排除",
+    "AC3 适应可读与停止明确，不把B更高级作为教学期待"
+  ],
+  "evidence_required": [
+    "两条件脚本",
+    "预算与问答",
+    "真实理解及修订"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "IN_REVIEW",
+  "depends_on_original": [
+    "U12-01",
+    "R-01"
+  ],
+  "revision_state": "ACTIVE_SCOPE_CHANGED_FROZEN_INPUT_PRESERVED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

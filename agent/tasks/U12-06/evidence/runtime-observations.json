@@ -1,0 +1,23 @@
+{
+  "task_id": "U12-06",
+  "scope": "EXISTING_SYNTHETIC_FIXTURE_ONLY",
+  "default_formal": {
+    "result": "REJECTED",
+    "code": "FORMAL_GATE_UNAVAILABLE",
+    "detail": "assignment_gate"
+  },
+  "synthetic_formal": {
+    "status": "PREPARED",
+    "control_events": 1,
+    "gate_evidence_ids": [
+      "g02:privacy-lint:PASS",
+      "formal-fixture:PASS",
+      "memory:1",
+      "formal-fixture:PASS"
+    ]
+  },
+  "real_approval_read": false,
+  "formal_research_gate_delivered": false,
+  "tcp_udp_sent": false,
+  "real_exposure_registered": false
+}

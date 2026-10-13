@@ -1,0 +1,19 @@
+........................................................F.               [100%]
+================================== FAILURES ===================================
+__________________ test_current_design_generated_separately ___________________
+
+    def test_current_design_generated_separately():
+>       assert json.loads((TASK / 'evidence/current-design.json').read_text(encoding='utf-8')) == BUILD['generate']()
+E       AssertionError: assert {'evidence_cl...D9042F2', ...} == {'evidence_cl...D9042F2', ...}
+E         
+E         Omitting 7 identical items, use -vv to show
+E         Differing items:
+E         {'outputs': {'execution/build_evidence.py': 'd96b7b44f55e96775106e28abfc1d5b8154a6de58f9ac0fcc61647910a715d8c', 'execu...012c88f8e70ed5613c', 'outputs/contract.json': '3c5775a0464eff80299717c636a0608966465e399194ff21265ed96aa2d74037', ...}} != {'outputs': {'execution/build_evidence.py': '2c2b8fe0d47b9c59c551355f61b7d4185d3536e07bd3c932d95c6160eb9c8645', 'execu...bdc563748e0cabe41b', 'outputs/contract.json': '3c5775a0464eff80299717c636a0608966465e399194ff21265ed96aa2d74037', ...}}
+E         {'sources': {'02-技术研发/srp_session...
+E         
+E         ...Full output truncated (2 lines hidden), use '-vv' to show
+
+agent\tasks\U12-03\execution\test_training_handoff.py:63: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-03/execution/test_training_handoff.py::test_current_design_generated_separately
+1 failed, 57 passed in 0.46s

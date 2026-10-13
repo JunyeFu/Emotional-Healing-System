@@ -1,0 +1,21 @@
+....................F..                                                  [100%]
+================================== FAILURES ===================================
+____________________ test_current_navigation_links_resolve ____________________
+
+    def test_current_navigation_links_resolve():
+        docs = ROOT / 'agent/modules/07-数据治理/docs'
+        for path in (LEGACY / 'TASK.md', LEGACY / 'FILES.md', docs / 'formal_machine_setup.md', docs / 'formal_environment_closure_runbook.md'):
+            for target in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8-sig')):
+>               assert (path.parent / target).resolve().exists(), (path, target)
+E               AssertionError: (WindowsPath('D:/Agent/srp/agent/modules/07-数据治理/docs/formal_machine_setup.md'), '../../../agent/tasks/G-05/outputs/current-admission.md')
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/G-05/outputs/current-admission.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/G-05/outputs/current-admission.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/modules/07-数据治理/docs') / '../../../agent/tasks/G-05/outputs/current-admission.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/modules/07-数据治理/docs') = WindowsPath('D:/Agent/srp/agent/modules/07-数据治理/docs/formal_machine_setup.md').parent
+
+agent\tasks\G-05\execution\test_admission_handoff.py:70: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/G-05/execution/test_admission_handoff.py::test_current_navigation_links_resolve
+1 failed, 22 passed in 0.23s

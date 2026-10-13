@@ -1,0 +1,223 @@
+{
+  "task_id": "R-01",
+  "title": "R-01 固定开环与原生自适应整包设计 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "R-01注册状态DONE仅保留原范围。当前任务更新为固定开环与原生自适应整包设计；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "Codex独立AC审查（模型，不是团队第二人）",
+    "date": "2026-08-06",
+    "commit": "",
+    "method": "原验收PASS_FOR_CANDIDATE_PACKAGE明确是模型候选审查；未记录真实团队双签，本轮不补署傅钧烨或虚构签收提交。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 明确A无本人反馈、B闭环支持且共享I，撤回纯表示前提",
+        "AC2 G、X、累计与不可用信息来源明确且可理解",
+        "AC3 固有处理差异和可控制混杂分开，两臂不独立归因机制"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "固定开环与原生自适应整包设计修订交接",
+        "完整方案对照表",
+        "I/G/X表示规则",
+        "ODES-20261008设计交付：审阅需求—原理—设计—证据链，条件差异及具体天气用途；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：固定开环与原生自适应整包设计"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：完整方案对照表；I/G/X表示规则；六类异常故事板"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：F-02；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：完整方案对照表；I/G/X表示规则；六类异常故事板"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "R01-N01",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "旧Gate 2报告门不适用于v1.2，当前研究与天气使用入口已对齐，历史保留",
+      "source": "agent/tasks/R-01/outputs/current-representation.md"
+    },
+    {
+      "id": "R01-N02",
+      "status": "FIXED",
+      "description": "旧校验器实际Schema漏检已修复，13项正负回归通过",
+      "source": "agent/tasks/R-01/evidence/verification.json"
+    },
+    {
+      "id": "R01-N03",
+      "status": "OPEN_HUMAN_REVIEW",
+      "description": "历史仅模型候选审查，无真实团队双签；不代署，由团队总监安排",
+      "source": "agent/tasks/R-01/TASK.md"
+    },
+    {
+      "id": "R01-N04",
+      "status": "OPEN_DOWNSTREAM_CONFIGURATIONS",
+      "description": "仅storm双条件合法fixture，真实四结构配置与渲染由U-03至U-07补齐",
+      "source": "agent/tasks/R-01/evidence/consumer-impact.md"
+    },
+    {
+      "id": "R-01-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "固定开环与原生自适应整包设计；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前表示方案适用",
+      "path": "agent/tasks/R-01/outputs/current-representation.md"
+    },
+    {
+      "label": "本次Schema验证",
+      "path": "agent/tasks/R-01/evidence/verification.json"
+    },
+    {
+      "label": "消费者变更影响",
+      "path": "agent/tasks/R-01/evidence/consumer-impact.md"
+    },
+    {
+      "label": "历史模型验收",
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/20_产品与场景设计/R-01_四层表示方案/R-01_验收记录.md"
+    },
+    {
+      "label": "国内技能与学习资料",
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/R-01/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
+    }
+  ],
+  "previous_conclusion_202609": "R-01历史DONE只覆盖候选设计材料。校验器实际迁入Agent并补足Schema执行，13项回归通过；当前入口与v1.2、F-02及四层实现对齐。旧Gate 2报告门和旧天气提案不再指导当前研究。真人复核、四天气配置和真实渲染证据仍开放。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
+}

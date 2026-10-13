@@ -1,0 +1,79 @@
+{
+  "contract_id": "U12-03-FAIR-TRAINING-v0.1",
+  "status": "CANDIDATE_NOT_RESEARCH_FROZEN",
+  "formal_training_budget_seconds": null,
+  "formal_collection_allowed": false,
+  "conditions": [
+    "scene_native",
+    "abstract_pacer"
+  ],
+  "candidate_budget_seconds": 180,
+  "arm_budget_seconds": {"scene_native": 180, "abstract_pacer": 180},
+  "native_is_hidden": false,
+  "timeline": [
+    "neutral_preparation",
+    "panas_pre",
+    "allocation_reveal",
+    "condition_training",
+    "core_800s",
+    "panas_post",
+    "understanding_and_other_measures"
+  ],
+  "timeline_status": "PROPOSED_REQUIRES_U12_04_U12_11_FREEZE",
+  "blocks": [
+    {
+      "id": "four_layers",
+      "seconds": 20
+    },
+    {
+      "id": "storm",
+      "seconds": 30
+    },
+    {
+      "id": "heat",
+      "seconds": 30
+    },
+    {
+      "id": "snow",
+      "seconds": 30
+    },
+    {
+      "id": "fade",
+      "seconds": 30
+    },
+    {
+      "id": "unavailable",
+      "seconds": 20
+    },
+    {
+      "id": "recap",
+      "seconds": 20
+    }
+  ],
+  "demonstration_cycles_per_weather": 1,
+  "practice_cycles_per_weather": 1,
+  "extra_instruction_repetitions": 0,
+  "mastery_based_extension": false,
+  "exclude_for_slow_learning": false,
+  "weather_order": "assignment.weather_sequence",
+  "core_demo_seconds": 25,
+  "core_demo_extra_budget": false,
+  "layers": [
+    "target",
+    "actual",
+    "cumulative",
+    "unavailable"
+  ],
+  "actual_source": "real_input_or_explicitly_labelled_prerecorded_demonstration",
+  "formal_runtime_mock_allowed": false,
+  "understanding_in_core": false,
+  "emotion_reporting_requires_understanding_pass": false,
+  "research_freeze_required": [
+    "budget_and_timeline",
+    "paired_live_clips",
+    "formation_results",
+    "institutional_activity_receipt",
+    "measurement_thresholds"
+  ],
+  "evidence_status": "DESIGN_AND_SYNTHETIC_ONLY"
+}

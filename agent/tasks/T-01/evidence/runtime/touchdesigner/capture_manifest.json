@@ -1,0 +1,35 @@
+{
+  "captures": {
+    "disconnected": {
+      "screenshot": "disconnected.png",
+      "screenshot_sha256": "416EA9F2EA3132FB2E18E2DCF74442D777DEA9800C8240D662B6D781B23CD0B1",
+      "state": "disconnected.json",
+      "state_sha256": "8D68980B613AAEDD7D7325982D2550ADB50E700DE6751864646641D71ADCD958"
+    },
+    "fixture_good": {
+      "screenshot": "fixture_good.png",
+      "screenshot_sha256": "411D69D8BBA4AF0D8CC784D299FE0E9C8349BC8D3CEE06F6136D75E4F24970B2",
+      "state": "fixture_good.json",
+      "state_sha256": "A768E48AE4E249AF35ED1F7F6D90B60730FC87C8E93B5EFFF2D34B2E0F865837"
+    },
+    "out_of_order": {
+      "screenshot": "out_of_order.png",
+      "screenshot_sha256": "B3B297CAD94FD8872AC8BCB50E469021BB02245162203DDE45BBD3C858EFA9AF",
+      "state": "out_of_order.json",
+      "state_sha256": "6ADE04E4A21F0B9C76D228A593F2574CCFC37234E7E0FF465AE9A8BC85678264"
+    },
+    "publisher_live": {
+      "screenshot": "publisher_live.png",
+      "screenshot_sha256": "694CAEA4B1952D544F617DC88172E841BC3C1474DB76477345948267F4BDC3C7",
+      "state": "publisher_live.json",
+      "state_sha256": "BC8008365924AE6B955337ECAF514B31857DC5161DF4C2F240B5BEABDEF78563"
+    },
+    "recovered": {
+      "screenshot": "recovered.png",
+      "screenshot_sha256": "9C54131990B35A1E350B78F6D874E68E39EFF08CA8C1F25FBF4E6F62A5AA2D67",
+      "state": "recovered.json",
+      "state_sha256": "623D940FE9AAA85342073BA19BFCC332C1185242CCD90658D100F09EFD9DB174"
+    }
+  },
+  "manifest_schema_version": "t01-capture-manifest-v1"
+}

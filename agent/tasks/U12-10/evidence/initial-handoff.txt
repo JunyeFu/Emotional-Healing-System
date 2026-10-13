@@ -1,0 +1,22 @@
+.......................................F................................ [ 78%]
+....................                                                     [100%]
+================================== FAILURES ===================================
+____________ test_actual_cli_valid_invalid_json_and_missing_field _____________
+
+tmp_path = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1935/test_actual_cli_valid_invalid_0')
+
+    def test_actual_cli_valid_invalid_json_and_missing_field(tmp_path):
+        path = tmp_path / 'case.json'
+        for payload, code in [({'estimate': 3, 'ci_low': 2, 'ci_high': 4}, 0),
+                              ({'estimate': 3, 'ci_low': 2, 'ci_high': 4, 'ci_level': .90}, 2),
+                              ({'estimate': 3}, 2)]:
+            path.write_text(json.dumps(payload), encoding='utf-8')
+            result = subprocess.run([sys.executable, TASK / 'execution/result_classifier.py', path], capture_output=True)
+>           assert result.returncode == code
+E           AssertionError: assert 1 == 0
+E            +  where 1 = CompletedProcess(args=['C:\\Users\\fujunye\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe', WindowsPath('D:/A...check_help\r\n    raise ValueError(\'badly formed help string\') from exc\r\nValueError: badly formed help string\r\n').returncode
+
+agent\tasks\U12-10\execution\test_classification_handoff.py:119: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-10/execution/test_classification_handoff.py::test_actual_cli_valid_invalid_json_and_missing_field
+1 failed, 91 passed in 8.39s

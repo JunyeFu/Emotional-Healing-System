@@ -1,0 +1,16 @@
+{
+  "active_cross_stage_cases": 16,
+  "active_cross_stage_passed": true,
+  "audit_chain_valid": true,
+  "backup_restore_valid": true,
+  "completed_blocks_reentry": true,
+  "concurrent_active_reservation_count": 1,
+  "concurrent_new_count": 1,
+  "cross_stage_audit_valid": true,
+  "prior_exposure_cases": 16,
+  "prior_exposure_passed": true,
+  "release_before_exposure_allows_reentry": true,
+  "schema_version": 1,
+  "synthetic_only": true,
+  "withdrawn_after_exposure_blocks_reentry": true
+}

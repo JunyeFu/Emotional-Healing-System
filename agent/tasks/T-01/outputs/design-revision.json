@@ -1,0 +1,32 @@
+{
+  "task_id": "T-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "双设备只读显示服务于新测量",
+  "disposition": "RETAIN_WITH_SCOPE_CLARIFICATION",
+  "deliverables": [
+    "双设备只读显示服务于新测量修订交接",
+    "预览用途说明",
+    "状态显示核对"
+  ],
+  "acceptance_criteria": [
+    "AC1 设备分区及波形仍服务记录与操作员核查",
+    "AC2 不把HRV、TD图形或质量灯当情绪及训练真值",
+    "AC3 显示能区分模拟、真实、失效与未知，既有验证保留原范围"
+  ],
+  "evidence_required": [
+    "预览用途说明",
+    "状态显示核对",
+    "真实SDK未验收项"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [
+    "F-01",
+    "F-04",
+    "F-05"
+  ],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

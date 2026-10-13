@@ -1,0 +1,15 @@
+{
+  "id": "NORM-20261008",
+  "task_id": "T-02",
+  "scope": "EXPLICIT_DESIGN_SUPPLEMENT_ONLY",
+  "status": "READY",
+  "primary_claim_retained": false,
+  "previous_input_snapshot_id": "0F6371CA48C1996D19465A7CF0EE298E3A98D105111269ADD2E68933BAA8B141",
+  "current_input_snapshot_id": "E2D8F6D51476B94F98A1AAFAF7D5E511D865D6DF48AFA9AC787959D941AFA712",
+  "candidate_identity": null,
+  "supplement_count": 19,
+  "design_closed": false,
+  "business_acceptance_changed": false,
+  "formal_collection_allowed": false,
+  "description": "七份原位LaTeX/PDF及索引补齐规范化材料；M01/M02未关闭；领取中主身份保留，设计补充交接不继承原签收。"
+}

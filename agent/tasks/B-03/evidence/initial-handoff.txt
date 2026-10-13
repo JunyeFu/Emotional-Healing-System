@@ -1,0 +1,47 @@
+...F.................................................................... [ 50%]
+........................................................................ [100%]
+================================== FAILURES ===================================
+_ test_actual_fixed_stage3_recording_is_replayable_but_not_policy_deployment __
+
+tmp_path = WindowsPath('C:/Users/fujunye/AppData/Local/Temp/pytest-of-fujunye/pytest-1894/test_actual_fixed_stage3_recor0')
+
+    def test_actual_fixed_stage3_recording_is_replayable_but_not_policy_deployment(tmp_path):
+        manifest_factory, assignment_factory = factories()
+        manifest = manifest_factory(schema_version='2.2', study_stage='stage_3', assignment_arm='balanced_random')
+        assignment = assignment_factory(manifest)
+        store = DurableManifestStore.development(tmp_path)
+        dependencies = RuntimeDependencies.development()
+        dependencies.manifest_store = store
+        recorder = RecordingSessionCore(SessionCore(dependencies=dependencies), store)
+        recorder.prepare(manifest, assignment, 0)
+>       summary = recorder.finish('SYNTHETIC-B03-NOT-EXPERIENCE', 1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+agent\tasks\B-03\execution\test_batch_handoff.py:95:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+02-技术研发\srp_session_store\adapters.py:230: in finish
+    return self._invoke(
+02-技术研发\srp_session_store\adapters.py:260: in _invoke
+    raise error
+02-技术研发\srp_session_store\adapters.py:254: in _invoke
+    result = call()
+             ^^^^^^
+02-技术研发\srp_session_store\adapters.py:233: in <lambda>
+    lambda: self.core.finish(reason_code, now_ns),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+02-技术研发\srp_session_core\core.py:231: in finish
+    self._validate_reason_code(reason_code)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <srp_session_core.core.SessionCore object at 0x0000016AA98FABA0>
+reason_code = 'SYNTHETIC-B03-NOT-EXPERIENCE'
+
+    def _validate_reason_code(self, reason_code: str) -> None:
+        if not self._reason_code_is_valid(reason_code):
+>           raise SessionCoreError("INVALID_REASON_CODE")
+E           srp_session_core.errors.SessionCoreError: INVALID_REASON_CODE
+
+02-技术研发\srp_session_core\core.py:852: SessionCoreError
+=========================== short test summary info ===========================
+FAILED agent/tasks/B-03/execution/test_batch_handoff.py::test_actual_fixed_stage3_recording_is_replayable_but_not_policy_deployment
+1 failed, 143 passed in 6.32s

@@ -1,0 +1,32 @@
+{
+  "paths": [
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json",
+    "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/21_真实设备与在线运行系统/06_目标运行接口_v2.md",
+    "agent/tasks/T-01/outputs/current-td-contract.md",
+    "agent/modules/touchdesigner/t01_telemetry_panel/README.md",
+    "agent/modules/touchdesigner/t01_telemetry_panel/design/workbench-v3.md",
+    "agent/tasks/T-01/execution/build_workbench_a.py",
+    "agent/modules/touchdesigner/f04_readonly_console/README.md",
+    "agent/modules/srp_session_core/README.md",
+    "agent/modules/srp_session_core/models.py",
+    "agent/modules/srp_session_core/core.py",
+    "agent/modules/srp_session_core/transport.py",
+    "agent/modules/srp_session_store/README.md",
+    "agent/modules/srp_session_store/adapters.py",
+    "agent/modules/srp_session_store/contracts/append-record-v1.schema.json",
+    "agent/modules/communication/contracts/README.md",
+    "agent/tasks/T-02/inputs/legacy-relocations.json",
+    "agent/design/design-foundation-20261008/task-baseline.json",
+    "agent/design/design-foundation-20261008/00-reasoning.md",
+    "agent/design/design-foundation-20261008/01-design.tex",
+    "agent/design/design-foundation-20261008/01-design.pdf",
+    "agent/design/design-foundation-20261008/02-science.tex",
+    "agent/design/design-foundation-20261008/02-science.pdf",
+    "agent/design/design-foundation-20261008/03-decisions.tex",
+    "agent/design/design-foundation-20261008/03-decisions.pdf",
+    "agent/design/design-foundation-20261008/04-review-audit.tex",
+    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

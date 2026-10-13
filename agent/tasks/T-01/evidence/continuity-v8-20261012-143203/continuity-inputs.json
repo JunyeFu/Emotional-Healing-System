@@ -1,0 +1,19 @@
+{
+  "session_id": "DEV-1b7f4c6f41904daf",
+  "origin_ns": 107330314840900,
+  "packet_count": 1624,
+  "duration_s": 83.2,
+  "intervals": [
+    {
+      "kind": "missing",
+      "begin": 576,
+      "end": 596
+    },
+    {
+      "kind": "dropped",
+      "begin": 685,
+      "end": 705
+    }
+  ],
+  "source": "known mathematical calibration signals; dev_mock"
+}

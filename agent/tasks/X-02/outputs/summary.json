@@ -1,0 +1,164 @@
+{
+  "task_id": "X-02",
+  "title": "X-02 可选离线策略学习的延期边界 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "X-02注册状态WAIT_DEP仅保留原范围。当前任务更新为可选离线策略学习的延期边界；处理类型DEFERRED_EXTENSION。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "没有X-02历史签署。本轮Codex整理与软件检查，不代表独立Agent复核、真实训练或真人方法批准。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 首版B为解释性受限规则，不要求策略学习才能成立",
+        "AC2 后续学习需独立问题、参与者分组和可识别行为概率",
+        "AC3 不得用在线响应者选择证明因果价值或占用核心样本"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "可选离线策略学习的延期边界修订交接",
+        "延期范围",
+        "后续策略问题"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：可选离线策略学习的延期边界"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：延期范围；后续策略问题；独立评价前置条件"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：A-03；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：延期范围；后续策略问题；独立评价前置条件"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "X02-N01",
+      "status": "FIXED_ARCHIVE_AND_CURRENT_ROUTE",
+      "description": "两旧方案实际归档，导航及历史消费者修复，核心PANAS与可选策略范围分离",
+      "source": "agent/tasks/X-02/evidence/consumer-impact.md"
+    },
+    {
+      "id": "X02-N02",
+      "status": "FIXED_HANDOFF_NOT_IMPLEMENTATION",
+      "description": "分组/时序/概率/块依赖与奖励方向明确，正式方法和阈值未冻结，不宣称完成策略模型",
+      "source": "agent/tasks/X-02/outputs/current-policy.md"
+    },
+    {
+      "id": "X02-N03",
+      "status": "OPEN_MODEL_OPE_DATA_AND_RESPONSIBILITY",
+      "description": "训练器、OPE/ESS、真实锁定资料、负责人及E-05冻结证据仍缺，WAIT_DEP未签署",
+      "source": "agent/tasks/X-02/outputs/current-policy.json"
+    },
+    {
+      "id": "X-02-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "可选离线策略学习的延期边界；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前策略数据与方法交接",
+      "path": "agent/tasks/X-02/outputs/current-policy.md"
+    },
+    {
+      "label": "未实现与未冻结字段",
+      "path": "agent/tasks/X-02/outputs/current-policy.json"
+    },
+    {
+      "label": "实际专项结果",
+      "path": "agent/tasks/X-02/evidence/verification.json"
+    },
+    {
+      "label": "原件归档与字节记录",
+      "path": "agent/tasks/X-02/archive/README.md"
+    },
+    {
+      "label": "消费者和下游影响",
+      "path": "agent/tasks/X-02/evidence/consumer-impact.md"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

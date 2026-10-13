@@ -1,0 +1,7 @@
+{
+  "source_toe_sha256": "3A4DB364691D8A6AFFF10284AB5DF59060AD18D96BE2ADF369774F04643536ED",
+  "probe_toe_sha256": "C1F64C0EBE06D9F78EB61404B734623288C336F79ECC98FD07734989B1D4B9A3",
+  "change": "Runtime render callback extended with isolated verification/capture hook",
+  "source_preserved": true,
+  "probe_path": "D:\\Agent\\srp\\.artifacts-local\\task-normalization\\T-01\\probe\\20260929-141806\\probe.toe"
+}

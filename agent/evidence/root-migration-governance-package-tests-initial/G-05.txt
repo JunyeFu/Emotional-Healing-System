@@ -1,0 +1,21 @@
+....................F..                                                  [100%]
+================================== FAILURES ===================================
+____________________ test_current_navigation_links_resolve ____________________
+
+    def test_current_navigation_links_resolve():
+        docs = ROOT / '02-技术研发/07-数据治理/docs'
+        for path in (LEGACY / 'TASK.md', LEGACY / 'FILES.md', docs / 'formal_machine_setup.md', docs / 'formal_environment_closure_runbook.md'):
+            for target in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8-sig')):
+>               assert (path.parent / target).resolve().exists(), (path, target)
+E               AssertionError: (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/第58号任务包_G-05_外部准入闭环/TASK.md'), '../../../../../agent/tasks/G-05/TASK.md')
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/G-05/TASK.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/G-05/TASK.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/第58号任务包_G-05_外部准入闭环') / '../../../../../agent/tasks/G-05/TASK.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/第58号任务包_G-05_外部准入闭环') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/第58号任务包_G-05_外部准入闭环/TASK.md').parent
+
+agent\tasks\G-05\execution\test_admission_handoff.py:70: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/G-05/execution/test_admission_handoff.py::test_current_navigation_links_resolve
+1 failed, 22 passed in 0.20s

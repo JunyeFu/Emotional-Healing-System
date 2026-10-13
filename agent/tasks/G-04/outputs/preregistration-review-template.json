@@ -1,0 +1,52 @@
+{
+  "task_id": "G-04",
+  "document_type": "UNFILLED_REVIEW_OUTLINE_NOT_APPROVAL_OR_RUNTIME_MANIFEST",
+  "status": "NOT_RUN",
+  "formal_collection_allowed": false,
+  "stage3_scope_decision": null,
+  "pre_unblinding_extension_criteria_ref": null,
+  "e05_policy_signature_ref": null,
+  "treatment": {
+    "arms": [
+      "frozen_policy",
+      "balanced_random"
+    ],
+    "cue_mode": "scene_native",
+    "includes_fallback": true
+  },
+  "estimand_and_analysis_plan": null,
+  "final_randomized_n": null,
+  "recruitment_cap": null,
+  "stopping_rule": null,
+  "missingness_plan": null,
+  "gate3_and_pf_definition": null,
+  "allocation_list_ref": null,
+  "strata_and_concealment": null,
+  "questionnaire_stage3_permission": null,
+  "stage3_activity_approval": null,
+  "retention_and_privacy_ref": null,
+  "formal_machine_scope_ref": null,
+  "station_capacity_ref": null,
+  "unity_build_ref": null,
+  "shared_presentation_config_ref": null,
+  "policy_artifacts_ref": null,
+  "x03_runtime_replay_ref": null,
+  "live_chain_ref": null,
+  "teaching_exposure_integration_ref": null,
+  "permission_negative_test_ref": null,
+  "preregistration": {
+    "platform": null,
+    "receipt": null,
+    "date": null,
+    "version": null
+  },
+  "human_signoff": {
+    "research_owner": null,
+    "independent_reviewer": null,
+    "date": null,
+    "object": null,
+    "conclusion": null
+  },
+  "downstream_batch_permission": false,
+  "actual_partial_activity_evidence": null
+}

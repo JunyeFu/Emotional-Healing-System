@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-29",
+  "scope": "Author layout inspection and storage/path migration; not independent acceptance",
+  "pdf": {"path": "human/deliverables/pdf/02_固定任务概要.pdf", "pages": 6, "inspected_pages": [1, 2, 3, 4, 5, 6], "result": "Readable A4 output; registry count and current active sets agree"},
+  "word": {"path": "human/project-review.docx", "pages": 39, "repaired": "Grouped migration mappings remove the isolated two-line page 40", "inspected_changed_pages": [39]},
+  "tests": {"governance_renderers": "5 passed in 0.04s", "root_pytest": "635 passed in 47.46s", "governance": "PASS 71 tasks and preserved signed history", "registry": "PASS 68 fixed and 3 templates", "dispatch": "PASS 5 packages and 61 snapshots", "root_links": "PASS 71 packages and 330 Word source links"},
+  "migration": {"completed": 7, "total": 19, "remaining": 12, "complete": false},
+  "live_unity_td_devices_executed": false
+}

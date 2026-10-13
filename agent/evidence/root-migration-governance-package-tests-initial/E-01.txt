@@ -1,0 +1,73 @@
+............FFF..                                                        [100%]
+================================== FAILURES ===================================
+_ test_archived_original_bytes_and_navigation[00_\u7b2c7\u6b65\u8ba1\u5212.md] _
+
+name = '00_第7步计划.md'
+
+    @pytest.mark.parametrize('name', ['00_第7步计划.md', '01_详细执行方案.md', 'G-01-11_伦理提交执行检查清单.md'])
+    def test_archived_original_bytes_and_navigation(name):
+        expected = read(TASK / 'inputs/sources.json')['archived_bytes'][name]
+        assert hashlib.sha256((TASK / 'archive' / name).read_bytes()).hexdigest().upper() == expected
+        entry = PLAN / '08_步骤07_伦理提交与LevelA' / name
+        links = re.findall(r'\]\(([^)]+)\)', entry.read_text(encoding='utf-8'))
+        assert links
+        for link in links:
+>           assert (entry.parent / link).resolve().exists(), link
+E           AssertionError: ../../../../agent/tasks/E-01/outputs/current-execution.md
+E           assert False
+E            +  where False = exists()
+E            +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/E-01/outputs/current-execution.md').exists
+E            +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/E-01/outputs/current-execution.md') = resolve()
+E            +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA') / '../../../../agent/tasks/E-01/outputs/current-execution.md').resolve
+E            +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA/00_第7步计划.md').parent
+
+agent\tasks\E-01\execution\test_execution_handoff.py:83: AssertionError
+_ test_archived_original_bytes_and_navigation[01_\u8be6\u7ec6\u6267\u884c\u65b9\u6848.md] _
+
+name = '01_详细执行方案.md'
+
+    @pytest.mark.parametrize('name', ['00_第7步计划.md', '01_详细执行方案.md', 'G-01-11_伦理提交执行检查清单.md'])
+    def test_archived_original_bytes_and_navigation(name):
+        expected = read(TASK / 'inputs/sources.json')['archived_bytes'][name]
+        assert hashlib.sha256((TASK / 'archive' / name).read_bytes()).hexdigest().upper() == expected
+        entry = PLAN / '08_步骤07_伦理提交与LevelA' / name
+        links = re.findall(r'\]\(([^)]+)\)', entry.read_text(encoding='utf-8'))
+        assert links
+        for link in links:
+>           assert (entry.parent / link).resolve().exists(), link
+E           AssertionError: ../../../../agent/tasks/E-01/outputs/current-execution.md
+E           assert False
+E            +  where False = exists()
+E            +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/E-01/outputs/current-execution.md').exists
+E            +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/E-01/outputs/current-execution.md') = resolve()
+E            +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA') / '../../../../agent/tasks/E-01/outputs/current-execution.md').resolve
+E            +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA/01_详细执行方案.md').parent
+
+agent\tasks\E-01\execution\test_execution_handoff.py:83: AssertionError
+_ test_archived_original_bytes_and_navigation[G-01-11_\u4f26\u7406\u63d0\u4ea4\u6267\u884c\u68c0\u67e5\u6e05\u5355.md] _
+
+name = 'G-01-11_伦理提交执行检查清单.md'
+
+    @pytest.mark.parametrize('name', ['00_第7步计划.md', '01_详细执行方案.md', 'G-01-11_伦理提交执行检查清单.md'])
+    def test_archived_original_bytes_and_navigation(name):
+        expected = read(TASK / 'inputs/sources.json')['archived_bytes'][name]
+        assert hashlib.sha256((TASK / 'archive' / name).read_bytes()).hexdigest().upper() == expected
+        entry = PLAN / '08_步骤07_伦理提交与LevelA' / name
+        links = re.findall(r'\]\(([^)]+)\)', entry.read_text(encoding='utf-8'))
+        assert links
+        for link in links:
+>           assert (entry.parent / link).resolve().exists(), link
+E           AssertionError: ../../../../agent/tasks/E-01/archive/G-01-11_伦理提交执行检查清单.md
+E           assert False
+E            +  where False = exists()
+E            +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/E-01/archive/G-01-11_伦理提交执行检查清单.md').exists
+E            +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/E-01/archive/G-01-11_伦理提交执行检查清单.md') = resolve()
+E            +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA') / '../../../../agent/tasks/E-01/archive/G-01-11_伦理提交执行检查清单.md').resolve
+E            +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/08_步骤07_伦理提交与LevelA/G-01-11_伦理提交执行检查清单.md').parent
+
+agent\tasks\E-01\execution\test_execution_handoff.py:83: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/E-01/execution/test_execution_handoff.py::test_archived_original_bytes_and_navigation[00_\u7b2c7\u6b65\u8ba1\u5212.md]
+FAILED agent/tasks/E-01/execution/test_execution_handoff.py::test_archived_original_bytes_and_navigation[01_\u8be6\u7ec6\u6267\u884c\u65b9\u6848.md]
+FAILED agent/tasks/E-01/execution/test_execution_handoff.py::test_archived_original_bytes_and_navigation[G-01-11_\u4f26\u7406\u63d0\u4ea4\u6267\u884c\u68c0\u67e5\u6e05\u5355.md]
+3 failed, 14 passed in 0.22s

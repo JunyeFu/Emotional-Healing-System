@@ -1,0 +1,17 @@
+{
+  "task_id": "U12-10",
+  "review_type": "AUTHOR_RENDER_QA_NOT_INDEPENDENT_ACCEPTANCE",
+  "task_word": "human/tasks/U12-10/summary.docx",
+  "task_pages": 3,
+  "inspected_task_pages": [1, 2, 3],
+  "chain_word": "human/project-review.docx",
+  "chain_pages": 38,
+  "inspected_changed_chain_pages": [37, 38],
+  "unchanged_chain_pages": "1-36 byte-identical PNGs to previously reviewed U12-09 render",
+  "content_check": "build_task_reviews.py U12-10 --check passed",
+  "normalization_completed": 69,
+  "normalization_total": 71,
+  "root_migration_complete": false,
+  "business_status_changed": false,
+  "real_second_person_signed": false
+}

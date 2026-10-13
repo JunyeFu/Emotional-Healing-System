@@ -1,0 +1,166 @@
+{
+  "task_id": "D-02",
+  "title": "D-02 respiBAN实际呼吸可辨性 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "D-02注册状态WAIT_DEP_EXTERNAL仅保留原范围。当前任务更新为respiBAN实际呼吸可辨性；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签署",
+    "date": "尚未发生",
+    "commit": "",
+    "method": "没有独立真机复核或第二人签署。本轮Codex只整理任务、修复软件交接并形成Word，不代填责任人或真实PASS。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 真实SDK原始批次与时钟取证，不以模拟替代",
+        "AC2 验证吸呼、停留、补吸与运动下的混淆和不可判别",
+        "AC3 不消费G生成实际真值，不可辨事件保留未知"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "respiBAN实际呼吸可辨性修订交接",
+        "设备原件",
+        "独立事件标注"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：respiBAN实际呼吸可辨性"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：设备原件；独立事件标注；可辨性及延迟表"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：P-02；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：设备原件；独立事件标注；可辨性及延迟表"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "D02-N01",
+      "status": "FIXED_NATIVE_BATCH",
+      "description": "共享呼吸帧原生样本丢失已补批次与时间戳，旧均值仅作显示",
+      "source": "agent/modules/acquisition/frame_clock.py"
+    },
+    {
+      "id": "D02-N02",
+      "status": "OPEN_VENDOR_AND_HARDWARE",
+      "description": "缺respiBAN专用SDK、原始通知接口及真实30分钟记录，UP-06/M06仍开放",
+      "source": "agent/tasks/D-02/outputs/current-acquisition.md"
+    },
+    {
+      "id": "D02-N03",
+      "status": "OPEN_REAL_OWNER",
+      "description": "P-HARDWARE尚未落实实际领取人，不代填签收",
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/05_可领取任务包.csv"
+    },
+    {
+      "id": "D02-N04",
+      "status": "FIXED_GOVERNANCE_RELOCATION",
+      "description": "全仓发现R-01迁移路径误判，补精确映射；未知路径、其他任务和验收条件变化仍拒绝",
+      "source": "agent/normalization-relocations.json"
+    },
+    {
+      "id": "D-02-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "respiBAN实际呼吸可辨性；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前真实呼吸采集交接",
+      "path": "agent/tasks/D-02/outputs/current-acquisition.md"
+    },
+    {
+      "label": "原生批次实现",
+      "path": "agent/modules/acquisition/frame_clock.py"
+    },
+    {
+      "label": "软件验证记录",
+      "path": "agent/tasks/D-02/evidence/verification.json"
+    },
+    {
+      "label": "国内技能资料",
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/24_团队任务与项目治理/08_任务技能与国内学习资料_v1.0.md"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+}

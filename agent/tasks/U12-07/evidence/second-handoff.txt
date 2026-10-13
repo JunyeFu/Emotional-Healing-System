@@ -1,0 +1,23 @@
+.F...................................................................... [ 84%]
+.............                                                            [100%]
+================================== FAILURES ===================================
+________ test_historical_sources_and_outputs_use_declared_hash_policy _________
+
+    def test_historical_sources_and_outputs_use_declared_hash_policy():
+        evidence = read(ARCHIVE / 'evidence.json')
+        assert evidence['hash_policy'] == 'UTF8_LF_TRAILING_WHITESPACE_REMOVED_FINAL_LF'
+        candidate = read(GOV / 'u12_upgrade/acceptance/U12-07.json')['candidate_commit']
+        for source in evidence['sources']:
+            original = subprocess.check_output(['git', 'show', f"{candidate}:{source['name']}"], cwd=ROOT)
+            assert hashlib.sha256(normalized(original)).hexdigest().upper() == source['sha256_declared']
+        for output in evidence['outputs']:
+>           assert hashlib.sha256(normalized((ARCHIVE / output['name']).read_bytes())).hexdigest().upper() == output['sha256']
+E           AssertionError: assert '7A34F0B0F8CB...AD8D57410B6DF' == '3F93604E339F...C32722CBBDA66'
+E             
+E             - 3F93604E339FC9C225C86AEB69FB6E8EEC9E84BDA38B9BCFC5EC32722CBBDA66
+E             + 7A34F0B0F8CBA28B3A7AA41F5D8919EAC7D45357CBDC20BC41DAD8D57410B6DF
+
+agent\tasks\U12-07\execution\test_writing_handoff.py:45: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/U12-07/execution/test_writing_handoff.py::test_historical_sources_and_outputs_use_declared_hash_policy
+1 failed, 84 passed in 15.08s

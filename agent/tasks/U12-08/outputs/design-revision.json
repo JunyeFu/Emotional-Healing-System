@@ -1,0 +1,31 @@
+{
+  "task_id": "U12-08",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "可选扩展独立附录",
+  "disposition": "DEFERRED_EXTENSION",
+  "deliverables": [
+    "可选扩展独立附录修订交接",
+    "独立附录范围",
+    "扩展分析需求"
+  ],
+  "acceptance_criteria": [
+    "AC1 扩展只在核心之外按独立问题和样本开展",
+    "AC2 不以学习策略补足首版受限规则的贡献",
+    "AC3 实际活动、SAP和签署不足时标延期"
+  ],
+  "evidence_required": [
+    "独立附录范围",
+    "扩展分析需求",
+    "未开展边界"
+  ],
+  "completion_condition": "核心研究不以本扩展为依赖；只有独立批准、资源与真实活动齐备后再验收。",
+  "recorded_status": "WAIT_DEP",
+  "depends_on_original": [
+    "A-04",
+    "E-05"
+  ],
+  "revision_state": "NEW_SCOPE_NOT_EXECUTED",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

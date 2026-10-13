@@ -1,0 +1,5 @@
+# U12-10 原候选归档
+
+task-input内四文件从旧适配任务目录实际迁入，逐字节不改。package_manifest仍对应三项原输入，input_snapshot_id为ac08cfbb94c2e048198b717d6099cc7660a3ee3382e9de871720968c25d8824d；其中“尚未注册”仅是历史候选语境。
+
+外部审计来源result_classifier.py保留原位置，archive/source-tool副本逐字节相同。execution修正两处帮助文字的裸百分号，解决Python3.14 argparse启动报错；Evidence/_number/classify算法保持相同。来源身份不是本项目正式分类或新签收证据，不能改外部原件。

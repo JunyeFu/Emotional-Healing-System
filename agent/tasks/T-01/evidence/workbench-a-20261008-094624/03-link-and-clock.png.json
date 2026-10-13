@@ -1,0 +1,10 @@
+{
+  "screenshot": "03-link-and-clock.png",
+  "width": 1280,
+  "height": 720,
+  "page": "timing",
+  "errors": "",
+  "build": "2025.32820",
+  "scope": "Native TD WorkbenchA render; development fixtures only",
+  "nodes": 344
+}

@@ -1,0 +1,24 @@
+......F                                                                  [100%]
+================================== FAILURES ===================================
+________________ test_current_step_nine_navigation_and_sources ________________
+
+    def test_current_step_nine_navigation_and_sources():
+        for name in ('00_第9步计划.md', '01_详细执行方案.md'):
+            path = PLAN / '10_步骤09_LevelC技术预试与预注册' / name
+            text = path.read_text(encoding='utf-8-sig')
+            assert 'agent/tasks/E-03/outputs/current-closeout.md' in text
+            assert 'agent/tasks/B-01/outputs/current-batch.md' in text
+            for link in re.findall(r'\]\(([^)]+)\)', text):
+>               assert (path.parent / link).resolve().exists(), link
+E               AssertionError: ../../../../agent/tasks/Q-03/outputs/current-level-c.md
+E               assert False
+E                +  where False = exists()
+E                +    where exists = WindowsPath('D:/Agent/srp/agent/agent/tasks/Q-03/outputs/current-level-c.md').exists
+E                +      where WindowsPath('D:/Agent/srp/agent/agent/tasks/Q-03/outputs/current-level-c.md') = resolve()
+E                +        where resolve = (WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/10_步骤09_LevelC技术预试与预注册') / '../../../../agent/tasks/Q-03/outputs/current-level-c.md').resolve
+E                +          where WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/10_步骤09_LevelC技术预试与预注册') = WindowsPath('D:/Agent/srp/agent/governance/01-项目章程与规划/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/10_步骤09_LevelC技术预试与预注册/00_第9步计划.md').parent
+
+agent\tasks\E-03\execution\test_closeout_handoff.py:100: AssertionError
+=========================== short test summary info ===========================
+FAILED agent/tasks/E-03/execution/test_closeout_handoff.py::test_current_step_nine_navigation_and_sources
+1 failed, 6 passed in 0.16s

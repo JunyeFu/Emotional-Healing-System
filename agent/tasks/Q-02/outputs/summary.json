@@ -1,0 +1,217 @@
+{
+  "task_id": "Q-02",
+  "title": "Q-02 校园需求与方案认知访谈 · 新基线审阅",
+  "review_date": "2026-10-08",
+  "conclusion": "Q-02注册状态WAIT_DEP仅保留原范围。当前任务更新为校园需求与方案认知访谈；处理类型REVISE_FOR_NEW_BASELINE。任务正文、设计输入、验收与人类PDF按新基线同步；新的业务证据及真实签收尚未由本次文档更新取得。",
+  "historical_acceptance": {
+    "reviewer": "未签收",
+    "date": "无",
+    "commit": null,
+    "method": "未找到本包签署或独立实现；本轮Codex材料检查不代表新增独立Agent或真人复核。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "本包采用固定A与受限适应B整包基线；共享I、独立G/X及同预算。新设计、真实运行与正式许可分别成立。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 访谈真实困难、替代、可用时间和佩戴拒绝，不预设需要",
+        "AC2 检查A固定含义及B提示/响应/不可用信息",
+        "AC3 保留困惑与退出，PANAS适用与地板先审而非结果后换量表"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "本轮交付当前TASK、专项交接、design-revision.json及来源更新；不声称运行或研究已完成。",
+        "校园需求与方案认知访谈修订交接",
+        "需求访谈",
+        "条件适配题蓝图",
+        "ODES-20261008设计交付：需求访谈计入认知阶段子集，验证舒适性、教学及状态材料；设计文件和示意已交付，真实执行及独立复核仍待完成。",
+        "NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：slowdown_limit、absolute_step_limit、cumulative_rule；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "A固定引导圈及预设场景，本人数据只进入评估，不改变参与者输出",
+        "B数据驱动场景原生受限适应，合法边界调整G后趋向共同I",
+        "I共同理想/G有效下发/X独立实际分离；同预算，未知不补成功",
+        "PANAS-NA前测校正主要候选；I达成/G跟随/成本独立，不沿用旧PF非劣界",
+        "理解题按实际功能适配；SCCI只操纵检查；真实设备与新运行未经本轮验收",
+        "本包专项：校园需求与方案认知访谈"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "任务包/PDF/来源一致性由verify_task_design_baseline.py和build_task_reviews.py --check核查；这些静态结果仅证明当前文档一致。",
+        "原软件测试与签收见archive/pre-design-baseline-20261008/summary.json，保持原范围，不能支持本包新增要求。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "旧同反馈与固定Target口径已从当前任务范围撤回；旧PF界、原功效或同Actual题不能自动复用。",
+        "真实缺口：需求访谈；条件适配题蓝图；用时及负担记录"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "原依赖：U-08、Q-01、U12-02、U12-03；必须核对新范围交接，原DONE不自动证明修订完成。",
+        "消费design-foundation-20261008主稿、科学附录、决策影响和14项审稿攻击；本包真实证据：需求访谈；条件适配题蓝图；用时及负担记录"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "原签收保持下列历史信息；本轮无新增业务签收。",
+        "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "新修订状态：NEW_SCOPE_NOT_EXECUTED",
+        "先完成本包当前验收，再按实际依赖交接；可选策略扩展不成为首版核心研究依赖。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源：task-baseline.json与基石四份LaTeX/PDF；历史来源见归档总结。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "Q02-N01",
+      "status": "FIXED_CURRENT_PROCESS_AND_TEMPLATE",
+      "description": "通用联调改为认知访谈交接；独立作答/追问分计时，末尾猜测不暴露未分配条件",
+      "source": "agent/tasks/Q-02/outputs/interview-guide.md"
+    },
+    {
+      "id": "Q02-N02",
+      "status": "OPEN_SAMPLE_AND_ROLE_FREEZE",
+      "description": "旧24至32与E-02当前12至16人数口径不同；当前人数、轮次和真实负责人未冻结",
+      "source": "agent/tasks/Q-02/outputs/current-level-b.json"
+    },
+    {
+      "id": "Q02-N03",
+      "status": "OPEN_REAL_ACTIVITY_AND_RENDERING",
+      "description": "两臂四结构真实片段、访谈、修订关闭与最终Unity回归尚缺，保持WAIT_DEP",
+      "source": "agent/tasks/Q-02/TASK.md"
+    },
+    {
+      "id": "Q-02-DESIGN-BASELINE",
+      "status": "PLAN_UPDATED_EVIDENCE_PENDING",
+      "description": "校园需求与方案认知访谈；新业务证据未由文档刷新取得。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "当前Level B与未关闭条件",
+      "path": "agent/tasks/Q-02/outputs/current-level-b.md"
+    },
+    {
+      "label": "逐题访谈与修订提纲",
+      "path": "agent/tasks/Q-02/outputs/interview-guide.md"
+    },
+    {
+      "label": "当前状态与人数来源",
+      "path": "agent/tasks/Q-02/outputs/current-level-b.json"
+    },
+    {
+      "label": "专项验证证据",
+      "path": "agent/tasks/Q-02/evidence/verification.json"
+    },
+    {
+      "label": "任务过程与验收责任",
+      "path": "agent/tasks/Q-02/TASK.md"
+    },
+    {
+      "label": "本包新版画面及核查边界",
+      "path": "agent/tasks/Q-02/outputs/current-implementation-evidence.md"
+    },
+    {
+      "label": "统一实施标准",
+      "path": "agent/design/weather/2026-10-08_Storm与纯粒子双环实施标准.md"
+    },
+    {
+      "label": "成员原视频帧索引",
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/frame-index.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
+      "label": "操作设计 07-protocol-candidate.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
+    }
+  ],
+  "previous_conclusion_202609": "Q-02仍WAIT_DEP、未领取且无签署。本轮补齐固定结构、访谈提纲与空白记录，53项专项通过；真实人数、两臂四结构片段、活动与最终回归未完成，不把材料整理当Level B关闭。",
+  "figures": [
+    {
+      "path": "human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png",
+      "caption": "历史资产参考，非新双条件或受限适应运行证据。成员视频2第26秒的粒子双环参考。保留底部脚本缺失警告；不是独立Unity验收截图。",
+      "after_section": "实际交付"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false
+}

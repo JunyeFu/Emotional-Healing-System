@@ -1,0 +1,12 @@
+{
+  "task_id": "U12-06",
+  "reviewer": "AUTHOR_AGENT",
+  "layout_result": "PASS",
+  "task_summary": {"pages": 3, "inspected_pages": [1, 2, 3]},
+  "project_review": {"pages": 35, "inspected_changed_pages": [35], "pages_1_to_34": "BYTE_IDENTICAL_TO_U12-05_REVIEW"},
+  "member_status": "IN_PROGRESS_UNCHANGED",
+  "new_implementation_acceptance": "NOT_DELIVERED",
+  "independent_review": "NOT_RUN",
+  "human_signature": "NOT_SIGNED",
+  "root_migration_complete": false
+}

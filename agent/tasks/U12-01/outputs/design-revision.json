@@ -1,0 +1,28 @@
+{
+  "task_id": "U12-01",
+  "baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "scope": "新任务设计权威与原执行范围治理",
+  "disposition": "REVISE_FOR_NEW_BASELINE",
+  "deliverables": [
+    "新任务设计权威与原执行范围治理修订交接",
+    "权威区分",
+    "任务修订矩阵"
+  ],
+  "acceptance_criteria": [
+    "AC1 新基线作用于当前任务计划，v1.2只保留原协议范围",
+    "AC2 历史DONE/签收不覆盖适应修订，注册状态与修订需求分开",
+    "AC3 生成器、导航及分发同消费新要求，冻结输入有显式影响"
+  ],
+  "evidence_required": [
+    "权威区分",
+    "任务修订矩阵",
+    "分发输入影响"
+  ],
+  "completion_condition": "新范围由实际执行者取得上述证据及独立复核；历史DONE只覆盖原范围，本轮任务体系更新不转为新业务验收。",
+  "recorded_status": "DONE",
+  "depends_on_original": [],
+  "revision_state": "ORIGINAL_DONE_NEW_SCOPE_REQUIRES_REVIEW",
+  "formal_collection_allowed": false,
+  "historical_status_is_new_scope_completion": false,
+  "design_source": "agent/design/design-foundation-20261008/task-baseline.json"
+}

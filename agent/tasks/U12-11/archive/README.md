@@ -1,0 +1,5 @@
+# U12-11 原候选归档
+
+task-input四文件由适配包旧任务位置实际迁入，原文和字节不改。原manifest对应三项输入，input_snapshot_id为872991f355d66bf818b42d811b5f43e9c7ef25239063af25978b4e67aa5c67fa，dispatch_allowed=false。
+
+历史未注册说明不再适用当前活动状态；原外部审计、协议、SAP、签署和在研分发保持。本包原无实现或真实冻结报告，不虚构清理或历史签收。

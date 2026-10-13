@@ -1,0 +1,32 @@
+{
+  "task_id": "E-04",
+  "study_stage": "stage_1",
+  "status": "NOT_RUN",
+  "frozen_study_ref": null,
+  "preregistration_receipt_ref": null,
+  "activity_receipt_ref": null,
+  "all_batch_registry_ref": null,
+  "allocation_balance_ref": null,
+  "completion_imbalance_ref": null,
+  "exposure_audit_ref": null,
+  "stop_receipt_ref": null,
+  "raw_evidence": {
+    "status": "NOT_CHECKED",
+    "required_families": ["device_streams", "runtime_facts", "questionnaires", "allocations", "annotations", "configuration_build"],
+    "authorized_original_review_ref": null
+  },
+  "blind_qc_ref": null,
+  "annotation_resolution_ref": null,
+  "missingness_and_exclusion_ref": null,
+  "deviation_ref": null,
+  "blind_reconstruction_ref": null,
+  "analysis_sets_ref": null,
+  "frozen_sap_ref": null,
+  "code_config_build_ref": null,
+  "reproduction_entry_ref": null,
+  "counts": {"assigned": null, "exposed": null, "completed": null, "stopped_after_exposure": null, "cancelled_before_exposure": null, "pending": null},
+  "research_lock": {"id": null, "manifest_ref": null, "hash": null, "data_reviewer": null, "independent_reviewer": null, "signed_at": null},
+  "unblind_authorization": {"lock_id": null, "lock_hash": null, "authorizer": null, "recipient": null, "scope": null, "signed_at": null},
+  "unblinding_authorized": false,
+  "post_lock_changes_ref": null
+}
