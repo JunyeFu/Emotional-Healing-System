@@ -2855,3 +2855,5 @@ P-02归档 `agent/local/artifacts/bigrun-preflight/sessions/d42a93924246bd4f7ac0
 现有analysis环境Python3.14.7执行：srp_analysis、session_core/store、TD模块、A-01/02/03/04/05、U12-04/07/10、W-02/G-03及governance定向回归，517 passed / 195.80s。现有bigrun环境执行采集测试与T-01的BigRun包、manual_mock、capture_workbench_sdk测试，66 passed / 32.08s。07_validate_task_packages.py通过71项；14_validate_ready_task_packages.py --local通过5包88快照，注册状态未变。未启动新的真机或研究实验。
 
 同步范围含此前本地BigRun、手动TD、分析闭环与治理图修正；过程调试目录、重复TOE和全量捕获留在本地，新增精确忽略规则，不删除文件。公开手动验收保留截图、状态和结果摘要。SSH默认ProxyCommand中的exec在PowerShell下失败，单次core.sshCommand=ssh -o ProxyCommand=none成功获取远端；快进保留da74e54a标题修订，无全局设置变更。py -3.14启动器未登记运行时，改用既有虚拟环境完成全部验证，不安装依赖。
+
+2026-11-01发布收尾：工程与展示提交1529b310已推送main；ls-remote确认同一提交。领取包--require-index发布校验PASS（5包88快照），README、品牌SVG及TD展示图远端HTTP200。Edge无窗口直接访问GitHub实际页面，确认线上封面、中文、导航与画廊入口显示正常（本地github-live.png）；当时git status --short为空。此后仅补本条发布回执，任务结束，无新增研究验收。
