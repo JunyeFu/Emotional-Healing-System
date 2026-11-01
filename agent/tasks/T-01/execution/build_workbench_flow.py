@@ -10,7 +10,7 @@ FLOW_RUNTIME = '''
 flow_module = types.ModuleType('td_experiment_workflow')
 exec(op(ROOT + '/WorkbenchA/Logic/workflow_source').text, flow_module.__dict__)
 from pathlib import Path
-workflow = flow_module.Workflow(Path(project.folder) / 'development-workflow', session_module.DevelopmentCapture)
+workflow = flow_module.Workflow((Path(project.folder) / op(ROOT + '/WorkbenchA').fetch('workflow_root')).resolve(), session_module.DevelopmentCapture)
 capture = workflow.capture
 _monitor_frame = onFrameStart
 history_selection = None
@@ -21,7 +21,7 @@ export_note = ''
 
 def export_record():
     global export_note
-    item = workflow.history[history_selection] if history_selection is not None else workflow.current
+    item = workflow.history[history_selection] if workflow.view == 'HISTORY' and history_selection is not None else workflow.current if workflow.view != 'HISTORY' else None
     if not item or not item.get('path') or item['status'] not in ('COMPLETED','ABORTED'):
         export_note = '本场结束后可导出'
         return
@@ -41,6 +41,9 @@ def export_record():
 def action(name):
     global capture, channels, streams, history_selection, export_note
     try:
+        if op(ROOT + '/WorkbenchA').fetch('manual_workbench',False) and name in ('submit','start','resume','posttest'):
+            if not all(streams.get(k,{}).get('age_ms',1e9) < 1000 for k in ('resp','ecg')):
+                raise ValueError('MOCK_DISCONNECTED')
         previous = workflow.current
         workflow.action(name, time.monotonic_ns())
         capture = workflow.capture
@@ -67,7 +70,7 @@ def inspect_history(index):
 def open_record():
     import os
     from pathlib import Path
-    item = workflow.history[history_selection] if history_selection is not None else workflow.current
+    item = workflow.history[history_selection] if workflow.view == 'HISTORY' and history_selection is not None else workflow.current if workflow.view != 'HISTORY' else None
     if item and item.get('path'):
         path = (workflow.root / item['path']).resolve()
         if path.is_relative_to(workflow.root.resolve()) and path.exists():
@@ -83,6 +86,8 @@ def ingest_monitor(raw, now):
     if not isinstance(p, dict):
         return False
     if p.get('message_type') == 'session_observation':
+        if not workflow.current:
+            return True
         try:
             workflow.event(p, now)
             capture = workflow.capture
@@ -93,7 +98,7 @@ def ingest_monitor(raw, now):
         except OSError:
             workflow.fault('WORKFLOW_STORAGE_FAILED')
         return True
-    if not workflow.current or p.get('session_id') != workflow.current['session_id']:
+    if (workflow.current and p.get('session_id') != workflow.current['session_id']) or (not workflow.current and not op(ROOT + '/WorkbenchA').fetch('manual_workbench', False)):
         return True
     if p.get('message_type') == 'device_preview':
         if preview.ingest(raw, now):
@@ -117,16 +122,24 @@ def render_flow(now):
     content = shell.op('Content')
     pages = content.op('Pages')
     stage, view, c = workflow.stage, workflow.view, workflow.current
+    manual = shell.fetch('manual_workbench', False)
     page = 'history' if view == 'HISTORY' else 'timing' if view == 'DETAILS' else 'home' if stage == 'HOME' else 'closeout' if stage == 'CLOSEOUT' else 'overview'
     for node in pages.panelChildren:
         node.par.display = node.name == page
     shell.store('active_page', page)
     shell.store('flow_stage', stage)
     names = {'HOME':'主页面','PREPARE':'实验准备','WAITING':'正在等待Unity开始','RUNNING':'实验监控','PAUSED':'实验已暂停','CLOSEOUT':'本场实验收尾'}
+    if manual:
+        names['WAITING'] = '等待开始'
     _set_text(content.op('Context/recording'), names[stage] + (' · ' + ('模拟模式' if c else '开发工作台')))
     eff, total = workflow.times(now)
     _set_text(content.op('Context/elapsed'), session_module.duration(eff))
     _set_text(content.op('Header/state'), '模拟模式 · 正式记录桥未接入')
+    if manual:
+        connected = streams.get('ecg', {}).get('age_ms', 1e9) < 1000
+        _set_text(content.op('Header/state'), '模拟模式 · ' + ('已接入' if connected else '未接入'))
+        if workflow.error:
+            _set_text(content.op('Context/recording'), names[stage] + ' · ' + workflow.error)
     content.op('Header/state').par.bgalpha = 0
     _set_text(content.op('Header/source'), '会话：' + (c['session_id'] if c else '未创建'))
     _set_text(content.op('FlowNav/current/label'), names[stage])
@@ -156,13 +169,21 @@ def render_flow(now):
         for node in pages.findChildren(type=textCOMP):
             field = node.fetch('flow_field', None)
             if field in fields:
-                _set_text(node, fields[field])
+                value = fields[field]
+                _set_text(node, value.replace('（模拟）', '') if manual else value)
     controls = pages.op('overview/flow_controls')
     visible = {'submit':stage=='PREPARE', 'cancel':stage in ('PREPARE','WAITING'),
                'pause':stage=='RUNNING','resume':stage=='PAUSED','abort':stage in ('RUNNING','PAUSED')}
     for key, show in visible.items():
         controls.op(key).par.display = show
         controls.op(key).par.enable = not workflow.pending and (workflow.ready if key == 'submit' else True)
+    if manual:
+        controls.op('start').par.display = stage == 'WAITING'
+        controls.op('start').par.enable = connected and not workflow.pending
+        controls.op('submit').par.enable = connected and workflow.ready and not workflow.pending
+        posttest = pages.op('closeout/posttest')
+        posttest.par.display = bool(c and not c['posttest'])
+        posttest.par.enable = bool(c and c['sealed'] and not workflow.pending and connected)
     for key in ('next','home'):
         pages.op('closeout/' + key).par.enable = workflow.can_close and not workflow.pending
         pages.op('closeout/' + key).par.opacity = 1 if workflow.can_close and not workflow.pending else .4
@@ -181,7 +202,7 @@ def render_flow(now):
     else:
         note = '同一窗口连续运行 · 每场独立记录'
     _set_text(content.op('FlowNote'), note)
-    if c and 'replay_effective_s' in c:
+    if c and 'replay_effective_s' in c and not manual:
         _set_text(content.op('Header/state'), '合成回放 ×' + str(c['playback_speed']) + ' · 显示源时间')
     _set_text(pages.op('closeout/export_note'), export_note)
     _set_text(pages.op('history/export_note'), export_note)
@@ -197,7 +218,7 @@ def render_flow(now):
             callback.par.panels = row.op('inspect').path
             callback.par.panelvalue = 'lselect'
             callback.par.offtoon = True
-            callback.text = 'def onOffToOn(v):\\n    op(' + repr(shell.op('Logic/render').path) + ').module.inspect_history(' + str(i) + ')\\n'
+            callback.text = ('def onOffToOn(v):\\n    op(' + repr(shell.op('Logic/render').path) + ').module.inspect_history(' + str(i) + ')\\n').replace('\\\\n', '\\n')
         row.par.y.expr = 'parent().height - ' + str((i+1)*38)
         values = (item['session_id'], status.get(item['status'],item['status']), '已封存' if item['sealed'] else '待确认', '已收到' if item['posttest'] else '待回执')
         for j, value in enumerate(values):

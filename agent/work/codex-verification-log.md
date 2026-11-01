@@ -1,5 +1,25 @@
 # Codex Verification Log
 
+## 2026-10-20 电脑蓝牙驱动与省电维护
+
+硬件ID `USB\VID_13D3&PID_3571` 对应 Realtek 适配器；主板华硕 TUF GAMING B650M-PLUS WIFI，Windows11 build26200。原驱动1.9.1051.3002 / oem20.inf和允许自动省电已记录。官方18.4032.2509.1900包包含精确硬件ID，下载校验值匹配，目录/驱动/辅助程序微软硬件兼容签名有效；先导出旧驱动，系统pnputil安装退出0。首次Windows PowerShell脚本策略拦截未改系统，随后经管理员确认使用现有PowerShell7执行，没有修改全局执行策略。
+
+18:09:36最终复核：PnP版本18.4032.2509.1900 / oem56.inf，问题码0，RtkBtFilter2已启动且运行文件签名Valid，MSPower_DeviceEnable.Enable=false，无线电ON、BLE Central=True；维护后短时空闲观察新增BTHUSB错误0。全局USB选择性暂停AC/DC仍均为1，高性能电源计划未变。旧WMI签名驱动库存尚未刷新，原即时回执未改写；后续独立复核 `Success=true`。详见 [最终复核JSON](../local/artifacts/bluetooth-stability-20261020/current-verification.json)、[维护及回退记录](../local/artifacts/bluetooth-stability-20261020/README.md)。未自动重启、未连接BigRun或验收持续流，等待合适胸带实测；未改业务状态或提交推送。
+
+## 2026-10-19 原方案数据分析软件闭环
+
+独立环境`agent/local/venvs/analysis`最终回归 **298 passed in 275.56s**，覆盖srp_analysis及A-01/A-02/A-03/A-04/A-05、U12-04/U12-07/U12-10、W-02/G-03、P-02存储消费者。[JUnit](../local/artifacts/analysis-closure-20261019/verified/tests.xml)及[执行与关闭记录](2026-10-19_analysis-closure.md)。对照独立HC3调用、已知Rubin方差、50份PMM供体/观察值保持、确定性复算、原件不变、拒绝联系方式列、禁止socket、固定T分母、缺G/缺运行/缺信号、全地板和零正式参与者分支均通过；HRV固定等长RR相对窗与断流不拼接有专项回归。
+
+六类合成原件重建至`analysis-closure-20261019/verified/`，主样例n=30、50次插补、18张CSV、六组PNG/PDF及中文report.md/pdf；另跑B较低/无方向/A较低/地板四个完整情景。30/40/48/60人×-3/0/+3分×0/15%缺失的24格、每格10次全部可估计；小预算合成精度不用于冻结N。4页报告和7张图已检查非空、布局与B-A方向；最终六图及报告与目视检查版逐字节一致，最终analysis.json代码摘要与现有源码一致，六类输入清单未变。
+
+71任务注册、71当前计划/574链接/5分发范围/3原领取身份通过；独立包PASS_LOCAL=5包/88输入快照（未检查发布）。F-02当前入口生成与U12-04证据校验通过。A-03仅刷新显式design_updates，保留原input_snapshot_id、candidate_identity、source_files与inputs字节；原补充manifest/FILES和变更前TASK另存归档。工作树原有TD/BigRun改动保留，未操作桌面、真实BLE或实验控制，未改业务状态、提交或推送。软件完成与真实量表/设备、正式冻结、研究锁库/揭盲及独立实际复算分别记录。
+
+## 2026-10-19 BigRun Team TD 只读候选
+
+使用已有BigRun专用环境运行 `python -m pytest agent/modules/acquisition/tests agent/modules/touchdesigner/t01_telemetry_panel/tests agent/modules/tests/session_store agent/tasks/T-01/execution/test_bigrun_workbench_package.py -q`：**230 passed in 36.84s**。覆盖旧工作台/存储回归、消息来源与单位、两组XYZ、代理预热、断流清值、重连清历史、序列拒收/丢包断线、五类波形像素，以及离线TOE当前源码嵌入、12页渲染的节点替身执行、控制禁用和共同框线几何。全部为合成/替身/离线检查，不是实际TD或设备验收。
+
+打包首次检查暴露TD文本块并非总有首换行，修复从byte27读取有效负载，新增首字符与多行参数回归；旧隐藏节点的Polar/PLUX/mock及错误单位标签一并清除。新增只读发布器只向127.0.0.1:5005发送BigRun消息，无5007操作请求，无实验回执。独立CMD帮助返回0；TOE用本机toeexpand/toecollapse离线生成，原手动TOE在测试前后字节相同。交付位置和未验证项见[清单](2026-10-19_bigrun-td-update.md)。未打开/控制桌面、BLE、TD或Unity，无提交推送、治理状态变更。
+
 ## 2026-10-08 TD六类曲线与录制前检查
 
 专项测试、真实TD点击与曲线颜色像素检查、录制前后边界核查见[本轮验证](2026-10-08_T01_六类曲线与录制前检查.md)。输入均为合成数据，Unity开始由开发消息模拟。
@@ -2737,3 +2757,101 @@ Python使用本机`py -3.14`（pytest9.0.3），默认`python`环境未安装pyt
 ## 2026-10-13 分支清理验收
 
 以main ffe21c17为准，17个远程/35个本地分支均为其祖先；git worktree list仅main占用命名分支，开放PR为0，删除候选均未受保护。远程原子lease删除成功，本地git branch -d成功。GitHub API回读仅余main、G-01、codex/u-01-reliable-control、codex/u-02-grip；本地保留main与两份未合并备份。原有TD两份已修改脚本及7个候选/证据位置保持不变。恢复提交表见本地receipt.json；不创建新备份分支或改变业务状态。首次prune遇临时TLS EOF，按成功回读核查；本轮不改源码，不重复运行业务测试。
+
+## 2026-10-15 TD手动模拟全流程
+
+`py -3.14 -m pytest` 定向覆盖SessionCore、SessionStore、隐私门、TD模块、SessionBackend、StudySimulation、采集SDK及ManualMock：330 passed in 21.62s；末次SDK/Mock专项5 passed。UUID误命中隐私门、未确认准备可开始、晚到取消回执、冷启动导入路径、历史行鼠标拦截与标题节点映射均有针对性修正。
+
+`capture_workbench.py --manual`：TD2025.32820，71个原生面板检查点全部通过，源基线未覆盖。覆盖正常结束、运行/暂停中止与取消、后测/下一位门禁、六种曲线、导出实际CSV、历史/明细/复制/打开目录、强制断流失败保留。12页公共框实际坐标一致，说明性小字已去除。证据见 [验收说明](../tasks/T-01/evidence/manual-20261015-105659/README.md)。
+
+最终交付另经文件关联冷启动和资源管理器双击cmd验证；发布清除验收钩子/测试行，修正空历史示例统计，并在包内编译检查后重开。真实鼠标确认准备后仍等待手动开始，00:00、0记录；最后鼠标取消遇桌面输入超时，未冒充成功，已结束走查并重开接入首页，取消按钮另有完整原生验收。设备/Unity/问卷为模拟，P01/P02实际执行；不据此关闭真实运行或研究准入任务，未提交/推送GitHub。
+
+## 2026-10-15 期刊和排期核查
+
+通过既有journals.py只读取得IJHCI/IJHCS/BIT目录记录，IJHCI档案原费用/速度为空；官方检索正文核对范围、42天首决定、78天首轮外审、21天录用后在线及非OA无APC，作者指南直连403，未补作整条路线免费结论。07源稿核对12认知/20技术/8评审、人数互斥和简化精度公式；用户后续确认250+问卷与30+实验后排期已同步，不继续沿用100正式人假设。PowerShell计算N=30/40/60的精度量级、2027-01-15加42/78天为02-26/04-03；不把计算或问卷量当作统计充分或录用证明。新排期不修改运行、正式N或研究批准，未运行业务测试、未提交推送；原TD改动保留。
+
+扩展选刊核查：既有CLI领域检索88条，9刊ID/等级来自本地库，6本HCI刊等级与CCF官网目录正文对照；官方范围核读T&F、OUP、Elsevier、Springer及IEEE页。IWC作者指南已读，旧reviewer招募页与其评审口径不同，按正式作者指南记双匿名，不混用。作者侧适配排序不冒充期刊录用判断；未更新期刊库或业务状态。
+
+四刊指标核查：现有四刊档案费用/速度/录用率均unknown；T&F官方检索正文核对IJHCI最佳JCR Q1、42/78/21天、16%和非OA无APC，BIT最佳JCR Q1、10/75/15天、7%和非OA无APC。OUP正式作者指南正文核对3周初筛和3至5个月回复、standard/OA许可；IJHCS官方Insights与OA页403，OUP大费用页超工具长度且终端请求TLS EOF，未据此确认价格或全项免费。二手分区均显式标来源/版本/未核准，不采用社区录用率；未运行无关业务测试、未提交推送。改动格式及工作树检查见本轮命令结果。
+
+## 2026-10-18 心率设备资料核查
+
+放大用户原截图核对22条、3组重复及疑似混合SKU；排序采用截图价，不作当前到手价。核读D-01/D-02当前交接、采集目录、P-01/P-02接口和NOT_RUN真机证据。官方Bluetooth HRS/UUID、Polar H10/H9能力与PMD源码、各品牌产品/手册支持协议可行性；CYCPLUS厂方PDF为图像页，已渲染核对H1/H2的BLE/ANT+规格，不以空文本提取当作已读。Windows本机py -3.14无匹配运行时；资料检查改用捆绑Python，未安装依赖、未改启动器。只新增选型清单及本条工作记录；无BLE扫描、设备采集、TD/Unity操作、业务测试、任务状态变更或Git发布，不把文档可行性写成全链实测。
+
+清单检查通过：19项价格升序，截图1至22号各覆盖一次，5个本地依据链接可解析；定向git diff --check无格式错误，工作树复核未修改既有TD及其他源码。
+
+## 2026-10-20 BigRun Team 使用手册下载
+
+### 同日靠近设备后复查与TD接收修正
+
+普通8秒扫描无BRT，但WinRT对已配对MAC的uncached HRS查询返回SUCCESS/CONNECTED，证明“没有本次广播”不能直接写成不可连接。显式BLEDevice+uncached诊断取得真实归档 `bigrun-preflight/sessions/730220cffc36c0f9eb118754c44230306deb4b8d850357bf3a7fcd87cc6128a5`；现有inspect验证可读，ECG576包/5184样本、ACC432包/864样本、HR41包、RR11包/32样本、47个ECG/ACC共同秒bin，随后断连ABORTED，未通过60秒持续性。后续独立完整/仅私有服务发现均超时，不自动续接，也不把未完成的归档记成成功。WinRT额外查询的初次调用因重载名错误失败，改用已安装类实际提供的方法后返回成功；没有据此改写运行驱动或扩大硬件结论。
+
+TD修正前真实发包而接收accepted=0。先增加嵌入运行器必须服务UDP输入的定向测试，取得0次cook导致的预期失败；在 `bigrun_workbench_runtime.onFrameStart` 中增加UDP DAT强制cook。修正后包专项3项及传输/前端专项11项均通过；同源原生验证副本accepted增至1、无节点错误，消费的是一次失败真实连接的结束状态，不是模拟波形，不足以证明实时曲线成功。重新生成无验证钩子的BigRun交付TOE，旧TOE原件备份至忽略区；旧mock工程未改。
+
+Windows系统日志多条BTHUSB事件5报告HCI事件大小错误；枚举当前Classic/BLE连接均空后，显式请求无线电OFF再ON一次，实际状态恢复ON，未重装驱动或删除配对。用户明确胸带太小、已购买大款，结束硬件测试；没有后台采集或Mock，TD仅保留交付工程等待接入。呼吸无profile，仍是未标定；大款到手后再做持续性和真实曲线/呼吸参考验证。正式任务与研究状态不变，未提交推送。
+
+### 同日首次真机 BLE / TD 检查
+
+实际扫描发现 BRT08898（C2:22:61:0B:C5:C7）。GATT读回厂商/型号BigRun，标准HRS 0x180D/0x2A37与私有 f000efe0/efe1/efe3 服务存在。初次扫描因Windows无线电OFF失败，后续WinRT读回ON；已配对状态由Bleak读回。原驱动订阅失败（WinError -2147023673），uncached诊断可短时接收；独立标准HRS曾收到83至90 bpm，随后最小双订阅也在15秒检查前断开，再次HRS连接报GATT Unreachable。最后6秒扫描无目标，不认定问题已修复。
+
+P-02归档 `agent/local/artifacts/bigrun-preflight/sessions/d42a93924246bd4f7ac050053f90b345263e6755be0e81583168d0f1a4e483c8` 经现有inspect验证可读：ACC 38包/76样本、ECG 40包/360样本、HR 2包、RR 1包，ECG/ACC同秒交错4个bin；实际状态ABORTED。设备读回ecg=0/sr=1/xo=1、ecg_sr_reported=125；主机观察率和配置值均未提升为已验证输出率。未知/配置6条仍保留，不猜呼吸测量或原生RR单位。
+
+实际启动原BigRun TOE，再仅对同源忽略区副本增加本地状态/截图钩子；TD2025.32820回执无节点报错，1280x720等待接入PNG已目视检查。MCP9981连接拒绝，因此采用现有离线TOE打包与本地回执机制；不声称MCP可用。toeexpand/toecollapse返回1但实际生成产物，脚本改按文件格式/产物变化检查。副本无Mock/实验控制，正式TOE未改。本次没有真实数据到TD持续显示的回执，不能记录双通道显示通过。已请求用户确认设备开启/天线距离；源码、业务状态、正式研究与Git发布均不改。
+
+按用户要求取得知乎 Stryd爱跑步账号发布的完整使用说明书，保存到忽略区 `agent/local/artifacts/bigrun-manual-20261020/BigRun-Team-user-manual-web.mhtml`（2,009,697 字节），并附 `SOURCE.md`。MIME 解码检查确认正文完整章节、7 个 JPEG、4 个 PNG 和 79 个 CSS 部件存在；正文按 UTF-8 解码无替换字符。初次 MIME 检查因 HTML 部件未声明 charset 而采用 ASCII 默认值，改为读取原始载荷显式 UTF-8 解码后验证通过，原文件未改写。
+
+这是公开网页手册的本地副本，不是原厂独立 PDF；发布者的厂商身份未独立核验。正文声明适用 2024 年 7 月以后生产版本，实物批次及固件待核。本次不扫描/连接蓝牙、不操作 TD/Unity、不改任务状态、不提交或推送。
+
+## 2026-10-18 BigRun Team 候选采集与校准
+
+按用户明确授权实现 `agent/modules/acquisition/bigrun/`，提供独立 BLE 驱动、原始协议解析、既有 RawFrame/P-02 适配、导出/观察统计、心率参考检查、呼吸因果投影标定及冻结参数验证；入口 `agent/runtime/bigrun.py/.cmd`。P-02仅新增四个原始源名，未更改正式manifest/控制/遥测或任务状态。
+
+采用测试先行：协议、存储、驱动、校准各片先取得预期缺实现失败再实现。末轮专用Python3.14环境运行 `python -m pytest agent/modules/acquisition/tests agent/modules/tests/session_store -q`：**129 passed in 11.33s**，其中16项BigRun新增测试。覆盖两组XYZ、ECG ADC/头、RR整数、未知/畸形通知、P-02封存读取、名义时间导出、模式读回不匹配、记录失败传播、断连、候选采集CLI、NeuroKit2心搏检查、呼吸因果分块一致性、独立文件冻结验证、空/平坦/断点输入以及文档本地链接。波形/设备均为合成或替身，不是实际BLE数据。
+
+本机使用已存在的Python3.14.7创建忽略区 `agent/local/venvs/bigrun/`，仅在此环境安装版本化依赖。CMD无参数帮助入口返回0；定向 `git diff --check` 通过。初次链接正则把PowerShell `[double](Read-Host...)`误认链接，已改为排除代码围栏的自动回归测试，不修改正确命令示例。
+
+未运行BLE扫描/实机连接，未打开TD/Unity，未动既有TD/mock工作、不提交/推送。当前不能确认硬件固件协议、ECG/ACC/RR持续并发、输出率、时钟/丢包语义、ADC/RR单位或真实误差；参考时差需独立同步，未实现自动漂移标定。吸呼/停留/补吸分类器未实现，resp validity为false，正式运行接线与真人验收保持NOT_RUN。完整到手步骤及来源见 [BigRun说明](../modules/acquisition/bigrun/README.md)。
+
+## 2026-10-20 ECTRI APK 静态核查与 BLE 连接修复
+
+用户APK原件只读；提取目标classes4.dex并用JADX1.5.6反编译，工具及输出仅agent/local忽略区。关键连接、初始化、命令队列和模式bean方法可读，DEX整体9个反编译错误不冒充全APK成功。ManDevice未见createBond/私钥握手；Authenticated来自CCCD通知遍历完成。手表/脚部设备密钥与绑定不用于BigRun，日志中的30秒消息不等于已证实保活。具体Java行号与命令见[本轮记录](2026-10-20_ectri-ble-integration.md)。
+
+新增连接专项最初7 failed/1 passed，复现盲写匹配模式、ACK当读回、模式断连后继续等待等问题；修复并增加订阅失败/等待读回断线/CLI失败封存用例。最终专用环境执行 `python -m pytest agent/modules/acquisition/tests agent/modules/tests/session_store -q`：**143 passed in 12.06s**。包含真实入口替身测试，检查扫描BLEDevice/Windows无缓存参数、串行初始化、只写差异、ACK隔离、无自动续接、失败阶段写P-02及现有TD传输字段；所有设备均为替身。
+
+`agent/runtime/bigrun.cmd capture --help`退出0；README与分析记录本地链接已纳入既有回归。无BLE扫描、实机采集、桌面操作、TOE重打包、业务状态变化或Git发布。此前无广播但可WinRT访问的事实保留，扫描缺目标仅报NOT_ADVERTISING；新初始化与模式变化的固件响应、连续180秒接收和TD实时双通道仍待大款胸带实测。
+
+## 2026-10-20 ECTRI隔离模拟器安装与启动段
+
+使用现有AndroidSDK/Emulator36.5.10，新建独立SRP_ECTRI_20261020，未覆盖其他AVD。aapt核准APK为com.manridy.ectri V1.4.8/code190，Android35 x86_64中adb install成功；am start -W显示SplashActivity转PermissionActivity、Status ok、2664ms。已查看截图和UI树，首屏为隐私及用户协议同意页，未点击同意。已发确认问题，后续权限和扫描尚未执行。
+
+蓝牙dumpsys为虚拟控制器ON、HCI5.3/厂商224，不是实体BigRun；没有物理透传。权限dump显示蓝牙/定位/通讯录/通话等运行时权限为false，crash buffer空。保留启动段MP4（942468字节）、PNG/XML和截至当前logcat导出，导出含App启动/显示记录；初次后台logcat进程已结束，不宣称其连续驻留，后续前台采集重新开段。HCI日志/pcap仅配置启用，尚无实体胸带数据。
+
+隔离实例netsim --debug-no-network、--no-web-ui；实际端口5037/5560/5561/8560/6402/59452均loopback，8560要求token，全局表已登记。首轮instance3发现失败，停止本轮进程并更正，未重复盲试。模拟器保留同意页，录屏已正常结束并导出；未改源码/TD/任务状态、未提交推送。详情见[动态检查记录](2026-10-20_ectri-emulator-inspection.md)。
+
+### 同日用户确认后的继续检查
+
+获得用户同意后重新开启前台受控watch.py/logcat与180秒分段录屏。按UI树操作同意、跳过引导、Devices、Add device、前台位置和附近设备授权。App PID4578实际startLeScan且注册status=0，连续日志约20秒重扫；未出现设备列表项。scan it触发相机及媒体权限，逐项拒绝并quit回扫描；系统蓝牙OFF时页面仍Scanning，返回重进可见关闭提醒，经系统Allow开启后再Add device成功重扫。额外通知权限拒绝，未阻断最后扫描。读取电源/后台/自启动/权限建议但未代设。
+
+最终package-final.txt解析出恰五项运行时授权：FINE/COARSE_LOCATION、BLUETOOTH_SCAN/CONNECT/ADVERTISE；相机、媒体、通知、通讯录、通话及后台位置均false。crash-final.log空。ffprobe核准三段H.264/540x1212、180.053+180.032+87.048=447.134秒，片段切换有短暂间隙，logcat持续16,416,118字节。watch会话正常stop并完成导出，非声称无限监控。
+
+关闭本轮emulator-5560后netsim自动ZIP封存，保存原件并解包到忽略区；蓝牙PCAP43,701字节、820条完整记录、HCI命令410/事件410、ACL0，无实体GATT数据。inspect_evidence.py对PCAP边界/格式、权限、crash和视频检查通过，summary明确real_device_connection_test=NOT_RUN。最终5037共享ADB仍loopback监听，5560/5561/8560/6402/59452已释放；原AVD数据保留。运行阶段与结论已回填原BLE分析，未改驱动、TOE、任务状态或GitHub。
+
+## 2026-10-22 来源压缩与清理核查
+
+一次性inspect_cleanup.py inspect退出0：118个未跟踪缓存目标，2个已逐项SHA-256核对完整解压的安装ZIP；文献定向内容比较发现3组重复。删除调用被执行策略拒绝，没有执行或重试绕过。compress退出0：20目录14,451文件压缩前后文件集合和SHA-256完全一致；逻辑4,150,056,810字节不变，Win32存储大小2,823,120,064字节，减少1,326,936,746。硬链接按文件身份去重，未用全卷空闲差值冒充本任务收益。8个运行/工程入口存在；压缩目录在新增说明前Git内容无差异。证据及未完成范围见2026-10-22_project-cleanup.md；无业务源码修改、真实运行验收或研究状态变化。
+
+## 2026-10-28 团队PNG/SVG刷新验证
+
+07_validate_task_packages.py通过71项注册表；14_validate_ready_task_packages.py --local通过5包88快照，不包含发布验收。原test_readme_progress.py先复现1失败4通过：首页图片路径被错误加上../../../；修复后治理定向测试7通过，包括新增看板相对链接回归。render_governance_views.py生成71任务+3里程碑依赖图与71行状态清单，日期2026-10-28，原状态计数不变。现有Sharp以96dpi从SVG导出PNG：依赖图5125×5024，清单2400×6329；Pillow解码、SVG日期/任务编号、首页链接及3份SVG内容一致性检查通过，已目视确认中文和布局正常。只刷新制品与必要生成器/测试/工作记录，不改注册表或签收状态，不提交推送。
+
+## 2026-10-30 空间收尾核对
+
+定点检查无Unity/TD进程，源码/Packages与lock/ProjectSettings齐全；已知模拟包README及P-02来源为dev_mock/synthetic。两ZIP共561成员通过testzip完整读取及成员路径/长度核对，源文件在归档期间大小和时间未变化；无新增哈希链。56项同盘Move-Item逐项确认原位消失、目标存在，无覆盖、无跳过；源/候删绝对边界及嵌套链接对象已检查。逻辑隔离量4,607,381,275字节，实际释放0；归档423,471,174字节，必要环境、真实原件、AVD和任务状态未动。
+
+## 2026-11-01 GitHub 展示与工程同步验证
+
+首页使用仓库原帧和原生TD模拟截图，新增纯SVG品牌封面；同步成果、项目介绍与概览。GitHub Markdown API实际渲染成功，Edge headless 1280px页面截图目视确认封面、中文和三组画面可读（本地 `agent/local/github-showcase/desktop.png`，属于近似GitHub样式预览，不替代线上UI）。检测到单主屏，无窗口渲染未移动用户窗口。94个展示入口本地链接存在，SVG XML可解析；增量文本凭据模式检查无命中；git diff --check通过。
+
+现有analysis环境Python3.14.7执行：srp_analysis、session_core/store、TD模块、A-01/02/03/04/05、U12-04/07/10、W-02/G-03及governance定向回归，517 passed / 195.80s。现有bigrun环境执行采集测试与T-01的BigRun包、manual_mock、capture_workbench_sdk测试，66 passed / 32.08s。07_validate_task_packages.py通过71项；14_validate_ready_task_packages.py --local通过5包88快照，注册状态未变。未启动新的真机或研究实验。
+
+同步范围含此前本地BigRun、手动TD、分析闭环与治理图修正；过程调试目录、重复TOE和全量捕获留在本地，新增精确忽略规则，不删除文件。公开手动验收保留截图、状态和结果摘要。SSH默认ProxyCommand中的exec在PowerShell下失败，单次core.sshCommand=ssh -o ProxyCommand=none成功获取远端；快进保留da74e54a标题修订，无全局设置变更。py -3.14启动器未登记运行时，改用既有虚拟环境完成全部验证，不安装依赖。

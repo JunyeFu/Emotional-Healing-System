@@ -11,9 +11,9 @@
   "historical_review_date": "2026-09-11",
   "current_revision": "SPECIFICATION_CANDIDATE_NOT_MANUSCRIPT",
   "primary_outcome": "panas_negative_affect_post_adjusted_for_pre",
-  "contrast": "native_minus_abstract",
-  "negative_favors": "scene_native",
-  "positive_favors": "abstract_pacer",
+  "contrast": "B_minus_A",
+  "negative_favors": "B_native_adaptive_package",
+  "positive_favors": "A_fixed_open_loop_package",
   "functional_guard_blocks_primary_reporting": false,
   "scci_blocks_primary_reporting": false,
   "equivalence_confirmatory_enabled": false,
@@ -35,5 +35,10 @@
   "normalization_is_business_completion": false,
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "current_design_revision": "agent/tasks/U12-07/outputs/design-revision.json",
-  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE",
+  "analysis_spec_authority": "agent/tasks/U12-04/outputs/sap.md",
+  "analysis_entrypoint": "agent/runtime/srp-analysis.cmd",
+  "real_data_analysis": "NOT_RUN",
+  "formal_analysis_authorized": false,
+  "historical_implementation_ref": "../archive/pre-analysis-closure-20261019/outputs/current-writing.json"
 }

@@ -49,7 +49,7 @@ def test_current_extension_not_stage1_cue_comparison():
 
 @pytest.mark.parametrize('effect', [-0.4, 0.0, 0.4])
 def test_existing_hc3_helper_synthetic_policy_minus_random_direction(effect):
-    module = runpy.run_path(str(ROOT / 'agent/tasks/U12-04/execution/power_simulation.py'))
+    module = runpy.run_path(str(ROOT / 'agent/tasks/U12-04/archive/pre-analysis-closure-20261019/execution/power_simulation.py'))
     policy = np.tile([0., 1.], 12)
     pre = np.random.default_rng(604).normal(size=24)
     strata = np.repeat([0., 1.], 12)

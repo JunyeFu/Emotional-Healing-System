@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 import unicodedata
 from typing import Any
+from uuid import UUID
 
 from .errors import GovernanceError
 from .phone import normalize_phone
@@ -56,10 +57,16 @@ def _normalize_decimal_digits(value: str) -> str:
 
 
 def _contact_like_value(value: str) -> bool:
-    # A complete typed digest is not a phone number embedded in free text.
+    # Complete typed digests and UUIDs are not contact details embedded in free text.
     # Forbidden field names are still checked by the caller before values.
     if re.fullmatch(r"sha256:[0-9a-f]{64}", value):
         return False
+    if len(value) == 36:
+        try:
+            if str(UUID(value)) == value.lower():
+                return False
+        except ValueError:
+            pass
     value = unicodedata.normalize("NFKC", value)
     value = "".join(
         character

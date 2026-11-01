@@ -59,7 +59,7 @@ def test_invalid_boundary_inputs_rejected(change):
 
 def test_multiaxis_labels_do_not_suppress_affect_or_enable_equivalence():
     result = classify(Evidence(3, 2, 4, 1, delivery_valid=False, functional_guard='FAIL', sensitivity='SENSITIVE'))
-    assert result['direction_evidence'] == 'ABSTRACT_LOWER'
+    assert result['direction_evidence'] == 'A_LOWER'
     assert result['interpretation_scope'] == 'DELIVERY_VALIDITY_LIMITED'
     assert result['functional_guard'] == 'FAIL' and result['sensitivity'] == 'SENSITIVE'
     assert result['prespecified_affect_result_must_be_reported'] is True
@@ -72,10 +72,10 @@ def test_multiaxis_labels_do_not_suppress_affect_or_enable_equivalence():
 def test_source_copy_and_three_archived_input_identities():
     assert SOURCE.read_bytes() == (TASK / 'archive/source-tool/result_classifier.py').read_bytes()
     original = ast.parse(SOURCE.read_text(encoding='utf-8-sig'))
-    active = ast.parse((TASK / 'execution/result_classifier.py').read_text(encoding='utf-8-sig'))
+    archived = ast.parse((TASK / 'archive/pre-analysis-closure-20261019/result_classifier.py').read_text(encoding='utf-8-sig'))
     for name in ('Evidence', '_number', 'classify'):
         before = next(node for node in original.body if getattr(node, 'name', None) == name)
-        after = next(node for node in active.body if getattr(node, 'name', None) == name)
+        after = next(node for node in archived.body if getattr(node, 'name', None) == name)
         assert ast.dump(before) == ast.dump(after), name
     archive = TASK / 'archive/task-input'
     manifest = read(archive / 'package_manifest.json')
@@ -95,7 +95,7 @@ def test_current_registry_real_inputs_still_not_delivered():
     assert protocol['primary']['minimum_important_affect_difference'] is None
     assert protocol['formal_participant_collection_allowed'] is False
     actual = read(ROOT / 'agent/tasks/A-05/outputs/current-analysis.json')
-    assert actual['result_classifier'] == 'U12-10_CANDIDATE_ONLY_FORMAL_NOT_DELIVERED'
+    assert actual['result_classifier'] == 'B_MINUS_A_CI_CANDIDATE_IMPLEMENTED'
     assert actual['real_data_analysis'] == 'NOT_RUN'
     assert actual['research_lock_id'] is actual['formal_sap_ref'] is None
     empty = read(ROOT / 'agent/tasks/A-05/outputs/analysis-report-template.json')
@@ -127,7 +127,7 @@ def test_actual_cli_valid_invalid_json_and_missing_field(tmp_path):
         result = subprocess.run([sys.executable, TASK / 'execution/result_classifier.py', path], capture_output=True)
         assert result.returncode == code
         if code == 0:
-            assert json.loads(result.stdout)['direction_evidence'] == 'ABSTRACT_LOWER'
+            assert json.loads(result.stdout)['direction_evidence'] == 'A_LOWER'
         else:
             assert b'Input rejected:' in result.stderr and not result.stdout
     path.write_text('{', encoding='utf-8')

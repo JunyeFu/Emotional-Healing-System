@@ -6,7 +6,7 @@
     "P-02": "DONE_BOUNDED_STORAGE_AND_REPLAY",
     "S-02": "WAIT_DEP"
   },
-  "implementation": "OFFLINE_PIPELINE_NOT_DELIVERED",
+  "implementation": "OFFLINE_PIPELINE_CANDIDATE_IMPLEMENTED",
   "required_families": [
     "device_streams",
     "runtime_facts",
@@ -48,12 +48,18 @@
   "not_run": [
     "real_device_decode",
     "real_signal_synchronization",
-    "offline_event_pipeline",
-    "L3_pipeline",
     "formal_data_access",
-    "human_acceptance"
+    "human_acceptance",
+    "real_event_validation",
+    "formal_parameter_freeze",
+    "locked_research_analysis"
   ],
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "current_design_revision": "agent/tasks/A-01/outputs/design-revision.json",
-  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE",
+  "analysis_spec_authority": "agent/tasks/U12-04/outputs/sap.md",
+  "analysis_entrypoint": "agent/runtime/srp-analysis.cmd",
+  "real_data_analysis": "NOT_RUN",
+  "formal_analysis_authorized": false,
+  "historical_implementation_ref": "../archive/pre-analysis-closure-20261019/outputs/current-rebuild.json"
 }

@@ -36,7 +36,11 @@
         "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
         "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
         "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
-        "agent/design/design-foundation-20261008/operational-design.json"
+        "agent/design/design-foundation-20261008/operational-design.json",
+        "agent/modules/srp_analysis/README.md",
+        "agent/modules/srp_analysis/statistics.py",
+        "agent/modules/srp_analysis/analysis-spec.template.json",
+        "agent/tasks/U12-04/outputs/sap.md"
       ],
       "execution_update_path": "agent/tasks/A-03/TASK.md",
       "operational_design_candidate": "ODES-20261008"

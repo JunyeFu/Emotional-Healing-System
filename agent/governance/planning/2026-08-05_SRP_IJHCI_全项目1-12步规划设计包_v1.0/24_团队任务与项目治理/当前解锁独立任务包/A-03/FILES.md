@@ -39,7 +39,7 @@
 - [agent/design/design-foundation-20261008/04-review-audit.tex](design_updates/09_04-review-audit.tex)；1D47E11D4C6DAB4D77B420F144DCAF272BC7F8017DB2AD51625B7754DCA8A519
 - [agent/design/design-foundation-20261008/04-review-audit.pdf](design_updates/10_04-review-audit.pdf)；FD407713BD16B37B5323FE94BAAEAE4BE0FD10D040800B45E134C26180977573
 - [agent/tasks/A-03/outputs/design-revision.json](design_updates/11_design-revision.json)；8FBBD6AA3EB2EF00BAC95DE73A5235B684EB02AD71C3656F8DA0CC434FC68C9A
-- [agent/tasks/A-03/TASK.md](design_updates/12_TASK.md)；25916CD2C48EAAE073E18087A20250AE6DC2BF336F27FAC181F759F2A551B7E0
+- [agent/tasks/A-03/TASK.md](design_updates/12_TASK.md)；40916542F8022F6BAEF9A63EFE395ABBCD3D47EB5B4042F4EC63CB16EE668AAD
 - [agent/design/design-foundation-20261008/05-control-spec.tex](design_updates/13_05-control-spec.tex)；5974115723E72901374370EF2BFD1FFF16D330500A2E315D5549774014021BF1
 - [agent/design/design-foundation-20261008/05-control-spec.pdf](design_updates/14_05-control-spec.pdf)；14C9DAAD0D2C17B7CEA0EEF282533719BC43D3AF95F0A102B440F20F3C417D05
 - [agent/design/design-foundation-20261008/06-paired-storyboards.tex](design_updates/15_06-paired-storyboards.tex)；8C6B1D0787D01813CC6FD1D2A636265C9D2F057D5D7F6B81BA37B29D9E2ECB70
@@ -47,3 +47,7 @@
 - [agent/design/design-foundation-20261008/07-protocol-candidate.tex](design_updates/17_07-protocol-candidate.tex)；94A840BC078B862F409C65CB4C674C5133E69E4699F436BF568E47F79D28A441
 - [agent/design/design-foundation-20261008/07-protocol-candidate.pdf](design_updates/18_07-protocol-candidate.pdf)；69219843B56BF4B9950B07ACE502F31D96B3D51D6F0F55E57952C16F4CCBDE1F
 - [agent/design/design-foundation-20261008/operational-design.json](design_updates/19_operational-design.json)；81738308099D660D614C25914C27458F4FC0E82CA1F158DAE7DA635FBD28EB9D
+- [agent/modules/srp_analysis/README.md](design_updates/20_README.md)；40653C239C928B35C91C94368B2B966E716E227D8B309705C81A7382ED99D9AC
+- [agent/modules/srp_analysis/statistics.py](design_updates/21_statistics.py)；B1CF5D7530F3C44968D8D1D202246B41817AB2765E73A2F7950ED4F4C63B805C
+- [agent/modules/srp_analysis/analysis-spec.template.json](design_updates/22_analysis-spec.template.json)；7F65CE368F5B613AADF033194EF5D04F441B9484DF3EA04A1BAEB69FA663AE04
+- [agent/tasks/U12-04/outputs/sap.md](design_updates/23_sap.md)；8A336AE23E7BEF1541EA5D02647967DFD8B0A7674D8C06BB1784A3CCD86D97ED

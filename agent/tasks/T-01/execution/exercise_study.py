@@ -41,12 +41,13 @@ def exercise(command,pid,active,evidence,wait_for,dataset,speed=5,backend_mode=F
             session_id=current['current']['session_id'],event_id=str(uuid.uuid4()),event=kind)
         if current['pending']: p['request_id']=current['pending']['request_id']
         p.update(kwargs); send(p)
-    def take(name,click=None,stage=None,curves=None,final=False):
+    def take(name,click=None,stage=None,curves=None,final=False,manual_clicks=None):
         nonlocal current
         i=len(receipts); filename=f'{i:02d}-{name}.png'
         target=command.with_name(f'command-{i:03d}.json'); tmp=target.with_suffix('.tmp')
         tmp.write_text(json.dumps(dict(id=i,workflow=True,click=click,page='overview',width=1280,height=720,
-            filename=filename,curves=curves or {},final=final,candidate='T01_Workbench_A.flow-v5.candidate.toe')),encoding='utf-8')
+            filename=filename,curves=curves or {},final=final,manual_clicks=manual_clicks or [],
+            candidate='T01_Workbench_A.flow-v5.candidate.toe')),encoding='utf-8')
         tmp.replace(target)
         r=wait_for(evidence/(filename+'.json'),pid,90)
         assert not r['errors'],r['errors']
@@ -55,7 +56,8 @@ def exercise(command,pid,active,evidence,wait_for,dataset,speed=5,backend_mode=F
         if stage: assert current['stage']==stage,current
         receipts.append(r); print('STUDY_CAPTURE',filename,flush=True)
         return r
-    take('home',stage='HOME')
+    take('home',stage='HOME',manual_clicks=['Content/Pages/home/new/label'])
+    assert current['current'] is None and current['error'] is None
     take('prepare','Content/Pages/home/new/label','PREPARE')
     sent=[]
     for profile in (('A','abort') if backend_mode else ('A','B','abort')):
@@ -67,8 +69,9 @@ def exercise(command,pid,active,evidence,wait_for,dataset,speed=5,backend_mode=F
         for p in replay.packets(0):
             p['clock_domain_id']='synthetic:preflight'; send(p)
         event('preparation_status',participant='SIM-'+profile,condition=replay.meta['condition'],pretest=True,unity_ready=True,store_ready=True)
-        take(profile+'-ready',stage='PREPARE')
+        take(profile+'-ready',stage='PREPARE',manual_clicks=['Content/Pages/overview/flow_controls/submit/label'])
         assert current['record_count']==0
+        assert current['pending'] is None and current['error'] is None
         take(profile+'-submit','Content/Pages/overview/flow_controls/submit/label','PREPARE')
         event('prepared'); take(profile+'-waiting',stage='WAITING')
         event('unity_start_clicked'); time.sleep(.1)

@@ -88,3 +88,18 @@ sysinfo.txt
 *.sqlite-shm
 *.sqlite-wal
 /agent/modules/data-governance/evidence/unity_formal_build_gate*.log
+
+# Local TD capture iterations; final manual evidence remains versioned.
+/agent/tasks/T-01/evidence/backend-v7-20261015-091649/
+/agent/tasks/T-01/evidence/redesign-20261012-210911/
+/agent/tasks/T-01/evidence/redesign-20261012-211004/
+/agent/tasks/T-01/evidence/redesign-20261012-211424/
+/agent/tasks/T-01/evidence/redesign-20261012-211709/
+# Duplicate build and transient capture diagnostics (canonical TOE is in modules).
+/agent/tasks/T-01/evidence/manual-20261015-105659/T01_ManualWorkbench.toe
+/agent/tasks/T-01/evidence/manual-20261015-105659/capture-report.json
+/agent/tasks/T-01/evidence/manual-20261015-105659/capture-progress.json
+/agent/tasks/T-01/evidence/manual-20261015-105659/mock-service.log
+/agent/tasks/T-01/evidence/manual-20261015-105659/layout-diagnostic.json
+/agent/tasks/T-01/evidence/manual-20261015-105659/press-diagnostic.json
+/agent/tasks/T-01/evidence/manual-20261015-105659/ready.json

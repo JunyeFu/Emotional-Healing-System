@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "captures": 71,
+  "operator_start_required": true,
+  "preflight_record_count": 0,
+  "pause_keeps_samples": true,
+  "abort_sealed": true,
+  "posttest_operator_required": true,
+  "export_samples": true,
+  "input": "synthetic",
+  "unity_endpoint": "simulated"
+}

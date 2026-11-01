@@ -213,5 +213,13 @@
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "operational_design_candidate": "ODES-20261008",
   "normalization_candidate": "NORM-20261008",
-  "normalization_design_closed": false
+  "normalization_design_closed": false,
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "responsibility": "当前SAP采用B-A、四天气顺序、HC3、PMM k=5/50次/20轮；旧前测代填统计器转为历史回归，不再作为活动入口。",
+    "entrypoint": "agent/runtime/srp-analysis.cmd",
+    "research_completion": "NOT_RUN",
+    "business_status_changed": false,
+    "claimed_input_snapshots_changed": false
+  }
 }

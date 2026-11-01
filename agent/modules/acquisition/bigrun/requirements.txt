@@ -1,0 +1,5 @@
+bleak==3.0.2
+numpy==2.5.4
+scipy==1.18.1
+neurokit2==0.2.13
+jsonschema==4.26.0

@@ -29,7 +29,11 @@
     "agent/design/design-foundation-20261008/03-decisions.tex",
     "agent/design/design-foundation-20261008/03-decisions.pdf",
     "agent/design/design-foundation-20261008/04-review-audit.tex",
-    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/modules/srp_analysis/README.md",
+    "agent/modules/srp_analysis/analysis-spec.template.json",
+    "agent/modules/srp_analysis/statistics.py",
+    "agent/modules/srp_analysis/prepare.py"
   ],
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
 }

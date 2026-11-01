@@ -6,15 +6,7 @@
     "A-01"
   ],
   "research_authority": "v1.2",
-  "implementation": "ANALYSIS_SET_MI_AND_SENSITIVITY_PIPELINE_NOT_DELIVERED",
-  "opportunity_states": [
-    "COMPLIANT",
-    "NONCOMPLIANT",
-    "TECH_UNOBSERVABLE"
-  ],
-  "opportunity_completion_rate": "(COMPLIANT + NONCOMPLIANT) / expected_cycle_opportunities",
-  "pf_observable": "COMPLIANT / (COMPLIANT + NONCOMPLIANT)",
-  "pf_conservative": "COMPLIANT / expected_cycle_opportunities",
+  "implementation": "ANALYSIS_SET_PMM_AND_SENSITIVITY_CANDIDATE_IMPLEMENTED",
   "module_weights": {
     "storm": 0.25,
     "heat": 0.25,
@@ -28,36 +20,55 @@
     "complete_four_module"
   ],
   "functional_guard": {
-    "difference": "native_minus_abstract",
-    "margin_candidate": 0.075,
-    "margin_status": "INHERITED_REQUIRES_JUSTIFICATION",
+    "difference": "B_minus_A",
+    "margin_candidate": null,
+    "margin_status": "NOT_ENABLED_WITHOUT_FORMAL_JUSTIFICATION",
     "blocks_affect_reporting": false,
     "all_modules_noninferior_from_mean": false
   },
   "missingness": {
     "affect_and_sensor_separated": true,
     "sensor_failure_does_not_drop_valid_panas": true,
-    "candidate_imputations": 100,
+    "candidate_imputations": 50,
     "model_and_mnar_grid": null,
-    "pooling_rules": null,
-    "status": "SAP_FREEZE_REQUIRED"
+    "pooling_rules": "Rubin variance with HC3 and Barnard-Rubin df",
+    "status": "SAP_FREEZE_REQUIRED",
+    "pmm_k": 5,
+    "iterations": 20
   },
   "equivalence_enabled": false,
   "formal_n": null,
   "U12_04_acceptance_scope": "CANDIDATE_SAP_AND_SYNTHETIC_POWER_NOT_A02_MI",
-  "U12_04_power_missingness_implementation": "BASELINE_CARRIED_FORWARD_SYNTHETIC_SCENARIO",
+  "U12_04_power_missingness_implementation": "PMM_CANDIDATE_NOT_FORMAL_FREEZE",
   "power_observed_case_is_complete_four_module": false,
   "A03_frozen_refresh": false,
   "not_run": [
-    "A01_L3_consumer",
-    "analysis_set_builder",
-    "bounded_MI_and_pooling",
-    "MNAR_grid",
-    "tipping_point",
     "real_data_analysis",
-    "human_acceptance"
+    "human_acceptance",
+    "real_event_validation",
+    "formal_parameter_freeze",
+    "locked_research_analysis"
   ],
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "current_design_revision": "agent/tasks/A-02/outputs/design-revision.json",
-  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE",
+  "analysis_spec_authority": "agent/tasks/U12-04/outputs/sap.md",
+  "analysis_entrypoint": "agent/runtime/srp-analysis.cmd",
+  "real_data_analysis": "NOT_RUN",
+  "formal_analysis_authorized": false,
+  "historical_implementation_ref": "../archive/pre-analysis-closure-20261019/outputs/current-statistics.json",
+  "functional_metrics": {
+    "states": [
+      "C",
+      "K",
+      "U"
+    ],
+    "denominator": "fixed_module_exposure_T",
+    "lower": "C/T",
+    "upper": "(C+U)/T",
+    "observable": "C/(C+K)",
+    "unknown": "U/T",
+    "I_and_G_separate": true,
+    "no_legacy_noninferiority_gate": true
+  }
 }

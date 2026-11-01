@@ -1,5 +1,7 @@
 # 开发上手
 
+数据分析开发使用[独立入口与数据契约](../../agent/modules/srp_analysis/README.md)：`agent/runtime/srp-analysis.cmd demo / prepare / analyze`。当前软件演练不改变固定A与原生受限适应B，也不等于设备验证、研究冻结或真实结果。
+
 先验证不依赖设备的Python底座，再进入所属工程。当前没有统一正式启动器。
 
 ## 取得源码
@@ -40,7 +42,7 @@ py -3.14 -m pytest agent/modules/tests/session_core agent/modules/tests/session_
 | 设备采集 | [采集模块](../../agent/modules/acquisition/README.md) | D-01/D-02任务及专用SDK输入 |
 | 交互状态估计 | [信号模块](../../agent/modules/signal-processing/README.md) | S-01/S-02任务；旧评分不替代新算法 |
 | Unity画面 | [U-03交接](../../agent/tasks/U-03/outputs/current-slice.md) | Unity Hub添加 `agent/modules/unity/SRP-Weather-Visual/` |
-| TD操作台 | [T-01任务](../../agent/tasks/T-01/TASK.md) | `agent/modules/touchdesigner/`；按合同打开候选工程 |
+| TD操作台 | [手动 Mock 入口](../../agent/runtime/README.md#td-手动-mock) | 双击 `T01_ManualWorkbench.toe`，另启动 `start-td-mock.cmd`；正式接口另见 T-01/T-02合同 |
 | 接口与消息 | [通信合同](../../agent/modules/communication/contracts/README.md) | 先读合同，再改发送端/消费端 |
 
 Unity团队目标2022.3.62f3，但共享工程 `ProjectVersion.txt` 当前仍为6000.4.9f1，迁移未验收；不要用旧编辑器直接覆盖共享工程。TD目标2025.32820。原生工程与真实运行按所属任务分别验收。

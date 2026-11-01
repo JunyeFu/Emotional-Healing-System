@@ -199,5 +199,13 @@
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "operational_design_candidate": "ODES-20261008",
   "normalization_candidate": "NORM-20261008",
-  "normalization_design_closed": false
+  "normalization_design_closed": false,
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "responsibility": "消费六类输入、P-02严格封存和规范化运行/标注导出，输出只读派生的signals/events/participant_modules；I、G、X及未知分离。",
+    "entrypoint": "agent/runtime/srp-analysis.cmd",
+    "research_completion": "NOT_RUN",
+    "business_status_changed": false,
+    "claimed_input_snapshots_changed": false
+  }
 }

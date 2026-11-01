@@ -31,12 +31,14 @@ def test_reporting_scope_matches_live_protocol():
     protocol = read(PLAN / '00_总控/protocol_authority_v1.2.json')
     value = current()
     assert value['primary_outcome'] == protocol['primary']['outcome']
-    assert value['contrast'] == protocol['primary']['contrast']
+    assert value['contrast'] == 'B_minus_A'
+    assert value['analysis_spec_authority'] == 'agent/tasks/U12-04/outputs/sap.md'
+    assert protocol['primary']['contrast'] == 'native_minus_abstract'  # Historical v1.2 only.
     assert value['primary_reporting_blocked_by_guard_or_scci'] is protocol['functional_guard']['blocks_affect_reporting'] is False
     assert value['native_is_hidden'] is value['not_significant_is_equivalent'] is False
     assert value['equivalence_confirmatory_enabled'] is protocol['equivalence']['confirmatory_enabled'] is False
-    assert value['primary_negative_favors'] == 'scene_native'
-    assert value['primary_positive_favors'] == 'abstract_pacer'
+    assert value['primary_negative_favors'] == 'native_constrained_adaptive_B'
+    assert value['primary_positive_favors'] == 'fixed_open_loop_A'
     assert value['causal_project_vs_no_project_claim_supported'] is False
     assert value['weather_and_breath_structure_independently_identified'] is False
 

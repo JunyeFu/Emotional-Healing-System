@@ -1,6 +1,24 @@
 # T-01 TouchDesigner 实时遥测面板
 
-本目录是T-01独立运行制品，不修改F-04签署目录。`T01_TelemetryPanel.toe/.tox`只读监听`127.0.0.1:5005`，显示Python权威发布的v2.2遥测和TD本地链路统计。
+## BigRun Team 当前候选
+
+单设备入口：[T01_BigRunWorkbench.toe](T01_BigRunWorkbench.toe)及[start-td-bigrun.cmd](../../../runtime/start-td-bigrun.cmd)。[逐项更新清单](../../../work/2026-10-19_bigrun-td-update.md)、[操作说明与未验证项](design/bigrun-workbench.md)。这是ECG/RR/HR/ACC与呼吸代理的只读候选；真实实验桥未接入，准备确认/开始保持禁用。下列旧mock入口保留，不与BigRun混用。
+
+## 当前手动操作入口
+
+双击 [T01_ManualWorkbench.toe](T01_ManualWorkbench.toe)，再双击 [start-td-mock.cmd](../../../runtime/start-td-mock.cmd)。也可先启动 mock；两者独立，接入后等待操作员，不自动建场、确认准备或开始。
+
+点击顺序：准备下一位 → 确认准备 → 收到准备回执 → 开始实验 → 暂停/恢复或中止 → 自动封存 → 确认后测 → 返回主页/准备下一位。确认准备之前禁止开始；准备页和等待页不记录、不计时。中止需要二次确认，可取消；取消准备不建立运行记录。
+
+实验记录可选中、导出和打开目录；明细可查看原始字段和复制场次编号。运行中 mock 断流进入记录失败，保留部分记录并返回，不冒充正常封存。mock 窗口 Ctrl+C 停止。
+
+本入口仅为手动模拟测试：设备、Unity 和问卷回执为模拟，会话与存储使用实际 P-01/P-02。UDP5005 接入，UDP5007 传递操作请求；本地记录位于 `agent/local/artifacts/td-manual-workbench/`。不修改 F-04 签署制品，也不代表正式 T-02 或真实设备联合验收。
+
+开发重建与自动验收入口：`py -3.14 agent/tasks/T-01/execution/capture_workbench.py --manual`，不是日常 mock 开关。当前实现为 `build_workbench_manual.py`、`workbench_redesign_runtime.py`、`manual_mock_service.py`；均在 [Agent 执行层](../../../tasks/T-01/execution/README.md)。
+
+## 历史只读基线
+
+以下说明仅对应旧 `T01_TelemetryPanel.toe/.tox`，不作为当前手动入口。旧制品只读监听`127.0.0.1:5005`，显示Python权威发布的v2.2遥测和TD本地链路统计。
 
 当前使用和修复范围以[Agent交接说明](../../../../agent/tasks/T-01/outputs/current-td-contract.md)为入口；原签收与新候选分开。2026-09-28实际TD探针通过，独立可读性候选修复旧文字裁切；A主题原生控件仍待验证。
 

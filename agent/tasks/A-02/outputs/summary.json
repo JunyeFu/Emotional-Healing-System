@@ -199,5 +199,13 @@
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "operational_design_candidate": "ODES-20261008",
   "normalization_candidate": "NORM-20261008",
-  "normalization_design_closed": false
+  "normalization_design_closed": false,
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "responsibility": "按原分配构建正式参与者集；前置问卷/预试分开；四模块固定分母，传感器失效不删除有效PANAS，50次PMM及delta敏感性候选已实现。",
+    "entrypoint": "agent/runtime/srp-analysis.cmd",
+    "research_completion": "NOT_RUN",
+    "business_status_changed": false,
+    "claimed_input_snapshots_changed": false
+  }
 }

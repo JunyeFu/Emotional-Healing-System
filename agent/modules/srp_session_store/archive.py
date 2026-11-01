@@ -33,7 +33,10 @@ _RECORD_DOMAIN = b"srp:p02:record:v1\0"
 _CHECKPOINT_DOMAIN = b"srp:p02:checkpoint:v1\0"
 _SEAL_DOMAIN = b"srp:p02:seal:v1\0"
 _ZERO_HASH = "sha256:" + "0" * 64
-_RAW_SOURCE_IDS = {"plux_respiban", "polar_h10_ecg", "polar_h10_rr"}
+_RAW_SOURCE_IDS = {
+    "plux_respiban", "polar_h10_ecg", "polar_h10_rr",
+    "bigrun_team_ecg", "bigrun_team_rr", "bigrun_team_acc", "bigrun_team_hr",
+}
 _FORMAL_ARCHIVE_TOKEN = object()
 _HASH_VALUE = re.compile(r"^sha256:[0-9a-f]{64}$")
 _SESSION_KEY_VALUE = re.compile(r"^[0-9a-f]{64}$")

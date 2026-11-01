@@ -37,6 +37,25 @@ def prepare(w):
     receipt(w,'prepared')
 
 
+def test_manual_start_waits_for_click_and_matching_mock_reply(tmp_path):
+    w = make(tmp_path)
+    prepare(w)
+    assert w.stage == 'WAITING' and w.capture.path is None
+    w.action('start', 10)
+    assert w.pending['action'] == 'mock_start'
+    with pytest.raises(ValueError, match='REQUEST_RECEIPT_MISMATCH'):
+        receipt(w, 'started', 20, request_id='other', unity_start_confirmed=True)
+    assert w.stage == 'WAITING' and w.capture.path is None
+    receipt(w, 'started', 20, unity_start_confirmed=True)
+    assert w.stage == 'RUNNING' and w.pending is None
+    receipt(w, 'aborted', 30)
+    receipt(w, 'closeout_status', 40, sealed=True, posttest=False)
+    assert not w.can_close
+    w.action('posttest', 50)
+    receipt(w, 'closeout_status', 60, sealed=True, posttest=True)
+    assert w.can_close and w.pending is None
+
+
 def test_three_consecutive_sessions(tmp_path):
     w=make(tmp_path)
     ids=[]
@@ -137,3 +156,23 @@ def test_write_failure_blocks_progress(tmp_path,monkeypatch):
     w.fault('CAPTURE_WRITE_FAILED')
     assert w.stage=='CLOSEOUT' and not w.can_close
     assert w.capture.file is None
+
+
+def test_fault_freezes_clock_and_can_be_archived_without_false_seal(tmp_path):
+    w=make(tmp_path); prepare(w)
+    receipt(w,'started',0,unity_start_confirmed=True)
+    w.fault('CAPTURE_WRITE_FAILED', 10_000_000_000)
+    assert w.times(30_000_000_000)==(10_000_000_000,10_000_000_000)
+    w.action('dismiss_fault',30_000_000_000)
+    assert w.stage=='HOME' and w.history[0]['closed']
+    assert w.history[0]['status']=='RECORDING_FAILED' and not w.history[0]['sealed']
+
+
+def test_manual_workbench_rejects_unsolicited_start_even_after_preparation(tmp_path):
+    w=make(tmp_path); w.manual_start_required=True; prepare(w)
+    with pytest.raises(ValueError,match='OPERATOR_START_REQUIRED'):
+        receipt(w,'started',unity_start_confirmed=True)
+    assert w.stage=='WAITING' and w.capture.path is None
+    w.action('start',10)
+    receipt(w,'started',20,unity_start_confirmed=True)
+    receipt(w,'aborted',30)

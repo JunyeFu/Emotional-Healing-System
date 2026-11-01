@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "evidence_class": "REAL_PRELIMINARY",
+  "measurement_frozen": false,
+  "sap_frozen": false,
+  "seed": 20261019,
+  "pmm_k": 5,
+  "imputations": 50,
+  "iterations": 20,
+  "imputation_predictors": [],
+  "delta_pairs": [[0, 0], [0, 2], [0, 4], [-2, 0], [-4, 0]],
+  "delta_grid_status": "CANDIDATE_REQUIRES_REAL_FREEZE",
+  "panas_form": {
+    "form_id": "SRP-PANASX-GENERAL-ZH-DRAFT-01",
+    "NA": ["afraid", "scared", "upset", "distressed", "jittery", "nervous", "ashamed", "guilty", "irritable", "hostile"],
+    "PA": ["active", "alert", "attentive", "determined", "enthusiastic", "excited", "inspired", "interested", "proud", "strong"]
+  },
+  "scoring_tolerance_s": null,
+  "scoring_tolerance_status": "UNFROZEN",
+  "ideal_steps": {
+    "storm": {"inhale_1": 3, "hold_1": 3, "exhale_1": 3, "hold_2": 3},
+    "heat": {"inhale_1": 4, "exhale_1": 6},
+    "snow": {"inhale_1": 4, "exhale_1": 6},
+    "fade": {"inhale_1": 2.5, "inhale_2": 1.5, "exhale_1": 6}
+  },
+  "ideal_steps_status": "ENGINEERING_CANDIDATE_VERIFY_AGAINST_FINAL_MANIFEST",
+  "signals": {
+    "ecg_hz": null,
+    "acc_hz": null,
+    "gap_limit_s": null,
+    "rr_units": null,
+    "rr_units_validated": false,
+    "rr_sequence_validated": false,
+    "quality_validated": false,
+    "validation_ref": null,
+    "rr_accept_ms": null,
+    "hrv_window_s": null
+  },
+  "research_gates": {
+    "device_validation": "NOT_RUN",
+    "measurement_approval": "NOT_RUN",
+    "research_lock": "NOT_RUN",
+    "unblind_authorization": "NOT_RUN"
+  }
+}

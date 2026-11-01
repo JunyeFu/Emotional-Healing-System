@@ -10,34 +10,35 @@
   "reviewer": null,
   "historical_acceptance": null,
   "real_data_analysis": "NOT_RUN",
-  "implementation": "FULL_LOCKED_ANALYSIS_PIPELINE_NOT_DELIVERED",
+  "implementation": "ANALYSIS_REPORT_CANDIDATE_IMPLEMENTED",
   "research_lock_id": null,
   "unblind_authorization": null,
   "formal_sap_ref": null,
   "primary": {
     "outcome": "panas_negative_affect_post_adjusted_for_pre",
-    "contrast": "native_minus_abstract",
-    "native_code": 1,
-    "abstract_code": 0,
+    "contrast": "B_minus_A",
     "lower_is_better": true,
-    "candidate_model": "NA_post ~ cue_mode + centered_NA_pre + randomization_strata",
+    "candidate_model": "NA_post ~ B + centered_NA_pre + order_2 + order_3 + order_4",
     "candidate_variance": "HC3",
     "test": "two_sided",
     "alpha": 0.05,
     "ci_level": 0.95,
     "post_treatment_covariates_in_primary_model": false,
     "report_even_if_functional_guard_fails": true,
-    "minimum_important_affect_difference": null
+    "minimum_important_affect_difference": null,
+    "A_code": 0,
+    "B_code": 1
   },
   "functional_guard": {
     "analysis_sets": [
       "all_randomized",
       "complete_four_module"
     ],
-    "margin_candidate": 0.075,
-    "margin_status": "INHERITED_REQUIRES_JUSTIFICATION",
+    "margin_candidate": null,
+    "margin_status": "NOT_ENABLED_WITHOUT_FORMAL_JUSTIFICATION",
     "blocks_affect_reporting": false,
-    "all_modules_noninferior_from_mean": false
+    "all_modules_noninferior_from_mean": false,
+    "difference": "B_minus_A"
   },
   "scci_role": "MANIPULATION_CHECK_ONLY",
   "equivalence_confirmatory_enabled": false,
@@ -45,7 +46,7 @@
   "observed_case_is_complete_four_module": false,
   "power_script_is_formal_mi_analysis": false,
   "bh_helper_is_full_fdr_pipeline": false,
-  "result_classifier": "U12-10_CANDIDATE_ONLY_FORMAL_NOT_DELIVERED",
+  "result_classifier": "B_MINUS_A_CI_CANDIDATE_IMPLEMENTED",
   "approved_training_release": null,
   "online_state_may_include_post_panas": false,
   "optional_stage3_required_for_core_paper": false,
@@ -54,5 +55,9 @@
   "root_migration_complete": false,
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "current_design_revision": "agent/tasks/A-05/outputs/design-revision.json",
-  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE",
+  "analysis_spec_authority": "agent/tasks/U12-04/outputs/sap.md",
+  "analysis_entrypoint": "agent/runtime/srp-analysis.cmd",
+  "formal_analysis_authorized": false,
+  "historical_implementation_ref": "../archive/pre-analysis-closure-20261019/outputs/current-analysis.json"
 }

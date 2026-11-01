@@ -1,5 +1,11 @@
 # T-01 当前执行入口
 
+BigRun单设备候选为[T01_BigRunWorkbench.toe](../../../modules/touchdesigner/t01_telemetry_panel/T01_BigRunWorkbench.toe)，用[独立启动脚本](../../../runtime/start-td-bigrun.cmd)接收真机候选流，见[更新清单](../../../work/2026-10-19_bigrun-td-update.md)。`package_bigrun_workbench.py`离线打包，不打开桌面；`bigrun_workbench_runtime.py`与`bigrun_preview.py`嵌入TOE，实验按钮不使用旧mock回执。原生TD实开和真机待测。
+
+手动操作使用 [T01_ManualWorkbench.toe](../../../modules/touchdesigner/t01_telemetry_panel/T01_ManualWorkbench.toe) 和独立 [start-td-mock.cmd](../../../runtime/start-td-mock.cmd)，顺序见 [当前模块说明](../../../modules/touchdesigner/t01_telemetry_panel/README.md)。`run_manual_mock.py` 只提供持续接入，不自动开始实验。
+
+`py -3.14 agent/tasks/T-01/execution/capture_workbench.py --manual` 从保留的基线重建、保存并重新打开工程，然后自动点击原生 TD 面板验收完整手动流程。仅在关闭自己的 TD 后运行；原签收工程不被覆盖，合成输入不作真实设备证据。
+
 仓库根运行`py -3.14 agent/tasks/T-01/execution/verify.py`或本目录verify.ps1。验证48项T-01/F-04专项及9项验证器回归、原23项制品、当前工程清理与已有本轮探针身份。
 
 需要实跑TD时，关闭并保存自己的TD工程，然后运行`run_td_probe.py`。它检查没有其他TD进程和5005占用，只启动隐藏的隔离副本，修改副本回调加入验证钩子，结束时只停止自己启动的进程。运行依赖项目Python与TD2025.32820，不安装依赖、不保存回原工程。输出至本包evidence/runtime，合成输入不作为真实设备证据。

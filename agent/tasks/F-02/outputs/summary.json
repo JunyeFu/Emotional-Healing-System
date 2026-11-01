@@ -198,5 +198,13 @@
     "outstanding": "M01/M02、真实验证、正式参数及样本量冻结、对应活动批准分别推进",
     "empirical_validation_passed": false,
     "authorizes_collection": false
+  },
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "responsibility": "核对最终NA10/PA10题键、此刻指令、前后测时点与逐题CSV；缺题只令相应分量缺失。工作译稿与正式资格分开。",
+    "entrypoint": "agent/runtime/srp-analysis.cmd",
+    "research_completion": "NOT_RUN",
+    "business_status_changed": false,
+    "claimed_input_snapshots_changed": false
   }
 }

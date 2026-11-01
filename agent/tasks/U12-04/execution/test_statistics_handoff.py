@@ -18,7 +18,8 @@ ARCHIVE = TASK / 'archive/signed-candidate'
 SOURCES = json.loads((TASK / 'inputs/sources.json').read_text(encoding='utf-8'))
 OLD = json.loads((ARCHIVE / 'evidence.json').read_text(encoding='utf-8'))
 BUILD = runpy.run_path(str(TASK / 'execution/build_evidence.py'))
-POWER = runpy.run_path(str(TASK / 'execution/power_simulation.py'))
+LEGACY = TASK / 'archive/pre-analysis-closure-20261019'
+POWER = runpy.run_path(str(LEGACY / 'execution/power_simulation.py'))
 
 
 @pytest.mark.parametrize('name,digest', list(SOURCES['archived_bytes'].items()))
@@ -54,12 +55,13 @@ def test_original_acceptance_and_activity_contract_unchanged():
 def test_current_sap_corrects_completion_and_total_n():
     sap = (TASK / 'outputs/sap.md').read_text(encoding='utf-8')
     assert '不能自动替代主结果分析集' in sap
-    assert '不是每臂48人' in sap
+    assert '总N=30/40/48/60不是每臂人数' in sap
     assert '不保证保守' in sap and '不是正式MI' in sap
     spec = json.loads((TASK / 'outputs/power_spec.json').read_text(encoding='utf-8'))
-    assert spec['analysis_sets_definition']['OBSERVED_CASE']['inclusion'] == 'observed_post_only'
-    assert spec['data_generation']['baseline_coefficient'] == .5
-    assert spec['grid']['effect_grid_residual_sd'] == list(POWER['DEFAULT_EFFECT_GRID'])
+    assert spec['model']['contrast'] == 'B_minus_A'
+    assert spec['grid']['n_total_grid'] == [30, 40, 48, 60]
+    assert spec['missingness']['imputations'] == 50
+    assert not spec['missingness']['baseline_carried_forward']
 
 
 def test_hc3_and_residual_df_follow_actual_rows():
@@ -109,16 +111,16 @@ def test_direction_and_null_synthetic_scenarios(effect):
 
 
 def test_default_grid_rebuilds_current_output():
-    actual = json.loads((TASK / 'outputs/power/power_grid.json').read_text(encoding='utf-8'))
+    actual = json.loads((LEGACY / 'outputs/power/power_grid.json').read_text(encoding='utf-8'))
     assert actual == POWER['run_power_grid']()
     assert len(actual['cells']) == 20
     assert all(cell[s]['valid_replications'] == 1000 for cell in actual['cells'] for s in POWER['ANALYSIS_SETS'])
-    assert (TASK / 'outputs/power/power_report.md').read_text(encoding='utf-8') == POWER['render_power_report'](actual)
+    assert (LEGACY / 'outputs/power/power_report.md').read_text(encoding='utf-8') == POWER['render_power_report'](actual)
 
 
 def test_cli_zero_and_output_exclusivity(tmp_path):
     destination = tmp_path / 'new-grid'
-    command = [sys.executable, str(TASK / 'execution/power_simulation.py'), '--output-dir', str(destination),
+    command = [sys.executable, str(LEGACY / 'execution/power_simulation.py'), '--output-dir', str(destination),
                '--n-total', '48', '--effect-d', '0', '--replications', '100']
     run = subprocess.run(command, capture_output=True, text=True)
     assert run.returncode == 0, run.stderr

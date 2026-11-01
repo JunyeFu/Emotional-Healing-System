@@ -46,9 +46,20 @@ def test_frozen_dispatch_identity_and_original_candidate_are_preserved():
     assert manifest['input_snapshot_id'] == sources['frozen_input_snapshot_id']
     assert manifest['candidate_identity'] == '4071c84bc03ab9d80f7ce5997034fe27737e5d51'
     git_bytes = runpy.run_path(str(ROOT / 'agent/tools/resolve_frozen_source.py'))['git_source_bytes']
-    for path in (GOV / '当前解锁独立任务包').rglob('*'):
+    dispatch = GOV / '当前解锁独立任务包'
+    for path in dispatch.rglob('*'):
         if path.is_file():
+            parts = path.relative_to(dispatch).parts
+            # Explicit design supplements may change; original claimed inputs may not.
+            if parts[0] == 'A-03' and parts[1] in ('design_updates', 'FILES.md'):
+                continue
             original = git_bytes(ROOT, 'HEAD', path.relative_to(ROOT).as_posix())
+            if parts == ('A-03', 'package_manifest.json'):
+                previous = json.loads(original)
+                assert {k: manifest[k] for k in previous if k != 'design_updates'} == {
+                    k: v for k, v in previous.items() if k != 'design_updates'}
+                assert manifest['analysis_software_handoff']['original_input_identity_preserved']
+                continue
             assert original.replace(b'\r\n', b'\n') == path.read_bytes().replace(b'\r\n', b'\n'), path
 
 

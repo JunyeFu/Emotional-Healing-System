@@ -21,10 +21,31 @@ def test_clock():
     assert m.age(800000) == '13:20'
 
 
+def test_direct_start_cannot_bypass_operator_preparation(tmp_path):
+    c = m.DevelopmentCapture(tmp_path / 'records')
+    with pytest.raises(ValueError, match='PREPARATION_NOT_CONFIRMED'):
+        c.event(event('started'), 10)
+    assert c.file is None and not c.root.exists()
+
+
+def test_preparation_receipt_must_match_operator_request_and_session(tmp_path):
+    c = m.DevelopmentCapture(tmp_path / 'records')
+    c.request_prepare(dict(session_id='s1', request_id='prepare-1'))
+    with pytest.raises(ValueError, match='PREPARATION_RECEIPT_MISMATCH'):
+        c.event(dict(event('prepared'), request_id='other'), 0)
+    with pytest.raises(ValueError, match='PREPARATION_RECEIPT_MISMATCH'):
+        c.event(dict(event('prepared'), request_id='prepare-1', session_id='s2'), 0)
+    c.event(dict(event('prepared'), request_id='prepare-1'), 0)
+    c.event(event('started'), 1)
+    c.event(event('aborted'), 2)
+
+
 def test_preflight_one_file_and_complete(tmp_path):
     c = m.DevelopmentCapture(tmp_path / 'records')
     packet = dict(session_id='s1',source_mode='dev_mock')
     c.append(packet, 0)
+    c.request_prepare(dict(session_id='s1', request_id='prepare-1'))
+    c.event(dict(event('prepared'), request_id='prepare-1'), 0)
     c.event(event('unity_start_clicked'), 1)
     c.append(packet, 2)
     assert not c.root.exists()
@@ -48,7 +69,7 @@ def test_start_requires_confirmation_and_formal_not_faked(tmp_path):
     with pytest.raises(ValueError): c.event(p, 0)
     p['source_mode'] = 'real'
     with pytest.raises(ValueError): c.event(p, 0)
-    assert c.state == 'WAITING'
+    assert c.state == 'PREPARE'
     assert not list(tmp_path.iterdir())
 
 

@@ -61,6 +61,8 @@ def test_preview_batch_sync_does_not_fsync_every_sample(tmp_path,monkeypatch):
     capture=DevelopmentCapture(tmp_path)
     p=dict(message_type='session_observation',version='1.0',source_mode='dev_mock',
         authority='python_session_core',session_id='DEV-sync',event_id='start',event='started',unity_start_confirmed=True)
+    capture.request_prepare(dict(session_id='DEV-sync',request_id='prepare-sync'))
+    capture.event(dict(p,event='prepared',event_id='prepared',request_id='prepare-sync'),0)
     capture.event(p,0)
     for i in range(100): capture.append(dict(session_id='DEV-sync',source_mode='dev_mock',value=i),i)
     assert len(calls)==1

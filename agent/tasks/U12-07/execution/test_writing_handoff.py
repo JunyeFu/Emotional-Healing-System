@@ -81,8 +81,8 @@ def test_original_signatures_and_business_registration_not_rewritten():
 
 @pytest.mark.parametrize('field,expected', [
     ('primary_outcome', 'panas_negative_affect_post_adjusted_for_pre'),
-    ('contrast', 'native_minus_abstract'), ('negative_favors', 'scene_native'),
-    ('positive_favors', 'abstract_pacer'), ('functional_guard_blocks_primary_reporting', False),
+    ('contrast', 'B_minus_A'), ('negative_favors', 'B_native_adaptive_package'),
+    ('positive_favors', 'A_fixed_open_loop_package'), ('functional_guard_blocks_primary_reporting', False),
     ('scci_blocks_primary_reporting', False), ('equivalence_confirmatory_enabled', False),
     ('not_significant_is_equivalent', False), ('native_is_hidden', False),
     ('weather_breath_independent_effect', False), ('requires_unstarted_stage3_done', False),
@@ -106,7 +106,7 @@ def test_current_specifications_match_protocol_and_actual_measurement():
     assert '非论文正文' in method and '前测必须在其之前' in method
     tables = (TASK / 'outputs/table-spec.md').read_text(encoding='utf-8')
     assert len(re.findall(r'^\| T\d{2} \|', tables, re.M)) == value['table_count'] == 11
-    assert 'T03 | PANAS主要比较' in tables and 'T04 | 机会PF功能护栏' in tables
+    assert 'T03 | PANAS主要比较' in tables and 'T04 | I达成、G跟随与成本' in tables
     rules = (TASK / 'outputs/reporting-rules.md').read_text(encoding='utf-8')
     for phrase in ('CI全负', 'CI全正', 'CI跨零', '确认性等效默认未启用', 'PF任一分析集失败', '仅部分运行'):
         assert phrase in rules
@@ -119,7 +119,9 @@ def test_actual_consumers_sources_navigation_and_frozen_inputs():
     for task in ('W-01', 'W-02'):
         filename = 'current-paper.md' if task == 'W-01' else 'current-manuscript.md'
         text = (ROOT / f'agent/tasks/{task}/outputs/{filename}').read_text(encoding='utf-8')
-        assert 'U12-07' in text and '规格' in text and '原' in text
+        assert 'A固定引导圈' in text and '共同I' in text and '原' in text
+        if task == 'W-02':
+            assert '唯一入口与数据格式' in text
     for source in read(ROOT / 'agent/tasks/A-05/inputs/sources.json')['paths']:
         assert (ROOT / source).is_file(), source
     for path in (GOV / 'u12_upgrade/U12-07_neutral_core_draft/README.md',
@@ -129,8 +131,17 @@ def test_actual_consumers_sources_navigation_and_frozen_inputs():
     dispatch = GOV / '当前解锁独立任务包'
     for path in dispatch.rglob('*'):
         if path.is_file():
+            parts = path.relative_to(dispatch).parts
+            if parts[0] == 'A-03' and parts[1] in ('design_updates', 'FILES.md'):
+                continue  # Governed explicit supplements, not the frozen claimed inputs.
             relative = path.relative_to(ROOT).as_posix()
             old = PATHS['git_source_bytes'](ROOT, 'HEAD', relative)
+            if parts == ('A-03', 'package_manifest.json'):
+                previous, current = json.loads(old), read(path)
+                assert {k: current[k] for k in previous if k != 'design_updates'} == {
+                    k: v for k, v in previous.items() if k != 'design_updates'}
+                assert current['analysis_software_handoff']['original_input_identity_preserved']
+                continue
             assert old.replace(b'\r\n', b'\n') == path.read_bytes().replace(b'\r\n', b'\n'), path
     for path in [TASK / 'TASK.md', *(TASK / 'outputs').glob('*.md')]:
         assert not re.search('诊断|治疗|疾病|患者|医疗设备|临床', path.read_text(encoding='utf-8'))

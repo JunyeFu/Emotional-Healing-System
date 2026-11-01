@@ -28,7 +28,7 @@ def write(path, text):
 def progress_section(text, summary):
     block = ("<!-- TEAM_PROGRESS_START -->\n## 团队任务进度\n\n"
              + summary + "\n\n"
-             + "[![团队任务进度图](../../../human/assets/readme/team-task-progress.svg)](../../../human/assets/readme/team-task-progress.svg)\n\n"
+             + "[![团队任务进度图](human/assets/readme/team-task-progress.svg)](human/assets/readme/team-task-progress.svg)\n\n"
              + "点击图可打开原始SVG放大查看。图与摘要由同一任务注册表生成。\n"
              + "<!-- TEAM_PROGRESS_END -->")
     if "<!-- TEAM_PROGRESS_START -->" in text:
@@ -67,7 +67,8 @@ def main():
             text = re.sub(r"^\| 看当前执行权威 .*?$", f"| 看当前执行权威 | `{GUIDE}` + `active_governance.json`（治理目录） |", text, flags=re.MULTILINE)
         write(path, text)
     board = f"# 当前阶段看板\n\n> {iso_date} | " + summary + "\n\n"
-    board += f"当前设计与责任入口：[U12-01](/{(ROOT / GUIDE).as_posix()})。\n\n"
+    board_guide = (ROOT / GUIDE).relative_to(ROOT / "agent/governance").as_posix()
+    board += f"当前设计与责任入口：[U12-01](../{board_guide})。\n\n"
     board += "当前任务设计采用固定开环A与原生受限适应B；71包新增范围见[新基线任务迁移](../../work/2026-10-08_新基线任务包迁移.md)，历史状态不自动覆盖新范围。\n\n"
     board += "## 研究与工程分开\n\n阶段一独立支撑核心论文；阶段二/三为条件式扩展。PANAS主要比较候选与PF功能护栏分开，SCCI只作操纵检查。原新颖性REVISE_REQUIRED和研究证据缺口不因工程迁移自动解除。\n\n"
     board += "原18项签收保留原范围；新TD界面与工程壳仍需实机证据。A-03新统计规格由U12-04提供，REAL/CAL不得沿用旧规格冒充新校准。\n\n"

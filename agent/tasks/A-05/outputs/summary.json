@@ -160,5 +160,13 @@
       "label": "当前设计基线 04-review-audit.pdf"
     }
   ],
-  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "responsibility": "通过唯一分析入口生成estimates/sensitivity/secondary表、六组图和中文报告；真实锁库、揭盲、正式SAP及独立复算仍待执行。",
+    "entrypoint": "agent/runtime/srp-analysis.cmd",
+    "research_completion": "NOT_RUN",
+    "business_status_changed": false,
+    "claimed_input_snapshots_changed": false
+  }
 }

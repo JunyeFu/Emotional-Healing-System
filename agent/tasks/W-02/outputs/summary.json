@@ -221,5 +221,13 @@
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "operational_design_candidate": "ODES-20261008",
   "normalization_candidate": "NORM-20261008",
-  "normalization_design_closed": false
+  "normalization_design_closed": false,
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "responsibility": "消费analysis.json、结果CSV、PNG/PDF及report.md/pdf；逐项主张对应真实结果行与输入，不把SYNTHETIC样例当实证或论文成稿。",
+    "entrypoint": "agent/runtime/srp-analysis.cmd",
+    "research_completion": "NOT_RUN",
+    "business_status_changed": false,
+    "claimed_input_snapshots_changed": false
+  }
 }

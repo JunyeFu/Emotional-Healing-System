@@ -9,6 +9,8 @@ ROOT = TASK.parents[2]
 
 
 def text_hash(path):
+    if path.suffix.lower() == '.pdf':
+        return hashlib.sha256(path.read_bytes()).hexdigest().upper()
     text = path.read_text(encoding='utf-8-sig')
     normalized = '\n'.join(line.rstrip() for line in text.splitlines()) + '\n'
     return hashlib.sha256(normalized.encode('utf-8')).hexdigest().upper()
@@ -25,7 +27,7 @@ def generate():
     old = json.loads((TASK / 'archive/signed-candidate/evidence.json').read_text(encoding='utf-8'))
     return {
         'task_id': 'U12-04', 'evidence_class': 'DESIGN_AND_SYNTHETIC_ONLY',
-        'hash_policy': 'UTF8_LF_TRAILING_WHITESPACE_REMOVED_FINAL_LF',
+        'hash_policy': 'TEXT_UTF8_LF_TRAILING_WHITESPACE_REMOVED_FINAL_LF; PDF_BYTE_SHA256',
         'historical_candidate': 'd701a4054a4a36030d37335efa65d67a93ed35c3',
         'historical_input_snapshot_id': old['input_snapshot_id'],
         'sources': {p: text_hash(ROOT / p) for p in sources},

@@ -124,7 +124,10 @@ def test_current_handoff_and_all_source_paths():
     for path in read(TASK / 'inputs/sources.json')['paths']:
         assert (ROOT / path).is_file(), path
     text = (TASK / 'outputs/current-freeze.md').read_text(encoding='utf-8')
-    for point in ('未领取未签收', 'P-01当前仅首次核心start登记', '100次插补仍候选',
+    for point in ('未领取未签收', 'P-01当前仅首次核心start登记', '50次插补',
                   '受限原件/隐藏分配不公开上传', '最多12人一实例', '不要求未开展阶段三伪DONE'):
         assert point in text
+    assert '研究锁库和揭盲授权仍待完成' in text
+    historical = (TASK / 'archive/pre-design-baseline-20261008/current-freeze.md').read_text(encoding='utf-8')
+    assert '100次插补仍候选' in historical
     assert not re.search('诊断|治疗|疾病|患者|医疗设备|临床', text)

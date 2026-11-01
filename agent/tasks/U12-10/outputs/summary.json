@@ -168,5 +168,13 @@
       "label": "当前设计基线 04-review-audit.pdf"
     }
   ],
-  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008"
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "responsibility": "按B-A区间解释方向；跨零不是等效；情绪、执行、覆盖与成本分轴，不自动综合胜出或拆分机制因果。",
+    "entrypoint": "agent/runtime/srp-analysis.cmd",
+    "research_completion": "NOT_RUN",
+    "business_status_changed": false,
+    "claimed_input_snapshots_changed": false
+  }
 }

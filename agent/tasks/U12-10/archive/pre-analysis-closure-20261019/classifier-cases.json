@@ -1,0 +1,20 @@
+{
+  "scope": "SYNTHETIC_ONLY_NOT_RESEARCH_RESULTS",
+  "cases": [
+    {"id": "native_large", "evidence": {"estimate": -3, "ci_low": -4, "ci_high": -2, "practical_delta": 1}, "direction": "NATIVE_LOWER", "scale": "NATIVE_IMPORTANT_BENEFIT_SUPPORTED"},
+    {"id": "abstract_large", "evidence": {"estimate": 3, "ci_low": 2, "ci_high": 4, "practical_delta": 1}, "direction": "ABSTRACT_LOWER", "scale": "ABSTRACT_IMPORTANT_BENEFIT_SUPPORTED"},
+    {"id": "native_small", "evidence": {"estimate": -0.2, "ci_low": -0.3, "ci_high": -0.1, "practical_delta": 1}, "direction": "NATIVE_LOWER", "scale": "WITHIN_PRESPECIFIED_PRACTICAL_BOUNDS"},
+    {"id": "abstract_small", "evidence": {"estimate": 0.2, "ci_low": 0.1, "ci_high": 0.3, "practical_delta": 1}, "direction": "ABSTRACT_LOWER", "scale": "WITHIN_PRESPECIFIED_PRACTICAL_BOUNDS"},
+    {"id": "uncertain_wide", "evidence": {"estimate": 0, "ci_low": -4, "ci_high": 4, "practical_delta": 1}, "direction": "NO_DIRECTION_ESTABLISHED", "scale": "IMPORTANT_EFFECT_NOT_EXCLUDED"},
+    {"id": "uncertain_narrow", "evidence": {"estimate": 0, "ci_low": -0.2, "ci_high": 0.2, "practical_delta": 1}, "direction": "NO_DIRECTION_ESTABLISHED", "scale": "WITHIN_PRESPECIFIED_PRACTICAL_BOUNDS"},
+    {"id": "touch_zero_native", "evidence": {"estimate": -0.5, "ci_low": -1, "ci_high": 0}, "direction": "NO_DIRECTION_ESTABLISHED", "scale": "THRESHOLD_NOT_FROZEN"},
+    {"id": "touch_zero_abstract", "evidence": {"estimate": 0.5, "ci_low": 0, "ci_high": 1}, "direction": "NO_DIRECTION_ESTABLISHED", "scale": "THRESHOLD_NOT_FROZEN"},
+    {"id": "touch_negative_delta", "evidence": {"estimate": -2, "ci_low": -3, "ci_high": -1, "practical_delta": 1}, "direction": "NATIVE_LOWER", "scale": "IMPORTANT_EFFECT_NOT_EXCLUDED"},
+    {"id": "touch_positive_delta", "evidence": {"estimate": 2, "ci_low": 1, "ci_high": 3, "practical_delta": 1}, "direction": "ABSTRACT_LOWER", "scale": "IMPORTANT_EFFECT_NOT_EXCLUDED"},
+    {"id": "threshold_missing", "evidence": {"estimate": -2, "ci_low": -3, "ci_high": -1}, "direction": "NATIVE_LOWER", "scale": "THRESHOLD_NOT_FROZEN"},
+    {"id": "guard_failed", "evidence": {"estimate": 3, "ci_low": 2, "ci_high": 4, "practical_delta": 1, "functional_guard": "FAIL"}, "direction": "ABSTRACT_LOWER", "scale": "ABSTRACT_IMPORTANT_BENEFIT_SUPPORTED"},
+    {"id": "delivery_invalid", "evidence": {"estimate": 3, "ci_low": 2, "ci_high": 4, "delivery_valid": false}, "direction": "ABSTRACT_LOWER", "scale": "THRESHOLD_NOT_FROZEN"},
+    {"id": "not_assessable", "evidence": {"estimate": 0, "ci_low": -1, "ci_high": 1, "affect_assessable": false}, "direction": "NOT_ASSESSABLE", "scale": "NOT_ASSESSABLE"},
+    {"id": "sensitive", "evidence": {"estimate": -2, "ci_low": -3, "ci_high": -1, "sensitivity": "SENSITIVE"}, "direction": "NATIVE_LOWER", "scale": "THRESHOLD_NOT_FROZEN"}
+  ]
+}

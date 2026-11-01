@@ -25,6 +25,15 @@ def test_document_without_sections():
     assert "TEAM_PROGRESS_END" in render("# SRP\n", "DONE=20")
 
 
+def test_generated_board_authority_link_is_repository_relative():
+    root = Path(__file__).resolve().parents[3]
+    board = root / 'agent/governance/boards/当前阶段看板.md'
+    text = board.read_text(encoding='utf-8')
+    target = text.split('[U12-01](', 1)[1].split(')', 1)[0]
+    assert target.startswith('../planning/')
+    assert (board.parent / target).is_file()
+
+
 def test_renderer_root_and_current_media_target():
     namespace = runpy.run_path(str(Path(__file__).with_name("render_governance_views.py")))
     root = Path(__file__).resolve().parents[3]

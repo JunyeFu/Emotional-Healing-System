@@ -110,7 +110,7 @@
     {
       "source_path": "agent/tasks/A-03/TASK.md",
       "package_path": "design_updates/12_TASK.md",
-      "sha256": "25916CD2C48EAAE073E18087A20250AE6DC2BF336F27FAC181F759F2A551B7E0"
+      "sha256": "40916542F8022F6BAEF9A63EFE395ABBCD3D47EB5B4042F4EC63CB16EE668AAD"
     },
     {
       "source_path": "agent/design/design-foundation-20261008/05-control-spec.tex",
@@ -146,7 +146,32 @@
       "source_path": "agent/design/design-foundation-20261008/operational-design.json",
       "package_path": "design_updates/19_operational-design.json",
       "sha256": "81738308099D660D614C25914C27458F4FC0E82CA1F158DAE7DA635FBD28EB9D"
+    },
+    {
+      "source_path": "agent/modules/srp_analysis/README.md",
+      "package_path": "design_updates/20_README.md",
+      "sha256": "40653C239C928B35C91C94368B2B966E716E227D8B309705C81A7382ED99D9AC"
+    },
+    {
+      "source_path": "agent/modules/srp_analysis/statistics.py",
+      "package_path": "design_updates/21_statistics.py",
+      "sha256": "B1CF5D7530F3C44968D8D1D202246B41817AB2765E73A2F7950ED4F4C63B805C"
+    },
+    {
+      "source_path": "agent/modules/srp_analysis/analysis-spec.template.json",
+      "package_path": "design_updates/22_analysis-spec.template.json",
+      "sha256": "7F65CE368F5B613AADF033194EF5D04F441B9484DF3EA04A1BAEB69FA663AE04"
+    },
+    {
+      "source_path": "agent/tasks/U12-04/outputs/sap.md",
+      "package_path": "design_updates/23_sap.md",
+      "sha256": "8A336AE23E7BEF1541EA5D02647967DFD8B0A7674D8C06BB1784A3CCD86D97ED"
     }
   ],
-  "current_scope_acceptance": "PENDING_NOT_INHERITED_FROM_ORIGINAL_REVIEW"
+  "current_scope_acceptance": "PENDING_NOT_INHERITED_FROM_ORIGINAL_REVIEW",
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "review_status": "PENDING_NOT_HUMAN_ACCEPTANCE",
+    "original_input_identity_preserved": true
+  }
 }

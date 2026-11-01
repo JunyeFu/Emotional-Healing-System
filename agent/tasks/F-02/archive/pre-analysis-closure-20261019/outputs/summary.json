@@ -1,0 +1,202 @@
+{
+  "task_id": "F-02",
+  "title": "F-02 构念与测量设计更新审阅",
+  "review_date": "2026-10-09",
+  "conclusion": "F-02原注册状态DONE及历史签收保留。2026-10-09用户批准本轮设计通过；当前设计与材料更新已交付。中文独立复核、适用性验证和正式测量冻结仍待执行，不以历史DONE或设计批准代替真实研究准入。",
+  "historical_acceptance": {
+    "reviewer": "Codex独立AC审查",
+    "date": "2026-08-06",
+    "commit": null,
+    "method": "历史结论为PASS_FOR_CANDIDATE_PACKAGE，仅候选材料审查；原记录未登记固定审核提交，明确要求另行安排真实第二人签收。本轮不代签。"
+  },
+  "sections": [
+    {
+      "heading": "当前结论",
+      "paragraphs": [
+        "原DONE、本轮设计批准、真实验证分别记录；当前方案为固定A与受限适应B整包比较，I/G/X分离。"
+      ]
+    },
+    {
+      "heading": "目标与完成标准",
+      "paragraphs": [
+        "AC1 PANAS-NA前测校正后测为主要候选并核查版本、时间指令和地板",
+        "AC2 理解题按功能适配，A不参加不存在的Actual读取排名",
+        "AC3 I达成、G跟随、努力及不适独立定义，不用SCCI代证收益"
+      ]
+    },
+    {
+      "heading": "实际交付",
+      "paragraphs": [
+        "英文PANAS-X原手册已取得（版权1994、updated 8/99，DOI 10.17077/48vt-m4t2）；PhenX180501明确允许非商业复制使用。",
+        "采用一般NA10/PA10，共20题；此刻时间窗口，NA前测校正后测为主要候选，PA为次要候选。各分量1至5求和10至50，无反向，不合成20题总分；任一分量缺题则该分量缺失为项目工作规则。",
+        "中文SRP-PANASX-GENERAL-ZH-DRAFT-01及指导语、锚点、计分键已交付；允许内部审阅，不是官方或已验证译本。原不自译要求已由用户授权工作初译取代。",
+        "07第10、11节已提供逐题复核、独立回译输入要求、主持稿、单人记录及轮次决定表。两轮各A3/B3，累计12名不同认知学生；优先原8评审内安排2名合适语言审阅者。人选尚未落实。",
+        "M01现为独立语言审阅、中文版本选定及适用性证据；M02为中文翻译/改编与公开范围核对。英文非商业复制许可不再列为待取得。20名技术前置不能独自证明新译本有效。"
+      ]
+    },
+    {
+      "heading": "执行过程与关键决定",
+      "paragraphs": [
+        "理解题共同部分经等值核验后比较，A预设误读题与B目标/实际/不可用题分开解释。",
+        "I达成、G跟随、控制成本、努力及舒适独立；SCCI仅操纵检查。",
+        "主要候选分析单位为参与者；原分配纳入目标人群，后测NA以前测和顺序校正，缺失按07候选规格处理。真实X未知不由G插补。"
+      ]
+    },
+    {
+      "heading": "验证与结果",
+      "paragraphs": [
+        "英文原件题项与20题工作稿NA/PA映射已有静态核对；材料和生成结果检查仅证明文档一致。",
+        "中文回译、认知访谈、地板分布及适用性验证未执行；正式参数与N未冻结。"
+      ]
+    },
+    {
+      "heading": "偏离与修复闭环",
+      "paragraphs": [
+        "已删除当前生成来源中的不自译旧规则，并落实中文工作稿的真实身份。",
+        "构念测量蓝图和候选分析规格已交付；剩余的是具体中文材料复核与实证适用性，不再把整份设计材料列为尚未交付。"
+      ]
+    },
+    {
+      "heading": "目录与文件整理",
+      "paragraphs": [
+        "旧任务、总结及被替代交接保存在archive/pre-design-baseline-20261008；当前设计用LaTeX/PDF维护，不新增DOCX。"
+      ]
+    },
+    {
+      "heading": "上下游交接",
+      "paragraphs": [
+        "F-02负责构念与版本决定；Q-01承接语言审阅人选，Q-02承接认知访谈，U12-04核对评分及统计规格，G-05核对对应活动批准及使用范围；下一动作是落实审阅人员和中文摘录，尚不招募正式研究。",
+        "原AC1至AC3保留为新范围完整验收条件，未勾选不表示设计稿未交付；真实部分须相应证据。设计通过已单独记录，不重复要求批准同一设计。",
+        "07当前有效内容以.tex及编辑器预览为准；磁盘07 PDF未另行导出，不作为此次测量更新依据。F-02自己的证据PDF从本总结重新生成。"
+      ]
+    },
+    {
+      "heading": "审阅与责任签收",
+      "paragraphs": [
+        "用户于2026-10-09明确批准设计通过，适用于本轮设计方案和材料。历史候选审查原件及其签署边界保留，用户设计批准不冒充语言专家或真实第二人测量审阅。"
+      ]
+    },
+    {
+      "heading": "收尾与下一包",
+      "paragraphs": [
+        "F-02本轮文档与设计更新完成；按上述责任分工承接前置复核，取得真实证据后再冻结中文测量。业务状态保持DONE，不重新领取旧任务。"
+      ]
+    },
+    {
+      "heading": "审阅来源",
+      "paragraphs": [
+        "当前来源为07源稿第3、7、10、11节、operational-design.json及来源补获记录；原英文手册仅作非商业研究材料保存。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F02-N01",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "历史有序联合门与v1.2情绪报告规则冲突，当前使用入口已改为PANAS主结果与SCCI操纵检查分开",
+      "source": "agent/tasks/F-02/outputs/current-measurement.md"
+    },
+    {
+      "id": "F02-N02",
+      "status": "FIXED_CURRENT_USAGE",
+      "description": "旧粗相位关系题和常识累计题由U12-02步骤实例及片段变化候选替代",
+      "source": "agent/modules/srp_step_measurement/README.md"
+    },
+    {
+      "id": "F02-N03",
+      "status": "OPEN_HUMAN_REVIEW",
+      "description": "历史验收仅模型候选审查，所读来源未取得F-02真实第二人签署；责任由团队总监安排",
+      "source": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+    },
+    {
+      "id": "F-02-DESIGN-BASELINE",
+      "status": "DESIGN_APPROVED_EMPIRICAL_PENDING",
+      "description": "F-02原注册状态DONE及历史签收保留。2026-10-09用户批准本轮设计通过；当前设计与材料更新已交付。中文独立复核、适用性验证和正式测量冻结仍待执行，不以历史DONE或设计批准代替真实研究准入。"
+    }
+  ],
+  "next_task": "按业务注册表及实际依赖推进",
+  "source_links": [
+    {
+      "label": "打开 F-02 当前适用说明",
+      "path": "agent/tasks/F-02/outputs/current-measurement.md"
+    },
+    {
+      "label": "打开 F-02 历史候选审查记录",
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/03_步骤02_构念比较条件与测量/02_F-02_验收记录.md"
+    },
+    {
+      "label": "打开当前 v1.2 研究合同",
+      "path": "agent/governance/planning/2026-08-05_SRP_IJHCI_全项目1-12步规划设计包_v1.0/00_总控/protocol_authority_v1.2.json"
+    },
+    {
+      "path": "agent/design/研究主旨与实验设计论证_当前.md",
+      "label": "当前实验设计与贡献论证"
+    },
+    {
+      "path": "agent/work/2026-10-08_任务完成时序与研究主旨.md",
+      "label": "任务完成时序与签收范围"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/task-baseline.json",
+      "label": "当前设计基线 task-baseline.json"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/01-design.pdf",
+      "label": "当前设计基线 01-design.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/02-science.pdf",
+      "label": "当前设计基线 02-science.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/03-decisions.pdf",
+      "label": "当前设计基线 03-decisions.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/04-review-audit.pdf",
+      "label": "当前设计基线 04-review-audit.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.tex",
+      "label": "操作设计 05-control-spec.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/05-control-spec.pdf",
+      "label": "操作设计 05-control-spec.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.tex",
+      "label": "操作设计 06-paired-storyboards.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
+      "label": "操作设计 06-paired-storyboards.pdf"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
+      "label": "操作设计 07-protocol-candidate.tex"
+    },
+    {
+      "path": "agent/design/design-foundation-20261008/operational-design.json",
+      "label": "操作设计 operational-design.json"
+    },
+    {
+      "path": "agent/work/2026-10-08_科学来源补获与量表侧证.md",
+      "label": "当前测量来源 2026-10-08_科学来源补获与量表侧证.md"
+    }
+  ],
+  "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
+  "operational_design_candidate": "ODES-20261008",
+  "normalization_candidate": "NORM-20261008",
+  "normalization_design_closed": false,
+  "design_review": {
+    "status": "APPROVED",
+    "date": "2026-10-09",
+    "authority": "user_explicit_instruction",
+    "statement": "批准设计通过",
+    "scope": "本轮设计方案与材料，作为后续前置工作依据",
+    "outstanding": "M01/M02、真实验证、正式参数及样本量冻结、对应活动批准分别推进",
+    "empirical_validation_passed": false,
+    "authorizes_collection": false
+  }
+}

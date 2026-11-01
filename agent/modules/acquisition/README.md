@@ -1,5 +1,7 @@
 # 数据采集模块
 
+2026-10-18 新增 [BigRun Team 单设备开发候选](bigrun/README.md)：独立 BLE 驱动、P-02 原始记录、项目 RawFrame 接口及心率/ACC 呼吸代理校准。入口为 `agent/runtime/bigrun.cmd`；尚无真机验证，不替换下述正式设备和研究准入，不接管 TD Mock 或自动开始实验。
+
 当前任务入口：[D-01真实ECG与RR交接](../../../agent/tasks/D-01/outputs/current-acquisition.md)与[D-02真实呼吸与运动交接](../../../agent/tasks/D-02/outputs/current-acquisition.md)。两包仍WAIT_DEP_EXTERNAL、未领取；S-01负责同步与SQI，P-02负责原始字节追加记录。
 
 DeviceDriver/DeviceManager/RingBuffer/FrameClock为共享历史实现，28项通用测试不能证明真机适配。FrameClock保留ECG与呼吸原生批次，呼吸均值仅作历史显示；没有新呼吸样本时有效性为false。DeviceManager连接后质量保持unknown，不能据连接成功声称GOOD。mock_data.py只用于明确开发fixture，不用于正式采集或替代缺失数据。

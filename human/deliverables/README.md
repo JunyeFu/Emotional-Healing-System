@@ -10,12 +10,21 @@
 
 双环外观参考，原视频包含脚本缺失警告；单帧不证明接口、性能或正式构建通过。
 
+## TD 手动工作台
+
+![TD手动工作台：运行中的模拟信号与流程](../../agent/tasks/T-01/evidence/manual-20261015-105659/18-started.png)
+
+2026-10-15原生模拟验收截图，设备、Unity端与问卷回执为模拟。工作台覆盖手动准备、开始、暂停、中止、后测与历史记录；[71点检查记录](../../agent/tasks/T-01/evidence/manual-20261015-105659/README.md)。[运行入口](../../agent/runtime/README.md)分别说明手动Mock与BigRun预览。
+
 ## 可打开的材料
 
 | 成果 | 类型与版本 | 入口 | 证明范围 |
 |---|---|---|---|
 | Storm与粒子双环 | 成员录屏，2026-10-08 | [画面与交接](../../agent/work/2026-10-08_李民约_Storm与粒子双环进展.md) | 视频可见外观，非完整联调 |
 | TD十二页操作台 | diagrams.net设计，2026-10-12 | [设计记录](../../agent/work/2026-10-12_TD矢量页面设计.md) | 布局、对齐与小字清理，非TD实现 |
+| TD手动工作台 | 原生TOE与71点模拟检查，2026-10-15 | [操作说明](../../agent/modules/touchdesigner/t01_telemetry_panel/README.md) | 模拟输入下的原生操作与P-01/P-02，不代表真实联合链 |
+| BigRun采集候选 | BLE驱动、P-02记录与TD预览 | [采集手册](../../agent/modules/acquisition/bigrun/README.md) | 软件接入；真实稳定性和呼吸参考待验 |
+| 离线分析软件 | 六类输入、统计、图表与报告 | [分析手册](../../agent/modules/srp_analysis/README.md) · [演练记录](../../agent/work/2026-10-19_analysis-closure.md) | 合成演练与软件候选，非参与者结果 |
 | A/B完整体验设计 | 设计地基，2026-10-08 | [设计材料](../../agent/design/design-foundation-20261008/README.md) | 设计候选，最新07以源稿为准 |
 | Python会话与记录 | 当前源码与测试 | [开发上手](../developers/README.md) | 软件状态、记录与重放合同 |
 | 71包任务交付 | 当前逐包审阅 | [任务索引](../tasks/README.md) · [串联PDF](../project-review.pdf) | 交付与实际缺口 |

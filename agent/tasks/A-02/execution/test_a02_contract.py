@@ -32,10 +32,11 @@ def test_current_navigation():
 
 def test_current_opportunity_definitions_match_S02():
     candidate = read(TASK / 'outputs/current-statistics.json')
-    source = read(ROOT / 'agent/tasks/S-02/outputs/current-events.json')
-    for key in ('opportunity_states', 'opportunity_completion_rate', 'pf_observable',
-                'pf_conservative', 'module_weights', 'missing_module_may_reweight'):
-        assert candidate[key] == source[key]
+    assert candidate['functional_metrics']['denominator'] == 'fixed_module_exposure_T'
+    assert candidate['functional_metrics']['states'] == ['C', 'K', 'U']
+    assert candidate['functional_metrics']['I_and_G_separate']
+    assert candidate['functional_metrics']['no_legacy_noninferiority_gate']
+    assert not candidate['missing_module_may_reweight']
     assert candidate['zero_denominator_value'] is None
 
 
@@ -43,18 +44,19 @@ def test_current_freeze_and_missingness_match_authority():
     candidate = read(TASK / 'outputs/current-statistics.json')
     authority = read(PLAN / '00_总控/protocol_authority_v1.2.json')
     guard = candidate['functional_guard']
-    assert guard['margin_candidate'] == authority['functional_guard']['noninferiority_margin_candidate']
+    assert guard['margin_candidate'] is None
     assert guard['blocks_affect_reporting'] is False
     assert guard['all_modules_noninferior_from_mean'] is False
     for key in ('affect_and_sensor_separated', 'sensor_failure_does_not_drop_valid_panas',
-                'candidate_imputations', 'model_and_mnar_grid', 'status'):
+                'model_and_mnar_grid', 'status'):
         assert candidate['missingness'][key] == authority['missingness'][key]
-    assert candidate['missingness']['pooling_rules'] is None
+    assert candidate['missingness']['candidate_imputations'] == 50
+    assert 'Rubin' in candidate['missingness']['pooling_rules']
     assert candidate['formal_n'] is None
     assert not candidate['equivalence_enabled']
     assert candidate['business_status'] == 'WAIT_DEP'
     assert candidate['owner'] is None
-    assert candidate['implementation'] == 'ANALYSIS_SET_MI_AND_SENSITIVITY_PIPELINE_NOT_DELIVERED'
+    assert candidate['implementation'] == 'ANALYSIS_SET_PMM_AND_SENSITIVITY_CANDIDATE_IMPLEMENTED'
 
 
 def test_signed_candidate_is_not_research_freeze():
@@ -68,7 +70,7 @@ def test_signed_candidate_is_not_research_freeze():
 
 
 def test_actual_power_missingness_is_carried_forward_not_MI(monkeypatch):
-    module = runpy.run_path(str(SAP.parent / 'execution/power_simulation.py'))
+    module = runpy.run_path(str(SAP.parent / 'archive/pre-analysis-closure-20261019/execution/power_simulation.py'))
     replicate = module['_replicate']
     data = {
         'cue': np.array([0., 0., 1., 1., 0., 0., 1., 1.]),
@@ -94,7 +96,7 @@ def test_actual_power_missingness_is_carried_forward_not_MI(monkeypatch):
 
 @pytest.mark.parametrize('effect', [-0.3, 0., 0.3])
 def test_existing_synthetic_grid_is_deterministic_not_MI(effect):
-    module = runpy.run_path(str(SAP.parent / 'execution/power_simulation.py'))
+    module = runpy.run_path(str(SAP.parent / 'archive/pre-analysis-closure-20261019/execution/power_simulation.py'))
     args = dict(seed=20260929, replications=100, n_grid=(48,), effect_grid=(effect,))
     first = module['run_power_grid'](**args)
     assert first == module['run_power_grid'](**args)

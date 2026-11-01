@@ -37,7 +37,7 @@ def test_current_scope_and_independent_emotion():
     contract = json.loads((TASK / 'outputs/current-rebuild.json').read_text(encoding='utf-8'))
     assert contract['business_status'] == 'WAIT_DEP'
     assert contract['owner'] is None
-    assert contract['implementation'] == 'OFFLINE_PIPELINE_NOT_DELIVERED'
+    assert contract['implementation'] == 'OFFLINE_PIPELINE_CANDIDATE_IMPLEMENTED'
     assert contract['primary_emotion_independent_of_pf_gate']
     assert not contract['frozen_A03_input_refresh']
     assert contract['event_tolerances'] is None

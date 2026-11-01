@@ -1,41 +1,103 @@
-# SRP · 多模态呼吸交互与情绪调节
+<p align="center">
+  <img src="human/assets/readme/brand-cover.svg" alt="SRP：让呼吸，成为风景的一部分。多模态呼吸交互与情绪调节教育" width="100%">
+</p>
 
-把呼吸练习融入天气场景，用视听反馈连接身体节奏与交互体验。面向普通学习间隙的自愿练习者，也面向研究、设计与开发协作者。
+<h1 align="center">SRP · 多模态呼吸交互</h1>
+<p align="center">把身体节奏融入天气场景，让短时呼吸练习拥有可感知的视听反馈。</p>
+<p align="center">
+  <a href="#体验画廊">体验画廊</a> ·
+  <a href="#当前进展">当前进展</a> ·
+  <a href="human/developers/README.md">开发上手</a> ·
+  <a href="human/tasks/README.md">参与协作</a>
+</p>
 
-**当前阶段：设计与工程候选开发。** 已有成员场景演示、Python会话与记录底座、任务审阅材料；完整真机链与正式参与者结果尚未交付。
+<p align="center"><strong>场景体验 × 可穿戴输入 × 研究工具</strong><br>当前阶段：工程候选与合成验证 · 内容更新：2026-11-01</p>
 
-![Storm场景成员演示：溪边木屋、雨幕与波纹](human/assets/previews/2026-10-08/member-storm-particle-rings/video-01-t12.png)
+---
 
-上图来自2026-10-08成员录屏，保留开发面板，只展示可见外观。更多画面、TD设计稿及各自证据范围见[成果展示](human/deliverables/README.md)。
+## 体验画廊
 
-## 从这里进入
+### 01 / 在天气中，看见节奏
 
-| 你想做什么 | 入口 |
+溪边木屋、雨幕与水面波纹构成固定镜头下的练习空间。视觉提示从环境中自然出现，四种天气各围绕一个核心机制展开。
+
+![Storm场景：溪边木屋、雨幕与水面波纹；成员开发录屏原帧](human/assets/previews/2026-10-08/member-storm-particle-rings/video-01-t12.png)
+
+<sub>Storm · 2026-10-08 成员开发录屏原帧，保留原测试面板。</sub>
+
+### 02 / 用粒子，呈现呼吸引导
+
+屏幕空间粒子双环提供直观的节奏参照。项目比较固定引导与场景原生受限适应，关注体验、执行表现和调整成本。
+
+![屏幕空间纯粒子双环：青色外环与白色内环](human/assets/previews/2026-10-08/member-storm-particle-rings/video-02-t26.png)
+
+<sub>双环外观演示 · 原帧保留脚本缺失警告；场景演示不代表完整系统联调通过。[查看素材来源](human/assets/previews/2026-10-08/member-storm-particle-rings/README.md)</sub>
+
+### 03 / 一张工作台，掌握练习流程
+
+TD 手动工作台将设备曲线、当前流程、暂停与后测组织在同一个操作界面中。准备、开始和结束由操作员明确控制。
+
+![TD手动工作台运行界面：模拟呼吸与ECG曲线、I/G/X状态和操作按钮](agent/tasks/T-01/evidence/manual-20261015-105659/18-started.png)
+
+<sub>TouchDesigner 原生界面 · 2026-10-15 手动模拟验收。设备、Unity端与问卷回执为模拟，会话与存储使用实际 P-01/P-02。[查看71个检查点及结果](agent/tasks/T-01/evidence/manual-20261015-105659/README.md)</sub>
+
+[浏览全部成果与证据 →](human/deliverables/README.md)
+
+## 从练习体验，到可分析的记录
+
+| 参与者体验 | 操作与采集 | 离线分析 |
+|---|---|---|
+| Unity 天气场景与粒子引导 | Python 会话、时钟、设备接入与记录；TD 操作台 | 六类输入只读重建、统计、图表与报告 |
+| 固定镜头，让提示融入环境 | 保留准备、暂停、退出与封存过程 | 区分情绪收益、执行表现与调整成本 |
+| [体验与场景设计](agent/design/weather/四种天气设计.md) | [当前运行入口](agent/runtime/README.md) | [分析软件与数据格式](agent/modules/srp_analysis/README.md) |
+
+### 两种完整体验，共同的练习目标
+
+| A · 固定引导 | B · 场景原生受限适应 |
 |---|---|
-| 认识项目与研究问题 | [项目概览](human/project/README.md) |
-| 看已有成果与演示 | [成果目录](human/deliverables/README.md) · [对外介绍](human/project/project-introduction.md) |
-| 运行验证、继续开发 | [开发上手](human/developers/README.md) · [模块地图](human/project/PROJECT_MODULES.md) |
-| 领取任务或审阅交付 | [任务导航](human/tasks/README.md) |
-| 维护权威材料与生成工具 | [Agent执行层](agent/README.md) |
+| 呼吸引导圈与预设场景变化共同呈现固定练习节奏。 | 根据实际呼吸与场景状态，在限定范围内调整引导，再趋向共同目标。 |
 
-## 两种完整体验方案
+两组共享理想目标 **I**，实际引导 **G** 与实际呼吸 **X** 独立记录。研究要回答的是：体验与情绪收益如何变化，执行表现和调整成本又如何变化？
 
-- **A：固定引导。** 呼吸引导圈和预设场景变化共同呈现练习节奏。
-- **B：场景原生受限适应。** 根据实际呼吸与场景状态调整实际引导，再趋向共同理想目标。
+[阅读项目概览](human/project/README.md) · [设计地基与实验候选](agent/design/design-foundation-20261008/README.md)
 
-两组共享理想目标I；实际引导G与实际呼吸X独立记录。研究关注情绪收益、执行表现与调整成本，不把视觉效果或软件测试当作参与者效果。[设计地基](agent/design/design-foundation-20261008/README.md) · [实验设计论证](agent/design/研究主旨与实验设计论证_当前.md)
+## 当前进展
 
-## 系统如何协作
+| 模块 | 已有交付 | 下一步 |
+|---|---|---|
+| Unity 场景 | Storm 与纯粒子双环成员演示 | 目标版本迁移、四天气整合与完整旅程验收 |
+| TD 工作台 | 手动模拟工作台与71点原生检查记录；BigRun预览工程 | 正式请求接口及真实设备联合验证 |
+| BigRun 采集 | BLE 接入、原始通道记录、P-02归档和连接阶段显示 | 持续采集稳定性、时钟、单位与独立呼吸参考验证 |
+| 离线分析 | `demo / prepare / analyze`、统计与报告；合成演练已完成 | 正式输入、统计规格冻结与独立复算 |
+| 团队协作 | 71项任务体系、独立领取包与进度图 | 按当前范围逐项验收 |
 
-```text
-可穿戴设备 → Python采集、交互状态估计、会话编排与记录 → Unity参与者体验
-                                       └──────────────→ TD操作台与监控
-原始记录、问卷与回执 → 离线重建与分析 → 图表和论文材料
+完整真机链、正式参数与参与者研究结果尚未交付。软件与合成演练的完成范围见[分析关闭记录](agent/work/2026-10-19_analysis-closure.md)；设备现状见[BigRun接入说明](agent/modules/acquisition/bigrun/README.md)。
+
+## 开始探索
+
+**看作品** → [成果展示](human/deliverables/README.md) · [项目介绍](human/project/project-introduction.md)<br>
+**运行代码** → [开发上手](human/developers/README.md) · [运行入口](agent/runtime/README.md)<br>
+**加入协作** → [任务导航](human/tasks/README.md) · [贡献指南](CONTRIBUTING.md)
+
+取得源码与大文件：
+
+```powershell
+git clone --branch main https://github.com/JunyeFu/Emotional-Healing-System.git srp
+Set-Location srp
+git lfs install --local
+git lfs pull
 ```
 
-Python掌握流程与时钟；Unity独立完成画面，TD不直接控制研究流程。[运行入口](agent/runtime/README.md)区分可验证的底座与尚未接通的正式链。
+完成[分析环境准备](agent/modules/srp_analysis/README.md#直接运行)后，可先运行不需要设备的合成演练：
 
-## 团队进展
+```powershell
+agent/runtime/srp-analysis.cmd demo --out agent/local/artifacts/my-analysis-demo
+```
+
+输出包含派生表、统计图与报告，数据均为合成。Unity 团队目标为 **2022.3.62f3**，共享工程版本迁移尚未验收；TD 为 **2025.32820**。具体环境与版本差异见[开发指南](human/developers/README.md)。
+
+<details>
+<summary><strong>团队任务进度 · 展开查看注册表生成图</strong></summary>
 
 <!-- TEAM_PROGRESS_START -->
 ## 团队任务进度
@@ -47,17 +109,24 @@ Python掌握流程与时钟；Unity独立完成画面，TD不直接控制研究�
 点击图可打开原始SVG放大查看。图与摘要由同一任务注册表生成。
 <!-- TEAM_PROGRESS_END -->
 
-原签收只覆盖原范围；目录整理不改变业务状态。当前任务与冻结要求以[任务导航](human/tasks/README.md)中的治理权威为准。
+原签收覆盖原范围，新增范围按当前任务材料验收。[任务权威与领取入口](human/tasks/README.md)
 
-## 目录与协作
+</details>
+
+## 仓库导航
 
 ```text
-human/       项目介绍、成果、开发指南、任务审阅
-agent/       源码、合同、设计、治理、验证、任务执行
-AGENTS.md    项目执行约束
-CONTRIBUTING.md  协作入口
+human/                   面向读者：项目、成果、开发指南、任务导航
+agent/modules/           源码：采集、会话、存储、分析、Unity、TD
+agent/runtime/           当前运行入口
+agent/design/            体验、视听映射与研究设计
+agent/tasks/             任务输入、实现、交付与验证
+agent/governance/        任务注册、领取与签收
+agent/archive/           历史材料
 ```
 
-[目录与命名规范](human/project/repository-layout.md) · [目录改造任务书](human/project/repository-restructure-taskbook-20261013.md) · [协作指南](CONTRIBUTING.md)
+本地环境与工作产物归入被忽略的 `agent/local/`，研究原始数据不随源码公开。当前与历史入口按[目录规范](human/project/repository-layout.md)区分；源码职责见[模块地图](human/project/PROJECT_MODULES.md)。
 
-本地唯一入口为 `D:\Agent\srp`。GitHub默认分支[main](https://github.com/JunyeFu/Emotional-Healing-System/tree/main)包含完整规范化目录、源码、合同和开发入口，与本地已提交版本一致。正式参数、设备联调与参与者研究仍需各自验收，不提供“一键正式实验”承诺。
+---
+
+<p align="center"><strong>让练习融入环境，让每一步都有清楚的记录。</strong><br>SRP · 多模态交互与情绪调节教育</p>

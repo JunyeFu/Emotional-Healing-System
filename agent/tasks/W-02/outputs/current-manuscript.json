@@ -12,13 +12,13 @@
   "real_results": "NOT_RUN",
   "scope_receipt": null,
   "primary_outcome": "panas_negative_affect_post_adjusted_for_pre",
-  "contrast": "native_minus_abstract",
+  "contrast": "B_minus_A",
   "primary_reporting_blocked_by_guard_or_scci": false,
   "native_is_hidden": false,
   "not_significant_is_equivalent": false,
   "equivalence_confirmatory_enabled": false,
-  "primary_negative_favors": "scene_native",
-  "primary_positive_favors": "abstract_pacer",
+  "primary_negative_favors": "native_constrained_adaptive_B",
+  "primary_positive_favors": "fixed_open_loop_A",
   "causal_project_vs_no_project_claim_supported": false,
   "weather_and_breath_structure_independently_identified": false,
   "actual_sequence_rank_is_causal_effect": false,
@@ -34,5 +34,8 @@
   "root_migration_complete": false,
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "current_design_revision": "agent/tasks/W-02/outputs/design-revision.json",
-  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE"
+  "existing_runtime_fields_scope": "ORIGINAL_IMPLEMENTATION_FACTS_NOT_NEW_DESIGN_ACCEPTANCE",
+  "analysis_entrypoint": "agent/runtime/srp-analysis.cmd",
+  "analysis_spec_authority": "agent/tasks/U12-04/outputs/sap.md",
+  "software_results_are_real_manuscript": false
 }

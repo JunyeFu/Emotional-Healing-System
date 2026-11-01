@@ -88,9 +88,10 @@ def onFrameStart(frame):
         actual = [v for item in series for _, v in item['points'] if v is not None]
         label = session_module.LABELS[key] + ' / ' + session_module.UNITS[key]
         window = 6 if key == 'ecg' else 30
-        label += ' · ' + str(window) + '秒'
-        if key in ('acceleration', 'angular_velocity'):
-            label += ' · 独立量程'
+        if not shell.fetch('manual_workbench', False):
+            label += ' · ' + str(window) + '秒'
+            if key in ('acceleration', 'angular_velocity'):
+                label += ' · 独立量程'
         values[source + '_plot_label'] = label
         values[source + '_plot_state'] = ('历史 · ' if stream.get('state') == 'STALE' else '') + ('有缺口' if actual and any(s.get('has_gaps') for s in series) else '有数据' if actual else '未接入')
         device = shell.op('Content/Pages/overview/devices/' + source)

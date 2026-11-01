@@ -35,7 +35,7 @@ def wait_for(path, pid, timeout=60):
     raise TimeoutError(path)
 
 
-def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None, study_speed=5, backend_mode=False, continuity_mode=False, audit_mode=False):
+def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None, study_speed=5, backend_mode=False, continuity_mode=False, audit_mode=False, redesign=False, manual=False):
     if not 0 < study_speed <= 10:
         raise ValueError('Replay speed must be in (0, 10]')
     global EVIDENCE, SCRATCH
@@ -70,6 +70,13 @@ def main(device_mode=False, monitor_mode=False, flow_mode=False, study_path=None
         SCRATCH = ROOT / 'agent/local/artifacts/td-workbench-audit' / RUN_ID
     if not audit_mode and ps('Get-Process TouchDesigner -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Id'):
         raise RuntimeError('Preserve already open TD projects; close the owned capture copy first')
+    if redesign:
+        EVIDENCE = EXECUTION.parent / 'evidence' / ('redesign-' + RUN_ID)
+        candidate_name = 'T01_Workbench.redesign.candidate.toe'
+    if manual:
+        EVIDENCE = EXECUTION.parent / 'evidence' / ('manual-' + RUN_ID)
+        SCRATCH = ROOT / 'agent/local/artifacts/td-workbench-manual' / RUN_ID
+        candidate_name = 'T01_ManualWorkbench.toe'
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as check:
         check.bind(('127.0.0.1', capture_port))
     source_bytes = SOURCE.read_bytes()
@@ -107,7 +114,8 @@ def onFrameStart(frame):
         hook = op('/project1/T01_TelemetryPanel').create(executeDAT, '_capture_runtime')
         hook.store('evidence', {str(EVIDENCE)!r})
         hook.store('command', {str(command)!r})
-        hook.store('builder', {str(EXECUTION / ('build_workbench_flow.py' if flow_mode else 'build_workbench_monitor.py' if monitor_mode else 'build_workbench_devices.py' if device_mode else 'build_workbench_a.py'))!r})
+        hook.store('reopen_required', {manual!r})
+        hook.store('builder', {str(EXECUTION / ('build_workbench_manual.py' if manual else 'build_workbench_redesign.py' if redesign else 'build_workbench_flow.py' if flow_mode else 'build_workbench_monitor.py' if monitor_mode else 'build_workbench_devices.py' if device_mode else 'build_workbench_a.py'))!r})
         hook.text = Path({str(EXECUTION / 'capture_workbench_sdk.py')!r}).read_text(encoding='utf-8')
         hook.par.framestart = True
         hook.par.active = True
@@ -162,11 +170,22 @@ def onFrameStart(frame):
     sender.start()
     success = False
     try:
+        if manual:
+            built = wait_for(EVIDENCE / 'built.json',pid)
+            ps(f'Stop-Process -Id {pid} -ErrorAction SilentlyContinue')
+            pid = int(ps(f"(Start-Process -FilePath '{TD_BIN / 'TouchDesigner.exe'}' -ArgumentList '\"{built['path']}\"' -WindowStyle Hidden -PassThru).Id"))
         ready = wait_for(EVIDENCE / 'ready.json', pid)
         print('TD_READY', ready, flush=True)
+        print('TD_AUTOMATED_CAPTURE: panel input belongs to the runner until EVIDENCE is printed.', flush=True)
         time.sleep(3)
         if flow_mode:
-            if continuity_mode:
+            if manual:
+                from exercise_manual_workbench import exercise
+                receipts = exercise(command,pid,active,EVIDENCE,wait_for)
+            elif redesign:
+                from exercise_workbench_redesign import exercise
+                receipts = exercise(command,pid,active,EVIDENCE,wait_for)
+            elif continuity_mode:
                 from exercise_continuity import exercise
                 receipts = exercise(command,pid,active,EVIDENCE,wait_for)
             elif study_path:
@@ -178,11 +197,11 @@ def onFrameStart(frame):
             assert SOURCE.read_bytes() == source_bytes
             candidate = SCRATCH / candidate_name
             shutil.copyfile(candidate, EVIDENCE / candidate_name)
-            if not continuity_mode:
+            if not continuity_mode and not manual:
                 shutil.copytree(SCRATCH / 'development-workflow', EVIDENCE / 'development-workflow')
             report = dict(source_preserved=True, td=ready, captures=receipts, owned_process_id=pid,
                           candidate=str(candidate), capture_port=capture_port,
-                          input_source=('Known mathematical calibration signals; development preflight only' if continuity_mode else 'Actual P01/P02; synthetic devices and Unity endpoint' if backend_mode else 'Synthetic fixtures and simulated authority receipts only'))
+                          input_source=('Known mathematical calibration signals; development preflight only' if continuity_mode else 'Actual P01/P02; synthetic devices and Unity endpoint' if backend_mode or manual else 'Synthetic fixtures and simulated authority receipts only'))
             (EVIDENCE / 'capture-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
             success = True
             if audit_mode:
@@ -287,7 +306,11 @@ def onFrameStart(frame):
         stop.set()
         sender.join()
         if not success:
-            ps(f'Stop-Process -Id {pid} -ErrorAction SilentlyContinue')
+            print('TD_CAPTURE_ABORTED: verification failed; closing only the runner-owned TD copy.', flush=True)
+            if '--keep-failed' not in __import__('sys').argv:
+                ps(f'Stop-Process -Id {pid} -ErrorAction SilentlyContinue')
+            else:
+                print('OWNED_TD_DEBUG_PID',pid,flush=True)
 
 
 if __name__ == '__main__':
@@ -295,8 +318,9 @@ if __name__ == '__main__':
     study = sys.argv[sys.argv.index('--study')+1] if '--study' in sys.argv else None
     speed = float(sys.argv[sys.argv.index('--speed')+1]) if '--speed' in sys.argv else 5
     continuity='--continuity' in sys.argv
+    manual='--manual' in sys.argv
     audit='--audit' in sys.argv
-    main(device_mode=audit or continuity or bool(study) or any(x in sys.argv for x in ('--devices','--monitor','--flow')),
-         monitor_mode=audit or continuity or bool(study) or '--monitor' in sys.argv or '--flow' in sys.argv,
-         flow_mode=audit or continuity or bool(study) or '--flow' in sys.argv,study_path=study,study_speed=speed,
-         backend_mode='--backend' in sys.argv,continuity_mode=continuity,audit_mode=audit)
+    main(device_mode=manual or audit or continuity or bool(study) or any(x in sys.argv for x in ('--devices','--monitor','--flow')),
+         monitor_mode=manual or audit or continuity or bool(study) or '--monitor' in sys.argv or '--flow' in sys.argv,
+         flow_mode=manual or audit or continuity or bool(study) or '--flow' in sys.argv,study_path=study,study_speed=speed,
+         backend_mode='--backend' in sys.argv,continuity_mode=continuity,audit_mode=audit,redesign='--redesign' in sys.argv,manual=manual)

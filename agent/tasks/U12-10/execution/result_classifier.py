@@ -33,7 +33,7 @@ def classify(e: Evidence) -> dict[str, Any]:
     est=_number(e.estimate,'estimate'); lo=_number(e.ci_low,'ci_low'); hi=_number(e.ci_high,'ci_high')
     level=_number(e.ci_level,'ci_level')
     if level != 0.95:
-        raise ValueError('v1.2 classifier requires a 95% CI; do not pass a TOST 90% CI.')
+        raise ValueError('A/B classifier requires a 95% CI; do not pass a TOST 90% CI.')
     if not lo < hi or not lo <= est <= hi:
         raise ValueError('Require ci_low < ci_high and estimate inside its CI.')
     if type(e.affect_assessable) is not bool or type(e.delivery_valid) is not bool:
@@ -48,15 +48,15 @@ def classify(e: Evidence) -> dict[str, Any]:
     if not e.affect_assessable:
         direction='NOT_ASSESSABLE'; practical='NOT_ASSESSABLE'
     else:
-        direction='NATIVE_LOWER' if hi < 0 else 'ABSTRACT_LOWER' if lo > 0 else 'NO_DIRECTION_ESTABLISHED'
+        direction='B_LOWER' if hi < 0 else 'A_LOWER' if lo > 0 else 'NO_DIRECTION_ESTABLISHED'
         if d is None: practical='THRESHOLD_NOT_FROZEN'
-        elif hi < -d: practical='NATIVE_IMPORTANT_BENEFIT_SUPPORTED'
-        elif lo > d: practical='ABSTRACT_IMPORTANT_BENEFIT_SUPPORTED'
+        elif hi < -d: practical='B_IMPORTANT_BENEFIT_SUPPORTED'
+        elif lo > d: practical='A_IMPORTANT_BENEFIT_SUPPORTED'
         elif lo > -d and hi < d: practical='WITHIN_PRESPECIFIED_PRACTICAL_BOUNDS'
         else: practical='IMPORTANT_EFFECT_NOT_EXCLUDED'
     return {
         'input':{'estimate':est,'ci95':[lo,hi],'practical_delta':d},
-        'contrast':'native_minus_abstract; lower_negative_affect_is_better',
+        'contrast':'B_minus_A; lower_negative_affect_is_better',
         'direction_evidence':direction,'practical_scale':practical,
         'interpretation_scope':'ASSIGNED_IMPLEMENTATIONS' if e.delivery_valid else 'DELIVERY_VALIDITY_LIMITED',
         'functional_guard':e.functional_guard,'sensitivity':e.sensitivity,

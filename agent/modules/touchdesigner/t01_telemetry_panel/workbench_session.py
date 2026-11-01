@@ -91,7 +91,9 @@ class DevelopmentCapture:
     """One append-only mock capture per session. Not a replacement for P-02."""
     def __init__(self, root):
         self.root = Path(root)
-        self.state = 'WAITING'
+        self.state = 'PREPARE'
+        self.prepare_request = None
+        self.prepared_session = None
         self.session = None
         self.file = None
         self.path = None
@@ -103,6 +105,11 @@ class DevelopmentCapture:
         self.count = 0
         self.last_sync = time.monotonic()
 
+    def request_prepare(self, request):
+        self.prepare_request = (request['session_id'], request['request_id'])
+        self.prepared_session = None
+        self.state = 'PREPARE'
+
     def event(self, p, now):
         if p.get('message_type') != 'session_observation' or p.get('version') != '1.0':
             raise ValueError('SESSION_MESSAGE_VERSION')
@@ -113,11 +120,19 @@ class DevelopmentCapture:
             raise ValueError('SESSION_IDENTITY')
         if (sid, eid) in self.seen:
             return False
-        if action == 'unity_start_clicked':
+        if action == 'prepared':
+            if (sid, p.get('request_id')) != self.prepare_request or p.get('authority') != 'python_session_core':
+                raise ValueError('PREPARATION_RECEIPT_MISMATCH')
+            self.prepared_session, self.state = sid, 'WAITING'
+        elif action == 'unity_start_clicked':
+            if self.prepared_session != sid:
+                raise ValueError('PREPARATION_NOT_CONFIRMED')
             if self.state not in ('WAITING', 'CLICKED'):
                 raise ValueError('SESSION_ALREADY_ACTIVE')
             self.state = 'CLICKED'
         elif action == 'started':
+            if self.prepared_session != sid:
+                raise ValueError('PREPARATION_NOT_CONFIRMED')
             if self.file or sid in self.closed or self.state == 'ERROR':
                 raise ValueError('SESSION_ALREADY_CAPTURED')
             if p.get('authority') != 'python_session_core' or p.get('unity_start_confirmed') is not True:
@@ -167,7 +182,7 @@ class DevelopmentCapture:
         return duration((self.ended if self.ended is not None else now) - self.started) if self.started is not None else '00:00'
 
     def label(self):
-        return {'WAITING': '正在等待Unity开始 · 预览不计入录制',
+        return {'PREPARE': '待确认准备', 'WAITING': '等待开始',
                 'CLICKED': 'Unity已点击开始 · 等待Python确认',
                 'RECORDING': '模拟会话录制中', 'COMPLETED': '模拟录制已完成',
                 'ABORTED': '模拟录制已中止', 'ERROR': '录制失败'}[self.state]

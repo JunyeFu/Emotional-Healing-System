@@ -39,7 +39,11 @@
     "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
     "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
     "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
-    "agent/design/design-foundation-20261008/operational-design.json"
+    "agent/design/design-foundation-20261008/operational-design.json",
+    "agent/modules/srp_analysis/README.md",
+    "agent/modules/srp_analysis/analysis-spec.template.json",
+    "agent/modules/srp_analysis/statistics.py",
+    "agent/modules/srp_analysis/prepare.py"
   ],
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "operational_design_candidate": "ODES-20261008"

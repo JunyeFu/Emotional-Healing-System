@@ -24,7 +24,11 @@
     "agent/design/design-foundation-20261008/03-decisions.tex",
     "agent/design/design-foundation-20261008/03-decisions.pdf",
     "agent/design/design-foundation-20261008/04-review-audit.tex",
-    "agent/design/design-foundation-20261008/04-review-audit.pdf"
+    "agent/design/design-foundation-20261008/04-review-audit.pdf",
+    "agent/modules/srp_analysis/README.md",
+    "agent/modules/srp_analysis/analysis-spec.template.json",
+    "agent/modules/srp_analysis/statistics.py",
+    "agent/modules/srp_analysis/prepare.py"
   ],
   "archive_bytes": {
     "claim_sentences.md": "0CE9C20F303432407AC1F468C8314BC1FE610CEEC4402665D38742C54C600E4F",

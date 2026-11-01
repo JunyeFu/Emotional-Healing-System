@@ -46,3 +46,9 @@ inputs/sources.json列出当前设计来源；领取中原input_snapshot_id及�
 操作级设计已交付；本包具体责任见[专项交接](operational-design-handoff.md)，真实运行与复核仍待执行。
 
 NORM-20261008：普通学习间隙、不诱发压力、不按NA筛选；校准前10/保留核验后10，正式冻结在前置验证之后。设计材料已交付，M01唯一中文题本/映射/指令与M02使用条件仍未关闭。本包承接参数规格：scoring_tolerance、measurement_version、minimum_interesting_difference、formal_sample_size；核对定义、单位、方法、接受依据和失败收缩，真实数值不由文档冻结。
+<!-- ANALYSIS-CLOSURE-20261019 -->
+## 2026-10-19 数据分析软件候选交接
+
+当前SAP采用B-A、四天气顺序、HC3、PMM k=5/50次/20轮；旧前测代填统计器转为历史回归，不再作为活动入口。
+
+[唯一入口与数据格式](../../../modules/srp_analysis/README.md)。活动分析采用当前07协议的固定A与原生受限适应B，不改变控制与天气。软件实现与合成回归不继承历史验收；真实量表/设备验证、正式SAP、研究锁库和揭盲仍未关闭。原业务状态、历史签名和领取输入快照保留。

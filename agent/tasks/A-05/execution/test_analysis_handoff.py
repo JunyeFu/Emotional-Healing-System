@@ -42,10 +42,12 @@ def test_registry_and_actual_input_gaps():
 
 def test_primary_and_guard_match_current_authority():
     protocol = read(PLAN / '00_总控/protocol_authority_v1.2.json')
-    for key, value in current()['primary'].items():
-        assert value == protocol['primary'][key], key
+    assert current()['primary']['outcome'] == protocol['primary']['outcome']
+    assert current()['primary']['contrast'] == 'B_minus_A'
+    assert current()['primary']['B_code'] == 1 and current()['primary']['A_code'] == 0
+    assert 'order_4' in current()['primary']['candidate_model']
     assert current()['functional_guard']['analysis_sets'] == protocol['functional_guard']['analysis_sets']
-    assert current()['functional_guard']['margin_candidate'] == protocol['functional_guard']['noninferiority_margin_candidate']
+    assert current()['functional_guard']['margin_candidate'] is None
     assert current()['functional_guard']['blocks_affect_reporting'] is False
     assert current()['scci_role'] == 'MANIPULATION_CHECK_ONLY'
     assert current()['equivalence_confirmatory_enabled'] is current()['sensor_failure_drops_valid_panas'] is False
@@ -53,7 +55,7 @@ def test_primary_and_guard_match_current_authority():
 
 @pytest.mark.parametrize('effect', [-0.4, 0., 0.4])
 def test_actual_candidate_hc3_preserves_native_minus_abstract_direction(effect):
-    module = runpy.run_path(str(SAP / 'power_simulation.py'))
+    module = runpy.run_path(str(SAP.parent / 'archive/pre-analysis-closure-20261019/execution/power_simulation.py'))
     cue = np.tile([0., 1.], 12)
     pre = np.random.default_rng(529).normal(size=24)
     strata = np.repeat([0., 1.], 12)
@@ -82,7 +84,7 @@ def test_empty_report_and_training_release_do_not_invent_results():
     assert current()['approved_training_release'] is None
     assert current()['online_state_may_include_post_panas'] is False
     assert current()['observed_case_is_complete_four_module'] is current()['power_script_is_formal_mi_analysis'] is False
-    assert current()['result_classifier'] == 'U12-10_CANDIDATE_ONLY_FORMAL_NOT_DELIVERED'
+    assert current()['result_classifier'] == 'B_MINUS_A_CI_CANDIDATE_IMPLEMENTED'
 
 
 def test_candidate_signature_preserved_and_differences_recorded():

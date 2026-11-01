@@ -18,6 +18,7 @@ class Workflow:
         self.pending = None
         self.error = None
         self.seen = set()
+        self.manual_start_required = False
         # A reopened application must not resume an interrupted participant experience.
         for item in self.history:
             if item['status'] in ('RECORDING', 'PAUSED', 'STARTED'):
@@ -72,6 +73,15 @@ class Workflow:
             if self.stage != 'PREPARE' or not self.ready:
                 raise ValueError('PREPARATION_INCOMPLETE')
             self._request('prepare', now)
+            self.capture.request_prepare(self.pending)
+        elif action == 'start':
+            if self.stage != 'WAITING':
+                raise ValueError('NOT_READY_TO_START')
+            self._request('mock_start', now)
+        elif action == 'posttest':
+            if self.stage != 'CLOSEOUT' or not self.current['sealed']:
+                raise ValueError('CLOSEOUT_INCOMPLETE')
+            self._request('mock_posttest', now)
         elif action == 'cancel':
             if self.stage not in ('PREPARE', 'WAITING'):
                 raise ValueError('CANNOT_CANCEL_ACTIVE_SESSION')
@@ -90,6 +100,12 @@ class Workflow:
             self.current = None
             if action == 'next':
                 self.new()
+        elif action == 'dismiss_fault':
+            if self.stage != 'CLOSEOUT' or self.current['status'] != 'RECORDING_FAILED':
+                raise ValueError('NOT_RECORDING_FAULT')
+            self.current['closed'] = True
+            self._save()
+            self.current, self.stage, self.pending = None, 'HOME', None
         else:
             raise ValueError('UNKNOWN_ACTION')
 
@@ -137,11 +153,13 @@ class Workflow:
             self._match_request(p, 'prepare')
             if self.stage != 'PREPARE' or not self.ready:
                 raise ValueError('PREPARATION_INCOMPLETE')
+            self.capture.event(p, now)
             self.stage, self.pending = 'WAITING', None
         elif event == 'cancelled':
             self._match_request(p, 'cancel_prepare')
             if self.stage not in ('PREPARE','WAITING'):
                 raise ValueError('ALREADY_STARTED')
+            self.capture.prepared_session, self.capture.prepare_request = None, None
             self.stage, self.current, self.pending = 'HOME', None, None
         elif event == 'request_rejected':
             if not self.pending or p.get('request_id') != self.pending['request_id']:
@@ -153,12 +171,16 @@ class Workflow:
                 raise ValueError('NOT_WAITING')
             self.capture.event(p, now)
         elif event == 'started':
-            if self.stage != 'WAITING' or self.pending:
+            if self.stage != 'WAITING':
                 raise ValueError('NOT_READY_TO_START')
+            if self.manual_start_required and not self.pending:
+                raise ValueError('OPERATOR_START_REQUIRED')
+            if self.pending:
+                self._match_request(p, 'mock_start')
             self.capture.event(p, now)
             c.update(status='RECORDING', start_ns=now, path=str(self.capture.path.relative_to(self.root)))
             self.history.append(c)
-            self.stage = 'RUNNING'
+            self.stage, self.pending = 'RUNNING', None
             self._save()
         elif event in ('paused', 'resumed'):
             expected, action = ('RUNNING', 'pause') if event == 'paused' else ('PAUSED','resume')
@@ -187,6 +209,9 @@ class Workflow:
         elif event == 'closeout_status':
             if self.stage != 'CLOSEOUT' or type(p.get('sealed')) is not bool or type(p.get('posttest')) is not bool:
                 raise ValueError('CLOSEOUT_RECEIPT_REQUIRED')
+            if self.pending:
+                self._match_request(p, 'mock_posttest')
+                self.pending = None
             # A receipt cannot turn a truncated local development file into a sealed record.
             c['sealed'] = p['sealed'] and self.capture.state in ('COMPLETED','ABORTED')
             c['posttest'] = p['posttest']
@@ -231,14 +256,21 @@ class Workflow:
         pause = end - c['pause_at'] if c['pause_at'] is not None else 0
         return max(0, elapsed - c['paused_ns'] - pause), elapsed
 
-    def fault(self, code):
+    def fault(self, code, now=None):
         self.error = code
         if self.capture.file:
             self.capture.file.close()
             self.capture.file = None
         if self.current and self.stage in ('RUNNING','PAUSED'):
+            if now is None:
+                import time
+                now = time.monotonic_ns()
+            self.current['end_ns'] = now
+            self.current['effective_ns'],self.current['elapsed_ns'] = self.times(now)
+            self.capture.state = 'ERROR'
             self.current.update(status='RECORDING_FAILED', sealed=False)
-            self.stage = 'CLOSEOUT'
+            self.stage, self.pending = 'CLOSEOUT', None
+            self._save()
 
     def snapshot(self, now):
         effective, elapsed = self.times(now)

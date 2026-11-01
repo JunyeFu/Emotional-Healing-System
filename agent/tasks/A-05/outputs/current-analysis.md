@@ -39,3 +39,11 @@
 inputs/sources.json列出当前设计来源；领取中原input_snapshot_id及候选身份保留，新增要求通过分发补充和影响记录交接，不静默替换领取输入。旧TASK与总结见archive/pre-design-baseline-20261008，原审核信息和实际代码证据保留原时间/范围。大型工程以项目工作目录引用，不复制缓存。
 
 本文件历史正文：[原范围记录](../archive/pre-design-baseline-20261008/current-analysis.md)。历史运行与候选事实仍可查，但不得以旧同反馈要求驱动新设计。
+<!-- ANALYSIS-CLOSURE-20261019 -->
+## 2026-10-19 数据分析软件候选交接
+
+通过唯一分析入口生成estimates/sensitivity/secondary表、六组图和中文报告；真实锁库、揭盲、正式SAP及独立复算仍待执行。
+
+结果解释消费[U12-10当前分类规则](../../U12-10/outputs/current-classification.md)；B-A区间、功能代价和缺失敏感性分别报告，不自动裁定综合胜出。
+
+[唯一入口与数据格式](../../../modules/srp_analysis/README.md)。活动分析采用当前07协议的固定A与原生受限适应B，不改变控制与天气。软件实现与合成回归不继承历史验收；真实量表/设备验证、正式SAP、研究锁库和揭盲仍未关闭。原业务状态、历史签名和领取输入快照保留。

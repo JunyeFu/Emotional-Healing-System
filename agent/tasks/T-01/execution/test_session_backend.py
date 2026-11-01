@@ -42,6 +42,25 @@ def test_digest_digits_are_not_contact_but_contact_fields_stay_blocked():
             privacy_lint(payload)
 
 
+def test_generated_request_uuid_is_not_a_phone_number(tmp_path):
+    from srp_session_store.privacy import privacy_lint
+    from srp_session_store import StoreError
+    identity = '51a6722d-b135-4743-9009-c4e9ee9c4b65'
+    for payload in ({'phone': identity}, {'note': identity + ' 13800138000'}):
+        with pytest.raises(StoreError):
+            privacy_lint(payload)
+    b = DevelopmentBackend(tmp_path, 'DEV-uuid-control')
+    try:
+        request(b, 'prepare', 0)
+        b.start_from_simulated_unity(1_000_000_000)
+        reply = request(b, 'abort', 2_000_000_000,
+                        request_id=identity)
+        assert reply['event'] == 'aborted'
+        assert b.seal()['replay']['valid']
+    finally:
+        b.close()
+
+
 def request(b, action, now, request_id=None):
     return b.request(dict(session_id=b.session_id, source_mode='dev_mock',
                           action=action, request_id=request_id or action), now)

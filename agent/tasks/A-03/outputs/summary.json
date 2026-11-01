@@ -193,5 +193,13 @@
   "design_baseline_id": "SRP-FIXED-VS-ADAPTIVE-NATIVE-20261008",
   "operational_design_candidate": "ODES-20261008",
   "normalization_candidate": "NORM-20261008",
-  "normalization_design_closed": false
+  "normalization_design_closed": false,
+  "analysis_software_handoff": {
+    "revision": "ANALYSIS-CLOSURE-20261019",
+    "responsibility": "以当前07源稿核查计分、HC3、PMM/Rubin及30/40/48/60精度情景；软件候选不能替代REAL/CAL与正式N冻结。",
+    "entrypoint": "agent/runtime/srp-analysis.cmd",
+    "research_completion": "NOT_RUN",
+    "business_status_changed": false,
+    "claimed_input_snapshots_changed": false
+  }
 }

@@ -27,7 +27,11 @@
     "agent/design/design-foundation-20261008/06-paired-storyboards.pdf",
     "agent/design/design-foundation-20261008/07-protocol-candidate.tex",
     "agent/design/design-foundation-20261008/07-protocol-candidate.pdf",
-    "agent/design/design-foundation-20261008/operational-design.json"
+    "agent/design/design-foundation-20261008/operational-design.json",
+    "agent/modules/srp_analysis/README.md",
+    "agent/modules/srp_analysis/analysis-spec.template.json",
+    "agent/modules/srp_analysis/statistics.py",
+    "agent/modules/srp_analysis/prepare.py"
   ],
   "frozen_input_snapshot_id": "570E00EC295CE4ABDBB1C1EF2C19FDFB3FADD6CEF7B63BDAE2CCF0F929E64309",
   "archived_byte_hashes": {
